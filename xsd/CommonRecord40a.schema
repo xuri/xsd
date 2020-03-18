@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSPY v5 rel. 3 U (http://www.xmlspy.com) by Max Venker (Accenture) -->
+<xsd:schema targetNamespace="http://www.ed.gov/FSA/COD/2014/v4.0a" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cod="http://www.ed.gov/FSA/COD/2014/v4.0a" elementFormDefault="qualified">
+	<xsd:include schemaLocation="CommonRecord4.0a-VR.xsd"/>
+<!-- 	<xsd:element name="CommonRecord" type="cod:CommonRecordType">
+		<xsd:annotation>
+			<xsd:documentation>Root Node for Department of Education Common Record</xsd:documentation>
+		</xsd:annotation>
+	</xsd:element> -->
+	<xsd:complexType name="CommonRecordType">
+		<xsd:sequence>
+			<xsd:element name="TransmissionData">
+				<xsd:complexType>
+					<xsd:sequence>
+						<xsd:element name="DocumentID">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:maxLength value="30"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+						<xsd:element name="CreatedDateTime" type="xsd:dateTime"/>
+						<!-- <xsd:element name="Source" type="cod:SourceType"/> -->
+						<!-- <xsd:element name="Destination" type="cod:DestinationType"/> -->
+						<xsd:element name="Software" minOccurs="0">
+							<xsd:complexType>
+								<xsd:sequence>
+									<xsd:element name="SoftwareProvider" minOccurs="0">
+										<xsd:simpleType>
+											<xsd:restriction base="xsd:string">
+												<xsd:maxLength value="10"/>
+											</xsd:restriction>
+										</xsd:simpleType>
+									</xsd:element>
+									<xsd:element name="SoftwareVersion" minOccurs="0">
+										<xsd:simpleType>
+											<xsd:restriction base="xsd:string">
+												<xsd:maxLength value="6"/>
+											</xsd:restriction>
+										</xsd:simpleType>
+									</xsd:element>
+								</xsd:sequence>
+							</xsd:complexType>
+						</xsd:element>
+						<xsd:element name="FullResponseCode" minOccurs="0">
+							<xsd:simpleType>
+								<xsd:restriction base="xsd:string">
+									<xsd:length value="1"/>
+									<xsd:enumeration value="S"/>
+									<xsd:enumeration value="F"/>
+									<xsd:enumeration value="M"/>
+									<xsd:enumeration value="N"/>
+								</xsd:restriction>
+							</xsd:simpleType>
+						</xsd:element>
+					</xsd:sequence>
+				</xsd:complexType>
+			</xsd:element>
+			<!-- <xsd:element name="ReportingSchool" type="cod:ReportingSchoolType" minOccurs="0" maxOccurs="unbounded"/> -->
+			<xsd:element name="Receipt" type="xsd:dateTime" minOccurs="0"/>
+			<!-- <xsd:element name="Response" type="cod:CommonRecordResponseType" minOccurs="0"/> -->
+		</xsd:sequence>
+	</xsd:complexType>
+</xsd:schema>

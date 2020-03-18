@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    Version Log:
+    $Log:
+    - - - - - - - - - - - - - - - - - - - - - - -
+
+    ©2008 Environment Agency
+
+    System : Generic Operator Returns (GOR)
+
+    - - - - - - - - - - - - - - - - - - - - - - -
+    XML Schema for submission of multiple Water Quality returns
+
+    Purpose: This schema is used to supply Water Quality Operator Self Monitoring returns to the Environment Agency.
+
+    Author: Paul Gardiner.
+    - - - - - - - - - - - - - - - - - - - - - - -
+    -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.environment-agency.gov.uk/XMLSchemas/GOR/WaterQualityMultiReturn/01" targetNamespace="http://www.environment-agency.gov.uk/XMLSchemas/GOR/WaterQualityMultiReturn/01" elementFormDefault="qualified" attributeFormDefault="unqualified" version="1.1" id="GOR-WQ">
+    <xsd:element name="FileUpload">
+        <xsd:complexType>
+            <xsd:sequence>
+                <xsd:element name="A" maxOccurs="unbounded">
+                    <xsd:complexType>
+                        <xsd:sequence>
+                            <xsd:element name="B" minOccurs="0">
+                                <xsd:complexType>
+                                    <xsd:sequence>
+                                        <xsd:element name="C" minOccurs="0">
+                                            <xsd:simpleType>
+                                                <xsd:restriction base="xsd:string">
+                                                    <xsd:maxLength value="8" />
+                                                </xsd:restriction>
+                                            </xsd:simpleType>
+                                        </xsd:element>
+                                    </xsd:sequence>
+                                </xsd:complexType>
+                            </xsd:element>
+                        </xsd:sequence>
+                    </xsd:complexType>
+                </xsd:element>
+            </xsd:sequence>
+        </xsd:complexType>
+    </xsd:element>
+</xsd:schema>
