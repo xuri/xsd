@@ -8,6 +8,7 @@
 package schema
 
 import (
+	"encoding/xml"
 	"time"
 )
 
@@ -363,14 +364,17 @@ type SignaturesType struct {
 
 // Name ...
 type Name struct {
+	XMLName xml.Name `xml:"name"`
 }
 
 // Role ...
 type Role struct {
+	XMLName xml.Name `xml:"role"`
 }
 
 // Affiliation ...
 type Affiliation struct {
+	XMLName xml.Name `xml:"affiliation"`
 }
 
 // SignatureType ...

@@ -8,6 +8,7 @@
 package schema
 
 import (
+	"encoding/xml"
 	"time"
 )
 
@@ -16,11 +17,13 @@ type Properties *CTProperties
 
 // CTProperties ...
 type CTProperties struct {
+	XMLName  xml.Name      `xml:"CT_Properties"`
 	Property []*CTProperty `xml:"property"`
 }
 
 // CTProperty ...
 type CTProperty struct {
+	XMLName        xml.Name   `xml:"CT_Property"`
 	FmtidAttr      string     `xml:"fmtid,attr"`
 	PidAttr        int        `xml:"pid,attr"`
 	NameAttr       string     `xml:"name,attr,omitempty"`
@@ -32,15 +35,15 @@ type CTProperty struct {
 	VtEmpty        *CTEmpty   `xml:"vt:empty"`
 	VtNull         *CTNull    `xml:"vt:null"`
 	VtI1           byte       `xml:"vt:i1"`
-	VtI2           *Int16     `xml:"vt:i2"`
+	VtI2           int16      `xml:"vt:i2"`
 	VtI4           int        `xml:"vt:i4"`
 	VtI8           int64      `xml:"vt:i8"`
 	VtInt          int        `xml:"vt:int"`
 	VtUi1          byte       `xml:"vt:ui1"`
-	VtUi2          *Uint16    `xml:"vt:ui2"`
-	VtUi4          *Uint32    `xml:"vt:ui4"`
+	VtUi2          uint16     `xml:"vt:ui2"`
+	VtUi4          uint32     `xml:"vt:ui4"`
 	VtUi8          uint64     `xml:"vt:ui8"`
-	VtUint         *Uint32    `xml:"vt:uint"`
+	VtUint         uint32     `xml:"vt:uint"`
 	VtR4           *Float     `xml:"vt:r4"`
 	VtR8           float64    `xml:"vt:r8"`
 	VtDecimal      float64    `xml:"vt:decimal"`

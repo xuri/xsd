@@ -7,17 +7,23 @@
 
 package schema
 
+import (
+	"encoding/xml"
+)
+
 // CTSchema ...
 type CTSchema struct {
-	UriAttr              string `xml:"uri,attr,omitempty"`
-	ManifestLocationAttr string `xml:"manifestLocation,attr,omitempty"`
-	SchemaLocationAttr   string `xml:"schemaLocation,attr,omitempty"`
-	SchemaLanguageAttr   string `xml:"schemaLanguage,attr,omitempty"`
+	XMLName              xml.Name `xml:"CT_Schema"`
+	UriAttr              string   `xml:"uri,attr,omitempty"`
+	ManifestLocationAttr string   `xml:"manifestLocation,attr,omitempty"`
+	SchemaLocationAttr   string   `xml:"schemaLocation,attr,omitempty"`
+	SchemaLanguageAttr   string   `xml:"schemaLanguage,attr,omitempty"`
 }
 
 // CTSchemaLibrary ...
 type CTSchemaLibrary struct {
-	Schema []*CTSchema `xml:"schema"`
+	XMLName xml.Name    `xml:"CT_SchemaLibrary"`
+	Schema  []*CTSchema `xml:"schema"`
 }
 
 // SchemaLibrary ...

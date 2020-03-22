@@ -8,6 +8,7 @@
 package schema
 
 import (
+	"encoding/xml"
 	"time"
 )
 
@@ -25,24 +26,27 @@ type STError string
 
 // CTEmpty ...
 type CTEmpty struct {
+	XMLName xml.Name `xml:"CT_Empty"`
 }
 
 // CTNull ...
 type CTNull struct {
+	XMLName xml.Name `xml:"CT_Null"`
 }
 
 // CTVector ...
 type CTVector struct {
+	XMLName      xml.Name   `xml:"CT_Vector"`
 	BaseTypeAttr string     `xml:"baseType,attr"`
-	SizeAttr     *Uint32    `xml:"size,attr"`
+	SizeAttr     uint32     `xml:"size,attr"`
 	Variant      *CTVariant `xml:"variant"`
 	I1           byte       `xml:"i1"`
-	I2           *Int16     `xml:"i2"`
+	I2           int16      `xml:"i2"`
 	I4           int        `xml:"i4"`
 	I8           int64      `xml:"i8"`
 	Ui1          byte       `xml:"ui1"`
-	Ui2          *Uint16    `xml:"ui2"`
-	Ui4          *Uint32    `xml:"ui4"`
+	Ui2          uint16     `xml:"ui2"`
+	Ui4          uint32     `xml:"ui4"`
 	Ui8          uint64     `xml:"ui8"`
 	R4           *Float     `xml:"r4"`
 	R8           float64    `xml:"r8"`
@@ -59,18 +63,19 @@ type CTVector struct {
 
 // CTArray ...
 type CTArray struct {
+	XMLName      xml.Name   `xml:"CT_Array"`
 	LBoundsAttr  int        `xml:"lBounds,attr"`
 	UBoundsAttr  int        `xml:"uBounds,attr"`
 	BaseTypeAttr string     `xml:"baseType,attr"`
 	Variant      *CTVariant `xml:"variant"`
 	I1           byte       `xml:"i1"`
-	I2           *Int16     `xml:"i2"`
+	I2           int16      `xml:"i2"`
 	I4           int        `xml:"i4"`
 	Int          int        `xml:"int"`
 	Ui1          byte       `xml:"ui1"`
-	Ui2          *Uint16    `xml:"ui2"`
-	Ui4          *Uint32    `xml:"ui4"`
-	Uint         *Uint32    `xml:"uint"`
+	Ui2          uint16     `xml:"ui2"`
+	Ui4          uint32     `xml:"ui4"`
+	Uint         uint32     `xml:"uint"`
 	R4           *Float     `xml:"r4"`
 	R8           float64    `xml:"r8"`
 	Decimal      float64    `xml:"decimal"`
@@ -83,6 +88,7 @@ type CTArray struct {
 
 // CTVariant ...
 type CTVariant struct {
+	XMLName  xml.Name   `xml:"CT_Variant"`
 	Variant  *CTVariant `xml:"variant"`
 	Vector   *CTVector  `xml:"vector"`
 	Array    *CTArray   `xml:"array"`
@@ -91,15 +97,15 @@ type CTVariant struct {
 	Empty    *CTEmpty   `xml:"empty"`
 	Null     *CTNull    `xml:"null"`
 	I1       byte       `xml:"i1"`
-	I2       *Int16     `xml:"i2"`
+	I2       int16      `xml:"i2"`
 	I4       int        `xml:"i4"`
 	I8       int64      `xml:"i8"`
 	Int      int        `xml:"int"`
 	Ui1      byte       `xml:"ui1"`
-	Ui2      *Uint16    `xml:"ui2"`
-	Ui4      *Uint32    `xml:"ui4"`
+	Ui2      uint16     `xml:"ui2"`
+	Ui4      uint32     `xml:"ui4"`
 	Ui8      uint64     `xml:"ui8"`
-	Uint     *Uint32    `xml:"uint"`
+	Uint     uint32     `xml:"uint"`
 	R4       *Float     `xml:"r4"`
 	R8       float64    `xml:"r8"`
 	Decimal  float64    `xml:"decimal"`
@@ -121,7 +127,8 @@ type CTVariant struct {
 
 // CTVstream ...
 type CTVstream struct {
-	VersionAttr string `xml:"version,attr,omitempty"`
+	XMLName     xml.Name `xml:"CT_Vstream"`
+	VersionAttr string   `xml:"version,attr,omitempty"`
 }
 
 // Variant ...
@@ -149,7 +156,7 @@ type Null *CTNull
 type I1 byte
 
 // I2 ...
-type I2 *Int16
+type I2 int16
 
 // I4 ...
 type I4 int
@@ -164,16 +171,16 @@ type Int int
 type Ui1 byte
 
 // Ui2 ...
-type Ui2 *Uint16
+type Ui2 uint16
 
 // Ui4 ...
-type Ui4 *Uint32
+type Ui4 uint32
 
 // Ui8 ...
 type Ui8 uint64
 
 // Uint ...
-type Uint *Uint32
+type Uint uint32
 
 // R4 ...
 type R4 *Float

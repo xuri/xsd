@@ -7,6 +7,10 @@
 
 package schema
 
+import (
+	"encoding/xml"
+)
+
 // STLang ...
 type STLang string
 
@@ -24,6 +28,7 @@ type STGuid string
 
 // STOnOff ...
 type STOnOff struct {
+	XMLName xml.Name `xml:"ST_OnOff"`
 	Boolean bool
 }
 
@@ -38,6 +43,7 @@ type STUnsignedDecimalNumber uint64
 
 // STTwipsMeasure ...
 type STTwipsMeasure struct {
+	XMLName                    xml.Name `xml:"ST_TwipsMeasure"`
 	STUnsignedDecimalNumber    uint64
 	STPositiveUniversalMeasure *STPositiveUniversalMeasure
 }

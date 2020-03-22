@@ -7,6 +7,10 @@
 
 package schema
 
+import (
+	"encoding/xml"
+)
+
 // From ...
 type From *CTMarker
 
@@ -15,18 +19,21 @@ type To *CTMarker
 
 // CTAnchorClientData ...
 type CTAnchorClientData struct {
-	FLocksWithSheetAttr  bool `xml:"fLocksWithSheet,attr,omitempty"`
-	FPrintsWithSheetAttr bool `xml:"fPrintsWithSheet,attr,omitempty"`
+	XMLName              xml.Name `xml:"CT_AnchorClientData"`
+	FLocksWithSheetAttr  bool     `xml:"fLocksWithSheet,attr,omitempty"`
+	FPrintsWithSheetAttr bool     `xml:"fPrintsWithSheet,attr,omitempty"`
 }
 
 // CTShapeNonVisual ...
 type CTShapeNonVisual struct {
+	XMLName xml.Name                        `xml:"CT_ShapeNonVisual"`
 	CNvPr   []*CTNonVisualDrawingProps      `xml:"cNvPr"`
 	CNvSpPr []*CTNonVisualDrawingShapeProps `xml:"cNvSpPr"`
 }
 
 // CTShape ...
 type CTShape struct {
+	XMLName        xml.Name             `xml:"CT_Shape"`
 	MacroAttr      string               `xml:"macro,attr,omitempty"`
 	TextlinkAttr   string               `xml:"textlink,attr,omitempty"`
 	FLocksTextAttr bool                 `xml:"fLocksText,attr,omitempty"`
@@ -39,12 +46,14 @@ type CTShape struct {
 
 // CTConnectorNonVisual ...
 type CTConnectorNonVisual struct {
+	XMLName    xml.Name                          `xml:"CT_ConnectorNonVisual"`
 	CNvPr      []*CTNonVisualDrawingProps        `xml:"cNvPr"`
 	CNvCxnSpPr []*CTNonVisualConnectorProperties `xml:"cNvCxnSpPr"`
 }
 
 // CTConnector ...
 type CTConnector struct {
+	XMLName        xml.Name                `xml:"CT_Connector"`
 	MacroAttr      string                  `xml:"macro,attr,omitempty"`
 	FPublishedAttr bool                    `xml:"fPublished,attr,omitempty"`
 	NvCxnSpPr      []*CTConnectorNonVisual `xml:"nvCxnSpPr"`
@@ -54,12 +63,14 @@ type CTConnector struct {
 
 // CTPictureNonVisual ...
 type CTPictureNonVisual struct {
+	XMLName  xml.Name                        `xml:"CT_PictureNonVisual"`
 	CNvPr    []*CTNonVisualDrawingProps      `xml:"cNvPr"`
 	CNvPicPr []*CTNonVisualPictureProperties `xml:"cNvPicPr"`
 }
 
 // CTPicture ...
 type CTPicture struct {
+	XMLName        xml.Name                `xml:"CT_Picture"`
 	MacroAttr      string                  `xml:"macro,attr,omitempty"`
 	FPublishedAttr bool                    `xml:"fPublished,attr,omitempty"`
 	NvPicPr        []*CTPictureNonVisual   `xml:"nvPicPr"`
@@ -70,12 +81,14 @@ type CTPicture struct {
 
 // CTGraphicalObjectFrameNonVisual ...
 type CTGraphicalObjectFrameNonVisual struct {
+	XMLName           xml.Name                             `xml:"CT_GraphicalObjectFrameNonVisual"`
 	CNvPr             []*CTNonVisualDrawingProps           `xml:"cNvPr"`
 	CNvGraphicFramePr []*CTNonVisualGraphicFrameProperties `xml:"cNvGraphicFramePr"`
 }
 
 // CTGraphicalObjectFrame ...
 type CTGraphicalObjectFrame struct {
+	XMLName          xml.Name                           `xml:"CT_GraphicalObjectFrame"`
 	MacroAttr        string                             `xml:"macro,attr,omitempty"`
 	FPublishedAttr   bool                               `xml:"fPublished,attr,omitempty"`
 	NvGraphicFramePr []*CTGraphicalObjectFrameNonVisual `xml:"nvGraphicFramePr"`
@@ -85,12 +98,14 @@ type CTGraphicalObjectFrame struct {
 
 // CTGroupShapeNonVisual ...
 type CTGroupShapeNonVisual struct {
+	XMLName    xml.Name                             `xml:"CT_GroupShapeNonVisual"`
 	CNvPr      []*CTNonVisualDrawingProps           `xml:"cNvPr"`
 	CNvGrpSpPr []*CTNonVisualGroupDrawingShapeProps `xml:"cNvGrpSpPr"`
 }
 
 // CTGroupShape ...
 type CTGroupShape struct {
+	XMLName      xml.Name                  `xml:"CT_GroupShape"`
 	NvGrpSpPr    []*CTGroupShapeNonVisual  `xml:"nvGrpSpPr"`
 	GrpSpPr      []*CTGroupShapeProperties `xml:"grpSpPr"`
 	Sp           *CTShape                  `xml:"sp"`
@@ -102,6 +117,7 @@ type CTGroupShape struct {
 
 // EGObjectChoices ...
 type EGObjectChoices struct {
+	XMLName      xml.Name `xml:"EG_ObjectChoices"`
 	Sp           *CTShape
 	GrpSp        *CTGroupShape
 	GraphicFrame *CTGraphicalObjectFrame
@@ -112,7 +128,8 @@ type EGObjectChoices struct {
 
 // CTRel ...
 type CTRel struct {
-	RIdAttr string `xml:"r:id,attr"`
+	XMLName xml.Name `xml:"CT_Rel"`
+	RIdAttr string   `xml:"r:id,attr"`
 }
 
 // STColID ...
@@ -123,10 +140,11 @@ type STRowID int
 
 // CTMarker ...
 type CTMarker struct {
-	Col    int           `xml:"col"`
-	ColOff *STCoordinate `xml:"colOff"`
-	Row    int           `xml:"row"`
-	RowOff *STCoordinate `xml:"rowOff"`
+	XMLName xml.Name      `xml:"CT_Marker"`
+	Col     int           `xml:"col"`
+	ColOff  *STCoordinate `xml:"colOff"`
+	Row     int           `xml:"row"`
+	RowOff  *STCoordinate `xml:"rowOff"`
 }
 
 // STEditAs ...
@@ -134,7 +152,8 @@ type STEditAs string
 
 // CTTwoCellAnchor ...
 type CTTwoCellAnchor struct {
-	EditAsAttr      string `xml:"editAs,attr,omitempty"`
+	XMLName         xml.Name `xml:"CT_TwoCellAnchor"`
+	EditAsAttr      string   `xml:"editAs,attr,omitempty"`
 	EGObjectChoices *EGObjectChoices
 	From            *CTMarker             `xml:"from"`
 	To              *CTMarker             `xml:"to"`
@@ -143,6 +162,7 @@ type CTTwoCellAnchor struct {
 
 // CTOneCellAnchor ...
 type CTOneCellAnchor struct {
+	XMLName         xml.Name `xml:"CT_OneCellAnchor"`
 	EGObjectChoices *EGObjectChoices
 	From            *CTMarker             `xml:"from"`
 	Ext             *CTPositiveSize2D     `xml:"ext"`
@@ -151,6 +171,7 @@ type CTOneCellAnchor struct {
 
 // CTAbsoluteAnchor ...
 type CTAbsoluteAnchor struct {
+	XMLName         xml.Name `xml:"CT_AbsoluteAnchor"`
 	EGObjectChoices *EGObjectChoices
 	Pos             *CTPoint2D            `xml:"pos"`
 	Ext             *CTPositiveSize2D     `xml:"ext"`
@@ -159,6 +180,7 @@ type CTAbsoluteAnchor struct {
 
 // EGAnchor ...
 type EGAnchor struct {
+	XMLName        xml.Name `xml:"EG_Anchor"`
 	TwoCellAnchor  *CTTwoCellAnchor
 	OneCellAnchor  *CTOneCellAnchor
 	AbsoluteAnchor *CTAbsoluteAnchor
@@ -166,6 +188,7 @@ type EGAnchor struct {
 
 // CTDrawing ...
 type CTDrawing struct {
+	XMLName  xml.Name `xml:"CT_Drawing"`
 	EGAnchor []*EGAnchor
 }
 

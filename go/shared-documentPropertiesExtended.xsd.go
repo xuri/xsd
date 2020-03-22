@@ -7,11 +7,16 @@
 
 package schema
 
+import (
+	"encoding/xml"
+)
+
 // Properties ...
 type Properties *CTProperties
 
 // CTProperties ...
 type CTProperties struct {
+	XMLName              xml.Name           `xml:"CT_Properties"`
 	Template             []string           `xml:"Template"`
 	Manager              []string           `xml:"Manager"`
 	Company              []string           `xml:"Company"`
@@ -43,15 +48,18 @@ type CTProperties struct {
 
 // CTVectorVariant ...
 type CTVectorVariant struct {
+	XMLName  xml.Name  `xml:"CT_VectorVariant"`
 	VtVector *CTVector `xml:"vt:vector"`
 }
 
 // CTVectorLpstr ...
 type CTVectorLpstr struct {
+	XMLName  xml.Name  `xml:"CT_VectorLpstr"`
 	VtVector *CTVector `xml:"vt:vector"`
 }
 
 // CTDigSigBlob ...
 type CTDigSigBlob struct {
-	VtBlob []byte `xml:"vt:blob"`
+	XMLName xml.Name `xml:"CT_DigSigBlob"`
+	VtBlob  []byte   `xml:"vt:blob"`
 }

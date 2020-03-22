@@ -7,13 +7,18 @@
 
 package schema
 
+import (
+	"encoding/xml"
+)
+
 // Root ...
 type Root bool
 
 // CommonAttributes ...
 type CommonAttributes struct {
-	IdAttr   string `xml:"id,attr,omitempty"`
-	HrefAttr string `xml:"href,attr,omitempty"`
+	XMLName  xml.Name `xml:"commonAttributes"`
+	IdAttr   string   `xml:"id,attr,omitempty"`
+	HrefAttr string   `xml:"href,attr,omitempty"`
 }
 
 // ArrayCoordinate ...
@@ -27,8 +32,9 @@ type Offset string
 
 // ArrayAttributes ...
 type ArrayAttributes struct {
-	TnsArrayTypeAttr string `xml:"tns:arrayType,attr,omitempty"`
-	TnsOffsetAttr    string `xml:"tns:offset,attr,omitempty"`
+	XMLName          xml.Name `xml:"arrayAttributes"`
+	TnsArrayTypeAttr string   `xml:"tns:arrayType,attr,omitempty"`
+	TnsOffsetAttr    string   `xml:"tns:offset,attr,omitempty"`
 }
 
 // Position ...
@@ -36,7 +42,8 @@ type Position string
 
 // ArrayMemberAttributes ...
 type ArrayMemberAttributes struct {
-	TnsPositionAttr string `xml:"tns:position,attr,omitempty"`
+	XMLName         xml.Name `xml:"arrayMemberAttributes"`
+	TnsPositionAttr string   `xml:"tns:position,attr,omitempty"`
 }
 
 // Array ...
@@ -158,7 +165,7 @@ type Long int64
 type Int int
 
 // Short ...
-type Short *Int16
+type Short int16
 
 // Byte ...
 type Byte byte
@@ -170,10 +177,10 @@ type NonNegativeInteger int
 type UnsignedLong uint64
 
 // UnsignedInt ...
-type UnsignedInt *Uint32
+type UnsignedInt uint32
 
 // UnsignedShort ...
-type UnsignedShort *Uint16
+type UnsignedShort uint16
 
 // UnsignedByte ...
 type UnsignedByte byte

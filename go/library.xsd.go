@@ -8,16 +8,19 @@
 package schema
 
 import (
+	"encoding/xml"
 	"time"
 )
 
 // Library ...
 type Library struct {
-	Book *BookType `xml:"book"`
+	XMLName xml.Name  `xml:"library"`
+	Book    *BookType `xml:"book"`
 }
 
 // Person ...
 type Person struct {
+	XMLName       xml.Name  `xml:"person"`
 	IdAttr        string    `xml:"id,attr"`
 	Name          string    `xml:"name"`
 	Born          time.Time `xml:"born"`
@@ -27,16 +30,19 @@ type Person struct {
 
 // Authors ...
 type Authors struct {
+	XMLName   xml.Name  `xml:"authors"`
 	LibPerson []*Person `xml:"lib:person"`
 }
 
 // Characters ...
 type Characters struct {
+	XMLName   xml.Name  `xml:"characters"`
 	LibPerson []*Person `xml:"lib:person"`
 }
 
 // BookType ...
 type BookType struct {
+	XMLName       xml.Name    `xml:"bookType"`
 	IdAttr        string      `xml:"id,attr"`
 	AvailableAttr string      `xml:"available,attr"`
 	Isbn          string      `xml:"isbn"`

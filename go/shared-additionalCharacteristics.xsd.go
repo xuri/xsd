@@ -7,17 +7,23 @@
 
 package schema
 
+import (
+	"encoding/xml"
+)
+
 // CTAdditionalCharacteristics ...
 type CTAdditionalCharacteristics struct {
+	XMLName        xml.Name            `xml:"CT_AdditionalCharacteristics"`
 	Characteristic []*CTCharacteristic `xml:"characteristic"`
 }
 
 // CTCharacteristic ...
 type CTCharacteristic struct {
-	NameAttr       string `xml:"name,attr"`
-	RelationAttr   string `xml:"relation,attr"`
-	ValAttr        string `xml:"val,attr"`
-	VocabularyAttr string `xml:"vocabulary,attr,omitempty"`
+	XMLName        xml.Name `xml:"CT_Characteristic"`
+	NameAttr       string   `xml:"name,attr"`
+	RelationAttr   string   `xml:"relation,attr"`
+	ValAttr        string   `xml:"val,attr"`
+	VocabularyAttr string   `xml:"vocabulary,attr,omitempty"`
 }
 
 // STRelation ...

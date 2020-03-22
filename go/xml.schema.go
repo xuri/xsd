@@ -7,6 +7,10 @@
 
 package schema
 
+import (
+	"encoding/xml"
+)
+
 // Lang ...
 type Lang string
 
@@ -21,8 +25,9 @@ type Id string
 
 // SpecialAttrs ...
 type SpecialAttrs struct {
-	XmlBaseAttr  string `xml:"xml:base,attr,omitempty"`
-	XmlLangAttr  string `xml:"xml:lang,attr,omitempty"`
-	XmlSpaceAttr string `xml:"xml:space,attr,omitempty"`
-	XmlIdAttr    string `xml:"xml:id,attr,omitempty"`
+	XMLName      xml.Name `xml:"specialAttrs"`
+	XmlBaseAttr  string   `xml:"xml:base,attr,omitempty"`
+	XmlLangAttr  string   `xml:"xml:lang,attr,omitempty"`
+	XmlSpaceAttr string   `xml:"xml:space,attr,omitempty"`
+	XmlIdAttr    string   `xml:"xml:id,attr,omitempty"`
 }

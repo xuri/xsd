@@ -7,21 +7,29 @@
 
 package schema
 
+import (
+	"encoding/xml"
+)
+
 // TDocumentation ...
 type TDocumentation struct {
+	XMLName xml.Name `xml:"tDocumentation"`
 }
 
 // TDocumented ...
 type TDocumented struct {
+	XMLName       xml.Name        `xml:"tDocumented"`
 	Documentation *TDocumentation `xml:"documentation"`
 }
 
 // TExtensibleAttributesDocumented ...
 type TExtensibleAttributesDocumented struct {
+	XMLName xml.Name `xml:"tExtensibleAttributesDocumented"`
 }
 
 // TExtensibleDocumented ...
 type TExtensibleDocumented struct {
+	XMLName xml.Name `xml:"tExtensibleDocumented"`
 }
 
 // Definitions ...
@@ -29,6 +37,7 @@ type Definitions *TDefinitions
 
 // AnyTopLevelOptionalElement ...
 type AnyTopLevelOptionalElement struct {
+	XMLName  xml.Name `xml:"anyTopLevelOptionalElement"`
 	Import   *TImport
 	Types    *TTypes
 	Message  *TMessage
@@ -39,29 +48,34 @@ type AnyTopLevelOptionalElement struct {
 
 // TDefinitions ...
 type TDefinitions struct {
-	TargetNamespaceAttr            string `xml:"targetNamespace,attr,omitempty"`
-	NameAttr                       string `xml:"name,attr,omitempty"`
+	XMLName                        xml.Name `xml:"tDefinitions"`
+	TargetNamespaceAttr            string   `xml:"targetNamespace,attr,omitempty"`
+	NameAttr                       string   `xml:"name,attr,omitempty"`
 	WsdlAnyTopLevelOptionalElement []*AnyTopLevelOptionalElement
 }
 
 // TImport ...
 type TImport struct {
-	NamespaceAttr string `xml:"namespace,attr"`
-	LocationAttr  string `xml:"location,attr"`
+	XMLName       xml.Name `xml:"tImport"`
+	NamespaceAttr string   `xml:"namespace,attr"`
+	LocationAttr  string   `xml:"location,attr"`
 }
 
 // TTypes ...
 type TTypes struct {
+	XMLName xml.Name `xml:"tTypes"`
 }
 
 // TMessage ...
 type TMessage struct {
+	XMLName  xml.Name `xml:"tMessage"`
 	NameAttr string   `xml:"name,attr"`
 	Part     []*TPart `xml:"part"`
 }
 
 // TPart ...
 type TPart struct {
+	XMLName     xml.Name `xml:"tPart"`
 	NameAttr    string   `xml:"name,attr"`
 	ElementAttr xml.Name `xml:"element,attr,omitempty"`
 	TypeAttr    xml.Name `xml:"type,attr,omitempty"`
@@ -69,12 +83,14 @@ type TPart struct {
 
 // TPortType ...
 type TPortType struct {
+	XMLName   xml.Name      `xml:"tPortType"`
 	NameAttr  string        `xml:"name,attr"`
 	Operation []*TOperation `xml:"operation"`
 }
 
 // TOperation ...
 type TOperation struct {
+	XMLName                                    xml.Name `xml:"tOperation"`
 	NameAttr                                   string   `xml:"name,attr"`
 	ParameterOrderAttr                         []string `xml:"parameterOrder,attr,omitempty"`
 	WsdlRequestresponseoronewayoperation       *Requestresponseoronewayoperation
@@ -83,32 +99,37 @@ type TOperation struct {
 
 // Requestresponseoronewayoperation ...
 type Requestresponseoronewayoperation struct {
-	Input  *TParam
-	Output *TParam
-	Fault  []*TFault
+	XMLName xml.Name `xml:"request-response-or-one-way-operation"`
+	Input   *TParam
+	Output  *TParam
+	Fault   []*TFault
 }
 
 // Solicitresponseornotificationoperation ...
 type Solicitresponseornotificationoperation struct {
-	Output *TParam
-	Input  *TParam
-	Fault  []*TFault
+	XMLName xml.Name `xml:"solicit-response-or-notification-operation"`
+	Output  *TParam
+	Input   *TParam
+	Fault   []*TFault
 }
 
 // TParam ...
 type TParam struct {
+	XMLName     xml.Name `xml:"tParam"`
 	NameAttr    string   `xml:"name,attr,omitempty"`
 	MessageAttr xml.Name `xml:"message,attr"`
 }
 
 // TFault ...
 type TFault struct {
+	XMLName     xml.Name `xml:"tFault"`
 	NameAttr    string   `xml:"name,attr"`
 	MessageAttr xml.Name `xml:"message,attr"`
 }
 
 // TBinding ...
 type TBinding struct {
+	XMLName   xml.Name             `xml:"tBinding"`
 	NameAttr  string               `xml:"name,attr"`
 	TypeAttr  xml.Name             `xml:"type,attr"`
 	Operation []*TBindingOperation `xml:"operation"`
@@ -116,16 +137,19 @@ type TBinding struct {
 
 // TBindingOperationMessage ...
 type TBindingOperationMessage struct {
-	NameAttr string `xml:"name,attr,omitempty"`
+	XMLName  xml.Name `xml:"tBindingOperationMessage"`
+	NameAttr string   `xml:"name,attr,omitempty"`
 }
 
 // TBindingOperationFault ...
 type TBindingOperationFault struct {
-	NameAttr string `xml:"name,attr"`
+	XMLName  xml.Name `xml:"tBindingOperationFault"`
+	NameAttr string   `xml:"name,attr"`
 }
 
 // TBindingOperation ...
 type TBindingOperation struct {
+	XMLName  xml.Name                  `xml:"tBindingOperation"`
 	NameAttr string                    `xml:"name,attr"`
 	Input    *TBindingOperationMessage `xml:"input"`
 	Output   *TBindingOperationMessage `xml:"output"`
@@ -134,12 +158,14 @@ type TBindingOperation struct {
 
 // TService ...
 type TService struct {
+	XMLName  xml.Name `xml:"tService"`
 	NameAttr string   `xml:"name,attr"`
 	Port     []*TPort `xml:"port"`
 }
 
 // TPort ...
 type TPort struct {
+	XMLName     xml.Name `xml:"tPort"`
 	NameAttr    string   `xml:"name,attr"`
 	BindingAttr xml.Name `xml:"binding,attr"`
 }
@@ -152,5 +178,6 @@ type Required bool
 
 // TExtensibilityElement ...
 type TExtensibilityElement struct {
-	WsdlRequiredAttr bool `xml:"wsdl:required,attr,omitempty"`
+	XMLName          xml.Name `xml:"tExtensibilityElement"`
+	WsdlRequiredAttr bool     `xml:"wsdl:required,attr,omitempty"`
 }

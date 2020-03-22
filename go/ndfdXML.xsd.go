@@ -7,6 +7,10 @@
 
 package schema
 
+import (
+	"encoding/xml"
+)
+
 // SectorType ...
 type SectorType string
 
@@ -45,59 +49,60 @@ type DisplayLevelType int
 
 // WeatherParametersType ...
 type WeatherParametersType struct {
-	Maxt         bool `xml:"maxt"`
-	Mint         bool `xml:"mint"`
-	Temp         bool `xml:"temp"`
-	Dew          bool `xml:"dew"`
-	Pop12        bool `xml:"pop12"`
-	Qpf          bool `xml:"qpf"`
-	Sky          bool `xml:"sky"`
-	Snow         bool `xml:"snow"`
-	Wspd         bool `xml:"wspd"`
-	Wdir         bool `xml:"wdir"`
-	Wx           bool `xml:"wx"`
-	Waveh        bool `xml:"waveh"`
-	Icons        bool `xml:"icons"`
-	Rh           bool `xml:"rh"`
-	Appt         bool `xml:"appt"`
-	Incw34       bool `xml:"incw34"`
-	Incw50       bool `xml:"incw50"`
-	Incw64       bool `xml:"incw64"`
-	Cumw34       bool `xml:"cumw34"`
-	Cumw50       bool `xml:"cumw50"`
-	Cumw64       bool `xml:"cumw64"`
-	Critfireo    bool `xml:"critfireo"`
-	Dryfireo     bool `xml:"dryfireo"`
-	Conhazo      bool `xml:"conhazo"`
-	Ptornado     bool `xml:"ptornado"`
-	Phail        bool `xml:"phail"`
-	Ptstmwinds   bool `xml:"ptstmwinds"`
-	Pxtornado    bool `xml:"pxtornado"`
-	Pxhail       bool `xml:"pxhail"`
-	Pxtstmwinds  bool `xml:"pxtstmwinds"`
-	Ptotsvrtstm  bool `xml:"ptotsvrtstm"`
-	Pxtotsvrtstm bool `xml:"pxtotsvrtstm"`
-	Tmpabv14d    bool `xml:"tmpabv14d"`
-	Tmpblw14d    bool `xml:"tmpblw14d"`
-	Tmpabv30d    bool `xml:"tmpabv30d"`
-	Tmpblw30d    bool `xml:"tmpblw30d"`
-	Tmpabv90d    bool `xml:"tmpabv90d"`
-	Tmpblw90d    bool `xml:"tmpblw90d"`
-	Prcpabv14d   bool `xml:"prcpabv14d"`
-	Prcpblw14d   bool `xml:"prcpblw14d"`
-	Prcpabv30d   bool `xml:"prcpabv30d"`
-	Prcpblw30d   bool `xml:"prcpblw30d"`
-	Prcpabv90d   bool `xml:"prcpabv90d"`
-	Prcpblw90d   bool `xml:"prcpblw90d"`
-	Precipar     bool `xml:"precipa_r"`
-	Skyr         bool `xml:"sky_r"`
-	Tdr          bool `xml:"td_r"`
-	Tempr        bool `xml:"temp_r"`
-	Wdirr        bool `xml:"wdir_r"`
-	Wspdr        bool `xml:"wspd_r"`
-	Wwa          bool `xml:"wwa"`
-	Wgust        bool `xml:"wgust"`
-	Iceaccum     bool `xml:"iceaccum"`
-	Maxrh        bool `xml:"maxrh"`
-	Minrh        bool `xml:"minrh"`
+	XMLName      xml.Name `xml:"weatherParametersType"`
+	Maxt         bool     `xml:"maxt"`
+	Mint         bool     `xml:"mint"`
+	Temp         bool     `xml:"temp"`
+	Dew          bool     `xml:"dew"`
+	Pop12        bool     `xml:"pop12"`
+	Qpf          bool     `xml:"qpf"`
+	Sky          bool     `xml:"sky"`
+	Snow         bool     `xml:"snow"`
+	Wspd         bool     `xml:"wspd"`
+	Wdir         bool     `xml:"wdir"`
+	Wx           bool     `xml:"wx"`
+	Waveh        bool     `xml:"waveh"`
+	Icons        bool     `xml:"icons"`
+	Rh           bool     `xml:"rh"`
+	Appt         bool     `xml:"appt"`
+	Incw34       bool     `xml:"incw34"`
+	Incw50       bool     `xml:"incw50"`
+	Incw64       bool     `xml:"incw64"`
+	Cumw34       bool     `xml:"cumw34"`
+	Cumw50       bool     `xml:"cumw50"`
+	Cumw64       bool     `xml:"cumw64"`
+	Critfireo    bool     `xml:"critfireo"`
+	Dryfireo     bool     `xml:"dryfireo"`
+	Conhazo      bool     `xml:"conhazo"`
+	Ptornado     bool     `xml:"ptornado"`
+	Phail        bool     `xml:"phail"`
+	Ptstmwinds   bool     `xml:"ptstmwinds"`
+	Pxtornado    bool     `xml:"pxtornado"`
+	Pxhail       bool     `xml:"pxhail"`
+	Pxtstmwinds  bool     `xml:"pxtstmwinds"`
+	Ptotsvrtstm  bool     `xml:"ptotsvrtstm"`
+	Pxtotsvrtstm bool     `xml:"pxtotsvrtstm"`
+	Tmpabv14d    bool     `xml:"tmpabv14d"`
+	Tmpblw14d    bool     `xml:"tmpblw14d"`
+	Tmpabv30d    bool     `xml:"tmpabv30d"`
+	Tmpblw30d    bool     `xml:"tmpblw30d"`
+	Tmpabv90d    bool     `xml:"tmpabv90d"`
+	Tmpblw90d    bool     `xml:"tmpblw90d"`
+	Prcpabv14d   bool     `xml:"prcpabv14d"`
+	Prcpblw14d   bool     `xml:"prcpblw14d"`
+	Prcpabv30d   bool     `xml:"prcpabv30d"`
+	Prcpblw30d   bool     `xml:"prcpblw30d"`
+	Prcpabv90d   bool     `xml:"prcpabv90d"`
+	Prcpblw90d   bool     `xml:"prcpblw90d"`
+	Precipar     bool     `xml:"precipa_r"`
+	Skyr         bool     `xml:"sky_r"`
+	Tdr          bool     `xml:"td_r"`
+	Tempr        bool     `xml:"temp_r"`
+	Wdirr        bool     `xml:"wdir_r"`
+	Wspdr        bool     `xml:"wspd_r"`
+	Wwa          bool     `xml:"wwa"`
+	Wgust        bool     `xml:"wgust"`
+	Iceaccum     bool     `xml:"iceaccum"`
+	Maxrh        bool     `xml:"maxrh"`
+	Minrh        bool     `xml:"minrh"`
 }

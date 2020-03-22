@@ -7,34 +7,43 @@
 
 package schema
 
+import (
+	"encoding/xml"
+)
+
 // STSourceType ...
 type STSourceType string
 
 // CTNameListType ...
 type CTNameListType struct {
-	Person []*CTPersonType `xml:"Person"`
+	XMLName xml.Name        `xml:"CT_NameListType"`
+	Person  []*CTPersonType `xml:"Person"`
 }
 
 // CTPersonType ...
 type CTPersonType struct {
-	Last   []string `xml:"Last"`
-	First  []string `xml:"First"`
-	Middle []string `xml:"Middle"`
+	XMLName xml.Name `xml:"CT_PersonType"`
+	Last    []string `xml:"Last"`
+	First   []string `xml:"First"`
+	Middle  []string `xml:"Middle"`
 }
 
 // CTNameType ...
 type CTNameType struct {
+	XMLName  xml.Name          `xml:"CT_NameType"`
 	NameList []*CTNameListType `xml:"NameList"`
 }
 
 // CTNameOrCorporateType ...
 type CTNameOrCorporateType struct {
+	XMLName   xml.Name          `xml:"CT_NameOrCorporateType"`
 	NameList  []*CTNameListType `xml:"NameList"`
 	Corporate []string          `xml:"Corporate"`
 }
 
 // CTAuthorType ...
 type CTAuthorType struct {
+	XMLName      xml.Name               `xml:"CT_AuthorType"`
 	Artist       *CTNameType            `xml:"Artist"`
 	Author       *CTNameOrCorporateType `xml:"Author"`
 	BookAuthor   *CTNameType            `xml:"BookAuthor"`
@@ -55,6 +64,7 @@ type CTAuthorType struct {
 
 // CTSourceType ...
 type CTSourceType struct {
+	XMLName               xml.Name      `xml:"CT_SourceType"`
 	AbbreviatedCaseNumber string        `xml:"AbbreviatedCaseNumber"`
 	AlbumTitle            string        `xml:"AlbumTitle"`
 	Author                *CTAuthorType `xml:"Author"`
@@ -114,6 +124,7 @@ type Sources *CTSources
 
 // CTSources ...
 type CTSources struct {
+	XMLName           xml.Name        `xml:"CT_Sources"`
 	SelectedStyleAttr string          `xml:"SelectedStyle,attr,omitempty"`
 	StyleNameAttr     string          `xml:"StyleName,attr,omitempty"`
 	URIAttr           string          `xml:"URI,attr,omitempty"`

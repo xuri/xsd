@@ -7,7 +7,12 @@
 
 package schema
 
+import (
+	"encoding/xml"
+)
+
 // ComplexFoo ...
 type ComplexFoo struct {
+	XMLName  xml.Name  `xml:"complexFoo"`
 	Element1 *Element1 `xml:"element1"`
 }

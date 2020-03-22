@@ -7,23 +7,29 @@
 
 package schema
 
+import (
+	"encoding/xml"
+)
+
 // CTEffectExtent ...
 type CTEffectExtent struct {
-	LAttr *STCoordinate `xml:"l,attr"`
-	TAttr *STCoordinate `xml:"t,attr"`
-	RAttr *STCoordinate `xml:"r,attr"`
-	BAttr *STCoordinate `xml:"b,attr"`
+	XMLName xml.Name      `xml:"CT_EffectExtent"`
+	LAttr   *STCoordinate `xml:"l,attr"`
+	TAttr   *STCoordinate `xml:"t,attr"`
+	RAttr   *STCoordinate `xml:"r,attr"`
+	BAttr   *STCoordinate `xml:"b,attr"`
 }
 
 // STWrapDistance ...
-type STWrapDistance *Uint32
+type STWrapDistance uint32
 
 // CTInline ...
 type CTInline struct {
-	DistTAttr         *Uint32                              `xml:"distT,attr,omitempty"`
-	DistBAttr         *Uint32                              `xml:"distB,attr,omitempty"`
-	DistLAttr         *Uint32                              `xml:"distL,attr,omitempty"`
-	DistRAttr         *Uint32                              `xml:"distR,attr,omitempty"`
+	XMLName           xml.Name                             `xml:"CT_Inline"`
+	DistTAttr         uint32                               `xml:"distT,attr,omitempty"`
+	DistBAttr         uint32                               `xml:"distB,attr,omitempty"`
+	DistLAttr         uint32                               `xml:"distL,attr,omitempty"`
+	DistRAttr         uint32                               `xml:"distR,attr,omitempty"`
 	Extent            *CTPositiveSize2D                    `xml:"extent"`
 	EffectExtent      *CTEffectExtent                      `xml:"effectExtent"`
 	DocPr             []*CTNonVisualDrawingProps           `xml:"docPr"`
@@ -36,6 +42,7 @@ type STWrapText string
 
 // CTWrapPath ...
 type CTWrapPath struct {
+	XMLName    xml.Name     `xml:"CT_WrapPath"`
 	EditedAttr bool         `xml:"edited,attr,omitempty"`
 	Start      []*CTPoint2D `xml:"start"`
 	LineTo     []*CTPoint2D `xml:"lineTo"`
@@ -43,43 +50,49 @@ type CTWrapPath struct {
 
 // CTWrapNone ...
 type CTWrapNone struct {
+	XMLName xml.Name `xml:"CT_WrapNone"`
 }
 
 // CTWrapSquare ...
 type CTWrapSquare struct {
+	XMLName      xml.Name        `xml:"CT_WrapSquare"`
 	WrapTextAttr string          `xml:"wrapText,attr"`
-	DistTAttr    *Uint32         `xml:"distT,attr,omitempty"`
-	DistBAttr    *Uint32         `xml:"distB,attr,omitempty"`
-	DistLAttr    *Uint32         `xml:"distL,attr,omitempty"`
-	DistRAttr    *Uint32         `xml:"distR,attr,omitempty"`
+	DistTAttr    uint32          `xml:"distT,attr,omitempty"`
+	DistBAttr    uint32          `xml:"distB,attr,omitempty"`
+	DistLAttr    uint32          `xml:"distL,attr,omitempty"`
+	DistRAttr    uint32          `xml:"distR,attr,omitempty"`
 	EffectExtent *CTEffectExtent `xml:"effectExtent"`
 }
 
 // CTWrapTight ...
 type CTWrapTight struct {
+	XMLName      xml.Name      `xml:"CT_WrapTight"`
 	WrapTextAttr string        `xml:"wrapText,attr"`
-	DistLAttr    *Uint32       `xml:"distL,attr,omitempty"`
-	DistRAttr    *Uint32       `xml:"distR,attr,omitempty"`
+	DistLAttr    uint32        `xml:"distL,attr,omitempty"`
+	DistRAttr    uint32        `xml:"distR,attr,omitempty"`
 	WrapPolygon  []*CTWrapPath `xml:"wrapPolygon"`
 }
 
 // CTWrapThrough ...
 type CTWrapThrough struct {
+	XMLName      xml.Name      `xml:"CT_WrapThrough"`
 	WrapTextAttr string        `xml:"wrapText,attr"`
-	DistLAttr    *Uint32       `xml:"distL,attr,omitempty"`
-	DistRAttr    *Uint32       `xml:"distR,attr,omitempty"`
+	DistLAttr    uint32        `xml:"distL,attr,omitempty"`
+	DistRAttr    uint32        `xml:"distR,attr,omitempty"`
 	WrapPolygon  []*CTWrapPath `xml:"wrapPolygon"`
 }
 
 // CTWrapTopBottom ...
 type CTWrapTopBottom struct {
-	DistTAttr    *Uint32         `xml:"distT,attr,omitempty"`
-	DistBAttr    *Uint32         `xml:"distB,attr,omitempty"`
+	XMLName      xml.Name        `xml:"CT_WrapTopBottom"`
+	DistTAttr    uint32          `xml:"distT,attr,omitempty"`
+	DistBAttr    uint32          `xml:"distB,attr,omitempty"`
 	EffectExtent *CTEffectExtent `xml:"effectExtent"`
 }
 
 // EGWrapType ...
 type EGWrapType struct {
+	XMLName          xml.Name `xml:"EG_WrapType"`
 	WrapNone         []*CTWrapNone
 	WrapSquare       []*CTWrapSquare
 	WrapTight        []*CTWrapTight
@@ -98,6 +111,7 @@ type STRelFromH string
 
 // CTPosH ...
 type CTPosH struct {
+	XMLName          xml.Name `xml:"CT_PosH"`
 	RelativeFromAttr string   `xml:"relativeFrom,attr"`
 	Align            []string `xml:"align"`
 	PosOffset        []int    `xml:"posOffset"`
@@ -111,6 +125,7 @@ type STRelFromV string
 
 // CTPosV ...
 type CTPosV struct {
+	XMLName          xml.Name `xml:"CT_PosV"`
 	RelativeFromAttr string   `xml:"relativeFrom,attr"`
 	Align            []string `xml:"align"`
 	PosOffset        []int    `xml:"posOffset"`
@@ -118,17 +133,18 @@ type CTPosV struct {
 
 // CTAnchor ...
 type CTAnchor struct {
-	DistTAttr          *Uint32 `xml:"distT,attr,omitempty"`
-	DistBAttr          *Uint32 `xml:"distB,attr,omitempty"`
-	DistLAttr          *Uint32 `xml:"distL,attr,omitempty"`
-	DistRAttr          *Uint32 `xml:"distR,attr,omitempty"`
-	SimplePosAttr      bool    `xml:"simplePos,attr,omitempty"`
-	RelativeHeightAttr *Uint32 `xml:"relativeHeight,attr"`
-	BehindDocAttr      bool    `xml:"behindDoc,attr"`
-	LockedAttr         bool    `xml:"locked,attr"`
-	LayoutInCellAttr   bool    `xml:"layoutInCell,attr"`
-	HiddenAttr         bool    `xml:"hidden,attr,omitempty"`
-	AllowOverlapAttr   bool    `xml:"allowOverlap,attr"`
+	XMLName            xml.Name `xml:"CT_Anchor"`
+	DistTAttr          uint32   `xml:"distT,attr,omitempty"`
+	DistBAttr          uint32   `xml:"distB,attr,omitempty"`
+	DistLAttr          uint32   `xml:"distL,attr,omitempty"`
+	DistRAttr          uint32   `xml:"distR,attr,omitempty"`
+	SimplePosAttr      bool     `xml:"simplePos,attr,omitempty"`
+	RelativeHeightAttr uint32   `xml:"relativeHeight,attr"`
+	BehindDocAttr      bool     `xml:"behindDoc,attr"`
+	LockedAttr         bool     `xml:"locked,attr"`
+	LayoutInCellAttr   bool     `xml:"layoutInCell,attr"`
+	HiddenAttr         bool     `xml:"hidden,attr,omitempty"`
+	AllowOverlapAttr   bool     `xml:"allowOverlap,attr"`
 	EGWrapType         *EGWrapType
 	SimplePos          *CTPoint2D                           `xml:"simplePos"`
 	PositionH          *CTPosH                              `xml:"positionH"`
@@ -142,25 +158,29 @@ type CTAnchor struct {
 
 // CTTxbxContent ...
 type CTTxbxContent struct {
+	XMLName           xml.Name `xml:"CT_TxbxContent"`
 	WEGBlockLevelElts []*EGBlockLevelElts
 }
 
 // CTTextboxInfo ...
 type CTTextboxInfo struct {
-	IdAttr      *Uint16                     `xml:"id,attr,omitempty"`
+	XMLName     xml.Name                    `xml:"CT_TextboxInfo"`
+	IdAttr      uint16                      `xml:"id,attr,omitempty"`
 	TxbxContent []*CTTxbxContent            `xml:"txbxContent"`
 	ExtLst      []*CTOfficeArtExtensionList `xml:"extLst"`
 }
 
 // CTLinkedTextboxInformation ...
 type CTLinkedTextboxInformation struct {
-	IdAttr  *Uint16                     `xml:"id,attr"`
-	SeqAttr *Uint16                     `xml:"seq,attr"`
+	XMLName xml.Name                    `xml:"CT_LinkedTextboxInformation"`
+	IdAttr  uint16                      `xml:"id,attr"`
+	SeqAttr uint16                      `xml:"seq,attr"`
 	ExtLst  []*CTOfficeArtExtensionList `xml:"extLst"`
 }
 
 // CTWordprocessingShape ...
 type CTWordprocessingShape struct {
+	XMLName                 xml.Name                          `xml:"CT_WordprocessingShape"`
 	NormalEastAsianFlowAttr bool                              `xml:"normalEastAsianFlow,attr,omitempty"`
 	CNvPr                   []*CTNonVisualDrawingProps        `xml:"cNvPr"`
 	CNvSpPr                 []*CTNonVisualDrawingShapeProps   `xml:"cNvSpPr"`
@@ -175,6 +195,7 @@ type CTWordprocessingShape struct {
 
 // CTGraphicFrame ...
 type CTGraphicFrame struct {
+	XMLName  xml.Name                             `xml:"CT_GraphicFrame"`
 	CNvPr    []*CTNonVisualDrawingProps           `xml:"cNvPr"`
 	CNvFrPr  []*CTNonVisualGraphicFrameProperties `xml:"cNvFrPr"`
 	Xfrm     []*CTTransform2D                     `xml:"xfrm"`
@@ -184,12 +205,14 @@ type CTGraphicFrame struct {
 
 // CTWordprocessingContentPartNonVisual ...
 type CTWordprocessingContentPartNonVisual struct {
+	XMLName          xml.Name                            `xml:"CT_WordprocessingContentPartNonVisual"`
 	CNvPr            []*CTNonVisualDrawingProps          `xml:"cNvPr"`
 	CNvContentPartPr []*CTNonVisualContentPartProperties `xml:"cNvContentPartPr"`
 }
 
 // CTWordprocessingContentPart ...
 type CTWordprocessingContentPart struct {
+	XMLName         xml.Name                                `xml:"CT_WordprocessingContentPart"`
 	BwModeAttr      string                                  `xml:"bwMode,attr,omitempty"`
 	RIdAttr         string                                  `xml:"r:id,attr"`
 	NvContentPartPr []*CTWordprocessingContentPartNonVisual `xml:"nvContentPartPr"`
@@ -199,6 +222,7 @@ type CTWordprocessingContentPart struct {
 
 // CTWordprocessingGroup ...
 type CTWordprocessingGroup struct {
+	XMLName      xml.Name                             `xml:"CT_WordprocessingGroup"`
 	CNvPr        []*CTNonVisualDrawingProps           `xml:"cNvPr"`
 	CNvGrpSpPr   []*CTNonVisualGroupDrawingShapeProps `xml:"cNvGrpSpPr"`
 	GrpSpPr      []*CTGroupShapeProperties            `xml:"grpSpPr"`
@@ -212,6 +236,7 @@ type CTWordprocessingGroup struct {
 
 // CTWordprocessingCanvas ...
 type CTWordprocessingCanvas struct {
+	XMLName      xml.Name                     `xml:"CT_WordprocessingCanvas"`
 	Bg           []*CTBackgroundFormatting    `xml:"bg"`
 	Whole        []*CTWholeE2oFormatting      `xml:"whole"`
 	Wsp          *CTWordprocessingShape       `xml:"wsp"`

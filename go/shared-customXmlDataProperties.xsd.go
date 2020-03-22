@@ -7,18 +7,25 @@
 
 package schema
 
+import (
+	"encoding/xml"
+)
+
 // CTDatastoreSchemaRef ...
 type CTDatastoreSchemaRef struct {
-	UriAttr string `xml:"uri,attr"`
+	XMLName xml.Name `xml:"CT_DatastoreSchemaRef"`
+	UriAttr string   `xml:"uri,attr"`
 }
 
 // CTDatastoreSchemaRefs ...
 type CTDatastoreSchemaRefs struct {
+	XMLName   xml.Name                `xml:"CT_DatastoreSchemaRefs"`
 	SchemaRef []*CTDatastoreSchemaRef `xml:"schemaRef"`
 }
 
 // CTDatastoreItem ...
 type CTDatastoreItem struct {
+	XMLName    xml.Name               `xml:"CT_DatastoreItem"`
 	ItemIDAttr string                 `xml:"itemID,attr"`
 	SchemaRefs *CTDatastoreSchemaRefs `xml:"schemaRefs"`
 }
