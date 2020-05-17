@@ -1080,8 +1080,8 @@ typedef struct {
 } CT_GeomGuideList;
 
 typedef struct {
-	char ST_GeomGuideName;
 	ST_Coordinate ST_Coordinate;
+	char ST_GeomGuideName;
 } ST_AdjCoordinate;
 
 typedef struct {
@@ -1724,8 +1724,8 @@ typedef struct {
 } EG_TextBullet;
 
 typedef struct {
-	char ST_UniversalMeasure;
 	ST_TextPointUnqualified ST_TextPointUnqualified;
+	char ST_UniversalMeasure;
 } ST_TextPoint;
 
 typedef int ST_TextPointUnqualified;

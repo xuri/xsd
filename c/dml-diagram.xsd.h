@@ -174,8 +174,8 @@ typedef struct {
 } CT_PresentationOf;
 
 typedef struct {
-	ST_OutputShapeType ST_OutputShapeType;
 	char ST_ShapeType;
+	ST_OutputShapeType ST_OutputShapeType;
 } ST_LayoutShapeType;
 
 typedef unsigned int ST_Index1;
@@ -351,42 +351,42 @@ typedef struct {
 typedef CT_RelIds RelIds;
 
 typedef struct {
+	ST_SecondaryChildAlignment ST_SecondaryChildAlignment;
+	ST_NodeVerticalAlignment ST_NodeVerticalAlignment;
+	ST_TextDirection ST_TextDirection;
+	int Int;
+	ST_ChildDirection ST_ChildDirection;
+	ST_HierarchyAlignment ST_HierarchyAlignment;
+	ST_DiagramHorizontalAlignment ST_DiagramHorizontalAlignment;
+	ST_VerticalAlignment ST_VerticalAlignment;
+	ST_Offset ST_Offset;
+	float Double;
+	ST_ConnectorRouting ST_ConnectorRouting;
+	ST_GrowDirection ST_GrowDirection;
+	ST_LinearDirection ST_LinearDirection;
+	ST_BendPoint ST_BendPoint;
+	ST_ArrowheadStyle ST_ArrowheadStyle;
+	ST_PyramidAccentPosition ST_PyramidAccentPosition;
+	ST_DiagramTextAlignment ST_DiagramTextAlignment;
+	ST_AutoTextRotation ST_AutoTextRotation;
+	ST_ChildAlignment ST_ChildAlignment;
+	ST_Breakpoint ST_Breakpoint;
+	ST_StartingElement ST_StartingElement;
+	ST_ConnectorDimension ST_ConnectorDimension;
+	ST_RotationPath ST_RotationPath;
+	ST_NodeHorizontalAlignment ST_NodeHorizontalAlignment;
+	ST_FallbackDimension ST_FallbackDimension;
+	ST_TextAnchorHorizontal ST_TextAnchorHorizontal;
+	ST_ContinueDirection ST_ContinueDirection;
+	char String;
+	ST_ConnectorPoint ST_ConnectorPoint;
+	ST_SecondaryLinearDirection ST_SecondaryLinearDirection;
+	ST_CenterShapeMapping ST_CenterShapeMapping;
 	ST_PyramidAccentTextMargin ST_PyramidAccentTextMargin;
 	ST_TextBlockDirection ST_TextBlockDirection;
 	ST_TextAnchorVertical ST_TextAnchorVertical;
-	ST_DiagramTextAlignment ST_DiagramTextAlignment;
-	ST_VerticalAlignment ST_VerticalAlignment;
-	ST_StartingElement ST_StartingElement;
-	ST_ConnectorDimension ST_ConnectorDimension;
-	ST_ChildDirection ST_ChildDirection;
-	ST_Offset ST_Offset;
-	char String;
-	ST_BendPoint ST_BendPoint;
-	ST_SecondaryLinearDirection ST_SecondaryLinearDirection;
-	ST_CenterShapeMapping ST_CenterShapeMapping;
-	ST_TextAnchorHorizontal ST_TextAnchorHorizontal;
-	ST_AutoTextRotation ST_AutoTextRotation;
-	ST_ChildAlignment ST_ChildAlignment;
-	ST_LinearDirection ST_LinearDirection;
-	ST_RotationPath ST_RotationPath;
-	ST_GrowDirection ST_GrowDirection;
-	int Int;
-	ST_DiagramHorizontalAlignment ST_DiagramHorizontalAlignment;
-	ST_ConnectorRouting ST_ConnectorRouting;
-	ST_NodeHorizontalAlignment ST_NodeHorizontalAlignment;
-	ST_FallbackDimension ST_FallbackDimension;
 	ST_FlowDirection ST_FlowDirection;
-	ST_ContinueDirection ST_ContinueDirection;
 	bool Boolean;
-	ST_ConnectorPoint ST_ConnectorPoint;
-	ST_SecondaryChildAlignment ST_SecondaryChildAlignment;
-	float Double;
-	ST_Breakpoint ST_Breakpoint;
-	ST_NodeVerticalAlignment ST_NodeVerticalAlignment;
-	ST_TextDirection ST_TextDirection;
-	ST_PyramidAccentPosition ST_PyramidAccentPosition;
-	ST_HierarchyAlignment ST_HierarchyAlignment;
-	ST_ArrowheadStyle ST_ArrowheadStyle;
 } ST_ParameterVal;
 
 typedef struct {
@@ -649,13 +649,13 @@ typedef char ST_Offset;
 typedef char ST_HierarchyAlignment;
 
 typedef struct {
+	bool Boolean;
+	char ST_Direction;
+	char ST_HierBranchStyle;
 	char ST_AnimOneStr;
 	char ST_AnimLvlStr;
 	char ST_ResizeHandlesStr;
 	int Int;
-	bool Boolean;
-	char ST_Direction;
-	char ST_HierBranchStyle;
 } ST_FunctionValue;
 
 typedef char ST_VariableType;

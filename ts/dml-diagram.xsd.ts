@@ -351,47 +351,47 @@ export class CT_RelIds {
 export type RelIds = CT_RelIds;
 
 export class ST_ParameterVal {
-	Int: number;
-	Double: number;
-	ST_ConnectorPoint: ST_ConnectorPoint;
-	ST_NodeVerticalAlignment: ST_NodeVerticalAlignment;
-	ST_LinearDirection: ST_LinearDirection;
-	ST_SecondaryChildAlignment: ST_SecondaryChildAlignment;
-	ST_ArrowheadStyle: ST_ArrowheadStyle;
-	ST_TextDirection: ST_TextDirection;
-	ST_StartingElement: ST_StartingElement;
-	String: string;
-	ST_TextBlockDirection: ST_TextBlockDirection;
-	ST_FallbackDimension: ST_FallbackDimension;
-	ST_PyramidAccentPosition: ST_PyramidAccentPosition;
-	ST_TextAnchorVertical: ST_TextAnchorVertical;
-	ST_Offset: ST_Offset;
-	ST_NodeHorizontalAlignment: ST_NodeHorizontalAlignment;
-	ST_SecondaryLinearDirection: ST_SecondaryLinearDirection;
-	ST_BendPoint: ST_BendPoint;
+	ST_ConnectorRouting: ST_ConnectorRouting;
 	ST_RotationPath: ST_RotationPath;
 	ST_CenterShapeMapping: ST_CenterShapeMapping;
-	ST_GrowDirection: ST_GrowDirection;
-	ST_Breakpoint: ST_Breakpoint;
-	ST_HierarchyAlignment: ST_HierarchyAlignment;
-	ST_VerticalAlignment: ST_VerticalAlignment;
-	ST_ChildAlignment: ST_ChildAlignment;
-	ST_PyramidAccentTextMargin: ST_PyramidAccentTextMargin;
-	ST_TextAnchorHorizontal: ST_TextAnchorHorizontal;
-	ST_AutoTextRotation: ST_AutoTextRotation;
-	ST_ContinueDirection: ST_ContinueDirection;
-	ST_ChildDirection: ST_ChildDirection;
-	ST_ConnectorRouting: ST_ConnectorRouting;
-	ST_ConnectorDimension: ST_ConnectorDimension;
 	ST_DiagramTextAlignment: ST_DiagramTextAlignment;
-	ST_FlowDirection: ST_FlowDirection;
-	Boolean: boolean;
+	ST_Breakpoint: ST_Breakpoint;
+	ST_VerticalAlignment: ST_VerticalAlignment;
+	ST_ChildDirection: ST_ChildDirection;
+	Double: number;
+	ST_ConnectorPoint: ST_ConnectorPoint;
+	ST_ChildAlignment: ST_ChildAlignment;
+	ST_ArrowheadStyle: ST_ArrowheadStyle;
+	ST_ConnectorDimension: ST_ConnectorDimension;
+	ST_TextBlockDirection: ST_TextBlockDirection;
+	ST_AutoTextRotation: ST_AutoTextRotation;
 	ST_DiagramHorizontalAlignment: ST_DiagramHorizontalAlignment;
+	ST_BendPoint: ST_BendPoint;
+	ST_PyramidAccentTextMargin: ST_PyramidAccentTextMargin;
+	ST_TextAnchorVertical: ST_TextAnchorVertical;
+	ST_GrowDirection: ST_GrowDirection;
+	ST_ContinueDirection: ST_ContinueDirection;
+	String: string;
+	ST_StartingElement: ST_StartingElement;
+	ST_FallbackDimension: ST_FallbackDimension;
+	ST_PyramidAccentPosition: ST_PyramidAccentPosition;
+	Int: number;
+	ST_SecondaryLinearDirection: ST_SecondaryLinearDirection;
+	ST_NodeHorizontalAlignment: ST_NodeHorizontalAlignment;
+	ST_TextDirection: ST_TextDirection;
+	ST_TextAnchorHorizontal: ST_TextAnchorHorizontal;
+	ST_FlowDirection: ST_FlowDirection;
+	ST_Offset: ST_Offset;
+	ST_HierarchyAlignment: ST_HierarchyAlignment;
+	Boolean: boolean;
+	ST_SecondaryChildAlignment: ST_SecondaryChildAlignment;
+	ST_LinearDirection: ST_LinearDirection;
+	ST_NodeVerticalAlignment: ST_NodeVerticalAlignment;
 }
 
 export class ST_ModelId {
-	ST_Guid: string;
 	Int: number;
+	ST_Guid: string;
 }
 
 export class ST_PrSetCustVal {

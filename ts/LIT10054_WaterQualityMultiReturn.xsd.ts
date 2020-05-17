@@ -7,36 +7,36 @@
 
 export class DepthValueRecorded {
 	DepthValue: Array<number>;
-	DepthValueUnits: Array<DepthValueUnits>;
-	DepthRelativeTo: Array<DepthRelativeTo>;
+	DepthValueUnits: Array<MandatoryStringType>;
+	DepthRelativeTo: Array<MandatoryStringType>;
 }
 
 export class PurgedVolumeRecorded {
 	PurgedVolume: Array<number>;
-	PurgedVolumeUnits: Array<PurgedVolumeUnits>;
+	PurgedVolumeUnits: Array<MandatoryStringType>;
 }
 
 export class Measurement {
-	DeterminandName: Array<DeterminandName>;
-	ResultType: Array<ResultType>;
+	DeterminandName: Array<MandatoryStringType>;
+	ResultType: Array<MandatoryStringType>;
 	ResultValue: Array<number>;
-	ResultUnits: Array<ResultUnits>;
-	Qualifier: Array<Qualifier>;
-	Comment: Array<Comment>;
+	ResultUnits: Array<MandatoryStringType>;
+	Qualifier: Array<MandatoryStringType>;
+	Comment: Array<string>;
 }
 
 export class Sample {
-	Sampler: Array<Sampler>;
-	SampleType: Array<SampleType>;
-	CustomerSamplePointName: Array<CustomerSamplePointName>;
+	Sampler: Array<string>;
+	SampleType: Array<MandatoryStringType>;
+	CustomerSamplePointName: Array<MandatoryStringType>;
 	SampleDateTime: Array<string>;
-	PurposeTypeName: Array<PurposeTypeName>;
-	MaterialName: Array<MaterialName>;
-	Mechanism: Array<Mechanism>;
-	CustomersLabSampleRef: Array<CustomersLabSampleRef>;
-	CustomersLabSampleRefSecondary: Array<CustomersLabSampleRefSecondary>;
-	Comment: Array<Comment>;
-	LabName: Array<LabName>;
+	PurposeTypeName: Array<MandatoryStringType>;
+	MaterialName: Array<MandatoryStringType>;
+	Mechanism: Array<MandatoryStringType>;
+	CustomersLabSampleRef: Array<MandatoryStringType>;
+	CustomersLabSampleRefSecondary: Array<string>;
+	Comment: Array<string>;
+	LabName: Array<MandatoryStringType>;
 	AnalysisCompleteDateTime: Array<string>;
 	DepthValueRecorded: Array<DepthValueRecorded>;
 	PurgedVolumeRecorded: Array<PurgedVolumeRecorded>;
@@ -44,9 +44,9 @@ export class Sample {
 }
 
 export class FileUpload {
-	Source: Array<Source>;
+	Source: Array<string>;
 	Sample: Array<Sample>;
-	RegulatedCustomerIdentifier: Array<RegulatedCustomerIdentifier>;
+	RegulatedCustomerIdentifier: Array<MandatoryStringType>;
 	CustomerReference: Array<string>;
 }
 

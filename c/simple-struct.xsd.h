@@ -6,5 +6,5 @@
 // found in the LICENSE file.
 
 typedef struct {
-	Element1 Element1;
+	NonEmptyString Element1;
 } ComplexFoo;

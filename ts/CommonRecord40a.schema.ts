@@ -6,18 +6,18 @@
 // found in the LICENSE file.
 
 export class Software {
-	SoftwareProvider: Array<SoftwareProvider>;
-	SoftwareVersion: Array<SoftwareVersion>;
+	SoftwareProvider: Array<string>;
+	SoftwareVersion: Array<string>;
 }
 
 export class TransmissionData {
-	DocumentID: Array<DocumentID>;
+	DocumentID: Array<string>;
 	CreatedDateTime: Array<string>;
-	Software: Array<Software>;
-	FullResponseCode: Array<FullResponseCode>;
+	Software: Array<any>;
+	FullResponseCode: Array<string>;
 }
 
 export class CommonRecordType {
-	TransmissionData: Array<TransmissionData>;
+	TransmissionData: Array<any>;
 	Receipt: Array<string>;
 }

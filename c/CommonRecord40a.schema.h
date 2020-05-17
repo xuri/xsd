@@ -6,18 +6,18 @@
 // found in the LICENSE file.
 
 typedef struct {
-	SoftwareProvider SoftwareProvider;
-	SoftwareVersion SoftwareVersion;
+	void SoftwareProvider;
+	void SoftwareVersion;
 } Software;
 
 typedef struct {
-	DocumentID DocumentID;
+	void DocumentID;
 	char CreatedDateTime;
-	Software Software;
-	FullResponseCode FullResponseCode;
+	void Software;
+	void FullResponseCode;
 } TransmissionData;
 
 typedef struct {
-	TransmissionData TransmissionData;
+	void TransmissionData;
 	char Receipt;
 } CommonRecordType;

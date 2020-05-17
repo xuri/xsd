@@ -115,8 +115,8 @@ type CTHpsMeasure struct {
 // STSignedHpsMeasure ...
 type STSignedHpsMeasure struct {
 	XMLName            xml.Name `xml:"ST_SignedHpsMeasure"`
-	STUniversalMeasure string
 	Integer            int
+	STUniversalMeasure string
 }
 
 // CTSignedHpsMeasure ...

@@ -20,8 +20,8 @@ export class CT_CornerDirectionTransition {
 }
 
 export class ST_TransitionEightDirectionType {
-	ST_TransitionSideDirectionType: string;
 	ST_TransitionCornerDirectionType: string;
+	ST_TransitionSideDirectionType: string;
 }
 
 export class CT_EightDirectionTransition {
@@ -304,8 +304,8 @@ export class CT_TLAnimVariant {
 }
 
 export class ST_TLTimeAnimateValueTime {
-	ST_TLTimeIndefinite: string;
 	ST_PositiveFixedPercentage: ST_PositiveFixedPercentage;
+	ST_TLTimeIndefinite: string;
 }
 
 export class CT_TLTimeAnimateValue {

@@ -20,8 +20,8 @@ typedef struct {
 } CT_CornerDirectionTransition;
 
 typedef struct {
-	char ST_TransitionSideDirectionType;
 	char ST_TransitionCornerDirectionType;
+	char ST_TransitionSideDirectionType;
 } ST_TransitionEightDirectionType;
 
 typedef struct {
@@ -304,8 +304,8 @@ typedef struct {
 } CT_TLAnimVariant;
 
 typedef struct {
-	char ST_TLTimeIndefinite;
 	ST_PositiveFixedPercentage ST_PositiveFixedPercentage;
+	char ST_TLTimeIndefinite;
 } ST_TLTimeAnimateValueTime;
 
 typedef struct {

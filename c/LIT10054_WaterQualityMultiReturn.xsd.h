@@ -7,36 +7,36 @@
 
 typedef struct {
 	float DepthValue;
-	DepthValueUnits DepthValueUnits;
-	DepthRelativeTo DepthRelativeTo;
+	MandatoryStringType DepthValueUnits;
+	MandatoryStringType DepthRelativeTo;
 } DepthValueRecorded;
 
 typedef struct {
 	float PurgedVolume;
-	PurgedVolumeUnits PurgedVolumeUnits;
+	MandatoryStringType PurgedVolumeUnits;
 } PurgedVolumeRecorded;
 
 typedef struct {
-	DeterminandName DeterminandName;
-	ResultType ResultType;
+	MandatoryStringType DeterminandName;
+	MandatoryStringType ResultType;
 	float ResultValue;
-	ResultUnits ResultUnits;
-	Qualifier Qualifier;
-	Comment Comment;
+	MandatoryStringType ResultUnits;
+	MandatoryStringType Qualifier;
+	char Comment;
 } Measurement;
 
 typedef struct {
-	Sampler Sampler;
-	SampleType SampleType;
-	CustomerSamplePointName CustomerSamplePointName;
+	char Sampler;
+	MandatoryStringType SampleType;
+	MandatoryStringType CustomerSamplePointName;
 	char SampleDateTime;
-	PurposeTypeName PurposeTypeName;
-	MaterialName MaterialName;
-	Mechanism Mechanism;
-	CustomersLabSampleRef CustomersLabSampleRef;
-	CustomersLabSampleRefSecondary CustomersLabSampleRefSecondary[];
-	Comment Comment;
-	LabName LabName;
+	MandatoryStringType PurposeTypeName;
+	MandatoryStringType MaterialName;
+	MandatoryStringType Mechanism;
+	MandatoryStringType CustomersLabSampleRef;
+	char CustomersLabSampleRefSecondary[];
+	char Comment;
+	MandatoryStringType LabName;
 	char AnalysisCompleteDateTime;
 	DepthValueRecorded DepthValueRecorded;
 	PurgedVolumeRecorded PurgedVolumeRecorded;
@@ -44,9 +44,9 @@ typedef struct {
 } Sample;
 
 typedef struct {
-	Source Source;
+	char Source;
 	Sample Sample[];
-	RegulatedCustomerIdentifier RegulatedCustomerIdentifier;
+	MandatoryStringType RegulatedCustomerIdentifier;
 	char CustomerReference;
 } FileUpload;
 

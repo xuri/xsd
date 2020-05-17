@@ -13,20 +13,20 @@ import (
 
 // Software ...
 type Software struct {
-	SoftwareProvider *SoftwareProvider `xml:"SoftwareProvider"`
-	SoftwareVersion  *SoftwareVersion  `xml:"SoftwareVersion"`
+	SoftwareProvider string `xml:"SoftwareProvider"`
+	SoftwareVersion  string `xml:"SoftwareVersion"`
 }
 
 // TransmissionData ...
 type TransmissionData struct {
-	DocumentID       *DocumentID       `xml:"DocumentID"`
-	CreatedDateTime  time.Time         `xml:"CreatedDateTime"`
-	Software         *Software         `xml:"Software"`
-	FullResponseCode *FullResponseCode `xml:"FullResponseCode"`
+	DocumentID       string      `xml:"DocumentID"`
+	CreatedDateTime  time.Time   `xml:"CreatedDateTime"`
+	Software         interface{} `xml:"Software"`
+	FullResponseCode string      `xml:"FullResponseCode"`
 }
 
 // CommonRecordType ...
 type CommonRecordType struct {
-	TransmissionData *TransmissionData `xml:"TransmissionData"`
-	Receipt          time.Time         `xml:"Receipt"`
+	TransmissionData interface{} `xml:"TransmissionData"`
+	Receipt          time.Time   `xml:"Receipt"`
 }

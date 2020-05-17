@@ -6,5 +6,5 @@
 // found in the LICENSE file.
 
 export class ComplexFoo {
-	Element1: Array<Element1>;
+	Element1: Array<NonEmptyString>;
 }

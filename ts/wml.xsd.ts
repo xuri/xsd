@@ -73,8 +73,8 @@ export class CT_HpsMeasure {
 }
 
 export class ST_SignedHpsMeasure {
-	Integer: number;
 	ST_UniversalMeasure: string;
+	Integer: number;
 }
 
 export class CT_SignedHpsMeasure {

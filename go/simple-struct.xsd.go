@@ -13,6 +13,6 @@ import (
 
 // ComplexFoo ...
 type ComplexFoo struct {
-	XMLName  xml.Name  `xml:"complexFoo"`
-	Element1 *Element1 `xml:"element1"`
+	XMLName  xml.Name        `xml:"complexFoo"`
+	Element1 *NonEmptyString `xml:"element1"`
 }

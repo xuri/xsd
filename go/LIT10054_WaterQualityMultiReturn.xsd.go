@@ -13,52 +13,52 @@ import (
 
 // DepthValueRecorded ...
 type DepthValueRecorded struct {
-	DepthValue      float64          `xml:"DepthValue"`
-	DepthValueUnits *DepthValueUnits `xml:"DepthValueUnits"`
-	DepthRelativeTo *DepthRelativeTo `xml:"DepthRelativeTo"`
+	DepthValue      float64              `xml:"DepthValue"`
+	DepthValueUnits *MandatoryStringType `xml:"DepthValueUnits"`
+	DepthRelativeTo *MandatoryStringType `xml:"DepthRelativeTo"`
 }
 
 // PurgedVolumeRecorded ...
 type PurgedVolumeRecorded struct {
-	PurgedVolume      float64            `xml:"PurgedVolume"`
-	PurgedVolumeUnits *PurgedVolumeUnits `xml:"PurgedVolumeUnits"`
+	PurgedVolume      float64              `xml:"PurgedVolume"`
+	PurgedVolumeUnits *MandatoryStringType `xml:"PurgedVolumeUnits"`
 }
 
 // Measurement ...
 type Measurement struct {
-	DeterminandName *DeterminandName `xml:"DeterminandName"`
-	ResultType      *ResultType      `xml:"ResultType"`
-	ResultValue     float64          `xml:"ResultValue"`
-	ResultUnits     *ResultUnits     `xml:"ResultUnits"`
-	Qualifier       *Qualifier       `xml:"Qualifier"`
-	Comment         *Comment         `xml:"Comment"`
+	DeterminandName *MandatoryStringType `xml:"DeterminandName"`
+	ResultType      *MandatoryStringType `xml:"ResultType"`
+	ResultValue     float64              `xml:"ResultValue"`
+	ResultUnits     *MandatoryStringType `xml:"ResultUnits"`
+	Qualifier       *MandatoryStringType `xml:"Qualifier"`
+	Comment         string               `xml:"Comment"`
 }
 
 // Sample ...
 type Sample struct {
-	Sampler                        *Sampler                          `xml:"Sampler"`
-	SampleType                     *SampleType                       `xml:"SampleType"`
-	CustomerSamplePointName        *CustomerSamplePointName          `xml:"CustomerSamplePointName"`
-	SampleDateTime                 time.Time                         `xml:"SampleDateTime"`
-	PurposeTypeName                *PurposeTypeName                  `xml:"PurposeTypeName"`
-	MaterialName                   *MaterialName                     `xml:"MaterialName"`
-	Mechanism                      *Mechanism                        `xml:"Mechanism"`
-	CustomersLabSampleRef          *CustomersLabSampleRef            `xml:"CustomersLabSampleRef"`
-	CustomersLabSampleRefSecondary []*CustomersLabSampleRefSecondary `xml:"CustomersLabSampleRefSecondary"`
-	Comment                        *Comment                          `xml:"Comment"`
-	LabName                        *LabName                          `xml:"LabName"`
-	AnalysisCompleteDateTime       time.Time                         `xml:"AnalysisCompleteDateTime"`
-	DepthValueRecorded             *DepthValueRecorded               `xml:"DepthValueRecorded"`
-	PurgedVolumeRecorded           *PurgedVolumeRecorded             `xml:"PurgedVolumeRecorded"`
-	Measurement                    []*Measurement                    `xml:"Measurement"`
+	Sampler                        string                `xml:"Sampler"`
+	SampleType                     *MandatoryStringType  `xml:"SampleType"`
+	CustomerSamplePointName        *MandatoryStringType  `xml:"CustomerSamplePointName"`
+	SampleDateTime                 time.Time             `xml:"SampleDateTime"`
+	PurposeTypeName                *MandatoryStringType  `xml:"PurposeTypeName"`
+	MaterialName                   *MandatoryStringType  `xml:"MaterialName"`
+	Mechanism                      *MandatoryStringType  `xml:"Mechanism"`
+	CustomersLabSampleRef          *MandatoryStringType  `xml:"CustomersLabSampleRef"`
+	CustomersLabSampleRefSecondary []string              `xml:"CustomersLabSampleRefSecondary"`
+	Comment                        string                `xml:"Comment"`
+	LabName                        *MandatoryStringType  `xml:"LabName"`
+	AnalysisCompleteDateTime       time.Time             `xml:"AnalysisCompleteDateTime"`
+	DepthValueRecorded             *DepthValueRecorded   `xml:"DepthValueRecorded"`
+	PurgedVolumeRecorded           *PurgedVolumeRecorded `xml:"PurgedVolumeRecorded"`
+	Measurement                    []*Measurement        `xml:"Measurement"`
 }
 
 // FileUpload ...
 type FileUpload struct {
-	Source                      *Source                      `xml:"Source"`
-	Sample                      []*Sample                    `xml:"Sample"`
-	RegulatedCustomerIdentifier *RegulatedCustomerIdentifier `xml:"RegulatedCustomerIdentifier"`
-	CustomerReference           string                       `xml:"CustomerReference"`
+	Source                      string               `xml:"Source"`
+	Sample                      []*Sample            `xml:"Sample"`
+	RegulatedCustomerIdentifier *MandatoryStringType `xml:"RegulatedCustomerIdentifier"`
+	CustomerReference           string               `xml:"CustomerReference"`
 }
 
 // CustomerReference ...

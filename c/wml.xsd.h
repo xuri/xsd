@@ -49,8 +49,8 @@ typedef struct {
 } CT_TwipsMeasure;
 
 typedef struct {
-	int Integer;
 	char ST_UniversalMeasure;
+	int Integer;
 } ST_SignedTwipsMeasure;
 
 typedef struct {
@@ -116,8 +116,8 @@ typedef struct {
 typedef char ST_HexColorAuto;
 
 typedef struct {
-	char ST_HexColorAuto;
 	char ST_HexColorRGB[];
+	char ST_HexColorAuto;
 } ST_HexColor;
 
 typedef struct {

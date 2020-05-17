@@ -137,15 +137,15 @@ export class CT_OfficeArtExtension {
 }
 
 export class ST_Coordinate {
-	ST_CoordinateUnqualified: ST_CoordinateUnqualified;
 	ST_UniversalMeasure: string;
+	ST_CoordinateUnqualified: ST_CoordinateUnqualified;
 }
 
 export type ST_CoordinateUnqualified = number;
 
 export class ST_Coordinate32 {
-	ST_UniversalMeasure: string;
 	ST_Coordinate32Unqualified: ST_Coordinate32Unqualified;
+	ST_UniversalMeasure: string;
 }
 
 export type ST_Coordinate32Unqualified = number;
@@ -553,8 +553,8 @@ export class CT_AnimationDgmBuildProperties {
 export type ST_AnimationChartOnlyBuildType = string;
 
 export class ST_AnimationChartBuildType {
-	ST_AnimationBuildType: string;
 	ST_AnimationChartOnlyBuildType: string;
+	ST_AnimationBuildType: string;
 }
 
 export class CT_AnimationChartBuildProperties {
@@ -1085,8 +1085,8 @@ export class ST_AdjCoordinate {
 }
 
 export class ST_AdjAngle {
-	ST_Angle: number;
 	ST_GeomGuideName: string;
+	ST_Angle: number;
 }
 
 export class CT_AdjPoint2D {
@@ -1724,8 +1724,8 @@ export class EG_TextBullet {
 }
 
 export class ST_TextPoint {
-	ST_TextPointUnqualified: ST_TextPointUnqualified;
 	ST_UniversalMeasure: string;
+	ST_TextPointUnqualified: ST_TextPointUnqualified;
 }
 
 export type ST_TextPointUnqualified = number;
