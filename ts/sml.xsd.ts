@@ -259,8 +259,8 @@ export class CT_Connection {
 	DescriptionAttr: string | null;
 	TypeAttr: number | null;
 	ReconnectionMethodAttr: number | null;
-	RefreshedVersionAttr: Any;
-	MinRefreshableVersionAttr: Any | null;
+	RefreshedVersionAttr: any;
+	MinRefreshableVersionAttr: any | null;
 	SavePasswordAttr: boolean | null;
 	NewAttr: boolean | null;
 	DeletedAttr: boolean | null;
@@ -400,9 +400,9 @@ export class CT_PivotCacheDefinition {
 	RefreshedDateIsoAttr: string | null;
 	BackgroundQueryAttr: boolean | null;
 	MissingItemsLimitAttr: number | null;
-	CreatedVersionAttr: Any | null;
-	RefreshedVersionAttr: Any | null;
-	MinRefreshableVersionAttr: Any | null;
+	CreatedVersionAttr: any | null;
+	RefreshedVersionAttr: any | null;
+	MinRefreshableVersionAttr: any | null;
 	RecordCountAttr: number | null;
 	UpgradeOnRefreshAttr: boolean | null;
 	TupleCacheAttr: boolean | null;
@@ -866,8 +866,8 @@ export class CT_pivotTableDefinition {
 	PivotTableStyleAttr: string | null;
 	VacatedStyleAttr: string | null;
 	TagAttr: string | null;
-	UpdatedVersionAttr: Any | null;
-	MinRefreshableVersionAttr: Any | null;
+	UpdatedVersionAttr: any | null;
+	MinRefreshableVersionAttr: any | null;
 	AsteriskTotalsAttr: boolean | null;
 	ShowItemsAttr: boolean | null;
 	EditDataAttr: boolean | null;
@@ -894,7 +894,7 @@ export class CT_pivotTableDefinition {
 	ItemPrintTitlesAttr: boolean | null;
 	MergeItemAttr: boolean | null;
 	ShowDropZonesAttr: boolean | null;
-	CreatedVersionAttr: Any | null;
+	CreatedVersionAttr: any | null;
 	IndentAttr: number | null;
 	ShowEmptyRowAttr: boolean | null;
 	ShowEmptyColAttr: boolean | null;
@@ -1348,7 +1348,7 @@ export class CT_QueryTableRefresh {
 	PreserveSortFilterLayoutAttr: boolean | null;
 	FieldIdWrappedAttr: boolean | null;
 	HeadersInLastRefreshAttr: boolean | null;
-	MinimumVersionAttr: Any | null;
+	MinimumVersionAttr: any | null;
 	NextIdAttr: number | null;
 	UnboundColumnsLeftAttr: number | null;
 	UnboundColumnsRightAttr: number | null;
@@ -1627,10 +1627,10 @@ export class CT_RevisionDefinedName {
 	NameAttr: string;
 	FunctionAttr: boolean | null;
 	OldFunctionAttr: boolean | null;
-	FunctionGroupIdAttr: Any | null;
-	OldFunctionGroupIdAttr: Any | null;
-	ShortcutKeyAttr: Any | null;
-	OldShortcutKeyAttr: Any | null;
+	FunctionGroupIdAttr: any | null;
+	OldFunctionGroupIdAttr: any | null;
+	ShortcutKeyAttr: any | null;
+	OldShortcutKeyAttr: any | null;
 	HiddenAttr: boolean | null;
 	OldHiddenAttr: boolean | null;
 	CustomMenuAttr: string | null;
@@ -1787,8 +1787,8 @@ export class CT_SheetFormatPr {
 	ZeroHeightAttr: boolean | null;
 	ThickTopAttr: boolean | null;
 	ThickBottomAttr: boolean | null;
-	OutlineLevelRowAttr: Any | null;
-	OutlineLevelColAttr: Any | null;
+	OutlineLevelRowAttr: any | null;
+	OutlineLevelColAttr: any | null;
 }
 
 export class CT_Cols {
@@ -1804,7 +1804,7 @@ export class CT_Col {
 	BestFitAttr: boolean | null;
 	CustomWidthAttr: boolean | null;
 	PhoneticAttr: boolean | null;
-	OutlineLevelAttr: Any | null;
+	OutlineLevelAttr: any | null;
 	CollapsedAttr: boolean | null;
 }
 
@@ -1820,7 +1820,7 @@ export class CT_Row {
 	HtAttr: number | null;
 	HiddenAttr: boolean | null;
 	CustomHeightAttr: boolean | null;
-	OutlineLevelAttr: Any | null;
+	OutlineLevelAttr: any | null;
 	CollapsedAttr: boolean | null;
 	ThickTopAttr: boolean | null;
 	ThickBotAttr: boolean | null;

@@ -22,12 +22,12 @@ export class CT_Property {
 	VtOblob: Array<Array<any>>;
 	VtEmpty: Array<CT_Empty>;
 	VtNull: Array<CT_Null>;
-	VtI1: Array<Any>;
+	VtI1: Array<any>;
 	VtI2: Array<number>;
 	VtI4: Array<number>;
 	VtI8: Array<number>;
 	VtInt: Array<number>;
-	VtUi1: Array<Any>;
+	VtUi1: Array<any>;
 	VtUi2: Array<number>;
 	VtUi4: Array<number>;
 	VtUi8: Array<number>;

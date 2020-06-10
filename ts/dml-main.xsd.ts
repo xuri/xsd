@@ -23,7 +23,7 @@ export class CT_QuickTimeFile {
 }
 
 export class CT_AudioCDTime {
-	TrackAttr: Any;
+	TrackAttr: any;
 	TimeAttr: number | null;
 }
 
@@ -1736,13 +1736,13 @@ export type ST_TextFontSize = number;
 
 export type ST_TextTypeface = string;
 
-export type ST_PitchFamily = Any;
+export type ST_PitchFamily = any;
 
 export class CT_TextFont {
 	TypefaceAttr: string;
 	PanoseAttr: Array<any> | null;
-	PitchFamilyAttr: Any | null;
-	CharsetAttr: Any | null;
+	PitchFamilyAttr: any | null;
+	CharsetAttr: any | null;
 }
 
 export type ST_TextUnderlineType = string;

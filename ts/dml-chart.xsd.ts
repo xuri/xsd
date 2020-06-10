@@ -147,10 +147,10 @@ export class CT_Title {
 	ExtLst: Array<CT_ExtensionList>;
 }
 
-export type ST_RotX = Any;
+export type ST_RotX = any;
 
 export class CT_RotX {
-	ValAttr: Any | null;
+	ValAttr: any | null;
 }
 
 export class ST_HPercent {
@@ -179,10 +179,10 @@ export class CT_DepthPercent {
 	ValAttr: ST_DepthPercent | null;
 }
 
-export type ST_Perspective = Any;
+export type ST_Perspective = any;
 
 export class CT_Perspective {
-	ValAttr: Any | null;
+	ValAttr: any | null;
 }
 
 export class CT_View3D {
@@ -357,10 +357,10 @@ export class CT_MarkerStyle {
 	ValAttr: string;
 }
 
-export type ST_MarkerSize = Any;
+export type ST_MarkerSize = any;
 
 export class CT_MarkerSize {
-	ValAttr: Any | null;
+	ValAttr: any | null;
 }
 
 export class CT_Marker {
@@ -387,10 +387,10 @@ export class CT_TrendlineType {
 	ValAttr: string | null;
 }
 
-export type ST_Order = Any;
+export type ST_Order = any;
 
 export class CT_Order {
-	ValAttr: Any | null;
+	ValAttr: any | null;
 }
 
 export type ST_Period = number;
@@ -1050,10 +1050,10 @@ export class CT_Chart {
 	ExtLst: Array<CT_ExtensionList>;
 }
 
-export type ST_Style = Any;
+export type ST_Style = any;
 
 export class CT_Style {
-	ValAttr: Any;
+	ValAttr: any;
 }
 
 export class CT_PivotSource {

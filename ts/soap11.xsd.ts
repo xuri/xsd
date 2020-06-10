@@ -68,7 +68,7 @@ export type Double = number;
 
 export type AnyURI = string;
 
-export type QName = Any;
+export type QName = any;
 
 export type String = string;
 
@@ -110,7 +110,7 @@ export type Int = number;
 
 export type Short = number;
 
-export type Byte = Any;
+export type Byte = any;
 
 export type NonNegativeInteger = number;
 
@@ -120,7 +120,7 @@ export type UnsignedInt = number;
 
 export type UnsignedShort = number;
 
-export type UnsignedByte = Any;
+export type UnsignedByte = any;
 
 export type PositiveInteger = number;
 

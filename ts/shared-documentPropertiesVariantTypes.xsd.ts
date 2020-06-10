@@ -23,11 +23,11 @@ export class CT_Vector {
 	BaseTypeAttr: string;
 	SizeAttr: number;
 	Variant: Array<CT_Variant>;
-	I1: Array<Any>;
+	I1: Array<any>;
 	I2: Array<number>;
 	I4: Array<number>;
 	I8: Array<number>;
-	Ui1: Array<Any>;
+	Ui1: Array<any>;
 	Ui2: Array<number>;
 	Ui4: Array<number>;
 	Ui8: Array<number>;
@@ -49,11 +49,11 @@ export class CT_Array {
 	UBoundsAttr: number;
 	BaseTypeAttr: string;
 	Variant: Array<CT_Variant>;
-	I1: Array<Any>;
+	I1: Array<any>;
 	I2: Array<number>;
 	I4: Array<number>;
 	Int: Array<number>;
-	Ui1: Array<Any>;
+	Ui1: Array<any>;
 	Ui2: Array<number>;
 	Ui4: Array<number>;
 	Uint: Array<number>;
@@ -75,12 +75,12 @@ export class CT_Variant {
 	Oblob: Array<Array<any>>;
 	Empty: Array<CT_Empty>;
 	Null: Array<CT_Null>;
-	I1: Array<Any>;
+	I1: Array<any>;
 	I2: Array<number>;
 	I4: Array<number>;
 	I8: Array<number>;
 	Int: Array<number>;
-	Ui1: Array<Any>;
+	Ui1: Array<any>;
 	Ui2: Array<number>;
 	Ui4: Array<number>;
 	Ui8: Array<number>;
@@ -122,7 +122,7 @@ export type Empty = CT_Empty;
 
 export type Null = CT_Null;
 
-export type I1 = Any;
+export type I1 = any;
 
 export type I2 = number;
 
@@ -132,7 +132,7 @@ export type I8 = number;
 
 export type Int = number;
 
-export type Ui1 = Any;
+export type Ui1 = any;
 
 export type Ui2 = number;
 

@@ -50,8 +50,8 @@ export class TMessage {
 
 export class TPart {
 	NameAttr: string;
-	ElementAttr: Any | null;
-	TypeAttr: Any | null;
+	ElementAttr: any | null;
+	TypeAttr: any | null;
 }
 
 export class TPortType {
@@ -80,17 +80,17 @@ export class Solicitresponseornotificationoperation {
 
 export class TParam {
 	NameAttr: string | null;
-	MessageAttr: Any;
+	MessageAttr: any;
 }
 
 export class TFault {
 	NameAttr: string;
-	MessageAttr: Any;
+	MessageAttr: any;
 }
 
 export class TBinding {
 	NameAttr: string;
-	TypeAttr: Any;
+	TypeAttr: any;
 	Operation: Array<TBindingOperation>;
 }
 
@@ -116,7 +116,7 @@ export class TService {
 
 export class TPort {
 	NameAttr: string;
-	BindingAttr: Any;
+	BindingAttr: any;
 }
 
 export type ArrayType = string;
