@@ -109,7 +109,11 @@ export class CT_Marker {
 	RowOff: Array<ST_Coordinate>;
 }
 
-export type ST_EditAs = string;
+export enum ST_EditAs {
+	twoCell = 'twoCell',
+	oneCell = 'oneCell',
+	absolute = 'absolute',
+}
 
 export class CT_TwoCellAnchor {
 	EditAsAttr: string | null;

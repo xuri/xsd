@@ -24,9 +24,16 @@ export class CT_CTCategories {
 	Cat: Array<CT_CTCategory>;
 }
 
-export type ST_ClrAppMethod = string;
+export enum ST_ClrAppMethod {
+	span = 'span',
+	cycle = 'cycle',
+	repeat = 'repeat',
+}
 
-export type ST_HueDir = string;
+export enum ST_HueDir {
+	cw = 'cw',
+	ccw = 'ccw',
+}
 
 export class CT_Colors {
 	MethAttr: string | null;
@@ -75,7 +82,14 @@ export class CT_ColorTransformHeaderLst {
 
 export type ColorsDefHdrLst = CT_ColorTransformHeaderLst;
 
-export type ST_PtType = string;
+export enum ST_PtType {
+	node = 'node',
+	asst = 'asst',
+	doc = 'doc',
+	pres = 'pres',
+	parTrans = 'parTrans',
+	sibTrans = 'sibTrans',
+}
 
 export class CT_Pt {
 	ModelIdAttr: ST_ModelId;
@@ -91,7 +105,12 @@ export class CT_PtList {
 	Pt: Array<CT_Pt>;
 }
 
-export type ST_CxnType = string;
+export enum ST_CxnType {
+	parOf = 'parOf',
+	presOf = 'presOf',
+	presParOf = 'presParOf',
+	unknownRelationship = 'unknownRelationship',
+}
 
 export class CT_Cxn {
 	ModelIdAttr: ST_ModelId;
@@ -174,8 +193,8 @@ export class CT_PresentationOf {
 }
 
 export class ST_LayoutShapeType {
-	ST_ShapeType: string;
 	ST_OutputShapeType: ST_OutputShapeType;
+	ST_ShapeType: string;
 }
 
 export type ST_Index1 = number;
@@ -351,42 +370,42 @@ export class CT_RelIds {
 export type RelIds = CT_RelIds;
 
 export class ST_ParameterVal {
-	ST_ConnectorRouting: ST_ConnectorRouting;
-	ST_RotationPath: ST_RotationPath;
-	ST_CenterShapeMapping: ST_CenterShapeMapping;
-	ST_DiagramTextAlignment: ST_DiagramTextAlignment;
-	ST_Breakpoint: ST_Breakpoint;
-	ST_VerticalAlignment: ST_VerticalAlignment;
-	ST_ChildDirection: ST_ChildDirection;
-	Double: number;
-	ST_ConnectorPoint: ST_ConnectorPoint;
-	ST_ChildAlignment: ST_ChildAlignment;
-	ST_ArrowheadStyle: ST_ArrowheadStyle;
-	ST_ConnectorDimension: ST_ConnectorDimension;
-	ST_TextBlockDirection: ST_TextBlockDirection;
-	ST_AutoTextRotation: ST_AutoTextRotation;
-	ST_DiagramHorizontalAlignment: ST_DiagramHorizontalAlignment;
-	ST_BendPoint: ST_BendPoint;
 	ST_PyramidAccentTextMargin: ST_PyramidAccentTextMargin;
-	ST_TextAnchorVertical: ST_TextAnchorVertical;
 	ST_GrowDirection: ST_GrowDirection;
-	ST_ContinueDirection: ST_ContinueDirection;
-	String: string;
+	ST_ChildAlignment: ST_ChildAlignment;
+	ST_SecondaryChildAlignment: ST_SecondaryChildAlignment;
 	ST_StartingElement: ST_StartingElement;
-	ST_FallbackDimension: ST_FallbackDimension;
+	ST_ConnectorDimension: ST_ConnectorDimension;
+	ST_CenterShapeMapping: ST_CenterShapeMapping;
 	ST_PyramidAccentPosition: ST_PyramidAccentPosition;
-	Int: number;
-	ST_SecondaryLinearDirection: ST_SecondaryLinearDirection;
+	ST_FlowDirection: ST_FlowDirection;
+	String: string;
+	ST_LinearDirection: ST_LinearDirection;
+	ST_ConnectorRouting: ST_ConnectorRouting;
+	ST_NodeVerticalAlignment: ST_NodeVerticalAlignment;
+	ST_FallbackDimension: ST_FallbackDimension;
+	ST_AutoTextRotation: ST_AutoTextRotation;
+	ST_ContinueDirection: ST_ContinueDirection;
+	ST_VerticalAlignment: ST_VerticalAlignment;
 	ST_NodeHorizontalAlignment: ST_NodeHorizontalAlignment;
+	ST_TextBlockDirection: ST_TextBlockDirection;
+	ST_TextAnchorVertical: ST_TextAnchorVertical;
+	ST_DiagramHorizontalAlignment: ST_DiagramHorizontalAlignment;
+	Double: number;
+	ST_ChildDirection: ST_ChildDirection;
+	ST_RotationPath: ST_RotationPath;
+	ST_Breakpoint: ST_Breakpoint;
+	ST_HierarchyAlignment: ST_HierarchyAlignment;
 	ST_TextDirection: ST_TextDirection;
 	ST_TextAnchorHorizontal: ST_TextAnchorHorizontal;
-	ST_FlowDirection: ST_FlowDirection;
+	ST_SecondaryLinearDirection: ST_SecondaryLinearDirection;
+	ST_BendPoint: ST_BendPoint;
+	ST_DiagramTextAlignment: ST_DiagramTextAlignment;
 	ST_Offset: ST_Offset;
-	ST_HierarchyAlignment: ST_HierarchyAlignment;
+	Int: number;
 	Boolean: boolean;
-	ST_SecondaryChildAlignment: ST_SecondaryChildAlignment;
-	ST_LinearDirection: ST_LinearDirection;
-	ST_NodeVerticalAlignment: ST_NodeVerticalAlignment;
+	ST_ArrowheadStyle: ST_ArrowheadStyle;
+	ST_ConnectorPoint: ST_ConnectorPoint;
 }
 
 export class ST_ModelId {
@@ -431,13 +450,30 @@ export class CT_ElemPropSet {
 	Style: Array<CT_ShapeStyle>;
 }
 
-export type ST_Direction = string;
+export enum ST_Direction {
+	norm = 'norm',
+	rev = 'rev',
+}
 
-export type ST_HierBranchStyle = string;
+export enum ST_HierBranchStyle {
+	l = 'l',
+	r = 'r',
+	hang = 'hang',
+	std = 'std',
+	init = 'init',
+}
 
-export type ST_AnimOneStr = string;
+export enum ST_AnimOneStr {
+	none = 'none',
+	one = 'one',
+	branch = 'branch',
+}
 
-export type ST_AnimLvlStr = string;
+export enum ST_AnimLvlStr {
+	none = 'none',
+	lvl = 'lvl',
+	ctr = 'ctr',
+}
 
 export class CT_OrgChart {
 	ValAttr: boolean | null;
@@ -473,7 +509,10 @@ export class CT_AnimLvl {
 	ValAttr: string | null;
 }
 
-export type ST_ResizeHandlesStr = string;
+export enum ST_ResizeHandlesStr {
+	exact = 'exact',
+	rel = 'rel',
+}
 
 export class CT_ResizeHandles {
 	ValAttr: string | null;
@@ -554,25 +593,194 @@ export class CT_StyleDefinitionHeaderLst {
 
 export type StyleDefHdrLst = CT_StyleDefinitionHeaderLst;
 
-export type ST_AlgorithmType = string;
+export enum ST_AlgorithmType {
+	composite = 'composite',
+	conn = 'conn',
+	cycle = 'cycle',
+	hierChild = 'hierChild',
+	hierRoot = 'hierRoot',
+	pyra = 'pyra',
+	lin = 'lin',
+	sp = 'sp',
+	tx = 'tx',
+	snake = 'snake',
+}
 
-export type ST_AxisType = string;
+export enum ST_AxisType {
+	self = 'self',
+	ch = 'ch',
+	des = 'des',
+	desOrSelf = 'desOrSelf',
+	par = 'par',
+	ancst = 'ancst',
+	ancstOrSelf = 'ancstOrSelf',
+	followSib = 'followSib',
+	precedSib = 'precedSib',
+	follow = 'follow',
+	preced = 'preced',
+	root = 'root',
+	none = 'none',
+}
 
 export type ST_AxisTypes = Array<string>;
 
-export type ST_BoolOperator = string;
+export enum ST_BoolOperator {
+	none = 'none',
+	equ = 'equ',
+	gte = 'gte',
+	lte = 'lte',
+}
 
-export type ST_ChildOrderType = string;
+export enum ST_ChildOrderType {
+	b = 'b',
+	t = 't',
+}
 
-export type ST_ConstraintType = string;
+export enum ST_ConstraintType {
+	none = 'none',
+	alignOff = 'alignOff',
+	begMarg = 'begMarg',
+	bendDist = 'bendDist',
+	begPad = 'begPad',
+	b = 'b',
+	bMarg = 'bMarg',
+	bOff = 'bOff',
+	ctrX = 'ctrX',
+	ctrXOff = 'ctrXOff',
+	ctrY = 'ctrY',
+	ctrYOff = 'ctrYOff',
+	connDist = 'connDist',
+	diam = 'diam',
+	endMarg = 'endMarg',
+	endPad = 'endPad',
+	h = 'h',
+	hArH = 'hArH',
+	hOff = 'hOff',
+	l = 'l',
+	lMarg = 'lMarg',
+	lOff = 'lOff',
+	r = 'r',
+	rMarg = 'rMarg',
+	rOff = 'rOff',
+	primFontSz = 'primFontSz',
+	pyraAcctRatio = 'pyraAcctRatio',
+	secFontSz = 'secFontSz',
+	sibSp = 'sibSp',
+	secSibSp = 'secSibSp',
+	sp = 'sp',
+	stemThick = 'stemThick',
+	t = 't',
+	tMarg = 'tMarg',
+	tOff = 'tOff',
+	userA = 'userA',
+	userB = 'userB',
+	userC = 'userC',
+	userD = 'userD',
+	userE = 'userE',
+	userF = 'userF',
+	userG = 'userG',
+	userH = 'userH',
+	userI = 'userI',
+	userJ = 'userJ',
+	userK = 'userK',
+	userL = 'userL',
+	userM = 'userM',
+	userN = 'userN',
+	userO = 'userO',
+	userP = 'userP',
+	userQ = 'userQ',
+	userR = 'userR',
+	userS = 'userS',
+	userT = 'userT',
+	userU = 'userU',
+	userV = 'userV',
+	userW = 'userW',
+	userX = 'userX',
+	userY = 'userY',
+	userZ = 'userZ',
+	w = 'w',
+	wArH = 'wArH',
+	wOff = 'wOff',
+}
 
-export type ST_ConstraintRelationship = string;
+export enum ST_ConstraintRelationship {
+	self = 'self',
+	ch = 'ch',
+	des = 'des',
+}
 
-export type ST_ElementType = string;
+export enum ST_ElementType {
+	all = 'all',
+	doc = 'doc',
+	node = 'node',
+	norm = 'norm',
+	nonNorm = 'nonNorm',
+	asst = 'asst',
+	nonAsst = 'nonAsst',
+	parTrans = 'parTrans',
+	pres = 'pres',
+	sibTrans = 'sibTrans',
+}
 
 export type ST_ElementTypes = Array<string>;
 
-export type ST_ParameterId = string;
+export enum ST_ParameterId {
+	horzAlign = 'horzAlign',
+	vertAlign = 'vertAlign',
+	chDir = 'chDir',
+	chAlign = 'chAlign',
+	secChAlign = 'secChAlign',
+	linDir = 'linDir',
+	secLinDir = 'secLinDir',
+	stElem = 'stElem',
+	bendPt = 'bendPt',
+	connRout = 'connRout',
+	begSty = 'begSty',
+	endSty = 'endSty',
+	dim = 'dim',
+	rotPath = 'rotPath',
+	ctrShpMap = 'ctrShpMap',
+	nodeHorzAlign = 'nodeHorzAlign',
+	nodeVertAlign = 'nodeVertAlign',
+	fallback = 'fallback',
+	txDir = 'txDir',
+	pyraAcctPos = 'pyraAcctPos',
+	pyraAcctTxMar = 'pyraAcctTxMar',
+	txBlDir = 'txBlDir',
+	txAnchorHorz = 'txAnchorHorz',
+	txAnchorVert = 'txAnchorVert',
+	txAnchorHorzCh = 'txAnchorHorzCh',
+	txAnchorVertCh = 'txAnchorVertCh',
+	parTxLTRAlign = 'parTxLTRAlign',
+	parTxRTLAlign = 'parTxRTLAlign',
+	shpTxLTRAlignCh = 'shpTxLTRAlignCh',
+	shpTxRTLAlignCh = 'shpTxRTLAlignCh',
+	autoTxRot = 'autoTxRot',
+	grDir = 'grDir',
+	flowDir = 'flowDir',
+	contDir = 'contDir',
+	bkpt = 'bkpt',
+	off = 'off',
+	hierAlign = 'hierAlign',
+	bkPtFixedVal = 'bkPtFixedVal',
+	stBulletLvl = 'stBulletLvl',
+	stAng = 'stAng',
+	spanAng = 'spanAng',
+	ar = 'ar',
+	lnSpPar = 'lnSpPar',
+	lnSpAfParP = 'lnSpAfParP',
+	lnSpCh = 'lnSpCh',
+	lnSpAfChP = 'lnSpAfChP',
+	rtShortDist = 'rtShortDist',
+	alignTx = 'alignTx',
+	pyraLvlNode = 'pyraLvlNode',
+	pyraAcctBkgdNode = 'pyraAcctBkgdNode',
+	pyraAcctTxNode = 'pyraAcctTxNode',
+	srcNode = 'srcNode',
+	dstNode = 'dstNode',
+	begPts = 'begPts',
+	endPts = 'endPts',
+}
 
 export type ST_Ints = Array<number>;
 
@@ -580,88 +788,264 @@ export type ST_UnsignedInts = Array<number>;
 
 export type ST_Booleans = Array<boolean>;
 
-export type ST_FunctionType = string;
+export enum ST_FunctionType {
+	cnt = 'cnt',
+	pos = 'pos',
+	revPos = 'revPos',
+	posEven = 'posEven',
+	posOdd = 'posOdd',
+	var = 'var',
+	depth = 'depth',
+	maxDepth = 'maxDepth',
+}
 
-export type ST_FunctionOperator = string;
+export enum ST_FunctionOperator {
+	equ = 'equ',
+	neq = 'neq',
+	gt = 'gt',
+	lt = 'lt',
+	gte = 'gte',
+	lte = 'lte',
+}
 
-export type ST_DiagramHorizontalAlignment = string;
+export enum ST_DiagramHorizontalAlignment {
+	l = 'l',
+	ctr = 'ctr',
+	r = 'r',
+	none = 'none',
+}
 
-export type ST_VerticalAlignment = string;
+export enum ST_VerticalAlignment {
+	t = 't',
+	mid = 'mid',
+	b = 'b',
+	none = 'none',
+}
 
-export type ST_ChildDirection = string;
+export enum ST_ChildDirection {
+	horz = 'horz',
+	vert = 'vert',
+}
 
-export type ST_ChildAlignment = string;
+export enum ST_ChildAlignment {
+	t = 't',
+	b = 'b',
+	l = 'l',
+	r = 'r',
+}
 
-export type ST_SecondaryChildAlignment = string;
+export enum ST_SecondaryChildAlignment {
+	none = 'none',
+	t = 't',
+	b = 'b',
+	l = 'l',
+	r = 'r',
+}
 
-export type ST_LinearDirection = string;
+export enum ST_LinearDirection {
+	fromL = 'fromL',
+	fromR = 'fromR',
+	fromT = 'fromT',
+	fromB = 'fromB',
+}
 
-export type ST_SecondaryLinearDirection = string;
+export enum ST_SecondaryLinearDirection {
+	none = 'none',
+	fromL = 'fromL',
+	fromR = 'fromR',
+	fromT = 'fromT',
+	fromB = 'fromB',
+}
 
-export type ST_StartingElement = string;
+export enum ST_StartingElement {
+	node = 'node',
+	trans = 'trans',
+}
 
-export type ST_RotationPath = string;
+export enum ST_RotationPath {
+	none = 'none',
+	alongPath = 'alongPath',
+}
 
-export type ST_CenterShapeMapping = string;
+export enum ST_CenterShapeMapping {
+	none = 'none',
+	fNode = 'fNode',
+}
 
-export type ST_BendPoint = string;
+export enum ST_BendPoint {
+	beg = 'beg',
+	def = 'def',
+	end = 'end',
+}
 
-export type ST_ConnectorRouting = string;
+export enum ST_ConnectorRouting {
+	stra = 'stra',
+	bend = 'bend',
+	curve = 'curve',
+	longCurve = 'longCurve',
+}
 
-export type ST_ArrowheadStyle = string;
+export enum ST_ArrowheadStyle {
+	auto = 'auto',
+	arr = 'arr',
+	noArr = 'noArr',
+}
 
-export type ST_ConnectorDimension = string;
+export enum ST_ConnectorDimension {
+	1D = '1D',
+	2D = '2D',
+	cust = 'cust',
+}
 
-export type ST_ConnectorPoint = string;
+export enum ST_ConnectorPoint {
+	auto = 'auto',
+	bCtr = 'bCtr',
+	ctr = 'ctr',
+	midL = 'midL',
+	midR = 'midR',
+	tCtr = 'tCtr',
+	bL = 'bL',
+	bR = 'bR',
+	tL = 'tL',
+	tR = 'tR',
+	radial = 'radial',
+}
 
-export type ST_NodeHorizontalAlignment = string;
+export enum ST_NodeHorizontalAlignment {
+	l = 'l',
+	ctr = 'ctr',
+	r = 'r',
+}
 
-export type ST_NodeVerticalAlignment = string;
+export enum ST_NodeVerticalAlignment {
+	t = 't',
+	mid = 'mid',
+	b = 'b',
+}
 
-export type ST_FallbackDimension = string;
+export enum ST_FallbackDimension {
+	1D = '1D',
+	2D = '2D',
+}
 
-export type ST_TextDirection = string;
+export enum ST_TextDirection {
+	fromT = 'fromT',
+	fromB = 'fromB',
+}
 
-export type ST_PyramidAccentPosition = string;
+export enum ST_PyramidAccentPosition {
+	bef = 'bef',
+	aft = 'aft',
+}
 
-export type ST_PyramidAccentTextMargin = string;
+export enum ST_PyramidAccentTextMargin {
+	step = 'step',
+	stack = 'stack',
+}
 
-export type ST_TextBlockDirection = string;
+export enum ST_TextBlockDirection {
+	horz = 'horz',
+	vert = 'vert',
+}
 
-export type ST_TextAnchorHorizontal = string;
+export enum ST_TextAnchorHorizontal {
+	none = 'none',
+	ctr = 'ctr',
+}
 
-export type ST_TextAnchorVertical = string;
+export enum ST_TextAnchorVertical {
+	t = 't',
+	mid = 'mid',
+	b = 'b',
+}
 
-export type ST_DiagramTextAlignment = string;
+export enum ST_DiagramTextAlignment {
+	l = 'l',
+	ctr = 'ctr',
+	r = 'r',
+}
 
-export type ST_AutoTextRotation = string;
+export enum ST_AutoTextRotation {
+	none = 'none',
+	upr = 'upr',
+	grav = 'grav',
+}
 
-export type ST_GrowDirection = string;
+export enum ST_GrowDirection {
+	tL = 'tL',
+	tR = 'tR',
+	bL = 'bL',
+	bR = 'bR',
+}
 
-export type ST_FlowDirection = string;
+export enum ST_FlowDirection {
+	row = 'row',
+	col = 'col',
+}
 
-export type ST_ContinueDirection = string;
+export enum ST_ContinueDirection {
+	revDir = 'revDir',
+	sameDir = 'sameDir',
+}
 
-export type ST_Breakpoint = string;
+export enum ST_Breakpoint {
+	endCnv = 'endCnv',
+	bal = 'bal',
+	fixed = 'fixed',
+}
 
-export type ST_Offset = string;
+export enum ST_Offset {
+	ctr = 'ctr',
+	off = 'off',
+}
 
-export type ST_HierarchyAlignment = string;
+export enum ST_HierarchyAlignment {
+	tL = 'tL',
+	tR = 'tR',
+	tCtrCh = 'tCtrCh',
+	tCtrDes = 'tCtrDes',
+	bL = 'bL',
+	bR = 'bR',
+	bCtrCh = 'bCtrCh',
+	bCtrDes = 'bCtrDes',
+	lT = 'lT',
+	lB = 'lB',
+	lCtrCh = 'lCtrCh',
+	lCtrDes = 'lCtrDes',
+	rT = 'rT',
+	rB = 'rB',
+	rCtrCh = 'rCtrCh',
+	rCtrDes = 'rCtrDes',
+}
 
 export class ST_FunctionValue {
-	Int: number;
 	Boolean: boolean;
 	ST_Direction: string;
 	ST_HierBranchStyle: string;
 	ST_AnimOneStr: string;
 	ST_AnimLvlStr: string;
 	ST_ResizeHandlesStr: string;
+	Int: number;
 }
 
-export type ST_VariableType = string;
+export enum ST_VariableType {
+	none = 'none',
+	orgChart = 'orgChart',
+	chMax = 'chMax',
+	chPref = 'chPref',
+	bulEnabled = 'bulEnabled',
+	dir = 'dir',
+	hierBranch = 'hierBranch',
+	animOne = 'animOne',
+	animLvl = 'animLvl',
+	resizeHandles = 'resizeHandles',
+}
 
 export class ST_FunctionArgument {
 	ST_VariableType: string;
 }
 
-export type ST_OutputShapeType = string;
+export enum ST_OutputShapeType {
+	none = 'none',
+	conn = 'conn',
+}

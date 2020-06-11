@@ -5,7 +5,25 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-export type ST_SourceType = string;
+export enum ST_SourceType {
+	ArticleInAPeriodical = 'ArticleInAPeriodical',
+	Book = 'Book',
+	BookSection = 'BookSection',
+	JournalArticle = 'JournalArticle',
+	ConferenceProceedings = 'ConferenceProceedings',
+	Report = 'Report',
+	SoundRecording = 'SoundRecording',
+	Performance = 'Performance',
+	Art = 'Art',
+	DocumentFromInternetSite = 'DocumentFromInternetSite',
+	InternetSite = 'InternetSite',
+	Film = 'Film',
+	Interview = 'Interview',
+	Patent = 'Patent',
+	ElectronicSource = 'ElectronicSource',
+	Case = 'Case',
+	Misc = 'Misc',
+}
 
 export class CT_NameListType {
 	Person: Array<CT_PersonType>;

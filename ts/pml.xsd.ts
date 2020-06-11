@@ -5,11 +5,24 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-export type ST_TransitionSideDirectionType = string;
+export enum ST_TransitionSideDirectionType {
+	l = 'l',
+	u = 'u',
+	r = 'r',
+	d = 'd',
+}
 
-export type ST_TransitionCornerDirectionType = string;
+export enum ST_TransitionCornerDirectionType {
+	lu = 'lu',
+	ru = 'ru',
+	ld = 'ld',
+	rd = 'rd',
+}
 
-export type ST_TransitionInOutDirectionType = string;
+export enum ST_TransitionInOutDirectionType {
+	out = 'out',
+	in = 'in',
+}
 
 export class CT_SideDirectionTransition {
 	DirAttr: string | null;
@@ -20,8 +33,8 @@ export class CT_CornerDirectionTransition {
 }
 
 export class ST_TransitionEightDirectionType {
-	ST_TransitionCornerDirectionType: string;
 	ST_TransitionSideDirectionType: string;
+	ST_TransitionCornerDirectionType: string;
 }
 
 export class CT_EightDirectionTransition {
@@ -59,7 +72,11 @@ export class CT_TransitionSoundAction {
 	EndSnd: Array<CT_Empty>;
 }
 
-export type ST_TransitionSpeed = string;
+export enum ST_TransitionSpeed {
+	slow = 'slow',
+	med = 'med',
+	fast = 'fast',
+}
 
 export class CT_SlideTransition {
 	SpdAttr: string | null;
@@ -90,7 +107,9 @@ export class CT_SlideTransition {
 	ExtLst: Array<CT_ExtensionListModify>;
 }
 
-export type ST_TLTimeIndefinite = string;
+export enum ST_TLTimeIndefinite {
+	indefinite = 'indefinite',
+}
 
 export class ST_TLTime {
 	UnsignedInt: number;
@@ -107,7 +126,11 @@ export class CT_TLIterateIntervalPercentage {
 	ValAttr: ST_PositivePercentage;
 }
 
-export type ST_IterateType = string;
+export enum ST_IterateType {
+	el = 'el',
+	wd = 'wd',
+	lt = 'lt',
+}
 
 export class CT_TLIterateData {
 	TypeAttr: string | null;
@@ -125,7 +148,13 @@ export class CT_TLTextTargetElement {
 	PRg: Array<CT_IndexRange>;
 }
 
-export type ST_TLChartSubelementType = string;
+export enum ST_TLChartSubelementType {
+	gridLegend = 'gridLegend',
+	series = 'series',
+	category = 'category',
+	ptInSeries = 'ptInSeries',
+	ptInCategory = 'ptInCategory',
+}
 
 export class CT_TLOleChartTargetElement {
 	TypeAttr: string;
@@ -152,13 +181,29 @@ export class CT_TLTriggerTimeNodeID {
 	ValAttr: number;
 }
 
-export type ST_TLTriggerRuntimeNode = string;
+export enum ST_TLTriggerRuntimeNode {
+	first = 'first',
+	last = 'last',
+	all = 'all',
+}
 
 export class CT_TLTriggerRuntimeNode {
 	ValAttr: string;
 }
 
-export type ST_TLTriggerEvent = string;
+export enum ST_TLTriggerEvent {
+	onBegin = 'onBegin',
+	onEnd = 'onEnd',
+	begin = 'begin',
+	end = 'end',
+	onClick = 'onClick',
+	onDblClick = 'onDblClick',
+	onMouseOver = 'onMouseOver',
+	onMouseOut = 'onMouseOut',
+	onNext = 'onNext',
+	onPrev = 'onPrev',
+	onStopAudio = 'onStopAudio',
+}
 
 export class CT_TLTimeCondition {
 	EvtAttr: string | null;
@@ -188,17 +233,50 @@ export class CT_TimeNodeList {
 	Video: Array<CT_TLMediaNodeVideo>;
 }
 
-export type ST_TLTimeNodePresetClassType = string;
+export enum ST_TLTimeNodePresetClassType {
+	entr = 'entr',
+	exit = 'exit',
+	emph = 'emph',
+	path = 'path',
+	verb = 'verb',
+	mediacall = 'mediacall',
+}
 
-export type ST_TLTimeNodeRestartType = string;
+export enum ST_TLTimeNodeRestartType {
+	always = 'always',
+	whenNotActive = 'whenNotActive',
+	never = 'never',
+}
 
-export type ST_TLTimeNodeFillType = string;
+export enum ST_TLTimeNodeFillType {
+	remove = 'remove',
+	freeze = 'freeze',
+	hold = 'hold',
+	transition = 'transition',
+}
 
-export type ST_TLTimeNodeSyncType = string;
+export enum ST_TLTimeNodeSyncType {
+	canSlip = 'canSlip',
+	locked = 'locked',
+}
 
-export type ST_TLTimeNodeMasterRelation = string;
+export enum ST_TLTimeNodeMasterRelation {
+	sameClick = 'sameClick',
+	lastClick = 'lastClick',
+	nextClick = 'nextClick',
+}
 
-export type ST_TLTimeNodeType = string;
+export enum ST_TLTimeNodeType {
+	clickEffect = 'clickEffect',
+	withEffect = 'withEffect',
+	afterEffect = 'afterEffect',
+	mainSeq = 'mainSeq',
+	interactiveSeq = 'interactiveSeq',
+	clickPar = 'clickPar',
+	withGroup = 'withGroup',
+	afterGroup = 'afterGroup',
+	tmRoot = 'tmRoot',
+}
 
 export class CT_TLCommonTimeNodeData {
 	IdAttr: number | null;
@@ -236,9 +314,15 @@ export class CT_TLTimeNodeParallel {
 	CTn: Array<CT_TLCommonTimeNodeData>;
 }
 
-export type ST_TLNextActionType = string;
+export enum ST_TLNextActionType {
+	none = 'none',
+	seek = 'seek',
+}
 
-export type ST_TLPreviousActionType = string;
+export enum ST_TLPreviousActionType {
+	none = 'none',
+	skipTimed = 'skipTimed',
+}
 
 export class CT_TLTimeNodeSequence {
 	ConcurrentAttr: boolean | null;
@@ -257,13 +341,28 @@ export class CT_TLBehaviorAttributeNameList {
 	AttrName: Array<string>;
 }
 
-export type ST_TLBehaviorAdditiveType = string;
+export enum ST_TLBehaviorAdditiveType {
+	base = 'base',
+	sum = 'sum',
+	repl = 'repl',
+	mult = 'mult',
+	none = 'none',
+}
 
-export type ST_TLBehaviorAccumulateType = string;
+export enum ST_TLBehaviorAccumulateType {
+	none = 'none',
+	always = 'always',
+}
 
-export type ST_TLBehaviorTransformType = string;
+export enum ST_TLBehaviorTransformType {
+	pt = 'pt',
+	img = 'img',
+}
 
-export type ST_TLBehaviorOverrideType = string;
+export enum ST_TLBehaviorOverrideType {
+	normal = 'normal',
+	childStyle = 'childStyle',
+}
 
 export class CT_TLCommonBehaviorData {
 	AdditiveAttr: string | null;
@@ -318,9 +417,17 @@ export class CT_TLTimeAnimateValueList {
 	Tav: Array<CT_TLTimeAnimateValue>;
 }
 
-export type ST_TLAnimateBehaviorCalcMode = string;
+export enum ST_TLAnimateBehaviorCalcMode {
+	discrete = 'discrete',
+	lin = 'lin',
+	fmla = 'fmla',
+}
 
-export type ST_TLAnimateBehaviorValueType = string;
+export enum ST_TLAnimateBehaviorValueType {
+	str = 'str',
+	num = 'num',
+	clr = 'clr',
+}
 
 export class CT_TLAnimateBehavior {
 	ByAttr: string | null;
@@ -349,9 +456,15 @@ export class CT_TLByAnimateColorTransform {
 	Hsl: Array<CT_TLByHslColorTransform>;
 }
 
-export type ST_TLAnimateColorSpace = string;
+export enum ST_TLAnimateColorSpace {
+	rgb = 'rgb',
+	hsl = 'hsl',
+}
 
-export type ST_TLAnimateColorDirection = string;
+export enum ST_TLAnimateColorDirection {
+	cw = 'cw',
+	ccw = 'ccw',
+}
 
 export class CT_TLAnimateColorBehavior {
 	ClrSpcAttr: string | null;
@@ -362,7 +475,11 @@ export class CT_TLAnimateColorBehavior {
 	To: Array<CT_Color>;
 }
 
-export type ST_TLAnimateEffectTransition = string;
+export enum ST_TLAnimateEffectTransition {
+	in = 'in',
+	out = 'out',
+	none = 'none',
+}
 
 export class CT_TLAnimateEffectBehavior {
 	TransitionAttr: string | null;
@@ -372,9 +489,15 @@ export class CT_TLAnimateEffectBehavior {
 	Progress: Array<CT_TLAnimVariant>;
 }
 
-export type ST_TLAnimateMotionBehaviorOrigin = string;
+export enum ST_TLAnimateMotionBehaviorOrigin {
+	parent = 'parent',
+	layout = 'layout',
+}
 
-export type ST_TLAnimateMotionPathEditMode = string;
+export enum ST_TLAnimateMotionPathEditMode {
+	relative = 'relative',
+	fixed = 'fixed',
+}
 
 export class CT_TLPoint {
 	XAttr: ST_Percentage;
@@ -409,7 +532,11 @@ export class CT_TLAnimateScaleBehavior {
 	To: Array<CT_TLPoint>;
 }
 
-export type ST_TLCommandType = string;
+export enum ST_TLCommandType {
+	evt = 'evt',
+	call = 'call',
+	verb = 'verb',
+}
 
 export class CT_TLCommandBehavior {
 	TypeAttr: string | null;
@@ -456,7 +583,12 @@ export class CT_TLTemplateList {
 	Tmpl: Array<CT_TLTemplate>;
 }
 
-export type ST_TLParaBuildType = string;
+export enum ST_TLParaBuildType {
+	allAtOnce = 'allAtOnce',
+	p = 'p',
+	cust = 'cust',
+	whole = 'whole',
+}
 
 export class CT_TLBuildParagraph {
 	AG_TLBuild: AG_TLBuild;
@@ -469,14 +601,38 @@ export class CT_TLBuildParagraph {
 	TmplLst: Array<CT_TLTemplateList>;
 }
 
-export type ST_TLDiagramBuildType = string;
+export enum ST_TLDiagramBuildType {
+	whole = 'whole',
+	depthByNode = 'depthByNode',
+	depthByBranch = 'depthByBranch',
+	breadthByNode = 'breadthByNode',
+	breadthByLvl = 'breadthByLvl',
+	cw = 'cw',
+	cwIn = 'cwIn',
+	cwOut = 'cwOut',
+	ccw = 'ccw',
+	ccwIn = 'ccwIn',
+	ccwOut = 'ccwOut',
+	inByRing = 'inByRing',
+	outByRing = 'outByRing',
+	up = 'up',
+	down = 'down',
+	allAtOnce = 'allAtOnce',
+	cust = 'cust',
+}
 
 export class CT_TLBuildDiagram {
 	AG_TLBuild: AG_TLBuild;
 	BldAttr: string | null;
 }
 
-export type ST_TLOleChartBuildType = string;
+export enum ST_TLOleChartBuildType {
+	allAtOnce = 'allAtOnce',
+	series = 'series',
+	category = 'category',
+	seriesEl = 'seriesEl',
+	categoryEl = 'categoryEl',
+}
 
 export class CT_TLOleBuildChart {
 	AG_TLBuild: AG_TLBuild;
@@ -508,7 +664,10 @@ export class CT_Empty {
 
 export type ST_Name = string;
 
-export type ST_Direction = string;
+export enum ST_Direction {
+	horz = 'horz',
+	vert = 'vert',
+}
 
 export type ST_Index = number;
 
@@ -603,7 +762,11 @@ export class AG_Ole {
 	ImgHAttr: number | null;
 }
 
-export type ST_OleObjectFollowColorScheme = string;
+export enum ST_OleObjectFollowColorScheme {
+	none = 'none',
+	full = 'full',
+	textAndBackground = 'textAndBackground',
+}
 
 export class CT_OleObjectEmbed {
 	FollowColorSchemeAttr: string | null;
@@ -708,9 +871,25 @@ export class CT_CustomShowList {
 	CustShow: Array<CT_CustomShow>;
 }
 
-export type ST_PhotoAlbumLayout = string;
+export enum ST_PhotoAlbumLayout {
+	fitToSlide = 'fitToSlide',
+	1pic = '1pic',
+	2pic = '2pic',
+	4pic = '4pic',
+	1picTitle = '1picTitle',
+	2picTitle = '2picTitle',
+	4picTitle = '4picTitle',
+}
 
-export type ST_PhotoAlbumFrameShape = string;
+export enum ST_PhotoAlbumFrameShape {
+	frameStyle1 = 'frameStyle1',
+	frameStyle2 = 'frameStyle2',
+	frameStyle3 = 'frameStyle3',
+	frameStyle4 = 'frameStyle4',
+	frameStyle5 = 'frameStyle5',
+	frameStyle6 = 'frameStyle6',
+	frameStyle7 = 'frameStyle7',
+}
 
 export class CT_PhotoAlbum {
 	BwAttr: boolean | null;
@@ -722,7 +901,24 @@ export class CT_PhotoAlbum {
 
 export type ST_SlideSizeCoordinate = number;
 
-export type ST_SlideSizeType = string;
+export enum ST_SlideSizeType {
+	screen4x3 = 'screen4x3',
+	letter = 'letter',
+	A4 = 'A4',
+	35mm = '35mm',
+	overhead = 'overhead',
+	banner = 'banner',
+	custom = 'custom',
+	ledger = 'ledger',
+	A3 = 'A3',
+	B4ISO = 'B4ISO',
+	B5ISO = 'B5ISO',
+	B4JIS = 'B4JIS',
+	B5JIS = 'B5JIS',
+	hagakiCard = 'hagakiCard',
+	screen16x9 = 'screen16x9',
+	screen16x10 = 'screen16x10',
+}
 
 export class CT_SlideSize {
 	CxAttr: number;
@@ -786,9 +982,23 @@ export class CT_HtmlPublishProperties {
 	ExtLst: Array<CT_ExtensionList>;
 }
 
-export type ST_PrintWhat = string;
+export enum ST_PrintWhat {
+	slides = 'slides',
+	handouts1 = 'handouts1',
+	handouts2 = 'handouts2',
+	handouts3 = 'handouts3',
+	handouts4 = 'handouts4',
+	handouts6 = 'handouts6',
+	handouts9 = 'handouts9',
+	notes = 'notes',
+	outline = 'outline',
+}
 
-export type ST_PrintColorMode = string;
+export enum ST_PrintColorMode {
+	bw = 'bw',
+	gray = 'gray',
+	clr = 'clr',
+}
 
 export class CT_PrintProperties {
 	PrnWhatAttr: string | null;
@@ -841,9 +1051,30 @@ export class CT_HeaderFooter {
 	ExtLst: Array<CT_ExtensionListModify>;
 }
 
-export type ST_PlaceholderType = string;
+export enum ST_PlaceholderType {
+	title = 'title',
+	body = 'body',
+	ctrTitle = 'ctrTitle',
+	subTitle = 'subTitle',
+	dt = 'dt',
+	sldNum = 'sldNum',
+	ftr = 'ftr',
+	hdr = 'hdr',
+	obj = 'obj',
+	chart = 'chart',
+	tbl = 'tbl',
+	clipArt = 'clipArt',
+	dgm = 'dgm',
+	media = 'media',
+	sldImg = 'sldImg',
+	pic = 'pic',
+}
 
-export type ST_PlaceholderSize = string;
+export enum ST_PlaceholderSize {
+	full = 'full',
+	half = 'half',
+	quarter = 'quarter',
+}
 
 export class CT_Placeholder {
 	TypeAttr: string | null;
@@ -992,7 +1223,44 @@ export class CT_Slide {
 
 export type Sld = CT_Slide;
 
-export type ST_SlideLayoutType = string;
+export enum ST_SlideLayoutType {
+	title = 'title',
+	tx = 'tx',
+	twoColTx = 'twoColTx',
+	tbl = 'tbl',
+	txAndChart = 'txAndChart',
+	chartAndTx = 'chartAndTx',
+	dgm = 'dgm',
+	chart = 'chart',
+	txAndClipArt = 'txAndClipArt',
+	clipArtAndTx = 'clipArtAndTx',
+	titleOnly = 'titleOnly',
+	blank = 'blank',
+	txAndObj = 'txAndObj',
+	objAndTx = 'objAndTx',
+	objOnly = 'objOnly',
+	obj = 'obj',
+	txAndMedia = 'txAndMedia',
+	mediaAndTx = 'mediaAndTx',
+	objOverTx = 'objOverTx',
+	txOverObj = 'txOverObj',
+	txAndTwoObj = 'txAndTwoObj',
+	twoObjAndTx = 'twoObjAndTx',
+	twoObjOverTx = 'twoObjOverTx',
+	fourObj = 'fourObj',
+	vertTx = 'vertTx',
+	clipArtAndVertTx = 'clipArtAndVertTx',
+	vertTitleAndTx = 'vertTitleAndTx',
+	vertTitleAndTxOverChart = 'vertTitleAndTxOverChart',
+	twoObj = 'twoObj',
+	objAndTwoObj = 'objAndTwoObj',
+	twoObjAndObj = 'twoObjAndObj',
+	cust = 'cust',
+	secHead = 'secHead',
+	twoTxTwoObj = 'twoTxTwoObj',
+	objTx = 'objTx',
+	picTx = 'picTx',
+}
 
 export class CT_SlideLayout {
 	AG_ChildSlide: AG_ChildSlide;
@@ -1091,9 +1359,22 @@ export class CT_TagList {
 
 export type TagLst = CT_TagList;
 
-export type ST_SplitterBarState = string;
+export enum ST_SplitterBarState {
+	minimized = 'minimized',
+	restored = 'restored',
+	maximized = 'maximized',
+}
 
-export type ST_ViewType = string;
+export enum ST_ViewType {
+	sldView = 'sldView',
+	sldMasterView = 'sldMasterView',
+	notesView = 'notesView',
+	handoutView = 'handoutView',
+	notesMasterView = 'notesMasterView',
+	outlineView = 'outlineView',
+	sldSorterView = 'sldSorterView',
+	sldThumbnailView = 'sldThumbnailView',
+}
 
 export class CT_NormalViewPortion {
 	SzAttr: ST_PositiveFixedPercentage;

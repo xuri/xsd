@@ -51,37 +51,63 @@ export class CT_YAlign {
 	ValAttr: string;
 }
 
-export type ST_Shp = string;
+export enum ST_Shp {
+	centered = 'centered',
+	match = 'match',
+}
 
 export class CT_Shp {
 	ValAttr: string;
 }
 
-export type ST_FType = string;
+export enum ST_FType {
+	bar = 'bar',
+	skw = 'skw',
+	lin = 'lin',
+	noBar = 'noBar',
+}
 
 export class CT_FType {
 	ValAttr: string;
 }
 
-export type ST_LimLoc = string;
+export enum ST_LimLoc {
+	undOvr = 'undOvr',
+	subSup = 'subSup',
+}
 
 export class CT_LimLoc {
 	ValAttr: string;
 }
 
-export type ST_TopBot = string;
+export enum ST_TopBot {
+	top = 'top',
+	bot = 'bot',
+}
 
 export class CT_TopBot {
 	ValAttr: string;
 }
 
-export type ST_Script = string;
+export enum ST_Script {
+	roman = 'roman',
+	script = 'script',
+	fraktur = 'fraktur',
+	double-struck = 'double-struck',
+	sans-serif = 'sans-serif',
+	monospace = 'monospace',
+}
 
 export class CT_Script {
 	ValAttr: string | null;
 }
 
-export type ST_Style = string;
+export enum ST_Style {
+	p = 'p',
+	b = 'b',
+	i = 'i',
+	bi = 'bi',
+}
 
 export class CT_Style {
 	ValAttr: string | null;
@@ -407,7 +433,12 @@ export class CT_OMathArg {
 	CtrlPr: Array<CT_CtrlPr>;
 }
 
-export type ST_Jc = string;
+export enum ST_Jc {
+	left = 'left',
+	right = 'right',
+	center = 'center',
+	centerGroup = 'centerGroup',
+}
 
 export class CT_OMathJc {
 	ValAttr: string | null;
@@ -421,13 +452,21 @@ export class CT_TwipsMeasure {
 	ValAttr: ST_TwipsMeasure;
 }
 
-export type ST_BreakBin = string;
+export enum ST_BreakBin {
+	before = 'before',
+	after = 'after',
+	repeat = 'repeat',
+}
 
 export class CT_BreakBin {
 	ValAttr: string | null;
 }
 
-export type ST_BreakBinSub = string;
+export enum ST_BreakBinSub {
+	-- = '--',
+	-+ = '-+',
+	+- = '+-',
+}
 
 export class CT_BreakBinSub {
 	ValAttr: string | null;

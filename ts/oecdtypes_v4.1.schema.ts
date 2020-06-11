@@ -5,6 +5,21 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-export type OECDNameType_EnumType = string;
+export enum OECDNameType_EnumType {
+	OECD201 = 'OECD201',
+	OECD202 = 'OECD202',
+	OECD203 = 'OECD203',
+	OECD204 = 'OECD204',
+	OECD205 = 'OECD205',
+	OECD206 = 'OECD206',
+	OECD207 = 'OECD207',
+	OECD208 = 'OECD208',
+}
 
-export type OECDLegalAddressType_EnumType = string;
+export enum OECDLegalAddressType_EnumType {
+	OECD301 = 'OECD301',
+	OECD302 = 'OECD302',
+	OECD303 = 'OECD303',
+	OECD304 = 'OECD304',
+	OECD305 = 'OECD305',
+}

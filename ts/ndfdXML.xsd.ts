@@ -5,13 +5,30 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-export type SectorType = string;
+export enum SectorType {
+	conus = 'conus',
+	nhemi = 'nhemi',
+	alaska = 'alaska',
+	guam = 'guam',
+	hawaii = 'hawaii',
+	puertori = 'puertori',
+	npacocn = 'npacocn',
+}
 
-export type UnitType = string;
+export enum UnitType {
+	e = 'e',
+	m = 'm',
+}
 
-export type FormatType = string;
+export enum FormatType {
+	24 hourly = '24 hourly',
+	12 hourly = '12 hourly',
+}
 
-export type ProductType = string;
+export enum ProductType {
+	time-series = 'time-series',
+	glance = 'glance',
+}
 
 export type LatLonPairType = string;
 
@@ -21,13 +38,35 @@ export type ZipCodeType = string;
 
 export type ZipCodeListType = string;
 
-export type FeatureTypeType = string;
+export enum FeatureTypeType {
+	Forecast_Gml2Point = 'Forecast_Gml2Point',
+	Forecast_Gml2AllWx = 'Forecast_Gml2AllWx',
+	Forecast_GmlsfPoint = 'Forecast_GmlsfPoint',
+	Forecast_GmlObs = 'Forecast_GmlObs',
+	NdfdMultiPointCoverage = 'NdfdMultiPointCoverage',
+	Ndfd_KmlPoint = 'Ndfd_KmlPoint',
+}
 
-export type CompTypeType = string;
+export enum CompTypeType {
+	IsEqual = 'IsEqual',
+	Between = 'Between',
+	GreaterThan = 'GreaterThan',
+	GreaterThanEqualTo = 'GreaterThanEqualTo',
+	LessThan = 'LessThan',
+	LessThanEqualTo = 'LessThanEqualTo',
+}
 
 export type ListCityNamesType = string;
 
-export type DisplayLevelType = number;
+export enum DisplayLevelType {
+	Enum1 = 1,
+	Enum2 = 2,
+	Enum3 = 3,
+	Enum4 = 4,
+	Enum12 = 12,
+	Enum34 = 34,
+	Enum1234 = 1234,
+}
 
 export class WeatherParametersType {
 	Maxt: Array<boolean>;

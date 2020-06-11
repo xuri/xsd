@@ -6,8 +6,8 @@
 // found in the LICENSE file.
 
 export class DateSimpleType {
-	Date: string;
 	DateTime: string;
+	Date: string;
 }
 
 export class OccurrenceSimpleType {
@@ -21,21 +21,83 @@ export type MediumStringSimpleType = string;
 
 export type LongStringSimpleType = string;
 
-export type ChoiceEnum = string;
+export enum ChoiceEnum {
+	all = 'all',
+	none = 'none',
+	first = 'first',
+	last = 'last',
+}
 
-export type PropertyTypeEnum = string;
+export enum PropertyTypeEnum {
+	string = 'string',
+	number = 'number',
+	token = 'token',
+	boolean = 'boolean',
+	text = 'text',
+	date = 'date',
+	url = 'url',
+}
 
-export type SetTypeEnum = string;
+export enum SetTypeEnum {
+	bag = 'bag',
+	seq = 'seq',
+	grp = 'grp',
+	alt = 'alt',
+	res = 'res',
+}
 
-export type StatusEnum = string;
+export enum StatusEnum {
+	proposed = 'proposed',
+	withdrawn = 'withdrawn',
+	cancelled = 'cancelled',
+	pending = 'pending',
+	operational = 'operational',
+	suspended = 'suspended',
+	renumbered = 'renumbered',
+	repealed = 'repealed',
+	expired = 'expired',
+	terminated = 'terminated',
+	hadItsEffect = 'hadItsEffect',
+	omitted = 'omitted',
+	notAdopted = 'notAdopted',
+	transferred = 'transferred',
+	redesignated = 'redesignated',
+	reserved = 'reserved',
+	vacant = 'vacant',
+	crossReference = 'crossReference',
+	unknown = 'unknown',
+}
 
-export type ActionTypeEnum = string;
+export enum ActionTypeEnum {
+	enact = 'enact',
+	add = 'add',
+	amend = 'amend',
+	substitute = 'substitute',
+	renumber = 'renumber',
+	repeal = 'repeal',
+	insert = 'insert',
+	delete = 'delete',
+}
 
-export type PositionEnum = string;
+export enum PositionEnum {
+	start = 'start',
+	before = 'before',
+	inside = 'inside',
+	after = 'after',
+	end = 'end',
+}
 
-export type OrientationEnum = string;
+export enum OrientationEnum {
+	portrait = 'portrait',
+	landscape = 'landscape',
+}
 
-export type NoteTypeEnum = string;
+export enum NoteTypeEnum {
+	inline = 'inline',
+	footnote = 'footnote',
+	endnote = 'endnote',
+	uscNote = 'uscNote',
+}
 
 export class IdentificationGroup {
 	IdAttr: string | null;

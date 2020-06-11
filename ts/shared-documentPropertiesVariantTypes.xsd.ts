@@ -5,9 +5,48 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-export type ST_VectorBaseType = string;
+export enum ST_VectorBaseType {
+	variant = 'variant',
+	i1 = 'i1',
+	i2 = 'i2',
+	i4 = 'i4',
+	i8 = 'i8',
+	ui1 = 'ui1',
+	ui2 = 'ui2',
+	ui4 = 'ui4',
+	ui8 = 'ui8',
+	r4 = 'r4',
+	r8 = 'r8',
+	lpstr = 'lpstr',
+	lpwstr = 'lpwstr',
+	bstr = 'bstr',
+	date = 'date',
+	filetime = 'filetime',
+	bool = 'bool',
+	cy = 'cy',
+	error = 'error',
+	clsid = 'clsid',
+}
 
-export type ST_ArrayBaseType = string;
+export enum ST_ArrayBaseType {
+	variant = 'variant',
+	i1 = 'i1',
+	i2 = 'i2',
+	i4 = 'i4',
+	int = 'int',
+	ui1 = 'ui1',
+	ui2 = 'ui2',
+	ui4 = 'ui4',
+	uint = 'uint',
+	r4 = 'r4',
+	r8 = 'r8',
+	decimal = 'decimal',
+	bstr = 'bstr',
+	date = 'date',
+	bool = 'bool',
+	cy = 'cy',
+	error = 'error',
+}
 
 export type ST_Cy = string;
 

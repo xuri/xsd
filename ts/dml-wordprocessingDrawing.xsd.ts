@@ -26,7 +26,12 @@ export class CT_Inline {
 	AGraphic: Array<CT_GraphicalObject>;
 }
 
-export type ST_WrapText = string;
+export enum ST_WrapText {
+	bothSides = 'bothSides',
+	left = 'left',
+	right = 'right',
+	largest = 'largest',
+}
 
 export class CT_WrapPath {
 	EditedAttr: boolean | null;
@@ -76,9 +81,24 @@ export class EG_WrapType {
 
 export type ST_PositionOffset = number;
 
-export type ST_AlignH = string;
+export enum ST_AlignH {
+	left = 'left',
+	right = 'right',
+	center = 'center',
+	inside = 'inside',
+	outside = 'outside',
+}
 
-export type ST_RelFromH = string;
+export enum ST_RelFromH {
+	margin = 'margin',
+	page = 'page',
+	column = 'column',
+	character = 'character',
+	leftMargin = 'leftMargin',
+	rightMargin = 'rightMargin',
+	insideMargin = 'insideMargin',
+	outsideMargin = 'outsideMargin',
+}
 
 export class CT_PosH {
 	RelativeFromAttr: string;
@@ -86,9 +106,24 @@ export class CT_PosH {
 	PosOffset: Array<number>;
 }
 
-export type ST_AlignV = string;
+export enum ST_AlignV {
+	top = 'top',
+	bottom = 'bottom',
+	center = 'center',
+	inside = 'inside',
+	outside = 'outside',
+}
 
-export type ST_RelFromV = string;
+export enum ST_RelFromV {
+	margin = 'margin',
+	page = 'page',
+	paragraph = 'paragraph',
+	line = 'line',
+	topMargin = 'topMargin',
+	bottomMargin = 'bottomMargin',
+	insideMargin = 'insideMargin',
+	outsideMargin = 'outsideMargin',
+}
 
 export class CT_PosV {
 	RelativeFromAttr: string;

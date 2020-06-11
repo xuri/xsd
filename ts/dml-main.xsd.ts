@@ -45,9 +45,26 @@ export type VideoFile = CT_VideoFile;
 
 export type ST_StyleMatrixColumnIndex = number;
 
-export type ST_FontCollectionIndex = string;
+export enum ST_FontCollectionIndex {
+	major = 'major',
+	minor = 'minor',
+	none = 'none',
+}
 
-export type ST_ColorSchemeIndex = string;
+export enum ST_ColorSchemeIndex {
+	dk1 = 'dk1',
+	lt1 = 'lt1',
+	dk2 = 'dk2',
+	lt2 = 'lt2',
+	accent1 = 'accent1',
+	accent2 = 'accent2',
+	accent3 = 'accent3',
+	accent4 = 'accent4',
+	accent5 = 'accent5',
+	accent6 = 'accent6',
+	hlink = 'hlink',
+	folHlink = 'folHlink',
+}
 
 export class CT_ColorScheme {
 	NameAttr: string;
@@ -280,7 +297,38 @@ export class CT_HslColor {
 	EG_ColorTransform: Array<EG_ColorTransform>;
 }
 
-export type ST_SystemColorVal = string;
+export enum ST_SystemColorVal {
+	scrollBar = 'scrollBar',
+	background = 'background',
+	activeCaption = 'activeCaption',
+	inactiveCaption = 'inactiveCaption',
+	menu = 'menu',
+	window = 'window',
+	windowFrame = 'windowFrame',
+	menuText = 'menuText',
+	windowText = 'windowText',
+	captionText = 'captionText',
+	activeBorder = 'activeBorder',
+	inactiveBorder = 'inactiveBorder',
+	appWorkspace = 'appWorkspace',
+	highlight = 'highlight',
+	highlightText = 'highlightText',
+	btnFace = 'btnFace',
+	btnShadow = 'btnShadow',
+	grayText = 'grayText',
+	btnText = 'btnText',
+	inactiveCaptionText = 'inactiveCaptionText',
+	btnHighlight = 'btnHighlight',
+	3dDkShadow = '3dDkShadow',
+	3dLight = '3dLight',
+	infoText = 'infoText',
+	infoBk = 'infoBk',
+	hotLight = 'hotLight',
+	gradientActiveCaption = 'gradientActiveCaption',
+	gradientInactiveCaption = 'gradientInactiveCaption',
+	menuHighlight = 'menuHighlight',
+	menuBar = 'menuBar',
+}
 
 export class CT_SystemColor {
 	ValAttr: string;
@@ -288,14 +336,223 @@ export class CT_SystemColor {
 	EG_ColorTransform: Array<EG_ColorTransform>;
 }
 
-export type ST_SchemeColorVal = string;
+export enum ST_SchemeColorVal {
+	bg1 = 'bg1',
+	tx1 = 'tx1',
+	bg2 = 'bg2',
+	tx2 = 'tx2',
+	accent1 = 'accent1',
+	accent2 = 'accent2',
+	accent3 = 'accent3',
+	accent4 = 'accent4',
+	accent5 = 'accent5',
+	accent6 = 'accent6',
+	hlink = 'hlink',
+	folHlink = 'folHlink',
+	phClr = 'phClr',
+	dk1 = 'dk1',
+	lt1 = 'lt1',
+	dk2 = 'dk2',
+	lt2 = 'lt2',
+}
 
 export class CT_SchemeColor {
 	ValAttr: string;
 	EG_ColorTransform: Array<EG_ColorTransform>;
 }
 
-export type ST_PresetColorVal = string;
+export enum ST_PresetColorVal {
+	aliceBlue = 'aliceBlue',
+	antiqueWhite = 'antiqueWhite',
+	aqua = 'aqua',
+	aquamarine = 'aquamarine',
+	azure = 'azure',
+	beige = 'beige',
+	bisque = 'bisque',
+	black = 'black',
+	blanchedAlmond = 'blanchedAlmond',
+	blue = 'blue',
+	blueViolet = 'blueViolet',
+	brown = 'brown',
+	burlyWood = 'burlyWood',
+	cadetBlue = 'cadetBlue',
+	chartreuse = 'chartreuse',
+	chocolate = 'chocolate',
+	coral = 'coral',
+	cornflowerBlue = 'cornflowerBlue',
+	cornsilk = 'cornsilk',
+	crimson = 'crimson',
+	cyan = 'cyan',
+	darkBlue = 'darkBlue',
+	darkCyan = 'darkCyan',
+	darkGoldenrod = 'darkGoldenrod',
+	darkGray = 'darkGray',
+	darkGrey = 'darkGrey',
+	darkGreen = 'darkGreen',
+	darkKhaki = 'darkKhaki',
+	darkMagenta = 'darkMagenta',
+	darkOliveGreen = 'darkOliveGreen',
+	darkOrange = 'darkOrange',
+	darkOrchid = 'darkOrchid',
+	darkRed = 'darkRed',
+	darkSalmon = 'darkSalmon',
+	darkSeaGreen = 'darkSeaGreen',
+	darkSlateBlue = 'darkSlateBlue',
+	darkSlateGray = 'darkSlateGray',
+	darkSlateGrey = 'darkSlateGrey',
+	darkTurquoise = 'darkTurquoise',
+	darkViolet = 'darkViolet',
+	dkBlue = 'dkBlue',
+	dkCyan = 'dkCyan',
+	dkGoldenrod = 'dkGoldenrod',
+	dkGray = 'dkGray',
+	dkGrey = 'dkGrey',
+	dkGreen = 'dkGreen',
+	dkKhaki = 'dkKhaki',
+	dkMagenta = 'dkMagenta',
+	dkOliveGreen = 'dkOliveGreen',
+	dkOrange = 'dkOrange',
+	dkOrchid = 'dkOrchid',
+	dkRed = 'dkRed',
+	dkSalmon = 'dkSalmon',
+	dkSeaGreen = 'dkSeaGreen',
+	dkSlateBlue = 'dkSlateBlue',
+	dkSlateGray = 'dkSlateGray',
+	dkSlateGrey = 'dkSlateGrey',
+	dkTurquoise = 'dkTurquoise',
+	dkViolet = 'dkViolet',
+	deepPink = 'deepPink',
+	deepSkyBlue = 'deepSkyBlue',
+	dimGray = 'dimGray',
+	dimGrey = 'dimGrey',
+	dodgerBlue = 'dodgerBlue',
+	firebrick = 'firebrick',
+	floralWhite = 'floralWhite',
+	forestGreen = 'forestGreen',
+	fuchsia = 'fuchsia',
+	gainsboro = 'gainsboro',
+	ghostWhite = 'ghostWhite',
+	gold = 'gold',
+	goldenrod = 'goldenrod',
+	gray = 'gray',
+	grey = 'grey',
+	green = 'green',
+	greenYellow = 'greenYellow',
+	honeydew = 'honeydew',
+	hotPink = 'hotPink',
+	indianRed = 'indianRed',
+	indigo = 'indigo',
+	ivory = 'ivory',
+	khaki = 'khaki',
+	lavender = 'lavender',
+	lavenderBlush = 'lavenderBlush',
+	lawnGreen = 'lawnGreen',
+	lemonChiffon = 'lemonChiffon',
+	lightBlue = 'lightBlue',
+	lightCoral = 'lightCoral',
+	lightCyan = 'lightCyan',
+	lightGoldenrodYellow = 'lightGoldenrodYellow',
+	lightGray = 'lightGray',
+	lightGrey = 'lightGrey',
+	lightGreen = 'lightGreen',
+	lightPink = 'lightPink',
+	lightSalmon = 'lightSalmon',
+	lightSeaGreen = 'lightSeaGreen',
+	lightSkyBlue = 'lightSkyBlue',
+	lightSlateGray = 'lightSlateGray',
+	lightSlateGrey = 'lightSlateGrey',
+	lightSteelBlue = 'lightSteelBlue',
+	lightYellow = 'lightYellow',
+	ltBlue = 'ltBlue',
+	ltCoral = 'ltCoral',
+	ltCyan = 'ltCyan',
+	ltGoldenrodYellow = 'ltGoldenrodYellow',
+	ltGray = 'ltGray',
+	ltGrey = 'ltGrey',
+	ltGreen = 'ltGreen',
+	ltPink = 'ltPink',
+	ltSalmon = 'ltSalmon',
+	ltSeaGreen = 'ltSeaGreen',
+	ltSkyBlue = 'ltSkyBlue',
+	ltSlateGray = 'ltSlateGray',
+	ltSlateGrey = 'ltSlateGrey',
+	ltSteelBlue = 'ltSteelBlue',
+	ltYellow = 'ltYellow',
+	lime = 'lime',
+	limeGreen = 'limeGreen',
+	linen = 'linen',
+	magenta = 'magenta',
+	maroon = 'maroon',
+	medAquamarine = 'medAquamarine',
+	medBlue = 'medBlue',
+	medOrchid = 'medOrchid',
+	medPurple = 'medPurple',
+	medSeaGreen = 'medSeaGreen',
+	medSlateBlue = 'medSlateBlue',
+	medSpringGreen = 'medSpringGreen',
+	medTurquoise = 'medTurquoise',
+	medVioletRed = 'medVioletRed',
+	mediumAquamarine = 'mediumAquamarine',
+	mediumBlue = 'mediumBlue',
+	mediumOrchid = 'mediumOrchid',
+	mediumPurple = 'mediumPurple',
+	mediumSeaGreen = 'mediumSeaGreen',
+	mediumSlateBlue = 'mediumSlateBlue',
+	mediumSpringGreen = 'mediumSpringGreen',
+	mediumTurquoise = 'mediumTurquoise',
+	mediumVioletRed = 'mediumVioletRed',
+	midnightBlue = 'midnightBlue',
+	mintCream = 'mintCream',
+	mistyRose = 'mistyRose',
+	moccasin = 'moccasin',
+	navajoWhite = 'navajoWhite',
+	navy = 'navy',
+	oldLace = 'oldLace',
+	olive = 'olive',
+	oliveDrab = 'oliveDrab',
+	orange = 'orange',
+	orangeRed = 'orangeRed',
+	orchid = 'orchid',
+	paleGoldenrod = 'paleGoldenrod',
+	paleGreen = 'paleGreen',
+	paleTurquoise = 'paleTurquoise',
+	paleVioletRed = 'paleVioletRed',
+	papayaWhip = 'papayaWhip',
+	peachPuff = 'peachPuff',
+	peru = 'peru',
+	pink = 'pink',
+	plum = 'plum',
+	powderBlue = 'powderBlue',
+	purple = 'purple',
+	red = 'red',
+	rosyBrown = 'rosyBrown',
+	royalBlue = 'royalBlue',
+	saddleBrown = 'saddleBrown',
+	salmon = 'salmon',
+	sandyBrown = 'sandyBrown',
+	seaGreen = 'seaGreen',
+	seaShell = 'seaShell',
+	sienna = 'sienna',
+	silver = 'silver',
+	skyBlue = 'skyBlue',
+	slateBlue = 'slateBlue',
+	slateGray = 'slateGray',
+	slateGrey = 'slateGrey',
+	snow = 'snow',
+	springGreen = 'springGreen',
+	steelBlue = 'steelBlue',
+	tan = 'tan',
+	teal = 'teal',
+	thistle = 'thistle',
+	tomato = 'tomato',
+	turquoise = 'turquoise',
+	violet = 'violet',
+	wheat = 'wheat',
+	white = 'white',
+	whiteSmoke = 'whiteSmoke',
+	yellow = 'yellow',
+	yellowGreen = 'yellowGreen',
+}
 
 export class CT_PresetColor {
 	ValAttr: string;
@@ -358,7 +615,17 @@ export class CT_RelativeRect {
 	BAttr: ST_Percentage | null;
 }
 
-export type ST_RectAlignment = string;
+export enum ST_RectAlignment {
+	tl = 'tl',
+	t = 't',
+	tr = 'tr',
+	l = 'l',
+	ctr = 'ctr',
+	r = 'r',
+	bl = 'bl',
+	b = 'b',
+	br = 'br',
+}
 
 export class EG_ColorChoice {
 	ScrgbClr: Array<CT_ScRgbColor>;
@@ -377,7 +644,19 @@ export class CT_ColorMRU {
 	EG_ColorChoice: Array<EG_ColorChoice>;
 }
 
-export type ST_BlackWhiteMode = string;
+export enum ST_BlackWhiteMode {
+	clr = 'clr',
+	auto = 'auto',
+	gray = 'gray',
+	ltGray = 'ltGray',
+	invGray = 'invGray',
+	grayWhite = 'grayWhite',
+	blackGray = 'blackGray',
+	blackWhite = 'blackWhite',
+	black = 'black',
+	white = 'white',
+	hidden = 'hidden',
+}
 
 export class AG_Blob {
 	REmbedAttr: string | null;
@@ -516,9 +795,19 @@ export class CT_GraphicalObject {
 
 export type Graphic = CT_GraphicalObject;
 
-export type ST_ChartBuildStep = string;
+export enum ST_ChartBuildStep {
+	category = 'category',
+	ptInCategory = 'ptInCategory',
+	series = 'series',
+	ptInSeries = 'ptInSeries',
+	allPts = 'allPts',
+	gridLegend = 'gridLegend',
+}
 
-export type ST_DgmBuildStep = string;
+export enum ST_DgmBuildStep {
+	sp = 'sp',
+	bg = 'bg',
+}
 
 export class CT_AnimationDgmElement {
 	IdAttr: string | null;
@@ -536,9 +825,15 @@ export class CT_AnimationElementChoice {
 	Chart: Array<CT_AnimationChartElement>;
 }
 
-export type ST_AnimationBuildType = string;
+export enum ST_AnimationBuildType {
+	allAtOnce = 'allAtOnce',
+}
 
-export type ST_AnimationDgmOnlyBuildType = string;
+export enum ST_AnimationDgmOnlyBuildType {
+	one = 'one',
+	lvlOne = 'lvlOne',
+	lvlAtOnce = 'lvlAtOnce',
+}
 
 export class ST_AnimationDgmBuildType {
 	ST_AnimationBuildType: string;
@@ -550,11 +845,16 @@ export class CT_AnimationDgmBuildProperties {
 	RevAttr: boolean | null;
 }
 
-export type ST_AnimationChartOnlyBuildType = string;
+export enum ST_AnimationChartOnlyBuildType {
+	series = 'series',
+	category = 'category',
+	seriesEl = 'seriesEl',
+	categoryEl = 'categoryEl',
+}
 
 export class ST_AnimationChartBuildType {
-	ST_AnimationChartOnlyBuildType: string;
 	ST_AnimationBuildType: string;
+	ST_AnimationChartOnlyBuildType: string;
 }
 
 export class CT_AnimationChartBuildProperties {
@@ -654,7 +954,70 @@ export class CT_GvmlGroupShape {
 	ExtLst: Array<CT_OfficeArtExtensionList>;
 }
 
-export type ST_PresetCameraType = string;
+export enum ST_PresetCameraType {
+	legacyObliqueTopLeft = 'legacyObliqueTopLeft',
+	legacyObliqueTop = 'legacyObliqueTop',
+	legacyObliqueTopRight = 'legacyObliqueTopRight',
+	legacyObliqueLeft = 'legacyObliqueLeft',
+	legacyObliqueFront = 'legacyObliqueFront',
+	legacyObliqueRight = 'legacyObliqueRight',
+	legacyObliqueBottomLeft = 'legacyObliqueBottomLeft',
+	legacyObliqueBottom = 'legacyObliqueBottom',
+	legacyObliqueBottomRight = 'legacyObliqueBottomRight',
+	legacyPerspectiveTopLeft = 'legacyPerspectiveTopLeft',
+	legacyPerspectiveTop = 'legacyPerspectiveTop',
+	legacyPerspectiveTopRight = 'legacyPerspectiveTopRight',
+	legacyPerspectiveLeft = 'legacyPerspectiveLeft',
+	legacyPerspectiveFront = 'legacyPerspectiveFront',
+	legacyPerspectiveRight = 'legacyPerspectiveRight',
+	legacyPerspectiveBottomLeft = 'legacyPerspectiveBottomLeft',
+	legacyPerspectiveBottom = 'legacyPerspectiveBottom',
+	legacyPerspectiveBottomRight = 'legacyPerspectiveBottomRight',
+	orthographicFront = 'orthographicFront',
+	isometricTopUp = 'isometricTopUp',
+	isometricTopDown = 'isometricTopDown',
+	isometricBottomUp = 'isometricBottomUp',
+	isometricBottomDown = 'isometricBottomDown',
+	isometricLeftUp = 'isometricLeftUp',
+	isometricLeftDown = 'isometricLeftDown',
+	isometricRightUp = 'isometricRightUp',
+	isometricRightDown = 'isometricRightDown',
+	isometricOffAxis1Left = 'isometricOffAxis1Left',
+	isometricOffAxis1Right = 'isometricOffAxis1Right',
+	isometricOffAxis1Top = 'isometricOffAxis1Top',
+	isometricOffAxis2Left = 'isometricOffAxis2Left',
+	isometricOffAxis2Right = 'isometricOffAxis2Right',
+	isometricOffAxis2Top = 'isometricOffAxis2Top',
+	isometricOffAxis3Left = 'isometricOffAxis3Left',
+	isometricOffAxis3Right = 'isometricOffAxis3Right',
+	isometricOffAxis3Bottom = 'isometricOffAxis3Bottom',
+	isometricOffAxis4Left = 'isometricOffAxis4Left',
+	isometricOffAxis4Right = 'isometricOffAxis4Right',
+	isometricOffAxis4Bottom = 'isometricOffAxis4Bottom',
+	obliqueTopLeft = 'obliqueTopLeft',
+	obliqueTop = 'obliqueTop',
+	obliqueTopRight = 'obliqueTopRight',
+	obliqueLeft = 'obliqueLeft',
+	obliqueRight = 'obliqueRight',
+	obliqueBottomLeft = 'obliqueBottomLeft',
+	obliqueBottom = 'obliqueBottom',
+	obliqueBottomRight = 'obliqueBottomRight',
+	perspectiveFront = 'perspectiveFront',
+	perspectiveLeft = 'perspectiveLeft',
+	perspectiveRight = 'perspectiveRight',
+	perspectiveAbove = 'perspectiveAbove',
+	perspectiveBelow = 'perspectiveBelow',
+	perspectiveAboveLeftFacing = 'perspectiveAboveLeftFacing',
+	perspectiveAboveRightFacing = 'perspectiveAboveRightFacing',
+	perspectiveContrastingLeftFacing = 'perspectiveContrastingLeftFacing',
+	perspectiveContrastingRightFacing = 'perspectiveContrastingRightFacing',
+	perspectiveHeroicLeftFacing = 'perspectiveHeroicLeftFacing',
+	perspectiveHeroicRightFacing = 'perspectiveHeroicRightFacing',
+	perspectiveHeroicExtremeLeftFacing = 'perspectiveHeroicExtremeLeftFacing',
+	perspectiveHeroicExtremeRightFacing = 'perspectiveHeroicExtremeRightFacing',
+	perspectiveRelaxed = 'perspectiveRelaxed',
+	perspectiveRelaxedModerately = 'perspectiveRelaxedModerately',
+}
 
 export type ST_FOVAngle = number;
 
@@ -665,9 +1028,46 @@ export class CT_Camera {
 	Rot: Array<CT_SphereCoords>;
 }
 
-export type ST_LightRigDirection = string;
+export enum ST_LightRigDirection {
+	tl = 'tl',
+	t = 't',
+	tr = 'tr',
+	l = 'l',
+	r = 'r',
+	bl = 'bl',
+	b = 'b',
+	br = 'br',
+}
 
-export type ST_LightRigType = string;
+export enum ST_LightRigType {
+	legacyFlat1 = 'legacyFlat1',
+	legacyFlat2 = 'legacyFlat2',
+	legacyFlat3 = 'legacyFlat3',
+	legacyFlat4 = 'legacyFlat4',
+	legacyNormal1 = 'legacyNormal1',
+	legacyNormal2 = 'legacyNormal2',
+	legacyNormal3 = 'legacyNormal3',
+	legacyNormal4 = 'legacyNormal4',
+	legacyHarsh1 = 'legacyHarsh1',
+	legacyHarsh2 = 'legacyHarsh2',
+	legacyHarsh3 = 'legacyHarsh3',
+	legacyHarsh4 = 'legacyHarsh4',
+	threePt = 'threePt',
+	balanced = 'balanced',
+	soft = 'soft',
+	harsh = 'harsh',
+	flood = 'flood',
+	contrasting = 'contrasting',
+	morning = 'morning',
+	sunrise = 'sunrise',
+	sunset = 'sunset',
+	chilly = 'chilly',
+	freezing = 'freezing',
+	flat = 'flat',
+	twoPt = 'twoPt',
+	glow = 'glow',
+	brightRoom = 'brightRoom',
+}
 
 export class CT_LightRig {
 	RigAttr: string;
@@ -689,7 +1089,20 @@ export class CT_Backdrop {
 	ExtLst: Array<CT_OfficeArtExtensionList>;
 }
 
-export type ST_BevelPresetType = string;
+export enum ST_BevelPresetType {
+	relaxedInset = 'relaxedInset',
+	circle = 'circle',
+	slope = 'slope',
+	cross = 'cross',
+	angle = 'angle',
+	softRound = 'softRound',
+	convex = 'convex',
+	coolSlant = 'coolSlant',
+	divot = 'divot',
+	riblet = 'riblet',
+	hardEdge = 'hardEdge',
+	artDeco = 'artDeco',
+}
 
 export class CT_Bevel {
 	WAttr: number | null;
@@ -697,7 +1110,23 @@ export class CT_Bevel {
 	PrstAttr: string | null;
 }
 
-export type ST_PresetMaterialType = string;
+export enum ST_PresetMaterialType {
+	legacyMatte = 'legacyMatte',
+	legacyPlastic = 'legacyPlastic',
+	legacyMetal = 'legacyMetal',
+	legacyWireframe = 'legacyWireframe',
+	matte = 'matte',
+	plastic = 'plastic',
+	metal = 'metal',
+	warmMatte = 'warmMatte',
+	translucentPowder = 'translucentPowder',
+	powder = 'powder',
+	dkEdge = 'dkEdge',
+	softEdge = 'softEdge',
+	clear = 'clear',
+	flat = 'flat',
+	softmetal = 'softmetal',
+}
 
 export class CT_Shape3D {
 	ZAttr: ST_Coordinate | null;
@@ -808,7 +1237,28 @@ export class CT_OuterShadowEffect {
 	EG_ColorChoice: Array<EG_ColorChoice>;
 }
 
-export type ST_PresetShadowVal = string;
+export enum ST_PresetShadowVal {
+	shdw1 = 'shdw1',
+	shdw2 = 'shdw2',
+	shdw3 = 'shdw3',
+	shdw4 = 'shdw4',
+	shdw5 = 'shdw5',
+	shdw6 = 'shdw6',
+	shdw7 = 'shdw7',
+	shdw8 = 'shdw8',
+	shdw9 = 'shdw9',
+	shdw10 = 'shdw10',
+	shdw11 = 'shdw11',
+	shdw12 = 'shdw12',
+	shdw13 = 'shdw13',
+	shdw14 = 'shdw14',
+	shdw15 = 'shdw15',
+	shdw16 = 'shdw16',
+	shdw17 = 'shdw17',
+	shdw18 = 'shdw18',
+	shdw19 = 'shdw19',
+	shdw20 = 'shdw20',
+}
 
 export class CT_PresetShadowEffect {
 	PrstAttr: string;
@@ -869,7 +1319,11 @@ export class CT_LinearShadeProperties {
 	ScaledAttr: boolean | null;
 }
 
-export type ST_PathShadeType = string;
+export enum ST_PathShadeType {
+	shape = 'shape',
+	circle = 'circle',
+	rect = 'rect',
+}
 
 export class CT_PathShadeProperties {
 	PathAttr: string | null;
@@ -881,7 +1335,12 @@ export class EG_ShadeProperties {
 	Path: Array<CT_PathShadeProperties>;
 }
 
-export type ST_TileFlipMode = string;
+export enum ST_TileFlipMode {
+	none = 'none',
+	x = 'x',
+	y = 'y',
+	xy = 'xy',
+}
 
 export class CT_GradientStop {
 	PosAttr: ST_PositiveFixedPercentage;
@@ -918,7 +1377,13 @@ export class EG_FillModeProperties {
 	Stretch: Array<CT_StretchInfoProperties>;
 }
 
-export type ST_BlipCompression = string;
+export enum ST_BlipCompression {
+	email = 'email',
+	screen = 'screen',
+	print = 'print',
+	hqprint = 'hqprint',
+	none = 'none',
+}
 
 export class CT_Blip {
 	AG_Blob: AG_Blob;
@@ -951,7 +1416,62 @@ export class CT_BlipFillProperties {
 	SrcRect: Array<CT_RelativeRect>;
 }
 
-export type ST_PresetPatternVal = string;
+export enum ST_PresetPatternVal {
+	pct5 = 'pct5',
+	pct10 = 'pct10',
+	pct20 = 'pct20',
+	pct25 = 'pct25',
+	pct30 = 'pct30',
+	pct40 = 'pct40',
+	pct50 = 'pct50',
+	pct60 = 'pct60',
+	pct70 = 'pct70',
+	pct75 = 'pct75',
+	pct80 = 'pct80',
+	pct90 = 'pct90',
+	horz = 'horz',
+	vert = 'vert',
+	ltHorz = 'ltHorz',
+	ltVert = 'ltVert',
+	dkHorz = 'dkHorz',
+	dkVert = 'dkVert',
+	narHorz = 'narHorz',
+	narVert = 'narVert',
+	dashHorz = 'dashHorz',
+	dashVert = 'dashVert',
+	cross = 'cross',
+	dnDiag = 'dnDiag',
+	upDiag = 'upDiag',
+	ltDnDiag = 'ltDnDiag',
+	ltUpDiag = 'ltUpDiag',
+	dkDnDiag = 'dkDnDiag',
+	dkUpDiag = 'dkUpDiag',
+	wdDnDiag = 'wdDnDiag',
+	wdUpDiag = 'wdUpDiag',
+	dashDnDiag = 'dashDnDiag',
+	dashUpDiag = 'dashUpDiag',
+	diagCross = 'diagCross',
+	smCheck = 'smCheck',
+	lgCheck = 'lgCheck',
+	smGrid = 'smGrid',
+	lgGrid = 'lgGrid',
+	dotGrid = 'dotGrid',
+	smConfetti = 'smConfetti',
+	lgConfetti = 'lgConfetti',
+	horzBrick = 'horzBrick',
+	diagBrick = 'diagBrick',
+	solidDmnd = 'solidDmnd',
+	openDmnd = 'openDmnd',
+	dotDmnd = 'dotDmnd',
+	plaid = 'plaid',
+	sphere = 'sphere',
+	weave = 'weave',
+	divot = 'divot',
+	shingle = 'shingle',
+	wave = 'wave',
+	trellis = 'trellis',
+	zigZag = 'zigZag',
+}
 
 export class CT_PatternFillProperties {
 	PrstAttr: string | null;
@@ -979,7 +1499,13 @@ export class CT_FillEffect {
 	EG_FillProperties: Array<EG_FillProperties>;
 }
 
-export type ST_BlendMode = string;
+export enum ST_BlendMode {
+	over = 'over',
+	mult = 'mult',
+	screen = 'screen',
+	darken = 'darken',
+	lighten = 'lighten',
+}
 
 export class CT_FillOverlayEffect {
 	BlendAttr: string;
@@ -1023,7 +1549,10 @@ export class EG_Effect {
 	Xfrm: Array<CT_TransformEffect>;
 }
 
-export type ST_EffectContainerType = string;
+export enum ST_EffectContainerType {
+	sib = 'sib',
+	tree = 'tree',
+}
 
 export class CT_EffectContainer {
 	TypeAttr: string | null;
@@ -1062,9 +1591,239 @@ export class CT_EffectProperties {
 
 export type Blip = CT_Blip;
 
-export type ST_ShapeType = string;
+export enum ST_ShapeType {
+	line = 'line',
+	lineInv = 'lineInv',
+	triangle = 'triangle',
+	rtTriangle = 'rtTriangle',
+	rect = 'rect',
+	diamond = 'diamond',
+	parallelogram = 'parallelogram',
+	trapezoid = 'trapezoid',
+	nonIsoscelesTrapezoid = 'nonIsoscelesTrapezoid',
+	pentagon = 'pentagon',
+	hexagon = 'hexagon',
+	heptagon = 'heptagon',
+	octagon = 'octagon',
+	decagon = 'decagon',
+	dodecagon = 'dodecagon',
+	star4 = 'star4',
+	star5 = 'star5',
+	star6 = 'star6',
+	star7 = 'star7',
+	star8 = 'star8',
+	star10 = 'star10',
+	star12 = 'star12',
+	star16 = 'star16',
+	star24 = 'star24',
+	star32 = 'star32',
+	roundRect = 'roundRect',
+	round1Rect = 'round1Rect',
+	round2SameRect = 'round2SameRect',
+	round2DiagRect = 'round2DiagRect',
+	snipRoundRect = 'snipRoundRect',
+	snip1Rect = 'snip1Rect',
+	snip2SameRect = 'snip2SameRect',
+	snip2DiagRect = 'snip2DiagRect',
+	plaque = 'plaque',
+	ellipse = 'ellipse',
+	teardrop = 'teardrop',
+	homePlate = 'homePlate',
+	chevron = 'chevron',
+	pieWedge = 'pieWedge',
+	pie = 'pie',
+	blockArc = 'blockArc',
+	donut = 'donut',
+	noSmoking = 'noSmoking',
+	rightArrow = 'rightArrow',
+	leftArrow = 'leftArrow',
+	upArrow = 'upArrow',
+	downArrow = 'downArrow',
+	stripedRightArrow = 'stripedRightArrow',
+	notchedRightArrow = 'notchedRightArrow',
+	bentUpArrow = 'bentUpArrow',
+	leftRightArrow = 'leftRightArrow',
+	upDownArrow = 'upDownArrow',
+	leftUpArrow = 'leftUpArrow',
+	leftRightUpArrow = 'leftRightUpArrow',
+	quadArrow = 'quadArrow',
+	leftArrowCallout = 'leftArrowCallout',
+	rightArrowCallout = 'rightArrowCallout',
+	upArrowCallout = 'upArrowCallout',
+	downArrowCallout = 'downArrowCallout',
+	leftRightArrowCallout = 'leftRightArrowCallout',
+	upDownArrowCallout = 'upDownArrowCallout',
+	quadArrowCallout = 'quadArrowCallout',
+	bentArrow = 'bentArrow',
+	uturnArrow = 'uturnArrow',
+	circularArrow = 'circularArrow',
+	leftCircularArrow = 'leftCircularArrow',
+	leftRightCircularArrow = 'leftRightCircularArrow',
+	curvedRightArrow = 'curvedRightArrow',
+	curvedLeftArrow = 'curvedLeftArrow',
+	curvedUpArrow = 'curvedUpArrow',
+	curvedDownArrow = 'curvedDownArrow',
+	swooshArrow = 'swooshArrow',
+	cube = 'cube',
+	can = 'can',
+	lightningBolt = 'lightningBolt',
+	heart = 'heart',
+	sun = 'sun',
+	moon = 'moon',
+	smileyFace = 'smileyFace',
+	irregularSeal1 = 'irregularSeal1',
+	irregularSeal2 = 'irregularSeal2',
+	foldedCorner = 'foldedCorner',
+	bevel = 'bevel',
+	frame = 'frame',
+	halfFrame = 'halfFrame',
+	corner = 'corner',
+	diagStripe = 'diagStripe',
+	chord = 'chord',
+	arc = 'arc',
+	leftBracket = 'leftBracket',
+	rightBracket = 'rightBracket',
+	leftBrace = 'leftBrace',
+	rightBrace = 'rightBrace',
+	bracketPair = 'bracketPair',
+	bracePair = 'bracePair',
+	straightConnector1 = 'straightConnector1',
+	bentConnector2 = 'bentConnector2',
+	bentConnector3 = 'bentConnector3',
+	bentConnector4 = 'bentConnector4',
+	bentConnector5 = 'bentConnector5',
+	curvedConnector2 = 'curvedConnector2',
+	curvedConnector3 = 'curvedConnector3',
+	curvedConnector4 = 'curvedConnector4',
+	curvedConnector5 = 'curvedConnector5',
+	callout1 = 'callout1',
+	callout2 = 'callout2',
+	callout3 = 'callout3',
+	accentCallout1 = 'accentCallout1',
+	accentCallout2 = 'accentCallout2',
+	accentCallout3 = 'accentCallout3',
+	borderCallout1 = 'borderCallout1',
+	borderCallout2 = 'borderCallout2',
+	borderCallout3 = 'borderCallout3',
+	accentBorderCallout1 = 'accentBorderCallout1',
+	accentBorderCallout2 = 'accentBorderCallout2',
+	accentBorderCallout3 = 'accentBorderCallout3',
+	wedgeRectCallout = 'wedgeRectCallout',
+	wedgeRoundRectCallout = 'wedgeRoundRectCallout',
+	wedgeEllipseCallout = 'wedgeEllipseCallout',
+	cloudCallout = 'cloudCallout',
+	cloud = 'cloud',
+	ribbon = 'ribbon',
+	ribbon2 = 'ribbon2',
+	ellipseRibbon = 'ellipseRibbon',
+	ellipseRibbon2 = 'ellipseRibbon2',
+	leftRightRibbon = 'leftRightRibbon',
+	verticalScroll = 'verticalScroll',
+	horizontalScroll = 'horizontalScroll',
+	wave = 'wave',
+	doubleWave = 'doubleWave',
+	plus = 'plus',
+	flowChartProcess = 'flowChartProcess',
+	flowChartDecision = 'flowChartDecision',
+	flowChartInputOutput = 'flowChartInputOutput',
+	flowChartPredefinedProcess = 'flowChartPredefinedProcess',
+	flowChartInternalStorage = 'flowChartInternalStorage',
+	flowChartDocument = 'flowChartDocument',
+	flowChartMultidocument = 'flowChartMultidocument',
+	flowChartTerminator = 'flowChartTerminator',
+	flowChartPreparation = 'flowChartPreparation',
+	flowChartManualInput = 'flowChartManualInput',
+	flowChartManualOperation = 'flowChartManualOperation',
+	flowChartConnector = 'flowChartConnector',
+	flowChartPunchedCard = 'flowChartPunchedCard',
+	flowChartPunchedTape = 'flowChartPunchedTape',
+	flowChartSummingJunction = 'flowChartSummingJunction',
+	flowChartOr = 'flowChartOr',
+	flowChartCollate = 'flowChartCollate',
+	flowChartSort = 'flowChartSort',
+	flowChartExtract = 'flowChartExtract',
+	flowChartMerge = 'flowChartMerge',
+	flowChartOfflineStorage = 'flowChartOfflineStorage',
+	flowChartOnlineStorage = 'flowChartOnlineStorage',
+	flowChartMagneticTape = 'flowChartMagneticTape',
+	flowChartMagneticDisk = 'flowChartMagneticDisk',
+	flowChartMagneticDrum = 'flowChartMagneticDrum',
+	flowChartDisplay = 'flowChartDisplay',
+	flowChartDelay = 'flowChartDelay',
+	flowChartAlternateProcess = 'flowChartAlternateProcess',
+	flowChartOffpageConnector = 'flowChartOffpageConnector',
+	actionButtonBlank = 'actionButtonBlank',
+	actionButtonHome = 'actionButtonHome',
+	actionButtonHelp = 'actionButtonHelp',
+	actionButtonInformation = 'actionButtonInformation',
+	actionButtonForwardNext = 'actionButtonForwardNext',
+	actionButtonBackPrevious = 'actionButtonBackPrevious',
+	actionButtonEnd = 'actionButtonEnd',
+	actionButtonBeginning = 'actionButtonBeginning',
+	actionButtonReturn = 'actionButtonReturn',
+	actionButtonDocument = 'actionButtonDocument',
+	actionButtonSound = 'actionButtonSound',
+	actionButtonMovie = 'actionButtonMovie',
+	gear6 = 'gear6',
+	gear9 = 'gear9',
+	funnel = 'funnel',
+	mathPlus = 'mathPlus',
+	mathMinus = 'mathMinus',
+	mathMultiply = 'mathMultiply',
+	mathDivide = 'mathDivide',
+	mathEqual = 'mathEqual',
+	mathNotEqual = 'mathNotEqual',
+	cornerTabs = 'cornerTabs',
+	squareTabs = 'squareTabs',
+	plaqueTabs = 'plaqueTabs',
+	chartX = 'chartX',
+	chartStar = 'chartStar',
+	chartPlus = 'chartPlus',
+}
 
-export type ST_TextShapeType = string;
+export enum ST_TextShapeType {
+	textNoShape = 'textNoShape',
+	textPlain = 'textPlain',
+	textStop = 'textStop',
+	textTriangle = 'textTriangle',
+	textTriangleInverted = 'textTriangleInverted',
+	textChevron = 'textChevron',
+	textChevronInverted = 'textChevronInverted',
+	textRingInside = 'textRingInside',
+	textRingOutside = 'textRingOutside',
+	textArchUp = 'textArchUp',
+	textArchDown = 'textArchDown',
+	textCircle = 'textCircle',
+	textButton = 'textButton',
+	textArchUpPour = 'textArchUpPour',
+	textArchDownPour = 'textArchDownPour',
+	textCirclePour = 'textCirclePour',
+	textButtonPour = 'textButtonPour',
+	textCurveUp = 'textCurveUp',
+	textCurveDown = 'textCurveDown',
+	textCanUp = 'textCanUp',
+	textCanDown = 'textCanDown',
+	textWave1 = 'textWave1',
+	textWave2 = 'textWave2',
+	textDoubleWave1 = 'textDoubleWave1',
+	textWave4 = 'textWave4',
+	textInflate = 'textInflate',
+	textDeflate = 'textDeflate',
+	textInflateBottom = 'textInflateBottom',
+	textDeflateBottom = 'textDeflateBottom',
+	textInflateTop = 'textInflateTop',
+	textDeflateTop = 'textDeflateTop',
+	textDeflateInflate = 'textDeflateInflate',
+	textDeflateInflateDeflate = 'textDeflateInflateDeflate',
+	textFadeRight = 'textFadeRight',
+	textFadeLeft = 'textFadeLeft',
+	textFadeUp = 'textFadeUp',
+	textFadeDown = 'textFadeDown',
+	textSlantUp = 'textSlantUp',
+	textSlantDown = 'textSlantDown',
+	textCascadeUp = 'textCascadeUp',
+	textCascadeDown = 'textCascadeDown',
+}
 
 export type ST_GeomGuideName = string;
 
@@ -1085,8 +1844,8 @@ export class ST_AdjCoordinate {
 }
 
 export class ST_AdjAngle {
-	ST_GeomGuideName: string;
 	ST_Angle: number;
+	ST_GeomGuideName: string;
 }
 
 export class CT_AdjPoint2D {
@@ -1166,7 +1925,14 @@ export class CT_Path2DCubicBezierTo {
 export class CT_Path2DClose {
 }
 
-export type ST_PathFillMode = string;
+export enum ST_PathFillMode {
+	none = 'none',
+	norm = 'norm',
+	lighten = 'lighten',
+	lightenLess = 'lightenLess',
+	darken = 'darken',
+	darkenLess = 'darkenLess',
+}
 
 export class CT_Path2D {
 	WAttr: number | null;
@@ -1215,11 +1981,26 @@ export class EG_TextGeometry {
 	PrstTxWarp: Array<CT_PresetTextShape>;
 }
 
-export type ST_LineEndType = string;
+export enum ST_LineEndType {
+	none = 'none',
+	triangle = 'triangle',
+	stealth = 'stealth',
+	diamond = 'diamond',
+	oval = 'oval',
+	arrow = 'arrow',
+}
 
-export type ST_LineEndWidth = string;
+export enum ST_LineEndWidth {
+	sm = 'sm',
+	med = 'med',
+	lg = 'lg',
+}
 
-export type ST_LineEndLength = string;
+export enum ST_LineEndLength {
+	sm = 'sm',
+	med = 'med',
+	lg = 'lg',
+}
 
 export class CT_LineEndProperties {
 	TypeAttr: string | null;
@@ -1250,7 +2031,19 @@ export class EG_LineJoinProperties {
 	Miter: Array<CT_LineJoinMiterProperties>;
 }
 
-export type ST_PresetLineDashVal = string;
+export enum ST_PresetLineDashVal {
+	solid = 'solid',
+	dot = 'dot',
+	dash = 'dash',
+	lgDash = 'lgDash',
+	dashDot = 'dashDot',
+	lgDashDot = 'lgDashDot',
+	lgDashDotDot = 'lgDashDotDot',
+	sysDash = 'sysDash',
+	sysDot = 'sysDot',
+	sysDashDot = 'sysDashDot',
+	sysDashDotDot = 'sysDashDotDot',
+}
 
 export class CT_PresetLineDashProperties {
 	ValAttr: string | null;
@@ -1270,13 +2063,26 @@ export class EG_LineDashProperties {
 	CustDash: Array<CT_DashStopList>;
 }
 
-export type ST_LineCap = string;
+export enum ST_LineCap {
+	rnd = 'rnd',
+	sq = 'sq',
+	flat = 'flat',
+}
 
 export type ST_LineWidth = number;
 
-export type ST_PenAlignment = string;
+export enum ST_PenAlignment {
+	ctr = 'ctr',
+	in = 'in',
+}
 
-export type ST_CompoundLine = string;
+export enum ST_CompoundLine {
+	sng = 'sng',
+	dbl = 'dbl',
+	thickThin = 'thickThin',
+	thinThick = 'thinThick',
+	tri = 'tri',
+}
 
 export class CT_LineProperties {
 	WAttr: number | null;
@@ -1506,7 +2312,11 @@ export class EG_ThemeableFontStyles {
 	FontRef: Array<CT_FontReference>;
 }
 
-export type ST_OnOffStyleType = string;
+export enum ST_OnOffStyleType {
+	on = 'on',
+	off = 'off',
+	def = 'def',
+}
 
 export class CT_TableStyleTextStyle {
 	BAttr: string | null;
@@ -1577,15 +2387,39 @@ export class CT_TextParagraph {
 	EndParaRPr: Array<CT_TextCharacterProperties>;
 }
 
-export type ST_TextAnchoringType = string;
+export enum ST_TextAnchoringType {
+	t = 't',
+	ctr = 'ctr',
+	b = 'b',
+	just = 'just',
+	dist = 'dist',
+}
 
-export type ST_TextVertOverflowType = string;
+export enum ST_TextVertOverflowType {
+	overflow = 'overflow',
+	ellipsis = 'ellipsis',
+	clip = 'clip',
+}
 
-export type ST_TextHorzOverflowType = string;
+export enum ST_TextHorzOverflowType {
+	overflow = 'overflow',
+	clip = 'clip',
+}
 
-export type ST_TextVerticalType = string;
+export enum ST_TextVerticalType {
+	horz = 'horz',
+	vert = 'vert',
+	vert270 = 'vert270',
+	wordArtVert = 'wordArtVert',
+	eaVert = 'eaVert',
+	mongolianVert = 'mongolianVert',
+	wordArtVertRtl = 'wordArtVertRtl',
+}
 
-export type ST_TextWrappingType = string;
+export enum ST_TextWrappingType {
+	none = 'none',
+	square = 'square',
+}
 
 export type ST_TextColumnCount = number;
 
@@ -1659,7 +2493,49 @@ export class CT_TextBody {
 
 export type ST_TextBulletStartAtNum = number;
 
-export type ST_TextAutonumberScheme = string;
+export enum ST_TextAutonumberScheme {
+	alphaLcParenBoth = 'alphaLcParenBoth',
+	alphaUcParenBoth = 'alphaUcParenBoth',
+	alphaLcParenR = 'alphaLcParenR',
+	alphaUcParenR = 'alphaUcParenR',
+	alphaLcPeriod = 'alphaLcPeriod',
+	alphaUcPeriod = 'alphaUcPeriod',
+	arabicParenBoth = 'arabicParenBoth',
+	arabicParenR = 'arabicParenR',
+	arabicPeriod = 'arabicPeriod',
+	arabicPlain = 'arabicPlain',
+	romanLcParenBoth = 'romanLcParenBoth',
+	romanUcParenBoth = 'romanUcParenBoth',
+	romanLcParenR = 'romanLcParenR',
+	romanUcParenR = 'romanUcParenR',
+	romanLcPeriod = 'romanLcPeriod',
+	romanUcPeriod = 'romanUcPeriod',
+	circleNumDbPlain = 'circleNumDbPlain',
+	circleNumWdBlackPlain = 'circleNumWdBlackPlain',
+	circleNumWdWhitePlain = 'circleNumWdWhitePlain',
+	arabicDbPeriod = 'arabicDbPeriod',
+	arabicDbPlain = 'arabicDbPlain',
+	ea1ChsPeriod = 'ea1ChsPeriod',
+	ea1ChsPlain = 'ea1ChsPlain',
+	ea1ChtPeriod = 'ea1ChtPeriod',
+	ea1ChtPlain = 'ea1ChtPlain',
+	ea1JpnChsDbPeriod = 'ea1JpnChsDbPeriod',
+	ea1JpnKorPlain = 'ea1JpnKorPlain',
+	ea1JpnKorPeriod = 'ea1JpnKorPeriod',
+	arabic1Minus = 'arabic1Minus',
+	arabic2Minus = 'arabic2Minus',
+	hebrew2Minus = 'hebrew2Minus',
+	thaiAlphaPeriod = 'thaiAlphaPeriod',
+	thaiAlphaParenR = 'thaiAlphaParenR',
+	thaiAlphaParenBoth = 'thaiAlphaParenBoth',
+	thaiNumPeriod = 'thaiNumPeriod',
+	thaiNumParenR = 'thaiNumParenR',
+	thaiNumParenBoth = 'thaiNumParenBoth',
+	hindiAlphaPeriod = 'hindiAlphaPeriod',
+	hindiNumPeriod = 'hindiNumPeriod',
+	hindiNumParenR = 'hindiNumParenR',
+	hindiAlpha1Period = 'hindiAlpha1Period',
+}
 
 export class CT_TextBulletColorFollowText {
 }
@@ -1724,8 +2600,8 @@ export class EG_TextBullet {
 }
 
 export class ST_TextPoint {
-	ST_UniversalMeasure: string;
 	ST_TextPointUnqualified: ST_TextPointUnqualified;
+	ST_UniversalMeasure: string;
 }
 
 export type ST_TextPointUnqualified = number;
@@ -1736,7 +2612,26 @@ export type ST_TextFontSize = number;
 
 export type ST_TextTypeface = string;
 
-export type ST_PitchFamily = any;
+export enum ST_PitchFamily {
+	Enum00 = '00',
+	Enum01 = '01',
+	Enum02 = '02',
+	Enum16 = '16',
+	Enum17 = '17',
+	Enum18 = '18',
+	Enum32 = '32',
+	Enum33 = '33',
+	Enum34 = '34',
+	Enum48 = '48',
+	Enum49 = '49',
+	Enum50 = '50',
+	Enum64 = '64',
+	Enum65 = '65',
+	Enum66 = '66',
+	Enum80 = '80',
+	Enum81 = '81',
+	Enum82 = '82',
+}
 
 export class CT_TextFont {
 	TypefaceAttr: string;
@@ -1745,7 +2640,26 @@ export class CT_TextFont {
 	CharsetAttr: any | null;
 }
 
-export type ST_TextUnderlineType = string;
+export enum ST_TextUnderlineType {
+	none = 'none',
+	words = 'words',
+	sng = 'sng',
+	dbl = 'dbl',
+	heavy = 'heavy',
+	dotted = 'dotted',
+	dottedHeavy = 'dottedHeavy',
+	dash = 'dash',
+	dashHeavy = 'dashHeavy',
+	dashLong = 'dashLong',
+	dashLongHeavy = 'dashLongHeavy',
+	dotDash = 'dotDash',
+	dotDashHeavy = 'dotDashHeavy',
+	dotDotDash = 'dotDotDash',
+	dotDotDashHeavy = 'dotDotDashHeavy',
+	wavy = 'wavy',
+	wavyHeavy = 'wavyHeavy',
+	wavyDbl = 'wavyDbl',
+}
 
 export class CT_TextUnderlineLineFollowText {
 }
@@ -1767,9 +2681,17 @@ export class EG_TextUnderlineFill {
 	UFill: CT_TextUnderlineFillGroupWrapper;
 }
 
-export type ST_TextStrikeType = string;
+export enum ST_TextStrikeType {
+	noStrike = 'noStrike',
+	sngStrike = 'sngStrike',
+	dblStrike = 'dblStrike',
+}
 
-export type ST_TextCapsType = string;
+export enum ST_TextCapsType {
+	none = 'none',
+	small = 'small',
+	all = 'all',
+}
 
 export class CT_TextCharacterProperties {
 	KumimojiAttr: boolean | null;
@@ -1829,7 +2751,12 @@ export type ST_TextMargin = number;
 
 export type ST_TextIndent = number;
 
-export type ST_TextTabAlignType = string;
+export enum ST_TextTabAlignType {
+	l = 'l',
+	ctr = 'ctr',
+	r = 'r',
+	dec = 'dec',
+}
 
 export class CT_TextTabStop {
 	PosAttr: ST_Coordinate32 | null;
@@ -1849,9 +2776,23 @@ export class CT_TextSpacing {
 	SpcPts: Array<CT_TextSpacingPoint>;
 }
 
-export type ST_TextAlignType = string;
+export enum ST_TextAlignType {
+	l = 'l',
+	ctr = 'ctr',
+	r = 'r',
+	just = 'just',
+	justLow = 'justLow',
+	dist = 'dist',
+	thaiDist = 'thaiDist',
+}
 
-export type ST_TextFontAlignType = string;
+export enum ST_TextFontAlignType {
+	auto = 'auto',
+	t = 't',
+	ctr = 'ctr',
+	base = 'base',
+	b = 'b',
+}
 
 export type ST_TextIndentLevelType = number;
 

@@ -16,6 +16,12 @@ export class CT_Characteristic {
 	VocabularyAttr: string | null;
 }
 
-export type ST_Relation = string;
+export enum ST_Relation {
+	ge = 'ge',
+	le = 'le',
+	gt = 'gt',
+	lt = 'lt',
+	eq = 'eq',
+}
 
 export type AdditionalCharacteristics = CT_AdditionalCharacteristics;

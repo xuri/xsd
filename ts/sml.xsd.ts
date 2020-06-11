@@ -63,7 +63,14 @@ export class CT_IconFilter {
 	IconIdAttr: number | null;
 }
 
-export type ST_FilterOperator = string;
+export enum ST_FilterOperator {
+	equal = 'equal',
+	lessThan = 'lessThan',
+	lessThanOrEqual = 'lessThanOrEqual',
+	notEqual = 'notEqual',
+	greaterThanOrEqual = 'greaterThanOrEqual',
+	greaterThan = 'greaterThan',
+}
 
 export class CT_DynamicFilter {
 	TypeAttr: string;
@@ -72,9 +79,63 @@ export class CT_DynamicFilter {
 	MaxValIsoAttr: string | null;
 }
 
-export type ST_DynamicFilterType = string;
+export enum ST_DynamicFilterType {
+	null = 'null',
+	aboveAverage = 'aboveAverage',
+	belowAverage = 'belowAverage',
+	tomorrow = 'tomorrow',
+	today = 'today',
+	yesterday = 'yesterday',
+	nextWeek = 'nextWeek',
+	thisWeek = 'thisWeek',
+	lastWeek = 'lastWeek',
+	nextMonth = 'nextMonth',
+	thisMonth = 'thisMonth',
+	lastMonth = 'lastMonth',
+	nextQuarter = 'nextQuarter',
+	thisQuarter = 'thisQuarter',
+	lastQuarter = 'lastQuarter',
+	nextYear = 'nextYear',
+	thisYear = 'thisYear',
+	lastYear = 'lastYear',
+	yearToDate = 'yearToDate',
+	Q1 = 'Q1',
+	Q2 = 'Q2',
+	Q3 = 'Q3',
+	Q4 = 'Q4',
+	M1 = 'M1',
+	M2 = 'M2',
+	M3 = 'M3',
+	M4 = 'M4',
+	M5 = 'M5',
+	M6 = 'M6',
+	M7 = 'M7',
+	M8 = 'M8',
+	M9 = 'M9',
+	M10 = 'M10',
+	M11 = 'M11',
+	M12 = 'M12',
+}
 
-export type ST_IconSetType = string;
+export enum ST_IconSetType {
+	3Arrows = '3Arrows',
+	3ArrowsGray = '3ArrowsGray',
+	3Flags = '3Flags',
+	3TrafficLights1 = '3TrafficLights1',
+	3TrafficLights2 = '3TrafficLights2',
+	3Signs = '3Signs',
+	3Symbols = '3Symbols',
+	3Symbols2 = '3Symbols2',
+	4Arrows = '4Arrows',
+	4ArrowsGray = '4ArrowsGray',
+	4RedToBlack = '4RedToBlack',
+	4Rating = '4Rating',
+	4TrafficLights = '4TrafficLights',
+	5Arrows = '5Arrows',
+	5ArrowsGray = '5ArrowsGray',
+	5Rating = '5Rating',
+	5Quarters = '5Quarters',
+}
 
 export class CT_SortState {
 	ColumnSortAttr: boolean | null;
@@ -95,9 +156,18 @@ export class CT_SortCondition {
 	IconIdAttr: number | null;
 }
 
-export type ST_SortBy = string;
+export enum ST_SortBy {
+	value = 'value',
+	cellColor = 'cellColor',
+	fontColor = 'fontColor',
+	icon = 'icon',
+}
 
-export type ST_SortMethod = string;
+export enum ST_SortMethod {
+	stroke = 'stroke',
+	pinYin = 'pinYin',
+	none = 'none',
+}
 
 export class CT_DateGroupItem {
 	YearAttr: number;
@@ -109,7 +179,14 @@ export class CT_DateGroupItem {
 	DateTimeGroupingAttr: string;
 }
 
-export type ST_DateTimeGrouping = string;
+export enum ST_DateTimeGrouping {
+	year = 'year',
+	month = 'month',
+	day = 'day',
+	hour = 'hour',
+	minute = 'minute',
+	second = 'second',
+}
 
 export type ST_CellRef = string;
 
@@ -203,9 +280,21 @@ export class CT_CommentPr {
 	Anchor: Array<CT_ObjectAnchor>;
 }
 
-export type ST_TextHAlign = string;
+export enum ST_TextHAlign {
+	left = 'left',
+	center = 'center',
+	right = 'right',
+	justify = 'justify',
+	distributed = 'distributed',
+}
 
-export type ST_TextVAlign = string;
+export enum ST_TextVAlign {
+	top = 'top',
+	center = 'center',
+	bottom = 'bottom',
+	justify = 'justify',
+	distributed = 'distributed',
+}
 
 export type MapInfo = CT_MapInfo;
 
@@ -278,7 +367,12 @@ export class CT_Connection {
 	ExtLst: Array<CT_ExtensionList>;
 }
 
-export type ST_CredMethod = string;
+export enum ST_CredMethod {
+	integrated = 'integrated',
+	none = 'none',
+	stored = 'stored',
+	prompt = 'prompt',
+}
 
 export class CT_DbPr {
 	ConnectionAttr: string;
@@ -316,7 +410,11 @@ export class CT_WebPr {
 	Tables: Array<CT_Tables>;
 }
 
-export type ST_HtmlFmt = string;
+export enum ST_HtmlFmt {
+	none = 'none',
+	rtf = 'rtf',
+	all = 'all',
+}
 
 export class CT_Parameters {
 	CountAttr: number | null;
@@ -336,7 +434,11 @@ export class CT_Parameter {
 	CellAttr: string | null;
 }
 
-export type ST_ParameterType = string;
+export enum ST_ParameterType {
+	prompt = 'prompt',
+	value = 'value',
+	cell = 'cell',
+}
 
 export class CT_Tables {
 	CountAttr: number | null;
@@ -367,9 +469,19 @@ export class CT_TextPr {
 	TextFields: Array<CT_TextFields>;
 }
 
-export type ST_FileType = string;
+export enum ST_FileType {
+	mac = 'mac',
+	win = 'win',
+	dos = 'dos',
+	lin = 'lin',
+	other = 'other',
+}
 
-export type ST_Qualifier = string;
+export enum ST_Qualifier {
+	doubleQuote = 'doubleQuote',
+	singleQuote = 'singleQuote',
+	none = 'none',
+}
 
 export class CT_TextFields {
 	CountAttr: number | null;
@@ -381,7 +493,18 @@ export class CT_TextField {
 	PositionAttr: number | null;
 }
 
-export type ST_ExternalConnectionType = string;
+export enum ST_ExternalConnectionType {
+	general = 'general',
+	text = 'text',
+	MDY = 'MDY',
+	DMY = 'DMY',
+	YMD = 'YMD',
+	MYD = 'MYD',
+	DYM = 'DYM',
+	YDM = 'YDM',
+	skip = 'skip',
+	EMD = 'EMD',
+}
 
 export type PivotCacheDefinition = CT_PivotCacheDefinition;
 
@@ -454,7 +577,12 @@ export class CT_CacheSource {
 	ExtLst: Array<CT_ExtensionList>;
 }
 
-export type ST_SourceType = string;
+export enum ST_SourceType {
+	worksheet = 'worksheet',
+	external = 'external',
+	consolidation = 'consolidation',
+	scenario = 'scenario',
+}
 
 export class CT_WorksheetSource {
 	RefAttr: string | null;
@@ -626,7 +754,16 @@ export class CT_RangePr {
 	GroupIntervalAttr: number | null;
 }
 
-export type ST_GroupBy = string;
+export enum ST_GroupBy {
+	range = 'range',
+	seconds = 'seconds',
+	minutes = 'minutes',
+	hours = 'hours',
+	days = 'days',
+	months = 'months',
+	quarters = 'quarters',
+	years = 'years',
+}
 
 export class CT_DiscretePr {
 	CountAttr: number | null;
@@ -810,7 +947,15 @@ export class CT_Set {
 	SortByTuple: Array<CT_Tuples>;
 }
 
-export type ST_SortType = string;
+export enum ST_SortType {
+	none = 'none',
+	ascending = 'ascending',
+	descending = 'descending',
+	ascendingAlpha = 'ascendingAlpha',
+	descendingAlpha = 'descendingAlpha',
+	ascendingNatural = 'ascendingNatural',
+	descendingNatural = 'descendingNatural',
+}
 
 export class CT_QueryCache {
 	CountAttr: number | null;
@@ -1118,9 +1263,18 @@ export class CT_PivotAreas {
 	PivotArea: Array<CT_PivotArea>;
 }
 
-export type ST_Scope = string;
+export enum ST_Scope {
+	selection = 'selection',
+	data = 'data',
+	field = 'field',
+}
 
-export type ST_Type = string;
+export enum ST_Type {
+	none = 'none',
+	all = 'all',
+	row = 'row',
+	column = 'column',
+}
 
 export class CT_ChartFormats {
 	CountAttr: number | null;
@@ -1259,15 +1413,117 @@ export class CT_PivotFilter {
 	ExtLst: Array<CT_ExtensionList>;
 }
 
-export type ST_ShowDataAs = string;
+export enum ST_ShowDataAs {
+	normal = 'normal',
+	difference = 'difference',
+	percent = 'percent',
+	percentDiff = 'percentDiff',
+	runTotal = 'runTotal',
+	percentOfRow = 'percentOfRow',
+	percentOfCol = 'percentOfCol',
+	percentOfTotal = 'percentOfTotal',
+	index = 'index',
+}
 
-export type ST_ItemType = string;
+export enum ST_ItemType {
+	data = 'data',
+	default = 'default',
+	sum = 'sum',
+	countA = 'countA',
+	avg = 'avg',
+	max = 'max',
+	min = 'min',
+	product = 'product',
+	count = 'count',
+	stdDev = 'stdDev',
+	stdDevP = 'stdDevP',
+	var = 'var',
+	varP = 'varP',
+	grand = 'grand',
+	blank = 'blank',
+}
 
-export type ST_FormatAction = string;
+export enum ST_FormatAction {
+	blank = 'blank',
+	formatting = 'formatting',
+	drill = 'drill',
+	formula = 'formula',
+}
 
-export type ST_FieldSortType = string;
+export enum ST_FieldSortType {
+	manual = 'manual',
+	ascending = 'ascending',
+	descending = 'descending',
+}
 
-export type ST_PivotFilterType = string;
+export enum ST_PivotFilterType {
+	unknown = 'unknown',
+	count = 'count',
+	percent = 'percent',
+	sum = 'sum',
+	captionEqual = 'captionEqual',
+	captionNotEqual = 'captionNotEqual',
+	captionBeginsWith = 'captionBeginsWith',
+	captionNotBeginsWith = 'captionNotBeginsWith',
+	captionEndsWith = 'captionEndsWith',
+	captionNotEndsWith = 'captionNotEndsWith',
+	captionContains = 'captionContains',
+	captionNotContains = 'captionNotContains',
+	captionGreaterThan = 'captionGreaterThan',
+	captionGreaterThanOrEqual = 'captionGreaterThanOrEqual',
+	captionLessThan = 'captionLessThan',
+	captionLessThanOrEqual = 'captionLessThanOrEqual',
+	captionBetween = 'captionBetween',
+	captionNotBetween = 'captionNotBetween',
+	valueEqual = 'valueEqual',
+	valueNotEqual = 'valueNotEqual',
+	valueGreaterThan = 'valueGreaterThan',
+	valueGreaterThanOrEqual = 'valueGreaterThanOrEqual',
+	valueLessThan = 'valueLessThan',
+	valueLessThanOrEqual = 'valueLessThanOrEqual',
+	valueBetween = 'valueBetween',
+	valueNotBetween = 'valueNotBetween',
+	dateEqual = 'dateEqual',
+	dateNotEqual = 'dateNotEqual',
+	dateOlderThan = 'dateOlderThan',
+	dateOlderThanOrEqual = 'dateOlderThanOrEqual',
+	dateNewerThan = 'dateNewerThan',
+	dateNewerThanOrEqual = 'dateNewerThanOrEqual',
+	dateBetween = 'dateBetween',
+	dateNotBetween = 'dateNotBetween',
+	tomorrow = 'tomorrow',
+	today = 'today',
+	yesterday = 'yesterday',
+	nextWeek = 'nextWeek',
+	thisWeek = 'thisWeek',
+	lastWeek = 'lastWeek',
+	nextMonth = 'nextMonth',
+	thisMonth = 'thisMonth',
+	lastMonth = 'lastMonth',
+	nextQuarter = 'nextQuarter',
+	thisQuarter = 'thisQuarter',
+	lastQuarter = 'lastQuarter',
+	nextYear = 'nextYear',
+	thisYear = 'thisYear',
+	lastYear = 'lastYear',
+	yearToDate = 'yearToDate',
+	Q1 = 'Q1',
+	Q2 = 'Q2',
+	Q3 = 'Q3',
+	Q4 = 'Q4',
+	M1 = 'M1',
+	M2 = 'M2',
+	M3 = 'M3',
+	M4 = 'M4',
+	M5 = 'M5',
+	M6 = 'M6',
+	M7 = 'M7',
+	M8 = 'M8',
+	M9 = 'M9',
+	M10 = 'M10',
+	M11 = 'M11',
+	M12 = 'M12',
+}
 
 export class CT_PivotArea {
 	FieldAttr: number | null;
@@ -1286,7 +1542,15 @@ export class CT_PivotArea {
 	ExtLst: Array<CT_ExtensionList>;
 }
 
-export type ST_PivotAreaType = string;
+export enum ST_PivotAreaType {
+	none = 'none',
+	normal = 'normal',
+	data = 'data',
+	all = 'all',
+	origin = 'origin',
+	button = 'button',
+	topEnd = 'topEnd',
+}
 
 export class CT_PivotAreaReferences {
 	CountAttr: number | null;
@@ -1319,7 +1583,12 @@ export class CT_Index {
 	VAttr: number;
 }
 
-export type ST_Axis = string;
+export enum ST_Axis {
+	axisRow = 'axisRow',
+	axisCol = 'axisCol',
+	axisPage = 'axisPage',
+	axisValues = 'axisValues',
+}
 
 export type QueryTable = CT_QueryTable;
 
@@ -1383,7 +1652,11 @@ export class CT_QueryTableField {
 	ExtLst: Array<CT_ExtensionList>;
 }
 
-export type ST_GrowShrinkType = string;
+export enum ST_GrowShrinkType {
+	insertDelete = 'insertDelete',
+	insertClear = 'insertClear',
+	overwriteClear = 'overwriteClear',
+}
 
 export type Sst = CT_Sst;
 
@@ -1394,9 +1667,19 @@ export class CT_Sst {
 	ExtLst: Array<CT_ExtensionList>;
 }
 
-export type ST_PhoneticType = string;
+export enum ST_PhoneticType {
+	halfwidthKatakana = 'halfwidthKatakana',
+	fullwidthKatakana = 'fullwidthKatakana',
+	Hiragana = 'Hiragana',
+	noConversion = 'noConversion',
+}
 
-export type ST_PhoneticAlignment = string;
+export enum ST_PhoneticAlignment {
+	noControl = 'noControl',
+	left = 'left',
+	center = 'center',
+	distributed = 'distributed',
+}
 
 export class CT_PhoneticRun {
 	SbAttr: number;
@@ -1659,11 +1942,25 @@ export class CT_RevisionQueryTableField {
 	FieldIdAttr: number;
 }
 
-export type ST_rwColActionType = string;
+export enum ST_rwColActionType {
+	insertRow = 'insertRow',
+	deleteRow = 'deleteRow',
+	insertCol = 'insertCol',
+	deleteCol = 'deleteCol',
+}
 
-export type ST_RevisionAction = string;
+export enum ST_RevisionAction {
+	add = 'add',
+	delete = 'delete',
+}
 
-export type ST_FormulaExpression = string;
+export enum ST_FormulaExpression {
+	ref = 'ref',
+	refError = 'refError',
+	area = 'area',
+	areaError = 'areaError',
+	computedArea = 'computedArea',
+}
 
 export type Users = CT_Users;
 
@@ -1842,9 +2139,22 @@ export class CT_Cell {
 	ExtLst: Array<CT_ExtensionList>;
 }
 
-export type ST_CellType = string;
+export enum ST_CellType {
+	b = 'b',
+	d = 'd',
+	n = 'n',
+	e = 'e',
+	s = 's',
+	str = 'str',
+	inlineStr = 'inlineStr',
+}
 
-export type ST_CellFormulaType = string;
+export enum ST_CellFormulaType {
+	normal = 'normal',
+	array = 'array',
+	dataTable = 'dataTable',
+	shared = 'shared',
+}
 
 export class CT_SheetPr {
 	SyncHorizontalAttr: boolean | null;
@@ -1932,7 +2242,12 @@ export class CT_Selection {
 	SqrefAttr: ST_Sqref | null;
 }
 
-export type ST_Pane = string;
+export enum ST_Pane {
+	bottomRight = 'bottomRight',
+	topRight = 'topRight',
+	bottomLeft = 'bottomLeft',
+	topLeft = 'topLeft',
+}
 
 export class CT_PageBreak {
 	CountAttr: number | null;
@@ -1948,7 +2263,11 @@ export class CT_Break {
 	PtAttr: boolean | null;
 }
 
-export type ST_SheetViewType = string;
+export enum ST_SheetViewType {
+	normal = 'normal',
+	pageBreakPreview = 'pageBreakPreview',
+	pageLayout = 'pageLayout',
+}
 
 export class CT_OutlinePr {
 	ApplyStylesAttr: boolean | null;
@@ -1970,7 +2289,19 @@ export class CT_DataConsolidate {
 	DataRefs: Array<CT_DataRefs>;
 }
 
-export type ST_DataConsolidateFunction = string;
+export enum ST_DataConsolidateFunction {
+	average = 'average',
+	count = 'count',
+	countNums = 'countNums',
+	max = 'max',
+	min = 'min',
+	product = 'product',
+	stdDev = 'stdDev',
+	stdDevp = 'stdDevp',
+	sum = 'sum',
+	var = 'var',
+	varp = 'varp',
+}
 
 export class CT_DataRefs {
 	CountAttr: number | null;
@@ -2103,21 +2434,105 @@ export class CT_DataValidation {
 	Formula2: Array<string>;
 }
 
-export type ST_DataValidationType = string;
+export enum ST_DataValidationType {
+	none = 'none',
+	whole = 'whole',
+	decimal = 'decimal',
+	list = 'list',
+	date = 'date',
+	time = 'time',
+	textLength = 'textLength',
+	custom = 'custom',
+}
 
-export type ST_DataValidationOperator = string;
+export enum ST_DataValidationOperator {
+	between = 'between',
+	notBetween = 'notBetween',
+	equal = 'equal',
+	notEqual = 'notEqual',
+	lessThan = 'lessThan',
+	lessThanOrEqual = 'lessThanOrEqual',
+	greaterThan = 'greaterThan',
+	greaterThanOrEqual = 'greaterThanOrEqual',
+}
 
-export type ST_DataValidationErrorStyle = string;
+export enum ST_DataValidationErrorStyle {
+	stop = 'stop',
+	warning = 'warning',
+	information = 'information',
+}
 
-export type ST_DataValidationImeMode = string;
+export enum ST_DataValidationImeMode {
+	noControl = 'noControl',
+	off = 'off',
+	on = 'on',
+	disabled = 'disabled',
+	hiragana = 'hiragana',
+	fullKatakana = 'fullKatakana',
+	halfKatakana = 'halfKatakana',
+	fullAlpha = 'fullAlpha',
+	halfAlpha = 'halfAlpha',
+	fullHangul = 'fullHangul',
+	halfHangul = 'halfHangul',
+}
 
-export type ST_CfType = string;
+export enum ST_CfType {
+	expression = 'expression',
+	cellIs = 'cellIs',
+	colorScale = 'colorScale',
+	dataBar = 'dataBar',
+	iconSet = 'iconSet',
+	top10 = 'top10',
+	uniqueValues = 'uniqueValues',
+	duplicateValues = 'duplicateValues',
+	containsText = 'containsText',
+	notContainsText = 'notContainsText',
+	beginsWith = 'beginsWith',
+	endsWith = 'endsWith',
+	containsBlanks = 'containsBlanks',
+	notContainsBlanks = 'notContainsBlanks',
+	containsErrors = 'containsErrors',
+	notContainsErrors = 'notContainsErrors',
+	timePeriod = 'timePeriod',
+	aboveAverage = 'aboveAverage',
+}
 
-export type ST_TimePeriod = string;
+export enum ST_TimePeriod {
+	today = 'today',
+	yesterday = 'yesterday',
+	tomorrow = 'tomorrow',
+	last7Days = 'last7Days',
+	thisMonth = 'thisMonth',
+	lastMonth = 'lastMonth',
+	nextMonth = 'nextMonth',
+	thisWeek = 'thisWeek',
+	lastWeek = 'lastWeek',
+	nextWeek = 'nextWeek',
+}
 
-export type ST_ConditionalFormattingOperator = string;
+export enum ST_ConditionalFormattingOperator {
+	lessThan = 'lessThan',
+	lessThanOrEqual = 'lessThanOrEqual',
+	equal = 'equal',
+	notEqual = 'notEqual',
+	greaterThanOrEqual = 'greaterThanOrEqual',
+	greaterThan = 'greaterThan',
+	between = 'between',
+	notBetween = 'notBetween',
+	containsText = 'containsText',
+	notContains = 'notContains',
+	beginsWith = 'beginsWith',
+	endsWith = 'endsWith',
+}
 
-export type ST_CfvoType = string;
+export enum ST_CfvoType {
+	num = 'num',
+	percent = 'percent',
+	max = 'max',
+	min = 'min',
+	formula = 'formula',
+	percentile = 'percentile',
+}
 
 export class CT_ConditionalFormatting {
 	PivotAttr: boolean | null;
@@ -2241,11 +2656,22 @@ export class CT_PageSetup {
 	RIdAttr: string | null;
 }
 
-export type ST_PageOrder = string;
+export enum ST_PageOrder {
+	downThenOver = 'downThenOver',
+	overThenDown = 'overThenDown',
+}
 
-export type ST_Orientation = string;
+export enum ST_Orientation {
+	default = 'default',
+	portrait = 'portrait',
+	landscape = 'landscape',
+}
 
-export type ST_CellComments = string;
+export enum ST_CellComments {
+	none = 'none',
+	asDisplayed = 'asDisplayed',
+	atEnd = 'atEnd',
+}
 
 export class CT_HeaderFooter {
 	DifferentOddEvenAttr: boolean | null;
@@ -2260,7 +2686,12 @@ export class CT_HeaderFooter {
 	FirstFooter: Array<string>;
 }
 
-export type ST_PrintError = string;
+export enum ST_PrintError {
+	displayed = 'displayed',
+	blank = 'blank',
+	dash = 'dash',
+	NA = 'NA',
+}
 
 export class CT_Scenarios {
 	CurrentAttr: number | null;
@@ -2445,9 +2876,15 @@ export class CT_ObjectPr {
 	Anchor: Array<CT_ObjectAnchor>;
 }
 
-export type ST_DvAspect = string;
+export enum ST_DvAspect {
+	DVASPECT_CONTENT = 'DVASPECT_CONTENT',
+	DVASPECT_ICON = 'DVASPECT_ICON',
+}
 
-export type ST_OleUpdate = string;
+export enum ST_OleUpdate {
+	OLEUPDATE_ALWAYS = 'OLEUPDATE_ALWAYS',
+	OLEUPDATE_ONCALL = 'OLEUPDATE_ONCALL',
+}
 
 export class CT_WebPublishItems {
 	CountAttr: number | null;
@@ -2495,7 +2932,16 @@ export class CT_ControlPr {
 	Anchor: Array<CT_ObjectAnchor>;
 }
 
-export type ST_WebSourceType = string;
+export enum ST_WebSourceType {
+	sheet = 'sheet',
+	printArea = 'printArea',
+	autoFilter = 'autoFilter',
+	range = 'range',
+	chart = 'chart',
+	pivotTable = 'pivotTable',
+	query = 'query',
+	label = 'label',
+}
 
 export class CT_IgnoredErrors {
 	IgnoredError: Array<CT_IgnoredError>;
@@ -2515,7 +2961,11 @@ export class CT_IgnoredError {
 	CalculatedColumnAttr: boolean | null;
 }
 
-export type ST_PaneState = string;
+export enum ST_PaneState {
+	split = 'split',
+	frozen = 'frozen',
+	frozenSplit = 'frozenSplit',
+}
 
 export class CT_TableParts {
 	CountAttr: number | null;
@@ -2613,7 +3063,15 @@ export class CT_Mdx {
 	K: Array<CT_MdxKPI>;
 }
 
-export type ST_MdxFunctionType = string;
+export enum ST_MdxFunctionType {
+	m = 'm',
+	v = 'v',
+	s = 's',
+	c = 'c',
+	r = 'r',
+	p = 'p',
+	k = 'k',
+}
 
 export class CT_MdxTuple {
 	CAttr: number | null;
@@ -2636,7 +3094,15 @@ export class CT_MdxSet {
 	N: Array<CT_MetadataStringIndex>;
 }
 
-export type ST_MdxSetOrder = string;
+export enum ST_MdxSetOrder {
+	u = 'u',
+	a = 'a',
+	d = 'd',
+	aa = 'aa',
+	ad = 'ad',
+	na = 'na',
+	nd = 'nd',
+}
 
 export class CT_MdxMemeberProp {
 	NAttr: number;
@@ -2649,7 +3115,14 @@ export class CT_MdxKPI {
 	PAttr: string;
 }
 
-export type ST_MdxKPIProperty = string;
+export enum ST_MdxKPIProperty {
+	v = 'v',
+	g = 'g',
+	s = 's',
+	t = 't',
+	w = 'w',
+	m = 'm',
+}
 
 export class CT_MetadataStringIndex {
 	XAttr: number;
@@ -2717,9 +3190,26 @@ export class CT_CellAlignment {
 	ReadingOrderAttr: number | null;
 }
 
-export type ST_TextRotation = number;
+export enum ST_TextRotation {
+	Enum255 = 255,
+}
 
-export type ST_BorderStyle = string;
+export enum ST_BorderStyle {
+	none = 'none',
+	thin = 'thin',
+	medium = 'medium',
+	dashed = 'dashed',
+	dotted = 'dotted',
+	thick = 'thick',
+	double = 'double',
+	hair = 'hair',
+	mediumDashed = 'mediumDashed',
+	dashDot = 'dashDot',
+	mediumDashDot = 'mediumDashDot',
+	dashDotDot = 'dashDotDot',
+	mediumDashDotDot = 'mediumDashDotDot',
+	slantDashDot = 'slantDashDot',
+}
 
 export class CT_Borders {
 	CountAttr: number | null;
@@ -2778,7 +3268,27 @@ export class CT_Color {
 	TintAttr: number | null;
 }
 
-export type ST_PatternType = string;
+export enum ST_PatternType {
+	none = 'none',
+	solid = 'solid',
+	mediumGray = 'mediumGray',
+	darkGray = 'darkGray',
+	lightGray = 'lightGray',
+	darkHorizontal = 'darkHorizontal',
+	darkVertical = 'darkVertical',
+	darkDown = 'darkDown',
+	darkUp = 'darkUp',
+	darkGrid = 'darkGrid',
+	darkTrellis = 'darkTrellis',
+	lightHorizontal = 'lightHorizontal',
+	lightVertical = 'lightVertical',
+	lightDown = 'lightDown',
+	lightUp = 'lightUp',
+	lightGrid = 'lightGrid',
+	lightTrellis = 'lightTrellis',
+	gray125 = 'gray125',
+	gray0625 = 'gray0625',
+}
 
 export class CT_GradientFill {
 	TypeAttr: string | null;
@@ -2795,11 +3305,29 @@ export class CT_GradientStop {
 	Color: Array<CT_Color>;
 }
 
-export type ST_GradientType = string;
+export enum ST_GradientType {
+	linear = 'linear',
+	path = 'path',
+}
 
-export type ST_HorizontalAlignment = string;
+export enum ST_HorizontalAlignment {
+	general = 'general',
+	left = 'left',
+	center = 'center',
+	right = 'right',
+	fill = 'fill',
+	justify = 'justify',
+	centerContinuous = 'centerContinuous',
+	distributed = 'distributed',
+}
 
-export type ST_VerticalAlignment = string;
+export enum ST_VerticalAlignment {
+	top = 'top',
+	center = 'center',
+	bottom = 'bottom',
+	justify = 'justify',
+	distributed = 'distributed',
+}
 
 export class CT_NumFmts {
 	CountAttr: number | null;
@@ -2920,7 +3448,36 @@ export class CT_TableStyleElement {
 	DxfIdAttr: number | null;
 }
 
-export type ST_TableStyleType = string;
+export enum ST_TableStyleType {
+	wholeTable = 'wholeTable',
+	headerRow = 'headerRow',
+	totalRow = 'totalRow',
+	firstColumn = 'firstColumn',
+	lastColumn = 'lastColumn',
+	firstRowStripe = 'firstRowStripe',
+	secondRowStripe = 'secondRowStripe',
+	firstColumnStripe = 'firstColumnStripe',
+	secondColumnStripe = 'secondColumnStripe',
+	firstHeaderCell = 'firstHeaderCell',
+	lastHeaderCell = 'lastHeaderCell',
+	firstTotalCell = 'firstTotalCell',
+	lastTotalCell = 'lastTotalCell',
+	firstSubtotalColumn = 'firstSubtotalColumn',
+	secondSubtotalColumn = 'secondSubtotalColumn',
+	thirdSubtotalColumn = 'thirdSubtotalColumn',
+	firstSubtotalRow = 'firstSubtotalRow',
+	secondSubtotalRow = 'secondSubtotalRow',
+	thirdSubtotalRow = 'thirdSubtotalRow',
+	blankRow = 'blankRow',
+	firstColumnSubheading = 'firstColumnSubheading',
+	secondColumnSubheading = 'secondColumnSubheading',
+	thirdColumnSubheading = 'thirdColumnSubheading',
+	firstRowSubheading = 'firstRowSubheading',
+	secondRowSubheading = 'secondRowSubheading',
+	thirdRowSubheading = 'thirdRowSubheading',
+	pageFieldLabels = 'pageFieldLabels',
+	pageFieldValues = 'pageFieldValues',
+}
 
 export class CT_BooleanProperty {
 	ValAttr: boolean | null;
@@ -2946,13 +3503,23 @@ export class CT_FontScheme {
 	ValAttr: string;
 }
 
-export type ST_FontScheme = string;
+export enum ST_FontScheme {
+	none = 'none',
+	major = 'major',
+	minor = 'minor',
+}
 
 export class CT_UnderlineProperty {
 	ValAttr: string | null;
 }
 
-export type ST_UnderlineValues = string;
+export enum ST_UnderlineValues {
+	single = 'single',
+	double = 'double',
+	singleAccounting = 'singleAccounting',
+	doubleAccounting = 'doubleAccounting',
+	none = 'none',
+}
 
 export class CT_FontFamily {
 	ValAttr: number;
@@ -3073,7 +3640,13 @@ export class CT_DdeValue {
 	Val: Array<string>;
 }
 
-export type ST_DdeValueType = string;
+export enum ST_DdeValueType {
+	nil = 'nil',
+	b = 'b',
+	n = 'n',
+	e = 'e',
+	str = 'str',
+}
 
 export class CT_OleLink {
 	RIdAttr: string;
@@ -3124,7 +3697,11 @@ export class CT_Table {
 	ExtLst: Array<CT_ExtensionList>;
 }
 
-export type ST_TableType = string;
+export enum ST_TableType {
+	worksheet = 'worksheet',
+	xml = 'xml',
+	queryTable = 'queryTable',
+}
 
 export class CT_TableStyleInfo {
 	NameAttr: string | null;
@@ -3162,7 +3739,18 @@ export class CT_TableFormula {
 	ArrayAttr: boolean | null;
 }
 
-export type ST_TotalsRowFunction = string;
+export enum ST_TotalsRowFunction {
+	none = 'none',
+	sum = 'sum',
+	min = 'min',
+	max = 'max',
+	average = 'average',
+	count = 'count',
+	countNums = 'countNums',
+	stdDev = 'stdDev',
+	var = 'var',
+	custom = 'custom',
+}
 
 export class CT_XmlColumnPr {
 	MapIdAttr: number;
@@ -3203,9 +3791,17 @@ export class CT_VolTopicRef {
 	SAttr: number;
 }
 
-export type ST_VolDepType = string;
+export enum ST_VolDepType {
+	realTimeData = 'realTimeData',
+	olapFunctions = 'olapFunctions',
+}
 
-export type ST_VolValueType = string;
+export enum ST_VolValueType {
+	b = 'b',
+	n = 'n',
+	e = 'e',
+	s = 's',
+}
 
 export type Workbook = CT_Workbook;
 
@@ -3261,7 +3857,11 @@ export class CT_BookView {
 	ExtLst: Array<CT_ExtensionList>;
 }
 
-export type ST_Visibility = string;
+export enum ST_Visibility {
+	visible = 'visible',
+	hidden = 'hidden',
+	veryHidden = 'veryHidden',
+}
 
 export class CT_CustomWorkbookViews {
 	CustomWorkbookView: Array<CT_CustomWorkbookView>;
@@ -3295,9 +3895,17 @@ export class CT_CustomWorkbookView {
 	ExtLst: Array<CT_ExtensionList>;
 }
 
-export type ST_Comments = string;
+export enum ST_Comments {
+	commNone = 'commNone',
+	commIndicator = 'commIndicator',
+	commIndAndComment = 'commIndAndComment',
+}
 
-export type ST_Objects = string;
+export enum ST_Objects {
+	all = 'all',
+	placeholders = 'placeholders',
+	none = 'none',
+}
 
 export class CT_Sheets {
 	Sheet: Array<CT_Sheet>;
@@ -3310,7 +3918,11 @@ export class CT_Sheet {
 	RIdAttr: string;
 }
 
-export type ST_SheetState = string;
+export enum ST_SheetState {
+	visible = 'visible',
+	hidden = 'hidden',
+	veryHidden = 'veryHidden',
+}
 
 export class CT_WorkbookPr {
 	Date1904Attr: boolean | null;
@@ -3333,14 +3945,22 @@ export class CT_WorkbookPr {
 	DefaultThemeVersionAttr: number | null;
 }
 
-export type ST_UpdateLinks = string;
+export enum ST_UpdateLinks {
+	userSet = 'userSet',
+	never = 'never',
+	always = 'always',
+}
 
 export class CT_SmartTagPr {
 	EmbedAttr: boolean | null;
 	ShowAttr: string | null;
 }
 
-export type ST_SmartTagShow = string;
+export enum ST_SmartTagShow {
+	all = 'all',
+	none = 'none',
+	noIndicator = 'noIndicator',
+}
 
 export class CT_SmartTagTypes {
 	SmartTagType: Array<CT_SmartTagType>;
@@ -3375,9 +3995,16 @@ export class CT_CalcPr {
 	ForceFullCalcAttr: boolean | null;
 }
 
-export type ST_CalcMode = string;
+export enum ST_CalcMode {
+	manual = 'manual',
+	auto = 'auto',
+	autoNoTable = 'autoNoTable',
+}
 
-export type ST_RefMode = string;
+export enum ST_RefMode {
+	A1 = 'A1',
+	R1C1 = 'R1C1',
+}
 
 export class CT_DefinedNames {
 	DefinedName: Array<CT_DefinedName>;
@@ -3460,7 +4087,19 @@ export class CT_WebPublishing {
 	CharacterSetAttr: string | null;
 }
 
-export type ST_TargetScreenSize = string;
+export enum ST_TargetScreenSize {
+	544x376 = '544x376',
+	640x480 = '640x480',
+	720x512 = '720x512',
+	800x600 = '800x600',
+	1024x768 = '1024x768',
+	1152x882 = '1152x882',
+	1152x900 = '1152x900',
+	1280x1024 = '1280x1024',
+	1600x1200 = '1600x1200',
+	1800x1440 = '1800x1440',
+	1920x1200 = '1920x1200',
+}
 
 export class CT_FunctionGroups {
 	BuiltInGroupCountAttr: number | null;

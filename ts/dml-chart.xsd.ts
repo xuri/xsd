@@ -108,13 +108,19 @@ export class CT_SerTx {
 	V: Array<string>;
 }
 
-export type ST_LayoutTarget = string;
+export enum ST_LayoutTarget {
+	inner = 'inner',
+	outer = 'outer',
+}
 
 export class CT_LayoutTarget {
 	ValAttr: string | null;
 }
 
-export type ST_LayoutMode = string;
+export enum ST_LayoutMode {
+	edge = 'edge',
+	factor = 'factor',
+}
 
 export class CT_LayoutMode {
 	ValAttr: string | null;
@@ -252,7 +258,10 @@ export class CT_BubbleScale {
 	ValAttr: ST_BubbleScale | null;
 }
 
-export type ST_SizeRepresents = string;
+export enum ST_SizeRepresents {
+	area = 'area',
+	w = 'w',
+}
 
 export class CT_SizeRepresents {
 	ValAttr: string | null;
@@ -274,7 +283,13 @@ export class CT_HoleSize {
 	ValAttr: ST_HoleSize | null;
 }
 
-export type ST_SplitType = string;
+export enum ST_SplitType {
+	auto = 'auto',
+	cust = 'cust',
+	percent = 'percent',
+	pos = 'pos',
+	val = 'val',
+}
 
 export class CT_SplitType {
 	ValAttr: string | null;
@@ -299,13 +314,27 @@ export class CT_NumFmt {
 	SourceLinkedAttr: boolean | null;
 }
 
-export type ST_LblAlgn = string;
+export enum ST_LblAlgn {
+	ctr = 'ctr',
+	l = 'l',
+	r = 'r',
+}
 
 export class CT_LblAlgn {
 	ValAttr: string;
 }
 
-export type ST_DLblPos = string;
+export enum ST_DLblPos {
+	bestFit = 'bestFit',
+	b = 'b',
+	ctr = 'ctr',
+	inBase = 'inBase',
+	inEnd = 'inEnd',
+	l = 'l',
+	outEnd = 'outEnd',
+	r = 'r',
+	t = 't',
+}
 
 export class CT_DLblPos {
 	ValAttr: string;
@@ -351,7 +380,20 @@ export class CT_DLbls {
 	ExtLst: Array<CT_ExtensionList>;
 }
 
-export type ST_MarkerStyle = string;
+export enum ST_MarkerStyle {
+	circle = 'circle',
+	dash = 'dash',
+	diamond = 'diamond',
+	dot = 'dot',
+	none = 'none',
+	picture = 'picture',
+	plus = 'plus',
+	square = 'square',
+	star = 'star',
+	triangle = 'triangle',
+	x = 'x',
+	auto = 'auto',
+}
 
 export class CT_MarkerStyle {
 	ValAttr: string;
@@ -381,7 +423,14 @@ export class CT_DPt {
 	ExtLst: Array<CT_ExtensionList>;
 }
 
-export type ST_TrendlineType = string;
+export enum ST_TrendlineType {
+	exp = 'exp',
+	linear = 'linear',
+	log = 'log',
+	movingAvg = 'movingAvg',
+	poly = 'poly',
+	power = 'power',
+}
 
 export class CT_TrendlineType {
 	ValAttr: string | null;
@@ -423,19 +472,32 @@ export class CT_Trendline {
 	ExtLst: Array<CT_ExtensionList>;
 }
 
-export type ST_ErrDir = string;
+export enum ST_ErrDir {
+	x = 'x',
+	y = 'y',
+}
 
 export class CT_ErrDir {
 	ValAttr: string;
 }
 
-export type ST_ErrBarType = string;
+export enum ST_ErrBarType {
+	both = 'both',
+	minus = 'minus',
+	plus = 'plus',
+}
 
 export class CT_ErrBarType {
 	ValAttr: string | null;
 }
 
-export type ST_ErrValType = string;
+export enum ST_ErrValType {
+	cust = 'cust',
+	fixedVal = 'fixedVal',
+	percentage = 'percentage',
+	stdDev = 'stdDev',
+	stdErr = 'stdErr',
+}
 
 export class CT_ErrValType {
 	ValAttr: string | null;
@@ -564,7 +626,11 @@ export class CT_SurfaceSer {
 	ExtLst: Array<CT_ExtensionList>;
 }
 
-export type ST_Grouping = string;
+export enum ST_Grouping {
+	percentStacked = 'percentStacked',
+	standard = 'standard',
+	stacked = 'stacked',
+}
 
 export class CT_Grouping {
 	ValAttr: string | null;
@@ -609,7 +675,14 @@ export class CT_StockChart {
 	ExtLst: Array<CT_ExtensionList>;
 }
 
-export type ST_ScatterStyle = string;
+export enum ST_ScatterStyle {
+	none = 'none',
+	line = 'line',
+	lineMarker = 'lineMarker',
+	marker = 'marker',
+	smooth = 'smooth',
+	smoothMarker = 'smoothMarker',
+}
 
 export class CT_ScatterStyle {
 	ValAttr: string | null;
@@ -624,7 +697,11 @@ export class CT_ScatterChart {
 	ExtLst: Array<CT_ExtensionList>;
 }
 
-export type ST_RadarStyle = string;
+export enum ST_RadarStyle {
+	standard = 'standard',
+	marker = 'marker',
+	filled = 'filled',
+}
 
 export class CT_RadarStyle {
 	ValAttr: string | null;
@@ -639,19 +716,34 @@ export class CT_RadarChart {
 	ExtLst: Array<CT_ExtensionList>;
 }
 
-export type ST_BarGrouping = string;
+export enum ST_BarGrouping {
+	percentStacked = 'percentStacked',
+	clustered = 'clustered',
+	standard = 'standard',
+	stacked = 'stacked',
+}
 
 export class CT_BarGrouping {
 	ValAttr: string | null;
 }
 
-export type ST_BarDir = string;
+export enum ST_BarDir {
+	bar = 'bar',
+	col = 'col',
+}
 
 export class CT_BarDir {
 	ValAttr: string | null;
 }
 
-export type ST_Shape = string;
+export enum ST_Shape {
+	cone = 'cone',
+	coneToMax = 'coneToMax',
+	box = 'box',
+	cylinder = 'cylinder',
+	pyramid = 'pyramid',
+	pyramidToMax = 'pyramidToMax',
+}
 
 export class CT_Shape {
 	ValAttr: string | null;
@@ -728,7 +820,10 @@ export class CT_DoughnutChart {
 	ExtLst: Array<CT_ExtensionList>;
 }
 
-export type ST_OfPieType = string;
+export enum ST_OfPieType {
+	pie = 'pie',
+	bar = 'bar',
+}
 
 export class CT_OfPieType {
 	ValAttr: string | null;
@@ -785,31 +880,53 @@ export class CT_Surface3DChart {
 	ExtLst: Array<CT_ExtensionList>;
 }
 
-export type ST_AxPos = string;
+export enum ST_AxPos {
+	b = 'b',
+	l = 'l',
+	r = 'r',
+	t = 't',
+}
 
 export class CT_AxPos {
 	ValAttr: string;
 }
 
-export type ST_Crosses = string;
+export enum ST_Crosses {
+	autoZero = 'autoZero',
+	max = 'max',
+	min = 'min',
+}
 
 export class CT_Crosses {
 	ValAttr: string;
 }
 
-export type ST_CrossBetween = string;
+export enum ST_CrossBetween {
+	between = 'between',
+	midCat = 'midCat',
+}
 
 export class CT_CrossBetween {
 	ValAttr: string;
 }
 
-export type ST_TickMark = string;
+export enum ST_TickMark {
+	cross = 'cross',
+	in = 'in',
+	none = 'none',
+	out = 'out',
+}
 
 export class CT_TickMark {
 	ValAttr: string | null;
 }
 
-export type ST_TickLblPos = string;
+export enum ST_TickLblPos {
+	high = 'high',
+	low = 'low',
+	nextTo = 'nextTo',
+	none = 'none',
+}
 
 export class CT_TickLblPos {
 	ValAttr: string | null;
@@ -821,7 +938,11 @@ export class CT_Skip {
 	ValAttr: number;
 }
 
-export type ST_TimeUnit = string;
+export enum ST_TimeUnit {
+	days = 'days',
+	months = 'months',
+	years = 'years',
+}
 
 export class CT_TimeUnit {
 	ValAttr: string | null;
@@ -833,13 +954,27 @@ export class CT_AxisUnit {
 	ValAttr: number;
 }
 
-export type ST_BuiltInUnit = string;
+export enum ST_BuiltInUnit {
+	hundreds = 'hundreds',
+	thousands = 'thousands',
+	tenThousands = 'tenThousands',
+	hundredThousands = 'hundredThousands',
+	millions = 'millions',
+	tenMillions = 'tenMillions',
+	hundredMillions = 'hundredMillions',
+	billions = 'billions',
+	trillions = 'trillions',
+}
 
 export class CT_BuiltInUnit {
 	ValAttr: string | null;
 }
 
-export type ST_PictureFormat = string;
+export enum ST_PictureFormat {
+	stretch = 'stretch',
+	stack = 'stack',
+	stackScale = 'stackScale',
+}
 
 export class CT_PictureFormat {
 	ValAttr: string;
@@ -873,7 +1008,10 @@ export class CT_DispUnits {
 	ExtLst: Array<CT_ExtensionList>;
 }
 
-export type ST_Orientation = string;
+export enum ST_Orientation {
+	maxMin = 'maxMin',
+	minMax = 'minMax',
+}
 
 export class CT_Orientation {
 	ValAttr: string | null;
@@ -1001,7 +1139,13 @@ export class CT_PivotFmts {
 	PivotFmt: Array<CT_PivotFmt>;
 }
 
-export type ST_LegendPos = string;
+export enum ST_LegendPos {
+	b = 'b',
+	tr = 'tr',
+	l = 'l',
+	r = 'r',
+	t = 't',
+}
 
 export class CT_LegendPos {
 	ValAttr: string | null;
@@ -1028,7 +1172,11 @@ export class CT_Legend {
 	ExtLst: Array<CT_ExtensionList>;
 }
 
-export type ST_DispBlanksAs = string;
+export enum ST_DispBlanksAs {
+	span = 'span',
+	gap = 'gap',
+	zero = 'zero',
+}
 
 export class CT_DispBlanksAs {
 	ValAttr: string | null;
@@ -1091,7 +1239,11 @@ export class CT_PageMargins {
 	FooterAttr: number;
 }
 
-export type ST_PageSetupOrientation = string;
+export enum ST_PageSetupOrientation {
+	default = 'default',
+	portrait = 'portrait',
+	landscape = 'landscape',
+}
 
 export class CT_ExternalData {
 	RIdAttr: string;

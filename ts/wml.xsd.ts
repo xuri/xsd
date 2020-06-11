@@ -64,8 +64,8 @@ export class CT_PixelsMeasure {
 }
 
 export class ST_HpsMeasure {
-	ST_UnsignedDecimalNumber: number;
 	ST_PositiveUniversalMeasure: string;
+	ST_UnsignedDecimalNumber: number;
 }
 
 export class CT_HpsMeasure {
@@ -73,8 +73,8 @@ export class CT_HpsMeasure {
 }
 
 export class ST_SignedHpsMeasure {
-	ST_UniversalMeasure: string;
 	Integer: number;
+	ST_UniversalMeasure: string;
 }
 
 export class CT_SignedHpsMeasure {
@@ -107,13 +107,33 @@ export class CT_TextScale {
 	ValAttr: ST_TextScale | null;
 }
 
-export type ST_HighlightColor = string;
+export enum ST_HighlightColor {
+	black = 'black',
+	blue = 'blue',
+	cyan = 'cyan',
+	green = 'green',
+	magenta = 'magenta',
+	red = 'red',
+	yellow = 'yellow',
+	white = 'white',
+	darkBlue = 'darkBlue',
+	darkCyan = 'darkCyan',
+	darkGreen = 'darkGreen',
+	darkMagenta = 'darkMagenta',
+	darkRed = 'darkRed',
+	darkYellow = 'darkYellow',
+	darkGray = 'darkGray',
+	lightGray = 'lightGray',
+	none = 'none',
+}
 
 export class CT_Highlight {
 	ValAttr: string;
 }
 
-export type ST_HexColorAuto = string;
+export enum ST_HexColorAuto {
+	auto = 'auto',
+}
 
 export class ST_HexColor {
 	ST_HexColorAuto: string;
@@ -135,7 +155,26 @@ export class CT_Guid {
 	ValAttr: string | null;
 }
 
-export type ST_Underline = string;
+export enum ST_Underline {
+	single = 'single',
+	words = 'words',
+	double = 'double',
+	thick = 'thick',
+	dotted = 'dotted',
+	dottedHeavy = 'dottedHeavy',
+	dash = 'dash',
+	dashedHeavy = 'dashedHeavy',
+	dashLong = 'dashLong',
+	dashLongHeavy = 'dashLongHeavy',
+	dotDash = 'dotDash',
+	dashDotHeavy = 'dashDotHeavy',
+	dotDotDash = 'dotDotDash',
+	dashDotDotHeavy = 'dashDotDotHeavy',
+	wave = 'wave',
+	wavyHeavy = 'wavyHeavy',
+	wavyDouble = 'wavyDouble',
+	none = 'none',
+}
 
 export class CT_Underline {
 	ValAttr: string | null;
@@ -145,13 +184,215 @@ export class CT_Underline {
 	ThemeShadeAttr: Array<any> | null;
 }
 
-export type ST_TextEffect = string;
+export enum ST_TextEffect {
+	blinkBackground = 'blinkBackground',
+	lights = 'lights',
+	antsBlack = 'antsBlack',
+	antsRed = 'antsRed',
+	shimmer = 'shimmer',
+	sparkle = 'sparkle',
+	none = 'none',
+}
 
 export class CT_TextEffect {
 	ValAttr: string;
 }
 
-export type ST_Border = string;
+export enum ST_Border {
+	nil = 'nil',
+	none = 'none',
+	single = 'single',
+	thick = 'thick',
+	double = 'double',
+	dotted = 'dotted',
+	dashed = 'dashed',
+	dotDash = 'dotDash',
+	dotDotDash = 'dotDotDash',
+	triple = 'triple',
+	thinThickSmallGap = 'thinThickSmallGap',
+	thickThinSmallGap = 'thickThinSmallGap',
+	thinThickThinSmallGap = 'thinThickThinSmallGap',
+	thinThickMediumGap = 'thinThickMediumGap',
+	thickThinMediumGap = 'thickThinMediumGap',
+	thinThickThinMediumGap = 'thinThickThinMediumGap',
+	thinThickLargeGap = 'thinThickLargeGap',
+	thickThinLargeGap = 'thickThinLargeGap',
+	thinThickThinLargeGap = 'thinThickThinLargeGap',
+	wave = 'wave',
+	doubleWave = 'doubleWave',
+	dashSmallGap = 'dashSmallGap',
+	dashDotStroked = 'dashDotStroked',
+	threeDEmboss = 'threeDEmboss',
+	threeDEngrave = 'threeDEngrave',
+	outset = 'outset',
+	inset = 'inset',
+	apples = 'apples',
+	archedScallops = 'archedScallops',
+	babyPacifier = 'babyPacifier',
+	babyRattle = 'babyRattle',
+	balloons3Colors = 'balloons3Colors',
+	balloonsHotAir = 'balloonsHotAir',
+	basicBlackDashes = 'basicBlackDashes',
+	basicBlackDots = 'basicBlackDots',
+	basicBlackSquares = 'basicBlackSquares',
+	basicThinLines = 'basicThinLines',
+	basicWhiteDashes = 'basicWhiteDashes',
+	basicWhiteDots = 'basicWhiteDots',
+	basicWhiteSquares = 'basicWhiteSquares',
+	basicWideInline = 'basicWideInline',
+	basicWideMidline = 'basicWideMidline',
+	basicWideOutline = 'basicWideOutline',
+	bats = 'bats',
+	birds = 'birds',
+	birdsFlight = 'birdsFlight',
+	cabins = 'cabins',
+	cakeSlice = 'cakeSlice',
+	candyCorn = 'candyCorn',
+	celticKnotwork = 'celticKnotwork',
+	certificateBanner = 'certificateBanner',
+	chainLink = 'chainLink',
+	champagneBottle = 'champagneBottle',
+	checkedBarBlack = 'checkedBarBlack',
+	checkedBarColor = 'checkedBarColor',
+	checkered = 'checkered',
+	christmasTree = 'christmasTree',
+	circlesLines = 'circlesLines',
+	circlesRectangles = 'circlesRectangles',
+	classicalWave = 'classicalWave',
+	clocks = 'clocks',
+	compass = 'compass',
+	confetti = 'confetti',
+	confettiGrays = 'confettiGrays',
+	confettiOutline = 'confettiOutline',
+	confettiStreamers = 'confettiStreamers',
+	confettiWhite = 'confettiWhite',
+	cornerTriangles = 'cornerTriangles',
+	couponCutoutDashes = 'couponCutoutDashes',
+	couponCutoutDots = 'couponCutoutDots',
+	crazyMaze = 'crazyMaze',
+	creaturesButterfly = 'creaturesButterfly',
+	creaturesFish = 'creaturesFish',
+	creaturesInsects = 'creaturesInsects',
+	creaturesLadyBug = 'creaturesLadyBug',
+	crossStitch = 'crossStitch',
+	cup = 'cup',
+	decoArch = 'decoArch',
+	decoArchColor = 'decoArchColor',
+	decoBlocks = 'decoBlocks',
+	diamondsGray = 'diamondsGray',
+	doubleD = 'doubleD',
+	doubleDiamonds = 'doubleDiamonds',
+	earth1 = 'earth1',
+	earth2 = 'earth2',
+	earth3 = 'earth3',
+	eclipsingSquares1 = 'eclipsingSquares1',
+	eclipsingSquares2 = 'eclipsingSquares2',
+	eggsBlack = 'eggsBlack',
+	fans = 'fans',
+	film = 'film',
+	firecrackers = 'firecrackers',
+	flowersBlockPrint = 'flowersBlockPrint',
+	flowersDaisies = 'flowersDaisies',
+	flowersModern1 = 'flowersModern1',
+	flowersModern2 = 'flowersModern2',
+	flowersPansy = 'flowersPansy',
+	flowersRedRose = 'flowersRedRose',
+	flowersRoses = 'flowersRoses',
+	flowersTeacup = 'flowersTeacup',
+	flowersTiny = 'flowersTiny',
+	gems = 'gems',
+	gingerbreadMan = 'gingerbreadMan',
+	gradient = 'gradient',
+	handmade1 = 'handmade1',
+	handmade2 = 'handmade2',
+	heartBalloon = 'heartBalloon',
+	heartGray = 'heartGray',
+	hearts = 'hearts',
+	heebieJeebies = 'heebieJeebies',
+	holly = 'holly',
+	houseFunky = 'houseFunky',
+	hypnotic = 'hypnotic',
+	iceCreamCones = 'iceCreamCones',
+	lightBulb = 'lightBulb',
+	lightning1 = 'lightning1',
+	lightning2 = 'lightning2',
+	mapPins = 'mapPins',
+	mapleLeaf = 'mapleLeaf',
+	mapleMuffins = 'mapleMuffins',
+	marquee = 'marquee',
+	marqueeToothed = 'marqueeToothed',
+	moons = 'moons',
+	mosaic = 'mosaic',
+	musicNotes = 'musicNotes',
+	northwest = 'northwest',
+	ovals = 'ovals',
+	packages = 'packages',
+	palmsBlack = 'palmsBlack',
+	palmsColor = 'palmsColor',
+	paperClips = 'paperClips',
+	papyrus = 'papyrus',
+	partyFavor = 'partyFavor',
+	partyGlass = 'partyGlass',
+	pencils = 'pencils',
+	people = 'people',
+	peopleWaving = 'peopleWaving',
+	peopleHats = 'peopleHats',
+	poinsettias = 'poinsettias',
+	postageStamp = 'postageStamp',
+	pumpkin1 = 'pumpkin1',
+	pushPinNote2 = 'pushPinNote2',
+	pushPinNote1 = 'pushPinNote1',
+	pyramids = 'pyramids',
+	pyramidsAbove = 'pyramidsAbove',
+	quadrants = 'quadrants',
+	rings = 'rings',
+	safari = 'safari',
+	sawtooth = 'sawtooth',
+	sawtoothGray = 'sawtoothGray',
+	scaredCat = 'scaredCat',
+	seattle = 'seattle',
+	shadowedSquares = 'shadowedSquares',
+	sharksTeeth = 'sharksTeeth',
+	shorebirdTracks = 'shorebirdTracks',
+	skyrocket = 'skyrocket',
+	snowflakeFancy = 'snowflakeFancy',
+	snowflakes = 'snowflakes',
+	sombrero = 'sombrero',
+	southwest = 'southwest',
+	stars = 'stars',
+	starsTop = 'starsTop',
+	stars3d = 'stars3d',
+	starsBlack = 'starsBlack',
+	starsShadowed = 'starsShadowed',
+	sun = 'sun',
+	swirligig = 'swirligig',
+	tornPaper = 'tornPaper',
+	tornPaperBlack = 'tornPaperBlack',
+	trees = 'trees',
+	triangleParty = 'triangleParty',
+	triangles = 'triangles',
+	triangle1 = 'triangle1',
+	triangle2 = 'triangle2',
+	triangleCircle1 = 'triangleCircle1',
+	triangleCircle2 = 'triangleCircle2',
+	shapes1 = 'shapes1',
+	shapes2 = 'shapes2',
+	twistedLines1 = 'twistedLines1',
+	twistedLines2 = 'twistedLines2',
+	vine = 'vine',
+	waveline = 'waveline',
+	weavingAngles = 'weavingAngles',
+	weavingBraid = 'weavingBraid',
+	weavingRibbon = 'weavingRibbon',
+	weavingStrips = 'weavingStrips',
+	whiteFlowers = 'whiteFlowers',
+	woodwork = 'woodwork',
+	xIllusions = 'xIllusions',
+	zanyTriangles = 'zanyTriangles',
+	zigZag = 'zigZag',
+	zigZagStitch = 'zigZagStitch',
+	custom = 'custom',
+}
 
 export class CT_Border {
 	ValAttr: string;
@@ -165,7 +406,46 @@ export class CT_Border {
 	FrameAttr: ST_OnOff | null;
 }
 
-export type ST_Shd = string;
+export enum ST_Shd {
+	nil = 'nil',
+	clear = 'clear',
+	solid = 'solid',
+	horzStripe = 'horzStripe',
+	vertStripe = 'vertStripe',
+	reverseDiagStripe = 'reverseDiagStripe',
+	diagStripe = 'diagStripe',
+	horzCross = 'horzCross',
+	diagCross = 'diagCross',
+	thinHorzStripe = 'thinHorzStripe',
+	thinVertStripe = 'thinVertStripe',
+	thinReverseDiagStripe = 'thinReverseDiagStripe',
+	thinDiagStripe = 'thinDiagStripe',
+	thinHorzCross = 'thinHorzCross',
+	thinDiagCross = 'thinDiagCross',
+	pct5 = 'pct5',
+	pct10 = 'pct10',
+	pct12 = 'pct12',
+	pct15 = 'pct15',
+	pct20 = 'pct20',
+	pct25 = 'pct25',
+	pct30 = 'pct30',
+	pct35 = 'pct35',
+	pct37 = 'pct37',
+	pct40 = 'pct40',
+	pct45 = 'pct45',
+	pct50 = 'pct50',
+	pct55 = 'pct55',
+	pct60 = 'pct60',
+	pct62 = 'pct62',
+	pct65 = 'pct65',
+	pct70 = 'pct70',
+	pct75 = 'pct75',
+	pct80 = 'pct80',
+	pct85 = 'pct85',
+	pct87 = 'pct87',
+	pct90 = 'pct90',
+	pct95 = 'pct95',
+}
 
 export class CT_Shd {
 	ValAttr: string;
@@ -188,7 +468,13 @@ export class CT_FitText {
 	IdAttr: number | null;
 }
 
-export type ST_Em = string;
+export enum ST_Em {
+	none = 'none',
+	dot = 'dot',
+	comma = 'comma',
+	circle = 'circle',
+	underDot = 'underDot',
+}
 
 export class CT_Em {
 	ValAttr: string;
@@ -200,7 +486,13 @@ export class CT_Language {
 	BidiAttr: string | null;
 }
 
-export type ST_CombineBrackets = string;
+export enum ST_CombineBrackets {
+	none = 'none',
+	round = 'round',
+	square = 'square',
+	angle = 'angle',
+	curly = 'curly',
+}
 
 export class CT_EastAsianLayout {
 	IdAttr: number | null;
@@ -210,15 +502,38 @@ export class CT_EastAsianLayout {
 	VertCompressAttr: ST_OnOff | null;
 }
 
-export type ST_HeightRule = string;
+export enum ST_HeightRule {
+	auto = 'auto',
+	exact = 'exact',
+	atLeast = 'atLeast',
+}
 
-export type ST_Wrap = string;
+export enum ST_Wrap {
+	auto = 'auto',
+	notBeside = 'notBeside',
+	around = 'around',
+	tight = 'tight',
+	through = 'through',
+	none = 'none',
+}
 
-export type ST_VAnchor = string;
+export enum ST_VAnchor {
+	text = 'text',
+	margin = 'margin',
+	page = 'page',
+}
 
-export type ST_HAnchor = string;
+export enum ST_HAnchor {
+	text = 'text',
+	margin = 'margin',
+	page = 'page',
+}
 
-export type ST_DropCap = string;
+export enum ST_DropCap {
+	none = 'none',
+	drop = 'drop',
+	margin = 'margin',
+}
 
 export class CT_FramePr {
 	DropCapAttr: string | null;
@@ -238,9 +553,24 @@ export class CT_FramePr {
 	AnchorLockAttr: ST_OnOff | null;
 }
 
-export type ST_TabJc = string;
+export enum ST_TabJc {
+	clear = 'clear',
+	start = 'start',
+	center = 'center',
+	end = 'end',
+	decimal = 'decimal',
+	bar = 'bar',
+	num = 'num',
+}
 
-export type ST_TabTlc = string;
+export enum ST_TabTlc {
+	none = 'none',
+	dot = 'dot',
+	hyphen = 'hyphen',
+	underscore = 'underscore',
+	heavy = 'heavy',
+	middleDot = 'middleDot',
+}
 
 export class CT_TabStop {
 	ValAttr: string;
@@ -248,7 +578,11 @@ export class CT_TabStop {
 	PosAttr: ST_SignedTwipsMeasure;
 }
 
-export type ST_LineSpacingRule = string;
+export enum ST_LineSpacingRule {
+	auto = 'auto',
+	exact = 'exact',
+	atLeast = 'atLeast',
+}
 
 export class CT_Spacing {
 	BeforeAttr: ST_TwipsMeasure | null;
@@ -272,9 +606,24 @@ export class CT_Ind {
 	FirstLineCharsAttr: number | null;
 }
 
-export type ST_Jc = string;
+export enum ST_Jc {
+	start = 'start',
+	center = 'center',
+	end = 'end',
+	both = 'both',
+	mediumKashida = 'mediumKashida',
+	distribute = 'distribute',
+	numTab = 'numTab',
+	highKashida = 'highKashida',
+	lowKashida = 'lowKashida',
+	thaiDistribute = 'thaiDistribute',
+}
 
-export type ST_JcTable = string;
+export enum ST_JcTable {
+	center = 'center',
+	end = 'end',
+	start = 'start',
+}
 
 export class CT_Jc {
 	ValAttr: string;
@@ -284,13 +633,25 @@ export class CT_JcTable {
 	ValAttr: string;
 }
 
-export type ST_View = string;
+export enum ST_View {
+	none = 'none',
+	print = 'print',
+	outline = 'outline',
+	masterPages = 'masterPages',
+	normal = 'normal',
+	web = 'web',
+}
 
 export class CT_View {
 	ValAttr: string;
 }
 
-export type ST_Zoom = string;
+export enum ST_Zoom {
+	none = 'none',
+	fullPage = 'fullPage',
+	bestFit = 'bestFit',
+	textFit = 'textFit',
+}
 
 export class CT_Zoom {
 	ValAttr: string | null;
@@ -306,7 +667,10 @@ export class CT_WritingStyle {
 	AppNameAttr: string;
 }
 
-export type ST_Proof = string;
+export enum ST_Proof {
+	clean = 'clean',
+	dirty = 'dirty',
+}
 
 export class CT_Proof {
 	SpellingAttr: string | null;
@@ -319,7 +683,13 @@ export class CT_DocType {
 	ValAttr: string;
 }
 
-export type ST_DocProtect = string;
+export enum ST_DocProtect {
+	none = 'none',
+	readOnly = 'readOnly',
+	comments = 'comments',
+	trackedChanges = 'trackedChanges',
+	forms = 'forms',
+}
 
 export class AG_Password {
 	AlgorithmNameAttr: string | null;
@@ -335,7 +705,14 @@ export class CT_DocProtect {
 	EnforcementAttr: ST_OnOff | null;
 }
 
-export type ST_MailMergeDocType = string;
+export enum ST_MailMergeDocType {
+	catalog = 'catalog',
+	envelopes = 'envelopes',
+	mailingLabels = 'mailingLabels',
+	formLetters = 'formLetters',
+	email = 'email',
+	fax = 'fax',
+}
 
 export class CT_MailMergeDocType {
 	ValAttr: string;
@@ -347,13 +724,21 @@ export class CT_MailMergeDataType {
 	ValAttr: string;
 }
 
-export type ST_MailMergeDest = string;
+export enum ST_MailMergeDest {
+	newDocument = 'newDocument',
+	printer = 'printer',
+	email = 'email',
+	fax = 'fax',
+}
 
 export class CT_MailMergeDest {
 	ValAttr: string;
 }
 
-export type ST_MailMergeOdsoFMDFieldType = string;
+export enum ST_MailMergeOdsoFMDFieldType {
+	null = 'null',
+	dbColumn = 'dbColumn',
+}
 
 export class CT_MailMergeOdsoFMDFieldType {
 	ValAttr: string;
@@ -372,21 +757,40 @@ export class CT_Kinsoku {
 	ValAttr: string;
 }
 
-export type ST_TextDirection = string;
+export enum ST_TextDirection {
+	tb = 'tb',
+	rl = 'rl',
+	lr = 'lr',
+	tbV = 'tbV',
+	rlV = 'rlV',
+	lrV = 'lrV',
+}
 
 export class CT_TextDirection {
 	ValAttr: string;
 }
 
-export type ST_TextAlignment = string;
+export enum ST_TextAlignment {
+	top = 'top',
+	center = 'center',
+	baseline = 'baseline',
+	bottom = 'bottom',
+	auto = 'auto',
+}
 
 export class CT_TextAlignment {
 	ValAttr: string;
 }
 
-export type ST_DisplacedByCustomXml = string;
+export enum ST_DisplacedByCustomXml {
+	next = 'next',
+	prev = 'prev',
+}
 
-export type ST_AnnotationVMerge = string;
+export enum ST_AnnotationVMerge {
+	cont = 'cont',
+	rest = 'rest',
+}
 
 export class CT_Markup {
 	IdAttr: number;
@@ -531,7 +935,13 @@ export class CT_Tabs {
 	Tab: Array<CT_TabStop>;
 }
 
-export type ST_TextboxTightWrap = string;
+export enum ST_TextboxTightWrap {
+	none = 'none',
+	allLines = 'allLines',
+	firstAndLastLine = 'firstAndLastLine',
+	firstLineOnly = 'firstLineOnly',
+	lastLineOnly = 'lastLineOnly',
+}
 
 export class CT_TextboxTightWrap {
 	ValAttr: string;
@@ -619,14 +1029,20 @@ export class CT_ObjectEmbed {
 	FieldCodesAttr: string | null;
 }
 
-export type ST_ObjectDrawAspect = string;
+export enum ST_ObjectDrawAspect {
+	content = 'content',
+	icon = 'icon',
+}
 
 export class CT_ObjectLink {
 	UpdateModeAttr: string;
 	LockedFieldAttr: ST_OnOff | null;
 }
 
-export type ST_ObjectUpdateMode = string;
+export enum ST_ObjectUpdateMode {
+	always = 'always',
+	onCall = 'onCall',
+}
 
 export class CT_Drawing {
 	WpAnchor: Array<CT_Anchor>;
@@ -640,9 +1056,16 @@ export class CT_SimpleField {
 	EG_PContent: Array<EG_PContent>;
 }
 
-export type ST_FldCharType = string;
+export enum ST_FldCharType {
+	begin = 'begin',
+	separate = 'separate',
+	end = 'end',
+}
 
-export type ST_InfoTextType = string;
+export enum ST_InfoTextType {
+	text = 'text',
+	autoText = 'autoText',
+}
 
 export type ST_FFHelpTextVal = string;
 
@@ -650,7 +1073,14 @@ export type ST_FFStatusTextVal = string;
 
 export type ST_FFName = string;
 
-export type ST_FFTextType = string;
+export enum ST_FFTextType {
+	regular = 'regular',
+	number = 'number',
+	date = 'date',
+	currentTime = 'currentTime',
+	currentDate = 'currentDate',
+	calculated = 'calculated',
+}
 
 export class CT_FFTextType {
 	ValAttr: string;
@@ -722,7 +1152,13 @@ export class CT_FFTextInput {
 	Format: Array<CT_String>;
 }
 
-export type ST_SectionMark = string;
+export enum ST_SectionMark {
+	nextPage = 'nextPage',
+	nextColumn = 'nextColumn',
+	continuous = 'continuous',
+	evenPage = 'evenPage',
+	oddPage = 'oddPage',
+}
 
 export class CT_SectType {
 	ValAttr: string | null;
@@ -733,9 +1169,76 @@ export class CT_PaperSource {
 	OtherAttr: number | null;
 }
 
-export type ST_NumberFormat = string;
+export enum ST_NumberFormat {
+	decimal = 'decimal',
+	upperRoman = 'upperRoman',
+	lowerRoman = 'lowerRoman',
+	upperLetter = 'upperLetter',
+	lowerLetter = 'lowerLetter',
+	ordinal = 'ordinal',
+	cardinalText = 'cardinalText',
+	ordinalText = 'ordinalText',
+	hex = 'hex',
+	chicago = 'chicago',
+	ideographDigital = 'ideographDigital',
+	japaneseCounting = 'japaneseCounting',
+	aiueo = 'aiueo',
+	iroha = 'iroha',
+	decimalFullWidth = 'decimalFullWidth',
+	decimalHalfWidth = 'decimalHalfWidth',
+	japaneseLegal = 'japaneseLegal',
+	japaneseDigitalTenThousand = 'japaneseDigitalTenThousand',
+	decimalEnclosedCircle = 'decimalEnclosedCircle',
+	decimalFullWidth2 = 'decimalFullWidth2',
+	aiueoFullWidth = 'aiueoFullWidth',
+	irohaFullWidth = 'irohaFullWidth',
+	decimalZero = 'decimalZero',
+	bullet = 'bullet',
+	ganada = 'ganada',
+	chosung = 'chosung',
+	decimalEnclosedFullstop = 'decimalEnclosedFullstop',
+	decimalEnclosedParen = 'decimalEnclosedParen',
+	decimalEnclosedCircleChinese = 'decimalEnclosedCircleChinese',
+	ideographEnclosedCircle = 'ideographEnclosedCircle',
+	ideographTraditional = 'ideographTraditional',
+	ideographZodiac = 'ideographZodiac',
+	ideographZodiacTraditional = 'ideographZodiacTraditional',
+	taiwaneseCounting = 'taiwaneseCounting',
+	ideographLegalTraditional = 'ideographLegalTraditional',
+	taiwaneseCountingThousand = 'taiwaneseCountingThousand',
+	taiwaneseDigital = 'taiwaneseDigital',
+	chineseCounting = 'chineseCounting',
+	chineseLegalSimplified = 'chineseLegalSimplified',
+	chineseCountingThousand = 'chineseCountingThousand',
+	koreanDigital = 'koreanDigital',
+	koreanCounting = 'koreanCounting',
+	koreanLegal = 'koreanLegal',
+	koreanDigital2 = 'koreanDigital2',
+	vietnameseCounting = 'vietnameseCounting',
+	russianLower = 'russianLower',
+	russianUpper = 'russianUpper',
+	none = 'none',
+	numberInDash = 'numberInDash',
+	hebrew1 = 'hebrew1',
+	hebrew2 = 'hebrew2',
+	arabicAlpha = 'arabicAlpha',
+	arabicAbjad = 'arabicAbjad',
+	hindiVowels = 'hindiVowels',
+	hindiConsonants = 'hindiConsonants',
+	hindiNumbers = 'hindiNumbers',
+	hindiCounting = 'hindiCounting',
+	thaiLetters = 'thaiLetters',
+	thaiNumbers = 'thaiNumbers',
+	thaiCounting = 'thaiCounting',
+	bahtText = 'bahtText',
+	dollarText = 'dollarText',
+	custom = 'custom',
+}
 
-export type ST_PageOrientation = string;
+export enum ST_PageOrientation {
+	portrait = 'portrait',
+	landscape = 'landscape',
+}
 
 export class CT_PageSz {
 	WAttr: ST_TwipsMeasure | null;
@@ -754,11 +1257,21 @@ export class CT_PageMar {
 	GutterAttr: ST_TwipsMeasure;
 }
 
-export type ST_PageBorderZOrder = string;
+export enum ST_PageBorderZOrder {
+	front = 'front',
+	back = 'back',
+}
 
-export type ST_PageBorderDisplay = string;
+export enum ST_PageBorderDisplay {
+	allPages = 'allPages',
+	firstPage = 'firstPage',
+	notFirstPage = 'notFirstPage',
+}
 
-export type ST_PageBorderOffset = string;
+export enum ST_PageBorderOffset {
+	page = 'page',
+	text = 'text',
+}
 
 export class CT_PageBorders {
 	ZOrderAttr: string | null;
@@ -784,9 +1297,19 @@ export class CT_TopPageBorder {
 	RTopRightAttr: string | null;
 }
 
-export type ST_ChapterSep = string;
+export enum ST_ChapterSep {
+	hyphen = 'hyphen',
+	period = 'period',
+	colon = 'colon',
+	emDash = 'emDash',
+	enDash = 'enDash',
+}
 
-export type ST_LineNumberRestart = string;
+export enum ST_LineNumberRestart {
+	newPage = 'newPage',
+	newSection = 'newSection',
+	continuous = 'continuous',
+}
 
 export class CT_LineNumber {
 	CountByAttr: number | null;
@@ -815,13 +1338,23 @@ export class CT_Columns {
 	Col: Array<CT_Column>;
 }
 
-export type ST_VerticalJc = string;
+export enum ST_VerticalJc {
+	top = 'top',
+	center = 'center',
+	both = 'both',
+	bottom = 'bottom',
+}
 
 export class CT_VerticalJc {
 	ValAttr: string;
 }
 
-export type ST_DocGrid = string;
+export enum ST_DocGrid {
+	default = 'default',
+	lines = 'lines',
+	linesAndChars = 'linesAndChars',
+	snapToChars = 'snapToChars',
+}
 
 export class CT_DocGrid {
 	TypeAttr: string | null;
@@ -829,9 +1362,18 @@ export class CT_DocGrid {
 	CharSpaceAttr: number | null;
 }
 
-export type ST_HdrFtr = string;
+export enum ST_HdrFtr {
+	even = 'even',
+	default = 'default',
+	first = 'first',
+}
 
-export type ST_FtnEdn = string;
+export enum ST_FtnEdn {
+	normal = 'normal',
+	separator = 'separator',
+	continuationSeparator = 'continuationSeparator',
+	continuationNotice = 'continuationNotice',
+}
 
 export class CT_HdrFtrRef {
 	TypeAttr: string;
@@ -887,20 +1429,42 @@ export class CT_SectPr {
 	SectPrChange: Array<CT_SectPrChange>;
 }
 
-export type ST_BrType = string;
+export enum ST_BrType {
+	page = 'page',
+	column = 'column',
+	textWrapping = 'textWrapping',
+}
 
-export type ST_BrClear = string;
+export enum ST_BrClear {
+	none = 'none',
+	left = 'left',
+	right = 'right',
+	all = 'all',
+}
 
 export class CT_Br {
 	TypeAttr: string | null;
 	ClearAttr: string | null;
 }
 
-export type ST_PTabAlignment = string;
+export enum ST_PTabAlignment {
+	left = 'left',
+	center = 'center',
+	right = 'right',
+}
 
-export type ST_PTabRelativeTo = string;
+export enum ST_PTabRelativeTo {
+	margin = 'margin',
+	indent = 'indent',
+}
 
-export type ST_PTabLeader = string;
+export enum ST_PTabLeader {
+	none = 'none',
+	dot = 'dot',
+	hyphen = 'hyphen',
+	underscore = 'underscore',
+	middleDot = 'middleDot',
+}
 
 export class CT_PTab {
 	AlignmentAttr: string;
@@ -913,13 +1477,26 @@ export class CT_Sym {
 	CharAttr: Array<any> | null;
 }
 
-export type ST_ProofErr = string;
+export enum ST_ProofErr {
+	spellStart = 'spellStart',
+	spellEnd = 'spellEnd',
+	gramStart = 'gramStart',
+	gramEnd = 'gramEnd',
+}
 
 export class CT_ProofErr {
 	TypeAttr: string;
 }
 
-export type ST_EdGrp = string;
+export enum ST_EdGrp {
+	none = 'none',
+	everyone = 'everyone',
+	administrators = 'administrators',
+	contributors = 'contributors',
+	editors = 'editors',
+	owners = 'owners',
+	current = 'current',
+}
 
 export class CT_Perm {
 	IdAttr: string;
@@ -980,9 +1557,21 @@ export class CT_R {
 	EG_RunInnerContent: Array<EG_RunInnerContent>;
 }
 
-export type ST_Hint = string;
+export enum ST_Hint {
+	default = 'default',
+	eastAsia = 'eastAsia',
+}
 
-export type ST_Theme = string;
+export enum ST_Theme {
+	majorEastAsia = 'majorEastAsia',
+	majorBidi = 'majorBidi',
+	majorAscii = 'majorAscii',
+	majorHAnsi = 'majorHAnsi',
+	minorEastAsia = 'minorEastAsia',
+	minorBidi = 'minorBidi',
+	minorAscii = 'minorAscii',
+	minorHAnsi = 'minorHAnsi',
+}
 
 export class CT_Fonts {
 	HintAttr: string | null;
@@ -1097,7 +1686,14 @@ export class CT_AltChunkPr {
 	MatchSrc: Array<CT_OnOff>;
 }
 
-export type ST_RubyAlign = string;
+export enum ST_RubyAlign {
+	center = 'center',
+	distributeLetter = 'distributeLetter',
+	distributeSpace = 'distributeSpace',
+	left = 'left',
+	right = 'right',
+	rightVertical = 'rightVertical',
+}
 
 export class CT_RubyAlign {
 	ValAttr: string;
@@ -1127,7 +1723,12 @@ export class CT_Ruby {
 	RubyBase: Array<CT_RubyContent>;
 }
 
-export type ST_Lock = string;
+export enum ST_Lock {
+	sdtLocked = 'sdtLocked',
+	contentLocked = 'contentLocked',
+	unlocked = 'unlocked',
+	sdtContentLocked = 'sdtContentLocked',
+}
 
 export class CT_Lock {
 	ValAttr: string | null;
@@ -1138,7 +1739,11 @@ export class CT_SdtListItem {
 	ValueAttr: string | null;
 }
 
-export type ST_SdtDateMappingType = string;
+export enum ST_SdtDateMappingType {
+	text = 'text',
+	date = 'date',
+	dateTime = 'dateTime',
+}
 
 export class CT_SdtDateMappingType {
 	ValAttr: string | null;
@@ -1236,7 +1841,10 @@ export class CT_BdoContentRun {
 	EG_PContent: Array<EG_PContent>;
 }
 
-export type ST_Direction = string;
+export enum ST_Direction {
+	ltr = 'ltr',
+	rtl = 'rtl',
+}
 
 export class CT_SdtContentRun {
 	EG_PContent: Array<EG_PContent>;
@@ -1367,7 +1975,12 @@ export class CT_P {
 	PPr: Array<CT_PPr>;
 }
 
-export type ST_TblWidth = string;
+export enum ST_TblWidth {
+	nil = 'nil',
+	pct = 'pct',
+	dxa = 'dxa',
+	auto = 'auto',
+}
 
 export class CT_Height {
 	ValAttr: ST_TwipsMeasure | null;
@@ -1414,7 +2027,10 @@ export class CT_TcMar {
 	End: Array<CT_TblWidth>;
 }
 
-export type ST_Merge = string;
+export enum ST_Merge {
+	continue = 'continue',
+	restart = 'restart',
+}
 
 export class CT_VMerge {
 	ValAttr: string | null;
@@ -1500,13 +2116,19 @@ export class CT_Row {
 	TrPr: Array<CT_TrPr>;
 }
 
-export type ST_TblLayoutType = string;
+export enum ST_TblLayoutType {
+	fixed = 'fixed',
+	autofit = 'autofit',
+}
 
 export class CT_TblLayoutType {
 	TypeAttr: string | null;
 }
 
-export type ST_TblOverlap = string;
+export enum ST_TblOverlap {
+	never = 'never',
+	overlap = 'overlap',
+}
 
 export class CT_TblOverlap {
 	ValAttr: string;
@@ -1597,13 +2219,21 @@ export class CT_TblLook {
 	NoVBandAttr: ST_OnOff | null;
 }
 
-export type ST_FtnPos = string;
+export enum ST_FtnPos {
+	pageBottom = 'pageBottom',
+	beneathText = 'beneathText',
+	sectEnd = 'sectEnd',
+	docEnd = 'docEnd',
+}
 
 export class CT_FtnPos {
 	ValAttr: string;
 }
 
-export type ST_EdnPos = string;
+export enum ST_EdnPos {
+	sectEnd = 'sectEnd',
+	docEnd = 'docEnd',
+}
 
 export class CT_EdnPos {
 	ValAttr: string;
@@ -1614,7 +2244,11 @@ export class CT_NumFmt {
 	FormatAttr: string | null;
 }
 
-export type ST_RestartNumber = string;
+export enum ST_RestartNumber {
+	continuous = 'continuous',
+	eachSect = 'eachSect',
+	eachPage = 'eachPage',
+}
 
 export class CT_NumRestart {
 	ValAttr: string;
@@ -1685,7 +2319,17 @@ export class CT_OdsoFieldMapData {
 	DynamicAddress: Array<CT_OnOff>;
 }
 
-export type ST_MailMergeSourceType = string;
+export enum ST_MailMergeSourceType {
+	database = 'database',
+	addressBook = 'addressBook',
+	document1 = 'document1',
+	document2 = 'document2',
+	text = 'text',
+	email = 'email',
+	native = 'native',
+	legacy = 'legacy',
+	master = 'master',
+}
 
 export class CT_MailMergeSourceType {
 	ValAttr: string;
@@ -1721,7 +2365,19 @@ export class CT_MailMerge {
 	Odso: Array<CT_Odso>;
 }
 
-export type ST_TargetScreenSz = string;
+export enum ST_TargetScreenSz {
+	544x376 = '544x376',
+	640x480 = '640x480',
+	720x512 = '720x512',
+	800x600 = '800x600',
+	1024x768 = '1024x768',
+	1152x882 = '1152x882',
+	1152x900 = '1152x900',
+	1280x1024 = '1280x1024',
+	1600x1200 = '1600x1200',
+	1800x1440 = '1800x1440',
+	1920x1200 = '1920x1200',
+}
 
 export class CT_TargetScreenSz {
 	ValAttr: string;
@@ -1758,7 +2414,11 @@ export class CT_DocRsids {
 	Rsid: Array<CT_LongHexNumber>;
 }
 
-export type ST_CharacterSpacing = string;
+export enum ST_CharacterSpacing {
+	doNotCompress = 'doNotCompress',
+	compressPunctuation = 'compressPunctuation',
+	compressPunctuationAndJapaneseKana = 'compressPunctuationAndJapaneseKana',
+}
 
 export class CT_CharacterSpacing {
 	ValAttr: string;
@@ -1782,7 +2442,20 @@ export class CT_DocDefaults {
 	PPrDefault: Array<CT_PPrDefault>;
 }
 
-export type ST_WmlColorSchemeIndex = string;
+export enum ST_WmlColorSchemeIndex {
+	dark1 = 'dark1',
+	light1 = 'light1',
+	dark2 = 'dark2',
+	light2 = 'light2',
+	accent1 = 'accent1',
+	accent2 = 'accent2',
+	accent3 = 'accent3',
+	accent4 = 'accent4',
+	accent5 = 'accent5',
+	accent6 = 'accent6',
+	hyperlink = 'hyperlink',
+	followedHyperlink = 'followedHyperlink',
+}
 
 export class CT_ColorSchemeMapping {
 	Bg1Attr: string | null;
@@ -1932,7 +2605,14 @@ export class CT_StylePaneFilter {
 	AlternateStyleNamesAttr: ST_OnOff | null;
 }
 
-export type ST_StyleSort = string;
+export enum ST_StyleSort {
+	name = 'name',
+	priority = 'priority',
+	default = 'default',
+	font = 'font',
+	basedOn = 'basedOn',
+	type = 'type',
+}
 
 export class CT_WebSettings {
 	Frameset: Array<CT_Frameset>;
@@ -1949,7 +2629,11 @@ export class CT_WebSettings {
 	SaveSmartTagsAsXml: Array<CT_OnOff>;
 }
 
-export type ST_FrameScrollbar = string;
+export enum ST_FrameScrollbar {
+	on = 'on',
+	off = 'off',
+	auto = 'auto',
+}
 
 export class CT_FrameScrollbar {
 	ValAttr: string;
@@ -1972,7 +2656,11 @@ export class CT_Frame {
 	LinkedToFile: Array<CT_OnOff>;
 }
 
-export type ST_FrameLayout = string;
+export enum ST_FrameLayout {
+	rows = 'rows',
+	cols = 'cols',
+	none = 'none',
+}
 
 export class CT_FrameLayout {
 	ValAttr: string;
@@ -1999,7 +2687,11 @@ export class CT_NumPicBullet {
 	Drawing: Array<CT_Drawing>;
 }
 
-export type ST_LevelSuffix = string;
+export enum ST_LevelSuffix {
+	tab = 'tab',
+	space = 'space',
+	nothing = 'nothing',
+}
 
 export class CT_LevelSuffix {
 	ValAttr: string;
@@ -2027,7 +2719,11 @@ export class CT_Lvl {
 	RPr: Array<CT_RPr>;
 }
 
-export type ST_MultiLevelType = string;
+export enum ST_MultiLevelType {
+	singleLevel = 'singleLevel',
+	multilevel = 'multilevel',
+	hybridMultilevel = 'hybridMultilevel',
+}
 
 export class CT_MultiLevelType {
 	ValAttr: string;
@@ -2063,7 +2759,21 @@ export class CT_Numbering {
 	NumIdMacAtCleanup: Array<CT_DecimalNumber>;
 }
 
-export type ST_TblStyleOverrideType = string;
+export enum ST_TblStyleOverrideType {
+	wholeTable = 'wholeTable',
+	firstRow = 'firstRow',
+	lastRow = 'lastRow',
+	firstCol = 'firstCol',
+	lastCol = 'lastCol',
+	band1Vert = 'band1Vert',
+	band2Vert = 'band2Vert',
+	band1Horz = 'band1Horz',
+	band2Horz = 'band2Horz',
+	neCell = 'neCell',
+	nwCell = 'nwCell',
+	seCell = 'seCell',
+	swCell = 'swCell',
+}
 
 export class CT_TblStylePr {
 	TypeAttr: string;
@@ -2074,7 +2784,12 @@ export class CT_TblStylePr {
 	TcPr: Array<CT_TcPr>;
 }
 
-export type ST_StyleType = string;
+export enum ST_StyleType {
+	paragraph = 'paragraph',
+	character = 'character',
+	table = 'table',
+	numbering = 'numbering',
+}
 
 export class CT_Style {
 	TypeAttr: string | null;
@@ -2134,13 +2849,24 @@ export class CT_Panose {
 	ValAttr: Array<any>;
 }
 
-export type ST_FontFamily = string;
+export enum ST_FontFamily {
+	decorative = 'decorative',
+	modern = 'modern',
+	roman = 'roman',
+	script = 'script',
+	swiss = 'swiss',
+	auto = 'auto',
+}
 
 export class CT_FontFamily {
 	ValAttr: string;
 }
 
-export type ST_Pitch = string;
+export enum ST_Pitch {
+	fixed = 'fixed',
+	variable = 'variable',
+	default = 'default',
+}
 
 export class CT_Pitch {
 	ValAttr: string;
@@ -2261,9 +2987,31 @@ export class CT_SmartTagType {
 	UrlAttr: string | null;
 }
 
-export type ST_ThemeColor = string;
+export enum ST_ThemeColor {
+	dark1 = 'dark1',
+	light1 = 'light1',
+	dark2 = 'dark2',
+	light2 = 'light2',
+	accent1 = 'accent1',
+	accent2 = 'accent2',
+	accent3 = 'accent3',
+	accent4 = 'accent4',
+	accent5 = 'accent5',
+	accent6 = 'accent6',
+	hyperlink = 'hyperlink',
+	followedHyperlink = 'followedHyperlink',
+	none = 'none',
+	background1 = 'background1',
+	text1 = 'text1',
+	background2 = 'background2',
+	text2 = 'text2',
+}
 
-export type ST_DocPartBehavior = string;
+export enum ST_DocPartBehavior {
+	content = 'content',
+	p = 'p',
+	pg = 'pg',
+}
 
 export class CT_DocPartBehavior {
 	ValAttr: string;
@@ -2273,7 +3021,15 @@ export class CT_DocPartBehaviors {
 	Behavior: Array<CT_DocPartBehavior>;
 }
 
-export type ST_DocPartType = string;
+export enum ST_DocPartType {
+	none = 'none',
+	normal = 'normal',
+	autoExp = 'autoExp',
+	toolbar = 'toolbar',
+	speller = 'speller',
+	formFld = 'formFld',
+	bbPlcHdr = 'bbPlcHdr',
+}
 
 export class CT_DocPartType {
 	ValAttr: string;
@@ -2284,7 +3040,46 @@ export class CT_DocPartTypes {
 	Type: Array<CT_DocPartType>;
 }
 
-export type ST_DocPartGallery = string;
+export enum ST_DocPartGallery {
+	placeholder = 'placeholder',
+	any = 'any',
+	default = 'default',
+	docParts = 'docParts',
+	coverPg = 'coverPg',
+	eq = 'eq',
+	ftrs = 'ftrs',
+	hdrs = 'hdrs',
+	pgNum = 'pgNum',
+	tbls = 'tbls',
+	watermarks = 'watermarks',
+	autoTxt = 'autoTxt',
+	txtBox = 'txtBox',
+	pgNumT = 'pgNumT',
+	pgNumB = 'pgNumB',
+	pgNumMargins = 'pgNumMargins',
+	tblOfContents = 'tblOfContents',
+	bib = 'bib',
+	custQuickParts = 'custQuickParts',
+	custCoverPg = 'custCoverPg',
+	custEq = 'custEq',
+	custFtrs = 'custFtrs',
+	custHdrs = 'custHdrs',
+	custPgNum = 'custPgNum',
+	custTbls = 'custTbls',
+	custWatermarks = 'custWatermarks',
+	custAutoTxt = 'custAutoTxt',
+	custTxtBox = 'custTxtBox',
+	custPgNumT = 'custPgNumT',
+	custPgNumB = 'custPgNumB',
+	custPgNumMargins = 'custPgNumMargins',
+	custTblOfContents = 'custTblOfContents',
+	custBib = 'custBib',
+	custom1 = 'custom1',
+	custom2 = 'custom2',
+	custom3 = 'custom3',
+	custom4 = 'custom4',
+	custom5 = 'custom5',
+}
 
 export class CT_DocPartGallery {
 	ValAttr: string;
@@ -2329,7 +3124,12 @@ export type Numbering = CT_Numbering;
 
 export type Styles = CT_Styles;
 
-export type ST_CaptionPos = string;
+export enum ST_CaptionPos {
+	above = 'above',
+	below = 'below',
+	left = 'left',
+	right = 'right',
+}
 
 export class CT_Caption {
 	NameAttr: string;

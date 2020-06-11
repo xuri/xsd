@@ -5,7 +5,24 @@
 // Use of this source code is governed by a BSD-style license that can be
 // found in the LICENSE file.
 
-export type FinancialAwards = string;
+export enum FinancialAwards {
+	Pell = 'Pell',
+	DLSubsidized = 'DLSubsidized',
+	DLUnsubsidized = 'DLUnsubsidized',
+	DLPLUS = 'DLPLUS',
+	FFELSubsidized = 'FFELSubsidized',
+	FFELUnsubsidized = 'FFELUnsubsidized',
+	FFELPLUS = 'FFELPLUS',
+	AlternativeLoan = 'AlternativeLoan',
+	FWSP = 'FWSP',
+	SEOG = 'SEOG',
+	Perkins = 'Perkins',
+	AcademicCompetitivenessGrant = 'AcademicCompetitivenessGrant',
+	NationalSMARTGrant = 'NationalSMARTGrant',
+	DLGraduatePLUS = 'DLGraduatePLUS',
+	TEACH = 'TEACH',
+	Counseling = 'Counseling',
+}
 
 export type StudentLevelCode = string;
 
