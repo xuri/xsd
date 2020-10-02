@@ -5,12 +5,12 @@ export type PurchaseOrder = PurchaseOrderType;
 export type Comment = string;
 
 export class PurchaseOrderType {
-	ShipTo: Array<USAddress>;
-	BillTo: Array<USAddress>;
-	PoComment: Array<string>;
+	ShipTo: USAddress;
+	BillTo: USAddress;
+	PoComment: string;
 }
 
 export class USAddress {
-	Name: Array<string>;
-	Street: Array<string>;
+	Name: string;
+	Street: string;
 }

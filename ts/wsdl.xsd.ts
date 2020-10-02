@@ -4,7 +4,7 @@ export class TDocumentation {
 }
 
 export class TDocumented {
-	Documentation: Array<TDocumentation>;
+	Documentation: TDocumentation;
 }
 
 export class TExtensibleAttributesDocumented {
@@ -99,8 +99,8 @@ export class TBindingOperationFault {
 
 export class TBindingOperation {
 	NameAttr: string;
-	Input: Array<TBindingOperationMessage>;
-	Output: Array<TBindingOperationMessage>;
+	Input: TBindingOperationMessage;
+	Output: TBindingOperationMessage;
 	Fault: Array<TBindingOperationFault>;
 }
 
