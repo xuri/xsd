@@ -11,17 +11,21 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
+// TDocumentation ...
 public class TDocumentation {
 }
 
+// TDocumented is This type is extended by  component types to allow them to be documented
 public class TDocumented {
 	@XmlElement(required = true, name = "documentation")
 	protected TDocumentation Documentation;
 }
 
+// TExtensibleAttributesDocumented is This type is extended by component types to allow attributes from other namespaces to be added.
 public class TExtensibleAttributesDocumented {
 }
 
+// TExtensibleDocumented is This type is extended by component types to allow elements from other namespaces to be added.
 public class TExtensibleDocumented {
 }
 
@@ -31,6 +35,7 @@ public class Definitions {
 	protected TDefinitions Definitions;
 }
 
+// AnyTopLevelOptionalElement ...
 public class AnyTopLevelOptionalElement {
 	@XmlElement(required = true, name = "import")
 	protected TImport Import;
@@ -46,6 +51,7 @@ public class AnyTopLevelOptionalElement {
 	protected TService Service;
 }
 
+// TDefinitions ...
 public class TDefinitions {
 	@XmlAttribute(name = "targetNamespace")
 	protected QNameAttr TargetNamespace;
@@ -54,6 +60,7 @@ public class TDefinitions {
 	protected List<AnyTopLevelOptionalElement> WsdlAnyTopLevelOptionalElement;
 }
 
+// TImport ...
 public class TImport {
 	@XmlAttribute(name = "namespace", required = true)
 	protected QNameAttr Namespace;
@@ -61,9 +68,11 @@ public class TImport {
 	protected QNameAttr Location;
 }
 
+// TTypes ...
 public class TTypes {
 }
 
+// TMessage ...
 public class TMessage {
 	@XmlAttribute(name = "name", required = true)
 	protected StringAttr Name;
@@ -71,6 +80,7 @@ public class TMessage {
 	protected List<TPart> Part;
 }
 
+// TPart ...
 public class TPart {
 	@XmlAttribute(name = "name", required = true)
 	protected StringAttr Name;
@@ -80,6 +90,7 @@ public class TPart {
 	protected StringAttr Type;
 }
 
+// TPortType ...
 public class TPortType {
 	@XmlAttribute(name = "name", required = true)
 	protected StringAttr Name;
@@ -87,6 +98,7 @@ public class TPortType {
 	protected List<TOperation> Operation;
 }
 
+// TOperation ...
 public class TOperation {
 	@XmlAttribute(name = "name", required = true)
 	protected StringAttr Name;
@@ -96,6 +108,7 @@ public class TOperation {
 	protected Solicitresponseornotificationoperation WsdlSolicitresponseornotificationoperation;
 }
 
+// Requestresponseoronewayoperation ...
 public class Requestresponseoronewayoperation {
 	@XmlElement(required = true, name = "input")
 	protected TParam Input;
@@ -105,6 +118,7 @@ public class Requestresponseoronewayoperation {
 	protected List<TFault> Fault;
 }
 
+// Solicitresponseornotificationoperation ...
 public class Solicitresponseornotificationoperation {
 	@XmlElement(required = true, name = "output")
 	protected TParam Output;
@@ -114,6 +128,7 @@ public class Solicitresponseornotificationoperation {
 	protected List<TFault> Fault;
 }
 
+// TParam ...
 public class TParam {
 	@XmlAttribute(name = "name")
 	protected StringAttr Name;
@@ -121,6 +136,7 @@ public class TParam {
 	protected StringAttr Message;
 }
 
+// TFault ...
 public class TFault {
 	@XmlAttribute(name = "name", required = true)
 	protected StringAttr Name;
@@ -128,6 +144,7 @@ public class TFault {
 	protected StringAttr Message;
 }
 
+// TBinding ...
 public class TBinding {
 	@XmlAttribute(name = "name", required = true)
 	protected StringAttr Name;
@@ -137,16 +154,19 @@ public class TBinding {
 	protected List<TBindingOperation> Operation;
 }
 
+// TBindingOperationMessage ...
 public class TBindingOperationMessage {
 	@XmlAttribute(name = "name")
 	protected StringAttr Name;
 }
 
+// TBindingOperationFault ...
 public class TBindingOperationFault {
 	@XmlAttribute(name = "name", required = true)
 	protected StringAttr Name;
 }
 
+// TBindingOperation ...
 public class TBindingOperation {
 	@XmlAttribute(name = "name", required = true)
 	protected StringAttr Name;
@@ -158,6 +178,7 @@ public class TBindingOperation {
 	protected List<TBindingOperationFault> Fault;
 }
 
+// TService ...
 public class TService {
 	@XmlAttribute(name = "name", required = true)
 	protected StringAttr Name;
@@ -165,6 +186,7 @@ public class TService {
 	protected List<TPort> Port;
 }
 
+// TPort ...
 public class TPort {
 	@XmlAttribute(name = "name", required = true)
 	protected StringAttr Name;
@@ -184,6 +206,7 @@ public class Required {
 	protected Boolean Required;
 }
 
+// TExtensibilityElement ...
 public class TExtensibilityElement {
 	@XmlAttribute(name = "wsdl:required")
 	protected BooleanAttr WsdlRequired;

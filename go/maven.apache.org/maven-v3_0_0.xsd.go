@@ -6,7 +6,11 @@ import (
 	"encoding/xml"
 )
 
-// Project ...
+// Project is The <code>&lt;project&gt;</code> element specifies various attributes
+//          about a project. This is the root element of the project descriptor.
+//          The following table lists all of the possible child elements. Child
+//          elements with children are then documented further in subsequent
+//          sections.
 type Project *Model
 
 // MailingLists ...
@@ -68,7 +72,10 @@ type Dependencies struct {
 	Dependency []*Dependency `xml:"dependency"`
 }
 
-// Model ...
+// Model is Optional. The directory on the web server where the final
+//             distributions will be published.  This is used when the
+//             distributions are
+//             <a href="/plugins/dist/index.html">deployed</a>.
 type Model struct {
 	Extend                string         `xml:"extend"`
 	PomVersion            string         `xml:"pomVersion"`
@@ -116,7 +123,8 @@ type Resources struct {
 	Resource []*Resource `xml:"resource"`
 }
 
-// Build ...
+// Build is This element specifies a directory containing integration test
+//              sources of the project.
 type Build struct {
 	NagEmailAddress                    string               `xml:"nagEmailAddress"`
 	SourceDirectory                    string               `xml:"sourceDirectory"`
@@ -141,14 +149,15 @@ type Excludes struct {
 	Exclude []string `xml:"exclude"`
 }
 
-// UnitTest ...
+// UnitTest is 3.0.0
 type UnitTest struct {
 	Resources *Resources `xml:"resources"`
 	Includes  *Includes  `xml:"includes"`
 	Excludes  *Excludes  `xml:"excludes"`
 }
 
-// Resource ...
+// Resource is Describe the directory where the resource is stored.
+//             The path may be absolute, or relative to the project.xml file.
 type Resource struct {
 	TargetPath string    `xml:"targetPath"`
 	Filtering  bool      `xml:"filtering"`
@@ -157,7 +166,8 @@ type Resource struct {
 	Excludes   *Excludes `xml:"excludes"`
 }
 
-// SourceModification ...
+// SourceModification is Describe the directory where the resource is stored.
+//             The path may be absolute, or relative to the project.xml file.
 type SourceModification struct {
 	ClassName string    `xml:"className"`
 	Property  string    `xml:"property"`
@@ -166,7 +176,11 @@ type SourceModification struct {
 	Excludes  *Excludes `xml:"excludes"`
 }
 
-// Organization ...
+// Organization is The URL to the organization's logo image.  This can be an URL relative
+//             to the base directory of the generated web site,
+//             (e.g., <code>/images/org-logo.png</code>) or an absolute URL
+//             (e.g., <code>http://my.corp/logo.png</code>).  This value is used
+//             when generating the project documentation.
 type Organization struct {
 	Name string `xml:"name"`
 	Url  string `xml:"url"`
@@ -179,7 +193,7 @@ type Roles struct {
 	Role    []string `xml:"role"`
 }
 
-// Developer ...
+// Developer is The URL of the organization.
 type Developer struct {
 	Id              string      `xml:"id"`
 	Name            string      `xml:"name"`
@@ -192,7 +206,13 @@ type Developer struct {
 	Properties      *Properties `xml:"properties"`
 }
 
-// Dependency ...
+// Dependency is The type of dependency. This defaults to <code>jar</code>.
+//             Known recognised dependency types are:
+//             <ul>
+//             <li><code>jar</code></li>
+//             <li><code>ejb</code></li>
+//             <li><code>plugin</code></li>
+//             </ul>
 type Dependency struct {
 	Id         string      `xml:"id"`
 	GroupId    string      `xml:"groupId"`
@@ -204,27 +224,31 @@ type Dependency struct {
 	Properties *Properties `xml:"properties"`
 }
 
-// Repository ...
+// Repository is The URL to the project's browsable CVS repository.
 type Repository struct {
 	Connection          string `xml:"connection"`
 	DeveloperConnection string `xml:"developerConnection"`
 	Url                 string `xml:"url"`
 }
 
-// PackageGroup ...
+// PackageGroup is the description
 type PackageGroup struct {
 	Title    string `xml:"title"`
 	Packages string `xml:"packages"`
 }
 
-// Version ...
+// Version is A unique identifier for a version.  This ID is
+//             used to specify the version that
+//             <a href="/plugins/dist/index.html">
+//               <code>maven:dist</code>
+//             </a> builds.
 type Version struct {
 	Name string `xml:"name"`
 	Tag  string `xml:"tag"`
 	Id   string `xml:"id"`
 }
 
-// License ...
+// License is Addendum information pertaining to this license.
 type License struct {
 	Name         string `xml:"name"`
 	Url          string `xml:"url"`
@@ -232,7 +256,7 @@ type License struct {
 	Comments     string `xml:"comments"`
 }
 
-// Contributor ...
+// Contributor is The URL of the organization.
 type Contributor struct {
 	Name            string      `xml:"name"`
 	Email           string      `xml:"email"`
@@ -244,7 +268,9 @@ type Contributor struct {
 	Properties      *Properties `xml:"properties"`
 }
 
-// Branch ...
+// Branch is The branch tag in the version control system (e.g. cvs) used by the
+//             project for the source code associated with this branch of the
+//             project.
 type Branch struct {
 	Tag string `xml:"tag"`
 }
@@ -255,7 +281,7 @@ type OtherArchives struct {
 	OtherArchive []string `xml:"otherArchive"`
 }
 
-// MailingList ...
+// MailingList is The link to a URL where you can browse the mailing list archive.
 type MailingList struct {
 	Name          string         `xml:"name"`
 	Subscribe     string         `xml:"subscribe"`

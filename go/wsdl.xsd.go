@@ -11,18 +11,18 @@ type TDocumentation struct {
 	XMLName xml.Name `xml:"tDocumentation"`
 }
 
-// TDocumented ...
+// TDocumented is This type is extended by  component types to allow them to be documented
 type TDocumented struct {
 	XMLName       xml.Name        `xml:"tDocumented"`
 	Documentation *TDocumentation `xml:"documentation"`
 }
 
-// TExtensibleAttributesDocumented ...
+// TExtensibleAttributesDocumented is This type is extended by component types to allow attributes from other namespaces to be added.
 type TExtensibleAttributesDocumented struct {
 	XMLName xml.Name `xml:"tExtensibleAttributesDocumented"`
 }
 
-// TExtensibleDocumented ...
+// TExtensibleDocumented is This type is extended by component types to allow elements from other namespaces to be added.
 type TExtensibleDocumented struct {
 	XMLName xml.Name `xml:"tExtensibleDocumented"`
 }

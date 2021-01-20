@@ -2,6 +2,7 @@
 
 typedef DocumentModel Document;
 
+// DocumentModel is The meta data to construct a cover page for the document.
 typedef struct {
 	char OutputNameAttr; // attr, optional
 	DocumentMeta Meta;
@@ -9,12 +10,14 @@ typedef struct {
 	DocumentCover Cover;
 } DocumentModel;
 
+// DocumentTOC is TOC item.
 typedef struct {
 	char NameAttr; // attr, optional
 	int DepthAttr; // attr, optional
 	DocumentTOCItem Item[];
 } DocumentTOC;
 
+// DocumentTOCItem is A table of content item containing sub-items.
 typedef struct {
 	char NameAttr; // attr, optional
 	char RefAttr; // attr, optional
@@ -22,6 +25,7 @@ typedef struct {
 	DocumentTOCItem Item[];
 } DocumentTOCItem;
 
+// DocumentCover is The location of an image file that represents the company logo.
 typedef struct {
 	char CoverTitle;
 	char CoverSubTitle;
@@ -35,6 +39,7 @@ typedef struct {
 	char CompanyLogo;
 } DocumentCover;
 
+// DocumentAuthor is The state or province of the address of the author, if applicable.
 typedef struct {
 	char FirstName;
 	char LastName;
@@ -52,14 +57,18 @@ typedef struct {
 	char State;
 } DocumentAuthor;
 
+// Authors ...
 typedef struct {
 	DocumentAuthor Author[];
 } Authors;
 
+// KeyWords ...
 typedef struct {
 	char KeyWord[];
 } KeyWords;
 
+// DocumentMeta is A shortcut for the unique author of the document, usually as a String of "firstName lastName". For
+//             more authors, you could use the <authors/> tag.
 typedef struct {
 	char Title;
 	char Author;
@@ -86,12 +95,14 @@ typedef struct {
 	bool Draft;
 } DocumentMeta;
 
+// DocumentTemplate is A template that was used to create the document.
 typedef struct {
 	char HrefAttr; // attr, optional
 	char TitleAttr; // attr, optional
 	char DateAttr; // attr, optional
 } DocumentTemplate;
 
+// DocumentStatistic is Statistical attributes of the document.
 typedef struct {
 	int PageCountAttr; // attr, optional
 	int TableCountAttr; // attr, optional
@@ -109,6 +120,7 @@ typedef struct {
 	int NonWhitespaceCharacterCountAttr; // attr, optional
 } DocumentStatistic;
 
+// DocumentHyperlinkBehaviour is Specifies the default behavior for hyperlinks in the document.
 typedef struct {
 	char TargetFrameAttr; // attr, optional
 } DocumentHyperlinkBehaviour;

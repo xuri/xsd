@@ -6,7 +6,8 @@ import (
 	"encoding/xml"
 )
 
-// Project ...
+// Project is The <code>&lt;project&gt;</code> element is the root of the descriptor.
+//         The following table lists all of the possible child elements.
 type Project *Model
 
 // Licenses ...
@@ -73,7 +74,9 @@ type Profiles struct {
 	Profile []*Profile `xml:"profile"`
 }
 
-// Model ...
+// Model is This element describes various attributes of the organization to which the
+//             project belongs. These attributes are utilized when documentation is created (for
+//             copyright notices and links).
 type Model struct {
 	ChildProjectUrlInheritAppendPathAttr string                  `xml:"child.project.url.inherit.append.path,attr,omitempty"`
 	ModelVersion                         string                  `xml:"modelVersion"`
@@ -108,7 +111,7 @@ type Model struct {
 	Profiles                             *Profiles               `xml:"profiles"`
 }
 
-// License ...
+// License is Addendum information pertaining to this license.
 type License struct {
 	Name         string `xml:"name"`
 	Url          string `xml:"url"`
@@ -122,7 +125,8 @@ type Notifiers struct {
 	Notifier []*Notifier `xml:"notifier"`
 }
 
-// CiManagement ...
+// CiManagement is URL for the continuous integration system used by the project if it has a web
+//             interface.
 type CiManagement struct {
 	System    string     `xml:"system"`
 	Url       string     `xml:"url"`
@@ -134,7 +138,7 @@ type Configuration struct {
 	XMLName xml.Name `xml:"configuration"`
 }
 
-// Notifier ...
+// Notifier is <b>Deprecated</b>. Where to send the notification to - eg email address.
 type Notifier struct {
 	Type          string         `xml:"type"`
 	SendOnError   bool           `xml:"sendOnError"`
@@ -145,7 +149,9 @@ type Notifier struct {
 	Configuration *Configuration `xml:"configuration"`
 }
 
-// Scm ...
+// Scm is The URL to the project's browsable SCM repository, such as ViewVC or Fisheye.
+//             <br><b>Default value is</b>: parent value [+ path adjustment] + (artifactId or project.directory property), or just parent value if
+//             scm's <code>child.scm.url.inherit.append.path="false"</code>
 type Scm struct {
 	ChildScmConnectionInheritAppendPathAttr          string `xml:"child.scm.connection.inherit.append.path,attr,omitempty"`
 	ChildScmDeveloperConnectionInheritAppendPathAttr string `xml:"child.scm.developerConnection.inherit.append.path,attr,omitempty"`
@@ -156,13 +162,14 @@ type Scm struct {
 	Url                                              string `xml:"url"`
 }
 
-// IssueManagement ...
+// IssueManagement is URL for the issue management system used by the project.
 type IssueManagement struct {
 	System string `xml:"system"`
 	Url    string `xml:"url"`
 }
 
-// DependencyManagement ...
+// DependencyManagement is Section for management of default dependency information for use in a group of
+//         POMs.
 type DependencyManagement struct {
 	Dependencies *Dependencies `xml:"dependencies"`
 }
@@ -173,7 +180,12 @@ type Exclusions struct {
 	Exclusion []*Exclusion `xml:"exclusion"`
 }
 
-// Dependency ...
+// Dependency is FOR SYSTEM SCOPE ONLY. Note that use of this property is <b>discouraged</b>
+//             and may be replaced in later versions. This specifies the path on the filesystem
+//             for this dependency.
+//             Requires an absolute path for the value, not relative.
+//             Use a property that gives the machine specific absolute path,
+//             e.g. <code>${java.home}</code>.
 type Dependency struct {
 	GroupId    string      `xml:"groupId"`
 	ArtifactId string      `xml:"artifactId"`
@@ -186,13 +198,23 @@ type Dependency struct {
 	Optional   string      `xml:"optional"`
 }
 
-// Exclusion ...
+// Exclusion is The group ID of the project to exclude.
 type Exclusion struct {
 	ArtifactId string `xml:"artifactId"`
 	GroupId    string `xml:"groupId"`
 }
 
-// Parent ...
+// Parent is The relative path of the parent <code>pom.xml</code> file within the check out.
+//             If not specified, it defaults to <code>../pom.xml</code>.
+//             Maven looks for the parent POM first in this location on
+//             the filesystem, then the local repository, and lastly in the remote repo.
+//             <code>relativePath</code> allows you to select a different location,
+//             for example when your structure is flat, or deeper without an intermediate parent POM.
+//             However, the group ID, artifact ID and version are still required,
+//             and must match the file in the location given or it will revert to the repository for the POM.
+//             This feature is only for enhancing the development in a local checkout of that project.
+//             Set the value to an empty string in case you want to disable the feature and always resolve
+//             the parent POM from the repositories.
 type Parent struct {
 	GroupId      string `xml:"groupId"`
 	ArtifactId   string `xml:"artifactId"`
@@ -206,7 +228,7 @@ type Roles struct {
 	Role    []string `xml:"role"`
 }
 
-// Developer ...
+// Developer is The URL of the organization.
 type Developer struct {
 	Id              string      `xml:"id"`
 	Name            string      `xml:"name"`
@@ -225,7 +247,7 @@ type OtherArchives struct {
 	OtherArchive []string `xml:"otherArchive"`
 }
 
-// MailingList ...
+// MailingList is The link to a URL where you can browse the mailing list archive.
 type MailingList struct {
 	Name          string         `xml:"name"`
 	Subscribe     string         `xml:"subscribe"`
@@ -235,7 +257,7 @@ type MailingList struct {
 	OtherArchives *OtherArchives `xml:"otherArchives"`
 }
 
-// Contributor ...
+// Contributor is The URL of the organization.
 type Contributor struct {
 	Name            string      `xml:"name"`
 	Email           string      `xml:"email"`
@@ -247,13 +269,19 @@ type Contributor struct {
 	Properties      *Properties `xml:"properties"`
 }
 
-// Organization ...
+// Organization is The URL to the organization's home page.
 type Organization struct {
 	Name string `xml:"name"`
 	Url  string `xml:"url"`
 }
 
-// DistributionManagement ...
+// DistributionManagement is Gives the status of this artifact in the remote repository.
+//             This must not be set in your local project, as it is updated by
+//             tools placing it in the reposiory. Valid values are: <code>none</code> (default),
+//             <code>converted</code> (repository manager converted this from an Maven 1 POM),
+//             <code>partner</code>
+//             (directly synced from a partner Maven 2 repository), <code>deployed</code> (was deployed from a Maven 2
+//             instance), <code>verified</code> (has been hand verified as correct and final).
 type DistributionManagement struct {
 	Repository         *DeploymentRepository `xml:"repository"`
 	SnapshotRepository *DeploymentRepository `xml:"snapshotRepository"`
@@ -263,7 +291,8 @@ type DistributionManagement struct {
 	Status             string                `xml:"status"`
 }
 
-// DeploymentRepository ...
+// DeploymentRepository is The type of layout this repository uses for locating and storing artifacts -
+//             can be <code>legacy</code> or <code>default</code>.
 type DeploymentRepository struct {
 	UniqueVersion bool              `xml:"uniqueVersion"`
 	Releases      *RepositoryPolicy `xml:"releases"`
@@ -274,14 +303,20 @@ type DeploymentRepository struct {
 	Layout        string            `xml:"layout"`
 }
 
-// RepositoryPolicy ...
+// RepositoryPolicy is What to do when verification of an artifact checksum fails. Valid values are
+//             <code>ignore</code>
+//             ,
+//             <code>fail</code>
+//             or
+//             <code>warn</code>
+//             (the default).
 type RepositoryPolicy struct {
 	Enabled        string `xml:"enabled"`
 	UpdatePolicy   string `xml:"updatePolicy"`
 	ChecksumPolicy string `xml:"checksumPolicy"`
 }
 
-// Relocation ...
+// Relocation is An additional message to show the user about the move, such as the reason.
 type Relocation struct {
 	GroupId    string `xml:"groupId"`
 	ArtifactId string `xml:"artifactId"`
@@ -289,7 +324,9 @@ type Relocation struct {
 	Message    string `xml:"message"`
 }
 
-// Site ...
+// Site is The url of the location where website is deployed, in the form <code>protocol://hostname/path</code>.
+//             <br><b>Default value is</b>: parent value [+ path adjustment] + (artifactId or project.directory property), or just parent value if
+//             site's <code>child.site.url.inherit.append.path="false"</code>
 type Site struct {
 	ChildSiteUrlInheritAppendPathAttr string `xml:"child.site.url.inherit.append.path,attr,omitempty"`
 	Id                                string `xml:"id"`
@@ -303,7 +340,8 @@ type Plugins struct {
 	Plugin  []*ReportPlugin `xml:"plugin"`
 }
 
-// Reporting ...
+// Reporting is Where to store all of the generated reports. The default is
+//             <code>${project.build.directory}/site</code>.
 type Reporting struct {
 	ExcludeDefaults string   `xml:"excludeDefaults"`
 	OutputDirectory string   `xml:"outputDirectory"`
@@ -316,7 +354,7 @@ type ReportSets struct {
 	ReportSet []*ReportSet `xml:"reportSet"`
 }
 
-// ReportPlugin ...
+// ReportPlugin is The version of the reporting plugin to be used.
 type ReportPlugin struct {
 	GroupId       string         `xml:"groupId"`
 	ArtifactId    string         `xml:"artifactId"`
@@ -326,7 +364,8 @@ type ReportPlugin struct {
 	Configuration *Configuration `xml:"configuration"`
 }
 
-// ReportSet ...
+// ReportSet is The unique id for this report set, to be used during POM inheritance and profile injection
+//             for merging of report sets.
 type ReportSet struct {
 	Id            string         `xml:"id"`
 	Reports       *Reports       `xml:"reports"`
@@ -334,7 +373,7 @@ type ReportSet struct {
 	Configuration *Configuration `xml:"configuration"`
 }
 
-// Profile ...
+// Profile is Information required to build the project.
 type Profile struct {
 	Id                     string                  `xml:"id"`
 	Activation             *Activation             `xml:"activation"`
@@ -350,7 +389,7 @@ type Profile struct {
 	Reporting              *Reporting              `xml:"reporting"`
 }
 
-// Activation ...
+// Activation is Specifies that this profile will be activated based on existence of a file.
 type Activation struct {
 	ActiveByDefault bool                `xml:"activeByDefault"`
 	Jdk             string              `xml:"jdk"`
@@ -359,19 +398,20 @@ type Activation struct {
 	File            *ActivationFile     `xml:"file"`
 }
 
-// ActivationProperty ...
+// ActivationProperty is The value of the property required to activate a profile.
 type ActivationProperty struct {
 	Name  string `xml:"name"`
 	Value string `xml:"value"`
 }
 
-// ActivationFile ...
+// ActivationFile is The name of the file that must exist to activate the profile.
 type ActivationFile struct {
 	Missing string `xml:"missing"`
 	Exists  string `xml:"exists"`
 }
 
-// ActivationOS ...
+// ActivationOS is The version of the operating system to be used to activate the
+//           profile.
 type ActivationOS struct {
 	Name    string `xml:"name"`
 	Family  string `xml:"family"`
@@ -379,7 +419,8 @@ type ActivationOS struct {
 	Version string `xml:"version"`
 }
 
-// Repository ...
+// Repository is The type of layout this repository uses for locating and storing artifacts -
+//             can be <code>legacy</code> or <code>default</code>.
 type Repository struct {
 	Releases  *RepositoryPolicy `xml:"releases"`
 	Snapshots *RepositoryPolicy `xml:"snapshots"`
@@ -407,7 +448,10 @@ type Filters struct {
 	Filter  []string `xml:"filter"`
 }
 
-// BuildBase ...
+// BuildBase is The default goal (or phase in Maven 2) to execute when none is specified for
+//             the project. Note that in case of a multi-module build, only the default goal of the top-level
+//             project is relevant, i.e. the default goals of child modules are ignored. Since Maven 3,
+//             multiple goals/phases can be separated by whitespace.
 type BuildBase struct {
 	DefaultGoal      string            `xml:"defaultGoal"`
 	Resources        *Resources        `xml:"resources"`
@@ -430,7 +474,10 @@ type Goals struct {
 	XMLName xml.Name `xml:"goals"`
 }
 
-// Plugin ...
+// Plugin is Whether to load Maven extensions (such as packaging and type handlers) from
+//             this plugin. For performance reasons, this should only be enabled when necessary. Note: While the type
+//             of this field is <code>String</code> for technical reasons, the semantic type is actually
+//             <code>Boolean</code>. Default value is <code>false</code>.
 type Plugin struct {
 	GroupId       string         `xml:"groupId"`
 	ArtifactId    string         `xml:"artifactId"`
@@ -443,7 +490,8 @@ type Plugin struct {
 	Configuration *Configuration `xml:"configuration"`
 }
 
-// PluginExecution ...
+// PluginExecution is The build lifecycle phase to bind the goals in this execution to. If omitted,
+//             the goals will be bound to the default phase specified by the plugin.
 type PluginExecution struct {
 	Id            string         `xml:"id"`
 	Phase         string         `xml:"phase"`
@@ -464,7 +512,8 @@ type Excludes struct {
 	Exclude []string `xml:"exclude"`
 }
 
-// Resource ...
+// Resource is Describe the directory where the resources are stored. The path is relative
+//             to the POM.
 type Resource struct {
 	TargetPath string    `xml:"targetPath"`
 	Filtering  string    `xml:"filtering"`
@@ -473,12 +522,13 @@ type Resource struct {
 	Excludes   *Excludes `xml:"excludes"`
 }
 
-// PluginManagement ...
+// PluginManagement is Section for management of default plugin information for use in a group of POMs.
 type PluginManagement struct {
 	Plugins *Plugins `xml:"plugins"`
 }
 
-// Prerequisites ...
+// Prerequisites is For a plugin project (packaging is <code>maven-plugin</code>), the minimum version of
+//             Maven required to use the resulting plugin.<br>
 type Prerequisites struct {
 	Maven string `xml:"maven"`
 }
@@ -489,7 +539,8 @@ type Extensions struct {
 	Extension []*Extension `xml:"extension"`
 }
 
-// Build ...
+// Build is The directory where compiled test classes are placed.
+//             The default value is <code>target/test-classes</code>.
 type Build struct {
 	SourceDirectory       string            `xml:"sourceDirectory"`
 	ScriptSourceDirectory string            `xml:"scriptSourceDirectory"`
@@ -507,7 +558,7 @@ type Build struct {
 	Plugins               *Plugins          `xml:"plugins"`
 }
 
-// Extension ...
+// Extension is The version of the extension.
 type Extension struct {
 	GroupId    string `xml:"groupId"`
 	ArtifactId string `xml:"artifactId"`

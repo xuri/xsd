@@ -2,30 +2,37 @@
 
 typedef Component Component;
 
+// ModuleSets ...
 typedef struct {
 	ModuleSet ModuleSet[];
 } ModuleSets;
 
+// FileSets ...
 typedef struct {
 	FileSet FileSet[];
 } FileSets;
 
+// Files ...
 typedef struct {
 	FileItem File[];
 } Files;
 
+// DependencySets ...
 typedef struct {
 	DependencySet DependencySet[];
 } DependencySets;
 
+// Repositories ...
 typedef struct {
 	Repository Repository[];
 } Repositories;
 
+// ContainerDescriptorHandlers ...
 typedef struct {
 	ContainerDescriptorHandlerConfig ContainerDescriptorHandler[];
 } ContainerDescriptorHandlers;
 
+// Component is Describes the component layout and packaging.
 typedef struct {
 	ModuleSets ModuleSets;
 	FileSets FileSets;
@@ -35,6 +42,7 @@ typedef struct {
 	ContainerDescriptorHandlers ContainerDescriptorHandlers;
 } Component;
 
+// FileItem is Sets whether to determine if the file is filtered.
 typedef struct {
 	char Source;
 	char OutputDirectory;
@@ -44,22 +52,29 @@ typedef struct {
 	bool Filtered;
 } FileItem;
 
+// Configuration ...
 typedef struct {
 } Configuration;
 
+// ContainerDescriptorHandlerConfig is The handler's plexus role-hint, for lookup from the container.
 typedef struct {
 	char HandlerName;
 	Configuration Configuration;
 } ContainerDescriptorHandlerConfig;
 
+// Includes ...
 typedef struct {
 	char Include[];
 } Includes;
 
+// Excludes ...
 typedef struct {
 	char Exclude[];
 } Excludes;
 
+// FileSet is Sets the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory.
 typedef struct {
 	bool UseDefaultExcludes;
 	char OutputDirectory;
@@ -72,6 +87,9 @@ typedef struct {
 	bool Filtered;
 } FileSet;
 
+// ModuleSet is If set to false, the plugin will exclude sub-modules from processing in this ModuleSet.
+//           Otherwise, it will process all sub-modules, each subject to include/exclude rules.
+//           Default value is true. (Since 2.2)
 typedef struct {
 	bool UseAllReactorProjects;
 	bool IncludeSubModules;
@@ -81,6 +99,9 @@ typedef struct {
 	ModuleBinaries Binaries;
 } ModuleSet;
 
+// ModuleSources is Sets the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory.
 typedef struct {
 	bool UseDefaultExcludes;
 	char OutputDirectory;
@@ -94,6 +115,10 @@ typedef struct {
 	char OutputDirectoryMapping;
 } ModuleSources;
 
+// ModuleBinaries is Sets the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory,
+//             directly beneath the root of the archive.
 typedef struct {
 	char OutputDirectory;
 	Includes Includes;
@@ -108,6 +133,7 @@ typedef struct {
 	char OutputFileNameMapping;
 } ModuleBinaries;
 
+// UnpackOptions is Specifies options for including/excluding/filtering items extracted from an archive. (Since 2.2)
 typedef struct {
 	Includes Includes;
 	Excludes Excludes;
@@ -117,6 +143,10 @@ typedef struct {
 	char Encoding;
 } UnpackOptions;
 
+// DependencySet is Sets the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory,
+//             directly beneath the root of the archive.
 typedef struct {
 	char OutputDirectory;
 	Includes Includes;
@@ -134,10 +164,15 @@ typedef struct {
 	bool UseTransitiveFiltering;
 } DependencySet;
 
+// GroupVersionAlignments ...
 typedef struct {
 	GroupVersionAlignment GroupVersionAlignment[];
 } GroupVersionAlignments;
 
+// Repository is Sets the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory,
+//             directly beneath the root of the archive.
 typedef struct {
 	char OutputDirectory;
 	Includes Includes;
@@ -149,6 +184,7 @@ typedef struct {
 	char Scope;
 } Repository;
 
+// GroupVersionAlignment is The version you want to align this group to.
 typedef struct {
 	char Id;
 	char Version;

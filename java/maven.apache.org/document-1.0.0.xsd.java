@@ -17,6 +17,7 @@ public class Document {
 	protected DocumentModel Document;
 }
 
+// DocumentModel is The meta data to construct a cover page for the document.
 public class DocumentModel {
 	@XmlAttribute(name = "outputName")
 	protected StringAttr OutputName;
@@ -28,6 +29,7 @@ public class DocumentModel {
 	protected DocumentCover Cover;
 }
 
+// DocumentTOC is TOC item.
 public class DocumentTOC {
 	@XmlAttribute(name = "name")
 	protected StringAttr Name;
@@ -37,6 +39,7 @@ public class DocumentTOC {
 	protected List<DocumentTOCItem> Item;
 }
 
+// DocumentTOCItem is A table of content item containing sub-items.
 public class DocumentTOCItem {
 	@XmlAttribute(name = "name")
 	protected StringAttr Name;
@@ -48,6 +51,7 @@ public class DocumentTOCItem {
 	protected List<DocumentTOCItem> Item;
 }
 
+// DocumentCover is The location of an image file that represents the company logo.
 public class DocumentCover {
 	@XmlElement(required = true, name = "coverTitle")
 	protected String CoverTitle;
@@ -71,6 +75,7 @@ public class DocumentCover {
 	protected String CompanyLogo;
 }
 
+// DocumentAuthor is The state or province of the address of the author, if applicable.
 public class DocumentAuthor {
 	@XmlElement(required = true, name = "firstName")
 	protected String FirstName;
@@ -102,16 +107,20 @@ public class DocumentAuthor {
 	protected String State;
 }
 
+// Authors ...
 public class Authors {
 	@XmlElement(required = true, name = "author")
 	protected List<DocumentAuthor> Author;
 }
 
+// KeyWords ...
 public class KeyWords {
 	@XmlElement(required = true, name = "keyWord")
 	protected List<String> KeyWord;
 }
 
+// DocumentMeta is A shortcut for the unique author of the document, usually as a String of "firstName lastName". For
+//             more authors, you could use the <authors/> tag.
 public class DocumentMeta {
 	@XmlElement(required = true, name = "title")
 	protected String Title;
@@ -161,6 +170,7 @@ public class DocumentMeta {
 	protected Boolean Draft;
 }
 
+// DocumentTemplate is A template that was used to create the document.
 public class DocumentTemplate {
 	@XmlAttribute(name = "href")
 	protected StringAttr Href;
@@ -170,6 +180,7 @@ public class DocumentTemplate {
 	protected ByteAttr Date;
 }
 
+// DocumentStatistic is Statistical attributes of the document.
 public class DocumentStatistic {
 	@XmlAttribute(name = "pageCount")
 	protected LongAttr PageCount;
@@ -201,6 +212,7 @@ public class DocumentStatistic {
 	protected LongAttr NonWhitespaceCharacterCount;
 }
 
+// DocumentHyperlinkBehaviour is Specifies the default behavior for hyperlinks in the document.
 public class DocumentHyperlinkBehaviour {
 	@XmlAttribute(name = "targetFrame")
 	protected StringAttr TargetFrame;

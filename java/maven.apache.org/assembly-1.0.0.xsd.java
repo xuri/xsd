@@ -17,41 +17,50 @@ public class Assembly {
 	protected Assembly Assembly;
 }
 
+// Formats ...
 public class Formats {
 	@XmlElement(required = true, name = "format")
 	protected List<String> Format;
 }
 
+// ModuleSets ...
 public class ModuleSets {
 	@XmlElement(required = true, name = "moduleSet")
 	protected List<ModuleSet> ModuleSet;
 }
 
+// FileSets ...
 public class FileSets {
 	@XmlElement(required = true, name = "fileSet")
 	protected List<FileSet> FileSet;
 }
 
+// Files ...
 public class Files {
 	@XmlElement(required = true, name = "file")
 	protected List<FileItem> File;
 }
 
+// DependencySets ...
 public class DependencySets {
 	@XmlElement(required = true, name = "dependencySet")
 	protected List<DependencySet> DependencySet;
 }
 
+// Repositories ...
 public class Repositories {
 	@XmlElement(required = true, name = "repository")
 	protected List<Repository> Repository;
 }
 
+// ComponentDescriptors ...
 public class ComponentDescriptors {
 	@XmlElement(required = true, name = "componentDescriptor")
 	protected List<String> ComponentDescriptor;
 }
 
+// Assembly is The id of this assembly. This is a symbolic name for a
+//             particular assembly of files from this project.
 public class Assembly {
 	@XmlElement(required = true, name = "id")
 	protected String Id;
@@ -75,21 +84,27 @@ public class Assembly {
 	protected ComponentDescriptors ComponentDescriptors;
 }
 
+// GroupVersionAlignments ...
 public class GroupVersionAlignments {
 	@XmlElement(required = true, name = "groupVersionAlignment")
 	protected List<GroupVersionAlignment> GroupVersionAlignment;
 }
 
+// Includes ...
 public class Includes {
 	@XmlElement(required = true, name = "include")
 	protected List<String> Include;
 }
 
+// Excludes ...
 public class Excludes {
 	@XmlElement(required = true, name = "exclude")
 	protected List<String> Exclude;
 }
 
+// Repository is If set to true, this property will trigger the creation of repository
+//             metadata which will allow the repository to be used as a functional remote
+//             repository.
 public class Repository {
 	@XmlElement(required = true, name = "includeMetadata")
 	protected Boolean IncludeMetadata;
@@ -107,6 +122,7 @@ public class Repository {
 	protected String DirectoryMode;
 }
 
+// GroupVersionAlignment is The version you want to align this group to.
 public class GroupVersionAlignment {
 	@XmlElement(required = true, name = "id")
 	protected String Id;
@@ -116,6 +132,9 @@ public class GroupVersionAlignment {
 	protected Excludes Excludes;
 }
 
+// DependencySet is Specifies the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory.
 public class DependencySet {
 	@XmlElement(required = true, name = "outputFileNameMapping")
 	protected String OutputFileNameMapping;
@@ -135,6 +154,7 @@ public class DependencySet {
 	protected String DirectoryMode;
 }
 
+// ModuleSet is 1.0.0
 public class ModuleSet {
 	@XmlElement(required = true, name = "includes")
 	protected Includes Includes;
@@ -146,6 +166,9 @@ public class ModuleSet {
 	protected ModuleBinaries Binaries;
 }
 
+// ModuleSources is Specifies the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory.
 public class ModuleSources {
 	@XmlElement(required = true, name = "outputDirectory")
 	protected String OutputDirectory;
@@ -159,6 +182,9 @@ public class ModuleSources {
 	protected String DirectoryMode;
 }
 
+// ModuleBinaries is Specifies the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory.
 public class ModuleBinaries {
 	@XmlElement(required = true, name = "includeDependencies")
 	protected Boolean IncludeDependencies;
@@ -178,6 +204,7 @@ public class ModuleBinaries {
 	protected String DirectoryMode;
 }
 
+// FileItem is Flag used to determine if the file is filtered.
 public class FileItem {
 	@XmlElement(required = true, name = "source")
 	protected String Source;
@@ -193,6 +220,9 @@ public class FileItem {
 	protected Boolean Filtered;
 }
 
+// FileSet is Specifies the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory.
 public class FileSet {
 	@XmlElement(required = true, name = "directory")
 	protected String Directory;

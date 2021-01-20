@@ -17,57 +17,71 @@ public class Project {
 	protected Model Project;
 }
 
+// Licenses ...
 public class Licenses {
 	@XmlElement(required = true, name = "license")
 	protected List<License> License;
 }
 
+// Developers ...
 public class Developers {
 	@XmlElement(required = true, name = "developer")
 	protected List<Developer> Developer;
 }
 
+// Contributors ...
 public class Contributors {
 	@XmlElement(required = true, name = "contributor")
 	protected List<Contributor> Contributor;
 }
 
+// MailingLists ...
 public class MailingLists {
 	@XmlElement(required = true, name = "mailingList")
 	protected List<MailingList> MailingList;
 }
 
+// Modules ...
 public class Modules {
 	@XmlElement(required = true, name = "module")
 	protected List<String> Module;
 }
 
+// Properties ...
 public class Properties {
 }
 
+// Dependencies ...
 public class Dependencies {
 	@XmlElement(required = true, name = "dependency")
 	protected List<Dependency> Dependency;
 }
 
+// Repositories ...
 public class Repositories {
 	@XmlElement(required = true, name = "repository")
 	protected List<Repository> Repository;
 }
 
+// PluginRepositories ...
 public class PluginRepositories {
 	@XmlElement(required = true, name = "pluginRepository")
 	protected List<Repository> PluginRepository;
 }
 
+// Reports ...
 public class Reports {
 }
 
+// Profiles ...
 public class Profiles {
 	@XmlElement(required = true, name = "profile")
 	protected List<Profile> Profile;
 }
 
+// Model is This element describes various attributes of the organization to which the
+//             project belongs. These attributes are utilized when documentation is created (for
+//             copyright notices and links).
 public class Model {
 	@XmlAttribute(name = "child.project.url.inherit.append.path")
 	protected StringAttr ChildProjectUrlInheritAppendPath;
@@ -133,6 +147,7 @@ public class Model {
 	protected Profiles Profiles;
 }
 
+// License is Addendum information pertaining to this license.
 public class License {
 	@XmlElement(required = true, name = "name")
 	protected String Name;
@@ -144,11 +159,14 @@ public class License {
 	protected String Comments;
 }
 
+// Notifiers ...
 public class Notifiers {
 	@XmlElement(required = true, name = "notifier")
 	protected List<Notifier> Notifier;
 }
 
+// CiManagement is URL for the continuous integration system used by the project if it has a web
+//             interface.
 public class CiManagement {
 	@XmlElement(required = true, name = "system")
 	protected String System;
@@ -158,9 +176,11 @@ public class CiManagement {
 	protected Notifiers Notifiers;
 }
 
+// Configuration ...
 public class Configuration {
 }
 
+// Notifier is <b>Deprecated</b>. Where to send the notification to - eg email address.
 public class Notifier {
 	@XmlElement(required = true, name = "type")
 	protected String Type;
@@ -178,6 +198,9 @@ public class Notifier {
 	protected Configuration Configuration;
 }
 
+// Scm is The URL to the project's browsable SCM repository, such as ViewVC or Fisheye.
+//             <br><b>Default value is</b>: parent value [+ path adjustment] + (artifactId or project.directory property), or just parent value if
+//             scm's <code>child.scm.url.inherit.append.path="false"</code>
 public class Scm {
 	@XmlAttribute(name = "child.scm.connection.inherit.append.path")
 	protected StringAttr ChildScmConnectionInheritAppendPath;
@@ -195,6 +218,7 @@ public class Scm {
 	protected String Url;
 }
 
+// IssueManagement is URL for the issue management system used by the project.
 public class IssueManagement {
 	@XmlElement(required = true, name = "system")
 	protected String System;
@@ -202,16 +226,25 @@ public class IssueManagement {
 	protected String Url;
 }
 
+// DependencyManagement is Section for management of default dependency information for use in a group of
+//         POMs.
 public class DependencyManagement {
 	@XmlElement(required = true, name = "dependencies")
 	protected Dependencies Dependencies;
 }
 
+// Exclusions ...
 public class Exclusions {
 	@XmlElement(required = true, name = "exclusion")
 	protected List<Exclusion> Exclusion;
 }
 
+// Dependency is FOR SYSTEM SCOPE ONLY. Note that use of this property is <b>discouraged</b>
+//             and may be replaced in later versions. This specifies the path on the filesystem
+//             for this dependency.
+//             Requires an absolute path for the value, not relative.
+//             Use a property that gives the machine specific absolute path,
+//             e.g. <code>${java.home}</code>.
 public class Dependency {
 	@XmlElement(required = true, name = "groupId")
 	protected String GroupId;
@@ -233,6 +266,7 @@ public class Dependency {
 	protected String Optional;
 }
 
+// Exclusion is The group ID of the project to exclude.
 public class Exclusion {
 	@XmlElement(required = true, name = "artifactId")
 	protected String ArtifactId;
@@ -240,6 +274,17 @@ public class Exclusion {
 	protected String GroupId;
 }
 
+// Parent is The relative path of the parent <code>pom.xml</code> file within the check out.
+//             If not specified, it defaults to <code>../pom.xml</code>.
+//             Maven looks for the parent POM first in this location on
+//             the filesystem, then the local repository, and lastly in the remote repo.
+//             <code>relativePath</code> allows you to select a different location,
+//             for example when your structure is flat, or deeper without an intermediate parent POM.
+//             However, the group ID, artifact ID and version are still required,
+//             and must match the file in the location given or it will revert to the repository for the POM.
+//             This feature is only for enhancing the development in a local checkout of that project.
+//             Set the value to an empty string in case you want to disable the feature and always resolve
+//             the parent POM from the repositories.
 public class Parent {
 	@XmlElement(required = true, name = "groupId")
 	protected String GroupId;
@@ -251,11 +296,13 @@ public class Parent {
 	protected String RelativePath;
 }
 
+// Roles ...
 public class Roles {
 	@XmlElement(required = true, name = "role")
 	protected List<String> Role;
 }
 
+// Developer is The URL of the organization.
 public class Developer {
 	@XmlElement(required = true, name = "id")
 	protected String Id;
@@ -277,11 +324,13 @@ public class Developer {
 	protected Properties Properties;
 }
 
+// OtherArchives ...
 public class OtherArchives {
 	@XmlElement(required = true, name = "otherArchive")
 	protected List<String> OtherArchive;
 }
 
+// MailingList is The link to a URL where you can browse the mailing list archive.
 public class MailingList {
 	@XmlElement(required = true, name = "name")
 	protected String Name;
@@ -297,6 +346,7 @@ public class MailingList {
 	protected OtherArchives OtherArchives;
 }
 
+// Contributor is The URL of the organization.
 public class Contributor {
 	@XmlElement(required = true, name = "name")
 	protected String Name;
@@ -316,6 +366,7 @@ public class Contributor {
 	protected Properties Properties;
 }
 
+// Organization is The URL to the organization's home page.
 public class Organization {
 	@XmlElement(required = true, name = "name")
 	protected String Name;
@@ -323,6 +374,13 @@ public class Organization {
 	protected String Url;
 }
 
+// DistributionManagement is Gives the status of this artifact in the remote repository.
+//             This must not be set in your local project, as it is updated by
+//             tools placing it in the reposiory. Valid values are: <code>none</code> (default),
+//             <code>converted</code> (repository manager converted this from an Maven 1 POM),
+//             <code>partner</code>
+//             (directly synced from a partner Maven 2 repository), <code>deployed</code> (was deployed from a Maven 2
+//             instance), <code>verified</code> (has been hand verified as correct and final).
 public class DistributionManagement {
 	@XmlElement(required = true, name = "repository")
 	protected DeploymentRepository Repository;
@@ -338,6 +396,8 @@ public class DistributionManagement {
 	protected String Status;
 }
 
+// DeploymentRepository is The type of layout this repository uses for locating and storing artifacts -
+//             can be <code>legacy</code> or <code>default</code>.
 public class DeploymentRepository {
 	@XmlElement(required = true, name = "uniqueVersion")
 	protected Boolean UniqueVersion;
@@ -355,6 +415,13 @@ public class DeploymentRepository {
 	protected String Layout;
 }
 
+// RepositoryPolicy is What to do when verification of an artifact checksum fails. Valid values are
+//             <code>ignore</code>
+//             ,
+//             <code>fail</code>
+//             or
+//             <code>warn</code>
+//             (the default).
 public class RepositoryPolicy {
 	@XmlElement(required = true, name = "enabled")
 	protected String Enabled;
@@ -364,6 +431,7 @@ public class RepositoryPolicy {
 	protected String ChecksumPolicy;
 }
 
+// Relocation is An additional message to show the user about the move, such as the reason.
 public class Relocation {
 	@XmlElement(required = true, name = "groupId")
 	protected String GroupId;
@@ -375,6 +443,9 @@ public class Relocation {
 	protected String Message;
 }
 
+// Site is The url of the location where website is deployed, in the form <code>protocol://hostname/path</code>.
+//             <br><b>Default value is</b>: parent value [+ path adjustment] + (artifactId or project.directory property), or just parent value if
+//             site's <code>child.site.url.inherit.append.path="false"</code>
 public class Site {
 	@XmlAttribute(name = "child.site.url.inherit.append.path")
 	protected StringAttr ChildSiteUrlInheritAppendPath;
@@ -386,11 +457,14 @@ public class Site {
 	protected String Url;
 }
 
+// Plugins ...
 public class Plugins {
 	@XmlElement(required = true, name = "plugin")
 	protected List<ReportPlugin> Plugin;
 }
 
+// Reporting is Where to store all of the generated reports. The default is
+//             <code>${project.build.directory}/site</code>.
 public class Reporting {
 	@XmlElement(required = true, name = "excludeDefaults")
 	protected String ExcludeDefaults;
@@ -400,11 +474,13 @@ public class Reporting {
 	protected Plugins Plugins;
 }
 
+// ReportSets ...
 public class ReportSets {
 	@XmlElement(required = true, name = "reportSet")
 	protected List<ReportSet> ReportSet;
 }
 
+// ReportPlugin is The version of the reporting plugin to be used.
 public class ReportPlugin {
 	@XmlElement(required = true, name = "groupId")
 	protected String GroupId;
@@ -420,6 +496,8 @@ public class ReportPlugin {
 	protected Configuration Configuration;
 }
 
+// ReportSet is The unique id for this report set, to be used during POM inheritance and profile injection
+//             for merging of report sets.
 public class ReportSet {
 	@XmlElement(required = true, name = "id")
 	protected String Id;
@@ -431,6 +509,7 @@ public class ReportSet {
 	protected Configuration Configuration;
 }
 
+// Profile is Information required to build the project.
 public class Profile {
 	@XmlElement(required = true, name = "id")
 	protected String Id;
@@ -458,6 +537,7 @@ public class Profile {
 	protected Reporting Reporting;
 }
 
+// Activation is Specifies that this profile will be activated based on existence of a file.
 public class Activation {
 	@XmlElement(required = true, name = "activeByDefault")
 	protected Boolean ActiveByDefault;
@@ -471,6 +551,7 @@ public class Activation {
 	protected ActivationFile File;
 }
 
+// ActivationProperty is The value of the property required to activate a profile.
 public class ActivationProperty {
 	@XmlElement(required = true, name = "name")
 	protected String Name;
@@ -478,6 +559,7 @@ public class ActivationProperty {
 	protected String Value;
 }
 
+// ActivationFile is The name of the file that must exist to activate the profile.
 public class ActivationFile {
 	@XmlElement(required = true, name = "missing")
 	protected String Missing;
@@ -485,6 +567,8 @@ public class ActivationFile {
 	protected String Exists;
 }
 
+// ActivationOS is The version of the operating system to be used to activate the
+//           profile.
 public class ActivationOS {
 	@XmlElement(required = true, name = "name")
 	protected String Name;
@@ -496,6 +580,8 @@ public class ActivationOS {
 	protected String Version;
 }
 
+// Repository is The type of layout this repository uses for locating and storing artifacts -
+//             can be <code>legacy</code> or <code>default</code>.
 public class Repository {
 	@XmlElement(required = true, name = "releases")
 	protected RepositoryPolicy Releases;
@@ -511,21 +597,28 @@ public class Repository {
 	protected String Layout;
 }
 
+// Resources ...
 public class Resources {
 	@XmlElement(required = true, name = "resource")
 	protected List<Resource> Resource;
 }
 
+// TestResources ...
 public class TestResources {
 	@XmlElement(required = true, name = "testResource")
 	protected List<Resource> TestResource;
 }
 
+// Filters ...
 public class Filters {
 	@XmlElement(required = true, name = "filter")
 	protected List<String> Filter;
 }
 
+// BuildBase is The default goal (or phase in Maven 2) to execute when none is specified for
+//             the project. Note that in case of a multi-module build, only the default goal of the top-level
+//             project is relevant, i.e. the default goals of child modules are ignored. Since Maven 3,
+//             multiple goals/phases can be separated by whitespace.
 public class BuildBase {
 	@XmlElement(required = true, name = "defaultGoal")
 	protected String DefaultGoal;
@@ -545,14 +638,20 @@ public class BuildBase {
 	protected Plugins Plugins;
 }
 
+// Executions ...
 public class Executions {
 	@XmlElement(required = true, name = "execution")
 	protected List<PluginExecution> Execution;
 }
 
+// Goals ...
 public class Goals {
 }
 
+// Plugin is Whether to load Maven extensions (such as packaging and type handlers) from
+//             this plugin. For performance reasons, this should only be enabled when necessary. Note: While the type
+//             of this field is <code>String</code> for technical reasons, the semantic type is actually
+//             <code>Boolean</code>. Default value is <code>false</code>.
 public class Plugin {
 	@XmlElement(required = true, name = "groupId")
 	protected String GroupId;
@@ -574,6 +673,8 @@ public class Plugin {
 	protected Configuration Configuration;
 }
 
+// PluginExecution is The build lifecycle phase to bind the goals in this execution to. If omitted,
+//             the goals will be bound to the default phase specified by the plugin.
 public class PluginExecution {
 	@XmlElement(required = true, name = "id")
 	protected String Id;
@@ -587,16 +688,20 @@ public class PluginExecution {
 	protected Configuration Configuration;
 }
 
+// Includes ...
 public class Includes {
 	@XmlElement(required = true, name = "include")
 	protected List<String> Include;
 }
 
+// Excludes ...
 public class Excludes {
 	@XmlElement(required = true, name = "exclude")
 	protected List<String> Exclude;
 }
 
+// Resource is Describe the directory where the resources are stored. The path is relative
+//             to the POM.
 public class Resource {
 	@XmlElement(required = true, name = "targetPath")
 	protected String TargetPath;
@@ -610,21 +715,27 @@ public class Resource {
 	protected Excludes Excludes;
 }
 
+// PluginManagement is Section for management of default plugin information for use in a group of POMs.
 public class PluginManagement {
 	@XmlElement(required = true, name = "plugins")
 	protected Plugins Plugins;
 }
 
+// Prerequisites is For a plugin project (packaging is <code>maven-plugin</code>), the minimum version of
+//             Maven required to use the resulting plugin.<br>
 public class Prerequisites {
 	@XmlElement(required = true, name = "maven")
 	protected String Maven;
 }
 
+// Extensions ...
 public class Extensions {
 	@XmlElement(required = true, name = "extension")
 	protected List<Extension> Extension;
 }
 
+// Build is The directory where compiled test classes are placed.
+//             The default value is <code>target/test-classes</code>.
 public class Build {
 	@XmlElement(required = true, name = "sourceDirectory")
 	protected String SourceDirectory;
@@ -656,6 +767,7 @@ public class Build {
 	protected Plugins Plugins;
 }
 
+// Extension is The version of the extension.
 public class Extension {
 	@XmlElement(required = true, name = "groupId")
 	protected String GroupId;

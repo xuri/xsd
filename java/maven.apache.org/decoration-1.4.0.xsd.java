@@ -17,14 +17,17 @@ public class Project {
 	protected DecorationModel Project;
 }
 
+// PoweredBy ...
 public class PoweredBy {
 	@XmlElement(required = true, name = "logo")
 	protected List<Logo> Logo;
 }
 
+// Custom ...
 public class Custom {
 }
 
+// DecorationModel is Modify the version published display properties.
 public class DecorationModel {
 	@XmlAttribute(name = "name")
 	protected StringAttr Name;
@@ -52,11 +55,13 @@ public class DecorationModel {
 	protected Custom Custom;
 }
 
+// Version is Modify display properties for version published.
 public class Version {
 	@XmlAttribute(name = "position")
 	protected StringAttr Position;
 }
 
+// Banner is The title for the banner image.
 public class Banner {
 	@XmlElement(required = true, name = "name")
 	protected String Name;
@@ -76,22 +81,27 @@ public class Banner {
 	protected String Title;
 }
 
+// Head ...
 public class Head {
 }
 
+// Links ...
 public class Links {
 	@XmlElement(required = true, name = "item")
 	protected List<LinkItem> Item;
 }
 
+// Breadcrumbs ...
 public class Breadcrumbs {
 	@XmlElement(required = true, name = "item")
 	protected List<LinkItem> Item;
 }
 
+// Footer ...
 public class Footer {
 }
 
+// Body is The main content decoration.
 public class Body {
 	@XmlElement(required = true, name = "head")
 	protected Head Head;
@@ -105,6 +115,7 @@ public class Body {
 	protected Footer Footer;
 }
 
+// LinkItem is A link in the navigation.
 public class LinkItem {
 	@XmlAttribute(name = "name")
 	protected StringAttr Name;
@@ -128,6 +139,7 @@ public class LinkItem {
 	protected StringAttr Title;
 }
 
+// Menu is A list of menu item.
 public class Menu {
 	@XmlAttribute(name = "name")
 	protected StringAttr Name;
@@ -155,6 +167,7 @@ public class Menu {
 	protected List<MenuItem> Item;
 }
 
+// MenuItem is A list of menu item.
 public class MenuItem {
 	@XmlAttribute(name = "collapse")
 	protected BooleanAttr Collapse;
@@ -186,6 +199,7 @@ public class MenuItem {
 	protected List<MenuItem> Item;
 }
 
+// Skin is The skin version.
 public class Skin {
 	@XmlElement(required = true, name = "groupId")
 	protected String GroupId;
@@ -195,6 +209,7 @@ public class Skin {
 	protected String Version;
 }
 
+// Logo is Power by logo on the navigation.
 public class Logo {
 	@XmlAttribute(name = "name")
 	protected StringAttr Name;
@@ -218,6 +233,7 @@ public class Logo {
 	protected StringAttr Title;
 }
 
+// PublishDate is Modify display properties for date published.
 public class PublishDate {
 	@XmlAttribute(name = "position")
 	protected StringAttr Position;

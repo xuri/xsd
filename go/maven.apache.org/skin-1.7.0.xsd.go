@@ -2,16 +2,16 @@
 
 package schema
 
-// Skin ...
+// Skin is The <code>&lt;skin&gt;</code> element is the root of the skin descriptor.
 type Skin *SkinModel
 
-// SkinModel ...
+// SkinModel is Encoding of text content, like the Velocity template itself.
 type SkinModel struct {
 	Prerequisites *Prerequisites `xml:"prerequisites"`
 	Encoding      string         `xml:"encoding"`
 }
 
-// Prerequisites ...
+// Prerequisites is The minimum version of Doxia Sitetools required to use the resulting skin.
 type Prerequisites struct {
 	Doxiasitetools string `xml:"doxia-sitetools"`
 }

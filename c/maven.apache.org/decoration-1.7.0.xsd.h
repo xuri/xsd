@@ -2,13 +2,16 @@
 
 typedef DecorationModel Project;
 
+// PoweredBy ...
 typedef struct {
 	Logo Logo[];
 } PoweredBy;
 
+// Custom ...
 typedef struct {
 } Custom;
 
+// DecorationModel is Modify the version published display properties.
 typedef struct {
 	char NameAttr; // attr, optional
 	char CombineSelfAttr; // attr, optional
@@ -25,10 +28,12 @@ typedef struct {
 	Custom Custom;
 } DecorationModel;
 
+// Version is Modify display properties for version published.
 typedef struct {
 	char PositionAttr; // attr, optional
 } Version;
 
+// Banner is The title for the banner image.
 typedef struct {
 	char Name;
 	char Src;
@@ -40,14 +45,17 @@ typedef struct {
 	char Title;
 } Banner;
 
+// Links ...
 typedef struct {
 	LinkItem Item[];
 } Links;
 
+// Breadcrumbs ...
 typedef struct {
 	LinkItem Item[];
 } Breadcrumbs;
 
+// Body is Additional content (like JavaScript) to include in the HEAD block of the generated pages.
 typedef struct {
 	char Head;
 	Links Links;
@@ -56,6 +64,7 @@ typedef struct {
 	char Footer;
 } Body;
 
+// LinkItem is A link in the navigation.
 typedef struct {
 	char NameAttr; // attr, optional
 	char HrefAttr; // attr, optional
@@ -69,6 +78,7 @@ typedef struct {
 	char TitleAttr; // attr, optional
 } LinkItem;
 
+// Menu is A list of menu item.
 typedef struct {
 	char NameAttr; // attr, optional
 	char InheritAttr; // attr, optional
@@ -84,6 +94,7 @@ typedef struct {
 	MenuItem Item[];
 } Menu;
 
+// MenuItem is A list of menu item.
 typedef struct {
 	bool CollapseAttr; // attr, optional
 	char RefAttr; // attr, optional
@@ -101,12 +112,14 @@ typedef struct {
 	MenuItem Item[];
 } MenuItem;
 
+// Skin is The skin version.
 typedef struct {
 	char GroupId;
 	char ArtifactId;
 	char Version;
 } Skin;
 
+// Logo is Power by logo on the navigation.
 typedef struct {
 	char NameAttr; // attr, optional
 	char HrefAttr; // attr, optional
@@ -120,6 +133,7 @@ typedef struct {
 	char TitleAttr; // attr, optional
 } Logo;
 
+// PublishDate is Modify display properties for date published.
 typedef struct {
 	char PositionAttr; // attr, optional
 	char FormatAttr; // attr, optional

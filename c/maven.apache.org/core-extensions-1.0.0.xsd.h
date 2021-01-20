@@ -2,10 +2,12 @@
 
 typedef CoreExtensions Extensions;
 
+// CoreExtensions is A set of build extensions to use from this project.
 typedef struct {
 	CoreExtension Extension[];
 } CoreExtensions;
 
+// CoreExtension is The version of the extension.
 typedef struct {
 	char GroupId;
 	char ArtifactId;

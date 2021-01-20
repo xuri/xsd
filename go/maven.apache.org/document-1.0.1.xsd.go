@@ -7,10 +7,10 @@ import (
 	"time"
 )
 
-// Document ...
+// Document is Describes the overall document model.
 type Document *DocumentModel
 
-// DocumentModel ...
+// DocumentModel is The meta data to construct a cover page for the document.
 type DocumentModel struct {
 	OutputNameAttr string         `xml:"outputName,attr,omitempty"`
 	Meta           *DocumentMeta  `xml:"meta"`
@@ -18,14 +18,14 @@ type DocumentModel struct {
 	Cover          *DocumentCover `xml:"cover"`
 }
 
-// DocumentTOC ...
+// DocumentTOC is TOC item.
 type DocumentTOC struct {
 	NameAttr  string             `xml:"name,attr,omitempty"`
 	DepthAttr int                `xml:"depth,attr,omitempty"`
 	Item      []*DocumentTOCItem `xml:"item"`
 }
 
-// DocumentTOCItem ...
+// DocumentTOCItem is A table of content item containing sub-items.
 type DocumentTOCItem struct {
 	NameAttr     string             `xml:"name,attr,omitempty"`
 	RefAttr      string             `xml:"ref,attr,omitempty"`
@@ -39,7 +39,9 @@ type Authors struct {
 	Author  []*DocumentAuthor `xml:"author"`
 }
 
-// DocumentCover ...
+// DocumentCover is The date as String (recommended format is ISO 8601) to appear on the cover.
+//             Only used if <code>coverDate</code> is not set.
+//             @since 1.1.1
 type DocumentCover struct {
 	CoverTitle    string    `xml:"coverTitle"`
 	CoverSubTitle string    `xml:"coverSubTitle"`
@@ -55,7 +57,7 @@ type DocumentCover struct {
 	CompanyLogo   string    `xml:"companyLogo"`
 }
 
-// DocumentAuthor ...
+// DocumentAuthor is The state or province of the address of the author, if applicable.
 type DocumentAuthor struct {
 	FirstName   string `xml:"firstName"`
 	LastName    string `xml:"lastName"`
@@ -80,7 +82,8 @@ type KeyWords struct {
 	KeyWord []string `xml:"keyWord"`
 }
 
-// DocumentMeta ...
+// DocumentMeta is The unique author of the document, usually as a String of "firstName lastName". For
+//             more authors, you could use the &lt;authors/&gt; tag.
 type DocumentMeta struct {
 	Title              string                      `xml:"title"`
 	Author             string                      `xml:"author"`
@@ -110,7 +113,7 @@ type DocumentMeta struct {
 	Draft              bool                        `xml:"draft"`
 }
 
-// DocumentTemplate ...
+// DocumentTemplate is A template that was used to create the document.
 type DocumentTemplate struct {
 	HrefAttr       string    `xml:"href,attr,omitempty"`
 	TitleAttr      string    `xml:"title,attr,omitempty"`
@@ -118,7 +121,7 @@ type DocumentTemplate struct {
 	ModifydateAttr string    `xml:"modifydate,attr,omitempty"`
 }
 
-// DocumentStatistic ...
+// DocumentStatistic is Statistical attributes of the document.
 type DocumentStatistic struct {
 	PageCountAttr                   int64 `xml:"pageCount,attr,omitempty"`
 	TableCountAttr                  int64 `xml:"tableCount,attr,omitempty"`
@@ -136,7 +139,7 @@ type DocumentStatistic struct {
 	NonWhitespaceCharacterCountAttr int64 `xml:"nonWhitespaceCharacterCount,attr,omitempty"`
 }
 
-// DocumentHyperlinkBehaviour ...
+// DocumentHyperlinkBehaviour is Specifies the default behavior for hyperlinks in the document.
 type DocumentHyperlinkBehaviour struct {
 	TargetFrameAttr string `xml:"targetFrame,attr,omitempty"`
 }

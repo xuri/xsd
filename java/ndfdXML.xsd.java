@@ -11,78 +11,91 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
+// SectorType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "sectorType")
 public class SectorType {
 	protected String SectorType;
 }
 
+// UnitType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "unitType")
 public class UnitType {
 	protected String UnitType;
 }
 
+// FormatType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "formatType")
 public class FormatType {
 	protected String FormatType;
 }
 
+// ProductType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "productType")
 public class ProductType {
 	protected String ProductType;
 }
 
+// LatLonPairType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "latLonPairType")
 public class LatLonPairType {
 	protected String LatLonPairType;
 }
 
+// ListLatLonType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "listLatLonType")
 public class ListLatLonType {
 	protected String ListLatLonType;
 }
 
+// ZipCodeType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "zipCodeType")
 public class ZipCodeType {
 	protected String ZipCodeType;
 }
 
+// ZipCodeListType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "zipCodeListType")
 public class ZipCodeListType {
 	protected String ZipCodeListType;
 }
 
+// FeatureTypeType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "featureTypeType")
 public class FeatureTypeType {
 	protected String FeatureTypeType;
 }
 
+// CompTypeType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "compTypeType")
 public class CompTypeType {
 	protected String CompTypeType;
 }
 
+// ListCityNamesType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "listCityNamesType")
 public class ListCityNamesType {
 	protected String ListCityNamesType;
 }
 
+// DisplayLevelType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "displayLevelType")
 public class DisplayLevelType {
 	protected Integer DisplayLevelType;
 }
 
+// WeatherParametersType ...
 public class WeatherParametersType {
 	@XmlElement(required = true, name = "maxt")
 	protected Boolean Maxt;

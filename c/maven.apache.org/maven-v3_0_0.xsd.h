@@ -2,45 +2,59 @@
 
 typedef Model Project;
 
+// MailingLists ...
 typedef struct {
 	MailingList MailingList[];
 } MailingLists;
 
+// Developers ...
 typedef struct {
 	Developer Developer[];
 } Developers;
 
+// Contributors ...
 typedef struct {
 	Contributor Contributor[];
 } Contributors;
 
+// Licenses ...
 typedef struct {
 	License License[];
 } Licenses;
 
+// Versions ...
 typedef struct {
 	Version Version[];
 } Versions;
 
+// Branches ...
 typedef struct {
 	Branch Branch[];
 } Branches;
 
+// PackageGroups ...
 typedef struct {
 	PackageGroup PackageGroup[];
 } PackageGroups;
 
+// Reports ...
 typedef struct {
 	char Report[];
 } Reports;
 
+// Properties ...
 typedef struct {
 } Properties;
 
+// Dependencies ...
 typedef struct {
 	Dependency Dependency[];
 } Dependencies;
 
+// Model is Optional. The directory on the web server where the final
+//             distributions will be published.  This is used when the
+//             distributions are
+//             <a href="/plugins/dist/index.html">deployed</a>.
 typedef struct {
 	char Extend;
 	char PomVersion;
@@ -76,14 +90,18 @@ typedef struct {
 	Dependencies Dependencies;
 } Model;
 
+// SourceModifications ...
 typedef struct {
 	SourceModification SourceModification[];
 } SourceModifications;
 
+// Resources ...
 typedef struct {
 	Resource Resource[];
 } Resources;
 
+// Build is This element specifies a directory containing integration test    
+//              sources of the project.
 typedef struct {
 	char NagEmailAddress;
 	char SourceDirectory;
@@ -96,20 +114,25 @@ typedef struct {
 	Resources Resources;
 } Build;
 
+// Includes ...
 typedef struct {
 	char Include[];
 } Includes;
 
+// Excludes ...
 typedef struct {
 	char Exclude[];
 } Excludes;
 
+// UnitTest is 3.0.0
 typedef struct {
 	Resources Resources;
 	Includes Includes;
 	Excludes Excludes;
 } UnitTest;
 
+// Resource is Describe the directory where the resource is stored.
+//             The path may be absolute, or relative to the project.xml file.
 typedef struct {
 	char TargetPath;
 	bool Filtering;
@@ -118,6 +141,8 @@ typedef struct {
 	Excludes Excludes;
 } Resource;
 
+// SourceModification is Describe the directory where the resource is stored.
+//             The path may be absolute, or relative to the project.xml file.
 typedef struct {
 	char ClassName;
 	char Property;
@@ -126,16 +151,23 @@ typedef struct {
 	Excludes Excludes;
 } SourceModification;
 
+// Organization is The URL to the organization's logo image.  This can be an URL relative
+//             to the base directory of the generated web site,
+//             (e.g., <code>/images/org-logo.png</code>) or an absolute URL
+//             (e.g., <code>http://my.corp/logo.png</code>).  This value is used
+//             when generating the project documentation.
 typedef struct {
 	char Name;
 	char Url;
 	char Logo;
 } Organization;
 
+// Roles ...
 typedef struct {
 	char Role[];
 } Roles;
 
+// Developer is The URL of the organization.
 typedef struct {
 	char Id;
 	char Name;
@@ -148,6 +180,13 @@ typedef struct {
 	Properties Properties;
 } Developer;
 
+// Dependency is The type of dependency. This defaults to <code>jar</code>.
+//             Known recognised dependency types are:
+//             <ul>
+//             <li><code>jar</code></li>
+//             <li><code>ejb</code></li>
+//             <li><code>plugin</code></li>
+//             </ul>
 typedef struct {
 	char Id;
 	char GroupId;
@@ -159,23 +198,31 @@ typedef struct {
 	Properties Properties;
 } Dependency;
 
+// Repository is The URL to the project's browsable CVS repository.
 typedef struct {
 	char Connection;
 	char DeveloperConnection;
 	char Url;
 } Repository;
 
+// PackageGroup is the description
 typedef struct {
 	char Title;
 	char Packages;
 } PackageGroup;
 
+// Version is A unique identifier for a version.  This ID is
+//             used to specify the version that
+//             <a href="/plugins/dist/index.html">
+//               <code>maven:dist</code>
+//             </a> builds.
 typedef struct {
 	char Name;
 	char Tag;
 	char Id;
 } Version;
 
+// License is Addendum information pertaining to this license.
 typedef struct {
 	char Name;
 	char Url;
@@ -183,6 +230,7 @@ typedef struct {
 	char Comments;
 } License;
 
+// Contributor is The URL of the organization.
 typedef struct {
 	char Name;
 	char Email;
@@ -194,14 +242,19 @@ typedef struct {
 	Properties Properties;
 } Contributor;
 
+// Branch is The branch tag in the version control system (e.g. cvs) used by the 
+//             project for the source code associated with this branch of the
+//             project.
 typedef struct {
 	char Tag;
 } Branch;
 
+// OtherArchives ...
 typedef struct {
 	char OtherArchive[];
 } OtherArchives;
 
+// MailingList is The link to a URL where you can browse the mailing list archive.
 typedef struct {
 	char Name;
 	char Subscribe;

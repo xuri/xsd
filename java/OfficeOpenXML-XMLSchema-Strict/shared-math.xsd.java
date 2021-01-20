@@ -11,152 +11,180 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
+// ST_Integer255 ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_Integer255")
 public class ST_Integer255 {
 	protected Integer ST_Integer255;
 }
 
+// CT_Integer255 ...
 public class CT_Integer255 {
 	@XmlAttribute(name = "val", required = true)
 	protected IntegerAttr Val;
 }
 
+// ST_Integer2 ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_Integer2")
 public class ST_Integer2 {
 	protected Integer ST_Integer2;
 }
 
+// CT_Integer2 ...
 public class CT_Integer2 {
 	@XmlAttribute(name = "val", required = true)
 	protected IntegerAttr Val;
 }
 
+// ST_SpacingRule ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_SpacingRule")
 public class ST_SpacingRule {
 	protected Integer ST_SpacingRule;
 }
 
+// CT_SpacingRule ...
 public class CT_SpacingRule {
 	@XmlAttribute(name = "val", required = true)
 	protected IntegerAttr Val;
 }
 
+// ST_UnSignedInteger ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_UnSignedInteger")
 public class ST_UnSignedInteger {
 	protected Integer ST_UnSignedInteger;
 }
 
+// CT_UnSignedInteger ...
 public class CT_UnSignedInteger {
 	@XmlAttribute(name = "val", required = true)
 	protected IntegerAttr Val;
 }
 
+// ST_Char ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_Char")
 public class ST_Char {
 	protected String ST_Char;
 }
 
+// CT_Char ...
 public class CT_Char {
 	@XmlAttribute(name = "val", required = true)
 	protected StringAttr Val;
 }
 
+// CT_OnOff ...
 public class CT_OnOff {
 	@XmlAttribute(name = "val")
 	protected ST_OnOffAttr Val;
 }
 
+// CT_String ...
 public class CT_String {
 	@XmlAttribute(name = "val")
 	protected StringAttr Val;
 }
 
+// CT_XAlign ...
 public class CT_XAlign {
 	@XmlAttribute(name = "val", required = true)
 	protected StringAttr Val;
 }
 
+// CT_YAlign ...
 public class CT_YAlign {
 	@XmlAttribute(name = "val", required = true)
 	protected StringAttr Val;
 }
 
+// ST_Shp ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_Shp")
 public class ST_Shp {
 	protected String ST_Shp;
 }
 
+// CT_Shp ...
 public class CT_Shp {
 	@XmlAttribute(name = "val", required = true)
 	protected StringAttr Val;
 }
 
+// ST_FType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_FType")
 public class ST_FType {
 	protected String ST_FType;
 }
 
+// CT_FType ...
 public class CT_FType {
 	@XmlAttribute(name = "val", required = true)
 	protected StringAttr Val;
 }
 
+// ST_LimLoc ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_LimLoc")
 public class ST_LimLoc {
 	protected String ST_LimLoc;
 }
 
+// CT_LimLoc ...
 public class CT_LimLoc {
 	@XmlAttribute(name = "val", required = true)
 	protected StringAttr Val;
 }
 
+// ST_TopBot ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_TopBot")
 public class ST_TopBot {
 	protected String ST_TopBot;
 }
 
+// CT_TopBot ...
 public class CT_TopBot {
 	@XmlAttribute(name = "val", required = true)
 	protected StringAttr Val;
 }
 
+// ST_Script ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_Script")
 public class ST_Script {
 	protected String ST_Script;
 }
 
+// CT_Script ...
 public class CT_Script {
 	@XmlAttribute(name = "val")
 	protected StringAttr Val;
 }
 
+// ST_Style ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_Style")
 public class ST_Style {
 	protected String ST_Style;
 }
 
+// CT_Style ...
 public class CT_Style {
 	@XmlAttribute(name = "val")
 	protected StringAttr Val;
 }
 
+// CT_ManualBreak ...
 public class CT_ManualBreak {
 	@XmlAttribute(name = "alnAt")
 	protected IntegerAttr AlnAt;
 }
 
+// EG_ScriptStyle ...
 public class EG_ScriptStyle {
 	@XmlElement(required = true, name = "scr")
 	protected CT_Script Scr;
@@ -164,6 +192,7 @@ public class EG_ScriptStyle {
 	protected CT_Style Sty;
 }
 
+// CT_RPR ...
 public class CT_RPR {
 	protected EG_ScriptStyle EG_ScriptStyle;
 	@XmlElement(required = true, name = "lit")
@@ -176,11 +205,13 @@ public class CT_RPR {
 	protected CT_OnOff Aln;
 }
 
+// CT_Text ...
 public class CT_Text {
 	@XmlAttribute(name = "xml:space")
 	protected SpaceAttr XmlSpace;
 }
 
+// CT_R ...
 public class CT_R {
 	protected EG_RPr WEG_RPr;
 	protected EG_RunInnerContent WEG_RunInnerContent;
@@ -190,10 +221,12 @@ public class CT_R {
 	protected CT_Text T;
 }
 
+// CT_CtrlPr ...
 public class CT_CtrlPr {
 	protected EG_RPrMath WEG_RPrMath;
 }
 
+// CT_AccPr ...
 public class CT_AccPr {
 	@XmlElement(required = true, name = "chr")
 	protected CT_Char Chr;
@@ -201,6 +234,7 @@ public class CT_AccPr {
 	protected CT_CtrlPr CtrlPr;
 }
 
+// CT_Acc ...
 public class CT_Acc {
 	@XmlElement(required = true, name = "accPr")
 	protected CT_AccPr AccPr;
@@ -208,6 +242,7 @@ public class CT_Acc {
 	protected CT_OMathArg E;
 }
 
+// CT_BarPr ...
 public class CT_BarPr {
 	@XmlElement(required = true, name = "pos")
 	protected CT_TopBot Pos;
@@ -215,6 +250,7 @@ public class CT_BarPr {
 	protected CT_CtrlPr CtrlPr;
 }
 
+// CT_Bar ...
 public class CT_Bar {
 	@XmlElement(required = true, name = "barPr")
 	protected CT_BarPr BarPr;
@@ -222,6 +258,7 @@ public class CT_Bar {
 	protected CT_OMathArg E;
 }
 
+// CT_BoxPr ...
 public class CT_BoxPr {
 	@XmlElement(required = true, name = "opEmu")
 	protected CT_OnOff OpEmu;
@@ -237,6 +274,7 @@ public class CT_BoxPr {
 	protected CT_CtrlPr CtrlPr;
 }
 
+// CT_Box ...
 public class CT_Box {
 	@XmlElement(required = true, name = "boxPr")
 	protected CT_BoxPr BoxPr;
@@ -244,6 +282,7 @@ public class CT_Box {
 	protected CT_OMathArg E;
 }
 
+// CT_BorderBoxPr ...
 public class CT_BorderBoxPr {
 	@XmlElement(required = true, name = "hideTop")
 	protected CT_OnOff HideTop;
@@ -265,6 +304,7 @@ public class CT_BorderBoxPr {
 	protected CT_CtrlPr CtrlPr;
 }
 
+// CT_BorderBox ...
 public class CT_BorderBox {
 	@XmlElement(required = true, name = "borderBoxPr")
 	protected CT_BorderBoxPr BorderBoxPr;
@@ -272,6 +312,7 @@ public class CT_BorderBox {
 	protected CT_OMathArg E;
 }
 
+// CT_DPr ...
 public class CT_DPr {
 	@XmlElement(required = true, name = "begChr")
 	protected CT_Char BegChr;
@@ -287,6 +328,7 @@ public class CT_DPr {
 	protected CT_CtrlPr CtrlPr;
 }
 
+// CT_D ...
 public class CT_D {
 	@XmlElement(required = true, name = "dPr")
 	protected CT_DPr DPr;
@@ -294,6 +336,7 @@ public class CT_D {
 	protected List<CT_OMathArg> E;
 }
 
+// CT_EqArrPr ...
 public class CT_EqArrPr {
 	@XmlElement(required = true, name = "baseJc")
 	protected CT_YAlign BaseJc;
@@ -309,6 +352,7 @@ public class CT_EqArrPr {
 	protected CT_CtrlPr CtrlPr;
 }
 
+// CT_EqArr ...
 public class CT_EqArr {
 	@XmlElement(required = true, name = "eqArrPr")
 	protected CT_EqArrPr EqArrPr;
@@ -316,6 +360,7 @@ public class CT_EqArr {
 	protected List<CT_OMathArg> E;
 }
 
+// CT_FPr ...
 public class CT_FPr {
 	@XmlElement(required = true, name = "type")
 	protected CT_FType Type;
@@ -323,6 +368,7 @@ public class CT_FPr {
 	protected CT_CtrlPr CtrlPr;
 }
 
+// CT_F ...
 public class CT_F {
 	@XmlElement(required = true, name = "fPr")
 	protected CT_FPr FPr;
@@ -332,11 +378,13 @@ public class CT_F {
 	protected CT_OMathArg Den;
 }
 
+// CT_FuncPr ...
 public class CT_FuncPr {
 	@XmlElement(required = true, name = "ctrlPr")
 	protected CT_CtrlPr CtrlPr;
 }
 
+// CT_Func ...
 public class CT_Func {
 	@XmlElement(required = true, name = "funcPr")
 	protected CT_FuncPr FuncPr;
@@ -346,6 +394,7 @@ public class CT_Func {
 	protected CT_OMathArg E;
 }
 
+// CT_GroupChrPr ...
 public class CT_GroupChrPr {
 	@XmlElement(required = true, name = "chr")
 	protected CT_Char Chr;
@@ -357,6 +406,7 @@ public class CT_GroupChrPr {
 	protected CT_CtrlPr CtrlPr;
 }
 
+// CT_GroupChr ...
 public class CT_GroupChr {
 	@XmlElement(required = true, name = "groupChrPr")
 	protected CT_GroupChrPr GroupChrPr;
@@ -364,11 +414,13 @@ public class CT_GroupChr {
 	protected CT_OMathArg E;
 }
 
+// CT_LimLowPr ...
 public class CT_LimLowPr {
 	@XmlElement(required = true, name = "ctrlPr")
 	protected CT_CtrlPr CtrlPr;
 }
 
+// CT_LimLow ...
 public class CT_LimLow {
 	@XmlElement(required = true, name = "limLowPr")
 	protected CT_LimLowPr LimLowPr;
@@ -378,11 +430,13 @@ public class CT_LimLow {
 	protected CT_OMathArg Lim;
 }
 
+// CT_LimUppPr ...
 public class CT_LimUppPr {
 	@XmlElement(required = true, name = "ctrlPr")
 	protected CT_CtrlPr CtrlPr;
 }
 
+// CT_LimUpp ...
 public class CT_LimUpp {
 	@XmlElement(required = true, name = "limUppPr")
 	protected CT_LimUppPr LimUppPr;
@@ -392,6 +446,7 @@ public class CT_LimUpp {
 	protected CT_OMathArg Lim;
 }
 
+// CT_MCPr ...
 public class CT_MCPr {
 	@XmlElement(required = true, name = "count")
 	protected CT_Integer255 Count;
@@ -399,16 +454,19 @@ public class CT_MCPr {
 	protected CT_XAlign McJc;
 }
 
+// CT_MC ...
 public class CT_MC {
 	@XmlElement(required = true, name = "mcPr")
 	protected CT_MCPr McPr;
 }
 
+// CT_MCS ...
 public class CT_MCS {
 	@XmlElement(required = true, name = "mc")
 	protected List<CT_MC> Mc;
 }
 
+// CT_MPr ...
 public class CT_MPr {
 	@XmlElement(required = true, name = "baseJc")
 	protected CT_YAlign BaseJc;
@@ -430,11 +488,13 @@ public class CT_MPr {
 	protected CT_CtrlPr CtrlPr;
 }
 
+// CT_MR ...
 public class CT_MR {
 	@XmlElement(required = true, name = "e")
 	protected List<CT_OMathArg> E;
 }
 
+// CT_M ...
 public class CT_M {
 	@XmlElement(required = true, name = "mPr")
 	protected CT_MPr MPr;
@@ -442,6 +502,7 @@ public class CT_M {
 	protected List<CT_MR> Mr;
 }
 
+// CT_NaryPr ...
 public class CT_NaryPr {
 	@XmlElement(required = true, name = "chr")
 	protected CT_Char Chr;
@@ -457,6 +518,7 @@ public class CT_NaryPr {
 	protected CT_CtrlPr CtrlPr;
 }
 
+// CT_Nary ...
 public class CT_Nary {
 	@XmlElement(required = true, name = "naryPr")
 	protected CT_NaryPr NaryPr;
@@ -468,6 +530,7 @@ public class CT_Nary {
 	protected CT_OMathArg E;
 }
 
+// CT_PhantPr ...
 public class CT_PhantPr {
 	@XmlElement(required = true, name = "show")
 	protected CT_OnOff Show;
@@ -483,6 +546,7 @@ public class CT_PhantPr {
 	protected CT_CtrlPr CtrlPr;
 }
 
+// CT_Phant ...
 public class CT_Phant {
 	@XmlElement(required = true, name = "phantPr")
 	protected CT_PhantPr PhantPr;
@@ -490,6 +554,7 @@ public class CT_Phant {
 	protected CT_OMathArg E;
 }
 
+// CT_RadPr ...
 public class CT_RadPr {
 	@XmlElement(required = true, name = "degHide")
 	protected CT_OnOff DegHide;
@@ -497,6 +562,7 @@ public class CT_RadPr {
 	protected CT_CtrlPr CtrlPr;
 }
 
+// CT_Rad ...
 public class CT_Rad {
 	@XmlElement(required = true, name = "radPr")
 	protected CT_RadPr RadPr;
@@ -506,11 +572,13 @@ public class CT_Rad {
 	protected CT_OMathArg E;
 }
 
+// CT_SPrePr ...
 public class CT_SPrePr {
 	@XmlElement(required = true, name = "ctrlPr")
 	protected CT_CtrlPr CtrlPr;
 }
 
+// CT_SPre ...
 public class CT_SPre {
 	@XmlElement(required = true, name = "sPrePr")
 	protected CT_SPrePr SPrePr;
@@ -522,11 +590,13 @@ public class CT_SPre {
 	protected CT_OMathArg E;
 }
 
+// CT_SSubPr ...
 public class CT_SSubPr {
 	@XmlElement(required = true, name = "ctrlPr")
 	protected CT_CtrlPr CtrlPr;
 }
 
+// CT_SSub ...
 public class CT_SSub {
 	@XmlElement(required = true, name = "sSubPr")
 	protected CT_SSubPr SSubPr;
@@ -536,6 +606,7 @@ public class CT_SSub {
 	protected CT_OMathArg Sub;
 }
 
+// CT_SSubSupPr ...
 public class CT_SSubSupPr {
 	@XmlElement(required = true, name = "alnScr")
 	protected CT_OnOff AlnScr;
@@ -543,6 +614,7 @@ public class CT_SSubSupPr {
 	protected CT_CtrlPr CtrlPr;
 }
 
+// CT_SSubSup ...
 public class CT_SSubSup {
 	@XmlElement(required = true, name = "sSubSupPr")
 	protected CT_SSubSupPr SSubSupPr;
@@ -554,11 +626,13 @@ public class CT_SSubSup {
 	protected CT_OMathArg Sup;
 }
 
+// CT_SSupPr ...
 public class CT_SSupPr {
 	@XmlElement(required = true, name = "ctrlPr")
 	protected CT_CtrlPr CtrlPr;
 }
 
+// CT_SSup ...
 public class CT_SSup {
 	@XmlElement(required = true, name = "sSupPr")
 	protected CT_SSupPr SSupPr;
@@ -568,6 +642,7 @@ public class CT_SSup {
 	protected CT_OMathArg Sup;
 }
 
+// EG_OMathMathElements ...
 public class EG_OMathMathElements {
 	@XmlElement(required = true, name = "acc")
 	protected CT_Acc Acc;
@@ -611,16 +686,19 @@ public class EG_OMathMathElements {
 	protected CT_R R;
 }
 
+// EG_OMathElements ...
 public class EG_OMathElements {
 	protected EG_OMathMathElements EG_OMathMathElements;
 	protected EG_PContentMath WEG_PContentMath;
 }
 
+// CT_OMathArgPr ...
 public class CT_OMathArgPr {
 	@XmlElement(required = true, name = "argSz")
 	protected CT_Integer2 ArgSz;
 }
 
+// CT_OMathArg ...
 public class CT_OMathArg {
 	protected List<EG_OMathElements> EG_OMathElements;
 	@XmlElement(required = true, name = "argPr")
@@ -629,49 +707,58 @@ public class CT_OMathArg {
 	protected CT_CtrlPr CtrlPr;
 }
 
+// ST_Jc ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_Jc")
 public class ST_Jc {
 	protected String ST_Jc;
 }
 
+// CT_OMathJc ...
 public class CT_OMathJc {
 	@XmlAttribute(name = "val")
 	protected StringAttr Val;
 }
 
+// CT_OMathParaPr ...
 public class CT_OMathParaPr {
 	@XmlElement(required = true, name = "jc")
 	protected CT_OMathJc Jc;
 }
 
+// CT_TwipsMeasure ...
 public class CT_TwipsMeasure {
 	@XmlAttribute(name = "val", required = true)
 	protected ST_TwipsMeasureAttr Val;
 }
 
+// ST_BreakBin ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_BreakBin")
 public class ST_BreakBin {
 	protected String ST_BreakBin;
 }
 
+// CT_BreakBin ...
 public class CT_BreakBin {
 	@XmlAttribute(name = "val")
 	protected StringAttr Val;
 }
 
+// ST_BreakBinSub ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_BreakBinSub")
 public class ST_BreakBinSub {
 	protected String ST_BreakBinSub;
 }
 
+// CT_BreakBinSub ...
 public class CT_BreakBinSub {
 	@XmlAttribute(name = "val")
 	protected StringAttr Val;
 }
 
+// CT_MathPr ...
 public class CT_MathPr {
 	@XmlElement(required = true, name = "mathFont")
 	protected CT_String MathFont;
@@ -713,6 +800,7 @@ public class MathPr {
 	protected CT_MathPr MathPr;
 }
 
+// CT_OMathPara ...
 public class CT_OMathPara {
 	@XmlElement(required = true, name = "oMathParaPr")
 	protected CT_OMathParaPr OMathParaPr;
@@ -720,6 +808,7 @@ public class CT_OMathPara {
 	protected List<CT_OMath> OMath;
 }
 
+// CT_OMath ...
 public class CT_OMath {
 	protected List<EG_OMathElements> EG_OMathElements;
 }

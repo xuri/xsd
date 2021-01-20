@@ -4,12 +4,14 @@ typedef PurchaseOrderType PurchaseOrder;
 
 typedef char Comment;
 
+// PurchaseOrderType ...
 typedef struct {
 	USAddress ShipTo;
 	USAddress BillTo;
 	char PoComment;
 } PurchaseOrderType;
 
+// USAddress ...
 typedef struct {
 	char Name;
 	char Street;

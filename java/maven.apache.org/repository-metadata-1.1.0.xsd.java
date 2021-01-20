@@ -17,11 +17,13 @@ public class Metadata {
 	protected Metadata Metadata;
 }
 
+// Plugins ...
 public class Plugins {
 	@XmlElement(required = true, name = "plugin")
 	protected List<Plugin> Plugin;
 }
 
+// Metadata is Versioning information for the artifact.
 public class Metadata {
 	@XmlAttribute(name = "modelVersion")
 	protected StringAttr ModelVersion;
@@ -37,6 +39,7 @@ public class Metadata {
 	protected Plugins Plugins;
 }
 
+// Plugin is The plugin artifactId
 public class Plugin {
 	@XmlElement(required = true, name = "name")
 	protected String Name;
@@ -46,16 +49,19 @@ public class Plugin {
 	protected String ArtifactId;
 }
 
+// Versions ...
 public class Versions {
 	@XmlElement(required = true, name = "version")
 	protected List<String> Version;
 }
 
+// SnapshotVersions ...
 public class SnapshotVersions {
 	@XmlElement(required = true, name = "snapshotVersion")
 	protected List<SnapshotVersion> SnapshotVersion;
 }
 
+// Versioning is The current snapshot data in use for this version (artifact snapshots only)
 public class Versioning {
 	@XmlElement(required = true, name = "latest")
 	protected String Latest;
@@ -71,6 +77,7 @@ public class Versioning {
 	protected SnapshotVersions SnapshotVersions;
 }
 
+// SnapshotVersion is The timestamp when this version information was last updated. The timestamp is expressed using UTC in the format yyyyMMddHHmmss.
 public class SnapshotVersion {
 	@XmlElement(required = true, name = "classifier")
 	protected String Classifier;
@@ -82,6 +89,7 @@ public class SnapshotVersion {
 	protected String Updated;
 }
 
+// Snapshot is Whether to use a local copy instead (with filename that includes the base version)
 public class Snapshot {
 	@XmlElement(required = true, name = "timestamp")
 	protected String Timestamp;

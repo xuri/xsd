@@ -2,48 +2,62 @@
 
 typedef Model Project;
 
+// Licenses ...
 typedef struct {
 	License License[];
 } Licenses;
 
+// Developers ...
 typedef struct {
 	Developer Developer[];
 } Developers;
 
+// Contributors ...
 typedef struct {
 	Contributor Contributor[];
 } Contributors;
 
+// MailingLists ...
 typedef struct {
 	MailingList MailingList[];
 } MailingLists;
 
+// Modules ...
 typedef struct {
 	char Module[];
 } Modules;
 
+// Properties ...
 typedef struct {
 } Properties;
 
+// Dependencies ...
 typedef struct {
 	Dependency Dependency[];
 } Dependencies;
 
+// Repositories ...
 typedef struct {
 	Repository Repository[];
 } Repositories;
 
+// PluginRepositories ...
 typedef struct {
 	Repository PluginRepository[];
 } PluginRepositories;
 
+// Reports ...
 typedef struct {
 } Reports;
 
+// Profiles ...
 typedef struct {
 	Profile Profile[];
 } Profiles;
 
+// Model is This element describes various attributes of the organization to which the
+//             project belongs. These attributes are utilized when documentation is created (for
+//             copyright notices and links).
 typedef struct {
 	char ChildProjectUrlInheritAppendPathAttr; // attr, optional
 	char ModelVersion;
@@ -78,6 +92,7 @@ typedef struct {
 	Profiles Profiles;
 } Model;
 
+// License is Addendum information pertaining to this license.
 typedef struct {
 	char Name;
 	char Url;
@@ -85,19 +100,24 @@ typedef struct {
 	char Comments;
 } License;
 
+// Notifiers ...
 typedef struct {
 	Notifier Notifier[];
 } Notifiers;
 
+// CiManagement is URL for the continuous integration system used by the project if it has a web
+//             interface.
 typedef struct {
 	char System;
 	char Url;
 	Notifiers Notifiers;
 } CiManagement;
 
+// Configuration ...
 typedef struct {
 } Configuration;
 
+// Notifier is <b>Deprecated</b>. Where to send the notification to - eg email address.
 typedef struct {
 	char Type;
 	bool SendOnError;
@@ -108,6 +128,9 @@ typedef struct {
 	Configuration Configuration;
 } Notifier;
 
+// Scm is The URL to the project's browsable SCM repository, such as ViewVC or Fisheye.
+//             <br><b>Default value is</b>: parent value [+ path adjustment] + (artifactId or project.directory property), or just parent value if
+//             scm's <code>child.scm.url.inherit.append.path="false"</code>
 typedef struct {
 	char ChildScmConnectionInheritAppendPathAttr; // attr, optional
 	char ChildScmDeveloperConnectionInheritAppendPathAttr; // attr, optional
@@ -118,19 +141,29 @@ typedef struct {
 	char Url;
 } Scm;
 
+// IssueManagement is URL for the issue management system used by the project.
 typedef struct {
 	char System;
 	char Url;
 } IssueManagement;
 
+// DependencyManagement is Section for management of default dependency information for use in a group of
+//         POMs.
 typedef struct {
 	Dependencies Dependencies;
 } DependencyManagement;
 
+// Exclusions ...
 typedef struct {
 	Exclusion Exclusion[];
 } Exclusions;
 
+// Dependency is FOR SYSTEM SCOPE ONLY. Note that use of this property is <b>discouraged</b>
+//             and may be replaced in later versions. This specifies the path on the filesystem
+//             for this dependency.
+//             Requires an absolute path for the value, not relative.
+//             Use a property that gives the machine specific absolute path,
+//             e.g. <code>${java.home}</code>.
 typedef struct {
 	char GroupId;
 	char ArtifactId;
@@ -143,11 +176,23 @@ typedef struct {
 	char Optional;
 } Dependency;
 
+// Exclusion is The group ID of the project to exclude.
 typedef struct {
 	char ArtifactId;
 	char GroupId;
 } Exclusion;
 
+// Parent is The relative path of the parent <code>pom.xml</code> file within the check out.
+//             If not specified, it defaults to <code>../pom.xml</code>.
+//             Maven looks for the parent POM first in this location on
+//             the filesystem, then the local repository, and lastly in the remote repo.
+//             <code>relativePath</code> allows you to select a different location,
+//             for example when your structure is flat, or deeper without an intermediate parent POM.
+//             However, the group ID, artifact ID and version are still required,
+//             and must match the file in the location given or it will revert to the repository for the POM.
+//             This feature is only for enhancing the development in a local checkout of that project.
+//             Set the value to an empty string in case you want to disable the feature and always resolve
+//             the parent POM from the repositories.
 typedef struct {
 	char GroupId;
 	char ArtifactId;
@@ -155,10 +200,12 @@ typedef struct {
 	char RelativePath;
 } Parent;
 
+// Roles ...
 typedef struct {
 	char Role[];
 } Roles;
 
+// Developer is The URL of the organization.
 typedef struct {
 	char Id;
 	char Name;
@@ -171,10 +218,12 @@ typedef struct {
 	Properties Properties;
 } Developer;
 
+// OtherArchives ...
 typedef struct {
 	char OtherArchive[];
 } OtherArchives;
 
+// MailingList is The link to a URL where you can browse the mailing list archive.
 typedef struct {
 	char Name;
 	char Subscribe;
@@ -184,6 +233,7 @@ typedef struct {
 	OtherArchives OtherArchives;
 } MailingList;
 
+// Contributor is The URL of the organization.
 typedef struct {
 	char Name;
 	char Email;
@@ -195,11 +245,19 @@ typedef struct {
 	Properties Properties;
 } Contributor;
 
+// Organization is The URL to the organization's home page.
 typedef struct {
 	char Name;
 	char Url;
 } Organization;
 
+// DistributionManagement is Gives the status of this artifact in the remote repository.
+//             This must not be set in your local project, as it is updated by
+//             tools placing it in the reposiory. Valid values are: <code>none</code> (default),
+//             <code>converted</code> (repository manager converted this from an Maven 1 POM),
+//             <code>partner</code>
+//             (directly synced from a partner Maven 2 repository), <code>deployed</code> (was deployed from a Maven 2
+//             instance), <code>verified</code> (has been hand verified as correct and final).
 typedef struct {
 	DeploymentRepository Repository;
 	DeploymentRepository SnapshotRepository;
@@ -209,6 +267,8 @@ typedef struct {
 	char Status;
 } DistributionManagement;
 
+// DeploymentRepository is The type of layout this repository uses for locating and storing artifacts -
+//             can be <code>legacy</code> or <code>default</code>.
 typedef struct {
 	bool UniqueVersion;
 	RepositoryPolicy Releases;
@@ -219,12 +279,20 @@ typedef struct {
 	char Layout;
 } DeploymentRepository;
 
+// RepositoryPolicy is What to do when verification of an artifact checksum fails. Valid values are
+//             <code>ignore</code>
+//             ,
+//             <code>fail</code>
+//             or
+//             <code>warn</code>
+//             (the default).
 typedef struct {
 	char Enabled;
 	char UpdatePolicy;
 	char ChecksumPolicy;
 } RepositoryPolicy;
 
+// Relocation is An additional message to show the user about the move, such as the reason.
 typedef struct {
 	char GroupId;
 	char ArtifactId;
@@ -232,6 +300,9 @@ typedef struct {
 	char Message;
 } Relocation;
 
+// Site is The url of the location where website is deployed, in the form <code>protocol://hostname/path</code>.
+//             <br><b>Default value is</b>: parent value [+ path adjustment] + (artifactId or project.directory property), or just parent value if
+//             site's <code>child.site.url.inherit.append.path="false"</code>
 typedef struct {
 	char ChildSiteUrlInheritAppendPathAttr; // attr, optional
 	char Id;
@@ -239,20 +310,25 @@ typedef struct {
 	char Url;
 } Site;
 
+// Plugins ...
 typedef struct {
 	ReportPlugin Plugin[];
 } Plugins;
 
+// Reporting is Where to store all of the generated reports. The default is
+//             <code>${project.build.directory}/site</code>.
 typedef struct {
 	char ExcludeDefaults;
 	char OutputDirectory;
 	Plugins Plugins;
 } Reporting;
 
+// ReportSets ...
 typedef struct {
 	ReportSet ReportSet[];
 } ReportSets;
 
+// ReportPlugin is The version of the reporting plugin to be used.
 typedef struct {
 	char GroupId;
 	char ArtifactId;
@@ -262,6 +338,8 @@ typedef struct {
 	Configuration Configuration;
 } ReportPlugin;
 
+// ReportSet is The unique id for this report set, to be used during POM inheritance and profile injection
+//             for merging of report sets.
 typedef struct {
 	char Id;
 	Reports Reports;
@@ -269,6 +347,7 @@ typedef struct {
 	Configuration Configuration;
 } ReportSet;
 
+// Profile is Information required to build the project.
 typedef struct {
 	char Id;
 	Activation Activation;
@@ -284,6 +363,7 @@ typedef struct {
 	Reporting Reporting;
 } Profile;
 
+// Activation is Specifies that this profile will be activated based on existence of a file.
 typedef struct {
 	bool ActiveByDefault;
 	char Jdk;
@@ -292,16 +372,20 @@ typedef struct {
 	ActivationFile File;
 } Activation;
 
+// ActivationProperty is The value of the property required to activate a profile.
 typedef struct {
 	char Name;
 	char Value;
 } ActivationProperty;
 
+// ActivationFile is The name of the file that must exist to activate the profile.
 typedef struct {
 	char Missing;
 	char Exists;
 } ActivationFile;
 
+// ActivationOS is The version of the operating system to be used to activate the
+//           profile.
 typedef struct {
 	char Name;
 	char Family;
@@ -309,6 +393,8 @@ typedef struct {
 	char Version;
 } ActivationOS;
 
+// Repository is The type of layout this repository uses for locating and storing artifacts -
+//             can be <code>legacy</code> or <code>default</code>.
 typedef struct {
 	RepositoryPolicy Releases;
 	RepositoryPolicy Snapshots;
@@ -318,18 +404,25 @@ typedef struct {
 	char Layout;
 } Repository;
 
+// Resources ...
 typedef struct {
 	Resource Resource[];
 } Resources;
 
+// TestResources ...
 typedef struct {
 	Resource TestResource[];
 } TestResources;
 
+// Filters ...
 typedef struct {
 	char Filter[];
 } Filters;
 
+// BuildBase is The default goal (or phase in Maven 2) to execute when none is specified for
+//             the project. Note that in case of a multi-module build, only the default goal of the top-level
+//             project is relevant, i.e. the default goals of child modules are ignored. Since Maven 3,
+//             multiple goals/phases can be separated by whitespace.
 typedef struct {
 	char DefaultGoal;
 	Resources Resources;
@@ -341,13 +434,19 @@ typedef struct {
 	Plugins Plugins;
 } BuildBase;
 
+// Executions ...
 typedef struct {
 	PluginExecution Execution[];
 } Executions;
 
+// Goals ...
 typedef struct {
 } Goals;
 
+// Plugin is Whether to load Maven extensions (such as packaging and type handlers) from
+//             this plugin. For performance reasons, this should only be enabled when necessary. Note: While the type
+//             of this field is <code>String</code> for technical reasons, the semantic type is actually
+//             <code>Boolean</code>. Default value is <code>false</code>.
 typedef struct {
 	char GroupId;
 	char ArtifactId;
@@ -360,6 +459,8 @@ typedef struct {
 	Configuration Configuration;
 } Plugin;
 
+// PluginExecution is The build lifecycle phase to bind the goals in this execution to. If omitted,
+//             the goals will be bound to the default phase specified by the plugin.
 typedef struct {
 	char Id;
 	char Phase;
@@ -368,14 +469,18 @@ typedef struct {
 	Configuration Configuration;
 } PluginExecution;
 
+// Includes ...
 typedef struct {
 	char Include[];
 } Includes;
 
+// Excludes ...
 typedef struct {
 	char Exclude[];
 } Excludes;
 
+// Resource is Describe the directory where the resources are stored. The path is relative
+//             to the POM.
 typedef struct {
 	char TargetPath;
 	char Filtering;
@@ -384,18 +489,24 @@ typedef struct {
 	Excludes Excludes;
 } Resource;
 
+// PluginManagement is Section for management of default plugin information for use in a group of POMs.
 typedef struct {
 	Plugins Plugins;
 } PluginManagement;
 
+// Prerequisites is For a plugin project (packaging is <code>maven-plugin</code>), the minimum version of
+//             Maven required to use the resulting plugin.<br>
 typedef struct {
 	char Maven;
 } Prerequisites;
 
+// Extensions ...
 typedef struct {
 	Extension Extension[];
 } Extensions;
 
+// Build is The directory where compiled test classes are placed.
+//             The default value is <code>target/test-classes</code>.
 typedef struct {
 	char SourceDirectory;
 	char ScriptSourceDirectory;
@@ -413,6 +524,7 @@ typedef struct {
 	Plugins Plugins;
 } Build;
 
+// Extension is The version of the extension.
 typedef struct {
 	char GroupId;
 	char ArtifactId;

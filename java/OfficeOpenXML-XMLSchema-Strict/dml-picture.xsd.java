@@ -11,6 +11,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
+// CT_PictureNonVisual ...
 public class CT_PictureNonVisual {
 	@XmlElement(required = true, name = "cNvPr")
 	protected List<CT_NonVisualDrawingProps> CNvPr;
@@ -18,6 +19,7 @@ public class CT_PictureNonVisual {
 	protected List<CT_NonVisualPictureProperties> CNvPicPr;
 }
 
+// CT_Picture ...
 public class CT_Picture {
 	@XmlElement(required = true, name = "nvPicPr")
 	protected List<CT_PictureNonVisual> NvPicPr;

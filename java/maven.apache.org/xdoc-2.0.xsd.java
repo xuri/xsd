@@ -11,150 +11,192 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
+// ContentType is media type, as per [RFC2045]
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ContentType")
 public class ContentType {
 	protected String ContentType;
 }
 
+// ContentTypes is comma-separated list of media types, as per [RFC2045]
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ContentTypes")
 public class ContentTypes {
 	protected String ContentTypes;
 }
 
+// Charset is a character encoding, as per [RFC2045]
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "Charset")
 public class Charset {
 	protected String Charset;
 }
 
+// Charsets is a space separated list of character encodings, as per [RFC2045]
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "Charsets")
 public class Charsets {
 	protected String Charsets;
 }
 
+// LanguageCode is a language code, as per [RFC3066]
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "LanguageCode")
 public class LanguageCode {
 	protected String LanguageCode;
 }
 
+// Character is a single character, as per section 2.2 of [XML]
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "Character")
 public class Character {
 	protected String Character;
 }
 
+// Number is one or more digits
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "Number")
 public class Number {
 	protected Integer Number;
 }
 
+// TabindexNumber is tabindex attribute specifies the position of the current element
+//       in the tabbing order for the current document. This value must be
+//       a number between 0 and 32767. User agents should ignore leading zeros.
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "tabindexNumber")
 public class TabindexNumber {
 	protected Integer TabindexNumber;
 }
 
+// LinkTypes is space-separated list of link types
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "LinkTypes")
 public class LinkTypes {
 	protected List<String> LinkTypes;
 }
 
+// MediaDesc is single or comma-separated list of media descriptors
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "MediaDesc")
 public class MediaDesc {
 	protected String MediaDesc;
 }
 
+// URI is a Uniform Resource Identifier, see [RFC2396]
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "URI")
 public class URI {
 	protected String URI;
 }
 
+// UriList is a space separated list of Uniform Resource Identifiers
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "UriList")
 public class UriList {
 	protected String UriList;
 }
 
+// Datetime is date and time information. ISO date format
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "Datetime")
 public class Datetime {
 	protected Byte Datetime;
 }
 
+// Script is script expression
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "Script")
 public class Script {
 	protected String Script;
 }
 
+// StyleSheet is style sheet data
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "StyleSheet")
 public class StyleSheet {
 	protected String StyleSheet;
 }
 
+// Text is used for titles etc.
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "Text")
 public class Text {
 	protected String Text;
 }
 
+// FrameTarget is render in this frame
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "FrameTarget")
 public class FrameTarget {
 	protected String FrameTarget;
 }
 
+// Length is nn for pixels or nn% for percentage length
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "Length")
 public class Length {
 	protected String Length;
 }
 
+// MultiLength is pixel, percentage, or relative
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "MultiLength")
 public class MultiLength {
 	protected String MultiLength;
 }
 
+// Pixels is integer representing length in pixels
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "Pixels")
 public class Pixels {
 	protected Integer Pixels;
 }
 
+// Shape ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "Shape")
 public class Shape {
 	protected String Shape;
 }
 
+// Coords is comma separated list of lengths
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "Coords")
 public class Coords {
 	protected String Coords;
 }
 
+// ImgAlign is used for object, applet, img, input and iframe
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ImgAlign")
 public class ImgAlign {
 	protected String ImgAlign;
 }
 
+// Color is a color using sRGB: #RRGGBB as Hex values
+// 
+//       There are also 16 widely known color names with their sRGB values:
+// 
+//       Black  = #000000    Green  = #008000
+//       Silver = #C0C0C0    Lime   = #00FF00
+//       Gray   = #808080    Olive  = #808000
+//       White  = #FFFFFF    Yellow = #FFFF00
+//       Maroon = #800000    Navy   = #000080
+//       Red    = #FF0000    Blue   = #0000FF
+//       Purple = #800080    Teal   = #008080
+//       Fuchsia= #FF00FF    Aqua   = #00FFFF
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "Color")
 public class Color {
 	protected String Color;
 }
 
+// Coreattrs is core attributes common to most elements
+//       id       document-wide unique id
+//       class    space separated list of classes
+//       style    associated style info
+//       title    advisory title/amplification
 public class Coreattrs {
 	@XmlAttribute(name = "id")
 	protected StringAttr Id;
@@ -166,6 +208,10 @@ public class Coreattrs {
 	protected StringAttr Title;
 }
 
+// I18n is internationalization attributes
+//       lang        language code (backwards compatible)
+//       xml:lang    language code (as per XML 1.0 spec)
+//       dir         direction for weak/neutral text
 public class I18n {
 	@XmlAttribute(name = "lang")
 	protected StringAttr Lang;
@@ -175,6 +221,16 @@ public class I18n {
 	protected StringAttr Dir;
 }
 
+// Events is attributes for common UI events
+//       onclick     a pointer button was clicked
+//       ondblclick  a pointer button was double clicked
+//       onmousedown a pointer button was pressed down
+//       onmouseup   a pointer button was released
+//       onmousemove a pointer was moved onto the element
+//       onmouseout  a pointer was moved away from the element
+//       onkeypress  a key was pressed and released
+//       onkeydown   a key was pressed down
+//       onkeyup     a key was released
 public class Events {
 	@XmlAttribute(name = "onclick")
 	protected StringAttr Onclick;
@@ -198,6 +254,11 @@ public class Events {
 	protected StringAttr Onkeyup;
 }
 
+// Focus is attributes for elements that can get the focus
+//       accesskey   accessibility key character
+//       tabindex    position in tabbing order
+//       onfocus     the element got the focus
+//       onblur      the element lost the focus
 public class Focus {
 	@XmlAttribute(name = "accesskey")
 	protected StringAttr Accesskey;
@@ -209,14 +270,18 @@ public class Focus {
 	protected StringAttr Onblur;
 }
 
+// Attrs ...
 public class Attrs {
 }
 
+// TextAlign is text alignment for p, div, h1-h6. The default is
+//       align="left" for ltr headings, "right" for rtl
 public class TextAlign {
 	@XmlAttribute(name = "align")
 	protected StringAttr Align;
 }
 
+// SpecialExtra ...
 public class SpecialExtra {
 	@XmlElement(required = true, name = "object")
 	protected String Object;
@@ -234,6 +299,7 @@ public class SpecialExtra {
 	protected Macro Macro;
 }
 
+// SpecialBasic ...
 public class SpecialBasic {
 	@XmlElement(required = true, name = "br")
 	protected String Br;
@@ -243,11 +309,13 @@ public class SpecialBasic {
 	protected String Bdo;
 }
 
+// Special ...
 public class Special {
 	protected SpecialBasic SpecialBasic;
 	protected SpecialExtra SpecialExtra;
 }
 
+// FontstyleExtra ...
 public class FontstyleExtra {
 	@XmlElement(required = true, name = "big")
 	protected Big Big;
@@ -259,6 +327,7 @@ public class FontstyleExtra {
 	protected Basefont Basefont;
 }
 
+// FontstyleBasic ...
 public class FontstyleBasic {
 	@XmlElement(required = true, name = "tt")
 	protected Tt Tt;
@@ -274,11 +343,13 @@ public class FontstyleBasic {
 	protected Strike Strike;
 }
 
+// Fontstyle ...
 public class Fontstyle {
 	protected FontstyleBasic FontstyleBasic;
 	protected FontstyleExtra FontstyleExtra;
 }
 
+// PhraseExtra ...
 public class PhraseExtra {
 	@XmlElement(required = true, name = "sub")
 	protected Sub Sub;
@@ -286,6 +357,7 @@ public class PhraseExtra {
 	protected Sup Sup;
 }
 
+// PhraseBasic ...
 public class PhraseBasic {
 	@XmlElement(required = true, name = "em")
 	protected Em Em;
@@ -311,11 +383,13 @@ public class PhraseBasic {
 	protected Acronym Acronym;
 }
 
+// Phrase ...
 public class Phrase {
 	protected PhraseBasic PhraseBasic;
 	protected PhraseExtra PhraseExtra;
 }
 
+// InlineForms ...
 public class InlineForms {
 	@XmlElement(required = true, name = "input")
 	protected String Input;
@@ -329,6 +403,7 @@ public class InlineForms {
 	protected String Button;
 }
 
+// MiscInline ...
 public class MiscInline {
 	@XmlElement(required = true, name = "ins")
 	protected Ins Ins;
@@ -338,12 +413,14 @@ public class MiscInline {
 	protected String Script;
 }
 
+// Misc ...
 public class Misc {
 	@XmlElement(required = true, name = "noscript")
 	protected Noscript Noscript;
 	protected MiscInline MiscInline;
 }
 
+// Inline ...
 public class Inline {
 	@XmlElement(required = true, name = "a")
 	protected A A;
@@ -353,11 +430,13 @@ public class Inline {
 	protected InlineForms InlineForms;
 }
 
+// Inline is "Inline" covers inline or "text-level" element
 public class Inline {
 	protected Inline Inline;
 	protected MiscInline MiscInline;
 }
 
+// Heading ...
 public class Heading {
 	@XmlElement(required = true, name = "h1")
 	protected H1 H1;
@@ -373,6 +452,7 @@ public class Heading {
 	protected H6 H6;
 }
 
+// Lists ...
 public class Lists {
 	@XmlElement(required = true, name = "ul")
 	protected String Ul;
@@ -386,6 +466,7 @@ public class Lists {
 	protected String Dir;
 }
 
+// Blocktext ...
 public class Blocktext {
 	@XmlElement(required = true, name = "pre")
 	protected Pre Pre;
@@ -401,6 +482,7 @@ public class Blocktext {
 	protected Noframes Noframes;
 }
 
+// Block ...
 public class Block {
 	@XmlElement(required = true, name = "p")
 	protected P P;
@@ -417,6 +499,7 @@ public class Block {
 	protected Blocktext Blocktext;
 }
 
+// Flow is "Flow" mixes block and inline and is used for list items etc.
 public class Flow {
 	protected Block Block;
 	protected Inline Inline;
@@ -425,6 +508,7 @@ public class Flow {
 	protected String Form;
 }
 
+// AContent is a elements use "Inline" excluding a
 public class AContent {
 	protected Special Special;
 	protected Fontstyle Fontstyle;
@@ -433,6 +517,8 @@ public class AContent {
 	protected MiscInline MiscInline;
 }
 
+// PreContent is pre uses "Inline" excluding img, object, applet, big, small,
+//       font, or basefont
 public class PreContent {
 	protected SpecialBasic SpecialBasic;
 	protected FontstyleBasic FontstyleBasic;
@@ -443,12 +529,14 @@ public class PreContent {
 	protected A A;
 }
 
+// FormContent is form uses "Flow" excluding form
 public class FormContent {
 	protected Block Block;
 	protected Inline Inline;
 	protected Misc Misc;
 }
 
+// ButtonContent is button uses "Flow" but excludes a, form, form controls, iframe
 public class ButtonContent {
 	protected Heading Heading;
 	protected Lists Lists;
@@ -478,6 +566,7 @@ public class ButtonContent {
 	protected Map Map;
 }
 
+// HeadMisc ...
 public class HeadMisc {
 	@XmlElement(required = true, name = "script")
 	protected String Script;
@@ -493,6 +582,7 @@ public class HeadMisc {
 	protected Isindex Isindex;
 }
 
+// Head ...
 public class Head {
 	@XmlElement(required = true)
 	protected I18n I18n;
@@ -507,6 +597,7 @@ public class Head {
 	protected Base Base;
 }
 
+// Title ...
 public class Title {
 	@XmlElement(required = true)
 	protected I18n I18n;
@@ -514,6 +605,7 @@ public class Title {
 	protected StringAttr Id;
 }
 
+// Base ...
 public class Base {
 	@XmlAttribute(name = "id")
 	protected StringAttr Id;
@@ -523,6 +615,7 @@ public class Base {
 	protected StringAttr Target;
 }
 
+// Meta ...
 public class Meta {
 	@XmlElement(required = true)
 	protected I18n I18n;
@@ -538,6 +631,7 @@ public class Meta {
 	protected voidAttr Scheme;
 }
 
+// Link ...
 public class Link {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -559,6 +653,7 @@ public class Link {
 	protected StringAttr Target;
 }
 
+// Style ...
 public class Style {
 	@XmlElement(required = true)
 	protected I18n I18n;
@@ -574,6 +669,7 @@ public class Style {
 	protected SpaceAttr XmlSpace;
 }
 
+// Script ...
 public class Script {
 	@XmlAttribute(name = "id")
 	protected StringAttr Id;
@@ -591,11 +687,13 @@ public class Script {
 	protected SpaceAttr XmlSpace;
 }
 
+// Noscript ...
 public class Noscript {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
+// Iframe ...
 public class Iframe {
 	@XmlElement(required = true)
 	protected Coreattrs Coreattrs;
@@ -621,11 +719,13 @@ public class Iframe {
 	protected StringAttr Width;
 }
 
+// Noframes ...
 public class Noframes {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
+// Div ...
 public class Div {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -633,6 +733,7 @@ public class Div {
 	protected TextAlign TextAlign;
 }
 
+// P ...
 public class P {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -640,6 +741,7 @@ public class P {
 	protected TextAlign TextAlign;
 }
 
+// H1 ...
 public class H1 {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -647,6 +749,7 @@ public class H1 {
 	protected TextAlign TextAlign;
 }
 
+// H2 ...
 public class H2 {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -654,6 +757,7 @@ public class H2 {
 	protected TextAlign TextAlign;
 }
 
+// H3 ...
 public class H3 {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -661,6 +765,7 @@ public class H3 {
 	protected TextAlign TextAlign;
 }
 
+// H4 ...
 public class H4 {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -668,6 +773,7 @@ public class H4 {
 	protected TextAlign TextAlign;
 }
 
+// H5 ...
 public class H5 {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -675,6 +781,7 @@ public class H5 {
 	protected TextAlign TextAlign;
 }
 
+// H6 ...
 public class H6 {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -682,12 +789,14 @@ public class H6 {
 	protected TextAlign TextAlign;
 }
 
+// ULStyle is Unordered list bullet styles
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ULStyle")
 public class ULStyle {
 	protected String ULStyle;
 }
 
+// Ul ...
 public class Ul {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -699,12 +808,23 @@ public class Ul {
 	protected String Ul;
 }
 
+// OLStyle is Ordered list numbering style
+// 
+//       1   arabic numbers      1, 2, 3, ...
+//       a   lower alpha         a, b, c, ...
+//       A   upper alpha         A, B, C, ...
+//       i   lower roman         i, ii, iii, ...
+//       I   upper roman         I, II, III, ...
+// 
+//       The style is applied to the sequence number which by default
+//       is reset to 1 for the first list item in an ordered list.
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "OLStyle")
 public class OLStyle {
 	protected String OLStyle;
 }
 
+// Ol ...
 public class Ol {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -718,6 +838,7 @@ public class Ol {
 	protected String Ol;
 }
 
+// Menu ...
 public class Menu {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -727,6 +848,7 @@ public class Menu {
 	protected String Menu;
 }
 
+// Dir ...
 public class Dir {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -736,12 +858,14 @@ public class Dir {
 	protected String Dir;
 }
 
+// LIStyle is LIStyle is constrained to: "(ULStyle|OLStyle)"
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "LIStyle")
 public class LIStyle {
 	protected String LIStyle;
 }
 
+// Li ...
 public class Li {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -751,6 +875,7 @@ public class Li {
 	protected IntegerAttr Value;
 }
 
+// Dl ...
 public class Dl {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -762,16 +887,19 @@ public class Dl {
 	protected String Dl;
 }
 
+// Dt ...
 public class Dt {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
+// Dd ...
 public class Dd {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
+// Address ...
 public class Address {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -781,6 +909,7 @@ public class Address {
 	protected P P;
 }
 
+// Hr ...
 public class Hr {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -794,6 +923,7 @@ public class Hr {
 	protected StringAttr Width;
 }
 
+// Pre ...
 public class Pre {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -803,6 +933,7 @@ public class Pre {
 	protected SpaceAttr XmlSpace;
 }
 
+// Blockquote ...
 public class Blockquote {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -810,11 +941,13 @@ public class Blockquote {
 	protected StringAttr Cite;
 }
 
+// Center ...
 public class Center {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
+// Ins ...
 public class Ins {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -824,6 +957,7 @@ public class Ins {
 	protected ByteAttr Datetime;
 }
 
+// Del ...
 public class Del {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -833,6 +967,7 @@ public class Del {
 	protected ByteAttr Datetime;
 }
 
+// A ...
 public class A {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -860,11 +995,13 @@ public class A {
 	protected StringAttr Target;
 }
 
+// Span ...
 public class Span {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
+// Bdo ...
 public class Bdo {
 	@XmlElement(required = true)
 	protected Coreattrs Coreattrs;
@@ -878,6 +1015,7 @@ public class Bdo {
 	protected voidAttr Dir;
 }
 
+// Br ...
 public class Br {
 	@XmlElement(required = true)
 	protected Coreattrs Coreattrs;
@@ -885,56 +1023,67 @@ public class Br {
 	protected voidAttr Clear;
 }
 
+// Em ...
 public class Em {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
+// Strong ...
 public class Strong {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
+// Dfn ...
 public class Dfn {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
+// Code ...
 public class Code {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
+// Samp ...
 public class Samp {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
+// Kbd ...
 public class Kbd {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
+// Var ...
 public class Var {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
+// Cite ...
 public class Cite {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
+// Abbr ...
 public class Abbr {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
+// Acronym ...
 public class Acronym {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
+// Q ...
 public class Q {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -942,56 +1091,67 @@ public class Q {
 	protected StringAttr Cite;
 }
 
+// Sub ...
 public class Sub {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
+// Sup ...
 public class Sup {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
+// Tt ...
 public class Tt {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
+// I ...
 public class I {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
+// B ...
 public class B {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
+// Big ...
 public class Big {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
+// Small ...
 public class Small {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
+// U ...
 public class U {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
+// S ...
 public class S {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
+// Strike ...
 public class Strike {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
+// Basefont ...
 public class Basefont {
 	@XmlAttribute(name = "id")
 	protected StringAttr Id;
@@ -1003,6 +1163,7 @@ public class Basefont {
 	protected voidAttr Face;
 }
 
+// Font ...
 public class Font {
 	@XmlElement(required = true)
 	protected Coreattrs Coreattrs;
@@ -1016,6 +1177,7 @@ public class Font {
 	protected voidAttr Face;
 }
 
+// Object ...
 public class Object {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1062,6 +1224,7 @@ public class Object {
 	protected String Object;
 }
 
+// Param ...
 public class Param {
 	@XmlAttribute(name = "id")
 	protected StringAttr Id;
@@ -1075,6 +1238,7 @@ public class Param {
 	protected StringAttr Type;
 }
 
+// Applet ...
 public class Applet {
 	@XmlElement(required = true)
 	protected Coreattrs Coreattrs;
@@ -1109,6 +1273,7 @@ public class Applet {
 	protected String Form;
 }
 
+// Img ...
 public class Img {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1138,6 +1303,7 @@ public class Img {
 	protected IntegerAttr Vspace;
 }
 
+// Map ...
 public class Map {
 	@XmlElement(required = true)
 	protected I18n I18n;
@@ -1161,6 +1327,7 @@ public class Map {
 	protected List<String> Area;
 }
 
+// Area ...
 public class Area {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1180,6 +1347,7 @@ public class Area {
 	protected StringAttr Target;
 }
 
+// Form ...
 public class Form {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1201,6 +1369,7 @@ public class Form {
 	protected StringAttr Target;
 }
 
+// Label ...
 public class Label {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1214,12 +1383,14 @@ public class Label {
 	protected StringAttr Onblur;
 }
 
+// InputType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "InputType")
 public class InputType {
 	protected String InputType;
 }
 
+// Input ...
 public class Input {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1257,6 +1428,7 @@ public class Input {
 	protected StringAttr Align;
 }
 
+// Select ...
 public class Select {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1282,6 +1454,7 @@ public class Select {
 	protected String Select;
 }
 
+// Optgroup ...
 public class Optgroup {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1293,6 +1466,7 @@ public class Optgroup {
 	protected String Optgroup;
 }
 
+// Option ...
 public class Option {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1306,6 +1480,7 @@ public class Option {
 	protected voidAttr Value;
 }
 
+// Textarea ...
 public class Textarea {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1327,6 +1502,7 @@ public class Textarea {
 	protected StringAttr Onchange;
 }
 
+// Fieldset ...
 public class Fieldset {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1339,12 +1515,14 @@ public class Fieldset {
 	protected String Form;
 }
 
+// LAlign ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "LAlign")
 public class LAlign {
 	protected String LAlign;
 }
 
+// Legend ...
 public class Legend {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1354,6 +1532,7 @@ public class Legend {
 	protected StringAttr Align;
 }
 
+// Button ...
 public class Button {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1369,6 +1548,7 @@ public class Button {
 	protected voidAttr Disabled;
 }
 
+// Isindex ...
 public class Isindex {
 	@XmlElement(required = true)
 	protected Coreattrs Coreattrs;
@@ -1378,24 +1558,39 @@ public class Isindex {
 	protected StringAttr Prompt;
 }
 
+// TFrame is The border attribute sets the thickness of the frame around the
+//       table. The default units are screen pixels.
+// 
+//       The frame attribute specifies which parts of the frame around
+//       the table should be rendered. The values are not the same as
+//       CALS to avoid a name clash with the valign attribute.
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "TFrame")
 public class TFrame {
 	protected String TFrame;
 }
 
+// TRules is The rules attribute defines which rules to draw between cells:
+// 
+//       If rules is absent then assume:
+//           "none" if border is absent or border="0" otherwise "all"
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "TRules")
 public class TRules {
 	protected String TRules;
 }
 
+// TAlign is horizontal placement of table relative to document
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "TAlign")
 public class TAlign {
 	protected String TAlign;
 }
 
+// Cellhalign is horizontal alignment attributes for cell contents
+// 
+//       char        alignment char, e.g. char=':'
+//       charoff     offset for alignment char
 public class Cellhalign {
 	@XmlAttribute(name = "align")
 	protected StringAttr Align;
@@ -1405,11 +1600,13 @@ public class Cellhalign {
 	protected StringAttr Charoff;
 }
 
+// Cellvalign is vertical alignment attributes for cell contents
 public class Cellvalign {
 	@XmlAttribute(name = "valign")
 	protected StringAttr Valign;
 }
 
+// Table ...
 public class Table {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1447,12 +1644,14 @@ public class Table {
 	protected List<Tr> Tr;
 }
 
+// CAlign ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "CAlign")
 public class CAlign {
 	protected String CAlign;
 }
 
+// Caption ...
 public class Caption {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1460,6 +1659,7 @@ public class Caption {
 	protected StringAttr Align;
 }
 
+// Thead ...
 public class Thead {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1471,6 +1671,7 @@ public class Thead {
 	protected List<Tr> Tr;
 }
 
+// Tfoot ...
 public class Tfoot {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1482,6 +1683,7 @@ public class Tfoot {
 	protected List<Tr> Tr;
 }
 
+// Tbody ...
 public class Tbody {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1493,6 +1695,7 @@ public class Tbody {
 	protected List<Tr> Tr;
 }
 
+// Colgroup ...
 public class Colgroup {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1508,6 +1711,7 @@ public class Colgroup {
 	protected List<Col> Col;
 }
 
+// Col ...
 public class Col {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1521,6 +1725,7 @@ public class Col {
 	protected StringAttr Width;
 }
 
+// Tr ...
 public class Tr {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1536,12 +1741,14 @@ public class Tr {
 	protected String Td;
 }
 
+// Scope is Scope is simpler than headers attribute for common tables
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "Scope")
 public class Scope {
 	protected String Scope;
 }
 
+// Th ...
 public class Th {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1571,6 +1778,7 @@ public class Th {
 	protected StringAttr Height;
 }
 
+// Td ...
 public class Td {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1600,6 +1808,7 @@ public class Td {
 	protected StringAttr Height;
 }
 
+// Document ...
 public class Document {
 	@XmlElement(required = true)
 	protected I18n I18n;
@@ -1613,6 +1822,7 @@ public class Document {
 	protected List<Body> Body;
 }
 
+// Properties ...
 public class Properties {
 	@XmlElement(required = true, name = "title")
 	protected List<Title> Title;
@@ -1622,14 +1832,17 @@ public class Properties {
 	protected List<Byte> Date;
 }
 
+// Author ...
 public class Author {
 	@XmlAttribute(name = "email")
 	protected StringAttr Email;
 }
 
+// Date ...
 public class Date {
 }
 
+// Body ...
 public class Body {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1637,6 +1850,7 @@ public class Body {
 	protected List<Section> Section;
 }
 
+// Section ...
 public class Section {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1651,6 +1865,7 @@ public class Section {
 	protected Subsection Subsection;
 }
 
+// Subsection ...
 public class Subsection {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1663,9 +1878,11 @@ public class Subsection {
 	protected String Form;
 }
 
+// Source ...
 public class Source {
 }
 
+// Macro ...
 public class Macro {
 	@XmlAttribute(name = "name", required = true)
 	protected StringAttr Name;

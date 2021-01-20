@@ -2,13 +2,16 @@
 
 typedef SupplementalDataModel SupplementalDataModels;
 
+// SupplementalDataModel is Snippets of POM xml files used to supplement the data model.
 typedef struct {
 	Supplement Supplement[];
 } SupplementalDataModel;
 
+// Project ...
 typedef struct {
 } Project;
 
+// Supplement is A single supplement
 typedef struct {
 	Project Project;
 } Supplement;

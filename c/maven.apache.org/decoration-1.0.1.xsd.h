@@ -2,13 +2,16 @@
 
 typedef DecorationModel Project;
 
+// PoweredBy ...
 typedef struct {
 	Logo Logo[];
 } PoweredBy;
 
+// Custom ...
 typedef struct {
 } Custom;
 
+// DecorationModel is Modify the version published display properties.
 typedef struct {
 	char NameAttr; // attr, optional
 	Banner BannerLeft;
@@ -21,6 +24,7 @@ typedef struct {
 	Custom Custom;
 } DecorationModel;
 
+// Banner is The height to use for the banner image.
 typedef struct {
 	char Name;
 	char Src;
@@ -31,17 +35,21 @@ typedef struct {
 	char Height;
 } Banner;
 
+// Head ...
 typedef struct {
 } Head;
 
+// Links ...
 typedef struct {
 	LinkItem Item[];
 } Links;
 
+// Breadcrumbs ...
 typedef struct {
 	LinkItem Item[];
 } Breadcrumbs;
 
+// Body is The main content decoration.
 typedef struct {
 	Head Head;
 	Links Links;
@@ -49,6 +57,7 @@ typedef struct {
 	Menu Menu[];
 } Body;
 
+// LinkItem is A link in the navigation.
 typedef struct {
 	char NameAttr; // attr, optional
 	char HrefAttr; // attr, optional
@@ -61,6 +70,7 @@ typedef struct {
 	char TargetAttr; // attr, optional
 } LinkItem;
 
+// Menu is A list of menu item.
 typedef struct {
 	char NameAttr; // attr, optional
 	char InheritAttr; // attr, optional
@@ -75,6 +85,7 @@ typedef struct {
 	MenuItem Item[];
 } Menu;
 
+// MenuItem is A list of menu item.
 typedef struct {
 	bool CollapseAttr; // attr, optional
 	char RefAttr; // attr, optional
@@ -91,21 +102,25 @@ typedef struct {
 	MenuItem Item[];
 } MenuItem;
 
+// Skin is The skin version.
 typedef struct {
 	char GroupId;
 	char ArtifactId;
 	char Version;
 } Skin;
 
+// Version is Modify display properties for version published.
 typedef struct {
 	char PositionAttr; // attr, optional
 } Version;
 
+// PublishDate is Modify display properties for date published.
 typedef struct {
 	char PositionAttr; // attr, optional
 	char FormatAttr; // attr, optional
 } PublishDate;
 
+// Logo is Power by logo on the navigation.
 typedef struct {
 	char NameAttr; // attr, optional
 	char HrefAttr; // attr, optional

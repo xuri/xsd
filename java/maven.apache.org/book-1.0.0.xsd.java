@@ -17,11 +17,13 @@ public class Book {
 	protected BookModel Book;
 }
 
+// Chapters ...
 public class Chapters {
 	@XmlElement(required = true, name = "chapter")
 	protected List<Chapter> Chapter;
 }
 
+// BookModel is Specifies the date of this book.
 public class BookModel {
 	@XmlElement(required = true, name = "id")
 	protected String Id;
@@ -35,11 +37,13 @@ public class BookModel {
 	protected Chapters Chapters;
 }
 
+// Sections ...
 public class Sections {
 	@XmlElement(required = true, name = "section")
 	protected List<Section> Section;
 }
 
+// Chapter is Specifies the title of this chapter.
 public class Chapter {
 	@XmlElement(required = true, name = "id")
 	protected String Id;
@@ -49,6 +53,7 @@ public class Chapter {
 	protected Sections Sections;
 }
 
+// Section is Specifies the file of this section.
 public class Section {
 	@XmlElement(required = true, name = "id")
 	protected String Id;

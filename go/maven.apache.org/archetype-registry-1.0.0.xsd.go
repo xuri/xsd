@@ -2,7 +2,7 @@
 
 package schema
 
-// Archetyperegistry ...
+// Archetyperegistry is 0.0.0+
 type Archetyperegistry *ArchetypeRegistry
 
 // Languages ...
@@ -15,7 +15,7 @@ type FilteredExtensions struct {
 	FilteredExtension []string `xml:"FilteredExtension"`
 }
 
-// ArchetypeRegistry ...
+// ArchetypeRegistry is 0.0.0+
 type ArchetypeRegistry struct {
 	Languages          *Languages          `xml:"Languages"`
 	FilteredExtensions *FilteredExtensions `xml:"FilteredExtensions"`

@@ -2,6 +2,7 @@
 
 typedef CT_Properties Properties;
 
+// CT_Properties ...
 typedef struct {
 	char Template[];
 	char Manager[];
@@ -32,14 +33,17 @@ typedef struct {
 	int DocSecurity[];
 } CT_Properties;
 
+// CT_VectorVariant ...
 typedef struct {
 	CT_Vector VtVector;
 } CT_VectorVariant;
 
+// CT_VectorLpstr ...
 typedef struct {
 	CT_Vector VtVector;
 } CT_VectorLpstr;
 
+// CT_DigSigBlob ...
 typedef struct {
 	char VtBlob[];
 } CT_DigSigBlob;

@@ -17,46 +17,59 @@ public class Assembly {
 	protected Assembly Assembly;
 }
 
+// Formats ...
 public class Formats {
 	@XmlElement(required = true, name = "format")
 	protected List<String> Format;
 }
 
+// ContainerDescriptorHandlers ...
 public class ContainerDescriptorHandlers {
 	@XmlElement(required = true, name = "containerDescriptorHandler")
 	protected List<ContainerDescriptorHandlerConfig> ContainerDescriptorHandler;
 }
 
+// ModuleSets ...
 public class ModuleSets {
 	@XmlElement(required = true, name = "moduleSet")
 	protected List<ModuleSet> ModuleSet;
 }
 
+// FileSets ...
 public class FileSets {
 	@XmlElement(required = true, name = "fileSet")
 	protected List<FileSet> FileSet;
 }
 
+// Files ...
 public class Files {
 	@XmlElement(required = true, name = "file")
 	protected List<FileItem> File;
 }
 
+// DependencySets ...
 public class DependencySets {
 	@XmlElement(required = true, name = "dependencySet")
 	protected List<DependencySet> DependencySet;
 }
 
+// Repositories ...
 public class Repositories {
 	@XmlElement(required = true, name = "repository")
 	protected List<Repository> Repository;
 }
 
+// ComponentDescriptors ...
 public class ComponentDescriptors {
 	@XmlElement(required = true, name = "componentDescriptor")
 	protected List<String> ComponentDescriptor;
 }
 
+// Assembly is Sets the id of this assembly. This is a symbolic name for a
+//             particular assembly of files from this project. Also, aside from
+//             being used to distinctly name the assembled package by attaching
+//             its value to the generated archive, the id is used as your
+//             artifact's classifier when deploying.
 public class Assembly {
 	@XmlElement(required = true, name = "id")
 	protected String Id;
@@ -84,9 +97,11 @@ public class Assembly {
 	protected ComponentDescriptors ComponentDescriptors;
 }
 
+// Configuration ...
 public class Configuration {
 }
 
+// ContainerDescriptorHandlerConfig is The handler's plexus role-hint, for lookup from the container.
 public class ContainerDescriptorHandlerConfig {
 	@XmlElement(required = true, name = "handlerName")
 	protected String HandlerName;
@@ -94,21 +109,27 @@ public class ContainerDescriptorHandlerConfig {
 	protected Configuration Configuration;
 }
 
+// GroupVersionAlignments ...
 public class GroupVersionAlignments {
 	@XmlElement(required = true, name = "groupVersionAlignment")
 	protected List<GroupVersionAlignment> GroupVersionAlignment;
 }
 
+// Includes ...
 public class Includes {
 	@XmlElement(required = true, name = "include")
 	protected List<String> Include;
 }
 
+// Excludes ...
 public class Excludes {
 	@XmlElement(required = true, name = "exclude")
 	protected List<String> Exclude;
 }
 
+// Repository is If set to true, this property will trigger the creation of repository
+//             metadata which will allow the repository to be used as a functional remote
+//             repository. Default value is false.
 public class Repository {
 	@XmlElement(required = true, name = "includeMetadata")
 	protected Boolean IncludeMetadata;
@@ -132,6 +153,7 @@ public class Repository {
 	protected String DirectoryMode;
 }
 
+// GroupVersionAlignment is The version you want to align this group to.
 public class GroupVersionAlignment {
 	@XmlElement(required = true, name = "id")
 	protected String Id;
@@ -141,6 +163,7 @@ public class GroupVersionAlignment {
 	protected Excludes Excludes;
 }
 
+// FileItem is Sets whether to determine if the file is filtered.
 public class FileItem {
 	@XmlElement(required = true, name = "source")
 	protected String Source;
@@ -156,6 +179,9 @@ public class FileItem {
 	protected Boolean Filtered;
 }
 
+// FileSet is Sets the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory.
 public class FileSet {
 	@XmlElement(required = true, name = "directory")
 	protected String Directory;
@@ -179,6 +205,9 @@ public class FileSet {
 	protected String DirectoryMode;
 }
 
+// ModuleSet is If set to false, the plugin will exclude sub-modules from processing in this ModuleSet.
+//           Otherwise, it will process all sub-modules, each subject to include/exclude rules.
+//           Default value is true. (Since 2.2)
 public class ModuleSet {
 	@XmlElement(required = true, name = "includeSubModules")
 	protected Boolean IncludeSubModules;
@@ -192,6 +221,8 @@ public class ModuleSet {
 	protected ModuleBinaries Binaries;
 }
 
+// ModuleSources is Contains configuration options for including the source files of a
+//         project module in an assembly.
 public class ModuleSources {
 	@XmlElement(required = true, name = "fileSets")
 	protected FileSets FileSets;
@@ -217,6 +248,9 @@ public class ModuleSources {
 	protected String DirectoryMode;
 }
 
+// ModuleBinaries is If set to true, the plugin will include the direct and transitive dependencies of
+//           of the project modules included here.  Otherwise, it will only include the module
+//           packages only. Default value is true.
 public class ModuleBinaries {
 	@XmlElement(required = true, name = "attachmentClassifier")
 	protected String AttachmentClassifier;
@@ -246,6 +280,7 @@ public class ModuleBinaries {
 	protected String DirectoryMode;
 }
 
+// UnpackOptions is Specifies options for including/excluding/filtering items extracted from an archive. (Since 2.2)
 public class UnpackOptions {
 	@XmlElement(required = true, name = "includes")
 	protected Includes Includes;
@@ -255,6 +290,9 @@ public class UnpackOptions {
 	protected Boolean Filtered;
 }
 
+// DependencySet is Sets the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory.
 public class DependencySet {
 	@XmlElement(required = true, name = "outputFileNameMapping")
 	protected String OutputFileNameMapping;

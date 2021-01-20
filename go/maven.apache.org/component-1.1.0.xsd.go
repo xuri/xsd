@@ -6,7 +6,7 @@ import (
 	"encoding/xml"
 )
 
-// Component ...
+// Component is Describes the component layout and packaging.
 type Component *Component
 
 // FileSets ...
@@ -39,7 +39,7 @@ type ContainerDescriptorHandlers struct {
 	ContainerDescriptorHandler []*ContainerDescriptorHandlerConfig `xml:"containerDescriptorHandler"`
 }
 
-// Component ...
+// Component is Describes the component layout and packaging.
 type Component struct {
 	FileSets                    *FileSets                    `xml:"fileSets"`
 	Files                       *Files                       `xml:"files"`
@@ -48,7 +48,7 @@ type Component struct {
 	ContainerDescriptorHandlers *ContainerDescriptorHandlers `xml:"containerDescriptorHandlers"`
 }
 
-// ContainerDescriptorHandlerConfig ...
+// ContainerDescriptorHandlerConfig is The handler's plexus role-hint, for lookup from the container.
 type ContainerDescriptorHandlerConfig struct {
 	HandlerName string `xml:"handlerName"`
 }
@@ -71,7 +71,9 @@ type Excludes struct {
 	Exclude []string `xml:"exclude"`
 }
 
-// Repository ...
+// Repository is If set to true, this property will trigger the creation of repository
+//             metadata which will allow the repository to be used as a functional remote
+//             repository.
 type Repository struct {
 	IncludeMetadata        bool                    `xml:"includeMetadata"`
 	GroupVersionAlignments *GroupVersionAlignments `xml:"groupVersionAlignments"`
@@ -85,14 +87,14 @@ type Repository struct {
 	DirectoryMode          string                  `xml:"directoryMode"`
 }
 
-// GroupVersionAlignment ...
+// GroupVersionAlignment is The version you want to align this group to.
 type GroupVersionAlignment struct {
 	Id       string    `xml:"id"`
 	Version  string    `xml:"version"`
 	Excludes *Excludes `xml:"excludes"`
 }
 
-// FileItem ...
+// FileItem is Sets whether to determine if the file is filtered.
 type FileItem struct {
 	Source          string `xml:"source"`
 	OutputDirectory string `xml:"outputDirectory"`
@@ -102,7 +104,9 @@ type FileItem struct {
 	Filtered        bool   `xml:"filtered"`
 }
 
-// FileSet ...
+// FileSet is Sets the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory.
 type FileSet struct {
 	Directory          string    `xml:"directory"`
 	LineEnding         string    `xml:"lineEnding"`
@@ -116,7 +120,9 @@ type FileSet struct {
 	DirectoryMode      string    `xml:"directoryMode"`
 }
 
-// DependencySet ...
+// DependencySet is Sets the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory.
 type DependencySet struct {
 	OutputFileNameMapping     string         `xml:"outputFileNameMapping"`
 	Unpack                    bool           `xml:"unpack"`
@@ -135,7 +141,7 @@ type DependencySet struct {
 	DirectoryMode             string         `xml:"directoryMode"`
 }
 
-// UnpackOptions ...
+// UnpackOptions is Specifies options for including/excluding/filtering items extracted from an archive.
 type UnpackOptions struct {
 	Includes *Includes `xml:"includes"`
 	Excludes *Excludes `xml:"excludes"`

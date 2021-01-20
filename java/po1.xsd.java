@@ -23,6 +23,7 @@ public class Comment {
 	protected String Comment;
 }
 
+// PurchaseOrderType ...
 public class PurchaseOrderType {
 	@XmlElement(required = true, name = "shipTo")
 	protected USAddress ShipTo;
@@ -32,6 +33,7 @@ public class PurchaseOrderType {
 	protected String PoComment;
 }
 
+// USAddress ...
 public class USAddress {
 	@XmlElement(required = true, name = "name")
 	protected String Name;

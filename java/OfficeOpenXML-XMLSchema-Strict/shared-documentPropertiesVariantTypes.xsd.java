@@ -11,36 +11,43 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
+// ST_VectorBaseType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_VectorBaseType")
 public class ST_VectorBaseType {
 	protected String ST_VectorBaseType;
 }
 
+// ST_ArrayBaseType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_ArrayBaseType")
 public class ST_ArrayBaseType {
 	protected String ST_ArrayBaseType;
 }
 
+// ST_Cy ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_Cy")
 public class ST_Cy {
 	protected String ST_Cy;
 }
 
+// ST_Error ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_Error")
 public class ST_Error {
 	protected String ST_Error;
 }
 
+// CT_Empty ...
 public class CT_Empty {
 }
 
+// CT_Null ...
 public class CT_Null {
 }
 
+// CT_Vector ...
 public class CT_Vector {
 	@XmlAttribute(name = "baseType", required = true)
 	protected StringAttr BaseType;
@@ -88,6 +95,7 @@ public class CT_Vector {
 	protected String Clsid;
 }
 
+// CT_Array ...
 public class CT_Array {
 	@XmlAttribute(name = "lBounds", required = true)
 	protected IntegerAttr LBounds;
@@ -131,6 +139,7 @@ public class CT_Array {
 	protected String Cy;
 }
 
+// CT_Variant ...
 public class CT_Variant {
 	@XmlElement(required = true, name = "variant")
 	protected CT_Variant Variant;
@@ -202,6 +211,7 @@ public class CT_Variant {
 	protected String Clsid;
 }
 
+// CT_Vstream ...
 public class CT_Vstream {
 	@XmlAttribute(name = "version")
 	protected StringAttr Version;

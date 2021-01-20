@@ -11,22 +11,26 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
+// MyType1 ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "myType1")
 public class MyType1 {
 	protected List<Byte> MyType1;
 }
 
+// MyType2 ...
 public class MyType2 {
 	@XmlAttribute(name = "length")
 	protected IntegerAttr Length;
 }
 
+// MyType3 ...
 public class MyType3 {
 	@XmlAttribute(name = "length")
 	protected IntegerAttr Length;
 }
 
+// MyType4 ...
 public class MyType4 {
 	@XmlElement(required = true, name = "title")
 	protected String Title;
@@ -36,6 +40,7 @@ public class MyType4 {
 	protected Byte Timestamp;
 }
 
+// MyType5 ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "myType5")
 public class MyType5 {

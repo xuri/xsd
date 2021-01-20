@@ -7,79 +7,96 @@ import (
 	"time"
 )
 
-// ContentType ...
+// ContentType is media type, as per [RFC2045]
 type ContentType string
 
-// ContentTypes ...
+// ContentTypes is comma-separated list of media types, as per [RFC2045]
 type ContentTypes string
 
-// Charset ...
+// Charset is a character encoding, as per [RFC2045]
 type Charset string
 
-// Charsets ...
+// Charsets is a space separated list of character encodings, as per [RFC2045]
 type Charsets string
 
-// LanguageCode ...
+// LanguageCode is a language code, as per [RFC3066]
 type LanguageCode string
 
-// Character ...
+// Character is a single character, as per section 2.2 of [XML]
 type Character string
 
-// Number ...
+// Number is one or more digits
 type Number int
 
-// TabindexNumber ...
+// TabindexNumber is tabindex attribute specifies the position of the current element
+//       in the tabbing order for the current document. This value must be
+//       a number between 0 and 32767. User agents should ignore leading zeros.
 type TabindexNumber int
 
-// LinkTypes ...
+// LinkTypes is space-separated list of link types
 type LinkTypes []string
 
-// MediaDesc ...
+// MediaDesc is single or comma-separated list of media descriptors
 type MediaDesc string
 
-// URI ...
+// URI is a Uniform Resource Identifier, see [RFC2396]
 type URI string
 
-// UriList ...
+// UriList is a space separated list of Uniform Resource Identifiers
 type UriList string
 
-// Datetime ...
+// Datetime is date and time information. ISO date format
 type Datetime time.Time
 
-// Script ...
+// Script is script expression
 type Script string
 
-// StyleSheet ...
+// StyleSheet is style sheet data
 type StyleSheet string
 
-// Text ...
+// Text is used for titles etc.
 type Text string
 
-// FrameTarget ...
+// FrameTarget is render in this frame
 type FrameTarget string
 
-// Length ...
+// Length is nn for pixels or nn% for percentage length
 type Length string
 
-// MultiLength ...
+// MultiLength is pixel, percentage, or relative
 type MultiLength string
 
-// Pixels ...
+// Pixels is integer representing length in pixels
 type Pixels int
 
 // Shape ...
 type Shape string
 
-// Coords ...
+// Coords is comma separated list of lengths
 type Coords string
 
-// ImgAlign ...
+// ImgAlign is used for object, applet, img, input and iframe
 type ImgAlign string
 
-// Color ...
+// Color is a color using sRGB: #RRGGBB as Hex values
+//
+//       There are also 16 widely known color names with their sRGB values:
+//
+//       Black  = #000000    Green  = #008000
+//       Silver = #C0C0C0    Lime   = #00FF00
+//       Gray   = #808080    Olive  = #808000
+//       White  = #FFFFFF    Yellow = #FFFF00
+//       Maroon = #800000    Navy   = #000080
+//       Red    = #FF0000    Blue   = #0000FF
+//       Purple = #800080    Teal   = #008080
+//       Fuchsia= #FF00FF    Aqua   = #00FFFF
 type Color string
 
-// Coreattrs ...
+// Coreattrs is core attributes common to most elements
+//       id       document-wide unique id
+//       class    space separated list of classes
+//       style    associated style info
+//       title    advisory title/amplification
 type Coreattrs struct {
 	XMLName   xml.Name `xml:"coreattrs"`
 	IdAttr    string   `xml:"id,attr,omitempty"`
@@ -88,7 +105,10 @@ type Coreattrs struct {
 	TitleAttr string   `xml:"title,attr,omitempty"`
 }
 
-// I18n ...
+// I18n is internationalization attributes
+//       lang        language code (backwards compatible)
+//       xml:lang    language code (as per XML 1.0 spec)
+//       dir         direction for weak/neutral text
 type I18n struct {
 	XMLName     xml.Name `xml:"i18n"`
 	LangAttr    string   `xml:"lang,attr,omitempty"`
@@ -96,7 +116,16 @@ type I18n struct {
 	DirAttr     string   `xml:"dir,attr,omitempty"`
 }
 
-// Events ...
+// Events is attributes for common UI events
+//       onclick     a pointer button was clicked
+//       ondblclick  a pointer button was double clicked
+//       onmousedown a pointer button was pressed down
+//       onmouseup   a pointer button was released
+//       onmousemove a pointer was moved onto the element
+//       onmouseout  a pointer was moved away from the element
+//       onkeypress  a key was pressed and released
+//       onkeydown   a key was pressed down
+//       onkeyup     a key was released
 type Events struct {
 	XMLName         xml.Name `xml:"events"`
 	OnclickAttr     string   `xml:"onclick,attr,omitempty"`
@@ -111,7 +140,11 @@ type Events struct {
 	OnkeyupAttr     string   `xml:"onkeyup,attr,omitempty"`
 }
 
-// Focus ...
+// Focus is attributes for elements that can get the focus
+//       accesskey   accessibility key character
+//       tabindex    position in tabbing order
+//       onfocus     the element got the focus
+//       onblur      the element lost the focus
 type Focus struct {
 	XMLName       xml.Name `xml:"focus"`
 	AccesskeyAttr string   `xml:"accesskey,attr,omitempty"`
@@ -125,7 +158,8 @@ type Attrs struct {
 	XMLName xml.Name `xml:"attrs"`
 }
 
-// TextAlign ...
+// TextAlign is text alignment for p, div, h1-h6. The default is
+//       align="left" for ltr headings, "right" for rtl
 type TextAlign struct {
 	AlignAttr string `xml:"align,attr,omitempty"`
 }
@@ -249,7 +283,7 @@ type Inline struct {
 	InlineForms *InlineForms
 }
 
-// Inline ...
+// Inline is "Inline" covers inline or "text-level" element
 type Inline struct {
 	Inline     *Inline
 	MiscInline *MiscInline
@@ -300,7 +334,7 @@ type Block struct {
 	Blocktext *Blocktext
 }
 
-// Flow ...
+// Flow is "Flow" mixes block and inline and is used for list items etc.
 type Flow struct {
 	Block  *Block
 	Inline *Inline
@@ -308,7 +342,7 @@ type Flow struct {
 	Form   string `xml:"form"`
 }
 
-// AContent ...
+// AContent is a elements use "Inline" excluding a
 type AContent struct {
 	XMLName     xml.Name `xml:"a.content"`
 	Special     *Special
@@ -318,7 +352,8 @@ type AContent struct {
 	MiscInline  *MiscInline
 }
 
-// PreContent ...
+// PreContent is pre uses "Inline" excluding img, object, applet, big, small,
+//       font, or basefont
 type PreContent struct {
 	XMLName        xml.Name `xml:"pre.content"`
 	SpecialBasic   *SpecialBasic
@@ -329,7 +364,7 @@ type PreContent struct {
 	A              *A `xml:"a"`
 }
 
-// FormContent ...
+// FormContent is form uses "Flow" excluding form
 type FormContent struct {
 	XMLName xml.Name `xml:"form.content"`
 	Block   *Block
@@ -337,7 +372,7 @@ type FormContent struct {
 	Misc    *Misc
 }
 
-// ButtonContent ...
+// ButtonContent is button uses "Flow" but excludes a, form, form controls, iframe
 type ButtonContent struct {
 	XMLName   xml.Name `xml:"button.content"`
 	Heading   *Heading
@@ -527,7 +562,7 @@ type H6 struct {
 	TextAlign *TextAlign
 }
 
-// ULStyle ...
+// ULStyle is Unordered list bullet styles
 type ULStyle string
 
 // Ul ...
@@ -539,7 +574,16 @@ type Ul struct {
 	Ul          string      `xml:"ul"`
 }
 
-// OLStyle ...
+// OLStyle is Ordered list numbering style
+//
+//       1   arabic numbers      1, 2, 3, ...
+//       a   lower alpha         a, b, c, ...
+//       A   upper alpha         A, B, C, ...
+//       i   lower roman         i, ii, iii, ...
+//       I   upper roman         I, II, III, ...
+//
+//       The style is applied to the sequence number which by default
+//       is reset to 1 for the first list item in an ordered list.
 type OLStyle string
 
 // Ol ...
@@ -568,7 +612,7 @@ type Dir struct {
 	Dir         string      `xml:"dir"`
 }
 
-// LIStyle ...
+// LIStyle is LIStyle is constrained to: "(ULStyle|OLStyle)"
 type LIStyle string
 
 // Li ...
@@ -1088,16 +1132,27 @@ type Isindex struct {
 	PromptAttr string `xml:"prompt,attr,omitempty"`
 }
 
-// TFrame ...
+// TFrame is The border attribute sets the thickness of the frame around the
+//       table. The default units are screen pixels.
+//
+//       The frame attribute specifies which parts of the frame around
+//       the table should be rendered. The values are not the same as
+//       CALS to avoid a name clash with the valign attribute.
 type TFrame string
 
-// TRules ...
+// TRules is The rules attribute defines which rules to draw between cells:
+//
+//       If rules is absent then assume:
+//           "none" if border is absent or border="0" otherwise "all"
 type TRules string
 
-// TAlign ...
+// TAlign is horizontal placement of table relative to document
 type TAlign string
 
-// Cellhalign ...
+// Cellhalign is horizontal alignment attributes for cell contents
+//
+//       char        alignment char, e.g. char=':'
+//       charoff     offset for alignment char
 type Cellhalign struct {
 	XMLName     xml.Name `xml:"cellhalign"`
 	AlignAttr   string   `xml:"align,attr,omitempty"`
@@ -1105,7 +1160,7 @@ type Cellhalign struct {
 	CharoffAttr string   `xml:"charoff,attr,omitempty"`
 }
 
-// Cellvalign ...
+// Cellvalign is vertical alignment attributes for cell contents
 type Cellvalign struct {
 	XMLName    xml.Name `xml:"cellvalign"`
 	ValignAttr string   `xml:"valign,attr,omitempty"`
@@ -1202,7 +1257,7 @@ type Tr struct {
 	Td          string `xml:"td"`
 }
 
-// Scope ...
+// Scope is Scope is simpler than headers attribute for common tables
 type Scope string
 
 // Th ...

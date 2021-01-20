@@ -11,12 +11,14 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
+// CountryCode_Type is ZIMBABWE
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "CountryCode_Type")
 public class CountryCode_Type {
 	protected String CountryCode_Type;
 }
 
+// CurrCode_Type is Zimbabwe Dollar: ZIMBABWE
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "currCode_Type")
 public class CurrCode_Type {

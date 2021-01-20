@@ -6,7 +6,7 @@ import (
 	"encoding/xml"
 )
 
-// Archetype ...
+// Archetype is Describes the assembly layout and packaging.
 type Archetype *ArchetypeModel
 
 // Sources ...
@@ -39,7 +39,8 @@ type SiteResources struct {
 	Resource []*Resource `xml:"resource"`
 }
 
-// ArchetypeModel ...
+// ArchetypeModel is Setting this option to <code>true</code> makes it possible to run the
+//             <code>archetype:create</code> even on existing projects.
 type ArchetypeModel struct {
 	Id            string         `xml:"id"`
 	AllowPartial  bool           `xml:"allowPartial"`
@@ -50,12 +51,13 @@ type ArchetypeModel struct {
 	SiteResources *SiteResources `xml:"siteResources"`
 }
 
-// Source ...
+// Source is Describes a source file. Note that source files are always filtered, unlike resources that
+//         can be non-filtered.
 type Source struct {
 	EncodingAttr string `xml:"encoding,attr,omitempty"`
 }
 
-// Resource ...
+// Resource is Describes a resource file.
 type Resource struct {
 	EncodingAttr string `xml:"encoding,attr,omitempty"`
 	FilteredAttr bool   `xml:"filtered,attr,omitempty"`

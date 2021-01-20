@@ -17,16 +17,19 @@ public class ProfilesXml {
 	protected ProfilesRoot ProfilesXml;
 }
 
+// Profiles ...
 public class Profiles {
 	@XmlElement(required = true, name = "profile")
 	protected List<Profile> Profile;
 }
 
+// ActiveProfiles ...
 public class ActiveProfiles {
 	@XmlElement(required = true, name = "activeProfile")
 	protected List<String> ActiveProfile;
 }
 
+// ProfilesRoot is Root element of the profiles.xml file.
 public class ProfilesRoot {
 	@XmlElement(required = true, name = "profiles")
 	protected Profiles Profiles;
@@ -34,19 +37,24 @@ public class ProfilesRoot {
 	protected ActiveProfiles ActiveProfiles;
 }
 
+// Properties ...
 public class Properties {
 }
 
+// Repositories ...
 public class Repositories {
 	@XmlElement(required = true, name = "repository")
 	protected List<Repository> Repository;
 }
 
+// PluginRepositories ...
 public class PluginRepositories {
 	@XmlElement(required = true, name = "pluginRepository")
 	protected List<Repository> PluginRepository;
 }
 
+// Profile is The conditional logic which will automatically
+//             trigger the inclusion of this profile.
 public class Profile {
 	@XmlElement(required = true, name = "id")
 	protected String Id;
@@ -60,6 +68,7 @@ public class Profile {
 	protected PluginRepositories PluginRepositories;
 }
 
+// Activation is Specifies that this profile will be activated based on existence of a file.
 public class Activation {
 	@XmlElement(required = true, name = "activeByDefault")
 	protected Boolean ActiveByDefault;
@@ -73,6 +82,7 @@ public class Activation {
 	protected ActivationFile File;
 }
 
+// ActivationOS is The version of the OS to be used to activate a profile
 public class ActivationOS {
 	@XmlElement(required = true, name = "name")
 	protected String Name;
@@ -84,6 +94,7 @@ public class ActivationOS {
 	protected String Version;
 }
 
+// ActivationProperty is The value of the property to be used to activate a profile
 public class ActivationProperty {
 	@XmlElement(required = true, name = "name")
 	protected String Name;
@@ -91,6 +102,7 @@ public class ActivationProperty {
 	protected String Value;
 }
 
+// ActivationFile is The name of the file that should exist to activate a profile
 public class ActivationFile {
 	@XmlElement(required = true, name = "missing")
 	protected String Missing;
@@ -98,6 +110,8 @@ public class ActivationFile {
 	protected String Exists;
 }
 
+// Repository is The type of layout this repository uses for locating and storing artifacts - can be "legacy" or
+//             "default".
 public class Repository {
 	@XmlElement(required = true, name = "releases")
 	protected RepositoryPolicy Releases;
@@ -113,6 +127,8 @@ public class Repository {
 	protected String Layout;
 }
 
+// RepositoryPolicy is What to do when verification of an artifact checksum fails - warn, fail, etc. Valid values are
+//             "fail" or "warn"
 public class RepositoryPolicy {
 	@XmlElement(required = true, name = "enabled")
 	protected Boolean Enabled;

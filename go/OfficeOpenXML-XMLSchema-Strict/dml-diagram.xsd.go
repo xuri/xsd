@@ -451,49 +451,49 @@ type RelIds *CTRelIds
 // STParameterVal ...
 type STParameterVal struct {
 	XMLName                      xml.Name `xml:"ST_ParameterVal"`
-	Int                          int
+	STDiagramTextAlignment       *STDiagramTextAlignment
+	STOffset                     *STOffset
 	STVerticalAlignment          *STVerticalAlignment
-	STBendPoint                  *STBendPoint
-	STFallbackDimension          *STFallbackDimension
-	STTextBlockDirection         *STTextBlockDirection
+	STArrowheadStyle             *STArrowheadStyle
+	STRotationPath               *STRotationPath
+	STNodeHorizontalAlignment    *STNodeHorizontalAlignment
+	STTextAnchorVertical         *STTextAnchorVertical
+	Double                       float64
+	STNodeVerticalAlignment      *STNodeVerticalAlignment
+	STPyramidAccentTextMargin    *STPyramidAccentTextMargin
+	String                       string
 	STChildDirection             *STChildDirection
 	STSecondaryChildAlignment    *STSecondaryChildAlignment
-	STCenterShapeMapping         *STCenterShapeMapping
-	Double                       float64
 	STConnectorRouting           *STConnectorRouting
-	STAutoTextRotation           *STAutoTextRotation
-	STOffset                     *STOffset
-	Boolean                      bool
-	STDiagramHorizontalAlignment *STDiagramHorizontalAlignment
-	STNodeHorizontalAlignment    *STNodeHorizontalAlignment
-	STTextDirection              *STTextDirection
-	STFlowDirection              *STFlowDirection
-	String                       string
-	STStartingElement            *STStartingElement
-	STArrowheadStyle             *STArrowheadStyle
-	STConnectorDimension         *STConnectorDimension
-	STHierarchyAlignment         *STHierarchyAlignment
-	STConnectorPoint             *STConnectorPoint
-	STLinearDirection            *STLinearDirection
-	STTextAnchorVertical         *STTextAnchorVertical
-	STGrowDirection              *STGrowDirection
-	STNodeVerticalAlignment      *STNodeVerticalAlignment
-	STPyramidAccentPosition      *STPyramidAccentPosition
-	STDiagramTextAlignment       *STDiagramTextAlignment
-	STPyramidAccentTextMargin    *STPyramidAccentTextMargin
-	STTextAnchorHorizontal       *STTextAnchorHorizontal
-	STContinueDirection          *STContinueDirection
 	STBreakpoint                 *STBreakpoint
+	STHierarchyAlignment         *STHierarchyAlignment
 	STChildAlignment             *STChildAlignment
+	STStartingElement            *STStartingElement
+	STPyramidAccentPosition      *STPyramidAccentPosition
 	STSecondaryLinearDirection   *STSecondaryLinearDirection
-	STRotationPath               *STRotationPath
+	STGrowDirection              *STGrowDirection
+	STContinueDirection          *STContinueDirection
+	STTextDirection              *STTextDirection
+	Int                          int
+	STDiagramHorizontalAlignment *STDiagramHorizontalAlignment
+	STLinearDirection            *STLinearDirection
+	STBendPoint                  *STBendPoint
+	STAutoTextRotation           *STAutoTextRotation
+	STFlowDirection              *STFlowDirection
+	STConnectorPoint             *STConnectorPoint
+	STConnectorDimension         *STConnectorDimension
+	STTextBlockDirection         *STTextBlockDirection
+	STTextAnchorHorizontal       *STTextAnchorHorizontal
+	STCenterShapeMapping         *STCenterShapeMapping
+	STFallbackDimension          *STFallbackDimension
+	Boolean                      bool
 }
 
 // STModelId ...
 type STModelId struct {
 	XMLName xml.Name `xml:"ST_ModelId"`
-	Int     int
 	STGuid  string
+	Int     int
 }
 
 // STPrSetCustVal ...
@@ -851,13 +851,13 @@ type STHierarchyAlignment string
 // STFunctionValue ...
 type STFunctionValue struct {
 	XMLName            xml.Name `xml:"ST_FunctionValue"`
-	STResizeHandlesStr string
-	Int                int
 	Boolean            bool
 	STDirection        string
 	STHierBranchStyle  string
 	STAnimOneStr       string
 	STAnimLvlStr       string
+	STResizeHandlesStr string
+	Int                int
 }
 
 // STVariableType ...

@@ -11,6 +11,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
+// ConditionalUintType ...
 public class ConditionalUintType {
 	@XmlElement(required = true)
 	protected Integer UnsignedInt;

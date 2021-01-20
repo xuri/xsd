@@ -17,31 +17,38 @@ public class Archetype {
 	protected ArchetypeModel Archetype;
 }
 
+// Sources ...
 public class Sources {
 	@XmlElement(required = true, name = "source")
 	protected List<Source> Source;
 }
 
+// Resources ...
 public class Resources {
 	@XmlElement(required = true, name = "resource")
 	protected List<Resource> Resource;
 }
 
+// TestSources ...
 public class TestSources {
 	@XmlElement(required = true, name = "source")
 	protected List<Source> Source;
 }
 
+// TestResources ...
 public class TestResources {
 	@XmlElement(required = true, name = "resource")
 	protected List<Resource> Resource;
 }
 
+// SiteResources ...
 public class SiteResources {
 	@XmlElement(required = true, name = "resource")
 	protected List<Resource> Resource;
 }
 
+// ArchetypeModel is Setting this option to <code>true</code> makes it possible to run the
+//             <code>archetype:create</code> even on existing projects.
 public class ArchetypeModel {
 	@XmlElement(required = true, name = "id")
 	protected String Id;
@@ -59,11 +66,14 @@ public class ArchetypeModel {
 	protected SiteResources SiteResources;
 }
 
+// Source is Describes a source file. Note that source files are always filtered, unlike resources that
+//         can be non-filtered.
 public class Source {
 	@XmlAttribute(name = "encoding")
 	protected StringAttr Encoding;
 }
 
+// Resource is Describes a resource file.
 public class Resource {
 	@XmlAttribute(name = "encoding")
 	protected StringAttr Encoding;

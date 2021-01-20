@@ -6,7 +6,7 @@ import (
 	"encoding/xml"
 )
 
-// Book ...
+// Book is Describes the book layout and packaging.
 type Book *BookModel
 
 // Chapters ...
@@ -15,7 +15,7 @@ type Chapters struct {
 	Chapter []*Chapter `xml:"chapter"`
 }
 
-// BookModel ...
+// BookModel is Specifies the date of this book.
 type BookModel struct {
 	Id       string    `xml:"id"`
 	Title    string    `xml:"title"`
@@ -30,14 +30,14 @@ type Sections struct {
 	Section []*Section `xml:"section"`
 }
 
-// Chapter ...
+// Chapter is Specifies the title of this chapter.
 type Chapter struct {
 	Id       string    `xml:"id"`
 	Title    string    `xml:"title"`
 	Sections *Sections `xml:"sections"`
 }
 
-// Section ...
+// Section is Specifies the file of this section.
 type Section struct {
 	Id    string `xml:"id"`
 	Title string `xml:"title"`

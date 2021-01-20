@@ -11,6 +11,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
+// Software ...
 public class Software {
 	@XmlElement(required = true, name = "SoftwareProvider")
 	protected void SoftwareProvider;
@@ -18,6 +19,7 @@ public class Software {
 	protected void SoftwareVersion;
 }
 
+// TransmissionData ...
 public class TransmissionData {
 	@XmlElement(required = true, name = "DocumentID")
 	protected void DocumentID;
@@ -29,6 +31,7 @@ public class TransmissionData {
 	protected void FullResponseCode;
 }
 
+// CommonRecordType ...
 public class CommonRecordType {
 	@XmlElement(required = true, name = "TransmissionData")
 	protected void TransmissionData;

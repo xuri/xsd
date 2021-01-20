@@ -6,7 +6,7 @@ import (
 	"encoding/xml"
 )
 
-// RemoteResourcesBundle ...
+// RemoteResourcesBundle is Root element of the remote-resources.xml file.
 type RemoteResourcesBundle *RemoteResourcesBundle
 
 // RemoteResources ...
@@ -15,7 +15,7 @@ type RemoteResources struct {
 	RemoteResource []string `xml:"remoteResource"`
 }
 
-// RemoteResourcesBundle ...
+// RemoteResourcesBundle is Root element of the remote-resources.xml file.
 type RemoteResourcesBundle struct {
 	RemoteResources *RemoteResources `xml:"remoteResources"`
 	SourceEncoding  string           `xml:"sourceEncoding"`

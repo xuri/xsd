@@ -11,6 +11,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
+// Project ...
 public class Project {
 	@XmlElement(required = true, name = "extend")
 	protected String Extend;
@@ -200,6 +201,7 @@ public class Url {
 	protected String Url;
 }
 
+// Repository ...
 public class Repository {
 	@XmlElement(required = true, name = "connection")
 	protected String Connection;
@@ -209,6 +211,7 @@ public class Repository {
 	protected String Url;
 }
 
+// Organization ...
 public class Organization {
 	@XmlElement(required = true, name = "name")
 	protected String Name;
@@ -218,11 +221,13 @@ public class Organization {
 	protected String Logo;
 }
 
+// Versions ...
 public class Versions {
 	@XmlElement(required = true, name = "version")
 	protected List<Version> Version;
 }
 
+// Version ...
 public class Version {
 	@XmlElement(required = true, name = "id")
 	protected String Id;
@@ -238,21 +243,25 @@ public class Tag {
 	protected String Tag;
 }
 
+// Branches ...
 public class Branches {
 	@XmlElement(required = true, name = "branch")
 	protected List<Branch> Branch;
 }
 
+// Branch ...
 public class Branch {
 	@XmlElement(required = true, name = "tag")
 	protected String Tag;
 }
 
+// MailingLists ...
 public class MailingLists {
 	@XmlElement(required = true, name = "mailingList")
 	protected List<MailingList> MailingList;
 }
 
+// MailingList ...
 public class MailingList {
 	@XmlElement(required = true, name = "name")
 	protected String Name;
@@ -282,11 +291,13 @@ public class Archive {
 	protected String Archive;
 }
 
+// Developers ...
 public class Developers {
 	@XmlElement(required = true, name = "developer")
 	protected List<Developer> Developer;
 }
 
+// Developer ...
 public class Developer {
 	protected ContactDetails ContactDetails;
 	@XmlElement(required = true, name = "name")
@@ -295,6 +306,7 @@ public class Developer {
 	protected String Id;
 }
 
+// ContactDetails ...
 public class ContactDetails {
 	@XmlElement(required = true, name = "email")
 	protected String Email;
@@ -314,6 +326,7 @@ public class Email {
 	protected String Email;
 }
 
+// Roles ...
 public class Roles {
 	@XmlElement(required = true, name = "role")
 	protected List<String> Role;
@@ -325,6 +338,7 @@ public class Role {
 	protected String Role;
 }
 
+// TimezoneType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "timezoneType")
 public class TimezoneType {
@@ -337,22 +351,26 @@ public class Timezone {
 	protected Float Timezone;
 }
 
+// Contributors ...
 public class Contributors {
 	@XmlElement(required = true, name = "contributor")
 	protected List<Contributor> Contributor;
 }
 
+// Contributor ...
 public class Contributor {
 	protected ContactDetails ContactDetails;
 	@XmlElement(required = true, name = "name")
 	protected String Name;
 }
 
+// Licenses ...
 public class Licenses {
 	@XmlElement(required = true, name = "license")
 	protected List<License> License;
 }
 
+// License ...
 public class License {
 	@XmlElement(required = true, name = "name")
 	protected String Name;
@@ -368,11 +386,13 @@ public class Distribution {
 	protected String Distribution;
 }
 
+// Dependencies ...
 public class Dependencies {
 	@XmlElement(required = true, name = "dependency")
 	protected List<Dependency> Dependency;
 }
 
+// Dependency ...
 public class Dependency {
 	@XmlElement(required = true, name = "id")
 	protected String Id;
@@ -404,6 +424,7 @@ public class Jar {
 	protected String Jar;
 }
 
+// Build ...
 public class Build {
 	@XmlElement(required = true, name = "nagEmailAddress")
 	protected String NagEmailAddress;
@@ -435,11 +456,13 @@ public class SourceDirectory {
 	protected String SourceDirectory;
 }
 
+// SourceModifications ...
 public class SourceModifications {
 	@XmlElement(required = true, name = "sourceModification")
 	protected List<SourceModification> SourceModification;
 }
 
+// SourceModification ...
 public class SourceModification {
 	@XmlElement(required = true, name = "className")
 	protected String ClassName;
@@ -467,6 +490,7 @@ public class AspectSourceDirectory {
 	protected String AspectSourceDirectory;
 }
 
+// UnitTest ...
 public class UnitTest {
 	@XmlElement(required = true, name = "includes")
 	protected List<Includes> Includes;
@@ -476,11 +500,13 @@ public class UnitTest {
 	protected Resources Resources;
 }
 
+// Includes ...
 public class Includes {
 	@XmlElement(required = true, name = "include")
 	protected List<String> Include;
 }
 
+// Excludes ...
 public class Excludes {
 	@XmlElement(required = true, name = "exclude")
 	protected List<String> Exclude;
@@ -498,6 +524,7 @@ public class Exclude {
 	protected String Exclude;
 }
 
+// Resources ...
 public class Resources {
 	@XmlElement(required = true, name = "resource")
 	protected List<Resource> Resource;
@@ -521,6 +548,7 @@ public class Filtering {
 	protected Boolean Filtering;
 }
 
+// Resource ...
 public class Resource {
 	@XmlElement(required = true, name = "directory")
 	protected String Directory;
@@ -534,11 +562,13 @@ public class Resource {
 	protected List<Boolean> Filtering;
 }
 
+// Reports ...
 public class Reports {
 	@XmlElement(required = true, name = "report")
 	protected List<String> Report;
 }
 
+// Properties ...
 public class Properties {
 }
 

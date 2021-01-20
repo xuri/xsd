@@ -2,26 +2,33 @@
 
 typedef ArchetypeModel Archetype;
 
+// Sources ...
 typedef struct {
 	Source Source[];
 } Sources;
 
+// Resources ...
 typedef struct {
 	Resource Resource[];
 } Resources;
 
+// TestSources ...
 typedef struct {
 	Source Source[];
 } TestSources;
 
+// TestResources ...
 typedef struct {
 	Resource Resource[];
 } TestResources;
 
+// SiteResources ...
 typedef struct {
 	Resource Resource[];
 } SiteResources;
 
+// ArchetypeModel is Setting this option to <code>true</code> makes it possible to run the
+//             <code>archetype:create</code> even on existing projects.
 typedef struct {
 	char Id;
 	bool AllowPartial;
@@ -32,10 +39,13 @@ typedef struct {
 	SiteResources SiteResources;
 } ArchetypeModel;
 
+// Source is Describes a source file. Note that source files are always filtered, unlike resources that
+//         can be non-filtered.
 typedef struct {
 	char EncodingAttr; // attr, optional
 } Source;
 
+// Resource is Describes a resource file.
 typedef struct {
 	char EncodingAttr; // attr, optional
 	bool FilteredAttr; // attr, optional

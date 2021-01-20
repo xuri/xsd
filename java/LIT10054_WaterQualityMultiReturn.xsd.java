@@ -11,6 +11,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
+// DepthValueRecorded ...
 public class DepthValueRecorded {
 	@XmlElement(required = true, name = "DepthValue")
 	protected Float DepthValue;
@@ -20,6 +21,7 @@ public class DepthValueRecorded {
 	protected MandatoryStringType DepthRelativeTo;
 }
 
+// PurgedVolumeRecorded ...
 public class PurgedVolumeRecorded {
 	@XmlElement(required = true, name = "PurgedVolume")
 	protected Float PurgedVolume;
@@ -27,6 +29,7 @@ public class PurgedVolumeRecorded {
 	protected MandatoryStringType PurgedVolumeUnits;
 }
 
+// Measurement ...
 public class Measurement {
 	@XmlElement(required = true, name = "DeterminandName")
 	protected MandatoryStringType DeterminandName;
@@ -42,6 +45,7 @@ public class Measurement {
 	protected String Comment;
 }
 
+// Sample ...
 public class Sample {
 	@XmlElement(required = true, name = "Sampler")
 	protected String Sampler;
@@ -75,6 +79,7 @@ public class Sample {
 	protected List<Measurement> Measurement;
 }
 
+// FileUpload ...
 public class FileUpload {
 	@XmlElement(required = true, name = "Source")
 	protected String Source;

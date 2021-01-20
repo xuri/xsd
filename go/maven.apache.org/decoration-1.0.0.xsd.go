@@ -6,7 +6,8 @@ import (
 	"encoding/xml"
 )
 
-// Project ...
+// Project is The <code>&lt;project&gt;</code> element is the root of the site decoration descriptor.
+//          The following table lists all of the possible child elements.
 type Project *DecorationModel
 
 // PoweredBy ...
@@ -20,7 +21,7 @@ type Custom struct {
 	XMLName xml.Name `xml:"custom"`
 }
 
-// DecorationModel ...
+// DecorationModel is Modify the version published display properties.
 type DecorationModel struct {
 	NameAttr    string       `xml:"name,attr,omitempty"`
 	BannerLeft  *Banner      `xml:"bannerLeft"`
@@ -33,7 +34,7 @@ type DecorationModel struct {
 	Custom      *Custom      `xml:"custom"`
 }
 
-// Banner ...
+// Banner is The href of a link to be used for the banner image.
 type Banner struct {
 	Name string `xml:"name"`
 	Src  string `xml:"src"`
@@ -58,7 +59,7 @@ type Breadcrumbs struct {
 	Item    []*LinkItem `xml:"item"`
 }
 
-// Body ...
+// Body is The main content decoration.
 type Body struct {
 	Head        *Head        `xml:"head"`
 	Links       *Links       `xml:"links"`
@@ -66,13 +67,13 @@ type Body struct {
 	Menu        []*Menu      `xml:"menu"`
 }
 
-// LinkItem ...
+// LinkItem is A link in the navigation.
 type LinkItem struct {
 	NameAttr string `xml:"name,attr,omitempty"`
 	HrefAttr string `xml:"href,attr,omitempty"`
 }
 
-// Menu ...
+// Menu is A list of menu item.
 type Menu struct {
 	NameAttr         string      `xml:"name,attr,omitempty"`
 	InheritAttr      string      `xml:"inherit,attr,omitempty"`
@@ -82,7 +83,7 @@ type Menu struct {
 	Item             []*MenuItem `xml:"item"`
 }
 
-// MenuItem ...
+// MenuItem is Menu item.
 type MenuItem struct {
 	CollapseAttr bool        `xml:"collapse,attr,omitempty"`
 	RefAttr      string      `xml:"ref,attr,omitempty"`
@@ -92,25 +93,25 @@ type MenuItem struct {
 	Item         []*MenuItem `xml:"item"`
 }
 
-// Skin ...
+// Skin is The skin version.
 type Skin struct {
 	GroupId    string `xml:"groupId"`
 	ArtifactId string `xml:"artifactId"`
 	Version    string `xml:"version"`
 }
 
-// Version ...
+// Version is Modify display properties for version published.
 type Version struct {
 	PositionAttr string `xml:"position,attr,omitempty"`
 }
 
-// PublishDate ...
+// PublishDate is Modify display properties for date published.
 type PublishDate struct {
 	PositionAttr string `xml:"position,attr,omitempty"`
 	FormatAttr   string `xml:"format,attr,omitempty"`
 }
 
-// Logo ...
+// Logo is Power by logo on the navigation.
 type Logo struct {
 	ImgAttr  string `xml:"img,attr,omitempty"`
 	NameAttr string `xml:"name,attr,omitempty"`

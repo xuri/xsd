@@ -2,32 +2,41 @@
 
 typedef Component Component;
 
+// FileSets ...
 typedef struct {
 	FileSet FileSet[];
 } FileSets;
 
+// Files ...
 typedef struct {
 	FileItem File[];
 } Files;
 
+// DependencySets ...
 typedef struct {
 	DependencySet DependencySet[];
 } DependencySets;
 
+// Component is Describes the component layout and packaging.
 typedef struct {
 	FileSets FileSets;
 	Files Files;
 	DependencySets DependencySets;
 } Component;
 
+// Includes ...
 typedef struct {
 	char Include[];
 } Includes;
 
+// Excludes ...
 typedef struct {
 	char Exclude[];
 } Excludes;
 
+// DependencySet is Specifies the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory.
 typedef struct {
 	char OutputFileNameMapping;
 	bool Unpack;
@@ -39,6 +48,7 @@ typedef struct {
 	char DirectoryMode;
 } DependencySet;
 
+// FileItem is Flag used to determine if the file is filtered.
 typedef struct {
 	char Source;
 	char OutputDirectory;
@@ -48,6 +58,9 @@ typedef struct {
 	bool Filtered;
 } FileItem;
 
+// FileSet is Specifies the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory.
 typedef struct {
 	char Directory;
 	char LineEnding;

@@ -11,12 +11,15 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
+// Vehicle ...
 public class Vehicle {
 }
 
+// Car ...
 public class Car {
 }
 
+// Plane ...
 public class Plane {
 }
 

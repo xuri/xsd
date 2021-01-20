@@ -1446,8 +1446,8 @@ type CTGeomGuideList struct {
 // STAdjCoordinate ...
 type STAdjCoordinate struct {
 	XMLName         xml.Name `xml:"ST_AdjCoordinate"`
-	STCoordinate    *STCoordinate
 	STGeomGuideName string
+	STCoordinate    *STCoordinate
 }
 
 // STAdjAngle ...

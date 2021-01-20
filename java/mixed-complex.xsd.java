@@ -11,10 +11,12 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
+// Number ...
 public class Number {
 	@XmlAttribute(name = "precision")
 	protected IntegerAttr Precision;
 }
 
+// PositiveNumber ...
 public class PositiveNumber {
 }

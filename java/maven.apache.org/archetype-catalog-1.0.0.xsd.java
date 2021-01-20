@@ -17,16 +17,19 @@ public class Archetypecatalog {
 	protected ArchetypeCatalog Archetypecatalog;
 }
 
+// Archetypes ...
 public class Archetypes {
 	@XmlElement(required = true, name = "archetype")
 	protected List<Archetype> Archetype;
 }
 
+// ArchetypeCatalog is 0.0.0+
 public class ArchetypeCatalog {
 	@XmlElement(required = true, name = "archetypes")
 	protected Archetypes Archetypes;
 }
 
+// Archetype is The description of the archetype.
 public class Archetype {
 	@XmlElement(required = true, name = "groupId")
 	protected String GroupId;

@@ -17,6 +17,10 @@ public class Root {
 	protected Boolean Root;
 }
 
+// CommonAttributes is Attributes common to all elements that function as accessors or
+//         represent independent (multi-ref) values.  The href attribute is
+//         intended to be used in a manner like CONREF.  That is, the element
+//         content should be empty iff the href attribute appears
 public class CommonAttributes {
 	@XmlAttribute(name = "id")
 	protected StringAttr Id;
@@ -24,6 +28,7 @@ public class CommonAttributes {
 	protected StringAttr Href;
 }
 
+// ArrayCoordinate ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "arrayCoordinate")
 public class ArrayCoordinate {
@@ -42,6 +47,7 @@ public class Offset {
 	protected String Offset;
 }
 
+// ArrayAttributes ...
 public class ArrayAttributes {
 	@XmlAttribute(name = "tns:arrayType")
 	protected StringAttr TnsArrayType;
@@ -55,11 +61,13 @@ public class Position {
 	protected String Position;
 }
 
+// ArrayMemberAttributes ...
 public class ArrayMemberAttributes {
 	@XmlAttribute(name = "tns:position")
 	protected StringAttr TnsPosition;
 }
 
+// Array ...
 public class Array {
 }
 
@@ -69,6 +77,7 @@ public class Struct {
 	protected Struct Struct;
 }
 
+// Base64 ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "base64")
 public class Base64 {

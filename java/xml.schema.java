@@ -35,6 +35,7 @@ public class Id {
 	protected String Id;
 }
 
+// SpecialAttrs ...
 public class SpecialAttrs {
 	@XmlAttribute(name = "xml:base")
 	protected QNameAttr XmlBase;

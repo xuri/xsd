@@ -2,8 +2,8 @@
 
 package schema
 
-// CountryCodeType ...
+// CountryCodeType is ZIMBABWE
 type CountryCodeType string
 
-// CurrCodeType ...
+// CurrCodeType is Zimbabwe Dollar: ZIMBABWE
 type CurrCodeType string

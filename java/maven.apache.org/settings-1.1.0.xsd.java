@@ -17,36 +17,43 @@ public class Settings {
 	protected Settings Settings;
 }
 
+// Proxies ...
 public class Proxies {
 	@XmlElement(required = true, name = "proxy")
 	protected List<Proxy> Proxy;
 }
 
+// Servers ...
 public class Servers {
 	@XmlElement(required = true, name = "server")
 	protected List<Server> Server;
 }
 
+// Mirrors ...
 public class Mirrors {
 	@XmlElement(required = true, name = "mirror")
 	protected List<Mirror> Mirror;
 }
 
+// Profiles ...
 public class Profiles {
 	@XmlElement(required = true, name = "profile")
 	protected List<Profile> Profile;
 }
 
+// ActiveProfiles ...
 public class ActiveProfiles {
 	@XmlElement(required = true, name = "activeProfile")
 	protected List<String> ActiveProfile;
 }
 
+// PluginGroups ...
 public class PluginGroups {
 	@XmlElement(required = true, name = "pluginGroup")
 	protected List<String> PluginGroup;
 }
 
+// Settings is Indicate whether maven should operate in offline mode full-time.
 public class Settings {
 	@XmlElement(required = true, name = "localRepository")
 	protected String LocalRepository;
@@ -70,6 +77,7 @@ public class Settings {
 	protected PluginGroups PluginGroups;
 }
 
+// Proxy is 1.0.0+
 public class Proxy {
 	@XmlElement(required = true, name = "active")
 	protected Boolean Active;
@@ -89,9 +97,11 @@ public class Proxy {
 	protected String Id;
 }
 
+// Configuration ...
 public class Configuration {
 }
 
+// Server is The permissions for directories when they are created.
 public class Server {
 	@XmlElement(required = true, name = "username")
 	protected String Username;
@@ -111,6 +121,7 @@ public class Server {
 	protected String Id;
 }
 
+// Mirror is 1.0.0+
 public class Mirror {
 	@XmlElement(required = true, name = "mirrorOf")
 	protected String MirrorOf;
@@ -126,19 +137,24 @@ public class Mirror {
 	protected String Id;
 }
 
+// Properties ...
 public class Properties {
 }
 
+// Repositories ...
 public class Repositories {
 	@XmlElement(required = true, name = "repository")
 	protected List<Repository> Repository;
 }
 
+// PluginRepositories ...
 public class PluginRepositories {
 	@XmlElement(required = true, name = "pluginRepository")
 	protected List<Repository> PluginRepository;
 }
 
+// Profile is The conditional logic which will automatically
+//             trigger the inclusion of this profile.
 public class Profile {
 	@XmlElement(required = true, name = "activation")
 	protected Activation Activation;
@@ -152,6 +168,8 @@ public class Profile {
 	protected String Id;
 }
 
+// Repository is The type of layout this repository uses for locating and
+//             storing artifacts - can be "legacy" or "default".
 public class Repository {
 	@XmlElement(required = true, name = "releases")
 	protected RepositoryPolicy Releases;
@@ -167,6 +185,8 @@ public class Repository {
 	protected String Layout;
 }
 
+// RepositoryPolicy is What to do when verification of an artifact checksum fails -
+//             warn, fail, etc. Valid values are "fail" or "warn".
 public class RepositoryPolicy {
 	@XmlElement(required = true, name = "enabled")
 	protected Boolean Enabled;
@@ -176,6 +196,7 @@ public class RepositoryPolicy {
 	protected String ChecksumPolicy;
 }
 
+// Activation is Specifies that this profile will be activated based on existence of a file.
 public class Activation {
 	@XmlElement(required = true, name = "activeByDefault")
 	protected Boolean ActiveByDefault;
@@ -189,6 +210,7 @@ public class Activation {
 	protected ActivationFile File;
 }
 
+// ActivationOS is The version of the OS to be used to activate a profile.
 public class ActivationOS {
 	@XmlElement(required = true, name = "name")
 	protected String Name;
@@ -200,6 +222,7 @@ public class ActivationOS {
 	protected String Version;
 }
 
+// ActivationProperty is The value of the property to be used to activate a profile.
 public class ActivationProperty {
 	@XmlElement(required = true, name = "name")
 	protected String Name;
@@ -207,6 +230,7 @@ public class ActivationProperty {
 	protected String Value;
 }
 
+// ActivationFile is The name of the file that should exist to activate a profile.
 public class ActivationFile {
 	@XmlElement(required = true, name = "missing")
 	protected String Missing;

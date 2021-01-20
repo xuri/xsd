@@ -2,10 +2,12 @@
 
 typedef CT_Properties Properties;
 
+// CT_Properties ...
 typedef struct {
 	CT_Property Property[];
 } CT_Properties;
 
+// CT_Property ...
 typedef struct {
 	char FmtidAttr; // attr
 	int PidAttr; // attr

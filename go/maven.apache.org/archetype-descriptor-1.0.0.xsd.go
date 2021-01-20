@@ -6,7 +6,7 @@ import (
 	"encoding/xml"
 )
 
-// Archetypedescriptor ...
+// Archetypedescriptor is 0.0.0+
 type Archetypedescriptor *ArchetypeDescriptor
 
 // RequiredProperties ...
@@ -27,7 +27,7 @@ type Modules struct {
 	Module  []*ModuleDescriptor `xml:"module"`
 }
 
-// ArchetypeDescriptor ...
+// ArchetypeDescriptor is 0.0.0+
 type ArchetypeDescriptor struct {
 	NameAttr           string              `xml:"name,attr,omitempty"`
 	PartialAttr        bool                `xml:"partial,attr,omitempty"`
@@ -48,7 +48,8 @@ type Excludes struct {
 	Exclude []string `xml:"exclude"`
 }
 
-// FileSet ...
+// FileSet is The directory where the files will be searched for, which is also the directory where the
+//            project's files will be generated.
 type FileSet struct {
 	FilteredAttr bool      `xml:"filtered,attr,omitempty"`
 	PackagedAttr bool      `xml:"packaged,attr,omitempty"`
@@ -58,13 +59,13 @@ type FileSet struct {
 	Excludes     *Excludes `xml:"excludes"`
 }
 
-// RequiredProperty ...
+// RequiredProperty is Default value of the property.
 type RequiredProperty struct {
 	KeyAttr      string `xml:"key,attr,omitempty"`
 	DefaultValue string `xml:"defaultValue"`
 }
 
-// ModuleDescriptor ...
+// ModuleDescriptor is 0.0.0+
 type ModuleDescriptor struct {
 	IdAttr   string    `xml:"id,attr,omitempty"`
 	DirAttr  string    `xml:"dir,attr,omitempty"`

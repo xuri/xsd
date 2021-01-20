@@ -6,10 +6,10 @@ import (
 	"encoding/xml"
 )
 
-// Lifecycles ...
+// Lifecycles is Root element of the <code>lifecycle.xml</code> file.
 type Lifecycles *LifecycleConfiguration
 
-// LifecycleConfiguration ...
+// LifecycleConfiguration is 1.0.0
 type LifecycleConfiguration struct {
 	Lifecycle []*Lifecycle `xml:"lifecycle"`
 }
@@ -20,7 +20,7 @@ type Phases struct {
 	Phase   []*Phase `xml:"phase"`
 }
 
-// Lifecycle ...
+// Lifecycle is The ID of this lifecycle, for identification in the mojo descriptor.
 type Lifecycle struct {
 	Id     string  `xml:"id"`
 	Phases *Phases `xml:"phases"`
@@ -37,7 +37,7 @@ type Configuration struct {
 	XMLName xml.Name `xml:"configuration"`
 }
 
-// Phase ...
+// Phase is The ID of this phase, e.g., <code>generate-sources</code>.
 type Phase struct {
 	Id            string         `xml:"id"`
 	Executions    *Executions    `xml:"executions"`
@@ -50,7 +50,7 @@ type Goals struct {
 	Goal    []string `xml:"goal"`
 }
 
-// Execution ...
+// Execution is A set of goals to execute.
 type Execution struct {
 	Configuration *Configuration `xml:"configuration"`
 	Goals         *Goals         `xml:"goals"`

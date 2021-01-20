@@ -6,7 +6,7 @@ import (
 	"encoding/xml"
 )
 
-// Assembly ...
+// Assembly is Describes the assembly layout and packaging.
 type Assembly *Assembly
 
 // Formats ...
@@ -51,7 +51,8 @@ type ComponentDescriptors struct {
 	ComponentDescriptor []string `xml:"componentDescriptor"`
 }
 
-// Assembly ...
+// Assembly is The id of this assembly. This is a symbolic name for a
+//             particular assembly of files from this project.
 type Assembly struct {
 	Id                   string                `xml:"id"`
 	Formats              *Formats              `xml:"formats"`
@@ -83,7 +84,9 @@ type Excludes struct {
 	Exclude []string `xml:"exclude"`
 }
 
-// Repository ...
+// Repository is If set to true, this property will trigger the creation of repository
+//             metadata which will allow the repository to be used as a functional remote
+//             repository.
 type Repository struct {
 	IncludeMetadata        bool                    `xml:"includeMetadata"`
 	GroupVersionAlignments *GroupVersionAlignments `xml:"groupVersionAlignments"`
@@ -94,14 +97,16 @@ type Repository struct {
 	DirectoryMode          string                  `xml:"directoryMode"`
 }
 
-// GroupVersionAlignment ...
+// GroupVersionAlignment is The version you want to align this group to.
 type GroupVersionAlignment struct {
 	Id       string    `xml:"id"`
 	Version  string    `xml:"version"`
 	Excludes *Excludes `xml:"excludes"`
 }
 
-// DependencySet ...
+// DependencySet is Specifies the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory.
 type DependencySet struct {
 	OutputFileNameMapping string    `xml:"outputFileNameMapping"`
 	Unpack                bool      `xml:"unpack"`
@@ -113,7 +118,7 @@ type DependencySet struct {
 	DirectoryMode         string    `xml:"directoryMode"`
 }
 
-// ModuleSet ...
+// ModuleSet is 1.0.0
 type ModuleSet struct {
 	Includes *Includes       `xml:"includes"`
 	Excludes *Excludes       `xml:"excludes"`
@@ -121,7 +126,9 @@ type ModuleSet struct {
 	Binaries *ModuleBinaries `xml:"binaries"`
 }
 
-// ModuleSources ...
+// ModuleSources is Specifies the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory.
 type ModuleSources struct {
 	OutputDirectory string    `xml:"outputDirectory"`
 	Includes        *Includes `xml:"includes"`
@@ -130,7 +137,9 @@ type ModuleSources struct {
 	DirectoryMode   string    `xml:"directoryMode"`
 }
 
-// ModuleBinaries ...
+// ModuleBinaries is Specifies the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory.
 type ModuleBinaries struct {
 	IncludeDependencies   bool      `xml:"includeDependencies"`
 	Unpack                bool      `xml:"unpack"`
@@ -142,7 +151,7 @@ type ModuleBinaries struct {
 	DirectoryMode         string    `xml:"directoryMode"`
 }
 
-// FileItem ...
+// FileItem is Flag used to determine if the file is filtered.
 type FileItem struct {
 	Source          string `xml:"source"`
 	OutputDirectory string `xml:"outputDirectory"`
@@ -152,7 +161,9 @@ type FileItem struct {
 	Filtered        bool   `xml:"filtered"`
 }
 
-// FileSet ...
+// FileSet is Specifies the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory.
 type FileSet struct {
 	Directory       string    `xml:"directory"`
 	LineEnding      string    `xml:"lineEnding"`

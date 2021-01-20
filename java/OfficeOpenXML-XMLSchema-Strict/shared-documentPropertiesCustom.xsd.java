@@ -17,11 +17,13 @@ public class Properties {
 	protected CT_Properties Properties;
 }
 
+// CT_Properties ...
 public class CT_Properties {
 	@XmlElement(required = true, name = "property")
 	protected List<CT_Property> Property;
 }
 
+// CT_Property ...
 public class CT_Property {
 	@XmlAttribute(name = "fmtid", required = true)
 	protected StringAttr Fmtid;

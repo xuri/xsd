@@ -17,6 +17,7 @@ public class Skin {
 	protected SkinModel Skin;
 }
 
+// SkinModel is Encoding of text content, like the Velocity template itself.
 public class SkinModel {
 	@XmlElement(required = true, name = "prerequisites")
 	protected Prerequisites Prerequisites;
@@ -24,6 +25,7 @@ public class SkinModel {
 	protected String Encoding;
 }
 
+// Prerequisites is The minimum version of Doxia Sitetools required to use the resulting skin.
 public class Prerequisites {
 	@XmlElement(required = true, name = "doxia-sitetools")
 	protected String Doxiasitetools;

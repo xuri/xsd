@@ -11,6 +11,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
+// CT_EffectExtent ...
 public class CT_EffectExtent {
 	@XmlAttribute(name = "l", required = true)
 	protected ST_CoordinateAttr L;
@@ -22,12 +23,14 @@ public class CT_EffectExtent {
 	protected ST_CoordinateAttr B;
 }
 
+// ST_WrapDistance ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_WrapDistance")
 public class ST_WrapDistance {
 	protected Integer ST_WrapDistance;
 }
 
+// CT_Inline ...
 public class CT_Inline {
 	@XmlAttribute(name = "distT")
 	protected IntegerAttr DistT;
@@ -49,12 +52,14 @@ public class CT_Inline {
 	protected List<CT_GraphicalObject> AGraphic;
 }
 
+// ST_WrapText ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_WrapText")
 public class ST_WrapText {
 	protected String ST_WrapText;
 }
 
+// CT_WrapPath ...
 public class CT_WrapPath {
 	@XmlAttribute(name = "edited")
 	protected BooleanAttr Edited;
@@ -64,9 +69,11 @@ public class CT_WrapPath {
 	protected List<CT_Point2D> LineTo;
 }
 
+// CT_WrapNone ...
 public class CT_WrapNone {
 }
 
+// CT_WrapSquare ...
 public class CT_WrapSquare {
 	@XmlAttribute(name = "wrapText", required = true)
 	protected StringAttr WrapText;
@@ -82,6 +89,7 @@ public class CT_WrapSquare {
 	protected CT_EffectExtent EffectExtent;
 }
 
+// CT_WrapTight ...
 public class CT_WrapTight {
 	@XmlAttribute(name = "wrapText", required = true)
 	protected StringAttr WrapText;
@@ -93,6 +101,7 @@ public class CT_WrapTight {
 	protected List<CT_WrapPath> WrapPolygon;
 }
 
+// CT_WrapThrough ...
 public class CT_WrapThrough {
 	@XmlAttribute(name = "wrapText", required = true)
 	protected StringAttr WrapText;
@@ -104,6 +113,7 @@ public class CT_WrapThrough {
 	protected List<CT_WrapPath> WrapPolygon;
 }
 
+// CT_WrapTopBottom ...
 public class CT_WrapTopBottom {
 	@XmlAttribute(name = "distT")
 	protected IntegerAttr DistT;
@@ -113,6 +123,7 @@ public class CT_WrapTopBottom {
 	protected CT_EffectExtent EffectExtent;
 }
 
+// EG_WrapType ...
 public class EG_WrapType {
 	@XmlElement(required = true, name = "wrapNone")
 	protected List<CT_WrapNone> WrapNone;
@@ -126,24 +137,28 @@ public class EG_WrapType {
 	protected List<CT_WrapTopBottom> WrapTopAndBottom;
 }
 
+// ST_PositionOffset ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_PositionOffset")
 public class ST_PositionOffset {
 	protected Integer ST_PositionOffset;
 }
 
+// ST_AlignH ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_AlignH")
 public class ST_AlignH {
 	protected String ST_AlignH;
 }
 
+// ST_RelFromH ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_RelFromH")
 public class ST_RelFromH {
 	protected String ST_RelFromH;
 }
 
+// CT_PosH ...
 public class CT_PosH {
 	@XmlAttribute(name = "relativeFrom", required = true)
 	protected StringAttr RelativeFrom;
@@ -153,18 +168,21 @@ public class CT_PosH {
 	protected List<Integer> PosOffset;
 }
 
+// ST_AlignV ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_AlignV")
 public class ST_AlignV {
 	protected String ST_AlignV;
 }
 
+// ST_RelFromV ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_RelFromV")
 public class ST_RelFromV {
 	protected String ST_RelFromV;
 }
 
+// CT_PosV ...
 public class CT_PosV {
 	@XmlAttribute(name = "relativeFrom", required = true)
 	protected StringAttr RelativeFrom;
@@ -174,6 +192,7 @@ public class CT_PosV {
 	protected List<Integer> PosOffset;
 }
 
+// CT_Anchor ...
 public class CT_Anchor {
 	@XmlAttribute(name = "distT")
 	protected IntegerAttr DistT;
@@ -216,10 +235,12 @@ public class CT_Anchor {
 	protected List<CT_GraphicalObject> AGraphic;
 }
 
+// CT_TxbxContent ...
 public class CT_TxbxContent {
 	protected List<EG_BlockLevelElts> WEG_BlockLevelElts;
 }
 
+// CT_TextboxInfo ...
 public class CT_TextboxInfo {
 	@XmlAttribute(name = "id")
 	protected ShortAttr Id;
@@ -229,6 +250,7 @@ public class CT_TextboxInfo {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_LinkedTextboxInformation ...
 public class CT_LinkedTextboxInformation {
 	@XmlAttribute(name = "id", required = true)
 	protected ShortAttr Id;
@@ -238,6 +260,7 @@ public class CT_LinkedTextboxInformation {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_WordprocessingShape ...
 public class CT_WordprocessingShape {
 	@XmlAttribute(name = "normalEastAsianFlow")
 	protected BooleanAttr NormalEastAsianFlow;
@@ -261,6 +284,7 @@ public class CT_WordprocessingShape {
 	protected List<CT_TextBodyProperties> BodyPr;
 }
 
+// CT_GraphicFrame ...
 public class CT_GraphicFrame {
 	@XmlElement(required = true, name = "cNvPr")
 	protected List<CT_NonVisualDrawingProps> CNvPr;
@@ -274,6 +298,7 @@ public class CT_GraphicFrame {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_WordprocessingContentPartNonVisual ...
 public class CT_WordprocessingContentPartNonVisual {
 	@XmlElement(required = true, name = "cNvPr")
 	protected List<CT_NonVisualDrawingProps> CNvPr;
@@ -281,6 +306,7 @@ public class CT_WordprocessingContentPartNonVisual {
 	protected List<CT_NonVisualContentPartProperties> CNvContentPartPr;
 }
 
+// CT_WordprocessingContentPart ...
 public class CT_WordprocessingContentPart {
 	@XmlAttribute(name = "bwMode")
 	protected StringAttr BwMode;
@@ -294,6 +320,7 @@ public class CT_WordprocessingContentPart {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_WordprocessingGroup ...
 public class CT_WordprocessingGroup {
 	@XmlElement(required = true, name = "cNvPr")
 	protected List<CT_NonVisualDrawingProps> CNvPr;
@@ -315,6 +342,7 @@ public class CT_WordprocessingGroup {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_WordprocessingCanvas ...
 public class CT_WordprocessingCanvas {
 	@XmlElement(required = true, name = "bg")
 	protected List<CT_BackgroundFormatting> Bg;

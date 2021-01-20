@@ -56,5 +56,5 @@ type FileUpload struct {
 	CustomerReference           string               `xml:"CustomerReference"`
 }
 
-// CustomerReference ...
+// CustomerReference is Customer’s own reference.
 type CustomerReference string

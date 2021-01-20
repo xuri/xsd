@@ -11,17 +11,20 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
+// ST_SourceType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_SourceType")
 public class ST_SourceType {
 	protected String ST_SourceType;
 }
 
+// CT_NameListType ...
 public class CT_NameListType {
 	@XmlElement(required = true, name = "Person")
 	protected List<CT_PersonType> Person;
 }
 
+// CT_PersonType ...
 public class CT_PersonType {
 	@XmlElement(required = true, name = "Last")
 	protected List<String> Last;
@@ -31,11 +34,13 @@ public class CT_PersonType {
 	protected List<String> Middle;
 }
 
+// CT_NameType ...
 public class CT_NameType {
 	@XmlElement(required = true, name = "NameList")
 	protected List<CT_NameListType> NameList;
 }
 
+// CT_NameOrCorporateType ...
 public class CT_NameOrCorporateType {
 	@XmlElement(required = true, name = "NameList")
 	protected List<CT_NameListType> NameList;
@@ -43,6 +48,7 @@ public class CT_NameOrCorporateType {
 	protected List<String> Corporate;
 }
 
+// CT_AuthorType ...
 public class CT_AuthorType {
 	@XmlElement(required = true, name = "Artist")
 	protected CT_NameType Artist;
@@ -78,6 +84,7 @@ public class CT_AuthorType {
 	protected CT_NameType Writer;
 }
 
+// CT_SourceType ...
 public class CT_SourceType {
 	@XmlElement(required = true, name = "AbbreviatedCaseNumber")
 	protected String AbbreviatedCaseNumber;
@@ -191,6 +198,7 @@ public class Sources {
 	protected CT_Sources Sources;
 }
 
+// CT_Sources ...
 public class CT_Sources {
 	@XmlAttribute(name = "SelectedStyle")
 	protected StringAttr SelectedStyle;

@@ -11,11 +11,13 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
+// Library ...
 public class Library {
 	@XmlElement(required = true, name = "book")
 	protected BookType Book;
 }
 
+// Person ...
 public class Person {
 	@XmlAttribute(name = "id", required = true)
 	protected StringAttr Id;
@@ -29,16 +31,19 @@ public class Person {
 	protected String Qualification;
 }
 
+// Authors ...
 public class Authors {
 	@XmlElement(required = true, name = "lib:person")
 	protected List<Person> LibPerson;
 }
 
+// Characters ...
 public class Characters {
 	@XmlElement(required = true, name = "lib:person")
 	protected List<Person> LibPerson;
 }
 
+// BookType ...
 public class BookType {
 	@XmlAttribute(name = "id", required = true)
 	protected StringAttr Id;

@@ -6,16 +6,21 @@ import (
 	"encoding/xml"
 )
 
-// Lang ...
+// Lang is The union allows for the 'un-declaration' of xml:lang with
+// the empty string.
 type Lang string
 
-// Space ...
+// Space is denotes an attribute whose
+// value is a keyword indicating what whitespace processing
+// discipline is intended for the content of the element; its
+// value is inherited. This name is reserved by virtue of its
+// definition in the XML specification.
 type Space string
 
-// Base ...
+// Base is for information about this attribute.
 type Base string
 
-// Id ...
+// Id is for information about this attribute.
 type Id string
 
 // SpecialAttrs ...

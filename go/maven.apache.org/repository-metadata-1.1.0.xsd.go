@@ -6,7 +6,7 @@ import (
 	"encoding/xml"
 )
 
-// Metadata ...
+// Metadata is 1.0.0+
 type Metadata *Metadata
 
 // Plugins ...
@@ -15,7 +15,7 @@ type Plugins struct {
 	Plugin  []*Plugin `xml:"plugin"`
 }
 
-// Metadata ...
+// Metadata is Versioning information for the artifact.
 type Metadata struct {
 	ModelVersionAttr string      `xml:"modelVersion,attr,omitempty"`
 	GroupId          string      `xml:"groupId"`
@@ -25,7 +25,7 @@ type Metadata struct {
 	Plugins          *Plugins    `xml:"plugins"`
 }
 
-// Plugin ...
+// Plugin is The plugin artifactId
 type Plugin struct {
 	Name       string `xml:"name"`
 	Prefix     string `xml:"prefix"`
@@ -44,7 +44,7 @@ type SnapshotVersions struct {
 	SnapshotVersion []*SnapshotVersion `xml:"snapshotVersion"`
 }
 
-// Versioning ...
+// Versioning is The current snapshot data in use for this version (artifact snapshots only)
 type Versioning struct {
 	Latest           string            `xml:"latest"`
 	Release          string            `xml:"release"`
@@ -54,7 +54,7 @@ type Versioning struct {
 	SnapshotVersions *SnapshotVersions `xml:"snapshotVersions"`
 }
 
-// SnapshotVersion ...
+// SnapshotVersion is The timestamp when this version information was last updated. The timestamp is expressed using UTC in the format yyyyMMddHHmmss.
 type SnapshotVersion struct {
 	Classifier string `xml:"classifier"`
 	Extension  string `xml:"extension"`
@@ -62,7 +62,7 @@ type SnapshotVersion struct {
 	Updated    string `xml:"updated"`
 }
 
-// Snapshot ...
+// Snapshot is Whether to use a local copy instead (with filename that includes the base version)
 type Snapshot struct {
 	Timestamp   string `xml:"timestamp"`
 	BuildNumber int    `xml:"buildNumber"`

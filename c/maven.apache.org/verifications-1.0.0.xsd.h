@@ -2,14 +2,19 @@
 
 typedef Verifications Verifications;
 
+// Files ...
 typedef struct {
 	File File[];
 } Files;
 
+// Verifications is Root element of the verifications file.
 typedef struct {
 	Files Files;
 } Verifications;
 
+// File is When this is set to <code>true</code> the plugin checks that the
+//             file or directory exists. When set to <code>false</code> it checks
+//             that the file or directory does <strong>not</strong> exist.
 typedef struct {
 	char Location;
 	char Contains;

@@ -23,6 +23,7 @@ public class To {
 	protected CT_Marker To;
 }
 
+// CT_AnchorClientData ...
 public class CT_AnchorClientData {
 	@XmlAttribute(name = "fLocksWithSheet")
 	protected BooleanAttr FLocksWithSheet;
@@ -30,6 +31,7 @@ public class CT_AnchorClientData {
 	protected BooleanAttr FPrintsWithSheet;
 }
 
+// CT_ShapeNonVisual ...
 public class CT_ShapeNonVisual {
 	@XmlElement(required = true, name = "cNvPr")
 	protected List<CT_NonVisualDrawingProps> CNvPr;
@@ -37,6 +39,7 @@ public class CT_ShapeNonVisual {
 	protected List<CT_NonVisualDrawingShapeProps> CNvSpPr;
 }
 
+// CT_Shape ...
 public class CT_Shape {
 	@XmlAttribute(name = "macro")
 	protected StringAttr Macro;
@@ -56,6 +59,7 @@ public class CT_Shape {
 	protected List<CT_TextBody> TxBody;
 }
 
+// CT_ConnectorNonVisual ...
 public class CT_ConnectorNonVisual {
 	@XmlElement(required = true, name = "cNvPr")
 	protected List<CT_NonVisualDrawingProps> CNvPr;
@@ -63,6 +67,7 @@ public class CT_ConnectorNonVisual {
 	protected List<CT_NonVisualConnectorProperties> CNvCxnSpPr;
 }
 
+// CT_Connector ...
 public class CT_Connector {
 	@XmlAttribute(name = "macro")
 	protected StringAttr Macro;
@@ -76,6 +81,7 @@ public class CT_Connector {
 	protected List<CT_ShapeStyle> Style;
 }
 
+// CT_PictureNonVisual ...
 public class CT_PictureNonVisual {
 	@XmlElement(required = true, name = "cNvPr")
 	protected List<CT_NonVisualDrawingProps> CNvPr;
@@ -83,6 +89,7 @@ public class CT_PictureNonVisual {
 	protected List<CT_NonVisualPictureProperties> CNvPicPr;
 }
 
+// CT_Picture ...
 public class CT_Picture {
 	@XmlAttribute(name = "macro")
 	protected StringAttr Macro;
@@ -98,6 +105,7 @@ public class CT_Picture {
 	protected List<CT_ShapeStyle> Style;
 }
 
+// CT_GraphicalObjectFrameNonVisual ...
 public class CT_GraphicalObjectFrameNonVisual {
 	@XmlElement(required = true, name = "cNvPr")
 	protected List<CT_NonVisualDrawingProps> CNvPr;
@@ -105,6 +113,7 @@ public class CT_GraphicalObjectFrameNonVisual {
 	protected List<CT_NonVisualGraphicFrameProperties> CNvGraphicFramePr;
 }
 
+// CT_GraphicalObjectFrame ...
 public class CT_GraphicalObjectFrame {
 	@XmlAttribute(name = "macro")
 	protected StringAttr Macro;
@@ -118,6 +127,7 @@ public class CT_GraphicalObjectFrame {
 	protected List<CT_GraphicalObject> AGraphic;
 }
 
+// CT_GroupShapeNonVisual ...
 public class CT_GroupShapeNonVisual {
 	@XmlElement(required = true, name = "cNvPr")
 	protected List<CT_NonVisualDrawingProps> CNvPr;
@@ -125,6 +135,7 @@ public class CT_GroupShapeNonVisual {
 	protected List<CT_NonVisualGroupDrawingShapeProps> CNvGrpSpPr;
 }
 
+// CT_GroupShape ...
 public class CT_GroupShape {
 	@XmlElement(required = true, name = "nvGrpSpPr")
 	protected List<CT_GroupShapeNonVisual> NvGrpSpPr;
@@ -142,6 +153,7 @@ public class CT_GroupShape {
 	protected CT_Picture Pic;
 }
 
+// EG_ObjectChoices ...
 public class EG_ObjectChoices {
 	@XmlElement(required = true, name = "sp")
 	protected CT_Shape Sp;
@@ -157,23 +169,27 @@ public class EG_ObjectChoices {
 	protected CT_Rel ContentPart;
 }
 
+// CT_Rel ...
 public class CT_Rel {
 	@XmlAttribute(name = "r:id", required = true)
 	protected StringAttr RId;
 }
 
+// ST_ColID ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_ColID")
 public class ST_ColID {
 	protected Integer ST_ColID;
 }
 
+// ST_RowID ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_RowID")
 public class ST_RowID {
 	protected Integer ST_RowID;
 }
 
+// CT_Marker ...
 public class CT_Marker {
 	@XmlElement(required = true, name = "col")
 	protected Integer Col;
@@ -185,12 +201,14 @@ public class CT_Marker {
 	protected ST_Coordinate RowOff;
 }
 
+// ST_EditAs ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_EditAs")
 public class ST_EditAs {
 	protected String ST_EditAs;
 }
 
+// CT_TwoCellAnchor ...
 public class CT_TwoCellAnchor {
 	@XmlAttribute(name = "editAs")
 	protected StringAttr EditAs;
@@ -203,6 +221,7 @@ public class CT_TwoCellAnchor {
 	protected List<CT_AnchorClientData> ClientData;
 }
 
+// CT_OneCellAnchor ...
 public class CT_OneCellAnchor {
 	protected EG_ObjectChoices EG_ObjectChoices;
 	@XmlElement(required = true, name = "from")
@@ -213,6 +232,7 @@ public class CT_OneCellAnchor {
 	protected List<CT_AnchorClientData> ClientData;
 }
 
+// CT_AbsoluteAnchor ...
 public class CT_AbsoluteAnchor {
 	protected EG_ObjectChoices EG_ObjectChoices;
 	@XmlElement(required = true, name = "pos")
@@ -223,6 +243,7 @@ public class CT_AbsoluteAnchor {
 	protected List<CT_AnchorClientData> ClientData;
 }
 
+// EG_Anchor ...
 public class EG_Anchor {
 	@XmlElement(required = true, name = "twoCellAnchor")
 	protected CT_TwoCellAnchor TwoCellAnchor;
@@ -232,6 +253,7 @@ public class EG_Anchor {
 	protected CT_AbsoluteAnchor AbsoluteAnchor;
 }
 
+// CT_Drawing ...
 public class CT_Drawing {
 	protected List<EG_Anchor> EG_Anchor;
 }

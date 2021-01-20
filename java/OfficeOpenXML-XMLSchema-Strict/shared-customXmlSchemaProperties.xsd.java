@@ -11,6 +11,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
+// CT_Schema ...
 public class CT_Schema {
 	@XmlAttribute(name = "uri")
 	protected StringAttr Uri;
@@ -22,6 +23,7 @@ public class CT_Schema {
 	protected StringAttr SchemaLanguage;
 }
 
+// CT_SchemaLibrary ...
 public class CT_SchemaLibrary {
 	@XmlElement(required = true, name = "schema")
 	protected List<CT_Schema> Schema;

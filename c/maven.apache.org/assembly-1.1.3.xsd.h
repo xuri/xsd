@@ -2,38 +2,51 @@
 
 typedef Assembly Assembly;
 
+// Formats ...
 typedef struct {
 	char Format[];
 } Formats;
 
+// ContainerDescriptorHandlers ...
 typedef struct {
 	ContainerDescriptorHandlerConfig ContainerDescriptorHandler[];
 } ContainerDescriptorHandlers;
 
+// ModuleSets ...
 typedef struct {
 	ModuleSet ModuleSet[];
 } ModuleSets;
 
+// FileSets ...
 typedef struct {
 	FileSet FileSet[];
 } FileSets;
 
+// Files ...
 typedef struct {
 	FileItem File[];
 } Files;
 
+// DependencySets ...
 typedef struct {
 	DependencySet DependencySet[];
 } DependencySets;
 
+// Repositories ...
 typedef struct {
 	Repository Repository[];
 } Repositories;
 
+// ComponentDescriptors ...
 typedef struct {
 	char ComponentDescriptor[];
 } ComponentDescriptors;
 
+// Assembly is Sets the id of this assembly. This is a symbolic name for a
+//             particular assembly of files from this project. Also, aside from
+//             being used to distinctly name the assembled package by attaching
+//             its value to the generated archive, the id is used as your
+//             artifact's classifier when deploying.
 typedef struct {
 	char Id;
 	Formats Formats;
@@ -49,14 +62,20 @@ typedef struct {
 	ComponentDescriptors ComponentDescriptors;
 } Assembly;
 
+// Includes ...
 typedef struct {
 	char Include[];
 } Includes;
 
+// Excludes ...
 typedef struct {
 	char Exclude[];
 } Excludes;
 
+// DependencySet is Sets the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory,
+//             directly beneath the root of the archive.
 typedef struct {
 	char OutputDirectory;
 	Includes Includes;
@@ -74,6 +93,7 @@ typedef struct {
 	bool UseTransitiveFiltering;
 } DependencySet;
 
+// UnpackOptions is Specifies options for including/excluding/filtering items extracted from an archive. (Since 2.2-beta-1)
 typedef struct {
 	Includes Includes;
 	Excludes Excludes;
@@ -83,10 +103,15 @@ typedef struct {
 	char Encoding;
 } UnpackOptions;
 
+// GroupVersionAlignments ...
 typedef struct {
 	GroupVersionAlignment GroupVersionAlignment[];
 } GroupVersionAlignments;
 
+// Repository is Sets the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory,
+//             directly beneath the root of the archive.
 typedef struct {
 	char OutputDirectory;
 	Includes Includes;
@@ -98,20 +123,25 @@ typedef struct {
 	char Scope;
 } Repository;
 
+// GroupVersionAlignment is The version you want to align this group to.
 typedef struct {
 	char Id;
 	char Version;
 	Excludes Excludes;
 } GroupVersionAlignment;
 
+// Configuration ...
 typedef struct {
 } Configuration;
 
+// ContainerDescriptorHandlerConfig is The handler's plexus role-hint, for lookup from the container.
 typedef struct {
 	char HandlerName;
 	Configuration Configuration;
 } ContainerDescriptorHandlerConfig;
 
+// ModuleSet is If set to false, the plugin will exclude sub-modules from processing in this ModuleSet.
+//           Otherwise, it will process all sub-modules, each subject to include/exclude rules. (Since 2.2-beta-1)
 typedef struct {
 	bool UseAllReactorProjects;
 	bool IncludeSubModules;
@@ -121,6 +151,10 @@ typedef struct {
 	ModuleBinaries Binaries;
 } ModuleSet;
 
+// ModuleBinaries is Sets the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory,
+//             directly beneath the root of the archive.
 typedef struct {
 	char OutputDirectory;
 	Includes Includes;
@@ -135,6 +169,9 @@ typedef struct {
 	char OutputFileNameMapping;
 } ModuleBinaries;
 
+// ModuleSources is Sets the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory.
 typedef struct {
 	bool UseDefaultExcludes;
 	char OutputDirectory;
@@ -148,6 +185,9 @@ typedef struct {
 	char OutputDirectoryMapping;
 } ModuleSources;
 
+// FileSet is Sets the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory.
 typedef struct {
 	bool UseDefaultExcludes;
 	char OutputDirectory;
@@ -160,6 +200,7 @@ typedef struct {
 	bool Filtered;
 } FileSet;
 
+// FileItem is Sets whether to determine if the file is filtered.
 typedef struct {
 	char Source;
 	char OutputDirectory;

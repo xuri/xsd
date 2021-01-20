@@ -6,7 +6,7 @@ import (
 	"encoding/xml"
 )
 
-// Paramdoc ...
+// Paramdoc is The root of a parameter plugin expression document.
 type Paramdoc *ExpressionDocumentation
 
 // Expressions ...
@@ -15,7 +15,7 @@ type Expressions struct {
 	Expression []*Expression `xml:"expression"`
 }
 
-// ExpressionDocumentation ...
+// ExpressionDocumentation is The root of a parameter plugin expression document.
 type ExpressionDocumentation struct {
 	Expressions *Expressions `xml:"expressions"`
 }
@@ -30,7 +30,7 @@ type ApiMethods struct {
 	XMLName xml.Name `xml:"apiMethods"`
 }
 
-// Expression ...
+// Expression is The place and syntax used to change the value of this expression.
 type Expression struct {
 	Syntax        string      `xml:"syntax"`
 	Description   string      `xml:"description"`

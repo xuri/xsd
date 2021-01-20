@@ -17,11 +17,13 @@ public class Extensions {
 	protected CoreExtensions Extensions;
 }
 
+// CoreExtensions is A set of build extensions to use from this project.
 public class CoreExtensions {
 	@XmlElement(required = true, name = "extension")
 	protected List<CoreExtension> Extension;
 }
 
+// CoreExtension is The version of the extension.
 public class CoreExtension {
 	@XmlElement(required = true, name = "groupId")
 	protected String GroupId;

@@ -11,6 +11,10 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
+// DateSimpleType is The date simple type unifies both date and time formats and allows
+//             a date to be specified as either a day or a time in a day. This is
+//             to allow situations where the law becomes effective based on another
+//             time zone.
 public class DateSimpleType {
 	@XmlElement(required = true)
 	protected Byte Date;
@@ -18,6 +22,10 @@ public class DateSimpleType {
 	protected Byte DateTime;
 }
 
+// OccurrenceSimpleType is The occurrence simple type specifies which occurrence is affected
+//             by an action when amending. An occurence can be either a positive
+//             integer or a value from the choice enumeration such as "all" for
+//             all occurrences or "last" for the last occurrence.
 public class OccurrenceSimpleType {
 	@XmlElement(required = true)
 	protected Integer PositiveInteger;
@@ -25,72 +33,101 @@ public class OccurrenceSimpleType {
 	protected ChoiceEnum ChoiceEnum;
 }
 
+// ShortStringSimpleType is A simple string with not more than 32 characters.
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ShortStringSimpleType")
 public class ShortStringSimpleType {
 	protected String ShortStringSimpleType;
 }
 
+// MediumStringSimpleType is A simple string with not more than 128 characters.
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "MediumStringSimpleType")
 public class MediumStringSimpleType {
 	protected String MediumStringSimpleType;
 }
 
+// LongStringSimpleType is A simple string with not more than 1024 characters.
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "LongStringSimpleType")
 public class LongStringSimpleType {
 	protected String LongStringSimpleType;
 }
 
+// ChoiceEnum is The choice enumeration is used to enumerate some textual values for
+//             use with the occurrence simple type defined above.
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ChoiceEnum")
 public class ChoiceEnum {
 	protected String ChoiceEnum;
 }
 
+// PropertyTypeEnum is The property  type enumeration allows a property to be given a
+//             type specification. If the @type attribute is not specified, then
+//             the default type is "string".
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "PropertyTypeEnum")
 public class PropertyTypeEnum {
 	protected String PropertyTypeEnum;
 }
 
+// SetTypeEnum is A "res" is a resource, such as a person, place, or thing and
+//                   the properties enclosed within the set describe it.
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "SetTypeEnum")
 public class SetTypeEnum {
 	protected String SetTypeEnum;
 }
 
+// StatusEnum is A "unknown" status indicates that the status is not known.
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "StatusEnum")
 public class StatusEnum {
 	protected String StatusEnum;
 }
 
+// ActionTypeEnum is The "delete" action removes text from a proposed provision to
+//                   the law.
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ActionTypeEnum")
 public class ActionTypeEnum {
 	protected String ActionTypeEnum;
 }
 
+// PositionEnum is The position enumeration is used with references found within
+//             amendments when it is necessary to specify a position relative to an
+//             item rather than when referencing the item itself.
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "PositionEnum")
 public class PositionEnum {
 	protected String PositionEnum;
 }
 
+// OrientationEnum is The orientation enumeration is used specify how an item should be
+//             oriented in the printed form. The orientation can be specified
+//             for any content item or for any appendix item, including a
+//             schedule.
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "OrientationEnum")
 public class OrientationEnum {
 	protected String OrientationEnum;
 }
 
+// NoteTypeEnum is Notes can be placed inline, as footnotes at the end of the page,
+//             as end notes as the end of document, or U.S. Code notes. By default,
+//             notes are inline
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "NoteTypeEnum")
 public class NoteTypeEnum {
 	protected String NoteTypeEnum;
 }
 
+// IdentificationGroup is Use the @identifier attribute to specify the URL context of the
+//                element. Typically, the @identifier will be established on the
+//                root element or on any element, such as a <quotedStructure> or
+//                <quotedText> element, that changes the context.
+// 
+//                The @identifier attribute is optional.
 public class IdentificationGroup {
 	@XmlAttribute(name = "id")
 	protected StringAttr Id;
@@ -102,6 +139,12 @@ public class IdentificationGroup {
 	protected StringAttr Identifier;
 }
 
+// ClassificationGroup is The @style attribute is used to specify CSS attributes that
+//                override the default styles defined for an element or an element
+//                class. The current loose-leaf publication standards should be
+//                specified using an external style sheet and the use of the @style
+//                attribute should be reserved for exception cases where the
+//                default presentation must be overridden.
 public class ClassificationGroup {
 	@XmlAttribute(name = "role")
 	protected StringAttr Role;
@@ -111,6 +154,7 @@ public class ClassificationGroup {
 	protected StringAttr Style;
 }
 
+// AnnotationGroup is The @codificationTip is for internal use by the OLRC.
 public class AnnotationGroup {
 	@XmlAttribute(name = "note")
 	protected StringAttr Note;
@@ -126,6 +170,10 @@ public class AnnotationGroup {
 	protected StringAttr CodificationTip;
 }
 
+// DescriptionGroup is The @sortOrder attribute is used to specify a sorting order for
+//                a list of items, when that sort order is not the document
+//                sequence. The @sortOrder value must be specified as a positive
+//                integer. This attribute should rarely be used.
 public class DescriptionGroup {
 	@XmlAttribute(name = "title")
 	protected StringAttr Title;
@@ -135,6 +183,11 @@ public class DescriptionGroup {
 	protected IntegerAttr SortOrder;
 }
 
+// ReferenceGroup is The @portion attribute is used, in conjunction with the @idref
+//                attribute, when only a portion of the referenced item is being
+//                affected. The value of @portion is an additional part to append
+//                to the URL, with a "/" separator to identify the item affected.
+//                Do not include a leading "/" in the @portion value.
 public class ReferenceGroup {
 	@XmlAttribute(name = "href")
 	protected QNameAttr Href;
@@ -144,6 +197,9 @@ public class ReferenceGroup {
 	protected StringAttr Portion;
 }
 
+// AmendingGroup is The @posCount attribute is used to specify the number of
+//                occurrences of the @posText to seek out when establishing the
+//                context.
 public class AmendingGroup {
 	@XmlAttribute(name = "pos")
 	protected StringAttr Pos;
@@ -153,11 +209,16 @@ public class AmendingGroup {
 	protected IntegerAttr PosCount;
 }
 
+// LinkGroup is The @src attribute is a URL that points to an item to be included
+//                in the published document. Unlike an @href attribute, a @src
+//                attribute can be any normal URL and can be relative or absolute.
 public class LinkGroup {
 	@XmlAttribute(name = "src")
 	protected QNameAttr Src;
 }
 
+// ValueGroup is The @endValue attribute is used for the upper end of a value
+//             range.
 public class ValueGroup {
 	@XmlAttribute(name = "value")
 	protected StringAttr Value;
@@ -167,6 +228,11 @@ public class ValueGroup {
 	protected StringAttr EndValue;
 }
 
+// NoteGroup is Set the @topic attribute to a string value in order
+//                      to categorize the note or group of notes. An open,
+//                      but enumerated, list of string values should be used.
+//                      Using a fixed list of values will better aid in
+//                      categorization of notes later.
 public class NoteGroup {
 	@XmlAttribute(name = "type")
 	protected StringAttr Type;
@@ -174,6 +240,8 @@ public class NoteGroup {
 	protected StringAttr Topic;
 }
 
+// DateGroup is The @endDate attribute is used for the ending date of a date
+//                range.
 public class DateGroup {
 	@XmlAttribute(name = "date")
 	protected DateSimpleTypeAttr Date;
@@ -183,6 +251,9 @@ public class DateGroup {
 	protected DateSimpleTypeAttr EndDate;
 }
 
+// VersioningGroup is The @partial attribute is used, in conjunction with the
+//                @status attribute to indicate that the status is not fully
+//                applied.
 public class VersioningGroup {
 	@XmlAttribute(name = "startPeriod")
 	protected DateSimpleTypeAttr StartPeriod;
@@ -194,6 +265,8 @@ public class VersioningGroup {
 	protected BooleanAttr Partial;
 }
 
+// ActionGroup is The @commencementDate attribute specifies the date upon which the
+//                action is to be applied.
 public class ActionGroup {
 	@XmlAttribute(name = "type")
 	protected StringAttr Type;
@@ -203,6 +276,14 @@ public class ActionGroup {
 	protected DateSimpleTypeAttr CommencementDate;
 }
 
+// CellGroup is The @leaders attribute specifies whether leaders should be
+//             shown either trailing or following the text content. The character
+//             included as the value is the character used to render the leaders.
+// 
+//             Use the CSS text-align character to position the text. If you
+//             align the text to the left, then the leaders will show to the
+//             right and if you align the text to the right, then the leaders
+//             will show to the left.
 public class CellGroup {
 	@XmlAttribute(name = "colspan")
 	protected IntegerAttr Colspan;
@@ -212,6 +293,13 @@ public class CellGroup {
 	protected StringAttr Leaders;
 }
 
+// BaseType is The base type defines the most general element, specifying the
+//             attributes which can be found on all elements - specifically
+//             attributes belonging to the identification, classification, and
+//             annotation groups.
+// 
+//             The base type is defined as an abstract type and elements cannot
+//             be declared based on it.
 public class BaseType {
 	@XmlElement(required = true)
 	protected IdentificationGroup IdentificationGroup;
@@ -223,6 +311,9 @@ public class BaseType {
 	protected VersioningGroup VersioningGroup;
 }
 
+// BaseBlockType is The base block type is a variant of the base type, but having a
+//             content structure to support block level children - elements
+//             but no text.
 public class BaseBlockType {
 	@XmlElement(required = true)
 	protected IdentificationGroup IdentificationGroup;
@@ -234,6 +325,8 @@ public class BaseBlockType {
 	protected VersioningGroup VersioningGroup;
 }
 
+// BaseContentType is The base content type is a variant of the base type, but having
+//             a very open content model including text.
 public class BaseContentType {
 	@XmlElement(required = true)
 	protected IdentificationGroup IdentificationGroup;
@@ -245,9 +338,13 @@ public class BaseContentType {
 	protected VersioningGroup VersioningGroup;
 }
 
+// MarkerType is The marker type is a restriction of the base type to an element
+//             without content.
 public class MarkerType {
 }
 
+// InlineType is The inline type is a extension of the base type to text content or
+//             other inline elements.
 public class InlineType {
 	@XmlElement(required = true, name = "marker")
 	protected MarkerType Marker;
@@ -255,12 +352,16 @@ public class InlineType {
 	protected InlineType Inline;
 }
 
+// BlockType is The block type is a extension of the base type to content
+//             consisting of only elements.
 public class BlockType {
 }
 
+// TextType is The text type is a broad base type allowing any content.
 public class TextType {
 }
 
+// ContentType is The content type is a broad base type allowing any content.
 public class ContentType {
 	@XmlAttribute(name = "orientation")
 	protected StringAttr Orientation;
@@ -290,6 +391,11 @@ public class Content {
 	protected ContentType Content;
 }
 
+// LawDocType is In addition to the main part of the document, a document
+//                         may have one or more appendices such as schedules or
+//                         explanatory memorandums/notes. These appendices can
+//                         either be inline documents or the can be external
+//                         referenced documents.
 public class LawDocType {
 	@XmlElement(required = true, name = "meta")
 	protected MetaType Meta;
@@ -301,6 +407,8 @@ public class LawDocType {
 	protected AppendixType Appendix;
 }
 
+// GenericDocType is In addition to the content part of the document, a document
+//                         may have one or more appendices.
 public class GenericDocType {
 	@XmlElement(required = true, name = "meta")
 	protected MetaType Meta;
@@ -310,6 +418,10 @@ public class GenericDocType {
 	protected List<AppendixType> Appendix;
 }
 
+// MetaType is Properties can be grouped into sets. These set can
+//                         be used to represent something like a series of events,
+//                         a person, or another other object related to the
+//                         document.
 public class MetaType {
 	@XmlElement(required = true, name = "property")
 	protected PropertyType Property;
@@ -317,6 +429,15 @@ public class MetaType {
 	protected SetType Set;
 }
 
+// PropertyType is A property can represent a pointer to either an external
+//                   document or an element within the document.
+// 
+//                   You can use a ref to create a pointer to an endnote or a
+//                   footnote. In that case, the ref text will be the endnote or
+//                   footnote indicator as seen in "<ref idref="fn000001">†</ref>"
+//                   where the dagger is the indicator. An endnote or footnote
+//                   reference should always use the @idref attribute to point to
+//                   an endnote or a footnote within the document.
 public class PropertyType {
 	@XmlElement(required = true)
 	protected DateGroup DateGroup;
@@ -328,6 +449,7 @@ public class PropertyType {
 	protected StringAttr Type;
 }
 
+// SetType is A set can contain 0 or more sets.
 public class SetType {
 	@XmlAttribute(name = "type")
 	protected StringAttr Type;
@@ -337,6 +459,10 @@ public class SetType {
 	protected SetType Set;
 }
 
+// TocType is The items in a table of contents can be arranged in
+//                         a tabular fashion by surrounding the items in a layout.
+//                         When a layout is specified, use <column> elements
+//                         within each <tocItem> to indicate specific columns.
 public class TocType {
 	@XmlAttribute(name = "generate")
 	protected BooleanAttr Generate;
@@ -347,6 +473,8 @@ public class TocType {
 	protected LayoutType Layout;
 }
 
+// TocItemType is Use the description group to record the number and title in the
+//                   table of contents as metadata.
 public class TocItemType {
 	@XmlElement(required = true)
 	protected DescriptionGroup DescriptionGroup;
@@ -357,6 +485,9 @@ public class TocItemType {
 	protected List<ContentType> Content;
 }
 
+// MainType is The document is permitted to be empty to allow for the
+//                         case when the document is newly created and still in a
+//                         drafting state.
 public class MainType {
 	protected NoteStructure NoteStructure;
 	protected PreambleStructure PreambleStructure;
@@ -371,6 +502,9 @@ public class MainType {
 	protected TocType Toc;
 }
 
+// StatementType is The attributes of the description group can be used to
+//                   record a number and title for a statement for use when
+//                   generating a table of contents.
 public class StatementType {
 	@XmlElement(required = true)
 	protected DescriptionGroup DescriptionGroup;
@@ -388,6 +522,9 @@ public class StatementType {
 	protected LevelType Level;
 }
 
+// PreambleType is Attributes from the description group may be used to
+//                      attach information to the preamble for use in generating
+//                      a table of contents.
 public class PreambleType {
 	@XmlElement(required = true)
 	protected DescriptionGroup DescriptionGroup;
@@ -397,6 +534,8 @@ public class PreambleType {
 	protected StatementType EnactingFormula;
 }
 
+// LevelType is Use the description group to record information in the
+//                      attributes to be used when generating the table of contents.
 public class LevelType {
 	@XmlElement(required = true)
 	protected DescriptionGroup DescriptionGroup;
@@ -406,14 +545,24 @@ public class LevelType {
 	protected LevelStructure LevelStructure;
 }
 
+// NumType is Use the @value attribute to record a normalized value of
+//                      the <num> content. When the text content represents a
+//                      range of values, use the @beginValue and @endValue
+//                      attributes to record the range.
 public class NumType {
 	@XmlElement(required = true)
 	protected ValueGroup ValueGroup;
 }
 
+// HeadingType is The heading type is used to define heading and subheadings for
+//             levels and other structured items. Often a heading will follow
+//             a number.
 public class HeadingType {
 }
 
+// InstructionType is A quoted structure may be associated with an
+//                            action (by position) as part of the processing
+//                            action.
 public class InstructionType {
 	@XmlElement(required = true, name = "ref")
 	protected RefType Ref;
@@ -431,6 +580,7 @@ public class InstructionType {
 	protected QuotedContentType QuotedContent;
 }
 
+// ActionType is Use the @action attribute to describe the action being taken.
 public class ActionType {
 	@XmlElement(required = true)
 	protected ReferenceGroup ReferenceGroup;
@@ -440,6 +590,8 @@ public class ActionType {
 	protected ActionGroup ActionGroup;
 }
 
+// NotesType is You can use the @type attribute to position the notes
+//                      and the @topic attribute to categorize the notes.
 public class NotesType {
 	@XmlElement(required = true)
 	protected NoteGroup NoteGroup;
@@ -453,6 +605,8 @@ public class NotesType {
 	protected LayoutType Layout;
 }
 
+// NoteType is You can use the @date to associate dates to your notes.
+//                      This can be used to generate alerts.
 public class NoteType {
 	@XmlElement(required = true)
 	protected NoteGroup NoteGroup;
@@ -460,6 +614,9 @@ public class NoteType {
 	protected DateGroup DateGroup;
 }
 
+// AppendixType is If an <appendix> is to be included by reference, use the
+//                      @src attribute with a normal URL to point to the document
+//                      to be included.
 public class AppendixType {
 	@XmlElement(required = true)
 	protected DescriptionGroup DescriptionGroup;
@@ -475,6 +632,12 @@ public class AppendixType {
 	protected BlockType Block;
 }
 
+// SignaturesType is Defines a block for a collection of signatures. An opening paragraph
+//             is permitted as well as an ending date. In some cases, the date may
+//             appear within the opening paragraph.
+// 
+//             The signatures may either be specified serially in a grid-like
+//             layout.
 public class SignaturesType {
 	@XmlElement(required = true, name = "p")
 	protected PType P;
@@ -486,15 +649,23 @@ public class SignaturesType {
 	protected Byte Date;
 }
 
+// Name ...
 public class Name {
 }
 
+// Role ...
 public class Role {
 }
 
+// Affiliation ...
 public class Affiliation {
 }
 
+// SignatureType is Defines a basic signature element comprising a name and optionally
+//             the person's role, their affiliation, and a date. All fields can be
+//             defined to include either an @href or an @idref to point to an
+//             identifying resource that describes the person, their role, and
+//             their affiliation.
 public class SignatureType {
 	@XmlElement(required = true, name = "name")
 	protected Name Name;
@@ -506,26 +677,50 @@ public class SignatureType {
 	protected Byte Date;
 }
 
+// RefType is Use the @pos and other attributes to describe
+//                      what or where is being affected.
+// 
+//                      The attributes in the amending group should only be used
+//                      for references or actions within an amending instruction.
 public class RefType {
 	@XmlElement(required = true)
 	protected AmendingGroup AmendingGroup;
 }
 
+// DateType is Use the @date attribute to record a normalized value of the
+//                      date according to ISO 8601.
 public class DateType {
 	@XmlElement(required = true)
 	protected DateGroup DateGroup;
 }
 
+// QuotedTextType is A quoted text type is an extraction of simple text from another
+//             source or origin. If the quoted text is to have literal quotes
+//             surrounding it, then those characters must be included in the text
+//             surrounding the quoted text and not within it.
+// 
+//             Quoted text is seen in amendments or modifications.
+// 
+//             Use the @identifier attribute to establish the referencing context
+//             of the quoted text.
 public class QuotedTextType {
 	@XmlAttribute(name = "origin")
 	protected QNameAttr Origin;
 }
 
+// QuotedContentType is A quotedContentType is used for an extraction of potentially structured
+//             text (text with XML elements) from another source or origin.
+// 
+//             Quoted content is seen in USC Notes, amendments, and modifications.
+// 
+//             Use the @identifier attribute to establish the referencing context
+//             of the quoted structure
 public class QuotedContentType {
 	@XmlAttribute(name = "origin")
 	protected QNameAttr Origin;
 }
 
+// NoteStructure ...
 public class NoteStructure {
 	@XmlElement(required = true, name = "note")
 	protected NoteType Note;
@@ -533,12 +728,14 @@ public class NoteStructure {
 	protected NotesType Notes;
 }
 
+// NumStructure ...
 public class NumStructure {
 	@XmlElement(required = true, name = "num")
 	protected List<NumType> Num;
 	protected List<NoteStructure> NoteStructure;
 }
 
+// HeadingStructure ...
 public class HeadingStructure {
 	@XmlElement(required = true, name = "heading")
 	protected List<HeadingType> Heading;
@@ -547,24 +744,28 @@ public class HeadingStructure {
 	protected List<NoteStructure> NoteStructure;
 }
 
+// TocStructure ...
 public class TocStructure {
 	@XmlElement(required = true, name = "toc")
 	protected TocType Toc;
 	protected List<NoteStructure> NoteStructure;
 }
 
+// StatementStructure ...
 public class StatementStructure {
 	@XmlElement(required = true, name = "statement")
 	protected StatementType Statement;
 	protected List<NoteStructure> NoteStructure;
 }
 
+// RecitalStructure ...
 public class RecitalStructure {
 	@XmlElement(required = true, name = "recital")
 	protected StatementType Recital;
 	protected List<NoteStructure> NoteStructure;
 }
 
+// PreambleStructure ...
 public class PreambleStructure {
 	@XmlElement(required = true, name = "preamble")
 	protected PreambleType Preamble;
@@ -573,6 +774,7 @@ public class PreambleStructure {
 	protected List<NoteStructure> NoteStructure;
 }
 
+// LevelStructure ...
 public class LevelStructure {
 	@XmlElement(required = true, name = "instruction")
 	protected List<InstructionType> Instruction;
@@ -763,6 +965,11 @@ public class QuotedContent {
 	protected QuotedContentType QuotedContent;
 }
 
+// LayoutType is A <layout> type can contain various types of elements
+//                      as rows including headers, rows, TOC items, blocks,
+//                      and contents. All elements, aside from <column> elements,
+//                      are treated as rows when found directly within a layout
+//                      structure.
 public class LayoutType {
 	@XmlAttribute(name = "orientation")
 	protected StringAttr Orientation;
@@ -779,22 +986,30 @@ public class LayoutType {
 	protected ContentType Content;
 }
 
+// RowType is A row contains one or more column cells.
 public class RowType {
 	@XmlElement(required = true, name = "column")
 	protected List<ColumnType> Column;
 }
 
+// ColumnType is Use the elements of the cell group to specify
+//                      the row and column spans.
 public class ColumnType {
 	@XmlElement(required = true)
 	protected CellGroup CellGroup;
 }
 
+// PType is A "P" type is a simple unnumbered paragraph. As a <content>
+//             element, it can contain a wide range of text and elements.
 public class PType {
 }
 
+// BrType is A break type is simple marker element denoting a line break.
 public class BrType {
 }
 
+// ImgType is An image type is a simple marker element denoting where a graphic
+//             image is to be inserted.
 public class ImgType {
 	@XmlElement(required = true)
 	protected LinkGroup LinkGroup;

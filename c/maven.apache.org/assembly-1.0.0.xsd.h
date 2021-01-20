@@ -2,34 +2,43 @@
 
 typedef Assembly Assembly;
 
+// Formats ...
 typedef struct {
 	char Format[];
 } Formats;
 
+// ModuleSets ...
 typedef struct {
 	ModuleSet ModuleSet[];
 } ModuleSets;
 
+// FileSets ...
 typedef struct {
 	FileSet FileSet[];
 } FileSets;
 
+// Files ...
 typedef struct {
 	FileItem File[];
 } Files;
 
+// DependencySets ...
 typedef struct {
 	DependencySet DependencySet[];
 } DependencySets;
 
+// Repositories ...
 typedef struct {
 	Repository Repository[];
 } Repositories;
 
+// ComponentDescriptors ...
 typedef struct {
 	char ComponentDescriptor[];
 } ComponentDescriptors;
 
+// Assembly is The id of this assembly. This is a symbolic name for a
+//             particular assembly of files from this project.
 typedef struct {
 	char Id;
 	Formats Formats;
@@ -43,18 +52,24 @@ typedef struct {
 	ComponentDescriptors ComponentDescriptors;
 } Assembly;
 
+// GroupVersionAlignments ...
 typedef struct {
 	GroupVersionAlignment GroupVersionAlignment[];
 } GroupVersionAlignments;
 
+// Includes ...
 typedef struct {
 	char Include[];
 } Includes;
 
+// Excludes ...
 typedef struct {
 	char Exclude[];
 } Excludes;
 
+// Repository is If set to true, this property will trigger the creation of repository
+//             metadata which will allow the repository to be used as a functional remote
+//             repository.
 typedef struct {
 	bool IncludeMetadata;
 	GroupVersionAlignments GroupVersionAlignments;
@@ -65,12 +80,16 @@ typedef struct {
 	char DirectoryMode;
 } Repository;
 
+// GroupVersionAlignment is The version you want to align this group to.
 typedef struct {
 	char Id;
 	char Version;
 	Excludes Excludes;
 } GroupVersionAlignment;
 
+// DependencySet is Specifies the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory.
 typedef struct {
 	char OutputFileNameMapping;
 	bool Unpack;
@@ -82,6 +101,7 @@ typedef struct {
 	char DirectoryMode;
 } DependencySet;
 
+// ModuleSet is 1.0.0
 typedef struct {
 	Includes Includes;
 	Excludes Excludes;
@@ -89,6 +109,9 @@ typedef struct {
 	ModuleBinaries Binaries;
 } ModuleSet;
 
+// ModuleSources is Specifies the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory.
 typedef struct {
 	char OutputDirectory;
 	Includes Includes;
@@ -97,6 +120,9 @@ typedef struct {
 	char DirectoryMode;
 } ModuleSources;
 
+// ModuleBinaries is Specifies the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory.
 typedef struct {
 	bool IncludeDependencies;
 	bool Unpack;
@@ -108,6 +134,7 @@ typedef struct {
 	char DirectoryMode;
 } ModuleBinaries;
 
+// FileItem is Flag used to determine if the file is filtered.
 typedef struct {
 	char Source;
 	char OutputDirectory;
@@ -117,6 +144,9 @@ typedef struct {
 	bool Filtered;
 } FileItem;
 
+// FileSet is Specifies the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory.
 typedef struct {
 	char Directory;
 	char LineEnding;

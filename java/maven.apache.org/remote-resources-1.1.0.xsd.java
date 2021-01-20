@@ -17,11 +17,13 @@ public class RemoteResourcesBundle {
 	protected RemoteResourcesBundle RemoteResourcesBundle;
 }
 
+// RemoteResources ...
 public class RemoteResources {
 	@XmlElement(required = true, name = "remoteResource")
 	protected List<String> RemoteResource;
 }
 
+// RemoteResourcesBundle is Root element of the remote-resources.xml file.
 public class RemoteResourcesBundle {
 	@XmlElement(required = true, name = "remoteResources")
 	protected RemoteResources RemoteResources;

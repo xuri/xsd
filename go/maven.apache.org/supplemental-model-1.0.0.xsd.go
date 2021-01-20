@@ -6,10 +6,10 @@ import (
 	"encoding/xml"
 )
 
-// SupplementalDataModels ...
+// SupplementalDataModels is Root element of the supplemental-models.xml file.
 type SupplementalDataModels *SupplementalDataModel
 
-// SupplementalDataModel ...
+// SupplementalDataModel is Snippets of POM xml files used to supplement the data model.
 type SupplementalDataModel struct {
 	Supplement []*Supplement `xml:"supplement"`
 }
@@ -19,7 +19,7 @@ type Project struct {
 	XMLName xml.Name `xml:"project"`
 }
 
-// Supplement ...
+// Supplement is A single supplement
 type Supplement struct {
 	Project *Project `xml:"project"`
 }

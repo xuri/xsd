@@ -11,11 +11,13 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
+// CT_AdditionalCharacteristics ...
 public class CT_AdditionalCharacteristics {
 	@XmlElement(required = true, name = "characteristic")
 	protected List<CT_Characteristic> Characteristic;
 }
 
+// CT_Characteristic ...
 public class CT_Characteristic {
 	@XmlAttribute(name = "name", required = true)
 	protected StringAttr Name;
@@ -27,6 +29,7 @@ public class CT_Characteristic {
 	protected QNameAttr Vocabulary;
 }
 
+// ST_Relation ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_Relation")
 public class ST_Relation {

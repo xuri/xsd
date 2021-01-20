@@ -2,16 +2,24 @@
 
 typedef PersistedToolchains Toolchains;
 
+// PersistedToolchains is The toolchain instance definition.
 typedef struct {
 	ToolchainModel Toolchain[];
 } PersistedToolchains;
 
+// Provides ...
 typedef struct {
 } Provides;
 
+// Configuration ...
 typedef struct {
 } Configuration;
 
+// ToolchainModel is Type of toolchain:<ul>
+//                     <li><code>jdk</code> for
+//                     <a href="http://maven.apache.org/plugins/maven-toolchains-plugin/toolchains/jdk.html">JDK Standard Toolchain</a>,</li>
+//                     <li>...</li>
+//                     </ul>
 typedef struct {
 	char Type;
 	Provides Provides;

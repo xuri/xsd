@@ -2,14 +2,17 @@
 
 typedef ArchetypeCatalog Archetypecatalog;
 
+// Archetypes ...
 typedef struct {
 	Archetype Archetype[];
 } Archetypes;
 
+// ArchetypeCatalog is 0.0.0+
 typedef struct {
 	Archetypes Archetypes;
 } ArchetypeCatalog;
 
+// Archetype is The description of the archetype.
 typedef struct {
 	char GroupId;
 	char ArtifactId;

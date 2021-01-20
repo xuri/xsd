@@ -6,7 +6,12 @@ import (
 	"encoding/xml"
 )
 
-// Assembly ...
+// Assembly is An assembly defines a collection of files usually distributed in an
+//         archive format such as zip, tar, or tar.gz that is generated from a
+//         project.  For example, a project could produce a ZIP assembly which
+//         contains a project's JAR artifact in the root directory, the
+//         runtime dependencies in a lib/ directory, and a shell script to launch
+//         a stand-alone application.
 type Assembly *Assembly
 
 // Formats ...
@@ -57,7 +62,11 @@ type ComponentDescriptors struct {
 	ComponentDescriptor []string `xml:"componentDescriptor"`
 }
 
-// Assembly ...
+// Assembly is Sets the id of this assembly. This is a symbolic name for a
+//             particular assembly of files from this project. Also, aside from
+//             being used to distinctly name the assembled package by attaching
+//             its value to the generated archive, the id is used as your
+//             artifact's classifier when deploying.
 type Assembly struct {
 	Id                          string                       `xml:"id"`
 	Formats                     *Formats                     `xml:"formats"`
@@ -85,7 +94,10 @@ type Excludes struct {
 	Exclude []string `xml:"exclude"`
 }
 
-// DependencySet ...
+// DependencySet is Sets the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory,
+//             directly beneath the root of the archive.
 type DependencySet struct {
 	OutputDirectory           string         `xml:"outputDirectory"`
 	Includes                  *Includes      `xml:"includes"`
@@ -103,7 +115,7 @@ type DependencySet struct {
 	UseTransitiveFiltering    bool           `xml:"useTransitiveFiltering"`
 }
 
-// UnpackOptions ...
+// UnpackOptions is Specifies options for including/excluding/filtering items extracted from an archive. (Since 2.2-beta-1)
 type UnpackOptions struct {
 	Includes           *Includes `xml:"includes"`
 	Excludes           *Excludes `xml:"excludes"`
@@ -118,7 +130,10 @@ type GroupVersionAlignments struct {
 	GroupVersionAlignment []*GroupVersionAlignment `xml:"groupVersionAlignment"`
 }
 
-// Repository ...
+// Repository is Sets the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory,
+//             directly beneath the root of the archive.
 type Repository struct {
 	OutputDirectory        string                  `xml:"outputDirectory"`
 	Includes               *Includes               `xml:"includes"`
@@ -130,7 +145,7 @@ type Repository struct {
 	Scope                  string                  `xml:"scope"`
 }
 
-// GroupVersionAlignment ...
+// GroupVersionAlignment is The version you want to align this group to.
 type GroupVersionAlignment struct {
 	Id       string    `xml:"id"`
 	Version  string    `xml:"version"`
@@ -142,13 +157,14 @@ type Configuration struct {
 	XMLName xml.Name `xml:"configuration"`
 }
 
-// ContainerDescriptorHandlerConfig ...
+// ContainerDescriptorHandlerConfig is The handler's plexus role-hint, for lookup from the container.
 type ContainerDescriptorHandlerConfig struct {
 	HandlerName   string         `xml:"handlerName"`
 	Configuration *Configuration `xml:"configuration"`
 }
 
-// ModuleSet ...
+// ModuleSet is If set to false, the plugin will exclude sub-modules from processing in this ModuleSet.
+//           Otherwise, it will process all sub-modules, each subject to include/exclude rules. (Since 2.2-beta-1)
 type ModuleSet struct {
 	UseAllReactorProjects bool            `xml:"useAllReactorProjects"`
 	IncludeSubModules     bool            `xml:"includeSubModules"`
@@ -158,7 +174,10 @@ type ModuleSet struct {
 	Binaries              *ModuleBinaries `xml:"binaries"`
 }
 
-// ModuleBinaries ...
+// ModuleBinaries is Sets the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory,
+//             directly beneath the root of the archive.
 type ModuleBinaries struct {
 	OutputDirectory       string          `xml:"outputDirectory"`
 	Includes              *Includes       `xml:"includes"`
@@ -173,7 +192,9 @@ type ModuleBinaries struct {
 	OutputFileNameMapping string          `xml:"outputFileNameMapping"`
 }
 
-// ModuleSources ...
+// ModuleSources is Sets the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory.
 type ModuleSources struct {
 	UseDefaultExcludes          bool      `xml:"useDefaultExcludes"`
 	OutputDirectory             string    `xml:"outputDirectory"`
@@ -187,7 +208,9 @@ type ModuleSources struct {
 	OutputDirectoryMapping      string    `xml:"outputDirectoryMapping"`
 }
 
-// FileSet ...
+// FileSet is Sets the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory.
 type FileSet struct {
 	UseDefaultExcludes bool      `xml:"useDefaultExcludes"`
 	OutputDirectory    string    `xml:"outputDirectory"`
@@ -200,7 +223,7 @@ type FileSet struct {
 	Filtered           bool      `xml:"filtered"`
 }
 
-// FileItem ...
+// FileItem is Sets whether to determine if the file is filtered.
 type FileItem struct {
 	Source          string `xml:"source"`
 	OutputDirectory string `xml:"outputDirectory"`

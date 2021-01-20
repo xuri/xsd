@@ -17,16 +17,19 @@ public class Archetyperegistry {
 	protected ArchetypeRegistry Archetyperegistry;
 }
 
+// Languages ...
 public class Languages {
 	@XmlElement(required = true, name = "Language")
 	protected List<String> Language;
 }
 
+// FilteredExtensions ...
 public class FilteredExtensions {
 	@XmlElement(required = true, name = "FilteredExtension")
 	protected List<String> FilteredExtension;
 }
 
+// ArchetypeRegistry is 0.0.0+
 public class ArchetypeRegistry {
 	@XmlElement(required = true, name = "Languages")
 	protected Languages Languages;

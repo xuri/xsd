@@ -17,31 +17,37 @@ public class Component {
 	protected Component Component;
 }
 
+// FileSets ...
 public class FileSets {
 	@XmlElement(required = true, name = "fileSet")
 	protected List<FileSet> FileSet;
 }
 
+// Files ...
 public class Files {
 	@XmlElement(required = true, name = "file")
 	protected List<FileItem> File;
 }
 
+// DependencySets ...
 public class DependencySets {
 	@XmlElement(required = true, name = "dependencySet")
 	protected List<DependencySet> DependencySet;
 }
 
+// Repositories ...
 public class Repositories {
 	@XmlElement(required = true, name = "repository")
 	protected List<Repository> Repository;
 }
 
+// ContainerDescriptorHandlers ...
 public class ContainerDescriptorHandlers {
 	@XmlElement(required = true, name = "containerDescriptorHandler")
 	protected List<ContainerDescriptorHandlerConfig> ContainerDescriptorHandler;
 }
 
+// Component is Describes the component layout and packaging.
 public class Component {
 	@XmlElement(required = true, name = "fileSets")
 	protected FileSets FileSets;
@@ -55,9 +61,11 @@ public class Component {
 	protected ContainerDescriptorHandlers ContainerDescriptorHandlers;
 }
 
+// Configuration ...
 public class Configuration {
 }
 
+// ContainerDescriptorHandlerConfig is The handler's plexus role-hint, for lookup from the container.
 public class ContainerDescriptorHandlerConfig {
 	@XmlElement(required = true, name = "handlerName")
 	protected String HandlerName;
@@ -65,21 +73,27 @@ public class ContainerDescriptorHandlerConfig {
 	protected Configuration Configuration;
 }
 
+// GroupVersionAlignments ...
 public class GroupVersionAlignments {
 	@XmlElement(required = true, name = "groupVersionAlignment")
 	protected List<GroupVersionAlignment> GroupVersionAlignment;
 }
 
+// Includes ...
 public class Includes {
 	@XmlElement(required = true, name = "include")
 	protected List<String> Include;
 }
 
+// Excludes ...
 public class Excludes {
 	@XmlElement(required = true, name = "exclude")
 	protected List<String> Exclude;
 }
 
+// Repository is If set to true, this property will trigger the creation of repository
+//             metadata which will allow the repository to be used as a functional remote
+//             repository.
 public class Repository {
 	@XmlElement(required = true, name = "includeMetadata")
 	protected Boolean IncludeMetadata;
@@ -103,6 +117,7 @@ public class Repository {
 	protected String DirectoryMode;
 }
 
+// GroupVersionAlignment is The version you want to align this group to.
 public class GroupVersionAlignment {
 	@XmlElement(required = true, name = "id")
 	protected String Id;
@@ -112,6 +127,7 @@ public class GroupVersionAlignment {
 	protected Excludes Excludes;
 }
 
+// FileItem is Sets whether to determine if the file is filtered.
 public class FileItem {
 	@XmlElement(required = true, name = "source")
 	protected String Source;
@@ -127,6 +143,9 @@ public class FileItem {
 	protected Boolean Filtered;
 }
 
+// FileSet is Sets the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory.
 public class FileSet {
 	@XmlElement(required = true, name = "directory")
 	protected String Directory;
@@ -150,6 +169,9 @@ public class FileSet {
 	protected String DirectoryMode;
 }
 
+// DependencySet is Sets the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory.
 public class DependencySet {
 	@XmlElement(required = true, name = "outputFileNameMapping")
 	protected String OutputFileNameMapping;
@@ -183,6 +205,7 @@ public class DependencySet {
 	protected String DirectoryMode;
 }
 
+// UnpackOptions is Specifies options for including/excluding/filtering items extracted from an archive.
 public class UnpackOptions {
 	@XmlElement(required = true, name = "includes")
 	protected Includes Includes;

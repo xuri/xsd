@@ -6,7 +6,7 @@ import (
 	"encoding/xml"
 )
 
-// Archetypecatalog ...
+// Archetypecatalog is 0.0.0+
 type Archetypecatalog *ArchetypeCatalog
 
 // Archetypes ...
@@ -15,12 +15,12 @@ type Archetypes struct {
 	Archetype []*Archetype `xml:"archetype"`
 }
 
-// ArchetypeCatalog ...
+// ArchetypeCatalog is 0.0.0+
 type ArchetypeCatalog struct {
 	Archetypes *Archetypes `xml:"archetypes"`
 }
 
-// Archetype ...
+// Archetype is The description of the archetype.
 type Archetype struct {
 	GroupId     string `xml:"groupId"`
 	ArtifactId  string `xml:"artifactId"`

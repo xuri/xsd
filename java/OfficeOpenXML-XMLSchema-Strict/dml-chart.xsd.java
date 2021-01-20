@@ -11,36 +11,43 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
+// CT_Boolean ...
 public class CT_Boolean {
 	@XmlAttribute(name = "val")
 	protected BooleanAttr Val;
 }
 
+// CT_Double ...
 public class CT_Double {
 	@XmlAttribute(name = "val", required = true)
 	protected FloatAttr Val;
 }
 
+// CT_UnsignedInt ...
 public class CT_UnsignedInt {
 	@XmlAttribute(name = "val", required = true)
 	protected IntegerAttr Val;
 }
 
+// CT_RelId ...
 public class CT_RelId {
 	@XmlAttribute(name = "r:id", required = true)
 	protected StringAttr RId;
 }
 
+// CT_Extension ...
 public class CT_Extension {
 	@XmlAttribute(name = "uri")
 	protected StringAttr Uri;
 }
 
+// CT_ExtensionList ...
 public class CT_ExtensionList {
 	@XmlElement(required = true, name = "ext")
 	protected List<CT_Extension> Ext;
 }
 
+// CT_NumVal ...
 public class CT_NumVal {
 	@XmlAttribute(name = "idx", required = true)
 	protected IntegerAttr Idx;
@@ -50,6 +57,7 @@ public class CT_NumVal {
 	protected List<String> V;
 }
 
+// CT_NumData ...
 public class CT_NumData {
 	@XmlElement(required = true, name = "formatCode")
 	protected List<String> FormatCode;
@@ -61,6 +69,7 @@ public class CT_NumData {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_NumRef ...
 public class CT_NumRef {
 	@XmlElement(required = true, name = "f")
 	protected List<String> F;
@@ -70,6 +79,7 @@ public class CT_NumRef {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_NumDataSource ...
 public class CT_NumDataSource {
 	@XmlElement(required = true, name = "numRef")
 	protected List<CT_NumRef> NumRef;
@@ -77,6 +87,7 @@ public class CT_NumDataSource {
 	protected List<CT_NumData> NumLit;
 }
 
+// CT_StrVal ...
 public class CT_StrVal {
 	@XmlAttribute(name = "idx", required = true)
 	protected IntegerAttr Idx;
@@ -84,6 +95,7 @@ public class CT_StrVal {
 	protected List<String> V;
 }
 
+// CT_StrData ...
 public class CT_StrData {
 	@XmlElement(required = true, name = "ptCount")
 	protected List<CT_UnsignedInt> PtCount;
@@ -93,6 +105,7 @@ public class CT_StrData {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_StrRef ...
 public class CT_StrRef {
 	@XmlElement(required = true, name = "f")
 	protected List<String> F;
@@ -102,6 +115,7 @@ public class CT_StrRef {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_Tx ...
 public class CT_Tx {
 	@XmlElement(required = true, name = "strRef")
 	protected List<CT_StrRef> StrRef;
@@ -109,16 +123,19 @@ public class CT_Tx {
 	protected List<CT_TextBody> Rich;
 }
 
+// CT_TextLanguageID ...
 public class CT_TextLanguageID {
 	@XmlAttribute(name = "val", required = true)
 	protected StringAttr Val;
 }
 
+// CT_Lvl ...
 public class CT_Lvl {
 	@XmlElement(required = true, name = "pt")
 	protected List<CT_StrVal> Pt;
 }
 
+// CT_MultiLvlStrData ...
 public class CT_MultiLvlStrData {
 	@XmlElement(required = true, name = "ptCount")
 	protected List<CT_UnsignedInt> PtCount;
@@ -128,6 +145,7 @@ public class CT_MultiLvlStrData {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_MultiLvlStrRef ...
 public class CT_MultiLvlStrRef {
 	@XmlElement(required = true, name = "f")
 	protected List<String> F;
@@ -137,6 +155,7 @@ public class CT_MultiLvlStrRef {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_AxDataSource ...
 public class CT_AxDataSource {
 	@XmlElement(required = true, name = "multiLvlStrRef")
 	protected List<CT_MultiLvlStrRef> MultiLvlStrRef;
@@ -150,6 +169,7 @@ public class CT_AxDataSource {
 	protected List<CT_StrData> StrLit;
 }
 
+// CT_SerTx ...
 public class CT_SerTx {
 	@XmlElement(required = true, name = "strRef")
 	protected List<CT_StrRef> StrRef;
@@ -157,28 +177,33 @@ public class CT_SerTx {
 	protected List<String> V;
 }
 
+// ST_LayoutTarget ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_LayoutTarget")
 public class ST_LayoutTarget {
 	protected String ST_LayoutTarget;
 }
 
+// CT_LayoutTarget ...
 public class CT_LayoutTarget {
 	@XmlAttribute(name = "val")
 	protected StringAttr Val;
 }
 
+// ST_LayoutMode ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_LayoutMode")
 public class ST_LayoutMode {
 	protected String ST_LayoutMode;
 }
 
+// CT_LayoutMode ...
 public class CT_LayoutMode {
 	@XmlAttribute(name = "val")
 	protected StringAttr Val;
 }
 
+// CT_ManualLayout ...
 public class CT_ManualLayout {
 	@XmlElement(required = true, name = "layoutTarget")
 	protected List<CT_LayoutTarget> LayoutTarget;
@@ -202,6 +227,7 @@ public class CT_ManualLayout {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_Layout ...
 public class CT_Layout {
 	@XmlElement(required = true, name = "manualLayout")
 	protected List<CT_ManualLayout> ManualLayout;
@@ -209,6 +235,7 @@ public class CT_Layout {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_Title ...
 public class CT_Title {
 	@XmlElement(required = true, name = "tx")
 	protected List<CT_Tx> Tx;
@@ -224,71 +251,84 @@ public class CT_Title {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// ST_RotX ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_RotX")
 public class ST_RotX {
 	protected Byte ST_RotX;
 }
 
+// CT_RotX ...
 public class CT_RotX {
 	@XmlAttribute(name = "val")
 	protected ByteAttr Val;
 }
 
+// ST_HPercent ...
 public class ST_HPercent {
 	@XmlElement(required = true)
 	protected ST_HPercentWithSymbol ST_HPercentWithSymbol;
 }
 
+// ST_HPercentWithSymbol ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_HPercentWithSymbol")
 public class ST_HPercentWithSymbol {
 	protected String ST_HPercentWithSymbol;
 }
 
+// CT_HPercent ...
 public class CT_HPercent {
 	@XmlAttribute(name = "val")
 	protected ST_HPercentAttr Val;
 }
 
+// ST_RotY ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_RotY")
 public class ST_RotY {
 	protected Short ST_RotY;
 }
 
+// CT_RotY ...
 public class CT_RotY {
 	@XmlAttribute(name = "val")
 	protected ShortAttr Val;
 }
 
+// ST_DepthPercent ...
 public class ST_DepthPercent {
 	@XmlElement(required = true)
 	protected ST_DepthPercentWithSymbol ST_DepthPercentWithSymbol;
 }
 
+// ST_DepthPercentWithSymbol ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_DepthPercentWithSymbol")
 public class ST_DepthPercentWithSymbol {
 	protected String ST_DepthPercentWithSymbol;
 }
 
+// CT_DepthPercent ...
 public class CT_DepthPercent {
 	@XmlAttribute(name = "val")
 	protected ST_DepthPercentAttr Val;
 }
 
+// ST_Perspective ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_Perspective")
 public class ST_Perspective {
 	protected Byte ST_Perspective;
 }
 
+// CT_Perspective ...
 public class CT_Perspective {
 	@XmlAttribute(name = "val")
 	protected ByteAttr Val;
 }
 
+// CT_View3D ...
 public class CT_View3D {
 	@XmlElement(required = true, name = "rotX")
 	protected List<CT_RotX> RotX;
@@ -306,6 +346,7 @@ public class CT_View3D {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_Surface ...
 public class CT_Surface {
 	@XmlElement(required = true, name = "thickness")
 	protected List<CT_Thickness> Thickness;
@@ -317,22 +358,26 @@ public class CT_Surface {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// ST_Thickness ...
 public class ST_Thickness {
 	@XmlElement(required = true)
 	protected ST_ThicknessPercent ST_ThicknessPercent;
 }
 
+// ST_ThicknessPercent ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_ThicknessPercent")
 public class ST_ThicknessPercent {
 	protected String ST_ThicknessPercent;
 }
 
+// CT_Thickness ...
 public class CT_Thickness {
 	@XmlAttribute(name = "val", required = true)
 	protected ST_ThicknessAttr Val;
 }
 
+// CT_DTable ...
 public class CT_DTable {
 	@XmlElement(required = true, name = "showHorzBorder")
 	protected List<CT_Boolean> ShowHorzBorder;
@@ -350,124 +395,147 @@ public class CT_DTable {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// ST_GapAmount ...
 public class ST_GapAmount {
 	@XmlElement(required = true)
 	protected ST_GapAmountPercent ST_GapAmountPercent;
 }
 
+// ST_GapAmountPercent ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_GapAmountPercent")
 public class ST_GapAmountPercent {
 	protected String ST_GapAmountPercent;
 }
 
+// CT_GapAmount ...
 public class CT_GapAmount {
 	@XmlAttribute(name = "val")
 	protected ST_GapAmountAttr Val;
 }
 
+// ST_Overlap ...
 public class ST_Overlap {
 	@XmlElement(required = true)
 	protected ST_OverlapPercent ST_OverlapPercent;
 }
 
+// ST_OverlapPercent ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_OverlapPercent")
 public class ST_OverlapPercent {
 	protected String ST_OverlapPercent;
 }
 
+// CT_Overlap ...
 public class CT_Overlap {
 	@XmlAttribute(name = "val")
 	protected ST_OverlapAttr Val;
 }
 
+// ST_BubbleScale ...
 public class ST_BubbleScale {
 	@XmlElement(required = true)
 	protected ST_BubbleScalePercent ST_BubbleScalePercent;
 }
 
+// ST_BubbleScalePercent ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_BubbleScalePercent")
 public class ST_BubbleScalePercent {
 	protected String ST_BubbleScalePercent;
 }
 
+// CT_BubbleScale ...
 public class CT_BubbleScale {
 	@XmlAttribute(name = "val")
 	protected ST_BubbleScaleAttr Val;
 }
 
+// ST_SizeRepresents ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_SizeRepresents")
 public class ST_SizeRepresents {
 	protected String ST_SizeRepresents;
 }
 
+// CT_SizeRepresents ...
 public class CT_SizeRepresents {
 	@XmlAttribute(name = "val")
 	protected StringAttr Val;
 }
 
+// ST_FirstSliceAng ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_FirstSliceAng")
 public class ST_FirstSliceAng {
 	protected Short ST_FirstSliceAng;
 }
 
+// CT_FirstSliceAng ...
 public class CT_FirstSliceAng {
 	@XmlAttribute(name = "val")
 	protected ShortAttr Val;
 }
 
+// ST_HoleSize ...
 public class ST_HoleSize {
 	@XmlElement(required = true)
 	protected ST_HoleSizePercent ST_HoleSizePercent;
 }
 
+// ST_HoleSizePercent ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_HoleSizePercent")
 public class ST_HoleSizePercent {
 	protected String ST_HoleSizePercent;
 }
 
+// CT_HoleSize ...
 public class CT_HoleSize {
 	@XmlAttribute(name = "val")
 	protected ST_HoleSizeAttr Val;
 }
 
+// ST_SplitType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_SplitType")
 public class ST_SplitType {
 	protected String ST_SplitType;
 }
 
+// CT_SplitType ...
 public class CT_SplitType {
 	@XmlAttribute(name = "val")
 	protected StringAttr Val;
 }
 
+// CT_CustSplit ...
 public class CT_CustSplit {
 	@XmlElement(required = true, name = "secondPiePt")
 	protected List<CT_UnsignedInt> SecondPiePt;
 }
 
+// ST_SecondPieSize ...
 public class ST_SecondPieSize {
 	@XmlElement(required = true)
 	protected ST_SecondPieSizePercent ST_SecondPieSizePercent;
 }
 
+// ST_SecondPieSizePercent ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_SecondPieSizePercent")
 public class ST_SecondPieSizePercent {
 	protected String ST_SecondPieSizePercent;
 }
 
+// CT_SecondPieSize ...
 public class CT_SecondPieSize {
 	@XmlAttribute(name = "val")
 	protected ST_SecondPieSizeAttr Val;
 }
 
+// CT_NumFmt ...
 public class CT_NumFmt {
 	@XmlAttribute(name = "formatCode", required = true)
 	protected StringAttr FormatCode;
@@ -475,28 +543,33 @@ public class CT_NumFmt {
 	protected BooleanAttr SourceLinked;
 }
 
+// ST_LblAlgn ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_LblAlgn")
 public class ST_LblAlgn {
 	protected String ST_LblAlgn;
 }
 
+// CT_LblAlgn ...
 public class CT_LblAlgn {
 	@XmlAttribute(name = "val", required = true)
 	protected StringAttr Val;
 }
 
+// ST_DLblPos ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_DLblPos")
 public class ST_DLblPos {
 	protected String ST_DLblPos;
 }
 
+// CT_DLblPos ...
 public class CT_DLblPos {
 	@XmlAttribute(name = "val", required = true)
 	protected StringAttr Val;
 }
 
+// EG_DLblShared ...
 public class EG_DLblShared {
 	@XmlElement(required = true, name = "numFmt")
 	protected List<CT_NumFmt> NumFmt;
@@ -522,6 +595,7 @@ public class EG_DLblShared {
 	protected List<String> Separator;
 }
 
+// Group_DLbl ...
 public class Group_DLbl {
 	@XmlElement(required = true, name = "layout")
 	protected List<CT_Layout> Layout;
@@ -530,6 +604,7 @@ public class Group_DLbl {
 	protected List<EG_DLblShared> EG_DLblShared;
 }
 
+// CT_DLbl ...
 public class CT_DLbl {
 	protected List<Group_DLbl> Group_DLbl;
 	@XmlElement(required = true, name = "idx")
@@ -540,6 +615,7 @@ public class CT_DLbl {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// Group_DLbls ...
 public class Group_DLbls {
 	@XmlElement(required = true, name = "showLeaderLines")
 	protected List<CT_Boolean> ShowLeaderLines;
@@ -548,6 +624,7 @@ public class Group_DLbls {
 	protected List<EG_DLblShared> EG_DLblShared;
 }
 
+// CT_DLbls ...
 public class CT_DLbls {
 	protected List<Group_DLbls> Group_DLbls;
 	@XmlElement(required = true, name = "dLbl")
@@ -558,28 +635,33 @@ public class CT_DLbls {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// ST_MarkerStyle ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_MarkerStyle")
 public class ST_MarkerStyle {
 	protected String ST_MarkerStyle;
 }
 
+// CT_MarkerStyle ...
 public class CT_MarkerStyle {
 	@XmlAttribute(name = "val", required = true)
 	protected StringAttr Val;
 }
 
+// ST_MarkerSize ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_MarkerSize")
 public class ST_MarkerSize {
 	protected Byte ST_MarkerSize;
 }
 
+// CT_MarkerSize ...
 public class CT_MarkerSize {
 	@XmlAttribute(name = "val")
 	protected ByteAttr Val;
 }
 
+// CT_Marker ...
 public class CT_Marker {
 	@XmlElement(required = true, name = "symbol")
 	protected List<CT_MarkerStyle> Symbol;
@@ -591,6 +673,7 @@ public class CT_Marker {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_DPt ...
 public class CT_DPt {
 	@XmlElement(required = true, name = "idx")
 	protected List<CT_UnsignedInt> Idx;
@@ -610,39 +693,46 @@ public class CT_DPt {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// ST_TrendlineType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_TrendlineType")
 public class ST_TrendlineType {
 	protected String ST_TrendlineType;
 }
 
+// CT_TrendlineType ...
 public class CT_TrendlineType {
 	@XmlAttribute(name = "val")
 	protected StringAttr Val;
 }
 
+// ST_Order ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_Order")
 public class ST_Order {
 	protected Byte ST_Order;
 }
 
+// CT_Order ...
 public class CT_Order {
 	@XmlAttribute(name = "val")
 	protected ByteAttr Val;
 }
 
+// ST_Period ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_Period")
 public class ST_Period {
 	protected Integer ST_Period;
 }
 
+// CT_Period ...
 public class CT_Period {
 	@XmlAttribute(name = "val")
 	protected IntegerAttr Val;
 }
 
+// CT_TrendlineLbl ...
 public class CT_TrendlineLbl {
 	@XmlElement(required = true, name = "layout")
 	protected List<CT_Layout> Layout;
@@ -658,6 +748,7 @@ public class CT_TrendlineLbl {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_Trendline ...
 public class CT_Trendline {
 	@XmlElement(required = true, name = "name")
 	protected List<String> Name;
@@ -685,39 +776,46 @@ public class CT_Trendline {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// ST_ErrDir ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_ErrDir")
 public class ST_ErrDir {
 	protected String ST_ErrDir;
 }
 
+// CT_ErrDir ...
 public class CT_ErrDir {
 	@XmlAttribute(name = "val", required = true)
 	protected StringAttr Val;
 }
 
+// ST_ErrBarType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_ErrBarType")
 public class ST_ErrBarType {
 	protected String ST_ErrBarType;
 }
 
+// CT_ErrBarType ...
 public class CT_ErrBarType {
 	@XmlAttribute(name = "val")
 	protected StringAttr Val;
 }
 
+// ST_ErrValType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_ErrValType")
 public class ST_ErrValType {
 	protected String ST_ErrValType;
 }
 
+// CT_ErrValType ...
 public class CT_ErrValType {
 	@XmlAttribute(name = "val")
 	protected StringAttr Val;
 }
 
+// CT_ErrBars ...
 public class CT_ErrBars {
 	@XmlElement(required = true, name = "errDir")
 	protected List<CT_ErrDir> ErrDir;
@@ -739,11 +837,13 @@ public class CT_ErrBars {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_UpDownBar ...
 public class CT_UpDownBar {
 	@XmlElement(required = true, name = "spPr")
 	protected List<CT_ShapeProperties> SpPr;
 }
 
+// CT_UpDownBars ...
 public class CT_UpDownBars {
 	@XmlElement(required = true, name = "gapWidth")
 	protected List<CT_GapAmount> GapWidth;
@@ -755,6 +855,7 @@ public class CT_UpDownBars {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// EG_SerShared ...
 public class EG_SerShared {
 	@XmlElement(required = true, name = "idx")
 	protected List<CT_UnsignedInt> Idx;
@@ -766,6 +867,7 @@ public class EG_SerShared {
 	protected List<CT_ShapeProperties> SpPr;
 }
 
+// CT_LineSer ...
 public class CT_LineSer {
 	protected List<EG_SerShared> EG_SerShared;
 	@XmlElement(required = true, name = "marker")
@@ -788,6 +890,7 @@ public class CT_LineSer {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_ScatterSer ...
 public class CT_ScatterSer {
 	protected List<EG_SerShared> EG_SerShared;
 	@XmlElement(required = true, name = "marker")
@@ -810,6 +913,7 @@ public class CT_ScatterSer {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_RadarSer ...
 public class CT_RadarSer {
 	protected List<EG_SerShared> EG_SerShared;
 	@XmlElement(required = true, name = "marker")
@@ -826,6 +930,7 @@ public class CT_RadarSer {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_BarSer ...
 public class CT_BarSer {
 	protected List<EG_SerShared> EG_SerShared;
 	@XmlElement(required = true, name = "invertIfNegative")
@@ -850,6 +955,7 @@ public class CT_BarSer {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_AreaSer ...
 public class CT_AreaSer {
 	protected List<EG_SerShared> EG_SerShared;
 	@XmlElement(required = true, name = "pictureOptions")
@@ -870,6 +976,7 @@ public class CT_AreaSer {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_PieSer ...
 public class CT_PieSer {
 	protected List<EG_SerShared> EG_SerShared;
 	@XmlElement(required = true, name = "explosion")
@@ -886,6 +993,7 @@ public class CT_PieSer {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_BubbleSer ...
 public class CT_BubbleSer {
 	protected List<EG_SerShared> EG_SerShared;
 	@XmlElement(required = true, name = "invertIfNegative")
@@ -910,6 +1018,7 @@ public class CT_BubbleSer {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_SurfaceSer ...
 public class CT_SurfaceSer {
 	protected List<EG_SerShared> EG_SerShared;
 	@XmlElement(required = true, name = "cat")
@@ -920,22 +1029,26 @@ public class CT_SurfaceSer {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// ST_Grouping ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_Grouping")
 public class ST_Grouping {
 	protected String ST_Grouping;
 }
 
+// CT_Grouping ...
 public class CT_Grouping {
 	@XmlAttribute(name = "val")
 	protected StringAttr Val;
 }
 
+// CT_ChartLines ...
 public class CT_ChartLines {
 	@XmlElement(required = true, name = "spPr")
 	protected List<CT_ShapeProperties> SpPr;
 }
 
+// EG_LineChartShared ...
 public class EG_LineChartShared {
 	@XmlElement(required = true, name = "grouping")
 	protected List<CT_Grouping> Grouping;
@@ -949,6 +1062,7 @@ public class EG_LineChartShared {
 	protected List<CT_ChartLines> DropLines;
 }
 
+// CT_LineChart ...
 public class CT_LineChart {
 	protected List<EG_LineChartShared> EG_LineChartShared;
 	@XmlElement(required = true, name = "hiLowLines")
@@ -965,6 +1079,7 @@ public class CT_LineChart {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_Line3DChart ...
 public class CT_Line3DChart {
 	protected List<EG_LineChartShared> EG_LineChartShared;
 	@XmlElement(required = true, name = "gapDepth")
@@ -975,6 +1090,7 @@ public class CT_Line3DChart {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_StockChart ...
 public class CT_StockChart {
 	@XmlElement(required = true, name = "ser")
 	protected List<CT_LineSer> Ser;
@@ -992,17 +1108,20 @@ public class CT_StockChart {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// ST_ScatterStyle ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_ScatterStyle")
 public class ST_ScatterStyle {
 	protected String ST_ScatterStyle;
 }
 
+// CT_ScatterStyle ...
 public class CT_ScatterStyle {
 	@XmlAttribute(name = "val")
 	protected StringAttr Val;
 }
 
+// CT_ScatterChart ...
 public class CT_ScatterChart {
 	@XmlElement(required = true, name = "scatterStyle")
 	protected List<CT_ScatterStyle> ScatterStyle;
@@ -1018,17 +1137,20 @@ public class CT_ScatterChart {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// ST_RadarStyle ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_RadarStyle")
 public class ST_RadarStyle {
 	protected String ST_RadarStyle;
 }
 
+// CT_RadarStyle ...
 public class CT_RadarStyle {
 	@XmlAttribute(name = "val")
 	protected StringAttr Val;
 }
 
+// CT_RadarChart ...
 public class CT_RadarChart {
 	@XmlElement(required = true, name = "radarStyle")
 	protected List<CT_RadarStyle> RadarStyle;
@@ -1044,39 +1166,46 @@ public class CT_RadarChart {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// ST_BarGrouping ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_BarGrouping")
 public class ST_BarGrouping {
 	protected String ST_BarGrouping;
 }
 
+// CT_BarGrouping ...
 public class CT_BarGrouping {
 	@XmlAttribute(name = "val")
 	protected StringAttr Val;
 }
 
+// ST_BarDir ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_BarDir")
 public class ST_BarDir {
 	protected String ST_BarDir;
 }
 
+// CT_BarDir ...
 public class CT_BarDir {
 	@XmlAttribute(name = "val")
 	protected StringAttr Val;
 }
 
+// ST_Shape ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_Shape")
 public class ST_Shape {
 	protected String ST_Shape;
 }
 
+// CT_Shape ...
 public class CT_Shape {
 	@XmlAttribute(name = "val")
 	protected StringAttr Val;
 }
 
+// EG_BarChartShared ...
 public class EG_BarChartShared {
 	@XmlElement(required = true, name = "barDir")
 	protected List<CT_BarDir> BarDir;
@@ -1090,6 +1219,7 @@ public class EG_BarChartShared {
 	protected List<CT_DLbls> DLbls;
 }
 
+// CT_BarChart ...
 public class CT_BarChart {
 	protected List<EG_BarChartShared> EG_BarChartShared;
 	@XmlElement(required = true, name = "gapWidth")
@@ -1104,6 +1234,7 @@ public class CT_BarChart {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_Bar3DChart ...
 public class CT_Bar3DChart {
 	protected List<EG_BarChartShared> EG_BarChartShared;
 	@XmlElement(required = true, name = "gapWidth")
@@ -1118,6 +1249,7 @@ public class CT_Bar3DChart {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// EG_AreaChartShared ...
 public class EG_AreaChartShared {
 	@XmlElement(required = true, name = "grouping")
 	protected List<CT_Grouping> Grouping;
@@ -1131,6 +1263,7 @@ public class EG_AreaChartShared {
 	protected List<CT_ChartLines> DropLines;
 }
 
+// CT_AreaChart ...
 public class CT_AreaChart {
 	protected List<EG_AreaChartShared> EG_AreaChartShared;
 	@XmlElement(required = true, name = "axId")
@@ -1139,6 +1272,7 @@ public class CT_AreaChart {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_Area3DChart ...
 public class CT_Area3DChart {
 	protected List<EG_AreaChartShared> EG_AreaChartShared;
 	@XmlElement(required = true, name = "gapDepth")
@@ -1149,6 +1283,7 @@ public class CT_Area3DChart {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// EG_PieChartShared ...
 public class EG_PieChartShared {
 	@XmlElement(required = true, name = "varyColors")
 	protected List<CT_Boolean> VaryColors;
@@ -1158,6 +1293,7 @@ public class EG_PieChartShared {
 	protected List<CT_DLbls> DLbls;
 }
 
+// CT_PieChart ...
 public class CT_PieChart {
 	protected List<EG_PieChartShared> EG_PieChartShared;
 	@XmlElement(required = true, name = "firstSliceAng")
@@ -1166,12 +1302,14 @@ public class CT_PieChart {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_Pie3DChart ...
 public class CT_Pie3DChart {
 	protected List<EG_PieChartShared> EG_PieChartShared;
 	@XmlElement(required = true, name = "extLst")
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_DoughnutChart ...
 public class CT_DoughnutChart {
 	protected List<EG_PieChartShared> EG_PieChartShared;
 	@XmlElement(required = true, name = "firstSliceAng")
@@ -1182,17 +1320,20 @@ public class CT_DoughnutChart {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// ST_OfPieType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_OfPieType")
 public class ST_OfPieType {
 	protected String ST_OfPieType;
 }
 
+// CT_OfPieType ...
 public class CT_OfPieType {
 	@XmlAttribute(name = "val")
 	protected StringAttr Val;
 }
 
+// CT_OfPieChart ...
 public class CT_OfPieChart {
 	protected List<EG_PieChartShared> EG_PieChartShared;
 	@XmlElement(required = true, name = "ofPieType")
@@ -1213,6 +1354,7 @@ public class CT_OfPieChart {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_BubbleChart ...
 public class CT_BubbleChart {
 	@XmlElement(required = true, name = "varyColors")
 	protected List<CT_Boolean> VaryColors;
@@ -1234,6 +1376,7 @@ public class CT_BubbleChart {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_BandFmt ...
 public class CT_BandFmt {
 	@XmlElement(required = true, name = "idx")
 	protected List<CT_UnsignedInt> Idx;
@@ -1241,11 +1384,13 @@ public class CT_BandFmt {
 	protected List<CT_ShapeProperties> SpPr;
 }
 
+// CT_BandFmts ...
 public class CT_BandFmts {
 	@XmlElement(required = true, name = "bandFmt")
 	protected List<CT_BandFmt> BandFmt;
 }
 
+// EG_SurfaceChartShared ...
 public class EG_SurfaceChartShared {
 	@XmlElement(required = true, name = "wireframe")
 	protected List<CT_Boolean> Wireframe;
@@ -1255,6 +1400,7 @@ public class EG_SurfaceChartShared {
 	protected List<CT_BandFmts> BandFmts;
 }
 
+// CT_SurfaceChart ...
 public class CT_SurfaceChart {
 	protected List<EG_SurfaceChartShared> EG_SurfaceChartShared;
 	@XmlElement(required = true, name = "axId")
@@ -1263,6 +1409,7 @@ public class CT_SurfaceChart {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_Surface3DChart ...
 public class CT_Surface3DChart {
 	protected List<EG_SurfaceChartShared> EG_SurfaceChartShared;
 	@XmlElement(required = true, name = "axId")
@@ -1271,127 +1418,150 @@ public class CT_Surface3DChart {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// ST_AxPos ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_AxPos")
 public class ST_AxPos {
 	protected String ST_AxPos;
 }
 
+// CT_AxPos ...
 public class CT_AxPos {
 	@XmlAttribute(name = "val", required = true)
 	protected StringAttr Val;
 }
 
+// ST_Crosses ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_Crosses")
 public class ST_Crosses {
 	protected String ST_Crosses;
 }
 
+// CT_Crosses ...
 public class CT_Crosses {
 	@XmlAttribute(name = "val", required = true)
 	protected StringAttr Val;
 }
 
+// ST_CrossBetween ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_CrossBetween")
 public class ST_CrossBetween {
 	protected String ST_CrossBetween;
 }
 
+// CT_CrossBetween ...
 public class CT_CrossBetween {
 	@XmlAttribute(name = "val", required = true)
 	protected StringAttr Val;
 }
 
+// ST_TickMark ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_TickMark")
 public class ST_TickMark {
 	protected String ST_TickMark;
 }
 
+// CT_TickMark ...
 public class CT_TickMark {
 	@XmlAttribute(name = "val")
 	protected StringAttr Val;
 }
 
+// ST_TickLblPos ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_TickLblPos")
 public class ST_TickLblPos {
 	protected String ST_TickLblPos;
 }
 
+// CT_TickLblPos ...
 public class CT_TickLblPos {
 	@XmlAttribute(name = "val")
 	protected StringAttr Val;
 }
 
+// ST_Skip ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_Skip")
 public class ST_Skip {
 	protected Integer ST_Skip;
 }
 
+// CT_Skip ...
 public class CT_Skip {
 	@XmlAttribute(name = "val", required = true)
 	protected IntegerAttr Val;
 }
 
+// ST_TimeUnit ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_TimeUnit")
 public class ST_TimeUnit {
 	protected String ST_TimeUnit;
 }
 
+// CT_TimeUnit ...
 public class CT_TimeUnit {
 	@XmlAttribute(name = "val")
 	protected StringAttr Val;
 }
 
+// ST_AxisUnit ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_AxisUnit")
 public class ST_AxisUnit {
 	protected Float ST_AxisUnit;
 }
 
+// CT_AxisUnit ...
 public class CT_AxisUnit {
 	@XmlAttribute(name = "val", required = true)
 	protected FloatAttr Val;
 }
 
+// ST_BuiltInUnit ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_BuiltInUnit")
 public class ST_BuiltInUnit {
 	protected String ST_BuiltInUnit;
 }
 
+// CT_BuiltInUnit ...
 public class CT_BuiltInUnit {
 	@XmlAttribute(name = "val")
 	protected StringAttr Val;
 }
 
+// ST_PictureFormat ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_PictureFormat")
 public class ST_PictureFormat {
 	protected String ST_PictureFormat;
 }
 
+// CT_PictureFormat ...
 public class CT_PictureFormat {
 	@XmlAttribute(name = "val", required = true)
 	protected StringAttr Val;
 }
 
+// ST_PictureStackUnit ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_PictureStackUnit")
 public class ST_PictureStackUnit {
 	protected Float ST_PictureStackUnit;
 }
 
+// CT_PictureStackUnit ...
 public class CT_PictureStackUnit {
 	@XmlAttribute(name = "val", required = true)
 	protected FloatAttr Val;
 }
 
+// CT_PictureOptions ...
 public class CT_PictureOptions {
 	@XmlElement(required = true, name = "applyToFront")
 	protected List<CT_Boolean> ApplyToFront;
@@ -1405,6 +1575,7 @@ public class CT_PictureOptions {
 	protected List<CT_PictureStackUnit> PictureStackUnit;
 }
 
+// CT_DispUnitsLbl ...
 public class CT_DispUnitsLbl {
 	@XmlElement(required = true, name = "layout")
 	protected List<CT_Layout> Layout;
@@ -1416,6 +1587,7 @@ public class CT_DispUnitsLbl {
 	protected List<CT_TextBody> TxPr;
 }
 
+// CT_DispUnits ...
 public class CT_DispUnits {
 	@XmlElement(required = true, name = "custUnit")
 	protected List<CT_Double> CustUnit;
@@ -1427,28 +1599,33 @@ public class CT_DispUnits {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// ST_Orientation ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_Orientation")
 public class ST_Orientation {
 	protected String ST_Orientation;
 }
 
+// CT_Orientation ...
 public class CT_Orientation {
 	@XmlAttribute(name = "val")
 	protected StringAttr Val;
 }
 
+// ST_LogBase ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_LogBase")
 public class ST_LogBase {
 	protected Float ST_LogBase;
 }
 
+// CT_LogBase ...
 public class CT_LogBase {
 	@XmlAttribute(name = "val", required = true)
 	protected FloatAttr Val;
 }
 
+// CT_Scaling ...
 public class CT_Scaling {
 	@XmlElement(required = true, name = "logBase")
 	protected List<CT_LogBase> LogBase;
@@ -1462,22 +1639,26 @@ public class CT_Scaling {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// ST_LblOffset ...
 public class ST_LblOffset {
 	@XmlElement(required = true)
 	protected ST_LblOffsetPercent ST_LblOffsetPercent;
 }
 
+// ST_LblOffsetPercent ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_LblOffsetPercent")
 public class ST_LblOffsetPercent {
 	protected String ST_LblOffsetPercent;
 }
 
+// CT_LblOffset ...
 public class CT_LblOffset {
 	@XmlAttribute(name = "val")
 	protected ST_LblOffsetAttr Val;
 }
 
+// EG_AxShared ...
 public class EG_AxShared {
 	@XmlElement(required = true, name = "axId")
 	protected List<CT_UnsignedInt> AxId;
@@ -1513,6 +1694,7 @@ public class EG_AxShared {
 	protected List<CT_Double> CrossesAt;
 }
 
+// CT_CatAx ...
 public class CT_CatAx {
 	protected List<EG_AxShared> EG_AxShared;
 	@XmlElement(required = true, name = "auto")
@@ -1531,6 +1713,7 @@ public class CT_CatAx {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_DateAx ...
 public class CT_DateAx {
 	protected List<EG_AxShared> EG_AxShared;
 	@XmlElement(required = true, name = "auto")
@@ -1551,6 +1734,7 @@ public class CT_DateAx {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_SerAx ...
 public class CT_SerAx {
 	protected List<EG_AxShared> EG_AxShared;
 	@XmlElement(required = true, name = "tickLblSkip")
@@ -1561,6 +1745,7 @@ public class CT_SerAx {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_ValAx ...
 public class CT_ValAx {
 	protected List<EG_AxShared> EG_AxShared;
 	@XmlElement(required = true, name = "crossBetween")
@@ -1575,6 +1760,7 @@ public class CT_ValAx {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_PlotArea ...
 public class CT_PlotArea {
 	@XmlElement(required = true, name = "layout")
 	protected List<CT_Layout> Layout;
@@ -1626,6 +1812,7 @@ public class CT_PlotArea {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_PivotFmt ...
 public class CT_PivotFmt {
 	@XmlElement(required = true, name = "idx")
 	protected List<CT_UnsignedInt> Idx;
@@ -1641,27 +1828,32 @@ public class CT_PivotFmt {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_PivotFmts ...
 public class CT_PivotFmts {
 	@XmlElement(required = true, name = "pivotFmt")
 	protected List<CT_PivotFmt> PivotFmt;
 }
 
+// ST_LegendPos ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_LegendPos")
 public class ST_LegendPos {
 	protected String ST_LegendPos;
 }
 
+// CT_LegendPos ...
 public class CT_LegendPos {
 	@XmlAttribute(name = "val")
 	protected StringAttr Val;
 }
 
+// EG_LegendEntryData ...
 public class EG_LegendEntryData {
 	@XmlElement(required = true, name = "txPr")
 	protected List<CT_TextBody> TxPr;
 }
 
+// CT_LegendEntry ...
 public class CT_LegendEntry {
 	protected List<EG_LegendEntryData> EG_LegendEntryData;
 	@XmlElement(required = true, name = "idx")
@@ -1672,6 +1864,7 @@ public class CT_LegendEntry {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_Legend ...
 public class CT_Legend {
 	@XmlElement(required = true, name = "legendPos")
 	protected List<CT_LegendPos> LegendPos;
@@ -1689,17 +1882,20 @@ public class CT_Legend {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// ST_DispBlanksAs ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_DispBlanksAs")
 public class ST_DispBlanksAs {
 	protected String ST_DispBlanksAs;
 }
 
+// CT_DispBlanksAs ...
 public class CT_DispBlanksAs {
 	@XmlAttribute(name = "val")
 	protected StringAttr Val;
 }
 
+// CT_Chart ...
 public class CT_Chart {
 	@XmlElement(required = true, name = "title")
 	protected List<CT_Title> Title;
@@ -1729,17 +1925,20 @@ public class CT_Chart {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// ST_Style ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_Style")
 public class ST_Style {
 	protected Byte ST_Style;
 }
 
+// CT_Style ...
 public class CT_Style {
 	@XmlAttribute(name = "val", required = true)
 	protected ByteAttr Val;
 }
 
+// CT_PivotSource ...
 public class CT_PivotSource {
 	@XmlElement(required = true, name = "name")
 	protected List<String> Name;
@@ -1749,6 +1948,7 @@ public class CT_PivotSource {
 	protected List<CT_ExtensionList> ExtLst;
 }
 
+// CT_Protection ...
 public class CT_Protection {
 	@XmlElement(required = true, name = "chartObject")
 	protected List<CT_Boolean> ChartObject;
@@ -1762,6 +1962,7 @@ public class CT_Protection {
 	protected List<CT_Boolean> UserInterface;
 }
 
+// CT_HeaderFooter ...
 public class CT_HeaderFooter {
 	@XmlAttribute(name = "alignWithMargins")
 	protected BooleanAttr AlignWithMargins;
@@ -1783,6 +1984,7 @@ public class CT_HeaderFooter {
 	protected List<String> FirstFooter;
 }
 
+// CT_PageMargins ...
 public class CT_PageMargins {
 	@XmlAttribute(name = "l", required = true)
 	protected FloatAttr L;
@@ -1798,12 +2000,14 @@ public class CT_PageMargins {
 	protected FloatAttr Footer;
 }
 
+// ST_PageSetupOrientation ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_PageSetupOrientation")
 public class ST_PageSetupOrientation {
 	protected String ST_PageSetupOrientation;
 }
 
+// CT_ExternalData ...
 public class CT_ExternalData {
 	@XmlAttribute(name = "r:id", required = true)
 	protected StringAttr RId;
@@ -1811,6 +2015,7 @@ public class CT_ExternalData {
 	protected List<CT_Boolean> AutoUpdate;
 }
 
+// CT_PageSetup ...
 public class CT_PageSetup {
 	@XmlAttribute(name = "paperSize")
 	protected IntegerAttr PaperSize;
@@ -1836,6 +2041,7 @@ public class CT_PageSetup {
 	protected IntegerAttr Copies;
 }
 
+// CT_PrintSettings ...
 public class CT_PrintSettings {
 	@XmlElement(required = true, name = "headerFooter")
 	protected List<CT_HeaderFooter> HeaderFooter;
@@ -1845,6 +2051,7 @@ public class CT_PrintSettings {
 	protected List<CT_PageSetup> PageSetup;
 }
 
+// CT_ChartSpace ...
 public class CT_ChartSpace {
 	@XmlElement(required = true, name = "date1904")
 	protected List<CT_Boolean> Date1904;

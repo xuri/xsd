@@ -6,7 +6,7 @@ import (
 	"encoding/xml"
 )
 
-// Verifications ...
+// Verifications is Root element of the verifications file.
 type Verifications *Verifications
 
 // Files ...
@@ -15,12 +15,14 @@ type Files struct {
 	File    []*File  `xml:"file"`
 }
 
-// Verifications ...
+// Verifications is Root element of the verifications file.
 type Verifications struct {
 	Files *Files `xml:"files"`
 }
 
-// File ...
+// File is When this is set to <code>true</code> the plugin checks that the
+//             file or directory exists. When set to <code>false</code> it checks
+//             that the file or directory does <strong>not</strong> exist.
 type File struct {
 	Location string `xml:"location"`
 	Contains string `xml:"contains"`

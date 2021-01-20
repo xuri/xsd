@@ -6,7 +6,7 @@ import (
 	"encoding/xml"
 )
 
-// PluginMetadata ...
+// PluginMetadata is Root element of a script-based mojo's plugin metadata bindings.
 type PluginMetadata *PluginMetadata
 
 // Mojos ...
@@ -15,7 +15,7 @@ type Mojos struct {
 	Mojo    []*Mojo  `xml:"mojo"`
 }
 
-// PluginMetadata ...
+// PluginMetadata is Root element of a script-based mojo's plugin metadata bindings.
 type PluginMetadata struct {
 	Mojos *Mojos `xml:"mojos"`
 }
@@ -32,7 +32,7 @@ type Parameters struct {
 	Parameter []*Parameter `xml:"parameter"`
 }
 
-// Mojo ...
+// Mojo is Information about a sub-execution of the Maven lifecycle which should be processed.
 type Mojo struct {
 	Goal                         string              `xml:"goal"`
 	Phase                        string              `xml:"phase"`
@@ -51,7 +51,7 @@ type Mojo struct {
 	Call                         string              `xml:"call"`
 }
 
-// Parameter ...
+// Parameter is A deprecation message for this mojo parameter.
 type Parameter struct {
 	Name         string `xml:"name"`
 	Alias        string `xml:"alias"`
@@ -65,14 +65,14 @@ type Parameter struct {
 	Deprecated   string `xml:"deprecated"`
 }
 
-// LifecycleExecution ...
+// LifecycleExecution is A goal, not attached to a lifecycle phase, which should be executed ahead of this mojo.
 type LifecycleExecution struct {
 	Lifecycle string `xml:"lifecycle"`
 	Phase     string `xml:"phase"`
 	Goal      string `xml:"goal"`
 }
 
-// Component ...
+// Component is The role-hint to lookup.
 type Component struct {
 	Role string `xml:"role"`
 	Hint string `xml:"hint"`

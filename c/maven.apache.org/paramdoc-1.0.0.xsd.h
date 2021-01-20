@@ -2,20 +2,25 @@
 
 typedef ExpressionDocumentation Paramdoc;
 
+// Expressions ...
 typedef struct {
 	Expression Expression[];
 } Expressions;
 
+// ExpressionDocumentation is The root of a parameter plugin expression document.
 typedef struct {
 	Expressions Expressions;
 } ExpressionDocumentation;
 
+// CliOptions ...
 typedef struct {
 } CliOptions;
 
+// ApiMethods ...
 typedef struct {
 } ApiMethods;
 
+// Expression is The place and syntax used to change the value of this expression.
 typedef struct {
 	char Syntax;
 	char Description;

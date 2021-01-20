@@ -17,21 +17,25 @@ public class Archetypedescriptor {
 	protected ArchetypeDescriptor Archetypedescriptor;
 }
 
+// RequiredProperties ...
 public class RequiredProperties {
 	@XmlElement(required = true, name = "requiredProperty")
 	protected List<RequiredProperty> RequiredProperty;
 }
 
+// FileSets ...
 public class FileSets {
 	@XmlElement(required = true, name = "fileSet")
 	protected List<FileSet> FileSet;
 }
 
+// Modules ...
 public class Modules {
 	@XmlElement(required = true, name = "module")
 	protected List<ModuleDescriptor> Module;
 }
 
+// ArchetypeDescriptor is 0.0.0+
 public class ArchetypeDescriptor {
 	@XmlAttribute(name = "name")
 	protected StringAttr Name;
@@ -45,16 +49,20 @@ public class ArchetypeDescriptor {
 	protected Modules Modules;
 }
 
+// Includes ...
 public class Includes {
 	@XmlElement(required = true, name = "include")
 	protected List<String> Include;
 }
 
+// Excludes ...
 public class Excludes {
 	@XmlElement(required = true, name = "exclude")
 	protected List<String> Exclude;
 }
 
+// FileSet is The directory where the files will be searched for, which is also the directory where the
+//            project's files will be generated.
 public class FileSet {
 	@XmlAttribute(name = "filtered")
 	protected BooleanAttr Filtered;
@@ -70,6 +78,7 @@ public class FileSet {
 	protected Excludes Excludes;
 }
 
+// RequiredProperty is Default value of the property.
 public class RequiredProperty {
 	@XmlAttribute(name = "key")
 	protected StringAttr Key;
@@ -77,6 +86,7 @@ public class RequiredProperty {
 	protected String DefaultValue;
 }
 
+// ModuleDescriptor is 0.0.0+
 public class ModuleDescriptor {
 	@XmlAttribute(name = "id")
 	protected StringAttr Id;

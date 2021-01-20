@@ -11,6 +11,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
+// CT_AudioFile ...
 public class CT_AudioFile {
 	@XmlAttribute(name = "r:link", required = true)
 	protected StringAttr RLink;
@@ -20,6 +21,7 @@ public class CT_AudioFile {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_VideoFile ...
 public class CT_VideoFile {
 	@XmlAttribute(name = "r:link", required = true)
 	protected StringAttr RLink;
@@ -29,6 +31,7 @@ public class CT_VideoFile {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_QuickTimeFile ...
 public class CT_QuickTimeFile {
 	@XmlAttribute(name = "r:link", required = true)
 	protected StringAttr RLink;
@@ -36,6 +39,7 @@ public class CT_QuickTimeFile {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_AudioCDTime ...
 public class CT_AudioCDTime {
 	@XmlAttribute(name = "track", required = true)
 	protected ByteAttr Track;
@@ -43,6 +47,7 @@ public class CT_AudioCDTime {
 	protected IntegerAttr Time;
 }
 
+// CT_AudioCD ...
 public class CT_AudioCD {
 	@XmlElement(required = true, name = "st")
 	protected List<CT_AudioCDTime> St;
@@ -52,6 +57,7 @@ public class CT_AudioCD {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// EG_Media ...
 public class EG_Media {
 	@XmlElement(required = true, name = "audioCd")
 	protected CT_AudioCD AudioCd;
@@ -71,24 +77,28 @@ public class VideoFile {
 	protected CT_VideoFile VideoFile;
 }
 
+// ST_StyleMatrixColumnIndex ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_StyleMatrixColumnIndex")
 public class ST_StyleMatrixColumnIndex {
 	protected Integer ST_StyleMatrixColumnIndex;
 }
 
+// ST_FontCollectionIndex ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_FontCollectionIndex")
 public class ST_FontCollectionIndex {
 	protected String ST_FontCollectionIndex;
 }
 
+// ST_ColorSchemeIndex ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_ColorSchemeIndex")
 public class ST_ColorSchemeIndex {
 	protected String ST_ColorSchemeIndex;
 }
 
+// CT_ColorScheme ...
 public class CT_ColorScheme {
 	@XmlAttribute(name = "name", required = true)
 	protected StringAttr Name;
@@ -120,12 +130,14 @@ public class CT_ColorScheme {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_CustomColor ...
 public class CT_CustomColor {
 	@XmlAttribute(name = "name")
 	protected StringAttr Name;
 	protected List<EG_ColorChoice> EG_ColorChoice;
 }
 
+// CT_SupplementalFont ...
 public class CT_SupplementalFont {
 	@XmlAttribute(name = "script", required = true)
 	protected StringAttr Script;
@@ -133,11 +145,13 @@ public class CT_SupplementalFont {
 	protected StringAttr Typeface;
 }
 
+// CT_CustomColorList ...
 public class CT_CustomColorList {
 	@XmlElement(required = true, name = "custClr")
 	protected List<CT_CustomColor> CustClr;
 }
 
+// CT_FontCollection ...
 public class CT_FontCollection {
 	@XmlElement(required = true, name = "latin")
 	protected List<CT_TextFont> Latin;
@@ -151,6 +165,7 @@ public class CT_FontCollection {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_EffectStyleItem ...
 public class CT_EffectStyleItem {
 	protected List<EG_EffectProperties> EG_EffectProperties;
 	@XmlElement(required = true, name = "scene3d")
@@ -159,6 +174,7 @@ public class CT_EffectStyleItem {
 	protected List<CT_Shape3D> Sp3d;
 }
 
+// CT_FontScheme ...
 public class CT_FontScheme {
 	@XmlAttribute(name = "name", required = true)
 	protected StringAttr Name;
@@ -170,24 +186,29 @@ public class CT_FontScheme {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_FillStyleList ...
 public class CT_FillStyleList {
 	protected List<EG_FillProperties> EG_FillProperties;
 }
 
+// CT_LineStyleList ...
 public class CT_LineStyleList {
 	@XmlElement(required = true, name = "ln")
 	protected List<CT_LineProperties> Ln;
 }
 
+// CT_EffectStyleList ...
 public class CT_EffectStyleList {
 	@XmlElement(required = true, name = "effectStyle")
 	protected List<CT_EffectStyleItem> EffectStyle;
 }
 
+// CT_BackgroundFillStyleList ...
 public class CT_BackgroundFillStyleList {
 	protected List<EG_FillProperties> EG_FillProperties;
 }
 
+// CT_StyleMatrix ...
 public class CT_StyleMatrix {
 	@XmlAttribute(name = "name")
 	protected StringAttr Name;
@@ -201,6 +222,7 @@ public class CT_StyleMatrix {
 	protected List<CT_BackgroundFillStyleList> BgFillStyleLst;
 }
 
+// CT_BaseStyles ...
 public class CT_BaseStyles {
 	@XmlElement(required = true, name = "clrScheme")
 	protected List<CT_ColorScheme> ClrScheme;
@@ -212,11 +234,13 @@ public class CT_BaseStyles {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_OfficeArtExtension ...
 public class CT_OfficeArtExtension {
 	@XmlAttribute(name = "uri", required = true)
 	protected StringAttr Uri;
 }
 
+// ST_Coordinate ...
 public class ST_Coordinate {
 	@XmlElement(required = true)
 	protected ST_CoordinateUnqualified ST_CoordinateUnqualified;
@@ -224,12 +248,14 @@ public class ST_Coordinate {
 	protected String ST_UniversalMeasure;
 }
 
+// ST_CoordinateUnqualified ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_CoordinateUnqualified")
 public class ST_CoordinateUnqualified {
 	protected Long ST_CoordinateUnqualified;
 }
 
+// ST_Coordinate32 ...
 public class ST_Coordinate32 {
 	@XmlElement(required = true)
 	protected ST_Coordinate32Unqualified ST_Coordinate32Unqualified;
@@ -237,92 +263,109 @@ public class ST_Coordinate32 {
 	protected String ST_UniversalMeasure;
 }
 
+// ST_Coordinate32Unqualified ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_Coordinate32Unqualified")
 public class ST_Coordinate32Unqualified {
 	protected Integer ST_Coordinate32Unqualified;
 }
 
+// ST_PositiveCoordinate ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_PositiveCoordinate")
 public class ST_PositiveCoordinate {
 	protected Long ST_PositiveCoordinate;
 }
 
+// ST_PositiveCoordinate32 ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_PositiveCoordinate32")
 public class ST_PositiveCoordinate32 {
 	protected Integer ST_PositiveCoordinate32;
 }
 
+// ST_Angle ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_Angle")
 public class ST_Angle {
 	protected Integer ST_Angle;
 }
 
+// CT_Angle ...
 public class CT_Angle {
 	@XmlAttribute(name = "val", required = true)
 	protected IntegerAttr Val;
 }
 
+// ST_FixedAngle ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_FixedAngle")
 public class ST_FixedAngle {
 	protected Integer ST_FixedAngle;
 }
 
+// ST_PositiveFixedAngle ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_PositiveFixedAngle")
 public class ST_PositiveFixedAngle {
 	protected Integer ST_PositiveFixedAngle;
 }
 
+// CT_PositiveFixedAngle ...
 public class CT_PositiveFixedAngle {
 	@XmlAttribute(name = "val", required = true)
 	protected IntegerAttr Val;
 }
 
+// ST_Percentage ...
 public class ST_Percentage {
 	@XmlElement(required = true)
 	protected String ST_Percentage;
 }
 
+// CT_Percentage ...
 public class CT_Percentage {
 	@XmlAttribute(name = "val", required = true)
 	protected ST_PercentageAttr Val;
 }
 
+// ST_PositivePercentage ...
 public class ST_PositivePercentage {
 	@XmlElement(required = true)
 	protected String ST_PositivePercentage;
 }
 
+// CT_PositivePercentage ...
 public class CT_PositivePercentage {
 	@XmlAttribute(name = "val", required = true)
 	protected ST_PositivePercentageAttr Val;
 }
 
+// ST_FixedPercentage ...
 public class ST_FixedPercentage {
 	@XmlElement(required = true)
 	protected String ST_FixedPercentage;
 }
 
+// CT_FixedPercentage ...
 public class CT_FixedPercentage {
 	@XmlAttribute(name = "val", required = true)
 	protected ST_FixedPercentageAttr Val;
 }
 
+// ST_PositiveFixedPercentage ...
 public class ST_PositiveFixedPercentage {
 	@XmlElement(required = true)
 	protected String ST_PositiveFixedPercentage;
 }
 
+// CT_PositiveFixedPercentage ...
 public class CT_PositiveFixedPercentage {
 	@XmlAttribute(name = "val", required = true)
 	protected ST_PositiveFixedPercentageAttr Val;
 }
 
+// CT_Ratio ...
 public class CT_Ratio {
 	@XmlAttribute(name = "n", required = true)
 	protected LongAttr N;
@@ -330,6 +373,7 @@ public class CT_Ratio {
 	protected LongAttr D;
 }
 
+// CT_Point2D ...
 public class CT_Point2D {
 	@XmlAttribute(name = "x", required = true)
 	protected ST_CoordinateAttr X;
@@ -337,6 +381,7 @@ public class CT_Point2D {
 	protected ST_CoordinateAttr Y;
 }
 
+// CT_PositiveSize2D ...
 public class CT_PositiveSize2D {
 	@XmlAttribute(name = "cx", required = true)
 	protected LongAttr Cx;
@@ -344,21 +389,27 @@ public class CT_PositiveSize2D {
 	protected LongAttr Cy;
 }
 
+// CT_ComplementTransform ...
 public class CT_ComplementTransform {
 }
 
+// CT_InverseTransform ...
 public class CT_InverseTransform {
 }
 
+// CT_GrayscaleTransform ...
 public class CT_GrayscaleTransform {
 }
 
+// CT_GammaTransform ...
 public class CT_GammaTransform {
 }
 
+// CT_InverseGammaTransform ...
 public class CT_InverseGammaTransform {
 }
 
+// EG_ColorTransform ...
 public class EG_ColorTransform {
 	@XmlElement(required = true, name = "tint")
 	protected List<CT_PositiveFixedPercentage> Tint;
@@ -418,6 +469,7 @@ public class EG_ColorTransform {
 	protected List<CT_InverseGammaTransform> InvGamma;
 }
 
+// CT_ScRgbColor ...
 public class CT_ScRgbColor {
 	@XmlAttribute(name = "r", required = true)
 	protected ST_PercentageAttr R;
@@ -428,12 +480,14 @@ public class CT_ScRgbColor {
 	protected List<EG_ColorTransform> EG_ColorTransform;
 }
 
+// CT_SRgbColor ...
 public class CT_SRgbColor {
 	@XmlAttribute(name = "val", required = true)
 	protected List<Byte>Attr Val;
 	protected List<EG_ColorTransform> EG_ColorTransform;
 }
 
+// CT_HslColor ...
 public class CT_HslColor {
 	@XmlAttribute(name = "hue", required = true)
 	protected IntegerAttr Hue;
@@ -444,12 +498,14 @@ public class CT_HslColor {
 	protected List<EG_ColorTransform> EG_ColorTransform;
 }
 
+// ST_SystemColorVal ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_SystemColorVal")
 public class ST_SystemColorVal {
 	protected String ST_SystemColorVal;
 }
 
+// CT_SystemColor ...
 public class CT_SystemColor {
 	@XmlAttribute(name = "val", required = true)
 	protected StringAttr Val;
@@ -458,39 +514,46 @@ public class CT_SystemColor {
 	protected List<EG_ColorTransform> EG_ColorTransform;
 }
 
+// ST_SchemeColorVal ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_SchemeColorVal")
 public class ST_SchemeColorVal {
 	protected String ST_SchemeColorVal;
 }
 
+// CT_SchemeColor ...
 public class CT_SchemeColor {
 	@XmlAttribute(name = "val", required = true)
 	protected StringAttr Val;
 	protected List<EG_ColorTransform> EG_ColorTransform;
 }
 
+// ST_PresetColorVal ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_PresetColorVal")
 public class ST_PresetColorVal {
 	protected String ST_PresetColorVal;
 }
 
+// CT_PresetColor ...
 public class CT_PresetColor {
 	@XmlAttribute(name = "val", required = true)
 	protected StringAttr Val;
 	protected List<EG_ColorTransform> EG_ColorTransform;
 }
 
+// EG_OfficeArtExtensionList ...
 public class EG_OfficeArtExtensionList {
 	@XmlElement(required = true, name = "ext")
 	protected List<CT_OfficeArtExtension> Ext;
 }
 
+// CT_OfficeArtExtensionList ...
 public class CT_OfficeArtExtensionList {
 	protected List<EG_OfficeArtExtensionList> EG_OfficeArtExtensionList;
 }
 
+// CT_Scale2D ...
 public class CT_Scale2D {
 	@XmlElement(required = true, name = "sx")
 	protected List<CT_Ratio> Sx;
@@ -498,6 +561,7 @@ public class CT_Scale2D {
 	protected List<CT_Ratio> Sy;
 }
 
+// CT_Transform2D ...
 public class CT_Transform2D {
 	@XmlAttribute(name = "rot")
 	protected IntegerAttr Rot;
@@ -511,6 +575,7 @@ public class CT_Transform2D {
 	protected List<CT_PositiveSize2D> Ext;
 }
 
+// CT_GroupTransform2D ...
 public class CT_GroupTransform2D {
 	@XmlAttribute(name = "rot")
 	protected IntegerAttr Rot;
@@ -528,6 +593,7 @@ public class CT_GroupTransform2D {
 	protected List<CT_PositiveSize2D> ChExt;
 }
 
+// CT_Point3D ...
 public class CT_Point3D {
 	@XmlAttribute(name = "x", required = true)
 	protected ST_CoordinateAttr X;
@@ -537,6 +603,7 @@ public class CT_Point3D {
 	protected ST_CoordinateAttr Z;
 }
 
+// CT_Vector3D ...
 public class CT_Vector3D {
 	@XmlAttribute(name = "dx", required = true)
 	protected ST_CoordinateAttr Dx;
@@ -546,6 +613,7 @@ public class CT_Vector3D {
 	protected ST_CoordinateAttr Dz;
 }
 
+// CT_SphereCoords ...
 public class CT_SphereCoords {
 	@XmlAttribute(name = "lat", required = true)
 	protected IntegerAttr Lat;
@@ -555,6 +623,7 @@ public class CT_SphereCoords {
 	protected IntegerAttr Rev;
 }
 
+// CT_RelativeRect ...
 public class CT_RelativeRect {
 	@XmlAttribute(name = "l")
 	protected ST_PercentageAttr L;
@@ -566,12 +635,14 @@ public class CT_RelativeRect {
 	protected ST_PercentageAttr B;
 }
 
+// ST_RectAlignment ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_RectAlignment")
 public class ST_RectAlignment {
 	protected String ST_RectAlignment;
 }
 
+// EG_ColorChoice ...
 public class EG_ColorChoice {
 	@XmlElement(required = true, name = "scrgbClr")
 	protected List<CT_ScRgbColor> ScrgbClr;
@@ -587,20 +658,24 @@ public class EG_ColorChoice {
 	protected List<CT_PresetColor> PrstClr;
 }
 
+// CT_Color ...
 public class CT_Color {
 	protected EG_ColorChoice EG_ColorChoice;
 }
 
+// CT_ColorMRU ...
 public class CT_ColorMRU {
 	protected List<EG_ColorChoice> EG_ColorChoice;
 }
 
+// ST_BlackWhiteMode ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_BlackWhiteMode")
 public class ST_BlackWhiteMode {
 	protected String ST_BlackWhiteMode;
 }
 
+// AG_Blob ...
 public class AG_Blob {
 	@XmlAttribute(name = "r:embed")
 	protected StringAttr REmbed;
@@ -608,6 +683,7 @@ public class AG_Blob {
 	protected StringAttr RLink;
 }
 
+// CT_EmbeddedWAVAudioFile ...
 public class CT_EmbeddedWAVAudioFile {
 	@XmlAttribute(name = "r:embed", required = true)
 	protected StringAttr REmbed;
@@ -615,6 +691,7 @@ public class CT_EmbeddedWAVAudioFile {
 	protected StringAttr Name;
 }
 
+// CT_Hyperlink ...
 public class CT_Hyperlink {
 	@XmlAttribute(name = "r:id")
 	protected StringAttr RId;
@@ -638,12 +715,14 @@ public class CT_Hyperlink {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// ST_DrawingElementId ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_DrawingElementId")
 public class ST_DrawingElementId {
 	protected Integer ST_DrawingElementId;
 }
 
+// AG_Locking ...
 public class AG_Locking {
 	@XmlAttribute(name = "noGrp")
 	protected BooleanAttr NoGrp;
@@ -667,6 +746,7 @@ public class AG_Locking {
 	protected BooleanAttr NoChangeShapeType;
 }
 
+// CT_ConnectorLocking ...
 public class CT_ConnectorLocking {
 	@XmlElement(required = true)
 	protected AG_Locking AG_Locking;
@@ -674,6 +754,7 @@ public class CT_ConnectorLocking {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_ShapeLocking ...
 public class CT_ShapeLocking {
 	@XmlElement(required = true)
 	protected AG_Locking AG_Locking;
@@ -683,6 +764,7 @@ public class CT_ShapeLocking {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_PictureLocking ...
 public class CT_PictureLocking {
 	@XmlElement(required = true)
 	protected AG_Locking AG_Locking;
@@ -692,6 +774,7 @@ public class CT_PictureLocking {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_GroupLocking ...
 public class CT_GroupLocking {
 	@XmlAttribute(name = "noGrp")
 	protected BooleanAttr NoGrp;
@@ -711,6 +794,7 @@ public class CT_GroupLocking {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_GraphicalObjectFrameLocking ...
 public class CT_GraphicalObjectFrameLocking {
 	@XmlAttribute(name = "noGrp")
 	protected BooleanAttr NoGrp;
@@ -728,6 +812,7 @@ public class CT_GraphicalObjectFrameLocking {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_ContentPartLocking ...
 public class CT_ContentPartLocking {
 	@XmlElement(required = true)
 	protected AG_Locking AG_Locking;
@@ -735,6 +820,7 @@ public class CT_ContentPartLocking {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_NonVisualDrawingProps ...
 public class CT_NonVisualDrawingProps {
 	@XmlAttribute(name = "id", required = true)
 	protected IntegerAttr Id;
@@ -754,6 +840,7 @@ public class CT_NonVisualDrawingProps {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_NonVisualDrawingShapeProps ...
 public class CT_NonVisualDrawingShapeProps {
 	@XmlAttribute(name = "txBox")
 	protected BooleanAttr TxBox;
@@ -763,6 +850,7 @@ public class CT_NonVisualDrawingShapeProps {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_NonVisualConnectorProperties ...
 public class CT_NonVisualConnectorProperties {
 	@XmlElement(required = true, name = "cxnSpLocks")
 	protected List<CT_ConnectorLocking> CxnSpLocks;
@@ -774,6 +862,7 @@ public class CT_NonVisualConnectorProperties {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_NonVisualPictureProperties ...
 public class CT_NonVisualPictureProperties {
 	@XmlAttribute(name = "preferRelativeResize")
 	protected BooleanAttr PreferRelativeResize;
@@ -783,6 +872,7 @@ public class CT_NonVisualPictureProperties {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_NonVisualGroupDrawingShapeProps ...
 public class CT_NonVisualGroupDrawingShapeProps {
 	@XmlElement(required = true, name = "grpSpLocks")
 	protected List<CT_GroupLocking> GrpSpLocks;
@@ -790,6 +880,7 @@ public class CT_NonVisualGroupDrawingShapeProps {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_NonVisualGraphicFrameProperties ...
 public class CT_NonVisualGraphicFrameProperties {
 	@XmlElement(required = true, name = "graphicFrameLocks")
 	protected List<CT_GraphicalObjectFrameLocking> GraphicFrameLocks;
@@ -797,6 +888,7 @@ public class CT_NonVisualGraphicFrameProperties {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_NonVisualContentPartProperties ...
 public class CT_NonVisualContentPartProperties {
 	@XmlAttribute(name = "isComment")
 	protected BooleanAttr IsComment;
@@ -806,11 +898,13 @@ public class CT_NonVisualContentPartProperties {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_GraphicalObjectData ...
 public class CT_GraphicalObjectData {
 	@XmlAttribute(name = "uri", required = true)
 	protected StringAttr Uri;
 }
 
+// CT_GraphicalObject ...
 public class CT_GraphicalObject {
 	@XmlElement(required = true, name = "graphicData")
 	protected CT_GraphicalObjectData GraphicData;
@@ -822,18 +916,21 @@ public class Graphic {
 	protected CT_GraphicalObject Graphic;
 }
 
+// ST_ChartBuildStep ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_ChartBuildStep")
 public class ST_ChartBuildStep {
 	protected String ST_ChartBuildStep;
 }
 
+// ST_DgmBuildStep ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_DgmBuildStep")
 public class ST_DgmBuildStep {
 	protected String ST_DgmBuildStep;
 }
 
+// CT_AnimationDgmElement ...
 public class CT_AnimationDgmElement {
 	@XmlAttribute(name = "id")
 	protected StringAttr Id;
@@ -841,6 +938,7 @@ public class CT_AnimationDgmElement {
 	protected StringAttr BldStep;
 }
 
+// CT_AnimationChartElement ...
 public class CT_AnimationChartElement {
 	@XmlAttribute(name = "seriesIdx")
 	protected IntegerAttr SeriesIdx;
@@ -850,6 +948,7 @@ public class CT_AnimationChartElement {
 	protected StringAttr BldStep;
 }
 
+// CT_AnimationElementChoice ...
 public class CT_AnimationElementChoice {
 	@XmlElement(required = true, name = "dgm")
 	protected CT_AnimationDgmElement Dgm;
@@ -857,18 +956,21 @@ public class CT_AnimationElementChoice {
 	protected CT_AnimationChartElement Chart;
 }
 
+// ST_AnimationBuildType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_AnimationBuildType")
 public class ST_AnimationBuildType {
 	protected String ST_AnimationBuildType;
 }
 
+// ST_AnimationDgmOnlyBuildType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_AnimationDgmOnlyBuildType")
 public class ST_AnimationDgmOnlyBuildType {
 	protected String ST_AnimationDgmOnlyBuildType;
 }
 
+// ST_AnimationDgmBuildType ...
 public class ST_AnimationDgmBuildType {
 	@XmlElement(required = true)
 	protected String ST_AnimationBuildType;
@@ -876,6 +978,7 @@ public class ST_AnimationDgmBuildType {
 	protected String ST_AnimationDgmOnlyBuildType;
 }
 
+// CT_AnimationDgmBuildProperties ...
 public class CT_AnimationDgmBuildProperties {
 	@XmlAttribute(name = "bld")
 	protected ST_AnimationDgmBuildTypeAttr Bld;
@@ -883,12 +986,14 @@ public class CT_AnimationDgmBuildProperties {
 	protected BooleanAttr Rev;
 }
 
+// ST_AnimationChartOnlyBuildType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_AnimationChartOnlyBuildType")
 public class ST_AnimationChartOnlyBuildType {
 	protected String ST_AnimationChartOnlyBuildType;
 }
 
+// ST_AnimationChartBuildType ...
 public class ST_AnimationChartBuildType {
 	@XmlElement(required = true)
 	protected String ST_AnimationBuildType;
@@ -896,6 +1001,7 @@ public class ST_AnimationChartBuildType {
 	protected String ST_AnimationChartOnlyBuildType;
 }
 
+// CT_AnimationChartBuildProperties ...
 public class CT_AnimationChartBuildProperties {
 	@XmlAttribute(name = "bld")
 	protected ST_AnimationChartBuildTypeAttr Bld;
@@ -903,6 +1009,7 @@ public class CT_AnimationChartBuildProperties {
 	protected BooleanAttr AnimBg;
 }
 
+// CT_AnimationGraphicalObjectBuildProperties ...
 public class CT_AnimationGraphicalObjectBuildProperties {
 	@XmlElement(required = true, name = "bldDgm")
 	protected CT_AnimationDgmBuildProperties BldDgm;
@@ -910,20 +1017,24 @@ public class CT_AnimationGraphicalObjectBuildProperties {
 	protected CT_AnimationChartBuildProperties BldChart;
 }
 
+// CT_BackgroundFormatting ...
 public class CT_BackgroundFormatting {
 	protected List<EG_FillProperties> EG_FillProperties;
 	protected List<EG_EffectProperties> EG_EffectProperties;
 }
 
+// CT_WholeE2oFormatting ...
 public class CT_WholeE2oFormatting {
 	protected List<EG_EffectProperties> EG_EffectProperties;
 	@XmlElement(required = true, name = "ln")
 	protected List<CT_LineProperties> Ln;
 }
 
+// CT_GvmlUseShapeRectangle ...
 public class CT_GvmlUseShapeRectangle {
 }
 
+// CT_GvmlTextShape ...
 public class CT_GvmlTextShape {
 	@XmlElement(required = true, name = "txBody")
 	protected List<CT_TextBody> TxBody;
@@ -935,6 +1046,7 @@ public class CT_GvmlTextShape {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_GvmlShapeNonVisual ...
 public class CT_GvmlShapeNonVisual {
 	@XmlElement(required = true, name = "cNvPr")
 	protected List<CT_NonVisualDrawingProps> CNvPr;
@@ -942,6 +1054,7 @@ public class CT_GvmlShapeNonVisual {
 	protected List<CT_NonVisualDrawingShapeProps> CNvSpPr;
 }
 
+// CT_GvmlShape ...
 public class CT_GvmlShape {
 	@XmlElement(required = true, name = "nvSpPr")
 	protected List<CT_GvmlShapeNonVisual> NvSpPr;
@@ -955,6 +1068,7 @@ public class CT_GvmlShape {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_GvmlConnectorNonVisual ...
 public class CT_GvmlConnectorNonVisual {
 	@XmlElement(required = true, name = "cNvPr")
 	protected List<CT_NonVisualDrawingProps> CNvPr;
@@ -962,6 +1076,7 @@ public class CT_GvmlConnectorNonVisual {
 	protected List<CT_NonVisualConnectorProperties> CNvCxnSpPr;
 }
 
+// CT_GvmlConnector ...
 public class CT_GvmlConnector {
 	@XmlElement(required = true, name = "nvCxnSpPr")
 	protected List<CT_GvmlConnectorNonVisual> NvCxnSpPr;
@@ -973,6 +1088,7 @@ public class CT_GvmlConnector {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_GvmlPictureNonVisual ...
 public class CT_GvmlPictureNonVisual {
 	@XmlElement(required = true, name = "cNvPr")
 	protected List<CT_NonVisualDrawingProps> CNvPr;
@@ -980,6 +1096,7 @@ public class CT_GvmlPictureNonVisual {
 	protected List<CT_NonVisualPictureProperties> CNvPicPr;
 }
 
+// CT_GvmlPicture ...
 public class CT_GvmlPicture {
 	@XmlElement(required = true, name = "nvPicPr")
 	protected List<CT_GvmlPictureNonVisual> NvPicPr;
@@ -993,6 +1110,7 @@ public class CT_GvmlPicture {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_GvmlGraphicFrameNonVisual ...
 public class CT_GvmlGraphicFrameNonVisual {
 	@XmlElement(required = true, name = "cNvPr")
 	protected List<CT_NonVisualDrawingProps> CNvPr;
@@ -1000,6 +1118,7 @@ public class CT_GvmlGraphicFrameNonVisual {
 	protected List<CT_NonVisualGraphicFrameProperties> CNvGraphicFramePr;
 }
 
+// CT_GvmlGraphicalObjectFrame ...
 public class CT_GvmlGraphicalObjectFrame {
 	@XmlElement(required = true, name = "nvGraphicFramePr")
 	protected List<CT_GvmlGraphicFrameNonVisual> NvGraphicFramePr;
@@ -1011,6 +1130,7 @@ public class CT_GvmlGraphicalObjectFrame {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_GvmlGroupShapeNonVisual ...
 public class CT_GvmlGroupShapeNonVisual {
 	@XmlElement(required = true, name = "cNvPr")
 	protected List<CT_NonVisualDrawingProps> CNvPr;
@@ -1018,6 +1138,7 @@ public class CT_GvmlGroupShapeNonVisual {
 	protected List<CT_NonVisualGroupDrawingShapeProps> CNvGrpSpPr;
 }
 
+// CT_GvmlGroupShape ...
 public class CT_GvmlGroupShape {
 	@XmlElement(required = true, name = "nvGrpSpPr")
 	protected List<CT_GvmlGroupShapeNonVisual> NvGrpSpPr;
@@ -1039,18 +1160,21 @@ public class CT_GvmlGroupShape {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// ST_PresetCameraType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_PresetCameraType")
 public class ST_PresetCameraType {
 	protected String ST_PresetCameraType;
 }
 
+// ST_FOVAngle ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_FOVAngle")
 public class ST_FOVAngle {
 	protected Integer ST_FOVAngle;
 }
 
+// CT_Camera ...
 public class CT_Camera {
 	@XmlAttribute(name = "prst", required = true)
 	protected StringAttr Prst;
@@ -1062,18 +1186,21 @@ public class CT_Camera {
 	protected List<CT_SphereCoords> Rot;
 }
 
+// ST_LightRigDirection ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_LightRigDirection")
 public class ST_LightRigDirection {
 	protected String ST_LightRigDirection;
 }
 
+// ST_LightRigType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_LightRigType")
 public class ST_LightRigType {
 	protected String ST_LightRigType;
 }
 
+// CT_LightRig ...
 public class CT_LightRig {
 	@XmlAttribute(name = "rig", required = true)
 	protected StringAttr Rig;
@@ -1083,6 +1210,7 @@ public class CT_LightRig {
 	protected List<CT_SphereCoords> Rot;
 }
 
+// CT_Scene3D ...
 public class CT_Scene3D {
 	@XmlElement(required = true, name = "camera")
 	protected List<CT_Camera> Camera;
@@ -1094,6 +1222,7 @@ public class CT_Scene3D {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_Backdrop ...
 public class CT_Backdrop {
 	@XmlElement(required = true, name = "anchor")
 	protected List<CT_Point3D> Anchor;
@@ -1105,12 +1234,14 @@ public class CT_Backdrop {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// ST_BevelPresetType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_BevelPresetType")
 public class ST_BevelPresetType {
 	protected String ST_BevelPresetType;
 }
 
+// CT_Bevel ...
 public class CT_Bevel {
 	@XmlAttribute(name = "w")
 	protected LongAttr W;
@@ -1120,12 +1251,14 @@ public class CT_Bevel {
 	protected StringAttr Prst;
 }
 
+// ST_PresetMaterialType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_PresetMaterialType")
 public class ST_PresetMaterialType {
 	protected String ST_PresetMaterialType;
 }
 
+// CT_Shape3D ...
 public class CT_Shape3D {
 	@XmlAttribute(name = "z")
 	protected ST_CoordinateAttr Z;
@@ -1147,11 +1280,13 @@ public class CT_Shape3D {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_FlatText ...
 public class CT_FlatText {
 	@XmlAttribute(name = "z")
 	protected ST_CoordinateAttr Z;
 }
 
+// EG_Text3D ...
 public class EG_Text3D {
 	@XmlElement(required = true, name = "sp3d")
 	protected List<CT_Shape3D> Sp3d;
@@ -1159,41 +1294,50 @@ public class EG_Text3D {
 	protected List<CT_FlatText> FlatTx;
 }
 
+// CT_AlphaBiLevelEffect ...
 public class CT_AlphaBiLevelEffect {
 	@XmlAttribute(name = "thresh", required = true)
 	protected ST_PositiveFixedPercentageAttr Thresh;
 }
 
+// CT_AlphaCeilingEffect ...
 public class CT_AlphaCeilingEffect {
 }
 
+// CT_AlphaFloorEffect ...
 public class CT_AlphaFloorEffect {
 }
 
+// CT_AlphaInverseEffect ...
 public class CT_AlphaInverseEffect {
 	protected List<EG_ColorChoice> EG_ColorChoice;
 }
 
+// CT_AlphaModulateFixedEffect ...
 public class CT_AlphaModulateFixedEffect {
 	@XmlAttribute(name = "amt")
 	protected ST_PositivePercentageAttr Amt;
 }
 
+// CT_AlphaOutsetEffect ...
 public class CT_AlphaOutsetEffect {
 	@XmlAttribute(name = "rad")
 	protected ST_CoordinateAttr Rad;
 }
 
+// CT_AlphaReplaceEffect ...
 public class CT_AlphaReplaceEffect {
 	@XmlAttribute(name = "a", required = true)
 	protected ST_PositiveFixedPercentageAttr A;
 }
 
+// CT_BiLevelEffect ...
 public class CT_BiLevelEffect {
 	@XmlAttribute(name = "thresh", required = true)
 	protected ST_PositiveFixedPercentageAttr Thresh;
 }
 
+// CT_BlurEffect ...
 public class CT_BlurEffect {
 	@XmlAttribute(name = "rad")
 	protected LongAttr Rad;
@@ -1201,6 +1345,7 @@ public class CT_BlurEffect {
 	protected BooleanAttr Grow;
 }
 
+// CT_ColorChangeEffect ...
 public class CT_ColorChangeEffect {
 	@XmlAttribute(name = "useA")
 	protected BooleanAttr UseA;
@@ -1210,23 +1355,28 @@ public class CT_ColorChangeEffect {
 	protected List<CT_Color> ClrTo;
 }
 
+// CT_ColorReplaceEffect ...
 public class CT_ColorReplaceEffect {
 	protected List<EG_ColorChoice> EG_ColorChoice;
 }
 
+// CT_DuotoneEffect ...
 public class CT_DuotoneEffect {
 	protected List<EG_ColorChoice> EG_ColorChoice;
 }
 
+// CT_GlowEffect ...
 public class CT_GlowEffect {
 	@XmlAttribute(name = "rad")
 	protected LongAttr Rad;
 	protected List<EG_ColorChoice> EG_ColorChoice;
 }
 
+// CT_GrayscaleEffect ...
 public class CT_GrayscaleEffect {
 }
 
+// CT_HSLEffect ...
 public class CT_HSLEffect {
 	@XmlAttribute(name = "hue")
 	protected IntegerAttr Hue;
@@ -1236,6 +1386,7 @@ public class CT_HSLEffect {
 	protected ST_FixedPercentageAttr Lum;
 }
 
+// CT_InnerShadowEffect ...
 public class CT_InnerShadowEffect {
 	@XmlAttribute(name = "blurRad")
 	protected LongAttr BlurRad;
@@ -1246,6 +1397,7 @@ public class CT_InnerShadowEffect {
 	protected List<EG_ColorChoice> EG_ColorChoice;
 }
 
+// CT_LuminanceEffect ...
 public class CT_LuminanceEffect {
 	@XmlAttribute(name = "bright")
 	protected ST_FixedPercentageAttr Bright;
@@ -1253,6 +1405,7 @@ public class CT_LuminanceEffect {
 	protected ST_FixedPercentageAttr Contrast;
 }
 
+// CT_OuterShadowEffect ...
 public class CT_OuterShadowEffect {
 	@XmlAttribute(name = "blurRad")
 	protected LongAttr BlurRad;
@@ -1275,12 +1428,14 @@ public class CT_OuterShadowEffect {
 	protected List<EG_ColorChoice> EG_ColorChoice;
 }
 
+// ST_PresetShadowVal ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_PresetShadowVal")
 public class ST_PresetShadowVal {
 	protected String ST_PresetShadowVal;
 }
 
+// CT_PresetShadowEffect ...
 public class CT_PresetShadowEffect {
 	@XmlAttribute(name = "prst", required = true)
 	protected StringAttr Prst;
@@ -1291,6 +1446,7 @@ public class CT_PresetShadowEffect {
 	protected List<EG_ColorChoice> EG_ColorChoice;
 }
 
+// CT_ReflectionEffect ...
 public class CT_ReflectionEffect {
 	@XmlAttribute(name = "blurRad")
 	protected LongAttr BlurRad;
@@ -1322,6 +1478,7 @@ public class CT_ReflectionEffect {
 	protected BooleanAttr RotWithShape;
 }
 
+// CT_RelativeOffsetEffect ...
 public class CT_RelativeOffsetEffect {
 	@XmlAttribute(name = "tx")
 	protected ST_PercentageAttr Tx;
@@ -1329,11 +1486,13 @@ public class CT_RelativeOffsetEffect {
 	protected ST_PercentageAttr Ty;
 }
 
+// CT_SoftEdgesEffect ...
 public class CT_SoftEdgesEffect {
 	@XmlAttribute(name = "rad", required = true)
 	protected LongAttr Rad;
 }
 
+// CT_TintEffect ...
 public class CT_TintEffect {
 	@XmlAttribute(name = "hue")
 	protected IntegerAttr Hue;
@@ -1341,6 +1500,7 @@ public class CT_TintEffect {
 	protected ST_FixedPercentageAttr Amt;
 }
 
+// CT_TransformEffect ...
 public class CT_TransformEffect {
 	@XmlAttribute(name = "sx")
 	protected ST_PercentageAttr Sx;
@@ -1356,13 +1516,16 @@ public class CT_TransformEffect {
 	protected ST_CoordinateAttr Ty;
 }
 
+// CT_NoFillProperties ...
 public class CT_NoFillProperties {
 }
 
+// CT_SolidColorFillProperties ...
 public class CT_SolidColorFillProperties {
 	protected List<EG_ColorChoice> EG_ColorChoice;
 }
 
+// CT_LinearShadeProperties ...
 public class CT_LinearShadeProperties {
 	@XmlAttribute(name = "ang")
 	protected IntegerAttr Ang;
@@ -1370,12 +1533,14 @@ public class CT_LinearShadeProperties {
 	protected BooleanAttr Scaled;
 }
 
+// ST_PathShadeType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_PathShadeType")
 public class ST_PathShadeType {
 	protected String ST_PathShadeType;
 }
 
+// CT_PathShadeProperties ...
 public class CT_PathShadeProperties {
 	@XmlAttribute(name = "path")
 	protected StringAttr Path;
@@ -1383,6 +1548,7 @@ public class CT_PathShadeProperties {
 	protected List<CT_RelativeRect> FillToRect;
 }
 
+// EG_ShadeProperties ...
 public class EG_ShadeProperties {
 	@XmlElement(required = true, name = "lin")
 	protected List<CT_LinearShadeProperties> Lin;
@@ -1390,23 +1556,27 @@ public class EG_ShadeProperties {
 	protected List<CT_PathShadeProperties> Path;
 }
 
+// ST_TileFlipMode ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_TileFlipMode")
 public class ST_TileFlipMode {
 	protected String ST_TileFlipMode;
 }
 
+// CT_GradientStop ...
 public class CT_GradientStop {
 	@XmlAttribute(name = "pos", required = true)
 	protected ST_PositiveFixedPercentageAttr Pos;
 	protected List<EG_ColorChoice> EG_ColorChoice;
 }
 
+// CT_GradientStopList ...
 public class CT_GradientStopList {
 	@XmlElement(required = true, name = "gs")
 	protected List<CT_GradientStop> Gs;
 }
 
+// CT_GradientFillProperties ...
 public class CT_GradientFillProperties {
 	@XmlAttribute(name = "flip")
 	protected StringAttr Flip;
@@ -1419,6 +1589,7 @@ public class CT_GradientFillProperties {
 	protected List<CT_RelativeRect> TileRect;
 }
 
+// CT_TileInfoProperties ...
 public class CT_TileInfoProperties {
 	@XmlAttribute(name = "tx")
 	protected ST_CoordinateAttr Tx;
@@ -1434,11 +1605,13 @@ public class CT_TileInfoProperties {
 	protected StringAttr Algn;
 }
 
+// CT_StretchInfoProperties ...
 public class CT_StretchInfoProperties {
 	@XmlElement(required = true, name = "fillRect")
 	protected List<CT_RelativeRect> FillRect;
 }
 
+// EG_FillModeProperties ...
 public class EG_FillModeProperties {
 	@XmlElement(required = true, name = "tile")
 	protected List<CT_TileInfoProperties> Tile;
@@ -1446,12 +1619,14 @@ public class EG_FillModeProperties {
 	protected List<CT_StretchInfoProperties> Stretch;
 }
 
+// ST_BlipCompression ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_BlipCompression")
 public class ST_BlipCompression {
 	protected String ST_BlipCompression;
 }
 
+// CT_Blip ...
 public class CT_Blip {
 	@XmlElement(required = true)
 	protected AG_Blob AG_Blob;
@@ -1495,6 +1670,7 @@ public class CT_Blip {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_BlipFillProperties ...
 public class CT_BlipFillProperties {
 	@XmlAttribute(name = "dpi")
 	protected IntegerAttr Dpi;
@@ -1507,12 +1683,14 @@ public class CT_BlipFillProperties {
 	protected List<CT_RelativeRect> SrcRect;
 }
 
+// ST_PresetPatternVal ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_PresetPatternVal")
 public class ST_PresetPatternVal {
 	protected String ST_PresetPatternVal;
 }
 
+// CT_PatternFillProperties ...
 public class CT_PatternFillProperties {
 	@XmlAttribute(name = "prst")
 	protected StringAttr Prst;
@@ -1522,9 +1700,11 @@ public class CT_PatternFillProperties {
 	protected List<CT_Color> BgClr;
 }
 
+// CT_GroupFillProperties ...
 public class CT_GroupFillProperties {
 }
 
+// EG_FillProperties ...
 public class EG_FillProperties {
 	@XmlElement(required = true, name = "noFill")
 	protected List<CT_NoFillProperties> NoFill;
@@ -1540,31 +1720,37 @@ public class EG_FillProperties {
 	protected List<CT_GroupFillProperties> GrpFill;
 }
 
+// CT_FillProperties ...
 public class CT_FillProperties {
 	protected List<EG_FillProperties> EG_FillProperties;
 }
 
+// CT_FillEffect ...
 public class CT_FillEffect {
 	protected List<EG_FillProperties> EG_FillProperties;
 }
 
+// ST_BlendMode ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_BlendMode")
 public class ST_BlendMode {
 	protected String ST_BlendMode;
 }
 
+// CT_FillOverlayEffect ...
 public class CT_FillOverlayEffect {
 	@XmlAttribute(name = "blend", required = true)
 	protected StringAttr Blend;
 	protected List<EG_FillProperties> EG_FillProperties;
 }
 
+// CT_EffectReference ...
 public class CT_EffectReference {
 	@XmlAttribute(name = "ref", required = true)
 	protected StringAttr Ref;
 }
 
+// EG_Effect ...
 public class EG_Effect {
 	@XmlElement(required = true, name = "cont")
 	protected List<CT_EffectContainer> Cont;
@@ -1628,12 +1814,14 @@ public class EG_Effect {
 	protected List<CT_TransformEffect> Xfrm;
 }
 
+// ST_EffectContainerType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_EffectContainerType")
 public class ST_EffectContainerType {
 	protected String ST_EffectContainerType;
 }
 
+// CT_EffectContainer ...
 public class CT_EffectContainer {
 	@XmlAttribute(name = "type")
 	protected StringAttr Type;
@@ -1642,11 +1830,13 @@ public class CT_EffectContainer {
 	protected List<EG_Effect> EG_Effect;
 }
 
+// CT_AlphaModulateEffect ...
 public class CT_AlphaModulateEffect {
 	@XmlElement(required = true, name = "cont")
 	protected List<CT_EffectContainer> Cont;
 }
 
+// CT_BlendEffect ...
 public class CT_BlendEffect {
 	@XmlAttribute(name = "blend", required = true)
 	protected StringAttr Blend;
@@ -1654,6 +1844,7 @@ public class CT_BlendEffect {
 	protected List<CT_EffectContainer> Cont;
 }
 
+// CT_EffectList ...
 public class CT_EffectList {
 	@XmlElement(required = true, name = "blur")
 	protected List<CT_BlurEffect> Blur;
@@ -1673,6 +1864,7 @@ public class CT_EffectList {
 	protected List<CT_SoftEdgesEffect> SoftEdge;
 }
 
+// EG_EffectProperties ...
 public class EG_EffectProperties {
 	@XmlElement(required = true, name = "effectLst")
 	protected List<CT_EffectList> EffectLst;
@@ -1680,6 +1872,7 @@ public class EG_EffectProperties {
 	protected List<CT_EffectContainer> EffectDag;
 }
 
+// CT_EffectProperties ...
 public class CT_EffectProperties {
 	protected List<EG_EffectProperties> EG_EffectProperties;
 }
@@ -1690,30 +1883,35 @@ public class Blip {
 	protected CT_Blip Blip;
 }
 
+// ST_ShapeType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_ShapeType")
 public class ST_ShapeType {
 	protected String ST_ShapeType;
 }
 
+// ST_TextShapeType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_TextShapeType")
 public class ST_TextShapeType {
 	protected String ST_TextShapeType;
 }
 
+// ST_GeomGuideName ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_GeomGuideName")
 public class ST_GeomGuideName {
 	protected String ST_GeomGuideName;
 }
 
+// ST_GeomGuideFormula ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_GeomGuideFormula")
 public class ST_GeomGuideFormula {
 	protected String ST_GeomGuideFormula;
 }
 
+// CT_GeomGuide ...
 public class CT_GeomGuide {
 	@XmlAttribute(name = "name", required = true)
 	protected StringAttr Name;
@@ -1721,11 +1919,13 @@ public class CT_GeomGuide {
 	protected StringAttr Fmla;
 }
 
+// CT_GeomGuideList ...
 public class CT_GeomGuideList {
 	@XmlElement(required = true, name = "gd")
 	protected List<CT_GeomGuide> Gd;
 }
 
+// ST_AdjCoordinate ...
 public class ST_AdjCoordinate {
 	@XmlElement(required = true)
 	protected ST_Coordinate ST_Coordinate;
@@ -1733,6 +1933,7 @@ public class ST_AdjCoordinate {
 	protected String ST_GeomGuideName;
 }
 
+// ST_AdjAngle ...
 public class ST_AdjAngle {
 	@XmlElement(required = true)
 	protected Integer ST_Angle;
@@ -1740,6 +1941,7 @@ public class ST_AdjAngle {
 	protected String ST_GeomGuideName;
 }
 
+// CT_AdjPoint2D ...
 public class CT_AdjPoint2D {
 	@XmlAttribute(name = "x", required = true)
 	protected ST_AdjCoordinateAttr X;
@@ -1747,6 +1949,7 @@ public class CT_AdjPoint2D {
 	protected ST_AdjCoordinateAttr Y;
 }
 
+// CT_GeomRect ...
 public class CT_GeomRect {
 	@XmlAttribute(name = "l", required = true)
 	protected ST_AdjCoordinateAttr L;
@@ -1758,6 +1961,7 @@ public class CT_GeomRect {
 	protected ST_AdjCoordinateAttr B;
 }
 
+// CT_XYAdjustHandle ...
 public class CT_XYAdjustHandle {
 	@XmlAttribute(name = "gdRefX")
 	protected StringAttr GdRefX;
@@ -1775,6 +1979,7 @@ public class CT_XYAdjustHandle {
 	protected List<CT_AdjPoint2D> Pos;
 }
 
+// CT_PolarAdjustHandle ...
 public class CT_PolarAdjustHandle {
 	@XmlAttribute(name = "gdRefR")
 	protected StringAttr GdRefR;
@@ -1792,6 +1997,7 @@ public class CT_PolarAdjustHandle {
 	protected List<CT_AdjPoint2D> Pos;
 }
 
+// CT_ConnectionSite ...
 public class CT_ConnectionSite {
 	@XmlAttribute(name = "ang", required = true)
 	protected ST_AdjAngleAttr Ang;
@@ -1799,6 +2005,7 @@ public class CT_ConnectionSite {
 	protected List<CT_AdjPoint2D> Pos;
 }
 
+// CT_AdjustHandleList ...
 public class CT_AdjustHandleList {
 	@XmlElement(required = true, name = "ahXY")
 	protected List<CT_XYAdjustHandle> AhXY;
@@ -1806,11 +2013,13 @@ public class CT_AdjustHandleList {
 	protected List<CT_PolarAdjustHandle> AhPolar;
 }
 
+// CT_ConnectionSiteList ...
 public class CT_ConnectionSiteList {
 	@XmlElement(required = true, name = "cxn")
 	protected List<CT_ConnectionSite> Cxn;
 }
 
+// CT_Connection ...
 public class CT_Connection {
 	@XmlAttribute(name = "id", required = true)
 	protected IntegerAttr Id;
@@ -1818,16 +2027,19 @@ public class CT_Connection {
 	protected IntegerAttr Idx;
 }
 
+// CT_Path2DMoveTo ...
 public class CT_Path2DMoveTo {
 	@XmlElement(required = true, name = "pt")
 	protected List<CT_AdjPoint2D> Pt;
 }
 
+// CT_Path2DLineTo ...
 public class CT_Path2DLineTo {
 	@XmlElement(required = true, name = "pt")
 	protected List<CT_AdjPoint2D> Pt;
 }
 
+// CT_Path2DArcTo ...
 public class CT_Path2DArcTo {
 	@XmlAttribute(name = "wR", required = true)
 	protected ST_AdjCoordinateAttr WR;
@@ -1839,25 +2051,30 @@ public class CT_Path2DArcTo {
 	protected ST_AdjAngleAttr SwAng;
 }
 
+// CT_Path2DQuadBezierTo ...
 public class CT_Path2DQuadBezierTo {
 	@XmlElement(required = true, name = "pt")
 	protected List<CT_AdjPoint2D> Pt;
 }
 
+// CT_Path2DCubicBezierTo ...
 public class CT_Path2DCubicBezierTo {
 	@XmlElement(required = true, name = "pt")
 	protected List<CT_AdjPoint2D> Pt;
 }
 
+// CT_Path2DClose ...
 public class CT_Path2DClose {
 }
 
+// ST_PathFillMode ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_PathFillMode")
 public class ST_PathFillMode {
 	protected String ST_PathFillMode;
 }
 
+// CT_Path2D ...
 public class CT_Path2D {
 	@XmlAttribute(name = "w")
 	protected LongAttr W;
@@ -1883,11 +2100,13 @@ public class CT_Path2D {
 	protected List<CT_Path2DCubicBezierTo> CubicBezTo;
 }
 
+// CT_Path2DList ...
 public class CT_Path2DList {
 	@XmlElement(required = true, name = "path")
 	protected List<CT_Path2D> Path;
 }
 
+// CT_PresetGeometry2D ...
 public class CT_PresetGeometry2D {
 	@XmlAttribute(name = "prst", required = true)
 	protected StringAttr Prst;
@@ -1895,6 +2114,7 @@ public class CT_PresetGeometry2D {
 	protected List<CT_GeomGuideList> AvLst;
 }
 
+// CT_PresetTextShape ...
 public class CT_PresetTextShape {
 	@XmlAttribute(name = "prst", required = true)
 	protected StringAttr Prst;
@@ -1902,6 +2122,7 @@ public class CT_PresetTextShape {
 	protected List<CT_GeomGuideList> AvLst;
 }
 
+// CT_CustomGeometry2D ...
 public class CT_CustomGeometry2D {
 	@XmlElement(required = true, name = "avLst")
 	protected List<CT_GeomGuideList> AvLst;
@@ -1917,6 +2138,7 @@ public class CT_CustomGeometry2D {
 	protected List<CT_Path2DList> PathLst;
 }
 
+// EG_Geometry ...
 public class EG_Geometry {
 	@XmlElement(required = true, name = "custGeom")
 	protected List<CT_CustomGeometry2D> CustGeom;
@@ -1924,6 +2146,7 @@ public class EG_Geometry {
 	protected List<CT_PresetGeometry2D> PrstGeom;
 }
 
+// EG_TextGeometry ...
 public class EG_TextGeometry {
 	@XmlElement(required = true, name = "custGeom")
 	protected List<CT_CustomGeometry2D> CustGeom;
@@ -1931,24 +2154,28 @@ public class EG_TextGeometry {
 	protected List<CT_PresetTextShape> PrstTxWarp;
 }
 
+// ST_LineEndType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_LineEndType")
 public class ST_LineEndType {
 	protected String ST_LineEndType;
 }
 
+// ST_LineEndWidth ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_LineEndWidth")
 public class ST_LineEndWidth {
 	protected String ST_LineEndWidth;
 }
 
+// ST_LineEndLength ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_LineEndLength")
 public class ST_LineEndLength {
 	protected String ST_LineEndLength;
 }
 
+// CT_LineEndProperties ...
 public class CT_LineEndProperties {
 	@XmlAttribute(name = "type")
 	protected StringAttr Type;
@@ -1958,6 +2185,7 @@ public class CT_LineEndProperties {
 	protected StringAttr Len;
 }
 
+// EG_LineFillProperties ...
 public class EG_LineFillProperties {
 	@XmlElement(required = true, name = "noFill")
 	protected List<CT_NoFillProperties> NoFill;
@@ -1969,17 +2197,21 @@ public class EG_LineFillProperties {
 	protected List<CT_PatternFillProperties> PattFill;
 }
 
+// CT_LineJoinBevel ...
 public class CT_LineJoinBevel {
 }
 
+// CT_LineJoinRound ...
 public class CT_LineJoinRound {
 }
 
+// CT_LineJoinMiterProperties ...
 public class CT_LineJoinMiterProperties {
 	@XmlAttribute(name = "lim")
 	protected ST_PositivePercentageAttr Lim;
 }
 
+// EG_LineJoinProperties ...
 public class EG_LineJoinProperties {
 	@XmlElement(required = true, name = "round")
 	protected List<CT_LineJoinRound> Round;
@@ -1989,17 +2221,20 @@ public class EG_LineJoinProperties {
 	protected List<CT_LineJoinMiterProperties> Miter;
 }
 
+// ST_PresetLineDashVal ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_PresetLineDashVal")
 public class ST_PresetLineDashVal {
 	protected String ST_PresetLineDashVal;
 }
 
+// CT_PresetLineDashProperties ...
 public class CT_PresetLineDashProperties {
 	@XmlAttribute(name = "val")
 	protected StringAttr Val;
 }
 
+// CT_DashStop ...
 public class CT_DashStop {
 	@XmlAttribute(name = "d", required = true)
 	protected ST_PositivePercentageAttr D;
@@ -2007,11 +2242,13 @@ public class CT_DashStop {
 	protected ST_PositivePercentageAttr Sp;
 }
 
+// CT_DashStopList ...
 public class CT_DashStopList {
 	@XmlElement(required = true, name = "ds")
 	protected List<CT_DashStop> Ds;
 }
 
+// EG_LineDashProperties ...
 public class EG_LineDashProperties {
 	@XmlElement(required = true, name = "prstDash")
 	protected List<CT_PresetLineDashProperties> PrstDash;
@@ -2019,30 +2256,35 @@ public class EG_LineDashProperties {
 	protected List<CT_DashStopList> CustDash;
 }
 
+// ST_LineCap ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_LineCap")
 public class ST_LineCap {
 	protected String ST_LineCap;
 }
 
+// ST_LineWidth ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_LineWidth")
 public class ST_LineWidth {
 	protected Integer ST_LineWidth;
 }
 
+// ST_PenAlignment ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_PenAlignment")
 public class ST_PenAlignment {
 	protected String ST_PenAlignment;
 }
 
+// ST_CompoundLine ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_CompoundLine")
 public class ST_CompoundLine {
 	protected String ST_CompoundLine;
 }
 
+// CT_LineProperties ...
 public class CT_LineProperties {
 	@XmlAttribute(name = "w")
 	protected IntegerAttr W;
@@ -2063,12 +2305,14 @@ public class CT_LineProperties {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// ST_ShapeID ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_ShapeID")
 public class ST_ShapeID {
 	protected String ST_ShapeID;
 }
 
+// CT_ShapeProperties ...
 public class CT_ShapeProperties {
 	@XmlAttribute(name = "bwMode")
 	protected StringAttr BwMode;
@@ -2087,6 +2331,7 @@ public class CT_ShapeProperties {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_GroupShapeProperties ...
 public class CT_GroupShapeProperties {
 	@XmlAttribute(name = "bwMode")
 	protected StringAttr BwMode;
@@ -2100,18 +2345,21 @@ public class CT_GroupShapeProperties {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_StyleMatrixReference ...
 public class CT_StyleMatrixReference {
 	@XmlAttribute(name = "idx", required = true)
 	protected IntegerAttr Idx;
 	protected List<EG_ColorChoice> EG_ColorChoice;
 }
 
+// CT_FontReference ...
 public class CT_FontReference {
 	@XmlAttribute(name = "idx", required = true)
 	protected StringAttr Idx;
 	protected List<EG_ColorChoice> EG_ColorChoice;
 }
 
+// CT_ShapeStyle ...
 public class CT_ShapeStyle {
 	@XmlElement(required = true, name = "lnRef")
 	protected List<CT_StyleMatrixReference> LnRef;
@@ -2123,6 +2371,7 @@ public class CT_ShapeStyle {
 	protected List<CT_FontReference> FontRef;
 }
 
+// CT_DefaultShapeDefinition ...
 public class CT_DefaultShapeDefinition {
 	@XmlElement(required = true, name = "spPr")
 	protected List<CT_ShapeProperties> SpPr;
@@ -2136,6 +2385,7 @@ public class CT_DefaultShapeDefinition {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_ObjectStyleDefaults ...
 public class CT_ObjectStyleDefaults {
 	@XmlElement(required = true, name = "spDef")
 	protected List<CT_DefaultShapeDefinition> SpDef;
@@ -2147,9 +2397,11 @@ public class CT_ObjectStyleDefaults {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_EmptyElement ...
 public class CT_EmptyElement {
 }
 
+// CT_ColorMapping ...
 public class CT_ColorMapping {
 	@XmlAttribute(name = "bg1", required = true)
 	protected StringAttr Bg1;
@@ -2179,6 +2431,7 @@ public class CT_ColorMapping {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_ColorMappingOverride ...
 public class CT_ColorMappingOverride {
 	@XmlElement(required = true, name = "masterClrMapping")
 	protected CT_EmptyElement MasterClrMapping;
@@ -2186,6 +2439,7 @@ public class CT_ColorMappingOverride {
 	protected CT_ColorMapping OverrideClrMapping;
 }
 
+// CT_ColorSchemeAndMapping ...
 public class CT_ColorSchemeAndMapping {
 	@XmlElement(required = true, name = "clrScheme")
 	protected List<CT_ColorScheme> ClrScheme;
@@ -2193,11 +2447,13 @@ public class CT_ColorSchemeAndMapping {
 	protected List<CT_ColorMapping> ClrMap;
 }
 
+// CT_ColorSchemeList ...
 public class CT_ColorSchemeList {
 	@XmlElement(required = true, name = "extraClrScheme")
 	protected List<CT_ColorSchemeAndMapping> ExtraClrScheme;
 }
 
+// CT_OfficeStyleSheet ...
 public class CT_OfficeStyleSheet {
 	@XmlAttribute(name = "name")
 	protected StringAttr Name;
@@ -2213,6 +2469,7 @@ public class CT_OfficeStyleSheet {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_BaseStylesOverride ...
 public class CT_BaseStylesOverride {
 	@XmlElement(required = true, name = "clrScheme")
 	protected List<CT_ColorScheme> ClrScheme;
@@ -2222,6 +2479,7 @@ public class CT_BaseStylesOverride {
 	protected List<CT_StyleMatrix> FmtScheme;
 }
 
+// CT_ClipboardStyleSheet ...
 public class CT_ClipboardStyleSheet {
 	@XmlElement(required = true, name = "themeElements")
 	protected List<CT_BaseStyles> ThemeElements;
@@ -2247,6 +2505,7 @@ public class ThemeManager {
 	protected CT_EmptyElement ThemeManager;
 }
 
+// CT_TableCellProperties ...
 public class CT_TableCellProperties {
 	@XmlAttribute(name = "marL")
 	protected ST_Coordinate32Attr MarL;
@@ -2285,11 +2544,13 @@ public class CT_TableCellProperties {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_Headers ...
 public class CT_Headers {
 	@XmlElement(required = true, name = "header")
 	protected String Header;
 }
 
+// CT_TableCol ...
 public class CT_TableCol {
 	@XmlAttribute(name = "w", required = true)
 	protected ST_CoordinateAttr W;
@@ -2297,11 +2558,13 @@ public class CT_TableCol {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_TableGrid ...
 public class CT_TableGrid {
 	@XmlElement(required = true, name = "gridCol")
 	protected List<CT_TableCol> GridCol;
 }
 
+// CT_TableCell ...
 public class CT_TableCell {
 	@XmlAttribute(name = "rowSpan")
 	protected IntegerAttr RowSpan;
@@ -2321,6 +2584,7 @@ public class CT_TableCell {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_TableRow ...
 public class CT_TableRow {
 	@XmlAttribute(name = "h", required = true)
 	protected ST_CoordinateAttr H;
@@ -2330,6 +2594,7 @@ public class CT_TableRow {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_TableProperties ...
 public class CT_TableProperties {
 	@XmlAttribute(name = "rtl")
 	protected BooleanAttr Rtl;
@@ -2355,6 +2620,7 @@ public class CT_TableProperties {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_Table ...
 public class CT_Table {
 	@XmlElement(required = true, name = "tblPr")
 	protected List<CT_TableProperties> TblPr;
@@ -2370,6 +2636,7 @@ public class Tbl {
 	protected CT_Table Tbl;
 }
 
+// CT_Cell3D ...
 public class CT_Cell3D {
 	@XmlAttribute(name = "prstMaterial")
 	protected StringAttr PrstMaterial;
@@ -2381,6 +2648,7 @@ public class CT_Cell3D {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// EG_ThemeableFillStyle ...
 public class EG_ThemeableFillStyle {
 	@XmlElement(required = true, name = "fill")
 	protected List<CT_FillProperties> Fill;
@@ -2388,6 +2656,7 @@ public class EG_ThemeableFillStyle {
 	protected List<CT_StyleMatrixReference> FillRef;
 }
 
+// CT_ThemeableLineStyle ...
 public class CT_ThemeableLineStyle {
 	@XmlElement(required = true, name = "ln")
 	protected List<CT_LineProperties> Ln;
@@ -2395,6 +2664,7 @@ public class CT_ThemeableLineStyle {
 	protected List<CT_StyleMatrixReference> LnRef;
 }
 
+// EG_ThemeableEffectStyle ...
 public class EG_ThemeableEffectStyle {
 	@XmlElement(required = true, name = "effect")
 	protected List<CT_EffectProperties> Effect;
@@ -2402,6 +2672,7 @@ public class EG_ThemeableEffectStyle {
 	protected List<CT_StyleMatrixReference> EffectRef;
 }
 
+// EG_ThemeableFontStyles ...
 public class EG_ThemeableFontStyles {
 	@XmlElement(required = true, name = "font")
 	protected List<CT_FontCollection> Font;
@@ -2409,12 +2680,14 @@ public class EG_ThemeableFontStyles {
 	protected List<CT_FontReference> FontRef;
 }
 
+// ST_OnOffStyleType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_OnOffStyleType")
 public class ST_OnOffStyleType {
 	protected String ST_OnOffStyleType;
 }
 
+// CT_TableStyleTextStyle ...
 public class CT_TableStyleTextStyle {
 	@XmlAttribute(name = "b")
 	protected StringAttr B;
@@ -2426,6 +2699,7 @@ public class CT_TableStyleTextStyle {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_TableCellBorderStyle ...
 public class CT_TableCellBorderStyle {
 	@XmlElement(required = true, name = "left")
 	protected List<CT_ThemeableLineStyle> Left;
@@ -2447,11 +2721,13 @@ public class CT_TableCellBorderStyle {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_TableBackgroundStyle ...
 public class CT_TableBackgroundStyle {
 	protected List<EG_ThemeableFillStyle> EG_ThemeableFillStyle;
 	protected List<EG_ThemeableEffectStyle> EG_ThemeableEffectStyle;
 }
 
+// CT_TableStyleCellStyle ...
 public class CT_TableStyleCellStyle {
 	protected List<EG_ThemeableFillStyle> EG_ThemeableFillStyle;
 	@XmlElement(required = true, name = "tcBdr")
@@ -2460,6 +2736,7 @@ public class CT_TableStyleCellStyle {
 	protected List<CT_Cell3D> Cell3D;
 }
 
+// CT_TablePartStyle ...
 public class CT_TablePartStyle {
 	@XmlElement(required = true, name = "tcTxStyle")
 	protected List<CT_TableStyleTextStyle> TcTxStyle;
@@ -2467,6 +2744,7 @@ public class CT_TablePartStyle {
 	protected List<CT_TableStyleCellStyle> TcStyle;
 }
 
+// CT_TableStyle ...
 public class CT_TableStyle {
 	@XmlAttribute(name = "styleId", required = true)
 	protected StringAttr StyleId;
@@ -2504,6 +2782,7 @@ public class CT_TableStyle {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_TableStyleList ...
 public class CT_TableStyleList {
 	@XmlAttribute(name = "def", required = true)
 	protected StringAttr Def;
@@ -2517,6 +2796,7 @@ public class TblStyleLst {
 	protected CT_TableStyleList TblStyleLst;
 }
 
+// CT_TextParagraph ...
 public class CT_TextParagraph {
 	protected List<EG_TextRun> EG_TextRun;
 	@XmlElement(required = true, name = "pPr")
@@ -2525,42 +2805,49 @@ public class CT_TextParagraph {
 	protected List<CT_TextCharacterProperties> EndParaRPr;
 }
 
+// ST_TextAnchoringType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_TextAnchoringType")
 public class ST_TextAnchoringType {
 	protected String ST_TextAnchoringType;
 }
 
+// ST_TextVertOverflowType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_TextVertOverflowType")
 public class ST_TextVertOverflowType {
 	protected String ST_TextVertOverflowType;
 }
 
+// ST_TextHorzOverflowType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_TextHorzOverflowType")
 public class ST_TextHorzOverflowType {
 	protected String ST_TextHorzOverflowType;
 }
 
+// ST_TextVerticalType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_TextVerticalType")
 public class ST_TextVerticalType {
 	protected String ST_TextVerticalType;
 }
 
+// ST_TextWrappingType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_TextWrappingType")
 public class ST_TextWrappingType {
 	protected String ST_TextWrappingType;
 }
 
+// ST_TextColumnCount ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_TextColumnCount")
 public class ST_TextColumnCount {
 	protected Integer ST_TextColumnCount;
 }
 
+// CT_TextListStyle ...
 public class CT_TextListStyle {
 	@XmlElement(required = true, name = "defPPr")
 	protected List<CT_TextParagraphProperties> DefPPr;
@@ -2586,11 +2873,13 @@ public class CT_TextListStyle {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// ST_TextFontScalePercentOrPercentString ...
 public class ST_TextFontScalePercentOrPercentString {
 	@XmlElement(required = true)
 	protected String ST_Percentage;
 }
 
+// CT_TextNormalAutofit ...
 public class CT_TextNormalAutofit {
 	@XmlAttribute(name = "fontScale")
 	protected ST_TextFontScalePercentOrPercentStringAttr FontScale;
@@ -2598,12 +2887,15 @@ public class CT_TextNormalAutofit {
 	protected ST_TextSpacingPercentOrPercentStringAttr LnSpcReduction;
 }
 
+// CT_TextShapeAutofit ...
 public class CT_TextShapeAutofit {
 }
 
+// CT_TextNoAutofit ...
 public class CT_TextNoAutofit {
 }
 
+// EG_TextAutofit ...
 public class EG_TextAutofit {
 	@XmlElement(required = true, name = "noAutofit")
 	protected CT_TextNoAutofit NoAutofit;
@@ -2613,6 +2905,7 @@ public class EG_TextAutofit {
 	protected CT_TextShapeAutofit SpAutoFit;
 }
 
+// CT_TextBodyProperties ...
 public class CT_TextBodyProperties {
 	@XmlAttribute(name = "rot")
 	protected IntegerAttr Rot;
@@ -2662,6 +2955,7 @@ public class CT_TextBodyProperties {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_TextBody ...
 public class CT_TextBody {
 	@XmlElement(required = true, name = "bodyPr")
 	protected List<CT_TextBodyProperties> BodyPr;
@@ -2671,21 +2965,25 @@ public class CT_TextBody {
 	protected List<CT_TextParagraph> P;
 }
 
+// ST_TextBulletStartAtNum ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_TextBulletStartAtNum")
 public class ST_TextBulletStartAtNum {
 	protected Integer ST_TextBulletStartAtNum;
 }
 
+// ST_TextAutonumberScheme ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_TextAutonumberScheme")
 public class ST_TextAutonumberScheme {
 	protected String ST_TextAutonumberScheme;
 }
 
+// CT_TextBulletColorFollowText ...
 public class CT_TextBulletColorFollowText {
 }
 
+// EG_TextBulletColor ...
 public class EG_TextBulletColor {
 	@XmlElement(required = true, name = "buClrTx")
 	protected List<CT_TextBulletColorFollowText> BuClrTx;
@@ -2693,30 +2991,36 @@ public class EG_TextBulletColor {
 	protected List<CT_Color> BuClr;
 }
 
+// ST_TextBulletSize ...
 public class ST_TextBulletSize {
 	@XmlElement(required = true)
 	protected ST_TextBulletSizePercent ST_TextBulletSizePercent;
 }
 
+// ST_TextBulletSizePercent ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_TextBulletSizePercent")
 public class ST_TextBulletSizePercent {
 	protected String ST_TextBulletSizePercent;
 }
 
+// CT_TextBulletSizeFollowText ...
 public class CT_TextBulletSizeFollowText {
 }
 
+// CT_TextBulletSizePercent ...
 public class CT_TextBulletSizePercent {
 	@XmlAttribute(name = "val", required = true)
 	protected StringAttr Val;
 }
 
+// CT_TextBulletSizePoint ...
 public class CT_TextBulletSizePoint {
 	@XmlAttribute(name = "val", required = true)
 	protected IntegerAttr Val;
 }
 
+// EG_TextBulletSize ...
 public class EG_TextBulletSize {
 	@XmlElement(required = true, name = "buSzTx")
 	protected CT_TextBulletSizeFollowText BuSzTx;
@@ -2726,9 +3030,11 @@ public class EG_TextBulletSize {
 	protected CT_TextBulletSizePoint BuSzPts;
 }
 
+// CT_TextBulletTypefaceFollowText ...
 public class CT_TextBulletTypefaceFollowText {
 }
 
+// EG_TextBulletTypeface ...
 public class EG_TextBulletTypeface {
 	@XmlElement(required = true, name = "buFontTx")
 	protected CT_TextBulletTypefaceFollowText BuFontTx;
@@ -2736,6 +3042,7 @@ public class EG_TextBulletTypeface {
 	protected CT_TextFont BuFont;
 }
 
+// CT_TextAutonumberBullet ...
 public class CT_TextAutonumberBullet {
 	@XmlAttribute(name = "type", required = true)
 	protected StringAttr Type;
@@ -2743,19 +3050,23 @@ public class CT_TextAutonumberBullet {
 	protected IntegerAttr StartAt;
 }
 
+// CT_TextCharBullet ...
 public class CT_TextCharBullet {
 	@XmlAttribute(name = "char", required = true)
 	protected StringAttr Char;
 }
 
+// CT_TextBlipBullet ...
 public class CT_TextBlipBullet {
 	@XmlElement(required = true, name = "blip")
 	protected List<CT_Blip> Blip;
 }
 
+// CT_TextNoBullet ...
 public class CT_TextNoBullet {
 }
 
+// EG_TextBullet ...
 public class EG_TextBullet {
 	@XmlElement(required = true, name = "buNone")
 	protected CT_TextNoBullet BuNone;
@@ -2767,6 +3078,7 @@ public class EG_TextBullet {
 	protected CT_TextBlipBullet BuBlip;
 }
 
+// ST_TextPoint ...
 public class ST_TextPoint {
 	@XmlElement(required = true)
 	protected ST_TextPointUnqualified ST_TextPointUnqualified;
@@ -2774,36 +3086,42 @@ public class ST_TextPoint {
 	protected String ST_UniversalMeasure;
 }
 
+// ST_TextPointUnqualified ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_TextPointUnqualified")
 public class ST_TextPointUnqualified {
 	protected Integer ST_TextPointUnqualified;
 }
 
+// ST_TextNonNegativePoint ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_TextNonNegativePoint")
 public class ST_TextNonNegativePoint {
 	protected Integer ST_TextNonNegativePoint;
 }
 
+// ST_TextFontSize ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_TextFontSize")
 public class ST_TextFontSize {
 	protected Integer ST_TextFontSize;
 }
 
+// ST_TextTypeface ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_TextTypeface")
 public class ST_TextTypeface {
 	protected String ST_TextTypeface;
 }
 
+// ST_PitchFamily ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_PitchFamily")
 public class ST_PitchFamily {
 	protected Byte ST_PitchFamily;
 }
 
+// CT_TextFont ...
 public class CT_TextFont {
 	@XmlAttribute(name = "typeface", required = true)
 	protected StringAttr Typeface;
@@ -2815,22 +3133,27 @@ public class CT_TextFont {
 	protected ByteAttr Charset;
 }
 
+// ST_TextUnderlineType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_TextUnderlineType")
 public class ST_TextUnderlineType {
 	protected String ST_TextUnderlineType;
 }
 
+// CT_TextUnderlineLineFollowText ...
 public class CT_TextUnderlineLineFollowText {
 }
 
+// CT_TextUnderlineFillFollowText ...
 public class CT_TextUnderlineFillFollowText {
 }
 
+// CT_TextUnderlineFillGroupWrapper ...
 public class CT_TextUnderlineFillGroupWrapper {
 	protected List<EG_FillProperties> EG_FillProperties;
 }
 
+// EG_TextUnderlineLine ...
 public class EG_TextUnderlineLine {
 	@XmlElement(required = true, name = "uLnTx")
 	protected CT_TextUnderlineLineFollowText ULnTx;
@@ -2838,6 +3161,7 @@ public class EG_TextUnderlineLine {
 	protected List<CT_LineProperties> ULn;
 }
 
+// EG_TextUnderlineFill ...
 public class EG_TextUnderlineFill {
 	@XmlElement(required = true, name = "uFillTx")
 	protected CT_TextUnderlineFillFollowText UFillTx;
@@ -2845,18 +3169,21 @@ public class EG_TextUnderlineFill {
 	protected CT_TextUnderlineFillGroupWrapper UFill;
 }
 
+// ST_TextStrikeType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_TextStrikeType")
 public class ST_TextStrikeType {
 	protected String ST_TextStrikeType;
 }
 
+// ST_TextCapsType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_TextCapsType")
 public class ST_TextCapsType {
 	protected String ST_TextCapsType;
 }
 
+// CT_TextCharacterProperties ...
 public class CT_TextCharacterProperties {
 	@XmlAttribute(name = "kumimoji")
 	protected BooleanAttr Kumimoji;
@@ -2922,50 +3249,59 @@ public class CT_TextCharacterProperties {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_Boolean ...
 public class CT_Boolean {
 	@XmlAttribute(name = "val")
 	protected ST_OnOffAttr Val;
 }
 
+// ST_TextSpacingPoint ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_TextSpacingPoint")
 public class ST_TextSpacingPoint {
 	protected Integer ST_TextSpacingPoint;
 }
 
+// ST_TextSpacingPercentOrPercentString ...
 public class ST_TextSpacingPercentOrPercentString {
 	@XmlElement(required = true)
 	protected String ST_Percentage;
 }
 
+// CT_TextSpacingPercent ...
 public class CT_TextSpacingPercent {
 	@XmlAttribute(name = "val", required = true)
 	protected ST_TextSpacingPercentOrPercentStringAttr Val;
 }
 
+// CT_TextSpacingPoint ...
 public class CT_TextSpacingPoint {
 	@XmlAttribute(name = "val", required = true)
 	protected IntegerAttr Val;
 }
 
+// ST_TextMargin ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_TextMargin")
 public class ST_TextMargin {
 	protected Integer ST_TextMargin;
 }
 
+// ST_TextIndent ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_TextIndent")
 public class ST_TextIndent {
 	protected Integer ST_TextIndent;
 }
 
+// ST_TextTabAlignType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_TextTabAlignType")
 public class ST_TextTabAlignType {
 	protected String ST_TextTabAlignType;
 }
 
+// CT_TextTabStop ...
 public class CT_TextTabStop {
 	@XmlAttribute(name = "pos")
 	protected ST_Coordinate32Attr Pos;
@@ -2973,16 +3309,19 @@ public class CT_TextTabStop {
 	protected StringAttr Algn;
 }
 
+// CT_TextTabStopList ...
 public class CT_TextTabStopList {
 	@XmlElement(required = true, name = "tab")
 	protected List<CT_TextTabStop> Tab;
 }
 
+// CT_TextLineBreak ...
 public class CT_TextLineBreak {
 	@XmlElement(required = true, name = "rPr")
 	protected List<CT_TextCharacterProperties> RPr;
 }
 
+// CT_TextSpacing ...
 public class CT_TextSpacing {
 	@XmlElement(required = true, name = "spcPct")
 	protected CT_TextSpacingPercent SpcPct;
@@ -2990,24 +3329,28 @@ public class CT_TextSpacing {
 	protected CT_TextSpacingPoint SpcPts;
 }
 
+// ST_TextAlignType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_TextAlignType")
 public class ST_TextAlignType {
 	protected String ST_TextAlignType;
 }
 
+// ST_TextFontAlignType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_TextFontAlignType")
 public class ST_TextFontAlignType {
 	protected String ST_TextFontAlignType;
 }
 
+// ST_TextIndentLevelType ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_TextIndentLevelType")
 public class ST_TextIndentLevelType {
 	protected Integer ST_TextIndentLevelType;
 }
 
+// CT_TextParagraphProperties ...
 public class CT_TextParagraphProperties {
 	@XmlAttribute(name = "marL")
 	protected IntegerAttr MarL;
@@ -3049,6 +3392,7 @@ public class CT_TextParagraphProperties {
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
+// CT_TextField ...
 public class CT_TextField {
 	@XmlAttribute(name = "id", required = true)
 	protected StringAttr Id;
@@ -3062,6 +3406,7 @@ public class CT_TextField {
 	protected List<String> T;
 }
 
+// EG_TextRun ...
 public class EG_TextRun {
 	@XmlElement(required = true, name = "r")
 	protected CT_RegularTextRun R;
@@ -3071,6 +3416,7 @@ public class EG_TextRun {
 	protected CT_TextField Fld;
 }
 
+// CT_RegularTextRun ...
 public class CT_RegularTextRun {
 	@XmlElement(required = true, name = "rPr")
 	protected List<CT_TextCharacterProperties> RPr;

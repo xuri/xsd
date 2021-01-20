@@ -2,22 +2,27 @@
 
 typedef PluginMetadata PluginMetadata;
 
+// Mojos ...
 typedef struct {
 	Mojo Mojo[];
 } Mojos;
 
+// PluginMetadata is Root element of a script-based mojo's plugin metadata bindings.
 typedef struct {
 	Mojos Mojos;
 } PluginMetadata;
 
+// Components ...
 typedef struct {
 	Component Component[];
 } Components;
 
+// Parameters ...
 typedef struct {
 	Parameter Parameter[];
 } Parameters;
 
+// Mojo is Information about a sub-execution of the Maven lifecycle which should be processed.
 typedef struct {
 	char Goal;
 	char Phase;
@@ -36,6 +41,7 @@ typedef struct {
 	char Call;
 } Mojo;
 
+// Parameter is A deprecation message for this mojo parameter.
 typedef struct {
 	char Name;
 	char Alias;
@@ -49,12 +55,14 @@ typedef struct {
 	char Deprecated;
 } Parameter;
 
+// LifecycleExecution is A goal, not attached to a lifecycle phase, which should be executed ahead of this mojo.
 typedef struct {
 	char Lifecycle;
 	char Phase;
 	char Goal;
 } LifecycleExecution;
 
+// Component is The role-hint to lookup.
 typedef struct {
 	char Role;
 	char Hint;

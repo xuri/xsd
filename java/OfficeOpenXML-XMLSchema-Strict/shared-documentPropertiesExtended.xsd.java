@@ -17,6 +17,7 @@ public class Properties {
 	protected CT_Properties Properties;
 }
 
+// CT_Properties ...
 public class CT_Properties {
 	@XmlElement(required = true, name = "Template")
 	protected List<String> Template;
@@ -74,16 +75,19 @@ public class CT_Properties {
 	protected List<Integer> DocSecurity;
 }
 
+// CT_VectorVariant ...
 public class CT_VectorVariant {
 	@XmlElement(required = true, name = "vt:vector")
 	protected CT_Vector VtVector;
 }
 
+// CT_VectorLpstr ...
 public class CT_VectorLpstr {
 	@XmlElement(required = true, name = "vt:vector")
 	protected CT_Vector VtVector;
 }
 
+// CT_DigSigBlob ...
 public class CT_DigSigBlob {
 	@XmlElement(required = true, name = "vt:blob")
 	protected List<Byte> VtBlob;

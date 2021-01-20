@@ -11,6 +11,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
+// ComplexFoo ...
 public class ComplexFoo {
 	@XmlElement(required = true, name = "element1")
 	protected NonEmptyString Element1;

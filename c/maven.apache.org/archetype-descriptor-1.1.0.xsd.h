@@ -2,18 +2,22 @@
 
 typedef ArchetypeDescriptor Archetypedescriptor;
 
+// RequiredProperties ...
 typedef struct {
 	RequiredProperty RequiredProperty[];
 } RequiredProperties;
 
+// FileSets ...
 typedef struct {
 	FileSet FileSet[];
 } FileSets;
 
+// Modules ...
 typedef struct {
 	ModuleDescriptor Module[];
 } Modules;
 
+// ArchetypeDescriptor is 1.0.0+
 typedef struct {
 	char NameAttr; // attr
 	bool PartialAttr; // attr, optional
@@ -22,12 +26,14 @@ typedef struct {
 	Modules Modules;
 } ArchetypeDescriptor;
 
+// RequiredProperty is A regular expression used to validate the property.
 typedef struct {
 	char KeyAttr; // attr
 	char DefaultValue;
 	char ValidationRegex;
 } RequiredProperty;
 
+// ModuleDescriptor is 1.0.0+
 typedef struct {
 	char IdAttr; // attr
 	char DirAttr; // attr
@@ -36,14 +42,18 @@ typedef struct {
 	Modules Modules;
 } ModuleDescriptor;
 
+// Includes ...
 typedef struct {
 	char Include[];
 } Includes;
 
+// Excludes ...
 typedef struct {
 	char Exclude[];
 } Excludes;
 
+// FileSet is The directory where the files will be searched for, which is also the directory where the
+//            project's files will be generated.
 typedef struct {
 	bool FilteredAttr; // attr, optional
 	bool PackagedAttr; // attr, optional

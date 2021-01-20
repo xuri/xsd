@@ -17,6 +17,8 @@ public class Document {
 	protected ChangesDocument Document;
 }
 
+// ChangesDocument is Contains the releases of this project with the actions taken
+//             for each of the releases.
 public class ChangesDocument {
 	@XmlElement(required = true, name = "properties")
 	protected Properties Properties;
@@ -24,11 +26,13 @@ public class ChangesDocument {
 	protected Body Body;
 }
 
+// Body is The list of releases for this project.
 public class Body {
 	@XmlElement(required = true, name = "release")
 	protected List<Release> Release;
 }
 
+// Release is The list of actions taken for this release.
 public class Release {
 	@XmlAttribute(name = "version")
 	protected StringAttr Version;
@@ -40,6 +44,7 @@ public class Release {
 	protected List<Action> Action;
 }
 
+// Action is A list of contibutors for this issue.
 public class Action {
 	@XmlAttribute(name = "dev")
 	protected StringAttr Dev;
@@ -61,11 +66,13 @@ public class Action {
 	protected List<DueTo> Dueto;
 }
 
+// FixedIssue is A fixed issue.
 public class FixedIssue {
 	@XmlAttribute(name = "issue")
 	protected StringAttr Issue;
 }
 
+// DueTo is Name and Email of the person to be credited for this change. This can be used when a patch is submitted by a non-committer.
 public class DueTo {
 	@XmlAttribute(name = "name")
 	protected StringAttr Name;
@@ -73,6 +80,7 @@ public class DueTo {
 	protected StringAttr Email;
 }
 
+// Properties is Page Author
 public class Properties {
 	@XmlElement(required = true, name = "title")
 	protected String Title;
@@ -80,6 +88,7 @@ public class Properties {
 	protected Author Author;
 }
 
+// Author is A description of the author page.
 public class Author {
 	@XmlAttribute(name = "email")
 	protected StringAttr Email;

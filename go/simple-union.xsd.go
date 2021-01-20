@@ -4,6 +4,6 @@ package schema
 
 // ConditionalUintType ...
 type ConditionalUintType struct {
-	Boolean     bool
 	UnsignedInt uint32
+	Boolean     bool
 }

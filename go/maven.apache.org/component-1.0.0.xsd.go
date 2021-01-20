@@ -6,7 +6,7 @@ import (
 	"encoding/xml"
 )
 
-// Component ...
+// Component is Describes the component layout and packaging.
 type Component *Component
 
 // FileSets ...
@@ -27,7 +27,7 @@ type DependencySets struct {
 	DependencySet []*DependencySet `xml:"dependencySet"`
 }
 
-// Component ...
+// Component is Describes the component layout and packaging.
 type Component struct {
 	FileSets       *FileSets       `xml:"fileSets"`
 	Files          *Files          `xml:"files"`
@@ -46,7 +46,9 @@ type Excludes struct {
 	Exclude []string `xml:"exclude"`
 }
 
-// DependencySet ...
+// DependencySet is Specifies the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory.
 type DependencySet struct {
 	OutputFileNameMapping string    `xml:"outputFileNameMapping"`
 	Unpack                bool      `xml:"unpack"`
@@ -58,7 +60,7 @@ type DependencySet struct {
 	DirectoryMode         string    `xml:"directoryMode"`
 }
 
-// FileItem ...
+// FileItem is Flag used to determine if the file is filtered.
 type FileItem struct {
 	Source          string `xml:"source"`
 	OutputDirectory string `xml:"outputDirectory"`
@@ -68,7 +70,9 @@ type FileItem struct {
 	Filtered        bool   `xml:"filtered"`
 }
 
-// FileSet ...
+// FileSet is Specifies the output directory relative to the root
+//             of the root directory of the assembly. For example,
+//             "log" will put the specified files in the log directory.
 type FileSet struct {
 	Directory       string    `xml:"directory"`
 	LineEnding      string    `xml:"lineEnding"`

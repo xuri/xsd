@@ -6,7 +6,7 @@ import (
 	"encoding/xml"
 )
 
-// Project ...
+// Project is The <code>&lt;project&gt;</code> element is the root of the site decoration descriptor.
 type Project *DecorationModel
 
 // PoweredBy ...
@@ -20,7 +20,7 @@ type Custom struct {
 	XMLName xml.Name `xml:"custom"`
 }
 
-// DecorationModel ...
+// DecorationModel is Modify the version published display properties.
 type DecorationModel struct {
 	NameAttr                 string       `xml:"name,attr,omitempty"`
 	CombineSelfAttr          string       `xml:"combine.self,attr,omitempty"`
@@ -37,12 +37,12 @@ type DecorationModel struct {
 	Custom                   *Custom      `xml:"custom"`
 }
 
-// Version ...
+// Version is Modify display properties for version published.
 type Version struct {
 	PositionAttr string `xml:"position,attr,omitempty"`
 }
 
-// Banner ...
+// Banner is The title for the banner image.
 type Banner struct {
 	Name   string `xml:"name"`
 	Src    string `xml:"src"`
@@ -66,7 +66,7 @@ type Breadcrumbs struct {
 	Item    []*LinkItem `xml:"item"`
 }
 
-// Body ...
+// Body is Additional content (like JavaScript) to include in the HEAD block of the generated pages.
 type Body struct {
 	Head        string       `xml:"head"`
 	Links       *Links       `xml:"links"`
@@ -75,7 +75,7 @@ type Body struct {
 	Footer      string       `xml:"footer"`
 }
 
-// LinkItem ...
+// LinkItem is A link in the navigation.
 type LinkItem struct {
 	NameAttr     string `xml:"name,attr,omitempty"`
 	HrefAttr     string `xml:"href,attr,omitempty"`
@@ -89,7 +89,7 @@ type LinkItem struct {
 	TitleAttr    string `xml:"title,attr,omitempty"`
 }
 
-// Menu ...
+// Menu is A list of menu item.
 type Menu struct {
 	NameAttr         string      `xml:"name,attr,omitempty"`
 	InheritAttr      string      `xml:"inherit,attr,omitempty"`
@@ -105,7 +105,7 @@ type Menu struct {
 	Item             []*MenuItem `xml:"item"`
 }
 
-// MenuItem ...
+// MenuItem is A list of menu item.
 type MenuItem struct {
 	CollapseAttr bool        `xml:"collapse,attr,omitempty"`
 	RefAttr      string      `xml:"ref,attr,omitempty"`
@@ -123,14 +123,14 @@ type MenuItem struct {
 	Item         []*MenuItem `xml:"item"`
 }
 
-// Skin ...
+// Skin is The skin version.
 type Skin struct {
 	GroupId    string `xml:"groupId"`
 	ArtifactId string `xml:"artifactId"`
 	Version    string `xml:"version"`
 }
 
-// Logo ...
+// Logo is Power by logo on the navigation.
 type Logo struct {
 	NameAttr     string `xml:"name,attr,omitempty"`
 	HrefAttr     string `xml:"href,attr,omitempty"`
@@ -144,7 +144,7 @@ type Logo struct {
 	TitleAttr    string `xml:"title,attr,omitempty"`
 }
 
-// PublishDate ...
+// PublishDate is Modify display properties for date published.
 type PublishDate struct {
 	PositionAttr string `xml:"position,attr,omitempty"`
 	FormatAttr   string `xml:"format,attr,omitempty"`

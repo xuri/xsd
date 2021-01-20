@@ -2,10 +2,12 @@
 
 typedef RemoteResourcesBundle RemoteResourcesBundle;
 
+// RemoteResources ...
 typedef struct {
 	char RemoteResource[];
 } RemoteResources;
 
+// RemoteResourcesBundle is Root element of the remote-resources.xml file.
 typedef struct {
 	RemoteResources RemoteResources;
 	char SourceEncoding;

@@ -17,16 +17,21 @@ public class Verifications {
 	protected Verifications Verifications;
 }
 
+// Files ...
 public class Files {
 	@XmlElement(required = true, name = "file")
 	protected List<File> File;
 }
 
+// Verifications is Root element of the verifications file.
 public class Verifications {
 	@XmlElement(required = true, name = "files")
 	protected Files Files;
 }
 
+// File is When this is set to <code>true</code> the plugin checks that the
+//             file or directory exists. When set to <code>false</code> it checks
+//             that the file or directory does <strong>not</strong> exist.
 public class File {
 	@XmlElement(required = true, name = "location")
 	protected String Location;

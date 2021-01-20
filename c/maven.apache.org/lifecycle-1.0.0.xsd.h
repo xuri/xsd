@@ -2,36 +2,44 @@
 
 typedef LifecycleConfiguration Lifecycles;
 
+// LifecycleConfiguration is 1.0.0
 typedef struct {
 	Lifecycle Lifecycle[];
 } LifecycleConfiguration;
 
+// Phases ...
 typedef struct {
 	Phase Phase[];
 } Phases;
 
+// Lifecycle is The ID of this lifecycle, for identification in the mojo descriptor.
 typedef struct {
 	char Id;
 	Phases Phases;
 } Lifecycle;
 
+// Executions ...
 typedef struct {
 	Execution Execution[];
 } Executions;
 
+// Configuration ...
 typedef struct {
 } Configuration;
 
+// Phase is The ID of this phase, e.g., <code>generate-sources</code>.
 typedef struct {
 	char Id;
 	Executions Executions;
 	Configuration Configuration;
 } Phase;
 
+// Goals ...
 typedef struct {
 	char Goal[];
 } Goals;
 
+// Execution is A set of goals to execute.
 typedef struct {
 	Configuration Configuration;
 	Goals Goals;

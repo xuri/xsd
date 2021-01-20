@@ -7,52 +7,75 @@ import (
 	"time"
 )
 
-// DateSimpleType ...
+// DateSimpleType is The date simple type unifies both date and time formats and allows
+//             a date to be specified as either a day or a time in a day. This is
+//             to allow situations where the law becomes effective based on another
+//             time zone.
 type DateSimpleType struct {
 	Date     time.Time
 	DateTime time.Time
 }
 
-// OccurrenceSimpleType ...
+// OccurrenceSimpleType is The occurrence simple type specifies which occurrence is affected
+//             by an action when amending. An occurence can be either a positive
+//             integer or a value from the choice enumeration such as "all" for
+//             all occurrences or "last" for the last occurrence.
 type OccurrenceSimpleType struct {
 	PositiveInteger int
 	ChoiceEnum      *ChoiceEnum
 }
 
-// ShortStringSimpleType ...
+// ShortStringSimpleType is A simple string with not more than 32 characters.
 type ShortStringSimpleType string
 
-// MediumStringSimpleType ...
+// MediumStringSimpleType is A simple string with not more than 128 characters.
 type MediumStringSimpleType string
 
-// LongStringSimpleType ...
+// LongStringSimpleType is A simple string with not more than 1024 characters.
 type LongStringSimpleType string
 
-// ChoiceEnum ...
+// ChoiceEnum is The choice enumeration is used to enumerate some textual values for
+//             use with the occurrence simple type defined above.
 type ChoiceEnum string
 
-// PropertyTypeEnum ...
+// PropertyTypeEnum is The property  type enumeration allows a property to be given a
+//             type specification. If the @type attribute is not specified, then
+//             the default type is "string".
 type PropertyTypeEnum string
 
-// SetTypeEnum ...
+// SetTypeEnum is A "res" is a resource, such as a person, place, or thing and
+//                   the properties enclosed within the set describe it.
 type SetTypeEnum string
 
-// StatusEnum ...
+// StatusEnum is A "unknown" status indicates that the status is not known.
 type StatusEnum string
 
-// ActionTypeEnum ...
+// ActionTypeEnum is The "delete" action removes text from a proposed provision to
+//                   the law.
 type ActionTypeEnum string
 
-// PositionEnum ...
+// PositionEnum is The position enumeration is used with references found within
+//             amendments when it is necessary to specify a position relative to an
+//             item rather than when referencing the item itself.
 type PositionEnum string
 
-// OrientationEnum ...
+// OrientationEnum is The orientation enumeration is used specify how an item should be
+//             oriented in the printed form. The orientation can be specified
+//             for any content item or for any appendix item, including a
+//             schedule.
 type OrientationEnum string
 
-// NoteTypeEnum ...
+// NoteTypeEnum is Notes can be placed inline, as footnotes at the end of the page,
+//             as end notes as the end of document, or U.S. Code notes. By default,
+//             notes are inline
 type NoteTypeEnum string
 
-// IdentificationGroup ...
+// IdentificationGroup is Use the @identifier attribute to specify the URL context of the
+//                element. Typically, the @identifier will be established on the
+//                root element or on any element, such as a <quotedStructure> or
+//                <quotedText> element, that changes the context.
+//
+//                The @identifier attribute is optional.
 type IdentificationGroup struct {
 	IdAttr         string `xml:"id,attr,omitempty"`
 	NameAttr       string `xml:"name,attr,omitempty"`
@@ -60,14 +83,19 @@ type IdentificationGroup struct {
 	IdentifierAttr string `xml:"identifier,attr,omitempty"`
 }
 
-// ClassificationGroup ...
+// ClassificationGroup is The @style attribute is used to specify CSS attributes that
+//                override the default styles defined for an element or an element
+//                class. The current loose-leaf publication standards should be
+//                specified using an external style sheet and the use of the @style
+//                attribute should be reserved for exception cases where the
+//                default presentation must be overridden.
 type ClassificationGroup struct {
 	RoleAttr  string `xml:"role,attr,omitempty"`
 	ClassAttr string `xml:"class,attr,omitempty"`
 	StyleAttr string `xml:"style,attr,omitempty"`
 }
 
-// AnnotationGroup ...
+// AnnotationGroup is The @codificationTip is for internal use by the OLRC.
 type AnnotationGroup struct {
 	NoteAttr            string `xml:"note,attr,omitempty"`
 	AltAttr             string `xml:"alt,attr,omitempty"`
@@ -77,53 +105,72 @@ type AnnotationGroup struct {
 	CodificationTipAttr string `xml:"codificationTip,attr,omitempty"`
 }
 
-// DescriptionGroup ...
+// DescriptionGroup is The @sortOrder attribute is used to specify a sorting order for
+//                a list of items, when that sort order is not the document
+//                sequence. The @sortOrder value must be specified as a positive
+//                integer. This attribute should rarely be used.
 type DescriptionGroup struct {
 	TitleAttr     string `xml:"title,attr,omitempty"`
 	BriefAttr     string `xml:"brief,attr,omitempty"`
 	SortOrderAttr int    `xml:"sortOrder,attr,omitempty"`
 }
 
-// ReferenceGroup ...
+// ReferenceGroup is The @portion attribute is used, in conjunction with the @idref
+//                attribute, when only a portion of the referenced item is being
+//                affected. The value of @portion is an additional part to append
+//                to the URL, with a "/" separator to identify the item affected.
+//                Do not include a leading "/" in the @portion value.
 type ReferenceGroup struct {
 	HrefAttr    string `xml:"href,attr,omitempty"`
 	IdrefAttr   string `xml:"idref,attr,omitempty"`
 	PortionAttr string `xml:"portion,attr,omitempty"`
 }
 
-// AmendingGroup ...
+// AmendingGroup is The @posCount attribute is used to specify the number of
+//                occurrences of the @posText to seek out when establishing the
+//                context.
 type AmendingGroup struct {
 	PosAttr      string `xml:"pos,attr,omitempty"`
 	PosTextAttr  string `xml:"posText,attr,omitempty"`
 	PosCountAttr int    `xml:"posCount,attr,omitempty"`
 }
 
-// LinkGroup ...
+// LinkGroup is The @src attribute is a URL that points to an item to be included
+//                in the published document. Unlike an @href attribute, a @src
+//                attribute can be any normal URL and can be relative or absolute.
 type LinkGroup struct {
 	SrcAttr string `xml:"src,attr,omitempty"`
 }
 
-// ValueGroup ...
+// ValueGroup is The @endValue attribute is used for the upper end of a value
+//             range.
 type ValueGroup struct {
 	ValueAttr      string `xml:"value,attr,omitempty"`
 	StartValueAttr string `xml:"startValue,attr,omitempty"`
 	EndValueAttr   string `xml:"endValue,attr,omitempty"`
 }
 
-// NoteGroup ...
+// NoteGroup is Set the @topic attribute to a string value in order
+//                      to categorize the note or group of notes. An open,
+//                      but enumerated, list of string values should be used.
+//                      Using a fixed list of values will better aid in
+//                      categorization of notes later.
 type NoteGroup struct {
 	TypeAttr  string `xml:"type,attr,omitempty"`
 	TopicAttr string `xml:"topic,attr,omitempty"`
 }
 
-// DateGroup ...
+// DateGroup is The @endDate attribute is used for the ending date of a date
+//                range.
 type DateGroup struct {
 	DateAttr      *DateSimpleType `xml:"date,attr,omitempty"`
 	StartDateAttr *DateSimpleType `xml:"startDate,attr,omitempty"`
 	EndDateAttr   *DateSimpleType `xml:"endDate,attr,omitempty"`
 }
 
-// VersioningGroup ...
+// VersioningGroup is The @partial attribute is used, in conjunction with the
+//                @status attribute to indicate that the status is not fully
+//                applied.
 type VersioningGroup struct {
 	StartPeriodAttr *DateSimpleType `xml:"startPeriod,attr,omitempty"`
 	EndPeriodAttr   *DateSimpleType `xml:"endPeriod,attr,omitempty"`
@@ -131,21 +178,35 @@ type VersioningGroup struct {
 	PartialAttr     bool            `xml:"partial,attr,omitempty"`
 }
 
-// ActionGroup ...
+// ActionGroup is The @commencementDate attribute specifies the date upon which the
+//                action is to be applied.
 type ActionGroup struct {
 	TypeAttr             string                `xml:"type,attr,omitempty"`
 	OccurrenceAttr       *OccurrenceSimpleType `xml:"occurrence,attr,omitempty"`
 	CommencementDateAttr *DateSimpleType       `xml:"commencementDate,attr,omitempty"`
 }
 
-// CellGroup ...
+// CellGroup is The @leaders attribute specifies whether leaders should be
+//             shown either trailing or following the text content. The character
+//             included as the value is the character used to render the leaders.
+//
+//             Use the CSS text-align character to position the text. If you
+//             align the text to the left, then the leaders will show to the
+//             right and if you align the text to the right, then the leaders
+//             will show to the left.
 type CellGroup struct {
 	ColspanAttr int    `xml:"colspan,attr,omitempty"`
 	RowspanAttr int    `xml:"rowspan,attr,omitempty"`
 	LeadersAttr string `xml:"leaders,attr,omitempty"`
 }
 
-// BaseType ...
+// BaseType is The base type defines the most general element, specifying the
+//             attributes which can be found on all elements - specifically
+//             attributes belonging to the identification, classification, and
+//             annotation groups.
+//
+//             The base type is defined as an abstract type and elements cannot
+//             be declared based on it.
 type BaseType struct {
 	IdentificationGroup *IdentificationGroup
 	ClassificationGroup *ClassificationGroup
@@ -153,7 +214,9 @@ type BaseType struct {
 	VersioningGroup     *VersioningGroup
 }
 
-// BaseBlockType ...
+// BaseBlockType is The base block type is a variant of the base type, but having a
+//             content structure to support block level children - elements
+//             but no text.
 type BaseBlockType struct {
 	IdentificationGroup *IdentificationGroup
 	ClassificationGroup *ClassificationGroup
@@ -161,7 +224,8 @@ type BaseBlockType struct {
 	VersioningGroup     *VersioningGroup
 }
 
-// BaseContentType ...
+// BaseContentType is The base content type is a variant of the base type, but having
+//             a very open content model including text.
 type BaseContentType struct {
 	IdentificationGroup *IdentificationGroup
 	ClassificationGroup *ClassificationGroup
@@ -169,42 +233,59 @@ type BaseContentType struct {
 	VersioningGroup     *VersioningGroup
 }
 
-// MarkerType ...
+// MarkerType is The marker type is a restriction of the base type to an element
+//             without content.
 type MarkerType struct {
 }
 
-// InlineType ...
+// InlineType is The inline type is a extension of the base type to text content or
+//             other inline elements.
 type InlineType struct {
 	Marker *MarkerType `xml:"marker"`
 	Inline *InlineType `xml:"inline"`
 }
 
-// BlockType ...
+// BlockType is The block type is a extension of the base type to content
+//             consisting of only elements.
 type BlockType struct {
 }
 
-// TextType ...
+// TextType is The text type is a broad base type allowing any content.
 type TextType struct {
 }
 
-// ContentType ...
+// ContentType is The content type is a broad base type allowing any content.
 type ContentType struct {
 	OrientationAttr string `xml:"orientation,attr,omitempty"`
 }
 
-// Marker ...
+// Marker is The <marker> element is a primitive element to be used to mark or
+//             denote a spot in the text. I can be used in the <content> areas or
+//             anywhere else where an <inline> element is expected. The <marker>
+//             element contains no text.
 type Marker *MarkerType
 
-// Inline ...
+// Inline is The <inline> element is a primitive element to be used within
+//             <content> areas or within any other areas which can accept
+//             inline content.
 type Inline *InlineType
 
-// Block ...
+// Block is The <block> element is a primitive element to be used anywhere
+//             where <block> elements are permitted including within <content>
+//             elements or anywhere where <block> elements have been explicitly
+//             permitted.
 type Block *BlockType
 
-// Content ...
+// Content is The <content> element is a primitive element to be used anywhere
+//             where a very general content model is desired, including within
+//             other <content> elements.
 type Content *ContentType
 
-// LawDocType ...
+// LawDocType is In addition to the main part of the document, a document
+//                         may have one or more appendices such as schedules or
+//                         explanatory memorandums/notes. These appendices can
+//                         either be inline documents or the can be external
+//                         referenced documents.
 type LawDocType struct {
 	Meta     *MetaType     `xml:"meta"`
 	Main     *MainType     `xml:"main"`
@@ -212,20 +293,32 @@ type LawDocType struct {
 	Appendix *AppendixType `xml:"appendix"`
 }
 
-// GenericDocType ...
+// GenericDocType is In addition to the content part of the document, a document
+//                         may have one or more appendices.
 type GenericDocType struct {
 	Meta     *MetaType       `xml:"meta"`
 	Content  *ContentType    `xml:"content"`
 	Appendix []*AppendixType `xml:"appendix"`
 }
 
-// MetaType ...
+// MetaType is Properties can be grouped into sets. These set can
+//                         be used to represent something like a series of events,
+//                         a person, or another other object related to the
+//                         document.
 type MetaType struct {
 	Property *PropertyType `xml:"property"`
 	Set      *SetType      `xml:"set"`
 }
 
-// PropertyType ...
+// PropertyType is A property can represent a pointer to either an external
+//                   document or an element within the document.
+//
+//                   You can use a ref to create a pointer to an endnote or a
+//                   footnote. In that case, the ref text will be the endnote or
+//                   footnote indicator as seen in "<ref idref="fn000001">†</ref>"
+//                   where the dagger is the indicator. An endnote or footnote
+//                   reference should always use the @idref attribute to point to
+//                   an endnote or a footnote within the document.
 type PropertyType struct {
 	DateGroup      *DateGroup
 	ValueGroup     *ValueGroup
@@ -233,14 +326,17 @@ type PropertyType struct {
 	TypeAttr       string `xml:"type,attr,omitempty"`
 }
 
-// SetType ...
+// SetType is A set can contain 0 or more sets.
 type SetType struct {
 	TypeAttr string        `xml:"type,attr,omitempty"`
 	Property *PropertyType `xml:"property"`
 	Set      *SetType      `xml:"set"`
 }
 
-// TocType ...
+// TocType is The items in a table of contents can be arranged in
+//                         a tabular fashion by surrounding the items in a layout.
+//                         When a layout is specified, use <column> elements
+//                         within each <tocItem> to indicate specific columns.
 type TocType struct {
 	GenerateAttr     bool `xml:"generate,attr,omitempty"`
 	HeadingStructure *HeadingStructure
@@ -248,7 +344,8 @@ type TocType struct {
 	Layout           *LayoutType  `xml:"layout"`
 }
 
-// TocItemType ...
+// TocItemType is Use the description group to record the number and title in the
+//                   table of contents as metadata.
 type TocItemType struct {
 	DescriptionGroup *DescriptionGroup
 	HeadingStructure *HeadingStructure
@@ -256,7 +353,9 @@ type TocItemType struct {
 	Content          []*ContentType `xml:"content"`
 }
 
-// MainType ...
+// MainType is The document is permitted to be empty to allow for the
+//                         case when the document is newly created and still in a
+//                         drafting state.
 type MainType struct {
 	NoteStructure     *NoteStructure
 	PreambleStructure *PreambleStructure
@@ -267,7 +366,9 @@ type MainType struct {
 	Toc               *TocType       `xml:"toc"`
 }
 
-// StatementType ...
+// StatementType is The attributes of the description group can be used to
+//                   record a number and title for a statement for use when
+//                   generating a table of contents.
 type StatementType struct {
 	DescriptionGroup *DescriptionGroup
 	Marker           *MarkerType  `xml:"marker"`
@@ -278,7 +379,9 @@ type StatementType struct {
 	Level            *LevelType   `xml:"level"`
 }
 
-// PreambleType ...
+// PreambleType is Attributes from the description group may be used to
+//                      attach information to the preamble for use in generating
+//                      a table of contents.
 type PreambleType struct {
 	DescriptionGroup *DescriptionGroup
 	HeadingStructure *HeadingStructure
@@ -286,7 +389,8 @@ type PreambleType struct {
 	EnactingFormula  *StatementType `xml:"enactingFormula"`
 }
 
-// LevelType ...
+// LevelType is Use the description group to record information in the
+//                      attributes to be used when generating the table of contents.
 type LevelType struct {
 	DescriptionGroup *DescriptionGroup
 	NumStructure     *NumStructure
@@ -295,16 +399,23 @@ type LevelType struct {
 	LevelStructure   *LevelStructure
 }
 
-// NumType ...
+// NumType is Use the @value attribute to record a normalized value of
+//                      the <num> content. When the text content represents a
+//                      range of values, use the @beginValue and @endValue
+//                      attributes to record the range.
 type NumType struct {
 	ValueGroup *ValueGroup
 }
 
-// HeadingType ...
+// HeadingType is The heading type is used to define heading and subheadings for
+//             levels and other structured items. Often a heading will follow
+//             a number.
 type HeadingType struct {
 }
 
-// InstructionType ...
+// InstructionType is A quoted structure may be associated with an
+//                            action (by position) as part of the processing
+//                            action.
 type InstructionType struct {
 	Ref           *RefType           `xml:"ref"`
 	Inline        *InlineType        `xml:"inline"`
@@ -315,14 +426,15 @@ type InstructionType struct {
 	QuotedContent *QuotedContentType `xml:"quotedContent"`
 }
 
-// ActionType ...
+// ActionType is Use the @action attribute to describe the action being taken.
 type ActionType struct {
 	ReferenceGroup *ReferenceGroup
 	AmendingGroup  *AmendingGroup
 	ActionGroup    *ActionGroup
 }
 
-// NotesType ...
+// NotesType is You can use the @type attribute to position the notes
+//                      and the @topic attribute to categorize the notes.
 type NotesType struct {
 	NoteGroup  *NoteGroup
 	Heading    *HeadingType   `xml:"heading"`
@@ -331,13 +443,16 @@ type NotesType struct {
 	Layout     *LayoutType    `xml:"layout"`
 }
 
-// NoteType ...
+// NoteType is You can use the @date to associate dates to your notes.
+//                      This can be used to generate alerts.
 type NoteType struct {
 	NoteGroup *NoteGroup
 	DateGroup *DateGroup
 }
 
-// AppendixType ...
+// AppendixType is If an <appendix> is to be included by reference, use the
+//                      @src attribute with a normal URL to point to the document
+//                      to be included.
 type AppendixType struct {
 	DescriptionGroup *DescriptionGroup
 	LinkGroup        *LinkGroup
@@ -349,7 +464,12 @@ type AppendixType struct {
 	Block            *BlockType `xml:"block"`
 }
 
-// SignaturesType ...
+// SignaturesType is Defines a block for a collection of signatures. An opening paragraph
+//             is permitted as well as an ending date. In some cases, the date may
+//             appear within the opening paragraph.
+//
+//             The signatures may either be specified serially in a grid-like
+//             layout.
 type SignaturesType struct {
 	P         *PType           `xml:"p"`
 	Signature []*SignatureType `xml:"signature"`
@@ -372,7 +492,11 @@ type Affiliation struct {
 	XMLName xml.Name `xml:"affiliation"`
 }
 
-// SignatureType ...
+// SignatureType is Defines a basic signature element comprising a name and optionally
+//             the person's role, their affiliation, and a date. All fields can be
+//             defined to include either an @href or an @idref to point to an
+//             identifying resource that describes the person, their role, and
+//             their affiliation.
 type SignatureType struct {
 	Name        *Name        `xml:"name"`
 	Role        *Role        `xml:"role"`
@@ -380,22 +504,41 @@ type SignatureType struct {
 	Date        time.Time    `xml:"date"`
 }
 
-// RefType ...
+// RefType is Use the @pos and other attributes to describe
+//                      what or where is being affected.
+//
+//                      The attributes in the amending group should only be used
+//                      for references or actions within an amending instruction.
 type RefType struct {
 	AmendingGroup *AmendingGroup
 }
 
-// DateType ...
+// DateType is Use the @date attribute to record a normalized value of the
+//                      date according to ISO 8601.
 type DateType struct {
 	DateGroup *DateGroup
 }
 
-// QuotedTextType ...
+// QuotedTextType is A quoted text type is an extraction of simple text from another
+//             source or origin. If the quoted text is to have literal quotes
+//             surrounding it, then those characters must be included in the text
+//             surrounding the quoted text and not within it.
+//
+//             Quoted text is seen in amendments or modifications.
+//
+//             Use the @identifier attribute to establish the referencing context
+//             of the quoted text.
 type QuotedTextType struct {
 	OriginAttr string `xml:"origin,attr,omitempty"`
 }
 
-// QuotedContentType ...
+// QuotedContentType is A quotedContentType is used for an extraction of potentially structured
+//             text (text with XML elements) from another source or origin.
+//
+//             Quoted content is seen in USC Notes, amendments, and modifications.
+//
+//             Use the @identifier attribute to establish the referencing context
+//             of the quoted structure
 type QuotedContentType struct {
 	OriginAttr string `xml:"origin,attr,omitempty"`
 }
@@ -456,94 +599,196 @@ type LevelStructure struct {
 	NoteStructure []*NoteStructure
 }
 
-// LawDoc ...
+// LawDoc is A <lawDoc> is a base level element representing all types of
+//             legislative documents.
 type LawDoc *LawDocType
 
-// Document ...
+// Document is A <document> is a base level element for loosely structured
+//             documents.
 type Document *GenericDocType
 
-// Meta ...
+// Meta is A <meta> block contains properties and sets of properties recording
+//             metadata about the document. The information contained within the
+//             meta block is not part of the official law and should not be printed
+//             as such. Ordinarily, all text content in a document is intended for
+//             publication in textual representations of the document. However,
+//             this is not the case for textual content in the <meta> block. If,
+//             for instance, a property in the meta block has text content, it
+//             does not automatically become text to be included in a published
+//             form. However, in some case this may be desirable and can be done.
+//             However, the meaning is not implicit.
+//
+//             The <meta> block may contain elements from the Dublin Core.
 type Meta *MetaType
 
-// Property ...
+// Property is A <property> is simple value recorded with the document. Typically
+//             properties are stored in the <meta> block of the document. However,
+//             this is not necessarily the case. It is possible to also define
+//             properties within any content area in the document. A case where
+//             this occurs is the definition of the short title. The short title
+//             is treated as a property (the <docTitle> element is a derivation
+//             from the <property> element).
+//
+//             If a property in the <meta> block has textual content, then this
+//             text is not implicitly intended for publication. However, if a
+//             property outside the <meta> block has textual content, then this
+//             text is implicitly intended for publication.
 type Property *PropertyType
 
-// Set ...
+// Set is A <set> is a grouping of properties in the <meta> block. Sets
+//             themselves can contain other sets. Sets can be typed using the
+//             @type attribute with the SetTypeEnum enumeration. By default, sets
+//             are simply unordered bags of properties.
 type Set *SetType
 
-// Toc ...
+// Toc is A <toc> is a table of contents. A table of contents can appear in a
+//             number of locations in document. A table of contents can appear in
+//             three different locations:
+//
+//             - It can appear anywhere within the top of the <main> element,
+//               before the levels.
+//             - It can appear in any level following the <heading>, <subheading>,
+//               and any notes.
+//             - It can appear in an <appendix>.
 type Toc *TocType
 
-// TocItem ...
+// TocItem is A <tocItem> is an entry in a table of contents. In addition to being
+//             found within a <toc> element, a <tocItem> can contain other <tocItem>
+//             elements in a hierarchy.
 type TocItem *TocItemType
 
-// Main ...
+// Main is A <main> is the primary container for the body of a legislative
+//             document.
 type Main *MainType
 
-// Statement ...
+// Statement is A <statement> is the general container for the provisions at the
+//             beginning of legislation.
 type Statement *StatementType
 
-// Preamble ...
+// Preamble is The <preamble> is a container for the "Whereas" clauses and the
+//             enacting formula. Modern practice is to not use the preamble,
+//             but to use a standalone enacting formula. However, for the rare
+//             cases where a preamble is desired, the tags are made available.
 type Preamble *PreambleType
 
-// Recital ...
+// Recital is A <recital> is a preliminary statement in a bill stating the reasons
+//             for the Bill. Modern legislation seldom uses a recital although it
+//             can still occur.
 type Recital *StatementType
 
-// EnactingFormula ...
+// EnactingFormula is The <enactingFormula> is specified just before the main provisions of
+//             a bill. The <enactingFormula> can appear as either the last statement
+//             in a preamble or, when a preamble is not present, standalone within
+//             the main element just prior to the main provisions.
 type EnactingFormula *StatementType
 
-// Level ...
+// Level is A <level> is the general container for the main provisions of
+//             legislation, often organized as a hierarchy.
 type Level *LevelType
 
-// Num ...
+// Num is The <num> surrounds the numeric designation assigned to a level
+//             in legislation. Numbering is not always present. The number should
+//             always include the surrounding decoration including descriptive
+//             text and parenthesis and grammar. This number should never be
+//             auto-generated. A normalized value based on the text content of the
+//             <num> element should be stored in the @value attribute.
 type Num *NumType
 
-// Text ...
+// Text is The <text> element is a base class for <chapeau>, <continuation>,
+//             <proviso>, <def> and any other type of text that can be interspersed
+//             in the hierarchy of a document. It is similar to the <content> tag,
+//             but has more limited applicability. In general, use the <content>
+//             tag when a hierarchical level is made up largely of general content
+//             and use the one of its derivatives of the text tag when limited text
+//             is found interstitially between levels or other tags.
 type Text *TextType
 
-// Heading ...
+// Heading is The <heading> is an optional part of a level element and various other
+//             elements. The heading is based on the content primitive and can contain
+//             various elements including definitions.
 type Heading *HeadingType
 
-// Subheading ...
+// Subheading is The <subheading> is an optional part of a level element and various
+//             other elements. Like the heading, the subheading is based on the
+//             content primitive and can contain various elements including
+//             definitions. A subheading should only be created if a heading
+//             already exists.
 type Subheading *HeadingType
 
-// CrossHeading ...
+// CrossHeading is A <crossHeading> is a non-hierarchical heading construct which can
+//             be placed within and amongst heading levels. A <crossHeading> acts
+//             as a divider, separating items within a level.
+//
+//             Cross headings are typically shown as center-aligned headings
+//             without any level identification or level numbering.
 type CrossHeading *HeadingType
 
-// Instruction ...
+// Instruction is An <instruction> is a container having formalized text describing an
+//             amendment or a modification. An <instruction> contains the <action>s
+//             and <quotedText>/<quotedContent> necessary to describe an
+//             amendment.
 type Instruction *InstructionType
 
-// Action ...
+// Action is An <action> is an atomic-level change defined within an amending
+//             formula. The action contains the text related to that action and,
+//             through attributes, identifies the item affected and the type of
+//             action to be performed.
 type Action *ActionType
 
-// Notes ...
+// Notes is The <notes> is a container for collections of individual notes.
 type Notes *NotesType
 
-// Note ...
+// Note is A <note> is a generic element for notes associated with items in the
+//             document. Typically, a derived note type should be used to
+//             differentiate between official statutory notes and unofficial
+//             editorial notes.
 type Note *NoteType
 
-// Appendix ...
+// Appendix is An <appendix> is a generic element appended to the main part of a
+//             document. Appendices can either be inline or included via a @src
+//             reference. Typically the appendix tag is not used. Rather, the
+//             derived tags such as <schedule> and <explanation> are used instead.
 type Appendix *AppendixType
 
-// Signatures ...
+// Signatures is Some documents, may conclude with one or
+//             more signatures indicating sponsorship or approval. These
+//             signatures are placed within this container.
 type Signatures *SignaturesType
 
-// Signature ...
+// Signature is A <signature> consists of a name and, optionally, role, affiliation,
+//             and/or date. Both the name and the role may be hyperlinked to something
+//             which identifies the person or role.
 type Signature *SignatureType
 
-// Ref ...
+// Ref is A <ref> element is a reference or link to another document, a
+//             location within another document, or a location with the same
+//             document.
 type Ref *RefType
 
-// Date ...
+// Date is A <date> element is a wrapper around dates. A normalized value
+//             of the date text can be stored in the @date attribute or in the
+//             @startDate and @endDate attributes in the case of a date range.
 type Date *DateType
 
-// QuotedText ...
+// QuotedText is A <quotedText> element is used for an extraction of simple text from
+//             another source or origin. If the quoted text is to have literal
+//             quotes surrounding it, then those characters must be included in the
+//             text surrounding the quoted text and not within it.
+//
+//             Quoted text is seen in amendments or modifications.
 type QuotedText *QuotedTextType
 
-// QuotedContent ...
+// QuotedContent is A <quotedContent> element is used for an extraction of potentially structured
+//             text (text with XML elements) from another source or origin.
+//
+//             Quoted content is used in USC Notes, amendments, and modifications.
 type QuotedContent *QuotedContentType
 
-// LayoutType ...
+// LayoutType is A <layout> type can contain various types of elements
+//                      as rows including headers, rows, TOC items, blocks,
+//                      and contents. All elements, aside from <column> elements,
+//                      are treated as rows when found directly within a layout
+//                      structure.
 type LayoutType struct {
 	OrientationAttr string `xml:"orientation,attr,omitempty"`
 	NoteStructure   *NoteStructure
@@ -554,206 +799,375 @@ type LayoutType struct {
 	Content         *ContentType `xml:"content"`
 }
 
-// RowType ...
+// RowType is A row contains one or more column cells.
 type RowType struct {
 	Column []*ColumnType `xml:"column"`
 }
 
-// ColumnType ...
+// ColumnType is Use the elements of the cell group to specify
+//                      the row and column spans.
 type ColumnType struct {
 	CellGroup *CellGroup
 }
 
-// PType ...
+// PType is A "P" type is a simple unnumbered paragraph. As a <content>
+//             element, it can contain a wide range of text and elements.
 type PType struct {
 }
 
-// BrType ...
+// BrType is A break type is simple marker element denoting a line break.
 type BrType struct {
 }
 
-// ImgType ...
+// ImgType is An image type is a simple marker element denoting where a graphic
+//             image is to be inserted.
 type ImgType struct {
 	LinkGroup       *LinkGroup
 	OrientationAttr string `xml:"orientation,attr,omitempty"`
 }
 
-// Layout ...
+// Layout is A <layout> element is used to denote an area of text intended to
+//             be displayed in a columns-oriented format similar to table. Use
+//             the <header>, <row>, and <column> elements to denote the rows and
+//             columns of the structure.
+//
+//             Use <layout> when describing legislative structure in a column-
+//             oriented fashion. For regular tables as shown for forms, use HTML
+//             tables.
 type Layout *LayoutType
 
-// Header ...
+// Header is A <header> denotes a header row within a column-based structure.
 type Header *RowType
 
-// Row ...
+// Row is A <row> denotes a row entry within a column-based structure.
+//             In addition to the formal <row> element, any child element
+//             in a <layout> element, aside from a <column> element, is regarded as
+//             a row. There should always be a <layout> element as an
+//             ancestor of a <row>. Both column and row spans may be defined for
+//             <row> entries.
 type Row *RowType
 
-// Column ...
+// Column is A <column> denotes a column when specified directly under a <layout>
+//             or a cell when specified within a <row> (or equivalent) in a
+//             <layout> structure. There should always be a <layout> element as an
+//             ancestor of a <column>. Both column and row spans may be defined for
+//             <column> entries.
 type Column *ColumnType
 
-// P ...
+// P is A <p> is a simple paragraph. This is different from the
+//             more complex numbered <paragraph> element used for
+//             the formal paragraph level of legislative documents.
 type P *PType
 
-// Br ...
+// Br is A <br> is simple marker element denoting a line break.
 type Br *BrType
 
-// Img ...
+// Img is An <img> is a simple marker element denoting where a graphic
+//             image is to be inserted. Use the @src attribute to point to the
+//             image with a normal URL.
 type Img *ImgType
 
-// Center ...
+// Center is A <center> is content text to be centered on the page.
 type Center *ContentType
 
-// FillIn ...
+// FillIn is A <fillIn> is an inline spacer which denotes an area to be filled
+//             in a printed form. Usually, a <fillIn> is rendered as dotted lines
+//             with the text content within the <fillIn> tags shown just below. If
+//             parenthesis are to surround the text shown below the line, then
+//             those parenthesis should be included in the text content.
 type FillIn *ContentType
 
-// CheckBox ...
+// CheckBox is A <checkBox> is an inline tick box which denotes a box to be filled
+//             in on an form.
 type CheckBox *ContentType
 
-// B ...
+// B is A <b> is a simple inline text to be shown in bold text.
 type B *InlineType
 
-// I ...
+// I is An <i> is a simple inline text to be shown in italic text.
 type I *InlineType
 
-// Sub ...
+// Sub is A <sub> is a simple inline text to be shown in subscript text.
 type Sub *InlineType
 
-// Sup ...
+// Sup is A <sup> is a simple inline text to be shown in superscript text.
 type Sup *InlineType
 
-// Del ...
+// Del is A <del> is a simple inline text to be shown in deleted text
+//             within a modification.
 type Del *InlineType
 
-// Ins ...
+// Ins is An <ins> is a simple inline tag to be used to show inserted text
+//             within a modification.
 type Ins *InlineType
 
-// Bill ...
+// Bill is A <bill> is a document containing proposed law. When enacted, a
+//             <bill> becomes an <statute>.
 type Bill *LawDocType
 
-// Statute ...
+// Statute is An <statute> is a document containing an enacted bill.
 type Statute *LawDocType
 
-// Resolution ...
+// Resolution is A <resolution> is a simple resolution, joint resolution, or concurrent
+//             resolution, as those terms are defined by the U.S. Congress.
 type Resolution *LawDocType
 
-// Amendment ...
+// Amendment is An <amendment> is a document containing a pre-enactment stage amendment.
 type Amendment *LawDocType
 
-// UscDoc ...
+// UscDoc is A <uscDoc> is a document containing a title or appendix of the
+//             U.S. Code.
 type UscDoc *LawDocType
 
-// DocNumber ...
+// DocNumber is The <docNumber> is a property that contains a numeric designation
+//             assigned to this document. The document number should not contain
+//             any document prefix. Use the <docType> for the prefix.
 type DocNumber *PropertyType
 
-// DocPublicationName ...
+// DocPublicationName is The <docPublicationName> is a property used to record the name of
+//             the publication that this document is part of. The values of the
+//             <docPublicationName> are not defined.
 type DocPublicationName *PropertyType
 
-// DocReleasePoint ...
+// DocReleasePoint is The <docReleasePoint> is a property used to record the point the document
+//             was released. The values of the doc status are not defined.  For a USC title,
+//             this may be the Public Law number that the title is updated through.
 type DocReleasePoint *PropertyType
 
-// DocTitle ...
+// DocTitle is A <docTitle> is a statement that precedes the long title in legislation. The short title is declared in the
+//             first clause of a bill and is tagged in that location using the
+//             <shortTitle> tag.
 type DocTitle *StatementType
 
-// LongTitle ...
+// LongTitle is A <longTitle> is a statement that sets out the purposes of the bill
+//             in general terms.
 type LongTitle *StatementType
 
-// ShortTitle ...
+// ShortTitle is The <shortTitle> element is used to surround the short title when it
+//             is first defined, usually in the first clause of the bill. Note
+//             that the <shortTitle> element is to be used in this case rather than
+//             the <docTitle> element.
 type ShortTitle *InlineType
 
-// Term ...
+// Term is A <term> is always defined within a definition. The <term> element
+//             surrounds the words for the term being defined. It is quite possible
+//             for multiple <term> elements to be specified within a definition.
+//             When a <term> is the words, in the alternate language, then the
+//             xml:lang attribute must be used. <term> elements can also be used
+//             for synonyms or near-synonyms which are also specified within the
+//             definition.
+//
+//             There are two ways in which defined terms are presented. The modern
+//             form is to present the term in bold and/or italic. The older form
+//             is to present the terms bounded by open and close double quotes. In
+//             all cases, the term (excluding the quotation marks) should be bound
+//             with the <term> element. The presentation should be determined based
+//             on the use of the @class and the @style attributes (TBD). It is
+//             important that the semantics be captured in the tags and that the
+//             presentation be separated and isolated to the styling attributes.
+//
+//             Notes:
+//
+//             (1) In some cases, a term from the opposite language may be defined
+//             without a term in the primary language and the term will be used as
+//             such in the legislation despite being in the opposite language.
+//
+//             (2) It is possible that a <term> appear multiple times within a
+//             definition and be identified as a <term> (along with the
+//             corresponding interpretation) each time the term appears.
+//
+//             (3) In some rare cases, a term may be defined to include the open
+//             and close quotes. In newer presentation forms, the term with the
+//             quotation marks will be found within the bold and/or italics while
+//             in older presentation forms, the term will show as a pair of open
+//             and a pair of close quotation marks. In that case, the inner
+//             quotation marks should be treated as part of the term itself.
 type Term *InlineType
 
-// Preliminary ...
+// Preliminary is A <preliminary> level is used to create a hierarchical region
+//             of the main document consisting of preliminary clauses that
+//             are outside of the main document hierarchy.
+//
+//             When naming a preliminary level, the case-sensitive prefix "prelim".
 type Preliminary *LevelType
 
-// Title ...
+// Title is A <title> is the top hierarchical level of a legislative document.
+//
+//             When naming a title, use the case-sensitive prefix "t".
 type Title *LevelType
 
-// Subtitle ...
+// Subtitle is A <subtitle> is a hierarchical level of a legislative document.
+//
+//             When naming a subtitle, use the case-sensitive prefix "st".
 type Subtitle *LevelType
 
-// Part ...
+// Part is A <part> is a hierarchical level of a legislative document.
+//
+//             When naming a part, use the case-sensitive prefix "p".
 type Part *LevelType
 
-// Subpart ...
+// Subpart is A <subpart> is a hierarchical level of a legislative document.
+//
+//             When naming a subpart, use the case-sensitive prefix "sp".
 type Subpart *LevelType
 
-// Division ...
+// Division is A <division> is a hierarchical level of a legislative document.
+//
+//             When naming a Division, use the case-sensitive prefix "d".
 type Division *LevelType
 
-// Subdivision ...
+// Subdivision is A <subdivision> is a hierarchical level of a legislative document.
+//
+//             When naming a subdivision, use the case-sensitive prefix "sd".
 type Subdivision *LevelType
 
-// Chapter ...
+// Chapter is A <chapter> is a hierarchical of a legislative document.
+//
+//             When naming a chapter, use the case-sensitive prefix "c".
 type Chapter *LevelType
 
-// Subchapter ...
+// Subchapter is A <subchapter> is a hierarchical level of a legislative document.
+//
+//             When naming a subchapter, use the case-sensitive prefix "sc".
 type Subchapter *LevelType
 
-// Article ...
+// Article is An <article> is a used in bills.
+//
+//             When naming an article, use the case-sensitive prefix "a".
 type Article *LevelType
 
-// Subarticle ...
+// Subarticle is A <subarticle> is used in bills.
+//
+//             When naming a subarticle, use the case-sensitive prefix "sa".
 type Subarticle *LevelType
 
-// Section ...
+// Section is A <section> is the primary hierarchical level in a USC Title or a bill.
+//
+//             When naming a section, use the case-sensitive prefix "s".
 type Section *LevelType
 
-// Subsection ...
+// Subsection is A <subsection> is an optional hierarchical level below a section.
+//             Subsections are usually numbered with lower-case letters.
+//
+//             When naming a subsection, use the case-sensitive prefix "ss".
 type Subsection *LevelType
 
-// Paragraph ...
+// Paragraph is A <paragraph> is a numbered level usually found below a
+//             subsection in the document hierarchy. Paragraphs are
+//             usually numbered with Arabic numbers.
+//
+//             When naming a paragraph, use the case-sensitive prefix "p".
 type Paragraph *LevelType
 
-// Subparagraph ...
+// Subparagraph is A <subparagraph> is a level below a paragraph in the document
+//             hierarchy. Subparagraphs are usually numbered with upper-case
+//             letters.
+//
+//             When naming a subparagraph, use the case-sensitive prefix "sp".
 type Subparagraph *LevelType
 
-// Clause ...
+// Clause is A <clause> is an optional below-section hierarchical level.
+//             Clauses are usually numbered with lower-case Roman numerals.
+//
+//             When naming a subclause, use the case-sensitive prefix "sc".
 type Clause *LevelType
 
-// Subclause ...
+// Subclause is A <subclause> is an optional hierarchical level below a clause.
+//             Subclauses are usually numbered with upper-case Roman numerals.
+//
+//             When naming a subclause, use the case-sensitive prefix "sc".
 type Subclause *LevelType
 
-// Item ...
+// Item is An <item> is a level usually below a subclause in the document
+//             hierarchy. Items are usually numbered with double lower-case
+//             letters.
 type Item *LevelType
 
-// Subitem ...
+// Subitem is A <subitem> is a level below an item in the document
+//             hierarchy. Subitems are usually numbered with double upper-case
+//             letters.
 type Subitem *LevelType
 
-// Subsubitem ...
+// Subsubitem is A <subsubitem> is a level below a subitem in the document
+//             hierarchy. Subsubitems are usually numbered with triple lower-case
+//             letters.
 type Subsubitem *LevelType
 
-// Def ...
+// Def is A <def> defines a term. It contains one or more <term> elements
+//             identifying the term being defined as well as the text describing
+//             the term. It is customary for the <term> to be identified in both
+//             languages. In the case where the term is for the opposite language,
+//             then the xml:lang attribute should be set for the term expressed in
+//             the opposite language. In some cases, closely related other terms
+//             might also be identified within the text of the definition and will
+//             also be identified with the <term> element..
 type Def *TextType
 
-// Chapeau ...
+// Chapeau is Use a <chapeau> whenever there is introductory text that comes
+//             before lower levels in a level hierarchy and the text alone is not
+//             permitted by the content model.
 type Chapeau *TextType
 
-// Continuation ...
+// Continuation is Use a <continuation> for interstitial text or whenever there is
+//             final text that comes after lower levels in a level hierarchy and
+//             the text alone is not permitted by the content model.
+//
+//             Be careful not to confuse continuation text with a proviso, which has
+//             a separate tag.
 type Continuation *TextType
 
-// Proviso ...
+// Proviso is A <proviso> is a paragraph that states conditions relating to the
+//             law it is related to. A proviso generally begins with "Provided that"
+//             or just "Provided". Proviso can contain their own
+//             complex structure including sandwich structures. When referencing
+//             into numbered parts of a proviso, a "proviso" level is added to
+//             the reference. If there are multiple provisos within a single
+//             parent, then those provisos should be named.
 type Proviso *TextType
 
-// AmendingFormula ...
+// AmendingFormula is An <amendingFormula> element is an instruction used when defining an amendment
+//             to legislation or proposed legislation.
 type AmendingFormula *InstructionType
 
-// SourceCredit ...
+// SourceCredit is A <sourceCredit> is a note included to indicate the source of a
+//             provision. It usually will contain a reference to the source of the
+//             provision and the Statute(s) that have affected it. Source credits are
+//             usually set out in parenthesis. The surrounding
+//             parenthesis are shown in the text - they must
+//             not be automatically added.
 type SourceCredit *NoteType
 
-// StatutoryNote ...
+// StatutoryNote is An <statutoryNote> is a note that becomes part of the law.
 type StatutoryNote *NoteType
 
-// EditorialNote ...
+// EditorialNote is An <editorialNote> is a note included for editorial purposes only. While
+//             present in the text of the document as printed, it is not a part of
+//             the law. Editorial notes are often used to record where provisions
+//             have been omitted or other changes have been made.
 type EditorialNote *NoteType
 
-// ChangeNote ...
+// ChangeNote is A <changeNote> is a note that records a non-substantive change that
+//             has been made to the document. Usually
+//             change notes are set out in square brackets and these must be set out in
+//             the text and must not be automatically added.
 type ChangeNote *NoteType
 
-// Made ...
+// Made is The signatures of the people making the legislation.
 type Made *SignaturesType
 
-// Approved ...
+// Approved is The signature of the people approving the document.
 type Approved *SignaturesType
 
-// Schedule ...
+// Schedule is A <schedule> is an appendix to a bill or other document.
+//             It contains a wide variety of content and the containment model is
+//             consequently quite loose. A <schedule> is often a list of numbered items,
+//             sometimes arranged in columns. Sometimes a schedule is a list of
+//             consequential amendments. Schedules can also be tables or documents
+//             defined externally such as extradition treaties or trade agreements.
+//             Schedules are sometimes printed in a landscape rather that portrait
+//             orientation.
+//
+//             In order to support the wide variety of content types, it is possible
+//             to embed arbitrary HTML content in a <content> element within a
+//             schedule.
 type Schedule *AppendixType

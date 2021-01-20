@@ -2,15 +2,15 @@
 
 package schema
 
-// Extensions ...
+// Extensions is Extensions to load.
 type Extensions *CoreExtensions
 
-// CoreExtensions ...
+// CoreExtensions is A set of build extensions to use from this project.
 type CoreExtensions struct {
 	Extension []*CoreExtension `xml:"extension"`
 }
 
-// CoreExtension ...
+// CoreExtension is The version of the extension.
 type CoreExtension struct {
 	GroupId    string `xml:"groupId"`
 	ArtifactId string `xml:"artifactId"`

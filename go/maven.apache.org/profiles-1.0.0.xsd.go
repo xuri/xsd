@@ -6,7 +6,7 @@ import (
 	"encoding/xml"
 )
 
-// ProfilesXml ...
+// ProfilesXml is Root element of the profiles.xml file.
 type ProfilesXml *ProfilesRoot
 
 // Profiles ...
@@ -21,7 +21,7 @@ type ActiveProfiles struct {
 	ActiveProfile []string `xml:"activeProfile"`
 }
 
-// ProfilesRoot ...
+// ProfilesRoot is Root element of the profiles.xml file.
 type ProfilesRoot struct {
 	Profiles       *Profiles       `xml:"profiles"`
 	ActiveProfiles *ActiveProfiles `xml:"activeProfiles"`
@@ -44,7 +44,8 @@ type PluginRepositories struct {
 	PluginRepository []*Repository `xml:"pluginRepository"`
 }
 
-// Profile ...
+// Profile is The conditional logic which will automatically
+//             trigger the inclusion of this profile.
 type Profile struct {
 	Id                 string              `xml:"id"`
 	Activation         *Activation         `xml:"activation"`
@@ -53,7 +54,7 @@ type Profile struct {
 	PluginRepositories *PluginRepositories `xml:"pluginRepositories"`
 }
 
-// Activation ...
+// Activation is Specifies that this profile will be activated based on existence of a file.
 type Activation struct {
 	ActiveByDefault bool                `xml:"activeByDefault"`
 	Jdk             string              `xml:"jdk"`
@@ -62,7 +63,7 @@ type Activation struct {
 	File            *ActivationFile     `xml:"file"`
 }
 
-// ActivationOS ...
+// ActivationOS is The version of the OS to be used to activate a profile
 type ActivationOS struct {
 	Name    string `xml:"name"`
 	Family  string `xml:"family"`
@@ -70,19 +71,20 @@ type ActivationOS struct {
 	Version string `xml:"version"`
 }
 
-// ActivationProperty ...
+// ActivationProperty is The value of the property to be used to activate a profile
 type ActivationProperty struct {
 	Name  string `xml:"name"`
 	Value string `xml:"value"`
 }
 
-// ActivationFile ...
+// ActivationFile is The name of the file that should exist to activate a profile
 type ActivationFile struct {
 	Missing string `xml:"missing"`
 	Exists  string `xml:"exists"`
 }
 
-// Repository ...
+// Repository is The type of layout this repository uses for locating and storing artifacts - can be "legacy" or
+//             "default".
 type Repository struct {
 	Releases  *RepositoryPolicy `xml:"releases"`
 	Snapshots *RepositoryPolicy `xml:"snapshots"`
@@ -92,7 +94,8 @@ type Repository struct {
 	Layout    string            `xml:"layout"`
 }
 
-// RepositoryPolicy ...
+// RepositoryPolicy is What to do when verification of an artifact checksum fails - warn, fail, etc. Valid values are
+//             "fail" or "warn"
 type RepositoryPolicy struct {
 	Enabled        bool   `xml:"enabled"`
 	UpdatePolicy   string `xml:"updatePolicy"`

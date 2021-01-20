@@ -17,26 +17,31 @@ public class PluginMetadata {
 	protected PluginMetadata PluginMetadata;
 }
 
+// Mojos ...
 public class Mojos {
 	@XmlElement(required = true, name = "mojo")
 	protected List<Mojo> Mojo;
 }
 
+// PluginMetadata is Root element of a script-based mojo's plugin metadata bindings.
 public class PluginMetadata {
 	@XmlElement(required = true, name = "mojos")
 	protected Mojos Mojos;
 }
 
+// Components ...
 public class Components {
 	@XmlElement(required = true, name = "component")
 	protected List<Component> Component;
 }
 
+// Parameters ...
 public class Parameters {
 	@XmlElement(required = true, name = "parameter")
 	protected List<Parameter> Parameter;
 }
 
+// Mojo is Information about a sub-execution of the Maven lifecycle which should be processed.
 public class Mojo {
 	@XmlElement(required = true, name = "goal")
 	protected String Goal;
@@ -70,6 +75,7 @@ public class Mojo {
 	protected String Call;
 }
 
+// Parameter is A deprecation message for this mojo parameter.
 public class Parameter {
 	@XmlElement(required = true, name = "name")
 	protected String Name;
@@ -93,6 +99,7 @@ public class Parameter {
 	protected String Deprecated;
 }
 
+// LifecycleExecution is A goal, not attached to a lifecycle phase, which should be executed ahead of this mojo.
 public class LifecycleExecution {
 	@XmlElement(required = true, name = "lifecycle")
 	protected String Lifecycle;
@@ -102,6 +109,7 @@ public class LifecycleExecution {
 	protected String Goal;
 }
 
+// Component is The role-hint to lookup.
 public class Component {
 	@XmlElement(required = true, name = "role")
 	protected String Role;

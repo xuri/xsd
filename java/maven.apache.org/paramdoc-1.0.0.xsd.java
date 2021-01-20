@@ -17,22 +17,27 @@ public class Paramdoc {
 	protected ExpressionDocumentation Paramdoc;
 }
 
+// Expressions ...
 public class Expressions {
 	@XmlElement(required = true, name = "expression")
 	protected List<Expression> Expression;
 }
 
+// ExpressionDocumentation is The root of a parameter plugin expression document.
 public class ExpressionDocumentation {
 	@XmlElement(required = true, name = "expressions")
 	protected Expressions Expressions;
 }
 
+// CliOptions ...
 public class CliOptions {
 }
 
+// ApiMethods ...
 public class ApiMethods {
 }
 
+// Expression is The place and syntax used to change the value of this expression.
 public class Expression {
 	@XmlElement(required = true, name = "syntax")
 	protected String Syntax;

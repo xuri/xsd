@@ -11,6 +11,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
+// CT_ShapeNonVisual ...
 public class CT_ShapeNonVisual {
 	@XmlElement(required = true, name = "cNvPr")
 	protected List<CT_NonVisualDrawingProps> CNvPr;
@@ -18,6 +19,7 @@ public class CT_ShapeNonVisual {
 	protected List<CT_NonVisualDrawingShapeProps> CNvSpPr;
 }
 
+// CT_Shape ...
 public class CT_Shape {
 	@XmlAttribute(name = "macro")
 	protected StringAttr Macro;
@@ -37,6 +39,7 @@ public class CT_Shape {
 	protected List<CT_TextBody> TxBody;
 }
 
+// CT_ConnectorNonVisual ...
 public class CT_ConnectorNonVisual {
 	@XmlElement(required = true, name = "cNvPr")
 	protected List<CT_NonVisualDrawingProps> CNvPr;
@@ -44,6 +47,7 @@ public class CT_ConnectorNonVisual {
 	protected List<CT_NonVisualConnectorProperties> CNvCxnSpPr;
 }
 
+// CT_Connector ...
 public class CT_Connector {
 	@XmlAttribute(name = "macro")
 	protected StringAttr Macro;
@@ -57,6 +61,7 @@ public class CT_Connector {
 	protected List<CT_ShapeStyle> Style;
 }
 
+// CT_PictureNonVisual ...
 public class CT_PictureNonVisual {
 	@XmlElement(required = true, name = "cNvPr")
 	protected List<CT_NonVisualDrawingProps> CNvPr;
@@ -64,6 +69,7 @@ public class CT_PictureNonVisual {
 	protected List<CT_NonVisualPictureProperties> CNvPicPr;
 }
 
+// CT_Picture ...
 public class CT_Picture {
 	@XmlAttribute(name = "macro")
 	protected StringAttr Macro;
@@ -79,6 +85,7 @@ public class CT_Picture {
 	protected List<CT_ShapeStyle> Style;
 }
 
+// CT_GraphicFrameNonVisual ...
 public class CT_GraphicFrameNonVisual {
 	@XmlElement(required = true, name = "cNvPr")
 	protected List<CT_NonVisualDrawingProps> CNvPr;
@@ -86,6 +93,7 @@ public class CT_GraphicFrameNonVisual {
 	protected List<CT_NonVisualGraphicFrameProperties> CNvGraphicFramePr;
 }
 
+// CT_GraphicFrame ...
 public class CT_GraphicFrame {
 	@XmlAttribute(name = "macro")
 	protected StringAttr Macro;
@@ -99,6 +107,7 @@ public class CT_GraphicFrame {
 	protected List<CT_GraphicalObject> AGraphic;
 }
 
+// CT_GroupShapeNonVisual ...
 public class CT_GroupShapeNonVisual {
 	@XmlElement(required = true, name = "cNvPr")
 	protected List<CT_NonVisualDrawingProps> CNvPr;
@@ -106,6 +115,7 @@ public class CT_GroupShapeNonVisual {
 	protected List<CT_NonVisualGroupDrawingShapeProps> CNvGrpSpPr;
 }
 
+// CT_GroupShape ...
 public class CT_GroupShape {
 	@XmlElement(required = true, name = "nvGrpSpPr")
 	protected List<CT_GroupShapeNonVisual> NvGrpSpPr;
@@ -123,6 +133,7 @@ public class CT_GroupShape {
 	protected CT_Picture Pic;
 }
 
+// EG_ObjectChoices ...
 public class EG_ObjectChoices {
 	@XmlElement(required = true, name = "sp")
 	protected CT_Shape Sp;
@@ -136,12 +147,14 @@ public class EG_ObjectChoices {
 	protected CT_Picture Pic;
 }
 
+// ST_MarkerCoordinate ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_MarkerCoordinate")
 public class ST_MarkerCoordinate {
 	protected Float ST_MarkerCoordinate;
 }
 
+// CT_Marker ...
 public class CT_Marker {
 	@XmlElement(required = true, name = "x")
 	protected List<Float> X;
@@ -149,6 +162,7 @@ public class CT_Marker {
 	protected List<Float> Y;
 }
 
+// CT_RelSizeAnchor ...
 public class CT_RelSizeAnchor {
 	protected EG_ObjectChoices EG_ObjectChoices;
 	@XmlElement(required = true, name = "from")
@@ -157,6 +171,7 @@ public class CT_RelSizeAnchor {
 	protected CT_Marker To;
 }
 
+// CT_AbsSizeAnchor ...
 public class CT_AbsSizeAnchor {
 	protected EG_ObjectChoices EG_ObjectChoices;
 	@XmlElement(required = true, name = "from")
@@ -165,6 +180,7 @@ public class CT_AbsSizeAnchor {
 	protected CT_PositiveSize2D Ext;
 }
 
+// EG_Anchor ...
 public class EG_Anchor {
 	@XmlElement(required = true, name = "relSizeAnchor")
 	protected CT_RelSizeAnchor RelSizeAnchor;
@@ -172,6 +188,7 @@ public class EG_Anchor {
 	protected CT_AbsSizeAnchor AbsSizeAnchor;
 }
 
+// CT_Drawing ...
 public class CT_Drawing {
 	protected List<EG_Anchor> EG_Anchor;
 }

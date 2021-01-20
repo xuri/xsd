@@ -2,11 +2,13 @@
 
 typedef SkinModel Skin;
 
+// SkinModel is Encoding of text content, like the Velocity template itself.
 typedef struct {
 	Prerequisites Prerequisites;
 	char Encoding;
 } SkinModel;
 
+// Prerequisites is The minimum version of Doxia Sitetools required to use the resulting skin.
 typedef struct {
 	char Doxiasitetools;
 } Prerequisites;

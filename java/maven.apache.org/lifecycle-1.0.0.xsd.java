@@ -17,16 +17,19 @@ public class Lifecycles {
 	protected LifecycleConfiguration Lifecycles;
 }
 
+// LifecycleConfiguration is 1.0.0
 public class LifecycleConfiguration {
 	@XmlElement(required = true, name = "lifecycle")
 	protected List<Lifecycle> Lifecycle;
 }
 
+// Phases ...
 public class Phases {
 	@XmlElement(required = true, name = "phase")
 	protected List<Phase> Phase;
 }
 
+// Lifecycle is The ID of this lifecycle, for identification in the mojo descriptor.
 public class Lifecycle {
 	@XmlElement(required = true, name = "id")
 	protected String Id;
@@ -34,14 +37,17 @@ public class Lifecycle {
 	protected Phases Phases;
 }
 
+// Executions ...
 public class Executions {
 	@XmlElement(required = true, name = "execution")
 	protected List<Execution> Execution;
 }
 
+// Configuration ...
 public class Configuration {
 }
 
+// Phase is The ID of this phase, e.g., <code>generate-sources</code>.
 public class Phase {
 	@XmlElement(required = true, name = "id")
 	protected String Id;
@@ -51,11 +57,13 @@ public class Phase {
 	protected Configuration Configuration;
 }
 
+// Goals ...
 public class Goals {
 	@XmlElement(required = true, name = "goal")
 	protected List<String> Goal;
 }
 
+// Execution is A set of goals to execute.
 public class Execution {
 	@XmlElement(required = true, name = "configuration")
 	protected Configuration Configuration;

@@ -17,17 +17,26 @@ public class Toolchains {
 	protected PersistedToolchains Toolchains;
 }
 
+// PersistedToolchains is The toolchain instance definition.
 public class PersistedToolchains {
 	@XmlElement(required = true, name = "toolchain")
 	protected List<ToolchainModel> Toolchain;
 }
 
+// Provides ...
 public class Provides {
 }
 
+// Configuration ...
 public class Configuration {
 }
 
+// ToolchainModel is Type of toolchain:<ul>
+//                     <li><code>jdk</code> for
+//                     <a href="https://maven.apache.org/plugins/maven-toolchains-plugin/toolchains/jdk.html">JDK Standard Toolchain</a>,</li>
+//                     <li>other value for
+//                     <a href="https://maven.apache.org/plugins/maven-toolchains-plugin/toolchains/custom.html">Custom Toolchain</a></li>
+//                     </ul>
 public class ToolchainModel {
 	@XmlElement(required = true, name = "type")
 	protected String Type;

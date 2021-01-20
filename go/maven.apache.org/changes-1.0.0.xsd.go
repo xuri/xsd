@@ -2,21 +2,22 @@
 
 package schema
 
-// Document ...
+// Document is Record every release with their subsequent changes.
 type Document *ChangesDocument
 
-// ChangesDocument ...
+// ChangesDocument is Contains the releases of this project with the actions taken
+//             for each of the releases.
 type ChangesDocument struct {
 	Properties *Properties `xml:"properties"`
 	Body       *Body       `xml:"body"`
 }
 
-// Body ...
+// Body is The list of releases for this project.
 type Body struct {
 	Release []*Release `xml:"release"`
 }
 
-// Release ...
+// Release is The list of actions taken for this release.
 type Release struct {
 	VersionAttr     string    `xml:"version,attr,omitempty"`
 	DateAttr        string    `xml:"date,attr,omitempty"`
@@ -24,7 +25,7 @@ type Release struct {
 	Action          []*Action `xml:"action"`
 }
 
-// Action ...
+// Action is A list of contibutors for this issue.
 type Action struct {
 	DevAttr        string        `xml:"dev,attr,omitempty"`
 	DuetoAttr      string        `xml:"due-to,attr,omitempty"`
@@ -37,24 +38,24 @@ type Action struct {
 	Dueto          []*DueTo      `xml:"dueto"`
 }
 
-// FixedIssue ...
+// FixedIssue is A fixed issue.
 type FixedIssue struct {
 	IssueAttr string `xml:"issue,attr,omitempty"`
 }
 
-// DueTo ...
+// DueTo is Name and Email of the person to be credited for this change. This can be used when a patch is submitted by a non-committer.
 type DueTo struct {
 	NameAttr  string `xml:"name,attr,omitempty"`
 	EmailAttr string `xml:"email,attr,omitempty"`
 }
 
-// Properties ...
+// Properties is Page Author
 type Properties struct {
 	Title  string  `xml:"title"`
 	Author *Author `xml:"author"`
 }
 
-// Author ...
+// Author is A description of the author page.
 type Author struct {
 	EmailAttr string `xml:"email,attr,omitempty"`
 }

@@ -11,16 +11,19 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 
+// B ...
 public class B {
 	@XmlElement(required = true, name = "C")
 	protected String C;
 }
 
+// A ...
 public class A {
 	@XmlElement(required = true, name = "B")
 	protected B B;
 }
 
+// FileUpload ...
 public class FileUpload {
 	@XmlElement(required = true, name = "A")
 	protected List<A> A;

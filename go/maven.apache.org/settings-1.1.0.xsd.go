@@ -6,7 +6,7 @@ import (
 	"encoding/xml"
 )
 
-// Settings ...
+// Settings is Root element of the user configuration file.
 type Settings *Settings
 
 // Proxies ...
@@ -45,7 +45,7 @@ type PluginGroups struct {
 	PluginGroup []string `xml:"pluginGroup"`
 }
 
-// Settings ...
+// Settings is Indicate whether maven should operate in offline mode full-time.
 type Settings struct {
 	LocalRepository   string          `xml:"localRepository"`
 	InteractiveMode   bool            `xml:"interactiveMode"`
@@ -59,7 +59,7 @@ type Settings struct {
 	PluginGroups      *PluginGroups   `xml:"pluginGroups"`
 }
 
-// Proxy ...
+// Proxy is 1.0.0+
 type Proxy struct {
 	Active        bool   `xml:"active"`
 	Protocol      string `xml:"protocol"`
@@ -76,7 +76,7 @@ type Configuration struct {
 	XMLName xml.Name `xml:"configuration"`
 }
 
-// Server ...
+// Server is The permissions for directories when they are created.
 type Server struct {
 	Username             string         `xml:"username"`
 	Password             string         `xml:"password"`
@@ -88,7 +88,7 @@ type Server struct {
 	Id                   string         `xml:"id"`
 }
 
-// Mirror ...
+// Mirror is 1.0.0+
 type Mirror struct {
 	MirrorOf        string `xml:"mirrorOf"`
 	Name            string `xml:"name"`
@@ -115,7 +115,8 @@ type PluginRepositories struct {
 	PluginRepository []*Repository `xml:"pluginRepository"`
 }
 
-// Profile ...
+// Profile is The conditional logic which will automatically
+//             trigger the inclusion of this profile.
 type Profile struct {
 	Activation         *Activation         `xml:"activation"`
 	Properties         *Properties         `xml:"properties"`
@@ -124,7 +125,8 @@ type Profile struct {
 	Id                 string              `xml:"id"`
 }
 
-// Repository ...
+// Repository is The type of layout this repository uses for locating and
+//             storing artifacts - can be "legacy" or "default".
 type Repository struct {
 	Releases  *RepositoryPolicy `xml:"releases"`
 	Snapshots *RepositoryPolicy `xml:"snapshots"`
@@ -134,14 +136,15 @@ type Repository struct {
 	Layout    string            `xml:"layout"`
 }
 
-// RepositoryPolicy ...
+// RepositoryPolicy is What to do when verification of an artifact checksum fails -
+//             warn, fail, etc. Valid values are "fail" or "warn".
 type RepositoryPolicy struct {
 	Enabled        bool   `xml:"enabled"`
 	UpdatePolicy   string `xml:"updatePolicy"`
 	ChecksumPolicy string `xml:"checksumPolicy"`
 }
 
-// Activation ...
+// Activation is Specifies that this profile will be activated based on existence of a file.
 type Activation struct {
 	ActiveByDefault bool                `xml:"activeByDefault"`
 	Jdk             string              `xml:"jdk"`
@@ -150,7 +153,7 @@ type Activation struct {
 	File            *ActivationFile     `xml:"file"`
 }
 
-// ActivationOS ...
+// ActivationOS is The version of the OS to be used to activate a profile.
 type ActivationOS struct {
 	Name    string `xml:"name"`
 	Family  string `xml:"family"`
@@ -158,13 +161,13 @@ type ActivationOS struct {
 	Version string `xml:"version"`
 }
 
-// ActivationProperty ...
+// ActivationProperty is The value of the property to be used to activate a profile.
 type ActivationProperty struct {
 	Name  string `xml:"name"`
 	Value string `xml:"value"`
 }
 
-// ActivationFile ...
+// ActivationFile is The name of the file that should exist to activate a profile.
 type ActivationFile struct {
 	Missing string `xml:"missing"`
 	Exists  string `xml:"exists"`

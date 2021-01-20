@@ -2,6 +2,7 @@
 
 typedef DocumentModel Document;
 
+// DocumentModel is The meta data to construct a cover page for the document.
 typedef struct {
 	char OutputNameAttr; // attr, optional
 	DocumentMeta Meta;
@@ -9,12 +10,14 @@ typedef struct {
 	DocumentCover Cover;
 } DocumentModel;
 
+// DocumentTOC is TOC item.
 typedef struct {
 	char NameAttr; // attr, optional
 	int DepthAttr; // attr, optional
 	DocumentTOCItem Item[];
 } DocumentTOC;
 
+// DocumentTOCItem is A table of content item containing sub-items.
 typedef struct {
 	char NameAttr; // attr, optional
 	char RefAttr; // attr, optional
@@ -22,10 +25,14 @@ typedef struct {
 	DocumentTOCItem Item[];
 } DocumentTOCItem;
 
+// Authors ...
 typedef struct {
 	DocumentAuthor Author[];
 } Authors;
 
+// DocumentCover is The date as String (recommended format is ISO 8601) to appear on the cover.
+//             Only used if <code>coverDate</code> is not set.
+//             @since 1.1.1
 typedef struct {
 	char CoverTitle;
 	char CoverSubTitle;
@@ -41,6 +48,7 @@ typedef struct {
 	char CompanyLogo;
 } DocumentCover;
 
+// DocumentAuthor is The state or province of the address of the author, if applicable.
 typedef struct {
 	char FirstName;
 	char LastName;
@@ -59,10 +67,13 @@ typedef struct {
 	char State;
 } DocumentAuthor;
 
+// KeyWords ...
 typedef struct {
 	char KeyWord[];
 } KeyWords;
 
+// DocumentMeta is The unique author of the document, usually as a String of "firstName lastName". For
+//             more authors, you could use the &lt;authors/&gt; tag.
 typedef struct {
 	char Title;
 	char Author;
@@ -92,6 +103,7 @@ typedef struct {
 	bool Draft;
 } DocumentMeta;
 
+// DocumentTemplate is A template that was used to create the document.
 typedef struct {
 	char HrefAttr; // attr, optional
 	char TitleAttr; // attr, optional
@@ -99,6 +111,7 @@ typedef struct {
 	char ModifydateAttr; // attr, optional
 } DocumentTemplate;
 
+// DocumentStatistic is Statistical attributes of the document.
 typedef struct {
 	int PageCountAttr; // attr, optional
 	int TableCountAttr; // attr, optional
@@ -116,6 +129,7 @@ typedef struct {
 	int NonWhitespaceCharacterCountAttr; // attr, optional
 } DocumentStatistic;
 
+// DocumentHyperlinkBehaviour is Specifies the default behavior for hyperlinks in the document.
 typedef struct {
 	char TargetFrameAttr; // attr, optional
 } DocumentHyperlinkBehaviour;
