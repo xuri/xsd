@@ -286,7 +286,7 @@ typedef struct {
 	char TargetPath;
 	Includes Includes[];
 	Excludes Excludes[];
-	bool Filtering[];
+	bool Filtering;
 } Resource;
 
 // Reports ...

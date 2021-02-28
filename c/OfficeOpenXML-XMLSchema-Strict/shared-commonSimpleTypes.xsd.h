@@ -31,8 +31,8 @@ typedef unsigned int ST_UnsignedDecimalNumber;
 
 // ST_TwipsMeasure ...
 typedef struct {
-	unsigned int ST_UnsignedDecimalNumber;
 	ST_PositiveUniversalMeasure ST_PositiveUniversalMeasure;
+	unsigned int ST_UnsignedDecimalNumber;
 } ST_TwipsMeasure;
 
 // ST_VerticalAlignRun ...

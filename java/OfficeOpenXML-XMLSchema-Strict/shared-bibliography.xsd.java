@@ -37,15 +37,15 @@ public class CT_PersonType {
 // CT_NameType ...
 public class CT_NameType {
 	@XmlElement(required = true, name = "NameList")
-	protected List<CT_NameListType> NameList;
+	protected CT_NameListType NameList;
 }
 
 // CT_NameOrCorporateType ...
 public class CT_NameOrCorporateType {
 	@XmlElement(required = true, name = "NameList")
-	protected List<CT_NameListType> NameList;
+	protected CT_NameListType NameList;
 	@XmlElement(required = true, name = "Corporate")
-	protected List<String> Corporate;
+	protected String Corporate;
 }
 
 // CT_AuthorType ...

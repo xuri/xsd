@@ -14,9 +14,9 @@ import javax.xml.bind.annotation.XmlType;
 // PublshInformation ...
 public class PublshInformation {
 	@XmlElement(required = true, name = "Publish_Date")
-	protected List<String> Publish_Date;
+	protected String Publish_Date;
 	@XmlElement(required = true, name = "Record_Count")
-	protected List<Integer> Record_Count;
+	protected Integer Record_Count;
 }
 
 // ProgramList ...
@@ -188,29 +188,29 @@ public class SdnEntry {
 	@XmlElement(required = true, name = "remarks")
 	protected String Remarks;
 	@XmlElement(required = true, name = "programList")
-	protected List<ProgramList> ProgramList;
+	protected ProgramList ProgramList;
 	@XmlElement(required = true, name = "idList")
-	protected List<IdList> IdList;
+	protected IdList IdList;
 	@XmlElement(required = true, name = "akaList")
-	protected List<AkaList> AkaList;
+	protected AkaList AkaList;
 	@XmlElement(required = true, name = "addressList")
-	protected List<AddressList> AddressList;
+	protected AddressList AddressList;
 	@XmlElement(required = true, name = "nationalityList")
-	protected List<NationalityList> NationalityList;
+	protected NationalityList NationalityList;
 	@XmlElement(required = true, name = "citizenshipList")
-	protected List<CitizenshipList> CitizenshipList;
+	protected CitizenshipList CitizenshipList;
 	@XmlElement(required = true, name = "dateOfBirthList")
-	protected List<DateOfBirthList> DateOfBirthList;
+	protected DateOfBirthList DateOfBirthList;
 	@XmlElement(required = true, name = "placeOfBirthList")
-	protected List<PlaceOfBirthList> PlaceOfBirthList;
+	protected PlaceOfBirthList PlaceOfBirthList;
 	@XmlElement(required = true, name = "vesselInfo")
-	protected List<VesselInfo> VesselInfo;
+	protected VesselInfo VesselInfo;
 }
 
 // SdnList ...
 public class SdnList {
 	@XmlElement(required = true, name = "publshInformation")
-	protected List<PublshInformation> PublshInformation;
+	protected PublshInformation PublshInformation;
 	@XmlElement(required = true, name = "sdnEntry")
 	protected List<SdnEntry> SdnEntry;
 }

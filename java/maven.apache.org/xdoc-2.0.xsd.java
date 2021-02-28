@@ -1815,21 +1815,21 @@ public class Document {
 	@XmlAttribute(name = "id")
 	protected StringAttr Id;
 	@XmlElement(required = true, name = "properties")
-	protected List<Properties> Properties;
+	protected Properties Properties;
 	@XmlElement(required = true, name = "head")
-	protected List<Head> Head;
+	protected Head Head;
 	@XmlElement(required = true, name = "body")
-	protected List<Body> Body;
+	protected Body Body;
 }
 
 // Properties ...
 public class Properties {
 	@XmlElement(required = true, name = "title")
-	protected List<Title> Title;
+	protected Title Title;
 	@XmlElement(required = true, name = "author")
 	protected List<Author> Author;
 	@XmlElement(required = true, name = "date")
-	protected List<Byte> Date;
+	protected Byte Date;
 }
 
 // Author ...

@@ -4,20 +4,20 @@
 export class CT_AudioFile {
 	RLinkAttr: string;
 	ContentTypeAttr: string | null;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_VideoFile ...
 export class CT_VideoFile {
 	RLinkAttr: string;
 	ContentTypeAttr: string | null;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_QuickTimeFile ...
 export class CT_QuickTimeFile {
 	RLinkAttr: string;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_AudioCDTime ...
@@ -28,9 +28,9 @@ export class CT_AudioCDTime {
 
 // CT_AudioCD ...
 export class CT_AudioCD {
-	St: Array<CT_AudioCDTime>;
-	End: Array<CT_AudioCDTime>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	St: CT_AudioCDTime;
+	End: CT_AudioCDTime;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // EG_Media ...
@@ -74,19 +74,19 @@ export enum ST_ColorSchemeIndex {
 // CT_ColorScheme ...
 export class CT_ColorScheme {
 	NameAttr: string;
-	Dk1: Array<CT_Color>;
-	Lt1: Array<CT_Color>;
-	Dk2: Array<CT_Color>;
-	Lt2: Array<CT_Color>;
-	Accent1: Array<CT_Color>;
-	Accent2: Array<CT_Color>;
-	Accent3: Array<CT_Color>;
-	Accent4: Array<CT_Color>;
-	Accent5: Array<CT_Color>;
-	Accent6: Array<CT_Color>;
-	Hlink: Array<CT_Color>;
-	FolHlink: Array<CT_Color>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	Dk1: CT_Color;
+	Lt1: CT_Color;
+	Dk2: CT_Color;
+	Lt2: CT_Color;
+	Accent1: CT_Color;
+	Accent2: CT_Color;
+	Accent3: CT_Color;
+	Accent4: CT_Color;
+	Accent5: CT_Color;
+	Accent6: CT_Color;
+	Hlink: CT_Color;
+	FolHlink: CT_Color;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_CustomColor ...
@@ -108,26 +108,26 @@ export class CT_CustomColorList {
 
 // CT_FontCollection ...
 export class CT_FontCollection {
-	Latin: Array<CT_TextFont>;
-	Ea: Array<CT_TextFont>;
-	Cs: Array<CT_TextFont>;
+	Latin: CT_TextFont;
+	Ea: CT_TextFont;
+	Cs: CT_TextFont;
 	Font: Array<CT_SupplementalFont>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_EffectStyleItem ...
 export class CT_EffectStyleItem {
 	EG_EffectProperties: Array<EG_EffectProperties>;
-	Scene3d: Array<CT_Scene3D>;
-	Sp3d: Array<CT_Shape3D>;
+	Scene3d: CT_Scene3D;
+	Sp3d: CT_Shape3D;
 }
 
 // CT_FontScheme ...
 export class CT_FontScheme {
 	NameAttr: string;
-	MajorFont: Array<CT_FontCollection>;
-	MinorFont: Array<CT_FontCollection>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	MajorFont: CT_FontCollection;
+	MinorFont: CT_FontCollection;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_FillStyleList ...
@@ -153,18 +153,18 @@ export class CT_BackgroundFillStyleList {
 // CT_StyleMatrix ...
 export class CT_StyleMatrix {
 	NameAttr: string | null;
-	FillStyleLst: Array<CT_FillStyleList>;
-	LnStyleLst: Array<CT_LineStyleList>;
-	EffectStyleLst: Array<CT_EffectStyleList>;
-	BgFillStyleLst: Array<CT_BackgroundFillStyleList>;
+	FillStyleLst: CT_FillStyleList;
+	LnStyleLst: CT_LineStyleList;
+	EffectStyleLst: CT_EffectStyleList;
+	BgFillStyleLst: CT_BackgroundFillStyleList;
 }
 
 // CT_BaseStyles ...
 export class CT_BaseStyles {
-	ClrScheme: Array<CT_ColorScheme>;
-	FontScheme: Array<CT_FontScheme>;
-	FmtScheme: Array<CT_StyleMatrix>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ClrScheme: CT_ColorScheme;
+	FontScheme: CT_FontScheme;
+	FmtScheme: CT_StyleMatrix;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_OfficeArtExtension ...
@@ -295,34 +295,34 @@ export class CT_InverseGammaTransform {
 
 // EG_ColorTransform ...
 export class EG_ColorTransform {
-	Tint: Array<CT_PositiveFixedPercentage>;
-	Shade: Array<CT_PositiveFixedPercentage>;
-	Comp: Array<CT_ComplementTransform>;
-	Inv: Array<CT_InverseTransform>;
-	Gray: Array<CT_GrayscaleTransform>;
-	Alpha: Array<CT_PositiveFixedPercentage>;
-	AlphaOff: Array<CT_FixedPercentage>;
-	AlphaMod: Array<CT_PositivePercentage>;
-	Hue: Array<CT_PositiveFixedAngle>;
-	HueOff: Array<CT_Angle>;
-	HueMod: Array<CT_PositivePercentage>;
-	Sat: Array<CT_Percentage>;
-	SatOff: Array<CT_Percentage>;
-	SatMod: Array<CT_Percentage>;
-	Lum: Array<CT_Percentage>;
-	LumOff: Array<CT_Percentage>;
-	LumMod: Array<CT_Percentage>;
-	Red: Array<CT_Percentage>;
-	RedOff: Array<CT_Percentage>;
-	RedMod: Array<CT_Percentage>;
-	Green: Array<CT_Percentage>;
-	GreenOff: Array<CT_Percentage>;
-	GreenMod: Array<CT_Percentage>;
-	Blue: Array<CT_Percentage>;
-	BlueOff: Array<CT_Percentage>;
-	BlueMod: Array<CT_Percentage>;
-	Gamma: Array<CT_GammaTransform>;
-	InvGamma: Array<CT_InverseGammaTransform>;
+	Tint: CT_PositiveFixedPercentage;
+	Shade: CT_PositiveFixedPercentage;
+	Comp: CT_ComplementTransform;
+	Inv: CT_InverseTransform;
+	Gray: CT_GrayscaleTransform;
+	Alpha: CT_PositiveFixedPercentage;
+	AlphaOff: CT_FixedPercentage;
+	AlphaMod: CT_PositivePercentage;
+	Hue: CT_PositiveFixedAngle;
+	HueOff: CT_Angle;
+	HueMod: CT_PositivePercentage;
+	Sat: CT_Percentage;
+	SatOff: CT_Percentage;
+	SatMod: CT_Percentage;
+	Lum: CT_Percentage;
+	LumOff: CT_Percentage;
+	LumMod: CT_Percentage;
+	Red: CT_Percentage;
+	RedOff: CT_Percentage;
+	RedMod: CT_Percentage;
+	Green: CT_Percentage;
+	GreenOff: CT_Percentage;
+	GreenMod: CT_Percentage;
+	Blue: CT_Percentage;
+	BlueOff: CT_Percentage;
+	BlueMod: CT_Percentage;
+	Gamma: CT_GammaTransform;
+	InvGamma: CT_InverseGammaTransform;
 }
 
 // CT_ScRgbColor ...
@@ -627,8 +627,8 @@ export class CT_OfficeArtExtensionList {
 
 // CT_Scale2D ...
 export class CT_Scale2D {
-	Sx: Array<CT_Ratio>;
-	Sy: Array<CT_Ratio>;
+	Sx: CT_Ratio;
+	Sy: CT_Ratio;
 }
 
 // CT_Transform2D ...
@@ -636,8 +636,8 @@ export class CT_Transform2D {
 	RotAttr: number | null;
 	FlipHAttr: boolean | null;
 	FlipVAttr: boolean | null;
-	Off: Array<CT_Point2D>;
-	Ext: Array<CT_PositiveSize2D>;
+	Off: CT_Point2D;
+	Ext: CT_PositiveSize2D;
 }
 
 // CT_GroupTransform2D ...
@@ -645,10 +645,10 @@ export class CT_GroupTransform2D {
 	RotAttr: number | null;
 	FlipHAttr: boolean | null;
 	FlipVAttr: boolean | null;
-	Off: Array<CT_Point2D>;
-	Ext: Array<CT_PositiveSize2D>;
-	ChOff: Array<CT_Point2D>;
-	ChExt: Array<CT_PositiveSize2D>;
+	Off: CT_Point2D;
+	Ext: CT_PositiveSize2D;
+	ChOff: CT_Point2D;
+	ChExt: CT_PositiveSize2D;
 }
 
 // CT_Point3D ...
@@ -695,12 +695,12 @@ export enum ST_RectAlignment {
 
 // EG_ColorChoice ...
 export class EG_ColorChoice {
-	ScrgbClr: Array<CT_ScRgbColor>;
-	SrgbClr: Array<CT_SRgbColor>;
-	HslClr: Array<CT_HslColor>;
-	SysClr: Array<CT_SystemColor>;
-	SchemeClr: Array<CT_SchemeColor>;
-	PrstClr: Array<CT_PresetColor>;
+	ScrgbClr: CT_ScRgbColor;
+	SrgbClr: CT_SRgbColor;
+	HslClr: CT_HslColor;
+	SysClr: CT_SystemColor;
+	SchemeClr: CT_SchemeColor;
+	PrstClr: CT_PresetColor;
 }
 
 // CT_Color ...
@@ -750,8 +750,8 @@ export class CT_Hyperlink {
 	HistoryAttr: boolean | null;
 	HighlightClickAttr: boolean | null;
 	EndSndAttr: boolean | null;
-	Snd: Array<CT_EmbeddedWAVAudioFile>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	Snd: CT_EmbeddedWAVAudioFile;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // ST_DrawingElementId ...
@@ -774,21 +774,21 @@ export class AG_Locking {
 // CT_ConnectorLocking ...
 export class CT_ConnectorLocking {
 	AG_Locking: AG_Locking;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_ShapeLocking ...
 export class CT_ShapeLocking {
 	AG_Locking: AG_Locking;
 	NoTextEditAttr: boolean | null;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_PictureLocking ...
 export class CT_PictureLocking {
 	AG_Locking: AG_Locking;
 	NoCropAttr: boolean | null;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_GroupLocking ...
@@ -800,7 +800,7 @@ export class CT_GroupLocking {
 	NoChangeAspectAttr: boolean | null;
 	NoMoveAttr: boolean | null;
 	NoResizeAttr: boolean | null;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_GraphicalObjectFrameLocking ...
@@ -811,13 +811,13 @@ export class CT_GraphicalObjectFrameLocking {
 	NoChangeAspectAttr: boolean | null;
 	NoMoveAttr: boolean | null;
 	NoResizeAttr: boolean | null;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_ContentPartLocking ...
 export class CT_ContentPartLocking {
 	AG_Locking: AG_Locking;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_NonVisualDrawingProps ...
@@ -827,50 +827,50 @@ export class CT_NonVisualDrawingProps {
 	DescrAttr: string | null;
 	HiddenAttr: boolean | null;
 	TitleAttr: string | null;
-	HlinkClick: Array<CT_Hyperlink>;
-	HlinkHover: Array<CT_Hyperlink>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	HlinkClick: CT_Hyperlink;
+	HlinkHover: CT_Hyperlink;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_NonVisualDrawingShapeProps ...
 export class CT_NonVisualDrawingShapeProps {
 	TxBoxAttr: boolean | null;
-	SpLocks: Array<CT_ShapeLocking>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	SpLocks: CT_ShapeLocking;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_NonVisualConnectorProperties ...
 export class CT_NonVisualConnectorProperties {
-	CxnSpLocks: Array<CT_ConnectorLocking>;
-	StCxn: Array<CT_Connection>;
-	EndCxn: Array<CT_Connection>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	CxnSpLocks: CT_ConnectorLocking;
+	StCxn: CT_Connection;
+	EndCxn: CT_Connection;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_NonVisualPictureProperties ...
 export class CT_NonVisualPictureProperties {
 	PreferRelativeResizeAttr: boolean | null;
-	PicLocks: Array<CT_PictureLocking>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	PicLocks: CT_PictureLocking;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_NonVisualGroupDrawingShapeProps ...
 export class CT_NonVisualGroupDrawingShapeProps {
-	GrpSpLocks: Array<CT_GroupLocking>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	GrpSpLocks: CT_GroupLocking;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_NonVisualGraphicFrameProperties ...
 export class CT_NonVisualGraphicFrameProperties {
-	GraphicFrameLocks: Array<CT_GraphicalObjectFrameLocking>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	GraphicFrameLocks: CT_GraphicalObjectFrameLocking;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_NonVisualContentPartProperties ...
 export class CT_NonVisualContentPartProperties {
 	IsCommentAttr: boolean | null;
-	CpLocks: Array<CT_ContentPartLocking>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	CpLocks: CT_ContentPartLocking;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_GraphicalObjectData ...
@@ -935,8 +935,8 @@ export enum ST_AnimationDgmOnlyBuildType {
 
 // ST_AnimationDgmBuildType ...
 export class ST_AnimationDgmBuildType {
-	ST_AnimationDgmOnlyBuildType: string;
 	ST_AnimationBuildType: string;
+	ST_AnimationDgmOnlyBuildType: string;
 }
 
 // CT_AnimationDgmBuildProperties ...
@@ -955,8 +955,8 @@ export enum ST_AnimationChartOnlyBuildType {
 
 // ST_AnimationChartBuildType ...
 export class ST_AnimationChartBuildType {
-	ST_AnimationBuildType: string;
 	ST_AnimationChartOnlyBuildType: string;
+	ST_AnimationBuildType: string;
 }
 
 // CT_AnimationChartBuildProperties ...
@@ -980,7 +980,7 @@ export class CT_BackgroundFormatting {
 // CT_WholeE2oFormatting ...
 export class CT_WholeE2oFormatting {
 	EG_EffectProperties: Array<EG_EffectProperties>;
-	Ln: Array<CT_LineProperties>;
+	Ln: CT_LineProperties;
 }
 
 // CT_GvmlUseShapeRectangle ...
@@ -989,87 +989,87 @@ export class CT_GvmlUseShapeRectangle {
 
 // CT_GvmlTextShape ...
 export class CT_GvmlTextShape {
-	TxBody: Array<CT_TextBody>;
-	UseSpRect: Array<CT_GvmlUseShapeRectangle>;
-	Xfrm: Array<CT_Transform2D>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	TxBody: CT_TextBody;
+	UseSpRect: CT_GvmlUseShapeRectangle;
+	Xfrm: CT_Transform2D;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_GvmlShapeNonVisual ...
 export class CT_GvmlShapeNonVisual {
-	CNvPr: Array<CT_NonVisualDrawingProps>;
-	CNvSpPr: Array<CT_NonVisualDrawingShapeProps>;
+	CNvPr: CT_NonVisualDrawingProps;
+	CNvSpPr: CT_NonVisualDrawingShapeProps;
 }
 
 // CT_GvmlShape ...
 export class CT_GvmlShape {
-	NvSpPr: Array<CT_GvmlShapeNonVisual>;
-	SpPr: Array<CT_ShapeProperties>;
-	TxSp: Array<CT_GvmlTextShape>;
-	Style: Array<CT_ShapeStyle>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	NvSpPr: CT_GvmlShapeNonVisual;
+	SpPr: CT_ShapeProperties;
+	TxSp: CT_GvmlTextShape;
+	Style: CT_ShapeStyle;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_GvmlConnectorNonVisual ...
 export class CT_GvmlConnectorNonVisual {
-	CNvPr: Array<CT_NonVisualDrawingProps>;
-	CNvCxnSpPr: Array<CT_NonVisualConnectorProperties>;
+	CNvPr: CT_NonVisualDrawingProps;
+	CNvCxnSpPr: CT_NonVisualConnectorProperties;
 }
 
 // CT_GvmlConnector ...
 export class CT_GvmlConnector {
-	NvCxnSpPr: Array<CT_GvmlConnectorNonVisual>;
-	SpPr: Array<CT_ShapeProperties>;
-	Style: Array<CT_ShapeStyle>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	NvCxnSpPr: CT_GvmlConnectorNonVisual;
+	SpPr: CT_ShapeProperties;
+	Style: CT_ShapeStyle;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_GvmlPictureNonVisual ...
 export class CT_GvmlPictureNonVisual {
-	CNvPr: Array<CT_NonVisualDrawingProps>;
-	CNvPicPr: Array<CT_NonVisualPictureProperties>;
+	CNvPr: CT_NonVisualDrawingProps;
+	CNvPicPr: CT_NonVisualPictureProperties;
 }
 
 // CT_GvmlPicture ...
 export class CT_GvmlPicture {
-	NvPicPr: Array<CT_GvmlPictureNonVisual>;
-	BlipFill: Array<CT_BlipFillProperties>;
-	SpPr: Array<CT_ShapeProperties>;
-	Style: Array<CT_ShapeStyle>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	NvPicPr: CT_GvmlPictureNonVisual;
+	BlipFill: CT_BlipFillProperties;
+	SpPr: CT_ShapeProperties;
+	Style: CT_ShapeStyle;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_GvmlGraphicFrameNonVisual ...
 export class CT_GvmlGraphicFrameNonVisual {
-	CNvPr: Array<CT_NonVisualDrawingProps>;
-	CNvGraphicFramePr: Array<CT_NonVisualGraphicFrameProperties>;
+	CNvPr: CT_NonVisualDrawingProps;
+	CNvGraphicFramePr: CT_NonVisualGraphicFrameProperties;
 }
 
 // CT_GvmlGraphicalObjectFrame ...
 export class CT_GvmlGraphicalObjectFrame {
-	NvGraphicFramePr: Array<CT_GvmlGraphicFrameNonVisual>;
-	Graphic: Array<CT_GraphicalObject>;
-	Xfrm: Array<CT_Transform2D>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	NvGraphicFramePr: CT_GvmlGraphicFrameNonVisual;
+	Graphic: CT_GraphicalObject;
+	Xfrm: CT_Transform2D;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_GvmlGroupShapeNonVisual ...
 export class CT_GvmlGroupShapeNonVisual {
-	CNvPr: Array<CT_NonVisualDrawingProps>;
-	CNvGrpSpPr: Array<CT_NonVisualGroupDrawingShapeProps>;
+	CNvPr: CT_NonVisualDrawingProps;
+	CNvGrpSpPr: CT_NonVisualGroupDrawingShapeProps;
 }
 
 // CT_GvmlGroupShape ...
 export class CT_GvmlGroupShape {
-	NvGrpSpPr: Array<CT_GvmlGroupShapeNonVisual>;
-	GrpSpPr: Array<CT_GroupShapeProperties>;
+	NvGrpSpPr: CT_GvmlGroupShapeNonVisual;
+	GrpSpPr: CT_GroupShapeProperties;
 	TxSp: CT_GvmlTextShape;
 	Sp: CT_GvmlShape;
 	CxnSp: CT_GvmlConnector;
 	Pic: CT_GvmlPicture;
 	GraphicFrame: CT_GvmlGraphicalObjectFrame;
 	GrpSp: CT_GvmlGroupShape;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // ST_PresetCameraType ...
@@ -1146,7 +1146,7 @@ export class CT_Camera {
 	PrstAttr: string;
 	FovAttr: number | null;
 	ZoomAttr: ST_PositivePercentage | null;
-	Rot: Array<CT_SphereCoords>;
+	Rot: CT_SphereCoords;
 }
 
 // ST_LightRigDirection ...
@@ -1196,23 +1196,23 @@ export enum ST_LightRigType {
 export class CT_LightRig {
 	RigAttr: string;
 	DirAttr: string;
-	Rot: Array<CT_SphereCoords>;
+	Rot: CT_SphereCoords;
 }
 
 // CT_Scene3D ...
 export class CT_Scene3D {
-	Camera: Array<CT_Camera>;
-	LightRig: Array<CT_LightRig>;
-	Backdrop: Array<CT_Backdrop>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	Camera: CT_Camera;
+	LightRig: CT_LightRig;
+	Backdrop: CT_Backdrop;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_Backdrop ...
 export class CT_Backdrop {
-	Anchor: Array<CT_Point3D>;
-	Norm: Array<CT_Vector3D>;
-	Up: Array<CT_Vector3D>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	Anchor: CT_Point3D;
+	Norm: CT_Vector3D;
+	Up: CT_Vector3D;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // ST_BevelPresetType ...
@@ -1263,11 +1263,11 @@ export class CT_Shape3D {
 	ExtrusionHAttr: number | null;
 	ContourWAttr: number | null;
 	PrstMaterialAttr: string | null;
-	BevelT: Array<CT_Bevel>;
-	BevelB: Array<CT_Bevel>;
-	ExtrusionClr: Array<CT_Color>;
-	ContourClr: Array<CT_Color>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	BevelT: CT_Bevel;
+	BevelB: CT_Bevel;
+	ExtrusionClr: CT_Color;
+	ContourClr: CT_Color;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_FlatText ...
@@ -1277,8 +1277,8 @@ export class CT_FlatText {
 
 // EG_Text3D ...
 export class EG_Text3D {
-	Sp3d: Array<CT_Shape3D>;
-	FlatTx: Array<CT_FlatText>;
+	Sp3d: CT_Shape3D;
+	FlatTx: CT_FlatText;
 }
 
 // CT_AlphaBiLevelEffect ...
@@ -1328,8 +1328,8 @@ export class CT_BlurEffect {
 // CT_ColorChangeEffect ...
 export class CT_ColorChangeEffect {
 	UseAAttr: boolean | null;
-	ClrFrom: Array<CT_Color>;
-	ClrTo: Array<CT_Color>;
+	ClrFrom: CT_Color;
+	ClrTo: CT_Color;
 }
 
 // CT_ColorReplaceEffect ...
@@ -1489,13 +1489,13 @@ export enum ST_PathShadeType {
 // CT_PathShadeProperties ...
 export class CT_PathShadeProperties {
 	PathAttr: string | null;
-	FillToRect: Array<CT_RelativeRect>;
+	FillToRect: CT_RelativeRect;
 }
 
 // EG_ShadeProperties ...
 export class EG_ShadeProperties {
-	Lin: Array<CT_LinearShadeProperties>;
-	Path: Array<CT_PathShadeProperties>;
+	Lin: CT_LinearShadeProperties;
+	Path: CT_PathShadeProperties;
 }
 
 // ST_TileFlipMode ...
@@ -1522,8 +1522,8 @@ export class CT_GradientFillProperties {
 	FlipAttr: string | null;
 	RotWithShapeAttr: boolean | null;
 	EG_ShadeProperties: Array<EG_ShadeProperties>;
-	GsLst: Array<CT_GradientStopList>;
-	TileRect: Array<CT_RelativeRect>;
+	GsLst: CT_GradientStopList;
+	TileRect: CT_RelativeRect;
 }
 
 // CT_TileInfoProperties ...
@@ -1538,13 +1538,13 @@ export class CT_TileInfoProperties {
 
 // CT_StretchInfoProperties ...
 export class CT_StretchInfoProperties {
-	FillRect: Array<CT_RelativeRect>;
+	FillRect: CT_RelativeRect;
 }
 
 // EG_FillModeProperties ...
 export class EG_FillModeProperties {
-	Tile: Array<CT_TileInfoProperties>;
-	Stretch: Array<CT_StretchInfoProperties>;
+	Tile: CT_TileInfoProperties;
+	Stretch: CT_StretchInfoProperties;
 }
 
 // ST_BlipCompression ...
@@ -1560,24 +1560,24 @@ export enum ST_BlipCompression {
 export class CT_Blip {
 	AG_Blob: AG_Blob;
 	CstateAttr: string | null;
-	AlphaBiLevel: Array<CT_AlphaBiLevelEffect>;
-	AlphaCeiling: Array<CT_AlphaCeilingEffect>;
-	AlphaFloor: Array<CT_AlphaFloorEffect>;
-	AlphaInv: Array<CT_AlphaInverseEffect>;
-	AlphaMod: Array<CT_AlphaModulateEffect>;
-	AlphaModFix: Array<CT_AlphaModulateFixedEffect>;
-	AlphaRepl: Array<CT_AlphaReplaceEffect>;
-	BiLevel: Array<CT_BiLevelEffect>;
-	Blur: Array<CT_BlurEffect>;
-	ClrChange: Array<CT_ColorChangeEffect>;
-	ClrRepl: Array<CT_ColorReplaceEffect>;
-	Duotone: Array<CT_DuotoneEffect>;
-	FillOverlay: Array<CT_FillOverlayEffect>;
-	Grayscl: Array<CT_GrayscaleEffect>;
-	Hsl: Array<CT_HSLEffect>;
-	Lum: Array<CT_LuminanceEffect>;
-	Tint: Array<CT_TintEffect>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	AlphaBiLevel: CT_AlphaBiLevelEffect;
+	AlphaCeiling: CT_AlphaCeilingEffect;
+	AlphaFloor: CT_AlphaFloorEffect;
+	AlphaInv: CT_AlphaInverseEffect;
+	AlphaMod: CT_AlphaModulateEffect;
+	AlphaModFix: CT_AlphaModulateFixedEffect;
+	AlphaRepl: CT_AlphaReplaceEffect;
+	BiLevel: CT_BiLevelEffect;
+	Blur: CT_BlurEffect;
+	ClrChange: CT_ColorChangeEffect;
+	ClrRepl: CT_ColorReplaceEffect;
+	Duotone: CT_DuotoneEffect;
+	FillOverlay: CT_FillOverlayEffect;
+	Grayscl: CT_GrayscaleEffect;
+	Hsl: CT_HSLEffect;
+	Lum: CT_LuminanceEffect;
+	Tint: CT_TintEffect;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_BlipFillProperties ...
@@ -1585,8 +1585,8 @@ export class CT_BlipFillProperties {
 	DpiAttr: number | null;
 	RotWithShapeAttr: boolean | null;
 	EG_FillModeProperties: Array<EG_FillModeProperties>;
-	Blip: Array<CT_Blip>;
-	SrcRect: Array<CT_RelativeRect>;
+	Blip: CT_Blip;
+	SrcRect: CT_RelativeRect;
 }
 
 // ST_PresetPatternVal ...
@@ -1650,8 +1650,8 @@ export enum ST_PresetPatternVal {
 // CT_PatternFillProperties ...
 export class CT_PatternFillProperties {
 	PrstAttr: string | null;
-	FgClr: Array<CT_Color>;
-	BgClr: Array<CT_Color>;
+	FgClr: CT_Color;
+	BgClr: CT_Color;
 }
 
 // CT_GroupFillProperties ...
@@ -1660,12 +1660,12 @@ export class CT_GroupFillProperties {
 
 // EG_FillProperties ...
 export class EG_FillProperties {
-	NoFill: Array<CT_NoFillProperties>;
-	SolidFill: Array<CT_SolidColorFillProperties>;
-	GradFill: Array<CT_GradientFillProperties>;
-	BlipFill: Array<CT_BlipFillProperties>;
-	PattFill: Array<CT_PatternFillProperties>;
-	GrpFill: Array<CT_GroupFillProperties>;
+	NoFill: CT_NoFillProperties;
+	SolidFill: CT_SolidColorFillProperties;
+	GradFill: CT_GradientFillProperties;
+	BlipFill: CT_BlipFillProperties;
+	PattFill: CT_PatternFillProperties;
+	GrpFill: CT_GroupFillProperties;
 }
 
 // CT_FillProperties ...
@@ -1700,36 +1700,36 @@ export class CT_EffectReference {
 
 // EG_Effect ...
 export class EG_Effect {
-	Cont: Array<CT_EffectContainer>;
-	Effect: Array<CT_EffectReference>;
-	AlphaBiLevel: Array<CT_AlphaBiLevelEffect>;
-	AlphaCeiling: Array<CT_AlphaCeilingEffect>;
-	AlphaFloor: Array<CT_AlphaFloorEffect>;
-	AlphaInv: Array<CT_AlphaInverseEffect>;
-	AlphaMod: Array<CT_AlphaModulateEffect>;
-	AlphaModFix: Array<CT_AlphaModulateFixedEffect>;
-	AlphaOutset: Array<CT_AlphaOutsetEffect>;
-	AlphaRepl: Array<CT_AlphaReplaceEffect>;
-	BiLevel: Array<CT_BiLevelEffect>;
-	Blend: Array<CT_BlendEffect>;
-	Blur: Array<CT_BlurEffect>;
-	ClrChange: Array<CT_ColorChangeEffect>;
-	ClrRepl: Array<CT_ColorReplaceEffect>;
-	Duotone: Array<CT_DuotoneEffect>;
-	Fill: Array<CT_FillEffect>;
-	FillOverlay: Array<CT_FillOverlayEffect>;
-	Glow: Array<CT_GlowEffect>;
-	Grayscl: Array<CT_GrayscaleEffect>;
-	Hsl: Array<CT_HSLEffect>;
-	InnerShdw: Array<CT_InnerShadowEffect>;
-	Lum: Array<CT_LuminanceEffect>;
-	OuterShdw: Array<CT_OuterShadowEffect>;
-	PrstShdw: Array<CT_PresetShadowEffect>;
-	Reflection: Array<CT_ReflectionEffect>;
-	RelOff: Array<CT_RelativeOffsetEffect>;
-	SoftEdge: Array<CT_SoftEdgesEffect>;
-	Tint: Array<CT_TintEffect>;
-	Xfrm: Array<CT_TransformEffect>;
+	Cont: CT_EffectContainer;
+	Effect: CT_EffectReference;
+	AlphaBiLevel: CT_AlphaBiLevelEffect;
+	AlphaCeiling: CT_AlphaCeilingEffect;
+	AlphaFloor: CT_AlphaFloorEffect;
+	AlphaInv: CT_AlphaInverseEffect;
+	AlphaMod: CT_AlphaModulateEffect;
+	AlphaModFix: CT_AlphaModulateFixedEffect;
+	AlphaOutset: CT_AlphaOutsetEffect;
+	AlphaRepl: CT_AlphaReplaceEffect;
+	BiLevel: CT_BiLevelEffect;
+	Blend: CT_BlendEffect;
+	Blur: CT_BlurEffect;
+	ClrChange: CT_ColorChangeEffect;
+	ClrRepl: CT_ColorReplaceEffect;
+	Duotone: CT_DuotoneEffect;
+	Fill: CT_FillEffect;
+	FillOverlay: CT_FillOverlayEffect;
+	Glow: CT_GlowEffect;
+	Grayscl: CT_GrayscaleEffect;
+	Hsl: CT_HSLEffect;
+	InnerShdw: CT_InnerShadowEffect;
+	Lum: CT_LuminanceEffect;
+	OuterShdw: CT_OuterShadowEffect;
+	PrstShdw: CT_PresetShadowEffect;
+	Reflection: CT_ReflectionEffect;
+	RelOff: CT_RelativeOffsetEffect;
+	SoftEdge: CT_SoftEdgesEffect;
+	Tint: CT_TintEffect;
+	Xfrm: CT_TransformEffect;
 }
 
 // ST_EffectContainerType ...
@@ -1747,31 +1747,31 @@ export class CT_EffectContainer {
 
 // CT_AlphaModulateEffect ...
 export class CT_AlphaModulateEffect {
-	Cont: Array<CT_EffectContainer>;
+	Cont: CT_EffectContainer;
 }
 
 // CT_BlendEffect ...
 export class CT_BlendEffect {
 	BlendAttr: string;
-	Cont: Array<CT_EffectContainer>;
+	Cont: CT_EffectContainer;
 }
 
 // CT_EffectList ...
 export class CT_EffectList {
-	Blur: Array<CT_BlurEffect>;
-	FillOverlay: Array<CT_FillOverlayEffect>;
-	Glow: Array<CT_GlowEffect>;
-	InnerShdw: Array<CT_InnerShadowEffect>;
-	OuterShdw: Array<CT_OuterShadowEffect>;
-	PrstShdw: Array<CT_PresetShadowEffect>;
-	Reflection: Array<CT_ReflectionEffect>;
-	SoftEdge: Array<CT_SoftEdgesEffect>;
+	Blur: CT_BlurEffect;
+	FillOverlay: CT_FillOverlayEffect;
+	Glow: CT_GlowEffect;
+	InnerShdw: CT_InnerShadowEffect;
+	OuterShdw: CT_OuterShadowEffect;
+	PrstShdw: CT_PresetShadowEffect;
+	Reflection: CT_ReflectionEffect;
+	SoftEdge: CT_SoftEdgesEffect;
 }
 
 // EG_EffectProperties ...
 export class EG_EffectProperties {
-	EffectLst: Array<CT_EffectList>;
-	EffectDag: Array<CT_EffectContainer>;
+	EffectLst: CT_EffectList;
+	EffectDag: CT_EffectContainer;
 }
 
 // CT_EffectProperties ...
@@ -2037,8 +2037,8 @@ export class CT_GeomGuideList {
 
 // ST_AdjCoordinate ...
 export class ST_AdjCoordinate {
-	ST_Coordinate: ST_Coordinate;
 	ST_GeomGuideName: string;
+	ST_Coordinate: ST_Coordinate;
 }
 
 // ST_AdjAngle ...
@@ -2069,7 +2069,7 @@ export class CT_XYAdjustHandle {
 	GdRefYAttr: string | null;
 	MinYAttr: ST_AdjCoordinate | null;
 	MaxYAttr: ST_AdjCoordinate | null;
-	Pos: Array<CT_AdjPoint2D>;
+	Pos: CT_AdjPoint2D;
 }
 
 // CT_PolarAdjustHandle ...
@@ -2080,19 +2080,19 @@ export class CT_PolarAdjustHandle {
 	GdRefAngAttr: string | null;
 	MinAngAttr: ST_AdjAngle | null;
 	MaxAngAttr: ST_AdjAngle | null;
-	Pos: Array<CT_AdjPoint2D>;
+	Pos: CT_AdjPoint2D;
 }
 
 // CT_ConnectionSite ...
 export class CT_ConnectionSite {
 	AngAttr: ST_AdjAngle;
-	Pos: Array<CT_AdjPoint2D>;
+	Pos: CT_AdjPoint2D;
 }
 
 // CT_AdjustHandleList ...
 export class CT_AdjustHandleList {
-	AhXY: Array<CT_XYAdjustHandle>;
-	AhPolar: Array<CT_PolarAdjustHandle>;
+	AhXY: CT_XYAdjustHandle;
+	AhPolar: CT_PolarAdjustHandle;
 }
 
 // CT_ConnectionSiteList ...
@@ -2108,12 +2108,12 @@ export class CT_Connection {
 
 // CT_Path2DMoveTo ...
 export class CT_Path2DMoveTo {
-	Pt: Array<CT_AdjPoint2D>;
+	Pt: CT_AdjPoint2D;
 }
 
 // CT_Path2DLineTo ...
 export class CT_Path2DLineTo {
-	Pt: Array<CT_AdjPoint2D>;
+	Pt: CT_AdjPoint2D;
 }
 
 // CT_Path2DArcTo ...
@@ -2155,12 +2155,12 @@ export class CT_Path2D {
 	FillAttr: string | null;
 	StrokeAttr: boolean | null;
 	ExtrusionOkAttr: boolean | null;
-	Close: Array<CT_Path2DClose>;
-	MoveTo: Array<CT_Path2DMoveTo>;
-	LnTo: Array<CT_Path2DLineTo>;
-	ArcTo: Array<CT_Path2DArcTo>;
-	QuadBezTo: Array<CT_Path2DQuadBezierTo>;
-	CubicBezTo: Array<CT_Path2DCubicBezierTo>;
+	Close: CT_Path2DClose;
+	MoveTo: CT_Path2DMoveTo;
+	LnTo: CT_Path2DLineTo;
+	ArcTo: CT_Path2DArcTo;
+	QuadBezTo: CT_Path2DQuadBezierTo;
+	CubicBezTo: CT_Path2DCubicBezierTo;
 }
 
 // CT_Path2DList ...
@@ -2171,35 +2171,35 @@ export class CT_Path2DList {
 // CT_PresetGeometry2D ...
 export class CT_PresetGeometry2D {
 	PrstAttr: string;
-	AvLst: Array<CT_GeomGuideList>;
+	AvLst: CT_GeomGuideList;
 }
 
 // CT_PresetTextShape ...
 export class CT_PresetTextShape {
 	PrstAttr: string;
-	AvLst: Array<CT_GeomGuideList>;
+	AvLst: CT_GeomGuideList;
 }
 
 // CT_CustomGeometry2D ...
 export class CT_CustomGeometry2D {
-	AvLst: Array<CT_GeomGuideList>;
-	GdLst: Array<CT_GeomGuideList>;
-	AhLst: Array<CT_AdjustHandleList>;
-	CxnLst: Array<CT_ConnectionSiteList>;
-	Rect: Array<CT_GeomRect>;
-	PathLst: Array<CT_Path2DList>;
+	AvLst: CT_GeomGuideList;
+	GdLst: CT_GeomGuideList;
+	AhLst: CT_AdjustHandleList;
+	CxnLst: CT_ConnectionSiteList;
+	Rect: CT_GeomRect;
+	PathLst: CT_Path2DList;
 }
 
 // EG_Geometry ...
 export class EG_Geometry {
-	CustGeom: Array<CT_CustomGeometry2D>;
-	PrstGeom: Array<CT_PresetGeometry2D>;
+	CustGeom: CT_CustomGeometry2D;
+	PrstGeom: CT_PresetGeometry2D;
 }
 
 // EG_TextGeometry ...
 export class EG_TextGeometry {
-	CustGeom: Array<CT_CustomGeometry2D>;
-	PrstTxWarp: Array<CT_PresetTextShape>;
+	CustGeom: CT_CustomGeometry2D;
+	PrstTxWarp: CT_PresetTextShape;
 }
 
 // ST_LineEndType ...
@@ -2235,10 +2235,10 @@ export class CT_LineEndProperties {
 
 // EG_LineFillProperties ...
 export class EG_LineFillProperties {
-	NoFill: Array<CT_NoFillProperties>;
-	SolidFill: Array<CT_SolidColorFillProperties>;
-	GradFill: Array<CT_GradientFillProperties>;
-	PattFill: Array<CT_PatternFillProperties>;
+	NoFill: CT_NoFillProperties;
+	SolidFill: CT_SolidColorFillProperties;
+	GradFill: CT_GradientFillProperties;
+	PattFill: CT_PatternFillProperties;
 }
 
 // CT_LineJoinBevel ...
@@ -2256,9 +2256,9 @@ export class CT_LineJoinMiterProperties {
 
 // EG_LineJoinProperties ...
 export class EG_LineJoinProperties {
-	Round: Array<CT_LineJoinRound>;
-	Bevel: Array<CT_LineJoinBevel>;
-	Miter: Array<CT_LineJoinMiterProperties>;
+	Round: CT_LineJoinRound;
+	Bevel: CT_LineJoinBevel;
+	Miter: CT_LineJoinMiterProperties;
 }
 
 // ST_PresetLineDashVal ...
@@ -2294,8 +2294,8 @@ export class CT_DashStopList {
 
 // EG_LineDashProperties ...
 export class EG_LineDashProperties {
-	PrstDash: Array<CT_PresetLineDashProperties>;
-	CustDash: Array<CT_DashStopList>;
+	PrstDash: CT_PresetLineDashProperties;
+	CustDash: CT_DashStopList;
 }
 
 // ST_LineCap ...
@@ -2332,9 +2332,9 @@ export class CT_LineProperties {
 	EG_LineFillProperties: Array<EG_LineFillProperties>;
 	EG_LineDashProperties: Array<EG_LineDashProperties>;
 	EG_LineJoinProperties: Array<EG_LineJoinProperties>;
-	HeadEnd: Array<CT_LineEndProperties>;
-	TailEnd: Array<CT_LineEndProperties>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	HeadEnd: CT_LineEndProperties;
+	TailEnd: CT_LineEndProperties;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // ST_ShapeID ...
@@ -2346,11 +2346,11 @@ export class CT_ShapeProperties {
 	EG_Geometry: Array<EG_Geometry>;
 	EG_FillProperties: Array<EG_FillProperties>;
 	EG_EffectProperties: Array<EG_EffectProperties>;
-	Xfrm: Array<CT_Transform2D>;
-	Ln: Array<CT_LineProperties>;
-	Scene3d: Array<CT_Scene3D>;
-	Sp3d: Array<CT_Shape3D>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	Xfrm: CT_Transform2D;
+	Ln: CT_LineProperties;
+	Scene3d: CT_Scene3D;
+	Sp3d: CT_Shape3D;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_GroupShapeProperties ...
@@ -2358,9 +2358,9 @@ export class CT_GroupShapeProperties {
 	BwModeAttr: string | null;
 	EG_FillProperties: Array<EG_FillProperties>;
 	EG_EffectProperties: Array<EG_EffectProperties>;
-	Xfrm: Array<CT_GroupTransform2D>;
-	Scene3d: Array<CT_Scene3D>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	Xfrm: CT_GroupTransform2D;
+	Scene3d: CT_Scene3D;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_StyleMatrixReference ...
@@ -2377,27 +2377,27 @@ export class CT_FontReference {
 
 // CT_ShapeStyle ...
 export class CT_ShapeStyle {
-	LnRef: Array<CT_StyleMatrixReference>;
-	FillRef: Array<CT_StyleMatrixReference>;
-	EffectRef: Array<CT_StyleMatrixReference>;
-	FontRef: Array<CT_FontReference>;
+	LnRef: CT_StyleMatrixReference;
+	FillRef: CT_StyleMatrixReference;
+	EffectRef: CT_StyleMatrixReference;
+	FontRef: CT_FontReference;
 }
 
 // CT_DefaultShapeDefinition ...
 export class CT_DefaultShapeDefinition {
-	SpPr: Array<CT_ShapeProperties>;
-	BodyPr: Array<CT_TextBodyProperties>;
-	LstStyle: Array<CT_TextListStyle>;
-	Style: Array<CT_ShapeStyle>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	SpPr: CT_ShapeProperties;
+	BodyPr: CT_TextBodyProperties;
+	LstStyle: CT_TextListStyle;
+	Style: CT_ShapeStyle;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_ObjectStyleDefaults ...
 export class CT_ObjectStyleDefaults {
-	SpDef: Array<CT_DefaultShapeDefinition>;
-	LnDef: Array<CT_DefaultShapeDefinition>;
-	TxDef: Array<CT_DefaultShapeDefinition>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	SpDef: CT_DefaultShapeDefinition;
+	LnDef: CT_DefaultShapeDefinition;
+	TxDef: CT_DefaultShapeDefinition;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_EmptyElement ...
@@ -2418,7 +2418,7 @@ export class CT_ColorMapping {
 	Accent6Attr: string;
 	HlinkAttr: string;
 	FolHlinkAttr: string;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_ColorMappingOverride ...
@@ -2429,8 +2429,8 @@ export class CT_ColorMappingOverride {
 
 // CT_ColorSchemeAndMapping ...
 export class CT_ColorSchemeAndMapping {
-	ClrScheme: Array<CT_ColorScheme>;
-	ClrMap: Array<CT_ColorMapping>;
+	ClrScheme: CT_ColorScheme;
+	ClrMap: CT_ColorMapping;
 }
 
 // CT_ColorSchemeList ...
@@ -2441,24 +2441,24 @@ export class CT_ColorSchemeList {
 // CT_OfficeStyleSheet ...
 export class CT_OfficeStyleSheet {
 	NameAttr: string | null;
-	ThemeElements: Array<CT_BaseStyles>;
-	ObjectDefaults: Array<CT_ObjectStyleDefaults>;
-	ExtraClrSchemeLst: Array<CT_ColorSchemeList>;
-	CustClrLst: Array<CT_CustomColorList>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ThemeElements: CT_BaseStyles;
+	ObjectDefaults: CT_ObjectStyleDefaults;
+	ExtraClrSchemeLst: CT_ColorSchemeList;
+	CustClrLst: CT_CustomColorList;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_BaseStylesOverride ...
 export class CT_BaseStylesOverride {
-	ClrScheme: Array<CT_ColorScheme>;
-	FontScheme: Array<CT_FontScheme>;
-	FmtScheme: Array<CT_StyleMatrix>;
+	ClrScheme: CT_ColorScheme;
+	FontScheme: CT_FontScheme;
+	FmtScheme: CT_StyleMatrix;
 }
 
 // CT_ClipboardStyleSheet ...
 export class CT_ClipboardStyleSheet {
-	ThemeElements: Array<CT_BaseStyles>;
-	ClrMap: Array<CT_ColorMapping>;
+	ThemeElements: CT_BaseStyles;
+	ClrMap: CT_ColorMapping;
 }
 
 // Theme ...
@@ -2481,15 +2481,15 @@ export class CT_TableCellProperties {
 	AnchorCtrAttr: boolean | null;
 	HorzOverflowAttr: string | null;
 	EG_FillProperties: Array<EG_FillProperties>;
-	LnL: Array<CT_LineProperties>;
-	LnR: Array<CT_LineProperties>;
-	LnT: Array<CT_LineProperties>;
-	LnB: Array<CT_LineProperties>;
-	LnTlToBr: Array<CT_LineProperties>;
-	LnBlToTr: Array<CT_LineProperties>;
-	Cell3D: Array<CT_Cell3D>;
+	LnL: CT_LineProperties;
+	LnR: CT_LineProperties;
+	LnT: CT_LineProperties;
+	LnB: CT_LineProperties;
+	LnTlToBr: CT_LineProperties;
+	LnBlToTr: CT_LineProperties;
+	Cell3D: CT_Cell3D;
 	Headers: CT_Headers;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_Headers ...
@@ -2500,7 +2500,7 @@ export class CT_Headers {
 // CT_TableCol ...
 export class CT_TableCol {
 	WAttr: ST_Coordinate;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_TableGrid ...
@@ -2515,16 +2515,16 @@ export class CT_TableCell {
 	HMergeAttr: boolean | null;
 	VMergeAttr: boolean | null;
 	IdAttr: string | null;
-	TxBody: Array<CT_TextBody>;
-	TcPr: Array<CT_TableCellProperties>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	TxBody: CT_TextBody;
+	TcPr: CT_TableCellProperties;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_TableRow ...
 export class CT_TableRow {
 	HAttr: ST_Coordinate;
 	Tc: Array<CT_TableCell>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_TableProperties ...
@@ -2540,13 +2540,13 @@ export class CT_TableProperties {
 	EG_EffectProperties: Array<EG_EffectProperties>;
 	TableStyle: CT_TableStyle;
 	TableStyleId: string;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_Table ...
 export class CT_Table {
-	TblPr: Array<CT_TableProperties>;
-	TblGrid: Array<CT_TableGrid>;
+	TblPr: CT_TableProperties;
+	TblGrid: CT_TableGrid;
 	Tr: Array<CT_TableRow>;
 }
 
@@ -2556,33 +2556,33 @@ export type Tbl = CT_Table;
 // CT_Cell3D ...
 export class CT_Cell3D {
 	PrstMaterialAttr: string | null;
-	Bevel: Array<CT_Bevel>;
-	LightRig: Array<CT_LightRig>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	Bevel: CT_Bevel;
+	LightRig: CT_LightRig;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // EG_ThemeableFillStyle ...
 export class EG_ThemeableFillStyle {
-	Fill: Array<CT_FillProperties>;
-	FillRef: Array<CT_StyleMatrixReference>;
+	Fill: CT_FillProperties;
+	FillRef: CT_StyleMatrixReference;
 }
 
 // CT_ThemeableLineStyle ...
 export class CT_ThemeableLineStyle {
-	Ln: Array<CT_LineProperties>;
-	LnRef: Array<CT_StyleMatrixReference>;
+	Ln: CT_LineProperties;
+	LnRef: CT_StyleMatrixReference;
 }
 
 // EG_ThemeableEffectStyle ...
 export class EG_ThemeableEffectStyle {
-	Effect: Array<CT_EffectProperties>;
-	EffectRef: Array<CT_StyleMatrixReference>;
+	Effect: CT_EffectProperties;
+	EffectRef: CT_StyleMatrixReference;
 }
 
 // EG_ThemeableFontStyles ...
 export class EG_ThemeableFontStyles {
-	Font: Array<CT_FontCollection>;
-	FontRef: Array<CT_FontReference>;
+	Font: CT_FontCollection;
+	FontRef: CT_FontReference;
 }
 
 // ST_OnOffStyleType ...
@@ -2598,20 +2598,20 @@ export class CT_TableStyleTextStyle {
 	IAttr: string | null;
 	EG_ThemeableFontStyles: Array<EG_ThemeableFontStyles>;
 	EG_ColorChoice: Array<EG_ColorChoice>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_TableCellBorderStyle ...
 export class CT_TableCellBorderStyle {
-	Left: Array<CT_ThemeableLineStyle>;
-	Right: Array<CT_ThemeableLineStyle>;
-	Top: Array<CT_ThemeableLineStyle>;
-	Bottom: Array<CT_ThemeableLineStyle>;
-	InsideH: Array<CT_ThemeableLineStyle>;
-	InsideV: Array<CT_ThemeableLineStyle>;
-	Tl2br: Array<CT_ThemeableLineStyle>;
-	Tr2bl: Array<CT_ThemeableLineStyle>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	Left: CT_ThemeableLineStyle;
+	Right: CT_ThemeableLineStyle;
+	Top: CT_ThemeableLineStyle;
+	Bottom: CT_ThemeableLineStyle;
+	InsideH: CT_ThemeableLineStyle;
+	InsideV: CT_ThemeableLineStyle;
+	Tl2br: CT_ThemeableLineStyle;
+	Tr2bl: CT_ThemeableLineStyle;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_TableBackgroundStyle ...
@@ -2623,35 +2623,35 @@ export class CT_TableBackgroundStyle {
 // CT_TableStyleCellStyle ...
 export class CT_TableStyleCellStyle {
 	EG_ThemeableFillStyle: Array<EG_ThemeableFillStyle>;
-	TcBdr: Array<CT_TableCellBorderStyle>;
-	Cell3D: Array<CT_Cell3D>;
+	TcBdr: CT_TableCellBorderStyle;
+	Cell3D: CT_Cell3D;
 }
 
 // CT_TablePartStyle ...
 export class CT_TablePartStyle {
-	TcTxStyle: Array<CT_TableStyleTextStyle>;
-	TcStyle: Array<CT_TableStyleCellStyle>;
+	TcTxStyle: CT_TableStyleTextStyle;
+	TcStyle: CT_TableStyleCellStyle;
 }
 
 // CT_TableStyle ...
 export class CT_TableStyle {
 	StyleIdAttr: string;
 	StyleNameAttr: string;
-	TblBg: Array<CT_TableBackgroundStyle>;
-	WholeTbl: Array<CT_TablePartStyle>;
-	Band1H: Array<CT_TablePartStyle>;
-	Band2H: Array<CT_TablePartStyle>;
-	Band1V: Array<CT_TablePartStyle>;
-	Band2V: Array<CT_TablePartStyle>;
-	LastCol: Array<CT_TablePartStyle>;
-	FirstCol: Array<CT_TablePartStyle>;
-	LastRow: Array<CT_TablePartStyle>;
-	SeCell: Array<CT_TablePartStyle>;
-	SwCell: Array<CT_TablePartStyle>;
-	FirstRow: Array<CT_TablePartStyle>;
-	NeCell: Array<CT_TablePartStyle>;
-	NwCell: Array<CT_TablePartStyle>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	TblBg: CT_TableBackgroundStyle;
+	WholeTbl: CT_TablePartStyle;
+	Band1H: CT_TablePartStyle;
+	Band2H: CT_TablePartStyle;
+	Band1V: CT_TablePartStyle;
+	Band2V: CT_TablePartStyle;
+	LastCol: CT_TablePartStyle;
+	FirstCol: CT_TablePartStyle;
+	LastRow: CT_TablePartStyle;
+	SeCell: CT_TablePartStyle;
+	SwCell: CT_TablePartStyle;
+	FirstRow: CT_TablePartStyle;
+	NeCell: CT_TablePartStyle;
+	NwCell: CT_TablePartStyle;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_TableStyleList ...
@@ -2666,8 +2666,8 @@ export type TblStyleLst = CT_TableStyleList;
 // CT_TextParagraph ...
 export class CT_TextParagraph {
 	EG_TextRun: Array<EG_TextRun>;
-	PPr: Array<CT_TextParagraphProperties>;
-	EndParaRPr: Array<CT_TextCharacterProperties>;
+	PPr: CT_TextParagraphProperties;
+	EndParaRPr: CT_TextCharacterProperties;
 }
 
 // ST_TextAnchoringType ...
@@ -2714,17 +2714,17 @@ export type ST_TextColumnCount = number;
 
 // CT_TextListStyle ...
 export class CT_TextListStyle {
-	DefPPr: Array<CT_TextParagraphProperties>;
-	Lvl1pPr: Array<CT_TextParagraphProperties>;
-	Lvl2pPr: Array<CT_TextParagraphProperties>;
-	Lvl3pPr: Array<CT_TextParagraphProperties>;
-	Lvl4pPr: Array<CT_TextParagraphProperties>;
-	Lvl5pPr: Array<CT_TextParagraphProperties>;
-	Lvl6pPr: Array<CT_TextParagraphProperties>;
-	Lvl7pPr: Array<CT_TextParagraphProperties>;
-	Lvl8pPr: Array<CT_TextParagraphProperties>;
-	Lvl9pPr: Array<CT_TextParagraphProperties>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	DefPPr: CT_TextParagraphProperties;
+	Lvl1pPr: CT_TextParagraphProperties;
+	Lvl2pPr: CT_TextParagraphProperties;
+	Lvl3pPr: CT_TextParagraphProperties;
+	Lvl4pPr: CT_TextParagraphProperties;
+	Lvl5pPr: CT_TextParagraphProperties;
+	Lvl6pPr: CT_TextParagraphProperties;
+	Lvl7pPr: CT_TextParagraphProperties;
+	Lvl8pPr: CT_TextParagraphProperties;
+	Lvl9pPr: CT_TextParagraphProperties;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // ST_TextFontScalePercentOrPercentString ...
@@ -2776,15 +2776,15 @@ export class CT_TextBodyProperties {
 	CompatLnSpcAttr: boolean | null;
 	EG_TextAutofit: Array<EG_TextAutofit>;
 	EG_Text3D: Array<EG_Text3D>;
-	PrstTxWarp: Array<CT_PresetTextShape>;
-	Scene3d: Array<CT_Scene3D>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	PrstTxWarp: CT_PresetTextShape;
+	Scene3d: CT_Scene3D;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_TextBody ...
 export class CT_TextBody {
-	BodyPr: Array<CT_TextBodyProperties>;
-	LstStyle: Array<CT_TextListStyle>;
+	BodyPr: CT_TextBodyProperties;
+	LstStyle: CT_TextListStyle;
 	P: Array<CT_TextParagraph>;
 }
 
@@ -2842,8 +2842,8 @@ export class CT_TextBulletColorFollowText {
 
 // EG_TextBulletColor ...
 export class EG_TextBulletColor {
-	BuClrTx: Array<CT_TextBulletColorFollowText>;
-	BuClr: Array<CT_Color>;
+	BuClrTx: CT_TextBulletColorFollowText;
+	BuClr: CT_Color;
 }
 
 // ST_TextBulletSize ...
@@ -2898,7 +2898,7 @@ export class CT_TextCharBullet {
 
 // CT_TextBlipBullet ...
 export class CT_TextBlipBullet {
-	Blip: Array<CT_Blip>;
+	Blip: CT_Blip;
 }
 
 // CT_TextNoBullet ...
@@ -2999,7 +2999,7 @@ export class CT_TextUnderlineFillGroupWrapper {
 // EG_TextUnderlineLine ...
 export class EG_TextUnderlineLine {
 	ULnTx: CT_TextUnderlineLineFollowText;
-	ULn: Array<CT_LineProperties>;
+	ULn: CT_LineProperties;
 }
 
 // EG_TextUnderlineFill ...
@@ -3047,16 +3047,16 @@ export class CT_TextCharacterProperties {
 	EG_EffectProperties: Array<EG_EffectProperties>;
 	EG_TextUnderlineLine: Array<EG_TextUnderlineLine>;
 	EG_TextUnderlineFill: Array<EG_TextUnderlineFill>;
-	Ln: Array<CT_LineProperties>;
-	Highlight: Array<CT_Color>;
-	Latin: Array<CT_TextFont>;
-	Ea: Array<CT_TextFont>;
-	Cs: Array<CT_TextFont>;
-	Sym: Array<CT_TextFont>;
-	HlinkClick: Array<CT_Hyperlink>;
-	HlinkMouseOver: Array<CT_Hyperlink>;
+	Ln: CT_LineProperties;
+	Highlight: CT_Color;
+	Latin: CT_TextFont;
+	Ea: CT_TextFont;
+	Cs: CT_TextFont;
+	Sym: CT_TextFont;
+	HlinkClick: CT_Hyperlink;
+	HlinkMouseOver: CT_Hyperlink;
 	Rtl: CT_Boolean;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_Boolean ...
@@ -3109,7 +3109,7 @@ export class CT_TextTabStopList {
 
 // CT_TextLineBreak ...
 export class CT_TextLineBreak {
-	RPr: Array<CT_TextCharacterProperties>;
+	RPr: CT_TextCharacterProperties;
 }
 
 // CT_TextSpacing ...
@@ -3158,20 +3158,20 @@ export class CT_TextParagraphProperties {
 	EG_TextBulletSize: Array<EG_TextBulletSize>;
 	EG_TextBulletTypeface: Array<EG_TextBulletTypeface>;
 	EG_TextBullet: Array<EG_TextBullet>;
-	LnSpc: Array<CT_TextSpacing>;
-	SpcBef: Array<CT_TextSpacing>;
-	SpcAft: Array<CT_TextSpacing>;
-	TabLst: Array<CT_TextTabStopList>;
-	DefRPr: Array<CT_TextCharacterProperties>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	LnSpc: CT_TextSpacing;
+	SpcBef: CT_TextSpacing;
+	SpcAft: CT_TextSpacing;
+	TabLst: CT_TextTabStopList;
+	DefRPr: CT_TextCharacterProperties;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_TextField ...
 export class CT_TextField {
 	IdAttr: string;
 	TypeAttr: string | null;
-	RPr: Array<CT_TextCharacterProperties>;
-	PPr: Array<CT_TextParagraphProperties>;
+	RPr: CT_TextCharacterProperties;
+	PPr: CT_TextParagraphProperties;
 	T: string;
 }
 
@@ -3184,6 +3184,6 @@ export class EG_TextRun {
 
 // CT_RegularTextRun ...
 export class CT_RegularTextRun {
-	RPr: Array<CT_TextCharacterProperties>;
+	RPr: CT_TextCharacterProperties;
 	T: string;
 }

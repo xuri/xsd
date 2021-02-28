@@ -14,19 +14,19 @@ import javax.xml.bind.annotation.XmlType;
 // CT_PictureNonVisual ...
 public class CT_PictureNonVisual {
 	@XmlElement(required = true, name = "cNvPr")
-	protected List<CT_NonVisualDrawingProps> CNvPr;
+	protected CT_NonVisualDrawingProps CNvPr;
 	@XmlElement(required = true, name = "cNvPicPr")
-	protected List<CT_NonVisualPictureProperties> CNvPicPr;
+	protected CT_NonVisualPictureProperties CNvPicPr;
 }
 
 // CT_Picture ...
 public class CT_Picture {
 	@XmlElement(required = true, name = "nvPicPr")
-	protected List<CT_PictureNonVisual> NvPicPr;
+	protected CT_PictureNonVisual NvPicPr;
 	@XmlElement(required = true, name = "blipFill")
-	protected List<CT_BlipFillProperties> BlipFill;
+	protected CT_BlipFillProperties BlipFill;
 	@XmlElement(required = true, name = "spPr")
-	protected List<CT_ShapeProperties> SpPr;
+	protected CT_ShapeProperties SpPr;
 }
 
 @XmlAccessorType(XmlAccessType.FIELD)

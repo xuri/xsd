@@ -17,13 +17,13 @@ typedef struct {
 
 // CT_NameType ...
 typedef struct {
-	CT_NameListType NameList[];
+	CT_NameListType NameList;
 } CT_NameType;
 
 // CT_NameOrCorporateType ...
 typedef struct {
-	CT_NameListType NameList[];
-	char Corporate[];
+	CT_NameListType NameList;
+	char Corporate;
 } CT_NameOrCorporateType;
 
 // CT_AuthorType ...

@@ -559,7 +559,7 @@ public class Resource {
 	@XmlElement(required = true, name = "excludes")
 	protected List<Excludes> Excludes;
 	@XmlElement(required = true, name = "filtering")
-	protected List<Boolean> Filtering;
+	protected Boolean Filtering;
 }
 
 // Reports ...

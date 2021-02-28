@@ -1177,16 +1177,16 @@ typedef struct {
 typedef struct {
 	I18n I18n;
 	char IdAttr; // attr, optional
-	Properties Properties[];
-	Head Head[];
-	Body Body[];
+	Properties Properties;
+	Head Head;
+	Body Body;
 } Document;
 
 // Properties ...
 typedef struct {
-	Title Title[];
+	Title Title;
 	Author Author[];
-	char Date[];
+	char Date;
 } Properties;
 
 // Author ...

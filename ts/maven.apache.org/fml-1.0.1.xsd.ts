@@ -1291,15 +1291,15 @@ export class Faqs {
 // Part ...
 export class Part {
 	IdAttr: string | null;
-	Title: Array<Title>;
+	Title: Title;
 	Faq: Array<Faq>;
 }
 
 // Faq ...
 export class Faq {
 	IdAttr: string | null;
-	Question: Array<Question>;
-	Answer: Array<Answer>;
+	Question: Question;
+	Answer: Answer;
 }
 
 // Question ...

@@ -69,19 +69,19 @@ public class CT_CTStyleLabel {
 	@XmlAttribute(name = "name", required = true)
 	protected StringAttr Name;
 	@XmlElement(required = true, name = "fillClrLst")
-	protected List<CT_Colors> FillClrLst;
+	protected CT_Colors FillClrLst;
 	@XmlElement(required = true, name = "linClrLst")
-	protected List<CT_Colors> LinClrLst;
+	protected CT_Colors LinClrLst;
 	@XmlElement(required = true, name = "effectClrLst")
-	protected List<CT_Colors> EffectClrLst;
+	protected CT_Colors EffectClrLst;
 	@XmlElement(required = true, name = "txLinClrLst")
-	protected List<CT_Colors> TxLinClrLst;
+	protected CT_Colors TxLinClrLst;
 	@XmlElement(required = true, name = "txFillClrLst")
-	protected List<CT_Colors> TxFillClrLst;
+	protected CT_Colors TxFillClrLst;
 	@XmlElement(required = true, name = "txEffectClrLst")
-	protected List<CT_Colors> TxEffectClrLst;
+	protected CT_Colors TxEffectClrLst;
 	@XmlElement(required = true, name = "extLst")
-	protected List<CT_OfficeArtExtensionList> ExtLst;
+	protected CT_OfficeArtExtensionList ExtLst;
 }
 
 // CT_ColorTransform ...
@@ -99,7 +99,7 @@ public class CT_ColorTransform {
 	@XmlElement(required = true, name = "styleLbl")
 	protected List<CT_CTStyleLabel> StyleLbl;
 	@XmlElement(required = true, name = "extLst")
-	protected List<CT_OfficeArtExtensionList> ExtLst;
+	protected CT_OfficeArtExtensionList ExtLst;
 }
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -123,7 +123,7 @@ public class CT_ColorTransformHeader {
 	@XmlElement(required = true, name = "catLst")
 	protected CT_CTCategories CatLst;
 	@XmlElement(required = true, name = "extLst")
-	protected List<CT_OfficeArtExtensionList> ExtLst;
+	protected CT_OfficeArtExtensionList ExtLst;
 }
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -160,13 +160,13 @@ public class CT_Pt {
 	@XmlAttribute(name = "cxnId")
 	protected ST_ModelIdAttr CxnId;
 	@XmlElement(required = true, name = "prSet")
-	protected List<CT_ElemPropSet> PrSet;
+	protected CT_ElemPropSet PrSet;
 	@XmlElement(required = true, name = "spPr")
-	protected List<CT_ShapeProperties> SpPr;
+	protected CT_ShapeProperties SpPr;
 	@XmlElement(required = true, name = "t")
-	protected List<CT_TextBody> T;
+	protected CT_TextBody T;
 	@XmlElement(required = true, name = "extLst")
-	protected List<CT_OfficeArtExtensionList> ExtLst;
+	protected CT_OfficeArtExtensionList ExtLst;
 }
 
 // CT_PtList ...
@@ -203,7 +203,7 @@ public class CT_Cxn {
 	@XmlAttribute(name = "presId")
 	protected StringAttr PresId;
 	@XmlElement(required = true, name = "extLst")
-	protected List<CT_OfficeArtExtensionList> ExtLst;
+	protected CT_OfficeArtExtensionList ExtLst;
 }
 
 // CT_CxnList ...
@@ -217,13 +217,13 @@ public class CT_DataModel {
 	@XmlElement(required = true, name = "ptLst")
 	protected CT_PtList PtLst;
 	@XmlElement(required = true, name = "cxnLst")
-	protected List<CT_CxnList> CxnLst;
+	protected CT_CxnList CxnLst;
 	@XmlElement(required = true, name = "bg")
 	protected CT_BackgroundFormatting Bg;
 	@XmlElement(required = true, name = "whole")
 	protected CT_WholeE2oFormatting Whole;
 	@XmlElement(required = true, name = "extLst")
-	protected List<CT_OfficeArtExtensionList> ExtLst;
+	protected CT_OfficeArtExtensionList ExtLst;
 }
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -285,7 +285,7 @@ public class CT_Constraint {
 	@XmlAttribute(name = "fact")
 	protected FloatAttr Fact;
 	@XmlElement(required = true, name = "extLst")
-	protected List<CT_OfficeArtExtensionList> ExtLst;
+	protected CT_OfficeArtExtensionList ExtLst;
 }
 
 // CT_Constraints ...
@@ -305,7 +305,7 @@ public class CT_NumericRule {
 	@XmlAttribute(name = "max")
 	protected FloatAttr Max;
 	@XmlElement(required = true, name = "extLst")
-	protected List<CT_OfficeArtExtensionList> ExtLst;
+	protected CT_OfficeArtExtensionList ExtLst;
 }
 
 // CT_Rules ...
@@ -319,15 +319,15 @@ public class CT_PresentationOf {
 	@XmlElement(required = true)
 	protected AG_IteratorAttributes AG_IteratorAttributes;
 	@XmlElement(required = true, name = "extLst")
-	protected List<CT_OfficeArtExtensionList> ExtLst;
+	protected CT_OfficeArtExtensionList ExtLst;
 }
 
 // ST_LayoutShapeType ...
 public class ST_LayoutShapeType {
 	@XmlElement(required = true)
-	protected String ST_ShapeType;
-	@XmlElement(required = true)
 	protected ST_OutputShapeType ST_OutputShapeType;
+	@XmlElement(required = true)
+	protected String ST_ShapeType;
 }
 
 // ST_Index1 ...
@@ -368,9 +368,9 @@ public class CT_Shape {
 	@XmlAttribute(name = "blipPhldr")
 	protected BooleanAttr BlipPhldr;
 	@XmlElement(required = true, name = "adjLst")
-	protected List<CT_AdjLst> AdjLst;
+	protected CT_AdjLst AdjLst;
 	@XmlElement(required = true, name = "extLst")
-	protected List<CT_OfficeArtExtensionList> ExtLst;
+	protected CT_OfficeArtExtensionList ExtLst;
 }
 
 // CT_Parameter ...
@@ -390,7 +390,7 @@ public class CT_Algorithm {
 	@XmlElement(required = true, name = "param")
 	protected List<CT_Parameter> Param;
 	@XmlElement(required = true, name = "extLst")
-	protected List<CT_OfficeArtExtensionList> ExtLst;
+	protected CT_OfficeArtExtensionList ExtLst;
 }
 
 // CT_LayoutNode ...
@@ -404,17 +404,17 @@ public class CT_LayoutNode {
 	@XmlAttribute(name = "moveWith")
 	protected StringAttr MoveWith;
 	@XmlElement(required = true, name = "alg")
-	protected List<CT_Algorithm> Alg;
+	protected CT_Algorithm Alg;
 	@XmlElement(required = true, name = "shape")
-	protected List<CT_Shape> Shape;
+	protected CT_Shape Shape;
 	@XmlElement(required = true, name = "presOf")
-	protected List<CT_PresentationOf> PresOf;
+	protected CT_PresentationOf PresOf;
 	@XmlElement(required = true, name = "constrLst")
-	protected List<CT_Constraints> ConstrLst;
+	protected CT_Constraints ConstrLst;
 	@XmlElement(required = true, name = "ruleLst")
-	protected List<CT_Rules> RuleLst;
+	protected CT_Rules RuleLst;
 	@XmlElement(required = true, name = "varLst")
-	protected List<CT_LayoutVariablePropertySet> VarLst;
+	protected CT_LayoutVariablePropertySet VarLst;
 	@XmlElement(required = true, name = "forEach")
 	protected CT_ForEach ForEach;
 	@XmlElement(required = true, name = "layoutNode")
@@ -422,7 +422,7 @@ public class CT_LayoutNode {
 	@XmlElement(required = true, name = "choose")
 	protected CT_Choose Choose;
 	@XmlElement(required = true, name = "extLst")
-	protected List<CT_OfficeArtExtensionList> ExtLst;
+	protected CT_OfficeArtExtensionList ExtLst;
 }
 
 // CT_ForEach ...
@@ -434,15 +434,15 @@ public class CT_ForEach {
 	@XmlAttribute(name = "ref")
 	protected StringAttr Ref;
 	@XmlElement(required = true, name = "alg")
-	protected List<CT_Algorithm> Alg;
+	protected CT_Algorithm Alg;
 	@XmlElement(required = true, name = "shape")
-	protected List<CT_Shape> Shape;
+	protected CT_Shape Shape;
 	@XmlElement(required = true, name = "presOf")
-	protected List<CT_PresentationOf> PresOf;
+	protected CT_PresentationOf PresOf;
 	@XmlElement(required = true, name = "constrLst")
-	protected List<CT_Constraints> ConstrLst;
+	protected CT_Constraints ConstrLst;
 	@XmlElement(required = true, name = "ruleLst")
-	protected List<CT_Rules> RuleLst;
+	protected CT_Rules RuleLst;
 	@XmlElement(required = true, name = "forEach")
 	protected CT_ForEach ForEach;
 	@XmlElement(required = true, name = "layoutNode")
@@ -450,7 +450,7 @@ public class CT_ForEach {
 	@XmlElement(required = true, name = "choose")
 	protected CT_Choose Choose;
 	@XmlElement(required = true, name = "extLst")
-	protected List<CT_OfficeArtExtensionList> ExtLst;
+	protected CT_OfficeArtExtensionList ExtLst;
 }
 
 // CT_When ...
@@ -468,15 +468,15 @@ public class CT_When {
 	@XmlAttribute(name = "val", required = true)
 	protected ST_FunctionValueAttr Val;
 	@XmlElement(required = true, name = "alg")
-	protected List<CT_Algorithm> Alg;
+	protected CT_Algorithm Alg;
 	@XmlElement(required = true, name = "shape")
-	protected List<CT_Shape> Shape;
+	protected CT_Shape Shape;
 	@XmlElement(required = true, name = "presOf")
-	protected List<CT_PresentationOf> PresOf;
+	protected CT_PresentationOf PresOf;
 	@XmlElement(required = true, name = "constrLst")
-	protected List<CT_Constraints> ConstrLst;
+	protected CT_Constraints ConstrLst;
 	@XmlElement(required = true, name = "ruleLst")
-	protected List<CT_Rules> RuleLst;
+	protected CT_Rules RuleLst;
 	@XmlElement(required = true, name = "forEach")
 	protected CT_ForEach ForEach;
 	@XmlElement(required = true, name = "layoutNode")
@@ -484,7 +484,7 @@ public class CT_When {
 	@XmlElement(required = true, name = "choose")
 	protected CT_Choose Choose;
 	@XmlElement(required = true, name = "extLst")
-	protected List<CT_OfficeArtExtensionList> ExtLst;
+	protected CT_OfficeArtExtensionList ExtLst;
 }
 
 // CT_Otherwise ...
@@ -492,15 +492,15 @@ public class CT_Otherwise {
 	@XmlAttribute(name = "name")
 	protected StringAttr Name;
 	@XmlElement(required = true, name = "alg")
-	protected List<CT_Algorithm> Alg;
+	protected CT_Algorithm Alg;
 	@XmlElement(required = true, name = "shape")
-	protected List<CT_Shape> Shape;
+	protected CT_Shape Shape;
 	@XmlElement(required = true, name = "presOf")
-	protected List<CT_PresentationOf> PresOf;
+	protected CT_PresentationOf PresOf;
 	@XmlElement(required = true, name = "constrLst")
-	protected List<CT_Constraints> ConstrLst;
+	protected CT_Constraints ConstrLst;
 	@XmlElement(required = true, name = "ruleLst")
-	protected List<CT_Rules> RuleLst;
+	protected CT_Rules RuleLst;
 	@XmlElement(required = true, name = "forEach")
 	protected CT_ForEach ForEach;
 	@XmlElement(required = true, name = "layoutNode")
@@ -508,7 +508,7 @@ public class CT_Otherwise {
 	@XmlElement(required = true, name = "choose")
 	protected CT_Choose Choose;
 	@XmlElement(required = true, name = "extLst")
-	protected List<CT_OfficeArtExtensionList> ExtLst;
+	protected CT_OfficeArtExtensionList ExtLst;
 }
 
 // CT_Choose ...
@@ -582,7 +582,7 @@ public class CT_DiagramDefinition {
 	@XmlElement(required = true, name = "layoutNode")
 	protected CT_LayoutNode LayoutNode;
 	@XmlElement(required = true, name = "extLst")
-	protected List<CT_OfficeArtExtensionList> ExtLst;
+	protected CT_OfficeArtExtensionList ExtLst;
 }
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -608,7 +608,7 @@ public class CT_DiagramDefinitionHeader {
 	@XmlElement(required = true, name = "catLst")
 	protected CT_Categories CatLst;
 	@XmlElement(required = true, name = "extLst")
-	protected List<CT_OfficeArtExtensionList> ExtLst;
+	protected CT_OfficeArtExtensionList ExtLst;
 }
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -650,77 +650,77 @@ public class RelIds {
 // ST_ParameterVal ...
 public class ST_ParameterVal {
 	@XmlElement(required = true)
-	protected ST_NodeHorizontalAlignment ST_NodeHorizontalAlignment;
+	protected ST_ChildDirection ST_ChildDirection;
+	@XmlElement(required = true)
+	protected ST_PyramidAccentPosition ST_PyramidAccentPosition;
 	@XmlElement(required = true)
 	protected ST_PyramidAccentTextMargin ST_PyramidAccentTextMargin;
 	@XmlElement(required = true)
+	protected ST_SecondaryChildAlignment ST_SecondaryChildAlignment;
+	@XmlElement(required = true)
+	protected ST_TextAnchorVertical ST_TextAnchorVertical;
+	@XmlElement(required = true)
+	protected ST_Offset ST_Offset;
+	@XmlElement(required = true)
 	protected ST_TextAnchorHorizontal ST_TextAnchorHorizontal;
-	@XmlElement(required = true)
-	protected ST_GrowDirection ST_GrowDirection;
-	@XmlElement(required = true)
-	protected ST_DiagramHorizontalAlignment ST_DiagramHorizontalAlignment;
-	@XmlElement(required = true)
-	protected ST_VerticalAlignment ST_VerticalAlignment;
-	@XmlElement(required = true)
-	protected ST_ChildDirection ST_ChildDirection;
-	@XmlElement(required = true)
-	protected ST_ConnectorDimension ST_ConnectorDimension;
-	@XmlElement(required = true)
-	protected ST_ChildAlignment ST_ChildAlignment;
-	@XmlElement(required = true)
-	protected ST_CenterShapeMapping ST_CenterShapeMapping;
-	@XmlElement(required = true)
-	protected ST_LinearDirection ST_LinearDirection;
-	@XmlElement(required = true)
-	protected Integer Int;
 	@XmlElement(required = true)
 	protected ST_DiagramTextAlignment ST_DiagramTextAlignment;
 	@XmlElement(required = true)
-	protected ST_Breakpoint ST_Breakpoint;
+	protected ST_AutoTextRotation ST_AutoTextRotation;
 	@XmlElement(required = true)
-	protected Boolean Boolean;
+	protected ST_DiagramHorizontalAlignment ST_DiagramHorizontalAlignment;
 	@XmlElement(required = true)
 	protected ST_StartingElement ST_StartingElement;
+	@XmlElement(required = true)
+	protected ST_CenterShapeMapping ST_CenterShapeMapping;
+	@XmlElement(required = true)
+	protected ST_NodeVerticalAlignment ST_NodeVerticalAlignment;
+	@XmlElement(required = true)
+	protected ST_TextBlockDirection ST_TextBlockDirection;
+	@XmlElement(required = true)
+	protected Integer Int;
+	@XmlElement(required = true)
+	protected ST_SecondaryLinearDirection ST_SecondaryLinearDirection;
+	@XmlElement(required = true)
+	protected ST_ArrowheadStyle ST_ArrowheadStyle;
+	@XmlElement(required = true)
+	protected ST_FallbackDimension ST_FallbackDimension;
+	@XmlElement(required = true)
+	protected ST_FlowDirection ST_FlowDirection;
+	@XmlElement(required = true)
+	protected ST_NodeHorizontalAlignment ST_NodeHorizontalAlignment;
+	@XmlElement(required = true)
+	protected String String;
+	@XmlElement(required = true)
+	protected ST_VerticalAlignment ST_VerticalAlignment;
+	@XmlElement(required = true)
+	protected ST_ChildAlignment ST_ChildAlignment;
+	@XmlElement(required = true)
+	protected ST_ConnectorDimension ST_ConnectorDimension;
+	@XmlElement(required = true)
+	protected ST_Breakpoint ST_Breakpoint;
+	@XmlElement(required = true)
+	protected ST_HierarchyAlignment ST_HierarchyAlignment;
+	@XmlElement(required = true)
+	protected ST_LinearDirection ST_LinearDirection;
 	@XmlElement(required = true)
 	protected ST_BendPoint ST_BendPoint;
 	@XmlElement(required = true)
 	protected ST_RotationPath ST_RotationPath;
 	@XmlElement(required = true)
-	protected ST_TextBlockDirection ST_TextBlockDirection;
-	@XmlElement(required = true)
-	protected ST_SecondaryLinearDirection ST_SecondaryLinearDirection;
-	@XmlElement(required = true)
-	protected ST_ConnectorRouting ST_ConnectorRouting;
-	@XmlElement(required = true)
-	protected ST_TextAnchorVertical ST_TextAnchorVertical;
-	@XmlElement(required = true)
-	protected ST_ConnectorPoint ST_ConnectorPoint;
-	@XmlElement(required = true)
-	protected ST_AutoTextRotation ST_AutoTextRotation;
+	protected ST_TextDirection ST_TextDirection;
 	@XmlElement(required = true)
 	protected ST_ContinueDirection ST_ContinueDirection;
 	@XmlElement(required = true)
-	protected ST_HierarchyAlignment ST_HierarchyAlignment;
+	protected ST_ConnectorRouting ST_ConnectorRouting;
+	@XmlElement(required = true)
+	protected ST_GrowDirection ST_GrowDirection;
 	@XmlElement(required = true)
 	protected Float Double;
 	@XmlElement(required = true)
-	protected ST_TextDirection ST_TextDirection;
+	protected Boolean Boolean;
 	@XmlElement(required = true)
-	protected ST_PyramidAccentPosition ST_PyramidAccentPosition;
-	@XmlElement(required = true)
-	protected ST_FlowDirection ST_FlowDirection;
-	@XmlElement(required = true)
-	protected String String;
-	@XmlElement(required = true)
-	protected ST_SecondaryChildAlignment ST_SecondaryChildAlignment;
-	@XmlElement(required = true)
-	protected ST_ArrowheadStyle ST_ArrowheadStyle;
-	@XmlElement(required = true)
-	protected ST_NodeVerticalAlignment ST_NodeVerticalAlignment;
-	@XmlElement(required = true)
-	protected ST_FallbackDimension ST_FallbackDimension;
-	@XmlElement(required = true)
-	protected ST_Offset ST_Offset;
+	protected ST_ConnectorPoint ST_ConnectorPoint;
 }
 
 // ST_ModelId ...
@@ -796,9 +796,9 @@ public class CT_ElemPropSet {
 	@XmlAttribute(name = "custRadScaleInc")
 	protected ST_PrSetCustValAttr CustRadScaleInc;
 	@XmlElement(required = true, name = "presLayoutVars")
-	protected List<CT_LayoutVariablePropertySet> PresLayoutVars;
+	protected CT_LayoutVariablePropertySet PresLayoutVars;
 	@XmlElement(required = true, name = "style")
-	protected List<CT_ShapeStyle> Style;
+	protected CT_ShapeStyle Style;
 }
 
 // ST_Direction ...
@@ -900,23 +900,23 @@ public class CT_ResizeHandles {
 // CT_LayoutVariablePropertySet ...
 public class CT_LayoutVariablePropertySet {
 	@XmlElement(required = true, name = "orgChart")
-	protected List<CT_OrgChart> OrgChart;
+	protected CT_OrgChart OrgChart;
 	@XmlElement(required = true, name = "chMax")
-	protected List<CT_ChildMax> ChMax;
+	protected CT_ChildMax ChMax;
 	@XmlElement(required = true, name = "chPref")
-	protected List<CT_ChildPref> ChPref;
+	protected CT_ChildPref ChPref;
 	@XmlElement(required = true, name = "bulletEnabled")
-	protected List<CT_BulletEnabled> BulletEnabled;
+	protected CT_BulletEnabled BulletEnabled;
 	@XmlElement(required = true, name = "dir")
-	protected List<CT_Direction> Dir;
+	protected CT_Direction Dir;
 	@XmlElement(required = true, name = "hierBranch")
-	protected List<CT_HierBranchStyle> HierBranch;
+	protected CT_HierBranchStyle HierBranch;
 	@XmlElement(required = true, name = "animOne")
-	protected List<CT_AnimOne> AnimOne;
+	protected CT_AnimOne AnimOne;
 	@XmlElement(required = true, name = "animLvl")
-	protected List<CT_AnimLvl> AnimLvl;
+	protected CT_AnimLvl AnimLvl;
 	@XmlElement(required = true, name = "resizeHandles")
-	protected List<CT_ResizeHandles> ResizeHandles;
+	protected CT_ResizeHandles ResizeHandles;
 }
 
 // CT_SDName ...
@@ -959,15 +959,15 @@ public class CT_StyleLabel {
 	@XmlAttribute(name = "name", required = true)
 	protected StringAttr Name;
 	@XmlElement(required = true, name = "scene3d")
-	protected List<CT_Scene3D> Scene3d;
+	protected CT_Scene3D Scene3d;
 	@XmlElement(required = true, name = "sp3d")
-	protected List<CT_Shape3D> Sp3d;
+	protected CT_Shape3D Sp3d;
 	@XmlElement(required = true, name = "txPr")
-	protected List<CT_TextProps> TxPr;
+	protected CT_TextProps TxPr;
 	@XmlElement(required = true, name = "style")
-	protected List<CT_ShapeStyle> Style;
+	protected CT_ShapeStyle Style;
 	@XmlElement(required = true, name = "extLst")
-	protected List<CT_OfficeArtExtensionList> ExtLst;
+	protected CT_OfficeArtExtensionList ExtLst;
 }
 
 // CT_StyleDefinition ...
@@ -983,11 +983,11 @@ public class CT_StyleDefinition {
 	@XmlElement(required = true, name = "catLst")
 	protected CT_SDCategories CatLst;
 	@XmlElement(required = true, name = "scene3d")
-	protected List<CT_Scene3D> Scene3d;
+	protected CT_Scene3D Scene3d;
 	@XmlElement(required = true, name = "styleLbl")
 	protected List<CT_StyleLabel> StyleLbl;
 	@XmlElement(required = true, name = "extLst")
-	protected List<CT_OfficeArtExtensionList> ExtLst;
+	protected CT_OfficeArtExtensionList ExtLst;
 }
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -1011,7 +1011,7 @@ public class CT_StyleDefinitionHeader {
 	@XmlElement(required = true, name = "catLst")
 	protected CT_SDCategories CatLst;
 	@XmlElement(required = true, name = "extLst")
-	protected List<CT_OfficeArtExtensionList> ExtLst;
+	protected CT_OfficeArtExtensionList ExtLst;
 }
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -1359,6 +1359,8 @@ public class ST_HierarchyAlignment {
 // ST_FunctionValue ...
 public class ST_FunctionValue {
 	@XmlElement(required = true)
+	protected String ST_ResizeHandlesStr;
+	@XmlElement(required = true)
 	protected Integer Int;
 	@XmlElement(required = true)
 	protected Boolean Boolean;
@@ -1370,8 +1372,6 @@ public class ST_FunctionValue {
 	protected String ST_AnimOneStr;
 	@XmlElement(required = true)
 	protected String ST_AnimLvlStr;
-	@XmlElement(required = true)
-	protected String ST_ResizeHandlesStr;
 }
 
 // ST_VariableType ...

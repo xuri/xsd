@@ -2,8 +2,8 @@
 
 // CT_ShapeNonVisual ...
 typedef struct {
-	CT_NonVisualDrawingProps CNvPr[];
-	CT_NonVisualDrawingShapeProps CNvSpPr[];
+	CT_NonVisualDrawingProps CNvPr;
+	CT_NonVisualDrawingShapeProps CNvSpPr;
 } CT_ShapeNonVisual;
 
 // CT_Shape ...
@@ -12,68 +12,68 @@ typedef struct {
 	char TextlinkAttr; // attr, optional
 	bool FLocksTextAttr; // attr, optional
 	bool FPublishedAttr; // attr, optional
-	CT_ShapeNonVisual NvSpPr[];
-	CT_ShapeProperties SpPr[];
-	CT_ShapeStyle Style[];
-	CT_TextBody TxBody[];
+	CT_ShapeNonVisual NvSpPr;
+	CT_ShapeProperties SpPr;
+	CT_ShapeStyle Style;
+	CT_TextBody TxBody;
 } CT_Shape;
 
 // CT_ConnectorNonVisual ...
 typedef struct {
-	CT_NonVisualDrawingProps CNvPr[];
-	CT_NonVisualConnectorProperties CNvCxnSpPr[];
+	CT_NonVisualDrawingProps CNvPr;
+	CT_NonVisualConnectorProperties CNvCxnSpPr;
 } CT_ConnectorNonVisual;
 
 // CT_Connector ...
 typedef struct {
 	char MacroAttr; // attr, optional
 	bool FPublishedAttr; // attr, optional
-	CT_ConnectorNonVisual NvCxnSpPr[];
-	CT_ShapeProperties SpPr[];
-	CT_ShapeStyle Style[];
+	CT_ConnectorNonVisual NvCxnSpPr;
+	CT_ShapeProperties SpPr;
+	CT_ShapeStyle Style;
 } CT_Connector;
 
 // CT_PictureNonVisual ...
 typedef struct {
-	CT_NonVisualDrawingProps CNvPr[];
-	CT_NonVisualPictureProperties CNvPicPr[];
+	CT_NonVisualDrawingProps CNvPr;
+	CT_NonVisualPictureProperties CNvPicPr;
 } CT_PictureNonVisual;
 
 // CT_Picture ...
 typedef struct {
 	char MacroAttr; // attr, optional
 	bool FPublishedAttr; // attr, optional
-	CT_PictureNonVisual NvPicPr[];
-	CT_BlipFillProperties BlipFill[];
-	CT_ShapeProperties SpPr[];
-	CT_ShapeStyle Style[];
+	CT_PictureNonVisual NvPicPr;
+	CT_BlipFillProperties BlipFill;
+	CT_ShapeProperties SpPr;
+	CT_ShapeStyle Style;
 } CT_Picture;
 
 // CT_GraphicFrameNonVisual ...
 typedef struct {
-	CT_NonVisualDrawingProps CNvPr[];
-	CT_NonVisualGraphicFrameProperties CNvGraphicFramePr[];
+	CT_NonVisualDrawingProps CNvPr;
+	CT_NonVisualGraphicFrameProperties CNvGraphicFramePr;
 } CT_GraphicFrameNonVisual;
 
 // CT_GraphicFrame ...
 typedef struct {
 	char MacroAttr; // attr, optional
 	bool FPublishedAttr; // attr, optional
-	CT_GraphicFrameNonVisual NvGraphicFramePr[];
-	CT_Transform2D Xfrm[];
-	CT_GraphicalObject AGraphic[];
+	CT_GraphicFrameNonVisual NvGraphicFramePr;
+	CT_Transform2D Xfrm;
+	CT_GraphicalObject AGraphic;
 } CT_GraphicFrame;
 
 // CT_GroupShapeNonVisual ...
 typedef struct {
-	CT_NonVisualDrawingProps CNvPr[];
-	CT_NonVisualGroupDrawingShapeProps CNvGrpSpPr[];
+	CT_NonVisualDrawingProps CNvPr;
+	CT_NonVisualGroupDrawingShapeProps CNvGrpSpPr;
 } CT_GroupShapeNonVisual;
 
 // CT_GroupShape ...
 typedef struct {
-	CT_GroupShapeNonVisual NvGrpSpPr[];
-	CT_GroupShapeProperties GrpSpPr[];
+	CT_GroupShapeNonVisual NvGrpSpPr;
+	CT_GroupShapeProperties GrpSpPr;
 	CT_Shape Sp;
 	CT_GroupShape GrpSp;
 	CT_GraphicFrame GraphicFrame;
@@ -95,8 +95,8 @@ typedef float ST_MarkerCoordinate;
 
 // CT_Marker ...
 typedef struct {
-	float X[];
-	float Y[];
+	float X;
+	float Y;
 } CT_Marker;
 
 // CT_RelSizeAnchor ...

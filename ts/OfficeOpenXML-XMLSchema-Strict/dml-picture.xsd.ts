@@ -2,15 +2,15 @@
 
 // CT_PictureNonVisual ...
 export class CT_PictureNonVisual {
-	CNvPr: Array<CT_NonVisualDrawingProps>;
-	CNvPicPr: Array<CT_NonVisualPictureProperties>;
+	CNvPr: CT_NonVisualDrawingProps;
+	CNvPicPr: CT_NonVisualPictureProperties;
 }
 
 // CT_Picture ...
 export class CT_Picture {
-	NvPicPr: Array<CT_PictureNonVisual>;
-	BlipFill: Array<CT_BlipFillProperties>;
-	SpPr: Array<CT_ShapeProperties>;
+	NvPicPr: CT_PictureNonVisual;
+	BlipFill: CT_BlipFillProperties;
+	SpPr: CT_ShapeProperties;
 }
 
 // Pic ...

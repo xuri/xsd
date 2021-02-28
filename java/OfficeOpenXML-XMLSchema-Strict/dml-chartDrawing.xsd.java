@@ -14,9 +14,9 @@ import javax.xml.bind.annotation.XmlType;
 // CT_ShapeNonVisual ...
 public class CT_ShapeNonVisual {
 	@XmlElement(required = true, name = "cNvPr")
-	protected List<CT_NonVisualDrawingProps> CNvPr;
+	protected CT_NonVisualDrawingProps CNvPr;
 	@XmlElement(required = true, name = "cNvSpPr")
-	protected List<CT_NonVisualDrawingShapeProps> CNvSpPr;
+	protected CT_NonVisualDrawingShapeProps CNvSpPr;
 }
 
 // CT_Shape ...
@@ -30,21 +30,21 @@ public class CT_Shape {
 	@XmlAttribute(name = "fPublished")
 	protected BooleanAttr FPublished;
 	@XmlElement(required = true, name = "nvSpPr")
-	protected List<CT_ShapeNonVisual> NvSpPr;
+	protected CT_ShapeNonVisual NvSpPr;
 	@XmlElement(required = true, name = "spPr")
-	protected List<CT_ShapeProperties> SpPr;
+	protected CT_ShapeProperties SpPr;
 	@XmlElement(required = true, name = "style")
-	protected List<CT_ShapeStyle> Style;
+	protected CT_ShapeStyle Style;
 	@XmlElement(required = true, name = "txBody")
-	protected List<CT_TextBody> TxBody;
+	protected CT_TextBody TxBody;
 }
 
 // CT_ConnectorNonVisual ...
 public class CT_ConnectorNonVisual {
 	@XmlElement(required = true, name = "cNvPr")
-	protected List<CT_NonVisualDrawingProps> CNvPr;
+	protected CT_NonVisualDrawingProps CNvPr;
 	@XmlElement(required = true, name = "cNvCxnSpPr")
-	protected List<CT_NonVisualConnectorProperties> CNvCxnSpPr;
+	protected CT_NonVisualConnectorProperties CNvCxnSpPr;
 }
 
 // CT_Connector ...
@@ -54,19 +54,19 @@ public class CT_Connector {
 	@XmlAttribute(name = "fPublished")
 	protected BooleanAttr FPublished;
 	@XmlElement(required = true, name = "nvCxnSpPr")
-	protected List<CT_ConnectorNonVisual> NvCxnSpPr;
+	protected CT_ConnectorNonVisual NvCxnSpPr;
 	@XmlElement(required = true, name = "spPr")
-	protected List<CT_ShapeProperties> SpPr;
+	protected CT_ShapeProperties SpPr;
 	@XmlElement(required = true, name = "style")
-	protected List<CT_ShapeStyle> Style;
+	protected CT_ShapeStyle Style;
 }
 
 // CT_PictureNonVisual ...
 public class CT_PictureNonVisual {
 	@XmlElement(required = true, name = "cNvPr")
-	protected List<CT_NonVisualDrawingProps> CNvPr;
+	protected CT_NonVisualDrawingProps CNvPr;
 	@XmlElement(required = true, name = "cNvPicPr")
-	protected List<CT_NonVisualPictureProperties> CNvPicPr;
+	protected CT_NonVisualPictureProperties CNvPicPr;
 }
 
 // CT_Picture ...
@@ -76,21 +76,21 @@ public class CT_Picture {
 	@XmlAttribute(name = "fPublished")
 	protected BooleanAttr FPublished;
 	@XmlElement(required = true, name = "nvPicPr")
-	protected List<CT_PictureNonVisual> NvPicPr;
+	protected CT_PictureNonVisual NvPicPr;
 	@XmlElement(required = true, name = "blipFill")
-	protected List<CT_BlipFillProperties> BlipFill;
+	protected CT_BlipFillProperties BlipFill;
 	@XmlElement(required = true, name = "spPr")
-	protected List<CT_ShapeProperties> SpPr;
+	protected CT_ShapeProperties SpPr;
 	@XmlElement(required = true, name = "style")
-	protected List<CT_ShapeStyle> Style;
+	protected CT_ShapeStyle Style;
 }
 
 // CT_GraphicFrameNonVisual ...
 public class CT_GraphicFrameNonVisual {
 	@XmlElement(required = true, name = "cNvPr")
-	protected List<CT_NonVisualDrawingProps> CNvPr;
+	protected CT_NonVisualDrawingProps CNvPr;
 	@XmlElement(required = true, name = "cNvGraphicFramePr")
-	protected List<CT_NonVisualGraphicFrameProperties> CNvGraphicFramePr;
+	protected CT_NonVisualGraphicFrameProperties CNvGraphicFramePr;
 }
 
 // CT_GraphicFrame ...
@@ -100,27 +100,27 @@ public class CT_GraphicFrame {
 	@XmlAttribute(name = "fPublished")
 	protected BooleanAttr FPublished;
 	@XmlElement(required = true, name = "nvGraphicFramePr")
-	protected List<CT_GraphicFrameNonVisual> NvGraphicFramePr;
+	protected CT_GraphicFrameNonVisual NvGraphicFramePr;
 	@XmlElement(required = true, name = "xfrm")
-	protected List<CT_Transform2D> Xfrm;
+	protected CT_Transform2D Xfrm;
 	@XmlElement(required = true, name = "a:graphic")
-	protected List<CT_GraphicalObject> AGraphic;
+	protected CT_GraphicalObject AGraphic;
 }
 
 // CT_GroupShapeNonVisual ...
 public class CT_GroupShapeNonVisual {
 	@XmlElement(required = true, name = "cNvPr")
-	protected List<CT_NonVisualDrawingProps> CNvPr;
+	protected CT_NonVisualDrawingProps CNvPr;
 	@XmlElement(required = true, name = "cNvGrpSpPr")
-	protected List<CT_NonVisualGroupDrawingShapeProps> CNvGrpSpPr;
+	protected CT_NonVisualGroupDrawingShapeProps CNvGrpSpPr;
 }
 
 // CT_GroupShape ...
 public class CT_GroupShape {
 	@XmlElement(required = true, name = "nvGrpSpPr")
-	protected List<CT_GroupShapeNonVisual> NvGrpSpPr;
+	protected CT_GroupShapeNonVisual NvGrpSpPr;
 	@XmlElement(required = true, name = "grpSpPr")
-	protected List<CT_GroupShapeProperties> GrpSpPr;
+	protected CT_GroupShapeProperties GrpSpPr;
 	@XmlElement(required = true, name = "sp")
 	protected CT_Shape Sp;
 	@XmlElement(required = true, name = "grpSp")
@@ -157,9 +157,9 @@ public class ST_MarkerCoordinate {
 // CT_Marker ...
 public class CT_Marker {
 	@XmlElement(required = true, name = "x")
-	protected List<Float> X;
+	protected Float X;
 	@XmlElement(required = true, name = "y")
-	protected List<Float> Y;
+	protected Float Y;
 }
 
 // CT_RelSizeAnchor ...

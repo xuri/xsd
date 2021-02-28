@@ -4,8 +4,8 @@
 typedef struct {
 	char RefAttr; // attr, optional
 	CT_FilterColumn FilterColumn[];
-	CT_SortState SortState[];
-	CT_ExtensionList ExtLst[];
+	CT_SortState SortState;
+	CT_ExtensionList ExtLst;
 } CT_AutoFilter;
 
 // CT_FilterColumn ...
@@ -13,13 +13,13 @@ typedef struct {
 	unsigned int ColIdAttr; // attr
 	bool HiddenButtonAttr; // attr, optional
 	bool ShowButtonAttr; // attr, optional
-	CT_Filters Filters[];
-	CT_Top10 Top10[];
-	CT_CustomFilters CustomFilters[];
-	CT_DynamicFilter DynamicFilter[];
-	CT_ColorFilter ColorFilter[];
-	CT_IconFilter IconFilter[];
-	CT_ExtensionList ExtLst[];
+	CT_Filters Filters;
+	CT_Top10 Top10;
+	CT_CustomFilters CustomFilters;
+	CT_DynamicFilter DynamicFilter;
+	CT_ColorFilter ColorFilter;
+	CT_IconFilter IconFilter;
+	CT_ExtensionList ExtLst;
 } CT_FilterColumn;
 
 // CT_Filters ...
@@ -91,7 +91,7 @@ typedef struct {
 	char SortMethodAttr; // attr, optional
 	char RefAttr; // attr
 	CT_SortCondition SortCondition[];
-	CT_ExtensionList ExtLst[];
+	CT_ExtensionList ExtLst;
 } CT_SortState;
 
 // CT_SortCondition ...
@@ -157,8 +157,8 @@ typedef struct {
 typedef struct {
 	bool MoveWithCellsAttr; // attr, optional
 	bool SizeWithCellsAttr; // attr, optional
-	CT_Marker XdrFrom[];
-	CT_Marker XdrTo[];
+	CT_Marker XdrFrom;
+	CT_Marker XdrTo;
 } CT_ObjectAnchor;
 
 // EG_ExtensionList ...
@@ -193,8 +193,8 @@ typedef CT_Comments Comments;
 
 // CT_Comments ...
 typedef struct {
-	CT_Authors Authors[];
-	CT_CommentList CommentList[];
+	CT_Authors Authors;
+	CT_CommentList CommentList;
 	CT_ExtensionList ExtLst;
 } CT_Comments;
 
@@ -214,8 +214,8 @@ typedef struct {
 	unsigned int AuthorIdAttr; // attr
 	char GuidAttr; // attr, optional
 	unsigned int ShapeIdAttr; // attr, optional
-	CT_Rst Text[];
-	CT_CommentPr CommentPr[];
+	CT_Rst Text;
+	CT_CommentPr CommentPr;
 } CT_Comment;
 
 // CT_CommentPr ...
@@ -232,7 +232,7 @@ typedef struct {
 	bool LockTextAttr; // attr, optional
 	bool JustLastXAttr; // attr, optional
 	bool AutoScaleAttr; // attr, optional
-	CT_ObjectAnchor Anchor[];
+	CT_ObjectAnchor Anchor;
 } CT_CommentPr;
 
 // ST_TextHAlign ...
@@ -269,7 +269,7 @@ typedef struct {
 	bool AppendAttr; // attr
 	bool PreserveSortAFLayoutAttr; // attr
 	bool PreserveFormatAttr; // attr
-	CT_DataBinding DataBinding[];
+	CT_DataBinding DataBinding;
 } CT_Map;
 
 // CT_DataBinding ...
@@ -310,12 +310,12 @@ typedef struct {
 	bool SaveDataAttr; // attr, optional
 	char CredentialsAttr; // attr, optional
 	char SingleSignOnIdAttr; // attr, optional
-	CT_DbPr DbPr[];
-	CT_OlapPr OlapPr[];
-	CT_WebPr WebPr[];
-	CT_TextPr TextPr[];
-	CT_Parameters Parameters[];
-	CT_ExtensionList ExtLst[];
+	CT_DbPr DbPr;
+	CT_OlapPr OlapPr;
+	CT_WebPr WebPr;
+	CT_TextPr TextPr;
+	CT_Parameters Parameters;
+	CT_ExtensionList ExtLst;
 } CT_Connection;
 
 // ST_CredMethod ...
@@ -357,7 +357,7 @@ typedef struct {
 	bool HtmlTablesAttr; // attr, optional
 	char HtmlFormatAttr; // attr, optional
 	char EditPageAttr; // attr, optional
-	CT_Tables Tables[];
+	CT_Tables Tables;
 } CT_WebPr;
 
 // ST_HtmlFmt ...
@@ -415,7 +415,7 @@ typedef struct {
 	bool ConsecutiveAttr; // attr, optional
 	char QualifierAttr; // attr, optional
 	char DelimiterAttr; // attr, optional
-	CT_TextFields TextFields[];
+	CT_TextFields TextFields;
 } CT_TextPr;
 
 // ST_FileType ...
@@ -465,8 +465,8 @@ typedef struct {
 	bool TupleCacheAttr; // attr, optional
 	bool SupportSubqueryAttr; // attr, optional
 	bool SupportAdvancedDrillAttr; // attr, optional
-	CT_CacheSource CacheSource[];
-	CT_CacheFields CacheFields[];
+	CT_CacheSource CacheSource;
+	CT_CacheFields CacheFields;
 	CT_CacheHierarchies CacheHierarchies;
 	CT_PCDKPIs Kpis;
 	CT_TupleCache TupleCache;
@@ -499,7 +499,7 @@ typedef struct {
 	bool DatabaseFieldAttr; // attr, optional
 	unsigned int MappingCountAttr; // attr, optional
 	bool MemberPropertyFieldAttr; // attr, optional
-	CT_SharedItems SharedItems[];
+	CT_SharedItems SharedItems;
 	CT_FieldGroup FieldGroup;
 	CT_X MpMap[];
 	CT_ExtensionList ExtLst;
@@ -509,8 +509,8 @@ typedef struct {
 typedef struct {
 	char TypeAttr; // attr
 	unsigned int ConnectionIdAttr; // attr, optional
-	CT_WorksheetSource WorksheetSource[];
-	CT_Consolidation Consolidation[];
+	CT_WorksheetSource WorksheetSource;
+	CT_Consolidation Consolidation;
 	CT_ExtensionList ExtLst;
 } CT_CacheSource;
 
@@ -528,8 +528,8 @@ typedef struct {
 // CT_Consolidation ...
 typedef struct {
 	bool AutoPageAttr; // attr, optional
-	CT_Pages Pages[];
-	CT_RangeSets RangeSets[];
+	CT_Pages Pages;
+	CT_RangeSets RangeSets;
 } CT_Consolidation;
 
 // CT_Pages ...
@@ -583,12 +583,12 @@ typedef struct {
 	char MaxDateAttr; // attr, optional
 	unsigned int CountAttr; // attr, optional
 	bool LongTextAttr; // attr, optional
-	CT_Missing M[];
-	CT_Number N[];
-	CT_Boolean B[];
-	CT_Error E[];
-	CT_String S[];
-	CT_DateTime D[];
+	CT_Missing M;
+	CT_Number N;
+	CT_Boolean B;
+	CT_Error E;
+	CT_String S;
+	CT_DateTime D;
 } CT_SharedItems;
 
 // CT_Missing ...
@@ -857,7 +857,7 @@ typedef struct {
 	CT_PCDSDTCEntries Entries;
 	CT_Sets Sets;
 	CT_QueryCache QueryCache;
-	CT_ServerFormats ServerFormats[];
+	CT_ServerFormats ServerFormats;
 	CT_ExtensionList ExtLst;
 } CT_TupleCache;
 
@@ -1035,10 +1035,10 @@ typedef struct {
 	CT_ConditionalFormats ConditionalFormats;
 	CT_ChartFormats ChartFormats;
 	CT_PivotHierarchies PivotHierarchies;
-	CT_PivotTableStyle PivotTableStyleInfo[];
-	CT_PivotFilters Filters[];
-	CT_RowHierarchiesUsage RowHierarchiesUsage[];
-	CT_ColHierarchiesUsage ColHierarchiesUsage[];
+	CT_PivotTableStyle PivotTableStyleInfo;
+	CT_PivotFilters Filters;
+	CT_RowHierarchiesUsage RowHierarchiesUsage;
+	CT_ColHierarchiesUsage ColHierarchiesUsage;
 	CT_ExtensionList ExtLst;
 } CT_pivotTableDefinition;
 
@@ -1409,7 +1409,7 @@ typedef struct {
 	char DescriptionAttr; // attr, optional
 	char StringValue1Attr; // attr, optional
 	char StringValue2Attr; // attr, optional
-	CT_AutoFilter AutoFilter[];
+	CT_AutoFilter AutoFilter;
 	CT_ExtensionList ExtLst;
 } CT_PivotFilter;
 
@@ -1506,8 +1506,8 @@ typedef struct {
 	bool AdjustColumnWidthAttr; // attr, optional
 	bool IntermediateAttr; // attr, optional
 	unsigned int ConnectionIdAttr; // attr
-	CT_QueryTableRefresh QueryTableRefresh[];
-	CT_ExtensionList ExtLst[];
+	CT_QueryTableRefresh QueryTableRefresh;
+	CT_ExtensionList ExtLst;
 } CT_QueryTable;
 
 // CT_QueryTableRefresh ...
@@ -1519,10 +1519,10 @@ typedef struct {
 	unsigned int NextIdAttr; // attr, optional
 	unsigned int UnboundColumnsLeftAttr; // attr, optional
 	unsigned int UnboundColumnsRightAttr; // attr, optional
-	CT_QueryTableFields QueryTableFields[];
-	CT_QueryTableDeletedFields QueryTableDeletedFields[];
-	CT_SortState SortState[];
-	CT_ExtensionList ExtLst[];
+	CT_QueryTableFields QueryTableFields;
+	CT_QueryTableDeletedFields QueryTableDeletedFields;
+	CT_SortState SortState;
+	CT_ExtensionList ExtLst;
 } CT_QueryTableRefresh;
 
 // CT_QueryTableDeletedFields ...
@@ -1551,7 +1551,7 @@ typedef struct {
 	bool FillFormulasAttr; // attr, optional
 	bool ClippedAttr; // attr, optional
 	unsigned int TableColumnIdAttr; // attr, optional
-	CT_ExtensionList ExtLst[];
+	CT_ExtensionList ExtLst;
 } CT_QueryTableField;
 
 // ST_GrowShrinkType ...
@@ -1577,40 +1577,40 @@ typedef char ST_PhoneticAlignment;
 typedef struct {
 	unsigned int SbAttr; // attr
 	unsigned int EbAttr; // attr
-	char T[];
+	char T;
 } CT_PhoneticRun;
 
 // CT_RElt ...
 typedef struct {
-	CT_RPrElt RPr[];
-	char T[];
+	CT_RPrElt RPr;
+	char T;
 } CT_RElt;
 
 // CT_RPrElt ...
 typedef struct {
-	CT_FontName RFont[];
-	CT_IntProperty Charset[];
-	CT_IntProperty Family[];
-	CT_BooleanProperty B[];
-	CT_BooleanProperty I[];
-	CT_BooleanProperty Strike[];
-	CT_BooleanProperty Outline[];
-	CT_BooleanProperty Shadow[];
-	CT_BooleanProperty Condense[];
-	CT_BooleanProperty Extend[];
-	CT_Color Color[];
-	CT_FontSize Sz[];
-	CT_UnderlineProperty U[];
-	CT_VerticalAlignFontProperty VertAlign[];
-	CT_FontScheme Scheme[];
+	CT_FontName RFont;
+	CT_IntProperty Charset;
+	CT_IntProperty Family;
+	CT_BooleanProperty B;
+	CT_BooleanProperty I;
+	CT_BooleanProperty Strike;
+	CT_BooleanProperty Outline;
+	CT_BooleanProperty Shadow;
+	CT_BooleanProperty Condense;
+	CT_BooleanProperty Extend;
+	CT_Color Color;
+	CT_FontSize Sz;
+	CT_UnderlineProperty U;
+	CT_VerticalAlignFontProperty VertAlign;
+	CT_FontScheme Scheme;
 } CT_RPrElt;
 
 // CT_Rst ...
 typedef struct {
-	char T[];
+	char T;
 	CT_RElt R[];
 	CT_PhoneticRun RPh[];
-	CT_PhoneticPr PhoneticPr[];
+	CT_PhoneticPr PhoneticPr;
 } CT_Rst;
 
 // CT_PhoneticPr ...
@@ -1673,8 +1673,8 @@ typedef struct {
 	char RIdAttr; // attr
 	unsigned int MinRIdAttr; // attr, optional
 	unsigned int MaxRIdAttr; // attr, optional
-	CT_SheetIdMap SheetIdMap[];
-	CT_ReviewedRevisions ReviewedList[];
+	CT_SheetIdMap SheetIdMap;
+	CT_ReviewedRevisions ReviewedList;
 	CT_ExtensionList ExtLst;
 } CT_RevisionHeader;
 
@@ -1777,10 +1777,10 @@ typedef struct {
 	bool PhAttr; // attr, optional
 	bool OldPhAttr; // attr, optional
 	bool EndOfListFormulaUpdateAttr; // attr, optional
-	CT_Cell Oc[];
-	CT_Cell Nc[];
-	CT_Dxf Odxf[];
-	CT_Dxf Ndxf[];
+	CT_Cell Oc;
+	CT_Cell Nc;
+	CT_Dxf Odxf;
+	CT_Dxf Ndxf;
 	CT_ExtensionList ExtLst;
 } CT_RevisionCellChange;
 
@@ -1792,7 +1792,7 @@ typedef struct {
 	ST_Sqref SqrefAttr; // attr
 	unsigned int StartAttr; // attr, optional
 	unsigned int LengthAttr; // attr, optional
-	CT_Dxf Dxf[];
+	CT_Dxf Dxf;
 	CT_ExtensionList ExtLst;
 } CT_RevisionFormatting;
 
@@ -1842,8 +1842,8 @@ typedef struct {
 	char OldStatusBarAttr; // attr, optional
 	char CommentAttr; // attr, optional
 	char OldCommentAttr; // attr, optional
-	char Formula[];
-	char OldFormula[];
+	char Formula;
+	char OldFormula;
 	CT_ExtensionList ExtLst;
 } CT_RevisionDefinedName;
 
@@ -1894,30 +1894,30 @@ typedef CT_Dialogsheet Dialogsheet;
 
 // CT_Macrosheet ...
 typedef struct {
-	CT_SheetPr SheetPr[];
-	CT_SheetDimension Dimension[];
-	CT_SheetViews SheetViews[];
-	CT_SheetFormatPr SheetFormatPr[];
+	CT_SheetPr SheetPr;
+	CT_SheetDimension Dimension;
+	CT_SheetViews SheetViews;
+	CT_SheetFormatPr SheetFormatPr;
 	CT_Cols Cols[];
-	CT_SheetData SheetData[];
-	CT_SheetProtection SheetProtection[];
-	CT_AutoFilter AutoFilter[];
-	CT_SortState SortState[];
-	CT_DataConsolidate DataConsolidate[];
-	CT_CustomSheetViews CustomSheetViews[];
-	CT_PhoneticPr PhoneticPr[];
+	CT_SheetData SheetData;
+	CT_SheetProtection SheetProtection;
+	CT_AutoFilter AutoFilter;
+	CT_SortState SortState;
+	CT_DataConsolidate DataConsolidate;
+	CT_CustomSheetViews CustomSheetViews;
+	CT_PhoneticPr PhoneticPr;
 	CT_ConditionalFormatting ConditionalFormatting[];
-	CT_PrintOptions PrintOptions[];
-	CT_PageMargins PageMargins[];
-	CT_PageSetup PageSetup[];
-	CT_HeaderFooter HeaderFooter[];
-	CT_PageBreak RowBreaks[];
-	CT_PageBreak ColBreaks[];
-	CT_CustomProperties CustomProperties[];
-	CT_Drawing Drawing[];
-	CT_DrawingHF DrawingHF[];
-	CT_SheetBackgroundPicture Picture[];
-	CT_OleObjects OleObjects[];
+	CT_PrintOptions PrintOptions;
+	CT_PageMargins PageMargins;
+	CT_PageSetup PageSetup;
+	CT_HeaderFooter HeaderFooter;
+	CT_PageBreak RowBreaks;
+	CT_PageBreak ColBreaks;
+	CT_CustomProperties CustomProperties;
+	CT_Drawing Drawing;
+	CT_DrawingHF DrawingHF;
+	CT_SheetBackgroundPicture Picture;
+	CT_OleObjects OleObjects;
 	CT_ExtensionList ExtLst;
 } CT_Macrosheet;
 
@@ -1926,58 +1926,58 @@ typedef struct {
 	CT_SheetPr SheetPr;
 	CT_SheetViews SheetViews;
 	CT_SheetFormatPr SheetFormatPr;
-	CT_SheetProtection SheetProtection[];
+	CT_SheetProtection SheetProtection;
 	CT_CustomSheetViews CustomSheetViews;
 	CT_PrintOptions PrintOptions;
 	CT_PageMargins PageMargins;
 	CT_PageSetup PageSetup;
 	CT_HeaderFooter HeaderFooter;
 	CT_Drawing Drawing;
-	CT_DrawingHF DrawingHF[];
-	CT_OleObjects OleObjects[];
-	CT_Controls Controls[];
+	CT_DrawingHF DrawingHF;
+	CT_OleObjects OleObjects;
+	CT_Controls Controls;
 	CT_ExtensionList ExtLst;
 } CT_Dialogsheet;
 
 // CT_Worksheet ...
 typedef struct {
-	CT_SheetPr SheetPr[];
-	CT_SheetDimension Dimension[];
-	CT_SheetViews SheetViews[];
-	CT_SheetFormatPr SheetFormatPr[];
+	CT_SheetPr SheetPr;
+	CT_SheetDimension Dimension;
+	CT_SheetViews SheetViews;
+	CT_SheetFormatPr SheetFormatPr;
 	CT_Cols Cols[];
-	CT_SheetData SheetData[];
-	CT_SheetCalcPr SheetCalcPr[];
-	CT_SheetProtection SheetProtection[];
-	CT_ProtectedRanges ProtectedRanges[];
-	CT_Scenarios Scenarios[];
-	CT_AutoFilter AutoFilter[];
-	CT_SortState SortState[];
-	CT_DataConsolidate DataConsolidate[];
-	CT_CustomSheetViews CustomSheetViews[];
-	CT_MergeCells MergeCells[];
-	CT_PhoneticPr PhoneticPr[];
+	CT_SheetData SheetData;
+	CT_SheetCalcPr SheetCalcPr;
+	CT_SheetProtection SheetProtection;
+	CT_ProtectedRanges ProtectedRanges;
+	CT_Scenarios Scenarios;
+	CT_AutoFilter AutoFilter;
+	CT_SortState SortState;
+	CT_DataConsolidate DataConsolidate;
+	CT_CustomSheetViews CustomSheetViews;
+	CT_MergeCells MergeCells;
+	CT_PhoneticPr PhoneticPr;
 	CT_ConditionalFormatting ConditionalFormatting[];
-	CT_DataValidations DataValidations[];
-	CT_Hyperlinks Hyperlinks[];
-	CT_PrintOptions PrintOptions[];
-	CT_PageMargins PageMargins[];
-	CT_PageSetup PageSetup[];
-	CT_HeaderFooter HeaderFooter[];
-	CT_PageBreak RowBreaks[];
-	CT_PageBreak ColBreaks[];
-	CT_CustomProperties CustomProperties[];
-	CT_CellWatches CellWatches[];
-	CT_IgnoredErrors IgnoredErrors[];
-	CT_SmartTags SmartTags[];
-	CT_Drawing Drawing[];
-	CT_DrawingHF DrawingHF[];
-	CT_SheetBackgroundPicture Picture[];
-	CT_OleObjects OleObjects[];
-	CT_Controls Controls[];
-	CT_WebPublishItems WebPublishItems[];
-	CT_TableParts TableParts[];
-	CT_ExtensionList ExtLst[];
+	CT_DataValidations DataValidations;
+	CT_Hyperlinks Hyperlinks;
+	CT_PrintOptions PrintOptions;
+	CT_PageMargins PageMargins;
+	CT_PageSetup PageSetup;
+	CT_HeaderFooter HeaderFooter;
+	CT_PageBreak RowBreaks;
+	CT_PageBreak ColBreaks;
+	CT_CustomProperties CustomProperties;
+	CT_CellWatches CellWatches;
+	CT_IgnoredErrors IgnoredErrors;
+	CT_SmartTags SmartTags;
+	CT_Drawing Drawing;
+	CT_DrawingHF DrawingHF;
+	CT_SheetBackgroundPicture Picture;
+	CT_OleObjects OleObjects;
+	CT_Controls Controls;
+	CT_WebPublishItems WebPublishItems;
+	CT_TableParts TableParts;
+	CT_ExtensionList ExtLst;
 } CT_Worksheet;
 
 // CT_SheetData ...
@@ -2054,9 +2054,9 @@ typedef struct {
 	unsigned int CmAttr; // attr, optional
 	unsigned int VmAttr; // attr, optional
 	bool PhAttr; // attr, optional
-	CT_CellFormula F[];
-	char V[];
-	CT_Rst Is[];
+	CT_CellFormula F;
+	char V;
+	CT_Rst Is;
 	CT_ExtensionList ExtLst;
 } CT_Cell;
 
@@ -2077,9 +2077,9 @@ typedef struct {
 	char CodeNameAttr; // attr, optional
 	bool FilterModeAttr; // attr, optional
 	bool EnableFormatConditionsCalculationAttr; // attr, optional
-	CT_Color TabColor[];
-	CT_OutlinePr OutlinePr[];
-	CT_PageSetUpPr PageSetUpPr[];
+	CT_Color TabColor;
+	CT_OutlinePr OutlinePr;
+	CT_PageSetUpPr PageSetUpPr;
 } CT_SheetPr;
 
 // CT_SheetDimension ...
@@ -2090,7 +2090,7 @@ typedef struct {
 // CT_SheetViews ...
 typedef struct {
 	CT_SheetView SheetView[];
-	CT_ExtensionList ExtLst[];
+	CT_ExtensionList ExtLst;
 } CT_SheetViews;
 
 // CT_SheetView ...
@@ -2114,10 +2114,10 @@ typedef struct {
 	unsigned int ZoomScaleSheetLayoutViewAttr; // attr, optional
 	unsigned int ZoomScalePageLayoutViewAttr; // attr, optional
 	unsigned int WorkbookViewIdAttr; // attr
-	CT_Pane Pane[];
+	CT_Pane Pane;
 	CT_Selection Selection[];
 	CT_PivotSelection PivotSelection[];
-	CT_ExtensionList ExtLst[];
+	CT_ExtensionList ExtLst;
 } CT_SheetView;
 
 // CT_Pane ...
@@ -2201,7 +2201,7 @@ typedef struct {
 	bool StartLabelsAttr; // attr, optional
 	bool TopLabelsAttr; // attr, optional
 	bool LinkAttr; // attr, optional
-	CT_DataRefs DataRefs[];
+	CT_DataRefs DataRefs;
 } CT_DataConsolidate;
 
 // ST_DataConsolidateFunction ...
@@ -2312,15 +2312,15 @@ typedef struct {
 	char ViewAttr; // attr, optional
 	bool ShowRulerAttr; // attr, optional
 	char TopLeftCellAttr; // attr, optional
-	CT_Pane Pane[];
-	CT_Selection Selection[];
-	CT_PageBreak RowBreaks[];
-	CT_PageBreak ColBreaks[];
-	CT_PageMargins PageMargins[];
-	CT_PrintOptions PrintOptions[];
-	CT_PageSetup PageSetup[];
-	CT_HeaderFooter HeaderFooter[];
-	CT_AutoFilter AutoFilter[];
+	CT_Pane Pane;
+	CT_Selection Selection;
+	CT_PageBreak RowBreaks;
+	CT_PageBreak ColBreaks;
+	CT_PageMargins PageMargins;
+	CT_PrintOptions PrintOptions;
+	CT_PageSetup PageSetup;
+	CT_HeaderFooter HeaderFooter;
+	CT_AutoFilter AutoFilter;
 	CT_ExtensionList ExtLst;
 } CT_CustomSheetView;
 
@@ -2348,8 +2348,8 @@ typedef struct {
 	char PromptTitleAttr; // attr, optional
 	char PromptAttr; // attr, optional
 	ST_Sqref SqrefAttr; // attr
-	char Formula1[];
-	char Formula2[];
+	char Formula1;
+	char Formula2;
 } CT_DataValidation;
 
 // ST_DataValidationType ...
@@ -2400,9 +2400,9 @@ typedef struct {
 	int StdDevAttr; // attr, optional
 	bool EqualAverageAttr; // attr, optional
 	char Formula[];
-	CT_ColorScale ColorScale[];
-	CT_DataBar DataBar[];
-	CT_IconSet IconSet[];
+	CT_ColorScale ColorScale;
+	CT_DataBar DataBar;
+	CT_IconSet IconSet;
 	CT_ExtensionList ExtLst;
 } CT_CfRule;
 
@@ -2448,7 +2448,7 @@ typedef struct {
 	unsigned int MaxLengthAttr; // attr, optional
 	bool ShowValueAttr; // attr, optional
 	CT_Cfvo Cfvo[];
-	CT_Color Color[];
+	CT_Color Color;
 } CT_DataBar;
 
 // CT_IconSet ...
@@ -2465,7 +2465,7 @@ typedef struct {
 	char TypeAttr; // attr
 	char ValAttr; // attr, optional
 	bool GteAttr; // attr, optional
-	CT_ExtensionList ExtLst[];
+	CT_ExtensionList ExtLst;
 } CT_Cfvo;
 
 // CT_PageMargins ...
@@ -2525,12 +2525,12 @@ typedef struct {
 	bool DifferentFirstAttr; // attr, optional
 	bool ScaleWithDocAttr; // attr, optional
 	bool AlignWithMarginsAttr; // attr, optional
-	char OddHeader[];
-	char OddFooter[];
-	char EvenHeader[];
-	char EvenFooter[];
-	char FirstHeader[];
-	char FirstFooter[];
+	char OddHeader;
+	char OddFooter;
+	char EvenHeader;
+	char EvenFooter;
+	char FirstHeader;
+	char FirstFooter;
 } CT_HeaderFooter;
 
 // ST_PrintError ...
@@ -2616,31 +2616,31 @@ typedef struct {
 
 // CT_Chartsheet ...
 typedef struct {
-	CT_ChartsheetPr SheetPr[];
-	CT_ChartsheetViews SheetViews[];
-	CT_ChartsheetProtection SheetProtection[];
-	CT_CustomChartsheetViews CustomSheetViews[];
+	CT_ChartsheetPr SheetPr;
+	CT_ChartsheetViews SheetViews;
+	CT_ChartsheetProtection SheetProtection;
+	CT_CustomChartsheetViews CustomSheetViews;
 	CT_PageMargins PageMargins;
-	CT_CsPageSetup PageSetup[];
+	CT_CsPageSetup PageSetup;
 	CT_HeaderFooter HeaderFooter;
-	CT_Drawing Drawing[];
-	CT_DrawingHF DrawingHF[];
-	CT_SheetBackgroundPicture Picture[];
-	CT_WebPublishItems WebPublishItems[];
-	CT_ExtensionList ExtLst[];
+	CT_Drawing Drawing;
+	CT_DrawingHF DrawingHF;
+	CT_SheetBackgroundPicture Picture;
+	CT_WebPublishItems WebPublishItems;
+	CT_ExtensionList ExtLst;
 } CT_Chartsheet;
 
 // CT_ChartsheetPr ...
 typedef struct {
 	bool PublishedAttr; // attr, optional
 	char CodeNameAttr; // attr, optional
-	CT_Color TabColor[];
+	CT_Color TabColor;
 } CT_ChartsheetPr;
 
 // CT_ChartsheetViews ...
 typedef struct {
 	CT_ChartsheetView SheetView[];
-	CT_ExtensionList ExtLst[];
+	CT_ExtensionList ExtLst;
 } CT_ChartsheetViews;
 
 // CT_ChartsheetView ...
@@ -2649,7 +2649,7 @@ typedef struct {
 	unsigned int ZoomScaleAttr; // attr, optional
 	unsigned int WorkbookViewIdAttr; // attr
 	bool ZoomToFitAttr; // attr, optional
-	CT_ExtensionList ExtLst[];
+	CT_ExtensionList ExtLst;
 } CT_ChartsheetView;
 
 // CT_ChartsheetProtection ...
@@ -2690,9 +2690,9 @@ typedef struct {
 	unsigned int ScaleAttr; // attr, optional
 	char StateAttr; // attr, optional
 	bool ZoomToFitAttr; // attr, optional
-	CT_PageMargins PageMargins[];
-	CT_CsPageSetup PageSetup[];
-	CT_HeaderFooter HeaderFooter[];
+	CT_PageMargins PageMargins;
+	CT_CsPageSetup PageSetup;
+	CT_HeaderFooter HeaderFooter;
 } CT_CustomChartsheetView;
 
 // CT_CustomProperties ...
@@ -2720,7 +2720,7 @@ typedef struct {
 	bool AutoLoadAttr; // attr, optional
 	unsigned int ShapeIdAttr; // attr
 	char RIdAttr; // attr, optional
-	CT_ObjectPr ObjectPr[];
+	CT_ObjectPr ObjectPr;
 } CT_OleObject;
 
 // CT_ObjectPr ...
@@ -2737,7 +2737,7 @@ typedef struct {
 	char AltTextAttr; // attr, optional
 	bool DdeAttr; // attr, optional
 	char RIdAttr; // attr, optional
-	CT_ObjectAnchor Anchor[];
+	CT_ObjectAnchor Anchor;
 } CT_ObjectPr;
 
 // ST_DvAspect ...
@@ -2774,7 +2774,7 @@ typedef struct {
 	unsigned int ShapeIdAttr; // attr
 	char RIdAttr; // attr
 	char NameAttr; // attr, optional
-	CT_ControlPr ControlPr[];
+	CT_ControlPr ControlPr;
 } CT_Control;
 
 // CT_ControlPr ...
@@ -2794,7 +2794,7 @@ typedef struct {
 	char ListFillRangeAttr; // attr, optional
 	char CfAttr; // attr, optional
 	char RIdAttr; // attr, optional
-	CT_ObjectAnchor Anchor[];
+	CT_ObjectAnchor Anchor;
 } CT_ControlPr;
 
 // ST_WebSourceType ...
@@ -2803,7 +2803,7 @@ typedef char ST_WebSourceType;
 // CT_IgnoredErrors ...
 typedef struct {
 	CT_IgnoredError IgnoredError[];
-	CT_ExtensionList ExtLst[];
+	CT_ExtensionList ExtLst;
 } CT_IgnoredErrors;
 
 // CT_IgnoredError ...
@@ -2838,13 +2838,13 @@ typedef CT_Metadata Metadata;
 
 // CT_Metadata ...
 typedef struct {
-	CT_MetadataTypes MetadataTypes[];
-	CT_MetadataStrings MetadataStrings[];
-	CT_MdxMetadata MdxMetadata[];
+	CT_MetadataTypes MetadataTypes;
+	CT_MetadataStrings MetadataStrings;
+	CT_MdxMetadata MdxMetadata;
 	CT_FutureMetadata FutureMetadata[];
-	CT_MetadataBlocks CellMetadata[];
-	CT_MetadataBlocks ValueMetadata[];
-	CT_ExtensionList ExtLst[];
+	CT_MetadataBlocks CellMetadata;
+	CT_MetadataBlocks ValueMetadata;
+	CT_ExtensionList ExtLst;
 } CT_Metadata;
 
 // CT_MetadataTypes ...
@@ -2907,12 +2907,12 @@ typedef struct {
 	char NameAttr; // attr
 	unsigned int CountAttr; // attr, optional
 	CT_FutureMetadataBlock Bk[];
-	CT_ExtensionList ExtLst[];
+	CT_ExtensionList ExtLst;
 } CT_FutureMetadata;
 
 // CT_FutureMetadataBlock ...
 typedef struct {
-	CT_ExtensionList ExtLst[];
+	CT_ExtensionList ExtLst;
 } CT_FutureMetadataBlock;
 
 // CT_MdxMetadata ...
@@ -3000,16 +3000,16 @@ typedef struct {
 	unsigned int IdAttr; // attr
 	char RAttr; // attr
 	unsigned int ConnectionIdAttr; // attr
-	CT_XmlCellPr XmlCellPr[];
-	CT_ExtensionList ExtLst[];
+	CT_XmlCellPr XmlCellPr;
+	CT_ExtensionList ExtLst;
 } CT_SingleXmlCell;
 
 // CT_XmlCellPr ...
 typedef struct {
 	unsigned int IdAttr; // attr
 	char UniqueNameAttr; // attr, optional
-	CT_XmlPr XmlPr[];
-	CT_ExtensionList ExtLst[];
+	CT_XmlPr XmlPr;
+	CT_ExtensionList ExtLst;
 } CT_XmlCellPr;
 
 // CT_XmlPr ...
@@ -3017,24 +3017,24 @@ typedef struct {
 	unsigned int MapIdAttr; // attr
 	char XpathAttr; // attr
 	char XmlDataTypeAttr; // attr
-	CT_ExtensionList ExtLst[];
+	CT_ExtensionList ExtLst;
 } CT_XmlPr;
 
 typedef CT_Stylesheet StyleSheet;
 
 // CT_Stylesheet ...
 typedef struct {
-	CT_NumFmts NumFmts[];
-	CT_Fonts Fonts[];
-	CT_Fills Fills[];
-	CT_Borders Borders[];
-	CT_CellStyleXfs CellStyleXfs[];
-	CT_CellXfs CellXfs[];
-	CT_CellStyles CellStyles[];
-	CT_Dxfs Dxfs[];
-	CT_TableStyles TableStyles[];
-	CT_Colors Colors[];
-	CT_ExtensionList ExtLst[];
+	CT_NumFmts NumFmts;
+	CT_Fonts Fonts;
+	CT_Fills Fills;
+	CT_Borders Borders;
+	CT_CellStyleXfs CellStyleXfs;
+	CT_CellXfs CellXfs;
+	CT_CellStyles CellStyles;
+	CT_Dxfs Dxfs;
+	CT_TableStyles TableStyles;
+	CT_Colors Colors;
+	CT_ExtensionList ExtLst;
 } CT_Stylesheet;
 
 // CT_CellAlignment ...
@@ -3067,19 +3067,19 @@ typedef struct {
 	bool DiagonalUpAttr; // attr, optional
 	bool DiagonalDownAttr; // attr, optional
 	bool OutlineAttr; // attr, optional
-	CT_BorderPr Start[];
-	CT_BorderPr End[];
-	CT_BorderPr Top[];
-	CT_BorderPr Bottom[];
-	CT_BorderPr Diagonal[];
-	CT_BorderPr Vertical[];
-	CT_BorderPr Horizontal[];
+	CT_BorderPr Start;
+	CT_BorderPr End;
+	CT_BorderPr Top;
+	CT_BorderPr Bottom;
+	CT_BorderPr Diagonal;
+	CT_BorderPr Vertical;
+	CT_BorderPr Horizontal;
 } CT_Border;
 
 // CT_BorderPr ...
 typedef struct {
 	char StyleAttr; // attr, optional
-	CT_Color Color[];
+	CT_Color Color;
 } CT_BorderPr;
 
 // CT_CellProtection ...
@@ -3102,15 +3102,15 @@ typedef struct {
 
 // CT_Fill ...
 typedef struct {
-	CT_PatternFill PatternFill[];
-	CT_GradientFill GradientFill[];
+	CT_PatternFill PatternFill;
+	CT_GradientFill GradientFill;
 } CT_Fill;
 
 // CT_PatternFill ...
 typedef struct {
 	char PatternTypeAttr; // attr, optional
-	CT_Color FgColor[];
-	CT_Color BgColor[];
+	CT_Color FgColor;
+	CT_Color BgColor;
 } CT_PatternFill;
 
 // CT_Color ...
@@ -3139,7 +3139,7 @@ typedef struct {
 // CT_GradientStop ...
 typedef struct {
 	float PositionAttr; // attr
-	CT_Color Color[];
+	CT_Color Color;
 } CT_GradientStop;
 
 // ST_GradientType ...
@@ -3190,9 +3190,9 @@ typedef struct {
 	bool ApplyBorderAttr; // attr, optional
 	bool ApplyAlignmentAttr; // attr, optional
 	bool ApplyProtectionAttr; // attr, optional
-	CT_CellAlignment Alignment[];
-	CT_CellProtection Protection[];
-	CT_ExtensionList ExtLst[];
+	CT_CellAlignment Alignment;
+	CT_CellProtection Protection;
+	CT_ExtensionList ExtLst;
 } CT_Xf;
 
 // CT_CellStyles ...
@@ -3209,7 +3209,7 @@ typedef struct {
 	unsigned int ILevelAttr; // attr, optional
 	bool HiddenAttr; // attr, optional
 	bool CustomBuiltinAttr; // attr, optional
-	CT_ExtensionList ExtLst[];
+	CT_ExtensionList ExtLst;
 } CT_CellStyle;
 
 // CT_Dxfs ...
@@ -3220,13 +3220,13 @@ typedef struct {
 
 // CT_Dxf ...
 typedef struct {
-	CT_Font Font[];
-	CT_NumFmt NumFmt[];
-	CT_Fill Fill[];
-	CT_CellAlignment Alignment[];
-	CT_Border Border[];
-	CT_CellProtection Protection[];
-	CT_ExtensionList ExtLst[];
+	CT_Font Font;
+	CT_NumFmt NumFmt;
+	CT_Fill Fill;
+	CT_CellAlignment Alignment;
+	CT_Border Border;
+	CT_CellProtection Protection;
+	CT_ExtensionList ExtLst;
 } CT_Dxf;
 
 // ST_NumFmtId ...
@@ -3249,8 +3249,8 @@ typedef unsigned int ST_DxfId;
 
 // CT_Colors ...
 typedef struct {
-	CT_IndexedColors IndexedColors[];
-	CT_MRUColors MruColors[];
+	CT_IndexedColors IndexedColors;
+	CT_MRUColors MruColors;
 } CT_Colors;
 
 // CT_IndexedColors ...
@@ -3346,21 +3346,21 @@ typedef int ST_FontFamily;
 
 // CT_Font ...
 typedef struct {
-	CT_FontName Name[];
-	CT_IntProperty Charset[];
-	CT_FontFamily Family[];
-	CT_BooleanProperty B[];
-	CT_BooleanProperty I[];
-	CT_BooleanProperty Strike[];
-	CT_BooleanProperty Outline[];
-	CT_BooleanProperty Shadow[];
-	CT_BooleanProperty Condense[];
-	CT_BooleanProperty Extend[];
-	CT_Color Color[];
-	CT_FontSize Sz[];
-	CT_UnderlineProperty U[];
-	CT_VerticalAlignFontProperty VertAlign[];
-	CT_FontScheme Scheme[];
+	CT_FontName Name;
+	CT_IntProperty Charset;
+	CT_FontFamily Family;
+	CT_BooleanProperty B;
+	CT_BooleanProperty I;
+	CT_BooleanProperty Strike;
+	CT_BooleanProperty Outline;
+	CT_BooleanProperty Shadow;
+	CT_BooleanProperty Condense;
+	CT_BooleanProperty Extend;
+	CT_Color Color;
+	CT_FontSize Sz;
+	CT_UnderlineProperty U;
+	CT_VerticalAlignFontProperty VertAlign;
+	CT_FontScheme Scheme;
 } CT_Font;
 
 // AG_AutoFormat ...
@@ -3378,18 +3378,18 @@ typedef CT_ExternalLink ExternalLink;
 
 // CT_ExternalLink ...
 typedef struct {
-	CT_ExternalBook ExternalBook[];
-	CT_DdeLink DdeLink[];
-	CT_OleLink OleLink[];
+	CT_ExternalBook ExternalBook;
+	CT_DdeLink DdeLink;
+	CT_OleLink OleLink;
 	CT_ExtensionList ExtLst;
 } CT_ExternalLink;
 
 // CT_ExternalBook ...
 typedef struct {
 	char RIdAttr; // attr
-	CT_ExternalSheetNames SheetNames[];
-	CT_ExternalDefinedNames DefinedNames[];
-	CT_ExternalSheetDataSet SheetDataSet[];
+	CT_ExternalSheetNames SheetNames;
+	CT_ExternalDefinedNames DefinedNames;
+	CT_ExternalSheetDataSet SheetDataSet;
 } CT_ExternalBook;
 
 // CT_ExternalSheetNames ...
@@ -3437,14 +3437,14 @@ typedef struct {
 	char RAttr; // attr, optional
 	char TAttr; // attr, optional
 	unsigned int VmAttr; // attr, optional
-	char V[];
+	char V;
 } CT_ExternalCell;
 
 // CT_DdeLink ...
 typedef struct {
 	char DdeServiceAttr; // attr
 	char DdeTopicAttr; // attr
-	CT_DdeItems DdeItems[];
+	CT_DdeItems DdeItems;
 } CT_DdeLink;
 
 // CT_DdeItems ...
@@ -3458,7 +3458,7 @@ typedef struct {
 	bool OleAttr; // attr, optional
 	bool AdviseAttr; // attr, optional
 	bool PreferPicAttr; // attr, optional
-	CT_DdeValues Values[];
+	CT_DdeValues Values;
 } CT_DdeItem;
 
 // CT_DdeValues ...
@@ -3471,7 +3471,7 @@ typedef struct {
 // CT_DdeValue ...
 typedef struct {
 	char TAttr; // attr, optional
-	char Val[];
+	char Val;
 } CT_DdeValue;
 
 // ST_DdeValueType ...
@@ -3481,7 +3481,7 @@ typedef char ST_DdeValueType;
 typedef struct {
 	char RIdAttr; // attr
 	char ProgIdAttr; // attr
-	CT_OleItems OleItems[];
+	CT_OleItems OleItems;
 } CT_OleLink;
 
 // CT_OleItems ...
@@ -3523,11 +3523,11 @@ typedef struct {
 	char DataCellStyleAttr; // attr, optional
 	char TotalsRowCellStyleAttr; // attr, optional
 	unsigned int ConnectionIdAttr; // attr, optional
-	CT_AutoFilter AutoFilter[];
-	CT_SortState SortState[];
-	CT_TableColumns TableColumns[];
-	CT_TableStyleInfo TableStyleInfo[];
-	CT_ExtensionList ExtLst[];
+	CT_AutoFilter AutoFilter;
+	CT_SortState SortState;
+	CT_TableColumns TableColumns;
+	CT_TableStyleInfo TableStyleInfo;
+	CT_ExtensionList ExtLst;
 } CT_Table;
 
 // ST_TableType ...
@@ -3562,10 +3562,10 @@ typedef struct {
 	char HeaderRowCellStyleAttr; // attr, optional
 	char DataCellStyleAttr; // attr, optional
 	char TotalsRowCellStyleAttr; // attr, optional
-	CT_TableFormula CalculatedColumnFormula[];
-	CT_TableFormula TotalsRowFormula[];
-	CT_XmlColumnPr XmlColumnPr[];
-	CT_ExtensionList ExtLst[];
+	CT_TableFormula CalculatedColumnFormula;
+	CT_TableFormula TotalsRowFormula;
+	CT_XmlColumnPr XmlColumnPr;
+	CT_ExtensionList ExtLst;
 } CT_TableColumn;
 
 // CT_TableFormula ...
@@ -3582,7 +3582,7 @@ typedef struct {
 	char XpathAttr; // attr
 	bool DenormalizedAttr; // attr, optional
 	char XmlDataTypeAttr; // attr
-	CT_ExtensionList ExtLst[];
+	CT_ExtensionList ExtLst;
 } CT_XmlColumnPr;
 
 // ST_XmlDataType ...
@@ -3611,7 +3611,7 @@ typedef struct {
 // CT_VolTopic ...
 typedef struct {
 	char TAttr; // attr, optional
-	char V[];
+	char V;
 	char Stp[];
 	CT_VolTopicRef Tr[];
 } CT_VolTopic;
@@ -3633,25 +3633,25 @@ typedef CT_Workbook Workbook;
 // CT_Workbook ...
 typedef struct {
 	char ConformanceAttr; // attr, optional
-	CT_FileVersion FileVersion[];
-	CT_FileSharing FileSharing[];
-	CT_WorkbookPr WorkbookPr[];
-	CT_WorkbookProtection WorkbookProtection[];
-	CT_BookViews BookViews[];
-	CT_Sheets Sheets[];
-	CT_FunctionGroups FunctionGroups[];
-	CT_ExternalReferences ExternalReferences[];
-	CT_DefinedNames DefinedNames[];
-	CT_CalcPr CalcPr[];
-	CT_OleSize OleSize[];
-	CT_CustomWorkbookViews CustomWorkbookViews[];
-	CT_PivotCaches PivotCaches[];
-	CT_SmartTagPr SmartTagPr[];
-	CT_SmartTagTypes SmartTagTypes[];
-	CT_WebPublishing WebPublishing[];
+	CT_FileVersion FileVersion;
+	CT_FileSharing FileSharing;
+	CT_WorkbookPr WorkbookPr;
+	CT_WorkbookProtection WorkbookProtection;
+	CT_BookViews BookViews;
+	CT_Sheets Sheets;
+	CT_FunctionGroups FunctionGroups;
+	CT_ExternalReferences ExternalReferences;
+	CT_DefinedNames DefinedNames;
+	CT_CalcPr CalcPr;
+	CT_OleSize OleSize;
+	CT_CustomWorkbookViews CustomWorkbookViews;
+	CT_PivotCaches PivotCaches;
+	CT_SmartTagPr SmartTagPr;
+	CT_SmartTagTypes SmartTagTypes;
+	CT_WebPublishing WebPublishing;
 	CT_FileRecoveryPr FileRecoveryPr[];
-	CT_WebPublishObjects WebPublishObjects[];
-	CT_ExtensionList ExtLst[];
+	CT_WebPublishObjects WebPublishObjects;
+	CT_ExtensionList ExtLst;
 } CT_Workbook;
 
 // CT_FileVersion ...
@@ -3683,7 +3683,7 @@ typedef struct {
 	unsigned int FirstSheetAttr; // attr, optional
 	unsigned int ActiveTabAttr; // attr, optional
 	bool AutoFilterDateGroupingAttr; // attr, optional
-	CT_ExtensionList ExtLst[];
+	CT_ExtensionList ExtLst;
 } CT_BookView;
 
 // ST_Visibility ...

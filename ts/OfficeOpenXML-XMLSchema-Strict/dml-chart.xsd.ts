@@ -40,22 +40,22 @@ export class CT_NumVal {
 // CT_NumData ...
 export class CT_NumData {
 	FormatCode: string;
-	PtCount: Array<CT_UnsignedInt>;
+	PtCount: CT_UnsignedInt;
 	Pt: Array<CT_NumVal>;
-	ExtLst: Array<CT_ExtensionList>;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_NumRef ...
 export class CT_NumRef {
 	F: string;
-	NumCache: Array<CT_NumData>;
-	ExtLst: Array<CT_ExtensionList>;
+	NumCache: CT_NumData;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_NumDataSource ...
 export class CT_NumDataSource {
-	NumRef: Array<CT_NumRef>;
-	NumLit: Array<CT_NumData>;
+	NumRef: CT_NumRef;
+	NumLit: CT_NumData;
 }
 
 // CT_StrVal ...
@@ -66,22 +66,22 @@ export class CT_StrVal {
 
 // CT_StrData ...
 export class CT_StrData {
-	PtCount: Array<CT_UnsignedInt>;
+	PtCount: CT_UnsignedInt;
 	Pt: Array<CT_StrVal>;
-	ExtLst: Array<CT_ExtensionList>;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_StrRef ...
 export class CT_StrRef {
 	F: string;
-	StrCache: Array<CT_StrData>;
-	ExtLst: Array<CT_ExtensionList>;
+	StrCache: CT_StrData;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_Tx ...
 export class CT_Tx {
-	StrRef: Array<CT_StrRef>;
-	Rich: Array<CT_TextBody>;
+	StrRef: CT_StrRef;
+	Rich: CT_TextBody;
 }
 
 // CT_TextLanguageID ...
@@ -96,30 +96,30 @@ export class CT_Lvl {
 
 // CT_MultiLvlStrData ...
 export class CT_MultiLvlStrData {
-	PtCount: Array<CT_UnsignedInt>;
+	PtCount: CT_UnsignedInt;
 	Lvl: Array<CT_Lvl>;
-	ExtLst: Array<CT_ExtensionList>;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_MultiLvlStrRef ...
 export class CT_MultiLvlStrRef {
 	F: string;
-	MultiLvlStrCache: Array<CT_MultiLvlStrData>;
-	ExtLst: Array<CT_ExtensionList>;
+	MultiLvlStrCache: CT_MultiLvlStrData;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_AxDataSource ...
 export class CT_AxDataSource {
-	MultiLvlStrRef: Array<CT_MultiLvlStrRef>;
-	NumRef: Array<CT_NumRef>;
-	NumLit: Array<CT_NumData>;
-	StrRef: Array<CT_StrRef>;
-	StrLit: Array<CT_StrData>;
+	MultiLvlStrRef: CT_MultiLvlStrRef;
+	NumRef: CT_NumRef;
+	NumLit: CT_NumData;
+	StrRef: CT_StrRef;
+	StrLit: CT_StrData;
 }
 
 // CT_SerTx ...
 export class CT_SerTx {
-	StrRef: Array<CT_StrRef>;
+	StrRef: CT_StrRef;
 	V: string;
 }
 
@@ -147,32 +147,32 @@ export class CT_LayoutMode {
 
 // CT_ManualLayout ...
 export class CT_ManualLayout {
-	LayoutTarget: Array<CT_LayoutTarget>;
-	XMode: Array<CT_LayoutMode>;
-	YMode: Array<CT_LayoutMode>;
-	WMode: Array<CT_LayoutMode>;
-	HMode: Array<CT_LayoutMode>;
-	X: Array<CT_Double>;
-	Y: Array<CT_Double>;
-	W: Array<CT_Double>;
-	H: Array<CT_Double>;
-	ExtLst: Array<CT_ExtensionList>;
+	LayoutTarget: CT_LayoutTarget;
+	XMode: CT_LayoutMode;
+	YMode: CT_LayoutMode;
+	WMode: CT_LayoutMode;
+	HMode: CT_LayoutMode;
+	X: CT_Double;
+	Y: CT_Double;
+	W: CT_Double;
+	H: CT_Double;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_Layout ...
 export class CT_Layout {
-	ManualLayout: Array<CT_ManualLayout>;
-	ExtLst: Array<CT_ExtensionList>;
+	ManualLayout: CT_ManualLayout;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_Title ...
 export class CT_Title {
-	Tx: Array<CT_Tx>;
-	Layout: Array<CT_Layout>;
-	Overlay: Array<CT_Boolean>;
-	SpPr: Array<CT_ShapeProperties>;
-	TxPr: Array<CT_TextBody>;
-	ExtLst: Array<CT_ExtensionList>;
+	Tx: CT_Tx;
+	Layout: CT_Layout;
+	Overlay: CT_Boolean;
+	SpPr: CT_ShapeProperties;
+	TxPr: CT_TextBody;
+	ExtLst: CT_ExtensionList;
 }
 
 // ST_RotX ...
@@ -227,21 +227,21 @@ export class CT_Perspective {
 
 // CT_View3D ...
 export class CT_View3D {
-	RotX: Array<CT_RotX>;
-	HPercent: Array<CT_HPercent>;
-	RotY: Array<CT_RotY>;
-	DepthPercent: Array<CT_DepthPercent>;
-	RAngAx: Array<CT_Boolean>;
-	Perspective: Array<CT_Perspective>;
-	ExtLst: Array<CT_ExtensionList>;
+	RotX: CT_RotX;
+	HPercent: CT_HPercent;
+	RotY: CT_RotY;
+	DepthPercent: CT_DepthPercent;
+	RAngAx: CT_Boolean;
+	Perspective: CT_Perspective;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_Surface ...
 export class CT_Surface {
-	Thickness: Array<CT_Thickness>;
-	SpPr: Array<CT_ShapeProperties>;
-	PictureOptions: Array<CT_PictureOptions>;
-	ExtLst: Array<CT_ExtensionList>;
+	Thickness: CT_Thickness;
+	SpPr: CT_ShapeProperties;
+	PictureOptions: CT_PictureOptions;
+	ExtLst: CT_ExtensionList;
 }
 
 // ST_Thickness ...
@@ -259,13 +259,13 @@ export class CT_Thickness {
 
 // CT_DTable ...
 export class CT_DTable {
-	ShowHorzBorder: Array<CT_Boolean>;
-	ShowVertBorder: Array<CT_Boolean>;
-	ShowOutline: Array<CT_Boolean>;
-	ShowKeys: Array<CT_Boolean>;
-	SpPr: Array<CT_ShapeProperties>;
-	TxPr: Array<CT_TextBody>;
-	ExtLst: Array<CT_ExtensionList>;
+	ShowHorzBorder: CT_Boolean;
+	ShowVertBorder: CT_Boolean;
+	ShowOutline: CT_Boolean;
+	ShowKeys: CT_Boolean;
+	SpPr: CT_ShapeProperties;
+	TxPr: CT_TextBody;
+	ExtLst: CT_ExtensionList;
 }
 
 // ST_GapAmount ...
@@ -409,38 +409,38 @@ export class CT_DLblPos {
 
 // EG_DLblShared ...
 export class EG_DLblShared {
-	NumFmt: Array<CT_NumFmt>;
-	SpPr: Array<CT_ShapeProperties>;
-	TxPr: Array<CT_TextBody>;
-	DLblPos: Array<CT_DLblPos>;
-	ShowLegendKey: Array<CT_Boolean>;
-	ShowVal: Array<CT_Boolean>;
-	ShowCatName: Array<CT_Boolean>;
-	ShowSerName: Array<CT_Boolean>;
-	ShowPercent: Array<CT_Boolean>;
-	ShowBubbleSize: Array<CT_Boolean>;
+	NumFmt: CT_NumFmt;
+	SpPr: CT_ShapeProperties;
+	TxPr: CT_TextBody;
+	DLblPos: CT_DLblPos;
+	ShowLegendKey: CT_Boolean;
+	ShowVal: CT_Boolean;
+	ShowCatName: CT_Boolean;
+	ShowSerName: CT_Boolean;
+	ShowPercent: CT_Boolean;
+	ShowBubbleSize: CT_Boolean;
 	Separator: string;
 }
 
 // Group_DLbl ...
 export class Group_DLbl {
-	Layout: Array<CT_Layout>;
-	Tx: Array<CT_Tx>;
+	Layout: CT_Layout;
+	Tx: CT_Tx;
 	EG_DLblShared: Array<EG_DLblShared>;
 }
 
 // CT_DLbl ...
 export class CT_DLbl {
 	Group_DLbl: Array<Group_DLbl>;
-	Idx: Array<CT_UnsignedInt>;
-	Delete: Array<CT_Boolean>;
-	ExtLst: Array<CT_ExtensionList>;
+	Idx: CT_UnsignedInt;
+	Delete: CT_Boolean;
+	ExtLst: CT_ExtensionList;
 }
 
 // Group_DLbls ...
 export class Group_DLbls {
-	ShowLeaderLines: Array<CT_Boolean>;
-	LeaderLines: Array<CT_ChartLines>;
+	ShowLeaderLines: CT_Boolean;
+	LeaderLines: CT_ChartLines;
 	EG_DLblShared: Array<EG_DLblShared>;
 }
 
@@ -448,8 +448,8 @@ export class Group_DLbls {
 export class CT_DLbls {
 	Group_DLbls: Array<Group_DLbls>;
 	DLbl: Array<CT_DLbl>;
-	Delete: Array<CT_Boolean>;
-	ExtLst: Array<CT_ExtensionList>;
+	Delete: CT_Boolean;
+	ExtLst: CT_ExtensionList;
 }
 
 // ST_MarkerStyle ...
@@ -483,22 +483,22 @@ export class CT_MarkerSize {
 
 // CT_Marker ...
 export class CT_Marker {
-	Symbol: Array<CT_MarkerStyle>;
-	Size: Array<CT_MarkerSize>;
-	SpPr: Array<CT_ShapeProperties>;
-	ExtLst: Array<CT_ExtensionList>;
+	Symbol: CT_MarkerStyle;
+	Size: CT_MarkerSize;
+	SpPr: CT_ShapeProperties;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_DPt ...
 export class CT_DPt {
-	Idx: Array<CT_UnsignedInt>;
-	InvertIfNegative: Array<CT_Boolean>;
-	Marker: Array<CT_Marker>;
-	Bubble3D: Array<CT_Boolean>;
-	Explosion: Array<CT_UnsignedInt>;
-	SpPr: Array<CT_ShapeProperties>;
-	PictureOptions: Array<CT_PictureOptions>;
-	ExtLst: Array<CT_ExtensionList>;
+	Idx: CT_UnsignedInt;
+	InvertIfNegative: CT_Boolean;
+	Marker: CT_Marker;
+	Bubble3D: CT_Boolean;
+	Explosion: CT_UnsignedInt;
+	SpPr: CT_ShapeProperties;
+	PictureOptions: CT_PictureOptions;
+	ExtLst: CT_ExtensionList;
 }
 
 // ST_TrendlineType ...
@@ -534,28 +534,28 @@ export class CT_Period {
 
 // CT_TrendlineLbl ...
 export class CT_TrendlineLbl {
-	Layout: Array<CT_Layout>;
-	Tx: Array<CT_Tx>;
-	NumFmt: Array<CT_NumFmt>;
-	SpPr: Array<CT_ShapeProperties>;
-	TxPr: Array<CT_TextBody>;
-	ExtLst: Array<CT_ExtensionList>;
+	Layout: CT_Layout;
+	Tx: CT_Tx;
+	NumFmt: CT_NumFmt;
+	SpPr: CT_ShapeProperties;
+	TxPr: CT_TextBody;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_Trendline ...
 export class CT_Trendline {
 	Name: string;
-	SpPr: Array<CT_ShapeProperties>;
-	TrendlineType: Array<CT_TrendlineType>;
-	Order: Array<CT_Order>;
-	Period: Array<CT_Period>;
-	Forward: Array<CT_Double>;
-	Backward: Array<CT_Double>;
-	Intercept: Array<CT_Double>;
-	DispRSqr: Array<CT_Boolean>;
-	DispEq: Array<CT_Boolean>;
-	TrendlineLbl: Array<CT_TrendlineLbl>;
-	ExtLst: Array<CT_ExtensionList>;
+	SpPr: CT_ShapeProperties;
+	TrendlineType: CT_TrendlineType;
+	Order: CT_Order;
+	Period: CT_Period;
+	Forward: CT_Double;
+	Backward: CT_Double;
+	Intercept: CT_Double;
+	DispRSqr: CT_Boolean;
+	DispEq: CT_Boolean;
+	TrendlineLbl: CT_TrendlineLbl;
+	ExtLst: CT_ExtensionList;
 }
 
 // ST_ErrDir ...
@@ -597,137 +597,137 @@ export class CT_ErrValType {
 
 // CT_ErrBars ...
 export class CT_ErrBars {
-	ErrDir: Array<CT_ErrDir>;
-	ErrBarType: Array<CT_ErrBarType>;
-	ErrValType: Array<CT_ErrValType>;
-	NoEndCap: Array<CT_Boolean>;
-	Plus: Array<CT_NumDataSource>;
-	Minus: Array<CT_NumDataSource>;
-	Val: Array<CT_Double>;
-	SpPr: Array<CT_ShapeProperties>;
-	ExtLst: Array<CT_ExtensionList>;
+	ErrDir: CT_ErrDir;
+	ErrBarType: CT_ErrBarType;
+	ErrValType: CT_ErrValType;
+	NoEndCap: CT_Boolean;
+	Plus: CT_NumDataSource;
+	Minus: CT_NumDataSource;
+	Val: CT_Double;
+	SpPr: CT_ShapeProperties;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_UpDownBar ...
 export class CT_UpDownBar {
-	SpPr: Array<CT_ShapeProperties>;
+	SpPr: CT_ShapeProperties;
 }
 
 // CT_UpDownBars ...
 export class CT_UpDownBars {
-	GapWidth: Array<CT_GapAmount>;
-	UpBars: Array<CT_UpDownBar>;
-	DownBars: Array<CT_UpDownBar>;
-	ExtLst: Array<CT_ExtensionList>;
+	GapWidth: CT_GapAmount;
+	UpBars: CT_UpDownBar;
+	DownBars: CT_UpDownBar;
+	ExtLst: CT_ExtensionList;
 }
 
 // EG_SerShared ...
 export class EG_SerShared {
-	Idx: Array<CT_UnsignedInt>;
-	Order: Array<CT_UnsignedInt>;
-	Tx: Array<CT_SerTx>;
-	SpPr: Array<CT_ShapeProperties>;
+	Idx: CT_UnsignedInt;
+	Order: CT_UnsignedInt;
+	Tx: CT_SerTx;
+	SpPr: CT_ShapeProperties;
 }
 
 // CT_LineSer ...
 export class CT_LineSer {
 	EG_SerShared: Array<EG_SerShared>;
-	Marker: Array<CT_Marker>;
+	Marker: CT_Marker;
 	DPt: Array<CT_DPt>;
-	DLbls: Array<CT_DLbls>;
+	DLbls: CT_DLbls;
 	Trendline: Array<CT_Trendline>;
-	ErrBars: Array<CT_ErrBars>;
-	Cat: Array<CT_AxDataSource>;
-	Val: Array<CT_NumDataSource>;
-	Smooth: Array<CT_Boolean>;
-	ExtLst: Array<CT_ExtensionList>;
+	ErrBars: CT_ErrBars;
+	Cat: CT_AxDataSource;
+	Val: CT_NumDataSource;
+	Smooth: CT_Boolean;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_ScatterSer ...
 export class CT_ScatterSer {
 	EG_SerShared: Array<EG_SerShared>;
-	Marker: Array<CT_Marker>;
+	Marker: CT_Marker;
 	DPt: Array<CT_DPt>;
-	DLbls: Array<CT_DLbls>;
+	DLbls: CT_DLbls;
 	Trendline: Array<CT_Trendline>;
 	ErrBars: Array<CT_ErrBars>;
-	XVal: Array<CT_AxDataSource>;
-	YVal: Array<CT_NumDataSource>;
-	Smooth: Array<CT_Boolean>;
-	ExtLst: Array<CT_ExtensionList>;
+	XVal: CT_AxDataSource;
+	YVal: CT_NumDataSource;
+	Smooth: CT_Boolean;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_RadarSer ...
 export class CT_RadarSer {
 	EG_SerShared: Array<EG_SerShared>;
-	Marker: Array<CT_Marker>;
+	Marker: CT_Marker;
 	DPt: Array<CT_DPt>;
-	DLbls: Array<CT_DLbls>;
-	Cat: Array<CT_AxDataSource>;
-	Val: Array<CT_NumDataSource>;
-	ExtLst: Array<CT_ExtensionList>;
+	DLbls: CT_DLbls;
+	Cat: CT_AxDataSource;
+	Val: CT_NumDataSource;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_BarSer ...
 export class CT_BarSer {
 	EG_SerShared: Array<EG_SerShared>;
-	InvertIfNegative: Array<CT_Boolean>;
-	PictureOptions: Array<CT_PictureOptions>;
+	InvertIfNegative: CT_Boolean;
+	PictureOptions: CT_PictureOptions;
 	DPt: Array<CT_DPt>;
-	DLbls: Array<CT_DLbls>;
+	DLbls: CT_DLbls;
 	Trendline: Array<CT_Trendline>;
-	ErrBars: Array<CT_ErrBars>;
-	Cat: Array<CT_AxDataSource>;
-	Val: Array<CT_NumDataSource>;
-	Shape: Array<CT_Shape>;
-	ExtLst: Array<CT_ExtensionList>;
+	ErrBars: CT_ErrBars;
+	Cat: CT_AxDataSource;
+	Val: CT_NumDataSource;
+	Shape: CT_Shape;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_AreaSer ...
 export class CT_AreaSer {
 	EG_SerShared: Array<EG_SerShared>;
-	PictureOptions: Array<CT_PictureOptions>;
+	PictureOptions: CT_PictureOptions;
 	DPt: Array<CT_DPt>;
-	DLbls: Array<CT_DLbls>;
+	DLbls: CT_DLbls;
 	Trendline: Array<CT_Trendline>;
 	ErrBars: Array<CT_ErrBars>;
-	Cat: Array<CT_AxDataSource>;
-	Val: Array<CT_NumDataSource>;
-	ExtLst: Array<CT_ExtensionList>;
+	Cat: CT_AxDataSource;
+	Val: CT_NumDataSource;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_PieSer ...
 export class CT_PieSer {
 	EG_SerShared: Array<EG_SerShared>;
-	Explosion: Array<CT_UnsignedInt>;
+	Explosion: CT_UnsignedInt;
 	DPt: Array<CT_DPt>;
-	DLbls: Array<CT_DLbls>;
-	Cat: Array<CT_AxDataSource>;
-	Val: Array<CT_NumDataSource>;
-	ExtLst: Array<CT_ExtensionList>;
+	DLbls: CT_DLbls;
+	Cat: CT_AxDataSource;
+	Val: CT_NumDataSource;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_BubbleSer ...
 export class CT_BubbleSer {
 	EG_SerShared: Array<EG_SerShared>;
-	InvertIfNegative: Array<CT_Boolean>;
+	InvertIfNegative: CT_Boolean;
 	DPt: Array<CT_DPt>;
-	DLbls: Array<CT_DLbls>;
+	DLbls: CT_DLbls;
 	Trendline: Array<CT_Trendline>;
 	ErrBars: Array<CT_ErrBars>;
-	XVal: Array<CT_AxDataSource>;
-	YVal: Array<CT_NumDataSource>;
-	BubbleSize: Array<CT_NumDataSource>;
-	Bubble3D: Array<CT_Boolean>;
-	ExtLst: Array<CT_ExtensionList>;
+	XVal: CT_AxDataSource;
+	YVal: CT_NumDataSource;
+	BubbleSize: CT_NumDataSource;
+	Bubble3D: CT_Boolean;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_SurfaceSer ...
 export class CT_SurfaceSer {
 	EG_SerShared: Array<EG_SerShared>;
-	Cat: Array<CT_AxDataSource>;
-	Val: Array<CT_NumDataSource>;
-	ExtLst: Array<CT_ExtensionList>;
+	Cat: CT_AxDataSource;
+	Val: CT_NumDataSource;
+	ExtLst: CT_ExtensionList;
 }
 
 // ST_Grouping ...
@@ -744,46 +744,46 @@ export class CT_Grouping {
 
 // CT_ChartLines ...
 export class CT_ChartLines {
-	SpPr: Array<CT_ShapeProperties>;
+	SpPr: CT_ShapeProperties;
 }
 
 // EG_LineChartShared ...
 export class EG_LineChartShared {
-	Grouping: Array<CT_Grouping>;
-	VaryColors: Array<CT_Boolean>;
+	Grouping: CT_Grouping;
+	VaryColors: CT_Boolean;
 	Ser: Array<CT_LineSer>;
-	DLbls: Array<CT_DLbls>;
-	DropLines: Array<CT_ChartLines>;
+	DLbls: CT_DLbls;
+	DropLines: CT_ChartLines;
 }
 
 // CT_LineChart ...
 export class CT_LineChart {
 	EG_LineChartShared: Array<EG_LineChartShared>;
-	HiLowLines: Array<CT_ChartLines>;
-	UpDownBars: Array<CT_UpDownBars>;
-	Marker: Array<CT_Boolean>;
-	Smooth: Array<CT_Boolean>;
+	HiLowLines: CT_ChartLines;
+	UpDownBars: CT_UpDownBars;
+	Marker: CT_Boolean;
+	Smooth: CT_Boolean;
 	AxId: Array<CT_UnsignedInt>;
-	ExtLst: Array<CT_ExtensionList>;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_Line3DChart ...
 export class CT_Line3DChart {
 	EG_LineChartShared: Array<EG_LineChartShared>;
-	GapDepth: Array<CT_GapAmount>;
+	GapDepth: CT_GapAmount;
 	AxId: Array<CT_UnsignedInt>;
-	ExtLst: Array<CT_ExtensionList>;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_StockChart ...
 export class CT_StockChart {
 	Ser: Array<CT_LineSer>;
-	DLbls: Array<CT_DLbls>;
-	DropLines: Array<CT_ChartLines>;
-	HiLowLines: Array<CT_ChartLines>;
-	UpDownBars: Array<CT_UpDownBars>;
+	DLbls: CT_DLbls;
+	DropLines: CT_ChartLines;
+	HiLowLines: CT_ChartLines;
+	UpDownBars: CT_UpDownBars;
 	AxId: Array<CT_UnsignedInt>;
-	ExtLst: Array<CT_ExtensionList>;
+	ExtLst: CT_ExtensionList;
 }
 
 // ST_ScatterStyle ...
@@ -803,12 +803,12 @@ export class CT_ScatterStyle {
 
 // CT_ScatterChart ...
 export class CT_ScatterChart {
-	ScatterStyle: Array<CT_ScatterStyle>;
-	VaryColors: Array<CT_Boolean>;
+	ScatterStyle: CT_ScatterStyle;
+	VaryColors: CT_Boolean;
 	Ser: Array<CT_ScatterSer>;
-	DLbls: Array<CT_DLbls>;
+	DLbls: CT_DLbls;
 	AxId: Array<CT_UnsignedInt>;
-	ExtLst: Array<CT_ExtensionList>;
+	ExtLst: CT_ExtensionList;
 }
 
 // ST_RadarStyle ...
@@ -825,12 +825,12 @@ export class CT_RadarStyle {
 
 // CT_RadarChart ...
 export class CT_RadarChart {
-	RadarStyle: Array<CT_RadarStyle>;
-	VaryColors: Array<CT_Boolean>;
+	RadarStyle: CT_RadarStyle;
+	VaryColors: CT_Boolean;
 	Ser: Array<CT_RadarSer>;
-	DLbls: Array<CT_DLbls>;
+	DLbls: CT_DLbls;
 	AxId: Array<CT_UnsignedInt>;
-	ExtLst: Array<CT_ExtensionList>;
+	ExtLst: CT_ExtensionList;
 }
 
 // ST_BarGrouping ...
@@ -874,83 +874,83 @@ export class CT_Shape {
 
 // EG_BarChartShared ...
 export class EG_BarChartShared {
-	BarDir: Array<CT_BarDir>;
-	Grouping: Array<CT_BarGrouping>;
-	VaryColors: Array<CT_Boolean>;
+	BarDir: CT_BarDir;
+	Grouping: CT_BarGrouping;
+	VaryColors: CT_Boolean;
 	Ser: Array<CT_BarSer>;
-	DLbls: Array<CT_DLbls>;
+	DLbls: CT_DLbls;
 }
 
 // CT_BarChart ...
 export class CT_BarChart {
 	EG_BarChartShared: Array<EG_BarChartShared>;
-	GapWidth: Array<CT_GapAmount>;
-	Overlap: Array<CT_Overlap>;
+	GapWidth: CT_GapAmount;
+	Overlap: CT_Overlap;
 	SerLines: Array<CT_ChartLines>;
 	AxId: Array<CT_UnsignedInt>;
-	ExtLst: Array<CT_ExtensionList>;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_Bar3DChart ...
 export class CT_Bar3DChart {
 	EG_BarChartShared: Array<EG_BarChartShared>;
-	GapWidth: Array<CT_GapAmount>;
-	GapDepth: Array<CT_GapAmount>;
-	Shape: Array<CT_Shape>;
+	GapWidth: CT_GapAmount;
+	GapDepth: CT_GapAmount;
+	Shape: CT_Shape;
 	AxId: Array<CT_UnsignedInt>;
-	ExtLst: Array<CT_ExtensionList>;
+	ExtLst: CT_ExtensionList;
 }
 
 // EG_AreaChartShared ...
 export class EG_AreaChartShared {
-	Grouping: Array<CT_Grouping>;
-	VaryColors: Array<CT_Boolean>;
+	Grouping: CT_Grouping;
+	VaryColors: CT_Boolean;
 	Ser: Array<CT_AreaSer>;
-	DLbls: Array<CT_DLbls>;
-	DropLines: Array<CT_ChartLines>;
+	DLbls: CT_DLbls;
+	DropLines: CT_ChartLines;
 }
 
 // CT_AreaChart ...
 export class CT_AreaChart {
 	EG_AreaChartShared: Array<EG_AreaChartShared>;
 	AxId: Array<CT_UnsignedInt>;
-	ExtLst: Array<CT_ExtensionList>;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_Area3DChart ...
 export class CT_Area3DChart {
 	EG_AreaChartShared: Array<EG_AreaChartShared>;
-	GapDepth: Array<CT_GapAmount>;
+	GapDepth: CT_GapAmount;
 	AxId: Array<CT_UnsignedInt>;
-	ExtLst: Array<CT_ExtensionList>;
+	ExtLst: CT_ExtensionList;
 }
 
 // EG_PieChartShared ...
 export class EG_PieChartShared {
-	VaryColors: Array<CT_Boolean>;
+	VaryColors: CT_Boolean;
 	Ser: Array<CT_PieSer>;
-	DLbls: Array<CT_DLbls>;
+	DLbls: CT_DLbls;
 }
 
 // CT_PieChart ...
 export class CT_PieChart {
 	EG_PieChartShared: Array<EG_PieChartShared>;
-	FirstSliceAng: Array<CT_FirstSliceAng>;
-	ExtLst: Array<CT_ExtensionList>;
+	FirstSliceAng: CT_FirstSliceAng;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_Pie3DChart ...
 export class CT_Pie3DChart {
 	EG_PieChartShared: Array<EG_PieChartShared>;
-	ExtLst: Array<CT_ExtensionList>;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_DoughnutChart ...
 export class CT_DoughnutChart {
 	EG_PieChartShared: Array<EG_PieChartShared>;
-	FirstSliceAng: Array<CT_FirstSliceAng>;
-	HoleSize: Array<CT_HoleSize>;
-	ExtLst: Array<CT_ExtensionList>;
+	FirstSliceAng: CT_FirstSliceAng;
+	HoleSize: CT_HoleSize;
+	ExtLst: CT_ExtensionList;
 }
 
 // ST_OfPieType ...
@@ -967,33 +967,33 @@ export class CT_OfPieType {
 // CT_OfPieChart ...
 export class CT_OfPieChart {
 	EG_PieChartShared: Array<EG_PieChartShared>;
-	OfPieType: Array<CT_OfPieType>;
-	GapWidth: Array<CT_GapAmount>;
-	SplitType: Array<CT_SplitType>;
-	SplitPos: Array<CT_Double>;
-	CustSplit: Array<CT_CustSplit>;
-	SecondPieSize: Array<CT_SecondPieSize>;
+	OfPieType: CT_OfPieType;
+	GapWidth: CT_GapAmount;
+	SplitType: CT_SplitType;
+	SplitPos: CT_Double;
+	CustSplit: CT_CustSplit;
+	SecondPieSize: CT_SecondPieSize;
 	SerLines: Array<CT_ChartLines>;
-	ExtLst: Array<CT_ExtensionList>;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_BubbleChart ...
 export class CT_BubbleChart {
-	VaryColors: Array<CT_Boolean>;
+	VaryColors: CT_Boolean;
 	Ser: Array<CT_BubbleSer>;
-	DLbls: Array<CT_DLbls>;
-	Bubble3D: Array<CT_Boolean>;
-	BubbleScale: Array<CT_BubbleScale>;
-	ShowNegBubbles: Array<CT_Boolean>;
-	SizeRepresents: Array<CT_SizeRepresents>;
+	DLbls: CT_DLbls;
+	Bubble3D: CT_Boolean;
+	BubbleScale: CT_BubbleScale;
+	ShowNegBubbles: CT_Boolean;
+	SizeRepresents: CT_SizeRepresents;
 	AxId: Array<CT_UnsignedInt>;
-	ExtLst: Array<CT_ExtensionList>;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_BandFmt ...
 export class CT_BandFmt {
-	Idx: Array<CT_UnsignedInt>;
-	SpPr: Array<CT_ShapeProperties>;
+	Idx: CT_UnsignedInt;
+	SpPr: CT_ShapeProperties;
 }
 
 // CT_BandFmts ...
@@ -1003,23 +1003,23 @@ export class CT_BandFmts {
 
 // EG_SurfaceChartShared ...
 export class EG_SurfaceChartShared {
-	Wireframe: Array<CT_Boolean>;
+	Wireframe: CT_Boolean;
 	Ser: Array<CT_SurfaceSer>;
-	BandFmts: Array<CT_BandFmts>;
+	BandFmts: CT_BandFmts;
 }
 
 // CT_SurfaceChart ...
 export class CT_SurfaceChart {
 	EG_SurfaceChartShared: Array<EG_SurfaceChartShared>;
 	AxId: Array<CT_UnsignedInt>;
-	ExtLst: Array<CT_ExtensionList>;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_Surface3DChart ...
 export class CT_Surface3DChart {
 	EG_SurfaceChartShared: Array<EG_SurfaceChartShared>;
 	AxId: Array<CT_UnsignedInt>;
-	ExtLst: Array<CT_ExtensionList>;
+	ExtLst: CT_ExtensionList;
 }
 
 // ST_AxPos ...
@@ -1152,27 +1152,27 @@ export class CT_PictureStackUnit {
 
 // CT_PictureOptions ...
 export class CT_PictureOptions {
-	ApplyToFront: Array<CT_Boolean>;
-	ApplyToSides: Array<CT_Boolean>;
-	ApplyToEnd: Array<CT_Boolean>;
-	PictureFormat: Array<CT_PictureFormat>;
-	PictureStackUnit: Array<CT_PictureStackUnit>;
+	ApplyToFront: CT_Boolean;
+	ApplyToSides: CT_Boolean;
+	ApplyToEnd: CT_Boolean;
+	PictureFormat: CT_PictureFormat;
+	PictureStackUnit: CT_PictureStackUnit;
 }
 
 // CT_DispUnitsLbl ...
 export class CT_DispUnitsLbl {
-	Layout: Array<CT_Layout>;
-	Tx: Array<CT_Tx>;
-	SpPr: Array<CT_ShapeProperties>;
-	TxPr: Array<CT_TextBody>;
+	Layout: CT_Layout;
+	Tx: CT_Tx;
+	SpPr: CT_ShapeProperties;
+	TxPr: CT_TextBody;
 }
 
 // CT_DispUnits ...
 export class CT_DispUnits {
-	CustUnit: Array<CT_Double>;
-	BuiltInUnit: Array<CT_BuiltInUnit>;
-	DispUnitsLbl: Array<CT_DispUnitsLbl>;
-	ExtLst: Array<CT_ExtensionList>;
+	CustUnit: CT_Double;
+	BuiltInUnit: CT_BuiltInUnit;
+	DispUnitsLbl: CT_DispUnitsLbl;
+	ExtLst: CT_ExtensionList;
 }
 
 // ST_Orientation ...
@@ -1196,11 +1196,11 @@ export class CT_LogBase {
 
 // CT_Scaling ...
 export class CT_Scaling {
-	LogBase: Array<CT_LogBase>;
-	Orientation: Array<CT_Orientation>;
-	Max: Array<CT_Double>;
-	Min: Array<CT_Double>;
-	ExtLst: Array<CT_ExtensionList>;
+	LogBase: CT_LogBase;
+	Orientation: CT_Orientation;
+	Max: CT_Double;
+	Min: CT_Double;
+	ExtLst: CT_ExtensionList;
 }
 
 // ST_LblOffset ...
@@ -1218,103 +1218,103 @@ export class CT_LblOffset {
 
 // EG_AxShared ...
 export class EG_AxShared {
-	AxId: Array<CT_UnsignedInt>;
-	Scaling: Array<CT_Scaling>;
-	Delete: Array<CT_Boolean>;
-	AxPos: Array<CT_AxPos>;
-	MajorGridlines: Array<CT_ChartLines>;
-	MinorGridlines: Array<CT_ChartLines>;
-	Title: Array<CT_Title>;
-	NumFmt: Array<CT_NumFmt>;
-	MajorTickMark: Array<CT_TickMark>;
-	MinorTickMark: Array<CT_TickMark>;
-	TickLblPos: Array<CT_TickLblPos>;
-	SpPr: Array<CT_ShapeProperties>;
-	TxPr: Array<CT_TextBody>;
-	CrossAx: Array<CT_UnsignedInt>;
-	Crosses: Array<CT_Crosses>;
-	CrossesAt: Array<CT_Double>;
+	AxId: CT_UnsignedInt;
+	Scaling: CT_Scaling;
+	Delete: CT_Boolean;
+	AxPos: CT_AxPos;
+	MajorGridlines: CT_ChartLines;
+	MinorGridlines: CT_ChartLines;
+	Title: CT_Title;
+	NumFmt: CT_NumFmt;
+	MajorTickMark: CT_TickMark;
+	MinorTickMark: CT_TickMark;
+	TickLblPos: CT_TickLblPos;
+	SpPr: CT_ShapeProperties;
+	TxPr: CT_TextBody;
+	CrossAx: CT_UnsignedInt;
+	Crosses: CT_Crosses;
+	CrossesAt: CT_Double;
 }
 
 // CT_CatAx ...
 export class CT_CatAx {
 	EG_AxShared: Array<EG_AxShared>;
-	Auto: Array<CT_Boolean>;
-	LblAlgn: Array<CT_LblAlgn>;
-	LblOffset: Array<CT_LblOffset>;
-	TickLblSkip: Array<CT_Skip>;
-	TickMarkSkip: Array<CT_Skip>;
-	NoMultiLvlLbl: Array<CT_Boolean>;
-	ExtLst: Array<CT_ExtensionList>;
+	Auto: CT_Boolean;
+	LblAlgn: CT_LblAlgn;
+	LblOffset: CT_LblOffset;
+	TickLblSkip: CT_Skip;
+	TickMarkSkip: CT_Skip;
+	NoMultiLvlLbl: CT_Boolean;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_DateAx ...
 export class CT_DateAx {
 	EG_AxShared: Array<EG_AxShared>;
-	Auto: Array<CT_Boolean>;
-	LblOffset: Array<CT_LblOffset>;
-	BaseTimeUnit: Array<CT_TimeUnit>;
-	MajorUnit: Array<CT_AxisUnit>;
-	MajorTimeUnit: Array<CT_TimeUnit>;
-	MinorUnit: Array<CT_AxisUnit>;
-	MinorTimeUnit: Array<CT_TimeUnit>;
-	ExtLst: Array<CT_ExtensionList>;
+	Auto: CT_Boolean;
+	LblOffset: CT_LblOffset;
+	BaseTimeUnit: CT_TimeUnit;
+	MajorUnit: CT_AxisUnit;
+	MajorTimeUnit: CT_TimeUnit;
+	MinorUnit: CT_AxisUnit;
+	MinorTimeUnit: CT_TimeUnit;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_SerAx ...
 export class CT_SerAx {
 	EG_AxShared: Array<EG_AxShared>;
-	TickLblSkip: Array<CT_Skip>;
-	TickMarkSkip: Array<CT_Skip>;
-	ExtLst: Array<CT_ExtensionList>;
+	TickLblSkip: CT_Skip;
+	TickMarkSkip: CT_Skip;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_ValAx ...
 export class CT_ValAx {
 	EG_AxShared: Array<EG_AxShared>;
-	CrossBetween: Array<CT_CrossBetween>;
-	MajorUnit: Array<CT_AxisUnit>;
-	MinorUnit: Array<CT_AxisUnit>;
-	DispUnits: Array<CT_DispUnits>;
-	ExtLst: Array<CT_ExtensionList>;
+	CrossBetween: CT_CrossBetween;
+	MajorUnit: CT_AxisUnit;
+	MinorUnit: CT_AxisUnit;
+	DispUnits: CT_DispUnits;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_PlotArea ...
 export class CT_PlotArea {
-	Layout: Array<CT_Layout>;
-	AreaChart: Array<CT_AreaChart>;
-	Area3DChart: Array<CT_Area3DChart>;
-	LineChart: Array<CT_LineChart>;
-	Line3DChart: Array<CT_Line3DChart>;
-	StockChart: Array<CT_StockChart>;
-	RadarChart: Array<CT_RadarChart>;
-	ScatterChart: Array<CT_ScatterChart>;
-	PieChart: Array<CT_PieChart>;
-	Pie3DChart: Array<CT_Pie3DChart>;
-	DoughnutChart: Array<CT_DoughnutChart>;
-	BarChart: Array<CT_BarChart>;
-	Bar3DChart: Array<CT_Bar3DChart>;
-	OfPieChart: Array<CT_OfPieChart>;
-	SurfaceChart: Array<CT_SurfaceChart>;
-	Surface3DChart: Array<CT_Surface3DChart>;
-	BubbleChart: Array<CT_BubbleChart>;
-	ValAx: Array<CT_ValAx>;
-	CatAx: Array<CT_CatAx>;
-	DateAx: Array<CT_DateAx>;
-	SerAx: Array<CT_SerAx>;
-	DTable: Array<CT_DTable>;
-	SpPr: Array<CT_ShapeProperties>;
-	ExtLst: Array<CT_ExtensionList>;
+	Layout: CT_Layout;
+	AreaChart: CT_AreaChart;
+	Area3DChart: CT_Area3DChart;
+	LineChart: CT_LineChart;
+	Line3DChart: CT_Line3DChart;
+	StockChart: CT_StockChart;
+	RadarChart: CT_RadarChart;
+	ScatterChart: CT_ScatterChart;
+	PieChart: CT_PieChart;
+	Pie3DChart: CT_Pie3DChart;
+	DoughnutChart: CT_DoughnutChart;
+	BarChart: CT_BarChart;
+	Bar3DChart: CT_Bar3DChart;
+	OfPieChart: CT_OfPieChart;
+	SurfaceChart: CT_SurfaceChart;
+	Surface3DChart: CT_Surface3DChart;
+	BubbleChart: CT_BubbleChart;
+	ValAx: CT_ValAx;
+	CatAx: CT_CatAx;
+	DateAx: CT_DateAx;
+	SerAx: CT_SerAx;
+	DTable: CT_DTable;
+	SpPr: CT_ShapeProperties;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_PivotFmt ...
 export class CT_PivotFmt {
-	Idx: Array<CT_UnsignedInt>;
-	SpPr: Array<CT_ShapeProperties>;
-	TxPr: Array<CT_TextBody>;
-	Marker: Array<CT_Marker>;
-	DLbl: Array<CT_DLbl>;
-	ExtLst: Array<CT_ExtensionList>;
+	Idx: CT_UnsignedInt;
+	SpPr: CT_ShapeProperties;
+	TxPr: CT_TextBody;
+	Marker: CT_Marker;
+	DLbl: CT_DLbl;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_PivotFmts ...
@@ -1338,26 +1338,26 @@ export class CT_LegendPos {
 
 // EG_LegendEntryData ...
 export class EG_LegendEntryData {
-	TxPr: Array<CT_TextBody>;
+	TxPr: CT_TextBody;
 }
 
 // CT_LegendEntry ...
 export class CT_LegendEntry {
 	EG_LegendEntryData: Array<EG_LegendEntryData>;
-	Idx: Array<CT_UnsignedInt>;
-	Delete: Array<CT_Boolean>;
-	ExtLst: Array<CT_ExtensionList>;
+	Idx: CT_UnsignedInt;
+	Delete: CT_Boolean;
+	ExtLst: CT_ExtensionList;
 }
 
 // CT_Legend ...
 export class CT_Legend {
-	LegendPos: Array<CT_LegendPos>;
+	LegendPos: CT_LegendPos;
 	LegendEntry: Array<CT_LegendEntry>;
-	Layout: Array<CT_Layout>;
-	Overlay: Array<CT_Boolean>;
-	SpPr: Array<CT_ShapeProperties>;
-	TxPr: Array<CT_TextBody>;
-	ExtLst: Array<CT_ExtensionList>;
+	Layout: CT_Layout;
+	Overlay: CT_Boolean;
+	SpPr: CT_ShapeProperties;
+	TxPr: CT_TextBody;
+	ExtLst: CT_ExtensionList;
 }
 
 // ST_DispBlanksAs ...
@@ -1374,19 +1374,19 @@ export class CT_DispBlanksAs {
 
 // CT_Chart ...
 export class CT_Chart {
-	Title: Array<CT_Title>;
-	AutoTitleDeleted: Array<CT_Boolean>;
-	PivotFmts: Array<CT_PivotFmts>;
-	View3D: Array<CT_View3D>;
-	Floor: Array<CT_Surface>;
-	SideWall: Array<CT_Surface>;
-	BackWall: Array<CT_Surface>;
-	PlotArea: Array<CT_PlotArea>;
-	Legend: Array<CT_Legend>;
-	PlotVisOnly: Array<CT_Boolean>;
-	DispBlanksAs: Array<CT_DispBlanksAs>;
-	ShowDLblsOverMax: Array<CT_Boolean>;
-	ExtLst: Array<CT_ExtensionList>;
+	Title: CT_Title;
+	AutoTitleDeleted: CT_Boolean;
+	PivotFmts: CT_PivotFmts;
+	View3D: CT_View3D;
+	Floor: CT_Surface;
+	SideWall: CT_Surface;
+	BackWall: CT_Surface;
+	PlotArea: CT_PlotArea;
+	Legend: CT_Legend;
+	PlotVisOnly: CT_Boolean;
+	DispBlanksAs: CT_DispBlanksAs;
+	ShowDLblsOverMax: CT_Boolean;
+	ExtLst: CT_ExtensionList;
 }
 
 // ST_Style ...
@@ -1400,17 +1400,17 @@ export class CT_Style {
 // CT_PivotSource ...
 export class CT_PivotSource {
 	Name: string;
-	FmtId: Array<CT_UnsignedInt>;
+	FmtId: CT_UnsignedInt;
 	ExtLst: Array<CT_ExtensionList>;
 }
 
 // CT_Protection ...
 export class CT_Protection {
-	ChartObject: Array<CT_Boolean>;
-	Data: Array<CT_Boolean>;
-	Formatting: Array<CT_Boolean>;
-	Selection: Array<CT_Boolean>;
-	UserInterface: Array<CT_Boolean>;
+	ChartObject: CT_Boolean;
+	Data: CT_Boolean;
+	Formatting: CT_Boolean;
+	Selection: CT_Boolean;
+	UserInterface: CT_Boolean;
 }
 
 // CT_HeaderFooter ...
@@ -1446,7 +1446,7 @@ export enum ST_PageSetupOrientation {
 // CT_ExternalData ...
 export class CT_ExternalData {
 	RIdAttr: string;
-	AutoUpdate: Array<CT_Boolean>;
+	AutoUpdate: CT_Boolean;
 }
 
 // CT_PageSetup ...
@@ -1466,27 +1466,27 @@ export class CT_PageSetup {
 
 // CT_PrintSettings ...
 export class CT_PrintSettings {
-	HeaderFooter: Array<CT_HeaderFooter>;
-	PageMargins: Array<CT_PageMargins>;
-	PageSetup: Array<CT_PageSetup>;
+	HeaderFooter: CT_HeaderFooter;
+	PageMargins: CT_PageMargins;
+	PageSetup: CT_PageSetup;
 }
 
 // CT_ChartSpace ...
 export class CT_ChartSpace {
-	Date1904: Array<CT_Boolean>;
-	Lang: Array<CT_TextLanguageID>;
-	RoundedCorners: Array<CT_Boolean>;
-	Style: Array<CT_Style>;
-	ClrMapOvr: Array<CT_ColorMapping>;
-	PivotSource: Array<CT_PivotSource>;
-	Protection: Array<CT_Protection>;
-	Chart: Array<CT_Chart>;
-	SpPr: Array<CT_ShapeProperties>;
-	TxPr: Array<CT_TextBody>;
-	ExternalData: Array<CT_ExternalData>;
-	PrintSettings: Array<CT_PrintSettings>;
-	UserShapes: Array<CT_RelId>;
-	ExtLst: Array<CT_ExtensionList>;
+	Date1904: CT_Boolean;
+	Lang: CT_TextLanguageID;
+	RoundedCorners: CT_Boolean;
+	Style: CT_Style;
+	ClrMapOvr: CT_ColorMapping;
+	PivotSource: CT_PivotSource;
+	Protection: CT_Protection;
+	Chart: CT_Chart;
+	SpPr: CT_ShapeProperties;
+	TxPr: CT_TextBody;
+	ExternalData: CT_ExternalData;
+	PrintSettings: CT_PrintSettings;
+	UserShapes: CT_RelId;
+	ExtLst: CT_ExtensionList;
 }
 
 // ChartSpace ...

@@ -1309,16 +1309,16 @@ type Faqs struct {
 type Part struct {
 	XMLName xml.Name `xml:"part"`
 	IdAttr  string   `xml:"id,attr,omitempty"`
-	Title   []*Title `xml:"title"`
+	Title   *Title   `xml:"title"`
 	Faq     []*Faq   `xml:"faq"`
 }
 
 // Faq ...
 type Faq struct {
-	XMLName  xml.Name    `xml:"faq"`
-	IdAttr   string      `xml:"id,attr,omitempty"`
-	Question []*Question `xml:"question"`
-	Answer   []*Answer   `xml:"answer"`
+	XMLName  xml.Name  `xml:"faq"`
+	IdAttr   string    `xml:"id,attr,omitempty"`
+	Question *Question `xml:"question"`
+	Answer   *Answer   `xml:"answer"`
 }
 
 // Question ...

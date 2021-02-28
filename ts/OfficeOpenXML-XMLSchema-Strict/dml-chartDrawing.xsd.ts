@@ -2,8 +2,8 @@
 
 // CT_ShapeNonVisual ...
 export class CT_ShapeNonVisual {
-	CNvPr: Array<CT_NonVisualDrawingProps>;
-	CNvSpPr: Array<CT_NonVisualDrawingShapeProps>;
+	CNvPr: CT_NonVisualDrawingProps;
+	CNvSpPr: CT_NonVisualDrawingShapeProps;
 }
 
 // CT_Shape ...
@@ -12,68 +12,68 @@ export class CT_Shape {
 	TextlinkAttr: string | null;
 	FLocksTextAttr: boolean | null;
 	FPublishedAttr: boolean | null;
-	NvSpPr: Array<CT_ShapeNonVisual>;
-	SpPr: Array<CT_ShapeProperties>;
-	Style: Array<CT_ShapeStyle>;
-	TxBody: Array<CT_TextBody>;
+	NvSpPr: CT_ShapeNonVisual;
+	SpPr: CT_ShapeProperties;
+	Style: CT_ShapeStyle;
+	TxBody: CT_TextBody;
 }
 
 // CT_ConnectorNonVisual ...
 export class CT_ConnectorNonVisual {
-	CNvPr: Array<CT_NonVisualDrawingProps>;
-	CNvCxnSpPr: Array<CT_NonVisualConnectorProperties>;
+	CNvPr: CT_NonVisualDrawingProps;
+	CNvCxnSpPr: CT_NonVisualConnectorProperties;
 }
 
 // CT_Connector ...
 export class CT_Connector {
 	MacroAttr: string | null;
 	FPublishedAttr: boolean | null;
-	NvCxnSpPr: Array<CT_ConnectorNonVisual>;
-	SpPr: Array<CT_ShapeProperties>;
-	Style: Array<CT_ShapeStyle>;
+	NvCxnSpPr: CT_ConnectorNonVisual;
+	SpPr: CT_ShapeProperties;
+	Style: CT_ShapeStyle;
 }
 
 // CT_PictureNonVisual ...
 export class CT_PictureNonVisual {
-	CNvPr: Array<CT_NonVisualDrawingProps>;
-	CNvPicPr: Array<CT_NonVisualPictureProperties>;
+	CNvPr: CT_NonVisualDrawingProps;
+	CNvPicPr: CT_NonVisualPictureProperties;
 }
 
 // CT_Picture ...
 export class CT_Picture {
 	MacroAttr: string | null;
 	FPublishedAttr: boolean | null;
-	NvPicPr: Array<CT_PictureNonVisual>;
-	BlipFill: Array<CT_BlipFillProperties>;
-	SpPr: Array<CT_ShapeProperties>;
-	Style: Array<CT_ShapeStyle>;
+	NvPicPr: CT_PictureNonVisual;
+	BlipFill: CT_BlipFillProperties;
+	SpPr: CT_ShapeProperties;
+	Style: CT_ShapeStyle;
 }
 
 // CT_GraphicFrameNonVisual ...
 export class CT_GraphicFrameNonVisual {
-	CNvPr: Array<CT_NonVisualDrawingProps>;
-	CNvGraphicFramePr: Array<CT_NonVisualGraphicFrameProperties>;
+	CNvPr: CT_NonVisualDrawingProps;
+	CNvGraphicFramePr: CT_NonVisualGraphicFrameProperties;
 }
 
 // CT_GraphicFrame ...
 export class CT_GraphicFrame {
 	MacroAttr: string | null;
 	FPublishedAttr: boolean | null;
-	NvGraphicFramePr: Array<CT_GraphicFrameNonVisual>;
-	Xfrm: Array<CT_Transform2D>;
-	AGraphic: Array<CT_GraphicalObject>;
+	NvGraphicFramePr: CT_GraphicFrameNonVisual;
+	Xfrm: CT_Transform2D;
+	AGraphic: CT_GraphicalObject;
 }
 
 // CT_GroupShapeNonVisual ...
 export class CT_GroupShapeNonVisual {
-	CNvPr: Array<CT_NonVisualDrawingProps>;
-	CNvGrpSpPr: Array<CT_NonVisualGroupDrawingShapeProps>;
+	CNvPr: CT_NonVisualDrawingProps;
+	CNvGrpSpPr: CT_NonVisualGroupDrawingShapeProps;
 }
 
 // CT_GroupShape ...
 export class CT_GroupShape {
-	NvGrpSpPr: Array<CT_GroupShapeNonVisual>;
-	GrpSpPr: Array<CT_GroupShapeProperties>;
+	NvGrpSpPr: CT_GroupShapeNonVisual;
+	GrpSpPr: CT_GroupShapeProperties;
 	Sp: CT_Shape;
 	GrpSp: CT_GroupShape;
 	GraphicFrame: CT_GraphicFrame;

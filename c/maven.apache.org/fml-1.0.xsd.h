@@ -1184,15 +1184,15 @@ typedef struct {
 // Part ...
 typedef struct {
 	char IdAttr; // attr, optional
-	Title Title[];
+	Title Title;
 	Faq Faq[];
 } Part;
 
 // Faq ...
 typedef struct {
 	char IdAttr; // attr, optional
-	Question Question[];
-	Answer Answer[];
+	Question Question;
+	Answer Answer;
 } Faq;
 
 // Question ...

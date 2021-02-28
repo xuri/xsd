@@ -59,7 +59,7 @@ typedef struct {
 // CT_TransitionStartSoundAction ...
 typedef struct {
 	bool LoopAttr; // attr, optional
-	CT_EmbeddedWAVAudioFile Snd[];
+	CT_EmbeddedWAVAudioFile Snd;
 } CT_TransitionStartSoundAction;
 
 // CT_TransitionSoundAction ...
@@ -97,8 +97,8 @@ typedef struct {
 	CT_WheelTransition Wheel;
 	CT_SideDirectionTransition Wipe;
 	CT_InOutTransition Zoom;
-	CT_TransitionSoundAction SndAc[];
-	CT_ExtensionListModify ExtLst[];
+	CT_TransitionSoundAction SndAc;
+	CT_ExtensionListModify ExtLst;
 } CT_SlideTransition;
 
 // ST_TLTimeIndefinite ...
@@ -262,17 +262,17 @@ typedef struct {
 	bool AfterEffectAttr; // attr, optional
 	char NodeTypeAttr; // attr, optional
 	bool NodePhAttr; // attr, optional
-	CT_TLTimeConditionList StCondLst[];
-	CT_TLTimeConditionList EndCondLst[];
-	CT_TLTimeCondition EndSync[];
-	CT_TLIterateData Iterate[];
-	CT_TimeNodeList ChildTnLst[];
-	CT_TimeNodeList SubTnLst[];
+	CT_TLTimeConditionList StCondLst;
+	CT_TLTimeConditionList EndCondLst;
+	CT_TLTimeCondition EndSync;
+	CT_TLIterateData Iterate;
+	CT_TimeNodeList ChildTnLst;
+	CT_TimeNodeList SubTnLst;
 } CT_TLCommonTimeNodeData;
 
 // CT_TLTimeNodeParallel ...
 typedef struct {
-	CT_TLCommonTimeNodeData CTn[];
+	CT_TLCommonTimeNodeData CTn;
 } CT_TLTimeNodeParallel;
 
 // ST_TLNextActionType ...
@@ -286,14 +286,14 @@ typedef struct {
 	bool ConcurrentAttr; // attr, optional
 	char PrevAcAttr; // attr, optional
 	char NextAcAttr; // attr, optional
-	CT_TLCommonTimeNodeData CTn[];
-	CT_TLTimeConditionList PrevCondLst[];
-	CT_TLTimeConditionList NextCondLst[];
+	CT_TLCommonTimeNodeData CTn;
+	CT_TLTimeConditionList PrevCondLst;
+	CT_TLTimeConditionList NextCondLst;
 } CT_TLTimeNodeSequence;
 
 // CT_TLTimeNodeExclusive ...
 typedef struct {
-	CT_TLCommonTimeNodeData CTn[];
+	CT_TLCommonTimeNodeData CTn;
 } CT_TLTimeNodeExclusive;
 
 // CT_TLBehaviorAttributeNameList ...
@@ -323,9 +323,9 @@ typedef struct {
 	char ByAttr; // attr, optional
 	char RctxAttr; // attr, optional
 	char OverrideAttr; // attr, optional
-	CT_TLCommonTimeNodeData CTn[];
-	CT_TLTimeTargetElement TgtEl[];
-	CT_TLBehaviorAttributeNameList AttrNameLst[];
+	CT_TLCommonTimeNodeData CTn;
+	CT_TLTimeTargetElement TgtEl;
+	CT_TLBehaviorAttributeNameList AttrNameLst;
 } CT_TLCommonBehaviorData;
 
 // CT_TLAnimVariantBooleanVal ...
@@ -367,7 +367,7 @@ typedef struct {
 typedef struct {
 	ST_TLTimeAnimateValueTime TmAttr; // attr, optional
 	char FmlaAttr; // attr, optional
-	CT_TLAnimVariant Val[];
+	CT_TLAnimVariant Val;
 } CT_TLTimeAnimateValue;
 
 // CT_TLTimeAnimateValueList ...
@@ -388,8 +388,8 @@ typedef struct {
 	char ToAttr; // attr, optional
 	char CalcmodeAttr; // attr, optional
 	char ValueTypeAttr; // attr, optional
-	CT_TLCommonBehaviorData CBhvr[];
-	CT_TLTimeAnimateValueList TavLst[];
+	CT_TLCommonBehaviorData CBhvr;
+	CT_TLTimeAnimateValueList TavLst;
 } CT_TLAnimateBehavior;
 
 // CT_TLByRgbColorTransform ...
@@ -422,10 +422,10 @@ typedef char ST_TLAnimateColorDirection;
 typedef struct {
 	char ClrSpcAttr; // attr, optional
 	char DirAttr; // attr, optional
-	CT_TLCommonBehaviorData CBhvr[];
-	CT_TLByAnimateColorTransform By[];
-	CT_Color From[];
-	CT_Color To[];
+	CT_TLCommonBehaviorData CBhvr;
+	CT_TLByAnimateColorTransform By;
+	CT_Color From;
+	CT_Color To;
 } CT_TLAnimateColorBehavior;
 
 // ST_TLAnimateEffectTransition ...
@@ -436,8 +436,8 @@ typedef struct {
 	char TransitionAttr; // attr, optional
 	char FilterAttr; // attr, optional
 	char PrLstAttr; // attr, optional
-	CT_TLCommonBehaviorData CBhvr[];
-	CT_TLAnimVariant Progress[];
+	CT_TLCommonBehaviorData CBhvr;
+	CT_TLAnimVariant Progress;
 } CT_TLAnimateEffectBehavior;
 
 // ST_TLAnimateMotionBehaviorOrigin ...
@@ -459,11 +459,11 @@ typedef struct {
 	char PathEditModeAttr; // attr, optional
 	int RAngAttr; // attr, optional
 	char PtsTypesAttr; // attr, optional
-	CT_TLCommonBehaviorData CBhvr[];
-	CT_TLPoint By[];
-	CT_TLPoint From[];
-	CT_TLPoint To[];
-	CT_TLPoint RCtr[];
+	CT_TLCommonBehaviorData CBhvr;
+	CT_TLPoint By;
+	CT_TLPoint From;
+	CT_TLPoint To;
+	CT_TLPoint RCtr;
 } CT_TLAnimateMotionBehavior;
 
 // CT_TLAnimateRotationBehavior ...
@@ -471,16 +471,16 @@ typedef struct {
 	int ByAttr; // attr, optional
 	int FromAttr; // attr, optional
 	int ToAttr; // attr, optional
-	CT_TLCommonBehaviorData CBhvr[];
+	CT_TLCommonBehaviorData CBhvr;
 } CT_TLAnimateRotationBehavior;
 
 // CT_TLAnimateScaleBehavior ...
 typedef struct {
 	bool ZoomContentsAttr; // attr, optional
-	CT_TLCommonBehaviorData CBhvr[];
-	CT_TLPoint By[];
-	CT_TLPoint From[];
-	CT_TLPoint To[];
+	CT_TLCommonBehaviorData CBhvr;
+	CT_TLPoint By;
+	CT_TLPoint From;
+	CT_TLPoint To;
 } CT_TLAnimateScaleBehavior;
 
 // ST_TLCommandType ...
@@ -490,13 +490,13 @@ typedef char ST_TLCommandType;
 typedef struct {
 	char TypeAttr; // attr, optional
 	char CmdAttr; // attr, optional
-	CT_TLCommonBehaviorData CBhvr[];
+	CT_TLCommonBehaviorData CBhvr;
 } CT_TLCommandBehavior;
 
 // CT_TLSetBehavior ...
 typedef struct {
-	CT_TLCommonBehaviorData CBhvr[];
-	CT_TLAnimVariant To[];
+	CT_TLCommonBehaviorData CBhvr;
+	CT_TLAnimVariant To;
 } CT_TLSetBehavior;
 
 // CT_TLCommonMediaNodeData ...
@@ -505,20 +505,20 @@ typedef struct {
 	bool MuteAttr; // attr, optional
 	unsigned int NumSldAttr; // attr, optional
 	bool ShowWhenStoppedAttr; // attr, optional
-	CT_TLCommonTimeNodeData CTn[];
-	CT_TLTimeTargetElement TgtEl[];
+	CT_TLCommonTimeNodeData CTn;
+	CT_TLTimeTargetElement TgtEl;
 } CT_TLCommonMediaNodeData;
 
 // CT_TLMediaNodeAudio ...
 typedef struct {
 	bool IsNarrationAttr; // attr, optional
-	CT_TLCommonMediaNodeData CMediaNode[];
+	CT_TLCommonMediaNodeData CMediaNode;
 } CT_TLMediaNodeAudio;
 
 // CT_TLMediaNodeVideo ...
 typedef struct {
 	bool FullScrnAttr; // attr, optional
-	CT_TLCommonMediaNodeData CMediaNode[];
+	CT_TLCommonMediaNodeData CMediaNode;
 } CT_TLMediaNodeVideo;
 
 // AG_TLBuild ...
@@ -531,7 +531,7 @@ typedef struct {
 // CT_TLTemplate ...
 typedef struct {
 	unsigned int LvlAttr; // attr, optional
-	CT_TimeNodeList TnLst[];
+	CT_TimeNodeList TnLst;
 } CT_TLTemplate;
 
 // CT_TLTemplateList ...
@@ -551,7 +551,7 @@ typedef struct {
 	bool AutoUpdateAnimBgAttr; // attr, optional
 	bool RevAttr; // attr, optional
 	ST_TLTime AdvAutoAttr; // attr, optional
-	CT_TLTemplateList TmplLst[];
+	CT_TLTemplateList TmplLst;
 } CT_TLBuildParagraph;
 
 // ST_TLDiagramBuildType ...
@@ -590,9 +590,9 @@ typedef struct {
 
 // CT_SlideTiming ...
 typedef struct {
-	CT_TimeNodeList TnLst[];
-	CT_BuildList BldLst[];
-	CT_ExtensionListModify ExtLst[];
+	CT_TimeNodeList TnLst;
+	CT_BuildList BldLst;
+	CT_ExtensionListModify ExtLst;
 } CT_SlideTiming;
 
 // CT_Empty ...
@@ -649,7 +649,7 @@ typedef struct {
 // CT_CustomerDataList ...
 typedef struct {
 	CT_CustomerData CustData[];
-	CT_TagsData Tags[];
+	CT_TagsData Tags;
 } CT_CustomerDataList;
 
 // CT_Extension ...
@@ -680,7 +680,7 @@ typedef struct {
 	char InitialsAttr; // attr
 	unsigned int LastIdxAttr; // attr
 	unsigned int ClrIdxAttr; // attr
-	CT_ExtensionList ExtLst[];
+	CT_ExtensionList ExtLst;
 } CT_CommentAuthor;
 
 // CT_CommentAuthorList ...
@@ -695,9 +695,9 @@ typedef struct {
 	unsigned int AuthorIdAttr; // attr
 	char DtAttr; // attr, optional
 	unsigned int IdxAttr; // attr
-	CT_Point2D Pos[];
-	char Text[];
-	CT_ExtensionListModify ExtLst[];
+	CT_Point2D Pos;
+	char Text;
+	CT_ExtensionListModify ExtLst;
 } CT_Comment;
 
 // CT_CommentList ...
@@ -722,13 +722,13 @@ typedef char ST_OleObjectFollowColorScheme;
 // CT_OleObjectEmbed ...
 typedef struct {
 	char FollowColorSchemeAttr; // attr, optional
-	CT_ExtensionList ExtLst[];
+	CT_ExtensionList ExtLst;
 } CT_OleObjectEmbed;
 
 // CT_OleObjectLink ...
 typedef struct {
 	bool UpdateAutomaticAttr; // attr, optional
-	CT_ExtensionList ExtLst[];
+	CT_ExtensionList ExtLst;
 } CT_OleObjectLink;
 
 // CT_OleObject ...
@@ -737,7 +737,7 @@ typedef struct {
 	char ProgIdAttr; // attr, optional
 	CT_OleObjectEmbed Embed;
 	CT_OleObjectLink Link;
-	CT_Picture Pic[];
+	CT_Picture Pic;
 } CT_OleObject;
 
 typedef CT_OleObject OleObj;
@@ -745,8 +745,8 @@ typedef CT_OleObject OleObj;
 // CT_Control ...
 typedef struct {
 	AG_Ole AG_Ole;
-	CT_ExtensionList ExtLst[];
-	CT_Picture Pic[];
+	CT_ExtensionList ExtLst;
+	CT_Picture Pic;
 } CT_Control;
 
 // CT_ControlList ...
@@ -761,7 +761,7 @@ typedef unsigned int ST_SlideId;
 typedef struct {
 	unsigned int IdAttr; // attr
 	char RIdAttr; // attr
-	CT_ExtensionList ExtLst[];
+	CT_ExtensionList ExtLst;
 } CT_SlideIdListEntry;
 
 // CT_SlideIdList ...
@@ -776,7 +776,7 @@ typedef unsigned int ST_SlideMasterId;
 typedef struct {
 	unsigned int IdAttr; // attr, optional
 	char RIdAttr; // attr
-	CT_ExtensionList ExtLst[];
+	CT_ExtensionList ExtLst;
 } CT_SlideMasterIdListEntry;
 
 // CT_SlideMasterIdList ...
@@ -787,23 +787,23 @@ typedef struct {
 // CT_NotesMasterIdListEntry ...
 typedef struct {
 	char RIdAttr; // attr
-	CT_ExtensionList ExtLst[];
+	CT_ExtensionList ExtLst;
 } CT_NotesMasterIdListEntry;
 
 // CT_NotesMasterIdList ...
 typedef struct {
-	CT_NotesMasterIdListEntry NotesMasterId[];
+	CT_NotesMasterIdListEntry NotesMasterId;
 } CT_NotesMasterIdList;
 
 // CT_HandoutMasterIdListEntry ...
 typedef struct {
 	char RIdAttr; // attr
-	CT_ExtensionList ExtLst[];
+	CT_ExtensionList ExtLst;
 } CT_HandoutMasterIdListEntry;
 
 // CT_HandoutMasterIdList ...
 typedef struct {
-	CT_HandoutMasterIdListEntry HandoutMasterId[];
+	CT_HandoutMasterIdListEntry HandoutMasterId;
 } CT_HandoutMasterIdList;
 
 // CT_EmbeddedFontDataId ...
@@ -813,11 +813,11 @@ typedef struct {
 
 // CT_EmbeddedFontListEntry ...
 typedef struct {
-	CT_TextFont Font[];
-	CT_EmbeddedFontDataId Regular[];
-	CT_EmbeddedFontDataId Bold[];
-	CT_EmbeddedFontDataId Italic[];
-	CT_EmbeddedFontDataId BoldItalic[];
+	CT_TextFont Font;
+	CT_EmbeddedFontDataId Regular;
+	CT_EmbeddedFontDataId Bold;
+	CT_EmbeddedFontDataId Italic;
+	CT_EmbeddedFontDataId BoldItalic;
 } CT_EmbeddedFontListEntry;
 
 // CT_EmbeddedFontList ...
@@ -834,8 +834,8 @@ typedef struct {
 typedef struct {
 	char NameAttr; // attr
 	unsigned int IdAttr; // attr
-	CT_SlideRelationshipList SldLst[];
-	CT_ExtensionList ExtLst[];
+	CT_SlideRelationshipList SldLst;
+	CT_ExtensionList ExtLst;
 } CT_CustomShow;
 
 // CT_CustomShowList ...
@@ -855,7 +855,7 @@ typedef struct {
 	bool ShowCaptionsAttr; // attr, optional
 	char LayoutAttr; // attr, optional
 	char FrameAttr; // attr, optional
-	CT_ExtensionList ExtLst[];
+	CT_ExtensionList ExtLst;
 } CT_PhotoAlbum;
 
 // ST_SlideSizeCoordinate ...
@@ -903,21 +903,21 @@ typedef struct {
 	bool AutoCompressPicturesAttr; // attr, optional
 	unsigned int BookmarkIdSeedAttr; // attr, optional
 	char ConformanceAttr; // attr, optional
-	CT_SlideMasterIdList SldMasterIdLst[];
-	CT_NotesMasterIdList NotesMasterIdLst[];
-	CT_HandoutMasterIdList HandoutMasterIdLst[];
-	CT_SlideIdList SldIdLst[];
-	CT_SlideSize SldSz[];
-	CT_PositiveSize2D NotesSz[];
-	CT_SmartTags SmartTags[];
-	CT_EmbeddedFontList EmbeddedFontLst[];
-	CT_CustomShowList CustShowLst[];
-	CT_PhotoAlbum PhotoAlbum[];
-	CT_CustomerDataList CustDataLst[];
+	CT_SlideMasterIdList SldMasterIdLst;
+	CT_NotesMasterIdList NotesMasterIdLst;
+	CT_HandoutMasterIdList HandoutMasterIdLst;
+	CT_SlideIdList SldIdLst;
+	CT_SlideSize SldSz;
+	CT_PositiveSize2D NotesSz;
+	CT_SmartTags SmartTags;
+	CT_EmbeddedFontList EmbeddedFontLst;
+	CT_CustomShowList CustShowLst;
+	CT_PhotoAlbum PhotoAlbum;
+	CT_CustomerDataList CustDataLst;
 	CT_Kinsoku Kinsoku;
-	CT_TextListStyle DefaultTextStyle[];
-	CT_ModifyVerifier ModifyVerifier[];
-	CT_ExtensionList ExtLst[];
+	CT_TextListStyle DefaultTextStyle;
+	CT_ModifyVerifier ModifyVerifier;
+	CT_ExtensionList ExtLst;
 } CT_Presentation;
 
 typedef CT_Presentation Presentation;
@@ -929,7 +929,7 @@ typedef struct {
 	char TitleAttr; // attr, optional
 	char RIdAttr; // attr
 	EG_SlideListChoice EG_SlideListChoice[];
-	CT_ExtensionList ExtLst[];
+	CT_ExtensionList ExtLst;
 } CT_HtmlPublishProperties;
 
 // ST_PrintWhat ...
@@ -945,7 +945,7 @@ typedef struct {
 	bool HiddenSlidesAttr; // attr, optional
 	bool ScaleToFitPaperAttr; // attr, optional
 	bool FrameSlidesAttr; // attr, optional
-	CT_ExtensionList ExtLst[];
+	CT_ExtensionList ExtLst;
 } CT_PrintProperties;
 
 // CT_ShowInfoBrowse ...
@@ -973,16 +973,16 @@ typedef struct {
 	bool UseTimingsAttr; // attr, optional
 	EG_ShowType EG_ShowType[];
 	EG_SlideListChoice EG_SlideListChoice[];
-	CT_Color PenClr[];
-	CT_ExtensionList ExtLst[];
+	CT_Color PenClr;
+	CT_ExtensionList ExtLst;
 } CT_ShowProperties;
 
 // CT_PresentationProperties ...
 typedef struct {
-	CT_PrintProperties PrnPr[];
-	CT_ShowProperties ShowPr[];
-	CT_ColorMRU ClrMru[];
-	CT_ExtensionList ExtLst[];
+	CT_PrintProperties PrnPr;
+	CT_ShowProperties ShowPr;
+	CT_ColorMRU ClrMru;
+	CT_ExtensionList ExtLst;
 } CT_PresentationProperties;
 
 typedef CT_PresentationProperties PresentationPr;
@@ -993,7 +993,7 @@ typedef struct {
 	bool HdrAttr; // attr, optional
 	bool FtrAttr; // attr, optional
 	bool DtAttr; // attr, optional
-	CT_ExtensionListModify ExtLst[];
+	CT_ExtensionListModify ExtLst;
 } CT_HeaderFooter;
 
 // ST_PlaceholderType ...
@@ -1009,7 +1009,7 @@ typedef struct {
 	char SzAttr; // attr, optional
 	unsigned int IdxAttr; // attr, optional
 	bool HasCustomPromptAttr; // attr, optional
-	CT_ExtensionListModify ExtLst[];
+	CT_ExtensionListModify ExtLst;
 } CT_Placeholder;
 
 // CT_ApplicationNonVisualDrawingProps ...
@@ -1017,93 +1017,93 @@ typedef struct {
 	bool IsPhotoAttr; // attr, optional
 	bool UserDrawnAttr; // attr, optional
 	EG_Media AEG_Media[];
-	CT_Placeholder Ph[];
-	CT_CustomerDataList CustDataLst[];
-	CT_ExtensionList ExtLst[];
+	CT_Placeholder Ph;
+	CT_CustomerDataList CustDataLst;
+	CT_ExtensionList ExtLst;
 } CT_ApplicationNonVisualDrawingProps;
 
 // CT_ShapeNonVisual ...
 typedef struct {
-	CT_NonVisualDrawingProps CNvPr[];
-	CT_NonVisualDrawingShapeProps CNvSpPr[];
-	CT_ApplicationNonVisualDrawingProps NvPr[];
+	CT_NonVisualDrawingProps CNvPr;
+	CT_NonVisualDrawingShapeProps CNvSpPr;
+	CT_ApplicationNonVisualDrawingProps NvPr;
 } CT_ShapeNonVisual;
 
 // CT_Shape ...
 typedef struct {
 	bool UseBgFillAttr; // attr, optional
-	CT_ShapeNonVisual NvSpPr[];
-	CT_ShapeProperties SpPr[];
-	CT_ShapeStyle Style[];
-	CT_TextBody TxBody[];
-	CT_ExtensionListModify ExtLst[];
+	CT_ShapeNonVisual NvSpPr;
+	CT_ShapeProperties SpPr;
+	CT_ShapeStyle Style;
+	CT_TextBody TxBody;
+	CT_ExtensionListModify ExtLst;
 } CT_Shape;
 
 // CT_ConnectorNonVisual ...
 typedef struct {
-	CT_NonVisualDrawingProps CNvPr[];
-	CT_NonVisualConnectorProperties CNvCxnSpPr[];
-	CT_ApplicationNonVisualDrawingProps NvPr[];
+	CT_NonVisualDrawingProps CNvPr;
+	CT_NonVisualConnectorProperties CNvCxnSpPr;
+	CT_ApplicationNonVisualDrawingProps NvPr;
 } CT_ConnectorNonVisual;
 
 // CT_Connector ...
 typedef struct {
-	CT_ConnectorNonVisual NvCxnSpPr[];
-	CT_ShapeProperties SpPr[];
-	CT_ShapeStyle Style[];
-	CT_ExtensionListModify ExtLst[];
+	CT_ConnectorNonVisual NvCxnSpPr;
+	CT_ShapeProperties SpPr;
+	CT_ShapeStyle Style;
+	CT_ExtensionListModify ExtLst;
 } CT_Connector;
 
 // CT_PictureNonVisual ...
 typedef struct {
-	CT_NonVisualDrawingProps CNvPr[];
-	CT_NonVisualPictureProperties CNvPicPr[];
-	CT_ApplicationNonVisualDrawingProps NvPr[];
+	CT_NonVisualDrawingProps CNvPr;
+	CT_NonVisualPictureProperties CNvPicPr;
+	CT_ApplicationNonVisualDrawingProps NvPr;
 } CT_PictureNonVisual;
 
 // CT_Picture ...
 typedef struct {
-	CT_PictureNonVisual NvPicPr[];
-	CT_BlipFillProperties BlipFill[];
-	CT_ShapeProperties SpPr[];
-	CT_ShapeStyle Style[];
-	CT_ExtensionListModify ExtLst[];
+	CT_PictureNonVisual NvPicPr;
+	CT_BlipFillProperties BlipFill;
+	CT_ShapeProperties SpPr;
+	CT_ShapeStyle Style;
+	CT_ExtensionListModify ExtLst;
 } CT_Picture;
 
 // CT_GraphicalObjectFrameNonVisual ...
 typedef struct {
-	CT_NonVisualDrawingProps CNvPr[];
-	CT_NonVisualGraphicFrameProperties CNvGraphicFramePr[];
-	CT_ApplicationNonVisualDrawingProps NvPr[];
+	CT_NonVisualDrawingProps CNvPr;
+	CT_NonVisualGraphicFrameProperties CNvGraphicFramePr;
+	CT_ApplicationNonVisualDrawingProps NvPr;
 } CT_GraphicalObjectFrameNonVisual;
 
 // CT_GraphicalObjectFrame ...
 typedef struct {
 	char BwModeAttr; // attr, optional
-	CT_GraphicalObjectFrameNonVisual NvGraphicFramePr[];
-	CT_Transform2D Xfrm[];
-	CT_GraphicalObject AGraphic[];
-	CT_ExtensionListModify ExtLst[];
+	CT_GraphicalObjectFrameNonVisual NvGraphicFramePr;
+	CT_Transform2D Xfrm;
+	CT_GraphicalObject AGraphic;
+	CT_ExtensionListModify ExtLst;
 } CT_GraphicalObjectFrame;
 
 // CT_GroupShapeNonVisual ...
 typedef struct {
-	CT_NonVisualDrawingProps CNvPr[];
-	CT_NonVisualGroupDrawingShapeProps CNvGrpSpPr[];
-	CT_ApplicationNonVisualDrawingProps NvPr[];
+	CT_NonVisualDrawingProps CNvPr;
+	CT_NonVisualGroupDrawingShapeProps CNvGrpSpPr;
+	CT_ApplicationNonVisualDrawingProps NvPr;
 } CT_GroupShapeNonVisual;
 
 // CT_GroupShape ...
 typedef struct {
-	CT_GroupShapeNonVisual NvGrpSpPr[];
-	CT_GroupShapeProperties GrpSpPr[];
+	CT_GroupShapeNonVisual NvGrpSpPr;
+	CT_GroupShapeProperties GrpSpPr;
 	CT_Shape Sp;
 	CT_GroupShape GrpSp;
 	CT_GraphicalObjectFrame GraphicFrame;
 	CT_Connector CxnSp;
 	CT_Picture Pic;
 	CT_Rel ContentPart;
-	CT_ExtensionListModify ExtLst[];
+	CT_ExtensionListModify ExtLst;
 } CT_GroupShape;
 
 // CT_Rel ...
@@ -1113,12 +1113,12 @@ typedef struct {
 
 // EG_TopLevelSlide ...
 typedef struct {
-	CT_ColorMapping ClrMap[];
+	CT_ColorMapping ClrMap;
 } EG_TopLevelSlide;
 
 // EG_ChildSlide ...
 typedef struct {
-	CT_ColorMappingOverride ClrMapOvr[];
+	CT_ColorMappingOverride ClrMapOvr;
 } EG_ChildSlide;
 
 // AG_ChildSlide ...
@@ -1132,7 +1132,7 @@ typedef struct {
 	bool ShadeToTitleAttr; // attr, optional
 	EG_FillProperties AEG_FillProperties[];
 	EG_EffectProperties AEG_EffectProperties[];
-	CT_ExtensionList ExtLst[];
+	CT_ExtensionList ExtLst;
 } CT_BackgroundProperties;
 
 // EG_Background ...
@@ -1150,11 +1150,11 @@ typedef struct {
 // CT_CommonSlideData ...
 typedef struct {
 	char NameAttr; // attr, optional
-	CT_Background Bg[];
-	CT_GroupShape SpTree[];
-	CT_CustomerDataList CustDataLst[];
-	CT_ControlList Controls[];
-	CT_ExtensionList ExtLst[];
+	CT_Background Bg;
+	CT_GroupShape SpTree;
+	CT_CustomerDataList CustDataLst;
+	CT_ControlList Controls;
+	CT_ExtensionList ExtLst;
 } CT_CommonSlideData;
 
 // CT_Slide ...
@@ -1162,10 +1162,10 @@ typedef struct {
 	AG_ChildSlide AG_ChildSlide;
 	bool ShowAttr; // attr, optional
 	EG_ChildSlide EG_ChildSlide[];
-	CT_CommonSlideData CSld[];
-	CT_SlideTransition Transition[];
-	CT_SlideTiming Timing[];
-	CT_ExtensionListModify ExtLst[];
+	CT_CommonSlideData CSld;
+	CT_SlideTransition Transition;
+	CT_SlideTiming Timing;
+	CT_ExtensionListModify ExtLst;
 } CT_Slide;
 
 typedef CT_Slide Sld;
@@ -1181,21 +1181,21 @@ typedef struct {
 	bool PreserveAttr; // attr, optional
 	bool UserDrawnAttr; // attr, optional
 	EG_ChildSlide EG_ChildSlide[];
-	CT_CommonSlideData CSld[];
-	CT_SlideTransition Transition[];
-	CT_SlideTiming Timing[];
-	CT_HeaderFooter Hf[];
-	CT_ExtensionListModify ExtLst[];
+	CT_CommonSlideData CSld;
+	CT_SlideTransition Transition;
+	CT_SlideTiming Timing;
+	CT_HeaderFooter Hf;
+	CT_ExtensionListModify ExtLst;
 } CT_SlideLayout;
 
 typedef CT_SlideLayout SldLayout;
 
 // CT_SlideMasterTextStyles ...
 typedef struct {
-	CT_TextListStyle TitleStyle[];
-	CT_TextListStyle BodyStyle[];
-	CT_TextListStyle OtherStyle[];
-	CT_ExtensionList ExtLst[];
+	CT_TextListStyle TitleStyle;
+	CT_TextListStyle BodyStyle;
+	CT_TextListStyle OtherStyle;
+	CT_ExtensionList ExtLst;
 } CT_SlideMasterTextStyles;
 
 // ST_SlideLayoutId ...
@@ -1205,7 +1205,7 @@ typedef unsigned int ST_SlideLayoutId;
 typedef struct {
 	unsigned int IdAttr; // attr, optional
 	char RIdAttr; // attr
-	CT_ExtensionList ExtLst[];
+	CT_ExtensionList ExtLst;
 } CT_SlideLayoutIdListEntry;
 
 // CT_SlideLayoutIdList ...
@@ -1217,13 +1217,13 @@ typedef struct {
 typedef struct {
 	bool PreserveAttr; // attr, optional
 	EG_TopLevelSlide EG_TopLevelSlide[];
-	CT_CommonSlideData CSld[];
-	CT_SlideLayoutIdList SldLayoutIdLst[];
-	CT_SlideTransition Transition[];
-	CT_SlideTiming Timing[];
-	CT_HeaderFooter Hf[];
-	CT_SlideMasterTextStyles TxStyles[];
-	CT_ExtensionListModify ExtLst[];
+	CT_CommonSlideData CSld;
+	CT_SlideLayoutIdList SldLayoutIdLst;
+	CT_SlideTransition Transition;
+	CT_SlideTiming Timing;
+	CT_HeaderFooter Hf;
+	CT_SlideMasterTextStyles TxStyles;
+	CT_ExtensionListModify ExtLst;
 } CT_SlideMaster;
 
 typedef CT_SlideMaster SldMaster;
@@ -1231,9 +1231,9 @@ typedef CT_SlideMaster SldMaster;
 // CT_HandoutMaster ...
 typedef struct {
 	EG_TopLevelSlide EG_TopLevelSlide[];
-	CT_CommonSlideData CSld[];
-	CT_HeaderFooter Hf[];
-	CT_ExtensionListModify ExtLst[];
+	CT_CommonSlideData CSld;
+	CT_HeaderFooter Hf;
+	CT_ExtensionListModify ExtLst;
 } CT_HandoutMaster;
 
 typedef CT_HandoutMaster HandoutMaster;
@@ -1241,10 +1241,10 @@ typedef CT_HandoutMaster HandoutMaster;
 // CT_NotesMaster ...
 typedef struct {
 	EG_TopLevelSlide EG_TopLevelSlide[];
-	CT_CommonSlideData CSld[];
-	CT_HeaderFooter Hf[];
-	CT_TextListStyle NotesStyle[];
-	CT_ExtensionListModify ExtLst[];
+	CT_CommonSlideData CSld;
+	CT_HeaderFooter Hf;
+	CT_TextListStyle NotesStyle;
+	CT_ExtensionListModify ExtLst;
 } CT_NotesMaster;
 
 typedef CT_NotesMaster NotesMaster;
@@ -1253,8 +1253,8 @@ typedef CT_NotesMaster NotesMaster;
 typedef struct {
 	AG_ChildSlide AG_ChildSlide;
 	EG_ChildSlide EG_ChildSlide[];
-	CT_CommonSlideData CSld[];
-	CT_ExtensionListModify ExtLst[];
+	CT_CommonSlideData CSld;
+	CT_ExtensionListModify ExtLst;
 } CT_NotesSlide;
 
 typedef CT_NotesSlide Notes;
@@ -1264,7 +1264,7 @@ typedef struct {
 	char ServerSldIdAttr; // attr
 	char ServerSldModifiedTimeAttr; // attr
 	char ClientInsertedTimeAttr; // attr
-	CT_ExtensionList ExtLst[];
+	CT_ExtensionList ExtLst;
 } CT_SlideSyncProperties;
 
 typedef CT_SlideSyncProperties SldSyncPr;
@@ -1301,22 +1301,22 @@ typedef struct {
 	char VertBarStateAttr; // attr, optional
 	char HorzBarStateAttr; // attr, optional
 	bool PreferSingleViewAttr; // attr, optional
-	CT_NormalViewPortion RestoredLeft[];
-	CT_NormalViewPortion RestoredTop[];
-	CT_ExtensionList ExtLst[];
+	CT_NormalViewPortion RestoredLeft;
+	CT_NormalViewPortion RestoredTop;
+	CT_ExtensionList ExtLst;
 } CT_NormalViewProperties;
 
 // CT_CommonViewProperties ...
 typedef struct {
 	bool VarScaleAttr; // attr, optional
-	CT_Scale2D Scale[];
-	CT_Point2D Origin[];
+	CT_Scale2D Scale;
+	CT_Point2D Origin;
 } CT_CommonViewProperties;
 
 // CT_NotesTextViewProperties ...
 typedef struct {
-	CT_CommonViewProperties CViewPr[];
-	CT_ExtensionList ExtLst[];
+	CT_CommonViewProperties CViewPr;
+	CT_ExtensionList ExtLst;
 } CT_NotesTextViewProperties;
 
 // CT_OutlineViewSlideEntry ...
@@ -1332,16 +1332,16 @@ typedef struct {
 
 // CT_OutlineViewProperties ...
 typedef struct {
-	CT_CommonViewProperties CViewPr[];
-	CT_OutlineViewSlideList SldLst[];
-	CT_ExtensionList ExtLst[];
+	CT_CommonViewProperties CViewPr;
+	CT_OutlineViewSlideList SldLst;
+	CT_ExtensionList ExtLst;
 } CT_OutlineViewProperties;
 
 // CT_SlideSorterViewProperties ...
 typedef struct {
 	bool ShowFormattingAttr; // attr, optional
-	CT_CommonViewProperties CViewPr[];
-	CT_ExtensionList ExtLst[];
+	CT_CommonViewProperties CViewPr;
+	CT_ExtensionList ExtLst;
 } CT_SlideSorterViewProperties;
 
 // CT_Guide ...
@@ -1360,34 +1360,34 @@ typedef struct {
 	bool SnapToGridAttr; // attr, optional
 	bool SnapToObjectsAttr; // attr, optional
 	bool ShowGuidesAttr; // attr, optional
-	CT_CommonViewProperties CViewPr[];
-	CT_GuideList GuideLst[];
+	CT_CommonViewProperties CViewPr;
+	CT_GuideList GuideLst;
 } CT_CommonSlideViewProperties;
 
 // CT_SlideViewProperties ...
 typedef struct {
-	CT_CommonSlideViewProperties CSldViewPr[];
-	CT_ExtensionList ExtLst[];
+	CT_CommonSlideViewProperties CSldViewPr;
+	CT_ExtensionList ExtLst;
 } CT_SlideViewProperties;
 
 // CT_NotesViewProperties ...
 typedef struct {
-	CT_CommonSlideViewProperties CSldViewPr[];
-	CT_ExtensionList ExtLst[];
+	CT_CommonSlideViewProperties CSldViewPr;
+	CT_ExtensionList ExtLst;
 } CT_NotesViewProperties;
 
 // CT_ViewProperties ...
 typedef struct {
 	char LastViewAttr; // attr, optional
 	bool ShowCommentsAttr; // attr, optional
-	CT_NormalViewProperties NormalViewPr[];
-	CT_SlideViewProperties SlideViewPr[];
-	CT_OutlineViewProperties OutlineViewPr[];
-	CT_NotesTextViewProperties NotesTextViewPr[];
-	CT_SlideSorterViewProperties SorterViewPr[];
-	CT_NotesViewProperties NotesViewPr[];
-	CT_PositiveSize2D GridSpacing[];
-	CT_ExtensionList ExtLst[];
+	CT_NormalViewProperties NormalViewPr;
+	CT_SlideViewProperties SlideViewPr;
+	CT_OutlineViewProperties OutlineViewPr;
+	CT_NotesTextViewProperties NotesTextViewPr;
+	CT_SlideSorterViewProperties SorterViewPr;
+	CT_NotesViewProperties NotesViewPr;
+	CT_PositiveSize2D GridSpacing;
+	CT_ExtensionList ExtLst;
 } CT_ViewProperties;
 
 typedef CT_ViewProperties ViewPr;

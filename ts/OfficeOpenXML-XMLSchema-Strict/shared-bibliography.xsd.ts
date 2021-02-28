@@ -35,12 +35,12 @@ export class CT_PersonType {
 
 // CT_NameType ...
 export class CT_NameType {
-	NameList: Array<CT_NameListType>;
+	NameList: CT_NameListType;
 }
 
 // CT_NameOrCorporateType ...
 export class CT_NameOrCorporateType {
-	NameList: Array<CT_NameListType>;
+	NameList: CT_NameListType;
 	Corporate: string;
 }
 

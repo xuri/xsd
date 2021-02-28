@@ -47,61 +47,61 @@ type CTNumVal struct {
 	XMLName        xml.Name `xml:"CT_NumVal"`
 	IdxAttr        uint32   `xml:"idx,attr"`
 	FormatCodeAttr string   `xml:"formatCode,attr,omitempty"`
-	V              []string `xml:"v"`
+	V              string   `xml:"v"`
 }
 
 // CTNumData ...
 type CTNumData struct {
-	XMLName    xml.Name           `xml:"CT_NumData"`
-	FormatCode []string           `xml:"formatCode"`
-	PtCount    []*CTUnsignedInt   `xml:"ptCount"`
-	Pt         []*CTNumVal        `xml:"pt"`
-	ExtLst     []*CTExtensionList `xml:"extLst"`
+	XMLName    xml.Name         `xml:"CT_NumData"`
+	FormatCode string           `xml:"formatCode"`
+	PtCount    *CTUnsignedInt   `xml:"ptCount"`
+	Pt         []*CTNumVal      `xml:"pt"`
+	ExtLst     *CTExtensionList `xml:"extLst"`
 }
 
 // CTNumRef ...
 type CTNumRef struct {
-	XMLName  xml.Name           `xml:"CT_NumRef"`
-	F        []string           `xml:"f"`
-	NumCache []*CTNumData       `xml:"numCache"`
-	ExtLst   []*CTExtensionList `xml:"extLst"`
+	XMLName  xml.Name         `xml:"CT_NumRef"`
+	F        string           `xml:"f"`
+	NumCache *CTNumData       `xml:"numCache"`
+	ExtLst   *CTExtensionList `xml:"extLst"`
 }
 
 // CTNumDataSource ...
 type CTNumDataSource struct {
-	XMLName xml.Name     `xml:"CT_NumDataSource"`
-	NumRef  []*CTNumRef  `xml:"numRef"`
-	NumLit  []*CTNumData `xml:"numLit"`
+	XMLName xml.Name   `xml:"CT_NumDataSource"`
+	NumRef  *CTNumRef  `xml:"numRef"`
+	NumLit  *CTNumData `xml:"numLit"`
 }
 
 // CTStrVal ...
 type CTStrVal struct {
 	XMLName xml.Name `xml:"CT_StrVal"`
 	IdxAttr uint32   `xml:"idx,attr"`
-	V       []string `xml:"v"`
+	V       string   `xml:"v"`
 }
 
 // CTStrData ...
 type CTStrData struct {
-	XMLName xml.Name           `xml:"CT_StrData"`
-	PtCount []*CTUnsignedInt   `xml:"ptCount"`
-	Pt      []*CTStrVal        `xml:"pt"`
-	ExtLst  []*CTExtensionList `xml:"extLst"`
+	XMLName xml.Name         `xml:"CT_StrData"`
+	PtCount *CTUnsignedInt   `xml:"ptCount"`
+	Pt      []*CTStrVal      `xml:"pt"`
+	ExtLst  *CTExtensionList `xml:"extLst"`
 }
 
 // CTStrRef ...
 type CTStrRef struct {
-	XMLName  xml.Name           `xml:"CT_StrRef"`
-	F        []string           `xml:"f"`
-	StrCache []*CTStrData       `xml:"strCache"`
-	ExtLst   []*CTExtensionList `xml:"extLst"`
+	XMLName  xml.Name         `xml:"CT_StrRef"`
+	F        string           `xml:"f"`
+	StrCache *CTStrData       `xml:"strCache"`
+	ExtLst   *CTExtensionList `xml:"extLst"`
 }
 
 // CTTx ...
 type CTTx struct {
-	XMLName xml.Name      `xml:"CT_Tx"`
-	StrRef  []*CTStrRef   `xml:"strRef"`
-	Rich    []*CTTextBody `xml:"rich"`
+	XMLName xml.Name    `xml:"CT_Tx"`
+	StrRef  *CTStrRef   `xml:"strRef"`
+	Rich    *CTTextBody `xml:"rich"`
 }
 
 // CTTextLanguageID ...
@@ -118,35 +118,35 @@ type CTLvl struct {
 
 // CTMultiLvlStrData ...
 type CTMultiLvlStrData struct {
-	XMLName xml.Name           `xml:"CT_MultiLvlStrData"`
-	PtCount []*CTUnsignedInt   `xml:"ptCount"`
-	Lvl     []*CTLvl           `xml:"lvl"`
-	ExtLst  []*CTExtensionList `xml:"extLst"`
+	XMLName xml.Name         `xml:"CT_MultiLvlStrData"`
+	PtCount *CTUnsignedInt   `xml:"ptCount"`
+	Lvl     []*CTLvl         `xml:"lvl"`
+	ExtLst  *CTExtensionList `xml:"extLst"`
 }
 
 // CTMultiLvlStrRef ...
 type CTMultiLvlStrRef struct {
-	XMLName          xml.Name             `xml:"CT_MultiLvlStrRef"`
-	F                []string             `xml:"f"`
-	MultiLvlStrCache []*CTMultiLvlStrData `xml:"multiLvlStrCache"`
-	ExtLst           []*CTExtensionList   `xml:"extLst"`
+	XMLName          xml.Name           `xml:"CT_MultiLvlStrRef"`
+	F                string             `xml:"f"`
+	MultiLvlStrCache *CTMultiLvlStrData `xml:"multiLvlStrCache"`
+	ExtLst           *CTExtensionList   `xml:"extLst"`
 }
 
 // CTAxDataSource ...
 type CTAxDataSource struct {
-	XMLName        xml.Name            `xml:"CT_AxDataSource"`
-	MultiLvlStrRef []*CTMultiLvlStrRef `xml:"multiLvlStrRef"`
-	NumRef         []*CTNumRef         `xml:"numRef"`
-	NumLit         []*CTNumData        `xml:"numLit"`
-	StrRef         []*CTStrRef         `xml:"strRef"`
-	StrLit         []*CTStrData        `xml:"strLit"`
+	XMLName        xml.Name          `xml:"CT_AxDataSource"`
+	MultiLvlStrRef *CTMultiLvlStrRef `xml:"multiLvlStrRef"`
+	NumRef         *CTNumRef         `xml:"numRef"`
+	NumLit         *CTNumData        `xml:"numLit"`
+	StrRef         *CTStrRef         `xml:"strRef"`
+	StrLit         *CTStrData        `xml:"strLit"`
 }
 
 // CTSerTx ...
 type CTSerTx struct {
-	XMLName xml.Name    `xml:"CT_SerTx"`
-	StrRef  []*CTStrRef `xml:"strRef"`
-	V       []string    `xml:"v"`
+	XMLName xml.Name  `xml:"CT_SerTx"`
+	StrRef  *CTStrRef `xml:"strRef"`
+	V       string    `xml:"v"`
 }
 
 // STLayoutTarget ...
@@ -169,35 +169,35 @@ type CTLayoutMode struct {
 
 // CTManualLayout ...
 type CTManualLayout struct {
-	XMLName      xml.Name           `xml:"CT_ManualLayout"`
-	LayoutTarget []*CTLayoutTarget  `xml:"layoutTarget"`
-	XMode        []*CTLayoutMode    `xml:"xMode"`
-	YMode        []*CTLayoutMode    `xml:"yMode"`
-	WMode        []*CTLayoutMode    `xml:"wMode"`
-	HMode        []*CTLayoutMode    `xml:"hMode"`
-	X            []*CTDouble        `xml:"x"`
-	Y            []*CTDouble        `xml:"y"`
-	W            []*CTDouble        `xml:"w"`
-	H            []*CTDouble        `xml:"h"`
-	ExtLst       []*CTExtensionList `xml:"extLst"`
+	XMLName      xml.Name         `xml:"CT_ManualLayout"`
+	LayoutTarget *CTLayoutTarget  `xml:"layoutTarget"`
+	XMode        *CTLayoutMode    `xml:"xMode"`
+	YMode        *CTLayoutMode    `xml:"yMode"`
+	WMode        *CTLayoutMode    `xml:"wMode"`
+	HMode        *CTLayoutMode    `xml:"hMode"`
+	X            *CTDouble        `xml:"x"`
+	Y            *CTDouble        `xml:"y"`
+	W            *CTDouble        `xml:"w"`
+	H            *CTDouble        `xml:"h"`
+	ExtLst       *CTExtensionList `xml:"extLst"`
 }
 
 // CTLayout ...
 type CTLayout struct {
-	XMLName      xml.Name           `xml:"CT_Layout"`
-	ManualLayout []*CTManualLayout  `xml:"manualLayout"`
-	ExtLst       []*CTExtensionList `xml:"extLst"`
+	XMLName      xml.Name         `xml:"CT_Layout"`
+	ManualLayout *CTManualLayout  `xml:"manualLayout"`
+	ExtLst       *CTExtensionList `xml:"extLst"`
 }
 
 // CTTitle ...
 type CTTitle struct {
-	XMLName xml.Name             `xml:"CT_Title"`
-	Tx      []*CTTx              `xml:"tx"`
-	Layout  []*CTLayout          `xml:"layout"`
-	Overlay []*CTBoolean         `xml:"overlay"`
-	SpPr    []*CTShapeProperties `xml:"spPr"`
-	TxPr    []*CTTextBody        `xml:"txPr"`
-	ExtLst  []*CTExtensionList   `xml:"extLst"`
+	XMLName xml.Name           `xml:"CT_Title"`
+	Tx      *CTTx              `xml:"tx"`
+	Layout  *CTLayout          `xml:"layout"`
+	Overlay *CTBoolean         `xml:"overlay"`
+	SpPr    *CTShapeProperties `xml:"spPr"`
+	TxPr    *CTTextBody        `xml:"txPr"`
+	ExtLst  *CTExtensionList   `xml:"extLst"`
 }
 
 // STRotX ...
@@ -259,23 +259,23 @@ type CTPerspective struct {
 
 // CTView3D ...
 type CTView3D struct {
-	XMLName      xml.Name           `xml:"CT_View3D"`
-	RotX         []*CTRotX          `xml:"rotX"`
-	HPercent     []*CTHPercent      `xml:"hPercent"`
-	RotY         []*CTRotY          `xml:"rotY"`
-	DepthPercent []*CTDepthPercent  `xml:"depthPercent"`
-	RAngAx       []*CTBoolean       `xml:"rAngAx"`
-	Perspective  []*CTPerspective   `xml:"perspective"`
-	ExtLst       []*CTExtensionList `xml:"extLst"`
+	XMLName      xml.Name         `xml:"CT_View3D"`
+	RotX         *CTRotX          `xml:"rotX"`
+	HPercent     *CTHPercent      `xml:"hPercent"`
+	RotY         *CTRotY          `xml:"rotY"`
+	DepthPercent *CTDepthPercent  `xml:"depthPercent"`
+	RAngAx       *CTBoolean       `xml:"rAngAx"`
+	Perspective  *CTPerspective   `xml:"perspective"`
+	ExtLst       *CTExtensionList `xml:"extLst"`
 }
 
 // CTSurface ...
 type CTSurface struct {
-	XMLName        xml.Name             `xml:"CT_Surface"`
-	Thickness      []*CTThickness       `xml:"thickness"`
-	SpPr           []*CTShapeProperties `xml:"spPr"`
-	PictureOptions []*CTPictureOptions  `xml:"pictureOptions"`
-	ExtLst         []*CTExtensionList   `xml:"extLst"`
+	XMLName        xml.Name           `xml:"CT_Surface"`
+	Thickness      *CTThickness       `xml:"thickness"`
+	SpPr           *CTShapeProperties `xml:"spPr"`
+	PictureOptions *CTPictureOptions  `xml:"pictureOptions"`
+	ExtLst         *CTExtensionList   `xml:"extLst"`
 }
 
 // STThickness ...
@@ -295,14 +295,14 @@ type CTThickness struct {
 
 // CTDTable ...
 type CTDTable struct {
-	XMLName        xml.Name             `xml:"CT_DTable"`
-	ShowHorzBorder []*CTBoolean         `xml:"showHorzBorder"`
-	ShowVertBorder []*CTBoolean         `xml:"showVertBorder"`
-	ShowOutline    []*CTBoolean         `xml:"showOutline"`
-	ShowKeys       []*CTBoolean         `xml:"showKeys"`
-	SpPr           []*CTShapeProperties `xml:"spPr"`
-	TxPr           []*CTTextBody        `xml:"txPr"`
-	ExtLst         []*CTExtensionList   `xml:"extLst"`
+	XMLName        xml.Name           `xml:"CT_DTable"`
+	ShowHorzBorder *CTBoolean         `xml:"showHorzBorder"`
+	ShowVertBorder *CTBoolean         `xml:"showVertBorder"`
+	ShowOutline    *CTBoolean         `xml:"showOutline"`
+	ShowKeys       *CTBoolean         `xml:"showKeys"`
+	SpPr           *CTShapeProperties `xml:"spPr"`
+	TxPr           *CTTextBody        `xml:"txPr"`
+	ExtLst         *CTExtensionList   `xml:"extLst"`
 }
 
 // STGapAmount ...
@@ -441,24 +441,24 @@ type CTDLblPos struct {
 // EGDLblShared ...
 type EGDLblShared struct {
 	XMLName        xml.Name `xml:"EG_DLblShared"`
-	NumFmt         []*CTNumFmt
-	SpPr           []*CTShapeProperties
-	TxPr           []*CTTextBody
-	DLblPos        []*CTDLblPos
-	ShowLegendKey  []*CTBoolean
-	ShowVal        []*CTBoolean
-	ShowCatName    []*CTBoolean
-	ShowSerName    []*CTBoolean
-	ShowPercent    []*CTBoolean
-	ShowBubbleSize []*CTBoolean
-	Separator      []string
+	NumFmt         *CTNumFmt
+	SpPr           *CTShapeProperties
+	TxPr           *CTTextBody
+	DLblPos        *CTDLblPos
+	ShowLegendKey  *CTBoolean
+	ShowVal        *CTBoolean
+	ShowCatName    *CTBoolean
+	ShowSerName    *CTBoolean
+	ShowPercent    *CTBoolean
+	ShowBubbleSize *CTBoolean
+	Separator      string
 }
 
 // GroupDLbl ...
 type GroupDLbl struct {
 	XMLName      xml.Name `xml:"Group_DLbl"`
-	Layout       []*CTLayout
-	Tx           []*CTTx
+	Layout       *CTLayout
+	Tx           *CTTx
 	EGDLblShared []*EGDLblShared
 }
 
@@ -466,16 +466,16 @@ type GroupDLbl struct {
 type CTDLbl struct {
 	XMLName   xml.Name `xml:"CT_DLbl"`
 	GroupDLbl []*GroupDLbl
-	Idx       []*CTUnsignedInt   `xml:"idx"`
-	Delete    []*CTBoolean       `xml:"delete"`
-	ExtLst    []*CTExtensionList `xml:"extLst"`
+	Idx       *CTUnsignedInt   `xml:"idx"`
+	Delete    *CTBoolean       `xml:"delete"`
+	ExtLst    *CTExtensionList `xml:"extLst"`
 }
 
 // GroupDLbls ...
 type GroupDLbls struct {
 	XMLName         xml.Name `xml:"Group_DLbls"`
-	ShowLeaderLines []*CTBoolean
-	LeaderLines     []*CTChartLines
+	ShowLeaderLines *CTBoolean
+	LeaderLines     *CTChartLines
 	EGDLblShared    []*EGDLblShared
 }
 
@@ -483,9 +483,9 @@ type GroupDLbls struct {
 type CTDLbls struct {
 	XMLName    xml.Name `xml:"CT_DLbls"`
 	GroupDLbls []*GroupDLbls
-	DLbl       []*CTDLbl          `xml:"dLbl"`
-	Delete     []*CTBoolean       `xml:"delete"`
-	ExtLst     []*CTExtensionList `xml:"extLst"`
+	DLbl       []*CTDLbl        `xml:"dLbl"`
+	Delete     *CTBoolean       `xml:"delete"`
+	ExtLst     *CTExtensionList `xml:"extLst"`
 }
 
 // STMarkerStyle ...
@@ -508,24 +508,24 @@ type CTMarkerSize struct {
 
 // CTMarker ...
 type CTMarker struct {
-	XMLName xml.Name             `xml:"CT_Marker"`
-	Symbol  []*CTMarkerStyle     `xml:"symbol"`
-	Size    []*CTMarkerSize      `xml:"size"`
-	SpPr    []*CTShapeProperties `xml:"spPr"`
-	ExtLst  []*CTExtensionList   `xml:"extLst"`
+	XMLName xml.Name           `xml:"CT_Marker"`
+	Symbol  *CTMarkerStyle     `xml:"symbol"`
+	Size    *CTMarkerSize      `xml:"size"`
+	SpPr    *CTShapeProperties `xml:"spPr"`
+	ExtLst  *CTExtensionList   `xml:"extLst"`
 }
 
 // CTDPt ...
 type CTDPt struct {
-	XMLName          xml.Name             `xml:"CT_DPt"`
-	Idx              []*CTUnsignedInt     `xml:"idx"`
-	InvertIfNegative []*CTBoolean         `xml:"invertIfNegative"`
-	Marker           []*CTMarker          `xml:"marker"`
-	Bubble3D         []*CTBoolean         `xml:"bubble3D"`
-	Explosion        []*CTUnsignedInt     `xml:"explosion"`
-	SpPr             []*CTShapeProperties `xml:"spPr"`
-	PictureOptions   []*CTPictureOptions  `xml:"pictureOptions"`
-	ExtLst           []*CTExtensionList   `xml:"extLst"`
+	XMLName          xml.Name           `xml:"CT_DPt"`
+	Idx              *CTUnsignedInt     `xml:"idx"`
+	InvertIfNegative *CTBoolean         `xml:"invertIfNegative"`
+	Marker           *CTMarker          `xml:"marker"`
+	Bubble3D         *CTBoolean         `xml:"bubble3D"`
+	Explosion        *CTUnsignedInt     `xml:"explosion"`
+	SpPr             *CTShapeProperties `xml:"spPr"`
+	PictureOptions   *CTPictureOptions  `xml:"pictureOptions"`
+	ExtLst           *CTExtensionList   `xml:"extLst"`
 }
 
 // STTrendlineType ...
@@ -557,30 +557,30 @@ type CTPeriod struct {
 
 // CTTrendlineLbl ...
 type CTTrendlineLbl struct {
-	XMLName xml.Name             `xml:"CT_TrendlineLbl"`
-	Layout  []*CTLayout          `xml:"layout"`
-	Tx      []*CTTx              `xml:"tx"`
-	NumFmt  []*CTNumFmt          `xml:"numFmt"`
-	SpPr    []*CTShapeProperties `xml:"spPr"`
-	TxPr    []*CTTextBody        `xml:"txPr"`
-	ExtLst  []*CTExtensionList   `xml:"extLst"`
+	XMLName xml.Name           `xml:"CT_TrendlineLbl"`
+	Layout  *CTLayout          `xml:"layout"`
+	Tx      *CTTx              `xml:"tx"`
+	NumFmt  *CTNumFmt          `xml:"numFmt"`
+	SpPr    *CTShapeProperties `xml:"spPr"`
+	TxPr    *CTTextBody        `xml:"txPr"`
+	ExtLst  *CTExtensionList   `xml:"extLst"`
 }
 
 // CTTrendline ...
 type CTTrendline struct {
-	XMLName       xml.Name             `xml:"CT_Trendline"`
-	Name          []string             `xml:"name"`
-	SpPr          []*CTShapeProperties `xml:"spPr"`
-	TrendlineType []*CTTrendlineType   `xml:"trendlineType"`
-	Order         []*CTOrder           `xml:"order"`
-	Period        []*CTPeriod          `xml:"period"`
-	Forward       []*CTDouble          `xml:"forward"`
-	Backward      []*CTDouble          `xml:"backward"`
-	Intercept     []*CTDouble          `xml:"intercept"`
-	DispRSqr      []*CTBoolean         `xml:"dispRSqr"`
-	DispEq        []*CTBoolean         `xml:"dispEq"`
-	TrendlineLbl  []*CTTrendlineLbl    `xml:"trendlineLbl"`
-	ExtLst        []*CTExtensionList   `xml:"extLst"`
+	XMLName       xml.Name           `xml:"CT_Trendline"`
+	Name          string             `xml:"name"`
+	SpPr          *CTShapeProperties `xml:"spPr"`
+	TrendlineType *CTTrendlineType   `xml:"trendlineType"`
+	Order         *CTOrder           `xml:"order"`
+	Period        *CTPeriod          `xml:"period"`
+	Forward       *CTDouble          `xml:"forward"`
+	Backward      *CTDouble          `xml:"backward"`
+	Intercept     *CTDouble          `xml:"intercept"`
+	DispRSqr      *CTBoolean         `xml:"dispRSqr"`
+	DispEq        *CTBoolean         `xml:"dispEq"`
+	TrendlineLbl  *CTTrendlineLbl    `xml:"trendlineLbl"`
+	ExtLst        *CTExtensionList   `xml:"extLst"`
 }
 
 // STErrDir ...
@@ -612,149 +612,149 @@ type CTErrValType struct {
 
 // CTErrBars ...
 type CTErrBars struct {
-	XMLName    xml.Name             `xml:"CT_ErrBars"`
-	ErrDir     []*CTErrDir          `xml:"errDir"`
-	ErrBarType []*CTErrBarType      `xml:"errBarType"`
-	ErrValType []*CTErrValType      `xml:"errValType"`
-	NoEndCap   []*CTBoolean         `xml:"noEndCap"`
-	Plus       []*CTNumDataSource   `xml:"plus"`
-	Minus      []*CTNumDataSource   `xml:"minus"`
-	Val        []*CTDouble          `xml:"val"`
-	SpPr       []*CTShapeProperties `xml:"spPr"`
-	ExtLst     []*CTExtensionList   `xml:"extLst"`
+	XMLName    xml.Name           `xml:"CT_ErrBars"`
+	ErrDir     *CTErrDir          `xml:"errDir"`
+	ErrBarType *CTErrBarType      `xml:"errBarType"`
+	ErrValType *CTErrValType      `xml:"errValType"`
+	NoEndCap   *CTBoolean         `xml:"noEndCap"`
+	Plus       *CTNumDataSource   `xml:"plus"`
+	Minus      *CTNumDataSource   `xml:"minus"`
+	Val        *CTDouble          `xml:"val"`
+	SpPr       *CTShapeProperties `xml:"spPr"`
+	ExtLst     *CTExtensionList   `xml:"extLst"`
 }
 
 // CTUpDownBar ...
 type CTUpDownBar struct {
-	XMLName xml.Name             `xml:"CT_UpDownBar"`
-	SpPr    []*CTShapeProperties `xml:"spPr"`
+	XMLName xml.Name           `xml:"CT_UpDownBar"`
+	SpPr    *CTShapeProperties `xml:"spPr"`
 }
 
 // CTUpDownBars ...
 type CTUpDownBars struct {
-	XMLName  xml.Name           `xml:"CT_UpDownBars"`
-	GapWidth []*CTGapAmount     `xml:"gapWidth"`
-	UpBars   []*CTUpDownBar     `xml:"upBars"`
-	DownBars []*CTUpDownBar     `xml:"downBars"`
-	ExtLst   []*CTExtensionList `xml:"extLst"`
+	XMLName  xml.Name         `xml:"CT_UpDownBars"`
+	GapWidth *CTGapAmount     `xml:"gapWidth"`
+	UpBars   *CTUpDownBar     `xml:"upBars"`
+	DownBars *CTUpDownBar     `xml:"downBars"`
+	ExtLst   *CTExtensionList `xml:"extLst"`
 }
 
 // EGSerShared ...
 type EGSerShared struct {
 	XMLName xml.Name `xml:"EG_SerShared"`
-	Idx     []*CTUnsignedInt
-	Order   []*CTUnsignedInt
-	Tx      []*CTSerTx
-	SpPr    []*CTShapeProperties
+	Idx     *CTUnsignedInt
+	Order   *CTUnsignedInt
+	Tx      *CTSerTx
+	SpPr    *CTShapeProperties
 }
 
 // CTLineSer ...
 type CTLineSer struct {
 	XMLName     xml.Name `xml:"CT_LineSer"`
 	EGSerShared []*EGSerShared
-	Marker      []*CTMarker        `xml:"marker"`
-	DPt         []*CTDPt           `xml:"dPt"`
-	DLbls       []*CTDLbls         `xml:"dLbls"`
-	Trendline   []*CTTrendline     `xml:"trendline"`
-	ErrBars     []*CTErrBars       `xml:"errBars"`
-	Cat         []*CTAxDataSource  `xml:"cat"`
-	Val         []*CTNumDataSource `xml:"val"`
-	Smooth      []*CTBoolean       `xml:"smooth"`
-	ExtLst      []*CTExtensionList `xml:"extLst"`
+	Marker      *CTMarker        `xml:"marker"`
+	DPt         []*CTDPt         `xml:"dPt"`
+	DLbls       *CTDLbls         `xml:"dLbls"`
+	Trendline   []*CTTrendline   `xml:"trendline"`
+	ErrBars     *CTErrBars       `xml:"errBars"`
+	Cat         *CTAxDataSource  `xml:"cat"`
+	Val         *CTNumDataSource `xml:"val"`
+	Smooth      *CTBoolean       `xml:"smooth"`
+	ExtLst      *CTExtensionList `xml:"extLst"`
 }
 
 // CTScatterSer ...
 type CTScatterSer struct {
 	XMLName     xml.Name `xml:"CT_ScatterSer"`
 	EGSerShared []*EGSerShared
-	Marker      []*CTMarker        `xml:"marker"`
-	DPt         []*CTDPt           `xml:"dPt"`
-	DLbls       []*CTDLbls         `xml:"dLbls"`
-	Trendline   []*CTTrendline     `xml:"trendline"`
-	ErrBars     []*CTErrBars       `xml:"errBars"`
-	XVal        []*CTAxDataSource  `xml:"xVal"`
-	YVal        []*CTNumDataSource `xml:"yVal"`
-	Smooth      []*CTBoolean       `xml:"smooth"`
-	ExtLst      []*CTExtensionList `xml:"extLst"`
+	Marker      *CTMarker        `xml:"marker"`
+	DPt         []*CTDPt         `xml:"dPt"`
+	DLbls       *CTDLbls         `xml:"dLbls"`
+	Trendline   []*CTTrendline   `xml:"trendline"`
+	ErrBars     []*CTErrBars     `xml:"errBars"`
+	XVal        *CTAxDataSource  `xml:"xVal"`
+	YVal        *CTNumDataSource `xml:"yVal"`
+	Smooth      *CTBoolean       `xml:"smooth"`
+	ExtLst      *CTExtensionList `xml:"extLst"`
 }
 
 // CTRadarSer ...
 type CTRadarSer struct {
 	XMLName     xml.Name `xml:"CT_RadarSer"`
 	EGSerShared []*EGSerShared
-	Marker      []*CTMarker        `xml:"marker"`
-	DPt         []*CTDPt           `xml:"dPt"`
-	DLbls       []*CTDLbls         `xml:"dLbls"`
-	Cat         []*CTAxDataSource  `xml:"cat"`
-	Val         []*CTNumDataSource `xml:"val"`
-	ExtLst      []*CTExtensionList `xml:"extLst"`
+	Marker      *CTMarker        `xml:"marker"`
+	DPt         []*CTDPt         `xml:"dPt"`
+	DLbls       *CTDLbls         `xml:"dLbls"`
+	Cat         *CTAxDataSource  `xml:"cat"`
+	Val         *CTNumDataSource `xml:"val"`
+	ExtLst      *CTExtensionList `xml:"extLst"`
 }
 
 // CTBarSer ...
 type CTBarSer struct {
 	XMLName          xml.Name `xml:"CT_BarSer"`
 	EGSerShared      []*EGSerShared
-	InvertIfNegative []*CTBoolean        `xml:"invertIfNegative"`
-	PictureOptions   []*CTPictureOptions `xml:"pictureOptions"`
-	DPt              []*CTDPt            `xml:"dPt"`
-	DLbls            []*CTDLbls          `xml:"dLbls"`
-	Trendline        []*CTTrendline      `xml:"trendline"`
-	ErrBars          []*CTErrBars        `xml:"errBars"`
-	Cat              []*CTAxDataSource   `xml:"cat"`
-	Val              []*CTNumDataSource  `xml:"val"`
-	Shape            []*CTShape          `xml:"shape"`
-	ExtLst           []*CTExtensionList  `xml:"extLst"`
+	InvertIfNegative *CTBoolean        `xml:"invertIfNegative"`
+	PictureOptions   *CTPictureOptions `xml:"pictureOptions"`
+	DPt              []*CTDPt          `xml:"dPt"`
+	DLbls            *CTDLbls          `xml:"dLbls"`
+	Trendline        []*CTTrendline    `xml:"trendline"`
+	ErrBars          *CTErrBars        `xml:"errBars"`
+	Cat              *CTAxDataSource   `xml:"cat"`
+	Val              *CTNumDataSource  `xml:"val"`
+	Shape            *CTShape          `xml:"shape"`
+	ExtLst           *CTExtensionList  `xml:"extLst"`
 }
 
 // CTAreaSer ...
 type CTAreaSer struct {
 	XMLName        xml.Name `xml:"CT_AreaSer"`
 	EGSerShared    []*EGSerShared
-	PictureOptions []*CTPictureOptions `xml:"pictureOptions"`
-	DPt            []*CTDPt            `xml:"dPt"`
-	DLbls          []*CTDLbls          `xml:"dLbls"`
-	Trendline      []*CTTrendline      `xml:"trendline"`
-	ErrBars        []*CTErrBars        `xml:"errBars"`
-	Cat            []*CTAxDataSource   `xml:"cat"`
-	Val            []*CTNumDataSource  `xml:"val"`
-	ExtLst         []*CTExtensionList  `xml:"extLst"`
+	PictureOptions *CTPictureOptions `xml:"pictureOptions"`
+	DPt            []*CTDPt          `xml:"dPt"`
+	DLbls          *CTDLbls          `xml:"dLbls"`
+	Trendline      []*CTTrendline    `xml:"trendline"`
+	ErrBars        []*CTErrBars      `xml:"errBars"`
+	Cat            *CTAxDataSource   `xml:"cat"`
+	Val            *CTNumDataSource  `xml:"val"`
+	ExtLst         *CTExtensionList  `xml:"extLst"`
 }
 
 // CTPieSer ...
 type CTPieSer struct {
 	XMLName     xml.Name `xml:"CT_PieSer"`
 	EGSerShared []*EGSerShared
-	Explosion   []*CTUnsignedInt   `xml:"explosion"`
-	DPt         []*CTDPt           `xml:"dPt"`
-	DLbls       []*CTDLbls         `xml:"dLbls"`
-	Cat         []*CTAxDataSource  `xml:"cat"`
-	Val         []*CTNumDataSource `xml:"val"`
-	ExtLst      []*CTExtensionList `xml:"extLst"`
+	Explosion   *CTUnsignedInt   `xml:"explosion"`
+	DPt         []*CTDPt         `xml:"dPt"`
+	DLbls       *CTDLbls         `xml:"dLbls"`
+	Cat         *CTAxDataSource  `xml:"cat"`
+	Val         *CTNumDataSource `xml:"val"`
+	ExtLst      *CTExtensionList `xml:"extLst"`
 }
 
 // CTBubbleSer ...
 type CTBubbleSer struct {
 	XMLName          xml.Name `xml:"CT_BubbleSer"`
 	EGSerShared      []*EGSerShared
-	InvertIfNegative []*CTBoolean       `xml:"invertIfNegative"`
-	DPt              []*CTDPt           `xml:"dPt"`
-	DLbls            []*CTDLbls         `xml:"dLbls"`
-	Trendline        []*CTTrendline     `xml:"trendline"`
-	ErrBars          []*CTErrBars       `xml:"errBars"`
-	XVal             []*CTAxDataSource  `xml:"xVal"`
-	YVal             []*CTNumDataSource `xml:"yVal"`
-	BubbleSize       []*CTNumDataSource `xml:"bubbleSize"`
-	Bubble3D         []*CTBoolean       `xml:"bubble3D"`
-	ExtLst           []*CTExtensionList `xml:"extLst"`
+	InvertIfNegative *CTBoolean       `xml:"invertIfNegative"`
+	DPt              []*CTDPt         `xml:"dPt"`
+	DLbls            *CTDLbls         `xml:"dLbls"`
+	Trendline        []*CTTrendline   `xml:"trendline"`
+	ErrBars          []*CTErrBars     `xml:"errBars"`
+	XVal             *CTAxDataSource  `xml:"xVal"`
+	YVal             *CTNumDataSource `xml:"yVal"`
+	BubbleSize       *CTNumDataSource `xml:"bubbleSize"`
+	Bubble3D         *CTBoolean       `xml:"bubble3D"`
+	ExtLst           *CTExtensionList `xml:"extLst"`
 }
 
 // CTSurfaceSer ...
 type CTSurfaceSer struct {
 	XMLName     xml.Name `xml:"CT_SurfaceSer"`
 	EGSerShared []*EGSerShared
-	Cat         []*CTAxDataSource  `xml:"cat"`
-	Val         []*CTNumDataSource `xml:"val"`
-	ExtLst      []*CTExtensionList `xml:"extLst"`
+	Cat         *CTAxDataSource  `xml:"cat"`
+	Val         *CTNumDataSource `xml:"val"`
+	ExtLst      *CTExtensionList `xml:"extLst"`
 }
 
 // STGrouping ...
@@ -768,51 +768,51 @@ type CTGrouping struct {
 
 // CTChartLines ...
 type CTChartLines struct {
-	XMLName xml.Name             `xml:"CT_ChartLines"`
-	SpPr    []*CTShapeProperties `xml:"spPr"`
+	XMLName xml.Name           `xml:"CT_ChartLines"`
+	SpPr    *CTShapeProperties `xml:"spPr"`
 }
 
 // EGLineChartShared ...
 type EGLineChartShared struct {
 	XMLName    xml.Name `xml:"EG_LineChartShared"`
-	Grouping   []*CTGrouping
-	VaryColors []*CTBoolean
+	Grouping   *CTGrouping
+	VaryColors *CTBoolean
 	Ser        []*CTLineSer
-	DLbls      []*CTDLbls
-	DropLines  []*CTChartLines
+	DLbls      *CTDLbls
+	DropLines  *CTChartLines
 }
 
 // CTLineChart ...
 type CTLineChart struct {
 	XMLName           xml.Name `xml:"CT_LineChart"`
 	EGLineChartShared []*EGLineChartShared
-	HiLowLines        []*CTChartLines    `xml:"hiLowLines"`
-	UpDownBars        []*CTUpDownBars    `xml:"upDownBars"`
-	Marker            []*CTBoolean       `xml:"marker"`
-	Smooth            []*CTBoolean       `xml:"smooth"`
-	AxId              []*CTUnsignedInt   `xml:"axId"`
-	ExtLst            []*CTExtensionList `xml:"extLst"`
+	HiLowLines        *CTChartLines    `xml:"hiLowLines"`
+	UpDownBars        *CTUpDownBars    `xml:"upDownBars"`
+	Marker            *CTBoolean       `xml:"marker"`
+	Smooth            *CTBoolean       `xml:"smooth"`
+	AxId              []*CTUnsignedInt `xml:"axId"`
+	ExtLst            *CTExtensionList `xml:"extLst"`
 }
 
 // CTLine3DChart ...
 type CTLine3DChart struct {
 	XMLName           xml.Name `xml:"CT_Line3DChart"`
 	EGLineChartShared []*EGLineChartShared
-	GapDepth          []*CTGapAmount     `xml:"gapDepth"`
-	AxId              []*CTUnsignedInt   `xml:"axId"`
-	ExtLst            []*CTExtensionList `xml:"extLst"`
+	GapDepth          *CTGapAmount     `xml:"gapDepth"`
+	AxId              []*CTUnsignedInt `xml:"axId"`
+	ExtLst            *CTExtensionList `xml:"extLst"`
 }
 
 // CTStockChart ...
 type CTStockChart struct {
-	XMLName    xml.Name           `xml:"CT_StockChart"`
-	Ser        []*CTLineSer       `xml:"ser"`
-	DLbls      []*CTDLbls         `xml:"dLbls"`
-	DropLines  []*CTChartLines    `xml:"dropLines"`
-	HiLowLines []*CTChartLines    `xml:"hiLowLines"`
-	UpDownBars []*CTUpDownBars    `xml:"upDownBars"`
-	AxId       []*CTUnsignedInt   `xml:"axId"`
-	ExtLst     []*CTExtensionList `xml:"extLst"`
+	XMLName    xml.Name         `xml:"CT_StockChart"`
+	Ser        []*CTLineSer     `xml:"ser"`
+	DLbls      *CTDLbls         `xml:"dLbls"`
+	DropLines  *CTChartLines    `xml:"dropLines"`
+	HiLowLines *CTChartLines    `xml:"hiLowLines"`
+	UpDownBars *CTUpDownBars    `xml:"upDownBars"`
+	AxId       []*CTUnsignedInt `xml:"axId"`
+	ExtLst     *CTExtensionList `xml:"extLst"`
 }
 
 // STScatterStyle ...
@@ -826,13 +826,13 @@ type CTScatterStyle struct {
 
 // CTScatterChart ...
 type CTScatterChart struct {
-	XMLName      xml.Name           `xml:"CT_ScatterChart"`
-	ScatterStyle []*CTScatterStyle  `xml:"scatterStyle"`
-	VaryColors   []*CTBoolean       `xml:"varyColors"`
-	Ser          []*CTScatterSer    `xml:"ser"`
-	DLbls        []*CTDLbls         `xml:"dLbls"`
-	AxId         []*CTUnsignedInt   `xml:"axId"`
-	ExtLst       []*CTExtensionList `xml:"extLst"`
+	XMLName      xml.Name         `xml:"CT_ScatterChart"`
+	ScatterStyle *CTScatterStyle  `xml:"scatterStyle"`
+	VaryColors   *CTBoolean       `xml:"varyColors"`
+	Ser          []*CTScatterSer  `xml:"ser"`
+	DLbls        *CTDLbls         `xml:"dLbls"`
+	AxId         []*CTUnsignedInt `xml:"axId"`
+	ExtLst       *CTExtensionList `xml:"extLst"`
 }
 
 // STRadarStyle ...
@@ -846,13 +846,13 @@ type CTRadarStyle struct {
 
 // CTRadarChart ...
 type CTRadarChart struct {
-	XMLName    xml.Name           `xml:"CT_RadarChart"`
-	RadarStyle []*CTRadarStyle    `xml:"radarStyle"`
-	VaryColors []*CTBoolean       `xml:"varyColors"`
-	Ser        []*CTRadarSer      `xml:"ser"`
-	DLbls      []*CTDLbls         `xml:"dLbls"`
-	AxId       []*CTUnsignedInt   `xml:"axId"`
-	ExtLst     []*CTExtensionList `xml:"extLst"`
+	XMLName    xml.Name         `xml:"CT_RadarChart"`
+	RadarStyle *CTRadarStyle    `xml:"radarStyle"`
+	VaryColors *CTBoolean       `xml:"varyColors"`
+	Ser        []*CTRadarSer    `xml:"ser"`
+	DLbls      *CTDLbls         `xml:"dLbls"`
+	AxId       []*CTUnsignedInt `xml:"axId"`
+	ExtLst     *CTExtensionList `xml:"extLst"`
 }
 
 // STBarGrouping ...
@@ -885,92 +885,92 @@ type CTShape struct {
 // EGBarChartShared ...
 type EGBarChartShared struct {
 	XMLName    xml.Name `xml:"EG_BarChartShared"`
-	BarDir     []*CTBarDir
-	Grouping   []*CTBarGrouping
-	VaryColors []*CTBoolean
+	BarDir     *CTBarDir
+	Grouping   *CTBarGrouping
+	VaryColors *CTBoolean
 	Ser        []*CTBarSer
-	DLbls      []*CTDLbls
+	DLbls      *CTDLbls
 }
 
 // CTBarChart ...
 type CTBarChart struct {
 	XMLName          xml.Name `xml:"CT_BarChart"`
 	EGBarChartShared []*EGBarChartShared
-	GapWidth         []*CTGapAmount     `xml:"gapWidth"`
-	Overlap          []*CTOverlap       `xml:"overlap"`
-	SerLines         []*CTChartLines    `xml:"serLines"`
-	AxId             []*CTUnsignedInt   `xml:"axId"`
-	ExtLst           []*CTExtensionList `xml:"extLst"`
+	GapWidth         *CTGapAmount     `xml:"gapWidth"`
+	Overlap          *CTOverlap       `xml:"overlap"`
+	SerLines         []*CTChartLines  `xml:"serLines"`
+	AxId             []*CTUnsignedInt `xml:"axId"`
+	ExtLst           *CTExtensionList `xml:"extLst"`
 }
 
 // CTBar3DChart ...
 type CTBar3DChart struct {
 	XMLName          xml.Name `xml:"CT_Bar3DChart"`
 	EGBarChartShared []*EGBarChartShared
-	GapWidth         []*CTGapAmount     `xml:"gapWidth"`
-	GapDepth         []*CTGapAmount     `xml:"gapDepth"`
-	Shape            []*CTShape         `xml:"shape"`
-	AxId             []*CTUnsignedInt   `xml:"axId"`
-	ExtLst           []*CTExtensionList `xml:"extLst"`
+	GapWidth         *CTGapAmount     `xml:"gapWidth"`
+	GapDepth         *CTGapAmount     `xml:"gapDepth"`
+	Shape            *CTShape         `xml:"shape"`
+	AxId             []*CTUnsignedInt `xml:"axId"`
+	ExtLst           *CTExtensionList `xml:"extLst"`
 }
 
 // EGAreaChartShared ...
 type EGAreaChartShared struct {
 	XMLName    xml.Name `xml:"EG_AreaChartShared"`
-	Grouping   []*CTGrouping
-	VaryColors []*CTBoolean
+	Grouping   *CTGrouping
+	VaryColors *CTBoolean
 	Ser        []*CTAreaSer
-	DLbls      []*CTDLbls
-	DropLines  []*CTChartLines
+	DLbls      *CTDLbls
+	DropLines  *CTChartLines
 }
 
 // CTAreaChart ...
 type CTAreaChart struct {
 	XMLName           xml.Name `xml:"CT_AreaChart"`
 	EGAreaChartShared []*EGAreaChartShared
-	AxId              []*CTUnsignedInt   `xml:"axId"`
-	ExtLst            []*CTExtensionList `xml:"extLst"`
+	AxId              []*CTUnsignedInt `xml:"axId"`
+	ExtLst            *CTExtensionList `xml:"extLst"`
 }
 
 // CTArea3DChart ...
 type CTArea3DChart struct {
 	XMLName           xml.Name `xml:"CT_Area3DChart"`
 	EGAreaChartShared []*EGAreaChartShared
-	GapDepth          []*CTGapAmount     `xml:"gapDepth"`
-	AxId              []*CTUnsignedInt   `xml:"axId"`
-	ExtLst            []*CTExtensionList `xml:"extLst"`
+	GapDepth          *CTGapAmount     `xml:"gapDepth"`
+	AxId              []*CTUnsignedInt `xml:"axId"`
+	ExtLst            *CTExtensionList `xml:"extLst"`
 }
 
 // EGPieChartShared ...
 type EGPieChartShared struct {
 	XMLName    xml.Name `xml:"EG_PieChartShared"`
-	VaryColors []*CTBoolean
+	VaryColors *CTBoolean
 	Ser        []*CTPieSer
-	DLbls      []*CTDLbls
+	DLbls      *CTDLbls
 }
 
 // CTPieChart ...
 type CTPieChart struct {
 	XMLName          xml.Name `xml:"CT_PieChart"`
 	EGPieChartShared []*EGPieChartShared
-	FirstSliceAng    []*CTFirstSliceAng `xml:"firstSliceAng"`
-	ExtLst           []*CTExtensionList `xml:"extLst"`
+	FirstSliceAng    *CTFirstSliceAng `xml:"firstSliceAng"`
+	ExtLst           *CTExtensionList `xml:"extLst"`
 }
 
 // CTPie3DChart ...
 type CTPie3DChart struct {
 	XMLName          xml.Name `xml:"CT_Pie3DChart"`
 	EGPieChartShared []*EGPieChartShared
-	ExtLst           []*CTExtensionList `xml:"extLst"`
+	ExtLst           *CTExtensionList `xml:"extLst"`
 }
 
 // CTDoughnutChart ...
 type CTDoughnutChart struct {
 	XMLName          xml.Name `xml:"CT_DoughnutChart"`
 	EGPieChartShared []*EGPieChartShared
-	FirstSliceAng    []*CTFirstSliceAng `xml:"firstSliceAng"`
-	HoleSize         []*CTHoleSize      `xml:"holeSize"`
-	ExtLst           []*CTExtensionList `xml:"extLst"`
+	FirstSliceAng    *CTFirstSliceAng `xml:"firstSliceAng"`
+	HoleSize         *CTHoleSize      `xml:"holeSize"`
+	ExtLst           *CTExtensionList `xml:"extLst"`
 }
 
 // STOfPieType ...
@@ -986,35 +986,35 @@ type CTOfPieType struct {
 type CTOfPieChart struct {
 	XMLName          xml.Name `xml:"CT_OfPieChart"`
 	EGPieChartShared []*EGPieChartShared
-	OfPieType        []*CTOfPieType     `xml:"ofPieType"`
-	GapWidth         []*CTGapAmount     `xml:"gapWidth"`
-	SplitType        []*CTSplitType     `xml:"splitType"`
-	SplitPos         []*CTDouble        `xml:"splitPos"`
-	CustSplit        []*CTCustSplit     `xml:"custSplit"`
-	SecondPieSize    []*CTSecondPieSize `xml:"secondPieSize"`
-	SerLines         []*CTChartLines    `xml:"serLines"`
-	ExtLst           []*CTExtensionList `xml:"extLst"`
+	OfPieType        *CTOfPieType     `xml:"ofPieType"`
+	GapWidth         *CTGapAmount     `xml:"gapWidth"`
+	SplitType        *CTSplitType     `xml:"splitType"`
+	SplitPos         *CTDouble        `xml:"splitPos"`
+	CustSplit        *CTCustSplit     `xml:"custSplit"`
+	SecondPieSize    *CTSecondPieSize `xml:"secondPieSize"`
+	SerLines         []*CTChartLines  `xml:"serLines"`
+	ExtLst           *CTExtensionList `xml:"extLst"`
 }
 
 // CTBubbleChart ...
 type CTBubbleChart struct {
-	XMLName        xml.Name            `xml:"CT_BubbleChart"`
-	VaryColors     []*CTBoolean        `xml:"varyColors"`
-	Ser            []*CTBubbleSer      `xml:"ser"`
-	DLbls          []*CTDLbls          `xml:"dLbls"`
-	Bubble3D       []*CTBoolean        `xml:"bubble3D"`
-	BubbleScale    []*CTBubbleScale    `xml:"bubbleScale"`
-	ShowNegBubbles []*CTBoolean        `xml:"showNegBubbles"`
-	SizeRepresents []*CTSizeRepresents `xml:"sizeRepresents"`
-	AxId           []*CTUnsignedInt    `xml:"axId"`
-	ExtLst         []*CTExtensionList  `xml:"extLst"`
+	XMLName        xml.Name          `xml:"CT_BubbleChart"`
+	VaryColors     *CTBoolean        `xml:"varyColors"`
+	Ser            []*CTBubbleSer    `xml:"ser"`
+	DLbls          *CTDLbls          `xml:"dLbls"`
+	Bubble3D       *CTBoolean        `xml:"bubble3D"`
+	BubbleScale    *CTBubbleScale    `xml:"bubbleScale"`
+	ShowNegBubbles *CTBoolean        `xml:"showNegBubbles"`
+	SizeRepresents *CTSizeRepresents `xml:"sizeRepresents"`
+	AxId           []*CTUnsignedInt  `xml:"axId"`
+	ExtLst         *CTExtensionList  `xml:"extLst"`
 }
 
 // CTBandFmt ...
 type CTBandFmt struct {
-	XMLName xml.Name             `xml:"CT_BandFmt"`
-	Idx     []*CTUnsignedInt     `xml:"idx"`
-	SpPr    []*CTShapeProperties `xml:"spPr"`
+	XMLName xml.Name           `xml:"CT_BandFmt"`
+	Idx     *CTUnsignedInt     `xml:"idx"`
+	SpPr    *CTShapeProperties `xml:"spPr"`
 }
 
 // CTBandFmts ...
@@ -1026,25 +1026,25 @@ type CTBandFmts struct {
 // EGSurfaceChartShared ...
 type EGSurfaceChartShared struct {
 	XMLName   xml.Name `xml:"EG_SurfaceChartShared"`
-	Wireframe []*CTBoolean
+	Wireframe *CTBoolean
 	Ser       []*CTSurfaceSer
-	BandFmts  []*CTBandFmts
+	BandFmts  *CTBandFmts
 }
 
 // CTSurfaceChart ...
 type CTSurfaceChart struct {
 	XMLName              xml.Name `xml:"CT_SurfaceChart"`
 	EGSurfaceChartShared []*EGSurfaceChartShared
-	AxId                 []*CTUnsignedInt   `xml:"axId"`
-	ExtLst               []*CTExtensionList `xml:"extLst"`
+	AxId                 []*CTUnsignedInt `xml:"axId"`
+	ExtLst               *CTExtensionList `xml:"extLst"`
 }
 
 // CTSurface3DChart ...
 type CTSurface3DChart struct {
 	XMLName              xml.Name `xml:"CT_Surface3DChart"`
 	EGSurfaceChartShared []*EGSurfaceChartShared
-	AxId                 []*CTUnsignedInt   `xml:"axId"`
-	ExtLst               []*CTExtensionList `xml:"extLst"`
+	AxId                 []*CTUnsignedInt `xml:"axId"`
+	ExtLst               *CTExtensionList `xml:"extLst"`
 }
 
 // STAxPos ...
@@ -1148,30 +1148,30 @@ type CTPictureStackUnit struct {
 
 // CTPictureOptions ...
 type CTPictureOptions struct {
-	XMLName          xml.Name              `xml:"CT_PictureOptions"`
-	ApplyToFront     []*CTBoolean          `xml:"applyToFront"`
-	ApplyToSides     []*CTBoolean          `xml:"applyToSides"`
-	ApplyToEnd       []*CTBoolean          `xml:"applyToEnd"`
-	PictureFormat    []*CTPictureFormat    `xml:"pictureFormat"`
-	PictureStackUnit []*CTPictureStackUnit `xml:"pictureStackUnit"`
+	XMLName          xml.Name            `xml:"CT_PictureOptions"`
+	ApplyToFront     *CTBoolean          `xml:"applyToFront"`
+	ApplyToSides     *CTBoolean          `xml:"applyToSides"`
+	ApplyToEnd       *CTBoolean          `xml:"applyToEnd"`
+	PictureFormat    *CTPictureFormat    `xml:"pictureFormat"`
+	PictureStackUnit *CTPictureStackUnit `xml:"pictureStackUnit"`
 }
 
 // CTDispUnitsLbl ...
 type CTDispUnitsLbl struct {
-	XMLName xml.Name             `xml:"CT_DispUnitsLbl"`
-	Layout  []*CTLayout          `xml:"layout"`
-	Tx      []*CTTx              `xml:"tx"`
-	SpPr    []*CTShapeProperties `xml:"spPr"`
-	TxPr    []*CTTextBody        `xml:"txPr"`
+	XMLName xml.Name           `xml:"CT_DispUnitsLbl"`
+	Layout  *CTLayout          `xml:"layout"`
+	Tx      *CTTx              `xml:"tx"`
+	SpPr    *CTShapeProperties `xml:"spPr"`
+	TxPr    *CTTextBody        `xml:"txPr"`
 }
 
 // CTDispUnits ...
 type CTDispUnits struct {
-	XMLName      xml.Name           `xml:"CT_DispUnits"`
-	CustUnit     []*CTDouble        `xml:"custUnit"`
-	BuiltInUnit  []*CTBuiltInUnit   `xml:"builtInUnit"`
-	DispUnitsLbl []*CTDispUnitsLbl  `xml:"dispUnitsLbl"`
-	ExtLst       []*CTExtensionList `xml:"extLst"`
+	XMLName      xml.Name         `xml:"CT_DispUnits"`
+	CustUnit     *CTDouble        `xml:"custUnit"`
+	BuiltInUnit  *CTBuiltInUnit   `xml:"builtInUnit"`
+	DispUnitsLbl *CTDispUnitsLbl  `xml:"dispUnitsLbl"`
+	ExtLst       *CTExtensionList `xml:"extLst"`
 }
 
 // STOrientation ...
@@ -1194,12 +1194,12 @@ type CTLogBase struct {
 
 // CTScaling ...
 type CTScaling struct {
-	XMLName     xml.Name           `xml:"CT_Scaling"`
-	LogBase     []*CTLogBase       `xml:"logBase"`
-	Orientation []*CTOrientation   `xml:"orientation"`
-	Max         []*CTDouble        `xml:"max"`
-	Min         []*CTDouble        `xml:"min"`
-	ExtLst      []*CTExtensionList `xml:"extLst"`
+	XMLName     xml.Name         `xml:"CT_Scaling"`
+	LogBase     *CTLogBase       `xml:"logBase"`
+	Orientation *CTOrientation   `xml:"orientation"`
+	Max         *CTDouble        `xml:"max"`
+	Min         *CTDouble        `xml:"min"`
+	ExtLst      *CTExtensionList `xml:"extLst"`
 }
 
 // STLblOffset ...
@@ -1220,109 +1220,109 @@ type CTLblOffset struct {
 // EGAxShared ...
 type EGAxShared struct {
 	XMLName        xml.Name `xml:"EG_AxShared"`
-	AxId           []*CTUnsignedInt
-	Scaling        []*CTScaling
-	Delete         []*CTBoolean
-	AxPos          []*CTAxPos
-	MajorGridlines []*CTChartLines
-	MinorGridlines []*CTChartLines
-	Title          []*CTTitle
-	NumFmt         []*CTNumFmt
-	MajorTickMark  []*CTTickMark
-	MinorTickMark  []*CTTickMark
-	TickLblPos     []*CTTickLblPos
-	SpPr           []*CTShapeProperties
-	TxPr           []*CTTextBody
-	CrossAx        []*CTUnsignedInt
-	Crosses        []*CTCrosses
-	CrossesAt      []*CTDouble
+	AxId           *CTUnsignedInt
+	Scaling        *CTScaling
+	Delete         *CTBoolean
+	AxPos          *CTAxPos
+	MajorGridlines *CTChartLines
+	MinorGridlines *CTChartLines
+	Title          *CTTitle
+	NumFmt         *CTNumFmt
+	MajorTickMark  *CTTickMark
+	MinorTickMark  *CTTickMark
+	TickLblPos     *CTTickLblPos
+	SpPr           *CTShapeProperties
+	TxPr           *CTTextBody
+	CrossAx        *CTUnsignedInt
+	Crosses        *CTCrosses
+	CrossesAt      *CTDouble
 }
 
 // CTCatAx ...
 type CTCatAx struct {
 	XMLName       xml.Name `xml:"CT_CatAx"`
 	EGAxShared    []*EGAxShared
-	Auto          []*CTBoolean       `xml:"auto"`
-	LblAlgn       []*CTLblAlgn       `xml:"lblAlgn"`
-	LblOffset     []*CTLblOffset     `xml:"lblOffset"`
-	TickLblSkip   []*CTSkip          `xml:"tickLblSkip"`
-	TickMarkSkip  []*CTSkip          `xml:"tickMarkSkip"`
-	NoMultiLvlLbl []*CTBoolean       `xml:"noMultiLvlLbl"`
-	ExtLst        []*CTExtensionList `xml:"extLst"`
+	Auto          *CTBoolean       `xml:"auto"`
+	LblAlgn       *CTLblAlgn       `xml:"lblAlgn"`
+	LblOffset     *CTLblOffset     `xml:"lblOffset"`
+	TickLblSkip   *CTSkip          `xml:"tickLblSkip"`
+	TickMarkSkip  *CTSkip          `xml:"tickMarkSkip"`
+	NoMultiLvlLbl *CTBoolean       `xml:"noMultiLvlLbl"`
+	ExtLst        *CTExtensionList `xml:"extLst"`
 }
 
 // CTDateAx ...
 type CTDateAx struct {
 	XMLName       xml.Name `xml:"CT_DateAx"`
 	EGAxShared    []*EGAxShared
-	Auto          []*CTBoolean       `xml:"auto"`
-	LblOffset     []*CTLblOffset     `xml:"lblOffset"`
-	BaseTimeUnit  []*CTTimeUnit      `xml:"baseTimeUnit"`
-	MajorUnit     []*CTAxisUnit      `xml:"majorUnit"`
-	MajorTimeUnit []*CTTimeUnit      `xml:"majorTimeUnit"`
-	MinorUnit     []*CTAxisUnit      `xml:"minorUnit"`
-	MinorTimeUnit []*CTTimeUnit      `xml:"minorTimeUnit"`
-	ExtLst        []*CTExtensionList `xml:"extLst"`
+	Auto          *CTBoolean       `xml:"auto"`
+	LblOffset     *CTLblOffset     `xml:"lblOffset"`
+	BaseTimeUnit  *CTTimeUnit      `xml:"baseTimeUnit"`
+	MajorUnit     *CTAxisUnit      `xml:"majorUnit"`
+	MajorTimeUnit *CTTimeUnit      `xml:"majorTimeUnit"`
+	MinorUnit     *CTAxisUnit      `xml:"minorUnit"`
+	MinorTimeUnit *CTTimeUnit      `xml:"minorTimeUnit"`
+	ExtLst        *CTExtensionList `xml:"extLst"`
 }
 
 // CTSerAx ...
 type CTSerAx struct {
 	XMLName      xml.Name `xml:"CT_SerAx"`
 	EGAxShared   []*EGAxShared
-	TickLblSkip  []*CTSkip          `xml:"tickLblSkip"`
-	TickMarkSkip []*CTSkip          `xml:"tickMarkSkip"`
-	ExtLst       []*CTExtensionList `xml:"extLst"`
+	TickLblSkip  *CTSkip          `xml:"tickLblSkip"`
+	TickMarkSkip *CTSkip          `xml:"tickMarkSkip"`
+	ExtLst       *CTExtensionList `xml:"extLst"`
 }
 
 // CTValAx ...
 type CTValAx struct {
 	XMLName      xml.Name `xml:"CT_ValAx"`
 	EGAxShared   []*EGAxShared
-	CrossBetween []*CTCrossBetween  `xml:"crossBetween"`
-	MajorUnit    []*CTAxisUnit      `xml:"majorUnit"`
-	MinorUnit    []*CTAxisUnit      `xml:"minorUnit"`
-	DispUnits    []*CTDispUnits     `xml:"dispUnits"`
-	ExtLst       []*CTExtensionList `xml:"extLst"`
+	CrossBetween *CTCrossBetween  `xml:"crossBetween"`
+	MajorUnit    *CTAxisUnit      `xml:"majorUnit"`
+	MinorUnit    *CTAxisUnit      `xml:"minorUnit"`
+	DispUnits    *CTDispUnits     `xml:"dispUnits"`
+	ExtLst       *CTExtensionList `xml:"extLst"`
 }
 
 // CTPlotArea ...
 type CTPlotArea struct {
-	XMLName        xml.Name             `xml:"CT_PlotArea"`
-	Layout         []*CTLayout          `xml:"layout"`
-	AreaChart      []*CTAreaChart       `xml:"areaChart"`
-	Area3DChart    []*CTArea3DChart     `xml:"area3DChart"`
-	LineChart      []*CTLineChart       `xml:"lineChart"`
-	Line3DChart    []*CTLine3DChart     `xml:"line3DChart"`
-	StockChart     []*CTStockChart      `xml:"stockChart"`
-	RadarChart     []*CTRadarChart      `xml:"radarChart"`
-	ScatterChart   []*CTScatterChart    `xml:"scatterChart"`
-	PieChart       []*CTPieChart        `xml:"pieChart"`
-	Pie3DChart     []*CTPie3DChart      `xml:"pie3DChart"`
-	DoughnutChart  []*CTDoughnutChart   `xml:"doughnutChart"`
-	BarChart       []*CTBarChart        `xml:"barChart"`
-	Bar3DChart     []*CTBar3DChart      `xml:"bar3DChart"`
-	OfPieChart     []*CTOfPieChart      `xml:"ofPieChart"`
-	SurfaceChart   []*CTSurfaceChart    `xml:"surfaceChart"`
-	Surface3DChart []*CTSurface3DChart  `xml:"surface3DChart"`
-	BubbleChart    []*CTBubbleChart     `xml:"bubbleChart"`
-	ValAx          []*CTValAx           `xml:"valAx"`
-	CatAx          []*CTCatAx           `xml:"catAx"`
-	DateAx         []*CTDateAx          `xml:"dateAx"`
-	SerAx          []*CTSerAx           `xml:"serAx"`
-	DTable         []*CTDTable          `xml:"dTable"`
-	SpPr           []*CTShapeProperties `xml:"spPr"`
-	ExtLst         []*CTExtensionList   `xml:"extLst"`
+	XMLName        xml.Name           `xml:"CT_PlotArea"`
+	Layout         *CTLayout          `xml:"layout"`
+	AreaChart      *CTAreaChart       `xml:"areaChart"`
+	Area3DChart    *CTArea3DChart     `xml:"area3DChart"`
+	LineChart      *CTLineChart       `xml:"lineChart"`
+	Line3DChart    *CTLine3DChart     `xml:"line3DChart"`
+	StockChart     *CTStockChart      `xml:"stockChart"`
+	RadarChart     *CTRadarChart      `xml:"radarChart"`
+	ScatterChart   *CTScatterChart    `xml:"scatterChart"`
+	PieChart       *CTPieChart        `xml:"pieChart"`
+	Pie3DChart     *CTPie3DChart      `xml:"pie3DChart"`
+	DoughnutChart  *CTDoughnutChart   `xml:"doughnutChart"`
+	BarChart       *CTBarChart        `xml:"barChart"`
+	Bar3DChart     *CTBar3DChart      `xml:"bar3DChart"`
+	OfPieChart     *CTOfPieChart      `xml:"ofPieChart"`
+	SurfaceChart   *CTSurfaceChart    `xml:"surfaceChart"`
+	Surface3DChart *CTSurface3DChart  `xml:"surface3DChart"`
+	BubbleChart    *CTBubbleChart     `xml:"bubbleChart"`
+	ValAx          *CTValAx           `xml:"valAx"`
+	CatAx          *CTCatAx           `xml:"catAx"`
+	DateAx         *CTDateAx          `xml:"dateAx"`
+	SerAx          *CTSerAx           `xml:"serAx"`
+	DTable         *CTDTable          `xml:"dTable"`
+	SpPr           *CTShapeProperties `xml:"spPr"`
+	ExtLst         *CTExtensionList   `xml:"extLst"`
 }
 
 // CTPivotFmt ...
 type CTPivotFmt struct {
-	XMLName xml.Name             `xml:"CT_PivotFmt"`
-	Idx     []*CTUnsignedInt     `xml:"idx"`
-	SpPr    []*CTShapeProperties `xml:"spPr"`
-	TxPr    []*CTTextBody        `xml:"txPr"`
-	Marker  []*CTMarker          `xml:"marker"`
-	DLbl    []*CTDLbl            `xml:"dLbl"`
-	ExtLst  []*CTExtensionList   `xml:"extLst"`
+	XMLName xml.Name           `xml:"CT_PivotFmt"`
+	Idx     *CTUnsignedInt     `xml:"idx"`
+	SpPr    *CTShapeProperties `xml:"spPr"`
+	TxPr    *CTTextBody        `xml:"txPr"`
+	Marker  *CTMarker          `xml:"marker"`
+	DLbl    *CTDLbl            `xml:"dLbl"`
+	ExtLst  *CTExtensionList   `xml:"extLst"`
 }
 
 // CTPivotFmts ...
@@ -1343,28 +1343,28 @@ type CTLegendPos struct {
 // EGLegendEntryData ...
 type EGLegendEntryData struct {
 	XMLName xml.Name `xml:"EG_LegendEntryData"`
-	TxPr    []*CTTextBody
+	TxPr    *CTTextBody
 }
 
 // CTLegendEntry ...
 type CTLegendEntry struct {
 	XMLName           xml.Name `xml:"CT_LegendEntry"`
 	EGLegendEntryData []*EGLegendEntryData
-	Idx               []*CTUnsignedInt   `xml:"idx"`
-	Delete            []*CTBoolean       `xml:"delete"`
-	ExtLst            []*CTExtensionList `xml:"extLst"`
+	Idx               *CTUnsignedInt   `xml:"idx"`
+	Delete            *CTBoolean       `xml:"delete"`
+	ExtLst            *CTExtensionList `xml:"extLst"`
 }
 
 // CTLegend ...
 type CTLegend struct {
-	XMLName     xml.Name             `xml:"CT_Legend"`
-	LegendPos   []*CTLegendPos       `xml:"legendPos"`
-	LegendEntry []*CTLegendEntry     `xml:"legendEntry"`
-	Layout      []*CTLayout          `xml:"layout"`
-	Overlay     []*CTBoolean         `xml:"overlay"`
-	SpPr        []*CTShapeProperties `xml:"spPr"`
-	TxPr        []*CTTextBody        `xml:"txPr"`
-	ExtLst      []*CTExtensionList   `xml:"extLst"`
+	XMLName     xml.Name           `xml:"CT_Legend"`
+	LegendPos   *CTLegendPos       `xml:"legendPos"`
+	LegendEntry []*CTLegendEntry   `xml:"legendEntry"`
+	Layout      *CTLayout          `xml:"layout"`
+	Overlay     *CTBoolean         `xml:"overlay"`
+	SpPr        *CTShapeProperties `xml:"spPr"`
+	TxPr        *CTTextBody        `xml:"txPr"`
+	ExtLst      *CTExtensionList   `xml:"extLst"`
 }
 
 // STDispBlanksAs ...
@@ -1378,20 +1378,20 @@ type CTDispBlanksAs struct {
 
 // CTChart ...
 type CTChart struct {
-	XMLName          xml.Name           `xml:"CT_Chart"`
-	Title            []*CTTitle         `xml:"title"`
-	AutoTitleDeleted []*CTBoolean       `xml:"autoTitleDeleted"`
-	PivotFmts        []*CTPivotFmts     `xml:"pivotFmts"`
-	View3D           []*CTView3D        `xml:"view3D"`
-	Floor            []*CTSurface       `xml:"floor"`
-	SideWall         []*CTSurface       `xml:"sideWall"`
-	BackWall         []*CTSurface       `xml:"backWall"`
-	PlotArea         []*CTPlotArea      `xml:"plotArea"`
-	Legend           []*CTLegend        `xml:"legend"`
-	PlotVisOnly      []*CTBoolean       `xml:"plotVisOnly"`
-	DispBlanksAs     []*CTDispBlanksAs  `xml:"dispBlanksAs"`
-	ShowDLblsOverMax []*CTBoolean       `xml:"showDLblsOverMax"`
-	ExtLst           []*CTExtensionList `xml:"extLst"`
+	XMLName          xml.Name         `xml:"CT_Chart"`
+	Title            *CTTitle         `xml:"title"`
+	AutoTitleDeleted *CTBoolean       `xml:"autoTitleDeleted"`
+	PivotFmts        *CTPivotFmts     `xml:"pivotFmts"`
+	View3D           *CTView3D        `xml:"view3D"`
+	Floor            *CTSurface       `xml:"floor"`
+	SideWall         *CTSurface       `xml:"sideWall"`
+	BackWall         *CTSurface       `xml:"backWall"`
+	PlotArea         *CTPlotArea      `xml:"plotArea"`
+	Legend           *CTLegend        `xml:"legend"`
+	PlotVisOnly      *CTBoolean       `xml:"plotVisOnly"`
+	DispBlanksAs     *CTDispBlanksAs  `xml:"dispBlanksAs"`
+	ShowDLblsOverMax *CTBoolean       `xml:"showDLblsOverMax"`
+	ExtLst           *CTExtensionList `xml:"extLst"`
 }
 
 // STStyle ...
@@ -1406,19 +1406,19 @@ type CTStyle struct {
 // CTPivotSource ...
 type CTPivotSource struct {
 	XMLName xml.Name           `xml:"CT_PivotSource"`
-	Name    []string           `xml:"name"`
-	FmtId   []*CTUnsignedInt   `xml:"fmtId"`
+	Name    string             `xml:"name"`
+	FmtId   *CTUnsignedInt     `xml:"fmtId"`
 	ExtLst  []*CTExtensionList `xml:"extLst"`
 }
 
 // CTProtection ...
 type CTProtection struct {
-	XMLName       xml.Name     `xml:"CT_Protection"`
-	ChartObject   []*CTBoolean `xml:"chartObject"`
-	Data          []*CTBoolean `xml:"data"`
-	Formatting    []*CTBoolean `xml:"formatting"`
-	Selection     []*CTBoolean `xml:"selection"`
-	UserInterface []*CTBoolean `xml:"userInterface"`
+	XMLName       xml.Name   `xml:"CT_Protection"`
+	ChartObject   *CTBoolean `xml:"chartObject"`
+	Data          *CTBoolean `xml:"data"`
+	Formatting    *CTBoolean `xml:"formatting"`
+	Selection     *CTBoolean `xml:"selection"`
+	UserInterface *CTBoolean `xml:"userInterface"`
 }
 
 // CTHeaderFooter ...
@@ -1427,12 +1427,12 @@ type CTHeaderFooter struct {
 	AlignWithMarginsAttr bool     `xml:"alignWithMargins,attr,omitempty"`
 	DifferentOddEvenAttr bool     `xml:"differentOddEven,attr,omitempty"`
 	DifferentFirstAttr   bool     `xml:"differentFirst,attr,omitempty"`
-	OddHeader            []string `xml:"oddHeader"`
-	OddFooter            []string `xml:"oddFooter"`
-	EvenHeader           []string `xml:"evenHeader"`
-	EvenFooter           []string `xml:"evenFooter"`
-	FirstHeader          []string `xml:"firstHeader"`
-	FirstFooter          []string `xml:"firstFooter"`
+	OddHeader            string   `xml:"oddHeader"`
+	OddFooter            string   `xml:"oddFooter"`
+	EvenHeader           string   `xml:"evenHeader"`
+	EvenFooter           string   `xml:"evenFooter"`
+	FirstHeader          string   `xml:"firstHeader"`
+	FirstFooter          string   `xml:"firstFooter"`
 }
 
 // CTPageMargins ...
@@ -1451,9 +1451,9 @@ type STPageSetupOrientation string
 
 // CTExternalData ...
 type CTExternalData struct {
-	XMLName    xml.Name     `xml:"CT_ExternalData"`
-	RIdAttr    string       `xml:"r:id,attr"`
-	AutoUpdate []*CTBoolean `xml:"autoUpdate"`
+	XMLName    xml.Name   `xml:"CT_ExternalData"`
+	RIdAttr    string     `xml:"r:id,attr"`
+	AutoUpdate *CTBoolean `xml:"autoUpdate"`
 }
 
 // CTPageSetup ...
@@ -1474,29 +1474,29 @@ type CTPageSetup struct {
 
 // CTPrintSettings ...
 type CTPrintSettings struct {
-	XMLName      xml.Name          `xml:"CT_PrintSettings"`
-	HeaderFooter []*CTHeaderFooter `xml:"headerFooter"`
-	PageMargins  []*CTPageMargins  `xml:"pageMargins"`
-	PageSetup    []*CTPageSetup    `xml:"pageSetup"`
+	XMLName      xml.Name        `xml:"CT_PrintSettings"`
+	HeaderFooter *CTHeaderFooter `xml:"headerFooter"`
+	PageMargins  *CTPageMargins  `xml:"pageMargins"`
+	PageSetup    *CTPageSetup    `xml:"pageSetup"`
 }
 
 // CTChartSpace ...
 type CTChartSpace struct {
-	XMLName        xml.Name             `xml:"CT_ChartSpace"`
-	Date1904       []*CTBoolean         `xml:"date1904"`
-	Lang           []*CTTextLanguageID  `xml:"lang"`
-	RoundedCorners []*CTBoolean         `xml:"roundedCorners"`
-	Style          []*CTStyle           `xml:"style"`
-	ClrMapOvr      []*CTColorMapping    `xml:"clrMapOvr"`
-	PivotSource    []*CTPivotSource     `xml:"pivotSource"`
-	Protection     []*CTProtection      `xml:"protection"`
-	Chart          []*CTChart           `xml:"chart"`
-	SpPr           []*CTShapeProperties `xml:"spPr"`
-	TxPr           []*CTTextBody        `xml:"txPr"`
-	ExternalData   []*CTExternalData    `xml:"externalData"`
-	PrintSettings  []*CTPrintSettings   `xml:"printSettings"`
-	UserShapes     []*CTRelId           `xml:"userShapes"`
-	ExtLst         []*CTExtensionList   `xml:"extLst"`
+	XMLName        xml.Name           `xml:"CT_ChartSpace"`
+	Date1904       *CTBoolean         `xml:"date1904"`
+	Lang           *CTTextLanguageID  `xml:"lang"`
+	RoundedCorners *CTBoolean         `xml:"roundedCorners"`
+	Style          *CTStyle           `xml:"style"`
+	ClrMapOvr      *CTColorMapping    `xml:"clrMapOvr"`
+	PivotSource    *CTPivotSource     `xml:"pivotSource"`
+	Protection     *CTProtection      `xml:"protection"`
+	Chart          *CTChart           `xml:"chart"`
+	SpPr           *CTShapeProperties `xml:"spPr"`
+	TxPr           *CTTextBody        `xml:"txPr"`
+	ExternalData   *CTExternalData    `xml:"externalData"`
+	PrintSettings  *CTPrintSettings   `xml:"printSettings"`
+	UserShapes     *CTRelId           `xml:"userShapes"`
+	ExtLst         *CTExtensionList   `xml:"extLst"`
 }
 
 // ChartSpace ...

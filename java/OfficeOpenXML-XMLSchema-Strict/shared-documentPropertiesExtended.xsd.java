@@ -20,59 +20,59 @@ public class Properties {
 // CT_Properties ...
 public class CT_Properties {
 	@XmlElement(required = true, name = "Template")
-	protected List<String> Template;
+	protected String Template;
 	@XmlElement(required = true, name = "Manager")
-	protected List<String> Manager;
+	protected String Manager;
 	@XmlElement(required = true, name = "Company")
-	protected List<String> Company;
+	protected String Company;
 	@XmlElement(required = true, name = "Pages")
-	protected List<Integer> Pages;
+	protected Integer Pages;
 	@XmlElement(required = true, name = "Words")
-	protected List<Integer> Words;
+	protected Integer Words;
 	@XmlElement(required = true, name = "Characters")
-	protected List<Integer> Characters;
+	protected Integer Characters;
 	@XmlElement(required = true, name = "PresentationFormat")
-	protected List<String> PresentationFormat;
+	protected String PresentationFormat;
 	@XmlElement(required = true, name = "Lines")
-	protected List<Integer> Lines;
+	protected Integer Lines;
 	@XmlElement(required = true, name = "Paragraphs")
-	protected List<Integer> Paragraphs;
+	protected Integer Paragraphs;
 	@XmlElement(required = true, name = "Slides")
-	protected List<Integer> Slides;
+	protected Integer Slides;
 	@XmlElement(required = true, name = "Notes")
-	protected List<Integer> Notes;
+	protected Integer Notes;
 	@XmlElement(required = true, name = "TotalTime")
-	protected List<Integer> TotalTime;
+	protected Integer TotalTime;
 	@XmlElement(required = true, name = "HiddenSlides")
-	protected List<Integer> HiddenSlides;
+	protected Integer HiddenSlides;
 	@XmlElement(required = true, name = "MMClips")
-	protected List<Integer> MMClips;
+	protected Integer MMClips;
 	@XmlElement(required = true, name = "ScaleCrop")
-	protected List<Boolean> ScaleCrop;
+	protected Boolean ScaleCrop;
 	@XmlElement(required = true, name = "HeadingPairs")
-	protected List<CT_VectorVariant> HeadingPairs;
+	protected CT_VectorVariant HeadingPairs;
 	@XmlElement(required = true, name = "TitlesOfParts")
-	protected List<CT_VectorLpstr> TitlesOfParts;
+	protected CT_VectorLpstr TitlesOfParts;
 	@XmlElement(required = true, name = "LinksUpToDate")
-	protected List<Boolean> LinksUpToDate;
+	protected Boolean LinksUpToDate;
 	@XmlElement(required = true, name = "CharactersWithSpaces")
-	protected List<Integer> CharactersWithSpaces;
+	protected Integer CharactersWithSpaces;
 	@XmlElement(required = true, name = "SharedDoc")
-	protected List<Boolean> SharedDoc;
+	protected Boolean SharedDoc;
 	@XmlElement(required = true, name = "HyperlinkBase")
-	protected List<String> HyperlinkBase;
+	protected String HyperlinkBase;
 	@XmlElement(required = true, name = "HLinks")
-	protected List<CT_VectorVariant> HLinks;
+	protected CT_VectorVariant HLinks;
 	@XmlElement(required = true, name = "HyperlinksChanged")
-	protected List<Boolean> HyperlinksChanged;
+	protected Boolean HyperlinksChanged;
 	@XmlElement(required = true, name = "DigSig")
-	protected List<CT_DigSigBlob> DigSig;
+	protected CT_DigSigBlob DigSig;
 	@XmlElement(required = true, name = "Application")
-	protected List<String> Application;
+	protected String Application;
 	@XmlElement(required = true, name = "AppVersion")
-	protected List<String> AppVersion;
+	protected String AppVersion;
 	@XmlElement(required = true, name = "DocSecurity")
-	protected List<Integer> DocSecurity;
+	protected Integer DocSecurity;
 }
 
 // CT_VectorVariant ...

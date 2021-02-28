@@ -11,34 +11,34 @@ type Properties *CTProperties
 
 // CTProperties ...
 type CTProperties struct {
-	XMLName              xml.Name           `xml:"CT_Properties"`
-	Template             []string           `xml:"Template"`
-	Manager              []string           `xml:"Manager"`
-	Company              []string           `xml:"Company"`
-	Pages                []int              `xml:"Pages"`
-	Words                []int              `xml:"Words"`
-	Characters           []int              `xml:"Characters"`
-	PresentationFormat   []string           `xml:"PresentationFormat"`
-	Lines                []int              `xml:"Lines"`
-	Paragraphs           []int              `xml:"Paragraphs"`
-	Slides               []int              `xml:"Slides"`
-	Notes                []int              `xml:"Notes"`
-	TotalTime            []int              `xml:"TotalTime"`
-	HiddenSlides         []int              `xml:"HiddenSlides"`
-	MMClips              []int              `xml:"MMClips"`
-	ScaleCrop            []bool             `xml:"ScaleCrop"`
-	HeadingPairs         []*CTVectorVariant `xml:"HeadingPairs"`
-	TitlesOfParts        []*CTVectorLpstr   `xml:"TitlesOfParts"`
-	LinksUpToDate        []bool             `xml:"LinksUpToDate"`
-	CharactersWithSpaces []int              `xml:"CharactersWithSpaces"`
-	SharedDoc            []bool             `xml:"SharedDoc"`
-	HyperlinkBase        []string           `xml:"HyperlinkBase"`
-	HLinks               []*CTVectorVariant `xml:"HLinks"`
-	HyperlinksChanged    []bool             `xml:"HyperlinksChanged"`
-	DigSig               []*CTDigSigBlob    `xml:"DigSig"`
-	Application          []string           `xml:"Application"`
-	AppVersion           []string           `xml:"AppVersion"`
-	DocSecurity          []int              `xml:"DocSecurity"`
+	XMLName              xml.Name         `xml:"CT_Properties"`
+	Template             string           `xml:"Template"`
+	Manager              string           `xml:"Manager"`
+	Company              string           `xml:"Company"`
+	Pages                int              `xml:"Pages"`
+	Words                int              `xml:"Words"`
+	Characters           int              `xml:"Characters"`
+	PresentationFormat   string           `xml:"PresentationFormat"`
+	Lines                int              `xml:"Lines"`
+	Paragraphs           int              `xml:"Paragraphs"`
+	Slides               int              `xml:"Slides"`
+	Notes                int              `xml:"Notes"`
+	TotalTime            int              `xml:"TotalTime"`
+	HiddenSlides         int              `xml:"HiddenSlides"`
+	MMClips              int              `xml:"MMClips"`
+	ScaleCrop            bool             `xml:"ScaleCrop"`
+	HeadingPairs         *CTVectorVariant `xml:"HeadingPairs"`
+	TitlesOfParts        *CTVectorLpstr   `xml:"TitlesOfParts"`
+	LinksUpToDate        bool             `xml:"LinksUpToDate"`
+	CharactersWithSpaces int              `xml:"CharactersWithSpaces"`
+	SharedDoc            bool             `xml:"SharedDoc"`
+	HyperlinkBase        string           `xml:"HyperlinkBase"`
+	HLinks               *CTVectorVariant `xml:"HLinks"`
+	HyperlinksChanged    bool             `xml:"HyperlinksChanged"`
+	DigSig               *CTDigSigBlob    `xml:"DigSig"`
+	Application          string           `xml:"Application"`
+	AppVersion           string           `xml:"AppVersion"`
+	DocSecurity          int              `xml:"DocSecurity"`
 }
 
 // CTVectorVariant ...

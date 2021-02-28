@@ -361,7 +361,7 @@ type Resource struct {
 	TargetPath string      `xml:"targetPath"`
 	Includes   []*Includes `xml:"includes"`
 	Excludes   []*Excludes `xml:"excludes"`
-	Filtering  []bool      `xml:"filtering"`
+	Filtering  bool        `xml:"filtering"`
 }
 
 // Reports ...

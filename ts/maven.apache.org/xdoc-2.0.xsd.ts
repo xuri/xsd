@@ -1283,14 +1283,14 @@ export class Td {
 export class Document {
 	I18n: I18n;
 	IdAttr: string | null;
-	Properties: Array<Properties>;
-	Head: Array<Head>;
-	Body: Array<Body>;
+	Properties: Properties;
+	Head: Head;
+	Body: Body;
 }
 
 // Properties ...
 export class Properties {
-	Title: Array<Title>;
+	Title: Title;
 	Author: Array<Author>;
 	Date: string;
 }

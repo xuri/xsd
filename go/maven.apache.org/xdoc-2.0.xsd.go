@@ -1300,18 +1300,18 @@ type Td struct {
 type Document struct {
 	XMLName    xml.Name `xml:"document"`
 	I18n       *I18n
-	IdAttr     string        `xml:"id,attr,omitempty"`
-	Properties []*Properties `xml:"properties"`
-	Head       []*Head       `xml:"head"`
-	Body       []*Body       `xml:"body"`
+	IdAttr     string      `xml:"id,attr,omitempty"`
+	Properties *Properties `xml:"properties"`
+	Head       *Head       `xml:"head"`
+	Body       *Body       `xml:"body"`
 }
 
 // Properties ...
 type Properties struct {
-	XMLName xml.Name    `xml:"properties"`
-	Title   []*Title    `xml:"title"`
-	Author  []*Author   `xml:"author"`
-	Date    []time.Time `xml:"date"`
+	XMLName xml.Name  `xml:"properties"`
+	Title   *Title    `xml:"title"`
+	Author  []*Author `xml:"author"`
+	Date    time.Time `xml:"date"`
 }
 
 // Author ...

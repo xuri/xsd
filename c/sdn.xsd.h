@@ -2,8 +2,8 @@
 
 // PublshInformation ...
 typedef struct {
-	char Publish_Date[];
-	int Record_Count[];
+	char Publish_Date;
+	int Record_Count;
 } PublshInformation;
 
 // ProgramList ...
@@ -123,19 +123,19 @@ typedef struct {
 	char Title;
 	char SdnType;
 	char Remarks;
-	ProgramList ProgramList[];
-	IdList IdList[];
-	AkaList AkaList[];
-	AddressList AddressList[];
-	NationalityList NationalityList[];
-	CitizenshipList CitizenshipList[];
-	DateOfBirthList DateOfBirthList[];
-	PlaceOfBirthList PlaceOfBirthList[];
-	VesselInfo VesselInfo[];
+	ProgramList ProgramList;
+	IdList IdList;
+	AkaList AkaList;
+	AddressList AddressList;
+	NationalityList NationalityList;
+	CitizenshipList CitizenshipList;
+	DateOfBirthList DateOfBirthList;
+	PlaceOfBirthList PlaceOfBirthList;
+	VesselInfo VesselInfo;
 } SdnEntry;
 
 // SdnList ...
 typedef struct {
-	PublshInformation PublshInformation[];
+	PublshInformation PublshInformation;
 	SdnEntry SdnEntry[];
 } SdnList;

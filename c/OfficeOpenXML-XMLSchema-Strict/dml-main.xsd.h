@@ -4,20 +4,20 @@
 typedef struct {
 	char RLinkAttr; // attr
 	char ContentTypeAttr; // attr, optional
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_OfficeArtExtensionList ExtLst;
 } CT_AudioFile;
 
 // CT_VideoFile ...
 typedef struct {
 	char RLinkAttr; // attr
 	char ContentTypeAttr; // attr, optional
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_OfficeArtExtensionList ExtLst;
 } CT_VideoFile;
 
 // CT_QuickTimeFile ...
 typedef struct {
 	char RLinkAttr; // attr
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_OfficeArtExtensionList ExtLst;
 } CT_QuickTimeFile;
 
 // CT_AudioCDTime ...
@@ -28,9 +28,9 @@ typedef struct {
 
 // CT_AudioCD ...
 typedef struct {
-	CT_AudioCDTime St[];
-	CT_AudioCDTime End[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_AudioCDTime St;
+	CT_AudioCDTime End;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_AudioCD;
 
 // EG_Media ...
@@ -56,19 +56,19 @@ typedef char ST_ColorSchemeIndex;
 // CT_ColorScheme ...
 typedef struct {
 	char NameAttr; // attr
-	CT_Color Dk1[];
-	CT_Color Lt1[];
-	CT_Color Dk2[];
-	CT_Color Lt2[];
-	CT_Color Accent1[];
-	CT_Color Accent2[];
-	CT_Color Accent3[];
-	CT_Color Accent4[];
-	CT_Color Accent5[];
-	CT_Color Accent6[];
-	CT_Color Hlink[];
-	CT_Color FolHlink[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_Color Dk1;
+	CT_Color Lt1;
+	CT_Color Dk2;
+	CT_Color Lt2;
+	CT_Color Accent1;
+	CT_Color Accent2;
+	CT_Color Accent3;
+	CT_Color Accent4;
+	CT_Color Accent5;
+	CT_Color Accent6;
+	CT_Color Hlink;
+	CT_Color FolHlink;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_ColorScheme;
 
 // CT_CustomColor ...
@@ -90,26 +90,26 @@ typedef struct {
 
 // CT_FontCollection ...
 typedef struct {
-	CT_TextFont Latin[];
-	CT_TextFont Ea[];
-	CT_TextFont Cs[];
+	CT_TextFont Latin;
+	CT_TextFont Ea;
+	CT_TextFont Cs;
 	CT_SupplementalFont Font[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_OfficeArtExtensionList ExtLst;
 } CT_FontCollection;
 
 // CT_EffectStyleItem ...
 typedef struct {
 	EG_EffectProperties EG_EffectProperties[];
-	CT_Scene3D Scene3d[];
-	CT_Shape3D Sp3d[];
+	CT_Scene3D Scene3d;
+	CT_Shape3D Sp3d;
 } CT_EffectStyleItem;
 
 // CT_FontScheme ...
 typedef struct {
 	char NameAttr; // attr
-	CT_FontCollection MajorFont[];
-	CT_FontCollection MinorFont[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_FontCollection MajorFont;
+	CT_FontCollection MinorFont;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_FontScheme;
 
 // CT_FillStyleList ...
@@ -135,18 +135,18 @@ typedef struct {
 // CT_StyleMatrix ...
 typedef struct {
 	char NameAttr; // attr, optional
-	CT_FillStyleList FillStyleLst[];
-	CT_LineStyleList LnStyleLst[];
-	CT_EffectStyleList EffectStyleLst[];
-	CT_BackgroundFillStyleList BgFillStyleLst[];
+	CT_FillStyleList FillStyleLst;
+	CT_LineStyleList LnStyleLst;
+	CT_EffectStyleList EffectStyleLst;
+	CT_BackgroundFillStyleList BgFillStyleLst;
 } CT_StyleMatrix;
 
 // CT_BaseStyles ...
 typedef struct {
-	CT_ColorScheme ClrScheme[];
-	CT_FontScheme FontScheme[];
-	CT_StyleMatrix FmtScheme[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_ColorScheme ClrScheme;
+	CT_FontScheme FontScheme;
+	CT_StyleMatrix FmtScheme;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_BaseStyles;
 
 // CT_OfficeArtExtension ...
@@ -156,8 +156,8 @@ typedef struct {
 
 // ST_Coordinate ...
 typedef struct {
-	ST_CoordinateUnqualified ST_CoordinateUnqualified;
 	char ST_UniversalMeasure;
+	ST_CoordinateUnqualified ST_CoordinateUnqualified;
 } ST_Coordinate;
 
 // ST_CoordinateUnqualified ...
@@ -277,34 +277,34 @@ typedef struct {
 
 // EG_ColorTransform ...
 typedef struct {
-	CT_PositiveFixedPercentage Tint[];
-	CT_PositiveFixedPercentage Shade[];
-	CT_ComplementTransform Comp[];
-	CT_InverseTransform Inv[];
-	CT_GrayscaleTransform Gray[];
-	CT_PositiveFixedPercentage Alpha[];
-	CT_FixedPercentage AlphaOff[];
-	CT_PositivePercentage AlphaMod[];
-	CT_PositiveFixedAngle Hue[];
-	CT_Angle HueOff[];
-	CT_PositivePercentage HueMod[];
-	CT_Percentage Sat[];
-	CT_Percentage SatOff[];
-	CT_Percentage SatMod[];
-	CT_Percentage Lum[];
-	CT_Percentage LumOff[];
-	CT_Percentage LumMod[];
-	CT_Percentage Red[];
-	CT_Percentage RedOff[];
-	CT_Percentage RedMod[];
-	CT_Percentage Green[];
-	CT_Percentage GreenOff[];
-	CT_Percentage GreenMod[];
-	CT_Percentage Blue[];
-	CT_Percentage BlueOff[];
-	CT_Percentage BlueMod[];
-	CT_GammaTransform Gamma[];
-	CT_InverseGammaTransform InvGamma[];
+	CT_PositiveFixedPercentage Tint;
+	CT_PositiveFixedPercentage Shade;
+	CT_ComplementTransform Comp;
+	CT_InverseTransform Inv;
+	CT_GrayscaleTransform Gray;
+	CT_PositiveFixedPercentage Alpha;
+	CT_FixedPercentage AlphaOff;
+	CT_PositivePercentage AlphaMod;
+	CT_PositiveFixedAngle Hue;
+	CT_Angle HueOff;
+	CT_PositivePercentage HueMod;
+	CT_Percentage Sat;
+	CT_Percentage SatOff;
+	CT_Percentage SatMod;
+	CT_Percentage Lum;
+	CT_Percentage LumOff;
+	CT_Percentage LumMod;
+	CT_Percentage Red;
+	CT_Percentage RedOff;
+	CT_Percentage RedMod;
+	CT_Percentage Green;
+	CT_Percentage GreenOff;
+	CT_Percentage GreenMod;
+	CT_Percentage Blue;
+	CT_Percentage BlueOff;
+	CT_Percentage BlueMod;
+	CT_GammaTransform Gamma;
+	CT_InverseGammaTransform InvGamma;
 } EG_ColorTransform;
 
 // CT_ScRgbColor ...
@@ -369,8 +369,8 @@ typedef struct {
 
 // CT_Scale2D ...
 typedef struct {
-	CT_Ratio Sx[];
-	CT_Ratio Sy[];
+	CT_Ratio Sx;
+	CT_Ratio Sy;
 } CT_Scale2D;
 
 // CT_Transform2D ...
@@ -378,8 +378,8 @@ typedef struct {
 	int RotAttr; // attr, optional
 	bool FlipHAttr; // attr, optional
 	bool FlipVAttr; // attr, optional
-	CT_Point2D Off[];
-	CT_PositiveSize2D Ext[];
+	CT_Point2D Off;
+	CT_PositiveSize2D Ext;
 } CT_Transform2D;
 
 // CT_GroupTransform2D ...
@@ -387,10 +387,10 @@ typedef struct {
 	int RotAttr; // attr, optional
 	bool FlipHAttr; // attr, optional
 	bool FlipVAttr; // attr, optional
-	CT_Point2D Off[];
-	CT_PositiveSize2D Ext[];
-	CT_Point2D ChOff[];
-	CT_PositiveSize2D ChExt[];
+	CT_Point2D Off;
+	CT_PositiveSize2D Ext;
+	CT_Point2D ChOff;
+	CT_PositiveSize2D ChExt;
 } CT_GroupTransform2D;
 
 // CT_Point3D ...
@@ -427,12 +427,12 @@ typedef char ST_RectAlignment;
 
 // EG_ColorChoice ...
 typedef struct {
-	CT_ScRgbColor ScrgbClr[];
-	CT_SRgbColor SrgbClr[];
-	CT_HslColor HslClr[];
-	CT_SystemColor SysClr[];
-	CT_SchemeColor SchemeClr[];
-	CT_PresetColor PrstClr[];
+	CT_ScRgbColor ScrgbClr;
+	CT_SRgbColor SrgbClr;
+	CT_HslColor HslClr;
+	CT_SystemColor SysClr;
+	CT_SchemeColor SchemeClr;
+	CT_PresetColor PrstClr;
 } EG_ColorChoice;
 
 // CT_Color ...
@@ -470,8 +470,8 @@ typedef struct {
 	bool HistoryAttr; // attr, optional
 	bool HighlightClickAttr; // attr, optional
 	bool EndSndAttr; // attr, optional
-	CT_EmbeddedWAVAudioFile Snd[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_EmbeddedWAVAudioFile Snd;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_Hyperlink;
 
 // ST_DrawingElementId ...
@@ -494,21 +494,21 @@ typedef struct {
 // CT_ConnectorLocking ...
 typedef struct {
 	AG_Locking AG_Locking;
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_OfficeArtExtensionList ExtLst;
 } CT_ConnectorLocking;
 
 // CT_ShapeLocking ...
 typedef struct {
 	AG_Locking AG_Locking;
 	bool NoTextEditAttr; // attr, optional
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_OfficeArtExtensionList ExtLst;
 } CT_ShapeLocking;
 
 // CT_PictureLocking ...
 typedef struct {
 	AG_Locking AG_Locking;
 	bool NoCropAttr; // attr, optional
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_OfficeArtExtensionList ExtLst;
 } CT_PictureLocking;
 
 // CT_GroupLocking ...
@@ -520,7 +520,7 @@ typedef struct {
 	bool NoChangeAspectAttr; // attr, optional
 	bool NoMoveAttr; // attr, optional
 	bool NoResizeAttr; // attr, optional
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_OfficeArtExtensionList ExtLst;
 } CT_GroupLocking;
 
 // CT_GraphicalObjectFrameLocking ...
@@ -531,13 +531,13 @@ typedef struct {
 	bool NoChangeAspectAttr; // attr, optional
 	bool NoMoveAttr; // attr, optional
 	bool NoResizeAttr; // attr, optional
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_OfficeArtExtensionList ExtLst;
 } CT_GraphicalObjectFrameLocking;
 
 // CT_ContentPartLocking ...
 typedef struct {
 	AG_Locking AG_Locking;
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_OfficeArtExtensionList ExtLst;
 } CT_ContentPartLocking;
 
 // CT_NonVisualDrawingProps ...
@@ -547,50 +547,50 @@ typedef struct {
 	char DescrAttr; // attr, optional
 	bool HiddenAttr; // attr, optional
 	char TitleAttr; // attr, optional
-	CT_Hyperlink HlinkClick[];
-	CT_Hyperlink HlinkHover[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_Hyperlink HlinkClick;
+	CT_Hyperlink HlinkHover;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_NonVisualDrawingProps;
 
 // CT_NonVisualDrawingShapeProps ...
 typedef struct {
 	bool TxBoxAttr; // attr, optional
-	CT_ShapeLocking SpLocks[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_ShapeLocking SpLocks;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_NonVisualDrawingShapeProps;
 
 // CT_NonVisualConnectorProperties ...
 typedef struct {
-	CT_ConnectorLocking CxnSpLocks[];
-	CT_Connection StCxn[];
-	CT_Connection EndCxn[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_ConnectorLocking CxnSpLocks;
+	CT_Connection StCxn;
+	CT_Connection EndCxn;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_NonVisualConnectorProperties;
 
 // CT_NonVisualPictureProperties ...
 typedef struct {
 	bool PreferRelativeResizeAttr; // attr, optional
-	CT_PictureLocking PicLocks[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_PictureLocking PicLocks;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_NonVisualPictureProperties;
 
 // CT_NonVisualGroupDrawingShapeProps ...
 typedef struct {
-	CT_GroupLocking GrpSpLocks[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_GroupLocking GrpSpLocks;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_NonVisualGroupDrawingShapeProps;
 
 // CT_NonVisualGraphicFrameProperties ...
 typedef struct {
-	CT_GraphicalObjectFrameLocking GraphicFrameLocks[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_GraphicalObjectFrameLocking GraphicFrameLocks;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_NonVisualGraphicFrameProperties;
 
 // CT_NonVisualContentPartProperties ...
 typedef struct {
 	bool IsCommentAttr; // attr, optional
-	CT_ContentPartLocking CpLocks[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_ContentPartLocking CpLocks;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_NonVisualContentPartProperties;
 
 // CT_GraphicalObjectData ...
@@ -678,7 +678,7 @@ typedef struct {
 // CT_WholeE2oFormatting ...
 typedef struct {
 	EG_EffectProperties EG_EffectProperties[];
-	CT_LineProperties Ln[];
+	CT_LineProperties Ln;
 } CT_WholeE2oFormatting;
 
 // CT_GvmlUseShapeRectangle ...
@@ -687,87 +687,87 @@ typedef struct {
 
 // CT_GvmlTextShape ...
 typedef struct {
-	CT_TextBody TxBody[];
-	CT_GvmlUseShapeRectangle UseSpRect[];
-	CT_Transform2D Xfrm[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_TextBody TxBody;
+	CT_GvmlUseShapeRectangle UseSpRect;
+	CT_Transform2D Xfrm;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_GvmlTextShape;
 
 // CT_GvmlShapeNonVisual ...
 typedef struct {
-	CT_NonVisualDrawingProps CNvPr[];
-	CT_NonVisualDrawingShapeProps CNvSpPr[];
+	CT_NonVisualDrawingProps CNvPr;
+	CT_NonVisualDrawingShapeProps CNvSpPr;
 } CT_GvmlShapeNonVisual;
 
 // CT_GvmlShape ...
 typedef struct {
-	CT_GvmlShapeNonVisual NvSpPr[];
-	CT_ShapeProperties SpPr[];
-	CT_GvmlTextShape TxSp[];
-	CT_ShapeStyle Style[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_GvmlShapeNonVisual NvSpPr;
+	CT_ShapeProperties SpPr;
+	CT_GvmlTextShape TxSp;
+	CT_ShapeStyle Style;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_GvmlShape;
 
 // CT_GvmlConnectorNonVisual ...
 typedef struct {
-	CT_NonVisualDrawingProps CNvPr[];
-	CT_NonVisualConnectorProperties CNvCxnSpPr[];
+	CT_NonVisualDrawingProps CNvPr;
+	CT_NonVisualConnectorProperties CNvCxnSpPr;
 } CT_GvmlConnectorNonVisual;
 
 // CT_GvmlConnector ...
 typedef struct {
-	CT_GvmlConnectorNonVisual NvCxnSpPr[];
-	CT_ShapeProperties SpPr[];
-	CT_ShapeStyle Style[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_GvmlConnectorNonVisual NvCxnSpPr;
+	CT_ShapeProperties SpPr;
+	CT_ShapeStyle Style;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_GvmlConnector;
 
 // CT_GvmlPictureNonVisual ...
 typedef struct {
-	CT_NonVisualDrawingProps CNvPr[];
-	CT_NonVisualPictureProperties CNvPicPr[];
+	CT_NonVisualDrawingProps CNvPr;
+	CT_NonVisualPictureProperties CNvPicPr;
 } CT_GvmlPictureNonVisual;
 
 // CT_GvmlPicture ...
 typedef struct {
-	CT_GvmlPictureNonVisual NvPicPr[];
-	CT_BlipFillProperties BlipFill[];
-	CT_ShapeProperties SpPr[];
-	CT_ShapeStyle Style[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_GvmlPictureNonVisual NvPicPr;
+	CT_BlipFillProperties BlipFill;
+	CT_ShapeProperties SpPr;
+	CT_ShapeStyle Style;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_GvmlPicture;
 
 // CT_GvmlGraphicFrameNonVisual ...
 typedef struct {
-	CT_NonVisualDrawingProps CNvPr[];
-	CT_NonVisualGraphicFrameProperties CNvGraphicFramePr[];
+	CT_NonVisualDrawingProps CNvPr;
+	CT_NonVisualGraphicFrameProperties CNvGraphicFramePr;
 } CT_GvmlGraphicFrameNonVisual;
 
 // CT_GvmlGraphicalObjectFrame ...
 typedef struct {
-	CT_GvmlGraphicFrameNonVisual NvGraphicFramePr[];
-	CT_GraphicalObject Graphic[];
-	CT_Transform2D Xfrm[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_GvmlGraphicFrameNonVisual NvGraphicFramePr;
+	CT_GraphicalObject Graphic;
+	CT_Transform2D Xfrm;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_GvmlGraphicalObjectFrame;
 
 // CT_GvmlGroupShapeNonVisual ...
 typedef struct {
-	CT_NonVisualDrawingProps CNvPr[];
-	CT_NonVisualGroupDrawingShapeProps CNvGrpSpPr[];
+	CT_NonVisualDrawingProps CNvPr;
+	CT_NonVisualGroupDrawingShapeProps CNvGrpSpPr;
 } CT_GvmlGroupShapeNonVisual;
 
 // CT_GvmlGroupShape ...
 typedef struct {
-	CT_GvmlGroupShapeNonVisual NvGrpSpPr[];
-	CT_GroupShapeProperties GrpSpPr[];
+	CT_GvmlGroupShapeNonVisual NvGrpSpPr;
+	CT_GroupShapeProperties GrpSpPr;
 	CT_GvmlTextShape TxSp;
 	CT_GvmlShape Sp;
 	CT_GvmlConnector CxnSp;
 	CT_GvmlPicture Pic;
 	CT_GvmlGraphicalObjectFrame GraphicFrame;
 	CT_GvmlGroupShape GrpSp;
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_OfficeArtExtensionList ExtLst;
 } CT_GvmlGroupShape;
 
 // ST_PresetCameraType ...
@@ -781,7 +781,7 @@ typedef struct {
 	char PrstAttr; // attr
 	int FovAttr; // attr, optional
 	ST_PositivePercentage ZoomAttr; // attr, optional
-	CT_SphereCoords Rot[];
+	CT_SphereCoords Rot;
 } CT_Camera;
 
 // ST_LightRigDirection ...
@@ -794,23 +794,23 @@ typedef char ST_LightRigType;
 typedef struct {
 	char RigAttr; // attr
 	char DirAttr; // attr
-	CT_SphereCoords Rot[];
+	CT_SphereCoords Rot;
 } CT_LightRig;
 
 // CT_Scene3D ...
 typedef struct {
-	CT_Camera Camera[];
-	CT_LightRig LightRig[];
-	CT_Backdrop Backdrop[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_Camera Camera;
+	CT_LightRig LightRig;
+	CT_Backdrop Backdrop;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_Scene3D;
 
 // CT_Backdrop ...
 typedef struct {
-	CT_Point3D Anchor[];
-	CT_Vector3D Norm[];
-	CT_Vector3D Up[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_Point3D Anchor;
+	CT_Vector3D Norm;
+	CT_Vector3D Up;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_Backdrop;
 
 // ST_BevelPresetType ...
@@ -832,11 +832,11 @@ typedef struct {
 	int ExtrusionHAttr; // attr, optional
 	int ContourWAttr; // attr, optional
 	char PrstMaterialAttr; // attr, optional
-	CT_Bevel BevelT[];
-	CT_Bevel BevelB[];
-	CT_Color ExtrusionClr[];
-	CT_Color ContourClr[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_Bevel BevelT;
+	CT_Bevel BevelB;
+	CT_Color ExtrusionClr;
+	CT_Color ContourClr;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_Shape3D;
 
 // CT_FlatText ...
@@ -846,8 +846,8 @@ typedef struct {
 
 // EG_Text3D ...
 typedef struct {
-	CT_Shape3D Sp3d[];
-	CT_FlatText FlatTx[];
+	CT_Shape3D Sp3d;
+	CT_FlatText FlatTx;
 } EG_Text3D;
 
 // CT_AlphaBiLevelEffect ...
@@ -897,8 +897,8 @@ typedef struct {
 // CT_ColorChangeEffect ...
 typedef struct {
 	bool UseAAttr; // attr, optional
-	CT_Color ClrFrom[];
-	CT_Color ClrTo[];
+	CT_Color ClrFrom;
+	CT_Color ClrTo;
 } CT_ColorChangeEffect;
 
 // CT_ColorReplaceEffect ...
@@ -1033,13 +1033,13 @@ typedef char ST_PathShadeType;
 // CT_PathShadeProperties ...
 typedef struct {
 	char PathAttr; // attr, optional
-	CT_RelativeRect FillToRect[];
+	CT_RelativeRect FillToRect;
 } CT_PathShadeProperties;
 
 // EG_ShadeProperties ...
 typedef struct {
-	CT_LinearShadeProperties Lin[];
-	CT_PathShadeProperties Path[];
+	CT_LinearShadeProperties Lin;
+	CT_PathShadeProperties Path;
 } EG_ShadeProperties;
 
 // ST_TileFlipMode ...
@@ -1061,8 +1061,8 @@ typedef struct {
 	char FlipAttr; // attr, optional
 	bool RotWithShapeAttr; // attr, optional
 	EG_ShadeProperties EG_ShadeProperties[];
-	CT_GradientStopList GsLst[];
-	CT_RelativeRect TileRect[];
+	CT_GradientStopList GsLst;
+	CT_RelativeRect TileRect;
 } CT_GradientFillProperties;
 
 // CT_TileInfoProperties ...
@@ -1077,13 +1077,13 @@ typedef struct {
 
 // CT_StretchInfoProperties ...
 typedef struct {
-	CT_RelativeRect FillRect[];
+	CT_RelativeRect FillRect;
 } CT_StretchInfoProperties;
 
 // EG_FillModeProperties ...
 typedef struct {
-	CT_TileInfoProperties Tile[];
-	CT_StretchInfoProperties Stretch[];
+	CT_TileInfoProperties Tile;
+	CT_StretchInfoProperties Stretch;
 } EG_FillModeProperties;
 
 // ST_BlipCompression ...
@@ -1093,24 +1093,24 @@ typedef char ST_BlipCompression;
 typedef struct {
 	AG_Blob AG_Blob;
 	char CstateAttr; // attr, optional
-	CT_AlphaBiLevelEffect AlphaBiLevel[];
-	CT_AlphaCeilingEffect AlphaCeiling[];
-	CT_AlphaFloorEffect AlphaFloor[];
-	CT_AlphaInverseEffect AlphaInv[];
-	CT_AlphaModulateEffect AlphaMod[];
-	CT_AlphaModulateFixedEffect AlphaModFix[];
-	CT_AlphaReplaceEffect AlphaRepl[];
-	CT_BiLevelEffect BiLevel[];
-	CT_BlurEffect Blur[];
-	CT_ColorChangeEffect ClrChange[];
-	CT_ColorReplaceEffect ClrRepl[];
-	CT_DuotoneEffect Duotone[];
-	CT_FillOverlayEffect FillOverlay[];
-	CT_GrayscaleEffect Grayscl[];
-	CT_HSLEffect Hsl[];
-	CT_LuminanceEffect Lum[];
-	CT_TintEffect Tint[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_AlphaBiLevelEffect AlphaBiLevel;
+	CT_AlphaCeilingEffect AlphaCeiling;
+	CT_AlphaFloorEffect AlphaFloor;
+	CT_AlphaInverseEffect AlphaInv;
+	CT_AlphaModulateEffect AlphaMod;
+	CT_AlphaModulateFixedEffect AlphaModFix;
+	CT_AlphaReplaceEffect AlphaRepl;
+	CT_BiLevelEffect BiLevel;
+	CT_BlurEffect Blur;
+	CT_ColorChangeEffect ClrChange;
+	CT_ColorReplaceEffect ClrRepl;
+	CT_DuotoneEffect Duotone;
+	CT_FillOverlayEffect FillOverlay;
+	CT_GrayscaleEffect Grayscl;
+	CT_HSLEffect Hsl;
+	CT_LuminanceEffect Lum;
+	CT_TintEffect Tint;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_Blip;
 
 // CT_BlipFillProperties ...
@@ -1118,8 +1118,8 @@ typedef struct {
 	unsigned int DpiAttr; // attr, optional
 	bool RotWithShapeAttr; // attr, optional
 	EG_FillModeProperties EG_FillModeProperties[];
-	CT_Blip Blip[];
-	CT_RelativeRect SrcRect[];
+	CT_Blip Blip;
+	CT_RelativeRect SrcRect;
 } CT_BlipFillProperties;
 
 // ST_PresetPatternVal ...
@@ -1128,8 +1128,8 @@ typedef char ST_PresetPatternVal;
 // CT_PatternFillProperties ...
 typedef struct {
 	char PrstAttr; // attr, optional
-	CT_Color FgClr[];
-	CT_Color BgClr[];
+	CT_Color FgClr;
+	CT_Color BgClr;
 } CT_PatternFillProperties;
 
 // CT_GroupFillProperties ...
@@ -1138,12 +1138,12 @@ typedef struct {
 
 // EG_FillProperties ...
 typedef struct {
-	CT_NoFillProperties NoFill[];
-	CT_SolidColorFillProperties SolidFill[];
-	CT_GradientFillProperties GradFill[];
-	CT_BlipFillProperties BlipFill[];
-	CT_PatternFillProperties PattFill[];
-	CT_GroupFillProperties GrpFill[];
+	CT_NoFillProperties NoFill;
+	CT_SolidColorFillProperties SolidFill;
+	CT_GradientFillProperties GradFill;
+	CT_BlipFillProperties BlipFill;
+	CT_PatternFillProperties PattFill;
+	CT_GroupFillProperties GrpFill;
 } EG_FillProperties;
 
 // CT_FillProperties ...
@@ -1172,36 +1172,36 @@ typedef struct {
 
 // EG_Effect ...
 typedef struct {
-	CT_EffectContainer Cont[];
-	CT_EffectReference Effect[];
-	CT_AlphaBiLevelEffect AlphaBiLevel[];
-	CT_AlphaCeilingEffect AlphaCeiling[];
-	CT_AlphaFloorEffect AlphaFloor[];
-	CT_AlphaInverseEffect AlphaInv[];
-	CT_AlphaModulateEffect AlphaMod[];
-	CT_AlphaModulateFixedEffect AlphaModFix[];
-	CT_AlphaOutsetEffect AlphaOutset[];
-	CT_AlphaReplaceEffect AlphaRepl[];
-	CT_BiLevelEffect BiLevel[];
-	CT_BlendEffect Blend[];
-	CT_BlurEffect Blur[];
-	CT_ColorChangeEffect ClrChange[];
-	CT_ColorReplaceEffect ClrRepl[];
-	CT_DuotoneEffect Duotone[];
-	CT_FillEffect Fill[];
-	CT_FillOverlayEffect FillOverlay[];
-	CT_GlowEffect Glow[];
-	CT_GrayscaleEffect Grayscl[];
-	CT_HSLEffect Hsl[];
-	CT_InnerShadowEffect InnerShdw[];
-	CT_LuminanceEffect Lum[];
-	CT_OuterShadowEffect OuterShdw[];
-	CT_PresetShadowEffect PrstShdw[];
-	CT_ReflectionEffect Reflection[];
-	CT_RelativeOffsetEffect RelOff[];
-	CT_SoftEdgesEffect SoftEdge[];
-	CT_TintEffect Tint[];
-	CT_TransformEffect Xfrm[];
+	CT_EffectContainer Cont;
+	CT_EffectReference Effect;
+	CT_AlphaBiLevelEffect AlphaBiLevel;
+	CT_AlphaCeilingEffect AlphaCeiling;
+	CT_AlphaFloorEffect AlphaFloor;
+	CT_AlphaInverseEffect AlphaInv;
+	CT_AlphaModulateEffect AlphaMod;
+	CT_AlphaModulateFixedEffect AlphaModFix;
+	CT_AlphaOutsetEffect AlphaOutset;
+	CT_AlphaReplaceEffect AlphaRepl;
+	CT_BiLevelEffect BiLevel;
+	CT_BlendEffect Blend;
+	CT_BlurEffect Blur;
+	CT_ColorChangeEffect ClrChange;
+	CT_ColorReplaceEffect ClrRepl;
+	CT_DuotoneEffect Duotone;
+	CT_FillEffect Fill;
+	CT_FillOverlayEffect FillOverlay;
+	CT_GlowEffect Glow;
+	CT_GrayscaleEffect Grayscl;
+	CT_HSLEffect Hsl;
+	CT_InnerShadowEffect InnerShdw;
+	CT_LuminanceEffect Lum;
+	CT_OuterShadowEffect OuterShdw;
+	CT_PresetShadowEffect PrstShdw;
+	CT_ReflectionEffect Reflection;
+	CT_RelativeOffsetEffect RelOff;
+	CT_SoftEdgesEffect SoftEdge;
+	CT_TintEffect Tint;
+	CT_TransformEffect Xfrm;
 } EG_Effect;
 
 // ST_EffectContainerType ...
@@ -1216,31 +1216,31 @@ typedef struct {
 
 // CT_AlphaModulateEffect ...
 typedef struct {
-	CT_EffectContainer Cont[];
+	CT_EffectContainer Cont;
 } CT_AlphaModulateEffect;
 
 // CT_BlendEffect ...
 typedef struct {
 	char BlendAttr; // attr
-	CT_EffectContainer Cont[];
+	CT_EffectContainer Cont;
 } CT_BlendEffect;
 
 // CT_EffectList ...
 typedef struct {
-	CT_BlurEffect Blur[];
-	CT_FillOverlayEffect FillOverlay[];
-	CT_GlowEffect Glow[];
-	CT_InnerShadowEffect InnerShdw[];
-	CT_OuterShadowEffect OuterShdw[];
-	CT_PresetShadowEffect PrstShdw[];
-	CT_ReflectionEffect Reflection[];
-	CT_SoftEdgesEffect SoftEdge[];
+	CT_BlurEffect Blur;
+	CT_FillOverlayEffect FillOverlay;
+	CT_GlowEffect Glow;
+	CT_InnerShadowEffect InnerShdw;
+	CT_OuterShadowEffect OuterShdw;
+	CT_PresetShadowEffect PrstShdw;
+	CT_ReflectionEffect Reflection;
+	CT_SoftEdgesEffect SoftEdge;
 } CT_EffectList;
 
 // EG_EffectProperties ...
 typedef struct {
-	CT_EffectList EffectLst[];
-	CT_EffectContainer EffectDag[];
+	CT_EffectList EffectLst;
+	CT_EffectContainer EffectDag;
 } EG_EffectProperties;
 
 // CT_EffectProperties ...
@@ -1307,7 +1307,7 @@ typedef struct {
 	char GdRefYAttr; // attr, optional
 	ST_AdjCoordinate MinYAttr; // attr, optional
 	ST_AdjCoordinate MaxYAttr; // attr, optional
-	CT_AdjPoint2D Pos[];
+	CT_AdjPoint2D Pos;
 } CT_XYAdjustHandle;
 
 // CT_PolarAdjustHandle ...
@@ -1318,19 +1318,19 @@ typedef struct {
 	char GdRefAngAttr; // attr, optional
 	ST_AdjAngle MinAngAttr; // attr, optional
 	ST_AdjAngle MaxAngAttr; // attr, optional
-	CT_AdjPoint2D Pos[];
+	CT_AdjPoint2D Pos;
 } CT_PolarAdjustHandle;
 
 // CT_ConnectionSite ...
 typedef struct {
 	ST_AdjAngle AngAttr; // attr
-	CT_AdjPoint2D Pos[];
+	CT_AdjPoint2D Pos;
 } CT_ConnectionSite;
 
 // CT_AdjustHandleList ...
 typedef struct {
-	CT_XYAdjustHandle AhXY[];
-	CT_PolarAdjustHandle AhPolar[];
+	CT_XYAdjustHandle AhXY;
+	CT_PolarAdjustHandle AhPolar;
 } CT_AdjustHandleList;
 
 // CT_ConnectionSiteList ...
@@ -1346,12 +1346,12 @@ typedef struct {
 
 // CT_Path2DMoveTo ...
 typedef struct {
-	CT_AdjPoint2D Pt[];
+	CT_AdjPoint2D Pt;
 } CT_Path2DMoveTo;
 
 // CT_Path2DLineTo ...
 typedef struct {
-	CT_AdjPoint2D Pt[];
+	CT_AdjPoint2D Pt;
 } CT_Path2DLineTo;
 
 // CT_Path2DArcTo ...
@@ -1386,12 +1386,12 @@ typedef struct {
 	char FillAttr; // attr, optional
 	bool StrokeAttr; // attr, optional
 	bool ExtrusionOkAttr; // attr, optional
-	CT_Path2DClose Close[];
-	CT_Path2DMoveTo MoveTo[];
-	CT_Path2DLineTo LnTo[];
-	CT_Path2DArcTo ArcTo[];
-	CT_Path2DQuadBezierTo QuadBezTo[];
-	CT_Path2DCubicBezierTo CubicBezTo[];
+	CT_Path2DClose Close;
+	CT_Path2DMoveTo MoveTo;
+	CT_Path2DLineTo LnTo;
+	CT_Path2DArcTo ArcTo;
+	CT_Path2DQuadBezierTo QuadBezTo;
+	CT_Path2DCubicBezierTo CubicBezTo;
 } CT_Path2D;
 
 // CT_Path2DList ...
@@ -1402,35 +1402,35 @@ typedef struct {
 // CT_PresetGeometry2D ...
 typedef struct {
 	char PrstAttr; // attr
-	CT_GeomGuideList AvLst[];
+	CT_GeomGuideList AvLst;
 } CT_PresetGeometry2D;
 
 // CT_PresetTextShape ...
 typedef struct {
 	char PrstAttr; // attr
-	CT_GeomGuideList AvLst[];
+	CT_GeomGuideList AvLst;
 } CT_PresetTextShape;
 
 // CT_CustomGeometry2D ...
 typedef struct {
-	CT_GeomGuideList AvLst[];
-	CT_GeomGuideList GdLst[];
-	CT_AdjustHandleList AhLst[];
-	CT_ConnectionSiteList CxnLst[];
-	CT_GeomRect Rect[];
-	CT_Path2DList PathLst[];
+	CT_GeomGuideList AvLst;
+	CT_GeomGuideList GdLst;
+	CT_AdjustHandleList AhLst;
+	CT_ConnectionSiteList CxnLst;
+	CT_GeomRect Rect;
+	CT_Path2DList PathLst;
 } CT_CustomGeometry2D;
 
 // EG_Geometry ...
 typedef struct {
-	CT_CustomGeometry2D CustGeom[];
-	CT_PresetGeometry2D PrstGeom[];
+	CT_CustomGeometry2D CustGeom;
+	CT_PresetGeometry2D PrstGeom;
 } EG_Geometry;
 
 // EG_TextGeometry ...
 typedef struct {
-	CT_CustomGeometry2D CustGeom[];
-	CT_PresetTextShape PrstTxWarp[];
+	CT_CustomGeometry2D CustGeom;
+	CT_PresetTextShape PrstTxWarp;
 } EG_TextGeometry;
 
 // ST_LineEndType ...
@@ -1451,10 +1451,10 @@ typedef struct {
 
 // EG_LineFillProperties ...
 typedef struct {
-	CT_NoFillProperties NoFill[];
-	CT_SolidColorFillProperties SolidFill[];
-	CT_GradientFillProperties GradFill[];
-	CT_PatternFillProperties PattFill[];
+	CT_NoFillProperties NoFill;
+	CT_SolidColorFillProperties SolidFill;
+	CT_GradientFillProperties GradFill;
+	CT_PatternFillProperties PattFill;
 } EG_LineFillProperties;
 
 // CT_LineJoinBevel ...
@@ -1472,9 +1472,9 @@ typedef struct {
 
 // EG_LineJoinProperties ...
 typedef struct {
-	CT_LineJoinRound Round[];
-	CT_LineJoinBevel Bevel[];
-	CT_LineJoinMiterProperties Miter[];
+	CT_LineJoinRound Round;
+	CT_LineJoinBevel Bevel;
+	CT_LineJoinMiterProperties Miter;
 } EG_LineJoinProperties;
 
 // ST_PresetLineDashVal ...
@@ -1498,8 +1498,8 @@ typedef struct {
 
 // EG_LineDashProperties ...
 typedef struct {
-	CT_PresetLineDashProperties PrstDash[];
-	CT_DashStopList CustDash[];
+	CT_PresetLineDashProperties PrstDash;
+	CT_DashStopList CustDash;
 } EG_LineDashProperties;
 
 // ST_LineCap ...
@@ -1523,9 +1523,9 @@ typedef struct {
 	EG_LineFillProperties EG_LineFillProperties[];
 	EG_LineDashProperties EG_LineDashProperties[];
 	EG_LineJoinProperties EG_LineJoinProperties[];
-	CT_LineEndProperties HeadEnd[];
-	CT_LineEndProperties TailEnd[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_LineEndProperties HeadEnd;
+	CT_LineEndProperties TailEnd;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_LineProperties;
 
 // ST_ShapeID ...
@@ -1537,11 +1537,11 @@ typedef struct {
 	EG_Geometry EG_Geometry[];
 	EG_FillProperties EG_FillProperties[];
 	EG_EffectProperties EG_EffectProperties[];
-	CT_Transform2D Xfrm[];
-	CT_LineProperties Ln[];
-	CT_Scene3D Scene3d[];
-	CT_Shape3D Sp3d[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_Transform2D Xfrm;
+	CT_LineProperties Ln;
+	CT_Scene3D Scene3d;
+	CT_Shape3D Sp3d;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_ShapeProperties;
 
 // CT_GroupShapeProperties ...
@@ -1549,9 +1549,9 @@ typedef struct {
 	char BwModeAttr; // attr, optional
 	EG_FillProperties EG_FillProperties[];
 	EG_EffectProperties EG_EffectProperties[];
-	CT_GroupTransform2D Xfrm[];
-	CT_Scene3D Scene3d[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_GroupTransform2D Xfrm;
+	CT_Scene3D Scene3d;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_GroupShapeProperties;
 
 // CT_StyleMatrixReference ...
@@ -1568,27 +1568,27 @@ typedef struct {
 
 // CT_ShapeStyle ...
 typedef struct {
-	CT_StyleMatrixReference LnRef[];
-	CT_StyleMatrixReference FillRef[];
-	CT_StyleMatrixReference EffectRef[];
-	CT_FontReference FontRef[];
+	CT_StyleMatrixReference LnRef;
+	CT_StyleMatrixReference FillRef;
+	CT_StyleMatrixReference EffectRef;
+	CT_FontReference FontRef;
 } CT_ShapeStyle;
 
 // CT_DefaultShapeDefinition ...
 typedef struct {
-	CT_ShapeProperties SpPr[];
-	CT_TextBodyProperties BodyPr[];
-	CT_TextListStyle LstStyle[];
-	CT_ShapeStyle Style[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_ShapeProperties SpPr;
+	CT_TextBodyProperties BodyPr;
+	CT_TextListStyle LstStyle;
+	CT_ShapeStyle Style;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_DefaultShapeDefinition;
 
 // CT_ObjectStyleDefaults ...
 typedef struct {
-	CT_DefaultShapeDefinition SpDef[];
-	CT_DefaultShapeDefinition LnDef[];
-	CT_DefaultShapeDefinition TxDef[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_DefaultShapeDefinition SpDef;
+	CT_DefaultShapeDefinition LnDef;
+	CT_DefaultShapeDefinition TxDef;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_ObjectStyleDefaults;
 
 // CT_EmptyElement ...
@@ -1609,7 +1609,7 @@ typedef struct {
 	char Accent6Attr; // attr
 	char HlinkAttr; // attr
 	char FolHlinkAttr; // attr
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_OfficeArtExtensionList ExtLst;
 } CT_ColorMapping;
 
 // CT_ColorMappingOverride ...
@@ -1620,8 +1620,8 @@ typedef struct {
 
 // CT_ColorSchemeAndMapping ...
 typedef struct {
-	CT_ColorScheme ClrScheme[];
-	CT_ColorMapping ClrMap[];
+	CT_ColorScheme ClrScheme;
+	CT_ColorMapping ClrMap;
 } CT_ColorSchemeAndMapping;
 
 // CT_ColorSchemeList ...
@@ -1632,24 +1632,24 @@ typedef struct {
 // CT_OfficeStyleSheet ...
 typedef struct {
 	char NameAttr; // attr, optional
-	CT_BaseStyles ThemeElements[];
-	CT_ObjectStyleDefaults ObjectDefaults[];
-	CT_ColorSchemeList ExtraClrSchemeLst[];
-	CT_CustomColorList CustClrLst[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_BaseStyles ThemeElements;
+	CT_ObjectStyleDefaults ObjectDefaults;
+	CT_ColorSchemeList ExtraClrSchemeLst;
+	CT_CustomColorList CustClrLst;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_OfficeStyleSheet;
 
 // CT_BaseStylesOverride ...
 typedef struct {
-	CT_ColorScheme ClrScheme[];
-	CT_FontScheme FontScheme[];
-	CT_StyleMatrix FmtScheme[];
+	CT_ColorScheme ClrScheme;
+	CT_FontScheme FontScheme;
+	CT_StyleMatrix FmtScheme;
 } CT_BaseStylesOverride;
 
 // CT_ClipboardStyleSheet ...
 typedef struct {
-	CT_BaseStyles ThemeElements[];
-	CT_ColorMapping ClrMap[];
+	CT_BaseStyles ThemeElements;
+	CT_ColorMapping ClrMap;
 } CT_ClipboardStyleSheet;
 
 typedef CT_OfficeStyleSheet Theme;
@@ -1669,15 +1669,15 @@ typedef struct {
 	bool AnchorCtrAttr; // attr, optional
 	char HorzOverflowAttr; // attr, optional
 	EG_FillProperties EG_FillProperties[];
-	CT_LineProperties LnL[];
-	CT_LineProperties LnR[];
-	CT_LineProperties LnT[];
-	CT_LineProperties LnB[];
-	CT_LineProperties LnTlToBr[];
-	CT_LineProperties LnBlToTr[];
-	CT_Cell3D Cell3D[];
+	CT_LineProperties LnL;
+	CT_LineProperties LnR;
+	CT_LineProperties LnT;
+	CT_LineProperties LnB;
+	CT_LineProperties LnTlToBr;
+	CT_LineProperties LnBlToTr;
+	CT_Cell3D Cell3D;
 	CT_Headers Headers;
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_OfficeArtExtensionList ExtLst;
 } CT_TableCellProperties;
 
 // CT_Headers ...
@@ -1688,7 +1688,7 @@ typedef struct {
 // CT_TableCol ...
 typedef struct {
 	ST_Coordinate WAttr; // attr
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_OfficeArtExtensionList ExtLst;
 } CT_TableCol;
 
 // CT_TableGrid ...
@@ -1703,16 +1703,16 @@ typedef struct {
 	bool HMergeAttr; // attr, optional
 	bool VMergeAttr; // attr, optional
 	char IdAttr; // attr, optional
-	CT_TextBody TxBody[];
-	CT_TableCellProperties TcPr[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_TextBody TxBody;
+	CT_TableCellProperties TcPr;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_TableCell;
 
 // CT_TableRow ...
 typedef struct {
 	ST_Coordinate HAttr; // attr
 	CT_TableCell Tc[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_OfficeArtExtensionList ExtLst;
 } CT_TableRow;
 
 // CT_TableProperties ...
@@ -1728,13 +1728,13 @@ typedef struct {
 	EG_EffectProperties EG_EffectProperties[];
 	CT_TableStyle TableStyle;
 	char TableStyleId;
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_OfficeArtExtensionList ExtLst;
 } CT_TableProperties;
 
 // CT_Table ...
 typedef struct {
-	CT_TableProperties TblPr[];
-	CT_TableGrid TblGrid[];
+	CT_TableProperties TblPr;
+	CT_TableGrid TblGrid;
 	CT_TableRow Tr[];
 } CT_Table;
 
@@ -1743,33 +1743,33 @@ typedef CT_Table Tbl;
 // CT_Cell3D ...
 typedef struct {
 	char PrstMaterialAttr; // attr, optional
-	CT_Bevel Bevel[];
-	CT_LightRig LightRig[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_Bevel Bevel;
+	CT_LightRig LightRig;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_Cell3D;
 
 // EG_ThemeableFillStyle ...
 typedef struct {
-	CT_FillProperties Fill[];
-	CT_StyleMatrixReference FillRef[];
+	CT_FillProperties Fill;
+	CT_StyleMatrixReference FillRef;
 } EG_ThemeableFillStyle;
 
 // CT_ThemeableLineStyle ...
 typedef struct {
-	CT_LineProperties Ln[];
-	CT_StyleMatrixReference LnRef[];
+	CT_LineProperties Ln;
+	CT_StyleMatrixReference LnRef;
 } CT_ThemeableLineStyle;
 
 // EG_ThemeableEffectStyle ...
 typedef struct {
-	CT_EffectProperties Effect[];
-	CT_StyleMatrixReference EffectRef[];
+	CT_EffectProperties Effect;
+	CT_StyleMatrixReference EffectRef;
 } EG_ThemeableEffectStyle;
 
 // EG_ThemeableFontStyles ...
 typedef struct {
-	CT_FontCollection Font[];
-	CT_FontReference FontRef[];
+	CT_FontCollection Font;
+	CT_FontReference FontRef;
 } EG_ThemeableFontStyles;
 
 // ST_OnOffStyleType ...
@@ -1781,20 +1781,20 @@ typedef struct {
 	char IAttr; // attr, optional
 	EG_ThemeableFontStyles EG_ThemeableFontStyles[];
 	EG_ColorChoice EG_ColorChoice[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_OfficeArtExtensionList ExtLst;
 } CT_TableStyleTextStyle;
 
 // CT_TableCellBorderStyle ...
 typedef struct {
-	CT_ThemeableLineStyle Left[];
-	CT_ThemeableLineStyle Right[];
-	CT_ThemeableLineStyle Top[];
-	CT_ThemeableLineStyle Bottom[];
-	CT_ThemeableLineStyle InsideH[];
-	CT_ThemeableLineStyle InsideV[];
-	CT_ThemeableLineStyle Tl2br[];
-	CT_ThemeableLineStyle Tr2bl[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_ThemeableLineStyle Left;
+	CT_ThemeableLineStyle Right;
+	CT_ThemeableLineStyle Top;
+	CT_ThemeableLineStyle Bottom;
+	CT_ThemeableLineStyle InsideH;
+	CT_ThemeableLineStyle InsideV;
+	CT_ThemeableLineStyle Tl2br;
+	CT_ThemeableLineStyle Tr2bl;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_TableCellBorderStyle;
 
 // CT_TableBackgroundStyle ...
@@ -1806,35 +1806,35 @@ typedef struct {
 // CT_TableStyleCellStyle ...
 typedef struct {
 	EG_ThemeableFillStyle EG_ThemeableFillStyle[];
-	CT_TableCellBorderStyle TcBdr[];
-	CT_Cell3D Cell3D[];
+	CT_TableCellBorderStyle TcBdr;
+	CT_Cell3D Cell3D;
 } CT_TableStyleCellStyle;
 
 // CT_TablePartStyle ...
 typedef struct {
-	CT_TableStyleTextStyle TcTxStyle[];
-	CT_TableStyleCellStyle TcStyle[];
+	CT_TableStyleTextStyle TcTxStyle;
+	CT_TableStyleCellStyle TcStyle;
 } CT_TablePartStyle;
 
 // CT_TableStyle ...
 typedef struct {
 	char StyleIdAttr; // attr
 	char StyleNameAttr; // attr
-	CT_TableBackgroundStyle TblBg[];
-	CT_TablePartStyle WholeTbl[];
-	CT_TablePartStyle Band1H[];
-	CT_TablePartStyle Band2H[];
-	CT_TablePartStyle Band1V[];
-	CT_TablePartStyle Band2V[];
-	CT_TablePartStyle LastCol[];
-	CT_TablePartStyle FirstCol[];
-	CT_TablePartStyle LastRow[];
-	CT_TablePartStyle SeCell[];
-	CT_TablePartStyle SwCell[];
-	CT_TablePartStyle FirstRow[];
-	CT_TablePartStyle NeCell[];
-	CT_TablePartStyle NwCell[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_TableBackgroundStyle TblBg;
+	CT_TablePartStyle WholeTbl;
+	CT_TablePartStyle Band1H;
+	CT_TablePartStyle Band2H;
+	CT_TablePartStyle Band1V;
+	CT_TablePartStyle Band2V;
+	CT_TablePartStyle LastCol;
+	CT_TablePartStyle FirstCol;
+	CT_TablePartStyle LastRow;
+	CT_TablePartStyle SeCell;
+	CT_TablePartStyle SwCell;
+	CT_TablePartStyle FirstRow;
+	CT_TablePartStyle NeCell;
+	CT_TablePartStyle NwCell;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_TableStyle;
 
 // CT_TableStyleList ...
@@ -1848,8 +1848,8 @@ typedef CT_TableStyleList TblStyleLst;
 // CT_TextParagraph ...
 typedef struct {
 	EG_TextRun EG_TextRun[];
-	CT_TextParagraphProperties PPr[];
-	CT_TextCharacterProperties EndParaRPr[];
+	CT_TextParagraphProperties PPr;
+	CT_TextCharacterProperties EndParaRPr;
 } CT_TextParagraph;
 
 // ST_TextAnchoringType ...
@@ -1872,17 +1872,17 @@ typedef int ST_TextColumnCount;
 
 // CT_TextListStyle ...
 typedef struct {
-	CT_TextParagraphProperties DefPPr[];
-	CT_TextParagraphProperties Lvl1pPr[];
-	CT_TextParagraphProperties Lvl2pPr[];
-	CT_TextParagraphProperties Lvl3pPr[];
-	CT_TextParagraphProperties Lvl4pPr[];
-	CT_TextParagraphProperties Lvl5pPr[];
-	CT_TextParagraphProperties Lvl6pPr[];
-	CT_TextParagraphProperties Lvl7pPr[];
-	CT_TextParagraphProperties Lvl8pPr[];
-	CT_TextParagraphProperties Lvl9pPr[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_TextParagraphProperties DefPPr;
+	CT_TextParagraphProperties Lvl1pPr;
+	CT_TextParagraphProperties Lvl2pPr;
+	CT_TextParagraphProperties Lvl3pPr;
+	CT_TextParagraphProperties Lvl4pPr;
+	CT_TextParagraphProperties Lvl5pPr;
+	CT_TextParagraphProperties Lvl6pPr;
+	CT_TextParagraphProperties Lvl7pPr;
+	CT_TextParagraphProperties Lvl8pPr;
+	CT_TextParagraphProperties Lvl9pPr;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_TextListStyle;
 
 // ST_TextFontScalePercentOrPercentString ...
@@ -1934,15 +1934,15 @@ typedef struct {
 	bool CompatLnSpcAttr; // attr, optional
 	EG_TextAutofit EG_TextAutofit[];
 	EG_Text3D EG_Text3D[];
-	CT_PresetTextShape PrstTxWarp[];
-	CT_Scene3D Scene3d[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_PresetTextShape PrstTxWarp;
+	CT_Scene3D Scene3d;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_TextBodyProperties;
 
 // CT_TextBody ...
 typedef struct {
-	CT_TextBodyProperties BodyPr[];
-	CT_TextListStyle LstStyle[];
+	CT_TextBodyProperties BodyPr;
+	CT_TextListStyle LstStyle;
 	CT_TextParagraph P[];
 } CT_TextBody;
 
@@ -1958,8 +1958,8 @@ typedef struct {
 
 // EG_TextBulletColor ...
 typedef struct {
-	CT_TextBulletColorFollowText BuClrTx[];
-	CT_Color BuClr[];
+	CT_TextBulletColorFollowText BuClrTx;
+	CT_Color BuClr;
 } EG_TextBulletColor;
 
 // ST_TextBulletSize ...
@@ -2014,7 +2014,7 @@ typedef struct {
 
 // CT_TextBlipBullet ...
 typedef struct {
-	CT_Blip Blip[];
+	CT_Blip Blip;
 } CT_TextBlipBullet;
 
 // CT_TextNoBullet ...
@@ -2077,7 +2077,7 @@ typedef struct {
 // EG_TextUnderlineLine ...
 typedef struct {
 	CT_TextUnderlineLineFollowText ULnTx;
-	CT_LineProperties ULn[];
+	CT_LineProperties ULn;
 } EG_TextUnderlineLine;
 
 // EG_TextUnderlineFill ...
@@ -2117,16 +2117,16 @@ typedef struct {
 	EG_EffectProperties EG_EffectProperties[];
 	EG_TextUnderlineLine EG_TextUnderlineLine[];
 	EG_TextUnderlineFill EG_TextUnderlineFill[];
-	CT_LineProperties Ln[];
-	CT_Color Highlight[];
-	CT_TextFont Latin[];
-	CT_TextFont Ea[];
-	CT_TextFont Cs[];
-	CT_TextFont Sym[];
-	CT_Hyperlink HlinkClick[];
-	CT_Hyperlink HlinkMouseOver[];
+	CT_LineProperties Ln;
+	CT_Color Highlight;
+	CT_TextFont Latin;
+	CT_TextFont Ea;
+	CT_TextFont Cs;
+	CT_TextFont Sym;
+	CT_Hyperlink HlinkClick;
+	CT_Hyperlink HlinkMouseOver;
 	CT_Boolean Rtl;
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_OfficeArtExtensionList ExtLst;
 } CT_TextCharacterProperties;
 
 // CT_Boolean ...
@@ -2174,7 +2174,7 @@ typedef struct {
 
 // CT_TextLineBreak ...
 typedef struct {
-	CT_TextCharacterProperties RPr[];
+	CT_TextCharacterProperties RPr;
 } CT_TextLineBreak;
 
 // CT_TextSpacing ...
@@ -2209,21 +2209,21 @@ typedef struct {
 	EG_TextBulletSize EG_TextBulletSize[];
 	EG_TextBulletTypeface EG_TextBulletTypeface[];
 	EG_TextBullet EG_TextBullet[];
-	CT_TextSpacing LnSpc[];
-	CT_TextSpacing SpcBef[];
-	CT_TextSpacing SpcAft[];
-	CT_TextTabStopList TabLst[];
-	CT_TextCharacterProperties DefRPr[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_TextSpacing LnSpc;
+	CT_TextSpacing SpcBef;
+	CT_TextSpacing SpcAft;
+	CT_TextTabStopList TabLst;
+	CT_TextCharacterProperties DefRPr;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_TextParagraphProperties;
 
 // CT_TextField ...
 typedef struct {
 	char IdAttr; // attr
 	char TypeAttr; // attr, optional
-	CT_TextCharacterProperties RPr[];
-	CT_TextParagraphProperties PPr[];
-	char T[];
+	CT_TextCharacterProperties RPr;
+	CT_TextParagraphProperties PPr;
+	char T;
 } CT_TextField;
 
 // EG_TextRun ...
@@ -2235,6 +2235,6 @@ typedef struct {
 
 // CT_RegularTextRun ...
 typedef struct {
-	CT_TextCharacterProperties RPr[];
-	char T[];
+	CT_TextCharacterProperties RPr;
+	char T;
 } CT_RegularTextRun;

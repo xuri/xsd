@@ -1827,7 +1827,7 @@ public class Part {
 	@XmlAttribute(name = "id")
 	protected StringAttr Id;
 	@XmlElement(required = true, name = "title")
-	protected List<Title> Title;
+	protected Title Title;
 	@XmlElement(required = true, name = "faq")
 	protected List<Faq> Faq;
 }
@@ -1837,9 +1837,9 @@ public class Faq {
 	@XmlAttribute(name = "id")
 	protected StringAttr Id;
 	@XmlElement(required = true, name = "question")
-	protected List<Question> Question;
+	protected Question Question;
 	@XmlElement(required = true, name = "answer")
-	protected List<Answer> Answer;
+	protected Answer Answer;
 }
 
 // Question ...

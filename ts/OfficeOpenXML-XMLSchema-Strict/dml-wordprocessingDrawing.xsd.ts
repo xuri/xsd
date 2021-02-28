@@ -19,9 +19,9 @@ export class CT_Inline {
 	DistRAttr: number | null;
 	Extent: CT_PositiveSize2D;
 	EffectExtent: CT_EffectExtent;
-	DocPr: Array<CT_NonVisualDrawingProps>;
-	CNvGraphicFramePr: Array<CT_NonVisualGraphicFrameProperties>;
-	AGraphic: Array<CT_GraphicalObject>;
+	DocPr: CT_NonVisualDrawingProps;
+	CNvGraphicFramePr: CT_NonVisualGraphicFrameProperties;
+	AGraphic: CT_GraphicalObject;
 }
 
 // ST_WrapText ...
@@ -35,7 +35,7 @@ export enum ST_WrapText {
 // CT_WrapPath ...
 export class CT_WrapPath {
 	EditedAttr: boolean | null;
-	Start: Array<CT_Point2D>;
+	Start: CT_Point2D;
 	LineTo: Array<CT_Point2D>;
 }
 
@@ -58,7 +58,7 @@ export class CT_WrapTight {
 	WrapTextAttr: string;
 	DistLAttr: number | null;
 	DistRAttr: number | null;
-	WrapPolygon: Array<CT_WrapPath>;
+	WrapPolygon: CT_WrapPath;
 }
 
 // CT_WrapThrough ...
@@ -66,7 +66,7 @@ export class CT_WrapThrough {
 	WrapTextAttr: string;
 	DistLAttr: number | null;
 	DistRAttr: number | null;
-	WrapPolygon: Array<CT_WrapPath>;
+	WrapPolygon: CT_WrapPath;
 }
 
 // CT_WrapTopBottom ...
@@ -78,11 +78,11 @@ export class CT_WrapTopBottom {
 
 // EG_WrapType ...
 export class EG_WrapType {
-	WrapNone: Array<CT_WrapNone>;
-	WrapSquare: Array<CT_WrapSquare>;
-	WrapTight: Array<CT_WrapTight>;
-	WrapThrough: Array<CT_WrapThrough>;
-	WrapTopAndBottom: Array<CT_WrapTopBottom>;
+	WrapNone: CT_WrapNone;
+	WrapSquare: CT_WrapSquare;
+	WrapTight: CT_WrapTight;
+	WrapThrough: CT_WrapThrough;
+	WrapTopAndBottom: CT_WrapTopBottom;
 }
 
 // ST_PositionOffset ...
@@ -163,9 +163,9 @@ export class CT_Anchor {
 	PositionV: CT_PosV;
 	Extent: CT_PositiveSize2D;
 	EffectExtent: CT_EffectExtent;
-	DocPr: Array<CT_NonVisualDrawingProps>;
-	CNvGraphicFramePr: Array<CT_NonVisualGraphicFrameProperties>;
-	AGraphic: Array<CT_GraphicalObject>;
+	DocPr: CT_NonVisualDrawingProps;
+	CNvGraphicFramePr: CT_NonVisualGraphicFrameProperties;
+	AGraphic: CT_GraphicalObject;
 }
 
 // CT_TxbxContent ...
@@ -176,78 +176,78 @@ export class CT_TxbxContent {
 // CT_TextboxInfo ...
 export class CT_TextboxInfo {
 	IdAttr: number | null;
-	TxbxContent: Array<CT_TxbxContent>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	TxbxContent: CT_TxbxContent;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_LinkedTextboxInformation ...
 export class CT_LinkedTextboxInformation {
 	IdAttr: number;
 	SeqAttr: number;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_WordprocessingShape ...
 export class CT_WordprocessingShape {
 	NormalEastAsianFlowAttr: boolean | null;
-	CNvPr: Array<CT_NonVisualDrawingProps>;
-	CNvSpPr: Array<CT_NonVisualDrawingShapeProps>;
-	CNvCnPr: Array<CT_NonVisualConnectorProperties>;
-	SpPr: Array<CT_ShapeProperties>;
-	Style: Array<CT_ShapeStyle>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
-	Txbx: Array<CT_TextboxInfo>;
-	LinkedTxbx: Array<CT_LinkedTextboxInformation>;
-	BodyPr: Array<CT_TextBodyProperties>;
+	CNvPr: CT_NonVisualDrawingProps;
+	CNvSpPr: CT_NonVisualDrawingShapeProps;
+	CNvCnPr: CT_NonVisualConnectorProperties;
+	SpPr: CT_ShapeProperties;
+	Style: CT_ShapeStyle;
+	ExtLst: CT_OfficeArtExtensionList;
+	Txbx: CT_TextboxInfo;
+	LinkedTxbx: CT_LinkedTextboxInformation;
+	BodyPr: CT_TextBodyProperties;
 }
 
 // CT_GraphicFrame ...
 export class CT_GraphicFrame {
-	CNvPr: Array<CT_NonVisualDrawingProps>;
-	CNvFrPr: Array<CT_NonVisualGraphicFrameProperties>;
-	Xfrm: Array<CT_Transform2D>;
-	AGraphic: Array<CT_GraphicalObject>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	CNvPr: CT_NonVisualDrawingProps;
+	CNvFrPr: CT_NonVisualGraphicFrameProperties;
+	Xfrm: CT_Transform2D;
+	AGraphic: CT_GraphicalObject;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_WordprocessingContentPartNonVisual ...
 export class CT_WordprocessingContentPartNonVisual {
-	CNvPr: Array<CT_NonVisualDrawingProps>;
-	CNvContentPartPr: Array<CT_NonVisualContentPartProperties>;
+	CNvPr: CT_NonVisualDrawingProps;
+	CNvContentPartPr: CT_NonVisualContentPartProperties;
 }
 
 // CT_WordprocessingContentPart ...
 export class CT_WordprocessingContentPart {
 	BwModeAttr: string | null;
 	RIdAttr: string;
-	NvContentPartPr: Array<CT_WordprocessingContentPartNonVisual>;
-	Xfrm: Array<CT_Transform2D>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	NvContentPartPr: CT_WordprocessingContentPartNonVisual;
+	Xfrm: CT_Transform2D;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_WordprocessingGroup ...
 export class CT_WordprocessingGroup {
-	CNvPr: Array<CT_NonVisualDrawingProps>;
-	CNvGrpSpPr: Array<CT_NonVisualGroupDrawingShapeProps>;
-	GrpSpPr: Array<CT_GroupShapeProperties>;
+	CNvPr: CT_NonVisualDrawingProps;
+	CNvGrpSpPr: CT_NonVisualGroupDrawingShapeProps;
+	GrpSpPr: CT_GroupShapeProperties;
 	Wsp: CT_WordprocessingShape;
 	GrpSp: CT_WordprocessingGroup;
 	GraphicFrame: CT_GraphicFrame;
 	DpctPic: CT_Picture;
 	ContentPart: CT_WordprocessingContentPart;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_WordprocessingCanvas ...
 export class CT_WordprocessingCanvas {
-	Bg: Array<CT_BackgroundFormatting>;
-	Whole: Array<CT_WholeE2oFormatting>;
+	Bg: CT_BackgroundFormatting;
+	Whole: CT_WholeE2oFormatting;
 	Wsp: CT_WordprocessingShape;
 	DpctPic: CT_Picture;
 	ContentPart: CT_WordprocessingContentPart;
 	Wgp: CT_WordprocessingGroup;
 	GraphicFrame: CT_GraphicFrame;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // Wpc ...

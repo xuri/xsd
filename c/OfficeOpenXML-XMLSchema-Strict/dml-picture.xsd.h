@@ -2,15 +2,15 @@
 
 // CT_PictureNonVisual ...
 typedef struct {
-	CT_NonVisualDrawingProps CNvPr[];
-	CT_NonVisualPictureProperties CNvPicPr[];
+	CT_NonVisualDrawingProps CNvPr;
+	CT_NonVisualPictureProperties CNvPicPr;
 } CT_PictureNonVisual;
 
 // CT_Picture ...
 typedef struct {
-	CT_PictureNonVisual NvPicPr[];
-	CT_BlipFillProperties BlipFill[];
-	CT_ShapeProperties SpPr[];
+	CT_PictureNonVisual NvPicPr;
+	CT_BlipFillProperties BlipFill;
+	CT_ShapeProperties SpPr;
 } CT_Picture;
 
 typedef CT_Picture Pic;

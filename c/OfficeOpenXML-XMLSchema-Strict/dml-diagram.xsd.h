@@ -39,13 +39,13 @@ typedef struct {
 // CT_CTStyleLabel ...
 typedef struct {
 	char NameAttr; // attr
-	CT_Colors FillClrLst[];
-	CT_Colors LinClrLst[];
-	CT_Colors EffectClrLst[];
-	CT_Colors TxLinClrLst[];
-	CT_Colors TxFillClrLst[];
-	CT_Colors TxEffectClrLst[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_Colors FillClrLst;
+	CT_Colors LinClrLst;
+	CT_Colors EffectClrLst;
+	CT_Colors TxLinClrLst;
+	CT_Colors TxFillClrLst;
+	CT_Colors TxEffectClrLst;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_CTStyleLabel;
 
 // CT_ColorTransform ...
@@ -56,7 +56,7 @@ typedef struct {
 	CT_CTDescription Desc[];
 	CT_CTCategories CatLst;
 	CT_CTStyleLabel StyleLbl[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_OfficeArtExtensionList ExtLst;
 } CT_ColorTransform;
 
 typedef CT_ColorTransform ColorsDef;
@@ -69,7 +69,7 @@ typedef struct {
 	CT_CTName Title[];
 	CT_CTDescription Desc[];
 	CT_CTCategories CatLst;
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_OfficeArtExtensionList ExtLst;
 } CT_ColorTransformHeader;
 
 typedef CT_ColorTransformHeader ColorsDefHdr;
@@ -89,10 +89,10 @@ typedef struct {
 	ST_ModelId ModelIdAttr; // attr
 	char TypeAttr; // attr, optional
 	ST_ModelId CxnIdAttr; // attr, optional
-	CT_ElemPropSet PrSet[];
-	CT_ShapeProperties SpPr[];
-	CT_TextBody T[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_ElemPropSet PrSet;
+	CT_ShapeProperties SpPr;
+	CT_TextBody T;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_Pt;
 
 // CT_PtList ...
@@ -114,7 +114,7 @@ typedef struct {
 	ST_ModelId ParTransIdAttr; // attr, optional
 	ST_ModelId SibTransIdAttr; // attr, optional
 	char PresIdAttr; // attr, optional
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_OfficeArtExtensionList ExtLst;
 } CT_Cxn;
 
 // CT_CxnList ...
@@ -125,10 +125,10 @@ typedef struct {
 // CT_DataModel ...
 typedef struct {
 	CT_PtList PtLst;
-	CT_CxnList CxnLst[];
+	CT_CxnList CxnLst;
 	CT_BackgroundFormatting Bg;
 	CT_WholeE2oFormatting Whole;
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_OfficeArtExtensionList ExtLst;
 } CT_DataModel;
 
 typedef CT_DataModel DataModel;
@@ -166,7 +166,7 @@ typedef struct {
 	char OpAttr; // attr, optional
 	float ValAttr; // attr, optional
 	float FactAttr; // attr, optional
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_OfficeArtExtensionList ExtLst;
 } CT_Constraint;
 
 // CT_Constraints ...
@@ -180,7 +180,7 @@ typedef struct {
 	float ValAttr; // attr, optional
 	float FactAttr; // attr, optional
 	float MaxAttr; // attr, optional
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_OfficeArtExtensionList ExtLst;
 } CT_NumericRule;
 
 // CT_Rules ...
@@ -191,7 +191,7 @@ typedef struct {
 // CT_PresentationOf ...
 typedef struct {
 	AG_IteratorAttributes AG_IteratorAttributes;
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_OfficeArtExtensionList ExtLst;
 } CT_PresentationOf;
 
 // ST_LayoutShapeType ...
@@ -223,8 +223,8 @@ typedef struct {
 	bool HideGeomAttr; // attr, optional
 	bool LkTxEntryAttr; // attr, optional
 	bool BlipPhldrAttr; // attr, optional
-	CT_AdjLst AdjLst[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_AdjLst AdjLst;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_Shape;
 
 // CT_Parameter ...
@@ -238,7 +238,7 @@ typedef struct {
 	char TypeAttr; // attr
 	unsigned int RevAttr; // attr, optional
 	CT_Parameter Param[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_OfficeArtExtensionList ExtLst;
 } CT_Algorithm;
 
 // CT_LayoutNode ...
@@ -247,16 +247,16 @@ typedef struct {
 	char StyleLblAttr; // attr, optional
 	char ChOrderAttr; // attr, optional
 	char MoveWithAttr; // attr, optional
-	CT_Algorithm Alg[];
-	CT_Shape Shape[];
-	CT_PresentationOf PresOf[];
-	CT_Constraints ConstrLst[];
-	CT_Rules RuleLst[];
-	CT_LayoutVariablePropertySet VarLst[];
+	CT_Algorithm Alg;
+	CT_Shape Shape;
+	CT_PresentationOf PresOf;
+	CT_Constraints ConstrLst;
+	CT_Rules RuleLst;
+	CT_LayoutVariablePropertySet VarLst;
 	CT_ForEach ForEach;
 	CT_LayoutNode LayoutNode;
 	CT_Choose Choose;
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_OfficeArtExtensionList ExtLst;
 } CT_LayoutNode;
 
 // CT_ForEach ...
@@ -264,15 +264,15 @@ typedef struct {
 	AG_IteratorAttributes AG_IteratorAttributes;
 	char NameAttr; // attr, optional
 	char RefAttr; // attr, optional
-	CT_Algorithm Alg[];
-	CT_Shape Shape[];
-	CT_PresentationOf PresOf[];
-	CT_Constraints ConstrLst[];
-	CT_Rules RuleLst[];
+	CT_Algorithm Alg;
+	CT_Shape Shape;
+	CT_PresentationOf PresOf;
+	CT_Constraints ConstrLst;
+	CT_Rules RuleLst;
 	CT_ForEach ForEach;
 	CT_LayoutNode LayoutNode;
 	CT_Choose Choose;
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_OfficeArtExtensionList ExtLst;
 } CT_ForEach;
 
 // CT_When ...
@@ -283,29 +283,29 @@ typedef struct {
 	ST_FunctionArgument ArgAttr; // attr, optional
 	char OpAttr; // attr
 	ST_FunctionValue ValAttr; // attr
-	CT_Algorithm Alg[];
-	CT_Shape Shape[];
-	CT_PresentationOf PresOf[];
-	CT_Constraints ConstrLst[];
-	CT_Rules RuleLst[];
+	CT_Algorithm Alg;
+	CT_Shape Shape;
+	CT_PresentationOf PresOf;
+	CT_Constraints ConstrLst;
+	CT_Rules RuleLst;
 	CT_ForEach ForEach;
 	CT_LayoutNode LayoutNode;
 	CT_Choose Choose;
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_OfficeArtExtensionList ExtLst;
 } CT_When;
 
 // CT_Otherwise ...
 typedef struct {
 	char NameAttr; // attr, optional
-	CT_Algorithm Alg[];
-	CT_Shape Shape[];
-	CT_PresentationOf PresOf[];
-	CT_Constraints ConstrLst[];
-	CT_Rules RuleLst[];
+	CT_Algorithm Alg;
+	CT_Shape Shape;
+	CT_PresentationOf PresOf;
+	CT_Constraints ConstrLst;
+	CT_Rules RuleLst;
 	CT_ForEach ForEach;
 	CT_LayoutNode LayoutNode;
 	CT_Choose Choose;
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_OfficeArtExtensionList ExtLst;
 } CT_Otherwise;
 
 // CT_Choose ...
@@ -356,7 +356,7 @@ typedef struct {
 	CT_SampleData StyleData;
 	CT_SampleData ClrData;
 	CT_LayoutNode LayoutNode;
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_OfficeArtExtensionList ExtLst;
 } CT_DiagramDefinition;
 
 typedef CT_DiagramDefinition LayoutDef;
@@ -370,7 +370,7 @@ typedef struct {
 	CT_Name Title[];
 	CT_Description Desc[];
 	CT_Categories CatLst;
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_OfficeArtExtensionList ExtLst;
 } CT_DiagramDefinitionHeader;
 
 typedef CT_DiagramDefinitionHeader LayoutDefHdr;
@@ -394,42 +394,42 @@ typedef CT_RelIds RelIds;
 
 // ST_ParameterVal ...
 typedef struct {
-	ST_ConnectorDimension ST_ConnectorDimension;
-	ST_NodeVerticalAlignment ST_NodeVerticalAlignment;
-	ST_TextBlockDirection ST_TextBlockDirection;
-	char String;
-	ST_RotationPath ST_RotationPath;
-	ST_PyramidAccentTextMargin ST_PyramidAccentTextMargin;
-	ST_AutoTextRotation ST_AutoTextRotation;
-	ST_HierarchyAlignment ST_HierarchyAlignment;
+	ST_SecondaryChildAlignment ST_SecondaryChildAlignment;
+	ST_SecondaryLinearDirection ST_SecondaryLinearDirection;
+	float Double;
 	ST_DiagramHorizontalAlignment ST_DiagramHorizontalAlignment;
+	ST_ArrowheadStyle ST_ArrowheadStyle;
+	ST_TextDirection ST_TextDirection;
+	ST_PyramidAccentTextMargin ST_PyramidAccentTextMargin;
+	ST_DiagramTextAlignment ST_DiagramTextAlignment;
+	ST_AutoTextRotation ST_AutoTextRotation;
+	int Int;
+	ST_StartingElement ST_StartingElement;
+	ST_RotationPath ST_RotationPath;
+	ST_Offset ST_Offset;
+	ST_GrowDirection ST_GrowDirection;
+	ST_HierarchyAlignment ST_HierarchyAlignment;
+	ST_ChildDirection ST_ChildDirection;
+	ST_PyramidAccentPosition ST_PyramidAccentPosition;
+	ST_TextAnchorHorizontal ST_TextAnchorHorizontal;
+	ST_NodeVerticalAlignment ST_NodeVerticalAlignment;
+	ST_TextAnchorVertical ST_TextAnchorVertical;
+	ST_ContinueDirection ST_ContinueDirection;
+	ST_ConnectorPoint ST_ConnectorPoint;
+	ST_VerticalAlignment ST_VerticalAlignment;
+	ST_ChildAlignment ST_ChildAlignment;
+	ST_LinearDirection ST_LinearDirection;
+	ST_TextBlockDirection ST_TextBlockDirection;
+	ST_FlowDirection ST_FlowDirection;
+	ST_Breakpoint ST_Breakpoint;
+	bool Boolean;
+	ST_BendPoint ST_BendPoint;
+	ST_ConnectorDimension ST_ConnectorDimension;
+	ST_FallbackDimension ST_FallbackDimension;
+	char String;
 	ST_ConnectorRouting ST_ConnectorRouting;
 	ST_CenterShapeMapping ST_CenterShapeMapping;
-	ST_TextAnchorVertical ST_TextAnchorVertical;
-	ST_ChildAlignment ST_ChildAlignment;
-	ST_SecondaryChildAlignment ST_SecondaryChildAlignment;
-	ST_PyramidAccentPosition ST_PyramidAccentPosition;
-	ST_DiagramTextAlignment ST_DiagramTextAlignment;
-	ST_FlowDirection ST_FlowDirection;
-	ST_VerticalAlignment ST_VerticalAlignment;
-	ST_LinearDirection ST_LinearDirection;
-	ST_ArrowheadStyle ST_ArrowheadStyle;
 	ST_NodeHorizontalAlignment ST_NodeHorizontalAlignment;
-	ST_TextDirection ST_TextDirection;
-	ST_ContinueDirection ST_ContinueDirection;
-	ST_Breakpoint ST_Breakpoint;
-	ST_StartingElement ST_StartingElement;
-	ST_FallbackDimension ST_FallbackDimension;
-	float Double;
-	int Int;
-	ST_ConnectorPoint ST_ConnectorPoint;
-	ST_Offset ST_Offset;
-	bool Boolean;
-	ST_ChildDirection ST_ChildDirection;
-	ST_SecondaryLinearDirection ST_SecondaryLinearDirection;
-	ST_BendPoint ST_BendPoint;
-	ST_TextAnchorHorizontal ST_TextAnchorHorizontal;
-	ST_GrowDirection ST_GrowDirection;
 } ST_ParameterVal;
 
 // ST_ModelId ...
@@ -473,8 +473,8 @@ typedef struct {
 	ST_PrSetCustVal CustLinFactNeighborYAttr; // attr, optional
 	ST_PrSetCustVal CustRadScaleRadAttr; // attr, optional
 	ST_PrSetCustVal CustRadScaleIncAttr; // attr, optional
-	CT_LayoutVariablePropertySet PresLayoutVars[];
-	CT_ShapeStyle Style[];
+	CT_LayoutVariablePropertySet PresLayoutVars;
+	CT_ShapeStyle Style;
 } CT_ElemPropSet;
 
 // ST_Direction ...
@@ -542,15 +542,15 @@ typedef struct {
 
 // CT_LayoutVariablePropertySet ...
 typedef struct {
-	CT_OrgChart OrgChart[];
-	CT_ChildMax ChMax[];
-	CT_ChildPref ChPref[];
-	CT_BulletEnabled BulletEnabled[];
-	CT_Direction Dir[];
-	CT_HierBranchStyle HierBranch[];
-	CT_AnimOne AnimOne[];
-	CT_AnimLvl AnimLvl[];
-	CT_ResizeHandles ResizeHandles[];
+	CT_OrgChart OrgChart;
+	CT_ChildMax ChMax;
+	CT_ChildPref ChPref;
+	CT_BulletEnabled BulletEnabled;
+	CT_Direction Dir;
+	CT_HierBranchStyle HierBranch;
+	CT_AnimOne AnimOne;
+	CT_AnimLvl AnimLvl;
+	CT_ResizeHandles ResizeHandles;
 } CT_LayoutVariablePropertySet;
 
 // CT_SDName ...
@@ -584,11 +584,11 @@ typedef struct {
 // CT_StyleLabel ...
 typedef struct {
 	char NameAttr; // attr
-	CT_Scene3D Scene3d[];
-	CT_Shape3D Sp3d[];
-	CT_TextProps TxPr[];
-	CT_ShapeStyle Style[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_Scene3D Scene3d;
+	CT_Shape3D Sp3d;
+	CT_TextProps TxPr;
+	CT_ShapeStyle Style;
+	CT_OfficeArtExtensionList ExtLst;
 } CT_StyleLabel;
 
 // CT_StyleDefinition ...
@@ -598,9 +598,9 @@ typedef struct {
 	CT_SDName Title[];
 	CT_SDDescription Desc[];
 	CT_SDCategories CatLst;
-	CT_Scene3D Scene3d[];
+	CT_Scene3D Scene3d;
 	CT_StyleLabel StyleLbl[];
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_OfficeArtExtensionList ExtLst;
 } CT_StyleDefinition;
 
 typedef CT_StyleDefinition StyleDef;
@@ -613,7 +613,7 @@ typedef struct {
 	CT_SDName Title[];
 	CT_SDDescription Desc[];
 	CT_SDCategories CatLst;
-	CT_OfficeArtExtensionList ExtLst[];
+	CT_OfficeArtExtensionList ExtLst;
 } CT_StyleDefinitionHeader;
 
 typedef CT_StyleDefinitionHeader StyleDefHdr;
@@ -768,13 +768,13 @@ typedef char ST_HierarchyAlignment;
 
 // ST_FunctionValue ...
 typedef struct {
+	char ST_AnimOneStr;
 	char ST_AnimLvlStr;
 	char ST_ResizeHandlesStr;
 	int Int;
 	bool Boolean;
 	char ST_Direction;
 	char ST_HierBranchStyle;
-	char ST_AnimOneStr;
 } ST_FunctionValue;
 
 // ST_VariableType ...

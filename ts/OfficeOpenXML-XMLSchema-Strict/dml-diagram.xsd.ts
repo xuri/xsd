@@ -46,13 +46,13 @@ export class CT_Colors {
 // CT_CTStyleLabel ...
 export class CT_CTStyleLabel {
 	NameAttr: string;
-	FillClrLst: Array<CT_Colors>;
-	LinClrLst: Array<CT_Colors>;
-	EffectClrLst: Array<CT_Colors>;
-	TxLinClrLst: Array<CT_Colors>;
-	TxFillClrLst: Array<CT_Colors>;
-	TxEffectClrLst: Array<CT_Colors>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	FillClrLst: CT_Colors;
+	LinClrLst: CT_Colors;
+	EffectClrLst: CT_Colors;
+	TxLinClrLst: CT_Colors;
+	TxFillClrLst: CT_Colors;
+	TxEffectClrLst: CT_Colors;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_ColorTransform ...
@@ -63,7 +63,7 @@ export class CT_ColorTransform {
 	Desc: Array<CT_CTDescription>;
 	CatLst: CT_CTCategories;
 	StyleLbl: Array<CT_CTStyleLabel>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // ColorsDef ...
@@ -77,7 +77,7 @@ export class CT_ColorTransformHeader {
 	Title: Array<CT_CTName>;
 	Desc: Array<CT_CTDescription>;
 	CatLst: CT_CTCategories;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // ColorsDefHdr ...
@@ -106,10 +106,10 @@ export class CT_Pt {
 	ModelIdAttr: ST_ModelId;
 	TypeAttr: string | null;
 	CxnIdAttr: ST_ModelId | null;
-	PrSet: Array<CT_ElemPropSet>;
-	SpPr: Array<CT_ShapeProperties>;
-	T: Array<CT_TextBody>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	PrSet: CT_ElemPropSet;
+	SpPr: CT_ShapeProperties;
+	T: CT_TextBody;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_PtList ...
@@ -136,7 +136,7 @@ export class CT_Cxn {
 	ParTransIdAttr: ST_ModelId | null;
 	SibTransIdAttr: ST_ModelId | null;
 	PresIdAttr: string | null;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_CxnList ...
@@ -147,10 +147,10 @@ export class CT_CxnList {
 // CT_DataModel ...
 export class CT_DataModel {
 	PtLst: CT_PtList;
-	CxnLst: Array<CT_CxnList>;
+	CxnLst: CT_CxnList;
 	Bg: CT_BackgroundFormatting;
 	Whole: CT_WholeE2oFormatting;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // DataModel ...
@@ -189,7 +189,7 @@ export class CT_Constraint {
 	OpAttr: string | null;
 	ValAttr: number | null;
 	FactAttr: number | null;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_Constraints ...
@@ -203,7 +203,7 @@ export class CT_NumericRule {
 	ValAttr: number | null;
 	FactAttr: number | null;
 	MaxAttr: number | null;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_Rules ...
@@ -214,13 +214,13 @@ export class CT_Rules {
 // CT_PresentationOf ...
 export class CT_PresentationOf {
 	AG_IteratorAttributes: AG_IteratorAttributes;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // ST_LayoutShapeType ...
 export class ST_LayoutShapeType {
-	ST_ShapeType: string;
 	ST_OutputShapeType: ST_OutputShapeType;
+	ST_ShapeType: string;
 }
 
 // ST_Index1 ...
@@ -246,8 +246,8 @@ export class CT_Shape {
 	HideGeomAttr: boolean | null;
 	LkTxEntryAttr: boolean | null;
 	BlipPhldrAttr: boolean | null;
-	AdjLst: Array<CT_AdjLst>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	AdjLst: CT_AdjLst;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_Parameter ...
@@ -261,7 +261,7 @@ export class CT_Algorithm {
 	TypeAttr: string;
 	RevAttr: number | null;
 	Param: Array<CT_Parameter>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_LayoutNode ...
@@ -270,16 +270,16 @@ export class CT_LayoutNode {
 	StyleLblAttr: string | null;
 	ChOrderAttr: string | null;
 	MoveWithAttr: string | null;
-	Alg: Array<CT_Algorithm>;
-	Shape: Array<CT_Shape>;
-	PresOf: Array<CT_PresentationOf>;
-	ConstrLst: Array<CT_Constraints>;
-	RuleLst: Array<CT_Rules>;
-	VarLst: Array<CT_LayoutVariablePropertySet>;
+	Alg: CT_Algorithm;
+	Shape: CT_Shape;
+	PresOf: CT_PresentationOf;
+	ConstrLst: CT_Constraints;
+	RuleLst: CT_Rules;
+	VarLst: CT_LayoutVariablePropertySet;
 	ForEach: CT_ForEach;
 	LayoutNode: CT_LayoutNode;
 	Choose: CT_Choose;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_ForEach ...
@@ -287,15 +287,15 @@ export class CT_ForEach {
 	AG_IteratorAttributes: AG_IteratorAttributes;
 	NameAttr: string | null;
 	RefAttr: string | null;
-	Alg: Array<CT_Algorithm>;
-	Shape: Array<CT_Shape>;
-	PresOf: Array<CT_PresentationOf>;
-	ConstrLst: Array<CT_Constraints>;
-	RuleLst: Array<CT_Rules>;
+	Alg: CT_Algorithm;
+	Shape: CT_Shape;
+	PresOf: CT_PresentationOf;
+	ConstrLst: CT_Constraints;
+	RuleLst: CT_Rules;
 	ForEach: CT_ForEach;
 	LayoutNode: CT_LayoutNode;
 	Choose: CT_Choose;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_When ...
@@ -306,29 +306,29 @@ export class CT_When {
 	ArgAttr: ST_FunctionArgument | null;
 	OpAttr: string;
 	ValAttr: ST_FunctionValue;
-	Alg: Array<CT_Algorithm>;
-	Shape: Array<CT_Shape>;
-	PresOf: Array<CT_PresentationOf>;
-	ConstrLst: Array<CT_Constraints>;
-	RuleLst: Array<CT_Rules>;
+	Alg: CT_Algorithm;
+	Shape: CT_Shape;
+	PresOf: CT_PresentationOf;
+	ConstrLst: CT_Constraints;
+	RuleLst: CT_Rules;
 	ForEach: CT_ForEach;
 	LayoutNode: CT_LayoutNode;
 	Choose: CT_Choose;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_Otherwise ...
 export class CT_Otherwise {
 	NameAttr: string | null;
-	Alg: Array<CT_Algorithm>;
-	Shape: Array<CT_Shape>;
-	PresOf: Array<CT_PresentationOf>;
-	ConstrLst: Array<CT_Constraints>;
-	RuleLst: Array<CT_Rules>;
+	Alg: CT_Algorithm;
+	Shape: CT_Shape;
+	PresOf: CT_PresentationOf;
+	ConstrLst: CT_Constraints;
+	RuleLst: CT_Rules;
 	ForEach: CT_ForEach;
 	LayoutNode: CT_LayoutNode;
 	Choose: CT_Choose;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_Choose ...
@@ -379,7 +379,7 @@ export class CT_DiagramDefinition {
 	StyleData: CT_SampleData;
 	ClrData: CT_SampleData;
 	LayoutNode: CT_LayoutNode;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // LayoutDef ...
@@ -394,7 +394,7 @@ export class CT_DiagramDefinitionHeader {
 	Title: Array<CT_Name>;
 	Desc: Array<CT_Description>;
 	CatLst: CT_Categories;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // LayoutDefHdr ...
@@ -421,42 +421,42 @@ export type RelIds = CT_RelIds;
 
 // ST_ParameterVal ...
 export class ST_ParameterVal {
-	Int: number;
-	ST_SecondaryChildAlignment: ST_SecondaryChildAlignment;
-	ST_StartingElement: ST_StartingElement;
-	ST_ArrowheadStyle: ST_ArrowheadStyle;
-	ST_RotationPath: ST_RotationPath;
-	ST_GrowDirection: ST_GrowDirection;
-	ST_Offset: ST_Offset;
-	ST_VerticalAlignment: ST_VerticalAlignment;
-	ST_ConnectorRouting: ST_ConnectorRouting;
-	ST_NodeHorizontalAlignment: ST_NodeHorizontalAlignment;
-	ST_TextBlockDirection: ST_TextBlockDirection;
-	ST_HierarchyAlignment: ST_HierarchyAlignment;
-	ST_TextDirection: ST_TextDirection;
-	ST_PyramidAccentPosition: ST_PyramidAccentPosition;
-	ST_DiagramTextAlignment: ST_DiagramTextAlignment;
-	ST_ContinueDirection: ST_ContinueDirection;
-	ST_ConnectorPoint: ST_ConnectorPoint;
-	ST_ChildDirection: ST_ChildDirection;
-	ST_ChildAlignment: ST_ChildAlignment;
-	ST_FallbackDimension: ST_FallbackDimension;
-	ST_TextAnchorVertical: ST_TextAnchorVertical;
-	ST_ConnectorDimension: ST_ConnectorDimension;
-	ST_CenterShapeMapping: ST_CenterShapeMapping;
 	ST_AutoTextRotation: ST_AutoTextRotation;
-	ST_Breakpoint: ST_Breakpoint;
-	String: string;
-	ST_SecondaryLinearDirection: ST_SecondaryLinearDirection;
-	ST_PyramidAccentTextMargin: ST_PyramidAccentTextMargin;
+	ST_VerticalAlignment: ST_VerticalAlignment;
+	ST_ChildDirection: ST_ChildDirection;
+	ST_BendPoint: ST_BendPoint;
+	ST_NodeHorizontalAlignment: ST_NodeHorizontalAlignment;
 	ST_TextAnchorHorizontal: ST_TextAnchorHorizontal;
-	ST_FlowDirection: ST_FlowDirection;
+	ST_ChildAlignment: ST_ChildAlignment;
+	ST_SecondaryChildAlignment: ST_SecondaryChildAlignment;
+	ST_SecondaryLinearDirection: ST_SecondaryLinearDirection;
+	ST_ConnectorDimension: ST_ConnectorDimension;
+	ST_NodeVerticalAlignment: ST_NodeVerticalAlignment;
+	ST_FallbackDimension: ST_FallbackDimension;
+	ST_DiagramHorizontalAlignment: ST_DiagramHorizontalAlignment;
+	ST_GrowDirection: ST_GrowDirection;
+	ST_StartingElement: ST_StartingElement;
+	ST_ConnectorRouting: ST_ConnectorRouting;
+	ST_Breakpoint: ST_Breakpoint;
 	Double: number;
 	Boolean: boolean;
-	ST_DiagramHorizontalAlignment: ST_DiagramHorizontalAlignment;
+	ST_ConnectorPoint: ST_ConnectorPoint;
+	ST_TextAnchorVertical: ST_TextAnchorVertical;
+	ST_ArrowheadStyle: ST_ArrowheadStyle;
+	ST_RotationPath: ST_RotationPath;
+	ST_CenterShapeMapping: ST_CenterShapeMapping;
+	ST_TextDirection: ST_TextDirection;
+	ST_PyramidAccentPosition: ST_PyramidAccentPosition;
+	ST_PyramidAccentTextMargin: ST_PyramidAccentTextMargin;
+	ST_TextBlockDirection: ST_TextBlockDirection;
+	ST_DiagramTextAlignment: ST_DiagramTextAlignment;
+	ST_HierarchyAlignment: ST_HierarchyAlignment;
+	String: string;
 	ST_LinearDirection: ST_LinearDirection;
-	ST_BendPoint: ST_BendPoint;
-	ST_NodeVerticalAlignment: ST_NodeVerticalAlignment;
+	ST_FlowDirection: ST_FlowDirection;
+	ST_ContinueDirection: ST_ContinueDirection;
+	ST_Offset: ST_Offset;
+	Int: number;
 }
 
 // ST_ModelId ...
@@ -500,8 +500,8 @@ export class CT_ElemPropSet {
 	CustLinFactNeighborYAttr: ST_PrSetCustVal | null;
 	CustRadScaleRadAttr: ST_PrSetCustVal | null;
 	CustRadScaleIncAttr: ST_PrSetCustVal | null;
-	PresLayoutVars: Array<CT_LayoutVariablePropertySet>;
-	Style: Array<CT_ShapeStyle>;
+	PresLayoutVars: CT_LayoutVariablePropertySet;
+	Style: CT_ShapeStyle;
 }
 
 // ST_Direction ...
@@ -589,15 +589,15 @@ export class CT_ResizeHandles {
 
 // CT_LayoutVariablePropertySet ...
 export class CT_LayoutVariablePropertySet {
-	OrgChart: Array<CT_OrgChart>;
-	ChMax: Array<CT_ChildMax>;
-	ChPref: Array<CT_ChildPref>;
-	BulletEnabled: Array<CT_BulletEnabled>;
-	Dir: Array<CT_Direction>;
-	HierBranch: Array<CT_HierBranchStyle>;
-	AnimOne: Array<CT_AnimOne>;
-	AnimLvl: Array<CT_AnimLvl>;
-	ResizeHandles: Array<CT_ResizeHandles>;
+	OrgChart: CT_OrgChart;
+	ChMax: CT_ChildMax;
+	ChPref: CT_ChildPref;
+	BulletEnabled: CT_BulletEnabled;
+	Dir: CT_Direction;
+	HierBranch: CT_HierBranchStyle;
+	AnimOne: CT_AnimOne;
+	AnimLvl: CT_AnimLvl;
+	ResizeHandles: CT_ResizeHandles;
 }
 
 // CT_SDName ...
@@ -631,11 +631,11 @@ export class CT_TextProps {
 // CT_StyleLabel ...
 export class CT_StyleLabel {
 	NameAttr: string;
-	Scene3d: Array<CT_Scene3D>;
-	Sp3d: Array<CT_Shape3D>;
-	TxPr: Array<CT_TextProps>;
-	Style: Array<CT_ShapeStyle>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	Scene3d: CT_Scene3D;
+	Sp3d: CT_Shape3D;
+	TxPr: CT_TextProps;
+	Style: CT_ShapeStyle;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // CT_StyleDefinition ...
@@ -645,9 +645,9 @@ export class CT_StyleDefinition {
 	Title: Array<CT_SDName>;
 	Desc: Array<CT_SDDescription>;
 	CatLst: CT_SDCategories;
-	Scene3d: Array<CT_Scene3D>;
+	Scene3d: CT_Scene3D;
 	StyleLbl: Array<CT_StyleLabel>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // StyleDef ...
@@ -661,7 +661,7 @@ export class CT_StyleDefinitionHeader {
 	Title: Array<CT_SDName>;
 	Desc: Array<CT_SDDescription>;
 	CatLst: CT_SDCategories;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst: CT_OfficeArtExtensionList;
 }
 
 // StyleDefHdr ...
@@ -1149,13 +1149,13 @@ export enum ST_HierarchyAlignment {
 
 // ST_FunctionValue ...
 export class ST_FunctionValue {
-	Boolean: boolean;
 	ST_Direction: string;
 	ST_HierBranchStyle: string;
 	ST_AnimOneStr: string;
 	ST_AnimLvlStr: string;
 	ST_ResizeHandlesStr: string;
 	Int: number;
+	Boolean: boolean;
 }
 
 // ST_VariableType ...

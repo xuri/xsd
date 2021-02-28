@@ -77,8 +77,8 @@ typedef struct {
 
 // ST_HpsMeasure ...
 typedef struct {
-	char ST_PositiveUniversalMeasure;
 	unsigned int ST_UnsignedDecimalNumber;
+	char ST_PositiveUniversalMeasure;
 } ST_HpsMeasure;
 
 // CT_HpsMeasure ...
@@ -145,8 +145,8 @@ typedef char ST_HexColorAuto;
 
 // ST_HexColor ...
 typedef struct {
-	char ST_HexColorRGB[];
 	char ST_HexColorAuto;
+	char ST_HexColorRGB[];
 } ST_HexColor;
 
 // CT_Color ...
@@ -698,7 +698,7 @@ typedef struct {
 	CT_TextboxTightWrap TextboxTightWrap;
 	CT_DecimalNumber OutlineLvl;
 	CT_DecimalNumber DivId;
-	CT_Cnf CnfStyle[];
+	CT_Cnf CnfStyle;
 } CT_PPrBase;
 
 // CT_PPrGeneral ...
@@ -806,7 +806,7 @@ typedef struct {
 	char FldCharTypeAttr; // attr
 	ST_OnOff FldLockAttr; // attr, optional
 	ST_OnOff DirtyAttr; // attr, optional
-	CT_FFData FfData[];
+	CT_FFData FfData;
 } CT_FldChar;
 
 // CT_Hyperlink ...
@@ -827,10 +827,10 @@ typedef struct {
 	CT_UnsignedDecimalNumber TabIndex;
 	CT_OnOff Enabled;
 	CT_OnOff CalcOnExit;
-	CT_MacroName EntryMacro[];
-	CT_MacroName ExitMacro[];
-	CT_FFHelpText HelpText[];
-	CT_FFStatusText StatusText[];
+	CT_MacroName EntryMacro;
+	CT_MacroName ExitMacro;
+	CT_FFHelpText HelpText;
+	CT_FFStatusText StatusText;
 	CT_FFCheckBox CheckBox;
 	CT_FFDDList DdList;
 	CT_FFTextInput TextInput;
@@ -1166,7 +1166,7 @@ typedef struct {
 	CT_Markup CommentReference;
 	CT_Drawing Drawing;
 	CT_PTab Ptab;
-	CT_Empty LastRenderedPageBreak[];
+	CT_Empty LastRenderedPageBreak;
 } EG_RunInnerContent;
 
 // CT_R ...
@@ -1303,12 +1303,12 @@ typedef struct {
 // CT_AltChunk ...
 typedef struct {
 	char RIdAttr; // attr, optional
-	CT_AltChunkPr AltChunkPr[];
+	CT_AltChunkPr AltChunkPr;
 } CT_AltChunk;
 
 // CT_AltChunkPr ...
 typedef struct {
-	CT_OnOff MatchSrc[];
+	CT_OnOff MatchSrc;
 } CT_AltChunkPr;
 
 // ST_RubyAlign ...
@@ -1524,30 +1524,30 @@ typedef struct {
 
 // CT_SdtBlock ...
 typedef struct {
-	CT_SdtPr SdtPr[];
-	CT_SdtEndPr SdtEndPr[];
-	CT_SdtContentBlock SdtContent[];
+	CT_SdtPr SdtPr;
+	CT_SdtEndPr SdtEndPr;
+	CT_SdtContentBlock SdtContent;
 } CT_SdtBlock;
 
 // CT_SdtRun ...
 typedef struct {
-	CT_SdtPr SdtPr[];
-	CT_SdtEndPr SdtEndPr[];
-	CT_SdtContentRun SdtContent[];
+	CT_SdtPr SdtPr;
+	CT_SdtEndPr SdtEndPr;
+	CT_SdtContentRun SdtContent;
 } CT_SdtRun;
 
 // CT_SdtCell ...
 typedef struct {
-	CT_SdtPr SdtPr[];
-	CT_SdtEndPr SdtEndPr[];
-	CT_SdtContentCell SdtContent[];
+	CT_SdtPr SdtPr;
+	CT_SdtEndPr SdtEndPr;
+	CT_SdtContentCell SdtContent;
 } CT_SdtCell;
 
 // CT_SdtRow ...
 typedef struct {
-	CT_SdtPr SdtPr[];
-	CT_SdtEndPr SdtEndPr[];
-	CT_SdtContentRow SdtContent[];
+	CT_SdtPr SdtPr;
+	CT_SdtEndPr SdtEndPr;
+	CT_SdtContentRow SdtContent;
 } CT_SdtRow;
 
 // CT_Attr ...
@@ -1562,7 +1562,7 @@ typedef struct {
 	char UriAttr; // attr, optional
 	char ElementAttr; // attr
 	EG_PContent EG_PContent[];
-	CT_CustomXmlPr CustomXmlPr[];
+	CT_CustomXmlPr CustomXmlPr;
 } CT_CustomXmlRun;
 
 // CT_SmartTagRun ...
@@ -1570,7 +1570,7 @@ typedef struct {
 	char UriAttr; // attr, optional
 	char ElementAttr; // attr
 	EG_PContent EG_PContent[];
-	CT_SmartTagPr SmartTagPr[];
+	CT_SmartTagPr SmartTagPr;
 } CT_SmartTagRun;
 
 // CT_CustomXmlBlock ...
@@ -1578,7 +1578,7 @@ typedef struct {
 	char UriAttr; // attr, optional
 	char ElementAttr; // attr
 	EG_ContentBlockContent EG_ContentBlockContent[];
-	CT_CustomXmlPr CustomXmlPr[];
+	CT_CustomXmlPr CustomXmlPr;
 } CT_CustomXmlBlock;
 
 // CT_CustomXmlPr ...
@@ -1592,7 +1592,7 @@ typedef struct {
 	char UriAttr; // attr, optional
 	char ElementAttr; // attr
 	EG_ContentRowContent EG_ContentRowContent[];
-	CT_CustomXmlPr CustomXmlPr[];
+	CT_CustomXmlPr CustomXmlPr;
 } CT_CustomXmlRow;
 
 // CT_CustomXmlCell ...
@@ -1600,7 +1600,7 @@ typedef struct {
 	char UriAttr; // attr, optional
 	char ElementAttr; // attr
 	EG_ContentCellContent EG_ContentCellContent[];
-	CT_CustomXmlPr CustomXmlPr[];
+	CT_CustomXmlPr CustomXmlPr;
 } CT_CustomXmlCell;
 
 // CT_SmartTagPr ...
@@ -1677,10 +1677,10 @@ typedef struct {
 
 // CT_TcMar ...
 typedef struct {
-	CT_TblWidth Top[];
-	CT_TblWidth Start[];
-	CT_TblWidth Bottom[];
-	CT_TblWidth End[];
+	CT_TblWidth Top;
+	CT_TblWidth Start;
+	CT_TblWidth Bottom;
+	CT_TblWidth End;
 } CT_TcMar;
 
 // ST_Merge ...
@@ -1693,16 +1693,16 @@ typedef struct {
 
 // CT_TcPrBase ...
 typedef struct {
-	CT_Cnf CnfStyle[];
-	CT_TblWidth TcW[];
+	CT_Cnf CnfStyle;
+	CT_TblWidth TcW;
 	CT_DecimalNumber GridSpan;
 	CT_VMerge VMerge;
-	CT_TcBorders TcBorders[];
+	CT_TcBorders TcBorders;
 	CT_Shd Shd;
 	CT_OnOff NoWrap;
-	CT_TcMar TcMar[];
-	CT_TextDirection TextDirection[];
-	CT_OnOff TcFitText[];
+	CT_TcMar TcMar;
+	CT_TextDirection TextDirection;
+	CT_OnOff TcFitText;
 	CT_VerticalJc VAlign;
 	CT_OnOff HideMark;
 	CT_Headers Headers;
@@ -1722,7 +1722,7 @@ typedef struct {
 typedef struct {
 	char IdAttr; // attr, optional
 	EG_BlockLevelElts EG_BlockLevelElts[];
-	CT_TcPr TcPr[];
+	CT_TcPr TcPr;
 } CT_Tc;
 
 // CT_Cnf ...
@@ -1748,17 +1748,17 @@ typedef struct {
 
 // CT_TrPrBase ...
 typedef struct {
-	CT_Cnf CnfStyle[];
+	CT_Cnf CnfStyle;
 	CT_DecimalNumber DivId;
 	CT_DecimalNumber GridBefore;
 	CT_DecimalNumber GridAfter;
-	CT_TblWidth WBefore[];
-	CT_TblWidth WAfter[];
+	CT_TblWidth WBefore;
+	CT_TblWidth WAfter;
 	CT_OnOff CantSplit;
 	CT_Height TrHeight;
 	CT_OnOff TblHeader;
-	CT_TblWidth TblCellSpacing[];
-	CT_JcTable Jc[];
+	CT_TblWidth TblCellSpacing;
+	CT_JcTable Jc;
 	CT_OnOff Hidden;
 } CT_TrPrBase;
 
@@ -1776,8 +1776,8 @@ typedef struct {
 	char RsidDelAttr[]; // attr, optional
 	char RsidTrAttr[]; // attr, optional
 	EG_ContentCellContent EG_ContentCellContent[];
-	CT_TblPrEx TblPrEx[];
-	CT_TrPr TrPr[];
+	CT_TblPrEx TblPrEx;
+	CT_TrPr TrPr;
 } CT_Row;
 
 // ST_TblLayoutType ...
@@ -1812,10 +1812,10 @@ typedef struct {
 
 // CT_TblCellMar ...
 typedef struct {
-	CT_TblWidth Top[];
-	CT_TblWidth Start[];
-	CT_TblWidth Bottom[];
-	CT_TblWidth End[];
+	CT_TblWidth Top;
+	CT_TblWidth Start;
+	CT_TblWidth Bottom;
+	CT_TblWidth End;
 } CT_TblCellMar;
 
 // CT_TblBorders ...
@@ -1831,22 +1831,22 @@ typedef struct {
 // CT_TblPrBase ...
 typedef struct {
 	CT_String TblStyle;
-	CT_TblPPr TblpPr[];
-	CT_TblOverlap TblOverlap[];
-	CT_OnOff BidiVisual[];
-	CT_DecimalNumber TblStyleRowBandSize[];
-	CT_DecimalNumber TblStyleColBandSize[];
-	CT_TblWidth TblW[];
-	CT_JcTable Jc[];
-	CT_TblWidth TblCellSpacing[];
-	CT_TblWidth TblInd[];
-	CT_TblBorders TblBorders[];
-	CT_Shd Shd[];
-	CT_TblLayoutType TblLayout[];
-	CT_TblCellMar TblCellMar[];
-	CT_TblLook TblLook[];
-	CT_String TblCaption[];
-	CT_String TblDescription[];
+	CT_TblPPr TblpPr;
+	CT_TblOverlap TblOverlap;
+	CT_OnOff BidiVisual;
+	CT_DecimalNumber TblStyleRowBandSize;
+	CT_DecimalNumber TblStyleColBandSize;
+	CT_TblWidth TblW;
+	CT_JcTable Jc;
+	CT_TblWidth TblCellSpacing;
+	CT_TblWidth TblInd;
+	CT_TblBorders TblBorders;
+	CT_Shd Shd;
+	CT_TblLayoutType TblLayout;
+	CT_TblCellMar TblCellMar;
+	CT_TblLook TblLook;
+	CT_String TblCaption;
+	CT_String TblDescription;
 } CT_TblPrBase;
 
 // CT_TblPr ...
@@ -1856,15 +1856,15 @@ typedef struct {
 
 // CT_TblPrExBase ...
 typedef struct {
-	CT_TblWidth TblW[];
-	CT_JcTable Jc[];
-	CT_TblWidth TblCellSpacing[];
-	CT_TblWidth TblInd[];
-	CT_TblBorders TblBorders[];
-	CT_Shd Shd[];
-	CT_TblLayoutType TblLayout[];
-	CT_TblCellMar TblCellMar[];
-	CT_TblLook TblLook[];
+	CT_TblWidth TblW;
+	CT_JcTable Jc;
+	CT_TblWidth TblCellSpacing;
+	CT_TblWidth TblInd;
+	CT_TblBorders TblBorders;
+	CT_Shd Shd;
+	CT_TblLayoutType TblLayout;
+	CT_TblCellMar TblCellMar;
+	CT_TblLook TblLook;
 } CT_TblPrExBase;
 
 // CT_TblPrEx ...
@@ -2077,7 +2077,7 @@ typedef struct {
 
 // CT_DocRsids ...
 typedef struct {
-	CT_LongHexNumber RsidRoot[];
+	CT_LongHexNumber RsidRoot;
 	CT_LongHexNumber Rsid[];
 } CT_DocRsids;
 
@@ -2228,20 +2228,20 @@ typedef struct {
 	CT_Compat Compat;
 	CT_DocVars DocVars;
 	CT_DocRsids Rsids;
-	CT_MathPr MMathPr[];
+	CT_MathPr MMathPr;
 	CT_String AttachedSchema[];
-	CT_Language ThemeFontLang[];
+	CT_Language ThemeFontLang;
 	CT_ColorSchemeMapping ClrSchemeMapping;
 	CT_OnOff DoNotIncludeSubdocsInStats;
 	CT_OnOff DoNotAutoCompressPictures;
-	CT_Empty ForceUpgrade[];
-	CT_Captions Captions[];
+	CT_Empty ForceUpgrade;
+	CT_Captions Captions;
 	CT_ReadingModeInkLockDown ReadModeInkLockDown;
 	CT_SmartTagType SmartTagType[];
-	CT_SchemaLibrary SlSchemaLibrary[];
+	CT_SchemaLibrary SlSchemaLibrary;
 	CT_OnOff DoNotEmbedSmartTags;
-	CT_String DecimalSymbol[];
-	CT_String ListSeparator[];
+	CT_String DecimalSymbol;
+	CT_String ListSeparator;
 } CT_Settings;
 
 // CT_StyleSort ...
@@ -2402,7 +2402,7 @@ typedef struct {
 typedef struct {
 	int IlvlAttr; // attr
 	CT_DecimalNumber StartOverride;
-	CT_Lvl Lvl[];
+	CT_Lvl Lvl;
 } CT_NumLvl;
 
 // CT_Num ...
@@ -2429,8 +2429,8 @@ typedef struct {
 	CT_PPrGeneral PPr;
 	CT_RPr RPr;
 	CT_TblPrBase TblPr;
-	CT_TrPr TrPr[];
-	CT_TcPr TcPr[];
+	CT_TrPr TrPr;
+	CT_TcPr TcPr;
 } CT_TblStylePr;
 
 // ST_StyleType ...
@@ -2442,7 +2442,7 @@ typedef struct {
 	char StyleIdAttr; // attr, optional
 	ST_OnOff DefaultAttr; // attr, optional
 	ST_OnOff CustomStyleAttr; // attr, optional
-	CT_String Name[];
+	CT_String Name;
 	CT_String Aliases;
 	CT_String BasedOn;
 	CT_String Next;
@@ -2458,11 +2458,11 @@ typedef struct {
 	CT_OnOff PersonalCompose;
 	CT_OnOff PersonalReply;
 	CT_LongHexNumber Rsid;
-	CT_PPrGeneral PPr[];
-	CT_RPr RPr[];
-	CT_TblPrBase TblPr[];
-	CT_TrPr TrPr[];
-	CT_TcPr TcPr[];
+	CT_PPrGeneral PPr;
+	CT_RPr RPr;
+	CT_TblPrBase TblPr;
+	CT_TrPr TrPr;
+	CT_TcPr TcPr;
 	CT_TblStylePr TblStylePr[];
 } CT_Style;
 
@@ -2490,7 +2490,7 @@ typedef struct {
 // CT_Styles ...
 typedef struct {
 	CT_DocDefaults DocDefaults;
-	CT_LatentStyles LatentStyles[];
+	CT_LatentStyles LatentStyles;
 	CT_Style Style[];
 } CT_Styles;
 
@@ -2534,17 +2534,17 @@ typedef struct {
 // CT_Font ...
 typedef struct {
 	char NameAttr; // attr
-	CT_String AltName[];
-	CT_Panose Panose1[];
-	CT_Charset Charset[];
-	CT_FontFamily Family[];
-	CT_OnOff NotTrueType[];
-	CT_Pitch Pitch[];
-	CT_FontSig Sig[];
-	CT_FontRel EmbedRegular[];
-	CT_FontRel EmbedBold[];
-	CT_FontRel EmbedItalic[];
-	CT_FontRel EmbedBoldItalic[];
+	CT_String AltName;
+	CT_Panose Panose1;
+	CT_Charset Charset;
+	CT_FontFamily Family;
+	CT_OnOff NotTrueType;
+	CT_Pitch Pitch;
+	CT_FontSig Sig;
+	CT_FontRel EmbedRegular;
+	CT_FontRel EmbedBold;
+	CT_FontRel EmbedItalic;
+	CT_FontRel EmbedBoldItalic;
 } CT_Font;
 
 // CT_FontsList ...
@@ -2611,7 +2611,7 @@ typedef struct {
 // CT_Body ...
 typedef struct {
 	EG_BlockLevelElts EG_BlockLevelElts[];
-	CT_SectPr SectPr[];
+	CT_SectPr SectPr;
 } CT_Body;
 
 // CT_Comments ...
@@ -2686,8 +2686,8 @@ typedef struct {
 
 // CT_DocPartCategory ...
 typedef struct {
-	CT_String Name[];
-	CT_DocPartGallery Gallery[];
+	CT_String Name;
+	CT_DocPartGallery Gallery;
 } CT_DocPartCategory;
 
 // CT_DocPartName ...
@@ -2756,7 +2756,7 @@ typedef struct {
 // CT_Captions ...
 typedef struct {
 	CT_Caption Caption[];
-	CT_AutoCaptions AutoCaptions[];
+	CT_AutoCaptions AutoCaptions;
 } CT_Captions;
 
 // CT_DocumentBase ...
@@ -2767,7 +2767,7 @@ typedef struct {
 // CT_Document ...
 typedef struct {
 	char ConformanceAttr; // attr, optional
-	CT_Body Body[];
+	CT_Body Body;
 } CT_Document;
 
 // CT_GlossaryDocument ...

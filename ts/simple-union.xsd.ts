@@ -2,6 +2,6 @@
 
 // ConditionalUintType ...
 export class ConditionalUintType {
-	UnsignedInt: number;
 	Boolean: boolean;
+	UnsignedInt: number;
 }

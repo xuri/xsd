@@ -123,19 +123,19 @@ export class SdnEntry {
 	Title: string;
 	SdnType: string;
 	Remarks: string;
-	ProgramList: Array<ProgramList>;
-	IdList: Array<IdList>;
-	AkaList: Array<AkaList>;
-	AddressList: Array<AddressList>;
-	NationalityList: Array<NationalityList>;
-	CitizenshipList: Array<CitizenshipList>;
-	DateOfBirthList: Array<DateOfBirthList>;
-	PlaceOfBirthList: Array<PlaceOfBirthList>;
-	VesselInfo: Array<VesselInfo>;
+	ProgramList: ProgramList;
+	IdList: IdList;
+	AkaList: AkaList;
+	AddressList: AddressList;
+	NationalityList: NationalityList;
+	CitizenshipList: CitizenshipList;
+	DateOfBirthList: DateOfBirthList;
+	PlaceOfBirthList: PlaceOfBirthList;
+	VesselInfo: VesselInfo;
 }
 
 // SdnList ...
 export class SdnList {
-	PublshInformation: Array<PublshInformation>;
+	PublshInformation: PublshInformation;
 	SdnEntry: Array<SdnEntry>;
 }

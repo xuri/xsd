@@ -25,15 +25,15 @@ type CTPersonType struct {
 
 // CTNameType ...
 type CTNameType struct {
-	XMLName  xml.Name          `xml:"CT_NameType"`
-	NameList []*CTNameListType `xml:"NameList"`
+	XMLName  xml.Name        `xml:"CT_NameType"`
+	NameList *CTNameListType `xml:"NameList"`
 }
 
 // CTNameOrCorporateType ...
 type CTNameOrCorporateType struct {
-	XMLName   xml.Name          `xml:"CT_NameOrCorporateType"`
-	NameList  []*CTNameListType `xml:"NameList"`
-	Corporate []string          `xml:"Corporate"`
+	XMLName   xml.Name        `xml:"CT_NameOrCorporateType"`
+	NameList  *CTNameListType `xml:"NameList"`
+	Corporate string          `xml:"Corporate"`
 }
 
 // CTAuthorType ...
