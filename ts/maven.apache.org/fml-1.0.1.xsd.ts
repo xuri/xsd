@@ -444,7 +444,7 @@ export class Script {
 	TypeAttr: string;
 	LanguageAttr: any | null;
 	SrcAttr: string | null;
-	DeferAttr: any | null;
+	DeferAttr: string | null;
 	XmlSpaceAttr: Space | null;
 }
 
@@ -459,10 +459,10 @@ export class Iframe {
 	LongdescAttr: string | null;
 	NameAttr: string | null;
 	SrcAttr: string | null;
-	FrameborderAttr: any | null;
+	FrameborderAttr: string | null;
 	MarginwidthAttr: number | null;
 	MarginheightAttr: number | null;
-	ScrollingAttr: any | null;
+	ScrollingAttr: string | null;
 	AlignAttr: string | null;
 	HeightAttr: string | null;
 	WidthAttr: string | null;
@@ -523,12 +523,6 @@ export class H6 {
 
 // ULStyle is Unordered list bullet styles
 export enum ULStyle {
-	defer = 'defer',
-	1 = '1',
-	0 = '0',
-	yes = 'yes',
-	no = 'no',
-	auto = 'auto',
 	disc = 'disc',
 	square = 'square',
 	circle = 'circle',
@@ -538,7 +532,7 @@ export enum ULStyle {
 export class Ul {
 	Attrs: Attrs;
 	TypeAttr: string | null;
-	CompactAttr: any | null;
+	CompactAttr: string | null;
 	Ul: string;
 }
 
@@ -552,15 +546,13 @@ export class Ul {
 // 
 //       The style is applied to the sequence number which by default
 //       is reset to 1 for the first list item in an ordered list.
-export enum OLStyle {
-	compact = 'compact',
-}
+export type OLStyle = string;
 
 // Ol ...
 export class Ol {
 	Attrs: Attrs;
 	TypeAttr: string | null;
-	CompactAttr: any | null;
+	CompactAttr: string | null;
 	StartAttr: number | null;
 	Ol: string;
 }
@@ -568,23 +560,19 @@ export class Ol {
 // Menu ...
 export class Menu {
 	Attrs: Attrs;
-	CompactAttr: any | null;
+	CompactAttr: string | null;
 	Menu: string;
 }
 
 // Dir ...
 export class Dir {
 	Attrs: Attrs;
-	CompactAttr: any | null;
+	CompactAttr: string | null;
 	Dir: string;
 }
 
 // LIStyle is LIStyle is constrained to: "(ULStyle|OLStyle)"
-export enum LIStyle {
-	compact = 'compact',
-	compact = 'compact',
-	compact = 'compact',
-}
+export type LIStyle = string;
 
 // Li ...
 export class Li {
@@ -596,7 +584,7 @@ export class Li {
 // Dl ...
 export class Dl {
 	Attrs: Attrs;
-	CompactAttr: any | null;
+	CompactAttr: string | null;
 	Dt: Dt;
 	Dl: string;
 }
@@ -622,8 +610,8 @@ export class Address {
 // Hr ...
 export class Hr {
 	Attrs: Attrs;
-	AlignAttr: any | null;
-	NoshadeAttr: any | null;
+	AlignAttr: string | null;
+	NoshadeAttr: string | null;
 	SizeAttr: number | null;
 	WidthAttr: string | null;
 }
@@ -687,13 +675,13 @@ export class Bdo {
 	Events: Events;
 	LangAttr: string | null;
 	XmlLangAttr: Lang | null;
-	DirAttr: any;
+	DirAttr: string;
 }
 
 // Br ...
 export class Br {
 	Coreattrs: Coreattrs;
-	ClearAttr: any | null;
+	ClearAttr: string | null;
 }
 
 // Em ...
@@ -822,7 +810,7 @@ export class Font {
 // Object ...
 export class Object {
 	Attrs: Attrs;
-	DeclareAttr: any | null;
+	DeclareAttr: string | null;
 	ClassidAttr: string | null;
 	CodebaseAttr: string | null;
 	DataAttr: string | null;
@@ -851,7 +839,7 @@ export class Param {
 	IdAttr: string | null;
 	NameAttr: any;
 	ValueAttr: any | null;
-	ValuetypeAttr: any | null;
+	ValuetypeAttr: string | null;
 	TypeAttr: string | null;
 }
 
@@ -886,7 +874,7 @@ export class Img {
 	HeightAttr: string | null;
 	WidthAttr: string | null;
 	UsemapAttr: string | null;
-	IsmapAttr: any | null;
+	IsmapAttr: string | null;
 	AlignAttr: string | null;
 	BorderAttr: string | null;
 	HspaceAttr: number | null;
@@ -915,7 +903,7 @@ export class Area {
 	ShapeAttr: string | null;
 	CoordsAttr: string | null;
 	HrefAttr: string | null;
-	NohrefAttr: any | null;
+	NohrefAttr: string | null;
 	AltAttr: string;
 	TargetAttr: string | null;
 }
@@ -924,7 +912,7 @@ export class Area {
 export class Form {
 	Attrs: Attrs;
 	ActionAttr: string;
-	MethodAttr: any | null;
+	MethodAttr: string | null;
 	EnctypeAttr: string | null;
 	OnsubmitAttr: string | null;
 	OnresetAttr: string | null;
@@ -944,25 +932,6 @@ export class Label {
 
 // InputType ...
 export enum InputType {
-	compact = 'compact',
-	left = 'left',
-	center = 'center',
-	right = 'right',
-	noshade = 'noshade',
-	ltr = 'ltr',
-	rtl = 'rtl',
-	left = 'left',
-	all = 'all',
-	right = 'right',
-	none = 'none',
-	declare = 'declare',
-	data = 'data',
-	ref = 'ref',
-	object = 'object',
-	ismap = 'ismap',
-	nohref = 'nohref',
-	get = 'get',
-	post = 'post',
 	text = 'text',
 	password = 'password',
 	checkbox = 'checkbox',
@@ -982,9 +951,9 @@ export class Input {
 	TypeAttr: string | null;
 	NameAttr: any | null;
 	ValueAttr: any | null;
-	CheckedAttr: any | null;
-	DisabledAttr: any | null;
-	ReadonlyAttr: any | null;
+	CheckedAttr: string | null;
+	DisabledAttr: string | null;
+	ReadonlyAttr: string | null;
 	SizeAttr: any | null;
 	MaxlengthAttr: number | null;
 	SrcAttr: string | null;
@@ -1001,8 +970,8 @@ export class Select {
 	Attrs: Attrs;
 	NameAttr: any | null;
 	SizeAttr: number | null;
-	MultipleAttr: any | null;
-	DisabledAttr: any | null;
+	MultipleAttr: string | null;
+	DisabledAttr: string | null;
 	TabindexAttr: number | null;
 	OnfocusAttr: string | null;
 	OnblurAttr: string | null;
@@ -1014,7 +983,7 @@ export class Select {
 // Optgroup ...
 export class Optgroup {
 	Attrs: Attrs;
-	DisabledAttr: any | null;
+	DisabledAttr: string | null;
 	LabelAttr: string;
 	Optgroup: string;
 }
@@ -1022,8 +991,8 @@ export class Optgroup {
 // Option ...
 export class Option {
 	Attrs: Attrs;
-	SelectedAttr: any | null;
-	DisabledAttr: any | null;
+	SelectedAttr: string | null;
+	DisabledAttr: string | null;
 	LabelAttr: string | null;
 	ValueAttr: any | null;
 }
@@ -1035,8 +1004,8 @@ export class Textarea {
 	NameAttr: any | null;
 	RowsAttr: number;
 	ColsAttr: number;
-	DisabledAttr: any | null;
-	ReadonlyAttr: any | null;
+	DisabledAttr: string | null;
+	ReadonlyAttr: string | null;
 	OnselectAttr: string | null;
 	OnchangeAttr: string | null;
 }
@@ -1053,16 +1022,6 @@ export class Fieldset {
 
 // LAlign ...
 export enum LAlign {
-	checked = 'checked',
-	disabled = 'disabled',
-	readonly = 'readonly',
-	multiple = 'multiple',
-	disabled = 'disabled',
-	disabled = 'disabled',
-	selected = 'selected',
-	disabled = 'disabled',
-	disabled = 'disabled',
-	readonly = 'readonly',
 	top = 'top',
 	bottom = 'bottom',
 	left = 'left',
@@ -1082,8 +1041,8 @@ export class Button {
 	Focus: Focus;
 	NameAttr: any | null;
 	ValueAttr: any | null;
-	TypeAttr: any | null;
-	DisabledAttr: any | null;
+	TypeAttr: string | null;
+	DisabledAttr: string | null;
 }
 
 // Isindex ...
@@ -1100,10 +1059,6 @@ export class Isindex {
 //       the table should be rendered. The values are not the same as
 //       CALS to avoid a name clash with the valign attribute.
 export enum TFrame {
-	button = 'button',
-	submit = 'submit',
-	reset = 'reset',
-	disabled = 'disabled',
 	void = 'void',
 	above = 'above',
 	below = 'below',
@@ -1256,7 +1211,7 @@ export class Th {
 	ScopeAttr: string | null;
 	RowspanAttr: number | null;
 	ColspanAttr: number | null;
-	NowrapAttr: any | null;
+	NowrapAttr: string | null;
 	BgcolorAttr: string | null;
 	WidthAttr: string | null;
 	HeightAttr: string | null;
@@ -1273,7 +1228,7 @@ export class Td {
 	ScopeAttr: string | null;
 	RowspanAttr: number | null;
 	ColspanAttr: number | null;
-	NowrapAttr: any | null;
+	NowrapAttr: string | null;
 	BgcolorAttr: string | null;
 	WidthAttr: string | null;
 	HeightAttr: string | null;
