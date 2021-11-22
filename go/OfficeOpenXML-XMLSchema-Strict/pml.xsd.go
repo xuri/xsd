@@ -126,8 +126,8 @@ type STTLTimeIndefinite string
 // STTLTime ...
 type STTLTime struct {
 	XMLName            xml.Name `xml:"ST_TLTime"`
-	UnsignedInt        uint32
 	STTLTimeIndefinite string
+	UnsignedInt        uint32
 }
 
 // STTLTimeNodeID ...

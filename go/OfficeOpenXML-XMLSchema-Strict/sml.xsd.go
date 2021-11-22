@@ -2670,6 +2670,7 @@ type CTCellFormula struct {
 	CaAttr   bool     `xml:"ca,attr,omitempty"`
 	SiAttr   uint32   `xml:"si,attr,omitempty"`
 	BxAttr   bool     `xml:"bx,attr,omitempty"`
+	Value    string   `xml:",chardata"`
 }
 
 // CTColorScale ...
@@ -3932,6 +3933,7 @@ type CTTableColumn struct {
 type CTTableFormula struct {
 	XMLName   xml.Name `xml:"CT_TableFormula"`
 	ArrayAttr bool     `xml:"array,attr,omitempty"`
+	Value     string   `xml:",chardata"`
 }
 
 // STTotalsRowFunction ...
@@ -4229,6 +4231,7 @@ type CTDefinedName struct {
 	ShortcutKeyAttr       string   `xml:"shortcutKey,attr,omitempty"`
 	PublishToServerAttr   bool     `xml:"publishToServer,attr,omitempty"`
 	WorkbookParameterAttr bool     `xml:"workbookParameter,attr,omitempty"`
+	Value                 string   `xml:",chardata"`
 }
 
 // CTExternalReferences ...

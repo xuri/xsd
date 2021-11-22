@@ -10,6 +10,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlValue;
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlElement(required = true, name = "archetype")
@@ -71,6 +72,8 @@ public class ArchetypeModel {
 public class Source {
 	@XmlAttribute(name = "encoding")
 	protected StringAttr Encoding;
+	@XmlValue
+	protected String value;
 }
 
 // Resource is Describes a resource file.
@@ -79,4 +82,6 @@ public class Resource {
 	protected StringAttr Encoding;
 	@XmlAttribute(name = "filtered")
 	protected BooleanAttr Filtered;
+	@XmlValue
+	protected String value;
 }

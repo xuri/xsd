@@ -8,10 +8,12 @@ type Vehicle struct {
 
 // Car ...
 type Car struct {
+	*Vehicle
 }
 
 // Plane ...
 type Plane struct {
+	*Vehicle
 }
 
 // Transport ...

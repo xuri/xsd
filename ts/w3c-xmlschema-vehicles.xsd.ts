@@ -5,11 +5,11 @@ export class Vehicle {
 }
 
 // Car ...
-export class Car {
+export class Car extends Vehicle  {
 }
 
 // Plane ...
-export class Plane {
+export class Plane extends Vehicle  {
 }
 
 // Transport ...

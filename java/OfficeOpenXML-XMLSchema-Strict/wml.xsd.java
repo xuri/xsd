@@ -10,6 +10,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlValue;
 
 // CT_Empty ...
 public class CT_Empty {
@@ -121,9 +122,9 @@ public class CT_PixelsMeasure {
 // ST_HpsMeasure ...
 public class ST_HpsMeasure {
 	@XmlElement(required = true)
-	protected String ST_PositiveUniversalMeasure;
-	@XmlElement(required = true)
 	protected Long ST_UnsignedDecimalNumber;
+	@XmlElement(required = true)
+	protected String ST_PositiveUniversalMeasure;
 }
 
 // CT_HpsMeasure ...
@@ -228,9 +229,9 @@ public class ST_HexColorAuto {
 // ST_HexColor ...
 public class ST_HexColor {
 	@XmlElement(required = true)
-	protected String ST_HexColorAuto;
-	@XmlElement(required = true)
 	protected List<Byte> ST_HexColorRGB;
+	@XmlElement(required = true)
+	protected String ST_HexColorAuto;
 }
 
 // CT_Color ...
@@ -797,7 +798,7 @@ public class CT_Markup {
 }
 
 // CT_TrackChange ...
-public class CT_TrackChange {
+public class CT_TrackChange extends CT_Markup  {
 	@XmlAttribute(name = "author", required = true)
 	protected StringAttr Author;
 	@XmlAttribute(name = "date")
@@ -805,7 +806,7 @@ public class CT_TrackChange {
 }
 
 // CT_CellMergeTrackChange ...
-public class CT_CellMergeTrackChange {
+public class CT_CellMergeTrackChange extends CT_TrackChange  {
 	@XmlAttribute(name = "vMerge")
 	protected StringAttr VMerge;
 	@XmlAttribute(name = "vMergeOrig")
@@ -813,19 +814,19 @@ public class CT_CellMergeTrackChange {
 }
 
 // CT_TrackChangeRange ...
-public class CT_TrackChangeRange {
+public class CT_TrackChangeRange extends CT_TrackChange  {
 	@XmlAttribute(name = "displacedByCustomXml")
 	protected StringAttr DisplacedByCustomXml;
 }
 
 // CT_MarkupRange ...
-public class CT_MarkupRange {
+public class CT_MarkupRange extends CT_Markup  {
 	@XmlAttribute(name = "displacedByCustomXml")
 	protected StringAttr DisplacedByCustomXml;
 }
 
 // CT_BookmarkRange ...
-public class CT_BookmarkRange {
+public class CT_BookmarkRange extends CT_MarkupRange  {
 	@XmlAttribute(name = "colFirst")
 	protected IntegerAttr ColFirst;
 	@XmlAttribute(name = "colLast")
@@ -833,13 +834,13 @@ public class CT_BookmarkRange {
 }
 
 // CT_Bookmark ...
-public class CT_Bookmark {
+public class CT_Bookmark extends CT_BookmarkRange  {
 	@XmlAttribute(name = "name", required = true)
 	protected StringAttr Name;
 }
 
 // CT_MoveBookmark ...
-public class CT_MoveBookmark {
+public class CT_MoveBookmark extends CT_Bookmark  {
 	@XmlAttribute(name = "author", required = true)
 	protected StringAttr Author;
 	@XmlAttribute(name = "date", required = true)
@@ -847,68 +848,68 @@ public class CT_MoveBookmark {
 }
 
 // CT_Comment ...
-public class CT_Comment {
+public class CT_Comment extends CT_TrackChange  {
 	@XmlAttribute(name = "initials")
 	protected StringAttr Initials;
 	protected List<EG_BlockLevelElts> EG_BlockLevelElts;
 }
 
 // CT_TblPrExChange ...
-public class CT_TblPrExChange {
+public class CT_TblPrExChange extends CT_TrackChange  {
 	@XmlElement(required = true, name = "tblPrEx")
 	protected CT_TblPrExBase TblPrEx;
 }
 
 // CT_TcPrChange ...
-public class CT_TcPrChange {
+public class CT_TcPrChange extends CT_TrackChange  {
 	@XmlElement(required = true, name = "tcPr")
 	protected CT_TcPrInner TcPr;
 }
 
 // CT_TrPrChange ...
-public class CT_TrPrChange {
+public class CT_TrPrChange extends CT_TrackChange  {
 	@XmlElement(required = true, name = "trPr")
 	protected CT_TrPrBase TrPr;
 }
 
 // CT_TblGridChange ...
-public class CT_TblGridChange {
+public class CT_TblGridChange extends CT_Markup  {
 	@XmlElement(required = true, name = "tblGrid")
 	protected CT_TblGridBase TblGrid;
 }
 
 // CT_TblPrChange ...
-public class CT_TblPrChange {
+public class CT_TblPrChange extends CT_TrackChange  {
 	@XmlElement(required = true, name = "tblPr")
 	protected CT_TblPrBase TblPr;
 }
 
 // CT_SectPrChange ...
-public class CT_SectPrChange {
+public class CT_SectPrChange extends CT_TrackChange  {
 	@XmlElement(required = true, name = "sectPr")
 	protected CT_SectPrBase SectPr;
 }
 
 // CT_PPrChange ...
-public class CT_PPrChange {
+public class CT_PPrChange extends CT_TrackChange  {
 	@XmlElement(required = true, name = "pPr")
 	protected CT_PPrBase PPr;
 }
 
 // CT_RPrChange ...
-public class CT_RPrChange {
+public class CT_RPrChange extends CT_TrackChange  {
 	@XmlElement(required = true, name = "rPr")
 	protected CT_RPrOriginal RPr;
 }
 
 // CT_ParaRPrChange ...
-public class CT_ParaRPrChange {
+public class CT_ParaRPrChange extends CT_TrackChange  {
 	@XmlElement(required = true, name = "rPr")
 	protected CT_ParaRPrOriginal RPr;
 }
 
 // CT_RunTrackChange ...
-public class CT_RunTrackChange {
+public class CT_RunTrackChange extends CT_TrackChange  {
 	protected EG_ContentRunContent EG_ContentRunContent;
 	protected EG_OMathMathElements MEG_OMathMathElements;
 }
@@ -1030,7 +1031,7 @@ public class CT_TextboxTightWrap {
 }
 
 // CT_PPr ...
-public class CT_PPr {
+public class CT_PPr extends CT_PPrBase  {
 	@XmlElement(required = true, name = "rPr")
 	protected CT_ParaRPr RPr;
 	@XmlElement(required = true, name = "sectPr")
@@ -1110,7 +1111,7 @@ public class CT_PPrBase {
 }
 
 // CT_PPrGeneral ...
-public class CT_PPrGeneral {
+public class CT_PPrGeneral extends CT_PPrBase  {
 	@XmlElement(required = true, name = "pPrChange")
 	protected CT_PPrChange PPrChange;
 }
@@ -1185,7 +1186,7 @@ public class ST_ObjectDrawAspect {
 }
 
 // CT_ObjectLink ...
-public class CT_ObjectLink {
+public class CT_ObjectLink extends CT_ObjectEmbed  {
 	@XmlAttribute(name = "updateMode", required = true)
 	protected StringAttr UpdateMode;
 	@XmlAttribute(name = "lockedField")
@@ -1484,13 +1485,13 @@ public class CT_PageBorders {
 }
 
 // CT_PageBorder ...
-public class CT_PageBorder {
+public class CT_PageBorder extends CT_Border  {
 	@XmlAttribute(name = "r:id")
 	protected StringAttr RId;
 }
 
 // CT_BottomPageBorder ...
-public class CT_BottomPageBorder {
+public class CT_BottomPageBorder extends CT_PageBorder  {
 	@XmlAttribute(name = "r:bottomLeft")
 	protected StringAttr RBottomLeft;
 	@XmlAttribute(name = "r:bottomRight")
@@ -1498,7 +1499,7 @@ public class CT_BottomPageBorder {
 }
 
 // CT_TopPageBorder ...
-public class CT_TopPageBorder {
+public class CT_TopPageBorder extends CT_PageBorder  {
 	@XmlAttribute(name = "r:topLeft")
 	protected StringAttr RTopLeft;
 	@XmlAttribute(name = "r:topRight")
@@ -1610,7 +1611,7 @@ public class ST_FtnEdn {
 }
 
 // CT_HdrFtrRef ...
-public class CT_HdrFtrRef {
+public class CT_HdrFtrRef extends CT_Rel  {
 	@XmlAttribute(name = "type", required = true)
 	protected StringAttr Type;
 }
@@ -1789,7 +1790,7 @@ public class CT_Perm {
 }
 
 // CT_PermStart ...
-public class CT_PermStart {
+public class CT_PermStart extends CT_Perm  {
 	@XmlAttribute(name = "edGrp")
 	protected StringAttr EdGrp;
 	@XmlAttribute(name = "ed")
@@ -1804,6 +1805,8 @@ public class CT_PermStart {
 public class CT_Text {
 	@XmlAttribute(name = "xml:space")
 	protected SpaceAttr XmlSpace;
+	@XmlValue
+	protected String value;
 }
 
 // EG_RunInnerContent ...
@@ -2032,7 +2035,7 @@ public class EG_RPrMath {
 }
 
 // CT_MathCtrlIns ...
-public class CT_MathCtrlIns {
+public class CT_MathCtrlIns extends CT_TrackChange  {
 	@XmlElement(required = true, name = "del")
 	protected CT_RPrChange Del;
 	@XmlElement(required = true, name = "rPr")
@@ -2040,7 +2043,7 @@ public class CT_MathCtrlIns {
 }
 
 // CT_MathCtrlDel ...
-public class CT_MathCtrlDel {
+public class CT_MathCtrlDel extends CT_TrackChange  {
 	@XmlElement(required = true, name = "rPr")
 	protected CT_RPr RPr;
 }
@@ -2583,7 +2586,7 @@ public class CT_TblGridBase {
 }
 
 // CT_TblGrid ...
-public class CT_TblGrid {
+public class CT_TblGrid extends CT_TblGridBase  {
 	@XmlElement(required = true, name = "tblGridChange")
 	protected CT_TblGridChange TblGridChange;
 }
@@ -2664,13 +2667,13 @@ public class CT_TcPrBase {
 }
 
 // CT_TcPr ...
-public class CT_TcPr {
+public class CT_TcPr extends CT_TcPrInner  {
 	@XmlElement(required = true, name = "tcPrChange")
 	protected CT_TcPrChange TcPrChange;
 }
 
 // CT_TcPrInner ...
-public class CT_TcPrInner {
+public class CT_TcPrInner extends CT_TcPrBase  {
 	protected List<EG_CellMarkupElements> EG_CellMarkupElements;
 }
 
@@ -2746,7 +2749,7 @@ public class CT_TrPrBase {
 }
 
 // CT_TrPr ...
-public class CT_TrPr {
+public class CT_TrPr extends CT_TrPrBase  {
 	@XmlElement(required = true, name = "ins")
 	protected CT_TrackChange Ins;
 	@XmlElement(required = true, name = "del")
@@ -2889,7 +2892,7 @@ public class CT_TblPrBase {
 }
 
 // CT_TblPr ...
-public class CT_TblPr {
+public class CT_TblPr extends CT_TblPrBase  {
 	@XmlElement(required = true, name = "tblPrChange")
 	protected CT_TblPrChange TblPrChange;
 }
@@ -2917,7 +2920,7 @@ public class CT_TblPrExBase {
 }
 
 // CT_TblPrEx ...
-public class CT_TblPrEx {
+public class CT_TblPrEx extends CT_TblPrExBase  {
 	@XmlElement(required = true, name = "tblPrExChange")
 	protected CT_TblPrExChange TblPrExChange;
 }
@@ -3045,13 +3048,13 @@ public class CT_EdnProps {
 }
 
 // CT_FtnDocProps ...
-public class CT_FtnDocProps {
+public class CT_FtnDocProps extends CT_FtnProps  {
 	@XmlElement(required = true, name = "footnote")
 	protected List<CT_FtnEdnSepRef> Footnote;
 }
 
 // CT_EdnDocProps ...
-public class CT_EdnDocProps {
+public class CT_EdnDocProps extends CT_EdnProps  {
 	@XmlElement(required = true, name = "endnote")
 	protected List<CT_FtnEdnSepRef> Endnote;
 }
@@ -3615,7 +3618,7 @@ public class CT_FrameScrollbar {
 }
 
 // CT_OptimizeForBrowser ...
-public class CT_OptimizeForBrowser {
+public class CT_OptimizeForBrowser extends CT_OnOff  {
 	@XmlAttribute(name = "target")
 	protected StringAttr Target;
 }
@@ -3990,7 +3993,7 @@ public class CT_FontSig {
 }
 
 // CT_FontRel ...
-public class CT_FontRel {
+public class CT_FontRel extends CT_Rel  {
 	@XmlAttribute(name = "fontKey")
 	protected StringAttr FontKey;
 	@XmlAttribute(name = "subsetted")
@@ -4368,7 +4371,7 @@ public class CT_DocumentBase {
 }
 
 // CT_Document ...
-public class CT_Document {
+public class CT_Document extends CT_DocumentBase  {
 	@XmlAttribute(name = "conformance")
 	protected StringAttr Conformance;
 	@XmlElement(required = true, name = "body")
@@ -4376,7 +4379,7 @@ public class CT_Document {
 }
 
 // CT_GlossaryDocument ...
-public class CT_GlossaryDocument {
+public class CT_GlossaryDocument extends CT_DocumentBase  {
 	@XmlElement(required = true, name = "docParts")
 	protected CT_DocParts DocParts;
 }

@@ -39,8 +39,8 @@ type STUnsignedDecimalNumber uint64
 // STTwipsMeasure ...
 type STTwipsMeasure struct {
 	XMLName                    xml.Name `xml:"ST_TwipsMeasure"`
-	STUnsignedDecimalNumber    uint64
 	STPositiveUniversalMeasure *STPositiveUniversalMeasure
+	STUnsignedDecimalNumber    uint64
 }
 
 // STVerticalAlignRun ...

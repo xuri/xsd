@@ -10,11 +10,12 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlValue;
 
 // ConditionalUintType ...
 public class ConditionalUintType {
 	@XmlElement(required = true)
-	protected Integer UnsignedInt;
-	@XmlElement(required = true)
 	protected Boolean Boolean;
+	@XmlElement(required = true)
+	protected Integer UnsignedInt;
 }

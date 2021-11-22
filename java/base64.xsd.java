@@ -10,6 +10,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlValue;
 
 // MyType1 ...
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -22,12 +23,16 @@ public class MyType1 {
 public class MyType2 {
 	@XmlAttribute(name = "length")
 	protected IntegerAttr Length;
+	@XmlValue
+	protected List<Byte> value;
 }
 
 // MyType3 ...
 public class MyType3 {
 	@XmlAttribute(name = "length")
 	protected IntegerAttr Length;
+	@XmlValue
+	protected Byte value;
 }
 
 // MyType4 ...

@@ -44,10 +44,12 @@ export class ArchetypeModel {
 //         can be non-filtered.
 export class Source {
 	EncodingAttr: string | null;
+	Value: string;
 }
 
 // Resource is Describes a resource file.
 export class Resource {
 	EncodingAttr: string | null;
 	FilteredAttr: boolean | null;
+	Value: string;
 }

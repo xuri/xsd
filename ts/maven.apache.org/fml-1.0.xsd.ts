@@ -448,12 +448,12 @@ export class Script {
 }
 
 // Noscript ...
-export class Noscript {
+export class Noscript extends Flow  {
 	Attrs: Attrs;
 }
 
 // Iframe ...
-export class Iframe {
+export class Iframe extends Flow  {
 	Coreattrs: Coreattrs;
 	LongdescAttr: string | null;
 	NameAttr: string | null;
@@ -468,54 +468,54 @@ export class Iframe {
 }
 
 // Noframes ...
-export class Noframes {
+export class Noframes extends Flow  {
 	Attrs: Attrs;
 }
 
 // Div ...
-export class Div {
+export class Div extends Flow  {
 	Attrs: Attrs;
 	TextAlign: TextAlign;
 }
 
 // P ...
-export class P {
+export class P extends Inline  {
 	Attrs: Attrs;
 	TextAlign: TextAlign;
 }
 
 // H1 ...
-export class H1 {
+export class H1 extends Inline  {
 	Attrs: Attrs;
 	TextAlign: TextAlign;
 }
 
 // H2 ...
-export class H2 {
+export class H2 extends Inline  {
 	Attrs: Attrs;
 	TextAlign: TextAlign;
 }
 
 // H3 ...
-export class H3 {
+export class H3 extends Inline  {
 	Attrs: Attrs;
 	TextAlign: TextAlign;
 }
 
 // H4 ...
-export class H4 {
+export class H4 extends Inline  {
 	Attrs: Attrs;
 	TextAlign: TextAlign;
 }
 
 // H5 ...
-export class H5 {
+export class H5 extends Inline  {
 	Attrs: Attrs;
 	TextAlign: TextAlign;
 }
 
 // H6 ...
-export class H6 {
+export class H6 extends Inline  {
 	Attrs: Attrs;
 	TextAlign: TextAlign;
 }
@@ -574,7 +574,7 @@ export class Dir {
 export type LIStyle = string;
 
 // Li ...
-export class Li {
+export class Li extends Flow  {
 	Attrs: Attrs;
 	TypeAttr: string | null;
 	ValueAttr: number | null;
@@ -589,12 +589,12 @@ export class Dl {
 }
 
 // Dt ...
-export class Dt {
+export class Dt extends Inline  {
 	Attrs: Attrs;
 }
 
 // Dd ...
-export class Dd {
+export class Dd extends Flow  {
 	Attrs: Attrs;
 }
 
@@ -616,39 +616,39 @@ export class Hr {
 }
 
 // Pre ...
-export class Pre {
+export class Pre extends PreContent  {
 	Attrs: Attrs;
 	WidthAttr: number | null;
 	XmlSpaceAttr: Space | null;
 }
 
 // Blockquote ...
-export class Blockquote {
+export class Blockquote extends Flow  {
 	Attrs: Attrs;
 	CiteAttr: string | null;
 }
 
 // Center ...
-export class Center {
+export class Center extends Flow  {
 	Attrs: Attrs;
 }
 
 // Ins ...
-export class Ins {
+export class Ins extends Flow  {
 	Attrs: Attrs;
 	CiteAttr: string | null;
 	DatetimeAttr: string | null;
 }
 
 // Del ...
-export class Del {
+export class Del extends Flow  {
 	Attrs: Attrs;
 	CiteAttr: string | null;
 	DatetimeAttr: string | null;
 }
 
 // A ...
-export class A {
+export class A extends AContent  {
 	Attrs: Attrs;
 	Focus: Focus;
 	CharsetAttr: string | null;
@@ -664,12 +664,12 @@ export class A {
 }
 
 // Span ...
-export class Span {
+export class Span extends Inline  {
 	Attrs: Attrs;
 }
 
 // Bdo ...
-export class Bdo {
+export class Bdo extends Inline  {
 	Coreattrs: Coreattrs;
 	Events: Events;
 	LangAttr: string | null;
@@ -684,108 +684,108 @@ export class Br {
 }
 
 // Em ...
-export class Em {
+export class Em extends Inline  {
 	Attrs: Attrs;
 }
 
 // Strong ...
-export class Strong {
+export class Strong extends Inline  {
 	Attrs: Attrs;
 }
 
 // Dfn ...
-export class Dfn {
+export class Dfn extends Inline  {
 	Attrs: Attrs;
 }
 
 // Code ...
-export class Code {
+export class Code extends Inline  {
 	Attrs: Attrs;
 }
 
 // Samp ...
-export class Samp {
+export class Samp extends Inline  {
 	Attrs: Attrs;
 }
 
 // Kbd ...
-export class Kbd {
+export class Kbd extends Inline  {
 	Attrs: Attrs;
 }
 
 // Var ...
-export class Var {
+export class Var extends Inline  {
 	Attrs: Attrs;
 }
 
 // Cite ...
-export class Cite {
+export class Cite extends Inline  {
 	Attrs: Attrs;
 }
 
 // Abbr ...
-export class Abbr {
+export class Abbr extends Inline  {
 	Attrs: Attrs;
 }
 
 // Acronym ...
-export class Acronym {
+export class Acronym extends Inline  {
 	Attrs: Attrs;
 }
 
 // Q ...
-export class Q {
+export class Q extends Inline  {
 	Attrs: Attrs;
 	CiteAttr: string | null;
 }
 
 // Sub ...
-export class Sub {
+export class Sub extends Inline  {
 	Attrs: Attrs;
 }
 
 // Sup ...
-export class Sup {
+export class Sup extends Inline  {
 	Attrs: Attrs;
 }
 
 // Tt ...
-export class Tt {
+export class Tt extends Inline  {
 	Attrs: Attrs;
 }
 
 // I ...
-export class I {
+export class I extends Inline  {
 	Attrs: Attrs;
 }
 
 // B ...
-export class B {
+export class B extends Inline  {
 	Attrs: Attrs;
 }
 
 // Big ...
-export class Big {
+export class Big extends Inline  {
 	Attrs: Attrs;
 }
 
 // Small ...
-export class Small {
+export class Small extends Inline  {
 	Attrs: Attrs;
 }
 
 // U ...
-export class U {
+export class U extends Inline  {
 	Attrs: Attrs;
 }
 
 // S ...
-export class S {
+export class S extends Inline  {
 	Attrs: Attrs;
 }
 
 // Strike ...
-export class Strike {
+export class Strike extends Inline  {
 	Attrs: Attrs;
 }
 
@@ -798,7 +798,7 @@ export class Basefont {
 }
 
 // Font ...
-export class Font {
+export class Font extends Inline  {
 	Coreattrs: Coreattrs;
 	I18n: I18n;
 	SizeAttr: any | null;
@@ -908,7 +908,7 @@ export class Area {
 }
 
 // Form ...
-export class Form {
+export class Form extends FormContent  {
 	Attrs: Attrs;
 	ActionAttr: string;
 	MethodAttr: string | null;
@@ -921,7 +921,7 @@ export class Form {
 }
 
 // Label ...
-export class Label {
+export class Label extends Inline  {
 	Attrs: Attrs;
 	ForAttr: string | null;
 	AccesskeyAttr: string | null;
@@ -1028,14 +1028,14 @@ export enum LAlign {
 }
 
 // Legend ...
-export class Legend {
+export class Legend extends Inline  {
 	Attrs: Attrs;
 	AccesskeyAttr: string | null;
 	AlignAttr: string | null;
 }
 
 // Button ...
-export class Button {
+export class Button extends ButtonContent  {
 	Attrs: Attrs;
 	Focus: Focus;
 	NameAttr: any | null;
@@ -1133,7 +1133,7 @@ export enum CAlign {
 }
 
 // Caption ...
-export class Caption {
+export class Caption extends Inline  {
 	Attrs: Attrs;
 	AlignAttr: string | null;
 }
@@ -1200,7 +1200,7 @@ export enum Scope {
 }
 
 // Th ...
-export class Th {
+export class Th extends Flow  {
 	Attrs: Attrs;
 	Cellhalign: Cellhalign;
 	Cellvalign: Cellvalign;
@@ -1217,7 +1217,7 @@ export class Th {
 }
 
 // Td ...
-export class Td {
+export class Td extends Flow  {
 	Attrs: Attrs;
 	Cellhalign: Cellhalign;
 	Cellvalign: Cellvalign;

@@ -106,8 +106,8 @@ typedef char ST_TLTimeIndefinite;
 
 // ST_TLTime ...
 typedef struct {
-	unsigned int UnsignedInt;
 	char ST_TLTimeIndefinite;
+	unsigned int UnsignedInt;
 } ST_TLTime;
 
 // ST_TLTimeNodeID ...

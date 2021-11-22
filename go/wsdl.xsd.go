@@ -20,11 +20,13 @@ type TDocumented struct {
 // TExtensibleAttributesDocumented is This type is extended by component types to allow attributes from other namespaces to be added.
 type TExtensibleAttributesDocumented struct {
 	XMLName xml.Name `xml:"tExtensibleAttributesDocumented"`
+	*TDocumented
 }
 
 // TExtensibleDocumented is This type is extended by component types to allow elements from other namespaces to be added.
 type TExtensibleDocumented struct {
 	XMLName xml.Name `xml:"tExtensibleDocumented"`
+	*TDocumented
 }
 
 // Definitions ...
@@ -47,6 +49,7 @@ type TDefinitions struct {
 	TargetNamespaceAttr            string   `xml:"targetNamespace,attr,omitempty"`
 	NameAttr                       string   `xml:"name,attr,omitempty"`
 	WsdlAnyTopLevelOptionalElement []*AnyTopLevelOptionalElement
+	*TExtensibleDocumented
 }
 
 // TImport ...
@@ -54,11 +57,13 @@ type TImport struct {
 	XMLName       xml.Name `xml:"tImport"`
 	NamespaceAttr string   `xml:"namespace,attr"`
 	LocationAttr  string   `xml:"location,attr"`
+	*TExtensibleAttributesDocumented
 }
 
 // TTypes ...
 type TTypes struct {
 	XMLName xml.Name `xml:"tTypes"`
+	*TExtensibleDocumented
 }
 
 // TMessage ...
@@ -66,6 +71,7 @@ type TMessage struct {
 	XMLName  xml.Name `xml:"tMessage"`
 	NameAttr string   `xml:"name,attr"`
 	Part     []*TPart `xml:"part"`
+	*TExtensibleDocumented
 }
 
 // TPart ...
@@ -74,6 +80,7 @@ type TPart struct {
 	NameAttr    string   `xml:"name,attr"`
 	ElementAttr xml.Name `xml:"element,attr,omitempty"`
 	TypeAttr    xml.Name `xml:"type,attr,omitempty"`
+	*TExtensibleAttributesDocumented
 }
 
 // TPortType ...
@@ -81,6 +88,7 @@ type TPortType struct {
 	XMLName   xml.Name      `xml:"tPortType"`
 	NameAttr  string        `xml:"name,attr"`
 	Operation []*TOperation `xml:"operation"`
+	*TExtensibleAttributesDocumented
 }
 
 // TOperation ...
@@ -90,6 +98,7 @@ type TOperation struct {
 	ParameterOrderAttr                         []string `xml:"parameterOrder,attr,omitempty"`
 	WsdlRequestresponseoronewayoperation       *Requestresponseoronewayoperation
 	WsdlSolicitresponseornotificationoperation *Solicitresponseornotificationoperation
+	*TExtensibleDocumented
 }
 
 // Requestresponseoronewayoperation ...
@@ -113,6 +122,7 @@ type TParam struct {
 	XMLName     xml.Name `xml:"tParam"`
 	NameAttr    string   `xml:"name,attr,omitempty"`
 	MessageAttr xml.Name `xml:"message,attr"`
+	*TExtensibleAttributesDocumented
 }
 
 // TFault ...
@@ -120,6 +130,7 @@ type TFault struct {
 	XMLName     xml.Name `xml:"tFault"`
 	NameAttr    string   `xml:"name,attr"`
 	MessageAttr xml.Name `xml:"message,attr"`
+	*TExtensibleAttributesDocumented
 }
 
 // TBinding ...
@@ -128,18 +139,21 @@ type TBinding struct {
 	NameAttr  string               `xml:"name,attr"`
 	TypeAttr  xml.Name             `xml:"type,attr"`
 	Operation []*TBindingOperation `xml:"operation"`
+	*TExtensibleDocumented
 }
 
 // TBindingOperationMessage ...
 type TBindingOperationMessage struct {
 	XMLName  xml.Name `xml:"tBindingOperationMessage"`
 	NameAttr string   `xml:"name,attr,omitempty"`
+	*TExtensibleDocumented
 }
 
 // TBindingOperationFault ...
 type TBindingOperationFault struct {
 	XMLName  xml.Name `xml:"tBindingOperationFault"`
 	NameAttr string   `xml:"name,attr"`
+	*TExtensibleDocumented
 }
 
 // TBindingOperation ...
@@ -149,6 +163,7 @@ type TBindingOperation struct {
 	Input    *TBindingOperationMessage `xml:"input"`
 	Output   *TBindingOperationMessage `xml:"output"`
 	Fault    []*TBindingOperationFault `xml:"fault"`
+	*TExtensibleDocumented
 }
 
 // TService ...
@@ -156,6 +171,7 @@ type TService struct {
 	XMLName  xml.Name `xml:"tService"`
 	NameAttr string   `xml:"name,attr"`
 	Port     []*TPort `xml:"port"`
+	*TExtensibleDocumented
 }
 
 // TPort ...
@@ -163,6 +179,7 @@ type TPort struct {
 	XMLName     xml.Name `xml:"tPort"`
 	NameAttr    string   `xml:"name,attr"`
 	BindingAttr xml.Name `xml:"binding,attr"`
+	*TExtensibleDocumented
 }
 
 // ArrayType ...

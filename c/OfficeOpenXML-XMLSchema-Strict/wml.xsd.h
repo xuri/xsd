@@ -58,8 +58,8 @@ typedef struct {
 
 // ST_SignedTwipsMeasure ...
 typedef struct {
-	int Integer;
 	char ST_UniversalMeasure;
+	int Integer;
 } ST_SignedTwipsMeasure;
 
 // CT_SignedTwipsMeasure ...
@@ -77,8 +77,8 @@ typedef struct {
 
 // ST_HpsMeasure ...
 typedef struct {
-	unsigned int ST_UnsignedDecimalNumber;
 	char ST_PositiveUniversalMeasure;
+	unsigned int ST_UnsignedDecimalNumber;
 } ST_HpsMeasure;
 
 // CT_HpsMeasure ...
@@ -88,8 +88,8 @@ typedef struct {
 
 // ST_SignedHpsMeasure ...
 typedef struct {
-	int Integer;
 	char ST_UniversalMeasure;
+	int Integer;
 } ST_SignedHpsMeasure;
 
 // CT_SignedHpsMeasure ...

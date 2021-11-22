@@ -165,8 +165,8 @@ export enum ST_HexColorAuto {
 
 // ST_HexColor ...
 export class ST_HexColor {
-	ST_HexColorAuto: string;
 	ST_HexColorRGB: Uint8Array;
+	ST_HexColorAuto: string;
 }
 
 // CT_Color ...
@@ -889,97 +889,97 @@ export class CT_Markup {
 }
 
 // CT_TrackChange ...
-export class CT_TrackChange {
+export class CT_TrackChange extends CT_Markup  {
 	AuthorAttr: string;
 	DateAttr: string | null;
 }
 
 // CT_CellMergeTrackChange ...
-export class CT_CellMergeTrackChange {
+export class CT_CellMergeTrackChange extends CT_TrackChange  {
 	VMergeAttr: string | null;
 	VMergeOrigAttr: string | null;
 }
 
 // CT_TrackChangeRange ...
-export class CT_TrackChangeRange {
+export class CT_TrackChangeRange extends CT_TrackChange  {
 	DisplacedByCustomXmlAttr: string | null;
 }
 
 // CT_MarkupRange ...
-export class CT_MarkupRange {
+export class CT_MarkupRange extends CT_Markup  {
 	DisplacedByCustomXmlAttr: string | null;
 }
 
 // CT_BookmarkRange ...
-export class CT_BookmarkRange {
+export class CT_BookmarkRange extends CT_MarkupRange  {
 	ColFirstAttr: number | null;
 	ColLastAttr: number | null;
 }
 
 // CT_Bookmark ...
-export class CT_Bookmark {
+export class CT_Bookmark extends CT_BookmarkRange  {
 	NameAttr: string;
 }
 
 // CT_MoveBookmark ...
-export class CT_MoveBookmark {
+export class CT_MoveBookmark extends CT_Bookmark  {
 	AuthorAttr: string;
 	DateAttr: string;
 }
 
 // CT_Comment ...
-export class CT_Comment {
+export class CT_Comment extends CT_TrackChange  {
 	InitialsAttr: string | null;
 	EG_BlockLevelElts: Array<EG_BlockLevelElts>;
 }
 
 // CT_TblPrExChange ...
-export class CT_TblPrExChange {
+export class CT_TblPrExChange extends CT_TrackChange  {
 	TblPrEx: CT_TblPrExBase;
 }
 
 // CT_TcPrChange ...
-export class CT_TcPrChange {
+export class CT_TcPrChange extends CT_TrackChange  {
 	TcPr: CT_TcPrInner;
 }
 
 // CT_TrPrChange ...
-export class CT_TrPrChange {
+export class CT_TrPrChange extends CT_TrackChange  {
 	TrPr: CT_TrPrBase;
 }
 
 // CT_TblGridChange ...
-export class CT_TblGridChange {
+export class CT_TblGridChange extends CT_Markup  {
 	TblGrid: CT_TblGridBase;
 }
 
 // CT_TblPrChange ...
-export class CT_TblPrChange {
+export class CT_TblPrChange extends CT_TrackChange  {
 	TblPr: CT_TblPrBase;
 }
 
 // CT_SectPrChange ...
-export class CT_SectPrChange {
+export class CT_SectPrChange extends CT_TrackChange  {
 	SectPr: CT_SectPrBase;
 }
 
 // CT_PPrChange ...
-export class CT_PPrChange {
+export class CT_PPrChange extends CT_TrackChange  {
 	PPr: CT_PPrBase;
 }
 
 // CT_RPrChange ...
-export class CT_RPrChange {
+export class CT_RPrChange extends CT_TrackChange  {
 	RPr: CT_RPrOriginal;
 }
 
 // CT_ParaRPrChange ...
-export class CT_ParaRPrChange {
+export class CT_ParaRPrChange extends CT_TrackChange  {
 	RPr: CT_ParaRPrOriginal;
 }
 
 // CT_RunTrackChange ...
-export class CT_RunTrackChange {
+export class CT_RunTrackChange extends CT_TrackChange  {
 	EG_ContentRunContent: EG_ContentRunContent;
 	MEG_OMathMathElements: EG_OMathMathElements;
 }
@@ -1068,7 +1068,7 @@ export class CT_TextboxTightWrap {
 }
 
 // CT_PPr ...
-export class CT_PPr {
+export class CT_PPr extends CT_PPrBase  {
 	RPr: CT_ParaRPr;
 	SectPr: CT_SectPr;
 	PPrChange: CT_PPrChange;
@@ -1112,7 +1112,7 @@ export class CT_PPrBase {
 }
 
 // CT_PPrGeneral ...
-export class CT_PPrGeneral {
+export class CT_PPrGeneral extends CT_PPrBase  {
 	PPrChange: CT_PPrChange;
 }
 
@@ -1164,7 +1164,7 @@ export enum ST_ObjectDrawAspect {
 }
 
 // CT_ObjectLink ...
-export class CT_ObjectLink {
+export class CT_ObjectLink extends CT_ObjectEmbed  {
 	UpdateModeAttr: string;
 	LockedFieldAttr: ST_OnOff | null;
 }
@@ -1444,18 +1444,18 @@ export class CT_PageBorders {
 }
 
 // CT_PageBorder ...
-export class CT_PageBorder {
+export class CT_PageBorder extends CT_Border  {
 	RIdAttr: string | null;
 }
 
 // CT_BottomPageBorder ...
-export class CT_BottomPageBorder {
+export class CT_BottomPageBorder extends CT_PageBorder  {
 	RBottomLeftAttr: string | null;
 	RBottomRightAttr: string | null;
 }
 
 // CT_TopPageBorder ...
-export class CT_TopPageBorder {
+export class CT_TopPageBorder extends CT_PageBorder  {
 	RTopLeftAttr: string | null;
 	RTopRightAttr: string | null;
 }
@@ -1551,7 +1551,7 @@ export enum ST_FtnEdn {
 }
 
 // CT_HdrFtrRef ...
-export class CT_HdrFtrRef {
+export class CT_HdrFtrRef extends CT_Rel  {
 	TypeAttr: string;
 }
 
@@ -1698,7 +1698,7 @@ export class CT_Perm {
 }
 
 // CT_PermStart ...
-export class CT_PermStart {
+export class CT_PermStart extends CT_Perm  {
 	EdGrpAttr: string | null;
 	EdAttr: string | null;
 	ColFirstAttr: number | null;
@@ -1708,6 +1708,7 @@ export class CT_PermStart {
 // CT_Text ...
 export class CT_Text {
 	XmlSpaceAttr: Space | null;
+	Value: string;
 }
 
 // EG_RunInnerContent ...
@@ -1853,13 +1854,13 @@ export class EG_RPrMath {
 }
 
 // CT_MathCtrlIns ...
-export class CT_MathCtrlIns {
+export class CT_MathCtrlIns extends CT_TrackChange  {
 	Del: CT_RPrChange;
 	RPr: CT_RPr;
 }
 
 // CT_MathCtrlDel ...
-export class CT_MathCtrlDel {
+export class CT_MathCtrlDel extends CT_TrackChange  {
 	RPr: CT_RPr;
 }
 
@@ -2272,7 +2273,7 @@ export class CT_TblGridBase {
 }
 
 // CT_TblGrid ...
-export class CT_TblGrid {
+export class CT_TblGrid extends CT_TblGridBase  {
 	TblGridChange: CT_TblGridChange;
 }
 
@@ -2325,12 +2326,12 @@ export class CT_TcPrBase {
 }
 
 // CT_TcPr ...
-export class CT_TcPr {
+export class CT_TcPr extends CT_TcPrInner  {
 	TcPrChange: CT_TcPrChange;
 }
 
 // CT_TcPrInner ...
-export class CT_TcPrInner {
+export class CT_TcPrInner extends CT_TcPrBase  {
 	EG_CellMarkupElements: Array<EG_CellMarkupElements>;
 }
 
@@ -2379,7 +2380,7 @@ export class CT_TrPrBase {
 }
 
 // CT_TrPr ...
-export class CT_TrPr {
+export class CT_TrPr extends CT_TrPrBase  {
 	Ins: CT_TrackChange;
 	Del: CT_TrackChange;
 	TrPrChange: CT_TrPrChange;
@@ -2472,7 +2473,7 @@ export class CT_TblPrBase {
 }
 
 // CT_TblPr ...
-export class CT_TblPr {
+export class CT_TblPr extends CT_TblPrBase  {
 	TblPrChange: CT_TblPrChange;
 }
 
@@ -2490,7 +2491,7 @@ export class CT_TblPrExBase {
 }
 
 // CT_TblPrEx ...
-export class CT_TblPrEx {
+export class CT_TblPrEx extends CT_TblPrExBase  {
 	TblPrExChange: CT_TblPrExChange;
 }
 
@@ -2593,12 +2594,12 @@ export class CT_EdnProps {
 }
 
 // CT_FtnDocProps ...
-export class CT_FtnDocProps {
+export class CT_FtnDocProps extends CT_FtnProps  {
 	Footnote: Array<CT_FtnEdnSepRef>;
 }
 
 // CT_EdnDocProps ...
-export class CT_EdnDocProps {
+export class CT_EdnDocProps extends CT_EdnProps  {
 	Endnote: Array<CT_FtnEdnSepRef>;
 }
 
@@ -2981,7 +2982,7 @@ export class CT_FrameScrollbar {
 }
 
 // CT_OptimizeForBrowser ...
-export class CT_OptimizeForBrowser {
+export class CT_OptimizeForBrowser extends CT_OnOff  {
 	TargetAttr: string | null;
 }
 
@@ -3253,7 +3254,7 @@ export class CT_FontSig {
 }
 
 // CT_FontRel ...
-export class CT_FontRel {
+export class CT_FontRel extends CT_Rel  {
 	FontKeyAttr: string | null;
 	SubsettedAttr: ST_OnOff | null;
 }
@@ -3576,13 +3577,13 @@ export class CT_DocumentBase {
 }
 
 // CT_Document ...
-export class CT_Document {
+export class CT_Document extends CT_DocumentBase  {
 	ConformanceAttr: string | null;
 	Body: CT_Body;
 }
 
 // CT_GlossaryDocument ...
-export class CT_GlossaryDocument {
+export class CT_GlossaryDocument extends CT_DocumentBase  {
 	DocParts: CT_DocParts;
 }
 

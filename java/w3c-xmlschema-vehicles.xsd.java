@@ -10,17 +10,18 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlValue;
 
 // Vehicle ...
 public class Vehicle {
 }
 
 // Car ...
-public class Car {
+public class Car extends Vehicle  {
 }
 
 // Plane ...
-public class Plane {
+public class Plane extends Vehicle  {
 }
 
 @XmlAccessorType(XmlAccessType.FIELD)

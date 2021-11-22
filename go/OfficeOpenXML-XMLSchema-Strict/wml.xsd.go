@@ -75,8 +75,8 @@ type CTTwipsMeasure struct {
 // STSignedTwipsMeasure ...
 type STSignedTwipsMeasure struct {
 	XMLName            xml.Name `xml:"ST_SignedTwipsMeasure"`
-	STUniversalMeasure string
 	Integer            int
+	STUniversalMeasure string
 }
 
 // CTSignedTwipsMeasure ...
@@ -97,8 +97,8 @@ type CTPixelsMeasure struct {
 // STHpsMeasure ...
 type STHpsMeasure struct {
 	XMLName                    xml.Name `xml:"ST_HpsMeasure"`
-	STUnsignedDecimalNumber    uint64
 	STPositiveUniversalMeasure string
+	STUnsignedDecimalNumber    uint64
 }
 
 // CTHpsMeasure ...
@@ -174,8 +174,8 @@ type STHexColorAuto string
 // STHexColor ...
 type STHexColor struct {
 	XMLName        xml.Name `xml:"ST_HexColor"`
-	STHexColorAuto string
 	STHexColorRGB  []byte
+	STHexColorAuto string
 }
 
 // CTColor ...
@@ -552,6 +552,7 @@ type CTTrackChange struct {
 	XMLName    xml.Name  `xml:"CT_TrackChange"`
 	AuthorAttr string    `xml:"author,attr"`
 	DateAttr   time.Time `xml:"date,attr,omitempty"`
+	*CTMarkup
 }
 
 // CTCellMergeTrackChange ...
@@ -559,18 +560,21 @@ type CTCellMergeTrackChange struct {
 	XMLName        xml.Name `xml:"CT_CellMergeTrackChange"`
 	VMergeAttr     string   `xml:"vMerge,attr,omitempty"`
 	VMergeOrigAttr string   `xml:"vMergeOrig,attr,omitempty"`
+	*CTTrackChange
 }
 
 // CTTrackChangeRange ...
 type CTTrackChangeRange struct {
 	XMLName                  xml.Name `xml:"CT_TrackChangeRange"`
 	DisplacedByCustomXmlAttr string   `xml:"displacedByCustomXml,attr,omitempty"`
+	*CTTrackChange
 }
 
 // CTMarkupRange ...
 type CTMarkupRange struct {
 	XMLName                  xml.Name `xml:"CT_MarkupRange"`
 	DisplacedByCustomXmlAttr string   `xml:"displacedByCustomXml,attr,omitempty"`
+	*CTMarkup
 }
 
 // CTBookmarkRange ...
@@ -578,12 +582,14 @@ type CTBookmarkRange struct {
 	XMLName      xml.Name `xml:"CT_BookmarkRange"`
 	ColFirstAttr int      `xml:"colFirst,attr,omitempty"`
 	ColLastAttr  int      `xml:"colLast,attr,omitempty"`
+	*CTMarkupRange
 }
 
 // CTBookmark ...
 type CTBookmark struct {
 	XMLName  xml.Name `xml:"CT_Bookmark"`
 	NameAttr string   `xml:"name,attr"`
+	*CTBookmarkRange
 }
 
 // CTMoveBookmark ...
@@ -591,6 +597,7 @@ type CTMoveBookmark struct {
 	XMLName    xml.Name  `xml:"CT_MoveBookmark"`
 	AuthorAttr string    `xml:"author,attr"`
 	DateAttr   time.Time `xml:"date,attr"`
+	*CTBookmark
 }
 
 // CTComment ...
@@ -598,60 +605,70 @@ type CTComment struct {
 	XMLName          xml.Name `xml:"CT_Comment"`
 	InitialsAttr     string   `xml:"initials,attr,omitempty"`
 	EGBlockLevelElts []*EGBlockLevelElts
+	*CTTrackChange
 }
 
 // CTTblPrExChange ...
 type CTTblPrExChange struct {
 	XMLName xml.Name       `xml:"CT_TblPrExChange"`
 	TblPrEx *CTTblPrExBase `xml:"tblPrEx"`
+	*CTTrackChange
 }
 
 // CTTcPrChange ...
 type CTTcPrChange struct {
 	XMLName xml.Name     `xml:"CT_TcPrChange"`
 	TcPr    *CTTcPrInner `xml:"tcPr"`
+	*CTTrackChange
 }
 
 // CTTrPrChange ...
 type CTTrPrChange struct {
 	XMLName xml.Name    `xml:"CT_TrPrChange"`
 	TrPr    *CTTrPrBase `xml:"trPr"`
+	*CTTrackChange
 }
 
 // CTTblGridChange ...
 type CTTblGridChange struct {
 	XMLName xml.Name       `xml:"CT_TblGridChange"`
 	TblGrid *CTTblGridBase `xml:"tblGrid"`
+	*CTMarkup
 }
 
 // CTTblPrChange ...
 type CTTblPrChange struct {
 	XMLName xml.Name     `xml:"CT_TblPrChange"`
 	TblPr   *CTTblPrBase `xml:"tblPr"`
+	*CTTrackChange
 }
 
 // CTSectPrChange ...
 type CTSectPrChange struct {
 	XMLName xml.Name      `xml:"CT_SectPrChange"`
 	SectPr  *CTSectPrBase `xml:"sectPr"`
+	*CTTrackChange
 }
 
 // CTPPrChange ...
 type CTPPrChange struct {
 	XMLName xml.Name   `xml:"CT_PPrChange"`
 	PPr     *CTPPrBase `xml:"pPr"`
+	*CTTrackChange
 }
 
 // CTRPrChange ...
 type CTRPrChange struct {
 	XMLName xml.Name       `xml:"CT_RPrChange"`
 	RPr     *CTRPrOriginal `xml:"rPr"`
+	*CTTrackChange
 }
 
 // CTParaRPrChange ...
 type CTParaRPrChange struct {
 	XMLName xml.Name           `xml:"CT_ParaRPrChange"`
 	RPr     *CTParaRPrOriginal `xml:"rPr"`
+	*CTTrackChange
 }
 
 // CTRunTrackChange ...
@@ -659,6 +676,7 @@ type CTRunTrackChange struct {
 	XMLName              xml.Name `xml:"CT_RunTrackChange"`
 	EGContentRunContent  *EGContentRunContent
 	MEGOMathMathElements *EGOMathMathElements
+	*CTTrackChange
 }
 
 // EGPContentMath ...
@@ -753,6 +771,7 @@ type CTPPr struct {
 	RPr       *CTParaRPr   `xml:"rPr"`
 	SectPr    *CTSectPr    `xml:"sectPr"`
 	PPrChange *CTPPrChange `xml:"pPrChange"`
+	*CTPPrBase
 }
 
 // CTPPrBase ...
@@ -797,6 +816,7 @@ type CTPPrBase struct {
 type CTPPrGeneral struct {
 	XMLName   xml.Name     `xml:"CT_PPrGeneral"`
 	PPrChange *CTPPrChange `xml:"pPrChange"`
+	*CTPPrBase
 }
 
 // CTControl ...
@@ -853,6 +873,7 @@ type CTObjectLink struct {
 	XMLName         xml.Name `xml:"CT_ObjectLink"`
 	UpdateModeAttr  string   `xml:"updateMode,attr"`
 	LockedFieldAttr *STOnOff `xml:"lockedField,attr,omitempty"`
+	*CTObjectEmbed
 }
 
 // STObjectUpdateMode ...
@@ -1050,6 +1071,7 @@ type CTPageBorders struct {
 type CTPageBorder struct {
 	XMLName xml.Name `xml:"CT_PageBorder"`
 	RIdAttr string   `xml:"r:id,attr,omitempty"`
+	*CTBorder
 }
 
 // CTBottomPageBorder ...
@@ -1057,6 +1079,7 @@ type CTBottomPageBorder struct {
 	XMLName          xml.Name `xml:"CT_BottomPageBorder"`
 	RBottomLeftAttr  string   `xml:"r:bottomLeft,attr,omitempty"`
 	RBottomRightAttr string   `xml:"r:bottomRight,attr,omitempty"`
+	*CTPageBorder
 }
 
 // CTTopPageBorder ...
@@ -1064,6 +1087,7 @@ type CTTopPageBorder struct {
 	XMLName       xml.Name `xml:"CT_TopPageBorder"`
 	RTopLeftAttr  string   `xml:"r:topLeft,attr,omitempty"`
 	RTopRightAttr string   `xml:"r:topRight,attr,omitempty"`
+	*CTPageBorder
 }
 
 // STChapterSep ...
@@ -1137,6 +1161,7 @@ type STFtnEdn string
 type CTHdrFtrRef struct {
 	XMLName  xml.Name `xml:"CT_HdrFtrRef"`
 	TypeAttr string   `xml:"type,attr"`
+	*CTRel
 }
 
 // EGHdrFtrReferences ...
@@ -1264,12 +1289,14 @@ type CTPermStart struct {
 	EdAttr       string   `xml:"ed,attr,omitempty"`
 	ColFirstAttr int      `xml:"colFirst,attr,omitempty"`
 	ColLastAttr  int      `xml:"colLast,attr,omitempty"`
+	*CTPerm
 }
 
 // CTText ...
 type CTText struct {
 	XMLName      xml.Name `xml:"CT_Text"`
 	XmlSpaceAttr *Space   `xml:"xml:space,attr,omitempty"`
+	Value        string   `xml:",chardata"`
 }
 
 // EGRunInnerContent ...
@@ -1415,12 +1442,14 @@ type CTMathCtrlIns struct {
 	XMLName xml.Name     `xml:"CT_MathCtrlIns"`
 	Del     *CTRPrChange `xml:"del"`
 	RPr     *CTRPr       `xml:"rPr"`
+	*CTTrackChange
 }
 
 // CTMathCtrlDel ...
 type CTMathCtrlDel struct {
 	XMLName xml.Name `xml:"CT_MathCtrlDel"`
 	RPr     *CTRPr   `xml:"rPr"`
+	*CTTrackChange
 }
 
 // CTRPrOriginal ...
@@ -1864,6 +1893,7 @@ type CTTblGridBase struct {
 type CTTblGrid struct {
 	XMLName       xml.Name         `xml:"CT_TblGrid"`
 	TblGridChange *CTTblGridChange `xml:"tblGridChange"`
+	*CTTblGridBase
 }
 
 // CTTcBorders ...
@@ -1919,12 +1949,14 @@ type CTTcPrBase struct {
 type CTTcPr struct {
 	XMLName    xml.Name      `xml:"CT_TcPr"`
 	TcPrChange *CTTcPrChange `xml:"tcPrChange"`
+	*CTTcPrInner
 }
 
 // CTTcPrInner ...
 type CTTcPrInner struct {
 	XMLName              xml.Name `xml:"CT_TcPrInner"`
 	EGCellMarkupElements []*EGCellMarkupElements
+	*CTTcPrBase
 }
 
 // CTTc ...
@@ -1981,6 +2013,7 @@ type CTTrPr struct {
 	Ins        *CTTrackChange `xml:"ins"`
 	Del        *CTTrackChange `xml:"del"`
 	TrPrChange *CTTrPrChange  `xml:"trPrChange"`
+	*CTTrPrBase
 }
 
 // CTRow ...
@@ -2074,6 +2107,7 @@ type CTTblPrBase struct {
 type CTTblPr struct {
 	XMLName     xml.Name       `xml:"CT_TblPr"`
 	TblPrChange *CTTblPrChange `xml:"tblPrChange"`
+	*CTTblPrBase
 }
 
 // CTTblPrExBase ...
@@ -2094,6 +2128,7 @@ type CTTblPrExBase struct {
 type CTTblPrEx struct {
 	XMLName       xml.Name         `xml:"CT_TblPrEx"`
 	TblPrExChange *CTTblPrExChange `xml:"tblPrExChange"`
+	*CTTblPrExBase
 }
 
 // CTTbl ...
@@ -2198,12 +2233,14 @@ type CTEdnProps struct {
 type CTFtnDocProps struct {
 	XMLName  xml.Name          `xml:"CT_FtnDocProps"`
 	Footnote []*CTFtnEdnSepRef `xml:"footnote"`
+	*CTFtnProps
 }
 
 // CTEdnDocProps ...
 type CTEdnDocProps struct {
 	XMLName xml.Name          `xml:"CT_EdnDocProps"`
 	Endnote []*CTFtnEdnSepRef `xml:"endnote"`
+	*CTEdnProps
 }
 
 // CTRecipientData ...
@@ -2564,6 +2601,7 @@ type CTFrameScrollbar struct {
 type CTOptimizeForBrowser struct {
 	XMLName    xml.Name `xml:"CT_OptimizeForBrowser"`
 	TargetAttr string   `xml:"target,attr,omitempty"`
+	*CTOnOff
 }
 
 // CTFrame ...
@@ -2818,6 +2856,7 @@ type CTFontRel struct {
 	XMLName       xml.Name `xml:"CT_FontRel"`
 	FontKeyAttr   string   `xml:"fontKey,attr,omitempty"`
 	SubsettedAttr *STOnOff `xml:"subsetted,attr,omitempty"`
+	*CTRel
 }
 
 // CTFont ...
@@ -3097,12 +3136,14 @@ type CTDocument struct {
 	XMLName         xml.Name `xml:"CT_Document"`
 	ConformanceAttr string   `xml:"conformance,attr,omitempty"`
 	Body            *CTBody  `xml:"body"`
+	*CTDocumentBase
 }
 
 // CTGlossaryDocument ...
 type CTGlossaryDocument struct {
 	XMLName  xml.Name    `xml:"CT_GlossaryDocument"`
 	DocParts *CTDocParts `xml:"docParts"`
+	*CTDocumentBase
 }
 
 // Document ...

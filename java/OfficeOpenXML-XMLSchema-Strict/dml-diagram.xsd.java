@@ -10,6 +10,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlValue;
 
 // CT_CTName ...
 public class CT_CTName {
@@ -650,77 +651,77 @@ public class RelIds {
 // ST_ParameterVal ...
 public class ST_ParameterVal {
 	@XmlElement(required = true)
-	protected ST_ChildDirection ST_ChildDirection;
+	protected Boolean Boolean;
 	@XmlElement(required = true)
-	protected ST_PyramidAccentPosition ST_PyramidAccentPosition;
-	@XmlElement(required = true)
-	protected ST_PyramidAccentTextMargin ST_PyramidAccentTextMargin;
-	@XmlElement(required = true)
-	protected ST_SecondaryChildAlignment ST_SecondaryChildAlignment;
-	@XmlElement(required = true)
-	protected ST_TextAnchorVertical ST_TextAnchorVertical;
-	@XmlElement(required = true)
-	protected ST_Offset ST_Offset;
-	@XmlElement(required = true)
-	protected ST_TextAnchorHorizontal ST_TextAnchorHorizontal;
-	@XmlElement(required = true)
-	protected ST_DiagramTextAlignment ST_DiagramTextAlignment;
-	@XmlElement(required = true)
-	protected ST_AutoTextRotation ST_AutoTextRotation;
-	@XmlElement(required = true)
-	protected ST_DiagramHorizontalAlignment ST_DiagramHorizontalAlignment;
-	@XmlElement(required = true)
-	protected ST_StartingElement ST_StartingElement;
-	@XmlElement(required = true)
-	protected ST_CenterShapeMapping ST_CenterShapeMapping;
-	@XmlElement(required = true)
-	protected ST_NodeVerticalAlignment ST_NodeVerticalAlignment;
-	@XmlElement(required = true)
-	protected ST_TextBlockDirection ST_TextBlockDirection;
+	protected Float Double;
 	@XmlElement(required = true)
 	protected Integer Int;
 	@XmlElement(required = true)
-	protected ST_SecondaryLinearDirection ST_SecondaryLinearDirection;
-	@XmlElement(required = true)
 	protected ST_ArrowheadStyle ST_ArrowheadStyle;
+	@XmlElement(required = true)
+	protected ST_AutoTextRotation ST_AutoTextRotation;
+	@XmlElement(required = true)
+	protected ST_BendPoint ST_BendPoint;
+	@XmlElement(required = true)
+	protected ST_Breakpoint ST_Breakpoint;
+	@XmlElement(required = true)
+	protected ST_CenterShapeMapping ST_CenterShapeMapping;
+	@XmlElement(required = true)
+	protected ST_ChildAlignment ST_ChildAlignment;
+	@XmlElement(required = true)
+	protected ST_ChildDirection ST_ChildDirection;
+	@XmlElement(required = true)
+	protected ST_ConnectorDimension ST_ConnectorDimension;
+	@XmlElement(required = true)
+	protected ST_ConnectorPoint ST_ConnectorPoint;
+	@XmlElement(required = true)
+	protected ST_ConnectorRouting ST_ConnectorRouting;
+	@XmlElement(required = true)
+	protected ST_ContinueDirection ST_ContinueDirection;
+	@XmlElement(required = true)
+	protected ST_DiagramHorizontalAlignment ST_DiagramHorizontalAlignment;
+	@XmlElement(required = true)
+	protected ST_DiagramTextAlignment ST_DiagramTextAlignment;
 	@XmlElement(required = true)
 	protected ST_FallbackDimension ST_FallbackDimension;
 	@XmlElement(required = true)
 	protected ST_FlowDirection ST_FlowDirection;
 	@XmlElement(required = true)
-	protected ST_NodeHorizontalAlignment ST_NodeHorizontalAlignment;
-	@XmlElement(required = true)
-	protected String String;
-	@XmlElement(required = true)
-	protected ST_VerticalAlignment ST_VerticalAlignment;
-	@XmlElement(required = true)
-	protected ST_ChildAlignment ST_ChildAlignment;
-	@XmlElement(required = true)
-	protected ST_ConnectorDimension ST_ConnectorDimension;
-	@XmlElement(required = true)
-	protected ST_Breakpoint ST_Breakpoint;
+	protected ST_GrowDirection ST_GrowDirection;
 	@XmlElement(required = true)
 	protected ST_HierarchyAlignment ST_HierarchyAlignment;
 	@XmlElement(required = true)
 	protected ST_LinearDirection ST_LinearDirection;
 	@XmlElement(required = true)
-	protected ST_BendPoint ST_BendPoint;
+	protected ST_NodeHorizontalAlignment ST_NodeHorizontalAlignment;
+	@XmlElement(required = true)
+	protected ST_NodeVerticalAlignment ST_NodeVerticalAlignment;
+	@XmlElement(required = true)
+	protected ST_Offset ST_Offset;
+	@XmlElement(required = true)
+	protected ST_PyramidAccentPosition ST_PyramidAccentPosition;
+	@XmlElement(required = true)
+	protected ST_PyramidAccentTextMargin ST_PyramidAccentTextMargin;
 	@XmlElement(required = true)
 	protected ST_RotationPath ST_RotationPath;
 	@XmlElement(required = true)
+	protected ST_SecondaryChildAlignment ST_SecondaryChildAlignment;
+	@XmlElement(required = true)
+	protected ST_SecondaryLinearDirection ST_SecondaryLinearDirection;
+	@XmlElement(required = true)
+	protected ST_StartingElement ST_StartingElement;
+	@XmlElement(required = true)
+	protected ST_TextAnchorHorizontal ST_TextAnchorHorizontal;
+	@XmlElement(required = true)
+	protected ST_TextAnchorVertical ST_TextAnchorVertical;
+	@XmlElement(required = true)
+	protected ST_TextBlockDirection ST_TextBlockDirection;
+	@XmlElement(required = true)
 	protected ST_TextDirection ST_TextDirection;
 	@XmlElement(required = true)
-	protected ST_ContinueDirection ST_ContinueDirection;
+	protected ST_VerticalAlignment ST_VerticalAlignment;
 	@XmlElement(required = true)
-	protected ST_ConnectorRouting ST_ConnectorRouting;
-	@XmlElement(required = true)
-	protected ST_GrowDirection ST_GrowDirection;
-	@XmlElement(required = true)
-	protected Float Double;
-	@XmlElement(required = true)
-	protected Boolean Boolean;
-	@XmlElement(required = true)
-	protected ST_ConnectorPoint ST_ConnectorPoint;
+	protected String String;
 }
 
 // ST_ModelId ...
@@ -1359,15 +1360,15 @@ public class ST_HierarchyAlignment {
 // ST_FunctionValue ...
 public class ST_FunctionValue {
 	@XmlElement(required = true)
-	protected String ST_ResizeHandlesStr;
+	protected Boolean Boolean;
 	@XmlElement(required = true)
 	protected Integer Int;
 	@XmlElement(required = true)
-	protected Boolean Boolean;
-	@XmlElement(required = true)
-	protected String ST_Direction;
+	protected String ST_ResizeHandlesStr;
 	@XmlElement(required = true)
 	protected String ST_HierBranchStyle;
+	@XmlElement(required = true)
+	protected String ST_Direction;
 	@XmlElement(required = true)
 	protected String ST_AnimOneStr;
 	@XmlElement(required = true)
