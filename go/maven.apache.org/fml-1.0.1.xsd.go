@@ -482,6 +482,7 @@ type Script struct {
 type Noscript struct {
 	XMLName xml.Name `xml:"noscript"`
 	Attrs   *Attrs
+	*Flow
 }
 
 // Iframe ...
@@ -498,12 +499,14 @@ type Iframe struct {
 	AlignAttr        string `xml:"align,attr,omitempty"`
 	HeightAttr       string `xml:"height,attr,omitempty"`
 	WidthAttr        string `xml:"width,attr,omitempty"`
+	*Flow
 }
 
 // Noframes ...
 type Noframes struct {
 	XMLName xml.Name `xml:"noframes"`
 	Attrs   *Attrs
+	*Flow
 }
 
 // Div ...
@@ -511,6 +514,7 @@ type Div struct {
 	XMLName   xml.Name `xml:"div"`
 	Attrs     *Attrs
 	TextAlign *TextAlign
+	*Flow
 }
 
 // P ...
@@ -518,6 +522,7 @@ type P struct {
 	XMLName   xml.Name `xml:"p"`
 	Attrs     *Attrs
 	TextAlign *TextAlign
+	*Inline
 }
 
 // H1 ...
@@ -525,6 +530,7 @@ type H1 struct {
 	XMLName   xml.Name `xml:"h1"`
 	Attrs     *Attrs
 	TextAlign *TextAlign
+	*Inline
 }
 
 // H2 ...
@@ -532,6 +538,7 @@ type H2 struct {
 	XMLName   xml.Name `xml:"h2"`
 	Attrs     *Attrs
 	TextAlign *TextAlign
+	*Inline
 }
 
 // H3 ...
@@ -539,6 +546,7 @@ type H3 struct {
 	XMLName   xml.Name `xml:"h3"`
 	Attrs     *Attrs
 	TextAlign *TextAlign
+	*Inline
 }
 
 // H4 ...
@@ -546,6 +554,7 @@ type H4 struct {
 	XMLName   xml.Name `xml:"h4"`
 	Attrs     *Attrs
 	TextAlign *TextAlign
+	*Inline
 }
 
 // H5 ...
@@ -553,6 +562,7 @@ type H5 struct {
 	XMLName   xml.Name `xml:"h5"`
 	Attrs     *Attrs
 	TextAlign *TextAlign
+	*Inline
 }
 
 // H6 ...
@@ -560,6 +570,7 @@ type H6 struct {
 	XMLName   xml.Name `xml:"h6"`
 	Attrs     *Attrs
 	TextAlign *TextAlign
+	*Inline
 }
 
 // ULStyle is Unordered list bullet styles
@@ -621,6 +632,7 @@ type Li struct {
 	Attrs     *Attrs
 	TypeAttr  string `xml:"type,attr,omitempty"`
 	ValueAttr int    `xml:"value,attr,omitempty"`
+	*Flow
 }
 
 // Dl ...
@@ -636,12 +648,14 @@ type Dl struct {
 type Dt struct {
 	XMLName xml.Name `xml:"dt"`
 	Attrs   *Attrs
+	*Inline
 }
 
 // Dd ...
 type Dd struct {
 	XMLName xml.Name `xml:"dd"`
 	Attrs   *Attrs
+	*Flow
 }
 
 // Address ...
@@ -669,6 +683,7 @@ type Pre struct {
 	Attrs        *Attrs
 	WidthAttr    int    `xml:"width,attr,omitempty"`
 	XmlSpaceAttr *Space `xml:"xml:space,attr,omitempty"`
+	*PreContent
 }
 
 // Blockquote ...
@@ -676,12 +691,14 @@ type Blockquote struct {
 	XMLName  xml.Name `xml:"blockquote"`
 	Attrs    *Attrs
 	CiteAttr string `xml:"cite,attr,omitempty"`
+	*Flow
 }
 
 // Center ...
 type Center struct {
 	XMLName xml.Name `xml:"center"`
 	Attrs   *Attrs
+	*Flow
 }
 
 // Ins ...
@@ -690,6 +707,7 @@ type Ins struct {
 	Attrs        *Attrs
 	CiteAttr     string    `xml:"cite,attr,omitempty"`
 	DatetimeAttr time.Time `xml:"datetime,attr,omitempty"`
+	*Flow
 }
 
 // Del ...
@@ -698,6 +716,7 @@ type Del struct {
 	Attrs        *Attrs
 	CiteAttr     string    `xml:"cite,attr,omitempty"`
 	DatetimeAttr time.Time `xml:"datetime,attr,omitempty"`
+	*Flow
 }
 
 // A ...
@@ -715,12 +734,14 @@ type A struct {
 	ShapeAttr    string   `xml:"shape,attr,omitempty"`
 	CoordsAttr   string   `xml:"coords,attr,omitempty"`
 	TargetAttr   string   `xml:"target,attr,omitempty"`
+	*AContent
 }
 
 // Span ...
 type Span struct {
 	XMLName xml.Name `xml:"span"`
 	Attrs   *Attrs
+	*Inline
 }
 
 // Bdo ...
@@ -731,6 +752,7 @@ type Bdo struct {
 	LangAttr    string `xml:"lang,attr,omitempty"`
 	XmlLangAttr *Lang  `xml:"xml:lang,attr,omitempty"`
 	DirAttr     string `xml:"dir,attr"`
+	*Inline
 }
 
 // Br ...
@@ -744,60 +766,70 @@ type Br struct {
 type Em struct {
 	XMLName xml.Name `xml:"em"`
 	Attrs   *Attrs
+	*Inline
 }
 
 // Strong ...
 type Strong struct {
 	XMLName xml.Name `xml:"strong"`
 	Attrs   *Attrs
+	*Inline
 }
 
 // Dfn ...
 type Dfn struct {
 	XMLName xml.Name `xml:"dfn"`
 	Attrs   *Attrs
+	*Inline
 }
 
 // Code ...
 type Code struct {
 	XMLName xml.Name `xml:"code"`
 	Attrs   *Attrs
+	*Inline
 }
 
 // Samp ...
 type Samp struct {
 	XMLName xml.Name `xml:"samp"`
 	Attrs   *Attrs
+	*Inline
 }
 
 // Kbd ...
 type Kbd struct {
 	XMLName xml.Name `xml:"kbd"`
 	Attrs   *Attrs
+	*Inline
 }
 
 // Var ...
 type Var struct {
 	XMLName xml.Name `xml:"var"`
 	Attrs   *Attrs
+	*Inline
 }
 
 // Cite ...
 type Cite struct {
 	XMLName xml.Name `xml:"cite"`
 	Attrs   *Attrs
+	*Inline
 }
 
 // Abbr ...
 type Abbr struct {
 	XMLName xml.Name `xml:"abbr"`
 	Attrs   *Attrs
+	*Inline
 }
 
 // Acronym ...
 type Acronym struct {
 	XMLName xml.Name `xml:"acronym"`
 	Attrs   *Attrs
+	*Inline
 }
 
 // Q ...
@@ -805,66 +837,77 @@ type Q struct {
 	XMLName  xml.Name `xml:"q"`
 	Attrs    *Attrs
 	CiteAttr string `xml:"cite,attr,omitempty"`
+	*Inline
 }
 
 // Sub ...
 type Sub struct {
 	XMLName xml.Name `xml:"sub"`
 	Attrs   *Attrs
+	*Inline
 }
 
 // Sup ...
 type Sup struct {
 	XMLName xml.Name `xml:"sup"`
 	Attrs   *Attrs
+	*Inline
 }
 
 // Tt ...
 type Tt struct {
 	XMLName xml.Name `xml:"tt"`
 	Attrs   *Attrs
+	*Inline
 }
 
 // I ...
 type I struct {
 	XMLName xml.Name `xml:"i"`
 	Attrs   *Attrs
+	*Inline
 }
 
 // B ...
 type B struct {
 	XMLName xml.Name `xml:"b"`
 	Attrs   *Attrs
+	*Inline
 }
 
 // Big ...
 type Big struct {
 	XMLName xml.Name `xml:"big"`
 	Attrs   *Attrs
+	*Inline
 }
 
 // Small ...
 type Small struct {
 	XMLName xml.Name `xml:"small"`
 	Attrs   *Attrs
+	*Inline
 }
 
 // U ...
 type U struct {
 	XMLName xml.Name `xml:"u"`
 	Attrs   *Attrs
+	*Inline
 }
 
 // S ...
 type S struct {
 	XMLName xml.Name `xml:"s"`
 	Attrs   *Attrs
+	*Inline
 }
 
 // Strike ...
 type Strike struct {
 	XMLName xml.Name `xml:"strike"`
 	Attrs   *Attrs
+	*Inline
 }
 
 // Basefont ...
@@ -884,6 +927,7 @@ type Font struct {
 	SizeAttr  interface{} `xml:"size,attr,omitempty"`
 	ColorAttr string      `xml:"color,attr,omitempty"`
 	FaceAttr  interface{} `xml:"face,attr,omitempty"`
+	*Inline
 }
 
 // Object ...
@@ -1005,6 +1049,7 @@ type Form struct {
 	AcceptAttr        string `xml:"accept,attr,omitempty"`
 	AcceptcharsetAttr string `xml:"accept-charset,attr,omitempty"`
 	TargetAttr        string `xml:"target,attr,omitempty"`
+	*FormContent
 }
 
 // Label ...
@@ -1015,6 +1060,7 @@ type Label struct {
 	AccesskeyAttr string `xml:"accesskey,attr,omitempty"`
 	OnfocusAttr   string `xml:"onfocus,attr,omitempty"`
 	OnblurAttr    string `xml:"onblur,attr,omitempty"`
+	*Inline
 }
 
 // InputType ...
@@ -1111,6 +1157,7 @@ type Legend struct {
 	Attrs         *Attrs
 	AccesskeyAttr string `xml:"accesskey,attr,omitempty"`
 	AlignAttr     string `xml:"align,attr,omitempty"`
+	*Inline
 }
 
 // Button ...
@@ -1122,6 +1169,7 @@ type Button struct {
 	ValueAttr    interface{} `xml:"value,attr,omitempty"`
 	TypeAttr     string      `xml:"type,attr,omitempty"`
 	DisabledAttr string      `xml:"disabled,attr,omitempty"`
+	*ButtonContent
 }
 
 // Isindex ...
@@ -1196,6 +1244,7 @@ type Caption struct {
 	XMLName   xml.Name `xml:"caption"`
 	Attrs     *Attrs
 	AlignAttr string `xml:"align,attr,omitempty"`
+	*Inline
 }
 
 // Thead ...
@@ -1276,6 +1325,7 @@ type Th struct {
 	BgcolorAttr string      `xml:"bgcolor,attr,omitempty"`
 	WidthAttr   string      `xml:"width,attr,omitempty"`
 	HeightAttr  string      `xml:"height,attr,omitempty"`
+	*Flow
 }
 
 // Td ...
@@ -1294,6 +1344,7 @@ type Td struct {
 	BgcolorAttr string      `xml:"bgcolor,attr,omitempty"`
 	WidthAttr   string      `xml:"width,attr,omitempty"`
 	HeightAttr  string      `xml:"height,attr,omitempty"`
+	*Flow
 }
 
 // Faqs ...

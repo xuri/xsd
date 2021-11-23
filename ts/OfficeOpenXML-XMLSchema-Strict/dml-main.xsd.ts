@@ -935,8 +935,8 @@ export enum ST_AnimationDgmOnlyBuildType {
 
 // ST_AnimationDgmBuildType ...
 export class ST_AnimationDgmBuildType {
-	ST_AnimationBuildType: string;
 	ST_AnimationDgmOnlyBuildType: string;
+	ST_AnimationBuildType: string;
 }
 
 // CT_AnimationDgmBuildProperties ...
@@ -2037,8 +2037,8 @@ export class CT_GeomGuideList {
 
 // ST_AdjCoordinate ...
 export class ST_AdjCoordinate {
-	ST_GeomGuideName: string;
 	ST_Coordinate: ST_Coordinate;
+	ST_GeomGuideName: string;
 }
 
 // ST_AdjAngle ...

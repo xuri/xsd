@@ -229,8 +229,8 @@ type CTPresentationOf struct {
 // STLayoutShapeType ...
 type STLayoutShapeType struct {
 	XMLName           xml.Name `xml:"ST_LayoutShapeType"`
-	STShapeType       string
 	STOutputShapeType *STOutputShapeType
+	STShapeType       string
 }
 
 // STIndex1 ...
@@ -451,42 +451,42 @@ type RelIds *CTRelIds
 // STParameterVal ...
 type STParameterVal struct {
 	XMLName                      xml.Name `xml:"ST_ParameterVal"`
-	STFlowDirection              *STFlowDirection
-	String                       string
-	STSecondaryChildAlignment    *STSecondaryChildAlignment
-	STNodeHorizontalAlignment    *STNodeHorizontalAlignment
-	STNodeVerticalAlignment      *STNodeVerticalAlignment
-	STPyramidAccentPosition      *STPyramidAccentPosition
-	STDiagramTextAlignment       *STDiagramTextAlignment
-	STGrowDirection              *STGrowDirection
-	STConnectorPoint             *STConnectorPoint
-	STContinueDirection          *STContinueDirection
-	STOffset                     *STOffset
-	Boolean                      bool
-	STLinearDirection            *STLinearDirection
-	STConnectorRouting           *STConnectorRouting
-	STCenterShapeMapping         *STCenterShapeMapping
-	STRotationPath               *STRotationPath
-	STTextDirection              *STTextDirection
-	STTextAnchorHorizontal       *STTextAnchorHorizontal
-	STTextAnchorVertical         *STTextAnchorVertical
+	STArrowheadStyle             *STArrowheadStyle
 	STAutoTextRotation           *STAutoTextRotation
-	STHierarchyAlignment         *STHierarchyAlignment
-	STVerticalAlignment          *STVerticalAlignment
+	STBendPoint                  *STBendPoint
+	STBreakpoint                 *STBreakpoint
+	STCenterShapeMapping         *STCenterShapeMapping
+	STChildAlignment             *STChildAlignment
 	STChildDirection             *STChildDirection
 	STConnectorDimension         *STConnectorDimension
-	STPyramidAccentTextMargin    *STPyramidAccentTextMargin
-	STTextBlockDirection         *STTextBlockDirection
-	STBreakpoint                 *STBreakpoint
+	STConnectorPoint             *STConnectorPoint
+	STConnectorRouting           *STConnectorRouting
+	STContinueDirection          *STContinueDirection
 	STDiagramHorizontalAlignment *STDiagramHorizontalAlignment
-	STStartingElement            *STStartingElement
+	STDiagramTextAlignment       *STDiagramTextAlignment
 	STFallbackDimension          *STFallbackDimension
-	Int                          int
-	Double                       float64
-	STChildAlignment             *STChildAlignment
+	STFlowDirection              *STFlowDirection
+	STGrowDirection              *STGrowDirection
+	STHierarchyAlignment         *STHierarchyAlignment
+	STLinearDirection            *STLinearDirection
+	STNodeHorizontalAlignment    *STNodeHorizontalAlignment
+	STNodeVerticalAlignment      *STNodeVerticalAlignment
+	STOffset                     *STOffset
+	STPyramidAccentPosition      *STPyramidAccentPosition
+	STPyramidAccentTextMargin    *STPyramidAccentTextMargin
+	STRotationPath               *STRotationPath
+	STSecondaryChildAlignment    *STSecondaryChildAlignment
 	STSecondaryLinearDirection   *STSecondaryLinearDirection
-	STBendPoint                  *STBendPoint
-	STArrowheadStyle             *STArrowheadStyle
+	STStartingElement            *STStartingElement
+	STTextAnchorHorizontal       *STTextAnchorHorizontal
+	STTextAnchorVertical         *STTextAnchorVertical
+	STTextBlockDirection         *STTextBlockDirection
+	STTextDirection              *STTextDirection
+	STVerticalAlignment          *STVerticalAlignment
+	Boolean                      bool
+	Double                       float64
+	Int                          int
+	String                       string
 }
 
 // STModelId ...
@@ -851,13 +851,13 @@ type STHierarchyAlignment string
 // STFunctionValue ...
 type STFunctionValue struct {
 	XMLName            xml.Name `xml:"ST_FunctionValue"`
+	Boolean            bool
+	Int                int
+	STResizeHandlesStr string
+	STHierBranchStyle  string
+	STDirection        string
 	STAnimOneStr       string
 	STAnimLvlStr       string
-	STResizeHandlesStr string
-	Int                int
-	Boolean            bool
-	STDirection        string
-	STHierBranchStyle  string
 }
 
 // STVariableType ...

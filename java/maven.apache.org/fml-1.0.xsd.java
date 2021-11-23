@@ -10,6 +10,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlValue;
 
 // ContentType is media type, as per [RFC2045]
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -680,19 +681,19 @@ public class Script {
 	@XmlAttribute(name = "src")
 	protected StringAttr Src;
 	@XmlAttribute(name = "defer")
-	protected voidAttr Defer;
+	protected StringAttr Defer;
 	@XmlAttribute(name = "xml:space")
 	protected SpaceAttr XmlSpace;
 }
 
 // Noscript ...
-public class Noscript {
+public class Noscript extends Flow  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
 // Iframe ...
-public class Iframe {
+public class Iframe extends Flow  {
 	@XmlElement(required = true)
 	protected Coreattrs Coreattrs;
 	@XmlAttribute(name = "longdesc")
@@ -702,13 +703,13 @@ public class Iframe {
 	@XmlAttribute(name = "src")
 	protected StringAttr Src;
 	@XmlAttribute(name = "frameborder")
-	protected voidAttr Frameborder;
+	protected StringAttr Frameborder;
 	@XmlAttribute(name = "marginwidth")
 	protected IntegerAttr Marginwidth;
 	@XmlAttribute(name = "marginheight")
 	protected IntegerAttr Marginheight;
 	@XmlAttribute(name = "scrolling")
-	protected voidAttr Scrolling;
+	protected StringAttr Scrolling;
 	@XmlAttribute(name = "align")
 	protected StringAttr Align;
 	@XmlAttribute(name = "height")
@@ -718,13 +719,13 @@ public class Iframe {
 }
 
 // Noframes ...
-public class Noframes {
+public class Noframes extends Flow  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
 // Div ...
-public class Div {
+public class Div extends Flow  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlElement(required = true)
@@ -732,7 +733,7 @@ public class Div {
 }
 
 // P ...
-public class P {
+public class P extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlElement(required = true)
@@ -740,7 +741,7 @@ public class P {
 }
 
 // H1 ...
-public class H1 {
+public class H1 extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlElement(required = true)
@@ -748,7 +749,7 @@ public class H1 {
 }
 
 // H2 ...
-public class H2 {
+public class H2 extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlElement(required = true)
@@ -756,7 +757,7 @@ public class H2 {
 }
 
 // H3 ...
-public class H3 {
+public class H3 extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlElement(required = true)
@@ -764,7 +765,7 @@ public class H3 {
 }
 
 // H4 ...
-public class H4 {
+public class H4 extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlElement(required = true)
@@ -772,7 +773,7 @@ public class H4 {
 }
 
 // H5 ...
-public class H5 {
+public class H5 extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlElement(required = true)
@@ -780,7 +781,7 @@ public class H5 {
 }
 
 // H6 ...
-public class H6 {
+public class H6 extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlElement(required = true)
@@ -801,7 +802,7 @@ public class Ul {
 	@XmlAttribute(name = "type")
 	protected StringAttr Type;
 	@XmlAttribute(name = "compact")
-	protected voidAttr Compact;
+	protected StringAttr Compact;
 	@XmlElement(required = true, name = "ul")
 	protected String Ul;
 }
@@ -829,7 +830,7 @@ public class Ol {
 	@XmlAttribute(name = "type")
 	protected StringAttr Type;
 	@XmlAttribute(name = "compact")
-	protected voidAttr Compact;
+	protected StringAttr Compact;
 	@XmlAttribute(name = "start")
 	protected IntegerAttr Start;
 	@XmlElement(required = true, name = "ol")
@@ -841,7 +842,7 @@ public class Menu {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlAttribute(name = "compact")
-	protected voidAttr Compact;
+	protected StringAttr Compact;
 	@XmlElement(required = true, name = "menu")
 	protected String Menu;
 }
@@ -851,7 +852,7 @@ public class Dir {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlAttribute(name = "compact")
-	protected voidAttr Compact;
+	protected StringAttr Compact;
 	@XmlElement(required = true, name = "dir")
 	protected String Dir;
 }
@@ -864,7 +865,7 @@ public class LIStyle {
 }
 
 // Li ...
-public class Li {
+public class Li extends Flow  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlAttribute(name = "type")
@@ -878,7 +879,7 @@ public class Dl {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlAttribute(name = "compact")
-	protected voidAttr Compact;
+	protected StringAttr Compact;
 	@XmlElement(required = true, name = "dt")
 	protected Dt Dt;
 	@XmlElement(required = true, name = "dl")
@@ -886,13 +887,13 @@ public class Dl {
 }
 
 // Dt ...
-public class Dt {
+public class Dt extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
 // Dd ...
-public class Dd {
+public class Dd extends Flow  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
@@ -912,9 +913,9 @@ public class Hr {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlAttribute(name = "align")
-	protected voidAttr Align;
+	protected StringAttr Align;
 	@XmlAttribute(name = "noshade")
-	protected voidAttr Noshade;
+	protected StringAttr Noshade;
 	@XmlAttribute(name = "size")
 	protected IntegerAttr Size;
 	@XmlAttribute(name = "width")
@@ -922,7 +923,7 @@ public class Hr {
 }
 
 // Pre ...
-public class Pre {
+public class Pre extends PreContent  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlAttribute(name = "width")
@@ -932,7 +933,7 @@ public class Pre {
 }
 
 // Blockquote ...
-public class Blockquote {
+public class Blockquote extends Flow  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlAttribute(name = "cite")
@@ -940,13 +941,13 @@ public class Blockquote {
 }
 
 // Center ...
-public class Center {
+public class Center extends Flow  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
 // Ins ...
-public class Ins {
+public class Ins extends Flow  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlAttribute(name = "cite")
@@ -956,7 +957,7 @@ public class Ins {
 }
 
 // Del ...
-public class Del {
+public class Del extends Flow  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlAttribute(name = "cite")
@@ -966,7 +967,7 @@ public class Del {
 }
 
 // A ...
-public class A {
+public class A extends AContent  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlElement(required = true)
@@ -994,13 +995,13 @@ public class A {
 }
 
 // Span ...
-public class Span {
+public class Span extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
 // Bdo ...
-public class Bdo {
+public class Bdo extends Inline  {
 	@XmlElement(required = true)
 	protected Coreattrs Coreattrs;
 	@XmlElement(required = true)
@@ -1010,7 +1011,7 @@ public class Bdo {
 	@XmlAttribute(name = "xml:lang")
 	protected LangAttr XmlLang;
 	@XmlAttribute(name = "dir", required = true)
-	protected voidAttr Dir;
+	protected StringAttr Dir;
 }
 
 // Br ...
@@ -1018,71 +1019,71 @@ public class Br {
 	@XmlElement(required = true)
 	protected Coreattrs Coreattrs;
 	@XmlAttribute(name = "clear")
-	protected voidAttr Clear;
+	protected StringAttr Clear;
 }
 
 // Em ...
-public class Em {
+public class Em extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
 // Strong ...
-public class Strong {
+public class Strong extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
 // Dfn ...
-public class Dfn {
+public class Dfn extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
 // Code ...
-public class Code {
+public class Code extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
 // Samp ...
-public class Samp {
+public class Samp extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
 // Kbd ...
-public class Kbd {
+public class Kbd extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
 // Var ...
-public class Var {
+public class Var extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
 // Cite ...
-public class Cite {
+public class Cite extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
 // Abbr ...
-public class Abbr {
+public class Abbr extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
 // Acronym ...
-public class Acronym {
+public class Acronym extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
 // Q ...
-public class Q {
+public class Q extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlAttribute(name = "cite")
@@ -1090,61 +1091,61 @@ public class Q {
 }
 
 // Sub ...
-public class Sub {
+public class Sub extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
 // Sup ...
-public class Sup {
+public class Sup extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
 // Tt ...
-public class Tt {
+public class Tt extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
 // I ...
-public class I {
+public class I extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
 // B ...
-public class B {
+public class B extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
 // Big ...
-public class Big {
+public class Big extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
 // Small ...
-public class Small {
+public class Small extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
 // U ...
-public class U {
+public class U extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
 // S ...
-public class S {
+public class S extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
 // Strike ...
-public class Strike {
+public class Strike extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
@@ -1162,7 +1163,7 @@ public class Basefont {
 }
 
 // Font ...
-public class Font {
+public class Font extends Inline  {
 	@XmlElement(required = true)
 	protected Coreattrs Coreattrs;
 	@XmlElement(required = true)
@@ -1180,7 +1181,7 @@ public class Object {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlAttribute(name = "declare")
-	protected voidAttr Declare;
+	protected StringAttr Declare;
 	@XmlAttribute(name = "classid")
 	protected StringAttr Classid;
 	@XmlAttribute(name = "codebase")
@@ -1231,7 +1232,7 @@ public class Param {
 	@XmlAttribute(name = "value")
 	protected voidAttr Value;
 	@XmlAttribute(name = "valuetype")
-	protected voidAttr Valuetype;
+	protected StringAttr Valuetype;
 	@XmlAttribute(name = "type")
 	protected StringAttr Type;
 }
@@ -1290,7 +1291,7 @@ public class Img {
 	@XmlAttribute(name = "usemap")
 	protected StringAttr Usemap;
 	@XmlAttribute(name = "ismap")
-	protected voidAttr Ismap;
+	protected StringAttr Ismap;
 	@XmlAttribute(name = "align")
 	protected StringAttr Align;
 	@XmlAttribute(name = "border")
@@ -1338,7 +1339,7 @@ public class Area {
 	@XmlAttribute(name = "href")
 	protected StringAttr Href;
 	@XmlAttribute(name = "nohref")
-	protected voidAttr Nohref;
+	protected StringAttr Nohref;
 	@XmlAttribute(name = "alt", required = true)
 	protected StringAttr Alt;
 	@XmlAttribute(name = "target")
@@ -1346,13 +1347,13 @@ public class Area {
 }
 
 // Form ...
-public class Form {
+public class Form extends FormContent  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlAttribute(name = "action", required = true)
 	protected StringAttr Action;
 	@XmlAttribute(name = "method")
-	protected voidAttr Method;
+	protected StringAttr Method;
 	@XmlAttribute(name = "enctype")
 	protected StringAttr Enctype;
 	@XmlAttribute(name = "onsubmit")
@@ -1368,7 +1369,7 @@ public class Form {
 }
 
 // Label ...
-public class Label {
+public class Label extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlAttribute(name = "for")
@@ -1401,11 +1402,11 @@ public class Input {
 	@XmlAttribute(name = "value")
 	protected voidAttr Value;
 	@XmlAttribute(name = "checked")
-	protected voidAttr Checked;
+	protected StringAttr Checked;
 	@XmlAttribute(name = "disabled")
-	protected voidAttr Disabled;
+	protected StringAttr Disabled;
 	@XmlAttribute(name = "readonly")
-	protected voidAttr Readonly;
+	protected StringAttr Readonly;
 	@XmlAttribute(name = "size")
 	protected voidAttr Size;
 	@XmlAttribute(name = "maxlength")
@@ -1435,9 +1436,9 @@ public class Select {
 	@XmlAttribute(name = "size")
 	protected IntegerAttr Size;
 	@XmlAttribute(name = "multiple")
-	protected voidAttr Multiple;
+	protected StringAttr Multiple;
 	@XmlAttribute(name = "disabled")
-	protected voidAttr Disabled;
+	protected StringAttr Disabled;
 	@XmlAttribute(name = "tabindex")
 	protected IntegerAttr Tabindex;
 	@XmlAttribute(name = "onfocus")
@@ -1457,7 +1458,7 @@ public class Optgroup {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlAttribute(name = "disabled")
-	protected voidAttr Disabled;
+	protected StringAttr Disabled;
 	@XmlAttribute(name = "label", required = true)
 	protected StringAttr Label;
 	@XmlElement(required = true, name = "optgroup")
@@ -1469,9 +1470,9 @@ public class Option {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlAttribute(name = "selected")
-	protected voidAttr Selected;
+	protected StringAttr Selected;
 	@XmlAttribute(name = "disabled")
-	protected voidAttr Disabled;
+	protected StringAttr Disabled;
 	@XmlAttribute(name = "label")
 	protected StringAttr Label;
 	@XmlAttribute(name = "value")
@@ -1491,9 +1492,9 @@ public class Textarea {
 	@XmlAttribute(name = "cols", required = true)
 	protected IntegerAttr Cols;
 	@XmlAttribute(name = "disabled")
-	protected voidAttr Disabled;
+	protected StringAttr Disabled;
 	@XmlAttribute(name = "readonly")
-	protected voidAttr Readonly;
+	protected StringAttr Readonly;
 	@XmlAttribute(name = "onselect")
 	protected StringAttr Onselect;
 	@XmlAttribute(name = "onchange")
@@ -1521,7 +1522,7 @@ public class LAlign {
 }
 
 // Legend ...
-public class Legend {
+public class Legend extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlAttribute(name = "accesskey")
@@ -1531,7 +1532,7 @@ public class Legend {
 }
 
 // Button ...
-public class Button {
+public class Button extends ButtonContent  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlElement(required = true)
@@ -1541,9 +1542,9 @@ public class Button {
 	@XmlAttribute(name = "value")
 	protected voidAttr Value;
 	@XmlAttribute(name = "type")
-	protected voidAttr Type;
+	protected StringAttr Type;
 	@XmlAttribute(name = "disabled")
-	protected voidAttr Disabled;
+	protected StringAttr Disabled;
 }
 
 // Isindex ...
@@ -1650,7 +1651,7 @@ public class CAlign {
 }
 
 // Caption ...
-public class Caption {
+public class Caption extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlAttribute(name = "align")
@@ -1747,7 +1748,7 @@ public class Scope {
 }
 
 // Th ...
-public class Th {
+public class Th extends Flow  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlElement(required = true)
@@ -1767,7 +1768,7 @@ public class Th {
 	@XmlAttribute(name = "colspan")
 	protected IntegerAttr Colspan;
 	@XmlAttribute(name = "nowrap")
-	protected voidAttr Nowrap;
+	protected StringAttr Nowrap;
 	@XmlAttribute(name = "bgcolor")
 	protected StringAttr Bgcolor;
 	@XmlAttribute(name = "width")
@@ -1777,7 +1778,7 @@ public class Th {
 }
 
 // Td ...
-public class Td {
+public class Td extends Flow  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlElement(required = true)
@@ -1797,7 +1798,7 @@ public class Td {
 	@XmlAttribute(name = "colspan")
 	protected IntegerAttr Colspan;
 	@XmlAttribute(name = "nowrap")
-	protected voidAttr Nowrap;
+	protected StringAttr Nowrap;
 	@XmlAttribute(name = "bgcolor")
 	protected StringAttr Bgcolor;
 	@XmlAttribute(name = "width")

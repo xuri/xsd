@@ -10,6 +10,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlValue;
 
 // CT_AutoFilter ...
 public class CT_AutoFilter {
@@ -4105,6 +4106,8 @@ public class CT_CellFormula {
 	protected IntegerAttr Si;
 	@XmlAttribute(name = "bx")
 	protected BooleanAttr Bx;
+	@XmlValue
+	protected String value;
 }
 
 // CT_ColorScale ...
@@ -5938,6 +5941,8 @@ public class CT_TableColumn {
 public class CT_TableFormula {
 	@XmlAttribute(name = "array")
 	protected BooleanAttr Array;
+	@XmlValue
+	protected String value;
 }
 
 // ST_TotalsRowFunction ...
@@ -6412,6 +6417,8 @@ public class CT_DefinedName {
 	protected BooleanAttr PublishToServer;
 	@XmlAttribute(name = "workbookParameter")
 	protected BooleanAttr WorkbookParameter;
+	@XmlValue
+	protected String value;
 }
 
 // CT_ExternalReferences ...

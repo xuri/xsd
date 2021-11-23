@@ -2864,6 +2864,7 @@ export class CT_CellFormula {
 	CaAttr: boolean | null;
 	SiAttr: number | null;
 	BxAttr: boolean | null;
+	Value: string;
 }
 
 // CT_ColorScale ...
@@ -4168,6 +4169,7 @@ export class CT_TableColumn {
 // CT_TableFormula ...
 export class CT_TableFormula {
 	ArrayAttr: boolean | null;
+	Value: string;
 }
 
 // ST_TotalsRowFunction ...
@@ -4493,6 +4495,7 @@ export class CT_DefinedName {
 	ShortcutKeyAttr: string | null;
 	PublishToServerAttr: boolean | null;
 	WorkbookParameterAttr: boolean | null;
+	Value: string;
 }
 
 // CT_ExternalReferences ...

@@ -432,7 +432,7 @@ typedef struct {
 	char TypeAttr; // attr
 	void LanguageAttr; // attr, optional
 	char SrcAttr; // attr, optional
-	void DeferAttr; // attr, optional
+	char DeferAttr; // attr, optional
 	Space XmlSpaceAttr; // attr, optional
 } Script;
 
@@ -447,10 +447,10 @@ typedef struct {
 	char LongdescAttr; // attr, optional
 	char NameAttr; // attr, optional
 	char SrcAttr; // attr, optional
-	void FrameborderAttr; // attr, optional
+	char FrameborderAttr; // attr, optional
 	int MarginwidthAttr; // attr, optional
 	int MarginheightAttr; // attr, optional
-	void ScrollingAttr; // attr, optional
+	char ScrollingAttr; // attr, optional
 	char AlignAttr; // attr, optional
 	char HeightAttr; // attr, optional
 	char WidthAttr; // attr, optional
@@ -516,7 +516,7 @@ typedef char ULStyle;
 typedef struct {
 	Attrs Attrs;
 	char TypeAttr; // attr, optional
-	void CompactAttr; // attr, optional
+	char CompactAttr; // attr, optional
 	char Ul;
 } Ul;
 
@@ -536,7 +536,7 @@ typedef char OLStyle;
 typedef struct {
 	Attrs Attrs;
 	char TypeAttr; // attr, optional
-	void CompactAttr; // attr, optional
+	char CompactAttr; // attr, optional
 	int StartAttr; // attr, optional
 	char Ol;
 } Ol;
@@ -544,14 +544,14 @@ typedef struct {
 // Menu ...
 typedef struct {
 	Attrs Attrs;
-	void CompactAttr; // attr, optional
+	char CompactAttr; // attr, optional
 	char Menu;
 } Menu;
 
 // Dir ...
 typedef struct {
 	Attrs Attrs;
-	void CompactAttr; // attr, optional
+	char CompactAttr; // attr, optional
 	char Dir;
 } Dir;
 
@@ -568,7 +568,7 @@ typedef struct {
 // Dl ...
 typedef struct {
 	Attrs Attrs;
-	void CompactAttr; // attr, optional
+	char CompactAttr; // attr, optional
 	Dt Dt;
 	char Dl;
 } Dl;
@@ -594,8 +594,8 @@ typedef struct {
 // Hr ...
 typedef struct {
 	Attrs Attrs;
-	void AlignAttr; // attr, optional
-	void NoshadeAttr; // attr, optional
+	char AlignAttr; // attr, optional
+	char NoshadeAttr; // attr, optional
 	int SizeAttr; // attr, optional
 	char WidthAttr; // attr, optional
 } Hr;
@@ -659,13 +659,13 @@ typedef struct {
 	Events Events;
 	char LangAttr; // attr, optional
 	Lang XmlLangAttr; // attr, optional
-	void DirAttr; // attr
+	char DirAttr; // attr
 } Bdo;
 
 // Br ...
 typedef struct {
 	Coreattrs Coreattrs;
-	void ClearAttr; // attr, optional
+	char ClearAttr; // attr, optional
 } Br;
 
 // Em ...
@@ -794,7 +794,7 @@ typedef struct {
 // Object ...
 typedef struct {
 	Attrs Attrs;
-	void DeclareAttr; // attr, optional
+	char DeclareAttr; // attr, optional
 	char ClassidAttr; // attr, optional
 	char CodebaseAttr; // attr, optional
 	char DataAttr; // attr, optional
@@ -823,7 +823,7 @@ typedef struct {
 	char IdAttr; // attr, optional
 	void NameAttr; // attr
 	void ValueAttr; // attr, optional
-	void ValuetypeAttr; // attr, optional
+	char ValuetypeAttr; // attr, optional
 	char TypeAttr; // attr, optional
 } Param;
 
@@ -858,7 +858,7 @@ typedef struct {
 	char HeightAttr; // attr, optional
 	char WidthAttr; // attr, optional
 	char UsemapAttr; // attr, optional
-	void IsmapAttr; // attr, optional
+	char IsmapAttr; // attr, optional
 	char AlignAttr; // attr, optional
 	char BorderAttr; // attr, optional
 	int HspaceAttr; // attr, optional
@@ -887,7 +887,7 @@ typedef struct {
 	char ShapeAttr; // attr, optional
 	char CoordsAttr; // attr, optional
 	char HrefAttr; // attr, optional
-	void NohrefAttr; // attr, optional
+	char NohrefAttr; // attr, optional
 	char AltAttr; // attr
 	char TargetAttr; // attr, optional
 } Area;
@@ -896,7 +896,7 @@ typedef struct {
 typedef struct {
 	Attrs Attrs;
 	char ActionAttr; // attr
-	void MethodAttr; // attr, optional
+	char MethodAttr; // attr, optional
 	char EnctypeAttr; // attr, optional
 	char OnsubmitAttr; // attr, optional
 	char OnresetAttr; // attr, optional
@@ -924,9 +924,9 @@ typedef struct {
 	char TypeAttr; // attr, optional
 	void NameAttr; // attr, optional
 	void ValueAttr; // attr, optional
-	void CheckedAttr; // attr, optional
-	void DisabledAttr; // attr, optional
-	void ReadonlyAttr; // attr, optional
+	char CheckedAttr; // attr, optional
+	char DisabledAttr; // attr, optional
+	char ReadonlyAttr; // attr, optional
 	void SizeAttr; // attr, optional
 	int MaxlengthAttr; // attr, optional
 	char SrcAttr; // attr, optional
@@ -943,8 +943,8 @@ typedef struct {
 	Attrs Attrs;
 	void NameAttr; // attr, optional
 	int SizeAttr; // attr, optional
-	void MultipleAttr; // attr, optional
-	void DisabledAttr; // attr, optional
+	char MultipleAttr; // attr, optional
+	char DisabledAttr; // attr, optional
 	int TabindexAttr; // attr, optional
 	char OnfocusAttr; // attr, optional
 	char OnblurAttr; // attr, optional
@@ -956,7 +956,7 @@ typedef struct {
 // Optgroup ...
 typedef struct {
 	Attrs Attrs;
-	void DisabledAttr; // attr, optional
+	char DisabledAttr; // attr, optional
 	char LabelAttr; // attr
 	char Optgroup;
 } Optgroup;
@@ -964,8 +964,8 @@ typedef struct {
 // Option ...
 typedef struct {
 	Attrs Attrs;
-	void SelectedAttr; // attr, optional
-	void DisabledAttr; // attr, optional
+	char SelectedAttr; // attr, optional
+	char DisabledAttr; // attr, optional
 	char LabelAttr; // attr, optional
 	void ValueAttr; // attr, optional
 } Option;
@@ -977,8 +977,8 @@ typedef struct {
 	void NameAttr; // attr, optional
 	int RowsAttr; // attr
 	int ColsAttr; // attr
-	void DisabledAttr; // attr, optional
-	void ReadonlyAttr; // attr, optional
+	char DisabledAttr; // attr, optional
+	char ReadonlyAttr; // attr, optional
 	char OnselectAttr; // attr, optional
 	char OnchangeAttr; // attr, optional
 } Textarea;
@@ -1009,8 +1009,8 @@ typedef struct {
 	Focus Focus;
 	void NameAttr; // attr, optional
 	void ValueAttr; // attr, optional
-	void TypeAttr; // attr, optional
-	void DisabledAttr; // attr, optional
+	char TypeAttr; // attr, optional
+	char DisabledAttr; // attr, optional
 } Button;
 
 // Isindex ...
@@ -1149,7 +1149,7 @@ typedef struct {
 	char ScopeAttr; // attr, optional
 	int RowspanAttr; // attr, optional
 	int ColspanAttr; // attr, optional
-	void NowrapAttr; // attr, optional
+	char NowrapAttr; // attr, optional
 	char BgcolorAttr; // attr, optional
 	char WidthAttr; // attr, optional
 	char HeightAttr; // attr, optional
@@ -1166,7 +1166,7 @@ typedef struct {
 	char ScopeAttr; // attr, optional
 	int RowspanAttr; // attr, optional
 	int ColspanAttr; // attr, optional
-	void NowrapAttr; // attr, optional
+	char NowrapAttr; // attr, optional
 	char BgcolorAttr; // attr, optional
 	char WidthAttr; // attr, optional
 	char HeightAttr; // attr, optional

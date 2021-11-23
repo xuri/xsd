@@ -46,8 +46,8 @@ export type ST_UnsignedDecimalNumber = number;
 
 // ST_TwipsMeasure ...
 export class ST_TwipsMeasure {
-	ST_UnsignedDecimalNumber: number;
 	ST_PositiveUniversalMeasure: ST_PositiveUniversalMeasure;
+	ST_UnsignedDecimalNumber: number;
 }
 
 // ST_VerticalAlignRun ...

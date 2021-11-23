@@ -10,6 +10,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlValue;
 
 // CT_AudioFile ...
 public class CT_AudioFile {
@@ -258,9 +259,9 @@ public class ST_CoordinateUnqualified {
 // ST_Coordinate32 ...
 public class ST_Coordinate32 {
 	@XmlElement(required = true)
-	protected String ST_UniversalMeasure;
-	@XmlElement(required = true)
 	protected ST_Coordinate32Unqualified ST_Coordinate32Unqualified;
+	@XmlElement(required = true)
+	protected String ST_UniversalMeasure;
 }
 
 // ST_Coordinate32Unqualified ...
@@ -973,9 +974,9 @@ public class ST_AnimationDgmOnlyBuildType {
 // ST_AnimationDgmBuildType ...
 public class ST_AnimationDgmBuildType {
 	@XmlElement(required = true)
-	protected String ST_AnimationBuildType;
-	@XmlElement(required = true)
 	protected String ST_AnimationDgmOnlyBuildType;
+	@XmlElement(required = true)
+	protected String ST_AnimationBuildType;
 }
 
 // CT_AnimationDgmBuildProperties ...
@@ -996,9 +997,9 @@ public class ST_AnimationChartOnlyBuildType {
 // ST_AnimationChartBuildType ...
 public class ST_AnimationChartBuildType {
 	@XmlElement(required = true)
-	protected String ST_AnimationBuildType;
-	@XmlElement(required = true)
 	protected String ST_AnimationChartOnlyBuildType;
+	@XmlElement(required = true)
+	protected String ST_AnimationBuildType;
 }
 
 // CT_AnimationChartBuildProperties ...

@@ -156,6 +156,7 @@ type CTRPR struct {
 type CTText struct {
 	XMLName      xml.Name `xml:"CT_Text"`
 	XmlSpaceAttr *Space   `xml:"xml:space,attr,omitempty"`
+	Value        string   `xml:",chardata"`
 }
 
 // CTR ...

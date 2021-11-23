@@ -10,6 +10,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlValue;
 
 // ST_Integer255 ...
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -209,6 +210,8 @@ public class CT_RPR {
 public class CT_Text {
 	@XmlAttribute(name = "xml:space")
 	protected SpaceAttr XmlSpace;
+	@XmlValue
+	protected String value;
 }
 
 // CT_R ...

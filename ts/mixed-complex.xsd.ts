@@ -3,6 +3,7 @@
 // Number ...
 export class Number {
 	PrecisionAttr: number | null;
+	Value: number;
 }
 
 // PositiveNumber ...

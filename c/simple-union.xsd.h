@@ -2,6 +2,6 @@
 
 // ConditionalUintType ...
 typedef struct {
-	unsigned int UnsignedInt;
 	bool Boolean;
+	unsigned int UnsignedInt;
 } ConditionalUintType;

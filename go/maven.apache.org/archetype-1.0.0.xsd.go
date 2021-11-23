@@ -55,10 +55,12 @@ type ArchetypeModel struct {
 //         can be non-filtered.
 type Source struct {
 	EncodingAttr string `xml:"encoding,attr,omitempty"`
+	Value        string `xml:",chardata"`
 }
 
 // Resource is Describes a resource file.
 type Resource struct {
 	EncodingAttr string `xml:"encoding,attr,omitempty"`
 	FilteredAttr bool   `xml:"filtered,attr,omitempty"`
+	Value        string `xml:",chardata"`
 }

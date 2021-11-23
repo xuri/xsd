@@ -156,8 +156,8 @@ typedef struct {
 
 // ST_Coordinate ...
 typedef struct {
-	char ST_UniversalMeasure;
 	ST_CoordinateUnqualified ST_CoordinateUnqualified;
+	char ST_UniversalMeasure;
 } ST_Coordinate;
 
 // ST_CoordinateUnqualified ...
@@ -638,8 +638,8 @@ typedef char ST_AnimationDgmOnlyBuildType;
 
 // ST_AnimationDgmBuildType ...
 typedef struct {
-	char ST_AnimationBuildType;
 	char ST_AnimationDgmOnlyBuildType;
+	char ST_AnimationBuildType;
 } ST_AnimationDgmBuildType;
 
 // CT_AnimationDgmBuildProperties ...
@@ -653,8 +653,8 @@ typedef char ST_AnimationChartOnlyBuildType;
 
 // ST_AnimationChartBuildType ...
 typedef struct {
-	char ST_AnimationBuildType;
 	char ST_AnimationChartOnlyBuildType;
+	char ST_AnimationBuildType;
 } ST_AnimationChartBuildType;
 
 // CT_AnimationChartBuildProperties ...
@@ -1281,8 +1281,8 @@ typedef struct {
 
 // ST_AdjAngle ...
 typedef struct {
-	int ST_Angle;
 	char ST_GeomGuideName;
+	int ST_Angle;
 } ST_AdjAngle;
 
 // CT_AdjPoint2D ...

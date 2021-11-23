@@ -10,11 +10,14 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlValue;
 
 // Number ...
 public class Number {
 	@XmlAttribute(name = "precision")
 	protected IntegerAttr Precision;
+	@XmlValue
+	protected Float value;
 }
 
 // PositiveNumber ...

@@ -157,6 +157,7 @@ export class CT_RPR {
 // CT_Text ...
 export class CT_Text {
 	XmlSpaceAttr: Space | null;
+	Value: string;
 }
 
 // CT_R ...

@@ -194,8 +194,8 @@ type STCoordinateUnqualified int64
 // STCoordinate32 ...
 type STCoordinate32 struct {
 	XMLName                   xml.Name `xml:"ST_Coordinate32"`
-	STUniversalMeasure        string
 	STCoordinate32Unqualified *STCoordinate32Unqualified
+	STUniversalMeasure        string
 }
 
 // STCoordinate32Unqualified ...
@@ -745,8 +745,8 @@ type STAnimationChartOnlyBuildType string
 // STAnimationChartBuildType ...
 type STAnimationChartBuildType struct {
 	XMLName                       xml.Name `xml:"ST_AnimationChartBuildType"`
-	STAnimationBuildType          string
 	STAnimationChartOnlyBuildType string
+	STAnimationBuildType          string
 }
 
 // CTAnimationChartBuildProperties ...

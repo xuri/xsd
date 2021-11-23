@@ -10,11 +10,11 @@ export class TDocumented {
 }
 
 // TExtensibleAttributesDocumented is This type is extended by component types to allow attributes from other namespaces to be added.
-export class TExtensibleAttributesDocumented {
+export class TExtensibleAttributesDocumented extends TDocumented  {
 }
 
 // TExtensibleDocumented is This type is extended by component types to allow elements from other namespaces to be added.
-export class TExtensibleDocumented {
+export class TExtensibleDocumented extends TDocumented  {
 }
 
 // Definitions ...
@@ -31,43 +31,43 @@ export class AnyTopLevelOptionalElement {
 }
 
 // TDefinitions ...
-export class TDefinitions {
+export class TDefinitions extends TExtensibleDocumented  {
 	TargetNamespaceAttr: string | null;
 	NameAttr: string | null;
 	WsdlAnyTopLevelOptionalElement: Array<AnyTopLevelOptionalElement>;
 }
 
 // TImport ...
-export class TImport {
+export class TImport extends TExtensibleAttributesDocumented  {
 	NamespaceAttr: string;
 	LocationAttr: string;
 }
 
 // TTypes ...
-export class TTypes {
+export class TTypes extends TExtensibleDocumented  {
 }
 
 // TMessage ...
-export class TMessage {
+export class TMessage extends TExtensibleDocumented  {
 	NameAttr: string;
 	Part: Array<TPart>;
 }
 
 // TPart ...
-export class TPart {
+export class TPart extends TExtensibleAttributesDocumented  {
 	NameAttr: string;
 	ElementAttr: any | null;
 	TypeAttr: any | null;
 }
 
 // TPortType ...
-export class TPortType {
+export class TPortType extends TExtensibleAttributesDocumented  {
 	NameAttr: string;
 	Operation: Array<TOperation>;
 }
 
 // TOperation ...
-export class TOperation {
+export class TOperation extends TExtensibleDocumented  {
 	NameAttr: string;
 	ParameterOrderAttr: Array<string> | null;
 	WsdlRequestresponseoronewayoperation: Requestresponseoronewayoperation;
@@ -89,36 +89,36 @@ export class Solicitresponseornotificationoperation {
 }
 
 // TParam ...
-export class TParam {
+export class TParam extends TExtensibleAttributesDocumented  {
 	NameAttr: string | null;
 	MessageAttr: any;
 }
 
 // TFault ...
-export class TFault {
+export class TFault extends TExtensibleAttributesDocumented  {
 	NameAttr: string;
 	MessageAttr: any;
 }
 
 // TBinding ...
-export class TBinding {
+export class TBinding extends TExtensibleDocumented  {
 	NameAttr: string;
 	TypeAttr: any;
 	Operation: Array<TBindingOperation>;
 }
 
 // TBindingOperationMessage ...
-export class TBindingOperationMessage {
+export class TBindingOperationMessage extends TExtensibleDocumented  {
 	NameAttr: string | null;
 }
 
 // TBindingOperationFault ...
-export class TBindingOperationFault {
+export class TBindingOperationFault extends TExtensibleDocumented  {
 	NameAttr: string;
 }
 
 // TBindingOperation ...
-export class TBindingOperation {
+export class TBindingOperation extends TExtensibleDocumented  {
 	NameAttr: string;
 	Input: TBindingOperationMessage;
 	Output: TBindingOperationMessage;
@@ -126,13 +126,13 @@ export class TBindingOperation {
 }
 
 // TService ...
-export class TService {
+export class TService extends TExtensibleDocumented  {
 	NameAttr: string;
 	Port: Array<TPort>;
 }
 
 // TPort ...
-export class TPort {
+export class TPort extends TExtensibleDocumented  {
 	NameAttr: string;
 	BindingAttr: any;
 }

@@ -10,6 +10,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlValue;
 
 // ST_VectorBaseType ...
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -215,6 +216,8 @@ public class CT_Variant {
 public class CT_Vstream {
 	@XmlAttribute(name = "version")
 	protected StringAttr Version;
+	@XmlValue
+	protected List<Byte> value;
 }
 
 @XmlAccessorType(XmlAccessType.FIELD)
