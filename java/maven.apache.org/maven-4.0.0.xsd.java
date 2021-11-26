@@ -85,7 +85,7 @@ public class Profiles {
 //             copyright notices and links).
 public class Model {
 	@XmlAttribute(name = "child.project.url.inherit.append.path")
-	protected StringAttr ChildProjectUrlInheritAppendPath;
+	protected String ChildProjectUrlInheritAppendPathAttr;
 	@XmlElement(required = true, name = "modelVersion")
 	protected String ModelVersion;
 	@XmlElement(required = true, name = "parent")
@@ -204,11 +204,11 @@ public class Notifier {
 //             scm's <code>child.scm.url.inherit.append.path="false"</code>
 public class Scm {
 	@XmlAttribute(name = "child.scm.connection.inherit.append.path")
-	protected StringAttr ChildScmConnectionInheritAppendPath;
+	protected String ChildScmConnectionInheritAppendPathAttr;
 	@XmlAttribute(name = "child.scm.developerConnection.inherit.append.path")
-	protected StringAttr ChildScmDeveloperConnectionInheritAppendPath;
+	protected String ChildScmDeveloperConnectionInheritAppendPathAttr;
 	@XmlAttribute(name = "child.scm.url.inherit.append.path")
-	protected StringAttr ChildScmUrlInheritAppendPath;
+	protected String ChildScmUrlInheritAppendPathAttr;
 	@XmlElement(required = true, name = "connection")
 	protected String Connection;
 	@XmlElement(required = true, name = "developerConnection")
@@ -449,7 +449,7 @@ public class Relocation {
 //             site's <code>child.site.url.inherit.append.path="false"</code>
 public class Site {
 	@XmlAttribute(name = "child.site.url.inherit.append.path")
-	protected StringAttr ChildSiteUrlInheritAppendPath;
+	protected String ChildSiteUrlInheritAppendPathAttr;
 	@XmlElement(required = true, name = "id")
 	protected String Id;
 	@XmlElement(required = true, name = "name")

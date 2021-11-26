@@ -22,7 +22,7 @@ public class ST_Integer255 {
 // CT_Integer255 ...
 public class CT_Integer255 {
 	@XmlAttribute(name = "val", required = true)
-	protected IntegerAttr Val;
+	protected Integer ValAttr;
 }
 
 // ST_Integer2 ...
@@ -35,7 +35,7 @@ public class ST_Integer2 {
 // CT_Integer2 ...
 public class CT_Integer2 {
 	@XmlAttribute(name = "val", required = true)
-	protected IntegerAttr Val;
+	protected Integer ValAttr;
 }
 
 // ST_SpacingRule ...
@@ -48,7 +48,7 @@ public class ST_SpacingRule {
 // CT_SpacingRule ...
 public class CT_SpacingRule {
 	@XmlAttribute(name = "val", required = true)
-	protected IntegerAttr Val;
+	protected Integer ValAttr;
 }
 
 // ST_UnSignedInteger ...
@@ -61,7 +61,7 @@ public class ST_UnSignedInteger {
 // CT_UnSignedInteger ...
 public class CT_UnSignedInteger {
 	@XmlAttribute(name = "val", required = true)
-	protected IntegerAttr Val;
+	protected Integer ValAttr;
 }
 
 // ST_Char ...
@@ -74,31 +74,31 @@ public class ST_Char {
 // CT_Char ...
 public class CT_Char {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_OnOff ...
 public class CT_OnOff {
 	@XmlAttribute(name = "val")
-	protected ST_OnOffAttr Val;
+	protected ST_OnOff ValAttr;
 }
 
 // CT_String ...
 public class CT_String {
 	@XmlAttribute(name = "val")
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_XAlign ...
 public class CT_XAlign {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_YAlign ...
 public class CT_YAlign {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // ST_Shp ...
@@ -111,7 +111,7 @@ public class ST_Shp {
 // CT_Shp ...
 public class CT_Shp {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // ST_FType ...
@@ -124,7 +124,7 @@ public class ST_FType {
 // CT_FType ...
 public class CT_FType {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // ST_LimLoc ...
@@ -137,7 +137,7 @@ public class ST_LimLoc {
 // CT_LimLoc ...
 public class CT_LimLoc {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // ST_TopBot ...
@@ -150,7 +150,7 @@ public class ST_TopBot {
 // CT_TopBot ...
 public class CT_TopBot {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // ST_Script ...
@@ -163,7 +163,7 @@ public class ST_Script {
 // CT_Script ...
 public class CT_Script {
 	@XmlAttribute(name = "val")
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // ST_Style ...
@@ -176,13 +176,13 @@ public class ST_Style {
 // CT_Style ...
 public class CT_Style {
 	@XmlAttribute(name = "val")
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_ManualBreak ...
 public class CT_ManualBreak {
 	@XmlAttribute(name = "alnAt")
-	protected IntegerAttr AlnAt;
+	protected Integer AlnAtAttr;
 }
 
 // EG_ScriptStyle ...
@@ -209,7 +209,7 @@ public class CT_RPR {
 // CT_Text ...
 public class CT_Text {
 	@XmlAttribute(name = "xml:space")
-	protected SpaceAttr XmlSpace;
+	protected Space XmlSpaceAttr;
 	@XmlValue
 	protected String value;
 }
@@ -720,7 +720,7 @@ public class ST_Jc {
 // CT_OMathJc ...
 public class CT_OMathJc {
 	@XmlAttribute(name = "val")
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_OMathParaPr ...
@@ -732,7 +732,7 @@ public class CT_OMathParaPr {
 // CT_TwipsMeasure ...
 public class CT_TwipsMeasure {
 	@XmlAttribute(name = "val", required = true)
-	protected ST_TwipsMeasureAttr Val;
+	protected ST_TwipsMeasure ValAttr;
 }
 
 // ST_BreakBin ...
@@ -745,7 +745,7 @@ public class ST_BreakBin {
 // CT_BreakBin ...
 public class CT_BreakBin {
 	@XmlAttribute(name = "val")
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // ST_BreakBinSub ...
@@ -758,7 +758,7 @@ public class ST_BreakBinSub {
 // CT_BreakBinSub ...
 public class CT_BreakBinSub {
 	@XmlAttribute(name = "val")
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_MathPr ...

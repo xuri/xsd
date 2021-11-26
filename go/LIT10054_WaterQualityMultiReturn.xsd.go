@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"time"
-)
-
 // DepthValueRecorded ...
 type DepthValueRecorded struct {
 	DepthValue      float64              `xml:"DepthValue"`
@@ -34,7 +30,7 @@ type Sample struct {
 	Sampler                        string                `xml:"Sampler"`
 	SampleType                     *MandatoryStringType  `xml:"SampleType"`
 	CustomerSamplePointName        *MandatoryStringType  `xml:"CustomerSamplePointName"`
-	SampleDateTime                 time.Time             `xml:"SampleDateTime"`
+	SampleDateTime                 string                `xml:"SampleDateTime"`
 	PurposeTypeName                *MandatoryStringType  `xml:"PurposeTypeName"`
 	MaterialName                   *MandatoryStringType  `xml:"MaterialName"`
 	Mechanism                      *MandatoryStringType  `xml:"Mechanism"`
@@ -42,7 +38,7 @@ type Sample struct {
 	CustomersLabSampleRefSecondary []string              `xml:"CustomersLabSampleRefSecondary"`
 	Comment                        string                `xml:"Comment"`
 	LabName                        *MandatoryStringType  `xml:"LabName"`
-	AnalysisCompleteDateTime       time.Time             `xml:"AnalysisCompleteDateTime"`
+	AnalysisCompleteDateTime       string                `xml:"AnalysisCompleteDateTime"`
 	DepthValueRecorded             *DepthValueRecorded   `xml:"DepthValueRecorded"`
 	PurgedVolumeRecorded           *PurgedVolumeRecorded `xml:"PurgedVolumeRecorded"`
 	Measurement                    []*Measurement        `xml:"Measurement"`

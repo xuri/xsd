@@ -10,6 +10,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlValue;
 
 // OECDNameType_EnumType is It is possible for stf documents to contain several names for the same party. This is a qualifier to indicate the type of a particular name. Such types include nicknames ('nick'), names under which a party does business ('dba' a short name for the entity, or a name that is used for public acquaintance instead of the official business name) etc. Examples: in the United States, DaimlerChrysler is still known simply as Chrysler, Dr. William Black dba Quality Pedriatics, Inc. 'SMFAliasOrOther' should be chosen if the document is generated from a legacy SMF record, where no further distinction is possible.
 // Possible values are:

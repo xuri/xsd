@@ -19,7 +19,7 @@ public class CT_Empty {
 // CT_OnOff ...
 public class CT_OnOff {
 	@XmlAttribute(name = "val")
-	protected ST_OnOffAttr Val;
+	protected ST_OnOff ValAttr;
 }
 
 // ST_LongHexNumber ...
@@ -32,7 +32,7 @@ public class ST_LongHexNumber {
 // CT_LongHexNumber ...
 public class CT_LongHexNumber {
 	@XmlAttribute(name = "val", required = true)
-	protected List<Byte>Attr Val;
+	protected List<Byte> ValAttr;
 }
 
 // ST_ShortHexNumber ...
@@ -52,7 +52,7 @@ public class ST_UcharHexNumber {
 // CT_Charset ...
 public class CT_Charset {
 	@XmlAttribute(name = "characterSet")
-	protected StringAttr CharacterSet;
+	protected String CharacterSetAttr;
 }
 
 // ST_DecimalNumberOrPercent ...
@@ -71,25 +71,25 @@ public class ST_DecimalNumber {
 // CT_DecimalNumber ...
 public class CT_DecimalNumber {
 	@XmlAttribute(name = "val", required = true)
-	protected IntegerAttr Val;
+	protected Integer ValAttr;
 }
 
 // CT_UnsignedDecimalNumber ...
 public class CT_UnsignedDecimalNumber {
 	@XmlAttribute(name = "val", required = true)
-	protected LongAttr Val;
+	protected Long ValAttr;
 }
 
 // CT_DecimalNumberOrPrecent ...
 public class CT_DecimalNumberOrPrecent {
 	@XmlAttribute(name = "val", required = true)
-	protected ST_DecimalNumberOrPercentAttr Val;
+	protected ST_DecimalNumberOrPercent ValAttr;
 }
 
 // CT_TwipsMeasure ...
 public class CT_TwipsMeasure {
 	@XmlAttribute(name = "val", required = true)
-	protected ST_TwipsMeasureAttr Val;
+	protected ST_TwipsMeasure ValAttr;
 }
 
 // ST_SignedTwipsMeasure ...
@@ -103,7 +103,7 @@ public class ST_SignedTwipsMeasure {
 // CT_SignedTwipsMeasure ...
 public class CT_SignedTwipsMeasure {
 	@XmlAttribute(name = "val", required = true)
-	protected ST_SignedTwipsMeasureAttr Val;
+	protected ST_SignedTwipsMeasure ValAttr;
 }
 
 // ST_PixelsMeasure ...
@@ -116,7 +116,7 @@ public class ST_PixelsMeasure {
 // CT_PixelsMeasure ...
 public class CT_PixelsMeasure {
 	@XmlAttribute(name = "val", required = true)
-	protected LongAttr Val;
+	protected Long ValAttr;
 }
 
 // ST_HpsMeasure ...
@@ -130,7 +130,7 @@ public class ST_HpsMeasure {
 // CT_HpsMeasure ...
 public class CT_HpsMeasure {
 	@XmlAttribute(name = "val", required = true)
-	protected ST_HpsMeasureAttr Val;
+	protected ST_HpsMeasure ValAttr;
 }
 
 // ST_SignedHpsMeasure ...
@@ -144,14 +144,14 @@ public class ST_SignedHpsMeasure {
 // CT_SignedHpsMeasure ...
 public class CT_SignedHpsMeasure {
 	@XmlAttribute(name = "val", required = true)
-	protected ST_SignedHpsMeasureAttr Val;
+	protected ST_SignedHpsMeasure ValAttr;
 }
 
 // ST_DateTime ...
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlAttribute(required = true, name = "ST_DateTime")
 public class ST_DateTime {
-	protected Byte ST_DateTime;
+	protected String ST_DateTime;
 }
 
 // ST_MacroName ...
@@ -164,7 +164,7 @@ public class ST_MacroName {
 // CT_MacroName ...
 public class CT_MacroName {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // ST_EighthPointMeasure ...
@@ -184,7 +184,7 @@ public class ST_PointMeasure {
 // CT_String ...
 public class CT_String {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // ST_TextScale ...
@@ -203,7 +203,7 @@ public class ST_TextScalePercent {
 // CT_TextScale ...
 public class CT_TextScale {
 	@XmlAttribute(name = "val")
-	protected ST_TextScaleAttr Val;
+	protected ST_TextScale ValAttr;
 }
 
 // ST_HighlightColor ...
@@ -216,7 +216,7 @@ public class ST_HighlightColor {
 // CT_Highlight ...
 public class CT_Highlight {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // ST_HexColorAuto ...
@@ -237,25 +237,25 @@ public class ST_HexColor {
 // CT_Color ...
 public class CT_Color {
 	@XmlAttribute(name = "val", required = true)
-	protected ST_HexColorAttr Val;
+	protected ST_HexColor ValAttr;
 	@XmlAttribute(name = "themeColor")
-	protected StringAttr ThemeColor;
+	protected String ThemeColorAttr;
 	@XmlAttribute(name = "themeTint")
-	protected List<Byte>Attr ThemeTint;
+	protected List<Byte> ThemeTintAttr;
 	@XmlAttribute(name = "themeShade")
-	protected List<Byte>Attr ThemeShade;
+	protected List<Byte> ThemeShadeAttr;
 }
 
 // CT_Lang ...
 public class CT_Lang {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_Guid ...
 public class CT_Guid {
 	@XmlAttribute(name = "val")
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // ST_Underline ...
@@ -268,15 +268,15 @@ public class ST_Underline {
 // CT_Underline ...
 public class CT_Underline {
 	@XmlAttribute(name = "val")
-	protected StringAttr Val;
+	protected String ValAttr;
 	@XmlAttribute(name = "color")
-	protected ST_HexColorAttr Color;
+	protected ST_HexColor ColorAttr;
 	@XmlAttribute(name = "themeColor")
-	protected StringAttr ThemeColor;
+	protected String ThemeColorAttr;
 	@XmlAttribute(name = "themeTint")
-	protected List<Byte>Attr ThemeTint;
+	protected List<Byte> ThemeTintAttr;
 	@XmlAttribute(name = "themeShade")
-	protected List<Byte>Attr ThemeShade;
+	protected List<Byte> ThemeShadeAttr;
 }
 
 // ST_TextEffect ...
@@ -289,7 +289,7 @@ public class ST_TextEffect {
 // CT_TextEffect ...
 public class CT_TextEffect {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // ST_Border ...
@@ -302,23 +302,23 @@ public class ST_Border {
 // CT_Border ...
 public class CT_Border {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 	@XmlAttribute(name = "color")
-	protected ST_HexColorAttr Color;
+	protected ST_HexColor ColorAttr;
 	@XmlAttribute(name = "themeColor")
-	protected StringAttr ThemeColor;
+	protected String ThemeColorAttr;
 	@XmlAttribute(name = "themeTint")
-	protected List<Byte>Attr ThemeTint;
+	protected List<Byte> ThemeTintAttr;
 	@XmlAttribute(name = "themeShade")
-	protected List<Byte>Attr ThemeShade;
+	protected List<Byte> ThemeShadeAttr;
 	@XmlAttribute(name = "sz")
-	protected LongAttr Sz;
+	protected Long SzAttr;
 	@XmlAttribute(name = "space")
-	protected LongAttr Space;
+	protected Long SpaceAttr;
 	@XmlAttribute(name = "shadow")
-	protected ST_OnOffAttr Shadow;
+	protected ST_OnOff ShadowAttr;
 	@XmlAttribute(name = "frame")
-	protected ST_OnOffAttr Frame;
+	protected ST_OnOff FrameAttr;
 }
 
 // ST_Shd ...
@@ -331,37 +331,37 @@ public class ST_Shd {
 // CT_Shd ...
 public class CT_Shd {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 	@XmlAttribute(name = "color")
-	protected ST_HexColorAttr Color;
+	protected ST_HexColor ColorAttr;
 	@XmlAttribute(name = "themeColor")
-	protected StringAttr ThemeColor;
+	protected String ThemeColorAttr;
 	@XmlAttribute(name = "themeTint")
-	protected List<Byte>Attr ThemeTint;
+	protected List<Byte> ThemeTintAttr;
 	@XmlAttribute(name = "themeShade")
-	protected List<Byte>Attr ThemeShade;
+	protected List<Byte> ThemeShadeAttr;
 	@XmlAttribute(name = "fill")
-	protected ST_HexColorAttr Fill;
+	protected ST_HexColor FillAttr;
 	@XmlAttribute(name = "themeFill")
-	protected StringAttr ThemeFill;
+	protected String ThemeFillAttr;
 	@XmlAttribute(name = "themeFillTint")
-	protected List<Byte>Attr ThemeFillTint;
+	protected List<Byte> ThemeFillTintAttr;
 	@XmlAttribute(name = "themeFillShade")
-	protected List<Byte>Attr ThemeFillShade;
+	protected List<Byte> ThemeFillShadeAttr;
 }
 
 // CT_VerticalAlignRun ...
 public class CT_VerticalAlignRun {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_FitText ...
 public class CT_FitText {
 	@XmlAttribute(name = "val", required = true)
-	protected ST_TwipsMeasureAttr Val;
+	protected ST_TwipsMeasure ValAttr;
 	@XmlAttribute(name = "id")
-	protected IntegerAttr Id;
+	protected Integer IdAttr;
 }
 
 // ST_Em ...
@@ -374,17 +374,17 @@ public class ST_Em {
 // CT_Em ...
 public class CT_Em {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_Language ...
 public class CT_Language {
 	@XmlAttribute(name = "val")
-	protected StringAttr Val;
+	protected String ValAttr;
 	@XmlAttribute(name = "eastAsia")
-	protected StringAttr EastAsia;
+	protected String EastAsiaAttr;
 	@XmlAttribute(name = "bidi")
-	protected StringAttr Bidi;
+	protected String BidiAttr;
 }
 
 // ST_CombineBrackets ...
@@ -397,15 +397,15 @@ public class ST_CombineBrackets {
 // CT_EastAsianLayout ...
 public class CT_EastAsianLayout {
 	@XmlAttribute(name = "id")
-	protected IntegerAttr Id;
+	protected Integer IdAttr;
 	@XmlAttribute(name = "combine")
-	protected ST_OnOffAttr Combine;
+	protected ST_OnOff CombineAttr;
 	@XmlAttribute(name = "combineBrackets")
-	protected StringAttr CombineBrackets;
+	protected String CombineBracketsAttr;
 	@XmlAttribute(name = "vert")
-	protected ST_OnOffAttr Vert;
+	protected ST_OnOff VertAttr;
 	@XmlAttribute(name = "vertCompress")
-	protected ST_OnOffAttr VertCompress;
+	protected ST_OnOff VertCompressAttr;
 }
 
 // ST_HeightRule ...
@@ -446,35 +446,35 @@ public class ST_DropCap {
 // CT_FramePr ...
 public class CT_FramePr {
 	@XmlAttribute(name = "dropCap")
-	protected StringAttr DropCap;
+	protected String DropCapAttr;
 	@XmlAttribute(name = "lines")
-	protected IntegerAttr Lines;
+	protected Integer LinesAttr;
 	@XmlAttribute(name = "w")
-	protected ST_TwipsMeasureAttr W;
+	protected ST_TwipsMeasure WAttr;
 	@XmlAttribute(name = "h")
-	protected ST_TwipsMeasureAttr H;
+	protected ST_TwipsMeasure HAttr;
 	@XmlAttribute(name = "vSpace")
-	protected ST_TwipsMeasureAttr VSpace;
+	protected ST_TwipsMeasure VSpaceAttr;
 	@XmlAttribute(name = "hSpace")
-	protected ST_TwipsMeasureAttr HSpace;
+	protected ST_TwipsMeasure HSpaceAttr;
 	@XmlAttribute(name = "wrap")
-	protected StringAttr Wrap;
+	protected String WrapAttr;
 	@XmlAttribute(name = "hAnchor")
-	protected StringAttr HAnchor;
+	protected String HAnchorAttr;
 	@XmlAttribute(name = "vAnchor")
-	protected StringAttr VAnchor;
+	protected String VAnchorAttr;
 	@XmlAttribute(name = "x")
-	protected ST_SignedTwipsMeasureAttr X;
+	protected ST_SignedTwipsMeasure XAttr;
 	@XmlAttribute(name = "xAlign")
-	protected StringAttr XAlign;
+	protected String XAlignAttr;
 	@XmlAttribute(name = "y")
-	protected ST_SignedTwipsMeasureAttr Y;
+	protected ST_SignedTwipsMeasure YAttr;
 	@XmlAttribute(name = "yAlign")
-	protected StringAttr YAlign;
+	protected String YAlignAttr;
 	@XmlAttribute(name = "hRule")
-	protected StringAttr HRule;
+	protected String HRuleAttr;
 	@XmlAttribute(name = "anchorLock")
-	protected ST_OnOffAttr AnchorLock;
+	protected ST_OnOff AnchorLockAttr;
 }
 
 // ST_TabJc ...
@@ -494,11 +494,11 @@ public class ST_TabTlc {
 // CT_TabStop ...
 public class CT_TabStop {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 	@XmlAttribute(name = "leader")
-	protected StringAttr Leader;
+	protected String LeaderAttr;
 	@XmlAttribute(name = "pos", required = true)
-	protected ST_SignedTwipsMeasureAttr Pos;
+	protected ST_SignedTwipsMeasure PosAttr;
 }
 
 // ST_LineSpacingRule ...
@@ -511,41 +511,41 @@ public class ST_LineSpacingRule {
 // CT_Spacing ...
 public class CT_Spacing {
 	@XmlAttribute(name = "before")
-	protected ST_TwipsMeasureAttr Before;
+	protected ST_TwipsMeasure BeforeAttr;
 	@XmlAttribute(name = "beforeLines")
-	protected IntegerAttr BeforeLines;
+	protected Integer BeforeLinesAttr;
 	@XmlAttribute(name = "beforeAutospacing")
-	protected ST_OnOffAttr BeforeAutospacing;
+	protected ST_OnOff BeforeAutospacingAttr;
 	@XmlAttribute(name = "after")
-	protected ST_TwipsMeasureAttr After;
+	protected ST_TwipsMeasure AfterAttr;
 	@XmlAttribute(name = "afterLines")
-	protected IntegerAttr AfterLines;
+	protected Integer AfterLinesAttr;
 	@XmlAttribute(name = "afterAutospacing")
-	protected ST_OnOffAttr AfterAutospacing;
+	protected ST_OnOff AfterAutospacingAttr;
 	@XmlAttribute(name = "line")
-	protected ST_SignedTwipsMeasureAttr Line;
+	protected ST_SignedTwipsMeasure LineAttr;
 	@XmlAttribute(name = "lineRule")
-	protected StringAttr LineRule;
+	protected String LineRuleAttr;
 }
 
 // CT_Ind ...
 public class CT_Ind {
 	@XmlAttribute(name = "start")
-	protected ST_SignedTwipsMeasureAttr Start;
+	protected ST_SignedTwipsMeasure StartAttr;
 	@XmlAttribute(name = "startChars")
-	protected IntegerAttr StartChars;
+	protected Integer StartCharsAttr;
 	@XmlAttribute(name = "end")
-	protected ST_SignedTwipsMeasureAttr End;
+	protected ST_SignedTwipsMeasure EndAttr;
 	@XmlAttribute(name = "endChars")
-	protected IntegerAttr EndChars;
+	protected Integer EndCharsAttr;
 	@XmlAttribute(name = "hanging")
-	protected ST_TwipsMeasureAttr Hanging;
+	protected ST_TwipsMeasure HangingAttr;
 	@XmlAttribute(name = "hangingChars")
-	protected IntegerAttr HangingChars;
+	protected Integer HangingCharsAttr;
 	@XmlAttribute(name = "firstLine")
-	protected ST_TwipsMeasureAttr FirstLine;
+	protected ST_TwipsMeasure FirstLineAttr;
 	@XmlAttribute(name = "firstLineChars")
-	protected IntegerAttr FirstLineChars;
+	protected Integer FirstLineCharsAttr;
 }
 
 // ST_Jc ...
@@ -565,13 +565,13 @@ public class ST_JcTable {
 // CT_Jc ...
 public class CT_Jc {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_JcTable ...
 public class CT_JcTable {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // ST_View ...
@@ -584,7 +584,7 @@ public class ST_View {
 // CT_View ...
 public class CT_View {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // ST_Zoom ...
@@ -597,25 +597,25 @@ public class ST_Zoom {
 // CT_Zoom ...
 public class CT_Zoom {
 	@XmlAttribute(name = "val")
-	protected StringAttr Val;
+	protected String ValAttr;
 	@XmlAttribute(name = "percent", required = true)
-	protected ST_DecimalNumberOrPercentAttr Percent;
+	protected ST_DecimalNumberOrPercent PercentAttr;
 }
 
 // CT_WritingStyle ...
 public class CT_WritingStyle {
 	@XmlAttribute(name = "lang", required = true)
-	protected StringAttr Lang;
+	protected String LangAttr;
 	@XmlAttribute(name = "vendorID", required = true)
-	protected StringAttr VendorID;
+	protected String VendorIDAttr;
 	@XmlAttribute(name = "dllVersion", required = true)
-	protected StringAttr DllVersion;
+	protected String DllVersionAttr;
 	@XmlAttribute(name = "nlCheck")
-	protected ST_OnOffAttr NlCheck;
+	protected ST_OnOff NlCheckAttr;
 	@XmlAttribute(name = "checkStyle", required = true)
-	protected ST_OnOffAttr CheckStyle;
+	protected ST_OnOff CheckStyleAttr;
 	@XmlAttribute(name = "appName", required = true)
-	protected StringAttr AppName;
+	protected String AppNameAttr;
 }
 
 // ST_Proof ...
@@ -628,9 +628,9 @@ public class ST_Proof {
 // CT_Proof ...
 public class CT_Proof {
 	@XmlAttribute(name = "spelling")
-	protected StringAttr Spelling;
+	protected String SpellingAttr;
 	@XmlAttribute(name = "grammar")
-	protected StringAttr Grammar;
+	protected String GrammarAttr;
 }
 
 // ST_DocType ...
@@ -643,7 +643,7 @@ public class ST_DocType {
 // CT_DocType ...
 public class CT_DocType {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // ST_DocProtect ...
@@ -670,11 +670,11 @@ public class CT_DocProtect {
 	@XmlElement(required = true)
 	protected AG_Password AG_Password;
 	@XmlAttribute(name = "edit")
-	protected StringAttr Edit;
+	protected String EditAttr;
 	@XmlAttribute(name = "formatting")
-	protected ST_OnOffAttr Formatting;
+	protected ST_OnOff FormattingAttr;
 	@XmlAttribute(name = "enforcement")
-	protected ST_OnOffAttr Enforcement;
+	protected ST_OnOff EnforcementAttr;
 }
 
 // ST_MailMergeDocType ...
@@ -687,7 +687,7 @@ public class ST_MailMergeDocType {
 // CT_MailMergeDocType ...
 public class CT_MailMergeDocType {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // ST_MailMergeDataType ...
@@ -700,7 +700,7 @@ public class ST_MailMergeDataType {
 // CT_MailMergeDataType ...
 public class CT_MailMergeDataType {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // ST_MailMergeDest ...
@@ -713,7 +713,7 @@ public class ST_MailMergeDest {
 // CT_MailMergeDest ...
 public class CT_MailMergeDest {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // ST_MailMergeOdsoFMDFieldType ...
@@ -726,29 +726,29 @@ public class ST_MailMergeOdsoFMDFieldType {
 // CT_MailMergeOdsoFMDFieldType ...
 public class CT_MailMergeOdsoFMDFieldType {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_TrackChangesView ...
 public class CT_TrackChangesView {
 	@XmlAttribute(name = "markup")
-	protected ST_OnOffAttr Markup;
+	protected ST_OnOff MarkupAttr;
 	@XmlAttribute(name = "comments")
-	protected ST_OnOffAttr Comments;
+	protected ST_OnOff CommentsAttr;
 	@XmlAttribute(name = "insDel")
-	protected ST_OnOffAttr InsDel;
+	protected ST_OnOff InsDelAttr;
 	@XmlAttribute(name = "formatting")
-	protected ST_OnOffAttr Formatting;
+	protected ST_OnOff FormattingAttr;
 	@XmlAttribute(name = "inkAnnotations")
-	protected ST_OnOffAttr InkAnnotations;
+	protected ST_OnOff InkAnnotationsAttr;
 }
 
 // CT_Kinsoku ...
 public class CT_Kinsoku {
 	@XmlAttribute(name = "lang", required = true)
-	protected StringAttr Lang;
+	protected String LangAttr;
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // ST_TextDirection ...
@@ -761,7 +761,7 @@ public class ST_TextDirection {
 // CT_TextDirection ...
 public class CT_TextDirection {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // ST_TextAlignment ...
@@ -774,7 +774,7 @@ public class ST_TextAlignment {
 // CT_TextAlignment ...
 public class CT_TextAlignment {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // ST_DisplacedByCustomXml ...
@@ -794,63 +794,63 @@ public class ST_AnnotationVMerge {
 // CT_Markup ...
 public class CT_Markup {
 	@XmlAttribute(name = "id", required = true)
-	protected IntegerAttr Id;
+	protected Integer IdAttr;
 }
 
 // CT_TrackChange ...
 public class CT_TrackChange extends CT_Markup  {
 	@XmlAttribute(name = "author", required = true)
-	protected StringAttr Author;
+	protected String AuthorAttr;
 	@XmlAttribute(name = "date")
-	protected ByteAttr Date;
+	protected String DateAttr;
 }
 
 // CT_CellMergeTrackChange ...
 public class CT_CellMergeTrackChange extends CT_TrackChange  {
 	@XmlAttribute(name = "vMerge")
-	protected StringAttr VMerge;
+	protected String VMergeAttr;
 	@XmlAttribute(name = "vMergeOrig")
-	protected StringAttr VMergeOrig;
+	protected String VMergeOrigAttr;
 }
 
 // CT_TrackChangeRange ...
 public class CT_TrackChangeRange extends CT_TrackChange  {
 	@XmlAttribute(name = "displacedByCustomXml")
-	protected StringAttr DisplacedByCustomXml;
+	protected String DisplacedByCustomXmlAttr;
 }
 
 // CT_MarkupRange ...
 public class CT_MarkupRange extends CT_Markup  {
 	@XmlAttribute(name = "displacedByCustomXml")
-	protected StringAttr DisplacedByCustomXml;
+	protected String DisplacedByCustomXmlAttr;
 }
 
 // CT_BookmarkRange ...
 public class CT_BookmarkRange extends CT_MarkupRange  {
 	@XmlAttribute(name = "colFirst")
-	protected IntegerAttr ColFirst;
+	protected Integer ColFirstAttr;
 	@XmlAttribute(name = "colLast")
-	protected IntegerAttr ColLast;
+	protected Integer ColLastAttr;
 }
 
 // CT_Bookmark ...
 public class CT_Bookmark extends CT_BookmarkRange  {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 }
 
 // CT_MoveBookmark ...
 public class CT_MoveBookmark extends CT_Bookmark  {
 	@XmlAttribute(name = "author", required = true)
-	protected StringAttr Author;
+	protected String AuthorAttr;
 	@XmlAttribute(name = "date", required = true)
-	protected ByteAttr Date;
+	protected String DateAttr;
 }
 
 // CT_Comment ...
 public class CT_Comment extends CT_TrackChange  {
 	@XmlAttribute(name = "initials")
-	protected StringAttr Initials;
+	protected String InitialsAttr;
 	protected List<EG_BlockLevelElts> EG_BlockLevelElts;
 }
 
@@ -1027,7 +1027,7 @@ public class ST_TextboxTightWrap {
 // CT_TextboxTightWrap ...
 public class CT_TextboxTightWrap {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_PPr ...
@@ -1119,23 +1119,23 @@ public class CT_PPrGeneral extends CT_PPrBase  {
 // CT_Control ...
 public class CT_Control {
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "shapeid")
-	protected StringAttr Shapeid;
+	protected String ShapeidAttr;
 	@XmlAttribute(name = "r:id")
-	protected StringAttr RId;
+	protected String RIdAttr;
 }
 
 // CT_Background ...
 public class CT_Background {
 	@XmlAttribute(name = "color")
-	protected ST_HexColorAttr Color;
+	protected ST_HexColor ColorAttr;
 	@XmlAttribute(name = "themeColor")
-	protected StringAttr ThemeColor;
+	protected String ThemeColorAttr;
 	@XmlAttribute(name = "themeTint")
-	protected List<Byte>Attr ThemeTint;
+	protected List<Byte> ThemeTintAttr;
 	@XmlAttribute(name = "themeShade")
-	protected List<Byte>Attr ThemeShade;
+	protected List<Byte> ThemeShadeAttr;
 	@XmlElement(required = true, name = "drawing")
 	protected CT_Drawing Drawing;
 }
@@ -1143,15 +1143,15 @@ public class CT_Background {
 // CT_Rel ...
 public class CT_Rel {
 	@XmlAttribute(name = "r:id", required = true)
-	protected StringAttr RId;
+	protected String RIdAttr;
 }
 
 // CT_Object ...
 public class CT_Object {
 	@XmlAttribute(name = "dxaOrig")
-	protected ST_TwipsMeasureAttr DxaOrig;
+	protected ST_TwipsMeasure DxaOrigAttr;
 	@XmlAttribute(name = "dyaOrig")
-	protected ST_TwipsMeasureAttr DyaOrig;
+	protected ST_TwipsMeasure DyaOrigAttr;
 	@XmlElement(required = true, name = "drawing")
 	protected CT_Drawing Drawing;
 	@XmlElement(required = true, name = "control")
@@ -1167,15 +1167,15 @@ public class CT_Object {
 // CT_ObjectEmbed ...
 public class CT_ObjectEmbed {
 	@XmlAttribute(name = "drawAspect")
-	protected StringAttr DrawAspect;
+	protected String DrawAspectAttr;
 	@XmlAttribute(name = "r:id", required = true)
-	protected StringAttr RId;
+	protected String RIdAttr;
 	@XmlAttribute(name = "progId")
-	protected StringAttr ProgId;
+	protected String ProgIdAttr;
 	@XmlAttribute(name = "shapeId")
-	protected StringAttr ShapeId;
+	protected String ShapeIdAttr;
 	@XmlAttribute(name = "fieldCodes")
-	protected StringAttr FieldCodes;
+	protected String FieldCodesAttr;
 }
 
 // ST_ObjectDrawAspect ...
@@ -1188,9 +1188,9 @@ public class ST_ObjectDrawAspect {
 // CT_ObjectLink ...
 public class CT_ObjectLink extends CT_ObjectEmbed  {
 	@XmlAttribute(name = "updateMode", required = true)
-	protected StringAttr UpdateMode;
+	protected String UpdateModeAttr;
 	@XmlAttribute(name = "lockedField")
-	protected ST_OnOffAttr LockedField;
+	protected ST_OnOff LockedFieldAttr;
 }
 
 // ST_ObjectUpdateMode ...
@@ -1211,11 +1211,11 @@ public class CT_Drawing {
 // CT_SimpleField ...
 public class CT_SimpleField {
 	@XmlAttribute(name = "instr", required = true)
-	protected StringAttr Instr;
+	protected String InstrAttr;
 	@XmlAttribute(name = "fldLock")
-	protected ST_OnOffAttr FldLock;
+	protected ST_OnOff FldLockAttr;
 	@XmlAttribute(name = "dirty")
-	protected ST_OnOffAttr Dirty;
+	protected ST_OnOff DirtyAttr;
 	protected List<EG_PContent> EG_PContent;
 }
 
@@ -1264,23 +1264,23 @@ public class ST_FFTextType {
 // CT_FFTextType ...
 public class CT_FFTextType {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_FFName ...
 public class CT_FFName {
 	@XmlAttribute(name = "val")
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_FldChar ...
 public class CT_FldChar {
 	@XmlAttribute(name = "fldCharType", required = true)
-	protected StringAttr FldCharType;
+	protected String FldCharTypeAttr;
 	@XmlAttribute(name = "fldLock")
-	protected ST_OnOffAttr FldLock;
+	protected ST_OnOff FldLockAttr;
 	@XmlAttribute(name = "dirty")
-	protected ST_OnOffAttr Dirty;
+	protected ST_OnOff DirtyAttr;
 	@XmlElement(required = true, name = "ffData")
 	protected CT_FFData FfData;
 }
@@ -1288,17 +1288,17 @@ public class CT_FldChar {
 // CT_Hyperlink ...
 public class CT_Hyperlink {
 	@XmlAttribute(name = "tgtFrame")
-	protected StringAttr TgtFrame;
+	protected String TgtFrameAttr;
 	@XmlAttribute(name = "tooltip")
-	protected StringAttr Tooltip;
+	protected String TooltipAttr;
 	@XmlAttribute(name = "docLocation")
-	protected StringAttr DocLocation;
+	protected String DocLocationAttr;
 	@XmlAttribute(name = "history")
-	protected ST_OnOffAttr History;
+	protected ST_OnOff HistoryAttr;
 	@XmlAttribute(name = "anchor")
-	protected StringAttr Anchor;
+	protected String AnchorAttr;
 	@XmlAttribute(name = "r:id")
-	protected StringAttr RId;
+	protected String RIdAttr;
 	protected List<EG_PContent> EG_PContent;
 }
 
@@ -1333,17 +1333,17 @@ public class CT_FFData {
 // CT_FFHelpText ...
 public class CT_FFHelpText {
 	@XmlAttribute(name = "type")
-	protected StringAttr Type;
+	protected String TypeAttr;
 	@XmlAttribute(name = "val")
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_FFStatusText ...
 public class CT_FFStatusText {
 	@XmlAttribute(name = "type")
-	protected StringAttr Type;
+	protected String TypeAttr;
 	@XmlAttribute(name = "val")
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_FFCheckBox ...
@@ -1390,15 +1390,15 @@ public class ST_SectionMark {
 // CT_SectType ...
 public class CT_SectType {
 	@XmlAttribute(name = "val")
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_PaperSource ...
 public class CT_PaperSource {
 	@XmlAttribute(name = "first")
-	protected IntegerAttr First;
+	protected Integer FirstAttr;
 	@XmlAttribute(name = "other")
-	protected IntegerAttr Other;
+	protected Integer OtherAttr;
 }
 
 // ST_NumberFormat ...
@@ -1418,31 +1418,31 @@ public class ST_PageOrientation {
 // CT_PageSz ...
 public class CT_PageSz {
 	@XmlAttribute(name = "w")
-	protected ST_TwipsMeasureAttr W;
+	protected ST_TwipsMeasure WAttr;
 	@XmlAttribute(name = "h")
-	protected ST_TwipsMeasureAttr H;
+	protected ST_TwipsMeasure HAttr;
 	@XmlAttribute(name = "orient")
-	protected StringAttr Orient;
+	protected String OrientAttr;
 	@XmlAttribute(name = "code")
-	protected IntegerAttr Code;
+	protected Integer CodeAttr;
 }
 
 // CT_PageMar ...
 public class CT_PageMar {
 	@XmlAttribute(name = "top", required = true)
-	protected ST_SignedTwipsMeasureAttr Top;
+	protected ST_SignedTwipsMeasure TopAttr;
 	@XmlAttribute(name = "right", required = true)
-	protected ST_TwipsMeasureAttr Right;
+	protected ST_TwipsMeasure RightAttr;
 	@XmlAttribute(name = "bottom", required = true)
-	protected ST_SignedTwipsMeasureAttr Bottom;
+	protected ST_SignedTwipsMeasure BottomAttr;
 	@XmlAttribute(name = "left", required = true)
-	protected ST_TwipsMeasureAttr Left;
+	protected ST_TwipsMeasure LeftAttr;
 	@XmlAttribute(name = "header", required = true)
-	protected ST_TwipsMeasureAttr Header;
+	protected ST_TwipsMeasure HeaderAttr;
 	@XmlAttribute(name = "footer", required = true)
-	protected ST_TwipsMeasureAttr Footer;
+	protected ST_TwipsMeasure FooterAttr;
 	@XmlAttribute(name = "gutter", required = true)
-	protected ST_TwipsMeasureAttr Gutter;
+	protected ST_TwipsMeasure GutterAttr;
 }
 
 // ST_PageBorderZOrder ...
@@ -1469,11 +1469,11 @@ public class ST_PageBorderOffset {
 // CT_PageBorders ...
 public class CT_PageBorders {
 	@XmlAttribute(name = "zOrder")
-	protected StringAttr ZOrder;
+	protected String ZOrderAttr;
 	@XmlAttribute(name = "display")
-	protected StringAttr Display;
+	protected String DisplayAttr;
 	@XmlAttribute(name = "offsetFrom")
-	protected StringAttr OffsetFrom;
+	protected String OffsetFromAttr;
 	@XmlElement(required = true, name = "top")
 	protected CT_TopPageBorder Top;
 	@XmlElement(required = true, name = "left")
@@ -1487,23 +1487,23 @@ public class CT_PageBorders {
 // CT_PageBorder ...
 public class CT_PageBorder extends CT_Border  {
 	@XmlAttribute(name = "r:id")
-	protected StringAttr RId;
+	protected String RIdAttr;
 }
 
 // CT_BottomPageBorder ...
 public class CT_BottomPageBorder extends CT_PageBorder  {
 	@XmlAttribute(name = "r:bottomLeft")
-	protected StringAttr RBottomLeft;
+	protected String RBottomLeftAttr;
 	@XmlAttribute(name = "r:bottomRight")
-	protected StringAttr RBottomRight;
+	protected String RBottomRightAttr;
 }
 
 // CT_TopPageBorder ...
 public class CT_TopPageBorder extends CT_PageBorder  {
 	@XmlAttribute(name = "r:topLeft")
-	protected StringAttr RTopLeft;
+	protected String RTopLeftAttr;
 	@XmlAttribute(name = "r:topRight")
-	protected StringAttr RTopRight;
+	protected String RTopRightAttr;
 }
 
 // ST_ChapterSep ...
@@ -1523,45 +1523,45 @@ public class ST_LineNumberRestart {
 // CT_LineNumber ...
 public class CT_LineNumber {
 	@XmlAttribute(name = "countBy")
-	protected IntegerAttr CountBy;
+	protected Integer CountByAttr;
 	@XmlAttribute(name = "start")
-	protected IntegerAttr Start;
+	protected Integer StartAttr;
 	@XmlAttribute(name = "distance")
-	protected ST_TwipsMeasureAttr Distance;
+	protected ST_TwipsMeasure DistanceAttr;
 	@XmlAttribute(name = "restart")
-	protected StringAttr Restart;
+	protected String RestartAttr;
 }
 
 // CT_PageNumber ...
 public class CT_PageNumber {
 	@XmlAttribute(name = "fmt")
-	protected StringAttr Fmt;
+	protected String FmtAttr;
 	@XmlAttribute(name = "start")
-	protected IntegerAttr Start;
+	protected Integer StartAttr;
 	@XmlAttribute(name = "chapStyle")
-	protected IntegerAttr ChapStyle;
+	protected Integer ChapStyleAttr;
 	@XmlAttribute(name = "chapSep")
-	protected StringAttr ChapSep;
+	protected String ChapSepAttr;
 }
 
 // CT_Column ...
 public class CT_Column {
 	@XmlAttribute(name = "w")
-	protected ST_TwipsMeasureAttr W;
+	protected ST_TwipsMeasure WAttr;
 	@XmlAttribute(name = "space")
-	protected ST_TwipsMeasureAttr Space;
+	protected ST_TwipsMeasure SpaceAttr;
 }
 
 // CT_Columns ...
 public class CT_Columns {
 	@XmlAttribute(name = "equalWidth")
-	protected ST_OnOffAttr EqualWidth;
+	protected ST_OnOff EqualWidthAttr;
 	@XmlAttribute(name = "space")
-	protected ST_TwipsMeasureAttr Space;
+	protected ST_TwipsMeasure SpaceAttr;
 	@XmlAttribute(name = "num")
-	protected IntegerAttr Num;
+	protected Integer NumAttr;
 	@XmlAttribute(name = "sep")
-	protected ST_OnOffAttr Sep;
+	protected ST_OnOff SepAttr;
 	@XmlElement(required = true, name = "col")
 	protected List<CT_Column> Col;
 }
@@ -1576,7 +1576,7 @@ public class ST_VerticalJc {
 // CT_VerticalJc ...
 public class CT_VerticalJc {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // ST_DocGrid ...
@@ -1589,11 +1589,11 @@ public class ST_DocGrid {
 // CT_DocGrid ...
 public class CT_DocGrid {
 	@XmlAttribute(name = "type")
-	protected StringAttr Type;
+	protected String TypeAttr;
 	@XmlAttribute(name = "linePitch")
-	protected IntegerAttr LinePitch;
+	protected Integer LinePitchAttr;
 	@XmlAttribute(name = "charSpace")
-	protected IntegerAttr CharSpace;
+	protected Integer CharSpaceAttr;
 }
 
 // ST_HdrFtr ...
@@ -1613,7 +1613,7 @@ public class ST_FtnEdn {
 // CT_HdrFtrRef ...
 public class CT_HdrFtrRef extends CT_Rel  {
 	@XmlAttribute(name = "type", required = true)
-	protected StringAttr Type;
+	protected String TypeAttr;
 }
 
 // EG_HdrFtrReferences ...
@@ -1717,9 +1717,9 @@ public class ST_BrClear {
 // CT_Br ...
 public class CT_Br {
 	@XmlAttribute(name = "type")
-	protected StringAttr Type;
+	protected String TypeAttr;
 	@XmlAttribute(name = "clear")
-	protected StringAttr Clear;
+	protected String ClearAttr;
 }
 
 // ST_PTabAlignment ...
@@ -1746,19 +1746,19 @@ public class ST_PTabLeader {
 // CT_PTab ...
 public class CT_PTab {
 	@XmlAttribute(name = "alignment", required = true)
-	protected StringAttr Alignment;
+	protected String AlignmentAttr;
 	@XmlAttribute(name = "relativeTo", required = true)
-	protected StringAttr RelativeTo;
+	protected String RelativeToAttr;
 	@XmlAttribute(name = "leader", required = true)
-	protected StringAttr Leader;
+	protected String LeaderAttr;
 }
 
 // CT_Sym ...
 public class CT_Sym {
 	@XmlAttribute(name = "font")
-	protected StringAttr Font;
+	protected String FontAttr;
 	@XmlAttribute(name = "char")
-	protected List<Byte>Attr Char;
+	protected List<Byte> CharAttr;
 }
 
 // ST_ProofErr ...
@@ -1771,7 +1771,7 @@ public class ST_ProofErr {
 // CT_ProofErr ...
 public class CT_ProofErr {
 	@XmlAttribute(name = "type", required = true)
-	protected StringAttr Type;
+	protected String TypeAttr;
 }
 
 // ST_EdGrp ...
@@ -1784,27 +1784,27 @@ public class ST_EdGrp {
 // CT_Perm ...
 public class CT_Perm {
 	@XmlAttribute(name = "id", required = true)
-	protected StringAttr Id;
+	protected String IdAttr;
 	@XmlAttribute(name = "displacedByCustomXml")
-	protected StringAttr DisplacedByCustomXml;
+	protected String DisplacedByCustomXmlAttr;
 }
 
 // CT_PermStart ...
 public class CT_PermStart extends CT_Perm  {
 	@XmlAttribute(name = "edGrp")
-	protected StringAttr EdGrp;
+	protected String EdGrpAttr;
 	@XmlAttribute(name = "ed")
-	protected StringAttr Ed;
+	protected String EdAttr;
 	@XmlAttribute(name = "colFirst")
-	protected IntegerAttr ColFirst;
+	protected Integer ColFirstAttr;
 	@XmlAttribute(name = "colLast")
-	protected IntegerAttr ColLast;
+	protected Integer ColLastAttr;
 }
 
 // CT_Text ...
 public class CT_Text {
 	@XmlAttribute(name = "xml:space")
-	protected SpaceAttr XmlSpace;
+	protected Space XmlSpaceAttr;
 	@XmlValue
 	protected String value;
 }
@@ -1880,11 +1880,11 @@ public class EG_RunInnerContent {
 // CT_R ...
 public class CT_R {
 	@XmlAttribute(name = "rsidRPr")
-	protected List<Byte>Attr RsidRPr;
+	protected List<Byte> RsidRPrAttr;
 	@XmlAttribute(name = "rsidDel")
-	protected List<Byte>Attr RsidDel;
+	protected List<Byte> RsidDelAttr;
 	@XmlAttribute(name = "rsidR")
-	protected List<Byte>Attr RsidR;
+	protected List<Byte> RsidRAttr;
 	protected EG_RPr EG_RPr;
 	protected List<EG_RunInnerContent> EG_RunInnerContent;
 }
@@ -1906,23 +1906,23 @@ public class ST_Theme {
 // CT_Fonts ...
 public class CT_Fonts {
 	@XmlAttribute(name = "hint")
-	protected StringAttr Hint;
+	protected String HintAttr;
 	@XmlAttribute(name = "ascii")
-	protected StringAttr Ascii;
+	protected String AsciiAttr;
 	@XmlAttribute(name = "hAnsi")
-	protected StringAttr HAnsi;
+	protected String HAnsiAttr;
 	@XmlAttribute(name = "eastAsia")
-	protected StringAttr EastAsia;
+	protected String EastAsiaAttr;
 	@XmlAttribute(name = "cs")
-	protected StringAttr Cs;
+	protected String CsAttr;
 	@XmlAttribute(name = "asciiTheme")
-	protected StringAttr AsciiTheme;
+	protected String AsciiThemeAttr;
 	@XmlAttribute(name = "hAnsiTheme")
-	protected StringAttr HAnsiTheme;
+	protected String HAnsiThemeAttr;
 	@XmlAttribute(name = "eastAsiaTheme")
-	protected StringAttr EastAsiaTheme;
+	protected String EastAsiaThemeAttr;
 	@XmlAttribute(name = "cstheme")
-	protected StringAttr Cstheme;
+	protected String CsthemeAttr;
 }
 
 // EG_RPrBase ...
@@ -2082,7 +2082,7 @@ public class EG_ParaRPrTrackChanges {
 // CT_AltChunk ...
 public class CT_AltChunk {
 	@XmlAttribute(name = "r:id")
-	protected StringAttr RId;
+	protected String RIdAttr;
 	@XmlElement(required = true, name = "altChunkPr")
 	protected CT_AltChunkPr AltChunkPr;
 }
@@ -2103,7 +2103,7 @@ public class ST_RubyAlign {
 // CT_RubyAlign ...
 public class CT_RubyAlign {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_RubyPr ...
@@ -2154,15 +2154,15 @@ public class ST_Lock {
 // CT_Lock ...
 public class CT_Lock {
 	@XmlAttribute(name = "val")
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_SdtListItem ...
 public class CT_SdtListItem {
 	@XmlAttribute(name = "displayText")
-	protected StringAttr DisplayText;
+	protected String DisplayTextAttr;
 	@XmlAttribute(name = "value")
-	protected StringAttr Value;
+	protected String ValueAttr;
 }
 
 // ST_SdtDateMappingType ...
@@ -2175,19 +2175,19 @@ public class ST_SdtDateMappingType {
 // CT_SdtDateMappingType ...
 public class CT_SdtDateMappingType {
 	@XmlAttribute(name = "val")
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_CalendarType ...
 public class CT_CalendarType {
 	@XmlAttribute(name = "val")
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_SdtDate ...
 public class CT_SdtDate {
 	@XmlAttribute(name = "fullDate")
-	protected ByteAttr FullDate;
+	protected String FullDateAttr;
 	@XmlElement(required = true, name = "dateFormat")
 	protected CT_String DateFormat;
 	@XmlElement(required = true, name = "lid")
@@ -2201,7 +2201,7 @@ public class CT_SdtDate {
 // CT_SdtComboBox ...
 public class CT_SdtComboBox {
 	@XmlAttribute(name = "lastValue")
-	protected StringAttr LastValue;
+	protected String LastValueAttr;
 	@XmlElement(required = true, name = "listItem")
 	protected List<CT_SdtListItem> ListItem;
 }
@@ -2219,7 +2219,7 @@ public class CT_SdtDocPart {
 // CT_SdtDropDownList ...
 public class CT_SdtDropDownList {
 	@XmlAttribute(name = "lastValue")
-	protected StringAttr LastValue;
+	protected String LastValueAttr;
 	@XmlElement(required = true, name = "listItem")
 	protected List<CT_SdtListItem> ListItem;
 }
@@ -2233,17 +2233,17 @@ public class CT_Placeholder {
 // CT_SdtText ...
 public class CT_SdtText {
 	@XmlAttribute(name = "multiLine")
-	protected ST_OnOffAttr MultiLine;
+	protected ST_OnOff MultiLineAttr;
 }
 
 // CT_DataBinding ...
 public class CT_DataBinding {
 	@XmlAttribute(name = "prefixMappings")
-	protected StringAttr PrefixMappings;
+	protected String PrefixMappingsAttr;
 	@XmlAttribute(name = "xpath", required = true)
-	protected StringAttr Xpath;
+	protected String XpathAttr;
 	@XmlAttribute(name = "storeItemID", required = true)
-	protected StringAttr StoreItemID;
+	protected String StoreItemIDAttr;
 }
 
 // CT_SdtPr ...
@@ -2322,14 +2322,14 @@ public class EG_ContentRunContent {
 // CT_DirContentRun ...
 public class CT_DirContentRun {
 	@XmlAttribute(name = "val")
-	protected StringAttr Val;
+	protected String ValAttr;
 	protected List<EG_PContent> EG_PContent;
 }
 
 // CT_BdoContentRun ...
 public class CT_BdoContentRun {
 	@XmlAttribute(name = "val")
-	protected StringAttr Val;
+	protected String ValAttr;
 	protected List<EG_PContent> EG_PContent;
 }
 
@@ -2438,19 +2438,19 @@ public class CT_SdtRow {
 // CT_Attr ...
 public class CT_Attr {
 	@XmlAttribute(name = "uri")
-	protected StringAttr Uri;
+	protected String UriAttr;
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_CustomXmlRun ...
 public class CT_CustomXmlRun {
 	@XmlAttribute(name = "uri")
-	protected StringAttr Uri;
+	protected String UriAttr;
 	@XmlAttribute(name = "element", required = true)
-	protected StringAttr Element;
+	protected String ElementAttr;
 	protected List<EG_PContent> EG_PContent;
 	@XmlElement(required = true, name = "customXmlPr")
 	protected CT_CustomXmlPr CustomXmlPr;
@@ -2459,9 +2459,9 @@ public class CT_CustomXmlRun {
 // CT_SmartTagRun ...
 public class CT_SmartTagRun {
 	@XmlAttribute(name = "uri")
-	protected StringAttr Uri;
+	protected String UriAttr;
 	@XmlAttribute(name = "element", required = true)
-	protected StringAttr Element;
+	protected String ElementAttr;
 	protected List<EG_PContent> EG_PContent;
 	@XmlElement(required = true, name = "smartTagPr")
 	protected CT_SmartTagPr SmartTagPr;
@@ -2470,9 +2470,9 @@ public class CT_SmartTagRun {
 // CT_CustomXmlBlock ...
 public class CT_CustomXmlBlock {
 	@XmlAttribute(name = "uri")
-	protected StringAttr Uri;
+	protected String UriAttr;
 	@XmlAttribute(name = "element", required = true)
-	protected StringAttr Element;
+	protected String ElementAttr;
 	protected List<EG_ContentBlockContent> EG_ContentBlockContent;
 	@XmlElement(required = true, name = "customXmlPr")
 	protected CT_CustomXmlPr CustomXmlPr;
@@ -2489,9 +2489,9 @@ public class CT_CustomXmlPr {
 // CT_CustomXmlRow ...
 public class CT_CustomXmlRow {
 	@XmlAttribute(name = "uri")
-	protected StringAttr Uri;
+	protected String UriAttr;
 	@XmlAttribute(name = "element", required = true)
-	protected StringAttr Element;
+	protected String ElementAttr;
 	protected List<EG_ContentRowContent> EG_ContentRowContent;
 	@XmlElement(required = true, name = "customXmlPr")
 	protected CT_CustomXmlPr CustomXmlPr;
@@ -2500,9 +2500,9 @@ public class CT_CustomXmlRow {
 // CT_CustomXmlCell ...
 public class CT_CustomXmlCell {
 	@XmlAttribute(name = "uri")
-	protected StringAttr Uri;
+	protected String UriAttr;
 	@XmlAttribute(name = "element", required = true)
-	protected StringAttr Element;
+	protected String ElementAttr;
 	protected List<EG_ContentCellContent> EG_ContentCellContent;
 	@XmlElement(required = true, name = "customXmlPr")
 	protected CT_CustomXmlPr CustomXmlPr;
@@ -2528,15 +2528,15 @@ public class EG_PContent {
 // CT_P ...
 public class CT_P {
 	@XmlAttribute(name = "rsidRPr")
-	protected List<Byte>Attr RsidRPr;
+	protected List<Byte> RsidRPrAttr;
 	@XmlAttribute(name = "rsidR")
-	protected List<Byte>Attr RsidR;
+	protected List<Byte> RsidRAttr;
 	@XmlAttribute(name = "rsidDel")
-	protected List<Byte>Attr RsidDel;
+	protected List<Byte> RsidDelAttr;
 	@XmlAttribute(name = "rsidP")
-	protected List<Byte>Attr RsidP;
+	protected List<Byte> RsidPAttr;
 	@XmlAttribute(name = "rsidRDefault")
-	protected List<Byte>Attr RsidRDefault;
+	protected List<Byte> RsidRDefaultAttr;
 	protected List<EG_PContent> EG_PContent;
 	@XmlElement(required = true, name = "pPr")
 	protected CT_PPr PPr;
@@ -2552,9 +2552,9 @@ public class ST_TblWidth {
 // CT_Height ...
 public class CT_Height {
 	@XmlAttribute(name = "val")
-	protected ST_TwipsMeasureAttr Val;
+	protected ST_TwipsMeasure ValAttr;
 	@XmlAttribute(name = "hRule")
-	protected StringAttr HRule;
+	protected String HRuleAttr;
 }
 
 // ST_MeasurementOrPercent ...
@@ -2568,15 +2568,15 @@ public class ST_MeasurementOrPercent {
 // CT_TblWidth ...
 public class CT_TblWidth {
 	@XmlAttribute(name = "w")
-	protected ST_MeasurementOrPercentAttr W;
+	protected ST_MeasurementOrPercent WAttr;
 	@XmlAttribute(name = "type")
-	protected StringAttr Type;
+	protected String TypeAttr;
 }
 
 // CT_TblGridCol ...
 public class CT_TblGridCol {
 	@XmlAttribute(name = "w")
-	protected ST_TwipsMeasureAttr W;
+	protected ST_TwipsMeasure WAttr;
 }
 
 // CT_TblGridBase ...
@@ -2633,7 +2633,7 @@ public class ST_Merge {
 // CT_VMerge ...
 public class CT_VMerge {
 	@XmlAttribute(name = "val")
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_TcPrBase ...
@@ -2680,7 +2680,7 @@ public class CT_TcPrInner extends CT_TcPrBase  {
 // CT_Tc ...
 public class CT_Tc {
 	@XmlAttribute(name = "id")
-	protected StringAttr Id;
+	protected String IdAttr;
 	protected List<EG_BlockLevelElts> EG_BlockLevelElts;
 	@XmlElement(required = true, name = "tcPr")
 	protected CT_TcPr TcPr;
@@ -2689,29 +2689,29 @@ public class CT_Tc {
 // CT_Cnf ...
 public class CT_Cnf {
 	@XmlAttribute(name = "firstRow")
-	protected ST_OnOffAttr FirstRow;
+	protected ST_OnOff FirstRowAttr;
 	@XmlAttribute(name = "lastRow")
-	protected ST_OnOffAttr LastRow;
+	protected ST_OnOff LastRowAttr;
 	@XmlAttribute(name = "firstColumn")
-	protected ST_OnOffAttr FirstColumn;
+	protected ST_OnOff FirstColumnAttr;
 	@XmlAttribute(name = "lastColumn")
-	protected ST_OnOffAttr LastColumn;
+	protected ST_OnOff LastColumnAttr;
 	@XmlAttribute(name = "oddVBand")
-	protected ST_OnOffAttr OddVBand;
+	protected ST_OnOff OddVBandAttr;
 	@XmlAttribute(name = "evenVBand")
-	protected ST_OnOffAttr EvenVBand;
+	protected ST_OnOff EvenVBandAttr;
 	@XmlAttribute(name = "oddHBand")
-	protected ST_OnOffAttr OddHBand;
+	protected ST_OnOff OddHBandAttr;
 	@XmlAttribute(name = "evenHBand")
-	protected ST_OnOffAttr EvenHBand;
+	protected ST_OnOff EvenHBandAttr;
 	@XmlAttribute(name = "firstRowFirstColumn")
-	protected ST_OnOffAttr FirstRowFirstColumn;
+	protected ST_OnOff FirstRowFirstColumnAttr;
 	@XmlAttribute(name = "firstRowLastColumn")
-	protected ST_OnOffAttr FirstRowLastColumn;
+	protected ST_OnOff FirstRowLastColumnAttr;
 	@XmlAttribute(name = "lastRowFirstColumn")
-	protected ST_OnOffAttr LastRowFirstColumn;
+	protected ST_OnOff LastRowFirstColumnAttr;
 	@XmlAttribute(name = "lastRowLastColumn")
-	protected ST_OnOffAttr LastRowLastColumn;
+	protected ST_OnOff LastRowLastColumnAttr;
 }
 
 // CT_Headers ...
@@ -2761,13 +2761,13 @@ public class CT_TrPr extends CT_TrPrBase  {
 // CT_Row ...
 public class CT_Row {
 	@XmlAttribute(name = "rsidRPr")
-	protected List<Byte>Attr RsidRPr;
+	protected List<Byte> RsidRPrAttr;
 	@XmlAttribute(name = "rsidR")
-	protected List<Byte>Attr RsidR;
+	protected List<Byte> RsidRAttr;
 	@XmlAttribute(name = "rsidDel")
-	protected List<Byte>Attr RsidDel;
+	protected List<Byte> RsidDelAttr;
 	@XmlAttribute(name = "rsidTr")
-	protected List<Byte>Attr RsidTr;
+	protected List<Byte> RsidTrAttr;
 	protected List<EG_ContentCellContent> EG_ContentCellContent;
 	@XmlElement(required = true, name = "tblPrEx")
 	protected CT_TblPrEx TblPrEx;
@@ -2785,7 +2785,7 @@ public class ST_TblLayoutType {
 // CT_TblLayoutType ...
 public class CT_TblLayoutType {
 	@XmlAttribute(name = "type")
-	protected StringAttr Type;
+	protected String TypeAttr;
 }
 
 // ST_TblOverlap ...
@@ -2798,31 +2798,31 @@ public class ST_TblOverlap {
 // CT_TblOverlap ...
 public class CT_TblOverlap {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_TblPPr ...
 public class CT_TblPPr {
 	@XmlAttribute(name = "leftFromText")
-	protected ST_TwipsMeasureAttr LeftFromText;
+	protected ST_TwipsMeasure LeftFromTextAttr;
 	@XmlAttribute(name = "rightFromText")
-	protected ST_TwipsMeasureAttr RightFromText;
+	protected ST_TwipsMeasure RightFromTextAttr;
 	@XmlAttribute(name = "topFromText")
-	protected ST_TwipsMeasureAttr TopFromText;
+	protected ST_TwipsMeasure TopFromTextAttr;
 	@XmlAttribute(name = "bottomFromText")
-	protected ST_TwipsMeasureAttr BottomFromText;
+	protected ST_TwipsMeasure BottomFromTextAttr;
 	@XmlAttribute(name = "vertAnchor")
-	protected StringAttr VertAnchor;
+	protected String VertAnchorAttr;
 	@XmlAttribute(name = "horzAnchor")
-	protected StringAttr HorzAnchor;
+	protected String HorzAnchorAttr;
 	@XmlAttribute(name = "tblpXSpec")
-	protected StringAttr TblpXSpec;
+	protected String TblpXSpecAttr;
 	@XmlAttribute(name = "tblpX")
-	protected ST_SignedTwipsMeasureAttr TblpX;
+	protected ST_SignedTwipsMeasure TblpXAttr;
 	@XmlAttribute(name = "tblpYSpec")
-	protected StringAttr TblpYSpec;
+	protected String TblpYSpecAttr;
 	@XmlAttribute(name = "tblpY")
-	protected ST_SignedTwipsMeasureAttr TblpY;
+	protected ST_SignedTwipsMeasure TblpYAttr;
 }
 
 // CT_TblCellMar ...
@@ -2938,17 +2938,17 @@ public class CT_Tbl {
 // CT_TblLook ...
 public class CT_TblLook {
 	@XmlAttribute(name = "firstRow")
-	protected ST_OnOffAttr FirstRow;
+	protected ST_OnOff FirstRowAttr;
 	@XmlAttribute(name = "lastRow")
-	protected ST_OnOffAttr LastRow;
+	protected ST_OnOff LastRowAttr;
 	@XmlAttribute(name = "firstColumn")
-	protected ST_OnOffAttr FirstColumn;
+	protected ST_OnOff FirstColumnAttr;
 	@XmlAttribute(name = "lastColumn")
-	protected ST_OnOffAttr LastColumn;
+	protected ST_OnOff LastColumnAttr;
 	@XmlAttribute(name = "noHBand")
-	protected ST_OnOffAttr NoHBand;
+	protected ST_OnOff NoHBandAttr;
 	@XmlAttribute(name = "noVBand")
-	protected ST_OnOffAttr NoVBand;
+	protected ST_OnOff NoVBandAttr;
 }
 
 // ST_FtnPos ...
@@ -2961,7 +2961,7 @@ public class ST_FtnPos {
 // CT_FtnPos ...
 public class CT_FtnPos {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // ST_EdnPos ...
@@ -2974,15 +2974,15 @@ public class ST_EdnPos {
 // CT_EdnPos ...
 public class CT_EdnPos {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_NumFmt ...
 public class CT_NumFmt {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 	@XmlAttribute(name = "format")
-	protected StringAttr Format;
+	protected String FormatAttr;
 }
 
 // ST_RestartNumber ...
@@ -2995,29 +2995,29 @@ public class ST_RestartNumber {
 // CT_NumRestart ...
 public class CT_NumRestart {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_FtnEdnRef ...
 public class CT_FtnEdnRef {
 	@XmlAttribute(name = "customMarkFollows")
-	protected ST_OnOffAttr CustomMarkFollows;
+	protected ST_OnOff CustomMarkFollowsAttr;
 	@XmlAttribute(name = "id", required = true)
-	protected IntegerAttr Id;
+	protected Integer IdAttr;
 }
 
 // CT_FtnEdnSepRef ...
 public class CT_FtnEdnSepRef {
 	@XmlAttribute(name = "id", required = true)
-	protected IntegerAttr Id;
+	protected Integer IdAttr;
 }
 
 // CT_FtnEdn ...
 public class CT_FtnEdn {
 	@XmlAttribute(name = "type")
-	protected StringAttr Type;
+	protected String TypeAttr;
 	@XmlAttribute(name = "id", required = true)
-	protected IntegerAttr Id;
+	protected Integer IdAttr;
 	protected List<EG_BlockLevelElts> EG_BlockLevelElts;
 }
 
@@ -3072,7 +3072,7 @@ public class CT_RecipientData {
 // CT_Base64Binary ...
 public class CT_Base64Binary {
 	@XmlAttribute(name = "val", required = true)
-	protected List<Byte>Attr Val;
+	protected List<Byte> ValAttr;
 }
 
 // CT_Recipients ...
@@ -3113,7 +3113,7 @@ public class ST_MailMergeSourceType {
 // CT_MailMergeSourceType ...
 public class CT_MailMergeSourceType {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_Odso ...
@@ -3182,7 +3182,7 @@ public class ST_TargetScreenSz {
 // CT_TargetScreenSz ...
 public class CT_TargetScreenSz {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_Compat ...
@@ -3208,19 +3208,19 @@ public class CT_Compat {
 // CT_CompatSetting ...
 public class CT_CompatSetting {
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "uri")
-	protected StringAttr Uri;
+	protected String UriAttr;
 	@XmlAttribute(name = "val")
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_DocVar ...
 public class CT_DocVar {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_DocVars ...
@@ -3247,15 +3247,15 @@ public class ST_CharacterSpacing {
 // CT_CharacterSpacing ...
 public class CT_CharacterSpacing {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_SaveThroughXslt ...
 public class CT_SaveThroughXslt {
 	@XmlAttribute(name = "r:id")
-	protected StringAttr RId;
+	protected String RIdAttr;
 	@XmlAttribute(name = "solutionID")
-	protected StringAttr SolutionID;
+	protected String SolutionIDAttr;
 }
 
 // CT_RPrDefault ...
@@ -3288,41 +3288,41 @@ public class ST_WmlColorSchemeIndex {
 // CT_ColorSchemeMapping ...
 public class CT_ColorSchemeMapping {
 	@XmlAttribute(name = "bg1")
-	protected StringAttr Bg1;
+	protected String Bg1Attr;
 	@XmlAttribute(name = "t1")
-	protected StringAttr T1;
+	protected String T1Attr;
 	@XmlAttribute(name = "bg2")
-	protected StringAttr Bg2;
+	protected String Bg2Attr;
 	@XmlAttribute(name = "t2")
-	protected StringAttr T2;
+	protected String T2Attr;
 	@XmlAttribute(name = "accent1")
-	protected StringAttr Accent1;
+	protected String Accent1Attr;
 	@XmlAttribute(name = "accent2")
-	protected StringAttr Accent2;
+	protected String Accent2Attr;
 	@XmlAttribute(name = "accent3")
-	protected StringAttr Accent3;
+	protected String Accent3Attr;
 	@XmlAttribute(name = "accent4")
-	protected StringAttr Accent4;
+	protected String Accent4Attr;
 	@XmlAttribute(name = "accent5")
-	protected StringAttr Accent5;
+	protected String Accent5Attr;
 	@XmlAttribute(name = "accent6")
-	protected StringAttr Accent6;
+	protected String Accent6Attr;
 	@XmlAttribute(name = "hyperlink")
-	protected StringAttr Hyperlink;
+	protected String HyperlinkAttr;
 	@XmlAttribute(name = "followedHyperlink")
-	protected StringAttr FollowedHyperlink;
+	protected String FollowedHyperlinkAttr;
 }
 
 // CT_ReadingModeInkLockDown ...
 public class CT_ReadingModeInkLockDown {
 	@XmlAttribute(name = "actualPg", required = true)
-	protected ST_OnOffAttr ActualPg;
+	protected ST_OnOff ActualPgAttr;
 	@XmlAttribute(name = "w", required = true)
-	protected LongAttr W;
+	protected Long WAttr;
 	@XmlAttribute(name = "h", required = true)
-	protected LongAttr H;
+	protected Long HAttr;
 	@XmlAttribute(name = "fontSz", required = true)
-	protected ST_DecimalNumberOrPercentAttr FontSz;
+	protected ST_DecimalNumberOrPercent FontSzAttr;
 }
 
 // CT_WriteProtection ...
@@ -3330,7 +3330,7 @@ public class CT_WriteProtection {
 	@XmlElement(required = true)
 	protected AG_Password AG_Password;
 	@XmlAttribute(name = "recommended")
-	protected ST_OnOffAttr Recommended;
+	protected ST_OnOff RecommendedAttr;
 }
 
 // CT_Settings ...
@@ -3532,41 +3532,41 @@ public class CT_Settings {
 // CT_StyleSort ...
 public class CT_StyleSort {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_StylePaneFilter ...
 public class CT_StylePaneFilter {
 	@XmlAttribute(name = "allStyles")
-	protected ST_OnOffAttr AllStyles;
+	protected ST_OnOff AllStylesAttr;
 	@XmlAttribute(name = "customStyles")
-	protected ST_OnOffAttr CustomStyles;
+	protected ST_OnOff CustomStylesAttr;
 	@XmlAttribute(name = "latentStyles")
-	protected ST_OnOffAttr LatentStyles;
+	protected ST_OnOff LatentStylesAttr;
 	@XmlAttribute(name = "stylesInUse")
-	protected ST_OnOffAttr StylesInUse;
+	protected ST_OnOff StylesInUseAttr;
 	@XmlAttribute(name = "headingStyles")
-	protected ST_OnOffAttr HeadingStyles;
+	protected ST_OnOff HeadingStylesAttr;
 	@XmlAttribute(name = "numberingStyles")
-	protected ST_OnOffAttr NumberingStyles;
+	protected ST_OnOff NumberingStylesAttr;
 	@XmlAttribute(name = "tableStyles")
-	protected ST_OnOffAttr TableStyles;
+	protected ST_OnOff TableStylesAttr;
 	@XmlAttribute(name = "directFormattingOnRuns")
-	protected ST_OnOffAttr DirectFormattingOnRuns;
+	protected ST_OnOff DirectFormattingOnRunsAttr;
 	@XmlAttribute(name = "directFormattingOnParagraphs")
-	protected ST_OnOffAttr DirectFormattingOnParagraphs;
+	protected ST_OnOff DirectFormattingOnParagraphsAttr;
 	@XmlAttribute(name = "directFormattingOnNumbering")
-	protected ST_OnOffAttr DirectFormattingOnNumbering;
+	protected ST_OnOff DirectFormattingOnNumberingAttr;
 	@XmlAttribute(name = "directFormattingOnTables")
-	protected ST_OnOffAttr DirectFormattingOnTables;
+	protected ST_OnOff DirectFormattingOnTablesAttr;
 	@XmlAttribute(name = "clearFormatting")
-	protected ST_OnOffAttr ClearFormatting;
+	protected ST_OnOff ClearFormattingAttr;
 	@XmlAttribute(name = "top3HeadingStyles")
-	protected ST_OnOffAttr Top3HeadingStyles;
+	protected ST_OnOff Top3HeadingStylesAttr;
 	@XmlAttribute(name = "visibleStyles")
-	protected ST_OnOffAttr VisibleStyles;
+	protected ST_OnOff VisibleStylesAttr;
 	@XmlAttribute(name = "alternateStyleNames")
-	protected ST_OnOffAttr AlternateStyleNames;
+	protected ST_OnOff AlternateStyleNamesAttr;
 }
 
 // ST_StyleSort ...
@@ -3614,13 +3614,13 @@ public class ST_FrameScrollbar {
 // CT_FrameScrollbar ...
 public class CT_FrameScrollbar {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_OptimizeForBrowser ...
 public class CT_OptimizeForBrowser extends CT_OnOff  {
 	@XmlAttribute(name = "target")
-	protected StringAttr Target;
+	protected String TargetAttr;
 }
 
 // CT_Frame ...
@@ -3657,7 +3657,7 @@ public class ST_FrameLayout {
 // CT_FrameLayout ...
 public class CT_FrameLayout {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_FramesetSplitbar ...
@@ -3691,7 +3691,7 @@ public class CT_Frameset {
 // CT_NumPicBullet ...
 public class CT_NumPicBullet {
 	@XmlAttribute(name = "numPicBulletId", required = true)
-	protected IntegerAttr NumPicBulletId;
+	protected Integer NumPicBulletIdAttr;
 	@XmlElement(required = true, name = "drawing")
 	protected CT_Drawing Drawing;
 }
@@ -3706,25 +3706,25 @@ public class ST_LevelSuffix {
 // CT_LevelSuffix ...
 public class CT_LevelSuffix {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_LevelText ...
 public class CT_LevelText {
 	@XmlAttribute(name = "val")
-	protected StringAttr Val;
+	protected String ValAttr;
 	@XmlAttribute(name = "null")
-	protected ST_OnOffAttr Null;
+	protected ST_OnOff NullAttr;
 }
 
 // CT_Lvl ...
 public class CT_Lvl {
 	@XmlAttribute(name = "ilvl", required = true)
-	protected IntegerAttr Ilvl;
+	protected Integer IlvlAttr;
 	@XmlAttribute(name = "tplc")
-	protected List<Byte>Attr Tplc;
+	protected List<Byte> TplcAttr;
 	@XmlAttribute(name = "tentative")
-	protected ST_OnOffAttr Tentative;
+	protected ST_OnOff TentativeAttr;
 	@XmlElement(required = true, name = "start")
 	protected CT_DecimalNumber Start;
 	@XmlElement(required = true, name = "numFmt")
@@ -3759,13 +3759,13 @@ public class ST_MultiLevelType {
 // CT_MultiLevelType ...
 public class CT_MultiLevelType {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_AbstractNum ...
 public class CT_AbstractNum {
 	@XmlAttribute(name = "abstractNumId", required = true)
-	protected IntegerAttr AbstractNumId;
+	protected Integer AbstractNumIdAttr;
 	@XmlElement(required = true, name = "nsid")
 	protected CT_LongHexNumber Nsid;
 	@XmlElement(required = true, name = "multiLevelType")
@@ -3785,7 +3785,7 @@ public class CT_AbstractNum {
 // CT_NumLvl ...
 public class CT_NumLvl {
 	@XmlAttribute(name = "ilvl", required = true)
-	protected IntegerAttr Ilvl;
+	protected Integer IlvlAttr;
 	@XmlElement(required = true, name = "startOverride")
 	protected CT_DecimalNumber StartOverride;
 	@XmlElement(required = true, name = "lvl")
@@ -3795,7 +3795,7 @@ public class CT_NumLvl {
 // CT_Num ...
 public class CT_Num {
 	@XmlAttribute(name = "numId", required = true)
-	protected IntegerAttr NumId;
+	protected Integer NumIdAttr;
 	@XmlElement(required = true, name = "abstractNumId")
 	protected CT_DecimalNumber AbstractNumId;
 	@XmlElement(required = true, name = "lvlOverride")
@@ -3824,7 +3824,7 @@ public class ST_TblStyleOverrideType {
 // CT_TblStylePr ...
 public class CT_TblStylePr {
 	@XmlAttribute(name = "type", required = true)
-	protected StringAttr Type;
+	protected String TypeAttr;
 	@XmlElement(required = true, name = "pPr")
 	protected CT_PPrGeneral PPr;
 	@XmlElement(required = true, name = "rPr")
@@ -3847,13 +3847,13 @@ public class ST_StyleType {
 // CT_Style ...
 public class CT_Style {
 	@XmlAttribute(name = "type")
-	protected StringAttr Type;
+	protected String TypeAttr;
 	@XmlAttribute(name = "styleId")
-	protected StringAttr StyleId;
+	protected String StyleIdAttr;
 	@XmlAttribute(name = "default")
-	protected ST_OnOffAttr Default;
+	protected ST_OnOff DefaultAttr;
 	@XmlAttribute(name = "customStyle")
-	protected ST_OnOffAttr CustomStyle;
+	protected ST_OnOff CustomStyleAttr;
 	@XmlElement(required = true, name = "name")
 	protected CT_String Name;
 	@XmlElement(required = true, name = "aliases")
@@ -3903,33 +3903,33 @@ public class CT_Style {
 // CT_LsdException ...
 public class CT_LsdException {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "locked")
-	protected ST_OnOffAttr Locked;
+	protected ST_OnOff LockedAttr;
 	@XmlAttribute(name = "uiPriority")
-	protected IntegerAttr UiPriority;
+	protected Integer UiPriorityAttr;
 	@XmlAttribute(name = "semiHidden")
-	protected ST_OnOffAttr SemiHidden;
+	protected ST_OnOff SemiHiddenAttr;
 	@XmlAttribute(name = "unhideWhenUsed")
-	protected ST_OnOffAttr UnhideWhenUsed;
+	protected ST_OnOff UnhideWhenUsedAttr;
 	@XmlAttribute(name = "qFormat")
-	protected ST_OnOffAttr QFormat;
+	protected ST_OnOff QFormatAttr;
 }
 
 // CT_LatentStyles ...
 public class CT_LatentStyles {
 	@XmlAttribute(name = "defLockedState")
-	protected ST_OnOffAttr DefLockedState;
+	protected ST_OnOff DefLockedStateAttr;
 	@XmlAttribute(name = "defUIPriority")
-	protected IntegerAttr DefUIPriority;
+	protected Integer DefUIPriorityAttr;
 	@XmlAttribute(name = "defSemiHidden")
-	protected ST_OnOffAttr DefSemiHidden;
+	protected ST_OnOff DefSemiHiddenAttr;
 	@XmlAttribute(name = "defUnhideWhenUsed")
-	protected ST_OnOffAttr DefUnhideWhenUsed;
+	protected ST_OnOff DefUnhideWhenUsedAttr;
 	@XmlAttribute(name = "defQFormat")
-	protected ST_OnOffAttr DefQFormat;
+	protected ST_OnOff DefQFormatAttr;
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "lsdException")
 	protected List<CT_LsdException> LsdException;
 }
@@ -3947,7 +3947,7 @@ public class CT_Styles {
 // CT_Panose ...
 public class CT_Panose {
 	@XmlAttribute(name = "val", required = true)
-	protected List<Byte>Attr Val;
+	protected List<Byte> ValAttr;
 }
 
 // ST_FontFamily ...
@@ -3960,7 +3960,7 @@ public class ST_FontFamily {
 // CT_FontFamily ...
 public class CT_FontFamily {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // ST_Pitch ...
@@ -3973,37 +3973,37 @@ public class ST_Pitch {
 // CT_Pitch ...
 public class CT_Pitch {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_FontSig ...
 public class CT_FontSig {
 	@XmlAttribute(name = "usb0", required = true)
-	protected List<Byte>Attr Usb0;
+	protected List<Byte> Usb0Attr;
 	@XmlAttribute(name = "usb1", required = true)
-	protected List<Byte>Attr Usb1;
+	protected List<Byte> Usb1Attr;
 	@XmlAttribute(name = "usb2", required = true)
-	protected List<Byte>Attr Usb2;
+	protected List<Byte> Usb2Attr;
 	@XmlAttribute(name = "usb3", required = true)
-	protected List<Byte>Attr Usb3;
+	protected List<Byte> Usb3Attr;
 	@XmlAttribute(name = "csb0", required = true)
-	protected List<Byte>Attr Csb0;
+	protected List<Byte> Csb0Attr;
 	@XmlAttribute(name = "csb1", required = true)
-	protected List<Byte>Attr Csb1;
+	protected List<Byte> Csb1Attr;
 }
 
 // CT_FontRel ...
 public class CT_FontRel extends CT_Rel  {
 	@XmlAttribute(name = "fontKey")
-	protected StringAttr FontKey;
+	protected String FontKeyAttr;
 	@XmlAttribute(name = "subsetted")
-	protected ST_OnOffAttr Subsetted;
+	protected ST_OnOff SubsettedAttr;
 }
 
 // CT_Font ...
 public class CT_Font {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlElement(required = true, name = "altName")
 	protected CT_String AltName;
 	@XmlElement(required = true, name = "panose1")
@@ -4049,7 +4049,7 @@ public class CT_DivBdr {
 // CT_Div ...
 public class CT_Div {
 	@XmlAttribute(name = "id", required = true)
-	protected IntegerAttr Id;
+	protected Integer IdAttr;
 	@XmlElement(required = true, name = "blockQuote")
 	protected CT_OnOff BlockQuote;
 	@XmlElement(required = true, name = "bodyDiv")
@@ -4172,11 +4172,11 @@ public class Ftr {
 // CT_SmartTagType ...
 public class CT_SmartTagType {
 	@XmlAttribute(name = "namespaceuri")
-	protected StringAttr Namespaceuri;
+	protected String NamespaceuriAttr;
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "url")
-	protected StringAttr Url;
+	protected String UrlAttr;
 }
 
 // ST_ThemeColor ...
@@ -4196,7 +4196,7 @@ public class ST_DocPartBehavior {
 // CT_DocPartBehavior ...
 public class CT_DocPartBehavior {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_DocPartBehaviors ...
@@ -4215,13 +4215,13 @@ public class ST_DocPartType {
 // CT_DocPartType ...
 public class CT_DocPartType {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_DocPartTypes ...
 public class CT_DocPartTypes {
 	@XmlAttribute(name = "all")
-	protected ST_OnOffAttr All;
+	protected ST_OnOff AllAttr;
 	@XmlElement(required = true, name = "type")
 	protected List<CT_DocPartType> Type;
 }
@@ -4236,7 +4236,7 @@ public class ST_DocPartGallery {
 // CT_DocPartGallery ...
 public class CT_DocPartGallery {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_DocPartCategory ...
@@ -4250,9 +4250,9 @@ public class CT_DocPartCategory {
 // CT_DocPartName ...
 public class CT_DocPartName {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 	@XmlAttribute(name = "decorated")
-	protected ST_OnOffAttr Decorated;
+	protected ST_OnOff DecoratedAttr;
 }
 
 // CT_DocPartPr ...
@@ -4327,27 +4327,27 @@ public class ST_CaptionPos {
 // CT_Caption ...
 public class CT_Caption {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "pos")
-	protected StringAttr Pos;
+	protected String PosAttr;
 	@XmlAttribute(name = "chapNum")
-	protected ST_OnOffAttr ChapNum;
+	protected ST_OnOff ChapNumAttr;
 	@XmlAttribute(name = "heading")
-	protected IntegerAttr Heading;
+	protected Integer HeadingAttr;
 	@XmlAttribute(name = "noLabel")
-	protected ST_OnOffAttr NoLabel;
+	protected ST_OnOff NoLabelAttr;
 	@XmlAttribute(name = "numFmt")
-	protected StringAttr NumFmt;
+	protected String NumFmtAttr;
 	@XmlAttribute(name = "sep")
-	protected StringAttr Sep;
+	protected String SepAttr;
 }
 
 // CT_AutoCaption ...
 public class CT_AutoCaption {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "caption", required = true)
-	protected StringAttr Caption;
+	protected String CaptionAttr;
 }
 
 // CT_AutoCaptions ...
@@ -4373,7 +4373,7 @@ public class CT_DocumentBase {
 // CT_Document ...
 public class CT_Document extends CT_DocumentBase  {
 	@XmlAttribute(name = "conformance")
-	protected StringAttr Conformance;
+	protected String ConformanceAttr;
 	@XmlElement(required = true, name = "body")
 	protected CT_Body Body;
 }

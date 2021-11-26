@@ -4,7 +4,6 @@ package schema
 
 import (
 	"encoding/xml"
-	"time"
 )
 
 // CTEmpty ...
@@ -121,7 +120,7 @@ type CTSignedHpsMeasure struct {
 }
 
 // STDateTime ...
-type STDateTime time.Time
+type STDateTime string
 
 // STMacroName ...
 type STMacroName string
@@ -549,9 +548,9 @@ type CTMarkup struct {
 
 // CTTrackChange ...
 type CTTrackChange struct {
-	XMLName    xml.Name  `xml:"CT_TrackChange"`
-	AuthorAttr string    `xml:"author,attr"`
-	DateAttr   time.Time `xml:"date,attr,omitempty"`
+	XMLName    xml.Name `xml:"CT_TrackChange"`
+	AuthorAttr string   `xml:"author,attr"`
+	DateAttr   string   `xml:"date,attr,omitempty"`
 	*CTMarkup
 }
 
@@ -594,9 +593,9 @@ type CTBookmark struct {
 
 // CTMoveBookmark ...
 type CTMoveBookmark struct {
-	XMLName    xml.Name  `xml:"CT_MoveBookmark"`
-	AuthorAttr string    `xml:"author,attr"`
-	DateAttr   time.Time `xml:"date,attr"`
+	XMLName    xml.Name `xml:"CT_MoveBookmark"`
+	AuthorAttr string   `xml:"author,attr"`
+	DateAttr   string   `xml:"date,attr"`
 	*CTBookmark
 }
 
@@ -1570,7 +1569,7 @@ type CTCalendarType struct {
 // CTSdtDate ...
 type CTSdtDate struct {
 	XMLName           xml.Name              `xml:"CT_SdtDate"`
-	FullDateAttr      time.Time             `xml:"fullDate,attr,omitempty"`
+	FullDateAttr      string                `xml:"fullDate,attr,omitempty"`
 	DateFormat        *CTString             `xml:"dateFormat"`
 	Lid               *CTLang               `xml:"lid"`
 	StoreMappedDataAs *CTSdtDateMappingType `xml:"storeMappedDataAs"`

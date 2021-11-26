@@ -4,7 +4,6 @@ package schema
 
 import (
 	"encoding/xml"
-	"time"
 )
 
 // STVectorBaseType ...
@@ -48,8 +47,8 @@ type CTVector struct {
 	Lpstr        string     `xml:"lpstr"`
 	Lpwstr       string     `xml:"lpwstr"`
 	Bstr         string     `xml:"bstr"`
-	Date         time.Time  `xml:"date"`
-	Filetime     time.Time  `xml:"filetime"`
+	Date         string     `xml:"date"`
+	Filetime     string     `xml:"filetime"`
 	Bool         bool       `xml:"bool"`
 	Cy           string     `xml:"cy"`
 	Error        string     `xml:"error"`
@@ -75,7 +74,7 @@ type CTArray struct {
 	R8           float64    `xml:"r8"`
 	Decimal      float64    `xml:"decimal"`
 	Bstr         string     `xml:"bstr"`
-	Date         time.Time  `xml:"date"`
+	Date         string     `xml:"date"`
 	Bool         bool       `xml:"bool"`
 	Error        string     `xml:"error"`
 	Cy           string     `xml:"cy"`
@@ -107,8 +106,8 @@ type CTVariant struct {
 	Lpstr    string     `xml:"lpstr"`
 	Lpwstr   string     `xml:"lpwstr"`
 	Bstr     string     `xml:"bstr"`
-	Date     time.Time  `xml:"date"`
-	Filetime time.Time  `xml:"filetime"`
+	Date     string     `xml:"date"`
+	Filetime string     `xml:"filetime"`
 	Bool     bool       `xml:"bool"`
 	Cy       string     `xml:"cy"`
 	Error    string     `xml:"error"`
@@ -197,10 +196,10 @@ type Lpwstr string
 type Bstr string
 
 // Date ...
-type Date time.Time
+type Date string
 
 // Filetime ...
-type Filetime time.Time
+type Filetime string
 
 // Bool ...
 type Bool bool

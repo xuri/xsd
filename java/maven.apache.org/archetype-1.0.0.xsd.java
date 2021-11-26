@@ -71,7 +71,7 @@ public class ArchetypeModel {
 //         can be non-filtered.
 public class Source {
 	@XmlAttribute(name = "encoding")
-	protected StringAttr Encoding;
+	protected String EncodingAttr;
 	@XmlValue
 	protected String value;
 }
@@ -79,9 +79,9 @@ public class Source {
 // Resource is Describes a resource file.
 public class Resource {
 	@XmlAttribute(name = "encoding")
-	protected StringAttr Encoding;
+	protected String EncodingAttr;
 	@XmlAttribute(name = "filtered")
-	protected BooleanAttr Filtered;
+	protected Boolean FilteredAttr;
 	@XmlValue
 	protected String value;
 }

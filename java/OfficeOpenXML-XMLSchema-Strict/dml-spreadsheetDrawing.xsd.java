@@ -27,9 +27,9 @@ public class To {
 // CT_AnchorClientData ...
 public class CT_AnchorClientData {
 	@XmlAttribute(name = "fLocksWithSheet")
-	protected BooleanAttr FLocksWithSheet;
+	protected Boolean FLocksWithSheetAttr;
 	@XmlAttribute(name = "fPrintsWithSheet")
-	protected BooleanAttr FPrintsWithSheet;
+	protected Boolean FPrintsWithSheetAttr;
 }
 
 // CT_ShapeNonVisual ...
@@ -43,13 +43,13 @@ public class CT_ShapeNonVisual {
 // CT_Shape ...
 public class CT_Shape {
 	@XmlAttribute(name = "macro")
-	protected StringAttr Macro;
+	protected String MacroAttr;
 	@XmlAttribute(name = "textlink")
-	protected StringAttr Textlink;
+	protected String TextlinkAttr;
 	@XmlAttribute(name = "fLocksText")
-	protected BooleanAttr FLocksText;
+	protected Boolean FLocksTextAttr;
 	@XmlAttribute(name = "fPublished")
-	protected BooleanAttr FPublished;
+	protected Boolean FPublishedAttr;
 	@XmlElement(required = true, name = "nvSpPr")
 	protected CT_ShapeNonVisual NvSpPr;
 	@XmlElement(required = true, name = "spPr")
@@ -71,9 +71,9 @@ public class CT_ConnectorNonVisual {
 // CT_Connector ...
 public class CT_Connector {
 	@XmlAttribute(name = "macro")
-	protected StringAttr Macro;
+	protected String MacroAttr;
 	@XmlAttribute(name = "fPublished")
-	protected BooleanAttr FPublished;
+	protected Boolean FPublishedAttr;
 	@XmlElement(required = true, name = "nvCxnSpPr")
 	protected CT_ConnectorNonVisual NvCxnSpPr;
 	@XmlElement(required = true, name = "spPr")
@@ -93,9 +93,9 @@ public class CT_PictureNonVisual {
 // CT_Picture ...
 public class CT_Picture {
 	@XmlAttribute(name = "macro")
-	protected StringAttr Macro;
+	protected String MacroAttr;
 	@XmlAttribute(name = "fPublished")
-	protected BooleanAttr FPublished;
+	protected Boolean FPublishedAttr;
 	@XmlElement(required = true, name = "nvPicPr")
 	protected CT_PictureNonVisual NvPicPr;
 	@XmlElement(required = true, name = "blipFill")
@@ -117,9 +117,9 @@ public class CT_GraphicalObjectFrameNonVisual {
 // CT_GraphicalObjectFrame ...
 public class CT_GraphicalObjectFrame {
 	@XmlAttribute(name = "macro")
-	protected StringAttr Macro;
+	protected String MacroAttr;
 	@XmlAttribute(name = "fPublished")
-	protected BooleanAttr FPublished;
+	protected Boolean FPublishedAttr;
 	@XmlElement(required = true, name = "nvGraphicFramePr")
 	protected CT_GraphicalObjectFrameNonVisual NvGraphicFramePr;
 	@XmlElement(required = true, name = "xfrm")
@@ -173,7 +173,7 @@ public class EG_ObjectChoices {
 // CT_Rel ...
 public class CT_Rel {
 	@XmlAttribute(name = "r:id", required = true)
-	protected StringAttr RId;
+	protected String RIdAttr;
 }
 
 // ST_ColID ...
@@ -212,7 +212,7 @@ public class ST_EditAs {
 // CT_TwoCellAnchor ...
 public class CT_TwoCellAnchor {
 	@XmlAttribute(name = "editAs")
-	protected StringAttr EditAs;
+	protected String EditAsAttr;
 	protected EG_ObjectChoices EG_ObjectChoices;
 	@XmlElement(required = true, name = "from")
 	protected CT_Marker From;

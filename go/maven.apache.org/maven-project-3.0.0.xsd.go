@@ -4,7 +4,6 @@ package schema
 
 import (
 	"encoding/xml"
-	"time"
 )
 
 // Project ...
@@ -17,7 +16,7 @@ type Project struct {
 	GroupId               string        `xml:"groupId"`
 	CurrentVersion        string        `xml:"currentVersion"`
 	Organization          *Organization `xml:"organization"`
-	InceptionYear         time.Time     `xml:"inceptionYear"`
+	InceptionYear         string        `xml:"inceptionYear"`
 	Package               string        `xml:"package"`
 	Logo                  string        `xml:"logo"`
 	GumpRepositoryId      string        `xml:"gumpRepositoryId"`
@@ -79,7 +78,7 @@ type GumpRepositoryId string
 type Id string
 
 // InceptionYear ...
-type InceptionYear time.Time
+type InceptionYear string
 
 // IssueTrackingUrl ...
 type IssueTrackingUrl string

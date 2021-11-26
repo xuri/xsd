@@ -60,7 +60,7 @@ type Base64 []byte
 type Duration string
 
 // DateTime ...
-type DateTime time.Time
+type DateTime string
 
 // NOTATION ...
 type NOTATION []string
@@ -69,22 +69,22 @@ type NOTATION []string
 type Time time.Time
 
 // Date ...
-type Date time.Time
+type Date string
 
 // GYearMonth ...
-type GYearMonth time.Time
+type GYearMonth string
 
 // GYear ...
-type GYear time.Time
+type GYear string
 
 // GMonthDay ...
-type GMonthDay time.Time
+type GMonthDay string
 
 // GDay ...
-type GDay time.Time
+type GDay string
 
 // GMonth ...
-type GMonth time.Time
+type GMonth string
 
 // Boolean ...
 type Boolean bool

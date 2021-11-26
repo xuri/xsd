@@ -36,13 +36,13 @@ public class ST_TransitionInOutDirectionType {
 // CT_SideDirectionTransition ...
 public class CT_SideDirectionTransition {
 	@XmlAttribute(name = "dir")
-	protected StringAttr Dir;
+	protected String DirAttr;
 }
 
 // CT_CornerDirectionTransition ...
 public class CT_CornerDirectionTransition {
 	@XmlAttribute(name = "dir")
-	protected StringAttr Dir;
+	protected String DirAttr;
 }
 
 // ST_TransitionEightDirectionType ...
@@ -56,45 +56,45 @@ public class ST_TransitionEightDirectionType {
 // CT_EightDirectionTransition ...
 public class CT_EightDirectionTransition {
 	@XmlAttribute(name = "dir")
-	protected ST_TransitionEightDirectionTypeAttr Dir;
+	protected ST_TransitionEightDirectionType DirAttr;
 }
 
 // CT_OrientationTransition ...
 public class CT_OrientationTransition {
 	@XmlAttribute(name = "dir")
-	protected StringAttr Dir;
+	protected String DirAttr;
 }
 
 // CT_InOutTransition ...
 public class CT_InOutTransition {
 	@XmlAttribute(name = "dir")
-	protected StringAttr Dir;
+	protected String DirAttr;
 }
 
 // CT_OptionalBlackTransition ...
 public class CT_OptionalBlackTransition {
 	@XmlAttribute(name = "thruBlk")
-	protected BooleanAttr ThruBlk;
+	protected Boolean ThruBlkAttr;
 }
 
 // CT_SplitTransition ...
 public class CT_SplitTransition {
 	@XmlAttribute(name = "orient")
-	protected StringAttr Orient;
+	protected String OrientAttr;
 	@XmlAttribute(name = "dir")
-	protected StringAttr Dir;
+	protected String DirAttr;
 }
 
 // CT_WheelTransition ...
 public class CT_WheelTransition {
 	@XmlAttribute(name = "spokes")
-	protected IntegerAttr Spokes;
+	protected Integer SpokesAttr;
 }
 
 // CT_TransitionStartSoundAction ...
 public class CT_TransitionStartSoundAction {
 	@XmlAttribute(name = "loop")
-	protected BooleanAttr Loop;
+	protected Boolean LoopAttr;
 	@XmlElement(required = true, name = "snd")
 	protected CT_EmbeddedWAVAudioFile Snd;
 }
@@ -117,11 +117,11 @@ public class ST_TransitionSpeed {
 // CT_SlideTransition ...
 public class CT_SlideTransition {
 	@XmlAttribute(name = "spd")
-	protected StringAttr Spd;
+	protected String SpdAttr;
 	@XmlAttribute(name = "advClick")
-	protected BooleanAttr AdvClick;
+	protected Boolean AdvClickAttr;
 	@XmlAttribute(name = "advTm")
-	protected IntegerAttr AdvTm;
+	protected Integer AdvTmAttr;
 	@XmlElement(required = true, name = "blinds")
 	protected CT_OrientationTransition Blinds;
 	@XmlElement(required = true, name = "checker")
@@ -195,13 +195,13 @@ public class ST_TLTimeNodeID {
 // CT_TLIterateIntervalTime ...
 public class CT_TLIterateIntervalTime {
 	@XmlAttribute(name = "val", required = true)
-	protected ST_TLTimeAttr Val;
+	protected ST_TLTime ValAttr;
 }
 
 // CT_TLIterateIntervalPercentage ...
 public class CT_TLIterateIntervalPercentage {
 	@XmlAttribute(name = "val", required = true)
-	protected ST_PositivePercentageAttr Val;
+	protected ST_PositivePercentage ValAttr;
 }
 
 // ST_IterateType ...
@@ -214,9 +214,9 @@ public class ST_IterateType {
 // CT_TLIterateData ...
 public class CT_TLIterateData {
 	@XmlAttribute(name = "type")
-	protected StringAttr Type;
+	protected String TypeAttr;
 	@XmlAttribute(name = "backwards")
-	protected BooleanAttr Backwards;
+	protected Boolean BackwardsAttr;
 	@XmlElement(required = true, name = "tmAbs")
 	protected CT_TLIterateIntervalTime TmAbs;
 	@XmlElement(required = true, name = "tmPct")
@@ -226,7 +226,7 @@ public class CT_TLIterateData {
 // CT_TLSubShapeId ...
 public class CT_TLSubShapeId {
 	@XmlAttribute(name = "spid", required = true)
-	protected StringAttr Spid;
+	protected String SpidAttr;
 }
 
 // CT_TLTextTargetElement ...
@@ -247,15 +247,15 @@ public class ST_TLChartSubelementType {
 // CT_TLOleChartTargetElement ...
 public class CT_TLOleChartTargetElement {
 	@XmlAttribute(name = "type", required = true)
-	protected StringAttr Type;
+	protected String TypeAttr;
 	@XmlAttribute(name = "lvl")
-	protected IntegerAttr Lvl;
+	protected Integer LvlAttr;
 }
 
 // CT_TLShapeTargetElement ...
 public class CT_TLShapeTargetElement {
 	@XmlAttribute(name = "spid", required = true)
-	protected IntegerAttr Spid;
+	protected Integer SpidAttr;
 	@XmlElement(required = true, name = "bg")
 	protected CT_Empty Bg;
 	@XmlElement(required = true, name = "subSp")
@@ -283,7 +283,7 @@ public class CT_TLTimeTargetElement {
 // CT_TLTriggerTimeNodeID ...
 public class CT_TLTriggerTimeNodeID {
 	@XmlAttribute(name = "val", required = true)
-	protected IntegerAttr Val;
+	protected Integer ValAttr;
 }
 
 // ST_TLTriggerRuntimeNode ...
@@ -296,7 +296,7 @@ public class ST_TLTriggerRuntimeNode {
 // CT_TLTriggerRuntimeNode ...
 public class CT_TLTriggerRuntimeNode {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // ST_TLTriggerEvent ...
@@ -309,9 +309,9 @@ public class ST_TLTriggerEvent {
 // CT_TLTimeCondition ...
 public class CT_TLTimeCondition {
 	@XmlAttribute(name = "evt")
-	protected StringAttr Evt;
+	protected String EvtAttr;
 	@XmlAttribute(name = "delay")
-	protected ST_TLTimeAttr Delay;
+	protected ST_TLTime DelayAttr;
 	@XmlElement(required = true, name = "tgtEl")
 	protected CT_TLTimeTargetElement TgtEl;
 	@XmlElement(required = true, name = "tn")
@@ -401,51 +401,51 @@ public class ST_TLTimeNodeType {
 // CT_TLCommonTimeNodeData ...
 public class CT_TLCommonTimeNodeData {
 	@XmlAttribute(name = "id")
-	protected IntegerAttr Id;
+	protected Integer IdAttr;
 	@XmlAttribute(name = "presetID")
-	protected IntegerAttr PresetID;
+	protected Integer PresetIDAttr;
 	@XmlAttribute(name = "presetClass")
-	protected StringAttr PresetClass;
+	protected String PresetClassAttr;
 	@XmlAttribute(name = "presetSubtype")
-	protected IntegerAttr PresetSubtype;
+	protected Integer PresetSubtypeAttr;
 	@XmlAttribute(name = "dur")
-	protected ST_TLTimeAttr Dur;
+	protected ST_TLTime DurAttr;
 	@XmlAttribute(name = "repeatCount")
-	protected ST_TLTimeAttr RepeatCount;
+	protected ST_TLTime RepeatCountAttr;
 	@XmlAttribute(name = "repeatDur")
-	protected ST_TLTimeAttr RepeatDur;
+	protected ST_TLTime RepeatDurAttr;
 	@XmlAttribute(name = "spd")
-	protected ST_PercentageAttr Spd;
+	protected ST_Percentage SpdAttr;
 	@XmlAttribute(name = "accel")
-	protected ST_PositiveFixedPercentageAttr Accel;
+	protected ST_PositiveFixedPercentage AccelAttr;
 	@XmlAttribute(name = "decel")
-	protected ST_PositiveFixedPercentageAttr Decel;
+	protected ST_PositiveFixedPercentage DecelAttr;
 	@XmlAttribute(name = "autoRev")
-	protected BooleanAttr AutoRev;
+	protected Boolean AutoRevAttr;
 	@XmlAttribute(name = "restart")
-	protected StringAttr Restart;
+	protected String RestartAttr;
 	@XmlAttribute(name = "fill")
-	protected StringAttr Fill;
+	protected String FillAttr;
 	@XmlAttribute(name = "syncBehavior")
-	protected StringAttr SyncBehavior;
+	protected String SyncBehaviorAttr;
 	@XmlAttribute(name = "tmFilter")
-	protected StringAttr TmFilter;
+	protected String TmFilterAttr;
 	@XmlAttribute(name = "evtFilter")
-	protected StringAttr EvtFilter;
+	protected String EvtFilterAttr;
 	@XmlAttribute(name = "display")
-	protected BooleanAttr Display;
+	protected Boolean DisplayAttr;
 	@XmlAttribute(name = "masterRel")
-	protected StringAttr MasterRel;
+	protected String MasterRelAttr;
 	@XmlAttribute(name = "bldLvl")
-	protected IntegerAttr BldLvl;
+	protected Integer BldLvlAttr;
 	@XmlAttribute(name = "grpId")
-	protected IntegerAttr GrpId;
+	protected Integer GrpIdAttr;
 	@XmlAttribute(name = "afterEffect")
-	protected BooleanAttr AfterEffect;
+	protected Boolean AfterEffectAttr;
 	@XmlAttribute(name = "nodeType")
-	protected StringAttr NodeType;
+	protected String NodeTypeAttr;
 	@XmlAttribute(name = "nodePh")
-	protected BooleanAttr NodePh;
+	protected Boolean NodePhAttr;
 	@XmlElement(required = true, name = "stCondLst")
 	protected CT_TLTimeConditionList StCondLst;
 	@XmlElement(required = true, name = "endCondLst")
@@ -483,11 +483,11 @@ public class ST_TLPreviousActionType {
 // CT_TLTimeNodeSequence ...
 public class CT_TLTimeNodeSequence {
 	@XmlAttribute(name = "concurrent")
-	protected BooleanAttr Concurrent;
+	protected Boolean ConcurrentAttr;
 	@XmlAttribute(name = "prevAc")
-	protected StringAttr PrevAc;
+	protected String PrevAcAttr;
 	@XmlAttribute(name = "nextAc")
-	protected StringAttr NextAc;
+	protected String NextAcAttr;
 	@XmlElement(required = true, name = "cTn")
 	protected CT_TLCommonTimeNodeData CTn;
 	@XmlElement(required = true, name = "prevCondLst")
@@ -539,21 +539,21 @@ public class ST_TLBehaviorOverrideType {
 // CT_TLCommonBehaviorData ...
 public class CT_TLCommonBehaviorData {
 	@XmlAttribute(name = "additive")
-	protected StringAttr Additive;
+	protected String AdditiveAttr;
 	@XmlAttribute(name = "accumulate")
-	protected StringAttr Accumulate;
+	protected String AccumulateAttr;
 	@XmlAttribute(name = "xfrmType")
-	protected StringAttr XfrmType;
+	protected String XfrmTypeAttr;
 	@XmlAttribute(name = "from")
-	protected StringAttr From;
+	protected String FromAttr;
 	@XmlAttribute(name = "to")
-	protected StringAttr To;
+	protected String ToAttr;
 	@XmlAttribute(name = "by")
-	protected StringAttr By;
+	protected String ByAttr;
 	@XmlAttribute(name = "rctx")
-	protected StringAttr Rctx;
+	protected String RctxAttr;
 	@XmlAttribute(name = "override")
-	protected StringAttr Override;
+	protected String OverrideAttr;
 	@XmlElement(required = true, name = "cTn")
 	protected CT_TLCommonTimeNodeData CTn;
 	@XmlElement(required = true, name = "tgtEl")
@@ -565,25 +565,25 @@ public class CT_TLCommonBehaviorData {
 // CT_TLAnimVariantBooleanVal ...
 public class CT_TLAnimVariantBooleanVal {
 	@XmlAttribute(name = "val", required = true)
-	protected BooleanAttr Val;
+	protected Boolean ValAttr;
 }
 
 // CT_TLAnimVariantIntegerVal ...
 public class CT_TLAnimVariantIntegerVal {
 	@XmlAttribute(name = "val", required = true)
-	protected IntegerAttr Val;
+	protected Integer ValAttr;
 }
 
 // CT_TLAnimVariantFloatVal ...
 public class CT_TLAnimVariantFloatVal {
 	@XmlAttribute(name = "val", required = true)
-	protected FloatAttr Val;
+	protected Float ValAttr;
 }
 
 // CT_TLAnimVariantStringVal ...
 public class CT_TLAnimVariantStringVal {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_TLAnimVariant ...
@@ -611,9 +611,9 @@ public class ST_TLTimeAnimateValueTime {
 // CT_TLTimeAnimateValue ...
 public class CT_TLTimeAnimateValue {
 	@XmlAttribute(name = "tm")
-	protected ST_TLTimeAnimateValueTimeAttr Tm;
+	protected ST_TLTimeAnimateValueTime TmAttr;
 	@XmlAttribute(name = "fmla")
-	protected StringAttr Fmla;
+	protected String FmlaAttr;
 	@XmlElement(required = true, name = "val")
 	protected CT_TLAnimVariant Val;
 }
@@ -641,15 +641,15 @@ public class ST_TLAnimateBehaviorValueType {
 // CT_TLAnimateBehavior ...
 public class CT_TLAnimateBehavior {
 	@XmlAttribute(name = "by")
-	protected StringAttr By;
+	protected String ByAttr;
 	@XmlAttribute(name = "from")
-	protected StringAttr From;
+	protected String FromAttr;
 	@XmlAttribute(name = "to")
-	protected StringAttr To;
+	protected String ToAttr;
 	@XmlAttribute(name = "calcmode")
-	protected StringAttr Calcmode;
+	protected String CalcmodeAttr;
 	@XmlAttribute(name = "valueType")
-	protected StringAttr ValueType;
+	protected String ValueTypeAttr;
 	@XmlElement(required = true, name = "cBhvr")
 	protected CT_TLCommonBehaviorData CBhvr;
 	@XmlElement(required = true, name = "tavLst")
@@ -659,21 +659,21 @@ public class CT_TLAnimateBehavior {
 // CT_TLByRgbColorTransform ...
 public class CT_TLByRgbColorTransform {
 	@XmlAttribute(name = "r", required = true)
-	protected ST_FixedPercentageAttr R;
+	protected ST_FixedPercentage RAttr;
 	@XmlAttribute(name = "g", required = true)
-	protected ST_FixedPercentageAttr G;
+	protected ST_FixedPercentage GAttr;
 	@XmlAttribute(name = "b", required = true)
-	protected ST_FixedPercentageAttr B;
+	protected ST_FixedPercentage BAttr;
 }
 
 // CT_TLByHslColorTransform ...
 public class CT_TLByHslColorTransform {
 	@XmlAttribute(name = "h", required = true)
-	protected IntegerAttr H;
+	protected Integer HAttr;
 	@XmlAttribute(name = "s", required = true)
-	protected ST_FixedPercentageAttr S;
+	protected ST_FixedPercentage SAttr;
 	@XmlAttribute(name = "l", required = true)
-	protected ST_FixedPercentageAttr L;
+	protected ST_FixedPercentage LAttr;
 }
 
 // CT_TLByAnimateColorTransform ...
@@ -701,9 +701,9 @@ public class ST_TLAnimateColorDirection {
 // CT_TLAnimateColorBehavior ...
 public class CT_TLAnimateColorBehavior {
 	@XmlAttribute(name = "clrSpc")
-	protected StringAttr ClrSpc;
+	protected String ClrSpcAttr;
 	@XmlAttribute(name = "dir")
-	protected StringAttr Dir;
+	protected String DirAttr;
 	@XmlElement(required = true, name = "cBhvr")
 	protected CT_TLCommonBehaviorData CBhvr;
 	@XmlElement(required = true, name = "by")
@@ -724,11 +724,11 @@ public class ST_TLAnimateEffectTransition {
 // CT_TLAnimateEffectBehavior ...
 public class CT_TLAnimateEffectBehavior {
 	@XmlAttribute(name = "transition")
-	protected StringAttr Transition;
+	protected String TransitionAttr;
 	@XmlAttribute(name = "filter")
-	protected StringAttr Filter;
+	protected String FilterAttr;
 	@XmlAttribute(name = "prLst")
-	protected StringAttr PrLst;
+	protected String PrLstAttr;
 	@XmlElement(required = true, name = "cBhvr")
 	protected CT_TLCommonBehaviorData CBhvr;
 	@XmlElement(required = true, name = "progress")
@@ -752,23 +752,23 @@ public class ST_TLAnimateMotionPathEditMode {
 // CT_TLPoint ...
 public class CT_TLPoint {
 	@XmlAttribute(name = "x", required = true)
-	protected ST_PercentageAttr X;
+	protected ST_Percentage XAttr;
 	@XmlAttribute(name = "y", required = true)
-	protected ST_PercentageAttr Y;
+	protected ST_Percentage YAttr;
 }
 
 // CT_TLAnimateMotionBehavior ...
 public class CT_TLAnimateMotionBehavior {
 	@XmlAttribute(name = "origin")
-	protected StringAttr Origin;
+	protected String OriginAttr;
 	@XmlAttribute(name = "path")
-	protected StringAttr Path;
+	protected String PathAttr;
 	@XmlAttribute(name = "pathEditMode")
-	protected StringAttr PathEditMode;
+	protected String PathEditModeAttr;
 	@XmlAttribute(name = "rAng")
-	protected IntegerAttr RAng;
+	protected Integer RAngAttr;
 	@XmlAttribute(name = "ptsTypes")
-	protected StringAttr PtsTypes;
+	protected String PtsTypesAttr;
 	@XmlElement(required = true, name = "cBhvr")
 	protected CT_TLCommonBehaviorData CBhvr;
 	@XmlElement(required = true, name = "by")
@@ -784,11 +784,11 @@ public class CT_TLAnimateMotionBehavior {
 // CT_TLAnimateRotationBehavior ...
 public class CT_TLAnimateRotationBehavior {
 	@XmlAttribute(name = "by")
-	protected IntegerAttr By;
+	protected Integer ByAttr;
 	@XmlAttribute(name = "from")
-	protected IntegerAttr From;
+	protected Integer FromAttr;
 	@XmlAttribute(name = "to")
-	protected IntegerAttr To;
+	protected Integer ToAttr;
 	@XmlElement(required = true, name = "cBhvr")
 	protected CT_TLCommonBehaviorData CBhvr;
 }
@@ -796,7 +796,7 @@ public class CT_TLAnimateRotationBehavior {
 // CT_TLAnimateScaleBehavior ...
 public class CT_TLAnimateScaleBehavior {
 	@XmlAttribute(name = "zoomContents")
-	protected BooleanAttr ZoomContents;
+	protected Boolean ZoomContentsAttr;
 	@XmlElement(required = true, name = "cBhvr")
 	protected CT_TLCommonBehaviorData CBhvr;
 	@XmlElement(required = true, name = "by")
@@ -817,9 +817,9 @@ public class ST_TLCommandType {
 // CT_TLCommandBehavior ...
 public class CT_TLCommandBehavior {
 	@XmlAttribute(name = "type")
-	protected StringAttr Type;
+	protected String TypeAttr;
 	@XmlAttribute(name = "cmd")
-	protected StringAttr Cmd;
+	protected String CmdAttr;
 	@XmlElement(required = true, name = "cBhvr")
 	protected CT_TLCommonBehaviorData CBhvr;
 }
@@ -835,13 +835,13 @@ public class CT_TLSetBehavior {
 // CT_TLCommonMediaNodeData ...
 public class CT_TLCommonMediaNodeData {
 	@XmlAttribute(name = "vol")
-	protected ST_PositiveFixedPercentageAttr Vol;
+	protected ST_PositiveFixedPercentage VolAttr;
 	@XmlAttribute(name = "mute")
-	protected BooleanAttr Mute;
+	protected Boolean MuteAttr;
 	@XmlAttribute(name = "numSld")
-	protected IntegerAttr NumSld;
+	protected Integer NumSldAttr;
 	@XmlAttribute(name = "showWhenStopped")
-	protected BooleanAttr ShowWhenStopped;
+	protected Boolean ShowWhenStoppedAttr;
 	@XmlElement(required = true, name = "cTn")
 	protected CT_TLCommonTimeNodeData CTn;
 	@XmlElement(required = true, name = "tgtEl")
@@ -851,7 +851,7 @@ public class CT_TLCommonMediaNodeData {
 // CT_TLMediaNodeAudio ...
 public class CT_TLMediaNodeAudio {
 	@XmlAttribute(name = "isNarration")
-	protected BooleanAttr IsNarration;
+	protected Boolean IsNarrationAttr;
 	@XmlElement(required = true, name = "cMediaNode")
 	protected CT_TLCommonMediaNodeData CMediaNode;
 }
@@ -859,7 +859,7 @@ public class CT_TLMediaNodeAudio {
 // CT_TLMediaNodeVideo ...
 public class CT_TLMediaNodeVideo {
 	@XmlAttribute(name = "fullScrn")
-	protected BooleanAttr FullScrn;
+	protected Boolean FullScrnAttr;
 	@XmlElement(required = true, name = "cMediaNode")
 	protected CT_TLCommonMediaNodeData CMediaNode;
 }
@@ -877,7 +877,7 @@ public class AG_TLBuild {
 // CT_TLTemplate ...
 public class CT_TLTemplate {
 	@XmlAttribute(name = "lvl")
-	protected IntegerAttr Lvl;
+	protected Integer LvlAttr;
 	@XmlElement(required = true, name = "tnLst")
 	protected CT_TimeNodeList TnLst;
 }
@@ -900,17 +900,17 @@ public class CT_TLBuildParagraph {
 	@XmlElement(required = true)
 	protected AG_TLBuild AG_TLBuild;
 	@XmlAttribute(name = "build")
-	protected StringAttr Build;
+	protected String BuildAttr;
 	@XmlAttribute(name = "bldLvl")
-	protected IntegerAttr BldLvl;
+	protected Integer BldLvlAttr;
 	@XmlAttribute(name = "animBg")
-	protected BooleanAttr AnimBg;
+	protected Boolean AnimBgAttr;
 	@XmlAttribute(name = "autoUpdateAnimBg")
-	protected BooleanAttr AutoUpdateAnimBg;
+	protected Boolean AutoUpdateAnimBgAttr;
 	@XmlAttribute(name = "rev")
-	protected BooleanAttr Rev;
+	protected Boolean RevAttr;
 	@XmlAttribute(name = "advAuto")
-	protected ST_TLTimeAttr AdvAuto;
+	protected ST_TLTime AdvAutoAttr;
 	@XmlElement(required = true, name = "tmplLst")
 	protected CT_TLTemplateList TmplLst;
 }
@@ -927,7 +927,7 @@ public class CT_TLBuildDiagram {
 	@XmlElement(required = true)
 	protected AG_TLBuild AG_TLBuild;
 	@XmlAttribute(name = "bld")
-	protected StringAttr Bld;
+	protected String BldAttr;
 }
 
 // ST_TLOleChartBuildType ...
@@ -942,9 +942,9 @@ public class CT_TLOleBuildChart {
 	@XmlElement(required = true)
 	protected AG_TLBuild AG_TLBuild;
 	@XmlAttribute(name = "bld")
-	protected StringAttr Bld;
+	protected String BldAttr;
 	@XmlAttribute(name = "animBg")
-	protected BooleanAttr AnimBg;
+	protected Boolean AnimBgAttr;
 }
 
 // CT_TLGraphicalObjectBuild ...
@@ -1007,15 +1007,15 @@ public class ST_Index {
 // CT_IndexRange ...
 public class CT_IndexRange {
 	@XmlAttribute(name = "st", required = true)
-	protected IntegerAttr St;
+	protected Integer StAttr;
 	@XmlAttribute(name = "end", required = true)
-	protected IntegerAttr End;
+	protected Integer EndAttr;
 }
 
 // CT_SlideRelationshipListEntry ...
 public class CT_SlideRelationshipListEntry {
 	@XmlAttribute(name = "r:id", required = true)
-	protected StringAttr RId;
+	protected String RIdAttr;
 }
 
 // CT_SlideRelationshipList ...
@@ -1027,7 +1027,7 @@ public class CT_SlideRelationshipList {
 // CT_CustomShowId ...
 public class CT_CustomShowId {
 	@XmlAttribute(name = "id", required = true)
-	protected IntegerAttr Id;
+	protected Integer IdAttr;
 }
 
 // EG_SlideListChoice ...
@@ -1043,13 +1043,13 @@ public class EG_SlideListChoice {
 // CT_CustomerData ...
 public class CT_CustomerData {
 	@XmlAttribute(name = "r:id", required = true)
-	protected StringAttr RId;
+	protected String RIdAttr;
 }
 
 // CT_TagsData ...
 public class CT_TagsData {
 	@XmlAttribute(name = "r:id", required = true)
-	protected StringAttr RId;
+	protected String RIdAttr;
 }
 
 // CT_CustomerDataList ...
@@ -1063,7 +1063,7 @@ public class CT_CustomerDataList {
 // CT_Extension ...
 public class CT_Extension {
 	@XmlAttribute(name = "uri", required = true)
-	protected StringAttr Uri;
+	protected String UriAttr;
 }
 
 // EG_ExtensionList ...
@@ -1080,22 +1080,22 @@ public class CT_ExtensionList {
 // CT_ExtensionListModify ...
 public class CT_ExtensionListModify {
 	@XmlAttribute(name = "mod")
-	protected BooleanAttr Mod;
+	protected Boolean ModAttr;
 	protected List<EG_ExtensionList> EG_ExtensionList;
 }
 
 // CT_CommentAuthor ...
 public class CT_CommentAuthor {
 	@XmlAttribute(name = "id", required = true)
-	protected IntegerAttr Id;
+	protected Integer IdAttr;
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "initials", required = true)
-	protected StringAttr Initials;
+	protected String InitialsAttr;
 	@XmlAttribute(name = "lastIdx", required = true)
-	protected IntegerAttr LastIdx;
+	protected Integer LastIdxAttr;
 	@XmlAttribute(name = "clrIdx", required = true)
-	protected IntegerAttr ClrIdx;
+	protected Integer ClrIdxAttr;
 	@XmlElement(required = true, name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
@@ -1115,11 +1115,11 @@ public class CmAuthorLst {
 // CT_Comment ...
 public class CT_Comment {
 	@XmlAttribute(name = "authorId", required = true)
-	protected IntegerAttr AuthorId;
+	protected Integer AuthorIdAttr;
 	@XmlAttribute(name = "dt")
-	protected ByteAttr Dt;
+	protected String DtAttr;
 	@XmlAttribute(name = "idx", required = true)
-	protected IntegerAttr Idx;
+	protected Integer IdxAttr;
 	@XmlElement(required = true, name = "pos")
 	protected CT_Point2D Pos;
 	@XmlElement(required = true, name = "text")
@@ -1164,7 +1164,7 @@ public class ST_OleObjectFollowColorScheme {
 // CT_OleObjectEmbed ...
 public class CT_OleObjectEmbed {
 	@XmlAttribute(name = "followColorScheme")
-	protected StringAttr FollowColorScheme;
+	protected String FollowColorSchemeAttr;
 	@XmlElement(required = true, name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
@@ -1172,7 +1172,7 @@ public class CT_OleObjectEmbed {
 // CT_OleObjectLink ...
 public class CT_OleObjectLink {
 	@XmlAttribute(name = "updateAutomatic")
-	protected BooleanAttr UpdateAutomatic;
+	protected Boolean UpdateAutomaticAttr;
 	@XmlElement(required = true, name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
@@ -1182,7 +1182,7 @@ public class CT_OleObject {
 	@XmlElement(required = true)
 	protected AG_Ole AG_Ole;
 	@XmlAttribute(name = "progId")
-	protected StringAttr ProgId;
+	protected String ProgIdAttr;
 	@XmlElement(required = true, name = "embed")
 	protected CT_OleObjectEmbed Embed;
 	@XmlElement(required = true, name = "link")
@@ -1223,9 +1223,9 @@ public class ST_SlideId {
 // CT_SlideIdListEntry ...
 public class CT_SlideIdListEntry {
 	@XmlAttribute(name = "id", required = true)
-	protected IntegerAttr Id;
+	protected Integer IdAttr;
 	@XmlAttribute(name = "r:id", required = true)
-	protected StringAttr RId;
+	protected String RIdAttr;
 	@XmlElement(required = true, name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
@@ -1246,9 +1246,9 @@ public class ST_SlideMasterId {
 // CT_SlideMasterIdListEntry ...
 public class CT_SlideMasterIdListEntry {
 	@XmlAttribute(name = "id")
-	protected IntegerAttr Id;
+	protected Integer IdAttr;
 	@XmlAttribute(name = "r:id", required = true)
-	protected StringAttr RId;
+	protected String RIdAttr;
 	@XmlElement(required = true, name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
@@ -1262,7 +1262,7 @@ public class CT_SlideMasterIdList {
 // CT_NotesMasterIdListEntry ...
 public class CT_NotesMasterIdListEntry {
 	@XmlAttribute(name = "r:id", required = true)
-	protected StringAttr RId;
+	protected String RIdAttr;
 	@XmlElement(required = true, name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
@@ -1276,7 +1276,7 @@ public class CT_NotesMasterIdList {
 // CT_HandoutMasterIdListEntry ...
 public class CT_HandoutMasterIdListEntry {
 	@XmlAttribute(name = "r:id", required = true)
-	protected StringAttr RId;
+	protected String RIdAttr;
 	@XmlElement(required = true, name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
@@ -1290,7 +1290,7 @@ public class CT_HandoutMasterIdList {
 // CT_EmbeddedFontDataId ...
 public class CT_EmbeddedFontDataId {
 	@XmlAttribute(name = "r:id", required = true)
-	protected StringAttr RId;
+	protected String RIdAttr;
 }
 
 // CT_EmbeddedFontListEntry ...
@@ -1316,15 +1316,15 @@ public class CT_EmbeddedFontList {
 // CT_SmartTags ...
 public class CT_SmartTags {
 	@XmlAttribute(name = "r:id", required = true)
-	protected StringAttr RId;
+	protected String RIdAttr;
 }
 
 // CT_CustomShow ...
 public class CT_CustomShow {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "id", required = true)
-	protected IntegerAttr Id;
+	protected Integer IdAttr;
 	@XmlElement(required = true, name = "sldLst")
 	protected CT_SlideRelationshipList SldLst;
 	@XmlElement(required = true, name = "extLst")
@@ -1354,13 +1354,13 @@ public class ST_PhotoAlbumFrameShape {
 // CT_PhotoAlbum ...
 public class CT_PhotoAlbum {
 	@XmlAttribute(name = "bw")
-	protected BooleanAttr Bw;
+	protected Boolean BwAttr;
 	@XmlAttribute(name = "showCaptions")
-	protected BooleanAttr ShowCaptions;
+	protected Boolean ShowCaptionsAttr;
 	@XmlAttribute(name = "layout")
-	protected StringAttr Layout;
+	protected String LayoutAttr;
 	@XmlAttribute(name = "frame")
-	protected StringAttr Frame;
+	protected String FrameAttr;
 	@XmlElement(required = true, name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
@@ -1382,21 +1382,21 @@ public class ST_SlideSizeType {
 // CT_SlideSize ...
 public class CT_SlideSize {
 	@XmlAttribute(name = "cx", required = true)
-	protected IntegerAttr Cx;
+	protected Integer CxAttr;
 	@XmlAttribute(name = "cy", required = true)
-	protected IntegerAttr Cy;
+	protected Integer CyAttr;
 	@XmlAttribute(name = "type")
-	protected StringAttr Type;
+	protected String TypeAttr;
 }
 
 // CT_Kinsoku ...
 public class CT_Kinsoku {
 	@XmlAttribute(name = "lang")
-	protected StringAttr Lang;
+	protected String LangAttr;
 	@XmlAttribute(name = "invalStChars", required = true)
-	protected StringAttr InvalStChars;
+	protected String InvalStCharsAttr;
 	@XmlAttribute(name = "invalEndChars", required = true)
-	protected StringAttr InvalEndChars;
+	protected String InvalEndCharsAttr;
 }
 
 // ST_BookmarkIdSeed ...
@@ -1409,41 +1409,41 @@ public class ST_BookmarkIdSeed {
 // CT_ModifyVerifier ...
 public class CT_ModifyVerifier {
 	@XmlAttribute(name = "algorithmName")
-	protected StringAttr AlgorithmName;
+	protected String AlgorithmNameAttr;
 	@XmlAttribute(name = "hashValue")
-	protected List<Byte>Attr HashValue;
+	protected List<Byte> HashValueAttr;
 	@XmlAttribute(name = "saltValue")
-	protected List<Byte>Attr SaltValue;
+	protected List<Byte> SaltValueAttr;
 	@XmlAttribute(name = "spinValue")
-	protected IntegerAttr SpinValue;
+	protected Integer SpinValueAttr;
 }
 
 // CT_Presentation ...
 public class CT_Presentation {
 	@XmlAttribute(name = "serverZoom")
-	protected ST_PercentageAttr ServerZoom;
+	protected ST_Percentage ServerZoomAttr;
 	@XmlAttribute(name = "firstSlideNum")
-	protected IntegerAttr FirstSlideNum;
+	protected Integer FirstSlideNumAttr;
 	@XmlAttribute(name = "showSpecialPlsOnTitleSld")
-	protected BooleanAttr ShowSpecialPlsOnTitleSld;
+	protected Boolean ShowSpecialPlsOnTitleSldAttr;
 	@XmlAttribute(name = "rtl")
-	protected BooleanAttr Rtl;
+	protected Boolean RtlAttr;
 	@XmlAttribute(name = "removePersonalInfoOnSave")
-	protected BooleanAttr RemovePersonalInfoOnSave;
+	protected Boolean RemovePersonalInfoOnSaveAttr;
 	@XmlAttribute(name = "compatMode")
-	protected BooleanAttr CompatMode;
+	protected Boolean CompatModeAttr;
 	@XmlAttribute(name = "strictFirstAndLastChars")
-	protected BooleanAttr StrictFirstAndLastChars;
+	protected Boolean StrictFirstAndLastCharsAttr;
 	@XmlAttribute(name = "embedTrueTypeFonts")
-	protected BooleanAttr EmbedTrueTypeFonts;
+	protected Boolean EmbedTrueTypeFontsAttr;
 	@XmlAttribute(name = "saveSubsetFonts")
-	protected BooleanAttr SaveSubsetFonts;
+	protected Boolean SaveSubsetFontsAttr;
 	@XmlAttribute(name = "autoCompressPictures")
-	protected BooleanAttr AutoCompressPictures;
+	protected Boolean AutoCompressPicturesAttr;
 	@XmlAttribute(name = "bookmarkIdSeed")
-	protected IntegerAttr BookmarkIdSeed;
+	protected Integer BookmarkIdSeedAttr;
 	@XmlAttribute(name = "conformance")
-	protected StringAttr Conformance;
+	protected String ConformanceAttr;
 	@XmlElement(required = true, name = "sldMasterIdLst")
 	protected CT_SlideMasterIdList SldMasterIdLst;
 	@XmlElement(required = true, name = "notesMasterIdLst")
@@ -1485,13 +1485,13 @@ public class Presentation {
 // CT_HtmlPublishProperties ...
 public class CT_HtmlPublishProperties {
 	@XmlAttribute(name = "showSpeakerNotes")
-	protected BooleanAttr ShowSpeakerNotes;
+	protected Boolean ShowSpeakerNotesAttr;
 	@XmlAttribute(name = "target")
-	protected StringAttr Target;
+	protected String TargetAttr;
 	@XmlAttribute(name = "title")
-	protected StringAttr Title;
+	protected String TitleAttr;
 	@XmlAttribute(name = "r:id", required = true)
-	protected StringAttr RId;
+	protected String RIdAttr;
 	protected List<EG_SlideListChoice> EG_SlideListChoice;
 	@XmlElement(required = true, name = "extLst")
 	protected CT_ExtensionList ExtLst;
@@ -1514,15 +1514,15 @@ public class ST_PrintColorMode {
 // CT_PrintProperties ...
 public class CT_PrintProperties {
 	@XmlAttribute(name = "prnWhat")
-	protected StringAttr PrnWhat;
+	protected String PrnWhatAttr;
 	@XmlAttribute(name = "clrMode")
-	protected StringAttr ClrMode;
+	protected String ClrModeAttr;
 	@XmlAttribute(name = "hiddenSlides")
-	protected BooleanAttr HiddenSlides;
+	protected Boolean HiddenSlidesAttr;
 	@XmlAttribute(name = "scaleToFitPaper")
-	protected BooleanAttr ScaleToFitPaper;
+	protected Boolean ScaleToFitPaperAttr;
 	@XmlAttribute(name = "frameSlides")
-	protected BooleanAttr FrameSlides;
+	protected Boolean FrameSlidesAttr;
 	@XmlElement(required = true, name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
@@ -1530,13 +1530,13 @@ public class CT_PrintProperties {
 // CT_ShowInfoBrowse ...
 public class CT_ShowInfoBrowse {
 	@XmlAttribute(name = "showScrollbar")
-	protected BooleanAttr ShowScrollbar;
+	protected Boolean ShowScrollbarAttr;
 }
 
 // CT_ShowInfoKiosk ...
 public class CT_ShowInfoKiosk {
 	@XmlAttribute(name = "restart")
-	protected IntegerAttr Restart;
+	protected Integer RestartAttr;
 }
 
 // EG_ShowType ...
@@ -1552,13 +1552,13 @@ public class EG_ShowType {
 // CT_ShowProperties ...
 public class CT_ShowProperties {
 	@XmlAttribute(name = "loop")
-	protected BooleanAttr Loop;
+	protected Boolean LoopAttr;
 	@XmlAttribute(name = "showNarration")
-	protected BooleanAttr ShowNarration;
+	protected Boolean ShowNarrationAttr;
 	@XmlAttribute(name = "showAnimation")
-	protected BooleanAttr ShowAnimation;
+	protected Boolean ShowAnimationAttr;
 	@XmlAttribute(name = "useTimings")
-	protected BooleanAttr UseTimings;
+	protected Boolean UseTimingsAttr;
 	protected List<EG_ShowType> EG_ShowType;
 	protected List<EG_SlideListChoice> EG_SlideListChoice;
 	@XmlElement(required = true, name = "penClr")
@@ -1588,13 +1588,13 @@ public class PresentationPr {
 // CT_HeaderFooter ...
 public class CT_HeaderFooter {
 	@XmlAttribute(name = "sldNum")
-	protected BooleanAttr SldNum;
+	protected Boolean SldNumAttr;
 	@XmlAttribute(name = "hdr")
-	protected BooleanAttr Hdr;
+	protected Boolean HdrAttr;
 	@XmlAttribute(name = "ftr")
-	protected BooleanAttr Ftr;
+	protected Boolean FtrAttr;
 	@XmlAttribute(name = "dt")
-	protected BooleanAttr Dt;
+	protected Boolean DtAttr;
 	@XmlElement(required = true, name = "extLst")
 	protected CT_ExtensionListModify ExtLst;
 }
@@ -1616,15 +1616,15 @@ public class ST_PlaceholderSize {
 // CT_Placeholder ...
 public class CT_Placeholder {
 	@XmlAttribute(name = "type")
-	protected StringAttr Type;
+	protected String TypeAttr;
 	@XmlAttribute(name = "orient")
-	protected StringAttr Orient;
+	protected String OrientAttr;
 	@XmlAttribute(name = "sz")
-	protected StringAttr Sz;
+	protected String SzAttr;
 	@XmlAttribute(name = "idx")
-	protected IntegerAttr Idx;
+	protected Integer IdxAttr;
 	@XmlAttribute(name = "hasCustomPrompt")
-	protected BooleanAttr HasCustomPrompt;
+	protected Boolean HasCustomPromptAttr;
 	@XmlElement(required = true, name = "extLst")
 	protected CT_ExtensionListModify ExtLst;
 }
@@ -1632,9 +1632,9 @@ public class CT_Placeholder {
 // CT_ApplicationNonVisualDrawingProps ...
 public class CT_ApplicationNonVisualDrawingProps {
 	@XmlAttribute(name = "isPhoto")
-	protected BooleanAttr IsPhoto;
+	protected Boolean IsPhotoAttr;
 	@XmlAttribute(name = "userDrawn")
-	protected BooleanAttr UserDrawn;
+	protected Boolean UserDrawnAttr;
 	protected List<EG_Media> AEG_Media;
 	@XmlElement(required = true, name = "ph")
 	protected CT_Placeholder Ph;
@@ -1657,7 +1657,7 @@ public class CT_ShapeNonVisual {
 // CT_Shape ...
 public class CT_Shape {
 	@XmlAttribute(name = "useBgFill")
-	protected BooleanAttr UseBgFill;
+	protected Boolean UseBgFillAttr;
 	@XmlElement(required = true, name = "nvSpPr")
 	protected CT_ShapeNonVisual NvSpPr;
 	@XmlElement(required = true, name = "spPr")
@@ -1729,7 +1729,7 @@ public class CT_GraphicalObjectFrameNonVisual {
 // CT_GraphicalObjectFrame ...
 public class CT_GraphicalObjectFrame {
 	@XmlAttribute(name = "bwMode")
-	protected StringAttr BwMode;
+	protected String BwModeAttr;
 	@XmlElement(required = true, name = "nvGraphicFramePr")
 	protected CT_GraphicalObjectFrameNonVisual NvGraphicFramePr;
 	@XmlElement(required = true, name = "xfrm")
@@ -1775,7 +1775,7 @@ public class CT_GroupShape {
 // CT_Rel ...
 public class CT_Rel {
 	@XmlAttribute(name = "r:id", required = true)
-	protected StringAttr RId;
+	protected String RIdAttr;
 }
 
 // EG_TopLevelSlide ...
@@ -1801,7 +1801,7 @@ public class AG_ChildSlide {
 // CT_BackgroundProperties ...
 public class CT_BackgroundProperties {
 	@XmlAttribute(name = "shadeToTitle")
-	protected BooleanAttr ShadeToTitle;
+	protected Boolean ShadeToTitleAttr;
 	protected List<EG_FillProperties> AEG_FillProperties;
 	protected List<EG_EffectProperties> AEG_EffectProperties;
 	@XmlElement(required = true, name = "extLst")
@@ -1819,14 +1819,14 @@ public class EG_Background {
 // CT_Background ...
 public class CT_Background {
 	@XmlAttribute(name = "bwMode")
-	protected StringAttr BwMode;
+	protected String BwModeAttr;
 	protected EG_Background EG_Background;
 }
 
 // CT_CommonSlideData ...
 public class CT_CommonSlideData {
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlElement(required = true, name = "bg")
 	protected CT_Background Bg;
 	@XmlElement(required = true, name = "spTree")
@@ -1844,7 +1844,7 @@ public class CT_Slide {
 	@XmlElement(required = true)
 	protected AG_ChildSlide AG_ChildSlide;
 	@XmlAttribute(name = "show")
-	protected BooleanAttr Show;
+	protected Boolean ShowAttr;
 	protected List<EG_ChildSlide> EG_ChildSlide;
 	@XmlElement(required = true, name = "cSld")
 	protected CT_CommonSlideData CSld;
@@ -1874,13 +1874,13 @@ public class CT_SlideLayout {
 	@XmlElement(required = true)
 	protected AG_ChildSlide AG_ChildSlide;
 	@XmlAttribute(name = "matchingName")
-	protected StringAttr MatchingName;
+	protected String MatchingNameAttr;
 	@XmlAttribute(name = "type")
-	protected StringAttr Type;
+	protected String TypeAttr;
 	@XmlAttribute(name = "preserve")
-	protected BooleanAttr Preserve;
+	protected Boolean PreserveAttr;
 	@XmlAttribute(name = "userDrawn")
-	protected BooleanAttr UserDrawn;
+	protected Boolean UserDrawnAttr;
 	protected List<EG_ChildSlide> EG_ChildSlide;
 	@XmlElement(required = true, name = "cSld")
 	protected CT_CommonSlideData CSld;
@@ -1922,9 +1922,9 @@ public class ST_SlideLayoutId {
 // CT_SlideLayoutIdListEntry ...
 public class CT_SlideLayoutIdListEntry {
 	@XmlAttribute(name = "id")
-	protected IntegerAttr Id;
+	protected Integer IdAttr;
 	@XmlAttribute(name = "r:id", required = true)
-	protected StringAttr RId;
+	protected String RIdAttr;
 	@XmlElement(required = true, name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
@@ -1938,7 +1938,7 @@ public class CT_SlideLayoutIdList {
 // CT_SlideMaster ...
 public class CT_SlideMaster {
 	@XmlAttribute(name = "preserve")
-	protected BooleanAttr Preserve;
+	protected Boolean PreserveAttr;
 	protected List<EG_TopLevelSlide> EG_TopLevelSlide;
 	@XmlElement(required = true, name = "cSld")
 	protected CT_CommonSlideData CSld;
@@ -2018,11 +2018,11 @@ public class Notes {
 // CT_SlideSyncProperties ...
 public class CT_SlideSyncProperties {
 	@XmlAttribute(name = "serverSldId", required = true)
-	protected StringAttr ServerSldId;
+	protected String ServerSldIdAttr;
 	@XmlAttribute(name = "serverSldModifiedTime", required = true)
-	protected ByteAttr ServerSldModifiedTime;
+	protected String ServerSldModifiedTimeAttr;
 	@XmlAttribute(name = "clientInsertedTime", required = true)
-	protected ByteAttr ClientInsertedTime;
+	protected String ClientInsertedTimeAttr;
 	@XmlElement(required = true, name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
@@ -2036,9 +2036,9 @@ public class SldSyncPr {
 // CT_StringTag ...
 public class CT_StringTag {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_TagList ...
@@ -2070,23 +2070,23 @@ public class ST_ViewType {
 // CT_NormalViewPortion ...
 public class CT_NormalViewPortion {
 	@XmlAttribute(name = "sz", required = true)
-	protected ST_PositiveFixedPercentageAttr Sz;
+	protected ST_PositiveFixedPercentage SzAttr;
 	@XmlAttribute(name = "autoAdjust")
-	protected BooleanAttr AutoAdjust;
+	protected Boolean AutoAdjustAttr;
 }
 
 // CT_NormalViewProperties ...
 public class CT_NormalViewProperties {
 	@XmlAttribute(name = "showOutlineIcons")
-	protected BooleanAttr ShowOutlineIcons;
+	protected Boolean ShowOutlineIconsAttr;
 	@XmlAttribute(name = "snapVertSplitter")
-	protected BooleanAttr SnapVertSplitter;
+	protected Boolean SnapVertSplitterAttr;
 	@XmlAttribute(name = "vertBarState")
-	protected StringAttr VertBarState;
+	protected String VertBarStateAttr;
 	@XmlAttribute(name = "horzBarState")
-	protected StringAttr HorzBarState;
+	protected String HorzBarStateAttr;
 	@XmlAttribute(name = "preferSingleView")
-	protected BooleanAttr PreferSingleView;
+	protected Boolean PreferSingleViewAttr;
 	@XmlElement(required = true, name = "restoredLeft")
 	protected CT_NormalViewPortion RestoredLeft;
 	@XmlElement(required = true, name = "restoredTop")
@@ -2098,7 +2098,7 @@ public class CT_NormalViewProperties {
 // CT_CommonViewProperties ...
 public class CT_CommonViewProperties {
 	@XmlAttribute(name = "varScale")
-	protected BooleanAttr VarScale;
+	protected Boolean VarScaleAttr;
 	@XmlElement(required = true, name = "scale")
 	protected CT_Scale2D Scale;
 	@XmlElement(required = true, name = "origin")
@@ -2116,9 +2116,9 @@ public class CT_NotesTextViewProperties {
 // CT_OutlineViewSlideEntry ...
 public class CT_OutlineViewSlideEntry {
 	@XmlAttribute(name = "r:id", required = true)
-	protected StringAttr RId;
+	protected String RIdAttr;
 	@XmlAttribute(name = "collapse")
-	protected BooleanAttr Collapse;
+	protected Boolean CollapseAttr;
 }
 
 // CT_OutlineViewSlideList ...
@@ -2140,7 +2140,7 @@ public class CT_OutlineViewProperties {
 // CT_SlideSorterViewProperties ...
 public class CT_SlideSorterViewProperties {
 	@XmlAttribute(name = "showFormatting")
-	protected BooleanAttr ShowFormatting;
+	protected Boolean ShowFormattingAttr;
 	@XmlElement(required = true, name = "cViewPr")
 	protected CT_CommonViewProperties CViewPr;
 	@XmlElement(required = true, name = "extLst")
@@ -2150,9 +2150,9 @@ public class CT_SlideSorterViewProperties {
 // CT_Guide ...
 public class CT_Guide {
 	@XmlAttribute(name = "orient")
-	protected StringAttr Orient;
+	protected String OrientAttr;
 	@XmlAttribute(name = "pos")
-	protected ST_Coordinate32Attr Pos;
+	protected ST_Coordinate32 PosAttr;
 }
 
 // CT_GuideList ...
@@ -2164,11 +2164,11 @@ public class CT_GuideList {
 // CT_CommonSlideViewProperties ...
 public class CT_CommonSlideViewProperties {
 	@XmlAttribute(name = "snapToGrid")
-	protected BooleanAttr SnapToGrid;
+	protected Boolean SnapToGridAttr;
 	@XmlAttribute(name = "snapToObjects")
-	protected BooleanAttr SnapToObjects;
+	protected Boolean SnapToObjectsAttr;
 	@XmlAttribute(name = "showGuides")
-	protected BooleanAttr ShowGuides;
+	protected Boolean ShowGuidesAttr;
 	@XmlElement(required = true, name = "cViewPr")
 	protected CT_CommonViewProperties CViewPr;
 	@XmlElement(required = true, name = "guideLst")
@@ -2194,9 +2194,9 @@ public class CT_NotesViewProperties {
 // CT_ViewProperties ...
 public class CT_ViewProperties {
 	@XmlAttribute(name = "lastView")
-	protected StringAttr LastView;
+	protected String LastViewAttr;
 	@XmlAttribute(name = "showComments")
-	protected BooleanAttr ShowComments;
+	protected Boolean ShowCommentsAttr;
 	@XmlElement(required = true, name = "normalViewPr")
 	protected CT_NormalViewProperties NormalViewPr;
 	@XmlElement(required = true, name = "slideViewPr")

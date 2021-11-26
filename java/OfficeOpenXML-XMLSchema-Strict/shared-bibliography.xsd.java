@@ -202,11 +202,11 @@ public class Sources {
 // CT_Sources ...
 public class CT_Sources {
 	@XmlAttribute(name = "SelectedStyle")
-	protected StringAttr SelectedStyle;
+	protected String SelectedStyleAttr;
 	@XmlAttribute(name = "StyleName")
-	protected StringAttr StyleName;
+	protected String StyleNameAttr;
 	@XmlAttribute(name = "URI")
-	protected StringAttr URI;
+	protected String URIAttr;
 	@XmlElement(required = true, name = "Source")
 	protected List<CT_SourceType> Source;
 }

@@ -39,9 +39,9 @@ public class Modules {
 // ArchetypeDescriptor is 1.0.0+
 public class ArchetypeDescriptor {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "partial")
-	protected BooleanAttr Partial;
+	protected Boolean PartialAttr;
 	@XmlElement(required = true, name = "requiredProperties")
 	protected RequiredProperties RequiredProperties;
 	@XmlElement(required = true, name = "fileSets")
@@ -53,7 +53,7 @@ public class ArchetypeDescriptor {
 // RequiredProperty is A regular expression used to validate the property.
 public class RequiredProperty {
 	@XmlAttribute(name = "key", required = true)
-	protected StringAttr Key;
+	protected String KeyAttr;
 	@XmlElement(required = true, name = "defaultValue")
 	protected String DefaultValue;
 	@XmlElement(required = true, name = "validationRegex")
@@ -63,11 +63,11 @@ public class RequiredProperty {
 // ModuleDescriptor is 1.0.0+
 public class ModuleDescriptor {
 	@XmlAttribute(name = "id", required = true)
-	protected StringAttr Id;
+	protected String IdAttr;
 	@XmlAttribute(name = "dir", required = true)
-	protected StringAttr Dir;
+	protected String DirAttr;
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlElement(required = true, name = "fileSets")
 	protected FileSets FileSets;
 	@XmlElement(required = true, name = "modules")
@@ -90,11 +90,11 @@ public class Excludes {
 //            project's files will be generated.
 public class FileSet {
 	@XmlAttribute(name = "filtered")
-	protected BooleanAttr Filtered;
+	protected Boolean FilteredAttr;
 	@XmlAttribute(name = "packaged")
-	protected BooleanAttr Packaged;
+	protected Boolean PackagedAttr;
 	@XmlAttribute(name = "encoding")
-	protected StringAttr Encoding;
+	protected String EncodingAttr;
 	@XmlElement(required = true, name = "directory")
 	protected String Directory;
 	@XmlElement(required = true, name = "includes")

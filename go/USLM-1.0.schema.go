@@ -4,7 +4,6 @@ package schema
 
 import (
 	"encoding/xml"
-	"time"
 )
 
 // DateSimpleType is The date simple type unifies both date and time formats and allows
@@ -12,8 +11,8 @@ import (
 //             to allow situations where the law becomes effective based on another
 //             time zone.
 type DateSimpleType struct {
-	Date     time.Time
-	DateTime time.Time
+	DateTime string
+	Date     string
 }
 
 // OccurrenceSimpleType is The occurrence simple type specifies which occurrence is affected
@@ -21,8 +20,8 @@ type DateSimpleType struct {
 //             integer or a value from the choice enumeration such as "all" for
 //             all occurrences or "last" for the last occurrence.
 type OccurrenceSimpleType struct {
-	PositiveInteger int
 	ChoiceEnum      *ChoiceEnum
+	PositiveInteger int
 }
 
 // ShortStringSimpleType is A simple string with not more than 32 characters.
@@ -212,6 +211,7 @@ type BaseType struct {
 	ClassificationGroup *ClassificationGroup
 	AnnotationGroup     *AnnotationGroup
 	VersioningGroup     *VersioningGroup
+	Value               string `xml:",chardata"`
 }
 
 // BaseBlockType is The base block type is a variant of the base type, but having a
@@ -243,20 +243,24 @@ type MarkerType struct {
 type InlineType struct {
 	Marker *MarkerType `xml:"marker"`
 	Inline *InlineType `xml:"inline"`
+	*BaseContentType
 }
 
 // BlockType is The block type is a extension of the base type to content
 //             consisting of only elements.
 type BlockType struct {
+	*BaseBlockType
 }
 
 // TextType is The text type is a broad base type allowing any content.
 type TextType struct {
+	*BaseContentType
 }
 
 // ContentType is The content type is a broad base type allowing any content.
 type ContentType struct {
 	OrientationAttr string `xml:"orientation,attr,omitempty"`
+	*BaseContentType
 }
 
 // Marker is The <marker> element is a primitive element to be used to mark or
@@ -291,6 +295,7 @@ type LawDocType struct {
 	Main     *MainType     `xml:"main"`
 	Block    *BlockType    `xml:"block"`
 	Appendix *AppendixType `xml:"appendix"`
+	*BaseBlockType
 }
 
 // GenericDocType is In addition to the content part of the document, a document
@@ -299,6 +304,7 @@ type GenericDocType struct {
 	Meta     *MetaType       `xml:"meta"`
 	Content  *ContentType    `xml:"content"`
 	Appendix []*AppendixType `xml:"appendix"`
+	*BaseBlockType
 }
 
 // MetaType is Properties can be grouped into sets. These set can
@@ -308,6 +314,7 @@ type GenericDocType struct {
 type MetaType struct {
 	Property *PropertyType `xml:"property"`
 	Set      *SetType      `xml:"set"`
+	*BaseBlockType
 }
 
 // PropertyType is A property can represent a pointer to either an external
@@ -324,6 +331,7 @@ type PropertyType struct {
 	ValueGroup     *ValueGroup
 	ReferenceGroup *ReferenceGroup
 	TypeAttr       string `xml:"type,attr,omitempty"`
+	*InlineType
 }
 
 // SetType is A set can contain 0 or more sets.
@@ -331,6 +339,7 @@ type SetType struct {
 	TypeAttr string        `xml:"type,attr,omitempty"`
 	Property *PropertyType `xml:"property"`
 	Set      *SetType      `xml:"set"`
+	*BaseBlockType
 }
 
 // TocType is The items in a table of contents can be arranged in
@@ -342,6 +351,7 @@ type TocType struct {
 	HeadingStructure *HeadingStructure
 	TocItem          *TocItemType `xml:"tocItem"`
 	Layout           *LayoutType  `xml:"layout"`
+	*BaseBlockType
 }
 
 // TocItemType is Use the description group to record the number and title in the
@@ -351,6 +361,7 @@ type TocItemType struct {
 	HeadingStructure *HeadingStructure
 	TocItem          []*TocItemType `xml:"tocItem"`
 	Content          []*ContentType `xml:"content"`
+	*BaseBlockType
 }
 
 // MainType is The document is permitted to be empty to allow for the
@@ -377,6 +388,7 @@ type StatementType struct {
 	Text             *TextType    `xml:"text"`
 	Content          *ContentType `xml:"content"`
 	Level            *LevelType   `xml:"level"`
+	*BaseContentType
 }
 
 // PreambleType is Attributes from the description group may be used to
@@ -387,6 +399,7 @@ type PreambleType struct {
 	HeadingStructure *HeadingStructure
 	RecitalStructure []*RecitalStructure
 	EnactingFormula  *StatementType `xml:"enactingFormula"`
+	*BaseBlockType
 }
 
 // LevelType is Use the description group to record information in the
@@ -397,6 +410,7 @@ type LevelType struct {
 	HeadingStructure *HeadingStructure
 	TocStructure     []*TocStructure
 	LevelStructure   *LevelStructure
+	*BaseBlockType
 }
 
 // NumType is Use the @value attribute to record a normalized value of
@@ -405,12 +419,14 @@ type LevelType struct {
 //                      attributes to record the range.
 type NumType struct {
 	ValueGroup *ValueGroup
+	*InlineType
 }
 
 // HeadingType is The heading type is used to define heading and subheadings for
 //             levels and other structured items. Often a heading will follow
 //             a number.
 type HeadingType struct {
+	*ContentType
 }
 
 // InstructionType is A quoted structure may be associated with an
@@ -424,6 +440,7 @@ type InstructionType struct {
 	Level         []*LevelType       `xml:"level"`
 	QuotedText    *QuotedTextType    `xml:"quotedText"`
 	QuotedContent *QuotedContentType `xml:"quotedContent"`
+	*BaseContentType
 }
 
 // ActionType is Use the @action attribute to describe the action being taken.
@@ -431,6 +448,7 @@ type ActionType struct {
 	ReferenceGroup *ReferenceGroup
 	AmendingGroup  *AmendingGroup
 	ActionGroup    *ActionGroup
+	*InlineType
 }
 
 // NotesType is You can use the @type attribute to position the notes
@@ -441,6 +459,7 @@ type NotesType struct {
 	Subheading []*HeadingType `xml:"subheading"`
 	Note       []*NoteType    `xml:"note"`
 	Layout     *LayoutType    `xml:"layout"`
+	*BaseBlockType
 }
 
 // NoteType is You can use the @date to associate dates to your notes.
@@ -448,6 +467,7 @@ type NotesType struct {
 type NoteType struct {
 	NoteGroup *NoteGroup
 	DateGroup *DateGroup
+	*ContentType
 }
 
 // AppendixType is If an <appendix> is to be included by reference, use the
@@ -462,6 +482,7 @@ type AppendixType struct {
 	TocStructure     *TocStructure
 	LevelStructure   *LevelStructure
 	Block            *BlockType `xml:"block"`
+	*BaseBlockType
 }
 
 // SignaturesType is Defines a block for a collection of signatures. An opening paragraph
@@ -474,7 +495,7 @@ type SignaturesType struct {
 	P         *PType           `xml:"p"`
 	Signature []*SignatureType `xml:"signature"`
 	Layout    *LayoutType      `xml:"layout"`
-	Date      time.Time        `xml:"date"`
+	Date      string           `xml:"date"`
 }
 
 // Name ...
@@ -501,7 +522,7 @@ type SignatureType struct {
 	Name        *Name        `xml:"name"`
 	Role        *Role        `xml:"role"`
 	Affiliation *Affiliation `xml:"affiliation"`
-	Date        time.Time    `xml:"date"`
+	Date        string       `xml:"date"`
 }
 
 // RefType is Use the @pos and other attributes to describe
@@ -511,6 +532,7 @@ type SignatureType struct {
 //                      for references or actions within an amending instruction.
 type RefType struct {
 	AmendingGroup *AmendingGroup
+	*PropertyType
 }
 
 // DateType is Use the @date attribute to record a normalized value of the
@@ -530,6 +552,7 @@ type DateType struct {
 //             of the quoted text.
 type QuotedTextType struct {
 	OriginAttr string `xml:"origin,attr,omitempty"`
+	*InlineType
 }
 
 // QuotedContentType is A quotedContentType is used for an extraction of potentially structured
@@ -541,6 +564,7 @@ type QuotedTextType struct {
 //             of the quoted structure
 type QuotedContentType struct {
 	OriginAttr string `xml:"origin,attr,omitempty"`
+	*ContentType
 }
 
 // NoteStructure ...
@@ -797,26 +821,31 @@ type LayoutType struct {
 	TocItem         *TocItemType `xml:"tocItem"`
 	Block           *BlockType   `xml:"block"`
 	Content         *ContentType `xml:"content"`
+	*BaseBlockType
 }
 
 // RowType is A row contains one or more column cells.
 type RowType struct {
 	Column []*ColumnType `xml:"column"`
+	*BaseBlockType
 }
 
 // ColumnType is Use the elements of the cell group to specify
 //                      the row and column spans.
 type ColumnType struct {
 	CellGroup *CellGroup
+	*ContentType
 }
 
 // PType is A "P" type is a simple unnumbered paragraph. As a <content>
 //             element, it can contain a wide range of text and elements.
 type PType struct {
+	*ContentType
 }
 
 // BrType is A break type is simple marker element denoting a line break.
 type BrType struct {
+	*MarkerType
 }
 
 // ImgType is An image type is a simple marker element denoting where a graphic
@@ -824,6 +853,7 @@ type BrType struct {
 type ImgType struct {
 	LinkGroup       *LinkGroup
 	OrientationAttr string `xml:"orientation,attr,omitempty"`
+	*MarkerType
 }
 
 // Layout is A <layout> element is used to denote an area of text intended to

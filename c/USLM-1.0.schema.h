@@ -5,8 +5,8 @@
 //             to allow situations where the law becomes effective based on another
 //             time zone.
 typedef struct {
-	char Date;
 	char DateTime;
+	char Date;
 } DateSimpleType;
 
 // OccurrenceSimpleType is The occurrence simple type specifies which occurrence is affected
@@ -14,8 +14,8 @@ typedef struct {
 //             integer or a value from the choice enumeration such as "all" for
 //             all occurrences or "last" for the last occurrence.
 typedef struct {
-	int PositiveInteger;
 	ChoiceEnum ChoiceEnum;
+	int PositiveInteger;
 } OccurrenceSimpleType;
 
 // ShortStringSimpleType is A simple string with not more than 32 characters.

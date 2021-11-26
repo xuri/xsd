@@ -36,11 +36,11 @@ public class Body {
 // Release is The list of actions taken for this release.
 public class Release {
 	@XmlAttribute(name = "version")
-	protected StringAttr Version;
+	protected String VersionAttr;
 	@XmlAttribute(name = "date")
-	protected StringAttr Date;
+	protected String DateAttr;
 	@XmlAttribute(name = "description")
-	protected StringAttr Description;
+	protected String DescriptionAttr;
 	@XmlElement(required = true, name = "action")
 	protected List<Action> Action;
 }
@@ -48,19 +48,19 @@ public class Release {
 // Action is A list of contibutors for this issue.
 public class Action {
 	@XmlAttribute(name = "dev")
-	protected StringAttr Dev;
+	protected String DevAttr;
 	@XmlAttribute(name = "due-to")
-	protected StringAttr Dueto;
+	protected String DuetoAttr;
 	@XmlAttribute(name = "due-to-email")
-	protected StringAttr Duetoemail;
+	protected String DuetoemailAttr;
 	@XmlAttribute(name = "issue")
-	protected StringAttr Issue;
+	protected String IssueAttr;
 	@XmlAttribute(name = "type")
-	protected StringAttr Type;
+	protected String TypeAttr;
 	@XmlAttribute(name = "system")
-	protected StringAttr System;
+	protected String SystemAttr;
 	@XmlAttribute(name = "date")
-	protected StringAttr Date;
+	protected String DateAttr;
 	@XmlElement(required = true, name = "fixes")
 	protected List<FixedIssue> Fixes;
 	@XmlElement(required = true, name = "dueto")
@@ -70,15 +70,15 @@ public class Action {
 // FixedIssue is A fixed issue.
 public class FixedIssue {
 	@XmlAttribute(name = "issue")
-	protected StringAttr Issue;
+	protected String IssueAttr;
 }
 
 // DueTo is Name and Email of the person to be credited for this change. This can be used when a patch is submitted by a non-committer.
 public class DueTo {
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "email")
-	protected StringAttr Email;
+	protected String EmailAttr;
 }
 
 // Properties is Page Author
@@ -92,5 +92,5 @@ public class Properties {
 // Author is A description of the author page.
 public class Author {
 	@XmlAttribute(name = "email")
-	protected StringAttr Email;
+	protected String EmailAttr;
 }

@@ -15,7 +15,7 @@ import javax.xml.bind.annotation.XmlValue;
 // CT_AutoFilter ...
 public class CT_AutoFilter {
 	@XmlAttribute(name = "ref")
-	protected StringAttr Ref;
+	protected String RefAttr;
 	@XmlElement(required = true, name = "filterColumn")
 	protected List<CT_FilterColumn> FilterColumn;
 	@XmlElement(required = true, name = "sortState")
@@ -27,11 +27,11 @@ public class CT_AutoFilter {
 // CT_FilterColumn ...
 public class CT_FilterColumn {
 	@XmlAttribute(name = "colId", required = true)
-	protected IntegerAttr ColId;
+	protected Integer ColIdAttr;
 	@XmlAttribute(name = "hiddenButton")
-	protected BooleanAttr HiddenButton;
+	protected Boolean HiddenButtonAttr;
 	@XmlAttribute(name = "showButton")
-	protected BooleanAttr ShowButton;
+	protected Boolean ShowButtonAttr;
 	@XmlElement(required = true, name = "filters")
 	protected CT_Filters Filters;
 	@XmlElement(required = true, name = "top10")
@@ -51,9 +51,9 @@ public class CT_FilterColumn {
 // CT_Filters ...
 public class CT_Filters {
 	@XmlAttribute(name = "blank")
-	protected BooleanAttr Blank;
+	protected Boolean BlankAttr;
 	@XmlAttribute(name = "calendarType")
-	protected StringAttr CalendarType;
+	protected String CalendarTypeAttr;
 	@XmlElement(required = true, name = "filter")
 	protected List<CT_Filter> Filter;
 	@XmlElement(required = true, name = "dateGroupItem")
@@ -63,13 +63,13 @@ public class CT_Filters {
 // CT_Filter ...
 public class CT_Filter {
 	@XmlAttribute(name = "val")
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_CustomFilters ...
 public class CT_CustomFilters {
 	@XmlAttribute(name = "and")
-	protected BooleanAttr And;
+	protected Boolean AndAttr;
 	@XmlElement(required = true, name = "customFilter")
 	protected List<CT_CustomFilter> CustomFilter;
 }
@@ -77,37 +77,37 @@ public class CT_CustomFilters {
 // CT_CustomFilter ...
 public class CT_CustomFilter {
 	@XmlAttribute(name = "operator")
-	protected StringAttr Operator;
+	protected String OperatorAttr;
 	@XmlAttribute(name = "val")
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_Top10 ...
 public class CT_Top10 {
 	@XmlAttribute(name = "top")
-	protected BooleanAttr Top;
+	protected Boolean TopAttr;
 	@XmlAttribute(name = "percent")
-	protected BooleanAttr Percent;
+	protected Boolean PercentAttr;
 	@XmlAttribute(name = "val", required = true)
-	protected FloatAttr Val;
+	protected Float ValAttr;
 	@XmlAttribute(name = "filterVal")
-	protected FloatAttr FilterVal;
+	protected Float FilterValAttr;
 }
 
 // CT_ColorFilter ...
 public class CT_ColorFilter {
 	@XmlAttribute(name = "dxfId")
-	protected IntegerAttr DxfId;
+	protected Integer DxfIdAttr;
 	@XmlAttribute(name = "cellColor")
-	protected BooleanAttr CellColor;
+	protected Boolean CellColorAttr;
 }
 
 // CT_IconFilter ...
 public class CT_IconFilter {
 	@XmlAttribute(name = "iconSet", required = true)
-	protected StringAttr IconSet;
+	protected String IconSetAttr;
 	@XmlAttribute(name = "iconId")
-	protected IntegerAttr IconId;
+	protected Integer IconIdAttr;
 }
 
 // ST_FilterOperator ...
@@ -120,13 +120,13 @@ public class ST_FilterOperator {
 // CT_DynamicFilter ...
 public class CT_DynamicFilter {
 	@XmlAttribute(name = "type", required = true)
-	protected StringAttr Type;
+	protected String TypeAttr;
 	@XmlAttribute(name = "val")
-	protected FloatAttr Val;
+	protected Float ValAttr;
 	@XmlAttribute(name = "valIso")
-	protected ByteAttr ValIso;
+	protected String ValIsoAttr;
 	@XmlAttribute(name = "maxValIso")
-	protected ByteAttr MaxValIso;
+	protected String MaxValIsoAttr;
 }
 
 // ST_DynamicFilterType ...
@@ -146,13 +146,13 @@ public class ST_IconSetType {
 // CT_SortState ...
 public class CT_SortState {
 	@XmlAttribute(name = "columnSort")
-	protected BooleanAttr ColumnSort;
+	protected Boolean ColumnSortAttr;
 	@XmlAttribute(name = "caseSensitive")
-	protected BooleanAttr CaseSensitive;
+	protected Boolean CaseSensitiveAttr;
 	@XmlAttribute(name = "sortMethod")
-	protected StringAttr SortMethod;
+	protected String SortMethodAttr;
 	@XmlAttribute(name = "ref", required = true)
-	protected StringAttr Ref;
+	protected String RefAttr;
 	@XmlElement(required = true, name = "sortCondition")
 	protected List<CT_SortCondition> SortCondition;
 	@XmlElement(required = true, name = "extLst")
@@ -162,19 +162,19 @@ public class CT_SortState {
 // CT_SortCondition ...
 public class CT_SortCondition {
 	@XmlAttribute(name = "descending")
-	protected BooleanAttr Descending;
+	protected Boolean DescendingAttr;
 	@XmlAttribute(name = "sortBy")
-	protected StringAttr SortBy;
+	protected String SortByAttr;
 	@XmlAttribute(name = "ref", required = true)
-	protected StringAttr Ref;
+	protected String RefAttr;
 	@XmlAttribute(name = "customList")
-	protected StringAttr CustomList;
+	protected String CustomListAttr;
 	@XmlAttribute(name = "dxfId")
-	protected IntegerAttr DxfId;
+	protected Integer DxfIdAttr;
 	@XmlAttribute(name = "iconSet")
-	protected StringAttr IconSet;
+	protected String IconSetAttr;
 	@XmlAttribute(name = "iconId")
-	protected IntegerAttr IconId;
+	protected Integer IconIdAttr;
 }
 
 // ST_SortBy ...
@@ -194,19 +194,19 @@ public class ST_SortMethod {
 // CT_DateGroupItem ...
 public class CT_DateGroupItem {
 	@XmlAttribute(name = "year", required = true)
-	protected ShortAttr Year;
+	protected Short YearAttr;
 	@XmlAttribute(name = "month")
-	protected ShortAttr Month;
+	protected Short MonthAttr;
 	@XmlAttribute(name = "day")
-	protected ShortAttr Day;
+	protected Short DayAttr;
 	@XmlAttribute(name = "hour")
-	protected ShortAttr Hour;
+	protected Short HourAttr;
 	@XmlAttribute(name = "minute")
-	protected ShortAttr Minute;
+	protected Short MinuteAttr;
 	@XmlAttribute(name = "second")
-	protected ShortAttr Second;
+	protected Short SecondAttr;
 	@XmlAttribute(name = "dateTimeGrouping", required = true)
-	protected StringAttr DateTimeGrouping;
+	protected String DateTimeGroupingAttr;
 }
 
 // ST_DateTimeGrouping ...
@@ -260,21 +260,21 @@ public class ST_UnsignedIntHex {
 // CT_XStringElement ...
 public class CT_XStringElement {
 	@XmlAttribute(name = "v", required = true)
-	protected StringAttr V;
+	protected String VAttr;
 }
 
 // CT_Extension ...
 public class CT_Extension {
 	@XmlAttribute(name = "uri")
-	protected StringAttr Uri;
+	protected String UriAttr;
 }
 
 // CT_ObjectAnchor ...
 public class CT_ObjectAnchor {
 	@XmlAttribute(name = "moveWithCells")
-	protected BooleanAttr MoveWithCells;
+	protected Boolean MoveWithCellsAttr;
 	@XmlAttribute(name = "sizeWithCells")
-	protected BooleanAttr SizeWithCells;
+	protected Boolean SizeWithCellsAttr;
 	@XmlElement(required = true, name = "xdr:from")
 	protected CT_Marker XdrFrom;
 	@XmlElement(required = true, name = "xdr:to")
@@ -309,17 +309,17 @@ public class CT_CalcChain {
 // CT_CalcCell ...
 public class CT_CalcCell {
 	@XmlAttribute(name = "r", required = true)
-	protected StringAttr R;
+	protected String RAttr;
 	@XmlAttribute(name = "i")
-	protected IntegerAttr I;
+	protected Integer IAttr;
 	@XmlAttribute(name = "s")
-	protected BooleanAttr S;
+	protected Boolean SAttr;
 	@XmlAttribute(name = "l")
-	protected BooleanAttr L;
+	protected Boolean LAttr;
 	@XmlAttribute(name = "t")
-	protected BooleanAttr T;
+	protected Boolean TAttr;
 	@XmlAttribute(name = "a")
-	protected BooleanAttr A;
+	protected Boolean AAttr;
 }
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -353,13 +353,13 @@ public class CT_CommentList {
 // CT_Comment ...
 public class CT_Comment {
 	@XmlAttribute(name = "ref", required = true)
-	protected StringAttr Ref;
+	protected String RefAttr;
 	@XmlAttribute(name = "authorId", required = true)
-	protected IntegerAttr AuthorId;
+	protected Integer AuthorIdAttr;
 	@XmlAttribute(name = "guid")
-	protected StringAttr Guid;
+	protected String GuidAttr;
 	@XmlAttribute(name = "shapeId")
-	protected IntegerAttr ShapeId;
+	protected Integer ShapeIdAttr;
 	@XmlElement(required = true, name = "text")
 	protected CT_Rst Text;
 	@XmlElement(required = true, name = "commentPr")
@@ -369,29 +369,29 @@ public class CT_Comment {
 // CT_CommentPr ...
 public class CT_CommentPr {
 	@XmlAttribute(name = "locked")
-	protected BooleanAttr Locked;
+	protected Boolean LockedAttr;
 	@XmlAttribute(name = "defaultSize")
-	protected BooleanAttr DefaultSize;
+	protected Boolean DefaultSizeAttr;
 	@XmlAttribute(name = "print")
-	protected BooleanAttr Print;
+	protected Boolean PrintAttr;
 	@XmlAttribute(name = "disabled")
-	protected BooleanAttr Disabled;
+	protected Boolean DisabledAttr;
 	@XmlAttribute(name = "autoFill")
-	protected BooleanAttr AutoFill;
+	protected Boolean AutoFillAttr;
 	@XmlAttribute(name = "autoLine")
-	protected BooleanAttr AutoLine;
+	protected Boolean AutoLineAttr;
 	@XmlAttribute(name = "altText")
-	protected StringAttr AltText;
+	protected String AltTextAttr;
 	@XmlAttribute(name = "textHAlign")
-	protected StringAttr TextHAlign;
+	protected String TextHAlignAttr;
 	@XmlAttribute(name = "textVAlign")
-	protected StringAttr TextVAlign;
+	protected String TextVAlignAttr;
 	@XmlAttribute(name = "lockText")
-	protected BooleanAttr LockText;
+	protected Boolean LockTextAttr;
 	@XmlAttribute(name = "justLastX")
-	protected BooleanAttr JustLastX;
+	protected Boolean JustLastXAttr;
 	@XmlAttribute(name = "autoScale")
-	protected BooleanAttr AutoScale;
+	protected Boolean AutoScaleAttr;
 	@XmlElement(required = true, name = "anchor")
 	protected CT_ObjectAnchor Anchor;
 }
@@ -419,7 +419,7 @@ public class MapInfo {
 // CT_MapInfo ...
 public class CT_MapInfo {
 	@XmlAttribute(name = "SelectionNamespaces", required = true)
-	protected StringAttr SelectionNamespaces;
+	protected String SelectionNamespacesAttr;
 	@XmlElement(required = true, name = "Schema")
 	protected List<CT_Schema> Schema;
 	@XmlElement(required = true, name = "Map")
@@ -429,35 +429,35 @@ public class CT_MapInfo {
 // CT_Schema ...
 public class CT_Schema {
 	@XmlAttribute(name = "ID", required = true)
-	protected StringAttr ID;
+	protected String IDAttr;
 	@XmlAttribute(name = "SchemaRef")
-	protected StringAttr SchemaRef;
+	protected String SchemaRefAttr;
 	@XmlAttribute(name = "Namespace")
-	protected StringAttr Namespace;
+	protected String NamespaceAttr;
 	@XmlAttribute(name = "SchemaLanguage")
-	protected StringAttr SchemaLanguage;
+	protected String SchemaLanguageAttr;
 }
 
 // CT_Map ...
 public class CT_Map {
 	@XmlAttribute(name = "ID", required = true)
-	protected IntegerAttr ID;
+	protected Integer IDAttr;
 	@XmlAttribute(name = "Name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "RootElement", required = true)
-	protected StringAttr RootElement;
+	protected String RootElementAttr;
 	@XmlAttribute(name = "SchemaID", required = true)
-	protected StringAttr SchemaID;
+	protected String SchemaIDAttr;
 	@XmlAttribute(name = "ShowImportExportValidationErrors", required = true)
-	protected BooleanAttr ShowImportExportValidationErrors;
+	protected Boolean ShowImportExportValidationErrorsAttr;
 	@XmlAttribute(name = "AutoFit", required = true)
-	protected BooleanAttr AutoFit;
+	protected Boolean AutoFitAttr;
 	@XmlAttribute(name = "Append", required = true)
-	protected BooleanAttr Append;
+	protected Boolean AppendAttr;
 	@XmlAttribute(name = "PreserveSortAFLayout", required = true)
-	protected BooleanAttr PreserveSortAFLayout;
+	protected Boolean PreserveSortAFLayoutAttr;
 	@XmlAttribute(name = "PreserveFormat", required = true)
-	protected BooleanAttr PreserveFormat;
+	protected Boolean PreserveFormatAttr;
 	@XmlElement(required = true, name = "DataBinding")
 	protected CT_DataBinding DataBinding;
 }
@@ -465,15 +465,15 @@ public class CT_Map {
 // CT_DataBinding ...
 public class CT_DataBinding {
 	@XmlAttribute(name = "DataBindingName")
-	protected StringAttr DataBindingName;
+	protected String DataBindingNameAttr;
 	@XmlAttribute(name = "FileBinding")
-	protected BooleanAttr FileBinding;
+	protected Boolean FileBindingAttr;
 	@XmlAttribute(name = "ConnectionID")
-	protected IntegerAttr ConnectionID;
+	protected Integer ConnectionIDAttr;
 	@XmlAttribute(name = "FileBindingName")
-	protected StringAttr FileBindingName;
+	protected String FileBindingNameAttr;
 	@XmlAttribute(name = "DataBindingLoadMode", required = true)
-	protected IntegerAttr DataBindingLoadMode;
+	protected Integer DataBindingLoadModeAttr;
 }
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -491,45 +491,45 @@ public class CT_Connections {
 // CT_Connection ...
 public class CT_Connection {
 	@XmlAttribute(name = "id", required = true)
-	protected IntegerAttr Id;
+	protected Integer IdAttr;
 	@XmlAttribute(name = "sourceFile")
-	protected StringAttr SourceFile;
+	protected String SourceFileAttr;
 	@XmlAttribute(name = "odcFile")
-	protected StringAttr OdcFile;
+	protected String OdcFileAttr;
 	@XmlAttribute(name = "keepAlive")
-	protected BooleanAttr KeepAlive;
+	protected Boolean KeepAliveAttr;
 	@XmlAttribute(name = "interval")
-	protected IntegerAttr Interval;
+	protected Integer IntervalAttr;
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "description")
-	protected StringAttr Description;
+	protected String DescriptionAttr;
 	@XmlAttribute(name = "type")
-	protected IntegerAttr Type;
+	protected Integer TypeAttr;
 	@XmlAttribute(name = "reconnectionMethod")
-	protected IntegerAttr ReconnectionMethod;
+	protected Integer ReconnectionMethodAttr;
 	@XmlAttribute(name = "refreshedVersion", required = true)
-	protected ByteAttr RefreshedVersion;
+	protected Byte RefreshedVersionAttr;
 	@XmlAttribute(name = "minRefreshableVersion")
-	protected ByteAttr MinRefreshableVersion;
+	protected Byte MinRefreshableVersionAttr;
 	@XmlAttribute(name = "savePassword")
-	protected BooleanAttr SavePassword;
+	protected Boolean SavePasswordAttr;
 	@XmlAttribute(name = "new")
-	protected BooleanAttr New;
+	protected Boolean NewAttr;
 	@XmlAttribute(name = "deleted")
-	protected BooleanAttr Deleted;
+	protected Boolean DeletedAttr;
 	@XmlAttribute(name = "onlyUseConnectionFile")
-	protected BooleanAttr OnlyUseConnectionFile;
+	protected Boolean OnlyUseConnectionFileAttr;
 	@XmlAttribute(name = "background")
-	protected BooleanAttr Background;
+	protected Boolean BackgroundAttr;
 	@XmlAttribute(name = "refreshOnLoad")
-	protected BooleanAttr RefreshOnLoad;
+	protected Boolean RefreshOnLoadAttr;
 	@XmlAttribute(name = "saveData")
-	protected BooleanAttr SaveData;
+	protected Boolean SaveDataAttr;
 	@XmlAttribute(name = "credentials")
-	protected StringAttr Credentials;
+	protected String CredentialsAttr;
 	@XmlAttribute(name = "singleSignOnId")
-	protected StringAttr SingleSignOnId;
+	protected String SingleSignOnIdAttr;
 	@XmlElement(required = true, name = "dbPr")
 	protected CT_DbPr DbPr;
 	@XmlElement(required = true, name = "olapPr")
@@ -554,65 +554,65 @@ public class ST_CredMethod {
 // CT_DbPr ...
 public class CT_DbPr {
 	@XmlAttribute(name = "connection", required = true)
-	protected StringAttr Connection;
+	protected String ConnectionAttr;
 	@XmlAttribute(name = "command")
-	protected StringAttr Command;
+	protected String CommandAttr;
 	@XmlAttribute(name = "serverCommand")
-	protected StringAttr ServerCommand;
+	protected String ServerCommandAttr;
 	@XmlAttribute(name = "commandType")
-	protected IntegerAttr CommandType;
+	protected Integer CommandTypeAttr;
 }
 
 // CT_OlapPr ...
 public class CT_OlapPr {
 	@XmlAttribute(name = "local")
-	protected BooleanAttr Local;
+	protected Boolean LocalAttr;
 	@XmlAttribute(name = "localConnection")
-	protected StringAttr LocalConnection;
+	protected String LocalConnectionAttr;
 	@XmlAttribute(name = "localRefresh")
-	protected BooleanAttr LocalRefresh;
+	protected Boolean LocalRefreshAttr;
 	@XmlAttribute(name = "sendLocale")
-	protected BooleanAttr SendLocale;
+	protected Boolean SendLocaleAttr;
 	@XmlAttribute(name = "rowDrillCount")
-	protected IntegerAttr RowDrillCount;
+	protected Integer RowDrillCountAttr;
 	@XmlAttribute(name = "serverFill")
-	protected BooleanAttr ServerFill;
+	protected Boolean ServerFillAttr;
 	@XmlAttribute(name = "serverNumberFormat")
-	protected BooleanAttr ServerNumberFormat;
+	protected Boolean ServerNumberFormatAttr;
 	@XmlAttribute(name = "serverFont")
-	protected BooleanAttr ServerFont;
+	protected Boolean ServerFontAttr;
 	@XmlAttribute(name = "serverFontColor")
-	protected BooleanAttr ServerFontColor;
+	protected Boolean ServerFontColorAttr;
 }
 
 // CT_WebPr ...
 public class CT_WebPr {
 	@XmlAttribute(name = "xml")
-	protected BooleanAttr Xml;
+	protected Boolean XmlAttr;
 	@XmlAttribute(name = "sourceData")
-	protected BooleanAttr SourceData;
+	protected Boolean SourceDataAttr;
 	@XmlAttribute(name = "parsePre")
-	protected BooleanAttr ParsePre;
+	protected Boolean ParsePreAttr;
 	@XmlAttribute(name = "consecutive")
-	protected BooleanAttr Consecutive;
+	protected Boolean ConsecutiveAttr;
 	@XmlAttribute(name = "firstRow")
-	protected BooleanAttr FirstRow;
+	protected Boolean FirstRowAttr;
 	@XmlAttribute(name = "xl97")
-	protected BooleanAttr Xl97;
+	protected Boolean Xl97Attr;
 	@XmlAttribute(name = "textDates")
-	protected BooleanAttr TextDates;
+	protected Boolean TextDatesAttr;
 	@XmlAttribute(name = "xl2000")
-	protected BooleanAttr Xl2000;
+	protected Boolean Xl2000Attr;
 	@XmlAttribute(name = "url")
-	protected StringAttr Url;
+	protected String UrlAttr;
 	@XmlAttribute(name = "post")
-	protected StringAttr Post;
+	protected String PostAttr;
 	@XmlAttribute(name = "htmlTables")
-	protected BooleanAttr HtmlTables;
+	protected Boolean HtmlTablesAttr;
 	@XmlAttribute(name = "htmlFormat")
-	protected StringAttr HtmlFormat;
+	protected String HtmlFormatAttr;
 	@XmlAttribute(name = "editPage")
-	protected StringAttr EditPage;
+	protected String EditPageAttr;
 	@XmlElement(required = true, name = "tables")
 	protected CT_Tables Tables;
 }
@@ -627,7 +627,7 @@ public class ST_HtmlFmt {
 // CT_Parameters ...
 public class CT_Parameters {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "parameter")
 	protected List<CT_Parameter> Parameter;
 }
@@ -635,25 +635,25 @@ public class CT_Parameters {
 // CT_Parameter ...
 public class CT_Parameter {
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "sqlType")
-	protected IntegerAttr SqlType;
+	protected Integer SqlTypeAttr;
 	@XmlAttribute(name = "parameterType")
-	protected StringAttr ParameterType;
+	protected String ParameterTypeAttr;
 	@XmlAttribute(name = "refreshOnChange")
-	protected BooleanAttr RefreshOnChange;
+	protected Boolean RefreshOnChangeAttr;
 	@XmlAttribute(name = "prompt")
-	protected StringAttr Prompt;
+	protected String PromptAttr;
 	@XmlAttribute(name = "boolean")
-	protected BooleanAttr Boolean;
+	protected Boolean BooleanAttr;
 	@XmlAttribute(name = "double")
-	protected FloatAttr Double;
+	protected Float DoubleAttr;
 	@XmlAttribute(name = "integer")
-	protected IntegerAttr Integer;
+	protected Integer IntegerAttr;
 	@XmlAttribute(name = "string")
-	protected StringAttr String;
+	protected String StringAttr;
 	@XmlAttribute(name = "cell")
-	protected StringAttr Cell;
+	protected String CellAttr;
 }
 
 // ST_ParameterType ...
@@ -666,7 +666,7 @@ public class ST_ParameterType {
 // CT_Tables ...
 public class CT_Tables {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "m")
 	protected CT_TableMissing M;
 	@XmlElement(required = true, name = "s")
@@ -682,35 +682,35 @@ public class CT_TableMissing {
 // CT_TextPr ...
 public class CT_TextPr {
 	@XmlAttribute(name = "prompt")
-	protected BooleanAttr Prompt;
+	protected Boolean PromptAttr;
 	@XmlAttribute(name = "fileType")
-	protected StringAttr FileType;
+	protected String FileTypeAttr;
 	@XmlAttribute(name = "characterSet")
-	protected StringAttr CharacterSet;
+	protected String CharacterSetAttr;
 	@XmlAttribute(name = "firstRow")
-	protected IntegerAttr FirstRow;
+	protected Integer FirstRowAttr;
 	@XmlAttribute(name = "sourceFile")
-	protected StringAttr SourceFile;
+	protected String SourceFileAttr;
 	@XmlAttribute(name = "delimited")
-	protected BooleanAttr Delimited;
+	protected Boolean DelimitedAttr;
 	@XmlAttribute(name = "decimal")
-	protected StringAttr Decimal;
+	protected String DecimalAttr;
 	@XmlAttribute(name = "thousands")
-	protected StringAttr Thousands;
+	protected String ThousandsAttr;
 	@XmlAttribute(name = "tab")
-	protected BooleanAttr Tab;
+	protected Boolean TabAttr;
 	@XmlAttribute(name = "space")
-	protected BooleanAttr Space;
+	protected Boolean SpaceAttr;
 	@XmlAttribute(name = "comma")
-	protected BooleanAttr Comma;
+	protected Boolean CommaAttr;
 	@XmlAttribute(name = "semicolon")
-	protected BooleanAttr Semicolon;
+	protected Boolean SemicolonAttr;
 	@XmlAttribute(name = "consecutive")
-	protected BooleanAttr Consecutive;
+	protected Boolean ConsecutiveAttr;
 	@XmlAttribute(name = "qualifier")
-	protected StringAttr Qualifier;
+	protected String QualifierAttr;
 	@XmlAttribute(name = "delimiter")
-	protected StringAttr Delimiter;
+	protected String DelimiterAttr;
 	@XmlElement(required = true, name = "textFields")
 	protected CT_TextFields TextFields;
 }
@@ -732,7 +732,7 @@ public class ST_Qualifier {
 // CT_TextFields ...
 public class CT_TextFields {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "textField")
 	protected List<CT_TextField> TextField;
 }
@@ -740,9 +740,9 @@ public class CT_TextFields {
 // CT_TextField ...
 public class CT_TextField {
 	@XmlAttribute(name = "type")
-	protected StringAttr Type;
+	protected String TypeAttr;
 	@XmlAttribute(name = "position")
-	protected IntegerAttr Position;
+	protected Integer PositionAttr;
 }
 
 // ST_ExternalConnectionType ...
@@ -773,41 +773,41 @@ public class PivotTableDefinition {
 // CT_PivotCacheDefinition ...
 public class CT_PivotCacheDefinition {
 	@XmlAttribute(name = "r:id")
-	protected StringAttr RId;
+	protected String RIdAttr;
 	@XmlAttribute(name = "invalid")
-	protected BooleanAttr Invalid;
+	protected Boolean InvalidAttr;
 	@XmlAttribute(name = "saveData")
-	protected BooleanAttr SaveData;
+	protected Boolean SaveDataAttr;
 	@XmlAttribute(name = "refreshOnLoad")
-	protected BooleanAttr RefreshOnLoad;
+	protected Boolean RefreshOnLoadAttr;
 	@XmlAttribute(name = "optimizeMemory")
-	protected BooleanAttr OptimizeMemory;
+	protected Boolean OptimizeMemoryAttr;
 	@XmlAttribute(name = "enableRefresh")
-	protected BooleanAttr EnableRefresh;
+	protected Boolean EnableRefreshAttr;
 	@XmlAttribute(name = "refreshedBy")
-	protected StringAttr RefreshedBy;
+	protected String RefreshedByAttr;
 	@XmlAttribute(name = "refreshedDateIso")
-	protected ByteAttr RefreshedDateIso;
+	protected String RefreshedDateIsoAttr;
 	@XmlAttribute(name = "backgroundQuery")
-	protected BooleanAttr BackgroundQuery;
+	protected Boolean BackgroundQueryAttr;
 	@XmlAttribute(name = "missingItemsLimit")
-	protected IntegerAttr MissingItemsLimit;
+	protected Integer MissingItemsLimitAttr;
 	@XmlAttribute(name = "createdVersion")
-	protected ByteAttr CreatedVersion;
+	protected Byte CreatedVersionAttr;
 	@XmlAttribute(name = "refreshedVersion")
-	protected ByteAttr RefreshedVersion;
+	protected Byte RefreshedVersionAttr;
 	@XmlAttribute(name = "minRefreshableVersion")
-	protected ByteAttr MinRefreshableVersion;
+	protected Byte MinRefreshableVersionAttr;
 	@XmlAttribute(name = "recordCount")
-	protected IntegerAttr RecordCount;
+	protected Integer RecordCountAttr;
 	@XmlAttribute(name = "upgradeOnRefresh")
-	protected BooleanAttr UpgradeOnRefresh;
+	protected Boolean UpgradeOnRefreshAttr;
 	@XmlAttribute(name = "tupleCache")
-	protected BooleanAttr TupleCache;
+	protected Boolean TupleCacheAttr;
 	@XmlAttribute(name = "supportSubquery")
-	protected BooleanAttr SupportSubquery;
+	protected Boolean SupportSubqueryAttr;
 	@XmlAttribute(name = "supportAdvancedDrill")
-	protected BooleanAttr SupportAdvancedDrill;
+	protected Boolean SupportAdvancedDrillAttr;
 	@XmlElement(required = true, name = "cacheSource")
 	protected CT_CacheSource CacheSource;
 	@XmlElement(required = true, name = "cacheFields")
@@ -835,7 +835,7 @@ public class CT_PivotCacheDefinition {
 // CT_CacheFields ...
 public class CT_CacheFields {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "cacheField")
 	protected List<CT_CacheField> CacheField;
 }
@@ -843,31 +843,31 @@ public class CT_CacheFields {
 // CT_CacheField ...
 public class CT_CacheField {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "caption")
-	protected StringAttr Caption;
+	protected String CaptionAttr;
 	@XmlAttribute(name = "propertyName")
-	protected StringAttr PropertyName;
+	protected String PropertyNameAttr;
 	@XmlAttribute(name = "serverField")
-	protected BooleanAttr ServerField;
+	protected Boolean ServerFieldAttr;
 	@XmlAttribute(name = "uniqueList")
-	protected BooleanAttr UniqueList;
+	protected Boolean UniqueListAttr;
 	@XmlAttribute(name = "numFmtId")
-	protected IntegerAttr NumFmtId;
+	protected Integer NumFmtIdAttr;
 	@XmlAttribute(name = "formula")
-	protected StringAttr Formula;
+	protected String FormulaAttr;
 	@XmlAttribute(name = "sqlType")
-	protected IntegerAttr SqlType;
+	protected Integer SqlTypeAttr;
 	@XmlAttribute(name = "hierarchy")
-	protected IntegerAttr Hierarchy;
+	protected Integer HierarchyAttr;
 	@XmlAttribute(name = "level")
-	protected IntegerAttr Level;
+	protected Integer LevelAttr;
 	@XmlAttribute(name = "databaseField")
-	protected BooleanAttr DatabaseField;
+	protected Boolean DatabaseFieldAttr;
 	@XmlAttribute(name = "mappingCount")
-	protected IntegerAttr MappingCount;
+	protected Integer MappingCountAttr;
 	@XmlAttribute(name = "memberPropertyField")
-	protected BooleanAttr MemberPropertyField;
+	protected Boolean MemberPropertyFieldAttr;
 	@XmlElement(required = true, name = "sharedItems")
 	protected CT_SharedItems SharedItems;
 	@XmlElement(required = true, name = "fieldGroup")
@@ -881,9 +881,9 @@ public class CT_CacheField {
 // CT_CacheSource ...
 public class CT_CacheSource {
 	@XmlAttribute(name = "type", required = true)
-	protected StringAttr Type;
+	protected String TypeAttr;
 	@XmlAttribute(name = "connectionId")
-	protected IntegerAttr ConnectionId;
+	protected Integer ConnectionIdAttr;
 	@XmlElement(required = true, name = "worksheetSource")
 	protected CT_WorksheetSource WorksheetSource;
 	@XmlElement(required = true, name = "consolidation")
@@ -902,19 +902,19 @@ public class ST_SourceType {
 // CT_WorksheetSource ...
 public class CT_WorksheetSource {
 	@XmlAttribute(name = "ref")
-	protected StringAttr Ref;
+	protected String RefAttr;
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "sheet")
-	protected StringAttr Sheet;
+	protected String SheetAttr;
 	@XmlAttribute(name = "r:id")
-	protected StringAttr RId;
+	protected String RIdAttr;
 }
 
 // CT_Consolidation ...
 public class CT_Consolidation {
 	@XmlAttribute(name = "autoPage")
-	protected BooleanAttr AutoPage;
+	protected Boolean AutoPageAttr;
 	@XmlElement(required = true, name = "pages")
 	protected CT_Pages Pages;
 	@XmlElement(required = true, name = "rangeSets")
@@ -924,7 +924,7 @@ public class CT_Consolidation {
 // CT_Pages ...
 public class CT_Pages {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "page")
 	protected List<CT_PCDSCPage> Page;
 }
@@ -932,7 +932,7 @@ public class CT_Pages {
 // CT_PCDSCPage ...
 public class CT_PCDSCPage {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "pageItem")
 	protected List<CT_PageItem> PageItem;
 }
@@ -940,13 +940,13 @@ public class CT_PCDSCPage {
 // CT_PageItem ...
 public class CT_PageItem {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 }
 
 // CT_RangeSets ...
 public class CT_RangeSets {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "rangeSet")
 	protected List<CT_RangeSet> RangeSet;
 }
@@ -954,53 +954,53 @@ public class CT_RangeSets {
 // CT_RangeSet ...
 public class CT_RangeSet {
 	@XmlAttribute(name = "i1")
-	protected IntegerAttr I1;
+	protected Integer I1Attr;
 	@XmlAttribute(name = "i2")
-	protected IntegerAttr I2;
+	protected Integer I2Attr;
 	@XmlAttribute(name = "i3")
-	protected IntegerAttr I3;
+	protected Integer I3Attr;
 	@XmlAttribute(name = "i4")
-	protected IntegerAttr I4;
+	protected Integer I4Attr;
 	@XmlAttribute(name = "ref")
-	protected StringAttr Ref;
+	protected String RefAttr;
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "sheet")
-	protected StringAttr Sheet;
+	protected String SheetAttr;
 	@XmlAttribute(name = "r:id")
-	protected StringAttr RId;
+	protected String RIdAttr;
 }
 
 // CT_SharedItems ...
 public class CT_SharedItems {
 	@XmlAttribute(name = "containsSemiMixedTypes")
-	protected BooleanAttr ContainsSemiMixedTypes;
+	protected Boolean ContainsSemiMixedTypesAttr;
 	@XmlAttribute(name = "containsNonDate")
-	protected BooleanAttr ContainsNonDate;
+	protected Boolean ContainsNonDateAttr;
 	@XmlAttribute(name = "containsDate")
-	protected BooleanAttr ContainsDate;
+	protected Boolean ContainsDateAttr;
 	@XmlAttribute(name = "containsString")
-	protected BooleanAttr ContainsString;
+	protected Boolean ContainsStringAttr;
 	@XmlAttribute(name = "containsBlank")
-	protected BooleanAttr ContainsBlank;
+	protected Boolean ContainsBlankAttr;
 	@XmlAttribute(name = "containsMixedTypes")
-	protected BooleanAttr ContainsMixedTypes;
+	protected Boolean ContainsMixedTypesAttr;
 	@XmlAttribute(name = "containsNumber")
-	protected BooleanAttr ContainsNumber;
+	protected Boolean ContainsNumberAttr;
 	@XmlAttribute(name = "containsInteger")
-	protected BooleanAttr ContainsInteger;
+	protected Boolean ContainsIntegerAttr;
 	@XmlAttribute(name = "minValue")
-	protected FloatAttr MinValue;
+	protected Float MinValueAttr;
 	@XmlAttribute(name = "maxValue")
-	protected FloatAttr MaxValue;
+	protected Float MaxValueAttr;
 	@XmlAttribute(name = "minDate")
-	protected ByteAttr MinDate;
+	protected String MinDateAttr;
 	@XmlAttribute(name = "maxDate")
-	protected ByteAttr MaxDate;
+	protected String MaxDateAttr;
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlAttribute(name = "longText")
-	protected BooleanAttr LongText;
+	protected Boolean LongTextAttr;
 	@XmlElement(required = true, name = "m")
 	protected CT_Missing M;
 	@XmlElement(required = true, name = "n")
@@ -1018,27 +1018,27 @@ public class CT_SharedItems {
 // CT_Missing ...
 public class CT_Missing {
 	@XmlAttribute(name = "u")
-	protected BooleanAttr U;
+	protected Boolean UAttr;
 	@XmlAttribute(name = "f")
-	protected BooleanAttr F;
+	protected Boolean FAttr;
 	@XmlAttribute(name = "c")
-	protected StringAttr C;
+	protected String CAttr;
 	@XmlAttribute(name = "cp")
-	protected IntegerAttr Cp;
+	protected Integer CpAttr;
 	@XmlAttribute(name = "in")
-	protected IntegerAttr In;
+	protected Integer InAttr;
 	@XmlAttribute(name = "bc")
-	protected List<Byte>Attr Bc;
+	protected List<Byte> BcAttr;
 	@XmlAttribute(name = "fc")
-	protected List<Byte>Attr Fc;
+	protected List<Byte> FcAttr;
 	@XmlAttribute(name = "i")
-	protected BooleanAttr I;
+	protected Boolean IAttr;
 	@XmlAttribute(name = "un")
-	protected BooleanAttr Un;
+	protected Boolean UnAttr;
 	@XmlAttribute(name = "st")
-	protected BooleanAttr St;
+	protected Boolean StAttr;
 	@XmlAttribute(name = "b")
-	protected BooleanAttr B;
+	protected Boolean BAttr;
 	@XmlElement(required = true, name = "tpls")
 	protected List<CT_Tuples> Tpls;
 	@XmlElement(required = true, name = "x")
@@ -1048,29 +1048,29 @@ public class CT_Missing {
 // CT_Number ...
 public class CT_Number {
 	@XmlAttribute(name = "v", required = true)
-	protected FloatAttr V;
+	protected Float VAttr;
 	@XmlAttribute(name = "u")
-	protected BooleanAttr U;
+	protected Boolean UAttr;
 	@XmlAttribute(name = "f")
-	protected BooleanAttr F;
+	protected Boolean FAttr;
 	@XmlAttribute(name = "c")
-	protected StringAttr C;
+	protected String CAttr;
 	@XmlAttribute(name = "cp")
-	protected IntegerAttr Cp;
+	protected Integer CpAttr;
 	@XmlAttribute(name = "in")
-	protected IntegerAttr In;
+	protected Integer InAttr;
 	@XmlAttribute(name = "bc")
-	protected List<Byte>Attr Bc;
+	protected List<Byte> BcAttr;
 	@XmlAttribute(name = "fc")
-	protected List<Byte>Attr Fc;
+	protected List<Byte> FcAttr;
 	@XmlAttribute(name = "i")
-	protected BooleanAttr I;
+	protected Boolean IAttr;
 	@XmlAttribute(name = "un")
-	protected BooleanAttr Un;
+	protected Boolean UnAttr;
 	@XmlAttribute(name = "st")
-	protected BooleanAttr St;
+	protected Boolean StAttr;
 	@XmlAttribute(name = "b")
-	protected BooleanAttr B;
+	protected Boolean BAttr;
 	@XmlElement(required = true, name = "tpls")
 	protected List<CT_Tuples> Tpls;
 	@XmlElement(required = true, name = "x")
@@ -1080,15 +1080,15 @@ public class CT_Number {
 // CT_Boolean ...
 public class CT_Boolean {
 	@XmlAttribute(name = "v", required = true)
-	protected BooleanAttr V;
+	protected Boolean VAttr;
 	@XmlAttribute(name = "u")
-	protected BooleanAttr U;
+	protected Boolean UAttr;
 	@XmlAttribute(name = "f")
-	protected BooleanAttr F;
+	protected Boolean FAttr;
 	@XmlAttribute(name = "c")
-	protected StringAttr C;
+	protected String CAttr;
 	@XmlAttribute(name = "cp")
-	protected IntegerAttr Cp;
+	protected Integer CpAttr;
 	@XmlElement(required = true, name = "x")
 	protected List<CT_X> X;
 }
@@ -1096,29 +1096,29 @@ public class CT_Boolean {
 // CT_Error ...
 public class CT_Error {
 	@XmlAttribute(name = "v", required = true)
-	protected StringAttr V;
+	protected String VAttr;
 	@XmlAttribute(name = "u")
-	protected BooleanAttr U;
+	protected Boolean UAttr;
 	@XmlAttribute(name = "f")
-	protected BooleanAttr F;
+	protected Boolean FAttr;
 	@XmlAttribute(name = "c")
-	protected StringAttr C;
+	protected String CAttr;
 	@XmlAttribute(name = "cp")
-	protected IntegerAttr Cp;
+	protected Integer CpAttr;
 	@XmlAttribute(name = "in")
-	protected IntegerAttr In;
+	protected Integer InAttr;
 	@XmlAttribute(name = "bc")
-	protected List<Byte>Attr Bc;
+	protected List<Byte> BcAttr;
 	@XmlAttribute(name = "fc")
-	protected List<Byte>Attr Fc;
+	protected List<Byte> FcAttr;
 	@XmlAttribute(name = "i")
-	protected BooleanAttr I;
+	protected Boolean IAttr;
 	@XmlAttribute(name = "un")
-	protected BooleanAttr Un;
+	protected Boolean UnAttr;
 	@XmlAttribute(name = "st")
-	protected BooleanAttr St;
+	protected Boolean StAttr;
 	@XmlAttribute(name = "b")
-	protected BooleanAttr B;
+	protected Boolean BAttr;
 	@XmlElement(required = true, name = "tpls")
 	protected CT_Tuples Tpls;
 	@XmlElement(required = true, name = "x")
@@ -1128,29 +1128,29 @@ public class CT_Error {
 // CT_String ...
 public class CT_String {
 	@XmlAttribute(name = "v", required = true)
-	protected StringAttr V;
+	protected String VAttr;
 	@XmlAttribute(name = "u")
-	protected BooleanAttr U;
+	protected Boolean UAttr;
 	@XmlAttribute(name = "f")
-	protected BooleanAttr F;
+	protected Boolean FAttr;
 	@XmlAttribute(name = "c")
-	protected StringAttr C;
+	protected String CAttr;
 	@XmlAttribute(name = "cp")
-	protected IntegerAttr Cp;
+	protected Integer CpAttr;
 	@XmlAttribute(name = "in")
-	protected IntegerAttr In;
+	protected Integer InAttr;
 	@XmlAttribute(name = "bc")
-	protected List<Byte>Attr Bc;
+	protected List<Byte> BcAttr;
 	@XmlAttribute(name = "fc")
-	protected List<Byte>Attr Fc;
+	protected List<Byte> FcAttr;
 	@XmlAttribute(name = "i")
-	protected BooleanAttr I;
+	protected Boolean IAttr;
 	@XmlAttribute(name = "un")
-	protected BooleanAttr Un;
+	protected Boolean UnAttr;
 	@XmlAttribute(name = "st")
-	protected BooleanAttr St;
+	protected Boolean StAttr;
 	@XmlAttribute(name = "b")
-	protected BooleanAttr B;
+	protected Boolean BAttr;
 	@XmlElement(required = true, name = "tpls")
 	protected List<CT_Tuples> Tpls;
 	@XmlElement(required = true, name = "x")
@@ -1160,15 +1160,15 @@ public class CT_String {
 // CT_DateTime ...
 public class CT_DateTime {
 	@XmlAttribute(name = "v", required = true)
-	protected ByteAttr V;
+	protected String VAttr;
 	@XmlAttribute(name = "u")
-	protected BooleanAttr U;
+	protected Boolean UAttr;
 	@XmlAttribute(name = "f")
-	protected BooleanAttr F;
+	protected Boolean FAttr;
 	@XmlAttribute(name = "c")
-	protected StringAttr C;
+	protected String CAttr;
 	@XmlAttribute(name = "cp")
-	protected IntegerAttr Cp;
+	protected Integer CpAttr;
 	@XmlElement(required = true, name = "x")
 	protected List<CT_X> X;
 }
@@ -1176,9 +1176,9 @@ public class CT_DateTime {
 // CT_FieldGroup ...
 public class CT_FieldGroup {
 	@XmlAttribute(name = "par")
-	protected IntegerAttr Par;
+	protected Integer ParAttr;
 	@XmlAttribute(name = "base")
-	protected IntegerAttr Base;
+	protected Integer BaseAttr;
 	@XmlElement(required = true, name = "rangePr")
 	protected CT_RangePr RangePr;
 	@XmlElement(required = true, name = "discretePr")
@@ -1190,21 +1190,21 @@ public class CT_FieldGroup {
 // CT_RangePr ...
 public class CT_RangePr {
 	@XmlAttribute(name = "autoStart")
-	protected BooleanAttr AutoStart;
+	protected Boolean AutoStartAttr;
 	@XmlAttribute(name = "autoEnd")
-	protected BooleanAttr AutoEnd;
+	protected Boolean AutoEndAttr;
 	@XmlAttribute(name = "groupBy")
-	protected StringAttr GroupBy;
+	protected String GroupByAttr;
 	@XmlAttribute(name = "startNum")
-	protected FloatAttr StartNum;
+	protected Float StartNumAttr;
 	@XmlAttribute(name = "endNum")
-	protected FloatAttr EndNum;
+	protected Float EndNumAttr;
 	@XmlAttribute(name = "startDate")
-	protected ByteAttr StartDate;
+	protected String StartDateAttr;
 	@XmlAttribute(name = "endDate")
-	protected ByteAttr EndDate;
+	protected String EndDateAttr;
 	@XmlAttribute(name = "groupInterval")
-	protected FloatAttr GroupInterval;
+	protected Float GroupIntervalAttr;
 }
 
 // ST_GroupBy ...
@@ -1217,7 +1217,7 @@ public class ST_GroupBy {
 // CT_DiscretePr ...
 public class CT_DiscretePr {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "x")
 	protected List<CT_Index> X;
 }
@@ -1225,7 +1225,7 @@ public class CT_DiscretePr {
 // CT_GroupItems ...
 public class CT_GroupItems {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "m")
 	protected CT_Missing M;
 	@XmlElement(required = true, name = "n")
@@ -1243,7 +1243,7 @@ public class CT_GroupItems {
 // CT_PivotCacheRecords ...
 public class CT_PivotCacheRecords {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "r")
 	protected List<CT_Record> R;
 	@XmlElement(required = true, name = "extLst")
@@ -1271,7 +1271,7 @@ public class CT_Record {
 // CT_PCDKPIs ...
 public class CT_PCDKPIs {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "kpi")
 	protected List<CT_PCDKPI> Kpi;
 }
@@ -1279,33 +1279,33 @@ public class CT_PCDKPIs {
 // CT_PCDKPI ...
 public class CT_PCDKPI {
 	@XmlAttribute(name = "uniqueName", required = true)
-	protected StringAttr UniqueName;
+	protected String UniqueNameAttr;
 	@XmlAttribute(name = "caption")
-	protected StringAttr Caption;
+	protected String CaptionAttr;
 	@XmlAttribute(name = "displayFolder")
-	protected StringAttr DisplayFolder;
+	protected String DisplayFolderAttr;
 	@XmlAttribute(name = "measureGroup")
-	protected StringAttr MeasureGroup;
+	protected String MeasureGroupAttr;
 	@XmlAttribute(name = "parent")
-	protected StringAttr Parent;
+	protected String ParentAttr;
 	@XmlAttribute(name = "value", required = true)
-	protected StringAttr Value;
+	protected String ValueAttr;
 	@XmlAttribute(name = "goal")
-	protected StringAttr Goal;
+	protected String GoalAttr;
 	@XmlAttribute(name = "status")
-	protected StringAttr Status;
+	protected String StatusAttr;
 	@XmlAttribute(name = "trend")
-	protected StringAttr Trend;
+	protected String TrendAttr;
 	@XmlAttribute(name = "weight")
-	protected StringAttr Weight;
+	protected String WeightAttr;
 	@XmlAttribute(name = "time")
-	protected StringAttr Time;
+	protected String TimeAttr;
 }
 
 // CT_CacheHierarchies ...
 public class CT_CacheHierarchies {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "cacheHierarchy")
 	protected List<CT_CacheHierarchy> CacheHierarchy;
 }
@@ -1313,49 +1313,49 @@ public class CT_CacheHierarchies {
 // CT_CacheHierarchy ...
 public class CT_CacheHierarchy {
 	@XmlAttribute(name = "uniqueName", required = true)
-	protected StringAttr UniqueName;
+	protected String UniqueNameAttr;
 	@XmlAttribute(name = "caption")
-	protected StringAttr Caption;
+	protected String CaptionAttr;
 	@XmlAttribute(name = "measure")
-	protected BooleanAttr Measure;
+	protected Boolean MeasureAttr;
 	@XmlAttribute(name = "set")
-	protected BooleanAttr Set;
+	protected Boolean SetAttr;
 	@XmlAttribute(name = "parentSet")
-	protected IntegerAttr ParentSet;
+	protected Integer ParentSetAttr;
 	@XmlAttribute(name = "iconSet")
-	protected IntegerAttr IconSet;
+	protected Integer IconSetAttr;
 	@XmlAttribute(name = "attribute")
-	protected BooleanAttr Attribute;
+	protected Boolean AttributeAttr;
 	@XmlAttribute(name = "time")
-	protected BooleanAttr Time;
+	protected Boolean TimeAttr;
 	@XmlAttribute(name = "keyAttribute")
-	protected BooleanAttr KeyAttribute;
+	protected Boolean KeyAttributeAttr;
 	@XmlAttribute(name = "defaultMemberUniqueName")
-	protected StringAttr DefaultMemberUniqueName;
+	protected String DefaultMemberUniqueNameAttr;
 	@XmlAttribute(name = "allUniqueName")
-	protected StringAttr AllUniqueName;
+	protected String AllUniqueNameAttr;
 	@XmlAttribute(name = "allCaption")
-	protected StringAttr AllCaption;
+	protected String AllCaptionAttr;
 	@XmlAttribute(name = "dimensionUniqueName")
-	protected StringAttr DimensionUniqueName;
+	protected String DimensionUniqueNameAttr;
 	@XmlAttribute(name = "displayFolder")
-	protected StringAttr DisplayFolder;
+	protected String DisplayFolderAttr;
 	@XmlAttribute(name = "measureGroup")
-	protected StringAttr MeasureGroup;
+	protected String MeasureGroupAttr;
 	@XmlAttribute(name = "measures")
-	protected BooleanAttr Measures;
+	protected Boolean MeasuresAttr;
 	@XmlAttribute(name = "count", required = true)
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlAttribute(name = "oneField")
-	protected BooleanAttr OneField;
+	protected Boolean OneFieldAttr;
 	@XmlAttribute(name = "memberValueDatatype")
-	protected ShortAttr MemberValueDatatype;
+	protected Short MemberValueDatatypeAttr;
 	@XmlAttribute(name = "unbalanced")
-	protected BooleanAttr Unbalanced;
+	protected Boolean UnbalancedAttr;
 	@XmlAttribute(name = "unbalancedGroup")
-	protected BooleanAttr UnbalancedGroup;
+	protected Boolean UnbalancedGroupAttr;
 	@XmlAttribute(name = "hidden")
-	protected BooleanAttr Hidden;
+	protected Boolean HiddenAttr;
 	@XmlElement(required = true, name = "fieldsUsage")
 	protected CT_FieldsUsage FieldsUsage;
 	@XmlElement(required = true, name = "groupLevels")
@@ -1367,7 +1367,7 @@ public class CT_CacheHierarchy {
 // CT_FieldsUsage ...
 public class CT_FieldsUsage {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "fieldUsage")
 	protected List<CT_FieldUsage> FieldUsage;
 }
@@ -1375,13 +1375,13 @@ public class CT_FieldsUsage {
 // CT_FieldUsage ...
 public class CT_FieldUsage {
 	@XmlAttribute(name = "x", required = true)
-	protected IntegerAttr X;
+	protected Integer XAttr;
 }
 
 // CT_GroupLevels ...
 public class CT_GroupLevels {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "groupLevel")
 	protected List<CT_GroupLevel> GroupLevel;
 }
@@ -1389,13 +1389,13 @@ public class CT_GroupLevels {
 // CT_GroupLevel ...
 public class CT_GroupLevel {
 	@XmlAttribute(name = "uniqueName", required = true)
-	protected StringAttr UniqueName;
+	protected String UniqueNameAttr;
 	@XmlAttribute(name = "caption", required = true)
-	protected StringAttr Caption;
+	protected String CaptionAttr;
 	@XmlAttribute(name = "user")
-	protected BooleanAttr User;
+	protected Boolean UserAttr;
 	@XmlAttribute(name = "customRollUp")
-	protected BooleanAttr CustomRollUp;
+	protected Boolean CustomRollUpAttr;
 	@XmlElement(required = true, name = "groups")
 	protected CT_Groups Groups;
 	@XmlElement(required = true, name = "extLst")
@@ -1405,7 +1405,7 @@ public class CT_GroupLevel {
 // CT_Groups ...
 public class CT_Groups {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "group")
 	protected List<CT_LevelGroup> Group;
 }
@@ -1413,15 +1413,15 @@ public class CT_Groups {
 // CT_LevelGroup ...
 public class CT_LevelGroup {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "uniqueName", required = true)
-	protected StringAttr UniqueName;
+	protected String UniqueNameAttr;
 	@XmlAttribute(name = "caption", required = true)
-	protected StringAttr Caption;
+	protected String CaptionAttr;
 	@XmlAttribute(name = "uniqueParent")
-	protected StringAttr UniqueParent;
+	protected String UniqueParentAttr;
 	@XmlAttribute(name = "id")
-	protected IntegerAttr Id;
+	protected Integer IdAttr;
 	@XmlElement(required = true, name = "groupMembers")
 	protected CT_GroupMembers GroupMembers;
 }
@@ -1429,7 +1429,7 @@ public class CT_LevelGroup {
 // CT_GroupMembers ...
 public class CT_GroupMembers {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "groupMember")
 	protected List<CT_GroupMember> GroupMember;
 }
@@ -1437,9 +1437,9 @@ public class CT_GroupMembers {
 // CT_GroupMember ...
 public class CT_GroupMember {
 	@XmlAttribute(name = "uniqueName", required = true)
-	protected StringAttr UniqueName;
+	protected String UniqueNameAttr;
 	@XmlAttribute(name = "group")
-	protected BooleanAttr Group;
+	protected Boolean GroupAttr;
 }
 
 // CT_TupleCache ...
@@ -1459,15 +1459,15 @@ public class CT_TupleCache {
 // CT_ServerFormat ...
 public class CT_ServerFormat {
 	@XmlAttribute(name = "culture")
-	protected StringAttr Culture;
+	protected String CultureAttr;
 	@XmlAttribute(name = "format")
-	protected StringAttr Format;
+	protected String FormatAttr;
 }
 
 // CT_ServerFormats ...
 public class CT_ServerFormats {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "serverFormat")
 	protected List<CT_ServerFormat> ServerFormat;
 }
@@ -1475,7 +1475,7 @@ public class CT_ServerFormats {
 // CT_PCDSDTCEntries ...
 public class CT_PCDSDTCEntries {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "m")
 	protected CT_Missing M;
 	@XmlElement(required = true, name = "n")
@@ -1489,7 +1489,7 @@ public class CT_PCDSDTCEntries {
 // CT_Tuples ...
 public class CT_Tuples {
 	@XmlAttribute(name = "c")
-	protected IntegerAttr C;
+	protected Integer CAttr;
 	@XmlElement(required = true, name = "tpl")
 	protected List<CT_Tuple> Tpl;
 }
@@ -1497,17 +1497,17 @@ public class CT_Tuples {
 // CT_Tuple ...
 public class CT_Tuple {
 	@XmlAttribute(name = "fld")
-	protected IntegerAttr Fld;
+	protected Integer FldAttr;
 	@XmlAttribute(name = "hier")
-	protected IntegerAttr Hier;
+	protected Integer HierAttr;
 	@XmlAttribute(name = "item", required = true)
-	protected IntegerAttr Item;
+	protected Integer ItemAttr;
 }
 
 // CT_Sets ...
 public class CT_Sets {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "set")
 	protected List<CT_Set> Set;
 }
@@ -1515,15 +1515,15 @@ public class CT_Sets {
 // CT_Set ...
 public class CT_Set {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlAttribute(name = "maxRank", required = true)
-	protected IntegerAttr MaxRank;
+	protected Integer MaxRankAttr;
 	@XmlAttribute(name = "setDefinition", required = true)
-	protected StringAttr SetDefinition;
+	protected String SetDefinitionAttr;
 	@XmlAttribute(name = "sortType")
-	protected StringAttr SortType;
+	protected String SortTypeAttr;
 	@XmlAttribute(name = "queryFailed")
-	protected BooleanAttr QueryFailed;
+	protected Boolean QueryFailedAttr;
 	@XmlElement(required = true, name = "tpls")
 	protected List<CT_Tuples> Tpls;
 	@XmlElement(required = true, name = "sortByTuple")
@@ -1540,7 +1540,7 @@ public class ST_SortType {
 // CT_QueryCache ...
 public class CT_QueryCache {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "query")
 	protected List<CT_Query> Query;
 }
@@ -1548,7 +1548,7 @@ public class CT_QueryCache {
 // CT_Query ...
 public class CT_Query {
 	@XmlAttribute(name = "mdx", required = true)
-	protected StringAttr Mdx;
+	protected String MdxAttr;
 	@XmlElement(required = true, name = "tpls")
 	protected CT_Tuples Tpls;
 }
@@ -1556,7 +1556,7 @@ public class CT_Query {
 // CT_CalculatedItems ...
 public class CT_CalculatedItems {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "calculatedItem")
 	protected List<CT_CalculatedItem> CalculatedItem;
 }
@@ -1564,9 +1564,9 @@ public class CT_CalculatedItems {
 // CT_CalculatedItem ...
 public class CT_CalculatedItem {
 	@XmlAttribute(name = "field")
-	protected IntegerAttr Field;
+	protected Integer FieldAttr;
 	@XmlAttribute(name = "formula")
-	protected StringAttr Formula;
+	protected String FormulaAttr;
 	@XmlElement(required = true, name = "pivotArea")
 	protected CT_PivotArea PivotArea;
 	@XmlElement(required = true, name = "extLst")
@@ -1576,7 +1576,7 @@ public class CT_CalculatedItem {
 // CT_CalculatedMembers ...
 public class CT_CalculatedMembers {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "calculatedMember")
 	protected List<CT_CalculatedMember> CalculatedMember;
 }
@@ -1584,19 +1584,19 @@ public class CT_CalculatedMembers {
 // CT_CalculatedMember ...
 public class CT_CalculatedMember {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "mdx", required = true)
-	protected StringAttr Mdx;
+	protected String MdxAttr;
 	@XmlAttribute(name = "memberName")
-	protected StringAttr MemberName;
+	protected String MemberNameAttr;
 	@XmlAttribute(name = "hierarchy")
-	protected StringAttr Hierarchy;
+	protected String HierarchyAttr;
 	@XmlAttribute(name = "parent")
-	protected StringAttr Parent;
+	protected String ParentAttr;
 	@XmlAttribute(name = "solveOrder")
-	protected IntegerAttr SolveOrder;
+	protected Integer SolveOrderAttr;
 	@XmlAttribute(name = "set")
-	protected BooleanAttr Set;
+	protected Boolean SetAttr;
 	@XmlElement(required = true, name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
@@ -1606,127 +1606,127 @@ public class CT_pivotTableDefinition {
 	@XmlElement(required = true)
 	protected AG_AutoFormat AG_AutoFormat;
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "cacheId", required = true)
-	protected IntegerAttr CacheId;
+	protected Integer CacheIdAttr;
 	@XmlAttribute(name = "dataOnRows")
-	protected BooleanAttr DataOnRows;
+	protected Boolean DataOnRowsAttr;
 	@XmlAttribute(name = "dataPosition")
-	protected IntegerAttr DataPosition;
+	protected Integer DataPositionAttr;
 	@XmlAttribute(name = "dataCaption", required = true)
-	protected StringAttr DataCaption;
+	protected String DataCaptionAttr;
 	@XmlAttribute(name = "grandTotalCaption")
-	protected StringAttr GrandTotalCaption;
+	protected String GrandTotalCaptionAttr;
 	@XmlAttribute(name = "errorCaption")
-	protected StringAttr ErrorCaption;
+	protected String ErrorCaptionAttr;
 	@XmlAttribute(name = "showError")
-	protected BooleanAttr ShowError;
+	protected Boolean ShowErrorAttr;
 	@XmlAttribute(name = "missingCaption")
-	protected StringAttr MissingCaption;
+	protected String MissingCaptionAttr;
 	@XmlAttribute(name = "showMissing")
-	protected BooleanAttr ShowMissing;
+	protected Boolean ShowMissingAttr;
 	@XmlAttribute(name = "pageStyle")
-	protected StringAttr PageStyle;
+	protected String PageStyleAttr;
 	@XmlAttribute(name = "pivotTableStyle")
-	protected StringAttr PivotTableStyle;
+	protected String PivotTableStyleAttr;
 	@XmlAttribute(name = "vacatedStyle")
-	protected StringAttr VacatedStyle;
+	protected String VacatedStyleAttr;
 	@XmlAttribute(name = "tag")
-	protected StringAttr Tag;
+	protected String TagAttr;
 	@XmlAttribute(name = "updatedVersion")
-	protected ByteAttr UpdatedVersion;
+	protected Byte UpdatedVersionAttr;
 	@XmlAttribute(name = "minRefreshableVersion")
-	protected ByteAttr MinRefreshableVersion;
+	protected Byte MinRefreshableVersionAttr;
 	@XmlAttribute(name = "asteriskTotals")
-	protected BooleanAttr AsteriskTotals;
+	protected Boolean AsteriskTotalsAttr;
 	@XmlAttribute(name = "showItems")
-	protected BooleanAttr ShowItems;
+	protected Boolean ShowItemsAttr;
 	@XmlAttribute(name = "editData")
-	protected BooleanAttr EditData;
+	protected Boolean EditDataAttr;
 	@XmlAttribute(name = "disableFieldList")
-	protected BooleanAttr DisableFieldList;
+	protected Boolean DisableFieldListAttr;
 	@XmlAttribute(name = "showCalcMbrs")
-	protected BooleanAttr ShowCalcMbrs;
+	protected Boolean ShowCalcMbrsAttr;
 	@XmlAttribute(name = "visualTotals")
-	protected BooleanAttr VisualTotals;
+	protected Boolean VisualTotalsAttr;
 	@XmlAttribute(name = "showMultipleLabel")
-	protected BooleanAttr ShowMultipleLabel;
+	protected Boolean ShowMultipleLabelAttr;
 	@XmlAttribute(name = "showDataDropDown")
-	protected BooleanAttr ShowDataDropDown;
+	protected Boolean ShowDataDropDownAttr;
 	@XmlAttribute(name = "showDrill")
-	protected BooleanAttr ShowDrill;
+	protected Boolean ShowDrillAttr;
 	@XmlAttribute(name = "printDrill")
-	protected BooleanAttr PrintDrill;
+	protected Boolean PrintDrillAttr;
 	@XmlAttribute(name = "showMemberPropertyTips")
-	protected BooleanAttr ShowMemberPropertyTips;
+	protected Boolean ShowMemberPropertyTipsAttr;
 	@XmlAttribute(name = "showDataTips")
-	protected BooleanAttr ShowDataTips;
+	protected Boolean ShowDataTipsAttr;
 	@XmlAttribute(name = "enableWizard")
-	protected BooleanAttr EnableWizard;
+	protected Boolean EnableWizardAttr;
 	@XmlAttribute(name = "enableDrill")
-	protected BooleanAttr EnableDrill;
+	protected Boolean EnableDrillAttr;
 	@XmlAttribute(name = "enableFieldProperties")
-	protected BooleanAttr EnableFieldProperties;
+	protected Boolean EnableFieldPropertiesAttr;
 	@XmlAttribute(name = "preserveFormatting")
-	protected BooleanAttr PreserveFormatting;
+	protected Boolean PreserveFormattingAttr;
 	@XmlAttribute(name = "useAutoFormatting")
-	protected BooleanAttr UseAutoFormatting;
+	protected Boolean UseAutoFormattingAttr;
 	@XmlAttribute(name = "pageWrap")
-	protected IntegerAttr PageWrap;
+	protected Integer PageWrapAttr;
 	@XmlAttribute(name = "pageOverThenDown")
-	protected BooleanAttr PageOverThenDown;
+	protected Boolean PageOverThenDownAttr;
 	@XmlAttribute(name = "subtotalHiddenItems")
-	protected BooleanAttr SubtotalHiddenItems;
+	protected Boolean SubtotalHiddenItemsAttr;
 	@XmlAttribute(name = "rowGrandTotals")
-	protected BooleanAttr RowGrandTotals;
+	protected Boolean RowGrandTotalsAttr;
 	@XmlAttribute(name = "colGrandTotals")
-	protected BooleanAttr ColGrandTotals;
+	protected Boolean ColGrandTotalsAttr;
 	@XmlAttribute(name = "fieldPrintTitles")
-	protected BooleanAttr FieldPrintTitles;
+	protected Boolean FieldPrintTitlesAttr;
 	@XmlAttribute(name = "itemPrintTitles")
-	protected BooleanAttr ItemPrintTitles;
+	protected Boolean ItemPrintTitlesAttr;
 	@XmlAttribute(name = "mergeItem")
-	protected BooleanAttr MergeItem;
+	protected Boolean MergeItemAttr;
 	@XmlAttribute(name = "showDropZones")
-	protected BooleanAttr ShowDropZones;
+	protected Boolean ShowDropZonesAttr;
 	@XmlAttribute(name = "createdVersion")
-	protected ByteAttr CreatedVersion;
+	protected Byte CreatedVersionAttr;
 	@XmlAttribute(name = "indent")
-	protected IntegerAttr Indent;
+	protected Integer IndentAttr;
 	@XmlAttribute(name = "showEmptyRow")
-	protected BooleanAttr ShowEmptyRow;
+	protected Boolean ShowEmptyRowAttr;
 	@XmlAttribute(name = "showEmptyCol")
-	protected BooleanAttr ShowEmptyCol;
+	protected Boolean ShowEmptyColAttr;
 	@XmlAttribute(name = "showHeaders")
-	protected BooleanAttr ShowHeaders;
+	protected Boolean ShowHeadersAttr;
 	@XmlAttribute(name = "compact")
-	protected BooleanAttr Compact;
+	protected Boolean CompactAttr;
 	@XmlAttribute(name = "outline")
-	protected BooleanAttr Outline;
+	protected Boolean OutlineAttr;
 	@XmlAttribute(name = "outlineData")
-	protected BooleanAttr OutlineData;
+	protected Boolean OutlineDataAttr;
 	@XmlAttribute(name = "compactData")
-	protected BooleanAttr CompactData;
+	protected Boolean CompactDataAttr;
 	@XmlAttribute(name = "published")
-	protected BooleanAttr Published;
+	protected Boolean PublishedAttr;
 	@XmlAttribute(name = "gridDropZones")
-	protected BooleanAttr GridDropZones;
+	protected Boolean GridDropZonesAttr;
 	@XmlAttribute(name = "immersive")
-	protected BooleanAttr Immersive;
+	protected Boolean ImmersiveAttr;
 	@XmlAttribute(name = "multipleFieldFilters")
-	protected BooleanAttr MultipleFieldFilters;
+	protected Boolean MultipleFieldFiltersAttr;
 	@XmlAttribute(name = "chartFormat")
-	protected IntegerAttr ChartFormat;
+	protected Integer ChartFormatAttr;
 	@XmlAttribute(name = "rowHeaderCaption")
-	protected StringAttr RowHeaderCaption;
+	protected String RowHeaderCaptionAttr;
 	@XmlAttribute(name = "colHeaderCaption")
-	protected StringAttr ColHeaderCaption;
+	protected String ColHeaderCaptionAttr;
 	@XmlAttribute(name = "fieldListSortAscending")
-	protected BooleanAttr FieldListSortAscending;
+	protected Boolean FieldListSortAscendingAttr;
 	@XmlAttribute(name = "mdxSubqueries")
-	protected BooleanAttr MdxSubqueries;
+	protected Boolean MdxSubqueriesAttr;
 	@XmlAttribute(name = "customListSort")
-	protected BooleanAttr CustomListSort;
+	protected Boolean CustomListSortAttr;
 	@XmlElement(required = true, name = "location")
 	protected CT_Location Location;
 	@XmlElement(required = true, name = "pivotFields")
@@ -1766,23 +1766,23 @@ public class CT_pivotTableDefinition {
 // CT_Location ...
 public class CT_Location {
 	@XmlAttribute(name = "ref", required = true)
-	protected StringAttr Ref;
+	protected String RefAttr;
 	@XmlAttribute(name = "firstHeaderRow", required = true)
-	protected IntegerAttr FirstHeaderRow;
+	protected Integer FirstHeaderRowAttr;
 	@XmlAttribute(name = "firstDataRow", required = true)
-	protected IntegerAttr FirstDataRow;
+	protected Integer FirstDataRowAttr;
 	@XmlAttribute(name = "firstDataCol", required = true)
-	protected IntegerAttr FirstDataCol;
+	protected Integer FirstDataColAttr;
 	@XmlAttribute(name = "rowPageCount")
-	protected IntegerAttr RowPageCount;
+	protected Integer RowPageCountAttr;
 	@XmlAttribute(name = "colPageCount")
-	protected IntegerAttr ColPageCount;
+	protected Integer ColPageCountAttr;
 }
 
 // CT_PivotFields ...
 public class CT_PivotFields {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "pivotField")
 	protected List<CT_PivotField> PivotField;
 }
@@ -1790,101 +1790,101 @@ public class CT_PivotFields {
 // CT_PivotField ...
 public class CT_PivotField {
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "axis")
-	protected StringAttr Axis;
+	protected String AxisAttr;
 	@XmlAttribute(name = "dataField")
-	protected BooleanAttr DataField;
+	protected Boolean DataFieldAttr;
 	@XmlAttribute(name = "subtotalCaption")
-	protected StringAttr SubtotalCaption;
+	protected String SubtotalCaptionAttr;
 	@XmlAttribute(name = "showDropDowns")
-	protected BooleanAttr ShowDropDowns;
+	protected Boolean ShowDropDownsAttr;
 	@XmlAttribute(name = "hiddenLevel")
-	protected BooleanAttr HiddenLevel;
+	protected Boolean HiddenLevelAttr;
 	@XmlAttribute(name = "uniqueMemberProperty")
-	protected StringAttr UniqueMemberProperty;
+	protected String UniqueMemberPropertyAttr;
 	@XmlAttribute(name = "compact")
-	protected BooleanAttr Compact;
+	protected Boolean CompactAttr;
 	@XmlAttribute(name = "allDrilled")
-	protected BooleanAttr AllDrilled;
+	protected Boolean AllDrilledAttr;
 	@XmlAttribute(name = "numFmtId")
-	protected IntegerAttr NumFmtId;
+	protected Integer NumFmtIdAttr;
 	@XmlAttribute(name = "outline")
-	protected BooleanAttr Outline;
+	protected Boolean OutlineAttr;
 	@XmlAttribute(name = "subtotalTop")
-	protected BooleanAttr SubtotalTop;
+	protected Boolean SubtotalTopAttr;
 	@XmlAttribute(name = "dragToRow")
-	protected BooleanAttr DragToRow;
+	protected Boolean DragToRowAttr;
 	@XmlAttribute(name = "dragToCol")
-	protected BooleanAttr DragToCol;
+	protected Boolean DragToColAttr;
 	@XmlAttribute(name = "multipleItemSelectionAllowed")
-	protected BooleanAttr MultipleItemSelectionAllowed;
+	protected Boolean MultipleItemSelectionAllowedAttr;
 	@XmlAttribute(name = "dragToPage")
-	protected BooleanAttr DragToPage;
+	protected Boolean DragToPageAttr;
 	@XmlAttribute(name = "dragToData")
-	protected BooleanAttr DragToData;
+	protected Boolean DragToDataAttr;
 	@XmlAttribute(name = "dragOff")
-	protected BooleanAttr DragOff;
+	protected Boolean DragOffAttr;
 	@XmlAttribute(name = "showAll")
-	protected BooleanAttr ShowAll;
+	protected Boolean ShowAllAttr;
 	@XmlAttribute(name = "insertBlankRow")
-	protected BooleanAttr InsertBlankRow;
+	protected Boolean InsertBlankRowAttr;
 	@XmlAttribute(name = "serverField")
-	protected BooleanAttr ServerField;
+	protected Boolean ServerFieldAttr;
 	@XmlAttribute(name = "insertPageBreak")
-	protected BooleanAttr InsertPageBreak;
+	protected Boolean InsertPageBreakAttr;
 	@XmlAttribute(name = "autoShow")
-	protected BooleanAttr AutoShow;
+	protected Boolean AutoShowAttr;
 	@XmlAttribute(name = "topAutoShow")
-	protected BooleanAttr TopAutoShow;
+	protected Boolean TopAutoShowAttr;
 	@XmlAttribute(name = "hideNewItems")
-	protected BooleanAttr HideNewItems;
+	protected Boolean HideNewItemsAttr;
 	@XmlAttribute(name = "measureFilter")
-	protected BooleanAttr MeasureFilter;
+	protected Boolean MeasureFilterAttr;
 	@XmlAttribute(name = "includeNewItemsInFilter")
-	protected BooleanAttr IncludeNewItemsInFilter;
+	protected Boolean IncludeNewItemsInFilterAttr;
 	@XmlAttribute(name = "itemPageCount")
-	protected IntegerAttr ItemPageCount;
+	protected Integer ItemPageCountAttr;
 	@XmlAttribute(name = "sortType")
-	protected StringAttr SortType;
+	protected String SortTypeAttr;
 	@XmlAttribute(name = "dataSourceSort")
-	protected BooleanAttr DataSourceSort;
+	protected Boolean DataSourceSortAttr;
 	@XmlAttribute(name = "nonAutoSortDefault")
-	protected BooleanAttr NonAutoSortDefault;
+	protected Boolean NonAutoSortDefaultAttr;
 	@XmlAttribute(name = "rankBy")
-	protected IntegerAttr RankBy;
+	protected Integer RankByAttr;
 	@XmlAttribute(name = "defaultSubtotal")
-	protected BooleanAttr DefaultSubtotal;
+	protected Boolean DefaultSubtotalAttr;
 	@XmlAttribute(name = "sumSubtotal")
-	protected BooleanAttr SumSubtotal;
+	protected Boolean SumSubtotalAttr;
 	@XmlAttribute(name = "countASubtotal")
-	protected BooleanAttr CountASubtotal;
+	protected Boolean CountASubtotalAttr;
 	@XmlAttribute(name = "avgSubtotal")
-	protected BooleanAttr AvgSubtotal;
+	protected Boolean AvgSubtotalAttr;
 	@XmlAttribute(name = "maxSubtotal")
-	protected BooleanAttr MaxSubtotal;
+	protected Boolean MaxSubtotalAttr;
 	@XmlAttribute(name = "minSubtotal")
-	protected BooleanAttr MinSubtotal;
+	protected Boolean MinSubtotalAttr;
 	@XmlAttribute(name = "productSubtotal")
-	protected BooleanAttr ProductSubtotal;
+	protected Boolean ProductSubtotalAttr;
 	@XmlAttribute(name = "countSubtotal")
-	protected BooleanAttr CountSubtotal;
+	protected Boolean CountSubtotalAttr;
 	@XmlAttribute(name = "stdDevSubtotal")
-	protected BooleanAttr StdDevSubtotal;
+	protected Boolean StdDevSubtotalAttr;
 	@XmlAttribute(name = "stdDevPSubtotal")
-	protected BooleanAttr StdDevPSubtotal;
+	protected Boolean StdDevPSubtotalAttr;
 	@XmlAttribute(name = "varSubtotal")
-	protected BooleanAttr VarSubtotal;
+	protected Boolean VarSubtotalAttr;
 	@XmlAttribute(name = "varPSubtotal")
-	protected BooleanAttr VarPSubtotal;
+	protected Boolean VarPSubtotalAttr;
 	@XmlAttribute(name = "showPropCell")
-	protected BooleanAttr ShowPropCell;
+	protected Boolean ShowPropCellAttr;
 	@XmlAttribute(name = "showPropTip")
-	protected BooleanAttr ShowPropTip;
+	protected Boolean ShowPropTipAttr;
 	@XmlAttribute(name = "showPropAsCaption")
-	protected BooleanAttr ShowPropAsCaption;
+	protected Boolean ShowPropAsCaptionAttr;
 	@XmlAttribute(name = "defaultAttributeDrillState")
-	protected BooleanAttr DefaultAttributeDrillState;
+	protected Boolean DefaultAttributeDrillStateAttr;
 	@XmlElement(required = true, name = "items")
 	protected CT_Items Items;
 	@XmlElement(required = true, name = "autoSortScope")
@@ -1902,7 +1902,7 @@ public class CT_AutoSortScope {
 // CT_Items ...
 public class CT_Items {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "item")
 	protected List<CT_Item> Item;
 }
@@ -1910,33 +1910,33 @@ public class CT_Items {
 // CT_Item ...
 public class CT_Item {
 	@XmlAttribute(name = "n")
-	protected StringAttr N;
+	protected String NAttr;
 	@XmlAttribute(name = "t")
-	protected StringAttr T;
+	protected String TAttr;
 	@XmlAttribute(name = "h")
-	protected BooleanAttr H;
+	protected Boolean HAttr;
 	@XmlAttribute(name = "s")
-	protected BooleanAttr S;
+	protected Boolean SAttr;
 	@XmlAttribute(name = "sd")
-	protected BooleanAttr Sd;
+	protected Boolean SdAttr;
 	@XmlAttribute(name = "f")
-	protected BooleanAttr F;
+	protected Boolean FAttr;
 	@XmlAttribute(name = "m")
-	protected BooleanAttr M;
+	protected Boolean MAttr;
 	@XmlAttribute(name = "c")
-	protected BooleanAttr C;
+	protected Boolean CAttr;
 	@XmlAttribute(name = "x")
-	protected IntegerAttr X;
+	protected Integer XAttr;
 	@XmlAttribute(name = "d")
-	protected BooleanAttr D;
+	protected Boolean DAttr;
 	@XmlAttribute(name = "e")
-	protected BooleanAttr E;
+	protected Boolean EAttr;
 }
 
 // CT_PageFields ...
 public class CT_PageFields {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "pageField")
 	protected List<CT_PageField> PageField;
 }
@@ -1944,15 +1944,15 @@ public class CT_PageFields {
 // CT_PageField ...
 public class CT_PageField {
 	@XmlAttribute(name = "fld", required = true)
-	protected IntegerAttr Fld;
+	protected Integer FldAttr;
 	@XmlAttribute(name = "item")
-	protected IntegerAttr Item;
+	protected Integer ItemAttr;
 	@XmlAttribute(name = "hier")
-	protected IntegerAttr Hier;
+	protected Integer HierAttr;
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "cap")
-	protected StringAttr Cap;
+	protected String CapAttr;
 	@XmlElement(required = true, name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
@@ -1960,7 +1960,7 @@ public class CT_PageField {
 // CT_DataFields ...
 public class CT_DataFields {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "dataField")
 	protected List<CT_DataField> DataField;
 }
@@ -1968,19 +1968,19 @@ public class CT_DataFields {
 // CT_DataField ...
 public class CT_DataField {
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "fld", required = true)
-	protected IntegerAttr Fld;
+	protected Integer FldAttr;
 	@XmlAttribute(name = "subtotal")
-	protected StringAttr Subtotal;
+	protected String SubtotalAttr;
 	@XmlAttribute(name = "showDataAs")
-	protected StringAttr ShowDataAs;
+	protected String ShowDataAsAttr;
 	@XmlAttribute(name = "baseField")
-	protected IntegerAttr BaseField;
+	protected Integer BaseFieldAttr;
 	@XmlAttribute(name = "baseItem")
-	protected IntegerAttr BaseItem;
+	protected Integer BaseItemAttr;
 	@XmlAttribute(name = "numFmtId")
-	protected IntegerAttr NumFmtId;
+	protected Integer NumFmtIdAttr;
 	@XmlElement(required = true, name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
@@ -1988,7 +1988,7 @@ public class CT_DataField {
 // CT_rowItems ...
 public class CT_rowItems {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "i")
 	protected List<CT_I> I;
 }
@@ -1996,7 +1996,7 @@ public class CT_rowItems {
 // CT_colItems ...
 public class CT_colItems {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "i")
 	protected List<CT_I> I;
 }
@@ -2004,11 +2004,11 @@ public class CT_colItems {
 // CT_I ...
 public class CT_I {
 	@XmlAttribute(name = "t")
-	protected StringAttr T;
+	protected String TAttr;
 	@XmlAttribute(name = "r")
-	protected IntegerAttr R;
+	protected Integer RAttr;
 	@XmlAttribute(name = "i")
-	protected IntegerAttr I;
+	protected Integer IAttr;
 	@XmlElement(required = true, name = "x")
 	protected List<CT_X> X;
 }
@@ -2016,13 +2016,13 @@ public class CT_I {
 // CT_X ...
 public class CT_X {
 	@XmlAttribute(name = "v")
-	protected IntegerAttr V;
+	protected Integer VAttr;
 }
 
 // CT_RowFields ...
 public class CT_RowFields {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "field")
 	protected List<CT_Field> Field;
 }
@@ -2030,7 +2030,7 @@ public class CT_RowFields {
 // CT_ColFields ...
 public class CT_ColFields {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "field")
 	protected List<CT_Field> Field;
 }
@@ -2038,13 +2038,13 @@ public class CT_ColFields {
 // CT_Field ...
 public class CT_Field {
 	@XmlAttribute(name = "x", required = true)
-	protected IntegerAttr X;
+	protected Integer XAttr;
 }
 
 // CT_Formats ...
 public class CT_Formats {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "format")
 	protected List<CT_Format> Format;
 }
@@ -2052,9 +2052,9 @@ public class CT_Formats {
 // CT_Format ...
 public class CT_Format {
 	@XmlAttribute(name = "action")
-	protected StringAttr Action;
+	protected String ActionAttr;
 	@XmlAttribute(name = "dxfId")
-	protected IntegerAttr DxfId;
+	protected Integer DxfIdAttr;
 	@XmlElement(required = true, name = "pivotArea")
 	protected CT_PivotArea PivotArea;
 	@XmlElement(required = true, name = "extLst")
@@ -2064,7 +2064,7 @@ public class CT_Format {
 // CT_ConditionalFormats ...
 public class CT_ConditionalFormats {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "conditionalFormat")
 	protected List<CT_ConditionalFormat> ConditionalFormat;
 }
@@ -2072,11 +2072,11 @@ public class CT_ConditionalFormats {
 // CT_ConditionalFormat ...
 public class CT_ConditionalFormat {
 	@XmlAttribute(name = "scope")
-	protected StringAttr Scope;
+	protected String ScopeAttr;
 	@XmlAttribute(name = "type")
-	protected StringAttr Type;
+	protected String TypeAttr;
 	@XmlAttribute(name = "priority", required = true)
-	protected IntegerAttr Priority;
+	protected Integer PriorityAttr;
 	@XmlElement(required = true, name = "pivotAreas")
 	protected CT_PivotAreas PivotAreas;
 	@XmlElement(required = true, name = "extLst")
@@ -2086,7 +2086,7 @@ public class CT_ConditionalFormat {
 // CT_PivotAreas ...
 public class CT_PivotAreas {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "pivotArea")
 	protected List<CT_PivotArea> PivotArea;
 }
@@ -2108,7 +2108,7 @@ public class ST_Type {
 // CT_ChartFormats ...
 public class CT_ChartFormats {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "chartFormat")
 	protected List<CT_ChartFormat> ChartFormat;
 }
@@ -2116,11 +2116,11 @@ public class CT_ChartFormats {
 // CT_ChartFormat ...
 public class CT_ChartFormat {
 	@XmlAttribute(name = "chart", required = true)
-	protected IntegerAttr Chart;
+	protected Integer ChartAttr;
 	@XmlAttribute(name = "format", required = true)
-	protected IntegerAttr Format;
+	protected Integer FormatAttr;
 	@XmlAttribute(name = "series")
-	protected BooleanAttr Series;
+	protected Boolean SeriesAttr;
 	@XmlElement(required = true, name = "pivotArea")
 	protected CT_PivotArea PivotArea;
 }
@@ -2128,7 +2128,7 @@ public class CT_ChartFormat {
 // CT_PivotHierarchies ...
 public class CT_PivotHierarchies {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "pivotHierarchy")
 	protected List<CT_PivotHierarchy> PivotHierarchy;
 }
@@ -2136,27 +2136,27 @@ public class CT_PivotHierarchies {
 // CT_PivotHierarchy ...
 public class CT_PivotHierarchy {
 	@XmlAttribute(name = "outline")
-	protected BooleanAttr Outline;
+	protected Boolean OutlineAttr;
 	@XmlAttribute(name = "multipleItemSelectionAllowed")
-	protected BooleanAttr MultipleItemSelectionAllowed;
+	protected Boolean MultipleItemSelectionAllowedAttr;
 	@XmlAttribute(name = "subtotalTop")
-	protected BooleanAttr SubtotalTop;
+	protected Boolean SubtotalTopAttr;
 	@XmlAttribute(name = "showInFieldList")
-	protected BooleanAttr ShowInFieldList;
+	protected Boolean ShowInFieldListAttr;
 	@XmlAttribute(name = "dragToRow")
-	protected BooleanAttr DragToRow;
+	protected Boolean DragToRowAttr;
 	@XmlAttribute(name = "dragToCol")
-	protected BooleanAttr DragToCol;
+	protected Boolean DragToColAttr;
 	@XmlAttribute(name = "dragToPage")
-	protected BooleanAttr DragToPage;
+	protected Boolean DragToPageAttr;
 	@XmlAttribute(name = "dragToData")
-	protected BooleanAttr DragToData;
+	protected Boolean DragToDataAttr;
 	@XmlAttribute(name = "dragOff")
-	protected BooleanAttr DragOff;
+	protected Boolean DragOffAttr;
 	@XmlAttribute(name = "includeNewItemsInFilter")
-	protected BooleanAttr IncludeNewItemsInFilter;
+	protected Boolean IncludeNewItemsInFilterAttr;
 	@XmlAttribute(name = "caption")
-	protected StringAttr Caption;
+	protected String CaptionAttr;
 	@XmlElement(required = true, name = "mps")
 	protected CT_MemberProperties Mps;
 	@XmlElement(required = true, name = "members")
@@ -2168,7 +2168,7 @@ public class CT_PivotHierarchy {
 // CT_RowHierarchiesUsage ...
 public class CT_RowHierarchiesUsage {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "rowHierarchyUsage")
 	protected List<CT_HierarchyUsage> RowHierarchyUsage;
 }
@@ -2176,7 +2176,7 @@ public class CT_RowHierarchiesUsage {
 // CT_ColHierarchiesUsage ...
 public class CT_ColHierarchiesUsage {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "colHierarchyUsage")
 	protected List<CT_HierarchyUsage> ColHierarchyUsage;
 }
@@ -2184,13 +2184,13 @@ public class CT_ColHierarchiesUsage {
 // CT_HierarchyUsage ...
 public class CT_HierarchyUsage {
 	@XmlAttribute(name = "hierarchyUsage", required = true)
-	protected IntegerAttr HierarchyUsage;
+	protected Integer HierarchyUsageAttr;
 }
 
 // CT_MemberProperties ...
 public class CT_MemberProperties {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "mp")
 	protected List<CT_MemberProperty> Mp;
 }
@@ -2198,31 +2198,31 @@ public class CT_MemberProperties {
 // CT_MemberProperty ...
 public class CT_MemberProperty {
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "showCell")
-	protected BooleanAttr ShowCell;
+	protected Boolean ShowCellAttr;
 	@XmlAttribute(name = "showTip")
-	protected BooleanAttr ShowTip;
+	protected Boolean ShowTipAttr;
 	@XmlAttribute(name = "showAsCaption")
-	protected BooleanAttr ShowAsCaption;
+	protected Boolean ShowAsCaptionAttr;
 	@XmlAttribute(name = "nameLen")
-	protected IntegerAttr NameLen;
+	protected Integer NameLenAttr;
 	@XmlAttribute(name = "pPos")
-	protected IntegerAttr PPos;
+	protected Integer PPosAttr;
 	@XmlAttribute(name = "pLen")
-	protected IntegerAttr PLen;
+	protected Integer PLenAttr;
 	@XmlAttribute(name = "level")
-	protected IntegerAttr Level;
+	protected Integer LevelAttr;
 	@XmlAttribute(name = "field", required = true)
-	protected IntegerAttr Field;
+	protected Integer FieldAttr;
 }
 
 // CT_Members ...
 public class CT_Members {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlAttribute(name = "level")
-	protected IntegerAttr Level;
+	protected Integer LevelAttr;
 	@XmlElement(required = true, name = "member")
 	protected List<CT_Member> Member;
 }
@@ -2230,13 +2230,13 @@ public class CT_Members {
 // CT_Member ...
 public class CT_Member {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 }
 
 // CT_Dimensions ...
 public class CT_Dimensions {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "dimension")
 	protected List<CT_PivotDimension> Dimension;
 }
@@ -2244,19 +2244,19 @@ public class CT_Dimensions {
 // CT_PivotDimension ...
 public class CT_PivotDimension {
 	@XmlAttribute(name = "measure")
-	protected BooleanAttr Measure;
+	protected Boolean MeasureAttr;
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "uniqueName", required = true)
-	protected StringAttr UniqueName;
+	protected String UniqueNameAttr;
 	@XmlAttribute(name = "caption", required = true)
-	protected StringAttr Caption;
+	protected String CaptionAttr;
 }
 
 // CT_MeasureGroups ...
 public class CT_MeasureGroups {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "measureGroup")
 	protected List<CT_MeasureGroup> MeasureGroup;
 }
@@ -2264,7 +2264,7 @@ public class CT_MeasureGroups {
 // CT_MeasureDimensionMaps ...
 public class CT_MeasureDimensionMaps {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "map")
 	protected List<CT_MeasureDimensionMap> Map;
 }
@@ -2272,39 +2272,39 @@ public class CT_MeasureDimensionMaps {
 // CT_MeasureGroup ...
 public class CT_MeasureGroup {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "caption", required = true)
-	protected StringAttr Caption;
+	protected String CaptionAttr;
 }
 
 // CT_MeasureDimensionMap ...
 public class CT_MeasureDimensionMap {
 	@XmlAttribute(name = "measureGroup")
-	protected IntegerAttr MeasureGroup;
+	protected Integer MeasureGroupAttr;
 	@XmlAttribute(name = "dimension")
-	protected IntegerAttr Dimension;
+	protected Integer DimensionAttr;
 }
 
 // CT_PivotTableStyle ...
 public class CT_PivotTableStyle {
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "showRowHeaders")
-	protected BooleanAttr ShowRowHeaders;
+	protected Boolean ShowRowHeadersAttr;
 	@XmlAttribute(name = "showColHeaders")
-	protected BooleanAttr ShowColHeaders;
+	protected Boolean ShowColHeadersAttr;
 	@XmlAttribute(name = "showRowStripes")
-	protected BooleanAttr ShowRowStripes;
+	protected Boolean ShowRowStripesAttr;
 	@XmlAttribute(name = "showColStripes")
-	protected BooleanAttr ShowColStripes;
+	protected Boolean ShowColStripesAttr;
 	@XmlAttribute(name = "showLastColumn")
-	protected BooleanAttr ShowLastColumn;
+	protected Boolean ShowLastColumnAttr;
 }
 
 // CT_PivotFilters ...
 public class CT_PivotFilters {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "filter")
 	protected List<CT_PivotFilter> Filter;
 }
@@ -2312,27 +2312,27 @@ public class CT_PivotFilters {
 // CT_PivotFilter ...
 public class CT_PivotFilter {
 	@XmlAttribute(name = "fld", required = true)
-	protected IntegerAttr Fld;
+	protected Integer FldAttr;
 	@XmlAttribute(name = "mpFld")
-	protected IntegerAttr MpFld;
+	protected Integer MpFldAttr;
 	@XmlAttribute(name = "type", required = true)
-	protected StringAttr Type;
+	protected String TypeAttr;
 	@XmlAttribute(name = "evalOrder")
-	protected IntegerAttr EvalOrder;
+	protected Integer EvalOrderAttr;
 	@XmlAttribute(name = "id", required = true)
-	protected IntegerAttr Id;
+	protected Integer IdAttr;
 	@XmlAttribute(name = "iMeasureHier")
-	protected IntegerAttr IMeasureHier;
+	protected Integer IMeasureHierAttr;
 	@XmlAttribute(name = "iMeasureFld")
-	protected IntegerAttr IMeasureFld;
+	protected Integer IMeasureFldAttr;
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "description")
-	protected StringAttr Description;
+	protected String DescriptionAttr;
 	@XmlAttribute(name = "stringValue1")
-	protected StringAttr StringValue1;
+	protected String StringValue1Attr;
 	@XmlAttribute(name = "stringValue2")
-	protected StringAttr StringValue2;
+	protected String StringValue2Attr;
 	@XmlElement(required = true, name = "autoFilter")
 	protected CT_AutoFilter AutoFilter;
 	@XmlElement(required = true, name = "extLst")
@@ -2377,29 +2377,29 @@ public class ST_PivotFilterType {
 // CT_PivotArea ...
 public class CT_PivotArea {
 	@XmlAttribute(name = "field")
-	protected IntegerAttr Field;
+	protected Integer FieldAttr;
 	@XmlAttribute(name = "type")
-	protected StringAttr Type;
+	protected String TypeAttr;
 	@XmlAttribute(name = "dataOnly")
-	protected BooleanAttr DataOnly;
+	protected Boolean DataOnlyAttr;
 	@XmlAttribute(name = "labelOnly")
-	protected BooleanAttr LabelOnly;
+	protected Boolean LabelOnlyAttr;
 	@XmlAttribute(name = "grandRow")
-	protected BooleanAttr GrandRow;
+	protected Boolean GrandRowAttr;
 	@XmlAttribute(name = "grandCol")
-	protected BooleanAttr GrandCol;
+	protected Boolean GrandColAttr;
 	@XmlAttribute(name = "cacheIndex")
-	protected BooleanAttr CacheIndex;
+	protected Boolean CacheIndexAttr;
 	@XmlAttribute(name = "outline")
-	protected BooleanAttr Outline;
+	protected Boolean OutlineAttr;
 	@XmlAttribute(name = "offset")
-	protected StringAttr Offset;
+	protected String OffsetAttr;
 	@XmlAttribute(name = "collapsedLevelsAreSubtotals")
-	protected BooleanAttr CollapsedLevelsAreSubtotals;
+	protected Boolean CollapsedLevelsAreSubtotalsAttr;
 	@XmlAttribute(name = "axis")
-	protected StringAttr Axis;
+	protected String AxisAttr;
 	@XmlAttribute(name = "fieldPosition")
-	protected IntegerAttr FieldPosition;
+	protected Integer FieldPositionAttr;
 	@XmlElement(required = true, name = "references")
 	protected CT_PivotAreaReferences References;
 	@XmlElement(required = true, name = "extLst")
@@ -2416,7 +2416,7 @@ public class ST_PivotAreaType {
 // CT_PivotAreaReferences ...
 public class CT_PivotAreaReferences {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "reference")
 	protected List<CT_PivotAreaReference> Reference;
 }
@@ -2424,39 +2424,39 @@ public class CT_PivotAreaReferences {
 // CT_PivotAreaReference ...
 public class CT_PivotAreaReference {
 	@XmlAttribute(name = "field")
-	protected IntegerAttr Field;
+	protected Integer FieldAttr;
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlAttribute(name = "selected")
-	protected BooleanAttr Selected;
+	protected Boolean SelectedAttr;
 	@XmlAttribute(name = "byPosition")
-	protected BooleanAttr ByPosition;
+	protected Boolean ByPositionAttr;
 	@XmlAttribute(name = "relative")
-	protected BooleanAttr Relative;
+	protected Boolean RelativeAttr;
 	@XmlAttribute(name = "defaultSubtotal")
-	protected BooleanAttr DefaultSubtotal;
+	protected Boolean DefaultSubtotalAttr;
 	@XmlAttribute(name = "sumSubtotal")
-	protected BooleanAttr SumSubtotal;
+	protected Boolean SumSubtotalAttr;
 	@XmlAttribute(name = "countASubtotal")
-	protected BooleanAttr CountASubtotal;
+	protected Boolean CountASubtotalAttr;
 	@XmlAttribute(name = "avgSubtotal")
-	protected BooleanAttr AvgSubtotal;
+	protected Boolean AvgSubtotalAttr;
 	@XmlAttribute(name = "maxSubtotal")
-	protected BooleanAttr MaxSubtotal;
+	protected Boolean MaxSubtotalAttr;
 	@XmlAttribute(name = "minSubtotal")
-	protected BooleanAttr MinSubtotal;
+	protected Boolean MinSubtotalAttr;
 	@XmlAttribute(name = "productSubtotal")
-	protected BooleanAttr ProductSubtotal;
+	protected Boolean ProductSubtotalAttr;
 	@XmlAttribute(name = "countSubtotal")
-	protected BooleanAttr CountSubtotal;
+	protected Boolean CountSubtotalAttr;
 	@XmlAttribute(name = "stdDevSubtotal")
-	protected BooleanAttr StdDevSubtotal;
+	protected Boolean StdDevSubtotalAttr;
 	@XmlAttribute(name = "stdDevPSubtotal")
-	protected BooleanAttr StdDevPSubtotal;
+	protected Boolean StdDevPSubtotalAttr;
 	@XmlAttribute(name = "varSubtotal")
-	protected BooleanAttr VarSubtotal;
+	protected Boolean VarSubtotalAttr;
 	@XmlAttribute(name = "varPSubtotal")
-	protected BooleanAttr VarPSubtotal;
+	protected Boolean VarPSubtotalAttr;
 	@XmlElement(required = true, name = "x")
 	protected List<CT_Index> X;
 	@XmlElement(required = true, name = "extLst")
@@ -2466,7 +2466,7 @@ public class CT_PivotAreaReference {
 // CT_Index ...
 public class CT_Index {
 	@XmlAttribute(name = "v", required = true)
-	protected IntegerAttr V;
+	protected Integer VAttr;
 }
 
 // ST_Axis ...
@@ -2487,35 +2487,35 @@ public class CT_QueryTable {
 	@XmlElement(required = true)
 	protected AG_AutoFormat AG_AutoFormat;
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "headers")
-	protected BooleanAttr Headers;
+	protected Boolean HeadersAttr;
 	@XmlAttribute(name = "rowNumbers")
-	protected BooleanAttr RowNumbers;
+	protected Boolean RowNumbersAttr;
 	@XmlAttribute(name = "disableRefresh")
-	protected BooleanAttr DisableRefresh;
+	protected Boolean DisableRefreshAttr;
 	@XmlAttribute(name = "backgroundRefresh")
-	protected BooleanAttr BackgroundRefresh;
+	protected Boolean BackgroundRefreshAttr;
 	@XmlAttribute(name = "firstBackgroundRefresh")
-	protected BooleanAttr FirstBackgroundRefresh;
+	protected Boolean FirstBackgroundRefreshAttr;
 	@XmlAttribute(name = "refreshOnLoad")
-	protected BooleanAttr RefreshOnLoad;
+	protected Boolean RefreshOnLoadAttr;
 	@XmlAttribute(name = "growShrinkType")
-	protected StringAttr GrowShrinkType;
+	protected String GrowShrinkTypeAttr;
 	@XmlAttribute(name = "fillFormulas")
-	protected BooleanAttr FillFormulas;
+	protected Boolean FillFormulasAttr;
 	@XmlAttribute(name = "removeDataOnSave")
-	protected BooleanAttr RemoveDataOnSave;
+	protected Boolean RemoveDataOnSaveAttr;
 	@XmlAttribute(name = "disableEdit")
-	protected BooleanAttr DisableEdit;
+	protected Boolean DisableEditAttr;
 	@XmlAttribute(name = "preserveFormatting")
-	protected BooleanAttr PreserveFormatting;
+	protected Boolean PreserveFormattingAttr;
 	@XmlAttribute(name = "adjustColumnWidth")
-	protected BooleanAttr AdjustColumnWidth;
+	protected Boolean AdjustColumnWidthAttr;
 	@XmlAttribute(name = "intermediate")
-	protected BooleanAttr Intermediate;
+	protected Boolean IntermediateAttr;
 	@XmlAttribute(name = "connectionId", required = true)
-	protected IntegerAttr ConnectionId;
+	protected Integer ConnectionIdAttr;
 	@XmlElement(required = true, name = "queryTableRefresh")
 	protected CT_QueryTableRefresh QueryTableRefresh;
 	@XmlElement(required = true, name = "extLst")
@@ -2525,19 +2525,19 @@ public class CT_QueryTable {
 // CT_QueryTableRefresh ...
 public class CT_QueryTableRefresh {
 	@XmlAttribute(name = "preserveSortFilterLayout")
-	protected BooleanAttr PreserveSortFilterLayout;
+	protected Boolean PreserveSortFilterLayoutAttr;
 	@XmlAttribute(name = "fieldIdWrapped")
-	protected BooleanAttr FieldIdWrapped;
+	protected Boolean FieldIdWrappedAttr;
 	@XmlAttribute(name = "headersInLastRefresh")
-	protected BooleanAttr HeadersInLastRefresh;
+	protected Boolean HeadersInLastRefreshAttr;
 	@XmlAttribute(name = "minimumVersion")
-	protected ByteAttr MinimumVersion;
+	protected Byte MinimumVersionAttr;
 	@XmlAttribute(name = "nextId")
-	protected IntegerAttr NextId;
+	protected Integer NextIdAttr;
 	@XmlAttribute(name = "unboundColumnsLeft")
-	protected IntegerAttr UnboundColumnsLeft;
+	protected Integer UnboundColumnsLeftAttr;
 	@XmlAttribute(name = "unboundColumnsRight")
-	protected IntegerAttr UnboundColumnsRight;
+	protected Integer UnboundColumnsRightAttr;
 	@XmlElement(required = true, name = "queryTableFields")
 	protected CT_QueryTableFields QueryTableFields;
 	@XmlElement(required = true, name = "queryTableDeletedFields")
@@ -2551,7 +2551,7 @@ public class CT_QueryTableRefresh {
 // CT_QueryTableDeletedFields ...
 public class CT_QueryTableDeletedFields {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "deletedField")
 	protected List<CT_DeletedField> DeletedField;
 }
@@ -2559,13 +2559,13 @@ public class CT_QueryTableDeletedFields {
 // CT_DeletedField ...
 public class CT_DeletedField {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 }
 
 // CT_QueryTableFields ...
 public class CT_QueryTableFields {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "queryTableField")
 	protected List<CT_QueryTableField> QueryTableField;
 }
@@ -2573,19 +2573,19 @@ public class CT_QueryTableFields {
 // CT_QueryTableField ...
 public class CT_QueryTableField {
 	@XmlAttribute(name = "id", required = true)
-	protected IntegerAttr Id;
+	protected Integer IdAttr;
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "dataBound")
-	protected BooleanAttr DataBound;
+	protected Boolean DataBoundAttr;
 	@XmlAttribute(name = "rowNumbers")
-	protected BooleanAttr RowNumbers;
+	protected Boolean RowNumbersAttr;
 	@XmlAttribute(name = "fillFormulas")
-	protected BooleanAttr FillFormulas;
+	protected Boolean FillFormulasAttr;
 	@XmlAttribute(name = "clipped")
-	protected BooleanAttr Clipped;
+	protected Boolean ClippedAttr;
 	@XmlAttribute(name = "tableColumnId")
-	protected IntegerAttr TableColumnId;
+	protected Integer TableColumnIdAttr;
 	@XmlElement(required = true, name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
@@ -2606,9 +2606,9 @@ public class Sst {
 // CT_Sst ...
 public class CT_Sst {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlAttribute(name = "uniqueCount")
-	protected IntegerAttr UniqueCount;
+	protected Integer UniqueCountAttr;
 	@XmlElement(required = true, name = "si")
 	protected List<CT_Rst> Si;
 	@XmlElement(required = true, name = "extLst")
@@ -2632,9 +2632,9 @@ public class ST_PhoneticAlignment {
 // CT_PhoneticRun ...
 public class CT_PhoneticRun {
 	@XmlAttribute(name = "sb", required = true)
-	protected IntegerAttr Sb;
+	protected Integer SbAttr;
 	@XmlAttribute(name = "eb", required = true)
-	protected IntegerAttr Eb;
+	protected Integer EbAttr;
 	@XmlElement(required = true, name = "t")
 	protected String T;
 }
@@ -2696,11 +2696,11 @@ public class CT_Rst {
 // CT_PhoneticPr ...
 public class CT_PhoneticPr {
 	@XmlAttribute(name = "fontId", required = true)
-	protected IntegerAttr FontId;
+	protected Integer FontIdAttr;
 	@XmlAttribute(name = "type")
-	protected StringAttr Type;
+	protected String TypeAttr;
 	@XmlAttribute(name = "alignment")
-	protected StringAttr Alignment;
+	protected String AlignmentAttr;
 }
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -2718,29 +2718,29 @@ public class Revisions {
 // CT_RevisionHeaders ...
 public class CT_RevisionHeaders {
 	@XmlAttribute(name = "guid", required = true)
-	protected StringAttr Guid;
+	protected String GuidAttr;
 	@XmlAttribute(name = "lastGuid")
-	protected StringAttr LastGuid;
+	protected String LastGuidAttr;
 	@XmlAttribute(name = "shared")
-	protected BooleanAttr Shared;
+	protected Boolean SharedAttr;
 	@XmlAttribute(name = "diskRevisions")
-	protected BooleanAttr DiskRevisions;
+	protected Boolean DiskRevisionsAttr;
 	@XmlAttribute(name = "history")
-	protected BooleanAttr History;
+	protected Boolean HistoryAttr;
 	@XmlAttribute(name = "trackRevisions")
-	protected BooleanAttr TrackRevisions;
+	protected Boolean TrackRevisionsAttr;
 	@XmlAttribute(name = "exclusive")
-	protected BooleanAttr Exclusive;
+	protected Boolean ExclusiveAttr;
 	@XmlAttribute(name = "revisionId")
-	protected IntegerAttr RevisionId;
+	protected Integer RevisionIdAttr;
 	@XmlAttribute(name = "version")
-	protected IntegerAttr Version;
+	protected Integer VersionAttr;
 	@XmlAttribute(name = "keepChangeHistory")
-	protected BooleanAttr KeepChangeHistory;
+	protected Boolean KeepChangeHistoryAttr;
 	@XmlAttribute(name = "protected")
-	protected BooleanAttr Protected;
+	protected Boolean ProtectedAttr;
 	@XmlAttribute(name = "preserveHistory")
-	protected IntegerAttr PreserveHistory;
+	protected Integer PreserveHistoryAttr;
 	@XmlElement(required = true, name = "header")
 	protected List<CT_RevisionHeader> Header;
 }
@@ -2786,19 +2786,19 @@ public class AG_RevData {
 // CT_RevisionHeader ...
 public class CT_RevisionHeader {
 	@XmlAttribute(name = "guid", required = true)
-	protected StringAttr Guid;
+	protected String GuidAttr;
 	@XmlAttribute(name = "dateTime", required = true)
-	protected ByteAttr DateTime;
+	protected String DateTimeAttr;
 	@XmlAttribute(name = "maxSheetId", required = true)
-	protected IntegerAttr MaxSheetId;
+	protected Integer MaxSheetIdAttr;
 	@XmlAttribute(name = "userName", required = true)
-	protected StringAttr UserName;
+	protected String UserNameAttr;
 	@XmlAttribute(name = "r:id", required = true)
-	protected StringAttr RId;
+	protected String RIdAttr;
 	@XmlAttribute(name = "minRId")
-	protected IntegerAttr MinRId;
+	protected Integer MinRIdAttr;
 	@XmlAttribute(name = "maxRId")
-	protected IntegerAttr MaxRId;
+	protected Integer MaxRIdAttr;
 	@XmlElement(required = true, name = "sheetIdMap")
 	protected CT_SheetIdMap SheetIdMap;
 	@XmlElement(required = true, name = "reviewedList")
@@ -2810,7 +2810,7 @@ public class CT_RevisionHeader {
 // CT_SheetIdMap ...
 public class CT_SheetIdMap {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "sheetId")
 	protected List<CT_SheetId> SheetId;
 }
@@ -2818,13 +2818,13 @@ public class CT_SheetIdMap {
 // CT_SheetId ...
 public class CT_SheetId {
 	@XmlAttribute(name = "val", required = true)
-	protected IntegerAttr Val;
+	protected Integer ValAttr;
 }
 
 // CT_ReviewedRevisions ...
 public class CT_ReviewedRevisions {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "reviewed")
 	protected List<CT_Reviewed> Reviewed;
 }
@@ -2832,33 +2832,33 @@ public class CT_ReviewedRevisions {
 // CT_Reviewed ...
 public class CT_Reviewed {
 	@XmlAttribute(name = "rId", required = true)
-	protected IntegerAttr RId;
+	protected Integer RIdAttr;
 }
 
 // CT_UndoInfo ...
 public class CT_UndoInfo {
 	@XmlAttribute(name = "index", required = true)
-	protected IntegerAttr Index;
+	protected Integer IndexAttr;
 	@XmlAttribute(name = "exp", required = true)
-	protected StringAttr Exp;
+	protected String ExpAttr;
 	@XmlAttribute(name = "ref3D")
-	protected BooleanAttr Ref3D;
+	protected Boolean Ref3DAttr;
 	@XmlAttribute(name = "array")
-	protected BooleanAttr Array;
+	protected Boolean ArrayAttr;
 	@XmlAttribute(name = "v")
-	protected BooleanAttr V;
+	protected Boolean VAttr;
 	@XmlAttribute(name = "nf")
-	protected BooleanAttr Nf;
+	protected Boolean NfAttr;
 	@XmlAttribute(name = "cs")
-	protected BooleanAttr Cs;
+	protected Boolean CsAttr;
 	@XmlAttribute(name = "dr", required = true)
-	protected StringAttr Dr;
+	protected String DrAttr;
 	@XmlAttribute(name = "dn")
-	protected StringAttr Dn;
+	protected String DnAttr;
 	@XmlAttribute(name = "r")
-	protected StringAttr R;
+	protected String RAttr;
 	@XmlAttribute(name = "sId")
-	protected IntegerAttr SId;
+	protected Integer SIdAttr;
 }
 
 // CT_RevisionRowColumn ...
@@ -2866,15 +2866,15 @@ public class CT_RevisionRowColumn {
 	@XmlElement(required = true)
 	protected AG_RevData AG_RevData;
 	@XmlAttribute(name = "sId", required = true)
-	protected IntegerAttr SId;
+	protected Integer SIdAttr;
 	@XmlAttribute(name = "eol")
-	protected BooleanAttr Eol;
+	protected Boolean EolAttr;
 	@XmlAttribute(name = "ref", required = true)
-	protected StringAttr Ref;
+	protected String RefAttr;
 	@XmlAttribute(name = "action", required = true)
-	protected StringAttr Action;
+	protected String ActionAttr;
 	@XmlAttribute(name = "edge")
-	protected BooleanAttr Edge;
+	protected Boolean EdgeAttr;
 	@XmlElement(required = true, name = "undo")
 	protected List<CT_UndoInfo> Undo;
 	@XmlElement(required = true, name = "rcc")
@@ -2888,13 +2888,13 @@ public class CT_RevisionMove {
 	@XmlElement(required = true)
 	protected AG_RevData AG_RevData;
 	@XmlAttribute(name = "sheetId", required = true)
-	protected IntegerAttr SheetId;
+	protected Integer SheetIdAttr;
 	@XmlAttribute(name = "source", required = true)
-	protected StringAttr Source;
+	protected String SourceAttr;
 	@XmlAttribute(name = "destination", required = true)
-	protected StringAttr Destination;
+	protected String DestinationAttr;
 	@XmlAttribute(name = "sourceSheetId")
-	protected IntegerAttr SourceSheetId;
+	protected Integer SourceSheetIdAttr;
 	@XmlElement(required = true, name = "undo")
 	protected List<CT_UndoInfo> Undo;
 	@XmlElement(required = true, name = "rcc")
@@ -2906,9 +2906,9 @@ public class CT_RevisionMove {
 // CT_RevisionCustomView ...
 public class CT_RevisionCustomView {
 	@XmlAttribute(name = "guid", required = true)
-	protected StringAttr Guid;
+	protected String GuidAttr;
 	@XmlAttribute(name = "action", required = true)
-	protected StringAttr Action;
+	protected String ActionAttr;
 }
 
 // CT_RevisionSheetRename ...
@@ -2916,11 +2916,11 @@ public class CT_RevisionSheetRename {
 	@XmlElement(required = true)
 	protected AG_RevData AG_RevData;
 	@XmlAttribute(name = "sheetId", required = true)
-	protected IntegerAttr SheetId;
+	protected Integer SheetIdAttr;
 	@XmlAttribute(name = "oldName", required = true)
-	protected StringAttr OldName;
+	protected String OldNameAttr;
 	@XmlAttribute(name = "newName", required = true)
-	protected StringAttr NewName;
+	protected String NewNameAttr;
 	@XmlElement(required = true, name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
@@ -2930,11 +2930,11 @@ public class CT_RevisionInsertSheet {
 	@XmlElement(required = true)
 	protected AG_RevData AG_RevData;
 	@XmlAttribute(name = "sheetId", required = true)
-	protected IntegerAttr SheetId;
+	protected Integer SheetIdAttr;
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "sheetPosition", required = true)
-	protected IntegerAttr SheetPosition;
+	protected Integer SheetPositionAttr;
 }
 
 // CT_RevisionCellChange ...
@@ -2942,27 +2942,27 @@ public class CT_RevisionCellChange {
 	@XmlElement(required = true)
 	protected AG_RevData AG_RevData;
 	@XmlAttribute(name = "sId", required = true)
-	protected IntegerAttr SId;
+	protected Integer SIdAttr;
 	@XmlAttribute(name = "odxf")
-	protected BooleanAttr Odxf;
+	protected Boolean OdxfAttr;
 	@XmlAttribute(name = "xfDxf")
-	protected BooleanAttr XfDxf;
+	protected Boolean XfDxfAttr;
 	@XmlAttribute(name = "s")
-	protected BooleanAttr S;
+	protected Boolean SAttr;
 	@XmlAttribute(name = "dxf")
-	protected BooleanAttr Dxf;
+	protected Boolean DxfAttr;
 	@XmlAttribute(name = "numFmtId")
-	protected IntegerAttr NumFmtId;
+	protected Integer NumFmtIdAttr;
 	@XmlAttribute(name = "quotePrefix")
-	protected BooleanAttr QuotePrefix;
+	protected Boolean QuotePrefixAttr;
 	@XmlAttribute(name = "oldQuotePrefix")
-	protected BooleanAttr OldQuotePrefix;
+	protected Boolean OldQuotePrefixAttr;
 	@XmlAttribute(name = "ph")
-	protected BooleanAttr Ph;
+	protected Boolean PhAttr;
 	@XmlAttribute(name = "oldPh")
-	protected BooleanAttr OldPh;
+	protected Boolean OldPhAttr;
 	@XmlAttribute(name = "endOfListFormulaUpdate")
-	protected BooleanAttr EndOfListFormulaUpdate;
+	protected Boolean EndOfListFormulaUpdateAttr;
 	@XmlElement(required = true, name = "oc")
 	protected CT_Cell Oc;
 	@XmlElement(required = true, name = "nc")
@@ -2978,17 +2978,17 @@ public class CT_RevisionCellChange {
 // CT_RevisionFormatting ...
 public class CT_RevisionFormatting {
 	@XmlAttribute(name = "sheetId", required = true)
-	protected IntegerAttr SheetId;
+	protected Integer SheetIdAttr;
 	@XmlAttribute(name = "xfDxf")
-	protected BooleanAttr XfDxf;
+	protected Boolean XfDxfAttr;
 	@XmlAttribute(name = "s")
-	protected BooleanAttr S;
+	protected Boolean SAttr;
 	@XmlAttribute(name = "sqref", required = true)
-	protected ST_SqrefAttr Sqref;
+	protected ST_Sqref SqrefAttr;
 	@XmlAttribute(name = "start")
-	protected IntegerAttr Start;
+	protected Integer StartAttr;
 	@XmlAttribute(name = "length")
-	protected IntegerAttr Length;
+	protected Integer LengthAttr;
 	@XmlElement(required = true, name = "dxf")
 	protected CT_Dxf Dxf;
 	@XmlElement(required = true, name = "extLst")
@@ -3000,35 +3000,35 @@ public class CT_RevisionAutoFormatting {
 	@XmlElement(required = true)
 	protected AG_AutoFormat AG_AutoFormat;
 	@XmlAttribute(name = "sheetId", required = true)
-	protected IntegerAttr SheetId;
+	protected Integer SheetIdAttr;
 	@XmlAttribute(name = "ref", required = true)
-	protected StringAttr Ref;
+	protected String RefAttr;
 }
 
 // CT_RevisionComment ...
 public class CT_RevisionComment {
 	@XmlAttribute(name = "sheetId", required = true)
-	protected IntegerAttr SheetId;
+	protected Integer SheetIdAttr;
 	@XmlAttribute(name = "cell", required = true)
-	protected StringAttr Cell;
+	protected String CellAttr;
 	@XmlAttribute(name = "guid", required = true)
-	protected StringAttr Guid;
+	protected String GuidAttr;
 	@XmlAttribute(name = "action")
-	protected StringAttr Action;
+	protected String ActionAttr;
 	@XmlAttribute(name = "alwaysShow")
-	protected BooleanAttr AlwaysShow;
+	protected Boolean AlwaysShowAttr;
 	@XmlAttribute(name = "old")
-	protected BooleanAttr Old;
+	protected Boolean OldAttr;
 	@XmlAttribute(name = "hiddenRow")
-	protected BooleanAttr HiddenRow;
+	protected Boolean HiddenRowAttr;
 	@XmlAttribute(name = "hiddenColumn")
-	protected BooleanAttr HiddenColumn;
+	protected Boolean HiddenColumnAttr;
 	@XmlAttribute(name = "author", required = true)
-	protected StringAttr Author;
+	protected String AuthorAttr;
 	@XmlAttribute(name = "oldLength")
-	protected IntegerAttr OldLength;
+	protected Integer OldLengthAttr;
 	@XmlAttribute(name = "newLength")
-	protected IntegerAttr NewLength;
+	protected Integer NewLengthAttr;
 }
 
 // CT_RevisionDefinedName ...
@@ -3036,47 +3036,47 @@ public class CT_RevisionDefinedName {
 	@XmlElement(required = true)
 	protected AG_RevData AG_RevData;
 	@XmlAttribute(name = "localSheetId")
-	protected IntegerAttr LocalSheetId;
+	protected Integer LocalSheetIdAttr;
 	@XmlAttribute(name = "customView")
-	protected BooleanAttr CustomView;
+	protected Boolean CustomViewAttr;
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "function")
-	protected BooleanAttr Function;
+	protected Boolean FunctionAttr;
 	@XmlAttribute(name = "oldFunction")
-	protected BooleanAttr OldFunction;
+	protected Boolean OldFunctionAttr;
 	@XmlAttribute(name = "functionGroupId")
-	protected ByteAttr FunctionGroupId;
+	protected Byte FunctionGroupIdAttr;
 	@XmlAttribute(name = "oldFunctionGroupId")
-	protected ByteAttr OldFunctionGroupId;
+	protected Byte OldFunctionGroupIdAttr;
 	@XmlAttribute(name = "shortcutKey")
-	protected ByteAttr ShortcutKey;
+	protected Byte ShortcutKeyAttr;
 	@XmlAttribute(name = "oldShortcutKey")
-	protected ByteAttr OldShortcutKey;
+	protected Byte OldShortcutKeyAttr;
 	@XmlAttribute(name = "hidden")
-	protected BooleanAttr Hidden;
+	protected Boolean HiddenAttr;
 	@XmlAttribute(name = "oldHidden")
-	protected BooleanAttr OldHidden;
+	protected Boolean OldHiddenAttr;
 	@XmlAttribute(name = "customMenu")
-	protected StringAttr CustomMenu;
+	protected String CustomMenuAttr;
 	@XmlAttribute(name = "oldCustomMenu")
-	protected StringAttr OldCustomMenu;
+	protected String OldCustomMenuAttr;
 	@XmlAttribute(name = "description")
-	protected StringAttr Description;
+	protected String DescriptionAttr;
 	@XmlAttribute(name = "oldDescription")
-	protected StringAttr OldDescription;
+	protected String OldDescriptionAttr;
 	@XmlAttribute(name = "help")
-	protected StringAttr Help;
+	protected String HelpAttr;
 	@XmlAttribute(name = "oldHelp")
-	protected StringAttr OldHelp;
+	protected String OldHelpAttr;
 	@XmlAttribute(name = "statusBar")
-	protected StringAttr StatusBar;
+	protected String StatusBarAttr;
 	@XmlAttribute(name = "oldStatusBar")
-	protected StringAttr OldStatusBar;
+	protected String OldStatusBarAttr;
 	@XmlAttribute(name = "comment")
-	protected StringAttr Comment;
+	protected String CommentAttr;
 	@XmlAttribute(name = "oldComment")
-	protected StringAttr OldComment;
+	protected String OldCommentAttr;
 	@XmlElement(required = true, name = "formula")
 	protected String Formula;
 	@XmlElement(required = true, name = "oldFormula")
@@ -3090,17 +3090,17 @@ public class CT_RevisionConflict {
 	@XmlElement(required = true)
 	protected AG_RevData AG_RevData;
 	@XmlAttribute(name = "sheetId")
-	protected IntegerAttr SheetId;
+	protected Integer SheetIdAttr;
 }
 
 // CT_RevisionQueryTableField ...
 public class CT_RevisionQueryTableField {
 	@XmlAttribute(name = "sheetId", required = true)
-	protected IntegerAttr SheetId;
+	protected Integer SheetIdAttr;
 	@XmlAttribute(name = "ref", required = true)
-	protected StringAttr Ref;
+	protected String RefAttr;
 	@XmlAttribute(name = "fieldId", required = true)
-	protected IntegerAttr FieldId;
+	protected Integer FieldIdAttr;
 }
 
 // ST_rwColActionType ...
@@ -3133,7 +3133,7 @@ public class Users {
 // CT_Users ...
 public class CT_Users {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "userInfo")
 	protected List<CT_SharedUser> UserInfo;
 }
@@ -3141,13 +3141,13 @@ public class CT_Users {
 // CT_SharedUser ...
 public class CT_SharedUser {
 	@XmlAttribute(name = "guid", required = true)
-	protected StringAttr Guid;
+	protected String GuidAttr;
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "id", required = true)
-	protected IntegerAttr Id;
+	protected Integer IdAttr;
 	@XmlAttribute(name = "dateTime", required = true)
-	protected ByteAttr DateTime;
+	protected String DateTimeAttr;
 	@XmlElement(required = true, name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
@@ -3343,29 +3343,29 @@ public class CT_SheetData {
 // CT_SheetCalcPr ...
 public class CT_SheetCalcPr {
 	@XmlAttribute(name = "fullCalcOnLoad")
-	protected BooleanAttr FullCalcOnLoad;
+	protected Boolean FullCalcOnLoadAttr;
 }
 
 // CT_SheetFormatPr ...
 public class CT_SheetFormatPr {
 	@XmlAttribute(name = "baseColWidth")
-	protected IntegerAttr BaseColWidth;
+	protected Integer BaseColWidthAttr;
 	@XmlAttribute(name = "defaultColWidth")
-	protected FloatAttr DefaultColWidth;
+	protected Float DefaultColWidthAttr;
 	@XmlAttribute(name = "defaultRowHeight", required = true)
-	protected FloatAttr DefaultRowHeight;
+	protected Float DefaultRowHeightAttr;
 	@XmlAttribute(name = "customHeight")
-	protected BooleanAttr CustomHeight;
+	protected Boolean CustomHeightAttr;
 	@XmlAttribute(name = "zeroHeight")
-	protected BooleanAttr ZeroHeight;
+	protected Boolean ZeroHeightAttr;
 	@XmlAttribute(name = "thickTop")
-	protected BooleanAttr ThickTop;
+	protected Boolean ThickTopAttr;
 	@XmlAttribute(name = "thickBottom")
-	protected BooleanAttr ThickBottom;
+	protected Boolean ThickBottomAttr;
 	@XmlAttribute(name = "outlineLevelRow")
-	protected ByteAttr OutlineLevelRow;
+	protected Byte OutlineLevelRowAttr;
 	@XmlAttribute(name = "outlineLevelCol")
-	protected ByteAttr OutlineLevelCol;
+	protected Byte OutlineLevelColAttr;
 }
 
 // CT_Cols ...
@@ -3377,25 +3377,25 @@ public class CT_Cols {
 // CT_Col ...
 public class CT_Col {
 	@XmlAttribute(name = "min", required = true)
-	protected IntegerAttr Min;
+	protected Integer MinAttr;
 	@XmlAttribute(name = "max", required = true)
-	protected IntegerAttr Max;
+	protected Integer MaxAttr;
 	@XmlAttribute(name = "width")
-	protected FloatAttr Width;
+	protected Float WidthAttr;
 	@XmlAttribute(name = "style")
-	protected IntegerAttr Style;
+	protected Integer StyleAttr;
 	@XmlAttribute(name = "hidden")
-	protected BooleanAttr Hidden;
+	protected Boolean HiddenAttr;
 	@XmlAttribute(name = "bestFit")
-	protected BooleanAttr BestFit;
+	protected Boolean BestFitAttr;
 	@XmlAttribute(name = "customWidth")
-	protected BooleanAttr CustomWidth;
+	protected Boolean CustomWidthAttr;
 	@XmlAttribute(name = "phonetic")
-	protected BooleanAttr Phonetic;
+	protected Boolean PhoneticAttr;
 	@XmlAttribute(name = "outlineLevel")
-	protected ByteAttr OutlineLevel;
+	protected Byte OutlineLevelAttr;
 	@XmlAttribute(name = "collapsed")
-	protected BooleanAttr Collapsed;
+	protected Boolean CollapsedAttr;
 }
 
 // ST_CellSpan ...
@@ -3414,29 +3414,29 @@ public class ST_CellSpans {
 // CT_Row ...
 public class CT_Row {
 	@XmlAttribute(name = "r")
-	protected IntegerAttr R;
+	protected Integer RAttr;
 	@XmlAttribute(name = "spans")
-	protected ST_CellSpansAttr Spans;
+	protected ST_CellSpans SpansAttr;
 	@XmlAttribute(name = "s")
-	protected IntegerAttr S;
+	protected Integer SAttr;
 	@XmlAttribute(name = "customFormat")
-	protected BooleanAttr CustomFormat;
+	protected Boolean CustomFormatAttr;
 	@XmlAttribute(name = "ht")
-	protected FloatAttr Ht;
+	protected Float HtAttr;
 	@XmlAttribute(name = "hidden")
-	protected BooleanAttr Hidden;
+	protected Boolean HiddenAttr;
 	@XmlAttribute(name = "customHeight")
-	protected BooleanAttr CustomHeight;
+	protected Boolean CustomHeightAttr;
 	@XmlAttribute(name = "outlineLevel")
-	protected ByteAttr OutlineLevel;
+	protected Byte OutlineLevelAttr;
 	@XmlAttribute(name = "collapsed")
-	protected BooleanAttr Collapsed;
+	protected Boolean CollapsedAttr;
 	@XmlAttribute(name = "thickTop")
-	protected BooleanAttr ThickTop;
+	protected Boolean ThickTopAttr;
 	@XmlAttribute(name = "thickBot")
-	protected BooleanAttr ThickBot;
+	protected Boolean ThickBotAttr;
 	@XmlAttribute(name = "ph")
-	protected BooleanAttr Ph;
+	protected Boolean PhAttr;
 	@XmlElement(required = true, name = "c")
 	protected List<CT_Cell> C;
 	@XmlElement(required = true, name = "extLst")
@@ -3446,17 +3446,17 @@ public class CT_Row {
 // CT_Cell ...
 public class CT_Cell {
 	@XmlAttribute(name = "r")
-	protected StringAttr R;
+	protected String RAttr;
 	@XmlAttribute(name = "s")
-	protected IntegerAttr S;
+	protected Integer SAttr;
 	@XmlAttribute(name = "t")
-	protected StringAttr T;
+	protected String TAttr;
 	@XmlAttribute(name = "cm")
-	protected IntegerAttr Cm;
+	protected Integer CmAttr;
 	@XmlAttribute(name = "vm")
-	protected IntegerAttr Vm;
+	protected Integer VmAttr;
 	@XmlAttribute(name = "ph")
-	protected BooleanAttr Ph;
+	protected Boolean PhAttr;
 	@XmlElement(required = true, name = "f")
 	protected CT_CellFormula F;
 	@XmlElement(required = true, name = "v")
@@ -3484,23 +3484,23 @@ public class ST_CellFormulaType {
 // CT_SheetPr ...
 public class CT_SheetPr {
 	@XmlAttribute(name = "syncHorizontal")
-	protected BooleanAttr SyncHorizontal;
+	protected Boolean SyncHorizontalAttr;
 	@XmlAttribute(name = "syncVertical")
-	protected BooleanAttr SyncVertical;
+	protected Boolean SyncVerticalAttr;
 	@XmlAttribute(name = "syncRef")
-	protected StringAttr SyncRef;
+	protected String SyncRefAttr;
 	@XmlAttribute(name = "transitionEvaluation")
-	protected BooleanAttr TransitionEvaluation;
+	protected Boolean TransitionEvaluationAttr;
 	@XmlAttribute(name = "transitionEntry")
-	protected BooleanAttr TransitionEntry;
+	protected Boolean TransitionEntryAttr;
 	@XmlAttribute(name = "published")
-	protected BooleanAttr Published;
+	protected Boolean PublishedAttr;
 	@XmlAttribute(name = "codeName")
-	protected StringAttr CodeName;
+	protected String CodeNameAttr;
 	@XmlAttribute(name = "filterMode")
-	protected BooleanAttr FilterMode;
+	protected Boolean FilterModeAttr;
 	@XmlAttribute(name = "enableFormatConditionsCalculation")
-	protected BooleanAttr EnableFormatConditionsCalculation;
+	protected Boolean EnableFormatConditionsCalculationAttr;
 	@XmlElement(required = true, name = "tabColor")
 	protected CT_Color TabColor;
 	@XmlElement(required = true, name = "outlinePr")
@@ -3512,7 +3512,7 @@ public class CT_SheetPr {
 // CT_SheetDimension ...
 public class CT_SheetDimension {
 	@XmlAttribute(name = "ref", required = true)
-	protected StringAttr Ref;
+	protected String RefAttr;
 }
 
 // CT_SheetViews ...
@@ -3526,43 +3526,43 @@ public class CT_SheetViews {
 // CT_SheetView ...
 public class CT_SheetView {
 	@XmlAttribute(name = "windowProtection")
-	protected BooleanAttr WindowProtection;
+	protected Boolean WindowProtectionAttr;
 	@XmlAttribute(name = "showFormulas")
-	protected BooleanAttr ShowFormulas;
+	protected Boolean ShowFormulasAttr;
 	@XmlAttribute(name = "showGridLines")
-	protected BooleanAttr ShowGridLines;
+	protected Boolean ShowGridLinesAttr;
 	@XmlAttribute(name = "showRowColHeaders")
-	protected BooleanAttr ShowRowColHeaders;
+	protected Boolean ShowRowColHeadersAttr;
 	@XmlAttribute(name = "showZeros")
-	protected BooleanAttr ShowZeros;
+	protected Boolean ShowZerosAttr;
 	@XmlAttribute(name = "rightToLeft")
-	protected BooleanAttr RightToLeft;
+	protected Boolean RightToLeftAttr;
 	@XmlAttribute(name = "tabSelected")
-	protected BooleanAttr TabSelected;
+	protected Boolean TabSelectedAttr;
 	@XmlAttribute(name = "showRuler")
-	protected BooleanAttr ShowRuler;
+	protected Boolean ShowRulerAttr;
 	@XmlAttribute(name = "showOutlineSymbols")
-	protected BooleanAttr ShowOutlineSymbols;
+	protected Boolean ShowOutlineSymbolsAttr;
 	@XmlAttribute(name = "defaultGridColor")
-	protected BooleanAttr DefaultGridColor;
+	protected Boolean DefaultGridColorAttr;
 	@XmlAttribute(name = "showWhiteSpace")
-	protected BooleanAttr ShowWhiteSpace;
+	protected Boolean ShowWhiteSpaceAttr;
 	@XmlAttribute(name = "view")
-	protected StringAttr View;
+	protected String ViewAttr;
 	@XmlAttribute(name = "topLeftCell")
-	protected StringAttr TopLeftCell;
+	protected String TopLeftCellAttr;
 	@XmlAttribute(name = "colorId")
-	protected IntegerAttr ColorId;
+	protected Integer ColorIdAttr;
 	@XmlAttribute(name = "zoomScale")
-	protected IntegerAttr ZoomScale;
+	protected Integer ZoomScaleAttr;
 	@XmlAttribute(name = "zoomScaleNormal")
-	protected IntegerAttr ZoomScaleNormal;
+	protected Integer ZoomScaleNormalAttr;
 	@XmlAttribute(name = "zoomScaleSheetLayoutView")
-	protected IntegerAttr ZoomScaleSheetLayoutView;
+	protected Integer ZoomScaleSheetLayoutViewAttr;
 	@XmlAttribute(name = "zoomScalePageLayoutView")
-	protected IntegerAttr ZoomScalePageLayoutView;
+	protected Integer ZoomScalePageLayoutViewAttr;
 	@XmlAttribute(name = "workbookViewId", required = true)
-	protected IntegerAttr WorkbookViewId;
+	protected Integer WorkbookViewIdAttr;
 	@XmlElement(required = true, name = "pane")
 	protected CT_Pane Pane;
 	@XmlElement(required = true, name = "selection")
@@ -3576,53 +3576,53 @@ public class CT_SheetView {
 // CT_Pane ...
 public class CT_Pane {
 	@XmlAttribute(name = "xSplit")
-	protected FloatAttr XSplit;
+	protected Float XSplitAttr;
 	@XmlAttribute(name = "ySplit")
-	protected FloatAttr YSplit;
+	protected Float YSplitAttr;
 	@XmlAttribute(name = "topLeftCell")
-	protected StringAttr TopLeftCell;
+	protected String TopLeftCellAttr;
 	@XmlAttribute(name = "activePane")
-	protected StringAttr ActivePane;
+	protected String ActivePaneAttr;
 	@XmlAttribute(name = "state")
-	protected StringAttr State;
+	protected String StateAttr;
 }
 
 // CT_PivotSelection ...
 public class CT_PivotSelection {
 	@XmlAttribute(name = "pane")
-	protected StringAttr Pane;
+	protected String PaneAttr;
 	@XmlAttribute(name = "showHeader")
-	protected BooleanAttr ShowHeader;
+	protected Boolean ShowHeaderAttr;
 	@XmlAttribute(name = "label")
-	protected BooleanAttr Label;
+	protected Boolean LabelAttr;
 	@XmlAttribute(name = "data")
-	protected BooleanAttr Data;
+	protected Boolean DataAttr;
 	@XmlAttribute(name = "extendable")
-	protected BooleanAttr Extendable;
+	protected Boolean ExtendableAttr;
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlAttribute(name = "axis")
-	protected StringAttr Axis;
+	protected String AxisAttr;
 	@XmlAttribute(name = "dimension")
-	protected IntegerAttr Dimension;
+	protected Integer DimensionAttr;
 	@XmlAttribute(name = "start")
-	protected IntegerAttr Start;
+	protected Integer StartAttr;
 	@XmlAttribute(name = "min")
-	protected IntegerAttr Min;
+	protected Integer MinAttr;
 	@XmlAttribute(name = "max")
-	protected IntegerAttr Max;
+	protected Integer MaxAttr;
 	@XmlAttribute(name = "activeRow")
-	protected IntegerAttr ActiveRow;
+	protected Integer ActiveRowAttr;
 	@XmlAttribute(name = "activeCol")
-	protected IntegerAttr ActiveCol;
+	protected Integer ActiveColAttr;
 	@XmlAttribute(name = "previousRow")
-	protected IntegerAttr PreviousRow;
+	protected Integer PreviousRowAttr;
 	@XmlAttribute(name = "previousCol")
-	protected IntegerAttr PreviousCol;
+	protected Integer PreviousColAttr;
 	@XmlAttribute(name = "click")
-	protected IntegerAttr Click;
+	protected Integer ClickAttr;
 	@XmlAttribute(name = "r:id")
-	protected StringAttr RId;
+	protected String RIdAttr;
 	@XmlElement(required = true, name = "pivotArea")
 	protected CT_PivotArea PivotArea;
 }
@@ -3630,13 +3630,13 @@ public class CT_PivotSelection {
 // CT_Selection ...
 public class CT_Selection {
 	@XmlAttribute(name = "pane")
-	protected StringAttr Pane;
+	protected String PaneAttr;
 	@XmlAttribute(name = "activeCell")
-	protected StringAttr ActiveCell;
+	protected String ActiveCellAttr;
 	@XmlAttribute(name = "activeCellId")
-	protected IntegerAttr ActiveCellId;
+	protected Integer ActiveCellIdAttr;
 	@XmlAttribute(name = "sqref")
-	protected ST_SqrefAttr Sqref;
+	protected ST_Sqref SqrefAttr;
 }
 
 // ST_Pane ...
@@ -3649,9 +3649,9 @@ public class ST_Pane {
 // CT_PageBreak ...
 public class CT_PageBreak {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlAttribute(name = "manualBreakCount")
-	protected IntegerAttr ManualBreakCount;
+	protected Integer ManualBreakCountAttr;
 	@XmlElement(required = true, name = "brk")
 	protected List<CT_Break> Brk;
 }
@@ -3659,15 +3659,15 @@ public class CT_PageBreak {
 // CT_Break ...
 public class CT_Break {
 	@XmlAttribute(name = "id")
-	protected IntegerAttr Id;
+	protected Integer IdAttr;
 	@XmlAttribute(name = "min")
-	protected IntegerAttr Min;
+	protected Integer MinAttr;
 	@XmlAttribute(name = "max")
-	protected IntegerAttr Max;
+	protected Integer MaxAttr;
 	@XmlAttribute(name = "man")
-	protected BooleanAttr Man;
+	protected Boolean ManAttr;
 	@XmlAttribute(name = "pt")
-	protected BooleanAttr Pt;
+	protected Boolean PtAttr;
 }
 
 // ST_SheetViewType ...
@@ -3680,33 +3680,33 @@ public class ST_SheetViewType {
 // CT_OutlinePr ...
 public class CT_OutlinePr {
 	@XmlAttribute(name = "applyStyles")
-	protected BooleanAttr ApplyStyles;
+	protected Boolean ApplyStylesAttr;
 	@XmlAttribute(name = "summaryBelow")
-	protected BooleanAttr SummaryBelow;
+	protected Boolean SummaryBelowAttr;
 	@XmlAttribute(name = "summaryRight")
-	protected BooleanAttr SummaryRight;
+	protected Boolean SummaryRightAttr;
 	@XmlAttribute(name = "showOutlineSymbols")
-	protected BooleanAttr ShowOutlineSymbols;
+	protected Boolean ShowOutlineSymbolsAttr;
 }
 
 // CT_PageSetUpPr ...
 public class CT_PageSetUpPr {
 	@XmlAttribute(name = "autoPageBreaks")
-	protected BooleanAttr AutoPageBreaks;
+	protected Boolean AutoPageBreaksAttr;
 	@XmlAttribute(name = "fitToPage")
-	protected BooleanAttr FitToPage;
+	protected Boolean FitToPageAttr;
 }
 
 // CT_DataConsolidate ...
 public class CT_DataConsolidate {
 	@XmlAttribute(name = "function")
-	protected StringAttr Function;
+	protected String FunctionAttr;
 	@XmlAttribute(name = "startLabels")
-	protected BooleanAttr StartLabels;
+	protected Boolean StartLabelsAttr;
 	@XmlAttribute(name = "topLabels")
-	protected BooleanAttr TopLabels;
+	protected Boolean TopLabelsAttr;
 	@XmlAttribute(name = "link")
-	protected BooleanAttr Link;
+	protected Boolean LinkAttr;
 	@XmlElement(required = true, name = "dataRefs")
 	protected CT_DataRefs DataRefs;
 }
@@ -3721,7 +3721,7 @@ public class ST_DataConsolidateFunction {
 // CT_DataRefs ...
 public class CT_DataRefs {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "dataRef")
 	protected List<CT_DataRef> DataRef;
 }
@@ -3729,19 +3729,19 @@ public class CT_DataRefs {
 // CT_DataRef ...
 public class CT_DataRef {
 	@XmlAttribute(name = "ref")
-	protected StringAttr Ref;
+	protected String RefAttr;
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "sheet")
-	protected StringAttr Sheet;
+	protected String SheetAttr;
 	@XmlAttribute(name = "r:id")
-	protected StringAttr RId;
+	protected String RIdAttr;
 }
 
 // CT_MergeCells ...
 public class CT_MergeCells {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "mergeCell")
 	protected List<CT_MergeCell> MergeCell;
 }
@@ -3749,7 +3749,7 @@ public class CT_MergeCells {
 // CT_MergeCell ...
 public class CT_MergeCell {
 	@XmlAttribute(name = "ref", required = true)
-	protected StringAttr Ref;
+	protected String RefAttr;
 }
 
 // CT_SmartTags ...
@@ -3761,7 +3761,7 @@ public class CT_SmartTags {
 // CT_CellSmartTags ...
 public class CT_CellSmartTags {
 	@XmlAttribute(name = "r", required = true)
-	protected StringAttr R;
+	protected String RAttr;
 	@XmlElement(required = true, name = "cellSmartTag")
 	protected List<CT_CellSmartTag> CellSmartTag;
 }
@@ -3769,11 +3769,11 @@ public class CT_CellSmartTags {
 // CT_CellSmartTag ...
 public class CT_CellSmartTag {
 	@XmlAttribute(name = "type", required = true)
-	protected IntegerAttr Type;
+	protected Integer TypeAttr;
 	@XmlAttribute(name = "deleted")
-	protected BooleanAttr Deleted;
+	protected Boolean DeletedAttr;
 	@XmlAttribute(name = "xmlBased")
-	protected BooleanAttr XmlBased;
+	protected Boolean XmlBasedAttr;
 	@XmlElement(required = true, name = "cellSmartTagPr")
 	protected List<CT_CellSmartTagPr> CellSmartTagPr;
 }
@@ -3781,57 +3781,57 @@ public class CT_CellSmartTag {
 // CT_CellSmartTagPr ...
 public class CT_CellSmartTagPr {
 	@XmlAttribute(name = "key", required = true)
-	protected StringAttr Key;
+	protected String KeyAttr;
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_Drawing ...
 public class CT_Drawing {
 	@XmlAttribute(name = "r:id", required = true)
-	protected StringAttr RId;
+	protected String RIdAttr;
 }
 
 // CT_DrawingHF ...
 public class CT_DrawingHF {
 	@XmlAttribute(name = "r:id", required = true)
-	protected StringAttr RId;
+	protected String RIdAttr;
 	@XmlAttribute(name = "lho")
-	protected IntegerAttr Lho;
+	protected Integer LhoAttr;
 	@XmlAttribute(name = "lhe")
-	protected IntegerAttr Lhe;
+	protected Integer LheAttr;
 	@XmlAttribute(name = "lhf")
-	protected IntegerAttr Lhf;
+	protected Integer LhfAttr;
 	@XmlAttribute(name = "cho")
-	protected IntegerAttr Cho;
+	protected Integer ChoAttr;
 	@XmlAttribute(name = "che")
-	protected IntegerAttr Che;
+	protected Integer CheAttr;
 	@XmlAttribute(name = "chf")
-	protected IntegerAttr Chf;
+	protected Integer ChfAttr;
 	@XmlAttribute(name = "rho")
-	protected IntegerAttr Rho;
+	protected Integer RhoAttr;
 	@XmlAttribute(name = "rhe")
-	protected IntegerAttr Rhe;
+	protected Integer RheAttr;
 	@XmlAttribute(name = "rhf")
-	protected IntegerAttr Rhf;
+	protected Integer RhfAttr;
 	@XmlAttribute(name = "lfo")
-	protected IntegerAttr Lfo;
+	protected Integer LfoAttr;
 	@XmlAttribute(name = "lfe")
-	protected IntegerAttr Lfe;
+	protected Integer LfeAttr;
 	@XmlAttribute(name = "lff")
-	protected IntegerAttr Lff;
+	protected Integer LffAttr;
 	@XmlAttribute(name = "cfo")
-	protected IntegerAttr Cfo;
+	protected Integer CfoAttr;
 	@XmlAttribute(name = "cfe")
-	protected IntegerAttr Cfe;
+	protected Integer CfeAttr;
 	@XmlAttribute(name = "cff")
-	protected IntegerAttr Cff;
+	protected Integer CffAttr;
 	@XmlAttribute(name = "rfo")
-	protected IntegerAttr Rfo;
+	protected Integer RfoAttr;
 	@XmlAttribute(name = "rfe")
-	protected IntegerAttr Rfe;
+	protected Integer RfeAttr;
 	@XmlAttribute(name = "rff")
-	protected IntegerAttr Rff;
+	protected Integer RffAttr;
 }
 
 // CT_CustomSheetViews ...
@@ -3843,45 +3843,45 @@ public class CT_CustomSheetViews {
 // CT_CustomSheetView ...
 public class CT_CustomSheetView {
 	@XmlAttribute(name = "guid", required = true)
-	protected StringAttr Guid;
+	protected String GuidAttr;
 	@XmlAttribute(name = "scale")
-	protected IntegerAttr Scale;
+	protected Integer ScaleAttr;
 	@XmlAttribute(name = "colorId")
-	protected IntegerAttr ColorId;
+	protected Integer ColorIdAttr;
 	@XmlAttribute(name = "showPageBreaks")
-	protected BooleanAttr ShowPageBreaks;
+	protected Boolean ShowPageBreaksAttr;
 	@XmlAttribute(name = "showFormulas")
-	protected BooleanAttr ShowFormulas;
+	protected Boolean ShowFormulasAttr;
 	@XmlAttribute(name = "showGridLines")
-	protected BooleanAttr ShowGridLines;
+	protected Boolean ShowGridLinesAttr;
 	@XmlAttribute(name = "showRowCol")
-	protected BooleanAttr ShowRowCol;
+	protected Boolean ShowRowColAttr;
 	@XmlAttribute(name = "outlineSymbols")
-	protected BooleanAttr OutlineSymbols;
+	protected Boolean OutlineSymbolsAttr;
 	@XmlAttribute(name = "zeroValues")
-	protected BooleanAttr ZeroValues;
+	protected Boolean ZeroValuesAttr;
 	@XmlAttribute(name = "fitToPage")
-	protected BooleanAttr FitToPage;
+	protected Boolean FitToPageAttr;
 	@XmlAttribute(name = "printArea")
-	protected BooleanAttr PrintArea;
+	protected Boolean PrintAreaAttr;
 	@XmlAttribute(name = "filter")
-	protected BooleanAttr Filter;
+	protected Boolean FilterAttr;
 	@XmlAttribute(name = "showAutoFilter")
-	protected BooleanAttr ShowAutoFilter;
+	protected Boolean ShowAutoFilterAttr;
 	@XmlAttribute(name = "hiddenRows")
-	protected BooleanAttr HiddenRows;
+	protected Boolean HiddenRowsAttr;
 	@XmlAttribute(name = "hiddenColumns")
-	protected BooleanAttr HiddenColumns;
+	protected Boolean HiddenColumnsAttr;
 	@XmlAttribute(name = "state")
-	protected StringAttr State;
+	protected String StateAttr;
 	@XmlAttribute(name = "filterUnique")
-	protected BooleanAttr FilterUnique;
+	protected Boolean FilterUniqueAttr;
 	@XmlAttribute(name = "view")
-	protected StringAttr View;
+	protected String ViewAttr;
 	@XmlAttribute(name = "showRuler")
-	protected BooleanAttr ShowRuler;
+	protected Boolean ShowRulerAttr;
 	@XmlAttribute(name = "topLeftCell")
-	protected StringAttr TopLeftCell;
+	protected String TopLeftCellAttr;
 	@XmlElement(required = true, name = "pane")
 	protected CT_Pane Pane;
 	@XmlElement(required = true, name = "selection")
@@ -3907,13 +3907,13 @@ public class CT_CustomSheetView {
 // CT_DataValidations ...
 public class CT_DataValidations {
 	@XmlAttribute(name = "disablePrompts")
-	protected BooleanAttr DisablePrompts;
+	protected Boolean DisablePromptsAttr;
 	@XmlAttribute(name = "xWindow")
-	protected IntegerAttr XWindow;
+	protected Integer XWindowAttr;
 	@XmlAttribute(name = "yWindow")
-	protected IntegerAttr YWindow;
+	protected Integer YWindowAttr;
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "dataValidation")
 	protected List<CT_DataValidation> DataValidation;
 }
@@ -3921,31 +3921,31 @@ public class CT_DataValidations {
 // CT_DataValidation ...
 public class CT_DataValidation {
 	@XmlAttribute(name = "type")
-	protected StringAttr Type;
+	protected String TypeAttr;
 	@XmlAttribute(name = "errorStyle")
-	protected StringAttr ErrorStyle;
+	protected String ErrorStyleAttr;
 	@XmlAttribute(name = "imeMode")
-	protected StringAttr ImeMode;
+	protected String ImeModeAttr;
 	@XmlAttribute(name = "operator")
-	protected StringAttr Operator;
+	protected String OperatorAttr;
 	@XmlAttribute(name = "allowBlank")
-	protected BooleanAttr AllowBlank;
+	protected Boolean AllowBlankAttr;
 	@XmlAttribute(name = "showDropDown")
-	protected BooleanAttr ShowDropDown;
+	protected Boolean ShowDropDownAttr;
 	@XmlAttribute(name = "showInputMessage")
-	protected BooleanAttr ShowInputMessage;
+	protected Boolean ShowInputMessageAttr;
 	@XmlAttribute(name = "showErrorMessage")
-	protected BooleanAttr ShowErrorMessage;
+	protected Boolean ShowErrorMessageAttr;
 	@XmlAttribute(name = "errorTitle")
-	protected StringAttr ErrorTitle;
+	protected String ErrorTitleAttr;
 	@XmlAttribute(name = "error")
-	protected StringAttr Error;
+	protected String ErrorAttr;
 	@XmlAttribute(name = "promptTitle")
-	protected StringAttr PromptTitle;
+	protected String PromptTitleAttr;
 	@XmlAttribute(name = "prompt")
-	protected StringAttr Prompt;
+	protected String PromptAttr;
 	@XmlAttribute(name = "sqref", required = true)
-	protected ST_SqrefAttr Sqref;
+	protected ST_Sqref SqrefAttr;
 	@XmlElement(required = true, name = "formula1")
 	protected String Formula1;
 	@XmlElement(required = true, name = "formula2")
@@ -4011,9 +4011,9 @@ public class ST_CfvoType {
 // CT_ConditionalFormatting ...
 public class CT_ConditionalFormatting {
 	@XmlAttribute(name = "pivot")
-	protected BooleanAttr Pivot;
+	protected Boolean PivotAttr;
 	@XmlAttribute(name = "sqref")
-	protected ST_SqrefAttr Sqref;
+	protected ST_Sqref SqrefAttr;
 	@XmlElement(required = true, name = "cfRule")
 	protected List<CT_CfRule> CfRule;
 	@XmlElement(required = true, name = "extLst")
@@ -4023,31 +4023,31 @@ public class CT_ConditionalFormatting {
 // CT_CfRule ...
 public class CT_CfRule {
 	@XmlAttribute(name = "type")
-	protected StringAttr Type;
+	protected String TypeAttr;
 	@XmlAttribute(name = "dxfId")
-	protected IntegerAttr DxfId;
+	protected Integer DxfIdAttr;
 	@XmlAttribute(name = "priority", required = true)
-	protected IntegerAttr Priority;
+	protected Integer PriorityAttr;
 	@XmlAttribute(name = "stopIfTrue")
-	protected BooleanAttr StopIfTrue;
+	protected Boolean StopIfTrueAttr;
 	@XmlAttribute(name = "aboveAverage")
-	protected BooleanAttr AboveAverage;
+	protected Boolean AboveAverageAttr;
 	@XmlAttribute(name = "percent")
-	protected BooleanAttr Percent;
+	protected Boolean PercentAttr;
 	@XmlAttribute(name = "bottom")
-	protected BooleanAttr Bottom;
+	protected Boolean BottomAttr;
 	@XmlAttribute(name = "operator")
-	protected StringAttr Operator;
+	protected String OperatorAttr;
 	@XmlAttribute(name = "text")
-	protected StringAttr Text;
+	protected String TextAttr;
 	@XmlAttribute(name = "timePeriod")
-	protected StringAttr TimePeriod;
+	protected String TimePeriodAttr;
 	@XmlAttribute(name = "rank")
-	protected IntegerAttr Rank;
+	protected Integer RankAttr;
 	@XmlAttribute(name = "stdDev")
-	protected IntegerAttr StdDev;
+	protected Integer StdDevAttr;
 	@XmlAttribute(name = "equalAverage")
-	protected BooleanAttr EqualAverage;
+	protected Boolean EqualAverageAttr;
 	@XmlElement(required = true, name = "formula")
 	protected List<String> Formula;
 	@XmlElement(required = true, name = "colorScale")
@@ -4069,43 +4069,43 @@ public class CT_Hyperlinks {
 // CT_Hyperlink ...
 public class CT_Hyperlink {
 	@XmlAttribute(name = "ref", required = true)
-	protected StringAttr Ref;
+	protected String RefAttr;
 	@XmlAttribute(name = "r:id")
-	protected StringAttr RId;
+	protected String RIdAttr;
 	@XmlAttribute(name = "location")
-	protected StringAttr Location;
+	protected String LocationAttr;
 	@XmlAttribute(name = "tooltip")
-	protected StringAttr Tooltip;
+	protected String TooltipAttr;
 	@XmlAttribute(name = "display")
-	protected StringAttr Display;
+	protected String DisplayAttr;
 }
 
 // CT_CellFormula ...
 public class CT_CellFormula {
 	@XmlAttribute(name = "t")
-	protected StringAttr T;
+	protected String TAttr;
 	@XmlAttribute(name = "aca")
-	protected BooleanAttr Aca;
+	protected Boolean AcaAttr;
 	@XmlAttribute(name = "ref")
-	protected StringAttr Ref;
+	protected String RefAttr;
 	@XmlAttribute(name = "dt2D")
-	protected BooleanAttr Dt2D;
+	protected Boolean Dt2DAttr;
 	@XmlAttribute(name = "dtr")
-	protected BooleanAttr Dtr;
+	protected Boolean DtrAttr;
 	@XmlAttribute(name = "del1")
-	protected BooleanAttr Del1;
+	protected Boolean Del1Attr;
 	@XmlAttribute(name = "del2")
-	protected BooleanAttr Del2;
+	protected Boolean Del2Attr;
 	@XmlAttribute(name = "r1")
-	protected StringAttr R1;
+	protected String R1Attr;
 	@XmlAttribute(name = "r2")
-	protected StringAttr R2;
+	protected String R2Attr;
 	@XmlAttribute(name = "ca")
-	protected BooleanAttr Ca;
+	protected Boolean CaAttr;
 	@XmlAttribute(name = "si")
-	protected IntegerAttr Si;
+	protected Integer SiAttr;
 	@XmlAttribute(name = "bx")
-	protected BooleanAttr Bx;
+	protected Boolean BxAttr;
 	@XmlValue
 	protected String value;
 }
@@ -4121,11 +4121,11 @@ public class CT_ColorScale {
 // CT_DataBar ...
 public class CT_DataBar {
 	@XmlAttribute(name = "minLength")
-	protected IntegerAttr MinLength;
+	protected Integer MinLengthAttr;
 	@XmlAttribute(name = "maxLength")
-	protected IntegerAttr MaxLength;
+	protected Integer MaxLengthAttr;
 	@XmlAttribute(name = "showValue")
-	protected BooleanAttr ShowValue;
+	protected Boolean ShowValueAttr;
 	@XmlElement(required = true, name = "cfvo")
 	protected List<CT_Cfvo> Cfvo;
 	@XmlElement(required = true, name = "color")
@@ -4135,13 +4135,13 @@ public class CT_DataBar {
 // CT_IconSet ...
 public class CT_IconSet {
 	@XmlAttribute(name = "iconSet")
-	protected StringAttr IconSet;
+	protected String IconSetAttr;
 	@XmlAttribute(name = "showValue")
-	protected BooleanAttr ShowValue;
+	protected Boolean ShowValueAttr;
 	@XmlAttribute(name = "percent")
-	protected BooleanAttr Percent;
+	protected Boolean PercentAttr;
 	@XmlAttribute(name = "reverse")
-	protected BooleanAttr Reverse;
+	protected Boolean ReverseAttr;
 	@XmlElement(required = true, name = "cfvo")
 	protected List<CT_Cfvo> Cfvo;
 }
@@ -4149,11 +4149,11 @@ public class CT_IconSet {
 // CT_Cfvo ...
 public class CT_Cfvo {
 	@XmlAttribute(name = "type", required = true)
-	protected StringAttr Type;
+	protected String TypeAttr;
 	@XmlAttribute(name = "val")
-	protected StringAttr Val;
+	protected String ValAttr;
 	@XmlAttribute(name = "gte")
-	protected BooleanAttr Gte;
+	protected Boolean GteAttr;
 	@XmlElement(required = true, name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
@@ -4161,73 +4161,73 @@ public class CT_Cfvo {
 // CT_PageMargins ...
 public class CT_PageMargins {
 	@XmlAttribute(name = "left", required = true)
-	protected FloatAttr Left;
+	protected Float LeftAttr;
 	@XmlAttribute(name = "right", required = true)
-	protected FloatAttr Right;
+	protected Float RightAttr;
 	@XmlAttribute(name = "top", required = true)
-	protected FloatAttr Top;
+	protected Float TopAttr;
 	@XmlAttribute(name = "bottom", required = true)
-	protected FloatAttr Bottom;
+	protected Float BottomAttr;
 	@XmlAttribute(name = "header", required = true)
-	protected FloatAttr Header;
+	protected Float HeaderAttr;
 	@XmlAttribute(name = "footer", required = true)
-	protected FloatAttr Footer;
+	protected Float FooterAttr;
 }
 
 // CT_PrintOptions ...
 public class CT_PrintOptions {
 	@XmlAttribute(name = "horizontalCentered")
-	protected BooleanAttr HorizontalCentered;
+	protected Boolean HorizontalCenteredAttr;
 	@XmlAttribute(name = "verticalCentered")
-	protected BooleanAttr VerticalCentered;
+	protected Boolean VerticalCenteredAttr;
 	@XmlAttribute(name = "headings")
-	protected BooleanAttr Headings;
+	protected Boolean HeadingsAttr;
 	@XmlAttribute(name = "gridLines")
-	protected BooleanAttr GridLines;
+	protected Boolean GridLinesAttr;
 	@XmlAttribute(name = "gridLinesSet")
-	protected BooleanAttr GridLinesSet;
+	protected Boolean GridLinesSetAttr;
 }
 
 // CT_PageSetup ...
 public class CT_PageSetup {
 	@XmlAttribute(name = "paperSize")
-	protected IntegerAttr PaperSize;
+	protected Integer PaperSizeAttr;
 	@XmlAttribute(name = "paperHeight")
-	protected StringAttr PaperHeight;
+	protected String PaperHeightAttr;
 	@XmlAttribute(name = "paperWidth")
-	protected StringAttr PaperWidth;
+	protected String PaperWidthAttr;
 	@XmlAttribute(name = "scale")
-	protected IntegerAttr Scale;
+	protected Integer ScaleAttr;
 	@XmlAttribute(name = "firstPageNumber")
-	protected IntegerAttr FirstPageNumber;
+	protected Integer FirstPageNumberAttr;
 	@XmlAttribute(name = "fitToWidth")
-	protected IntegerAttr FitToWidth;
+	protected Integer FitToWidthAttr;
 	@XmlAttribute(name = "fitToHeight")
-	protected IntegerAttr FitToHeight;
+	protected Integer FitToHeightAttr;
 	@XmlAttribute(name = "pageOrder")
-	protected StringAttr PageOrder;
+	protected String PageOrderAttr;
 	@XmlAttribute(name = "orientation")
-	protected StringAttr Orientation;
+	protected String OrientationAttr;
 	@XmlAttribute(name = "usePrinterDefaults")
-	protected BooleanAttr UsePrinterDefaults;
+	protected Boolean UsePrinterDefaultsAttr;
 	@XmlAttribute(name = "blackAndWhite")
-	protected BooleanAttr BlackAndWhite;
+	protected Boolean BlackAndWhiteAttr;
 	@XmlAttribute(name = "draft")
-	protected BooleanAttr Draft;
+	protected Boolean DraftAttr;
 	@XmlAttribute(name = "cellComments")
-	protected StringAttr CellComments;
+	protected String CellCommentsAttr;
 	@XmlAttribute(name = "useFirstPageNumber")
-	protected BooleanAttr UseFirstPageNumber;
+	protected Boolean UseFirstPageNumberAttr;
 	@XmlAttribute(name = "errors")
-	protected StringAttr Errors;
+	protected String ErrorsAttr;
 	@XmlAttribute(name = "horizontalDpi")
-	protected IntegerAttr HorizontalDpi;
+	protected Integer HorizontalDpiAttr;
 	@XmlAttribute(name = "verticalDpi")
-	protected IntegerAttr VerticalDpi;
+	protected Integer VerticalDpiAttr;
 	@XmlAttribute(name = "copies")
-	protected IntegerAttr Copies;
+	protected Integer CopiesAttr;
 	@XmlAttribute(name = "r:id")
-	protected StringAttr RId;
+	protected String RIdAttr;
 }
 
 // ST_PageOrder ...
@@ -4254,13 +4254,13 @@ public class ST_CellComments {
 // CT_HeaderFooter ...
 public class CT_HeaderFooter {
 	@XmlAttribute(name = "differentOddEven")
-	protected BooleanAttr DifferentOddEven;
+	protected Boolean DifferentOddEvenAttr;
 	@XmlAttribute(name = "differentFirst")
-	protected BooleanAttr DifferentFirst;
+	protected Boolean DifferentFirstAttr;
 	@XmlAttribute(name = "scaleWithDoc")
-	protected BooleanAttr ScaleWithDoc;
+	protected Boolean ScaleWithDocAttr;
 	@XmlAttribute(name = "alignWithMargins")
-	protected BooleanAttr AlignWithMargins;
+	protected Boolean AlignWithMarginsAttr;
 	@XmlElement(required = true, name = "oddHeader")
 	protected String OddHeader;
 	@XmlElement(required = true, name = "oddFooter")
@@ -4285,11 +4285,11 @@ public class ST_PrintError {
 // CT_Scenarios ...
 public class CT_Scenarios {
 	@XmlAttribute(name = "current")
-	protected IntegerAttr Current;
+	protected Integer CurrentAttr;
 	@XmlAttribute(name = "show")
-	protected IntegerAttr Show;
+	protected Integer ShowAttr;
 	@XmlAttribute(name = "sqref")
-	protected ST_SqrefAttr Sqref;
+	protected ST_Sqref SqrefAttr;
 	@XmlElement(required = true, name = "scenario")
 	protected List<CT_Scenario> Scenario;
 }
@@ -4297,45 +4297,45 @@ public class CT_Scenarios {
 // CT_SheetProtection ...
 public class CT_SheetProtection {
 	@XmlAttribute(name = "algorithmName")
-	protected StringAttr AlgorithmName;
+	protected String AlgorithmNameAttr;
 	@XmlAttribute(name = "hashValue")
-	protected List<Byte>Attr HashValue;
+	protected List<Byte> HashValueAttr;
 	@XmlAttribute(name = "saltValue")
-	protected List<Byte>Attr SaltValue;
+	protected List<Byte> SaltValueAttr;
 	@XmlAttribute(name = "spinCount")
-	protected IntegerAttr SpinCount;
+	protected Integer SpinCountAttr;
 	@XmlAttribute(name = "sheet")
-	protected BooleanAttr Sheet;
+	protected Boolean SheetAttr;
 	@XmlAttribute(name = "objects")
-	protected BooleanAttr Objects;
+	protected Boolean ObjectsAttr;
 	@XmlAttribute(name = "scenarios")
-	protected BooleanAttr Scenarios;
+	protected Boolean ScenariosAttr;
 	@XmlAttribute(name = "formatCells")
-	protected BooleanAttr FormatCells;
+	protected Boolean FormatCellsAttr;
 	@XmlAttribute(name = "formatColumns")
-	protected BooleanAttr FormatColumns;
+	protected Boolean FormatColumnsAttr;
 	@XmlAttribute(name = "formatRows")
-	protected BooleanAttr FormatRows;
+	protected Boolean FormatRowsAttr;
 	@XmlAttribute(name = "insertColumns")
-	protected BooleanAttr InsertColumns;
+	protected Boolean InsertColumnsAttr;
 	@XmlAttribute(name = "insertRows")
-	protected BooleanAttr InsertRows;
+	protected Boolean InsertRowsAttr;
 	@XmlAttribute(name = "insertHyperlinks")
-	protected BooleanAttr InsertHyperlinks;
+	protected Boolean InsertHyperlinksAttr;
 	@XmlAttribute(name = "deleteColumns")
-	protected BooleanAttr DeleteColumns;
+	protected Boolean DeleteColumnsAttr;
 	@XmlAttribute(name = "deleteRows")
-	protected BooleanAttr DeleteRows;
+	protected Boolean DeleteRowsAttr;
 	@XmlAttribute(name = "selectLockedCells")
-	protected BooleanAttr SelectLockedCells;
+	protected Boolean SelectLockedCellsAttr;
 	@XmlAttribute(name = "sort")
-	protected BooleanAttr Sort;
+	protected Boolean SortAttr;
 	@XmlAttribute(name = "autoFilter")
-	protected BooleanAttr AutoFilter;
+	protected Boolean AutoFilterAttr;
 	@XmlAttribute(name = "pivotTables")
-	protected BooleanAttr PivotTables;
+	protected Boolean PivotTablesAttr;
 	@XmlAttribute(name = "selectUnlockedCells")
-	protected BooleanAttr SelectUnlockedCells;
+	protected Boolean SelectUnlockedCellsAttr;
 }
 
 // CT_ProtectedRanges ...
@@ -4347,17 +4347,17 @@ public class CT_ProtectedRanges {
 // CT_ProtectedRange ...
 public class CT_ProtectedRange {
 	@XmlAttribute(name = "sqref", required = true)
-	protected ST_SqrefAttr Sqref;
+	protected ST_Sqref SqrefAttr;
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "algorithmName")
-	protected StringAttr AlgorithmName;
+	protected String AlgorithmNameAttr;
 	@XmlAttribute(name = "hashValue")
-	protected List<Byte>Attr HashValue;
+	protected List<Byte> HashValueAttr;
 	@XmlAttribute(name = "saltValue")
-	protected List<Byte>Attr SaltValue;
+	protected List<Byte> SaltValueAttr;
 	@XmlAttribute(name = "spinCount")
-	protected IntegerAttr SpinCount;
+	protected Integer SpinCountAttr;
 	@XmlElement(required = true, name = "securityDescriptor")
 	protected List<String> SecurityDescriptor;
 }
@@ -4365,17 +4365,17 @@ public class CT_ProtectedRange {
 // CT_Scenario ...
 public class CT_Scenario {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "locked")
-	protected BooleanAttr Locked;
+	protected Boolean LockedAttr;
 	@XmlAttribute(name = "hidden")
-	protected BooleanAttr Hidden;
+	protected Boolean HiddenAttr;
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlAttribute(name = "user")
-	protected StringAttr User;
+	protected String UserAttr;
 	@XmlAttribute(name = "comment")
-	protected StringAttr Comment;
+	protected String CommentAttr;
 	@XmlElement(required = true, name = "inputCells")
 	protected List<CT_InputCells> InputCells;
 }
@@ -4383,15 +4383,15 @@ public class CT_Scenario {
 // CT_InputCells ...
 public class CT_InputCells {
 	@XmlAttribute(name = "r", required = true)
-	protected StringAttr R;
+	protected String RAttr;
 	@XmlAttribute(name = "deleted")
-	protected BooleanAttr Deleted;
+	protected Boolean DeletedAttr;
 	@XmlAttribute(name = "undone")
-	protected BooleanAttr Undone;
+	protected Boolean UndoneAttr;
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 	@XmlAttribute(name = "numFmtId")
-	protected IntegerAttr NumFmtId;
+	protected Integer NumFmtIdAttr;
 }
 
 // CT_CellWatches ...
@@ -4403,7 +4403,7 @@ public class CT_CellWatches {
 // CT_CellWatch ...
 public class CT_CellWatch {
 	@XmlAttribute(name = "r", required = true)
-	protected StringAttr R;
+	protected String RAttr;
 }
 
 // CT_Chartsheet ...
@@ -4437,9 +4437,9 @@ public class CT_Chartsheet {
 // CT_ChartsheetPr ...
 public class CT_ChartsheetPr {
 	@XmlAttribute(name = "published")
-	protected BooleanAttr Published;
+	protected Boolean PublishedAttr;
 	@XmlAttribute(name = "codeName")
-	protected StringAttr CodeName;
+	protected String CodeNameAttr;
 	@XmlElement(required = true, name = "tabColor")
 	protected CT_Color TabColor;
 }
@@ -4455,13 +4455,13 @@ public class CT_ChartsheetViews {
 // CT_ChartsheetView ...
 public class CT_ChartsheetView {
 	@XmlAttribute(name = "tabSelected")
-	protected BooleanAttr TabSelected;
+	protected Boolean TabSelectedAttr;
 	@XmlAttribute(name = "zoomScale")
-	protected IntegerAttr ZoomScale;
+	protected Integer ZoomScaleAttr;
 	@XmlAttribute(name = "workbookViewId", required = true)
-	protected IntegerAttr WorkbookViewId;
+	protected Integer WorkbookViewIdAttr;
 	@XmlAttribute(name = "zoomToFit")
-	protected BooleanAttr ZoomToFit;
+	protected Boolean ZoomToFitAttr;
 	@XmlElement(required = true, name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
@@ -4469,47 +4469,47 @@ public class CT_ChartsheetView {
 // CT_ChartsheetProtection ...
 public class CT_ChartsheetProtection {
 	@XmlAttribute(name = "algorithmName")
-	protected StringAttr AlgorithmName;
+	protected String AlgorithmNameAttr;
 	@XmlAttribute(name = "hashValue")
-	protected List<Byte>Attr HashValue;
+	protected List<Byte> HashValueAttr;
 	@XmlAttribute(name = "saltValue")
-	protected List<Byte>Attr SaltValue;
+	protected List<Byte> SaltValueAttr;
 	@XmlAttribute(name = "spinCount")
-	protected IntegerAttr SpinCount;
+	protected Integer SpinCountAttr;
 	@XmlAttribute(name = "content")
-	protected BooleanAttr Content;
+	protected Boolean ContentAttr;
 	@XmlAttribute(name = "objects")
-	protected BooleanAttr Objects;
+	protected Boolean ObjectsAttr;
 }
 
 // CT_CsPageSetup ...
 public class CT_CsPageSetup {
 	@XmlAttribute(name = "paperSize")
-	protected IntegerAttr PaperSize;
+	protected Integer PaperSizeAttr;
 	@XmlAttribute(name = "paperHeight")
-	protected StringAttr PaperHeight;
+	protected String PaperHeightAttr;
 	@XmlAttribute(name = "paperWidth")
-	protected StringAttr PaperWidth;
+	protected String PaperWidthAttr;
 	@XmlAttribute(name = "firstPageNumber")
-	protected IntegerAttr FirstPageNumber;
+	protected Integer FirstPageNumberAttr;
 	@XmlAttribute(name = "orientation")
-	protected StringAttr Orientation;
+	protected String OrientationAttr;
 	@XmlAttribute(name = "usePrinterDefaults")
-	protected BooleanAttr UsePrinterDefaults;
+	protected Boolean UsePrinterDefaultsAttr;
 	@XmlAttribute(name = "blackAndWhite")
-	protected BooleanAttr BlackAndWhite;
+	protected Boolean BlackAndWhiteAttr;
 	@XmlAttribute(name = "draft")
-	protected BooleanAttr Draft;
+	protected Boolean DraftAttr;
 	@XmlAttribute(name = "useFirstPageNumber")
-	protected BooleanAttr UseFirstPageNumber;
+	protected Boolean UseFirstPageNumberAttr;
 	@XmlAttribute(name = "horizontalDpi")
-	protected IntegerAttr HorizontalDpi;
+	protected Integer HorizontalDpiAttr;
 	@XmlAttribute(name = "verticalDpi")
-	protected IntegerAttr VerticalDpi;
+	protected Integer VerticalDpiAttr;
 	@XmlAttribute(name = "copies")
-	protected IntegerAttr Copies;
+	protected Integer CopiesAttr;
 	@XmlAttribute(name = "r:id")
-	protected StringAttr RId;
+	protected String RIdAttr;
 }
 
 // CT_CustomChartsheetViews ...
@@ -4521,13 +4521,13 @@ public class CT_CustomChartsheetViews {
 // CT_CustomChartsheetView ...
 public class CT_CustomChartsheetView {
 	@XmlAttribute(name = "guid", required = true)
-	protected StringAttr Guid;
+	protected String GuidAttr;
 	@XmlAttribute(name = "scale")
-	protected IntegerAttr Scale;
+	protected Integer ScaleAttr;
 	@XmlAttribute(name = "state")
-	protected StringAttr State;
+	protected String StateAttr;
 	@XmlAttribute(name = "zoomToFit")
-	protected BooleanAttr ZoomToFit;
+	protected Boolean ZoomToFitAttr;
 	@XmlElement(required = true, name = "pageMargins")
 	protected CT_PageMargins PageMargins;
 	@XmlElement(required = true, name = "pageSetup")
@@ -4545,9 +4545,9 @@ public class CT_CustomProperties {
 // CT_CustomProperty ...
 public class CT_CustomProperty {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "r:id", required = true)
-	protected StringAttr RId;
+	protected String RIdAttr;
 }
 
 // CT_OleObjects ...
@@ -4559,19 +4559,19 @@ public class CT_OleObjects {
 // CT_OleObject ...
 public class CT_OleObject {
 	@XmlAttribute(name = "progId")
-	protected StringAttr ProgId;
+	protected String ProgIdAttr;
 	@XmlAttribute(name = "dvAspect")
-	protected StringAttr DvAspect;
+	protected String DvAspectAttr;
 	@XmlAttribute(name = "link")
-	protected StringAttr Link;
+	protected String LinkAttr;
 	@XmlAttribute(name = "oleUpdate")
-	protected StringAttr OleUpdate;
+	protected String OleUpdateAttr;
 	@XmlAttribute(name = "autoLoad")
-	protected BooleanAttr AutoLoad;
+	protected Boolean AutoLoadAttr;
 	@XmlAttribute(name = "shapeId", required = true)
-	protected IntegerAttr ShapeId;
+	protected Integer ShapeIdAttr;
 	@XmlAttribute(name = "r:id")
-	protected StringAttr RId;
+	protected String RIdAttr;
 	@XmlElement(required = true, name = "objectPr")
 	protected CT_ObjectPr ObjectPr;
 }
@@ -4579,29 +4579,29 @@ public class CT_OleObject {
 // CT_ObjectPr ...
 public class CT_ObjectPr {
 	@XmlAttribute(name = "locked")
-	protected BooleanAttr Locked;
+	protected Boolean LockedAttr;
 	@XmlAttribute(name = "defaultSize")
-	protected BooleanAttr DefaultSize;
+	protected Boolean DefaultSizeAttr;
 	@XmlAttribute(name = "print")
-	protected BooleanAttr Print;
+	protected Boolean PrintAttr;
 	@XmlAttribute(name = "disabled")
-	protected BooleanAttr Disabled;
+	protected Boolean DisabledAttr;
 	@XmlAttribute(name = "uiObject")
-	protected BooleanAttr UiObject;
+	protected Boolean UiObjectAttr;
 	@XmlAttribute(name = "autoFill")
-	protected BooleanAttr AutoFill;
+	protected Boolean AutoFillAttr;
 	@XmlAttribute(name = "autoLine")
-	protected BooleanAttr AutoLine;
+	protected Boolean AutoLineAttr;
 	@XmlAttribute(name = "autoPict")
-	protected BooleanAttr AutoPict;
+	protected Boolean AutoPictAttr;
 	@XmlAttribute(name = "macro")
-	protected StringAttr Macro;
+	protected String MacroAttr;
 	@XmlAttribute(name = "altText")
-	protected StringAttr AltText;
+	protected String AltTextAttr;
 	@XmlAttribute(name = "dde")
-	protected BooleanAttr Dde;
+	protected Boolean DdeAttr;
 	@XmlAttribute(name = "r:id")
-	protected StringAttr RId;
+	protected String RIdAttr;
 	@XmlElement(required = true, name = "anchor")
 	protected CT_ObjectAnchor Anchor;
 }
@@ -4623,7 +4623,7 @@ public class ST_OleUpdate {
 // CT_WebPublishItems ...
 public class CT_WebPublishItems {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "webPublishItem")
 	protected List<CT_WebPublishItem> WebPublishItem;
 }
@@ -4631,21 +4631,21 @@ public class CT_WebPublishItems {
 // CT_WebPublishItem ...
 public class CT_WebPublishItem {
 	@XmlAttribute(name = "id", required = true)
-	protected IntegerAttr Id;
+	protected Integer IdAttr;
 	@XmlAttribute(name = "divId", required = true)
-	protected StringAttr DivId;
+	protected String DivIdAttr;
 	@XmlAttribute(name = "sourceType", required = true)
-	protected StringAttr SourceType;
+	protected String SourceTypeAttr;
 	@XmlAttribute(name = "sourceRef")
-	protected StringAttr SourceRef;
+	protected String SourceRefAttr;
 	@XmlAttribute(name = "sourceObject")
-	protected StringAttr SourceObject;
+	protected String SourceObjectAttr;
 	@XmlAttribute(name = "destinationFile", required = true)
-	protected StringAttr DestinationFile;
+	protected String DestinationFileAttr;
 	@XmlAttribute(name = "title")
-	protected StringAttr Title;
+	protected String TitleAttr;
 	@XmlAttribute(name = "autoRepublish")
-	protected BooleanAttr AutoRepublish;
+	protected Boolean AutoRepublishAttr;
 }
 
 // CT_Controls ...
@@ -4657,11 +4657,11 @@ public class CT_Controls {
 // CT_Control ...
 public class CT_Control {
 	@XmlAttribute(name = "shapeId", required = true)
-	protected IntegerAttr ShapeId;
+	protected Integer ShapeIdAttr;
 	@XmlAttribute(name = "r:id", required = true)
-	protected StringAttr RId;
+	protected String RIdAttr;
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlElement(required = true, name = "controlPr")
 	protected CT_ControlPr ControlPr;
 }
@@ -4669,35 +4669,35 @@ public class CT_Control {
 // CT_ControlPr ...
 public class CT_ControlPr {
 	@XmlAttribute(name = "locked")
-	protected BooleanAttr Locked;
+	protected Boolean LockedAttr;
 	@XmlAttribute(name = "defaultSize")
-	protected BooleanAttr DefaultSize;
+	protected Boolean DefaultSizeAttr;
 	@XmlAttribute(name = "print")
-	protected BooleanAttr Print;
+	protected Boolean PrintAttr;
 	@XmlAttribute(name = "disabled")
-	protected BooleanAttr Disabled;
+	protected Boolean DisabledAttr;
 	@XmlAttribute(name = "recalcAlways")
-	protected BooleanAttr RecalcAlways;
+	protected Boolean RecalcAlwaysAttr;
 	@XmlAttribute(name = "uiObject")
-	protected BooleanAttr UiObject;
+	protected Boolean UiObjectAttr;
 	@XmlAttribute(name = "autoFill")
-	protected BooleanAttr AutoFill;
+	protected Boolean AutoFillAttr;
 	@XmlAttribute(name = "autoLine")
-	protected BooleanAttr AutoLine;
+	protected Boolean AutoLineAttr;
 	@XmlAttribute(name = "autoPict")
-	protected BooleanAttr AutoPict;
+	protected Boolean AutoPictAttr;
 	@XmlAttribute(name = "macro")
-	protected StringAttr Macro;
+	protected String MacroAttr;
 	@XmlAttribute(name = "altText")
-	protected StringAttr AltText;
+	protected String AltTextAttr;
 	@XmlAttribute(name = "linkedCell")
-	protected StringAttr LinkedCell;
+	protected String LinkedCellAttr;
 	@XmlAttribute(name = "listFillRange")
-	protected StringAttr ListFillRange;
+	protected String ListFillRangeAttr;
 	@XmlAttribute(name = "cf")
-	protected StringAttr Cf;
+	protected String CfAttr;
 	@XmlAttribute(name = "r:id")
-	protected StringAttr RId;
+	protected String RIdAttr;
 	@XmlElement(required = true, name = "anchor")
 	protected CT_ObjectAnchor Anchor;
 }
@@ -4720,25 +4720,25 @@ public class CT_IgnoredErrors {
 // CT_IgnoredError ...
 public class CT_IgnoredError {
 	@XmlAttribute(name = "sqref", required = true)
-	protected ST_SqrefAttr Sqref;
+	protected ST_Sqref SqrefAttr;
 	@XmlAttribute(name = "evalError")
-	protected BooleanAttr EvalError;
+	protected Boolean EvalErrorAttr;
 	@XmlAttribute(name = "twoDigitTextYear")
-	protected BooleanAttr TwoDigitTextYear;
+	protected Boolean TwoDigitTextYearAttr;
 	@XmlAttribute(name = "numberStoredAsText")
-	protected BooleanAttr NumberStoredAsText;
+	protected Boolean NumberStoredAsTextAttr;
 	@XmlAttribute(name = "formula")
-	protected BooleanAttr Formula;
+	protected Boolean FormulaAttr;
 	@XmlAttribute(name = "formulaRange")
-	protected BooleanAttr FormulaRange;
+	protected Boolean FormulaRangeAttr;
 	@XmlAttribute(name = "unlockedFormula")
-	protected BooleanAttr UnlockedFormula;
+	protected Boolean UnlockedFormulaAttr;
 	@XmlAttribute(name = "emptyCellReference")
-	protected BooleanAttr EmptyCellReference;
+	protected Boolean EmptyCellReferenceAttr;
 	@XmlAttribute(name = "listDataValidation")
-	protected BooleanAttr ListDataValidation;
+	protected Boolean ListDataValidationAttr;
 	@XmlAttribute(name = "calculatedColumn")
-	protected BooleanAttr CalculatedColumn;
+	protected Boolean CalculatedColumnAttr;
 }
 
 // ST_PaneState ...
@@ -4751,7 +4751,7 @@ public class ST_PaneState {
 // CT_TableParts ...
 public class CT_TableParts {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "tablePart")
 	protected List<CT_TablePart> TablePart;
 }
@@ -4759,7 +4759,7 @@ public class CT_TableParts {
 // CT_TablePart ...
 public class CT_TablePart {
 	@XmlAttribute(name = "r:id", required = true)
-	protected StringAttr RId;
+	protected String RIdAttr;
 }
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -4789,7 +4789,7 @@ public class CT_Metadata {
 // CT_MetadataTypes ...
 public class CT_MetadataTypes {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "metadataType")
 	protected List<CT_MetadataType> MetadataType;
 }
@@ -4797,67 +4797,67 @@ public class CT_MetadataTypes {
 // CT_MetadataType ...
 public class CT_MetadataType {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "minSupportedVersion", required = true)
-	protected IntegerAttr MinSupportedVersion;
+	protected Integer MinSupportedVersionAttr;
 	@XmlAttribute(name = "ghostRow")
-	protected BooleanAttr GhostRow;
+	protected Boolean GhostRowAttr;
 	@XmlAttribute(name = "ghostCol")
-	protected BooleanAttr GhostCol;
+	protected Boolean GhostColAttr;
 	@XmlAttribute(name = "edit")
-	protected BooleanAttr Edit;
+	protected Boolean EditAttr;
 	@XmlAttribute(name = "delete")
-	protected BooleanAttr Delete;
+	protected Boolean DeleteAttr;
 	@XmlAttribute(name = "copy")
-	protected BooleanAttr Copy;
+	protected Boolean CopyAttr;
 	@XmlAttribute(name = "pasteAll")
-	protected BooleanAttr PasteAll;
+	protected Boolean PasteAllAttr;
 	@XmlAttribute(name = "pasteFormulas")
-	protected BooleanAttr PasteFormulas;
+	protected Boolean PasteFormulasAttr;
 	@XmlAttribute(name = "pasteValues")
-	protected BooleanAttr PasteValues;
+	protected Boolean PasteValuesAttr;
 	@XmlAttribute(name = "pasteFormats")
-	protected BooleanAttr PasteFormats;
+	protected Boolean PasteFormatsAttr;
 	@XmlAttribute(name = "pasteComments")
-	protected BooleanAttr PasteComments;
+	protected Boolean PasteCommentsAttr;
 	@XmlAttribute(name = "pasteDataValidation")
-	protected BooleanAttr PasteDataValidation;
+	protected Boolean PasteDataValidationAttr;
 	@XmlAttribute(name = "pasteBorders")
-	protected BooleanAttr PasteBorders;
+	protected Boolean PasteBordersAttr;
 	@XmlAttribute(name = "pasteColWidths")
-	protected BooleanAttr PasteColWidths;
+	protected Boolean PasteColWidthsAttr;
 	@XmlAttribute(name = "pasteNumberFormats")
-	protected BooleanAttr PasteNumberFormats;
+	protected Boolean PasteNumberFormatsAttr;
 	@XmlAttribute(name = "merge")
-	protected BooleanAttr Merge;
+	protected Boolean MergeAttr;
 	@XmlAttribute(name = "splitFirst")
-	protected BooleanAttr SplitFirst;
+	protected Boolean SplitFirstAttr;
 	@XmlAttribute(name = "splitAll")
-	protected BooleanAttr SplitAll;
+	protected Boolean SplitAllAttr;
 	@XmlAttribute(name = "rowColShift")
-	protected BooleanAttr RowColShift;
+	protected Boolean RowColShiftAttr;
 	@XmlAttribute(name = "clearAll")
-	protected BooleanAttr ClearAll;
+	protected Boolean ClearAllAttr;
 	@XmlAttribute(name = "clearFormats")
-	protected BooleanAttr ClearFormats;
+	protected Boolean ClearFormatsAttr;
 	@XmlAttribute(name = "clearContents")
-	protected BooleanAttr ClearContents;
+	protected Boolean ClearContentsAttr;
 	@XmlAttribute(name = "clearComments")
-	protected BooleanAttr ClearComments;
+	protected Boolean ClearCommentsAttr;
 	@XmlAttribute(name = "assign")
-	protected BooleanAttr Assign;
+	protected Boolean AssignAttr;
 	@XmlAttribute(name = "coerce")
-	protected BooleanAttr Coerce;
+	protected Boolean CoerceAttr;
 	@XmlAttribute(name = "adjust")
-	protected BooleanAttr Adjust;
+	protected Boolean AdjustAttr;
 	@XmlAttribute(name = "cellMeta")
-	protected BooleanAttr CellMeta;
+	protected Boolean CellMetaAttr;
 }
 
 // CT_MetadataBlocks ...
 public class CT_MetadataBlocks {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "bk")
 	protected List<CT_MetadataBlock> Bk;
 }
@@ -4871,17 +4871,17 @@ public class CT_MetadataBlock {
 // CT_MetadataRecord ...
 public class CT_MetadataRecord {
 	@XmlAttribute(name = "t", required = true)
-	protected IntegerAttr T;
+	protected Integer TAttr;
 	@XmlAttribute(name = "v", required = true)
-	protected IntegerAttr V;
+	protected Integer VAttr;
 }
 
 // CT_FutureMetadata ...
 public class CT_FutureMetadata {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "bk")
 	protected List<CT_FutureMetadataBlock> Bk;
 	@XmlElement(required = true, name = "extLst")
@@ -4897,7 +4897,7 @@ public class CT_FutureMetadataBlock {
 // CT_MdxMetadata ...
 public class CT_MdxMetadata {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "mdx")
 	protected List<CT_Mdx> Mdx;
 }
@@ -4905,9 +4905,9 @@ public class CT_MdxMetadata {
 // CT_Mdx ...
 public class CT_Mdx {
 	@XmlAttribute(name = "n", required = true)
-	protected IntegerAttr N;
+	protected Integer NAttr;
 	@XmlAttribute(name = "f", required = true)
-	protected StringAttr F;
+	protected String FAttr;
 	@XmlElement(required = true, name = "t")
 	protected CT_MdxTuple T;
 	@XmlElement(required = true, name = "ms")
@@ -4928,25 +4928,25 @@ public class ST_MdxFunctionType {
 // CT_MdxTuple ...
 public class CT_MdxTuple {
 	@XmlAttribute(name = "c")
-	protected IntegerAttr C;
+	protected Integer CAttr;
 	@XmlAttribute(name = "ct")
-	protected StringAttr Ct;
+	protected String CtAttr;
 	@XmlAttribute(name = "si")
-	protected IntegerAttr Si;
+	protected Integer SiAttr;
 	@XmlAttribute(name = "fi")
-	protected IntegerAttr Fi;
+	protected Integer FiAttr;
 	@XmlAttribute(name = "bc")
-	protected List<Byte>Attr Bc;
+	protected List<Byte> BcAttr;
 	@XmlAttribute(name = "fc")
-	protected List<Byte>Attr Fc;
+	protected List<Byte> FcAttr;
 	@XmlAttribute(name = "i")
-	protected BooleanAttr I;
+	protected Boolean IAttr;
 	@XmlAttribute(name = "u")
-	protected BooleanAttr U;
+	protected Boolean UAttr;
 	@XmlAttribute(name = "st")
-	protected BooleanAttr St;
+	protected Boolean StAttr;
 	@XmlAttribute(name = "b")
-	protected BooleanAttr B;
+	protected Boolean BAttr;
 	@XmlElement(required = true, name = "n")
 	protected List<CT_MetadataStringIndex> N;
 }
@@ -4954,11 +4954,11 @@ public class CT_MdxTuple {
 // CT_MdxSet ...
 public class CT_MdxSet {
 	@XmlAttribute(name = "ns", required = true)
-	protected IntegerAttr Ns;
+	protected Integer NsAttr;
 	@XmlAttribute(name = "c")
-	protected IntegerAttr C;
+	protected Integer CAttr;
 	@XmlAttribute(name = "o")
-	protected StringAttr O;
+	protected String OAttr;
 	@XmlElement(required = true, name = "n")
 	protected List<CT_MetadataStringIndex> N;
 }
@@ -4973,19 +4973,19 @@ public class ST_MdxSetOrder {
 // CT_MdxMemeberProp ...
 public class CT_MdxMemeberProp {
 	@XmlAttribute(name = "n", required = true)
-	protected IntegerAttr N;
+	protected Integer NAttr;
 	@XmlAttribute(name = "np", required = true)
-	protected IntegerAttr Np;
+	protected Integer NpAttr;
 }
 
 // CT_MdxKPI ...
 public class CT_MdxKPI {
 	@XmlAttribute(name = "n", required = true)
-	protected IntegerAttr N;
+	protected Integer NAttr;
 	@XmlAttribute(name = "np", required = true)
-	protected IntegerAttr Np;
+	protected Integer NpAttr;
 	@XmlAttribute(name = "p", required = true)
-	protected StringAttr P;
+	protected String PAttr;
 }
 
 // ST_MdxKPIProperty ...
@@ -4998,15 +4998,15 @@ public class ST_MdxKPIProperty {
 // CT_MetadataStringIndex ...
 public class CT_MetadataStringIndex {
 	@XmlAttribute(name = "x", required = true)
-	protected IntegerAttr X;
+	protected Integer XAttr;
 	@XmlAttribute(name = "s")
-	protected BooleanAttr S;
+	protected Boolean SAttr;
 }
 
 // CT_MetadataStrings ...
 public class CT_MetadataStrings {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "s")
 	protected List<CT_XStringElement> S;
 }
@@ -5026,11 +5026,11 @@ public class CT_SingleXmlCells {
 // CT_SingleXmlCell ...
 public class CT_SingleXmlCell {
 	@XmlAttribute(name = "id", required = true)
-	protected IntegerAttr Id;
+	protected Integer IdAttr;
 	@XmlAttribute(name = "r", required = true)
-	protected StringAttr R;
+	protected String RAttr;
 	@XmlAttribute(name = "connectionId", required = true)
-	protected IntegerAttr ConnectionId;
+	protected Integer ConnectionIdAttr;
 	@XmlElement(required = true, name = "xmlCellPr")
 	protected CT_XmlCellPr XmlCellPr;
 	@XmlElement(required = true, name = "extLst")
@@ -5040,9 +5040,9 @@ public class CT_SingleXmlCell {
 // CT_XmlCellPr ...
 public class CT_XmlCellPr {
 	@XmlAttribute(name = "id", required = true)
-	protected IntegerAttr Id;
+	protected Integer IdAttr;
 	@XmlAttribute(name = "uniqueName")
-	protected StringAttr UniqueName;
+	protected String UniqueNameAttr;
 	@XmlElement(required = true, name = "xmlPr")
 	protected CT_XmlPr XmlPr;
 	@XmlElement(required = true, name = "extLst")
@@ -5052,11 +5052,11 @@ public class CT_XmlCellPr {
 // CT_XmlPr ...
 public class CT_XmlPr {
 	@XmlAttribute(name = "mapId", required = true)
-	protected IntegerAttr MapId;
+	protected Integer MapIdAttr;
 	@XmlAttribute(name = "xpath", required = true)
-	protected StringAttr Xpath;
+	protected String XpathAttr;
 	@XmlAttribute(name = "xmlDataType", required = true)
-	protected StringAttr XmlDataType;
+	protected String XmlDataTypeAttr;
 	@XmlElement(required = true, name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
@@ -5096,23 +5096,23 @@ public class CT_Stylesheet {
 // CT_CellAlignment ...
 public class CT_CellAlignment {
 	@XmlAttribute(name = "horizontal")
-	protected StringAttr Horizontal;
+	protected String HorizontalAttr;
 	@XmlAttribute(name = "vertical")
-	protected StringAttr Vertical;
+	protected String VerticalAttr;
 	@XmlAttribute(name = "textRotation")
-	protected ST_TextRotationAttr TextRotation;
+	protected ST_TextRotation TextRotationAttr;
 	@XmlAttribute(name = "wrapText")
-	protected BooleanAttr WrapText;
+	protected Boolean WrapTextAttr;
 	@XmlAttribute(name = "indent")
-	protected IntegerAttr Indent;
+	protected Integer IndentAttr;
 	@XmlAttribute(name = "relativeIndent")
-	protected IntegerAttr RelativeIndent;
+	protected Integer RelativeIndentAttr;
 	@XmlAttribute(name = "justifyLastLine")
-	protected BooleanAttr JustifyLastLine;
+	protected Boolean JustifyLastLineAttr;
 	@XmlAttribute(name = "shrinkToFit")
-	protected BooleanAttr ShrinkToFit;
+	protected Boolean ShrinkToFitAttr;
 	@XmlAttribute(name = "readingOrder")
-	protected IntegerAttr ReadingOrder;
+	protected Integer ReadingOrderAttr;
 }
 
 // ST_TextRotation ...
@@ -5132,7 +5132,7 @@ public class ST_BorderStyle {
 // CT_Borders ...
 public class CT_Borders {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "border")
 	protected List<CT_Border> Border;
 }
@@ -5140,11 +5140,11 @@ public class CT_Borders {
 // CT_Border ...
 public class CT_Border {
 	@XmlAttribute(name = "diagonalUp")
-	protected BooleanAttr DiagonalUp;
+	protected Boolean DiagonalUpAttr;
 	@XmlAttribute(name = "diagonalDown")
-	protected BooleanAttr DiagonalDown;
+	protected Boolean DiagonalDownAttr;
 	@XmlAttribute(name = "outline")
-	protected BooleanAttr Outline;
+	protected Boolean OutlineAttr;
 	@XmlElement(required = true, name = "start")
 	protected CT_BorderPr Start;
 	@XmlElement(required = true, name = "end")
@@ -5164,7 +5164,7 @@ public class CT_Border {
 // CT_BorderPr ...
 public class CT_BorderPr {
 	@XmlAttribute(name = "style")
-	protected StringAttr Style;
+	protected String StyleAttr;
 	@XmlElement(required = true, name = "color")
 	protected CT_Color Color;
 }
@@ -5172,15 +5172,15 @@ public class CT_BorderPr {
 // CT_CellProtection ...
 public class CT_CellProtection {
 	@XmlAttribute(name = "locked")
-	protected BooleanAttr Locked;
+	protected Boolean LockedAttr;
 	@XmlAttribute(name = "hidden")
-	protected BooleanAttr Hidden;
+	protected Boolean HiddenAttr;
 }
 
 // CT_Fonts ...
 public class CT_Fonts {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "font")
 	protected List<CT_Font> Font;
 }
@@ -5188,7 +5188,7 @@ public class CT_Fonts {
 // CT_Fills ...
 public class CT_Fills {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "fill")
 	protected List<CT_Fill> Fill;
 }
@@ -5204,7 +5204,7 @@ public class CT_Fill {
 // CT_PatternFill ...
 public class CT_PatternFill {
 	@XmlAttribute(name = "patternType")
-	protected StringAttr PatternType;
+	protected String PatternTypeAttr;
 	@XmlElement(required = true, name = "fgColor")
 	protected CT_Color FgColor;
 	@XmlElement(required = true, name = "bgColor")
@@ -5214,15 +5214,15 @@ public class CT_PatternFill {
 // CT_Color ...
 public class CT_Color {
 	@XmlAttribute(name = "auto")
-	protected BooleanAttr Auto;
+	protected Boolean AutoAttr;
 	@XmlAttribute(name = "indexed")
-	protected IntegerAttr Indexed;
+	protected Integer IndexedAttr;
 	@XmlAttribute(name = "rgb")
-	protected List<Byte>Attr Rgb;
+	protected List<Byte> RgbAttr;
 	@XmlAttribute(name = "theme")
-	protected IntegerAttr Theme;
+	protected Integer ThemeAttr;
 	@XmlAttribute(name = "tint")
-	protected FloatAttr Tint;
+	protected Float TintAttr;
 }
 
 // ST_PatternType ...
@@ -5235,17 +5235,17 @@ public class ST_PatternType {
 // CT_GradientFill ...
 public class CT_GradientFill {
 	@XmlAttribute(name = "type")
-	protected StringAttr Type;
+	protected String TypeAttr;
 	@XmlAttribute(name = "degree")
-	protected FloatAttr Degree;
+	protected Float DegreeAttr;
 	@XmlAttribute(name = "left")
-	protected FloatAttr Left;
+	protected Float LeftAttr;
 	@XmlAttribute(name = "right")
-	protected FloatAttr Right;
+	protected Float RightAttr;
 	@XmlAttribute(name = "top")
-	protected FloatAttr Top;
+	protected Float TopAttr;
 	@XmlAttribute(name = "bottom")
-	protected FloatAttr Bottom;
+	protected Float BottomAttr;
 	@XmlElement(required = true, name = "stop")
 	protected List<CT_GradientStop> Stop;
 }
@@ -5253,7 +5253,7 @@ public class CT_GradientFill {
 // CT_GradientStop ...
 public class CT_GradientStop {
 	@XmlAttribute(name = "position", required = true)
-	protected FloatAttr Position;
+	protected Float PositionAttr;
 	@XmlElement(required = true, name = "color")
 	protected CT_Color Color;
 }
@@ -5282,7 +5282,7 @@ public class ST_VerticalAlignment {
 // CT_NumFmts ...
 public class CT_NumFmts {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "numFmt")
 	protected List<CT_NumFmt> NumFmt;
 }
@@ -5290,15 +5290,15 @@ public class CT_NumFmts {
 // CT_NumFmt ...
 public class CT_NumFmt {
 	@XmlAttribute(name = "numFmtId", required = true)
-	protected IntegerAttr NumFmtId;
+	protected Integer NumFmtIdAttr;
 	@XmlAttribute(name = "formatCode", required = true)
-	protected StringAttr FormatCode;
+	protected String FormatCodeAttr;
 }
 
 // CT_CellStyleXfs ...
 public class CT_CellStyleXfs {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "xf")
 	protected List<CT_Xf> Xf;
 }
@@ -5306,7 +5306,7 @@ public class CT_CellStyleXfs {
 // CT_CellXfs ...
 public class CT_CellXfs {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "xf")
 	protected List<CT_Xf> Xf;
 }
@@ -5314,31 +5314,31 @@ public class CT_CellXfs {
 // CT_Xf ...
 public class CT_Xf {
 	@XmlAttribute(name = "numFmtId")
-	protected IntegerAttr NumFmtId;
+	protected Integer NumFmtIdAttr;
 	@XmlAttribute(name = "fontId")
-	protected IntegerAttr FontId;
+	protected Integer FontIdAttr;
 	@XmlAttribute(name = "fillId")
-	protected IntegerAttr FillId;
+	protected Integer FillIdAttr;
 	@XmlAttribute(name = "borderId")
-	protected IntegerAttr BorderId;
+	protected Integer BorderIdAttr;
 	@XmlAttribute(name = "xfId")
-	protected IntegerAttr XfId;
+	protected Integer XfIdAttr;
 	@XmlAttribute(name = "quotePrefix")
-	protected BooleanAttr QuotePrefix;
+	protected Boolean QuotePrefixAttr;
 	@XmlAttribute(name = "pivotButton")
-	protected BooleanAttr PivotButton;
+	protected Boolean PivotButtonAttr;
 	@XmlAttribute(name = "applyNumberFormat")
-	protected BooleanAttr ApplyNumberFormat;
+	protected Boolean ApplyNumberFormatAttr;
 	@XmlAttribute(name = "applyFont")
-	protected BooleanAttr ApplyFont;
+	protected Boolean ApplyFontAttr;
 	@XmlAttribute(name = "applyFill")
-	protected BooleanAttr ApplyFill;
+	protected Boolean ApplyFillAttr;
 	@XmlAttribute(name = "applyBorder")
-	protected BooleanAttr ApplyBorder;
+	protected Boolean ApplyBorderAttr;
 	@XmlAttribute(name = "applyAlignment")
-	protected BooleanAttr ApplyAlignment;
+	protected Boolean ApplyAlignmentAttr;
 	@XmlAttribute(name = "applyProtection")
-	protected BooleanAttr ApplyProtection;
+	protected Boolean ApplyProtectionAttr;
 	@XmlElement(required = true, name = "alignment")
 	protected CT_CellAlignment Alignment;
 	@XmlElement(required = true, name = "protection")
@@ -5350,7 +5350,7 @@ public class CT_Xf {
 // CT_CellStyles ...
 public class CT_CellStyles {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "cellStyle")
 	protected List<CT_CellStyle> CellStyle;
 }
@@ -5358,17 +5358,17 @@ public class CT_CellStyles {
 // CT_CellStyle ...
 public class CT_CellStyle {
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "xfId", required = true)
-	protected IntegerAttr XfId;
+	protected Integer XfIdAttr;
 	@XmlAttribute(name = "builtinId")
-	protected IntegerAttr BuiltinId;
+	protected Integer BuiltinIdAttr;
 	@XmlAttribute(name = "iLevel")
-	protected IntegerAttr ILevel;
+	protected Integer ILevelAttr;
 	@XmlAttribute(name = "hidden")
-	protected BooleanAttr Hidden;
+	protected Boolean HiddenAttr;
 	@XmlAttribute(name = "customBuiltin")
-	protected BooleanAttr CustomBuiltin;
+	protected Boolean CustomBuiltinAttr;
 	@XmlElement(required = true, name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
@@ -5376,7 +5376,7 @@ public class CT_CellStyle {
 // CT_Dxfs ...
 public class CT_Dxfs {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "dxf")
 	protected List<CT_Dxf> Dxf;
 }
@@ -5464,17 +5464,17 @@ public class CT_MRUColors {
 // CT_RgbColor ...
 public class CT_RgbColor {
 	@XmlAttribute(name = "rgb")
-	protected List<Byte>Attr Rgb;
+	protected List<Byte> RgbAttr;
 }
 
 // CT_TableStyles ...
 public class CT_TableStyles {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlAttribute(name = "defaultTableStyle")
-	protected StringAttr DefaultTableStyle;
+	protected String DefaultTableStyleAttr;
 	@XmlAttribute(name = "defaultPivotStyle")
-	protected StringAttr DefaultPivotStyle;
+	protected String DefaultPivotStyleAttr;
 	@XmlElement(required = true, name = "tableStyle")
 	protected List<CT_TableStyle> TableStyle;
 }
@@ -5482,13 +5482,13 @@ public class CT_TableStyles {
 // CT_TableStyle ...
 public class CT_TableStyle {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "pivot")
-	protected BooleanAttr Pivot;
+	protected Boolean PivotAttr;
 	@XmlAttribute(name = "table")
-	protected BooleanAttr Table;
+	protected Boolean TableAttr;
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "tableStyleElement")
 	protected List<CT_TableStyleElement> TableStyleElement;
 }
@@ -5496,11 +5496,11 @@ public class CT_TableStyle {
 // CT_TableStyleElement ...
 public class CT_TableStyleElement {
 	@XmlAttribute(name = "type", required = true)
-	protected StringAttr Type;
+	protected String TypeAttr;
 	@XmlAttribute(name = "size")
-	protected IntegerAttr Size;
+	protected Integer SizeAttr;
 	@XmlAttribute(name = "dxfId")
-	protected IntegerAttr DxfId;
+	protected Integer DxfIdAttr;
 }
 
 // ST_TableStyleType ...
@@ -5513,37 +5513,37 @@ public class ST_TableStyleType {
 // CT_BooleanProperty ...
 public class CT_BooleanProperty {
 	@XmlAttribute(name = "val")
-	protected BooleanAttr Val;
+	protected Boolean ValAttr;
 }
 
 // CT_FontSize ...
 public class CT_FontSize {
 	@XmlAttribute(name = "val", required = true)
-	protected FloatAttr Val;
+	protected Float ValAttr;
 }
 
 // CT_IntProperty ...
 public class CT_IntProperty {
 	@XmlAttribute(name = "val", required = true)
-	protected IntegerAttr Val;
+	protected Integer ValAttr;
 }
 
 // CT_FontName ...
 public class CT_FontName {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_VerticalAlignFontProperty ...
 public class CT_VerticalAlignFontProperty {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_FontScheme ...
 public class CT_FontScheme {
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // ST_FontScheme ...
@@ -5556,7 +5556,7 @@ public class ST_FontScheme {
 // CT_UnderlineProperty ...
 public class CT_UnderlineProperty {
 	@XmlAttribute(name = "val")
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // ST_UnderlineValues ...
@@ -5569,7 +5569,7 @@ public class ST_UnderlineValues {
 // CT_FontFamily ...
 public class CT_FontFamily {
 	@XmlAttribute(name = "val", required = true)
-	protected IntegerAttr Val;
+	protected Integer ValAttr;
 }
 
 // ST_FontFamily ...
@@ -5652,7 +5652,7 @@ public class CT_ExternalLink {
 // CT_ExternalBook ...
 public class CT_ExternalBook {
 	@XmlAttribute(name = "r:id", required = true)
-	protected StringAttr RId;
+	protected String RIdAttr;
 	@XmlElement(required = true, name = "sheetNames")
 	protected CT_ExternalSheetNames SheetNames;
 	@XmlElement(required = true, name = "definedNames")
@@ -5670,7 +5670,7 @@ public class CT_ExternalSheetNames {
 // CT_ExternalSheetName ...
 public class CT_ExternalSheetName {
 	@XmlAttribute(name = "val")
-	protected StringAttr Val;
+	protected String ValAttr;
 }
 
 // CT_ExternalDefinedNames ...
@@ -5682,11 +5682,11 @@ public class CT_ExternalDefinedNames {
 // CT_ExternalDefinedName ...
 public class CT_ExternalDefinedName {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "refersTo")
-	protected StringAttr RefersTo;
+	protected String RefersToAttr;
 	@XmlAttribute(name = "sheetId")
-	protected IntegerAttr SheetId;
+	protected Integer SheetIdAttr;
 }
 
 // CT_ExternalSheetDataSet ...
@@ -5698,9 +5698,9 @@ public class CT_ExternalSheetDataSet {
 // CT_ExternalSheetData ...
 public class CT_ExternalSheetData {
 	@XmlAttribute(name = "sheetId", required = true)
-	protected IntegerAttr SheetId;
+	protected Integer SheetIdAttr;
 	@XmlAttribute(name = "refreshError")
-	protected BooleanAttr RefreshError;
+	protected Boolean RefreshErrorAttr;
 	@XmlElement(required = true, name = "row")
 	protected List<CT_ExternalRow> Row;
 }
@@ -5708,7 +5708,7 @@ public class CT_ExternalSheetData {
 // CT_ExternalRow ...
 public class CT_ExternalRow {
 	@XmlAttribute(name = "r", required = true)
-	protected IntegerAttr R;
+	protected Integer RAttr;
 	@XmlElement(required = true, name = "cell")
 	protected List<CT_ExternalCell> Cell;
 }
@@ -5716,11 +5716,11 @@ public class CT_ExternalRow {
 // CT_ExternalCell ...
 public class CT_ExternalCell {
 	@XmlAttribute(name = "r")
-	protected StringAttr R;
+	protected String RAttr;
 	@XmlAttribute(name = "t")
-	protected StringAttr T;
+	protected String TAttr;
 	@XmlAttribute(name = "vm")
-	protected IntegerAttr Vm;
+	protected Integer VmAttr;
 	@XmlElement(required = true, name = "v")
 	protected String V;
 }
@@ -5728,9 +5728,9 @@ public class CT_ExternalCell {
 // CT_DdeLink ...
 public class CT_DdeLink {
 	@XmlAttribute(name = "ddeService", required = true)
-	protected StringAttr DdeService;
+	protected String DdeServiceAttr;
 	@XmlAttribute(name = "ddeTopic", required = true)
-	protected StringAttr DdeTopic;
+	protected String DdeTopicAttr;
 	@XmlElement(required = true, name = "ddeItems")
 	protected CT_DdeItems DdeItems;
 }
@@ -5744,13 +5744,13 @@ public class CT_DdeItems {
 // CT_DdeItem ...
 public class CT_DdeItem {
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "ole")
-	protected BooleanAttr Ole;
+	protected Boolean OleAttr;
 	@XmlAttribute(name = "advise")
-	protected BooleanAttr Advise;
+	protected Boolean AdviseAttr;
 	@XmlAttribute(name = "preferPic")
-	protected BooleanAttr PreferPic;
+	protected Boolean PreferPicAttr;
 	@XmlElement(required = true, name = "values")
 	protected CT_DdeValues Values;
 }
@@ -5758,9 +5758,9 @@ public class CT_DdeItem {
 // CT_DdeValues ...
 public class CT_DdeValues {
 	@XmlAttribute(name = "rows")
-	protected IntegerAttr Rows;
+	protected Integer RowsAttr;
 	@XmlAttribute(name = "cols")
-	protected IntegerAttr Cols;
+	protected Integer ColsAttr;
 	@XmlElement(required = true, name = "value")
 	protected List<CT_DdeValue> Value;
 }
@@ -5768,7 +5768,7 @@ public class CT_DdeValues {
 // CT_DdeValue ...
 public class CT_DdeValue {
 	@XmlAttribute(name = "t")
-	protected StringAttr T;
+	protected String TAttr;
 	@XmlElement(required = true, name = "val")
 	protected String Val;
 }
@@ -5783,9 +5783,9 @@ public class ST_DdeValueType {
 // CT_OleLink ...
 public class CT_OleLink {
 	@XmlAttribute(name = "r:id", required = true)
-	protected StringAttr RId;
+	protected String RIdAttr;
 	@XmlAttribute(name = "progId", required = true)
-	protected StringAttr ProgId;
+	protected String ProgIdAttr;
 	@XmlElement(required = true, name = "oleItems")
 	protected CT_OleItems OleItems;
 }
@@ -5799,13 +5799,13 @@ public class CT_OleItems {
 // CT_OleItem ...
 public class CT_OleItem {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "icon")
-	protected BooleanAttr Icon;
+	protected Boolean IconAttr;
 	@XmlAttribute(name = "advise")
-	protected BooleanAttr Advise;
+	protected Boolean AdviseAttr;
 	@XmlAttribute(name = "preferPic")
-	protected BooleanAttr PreferPic;
+	protected Boolean PreferPicAttr;
 }
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -5817,49 +5817,49 @@ public class Table {
 // CT_Table ...
 public class CT_Table {
 	@XmlAttribute(name = "id", required = true)
-	protected IntegerAttr Id;
+	protected Integer IdAttr;
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "displayName", required = true)
-	protected StringAttr DisplayName;
+	protected String DisplayNameAttr;
 	@XmlAttribute(name = "comment")
-	protected StringAttr Comment;
+	protected String CommentAttr;
 	@XmlAttribute(name = "ref", required = true)
-	protected StringAttr Ref;
+	protected String RefAttr;
 	@XmlAttribute(name = "tableType")
-	protected StringAttr TableType;
+	protected String TableTypeAttr;
 	@XmlAttribute(name = "headerRowCount")
-	protected IntegerAttr HeaderRowCount;
+	protected Integer HeaderRowCountAttr;
 	@XmlAttribute(name = "insertRow")
-	protected BooleanAttr InsertRow;
+	protected Boolean InsertRowAttr;
 	@XmlAttribute(name = "insertRowShift")
-	protected BooleanAttr InsertRowShift;
+	protected Boolean InsertRowShiftAttr;
 	@XmlAttribute(name = "totalsRowCount")
-	protected IntegerAttr TotalsRowCount;
+	protected Integer TotalsRowCountAttr;
 	@XmlAttribute(name = "totalsRowShown")
-	protected BooleanAttr TotalsRowShown;
+	protected Boolean TotalsRowShownAttr;
 	@XmlAttribute(name = "published")
-	protected BooleanAttr Published;
+	protected Boolean PublishedAttr;
 	@XmlAttribute(name = "headerRowDxfId")
-	protected IntegerAttr HeaderRowDxfId;
+	protected Integer HeaderRowDxfIdAttr;
 	@XmlAttribute(name = "dataDxfId")
-	protected IntegerAttr DataDxfId;
+	protected Integer DataDxfIdAttr;
 	@XmlAttribute(name = "totalsRowDxfId")
-	protected IntegerAttr TotalsRowDxfId;
+	protected Integer TotalsRowDxfIdAttr;
 	@XmlAttribute(name = "headerRowBorderDxfId")
-	protected IntegerAttr HeaderRowBorderDxfId;
+	protected Integer HeaderRowBorderDxfIdAttr;
 	@XmlAttribute(name = "tableBorderDxfId")
-	protected IntegerAttr TableBorderDxfId;
+	protected Integer TableBorderDxfIdAttr;
 	@XmlAttribute(name = "totalsRowBorderDxfId")
-	protected IntegerAttr TotalsRowBorderDxfId;
+	protected Integer TotalsRowBorderDxfIdAttr;
 	@XmlAttribute(name = "headerRowCellStyle")
-	protected StringAttr HeaderRowCellStyle;
+	protected String HeaderRowCellStyleAttr;
 	@XmlAttribute(name = "dataCellStyle")
-	protected StringAttr DataCellStyle;
+	protected String DataCellStyleAttr;
 	@XmlAttribute(name = "totalsRowCellStyle")
-	protected StringAttr TotalsRowCellStyle;
+	protected String TotalsRowCellStyleAttr;
 	@XmlAttribute(name = "connectionId")
-	protected IntegerAttr ConnectionId;
+	protected Integer ConnectionIdAttr;
 	@XmlElement(required = true, name = "autoFilter")
 	protected CT_AutoFilter AutoFilter;
 	@XmlElement(required = true, name = "sortState")
@@ -5882,21 +5882,21 @@ public class ST_TableType {
 // CT_TableStyleInfo ...
 public class CT_TableStyleInfo {
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "showFirstColumn")
-	protected BooleanAttr ShowFirstColumn;
+	protected Boolean ShowFirstColumnAttr;
 	@XmlAttribute(name = "showLastColumn")
-	protected BooleanAttr ShowLastColumn;
+	protected Boolean ShowLastColumnAttr;
 	@XmlAttribute(name = "showRowStripes")
-	protected BooleanAttr ShowRowStripes;
+	protected Boolean ShowRowStripesAttr;
 	@XmlAttribute(name = "showColumnStripes")
-	protected BooleanAttr ShowColumnStripes;
+	protected Boolean ShowColumnStripesAttr;
 }
 
 // CT_TableColumns ...
 public class CT_TableColumns {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "tableColumn")
 	protected List<CT_TableColumn> TableColumn;
 }
@@ -5904,29 +5904,29 @@ public class CT_TableColumns {
 // CT_TableColumn ...
 public class CT_TableColumn {
 	@XmlAttribute(name = "id", required = true)
-	protected IntegerAttr Id;
+	protected Integer IdAttr;
 	@XmlAttribute(name = "uniqueName")
-	protected StringAttr UniqueName;
+	protected String UniqueNameAttr;
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "totalsRowFunction")
-	protected StringAttr TotalsRowFunction;
+	protected String TotalsRowFunctionAttr;
 	@XmlAttribute(name = "totalsRowLabel")
-	protected StringAttr TotalsRowLabel;
+	protected String TotalsRowLabelAttr;
 	@XmlAttribute(name = "queryTableFieldId")
-	protected IntegerAttr QueryTableFieldId;
+	protected Integer QueryTableFieldIdAttr;
 	@XmlAttribute(name = "headerRowDxfId")
-	protected IntegerAttr HeaderRowDxfId;
+	protected Integer HeaderRowDxfIdAttr;
 	@XmlAttribute(name = "dataDxfId")
-	protected IntegerAttr DataDxfId;
+	protected Integer DataDxfIdAttr;
 	@XmlAttribute(name = "totalsRowDxfId")
-	protected IntegerAttr TotalsRowDxfId;
+	protected Integer TotalsRowDxfIdAttr;
 	@XmlAttribute(name = "headerRowCellStyle")
-	protected StringAttr HeaderRowCellStyle;
+	protected String HeaderRowCellStyleAttr;
 	@XmlAttribute(name = "dataCellStyle")
-	protected StringAttr DataCellStyle;
+	protected String DataCellStyleAttr;
 	@XmlAttribute(name = "totalsRowCellStyle")
-	protected StringAttr TotalsRowCellStyle;
+	protected String TotalsRowCellStyleAttr;
 	@XmlElement(required = true, name = "calculatedColumnFormula")
 	protected CT_TableFormula CalculatedColumnFormula;
 	@XmlElement(required = true, name = "totalsRowFormula")
@@ -5940,7 +5940,7 @@ public class CT_TableColumn {
 // CT_TableFormula ...
 public class CT_TableFormula {
 	@XmlAttribute(name = "array")
-	protected BooleanAttr Array;
+	protected Boolean ArrayAttr;
 	@XmlValue
 	protected String value;
 }
@@ -5955,13 +5955,13 @@ public class ST_TotalsRowFunction {
 // CT_XmlColumnPr ...
 public class CT_XmlColumnPr {
 	@XmlAttribute(name = "mapId", required = true)
-	protected IntegerAttr MapId;
+	protected Integer MapIdAttr;
 	@XmlAttribute(name = "xpath", required = true)
-	protected StringAttr Xpath;
+	protected String XpathAttr;
 	@XmlAttribute(name = "denormalized")
-	protected BooleanAttr Denormalized;
+	protected Boolean DenormalizedAttr;
 	@XmlAttribute(name = "xmlDataType", required = true)
-	protected StringAttr XmlDataType;
+	protected String XmlDataTypeAttr;
 	@XmlElement(required = true, name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
@@ -5990,7 +5990,7 @@ public class CT_VolTypes {
 // CT_VolType ...
 public class CT_VolType {
 	@XmlAttribute(name = "type", required = true)
-	protected StringAttr Type;
+	protected String TypeAttr;
 	@XmlElement(required = true, name = "main")
 	protected List<CT_VolMain> Main;
 }
@@ -5998,7 +5998,7 @@ public class CT_VolType {
 // CT_VolMain ...
 public class CT_VolMain {
 	@XmlAttribute(name = "first", required = true)
-	protected StringAttr First;
+	protected String FirstAttr;
 	@XmlElement(required = true, name = "tp")
 	protected List<CT_VolTopic> Tp;
 }
@@ -6006,7 +6006,7 @@ public class CT_VolMain {
 // CT_VolTopic ...
 public class CT_VolTopic {
 	@XmlAttribute(name = "t")
-	protected StringAttr T;
+	protected String TAttr;
 	@XmlElement(required = true, name = "v")
 	protected String V;
 	@XmlElement(required = true, name = "stp")
@@ -6018,9 +6018,9 @@ public class CT_VolTopic {
 // CT_VolTopicRef ...
 public class CT_VolTopicRef {
 	@XmlAttribute(name = "r", required = true)
-	protected StringAttr R;
+	protected String RAttr;
 	@XmlAttribute(name = "s", required = true)
-	protected IntegerAttr S;
+	protected Integer SAttr;
 }
 
 // ST_VolDepType ...
@@ -6046,7 +6046,7 @@ public class Workbook {
 // CT_Workbook ...
 public class CT_Workbook {
 	@XmlAttribute(name = "conformance")
-	protected StringAttr Conformance;
+	protected String ConformanceAttr;
 	@XmlElement(required = true, name = "fileVersion")
 	protected CT_FileVersion FileVersion;
 	@XmlElement(required = true, name = "fileSharing")
@@ -6090,15 +6090,15 @@ public class CT_Workbook {
 // CT_FileVersion ...
 public class CT_FileVersion {
 	@XmlAttribute(name = "appName")
-	protected StringAttr AppName;
+	protected String AppNameAttr;
 	@XmlAttribute(name = "lastEdited")
-	protected StringAttr LastEdited;
+	protected String LastEditedAttr;
 	@XmlAttribute(name = "lowestEdited")
-	protected StringAttr LowestEdited;
+	protected String LowestEditedAttr;
 	@XmlAttribute(name = "rupBuild")
-	protected StringAttr RupBuild;
+	protected String RupBuildAttr;
 	@XmlAttribute(name = "codeName")
-	protected StringAttr CodeName;
+	protected String CodeNameAttr;
 }
 
 // CT_BookViews ...
@@ -6110,31 +6110,31 @@ public class CT_BookViews {
 // CT_BookView ...
 public class CT_BookView {
 	@XmlAttribute(name = "visibility")
-	protected StringAttr Visibility;
+	protected String VisibilityAttr;
 	@XmlAttribute(name = "minimized")
-	protected BooleanAttr Minimized;
+	protected Boolean MinimizedAttr;
 	@XmlAttribute(name = "showHorizontalScroll")
-	protected BooleanAttr ShowHorizontalScroll;
+	protected Boolean ShowHorizontalScrollAttr;
 	@XmlAttribute(name = "showVerticalScroll")
-	protected BooleanAttr ShowVerticalScroll;
+	protected Boolean ShowVerticalScrollAttr;
 	@XmlAttribute(name = "showSheetTabs")
-	protected BooleanAttr ShowSheetTabs;
+	protected Boolean ShowSheetTabsAttr;
 	@XmlAttribute(name = "xWindow")
-	protected IntegerAttr XWindow;
+	protected Integer XWindowAttr;
 	@XmlAttribute(name = "yWindow")
-	protected IntegerAttr YWindow;
+	protected Integer YWindowAttr;
 	@XmlAttribute(name = "windowWidth")
-	protected IntegerAttr WindowWidth;
+	protected Integer WindowWidthAttr;
 	@XmlAttribute(name = "windowHeight")
-	protected IntegerAttr WindowHeight;
+	protected Integer WindowHeightAttr;
 	@XmlAttribute(name = "tabRatio")
-	protected IntegerAttr TabRatio;
+	protected Integer TabRatioAttr;
 	@XmlAttribute(name = "firstSheet")
-	protected IntegerAttr FirstSheet;
+	protected Integer FirstSheetAttr;
 	@XmlAttribute(name = "activeTab")
-	protected IntegerAttr ActiveTab;
+	protected Integer ActiveTabAttr;
 	@XmlAttribute(name = "autoFilterDateGrouping")
-	protected BooleanAttr AutoFilterDateGrouping;
+	protected Boolean AutoFilterDateGroupingAttr;
 	@XmlElement(required = true, name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
@@ -6155,53 +6155,53 @@ public class CT_CustomWorkbookViews {
 // CT_CustomWorkbookView ...
 public class CT_CustomWorkbookView {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "guid", required = true)
-	protected StringAttr Guid;
+	protected String GuidAttr;
 	@XmlAttribute(name = "autoUpdate")
-	protected BooleanAttr AutoUpdate;
+	protected Boolean AutoUpdateAttr;
 	@XmlAttribute(name = "mergeInterval")
-	protected IntegerAttr MergeInterval;
+	protected Integer MergeIntervalAttr;
 	@XmlAttribute(name = "changesSavedWin")
-	protected BooleanAttr ChangesSavedWin;
+	protected Boolean ChangesSavedWinAttr;
 	@XmlAttribute(name = "onlySync")
-	protected BooleanAttr OnlySync;
+	protected Boolean OnlySyncAttr;
 	@XmlAttribute(name = "personalView")
-	protected BooleanAttr PersonalView;
+	protected Boolean PersonalViewAttr;
 	@XmlAttribute(name = "includePrintSettings")
-	protected BooleanAttr IncludePrintSettings;
+	protected Boolean IncludePrintSettingsAttr;
 	@XmlAttribute(name = "includeHiddenRowCol")
-	protected BooleanAttr IncludeHiddenRowCol;
+	protected Boolean IncludeHiddenRowColAttr;
 	@XmlAttribute(name = "maximized")
-	protected BooleanAttr Maximized;
+	protected Boolean MaximizedAttr;
 	@XmlAttribute(name = "minimized")
-	protected BooleanAttr Minimized;
+	protected Boolean MinimizedAttr;
 	@XmlAttribute(name = "showHorizontalScroll")
-	protected BooleanAttr ShowHorizontalScroll;
+	protected Boolean ShowHorizontalScrollAttr;
 	@XmlAttribute(name = "showVerticalScroll")
-	protected BooleanAttr ShowVerticalScroll;
+	protected Boolean ShowVerticalScrollAttr;
 	@XmlAttribute(name = "showSheetTabs")
-	protected BooleanAttr ShowSheetTabs;
+	protected Boolean ShowSheetTabsAttr;
 	@XmlAttribute(name = "xWindow")
-	protected IntegerAttr XWindow;
+	protected Integer XWindowAttr;
 	@XmlAttribute(name = "yWindow")
-	protected IntegerAttr YWindow;
+	protected Integer YWindowAttr;
 	@XmlAttribute(name = "windowWidth", required = true)
-	protected IntegerAttr WindowWidth;
+	protected Integer WindowWidthAttr;
 	@XmlAttribute(name = "windowHeight", required = true)
-	protected IntegerAttr WindowHeight;
+	protected Integer WindowHeightAttr;
 	@XmlAttribute(name = "tabRatio")
-	protected IntegerAttr TabRatio;
+	protected Integer TabRatioAttr;
 	@XmlAttribute(name = "activeSheetId", required = true)
-	protected IntegerAttr ActiveSheetId;
+	protected Integer ActiveSheetIdAttr;
 	@XmlAttribute(name = "showFormulaBar")
-	protected BooleanAttr ShowFormulaBar;
+	protected Boolean ShowFormulaBarAttr;
 	@XmlAttribute(name = "showStatusbar")
-	protected BooleanAttr ShowStatusbar;
+	protected Boolean ShowStatusbarAttr;
 	@XmlAttribute(name = "showComments")
-	protected StringAttr ShowComments;
+	protected String ShowCommentsAttr;
 	@XmlAttribute(name = "showObjects")
-	protected StringAttr ShowObjects;
+	protected String ShowObjectsAttr;
 	@XmlElement(required = true, name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
@@ -6229,13 +6229,13 @@ public class CT_Sheets {
 // CT_Sheet ...
 public class CT_Sheet {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "sheetId", required = true)
-	protected IntegerAttr SheetId;
+	protected Integer SheetIdAttr;
 	@XmlAttribute(name = "state")
-	protected StringAttr State;
+	protected String StateAttr;
 	@XmlAttribute(name = "r:id", required = true)
-	protected StringAttr RId;
+	protected String RIdAttr;
 }
 
 // ST_SheetState ...
@@ -6248,41 +6248,41 @@ public class ST_SheetState {
 // CT_WorkbookPr ...
 public class CT_WorkbookPr {
 	@XmlAttribute(name = "date1904")
-	protected BooleanAttr Date1904;
+	protected Boolean Date1904Attr;
 	@XmlAttribute(name = "showObjects")
-	protected StringAttr ShowObjects;
+	protected String ShowObjectsAttr;
 	@XmlAttribute(name = "showBorderUnselectedTables")
-	protected BooleanAttr ShowBorderUnselectedTables;
+	protected Boolean ShowBorderUnselectedTablesAttr;
 	@XmlAttribute(name = "filterPrivacy")
-	protected BooleanAttr FilterPrivacy;
+	protected Boolean FilterPrivacyAttr;
 	@XmlAttribute(name = "promptedSolutions")
-	protected BooleanAttr PromptedSolutions;
+	protected Boolean PromptedSolutionsAttr;
 	@XmlAttribute(name = "showInkAnnotation")
-	protected BooleanAttr ShowInkAnnotation;
+	protected Boolean ShowInkAnnotationAttr;
 	@XmlAttribute(name = "backupFile")
-	protected BooleanAttr BackupFile;
+	protected Boolean BackupFileAttr;
 	@XmlAttribute(name = "saveExternalLinkValues")
-	protected BooleanAttr SaveExternalLinkValues;
+	protected Boolean SaveExternalLinkValuesAttr;
 	@XmlAttribute(name = "updateLinks")
-	protected StringAttr UpdateLinks;
+	protected String UpdateLinksAttr;
 	@XmlAttribute(name = "codeName")
-	protected StringAttr CodeName;
+	protected String CodeNameAttr;
 	@XmlAttribute(name = "hidePivotFieldList")
-	protected BooleanAttr HidePivotFieldList;
+	protected Boolean HidePivotFieldListAttr;
 	@XmlAttribute(name = "showPivotChartFilter")
-	protected BooleanAttr ShowPivotChartFilter;
+	protected Boolean ShowPivotChartFilterAttr;
 	@XmlAttribute(name = "allowRefreshQuery")
-	protected BooleanAttr AllowRefreshQuery;
+	protected Boolean AllowRefreshQueryAttr;
 	@XmlAttribute(name = "publishItems")
-	protected BooleanAttr PublishItems;
+	protected Boolean PublishItemsAttr;
 	@XmlAttribute(name = "checkCompatibility")
-	protected BooleanAttr CheckCompatibility;
+	protected Boolean CheckCompatibilityAttr;
 	@XmlAttribute(name = "autoCompressPictures")
-	protected BooleanAttr AutoCompressPictures;
+	protected Boolean AutoCompressPicturesAttr;
 	@XmlAttribute(name = "refreshAllConnections")
-	protected BooleanAttr RefreshAllConnections;
+	protected Boolean RefreshAllConnectionsAttr;
 	@XmlAttribute(name = "defaultThemeVersion")
-	protected IntegerAttr DefaultThemeVersion;
+	protected Integer DefaultThemeVersionAttr;
 }
 
 // ST_UpdateLinks ...
@@ -6295,9 +6295,9 @@ public class ST_UpdateLinks {
 // CT_SmartTagPr ...
 public class CT_SmartTagPr {
 	@XmlAttribute(name = "embed")
-	protected BooleanAttr Embed;
+	protected Boolean EmbedAttr;
 	@XmlAttribute(name = "show")
-	protected StringAttr Show;
+	protected String ShowAttr;
 }
 
 // ST_SmartTagShow ...
@@ -6316,53 +6316,53 @@ public class CT_SmartTagTypes {
 // CT_SmartTagType ...
 public class CT_SmartTagType {
 	@XmlAttribute(name = "namespaceUri")
-	protected StringAttr NamespaceUri;
+	protected String NamespaceUriAttr;
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "url")
-	protected StringAttr Url;
+	protected String UrlAttr;
 }
 
 // CT_FileRecoveryPr ...
 public class CT_FileRecoveryPr {
 	@XmlAttribute(name = "autoRecover")
-	protected BooleanAttr AutoRecover;
+	protected Boolean AutoRecoverAttr;
 	@XmlAttribute(name = "crashSave")
-	protected BooleanAttr CrashSave;
+	protected Boolean CrashSaveAttr;
 	@XmlAttribute(name = "dataExtractLoad")
-	protected BooleanAttr DataExtractLoad;
+	protected Boolean DataExtractLoadAttr;
 	@XmlAttribute(name = "repairLoad")
-	protected BooleanAttr RepairLoad;
+	protected Boolean RepairLoadAttr;
 }
 
 // CT_CalcPr ...
 public class CT_CalcPr {
 	@XmlAttribute(name = "calcId")
-	protected IntegerAttr CalcId;
+	protected Integer CalcIdAttr;
 	@XmlAttribute(name = "calcMode")
-	protected StringAttr CalcMode;
+	protected String CalcModeAttr;
 	@XmlAttribute(name = "fullCalcOnLoad")
-	protected BooleanAttr FullCalcOnLoad;
+	protected Boolean FullCalcOnLoadAttr;
 	@XmlAttribute(name = "refMode")
-	protected StringAttr RefMode;
+	protected String RefModeAttr;
 	@XmlAttribute(name = "iterate")
-	protected BooleanAttr Iterate;
+	protected Boolean IterateAttr;
 	@XmlAttribute(name = "iterateCount")
-	protected IntegerAttr IterateCount;
+	protected Integer IterateCountAttr;
 	@XmlAttribute(name = "iterateDelta")
-	protected FloatAttr IterateDelta;
+	protected Float IterateDeltaAttr;
 	@XmlAttribute(name = "fullPrecision")
-	protected BooleanAttr FullPrecision;
+	protected Boolean FullPrecisionAttr;
 	@XmlAttribute(name = "calcCompleted")
-	protected BooleanAttr CalcCompleted;
+	protected Boolean CalcCompletedAttr;
 	@XmlAttribute(name = "calcOnSave")
-	protected BooleanAttr CalcOnSave;
+	protected Boolean CalcOnSaveAttr;
 	@XmlAttribute(name = "concurrentCalc")
-	protected BooleanAttr ConcurrentCalc;
+	protected Boolean ConcurrentCalcAttr;
 	@XmlAttribute(name = "concurrentManualCount")
-	protected IntegerAttr ConcurrentManualCount;
+	protected Integer ConcurrentManualCountAttr;
 	@XmlAttribute(name = "forceFullCalc")
-	protected BooleanAttr ForceFullCalc;
+	protected Boolean ForceFullCalcAttr;
 }
 
 // ST_CalcMode ...
@@ -6388,35 +6388,35 @@ public class CT_DefinedNames {
 // CT_DefinedName ...
 public class CT_DefinedName {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "comment")
-	protected StringAttr Comment;
+	protected String CommentAttr;
 	@XmlAttribute(name = "customMenu")
-	protected StringAttr CustomMenu;
+	protected String CustomMenuAttr;
 	@XmlAttribute(name = "description")
-	protected StringAttr Description;
+	protected String DescriptionAttr;
 	@XmlAttribute(name = "help")
-	protected StringAttr Help;
+	protected String HelpAttr;
 	@XmlAttribute(name = "statusBar")
-	protected StringAttr StatusBar;
+	protected String StatusBarAttr;
 	@XmlAttribute(name = "localSheetId")
-	protected IntegerAttr LocalSheetId;
+	protected Integer LocalSheetIdAttr;
 	@XmlAttribute(name = "hidden")
-	protected BooleanAttr Hidden;
+	protected Boolean HiddenAttr;
 	@XmlAttribute(name = "function")
-	protected BooleanAttr Function;
+	protected Boolean FunctionAttr;
 	@XmlAttribute(name = "vbProcedure")
-	protected BooleanAttr VbProcedure;
+	protected Boolean VbProcedureAttr;
 	@XmlAttribute(name = "xlm")
-	protected BooleanAttr Xlm;
+	protected Boolean XlmAttr;
 	@XmlAttribute(name = "functionGroupId")
-	protected IntegerAttr FunctionGroupId;
+	protected Integer FunctionGroupIdAttr;
 	@XmlAttribute(name = "shortcutKey")
-	protected StringAttr ShortcutKey;
+	protected String ShortcutKeyAttr;
 	@XmlAttribute(name = "publishToServer")
-	protected BooleanAttr PublishToServer;
+	protected Boolean PublishToServerAttr;
 	@XmlAttribute(name = "workbookParameter")
-	protected BooleanAttr WorkbookParameter;
+	protected Boolean WorkbookParameterAttr;
 	@XmlValue
 	protected String value;
 }
@@ -6430,13 +6430,13 @@ public class CT_ExternalReferences {
 // CT_ExternalReference ...
 public class CT_ExternalReference {
 	@XmlAttribute(name = "r:id", required = true)
-	protected StringAttr RId;
+	protected String RIdAttr;
 }
 
 // CT_SheetBackgroundPicture ...
 public class CT_SheetBackgroundPicture {
 	@XmlAttribute(name = "r:id", required = true)
-	protected StringAttr RId;
+	protected String RIdAttr;
 }
 
 // CT_PivotCaches ...
@@ -6448,77 +6448,77 @@ public class CT_PivotCaches {
 // CT_PivotCache ...
 public class CT_PivotCache {
 	@XmlAttribute(name = "cacheId", required = true)
-	protected IntegerAttr CacheId;
+	protected Integer CacheIdAttr;
 	@XmlAttribute(name = "r:id", required = true)
-	protected StringAttr RId;
+	protected String RIdAttr;
 }
 
 // CT_FileSharing ...
 public class CT_FileSharing {
 	@XmlAttribute(name = "readOnlyRecommended")
-	protected BooleanAttr ReadOnlyRecommended;
+	protected Boolean ReadOnlyRecommendedAttr;
 	@XmlAttribute(name = "userName")
-	protected StringAttr UserName;
+	protected String UserNameAttr;
 	@XmlAttribute(name = "algorithmName")
-	protected StringAttr AlgorithmName;
+	protected String AlgorithmNameAttr;
 	@XmlAttribute(name = "hashValue")
-	protected List<Byte>Attr HashValue;
+	protected List<Byte> HashValueAttr;
 	@XmlAttribute(name = "saltValue")
-	protected List<Byte>Attr SaltValue;
+	protected List<Byte> SaltValueAttr;
 	@XmlAttribute(name = "spinCount")
-	protected IntegerAttr SpinCount;
+	protected Integer SpinCountAttr;
 }
 
 // CT_OleSize ...
 public class CT_OleSize {
 	@XmlAttribute(name = "ref", required = true)
-	protected StringAttr Ref;
+	protected String RefAttr;
 }
 
 // CT_WorkbookProtection ...
 public class CT_WorkbookProtection {
 	@XmlAttribute(name = "lockStructure")
-	protected BooleanAttr LockStructure;
+	protected Boolean LockStructureAttr;
 	@XmlAttribute(name = "lockWindows")
-	protected BooleanAttr LockWindows;
+	protected Boolean LockWindowsAttr;
 	@XmlAttribute(name = "lockRevision")
-	protected BooleanAttr LockRevision;
+	protected Boolean LockRevisionAttr;
 	@XmlAttribute(name = "revisionsAlgorithmName")
-	protected StringAttr RevisionsAlgorithmName;
+	protected String RevisionsAlgorithmNameAttr;
 	@XmlAttribute(name = "revisionsHashValue")
-	protected List<Byte>Attr RevisionsHashValue;
+	protected List<Byte> RevisionsHashValueAttr;
 	@XmlAttribute(name = "revisionsSaltValue")
-	protected List<Byte>Attr RevisionsSaltValue;
+	protected List<Byte> RevisionsSaltValueAttr;
 	@XmlAttribute(name = "revisionsSpinCount")
-	protected IntegerAttr RevisionsSpinCount;
+	protected Integer RevisionsSpinCountAttr;
 	@XmlAttribute(name = "workbookAlgorithmName")
-	protected StringAttr WorkbookAlgorithmName;
+	protected String WorkbookAlgorithmNameAttr;
 	@XmlAttribute(name = "workbookHashValue")
-	protected List<Byte>Attr WorkbookHashValue;
+	protected List<Byte> WorkbookHashValueAttr;
 	@XmlAttribute(name = "workbookSaltValue")
-	protected List<Byte>Attr WorkbookSaltValue;
+	protected List<Byte> WorkbookSaltValueAttr;
 	@XmlAttribute(name = "workbookSpinCount")
-	protected IntegerAttr WorkbookSpinCount;
+	protected Integer WorkbookSpinCountAttr;
 }
 
 // CT_WebPublishing ...
 public class CT_WebPublishing {
 	@XmlAttribute(name = "css")
-	protected BooleanAttr Css;
+	protected Boolean CssAttr;
 	@XmlAttribute(name = "thicket")
-	protected BooleanAttr Thicket;
+	protected Boolean ThicketAttr;
 	@XmlAttribute(name = "longFileNames")
-	protected BooleanAttr LongFileNames;
+	protected Boolean LongFileNamesAttr;
 	@XmlAttribute(name = "vml")
-	protected BooleanAttr Vml;
+	protected Boolean VmlAttr;
 	@XmlAttribute(name = "allowPng")
-	protected BooleanAttr AllowPng;
+	protected Boolean AllowPngAttr;
 	@XmlAttribute(name = "targetScreenSize")
-	protected StringAttr TargetScreenSize;
+	protected String TargetScreenSizeAttr;
 	@XmlAttribute(name = "dpi")
-	protected IntegerAttr Dpi;
+	protected Integer DpiAttr;
 	@XmlAttribute(name = "characterSet")
-	protected StringAttr CharacterSet;
+	protected String CharacterSetAttr;
 }
 
 // ST_TargetScreenSize ...
@@ -6531,7 +6531,7 @@ public class ST_TargetScreenSize {
 // CT_FunctionGroups ...
 public class CT_FunctionGroups {
 	@XmlAttribute(name = "builtInGroupCount")
-	protected IntegerAttr BuiltInGroupCount;
+	protected Integer BuiltInGroupCountAttr;
 	@XmlElement(required = true, name = "functionGroup")
 	protected CT_FunctionGroup FunctionGroup;
 }
@@ -6539,13 +6539,13 @@ public class CT_FunctionGroups {
 // CT_FunctionGroup ...
 public class CT_FunctionGroup {
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 }
 
 // CT_WebPublishObjects ...
 public class CT_WebPublishObjects {
 	@XmlAttribute(name = "count")
-	protected IntegerAttr Count;
+	protected Integer CountAttr;
 	@XmlElement(required = true, name = "webPublishObject")
 	protected List<CT_WebPublishObject> WebPublishObject;
 }
@@ -6553,15 +6553,15 @@ public class CT_WebPublishObjects {
 // CT_WebPublishObject ...
 public class CT_WebPublishObject {
 	@XmlAttribute(name = "id", required = true)
-	protected IntegerAttr Id;
+	protected Integer IdAttr;
 	@XmlAttribute(name = "divId", required = true)
-	protected StringAttr DivId;
+	protected String DivIdAttr;
 	@XmlAttribute(name = "sourceObject")
-	protected StringAttr SourceObject;
+	protected String SourceObjectAttr;
 	@XmlAttribute(name = "destinationFile", required = true)
-	protected StringAttr DestinationFile;
+	protected String DestinationFileAttr;
 	@XmlAttribute(name = "title")
-	protected StringAttr Title;
+	protected String TitleAttr;
 	@XmlAttribute(name = "autoRepublish")
-	protected BooleanAttr AutoRepublish;
+	protected Boolean AutoRepublishAttr;
 }

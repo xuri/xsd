@@ -4,7 +4,6 @@ package schema
 
 import (
 	"encoding/xml"
-	"time"
 )
 
 // STTransitionSideDirectionType ...
@@ -781,7 +780,7 @@ type CmAuthorLst *CTCommentAuthorList
 type CTComment struct {
 	XMLName      xml.Name               `xml:"CT_Comment"`
 	AuthorIdAttr uint32                 `xml:"authorId,attr"`
-	DtAttr       time.Time              `xml:"dt,attr,omitempty"`
+	DtAttr       string                 `xml:"dt,attr,omitempty"`
 	IdxAttr      uint32                 `xml:"idx,attr"`
 	Pos          *CTPoint2D             `xml:"pos"`
 	Text         string                 `xml:"text"`
@@ -1424,8 +1423,8 @@ type Notes *CTNotesSlide
 type CTSlideSyncProperties struct {
 	XMLName                   xml.Name         `xml:"CT_SlideSyncProperties"`
 	ServerSldIdAttr           string           `xml:"serverSldId,attr"`
-	ServerSldModifiedTimeAttr time.Time        `xml:"serverSldModifiedTime,attr"`
-	ClientInsertedTimeAttr    time.Time        `xml:"clientInsertedTime,attr"`
+	ServerSldModifiedTimeAttr string           `xml:"serverSldModifiedTime,attr"`
+	ClientInsertedTimeAttr    string           `xml:"clientInsertedTime,attr"`
 	ExtLst                    *CTExtensionList `xml:"extLst"`
 }
 

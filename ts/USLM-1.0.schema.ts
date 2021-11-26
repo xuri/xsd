@@ -5,8 +5,8 @@
 //             to allow situations where the law becomes effective based on another
 //             time zone.
 export class DateSimpleType {
-	Date: string;
 	DateTime: string;
+	Date: string;
 }
 
 // OccurrenceSimpleType is The occurrence simple type specifies which occurrence is affected
@@ -14,8 +14,8 @@ export class DateSimpleType {
 //             integer or a value from the choice enumeration such as "all" for
 //             all occurrences or "last" for the last occurrence.
 export class OccurrenceSimpleType {
-	PositiveInteger: number;
 	ChoiceEnum: ChoiceEnum;
+	PositiveInteger: number;
 }
 
 // ShortStringSimpleType is A simple string with not more than 32 characters.
@@ -267,6 +267,7 @@ export class BaseType {
 	ClassificationGroup: ClassificationGroup;
 	AnnotationGroup: AnnotationGroup;
 	VersioningGroup: VersioningGroup;
+	Value: string;
 }
 
 // BaseBlockType is The base block type is a variant of the base type, but having a
@@ -295,22 +296,22 @@ export class MarkerType {
 
 // InlineType is The inline type is a extension of the base type to text content or
 //             other inline elements.
-export class InlineType {
+export class InlineType extends BaseContentType  {
 	Marker: MarkerType;
 	Inline: InlineType;
 }
 
 // BlockType is The block type is a extension of the base type to content
 //             consisting of only elements.
-export class BlockType {
+export class BlockType extends BaseBlockType  {
 }
 
 // TextType is The text type is a broad base type allowing any content.
-export class TextType {
+export class TextType extends BaseContentType  {
 }
 
 // ContentType is The content type is a broad base type allowing any content.
-export class ContentType {
+export class ContentType extends BaseContentType  {
 	OrientationAttr: string | null;
 }
 
@@ -341,7 +342,7 @@ export type Content = ContentType;
 //                         explanatory memorandums/notes. These appendices can
 //                         either be inline documents or the can be external
 //                         referenced documents.
-export class LawDocType {
+export class LawDocType extends BaseBlockType  {
 	Meta: MetaType;
 	Main: MainType;
 	Block: BlockType;
@@ -350,7 +351,7 @@ export class LawDocType {
 
 // GenericDocType is In addition to the content part of the document, a document
 //                         may have one or more appendices.
-export class GenericDocType {
+export class GenericDocType extends BaseBlockType  {
 	Meta: MetaType;
 	Content: ContentType;
 	Appendix: Array<AppendixType>;
@@ -360,7 +361,7 @@ export class GenericDocType {
 //                         be used to represent something like a series of events,
 //                         a person, or another other object related to the
 //                         document.
-export class MetaType {
+export class MetaType extends BaseBlockType  {
 	Property: PropertyType;
 	Set: SetType;
 }
@@ -374,7 +375,7 @@ export class MetaType {
 //                   where the dagger is the indicator. An endnote or footnote
 //                   reference should always use the @idref attribute to point to
 //                   an endnote or a footnote within the document.
-export class PropertyType {
+export class PropertyType extends InlineType  {
 	DateGroup: DateGroup;
 	ValueGroup: ValueGroup;
 	ReferenceGroup: ReferenceGroup;
@@ -382,7 +383,7 @@ export class PropertyType {
 }
 
 // SetType is A set can contain 0 or more sets.
-export class SetType {
+export class SetType extends BaseBlockType  {
 	TypeAttr: string | null;
 	Property: PropertyType;
 	Set: SetType;
@@ -392,7 +393,7 @@ export class SetType {
 //                         a tabular fashion by surrounding the items in a layout.
 //                         When a layout is specified, use <column> elements
 //                         within each <tocItem> to indicate specific columns.
-export class TocType {
+export class TocType extends BaseBlockType  {
 	GenerateAttr: boolean | null;
 	HeadingStructure: HeadingStructure;
 	TocItem: TocItemType;
@@ -401,7 +402,7 @@ export class TocType {
 
 // TocItemType is Use the description group to record the number and title in the
 //                   table of contents as metadata.
-export class TocItemType {
+export class TocItemType extends BaseBlockType  {
 	DescriptionGroup: DescriptionGroup;
 	HeadingStructure: HeadingStructure;
 	TocItem: Array<TocItemType>;
@@ -424,7 +425,7 @@ export class MainType {
 // StatementType is The attributes of the description group can be used to
 //                   record a number and title for a statement for use when
 //                   generating a table of contents.
-export class StatementType {
+export class StatementType extends BaseContentType  {
 	DescriptionGroup: DescriptionGroup;
 	Marker: MarkerType;
 	Inline: InlineType;
@@ -437,7 +438,7 @@ export class StatementType {
 // PreambleType is Attributes from the description group may be used to
 //                      attach information to the preamble for use in generating
 //                      a table of contents.
-export class PreambleType {
+export class PreambleType extends BaseBlockType  {
 	DescriptionGroup: DescriptionGroup;
 	HeadingStructure: HeadingStructure;
 	RecitalStructure: Array<RecitalStructure>;
@@ -446,7 +447,7 @@ export class PreambleType {
 
 // LevelType is Use the description group to record information in the
 //                      attributes to be used when generating the table of contents.
-export class LevelType {
+export class LevelType extends BaseBlockType  {
 	DescriptionGroup: DescriptionGroup;
 	NumStructure: NumStructure;
 	HeadingStructure: HeadingStructure;
@@ -458,20 +459,20 @@ export class LevelType {
 //                      the <num> content. When the text content represents a
 //                      range of values, use the @beginValue and @endValue
 //                      attributes to record the range.
-export class NumType {
+export class NumType extends InlineType  {
 	ValueGroup: ValueGroup;
 }
 
 // HeadingType is The heading type is used to define heading and subheadings for
 //             levels and other structured items. Often a heading will follow
 //             a number.
-export class HeadingType {
+export class HeadingType extends ContentType  {
 }
 
 // InstructionType is A quoted structure may be associated with an
 //                            action (by position) as part of the processing
 //                            action.
-export class InstructionType {
+export class InstructionType extends BaseContentType  {
 	Ref: RefType;
 	Inline: InlineType;
 	Marker: MarkerType;
@@ -482,7 +483,7 @@ export class InstructionType {
 }
 
 // ActionType is Use the @action attribute to describe the action being taken.
-export class ActionType {
+export class ActionType extends InlineType  {
 	ReferenceGroup: ReferenceGroup;
 	AmendingGroup: AmendingGroup;
 	ActionGroup: ActionGroup;
@@ -490,7 +491,7 @@ export class ActionType {
 
 // NotesType is You can use the @type attribute to position the notes
 //                      and the @topic attribute to categorize the notes.
-export class NotesType {
+export class NotesType extends BaseBlockType  {
 	NoteGroup: NoteGroup;
 	Heading: HeadingType;
 	Subheading: Array<HeadingType>;
@@ -500,7 +501,7 @@ export class NotesType {
 
 // NoteType is You can use the @date to associate dates to your notes.
 //                      This can be used to generate alerts.
-export class NoteType {
+export class NoteType extends ContentType  {
 	NoteGroup: NoteGroup;
 	DateGroup: DateGroup;
 }
@@ -508,7 +509,7 @@ export class NoteType {
 // AppendixType is If an <appendix> is to be included by reference, use the
 //                      @src attribute with a normal URL to point to the document
 //                      to be included.
-export class AppendixType {
+export class AppendixType extends BaseBlockType  {
 	DescriptionGroup: DescriptionGroup;
 	LinkGroup: LinkGroup;
 	OrientationAttr: string | null;
@@ -561,7 +562,7 @@ export class SignatureType {
 // 
 //                      The attributes in the amending group should only be used
 //                      for references or actions within an amending instruction.
-export class RefType {
+export class RefType extends PropertyType  {
 	AmendingGroup: AmendingGroup;
 }
 
@@ -580,7 +581,7 @@ export class DateType {
 // 
 //             Use the @identifier attribute to establish the referencing context
 //             of the quoted text.
-export class QuotedTextType {
+export class QuotedTextType extends InlineType  {
 	OriginAttr: string | null;
 }
 
@@ -591,7 +592,7 @@ export class QuotedTextType {
 // 
 //             Use the @identifier attribute to establish the referencing context
 //             of the quoted structure
-export class QuotedContentType {
+export class QuotedContentType extends ContentType  {
 	OriginAttr: string | null;
 }
 
@@ -841,7 +842,7 @@ export type QuotedContent = QuotedContentType;
 //                      and contents. All elements, aside from <column> elements,
 //                      are treated as rows when found directly within a layout
 //                      structure.
-export class LayoutType {
+export class LayoutType extends BaseBlockType  {
 	OrientationAttr: string | null;
 	NoteStructure: NoteStructure;
 	Header: RowType;
@@ -852,28 +853,28 @@ export class LayoutType {
 }
 
 // RowType is A row contains one or more column cells.
-export class RowType {
+export class RowType extends BaseBlockType  {
 	Column: Array<ColumnType>;
 }
 
 // ColumnType is Use the elements of the cell group to specify
 //                      the row and column spans.
-export class ColumnType {
+export class ColumnType extends ContentType  {
 	CellGroup: CellGroup;
 }
 
 // PType is A "P" type is a simple unnumbered paragraph. As a <content>
 //             element, it can contain a wide range of text and elements.
-export class PType {
+export class PType extends ContentType  {
 }
 
 // BrType is A break type is simple marker element denoting a line break.
-export class BrType {
+export class BrType extends MarkerType  {
 }
 
 // ImgType is An image type is a simple marker element denoting where a graphic
 //             image is to be inserted.
-export class ImgType {
+export class ImgType extends MarkerType  {
 	LinkGroup: LinkGroup;
 	OrientationAttr: string | null;
 }

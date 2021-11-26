@@ -4,7 +4,6 @@ package schema
 
 import (
 	"encoding/xml"
-	"time"
 )
 
 // Document is Describes the overall document model.
@@ -39,7 +38,7 @@ type DocumentCover struct {
 	CoverSubTitle string            `xml:"coverSubTitle"`
 	CoverVersion  string            `xml:"coverVersion"`
 	CoverType     string            `xml:"coverType"`
-	CoverDate     time.Time         `xml:"coverDate"`
+	CoverDate     string            `xml:"coverDate"`
 	Author        []*DocumentAuthor `xml:"author"`
 	ProjectName   string            `xml:"projectName"`
 	ProjectLogo   string            `xml:"projectLogo"`
@@ -92,9 +91,9 @@ type DocumentMeta struct {
 	InitialCreator     string                      `xml:"initialCreator"`
 	Creator            string                      `xml:"creator"`
 	PrintedBy          string                      `xml:"printedBy"`
-	CreationDate       time.Time                   `xml:"creationDate"`
-	Date               time.Time                   `xml:"date"`
-	PrintDate          time.Time                   `xml:"printDate"`
+	CreationDate       string                      `xml:"creationDate"`
+	Date               string                      `xml:"date"`
+	PrintDate          string                      `xml:"printDate"`
 	Template           *DocumentTemplate           `xml:"template"`
 	HyperlinkBehaviour *DocumentHyperlinkBehaviour `xml:"hyperlinkBehaviour"`
 	Language           string                      `xml:"language"`
@@ -107,9 +106,9 @@ type DocumentMeta struct {
 
 // DocumentTemplate is A template that was used to create the document.
 type DocumentTemplate struct {
-	HrefAttr  string    `xml:"href,attr,omitempty"`
-	TitleAttr string    `xml:"title,attr,omitempty"`
-	DateAttr  time.Time `xml:"date,attr,omitempty"`
+	HrefAttr  string `xml:"href,attr,omitempty"`
+	TitleAttr string `xml:"title,attr,omitempty"`
+	DateAttr  string `xml:"date,attr,omitempty"`
 }
 
 // DocumentStatistic is Statistical attributes of the document.

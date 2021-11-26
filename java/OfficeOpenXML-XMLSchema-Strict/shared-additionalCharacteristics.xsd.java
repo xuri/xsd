@@ -21,13 +21,13 @@ public class CT_AdditionalCharacteristics {
 // CT_Characteristic ...
 public class CT_Characteristic {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "relation", required = true)
-	protected StringAttr Relation;
+	protected String RelationAttr;
 	@XmlAttribute(name = "val", required = true)
-	protected StringAttr Val;
+	protected String ValAttr;
 	@XmlAttribute(name = "vocabulary")
-	protected QNameAttr Vocabulary;
+	protected QName VocabularyAttr;
 }
 
 // ST_Relation ...

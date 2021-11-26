@@ -4,7 +4,6 @@ package schema
 
 import (
 	"encoding/xml"
-	"time"
 )
 
 // Properties ...
@@ -45,8 +44,8 @@ type CTProperty struct {
 	VtLpstr        string     `xml:"vt:lpstr"`
 	VtLpwstr       string     `xml:"vt:lpwstr"`
 	VtBstr         string     `xml:"vt:bstr"`
-	VtDate         time.Time  `xml:"vt:date"`
-	VtFiletime     time.Time  `xml:"vt:filetime"`
+	VtDate         string     `xml:"vt:date"`
+	VtFiletime     string     `xml:"vt:filetime"`
 	VtBool         bool       `xml:"vt:bool"`
 	VtCy           string     `xml:"vt:cy"`
 	VtError        string     `xml:"vt:error"`

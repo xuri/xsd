@@ -15,13 +15,13 @@ import javax.xml.bind.annotation.XmlValue;
 // CT_Schema ...
 public class CT_Schema {
 	@XmlAttribute(name = "uri")
-	protected StringAttr Uri;
+	protected String UriAttr;
 	@XmlAttribute(name = "manifestLocation")
-	protected StringAttr ManifestLocation;
+	protected String ManifestLocationAttr;
 	@XmlAttribute(name = "schemaLocation")
-	protected StringAttr SchemaLocation;
+	protected String SchemaLocationAttr;
 	@XmlAttribute(name = "schemaLanguage")
-	protected StringAttr SchemaLanguage;
+	protected String SchemaLanguageAttr;
 }
 
 // CT_SchemaLibrary ...

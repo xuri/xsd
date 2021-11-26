@@ -51,9 +51,9 @@ public class CT_Null {
 // CT_Vector ...
 public class CT_Vector {
 	@XmlAttribute(name = "baseType", required = true)
-	protected StringAttr BaseType;
+	protected String BaseTypeAttr;
 	@XmlAttribute(name = "size", required = true)
-	protected IntegerAttr Size;
+	protected Integer SizeAttr;
 	@XmlElement(required = true, name = "variant")
 	protected CT_Variant Variant;
 	@XmlElement(required = true, name = "i1")
@@ -83,9 +83,9 @@ public class CT_Vector {
 	@XmlElement(required = true, name = "bstr")
 	protected String Bstr;
 	@XmlElement(required = true, name = "date")
-	protected Byte Date;
+	protected String Date;
 	@XmlElement(required = true, name = "filetime")
-	protected Byte Filetime;
+	protected String Filetime;
 	@XmlElement(required = true, name = "bool")
 	protected Boolean Bool;
 	@XmlElement(required = true, name = "cy")
@@ -99,11 +99,11 @@ public class CT_Vector {
 // CT_Array ...
 public class CT_Array {
 	@XmlAttribute(name = "lBounds", required = true)
-	protected IntegerAttr LBounds;
+	protected Integer LBoundsAttr;
 	@XmlAttribute(name = "uBounds", required = true)
-	protected IntegerAttr UBounds;
+	protected Integer UBoundsAttr;
 	@XmlAttribute(name = "baseType", required = true)
-	protected StringAttr BaseType;
+	protected String BaseTypeAttr;
 	@XmlElement(required = true, name = "variant")
 	protected CT_Variant Variant;
 	@XmlElement(required = true, name = "i1")
@@ -131,7 +131,7 @@ public class CT_Array {
 	@XmlElement(required = true, name = "bstr")
 	protected String Bstr;
 	@XmlElement(required = true, name = "date")
-	protected Byte Date;
+	protected String Date;
 	@XmlElement(required = true, name = "bool")
 	protected Boolean Bool;
 	@XmlElement(required = true, name = "error")
@@ -189,9 +189,9 @@ public class CT_Variant {
 	@XmlElement(required = true, name = "bstr")
 	protected String Bstr;
 	@XmlElement(required = true, name = "date")
-	protected Byte Date;
+	protected String Date;
 	@XmlElement(required = true, name = "filetime")
-	protected Byte Filetime;
+	protected String Filetime;
 	@XmlElement(required = true, name = "bool")
 	protected Boolean Bool;
 	@XmlElement(required = true, name = "cy")
@@ -215,7 +215,7 @@ public class CT_Variant {
 // CT_Vstream ...
 public class CT_Vstream {
 	@XmlAttribute(name = "version")
-	protected StringAttr Version;
+	protected String VersionAttr;
 	@XmlValue
 	protected List<Byte> value;
 }
@@ -361,13 +361,13 @@ public class Bstr {
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlElement(required = true, name = "date")
 public class Date {
-	protected Byte Date;
+	protected String Date;
 }
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlElement(required = true, name = "filetime")
 public class Filetime {
-	protected Byte Filetime;
+	protected String Filetime;
 }
 
 @XmlAccessorType(XmlAccessType.FIELD)

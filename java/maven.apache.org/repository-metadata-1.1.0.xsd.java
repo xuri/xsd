@@ -27,7 +27,7 @@ public class Plugins {
 // Metadata is Versioning information for the artifact.
 public class Metadata {
 	@XmlAttribute(name = "modelVersion")
-	protected StringAttr ModelVersion;
+	protected String ModelVersionAttr;
 	@XmlElement(required = true, name = "groupId")
 	protected String GroupId;
 	@XmlElement(required = true, name = "artifactId")

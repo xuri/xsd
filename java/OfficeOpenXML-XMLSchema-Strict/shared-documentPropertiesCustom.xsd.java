@@ -27,13 +27,13 @@ public class CT_Properties {
 // CT_Property ...
 public class CT_Property {
 	@XmlAttribute(name = "fmtid", required = true)
-	protected StringAttr Fmtid;
+	protected String FmtidAttr;
 	@XmlAttribute(name = "pid", required = true)
-	protected IntegerAttr Pid;
+	protected Integer PidAttr;
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "linkTarget")
-	protected StringAttr LinkTarget;
+	protected String LinkTargetAttr;
 	@XmlElement(required = true, name = "vt:vector")
 	protected CT_Vector VtVector;
 	@XmlElement(required = true, name = "vt:array")
@@ -79,9 +79,9 @@ public class CT_Property {
 	@XmlElement(required = true, name = "vt:bstr")
 	protected String VtBstr;
 	@XmlElement(required = true, name = "vt:date")
-	protected Byte VtDate;
+	protected String VtDate;
 	@XmlElement(required = true, name = "vt:filetime")
-	protected Byte VtFiletime;
+	protected String VtFiletime;
 	@XmlElement(required = true, name = "vt:bool")
 	protected Boolean VtBool;
 	@XmlElement(required = true, name = "vt:cy")

@@ -2,10 +2,6 @@
 
 package schema
 
-import (
-	"time"
-)
-
 // Software ...
 type Software struct {
 	SoftwareProvider string `xml:"SoftwareProvider"`
@@ -15,7 +11,7 @@ type Software struct {
 // TransmissionData ...
 type TransmissionData struct {
 	DocumentID       string      `xml:"DocumentID"`
-	CreatedDateTime  time.Time   `xml:"CreatedDateTime"`
+	CreatedDateTime  string      `xml:"CreatedDateTime"`
 	Software         interface{} `xml:"Software"`
 	FullResponseCode string      `xml:"FullResponseCode"`
 }
@@ -23,5 +19,5 @@ type TransmissionData struct {
 // CommonRecordType ...
 type CommonRecordType struct {
 	TransmissionData interface{} `xml:"TransmissionData"`
-	Receipt          time.Time   `xml:"Receipt"`
+	Receipt          string      `xml:"Receipt"`
 }

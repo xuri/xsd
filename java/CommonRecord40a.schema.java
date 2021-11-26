@@ -10,6 +10,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlValue;
 
 // Software ...
 public class Software {
@@ -24,7 +25,7 @@ public class TransmissionData {
 	@XmlElement(required = true, name = "DocumentID")
 	protected void DocumentID;
 	@XmlElement(required = true, name = "CreatedDateTime")
-	protected Byte CreatedDateTime;
+	protected String CreatedDateTime;
 	@XmlElement(required = true, name = "Software")
 	protected void Software;
 	@XmlElement(required = true, name = "FullResponseCode")
@@ -36,5 +37,5 @@ public class CommonRecordType {
 	@XmlElement(required = true, name = "TransmissionData")
 	protected void TransmissionData;
 	@XmlElement(required = true, name = "Receipt")
-	protected Byte Receipt;
+	protected String Receipt;
 }

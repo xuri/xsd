@@ -15,7 +15,7 @@ import javax.xml.bind.annotation.XmlValue;
 // CT_DatastoreSchemaRef ...
 public class CT_DatastoreSchemaRef {
 	@XmlAttribute(name = "uri", required = true)
-	protected StringAttr Uri;
+	protected String UriAttr;
 }
 
 // CT_DatastoreSchemaRefs ...
@@ -27,7 +27,7 @@ public class CT_DatastoreSchemaRefs {
 // CT_DatastoreItem ...
 public class CT_DatastoreItem {
 	@XmlAttribute(name = "itemID", required = true)
-	protected StringAttr ItemID;
+	protected String ItemIDAttr;
 	@XmlElement(required = true, name = "schemaRefs")
 	protected CT_DatastoreSchemaRefs SchemaRefs;
 }

@@ -10,6 +10,7 @@ import javax.xml.bind.annotation.XmlAttribute;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
+import javax.xml.bind.annotation.XmlValue;
 
 // DateSimpleType is The date simple type unifies both date and time formats and allows
 //             a date to be specified as either a day or a time in a day. This is
@@ -17,9 +18,9 @@ import javax.xml.bind.annotation.XmlType;
 //             time zone.
 public class DateSimpleType {
 	@XmlElement(required = true)
-	protected Byte Date;
+	protected String DateTime;
 	@XmlElement(required = true)
-	protected Byte DateTime;
+	protected String Date;
 }
 
 // OccurrenceSimpleType is The occurrence simple type specifies which occurrence is affected
@@ -28,9 +29,9 @@ public class DateSimpleType {
 //             all occurrences or "last" for the last occurrence.
 public class OccurrenceSimpleType {
 	@XmlElement(required = true)
-	protected Integer PositiveInteger;
-	@XmlElement(required = true)
 	protected ChoiceEnum ChoiceEnum;
+	@XmlElement(required = true)
+	protected Integer PositiveInteger;
 }
 
 // ShortStringSimpleType is A simple string with not more than 32 characters.
@@ -309,6 +310,8 @@ public class BaseType {
 	protected AnnotationGroup AnnotationGroup;
 	@XmlElement(required = true)
 	protected VersioningGroup VersioningGroup;
+	@XmlValue
+	protected String value;
 }
 
 // BaseBlockType is The base block type is a variant of the base type, but having a
@@ -345,7 +348,7 @@ public class MarkerType {
 
 // InlineType is The inline type is a extension of the base type to text content or
 //             other inline elements.
-public class InlineType {
+public class InlineType extends BaseContentType  {
 	@XmlElement(required = true, name = "marker")
 	protected MarkerType Marker;
 	@XmlElement(required = true, name = "inline")
@@ -354,17 +357,17 @@ public class InlineType {
 
 // BlockType is The block type is a extension of the base type to content
 //             consisting of only elements.
-public class BlockType {
+public class BlockType extends BaseBlockType  {
 }
 
 // TextType is The text type is a broad base type allowing any content.
-public class TextType {
+public class TextType extends BaseContentType  {
 }
 
 // ContentType is The content type is a broad base type allowing any content.
-public class ContentType {
+public class ContentType extends BaseContentType  {
 	@XmlAttribute(name = "orientation")
-	protected StringAttr Orientation;
+	protected String OrientationAttr;
 }
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -396,7 +399,7 @@ public class Content {
 //                         explanatory memorandums/notes. These appendices can
 //                         either be inline documents or the can be external
 //                         referenced documents.
-public class LawDocType {
+public class LawDocType extends BaseBlockType  {
 	@XmlElement(required = true, name = "meta")
 	protected MetaType Meta;
 	@XmlElement(required = true, name = "main")
@@ -409,7 +412,7 @@ public class LawDocType {
 
 // GenericDocType is In addition to the content part of the document, a document
 //                         may have one or more appendices.
-public class GenericDocType {
+public class GenericDocType extends BaseBlockType  {
 	@XmlElement(required = true, name = "meta")
 	protected MetaType Meta;
 	@XmlElement(required = true, name = "content")
@@ -422,7 +425,7 @@ public class GenericDocType {
 //                         be used to represent something like a series of events,
 //                         a person, or another other object related to the
 //                         document.
-public class MetaType {
+public class MetaType extends BaseBlockType  {
 	@XmlElement(required = true, name = "property")
 	protected PropertyType Property;
 	@XmlElement(required = true, name = "set")
@@ -438,7 +441,7 @@ public class MetaType {
 //                   where the dagger is the indicator. An endnote or footnote
 //                   reference should always use the @idref attribute to point to
 //                   an endnote or a footnote within the document.
-public class PropertyType {
+public class PropertyType extends InlineType  {
 	@XmlElement(required = true)
 	protected DateGroup DateGroup;
 	@XmlElement(required = true)
@@ -446,13 +449,13 @@ public class PropertyType {
 	@XmlElement(required = true)
 	protected ReferenceGroup ReferenceGroup;
 	@XmlAttribute(name = "type")
-	protected StringAttr Type;
+	protected String TypeAttr;
 }
 
 // SetType is A set can contain 0 or more sets.
-public class SetType {
+public class SetType extends BaseBlockType  {
 	@XmlAttribute(name = "type")
-	protected StringAttr Type;
+	protected String TypeAttr;
 	@XmlElement(required = true, name = "property")
 	protected PropertyType Property;
 	@XmlElement(required = true, name = "set")
@@ -463,9 +466,9 @@ public class SetType {
 //                         a tabular fashion by surrounding the items in a layout.
 //                         When a layout is specified, use <column> elements
 //                         within each <tocItem> to indicate specific columns.
-public class TocType {
+public class TocType extends BaseBlockType  {
 	@XmlAttribute(name = "generate")
-	protected BooleanAttr Generate;
+	protected Boolean GenerateAttr;
 	protected HeadingStructure HeadingStructure;
 	@XmlElement(required = true, name = "tocItem")
 	protected TocItemType TocItem;
@@ -475,7 +478,7 @@ public class TocType {
 
 // TocItemType is Use the description group to record the number and title in the
 //                   table of contents as metadata.
-public class TocItemType {
+public class TocItemType extends BaseBlockType  {
 	@XmlElement(required = true)
 	protected DescriptionGroup DescriptionGroup;
 	protected HeadingStructure HeadingStructure;
@@ -505,7 +508,7 @@ public class MainType {
 // StatementType is The attributes of the description group can be used to
 //                   record a number and title for a statement for use when
 //                   generating a table of contents.
-public class StatementType {
+public class StatementType extends BaseContentType  {
 	@XmlElement(required = true)
 	protected DescriptionGroup DescriptionGroup;
 	@XmlElement(required = true, name = "marker")
@@ -525,7 +528,7 @@ public class StatementType {
 // PreambleType is Attributes from the description group may be used to
 //                      attach information to the preamble for use in generating
 //                      a table of contents.
-public class PreambleType {
+public class PreambleType extends BaseBlockType  {
 	@XmlElement(required = true)
 	protected DescriptionGroup DescriptionGroup;
 	protected HeadingStructure HeadingStructure;
@@ -536,7 +539,7 @@ public class PreambleType {
 
 // LevelType is Use the description group to record information in the
 //                      attributes to be used when generating the table of contents.
-public class LevelType {
+public class LevelType extends BaseBlockType  {
 	@XmlElement(required = true)
 	protected DescriptionGroup DescriptionGroup;
 	protected NumStructure NumStructure;
@@ -549,7 +552,7 @@ public class LevelType {
 //                      the <num> content. When the text content represents a
 //                      range of values, use the @beginValue and @endValue
 //                      attributes to record the range.
-public class NumType {
+public class NumType extends InlineType  {
 	@XmlElement(required = true)
 	protected ValueGroup ValueGroup;
 }
@@ -557,13 +560,13 @@ public class NumType {
 // HeadingType is The heading type is used to define heading and subheadings for
 //             levels and other structured items. Often a heading will follow
 //             a number.
-public class HeadingType {
+public class HeadingType extends ContentType  {
 }
 
 // InstructionType is A quoted structure may be associated with an
 //                            action (by position) as part of the processing
 //                            action.
-public class InstructionType {
+public class InstructionType extends BaseContentType  {
 	@XmlElement(required = true, name = "ref")
 	protected RefType Ref;
 	@XmlElement(required = true, name = "inline")
@@ -581,7 +584,7 @@ public class InstructionType {
 }
 
 // ActionType is Use the @action attribute to describe the action being taken.
-public class ActionType {
+public class ActionType extends InlineType  {
 	@XmlElement(required = true)
 	protected ReferenceGroup ReferenceGroup;
 	@XmlElement(required = true)
@@ -592,7 +595,7 @@ public class ActionType {
 
 // NotesType is You can use the @type attribute to position the notes
 //                      and the @topic attribute to categorize the notes.
-public class NotesType {
+public class NotesType extends BaseBlockType  {
 	@XmlElement(required = true)
 	protected NoteGroup NoteGroup;
 	@XmlElement(required = true, name = "heading")
@@ -607,7 +610,7 @@ public class NotesType {
 
 // NoteType is You can use the @date to associate dates to your notes.
 //                      This can be used to generate alerts.
-public class NoteType {
+public class NoteType extends ContentType  {
 	@XmlElement(required = true)
 	protected NoteGroup NoteGroup;
 	@XmlElement(required = true)
@@ -617,13 +620,13 @@ public class NoteType {
 // AppendixType is If an <appendix> is to be included by reference, use the
 //                      @src attribute with a normal URL to point to the document
 //                      to be included.
-public class AppendixType {
+public class AppendixType extends BaseBlockType  {
 	@XmlElement(required = true)
 	protected DescriptionGroup DescriptionGroup;
 	@XmlElement(required = true)
 	protected LinkGroup LinkGroup;
 	@XmlAttribute(name = "orientation")
-	protected StringAttr Orientation;
+	protected String OrientationAttr;
 	protected NumStructure NumStructure;
 	protected HeadingStructure HeadingStructure;
 	protected TocStructure TocStructure;
@@ -646,7 +649,7 @@ public class SignaturesType {
 	@XmlElement(required = true, name = "layout")
 	protected LayoutType Layout;
 	@XmlElement(required = true, name = "date")
-	protected Byte Date;
+	protected String Date;
 }
 
 // Name ...
@@ -674,7 +677,7 @@ public class SignatureType {
 	@XmlElement(required = true, name = "affiliation")
 	protected Affiliation Affiliation;
 	@XmlElement(required = true, name = "date")
-	protected Byte Date;
+	protected String Date;
 }
 
 // RefType is Use the @pos and other attributes to describe
@@ -682,7 +685,7 @@ public class SignatureType {
 // 
 //                      The attributes in the amending group should only be used
 //                      for references or actions within an amending instruction.
-public class RefType {
+public class RefType extends PropertyType  {
 	@XmlElement(required = true)
 	protected AmendingGroup AmendingGroup;
 }
@@ -703,9 +706,9 @@ public class DateType {
 // 
 //             Use the @identifier attribute to establish the referencing context
 //             of the quoted text.
-public class QuotedTextType {
+public class QuotedTextType extends InlineType  {
 	@XmlAttribute(name = "origin")
-	protected QNameAttr Origin;
+	protected QName OriginAttr;
 }
 
 // QuotedContentType is A quotedContentType is used for an extraction of potentially structured
@@ -715,9 +718,9 @@ public class QuotedTextType {
 // 
 //             Use the @identifier attribute to establish the referencing context
 //             of the quoted structure
-public class QuotedContentType {
+public class QuotedContentType extends ContentType  {
 	@XmlAttribute(name = "origin")
-	protected QNameAttr Origin;
+	protected QName OriginAttr;
 }
 
 // NoteStructure ...
@@ -970,9 +973,9 @@ public class QuotedContent {
 //                      and contents. All elements, aside from <column> elements,
 //                      are treated as rows when found directly within a layout
 //                      structure.
-public class LayoutType {
+public class LayoutType extends BaseBlockType  {
 	@XmlAttribute(name = "orientation")
-	protected StringAttr Orientation;
+	protected String OrientationAttr;
 	protected NoteStructure NoteStructure;
 	@XmlElement(required = true, name = "header")
 	protected RowType Header;
@@ -987,34 +990,34 @@ public class LayoutType {
 }
 
 // RowType is A row contains one or more column cells.
-public class RowType {
+public class RowType extends BaseBlockType  {
 	@XmlElement(required = true, name = "column")
 	protected List<ColumnType> Column;
 }
 
 // ColumnType is Use the elements of the cell group to specify
 //                      the row and column spans.
-public class ColumnType {
+public class ColumnType extends ContentType  {
 	@XmlElement(required = true)
 	protected CellGroup CellGroup;
 }
 
 // PType is A "P" type is a simple unnumbered paragraph. As a <content>
 //             element, it can contain a wide range of text and elements.
-public class PType {
+public class PType extends ContentType  {
 }
 
 // BrType is A break type is simple marker element denoting a line break.
-public class BrType {
+public class BrType extends MarkerType  {
 }
 
 // ImgType is An image type is a simple marker element denoting where a graphic
 //             image is to be inserted.
-public class ImgType {
+public class ImgType extends MarkerType  {
 	@XmlElement(required = true)
 	protected LinkGroup LinkGroup;
 	@XmlAttribute(name = "orientation")
-	protected StringAttr Orientation;
+	protected String OrientationAttr;
 }
 
 @XmlAccessorType(XmlAccessType.FIELD)

@@ -4,7 +4,6 @@ package schema
 
 import (
 	"encoding/xml"
-	"time"
 )
 
 // Library ...
@@ -15,12 +14,12 @@ type Library struct {
 
 // Person ...
 type Person struct {
-	XMLName       xml.Name  `xml:"person"`
-	IdAttr        string    `xml:"id,attr"`
-	Name          string    `xml:"name"`
-	Born          time.Time `xml:"born"`
-	Dead          time.Time `xml:"dead"`
-	Qualification string    `xml:"qualification"`
+	XMLName       xml.Name `xml:"person"`
+	IdAttr        string   `xml:"id,attr"`
+	Name          string   `xml:"name"`
+	Born          string   `xml:"born"`
+	Dead          string   `xml:"dead"`
+	Qualification string   `xml:"qualification"`
 }
 
 // Authors ...

@@ -31,7 +31,7 @@ public class Custom {
 // DecorationModel is Modify the version published display properties.
 public class DecorationModel {
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlElement(required = true, name = "bannerLeft")
 	protected Banner BannerLeft;
 	@XmlElement(required = true, name = "bannerRight")
@@ -59,7 +59,7 @@ public class DecorationModel {
 // Version is Modify display properties for version published.
 public class Version {
 	@XmlAttribute(name = "position")
-	protected StringAttr Position;
+	protected String PositionAttr;
 }
 
 // Banner is The title for the banner image.
@@ -119,51 +119,51 @@ public class Body {
 // LinkItem is A link in the navigation.
 public class LinkItem {
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "href")
-	protected StringAttr Href;
+	protected String HrefAttr;
 	@XmlAttribute(name = "img")
-	protected StringAttr Img;
+	protected String ImgAttr;
 	@XmlAttribute(name = "position")
-	protected StringAttr Position;
+	protected String PositionAttr;
 	@XmlAttribute(name = "alt")
-	protected StringAttr Alt;
+	protected String AltAttr;
 	@XmlAttribute(name = "border")
-	protected StringAttr Border;
+	protected String BorderAttr;
 	@XmlAttribute(name = "width")
-	protected StringAttr Width;
+	protected String WidthAttr;
 	@XmlAttribute(name = "height")
-	protected StringAttr Height;
+	protected String HeightAttr;
 	@XmlAttribute(name = "target")
-	protected StringAttr Target;
+	protected String TargetAttr;
 	@XmlAttribute(name = "title")
-	protected StringAttr Title;
+	protected String TitleAttr;
 }
 
 // Menu is A list of menu item.
 public class Menu {
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "inherit")
-	protected StringAttr Inherit;
+	protected String InheritAttr;
 	@XmlAttribute(name = "inheritAsRef")
-	protected BooleanAttr InheritAsRef;
+	protected Boolean InheritAsRefAttr;
 	@XmlAttribute(name = "ref")
-	protected StringAttr Ref;
+	protected String RefAttr;
 	@XmlAttribute(name = "img")
-	protected StringAttr Img;
+	protected String ImgAttr;
 	@XmlAttribute(name = "alt")
-	protected StringAttr Alt;
+	protected String AltAttr;
 	@XmlAttribute(name = "position")
-	protected StringAttr Position;
+	protected String PositionAttr;
 	@XmlAttribute(name = "border")
-	protected StringAttr Border;
+	protected String BorderAttr;
 	@XmlAttribute(name = "width")
-	protected StringAttr Width;
+	protected String WidthAttr;
 	@XmlAttribute(name = "height")
-	protected StringAttr Height;
+	protected String HeightAttr;
 	@XmlAttribute(name = "title")
-	protected StringAttr Title;
+	protected String TitleAttr;
 	@XmlElement(required = true, name = "item")
 	protected List<MenuItem> Item;
 }
@@ -171,29 +171,29 @@ public class Menu {
 // MenuItem is A list of menu item.
 public class MenuItem {
 	@XmlAttribute(name = "collapse")
-	protected BooleanAttr Collapse;
+	protected Boolean CollapseAttr;
 	@XmlAttribute(name = "ref")
-	protected StringAttr Ref;
+	protected String RefAttr;
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "href")
-	protected StringAttr Href;
+	protected String HrefAttr;
 	@XmlAttribute(name = "img")
-	protected StringAttr Img;
+	protected String ImgAttr;
 	@XmlAttribute(name = "position")
-	protected StringAttr Position;
+	protected String PositionAttr;
 	@XmlAttribute(name = "alt")
-	protected StringAttr Alt;
+	protected String AltAttr;
 	@XmlAttribute(name = "border")
-	protected StringAttr Border;
+	protected String BorderAttr;
 	@XmlAttribute(name = "width")
-	protected StringAttr Width;
+	protected String WidthAttr;
 	@XmlAttribute(name = "height")
-	protected StringAttr Height;
+	protected String HeightAttr;
 	@XmlAttribute(name = "target")
-	protected StringAttr Target;
+	protected String TargetAttr;
 	@XmlAttribute(name = "title")
-	protected StringAttr Title;
+	protected String TitleAttr;
 	@XmlElement(required = true, name = "description")
 	protected String Description;
 	@XmlElement(required = true, name = "item")
@@ -213,31 +213,31 @@ public class Skin {
 // Logo is Power by logo on the navigation.
 public class Logo {
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "href")
-	protected StringAttr Href;
+	protected String HrefAttr;
 	@XmlAttribute(name = "img")
-	protected StringAttr Img;
+	protected String ImgAttr;
 	@XmlAttribute(name = "position")
-	protected StringAttr Position;
+	protected String PositionAttr;
 	@XmlAttribute(name = "alt")
-	protected StringAttr Alt;
+	protected String AltAttr;
 	@XmlAttribute(name = "border")
-	protected StringAttr Border;
+	protected String BorderAttr;
 	@XmlAttribute(name = "width")
-	protected StringAttr Width;
+	protected String WidthAttr;
 	@XmlAttribute(name = "height")
-	protected StringAttr Height;
+	protected String HeightAttr;
 	@XmlAttribute(name = "target")
-	protected StringAttr Target;
+	protected String TargetAttr;
 	@XmlAttribute(name = "title")
-	protected StringAttr Title;
+	protected String TitleAttr;
 }
 
 // PublishDate is Modify display properties for date published.
 public class PublishDate {
 	@XmlAttribute(name = "position")
-	protected StringAttr Position;
+	protected String PositionAttr;
 	@XmlAttribute(name = "format")
-	protected StringAttr Format;
+	protected String FormatAttr;
 }

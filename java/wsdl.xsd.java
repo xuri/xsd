@@ -55,18 +55,18 @@ public class AnyTopLevelOptionalElement {
 // TDefinitions ...
 public class TDefinitions extends TExtensibleDocumented  {
 	@XmlAttribute(name = "targetNamespace")
-	protected QNameAttr TargetNamespace;
+	protected QName TargetNamespaceAttr;
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 	protected List<AnyTopLevelOptionalElement> WsdlAnyTopLevelOptionalElement;
 }
 
 // TImport ...
 public class TImport extends TExtensibleAttributesDocumented  {
 	@XmlAttribute(name = "namespace", required = true)
-	protected QNameAttr Namespace;
+	protected QName NamespaceAttr;
 	@XmlAttribute(name = "location", required = true)
-	protected QNameAttr Location;
+	protected QName LocationAttr;
 }
 
 // TTypes ...
@@ -76,7 +76,7 @@ public class TTypes extends TExtensibleDocumented  {
 // TMessage ...
 public class TMessage extends TExtensibleDocumented  {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlElement(required = true, name = "part")
 	protected List<TPart> Part;
 }
@@ -84,17 +84,17 @@ public class TMessage extends TExtensibleDocumented  {
 // TPart ...
 public class TPart extends TExtensibleAttributesDocumented  {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "element")
-	protected StringAttr Element;
+	protected String ElementAttr;
 	@XmlAttribute(name = "type")
-	protected StringAttr Type;
+	protected String TypeAttr;
 }
 
 // TPortType ...
 public class TPortType extends TExtensibleAttributesDocumented  {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlElement(required = true, name = "operation")
 	protected List<TOperation> Operation;
 }
@@ -102,9 +102,9 @@ public class TPortType extends TExtensibleAttributesDocumented  {
 // TOperation ...
 public class TOperation extends TExtensibleDocumented  {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "parameterOrder")
-	protected List<String>Attr ParameterOrder;
+	protected List<String> ParameterOrderAttr;
 	protected Requestresponseoronewayoperation WsdlRequestresponseoronewayoperation;
 	protected Solicitresponseornotificationoperation WsdlSolicitresponseornotificationoperation;
 }
@@ -132,25 +132,25 @@ public class Solicitresponseornotificationoperation {
 // TParam ...
 public class TParam extends TExtensibleAttributesDocumented  {
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "message", required = true)
-	protected StringAttr Message;
+	protected String MessageAttr;
 }
 
 // TFault ...
 public class TFault extends TExtensibleAttributesDocumented  {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "message", required = true)
-	protected StringAttr Message;
+	protected String MessageAttr;
 }
 
 // TBinding ...
 public class TBinding extends TExtensibleDocumented  {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "type", required = true)
-	protected StringAttr Type;
+	protected String TypeAttr;
 	@XmlElement(required = true, name = "operation")
 	protected List<TBindingOperation> Operation;
 }
@@ -158,19 +158,19 @@ public class TBinding extends TExtensibleDocumented  {
 // TBindingOperationMessage ...
 public class TBindingOperationMessage extends TExtensibleDocumented  {
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 }
 
 // TBindingOperationFault ...
 public class TBindingOperationFault extends TExtensibleDocumented  {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 }
 
 // TBindingOperation ...
 public class TBindingOperation extends TExtensibleDocumented  {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlElement(required = true, name = "input")
 	protected TBindingOperationMessage Input;
 	@XmlElement(required = true, name = "output")
@@ -182,7 +182,7 @@ public class TBindingOperation extends TExtensibleDocumented  {
 // TService ...
 public class TService extends TExtensibleDocumented  {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlElement(required = true, name = "port")
 	protected List<TPort> Port;
 }
@@ -190,9 +190,9 @@ public class TService extends TExtensibleDocumented  {
 // TPort ...
 public class TPort extends TExtensibleDocumented  {
 	@XmlAttribute(name = "name", required = true)
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "binding", required = true)
-	protected StringAttr Binding;
+	protected String BindingAttr;
 }
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -210,5 +210,5 @@ public class Required {
 // TExtensibilityElement ...
 public class TExtensibilityElement {
 	@XmlAttribute(name = "wsdl:required")
-	protected BooleanAttr WsdlRequired;
+	protected Boolean WsdlRequiredAttr;
 }

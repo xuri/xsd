@@ -55,7 +55,7 @@ public class Sample {
 	@XmlElement(required = true, name = "CustomerSamplePointName")
 	protected MandatoryStringType CustomerSamplePointName;
 	@XmlElement(required = true, name = "SampleDateTime")
-	protected Byte SampleDateTime;
+	protected String SampleDateTime;
 	@XmlElement(required = true, name = "PurposeTypeName")
 	protected MandatoryStringType PurposeTypeName;
 	@XmlElement(required = true, name = "MaterialName")
@@ -71,7 +71,7 @@ public class Sample {
 	@XmlElement(required = true, name = "LabName")
 	protected MandatoryStringType LabName;
 	@XmlElement(required = true, name = "AnalysisCompleteDateTime")
-	protected Byte AnalysisCompleteDateTime;
+	protected String AnalysisCompleteDateTime;
 	@XmlElement(required = true, name = "DepthValueRecorded")
 	protected DepthValueRecorded DepthValueRecorded;
 	@XmlElement(required = true, name = "PurgedVolumeRecorded")

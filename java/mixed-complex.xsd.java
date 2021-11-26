@@ -15,7 +15,7 @@ import javax.xml.bind.annotation.XmlValue;
 // Number ...
 public class Number {
 	@XmlAttribute(name = "precision")
-	protected IntegerAttr Precision;
+	protected Integer PrecisionAttr;
 	@XmlValue
 	protected Float value;
 }

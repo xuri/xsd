@@ -4,7 +4,6 @@ package schema
 
 import (
 	"encoding/xml"
-	"time"
 )
 
 // ContentType is media type, as per [RFC2045]
@@ -46,7 +45,7 @@ type URI string
 type UriList string
 
 // Datetime is date and time information. ISO date format
-type Datetime time.Time
+type Datetime string
 
 // Script is script expression
 type Script string
@@ -705,8 +704,8 @@ type Center struct {
 type Ins struct {
 	XMLName      xml.Name `xml:"ins"`
 	Attrs        *Attrs
-	CiteAttr     string    `xml:"cite,attr,omitempty"`
-	DatetimeAttr time.Time `xml:"datetime,attr,omitempty"`
+	CiteAttr     string `xml:"cite,attr,omitempty"`
+	DatetimeAttr string `xml:"datetime,attr,omitempty"`
 	*Flow
 }
 
@@ -714,8 +713,8 @@ type Ins struct {
 type Del struct {
 	XMLName      xml.Name `xml:"del"`
 	Attrs        *Attrs
-	CiteAttr     string    `xml:"cite,attr,omitempty"`
-	DatetimeAttr time.Time `xml:"datetime,attr,omitempty"`
+	CiteAttr     string `xml:"cite,attr,omitempty"`
+	DatetimeAttr string `xml:"datetime,attr,omitempty"`
 	*Flow
 }
 

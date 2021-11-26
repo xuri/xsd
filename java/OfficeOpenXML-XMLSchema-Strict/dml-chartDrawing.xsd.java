@@ -23,13 +23,13 @@ public class CT_ShapeNonVisual {
 // CT_Shape ...
 public class CT_Shape {
 	@XmlAttribute(name = "macro")
-	protected StringAttr Macro;
+	protected String MacroAttr;
 	@XmlAttribute(name = "textlink")
-	protected StringAttr Textlink;
+	protected String TextlinkAttr;
 	@XmlAttribute(name = "fLocksText")
-	protected BooleanAttr FLocksText;
+	protected Boolean FLocksTextAttr;
 	@XmlAttribute(name = "fPublished")
-	protected BooleanAttr FPublished;
+	protected Boolean FPublishedAttr;
 	@XmlElement(required = true, name = "nvSpPr")
 	protected CT_ShapeNonVisual NvSpPr;
 	@XmlElement(required = true, name = "spPr")
@@ -51,9 +51,9 @@ public class CT_ConnectorNonVisual {
 // CT_Connector ...
 public class CT_Connector {
 	@XmlAttribute(name = "macro")
-	protected StringAttr Macro;
+	protected String MacroAttr;
 	@XmlAttribute(name = "fPublished")
-	protected BooleanAttr FPublished;
+	protected Boolean FPublishedAttr;
 	@XmlElement(required = true, name = "nvCxnSpPr")
 	protected CT_ConnectorNonVisual NvCxnSpPr;
 	@XmlElement(required = true, name = "spPr")
@@ -73,9 +73,9 @@ public class CT_PictureNonVisual {
 // CT_Picture ...
 public class CT_Picture {
 	@XmlAttribute(name = "macro")
-	protected StringAttr Macro;
+	protected String MacroAttr;
 	@XmlAttribute(name = "fPublished")
-	protected BooleanAttr FPublished;
+	protected Boolean FPublishedAttr;
 	@XmlElement(required = true, name = "nvPicPr")
 	protected CT_PictureNonVisual NvPicPr;
 	@XmlElement(required = true, name = "blipFill")
@@ -97,9 +97,9 @@ public class CT_GraphicFrameNonVisual {
 // CT_GraphicFrame ...
 public class CT_GraphicFrame {
 	@XmlAttribute(name = "macro")
-	protected StringAttr Macro;
+	protected String MacroAttr;
 	@XmlAttribute(name = "fPublished")
-	protected BooleanAttr FPublished;
+	protected Boolean FPublishedAttr;
 	@XmlElement(required = true, name = "nvGraphicFramePr")
 	protected CT_GraphicFrameNonVisual NvGraphicFramePr;
 	@XmlElement(required = true, name = "xfrm")

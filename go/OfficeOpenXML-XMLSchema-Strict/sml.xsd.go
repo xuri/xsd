@@ -4,7 +4,6 @@ package schema
 
 import (
 	"encoding/xml"
-	"time"
 )
 
 // CTAutoFilter ...
@@ -88,11 +87,11 @@ type STFilterOperator string
 
 // CTDynamicFilter ...
 type CTDynamicFilter struct {
-	XMLName       xml.Name  `xml:"CT_DynamicFilter"`
-	TypeAttr      string    `xml:"type,attr"`
-	ValAttr       float64   `xml:"val,attr,omitempty"`
-	ValIsoAttr    time.Time `xml:"valIso,attr,omitempty"`
-	MaxValIsoAttr time.Time `xml:"maxValIso,attr,omitempty"`
+	XMLName       xml.Name `xml:"CT_DynamicFilter"`
+	TypeAttr      string   `xml:"type,attr"`
+	ValAttr       float64  `xml:"val,attr,omitempty"`
+	ValIsoAttr    string   `xml:"valIso,attr,omitempty"`
+	MaxValIsoAttr string   `xml:"maxValIso,attr,omitempty"`
 }
 
 // STDynamicFilterType ...
@@ -510,7 +509,7 @@ type CTPivotCacheDefinition struct {
 	OptimizeMemoryAttr        bool                    `xml:"optimizeMemory,attr,omitempty"`
 	EnableRefreshAttr         bool                    `xml:"enableRefresh,attr,omitempty"`
 	RefreshedByAttr           string                  `xml:"refreshedBy,attr,omitempty"`
-	RefreshedDateIsoAttr      time.Time               `xml:"refreshedDateIso,attr,omitempty"`
+	RefreshedDateIsoAttr      string                  `xml:"refreshedDateIso,attr,omitempty"`
 	BackgroundQueryAttr       bool                    `xml:"backgroundQuery,attr,omitempty"`
 	MissingItemsLimitAttr     uint32                  `xml:"missingItemsLimit,attr,omitempty"`
 	CreatedVersionAttr        byte                    `xml:"createdVersion,attr,omitempty"`
@@ -646,8 +645,8 @@ type CTSharedItems struct {
 	ContainsIntegerAttr        bool        `xml:"containsInteger,attr,omitempty"`
 	MinValueAttr               float64     `xml:"minValue,attr,omitempty"`
 	MaxValueAttr               float64     `xml:"maxValue,attr,omitempty"`
-	MinDateAttr                time.Time   `xml:"minDate,attr,omitempty"`
-	MaxDateAttr                time.Time   `xml:"maxDate,attr,omitempty"`
+	MinDateAttr                string      `xml:"minDate,attr,omitempty"`
+	MaxDateAttr                string      `xml:"maxDate,attr,omitempty"`
 	CountAttr                  uint32      `xml:"count,attr,omitempty"`
 	LongTextAttr               bool        `xml:"longText,attr,omitempty"`
 	M                          *CTMissing  `xml:"m"`
@@ -746,13 +745,13 @@ type CTString struct {
 
 // CTDateTime ...
 type CTDateTime struct {
-	XMLName xml.Name  `xml:"CT_DateTime"`
-	VAttr   time.Time `xml:"v,attr"`
-	UAttr   bool      `xml:"u,attr,omitempty"`
-	FAttr   bool      `xml:"f,attr,omitempty"`
-	CAttr   string    `xml:"c,attr,omitempty"`
-	CpAttr  uint32    `xml:"cp,attr,omitempty"`
-	X       []*CTX    `xml:"x"`
+	XMLName xml.Name `xml:"CT_DateTime"`
+	VAttr   string   `xml:"v,attr"`
+	UAttr   bool     `xml:"u,attr,omitempty"`
+	FAttr   bool     `xml:"f,attr,omitempty"`
+	CAttr   string   `xml:"c,attr,omitempty"`
+	CpAttr  uint32   `xml:"cp,attr,omitempty"`
+	X       []*CTX   `xml:"x"`
 }
 
 // CTFieldGroup ...
@@ -767,15 +766,15 @@ type CTFieldGroup struct {
 
 // CTRangePr ...
 type CTRangePr struct {
-	XMLName           xml.Name  `xml:"CT_RangePr"`
-	AutoStartAttr     bool      `xml:"autoStart,attr,omitempty"`
-	AutoEndAttr       bool      `xml:"autoEnd,attr,omitempty"`
-	GroupByAttr       string    `xml:"groupBy,attr,omitempty"`
-	StartNumAttr      float64   `xml:"startNum,attr,omitempty"`
-	EndNumAttr        float64   `xml:"endNum,attr,omitempty"`
-	StartDateAttr     time.Time `xml:"startDate,attr,omitempty"`
-	EndDateAttr       time.Time `xml:"endDate,attr,omitempty"`
-	GroupIntervalAttr float64   `xml:"groupInterval,attr,omitempty"`
+	XMLName           xml.Name `xml:"CT_RangePr"`
+	AutoStartAttr     bool     `xml:"autoStart,attr,omitempty"`
+	AutoEndAttr       bool     `xml:"autoEnd,attr,omitempty"`
+	GroupByAttr       string   `xml:"groupBy,attr,omitempty"`
+	StartNumAttr      float64  `xml:"startNum,attr,omitempty"`
+	EndNumAttr        float64  `xml:"endNum,attr,omitempty"`
+	StartDateAttr     string   `xml:"startDate,attr,omitempty"`
+	EndDateAttr       string   `xml:"endDate,attr,omitempty"`
+	GroupIntervalAttr float64  `xml:"groupInterval,attr,omitempty"`
 }
 
 // STGroupBy ...
@@ -1839,7 +1838,7 @@ type AGRevData struct {
 type CTRevisionHeader struct {
 	XMLName        xml.Name             `xml:"CT_RevisionHeader"`
 	GuidAttr       string               `xml:"guid,attr"`
-	DateTimeAttr   time.Time            `xml:"dateTime,attr"`
+	DateTimeAttr   string               `xml:"dateTime,attr"`
 	MaxSheetIdAttr uint32               `xml:"maxSheetId,attr"`
 	UserNameAttr   string               `xml:"userName,attr"`
 	RIdAttr        string               `xml:"r:id,attr"`
@@ -2074,7 +2073,7 @@ type CTSharedUser struct {
 	GuidAttr     string           `xml:"guid,attr"`
 	NameAttr     string           `xml:"name,attr"`
 	IdAttr       int              `xml:"id,attr"`
-	DateTimeAttr time.Time        `xml:"dateTime,attr"`
+	DateTimeAttr string           `xml:"dateTime,attr"`
 	ExtLst       *CTExtensionList `xml:"extLst"`
 }
 

@@ -22,7 +22,7 @@ public class MyType1 {
 // MyType2 ...
 public class MyType2 {
 	@XmlAttribute(name = "length")
-	protected IntegerAttr Length;
+	protected Integer LengthAttr;
 	@XmlValue
 	protected List<Byte> value;
 }
@@ -30,9 +30,9 @@ public class MyType2 {
 // MyType3 ...
 public class MyType3 {
 	@XmlAttribute(name = "length")
-	protected IntegerAttr Length;
+	protected Integer LengthAttr;
 	@XmlValue
-	protected Byte value;
+	protected String value;
 }
 
 // MyType4 ...
@@ -42,7 +42,7 @@ public class MyType4 {
 	@XmlElement(required = true, name = "blob")
 	protected List<Byte> Blob;
 	@XmlElement(required = true, name = "timestamp")
-	protected Byte Timestamp;
+	protected String Timestamp;
 }
 
 // MyType5 ...

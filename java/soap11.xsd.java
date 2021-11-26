@@ -94,7 +94,7 @@ public class Duration {
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlElement(required = true, name = "dateTime")
 public class DateTime {
-	protected Byte DateTime;
+	protected String DateTime;
 }
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -112,7 +112,7 @@ public class Time {
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlElement(required = true, name = "date")
 public class Date {
-	protected Byte Date;
+	protected String Date;
 }
 
 @XmlAccessorType(XmlAccessType.FIELD)

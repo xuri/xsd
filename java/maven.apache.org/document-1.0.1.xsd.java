@@ -21,7 +21,7 @@ public class Document {
 // DocumentModel is The meta data to construct a cover page for the document.
 public class DocumentModel {
 	@XmlAttribute(name = "outputName")
-	protected StringAttr OutputName;
+	protected String OutputNameAttr;
 	@XmlElement(required = true, name = "meta")
 	protected DocumentMeta Meta;
 	@XmlElement(required = true, name = "toc")
@@ -33,9 +33,9 @@ public class DocumentModel {
 // DocumentTOC is TOC item.
 public class DocumentTOC {
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "depth")
-	protected IntegerAttr Depth;
+	protected Integer DepthAttr;
 	@XmlElement(required = true, name = "item")
 	protected List<DocumentTOCItem> Item;
 }
@@ -43,11 +43,11 @@ public class DocumentTOC {
 // DocumentTOCItem is A table of content item containing sub-items.
 public class DocumentTOCItem {
 	@XmlAttribute(name = "name")
-	protected StringAttr Name;
+	protected String NameAttr;
 	@XmlAttribute(name = "ref")
-	protected StringAttr Ref;
+	protected String RefAttr;
 	@XmlAttribute(name = "collapse")
-	protected BooleanAttr Collapse;
+	protected Boolean CollapseAttr;
 	@XmlElement(required = true, name = "item")
 	protected List<DocumentTOCItem> Item;
 }
@@ -71,7 +71,7 @@ public class DocumentCover {
 	@XmlElement(required = true, name = "coverType")
 	protected String CoverType;
 	@XmlElement(required = true, name = "coverDate")
-	protected Byte CoverDate;
+	protected String CoverDate;
 	@XmlElement(required = true, name = "coverdate")
 	protected String Coverdate;
 	@XmlElement(required = true, name = "authors")
@@ -156,15 +156,15 @@ public class DocumentMeta {
 	@XmlElement(required = true, name = "printedBy")
 	protected String PrintedBy;
 	@XmlElement(required = true, name = "creationDate")
-	protected Byte CreationDate;
+	protected String CreationDate;
 	@XmlElement(required = true, name = "creationdate")
 	protected String Creationdate;
 	@XmlElement(required = true, name = "date")
-	protected Byte Date;
+	protected String Date;
 	@XmlElement(required = true, name = "modifydate")
 	protected String Modifydate;
 	@XmlElement(required = true, name = "printDate")
-	protected Byte PrintDate;
+	protected String PrintDate;
 	@XmlElement(required = true, name = "printdate")
 	protected String Printdate;
 	@XmlElement(required = true, name = "template")
@@ -188,49 +188,49 @@ public class DocumentMeta {
 // DocumentTemplate is A template that was used to create the document.
 public class DocumentTemplate {
 	@XmlAttribute(name = "href")
-	protected StringAttr Href;
+	protected String HrefAttr;
 	@XmlAttribute(name = "title")
-	protected StringAttr Title;
+	protected String TitleAttr;
 	@XmlAttribute(name = "date")
-	protected ByteAttr Date;
+	protected String DateAttr;
 	@XmlAttribute(name = "modifydate")
-	protected StringAttr Modifydate;
+	protected String ModifydateAttr;
 }
 
 // DocumentStatistic is Statistical attributes of the document.
 public class DocumentStatistic {
 	@XmlAttribute(name = "pageCount")
-	protected LongAttr PageCount;
+	protected Long PageCountAttr;
 	@XmlAttribute(name = "tableCount")
-	protected LongAttr TableCount;
+	protected Long TableCountAttr;
 	@XmlAttribute(name = "drawCount")
-	protected LongAttr DrawCount;
+	protected Long DrawCountAttr;
 	@XmlAttribute(name = "imageCount")
-	protected LongAttr ImageCount;
+	protected Long ImageCountAttr;
 	@XmlAttribute(name = "objectCount")
-	protected LongAttr ObjectCount;
+	protected Long ObjectCountAttr;
 	@XmlAttribute(name = "oleObjectCount")
-	protected LongAttr OleObjectCount;
+	protected Long OleObjectCountAttr;
 	@XmlAttribute(name = "paragraphCount")
-	protected LongAttr ParagraphCount;
+	protected Long ParagraphCountAttr;
 	@XmlAttribute(name = "wordCount")
-	protected LongAttr WordCount;
+	protected Long WordCountAttr;
 	@XmlAttribute(name = "characterCount")
-	protected LongAttr CharacterCount;
+	protected Long CharacterCountAttr;
 	@XmlAttribute(name = "rowCount")
-	protected LongAttr RowCount;
+	protected Long RowCountAttr;
 	@XmlAttribute(name = "frameCount")
-	protected LongAttr FrameCount;
+	protected Long FrameCountAttr;
 	@XmlAttribute(name = "sentenceCount")
-	protected LongAttr SentenceCount;
+	protected Long SentenceCountAttr;
 	@XmlAttribute(name = "syllableCount")
-	protected LongAttr SyllableCount;
+	protected Long SyllableCountAttr;
 	@XmlAttribute(name = "nonWhitespaceCharacterCount")
-	protected LongAttr NonWhitespaceCharacterCount;
+	protected Long NonWhitespaceCharacterCountAttr;
 }
 
 // DocumentHyperlinkBehaviour is Specifies the default behavior for hyperlinks in the document.
 public class DocumentHyperlinkBehaviour {
 	@XmlAttribute(name = "targetFrame")
-	protected StringAttr TargetFrame;
+	protected String TargetFrameAttr;
 }

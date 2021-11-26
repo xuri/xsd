@@ -21,13 +21,13 @@ public class Library {
 // Person ...
 public class Person {
 	@XmlAttribute(name = "id", required = true)
-	protected StringAttr Id;
+	protected String IdAttr;
 	@XmlElement(required = true, name = "name")
 	protected String Name;
 	@XmlElement(required = true, name = "born")
-	protected Byte Born;
+	protected String Born;
 	@XmlElement(required = true, name = "dead")
-	protected Byte Dead;
+	protected String Dead;
 	@XmlElement(required = true, name = "qualification")
 	protected String Qualification;
 }
@@ -47,9 +47,9 @@ public class Characters {
 // BookType ...
 public class BookType {
 	@XmlAttribute(name = "id", required = true)
-	protected StringAttr Id;
+	protected String IdAttr;
 	@XmlAttribute(name = "available", required = true)
-	protected StringAttr Available;
+	protected String AvailableAttr;
 	@XmlElement(required = true, name = "isbn")
 	protected String Isbn;
 	@XmlElement(required = true, name = "title")

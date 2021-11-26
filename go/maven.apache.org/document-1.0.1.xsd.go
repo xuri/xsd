@@ -4,7 +4,6 @@ package schema
 
 import (
 	"encoding/xml"
-	"time"
 )
 
 // Document is Describes the overall document model.
@@ -43,18 +42,18 @@ type Authors struct {
 //             Only used if <code>coverDate</code> is not set.
 //             @since 1.1.1
 type DocumentCover struct {
-	CoverTitle    string    `xml:"coverTitle"`
-	CoverSubTitle string    `xml:"coverSubTitle"`
-	CoverVersion  string    `xml:"coverVersion"`
-	CoverType     string    `xml:"coverType"`
-	CoverDate     time.Time `xml:"coverDate"`
-	Coverdate     string    `xml:"coverdate"`
-	Authors       *Authors  `xml:"authors"`
-	Author        string    `xml:"author"`
-	ProjectName   string    `xml:"projectName"`
-	ProjectLogo   string    `xml:"projectLogo"`
-	CompanyName   string    `xml:"companyName"`
-	CompanyLogo   string    `xml:"companyLogo"`
+	CoverTitle    string   `xml:"coverTitle"`
+	CoverSubTitle string   `xml:"coverSubTitle"`
+	CoverVersion  string   `xml:"coverVersion"`
+	CoverType     string   `xml:"coverType"`
+	CoverDate     string   `xml:"coverDate"`
+	Coverdate     string   `xml:"coverdate"`
+	Authors       *Authors `xml:"authors"`
+	Author        string   `xml:"author"`
+	ProjectName   string   `xml:"projectName"`
+	ProjectLogo   string   `xml:"projectLogo"`
+	CompanyName   string   `xml:"companyName"`
+	CompanyLogo   string   `xml:"companyLogo"`
 }
 
 // DocumentAuthor is The state or province of the address of the author, if applicable.
@@ -97,11 +96,11 @@ type DocumentMeta struct {
 	InitialCreator     string                      `xml:"initialCreator"`
 	Creator            string                      `xml:"creator"`
 	PrintedBy          string                      `xml:"printedBy"`
-	CreationDate       time.Time                   `xml:"creationDate"`
+	CreationDate       string                      `xml:"creationDate"`
 	Creationdate       string                      `xml:"creationdate"`
-	Date               time.Time                   `xml:"date"`
+	Date               string                      `xml:"date"`
 	Modifydate         string                      `xml:"modifydate"`
-	PrintDate          time.Time                   `xml:"printDate"`
+	PrintDate          string                      `xml:"printDate"`
 	Printdate          string                      `xml:"printdate"`
 	Template           *DocumentTemplate           `xml:"template"`
 	HyperlinkBehaviour *DocumentHyperlinkBehaviour `xml:"hyperlinkBehaviour"`
@@ -115,10 +114,10 @@ type DocumentMeta struct {
 
 // DocumentTemplate is A template that was used to create the document.
 type DocumentTemplate struct {
-	HrefAttr       string    `xml:"href,attr,omitempty"`
-	TitleAttr      string    `xml:"title,attr,omitempty"`
-	DateAttr       time.Time `xml:"date,attr,omitempty"`
-	ModifydateAttr string    `xml:"modifydate,attr,omitempty"`
+	HrefAttr       string `xml:"href,attr,omitempty"`
+	TitleAttr      string `xml:"title,attr,omitempty"`
+	DateAttr       string `xml:"date,attr,omitempty"`
+	ModifydateAttr string `xml:"modifydate,attr,omitempty"`
 }
 
 // DocumentStatistic is Statistical attributes of the document.

@@ -4,7 +4,6 @@ package schema
 
 import (
 	"encoding/xml"
-	"time"
 )
 
 // MyType1 ...
@@ -19,18 +18,18 @@ type MyType2 struct {
 
 // MyType3 ...
 type MyType3 struct {
-	XMLName    xml.Name  `xml:"myType3"`
-	LengthAttr int       `xml:"length,attr,omitempty"`
-	Value      time.Time `xml:",chardata"`
+	XMLName    xml.Name `xml:"myType3"`
+	LengthAttr int      `xml:"length,attr,omitempty"`
+	Value      string   `xml:",chardata"`
 }
 
 // MyType4 ...
 type MyType4 struct {
-	XMLName   xml.Name  `xml:"myType4"`
-	Title     string    `xml:"title"`
-	Blob      []byte    `xml:"blob"`
-	Timestamp time.Time `xml:"timestamp"`
+	XMLName   xml.Name `xml:"myType4"`
+	Title     string   `xml:"title"`
+	Blob      []byte   `xml:"blob"`
+	Timestamp string   `xml:"timestamp"`
 }
 
 // MyType5 ...
-type MyType5 time.Time
+type MyType5 string
