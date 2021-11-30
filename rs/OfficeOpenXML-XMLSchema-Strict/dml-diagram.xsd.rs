@@ -470,25 +470,25 @@ pub struct CTLayoutNode {
 	#[serde(rename = "moveWith")]
 	pub move_with: Option<String>,
 	#[serde(rename = "alg")]
-	pub alg: CTAlgorithm,
+	pub alg: Vec<CTAlgorithm>,
 	#[serde(rename = "shape")]
-	pub shape: CTShape,
+	pub shape: Vec<CTShape>,
 	#[serde(rename = "presOf")]
-	pub pres_of: CTPresentationOf,
+	pub pres_of: Vec<CTPresentationOf>,
 	#[serde(rename = "constrLst")]
-	pub constr_lst: CTConstraints,
+	pub constr_lst: Vec<CTConstraints>,
 	#[serde(rename = "ruleLst")]
-	pub rule_lst: CTRules,
+	pub rule_lst: Vec<CTRules>,
 	#[serde(rename = "varLst")]
-	pub var_lst: CTLayoutVariablePropertySet,
+	pub var_lst: Vec<CTLayoutVariablePropertySet>,
 	#[serde(rename = "forEach")]
-	pub for_each: CTForEach,
+	pub for_each: Vec<CTForEach>,
 	#[serde(rename = "layoutNode")]
-	pub layout_node: CTLayoutNode,
+	pub layout_node: Vec<CTLayoutNode>,
 	#[serde(rename = "choose")]
-	pub choose: CTChoose,
+	pub choose: Vec<CTChoose>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Vec<CTOfficeArtExtensionList>,
 }
 
 
@@ -502,23 +502,23 @@ pub struct CTForEach {
 	#[serde(rename = "ref")]
 	pub ref_attr: Option<String>,
 	#[serde(rename = "alg")]
-	pub alg: CTAlgorithm,
+	pub alg: Vec<CTAlgorithm>,
 	#[serde(rename = "shape")]
-	pub shape: CTShape,
+	pub shape: Vec<CTShape>,
 	#[serde(rename = "presOf")]
-	pub pres_of: CTPresentationOf,
+	pub pres_of: Vec<CTPresentationOf>,
 	#[serde(rename = "constrLst")]
-	pub constr_lst: CTConstraints,
+	pub constr_lst: Vec<CTConstraints>,
 	#[serde(rename = "ruleLst")]
-	pub rule_lst: CTRules,
+	pub rule_lst: Vec<CTRules>,
 	#[serde(rename = "forEach")]
-	pub for_each: CTForEach,
+	pub for_each: Vec<CTForEach>,
 	#[serde(rename = "layoutNode")]
-	pub layout_node: CTLayoutNode,
+	pub layout_node: Vec<CTLayoutNode>,
 	#[serde(rename = "choose")]
-	pub choose: CTChoose,
+	pub choose: Vec<CTChoose>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Vec<CTOfficeArtExtensionList>,
 }
 
 
@@ -538,23 +538,23 @@ pub struct CTWhen {
 	#[serde(rename = "val")]
 	pub val: STFunctionValue,
 	#[serde(rename = "alg")]
-	pub alg: CTAlgorithm,
+	pub alg: Vec<CTAlgorithm>,
 	#[serde(rename = "shape")]
-	pub shape: CTShape,
+	pub shape: Vec<CTShape>,
 	#[serde(rename = "presOf")]
-	pub pres_of: CTPresentationOf,
+	pub pres_of: Vec<CTPresentationOf>,
 	#[serde(rename = "constrLst")]
-	pub constr_lst: CTConstraints,
+	pub constr_lst: Vec<CTConstraints>,
 	#[serde(rename = "ruleLst")]
-	pub rule_lst: CTRules,
+	pub rule_lst: Vec<CTRules>,
 	#[serde(rename = "forEach")]
-	pub for_each: CTForEach,
+	pub for_each: Vec<CTForEach>,
 	#[serde(rename = "layoutNode")]
-	pub layout_node: CTLayoutNode,
+	pub layout_node: Vec<CTLayoutNode>,
 	#[serde(rename = "choose")]
-	pub choose: CTChoose,
+	pub choose: Vec<CTChoose>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Vec<CTOfficeArtExtensionList>,
 }
 
 
@@ -564,23 +564,23 @@ pub struct CTOtherwise {
 	#[serde(rename = "name")]
 	pub name: Option<String>,
 	#[serde(rename = "alg")]
-	pub alg: CTAlgorithm,
+	pub alg: Vec<CTAlgorithm>,
 	#[serde(rename = "shape")]
-	pub shape: CTShape,
+	pub shape: Vec<CTShape>,
 	#[serde(rename = "presOf")]
-	pub pres_of: CTPresentationOf,
+	pub pres_of: Vec<CTPresentationOf>,
 	#[serde(rename = "constrLst")]
-	pub constr_lst: CTConstraints,
+	pub constr_lst: Vec<CTConstraints>,
 	#[serde(rename = "ruleLst")]
-	pub rule_lst: CTRules,
+	pub rule_lst: Vec<CTRules>,
 	#[serde(rename = "forEach")]
-	pub for_each: CTForEach,
+	pub for_each: Vec<CTForEach>,
 	#[serde(rename = "layoutNode")]
-	pub layout_node: CTLayoutNode,
+	pub layout_node: Vec<CTLayoutNode>,
 	#[serde(rename = "choose")]
-	pub choose: CTChoose,
+	pub choose: Vec<CTChoose>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Vec<CTOfficeArtExtensionList>,
 }
 
 

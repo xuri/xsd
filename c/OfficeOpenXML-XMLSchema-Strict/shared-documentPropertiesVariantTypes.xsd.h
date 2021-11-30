@@ -24,26 +24,26 @@ typedef struct {
 typedef struct {
 	char BaseTypeAttr; // attr
 	unsigned int SizeAttr; // attr
-	CT_Variant Variant;
+	CT_Variant Variant[];
 	char I1[];
-	int I2;
-	int I4;
-	int I8;
-	char Ui1;
-	unsigned int Ui2;
-	unsigned int Ui4;
-	unsigned int Ui8;
-	float R4;
-	float R8;
-	char Lpstr;
-	char Lpwstr;
-	char Bstr;
-	char Date;
-	char Filetime;
-	bool Bool;
-	char Cy;
-	char Error;
-	char Clsid;
+	int I2[];
+	int I4[];
+	int I8[];
+	char Ui1[];
+	unsigned int Ui2[];
+	unsigned int Ui4[];
+	unsigned int Ui8[];
+	float R4[];
+	float R8[];
+	char Lpstr[];
+	char Lpwstr[];
+	char Bstr[];
+	char Date[];
+	char Filetime[];
+	bool Bool[];
+	char Cy[];
+	char Error[];
+	char Clsid[];
 } CT_Vector;
 
 // CT_Array ...
@@ -51,23 +51,23 @@ typedef struct {
 	int LBoundsAttr; // attr
 	int UBoundsAttr; // attr
 	char BaseTypeAttr; // attr
-	CT_Variant Variant;
+	CT_Variant Variant[];
 	char I1[];
-	int I2;
-	int I4;
-	int Int;
-	char Ui1;
-	unsigned int Ui2;
-	unsigned int Ui4;
-	unsigned int Uint;
-	float R4;
-	float R8;
-	float Decimal;
-	char Bstr;
-	char Date;
-	bool Bool;
-	char Error;
-	char Cy;
+	int I2[];
+	int I4[];
+	int Int[];
+	char Ui1[];
+	unsigned int Ui2[];
+	unsigned int Ui4[];
+	unsigned int Uint[];
+	float R4[];
+	float R8[];
+	float Decimal[];
+	char Bstr[];
+	char Date[];
+	bool Bool[];
+	char Error[];
+	char Cy[];
 } CT_Array;
 
 // CT_Variant ...

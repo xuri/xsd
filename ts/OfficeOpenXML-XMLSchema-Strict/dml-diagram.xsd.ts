@@ -270,16 +270,16 @@ export class CT_LayoutNode {
 	StyleLblAttr: string | null;
 	ChOrderAttr: string | null;
 	MoveWithAttr: string | null;
-	Alg: CT_Algorithm;
-	Shape: CT_Shape;
-	PresOf: CT_PresentationOf;
-	ConstrLst: CT_Constraints;
-	RuleLst: CT_Rules;
-	VarLst: CT_LayoutVariablePropertySet;
-	ForEach: CT_ForEach;
-	LayoutNode: CT_LayoutNode;
-	Choose: CT_Choose;
-	ExtLst: CT_OfficeArtExtensionList;
+	Alg: Array<CT_Algorithm>;
+	Shape: Array<CT_Shape>;
+	PresOf: Array<CT_PresentationOf>;
+	ConstrLst: Array<CT_Constraints>;
+	RuleLst: Array<CT_Rules>;
+	VarLst: Array<CT_LayoutVariablePropertySet>;
+	ForEach: Array<CT_ForEach>;
+	LayoutNode: Array<CT_LayoutNode>;
+	Choose: Array<CT_Choose>;
+	ExtLst: Array<CT_OfficeArtExtensionList>;
 }
 
 // CT_ForEach ...
@@ -287,15 +287,15 @@ export class CT_ForEach {
 	AG_IteratorAttributes: AG_IteratorAttributes;
 	NameAttr: string | null;
 	RefAttr: string | null;
-	Alg: CT_Algorithm;
-	Shape: CT_Shape;
-	PresOf: CT_PresentationOf;
-	ConstrLst: CT_Constraints;
-	RuleLst: CT_Rules;
-	ForEach: CT_ForEach;
-	LayoutNode: CT_LayoutNode;
-	Choose: CT_Choose;
-	ExtLst: CT_OfficeArtExtensionList;
+	Alg: Array<CT_Algorithm>;
+	Shape: Array<CT_Shape>;
+	PresOf: Array<CT_PresentationOf>;
+	ConstrLst: Array<CT_Constraints>;
+	RuleLst: Array<CT_Rules>;
+	ForEach: Array<CT_ForEach>;
+	LayoutNode: Array<CT_LayoutNode>;
+	Choose: Array<CT_Choose>;
+	ExtLst: Array<CT_OfficeArtExtensionList>;
 }
 
 // CT_When ...
@@ -306,29 +306,29 @@ export class CT_When {
 	ArgAttr: ST_FunctionArgument | null;
 	OpAttr: string;
 	ValAttr: ST_FunctionValue;
-	Alg: CT_Algorithm;
-	Shape: CT_Shape;
-	PresOf: CT_PresentationOf;
-	ConstrLst: CT_Constraints;
-	RuleLst: CT_Rules;
-	ForEach: CT_ForEach;
-	LayoutNode: CT_LayoutNode;
-	Choose: CT_Choose;
-	ExtLst: CT_OfficeArtExtensionList;
+	Alg: Array<CT_Algorithm>;
+	Shape: Array<CT_Shape>;
+	PresOf: Array<CT_PresentationOf>;
+	ConstrLst: Array<CT_Constraints>;
+	RuleLst: Array<CT_Rules>;
+	ForEach: Array<CT_ForEach>;
+	LayoutNode: Array<CT_LayoutNode>;
+	Choose: Array<CT_Choose>;
+	ExtLst: Array<CT_OfficeArtExtensionList>;
 }
 
 // CT_Otherwise ...
 export class CT_Otherwise {
 	NameAttr: string | null;
-	Alg: CT_Algorithm;
-	Shape: CT_Shape;
-	PresOf: CT_PresentationOf;
-	ConstrLst: CT_Constraints;
-	RuleLst: CT_Rules;
-	ForEach: CT_ForEach;
-	LayoutNode: CT_LayoutNode;
-	Choose: CT_Choose;
-	ExtLst: CT_OfficeArtExtensionList;
+	Alg: Array<CT_Algorithm>;
+	Shape: Array<CT_Shape>;
+	PresOf: Array<CT_PresentationOf>;
+	ConstrLst: Array<CT_Constraints>;
+	RuleLst: Array<CT_Rules>;
+	ForEach: Array<CT_ForEach>;
+	LayoutNode: Array<CT_LayoutNode>;
+	Choose: Array<CT_Choose>;
+	ExtLst: Array<CT_OfficeArtExtensionList>;
 }
 
 // CT_Choose ...

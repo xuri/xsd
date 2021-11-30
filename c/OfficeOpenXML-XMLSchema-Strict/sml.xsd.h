@@ -389,9 +389,9 @@ typedef char ST_ParameterType;
 // CT_Tables ...
 typedef struct {
 	unsigned int CountAttr; // attr, optional
-	CT_TableMissing M;
-	CT_XStringElement S;
-	CT_Index X;
+	CT_TableMissing M[];
+	CT_XStringElement S[];
+	CT_Index X[];
 } CT_Tables;
 
 // CT_TableMissing ...
@@ -583,12 +583,12 @@ typedef struct {
 	char MaxDateAttr; // attr, optional
 	unsigned int CountAttr; // attr, optional
 	bool LongTextAttr; // attr, optional
-	CT_Missing M;
-	CT_Number N;
-	CT_Boolean B;
-	CT_Error E;
-	CT_String S;
-	CT_DateTime D;
+	CT_Missing M[];
+	CT_Number N[];
+	CT_Boolean B[];
+	CT_Error E[];
+	CT_String S[];
+	CT_DateTime D[];
 } CT_SharedItems;
 
 // CT_Missing ...
@@ -715,12 +715,12 @@ typedef struct {
 // CT_GroupItems ...
 typedef struct {
 	unsigned int CountAttr; // attr, optional
-	CT_Missing M;
-	CT_Number N;
-	CT_Boolean B;
-	CT_Error E;
-	CT_String S;
-	CT_DateTime D;
+	CT_Missing M[];
+	CT_Number N[];
+	CT_Boolean B[];
+	CT_Error E[];
+	CT_String S[];
+	CT_DateTime D[];
 } CT_GroupItems;
 
 // CT_PivotCacheRecords ...
@@ -732,13 +732,13 @@ typedef struct {
 
 // CT_Record ...
 typedef struct {
-	CT_Missing M;
-	CT_Number N;
-	CT_Boolean B;
-	CT_Error E;
-	CT_String S;
-	CT_DateTime D;
-	CT_Index X;
+	CT_Missing M[];
+	CT_Number N[];
+	CT_Boolean B[];
+	CT_Error E[];
+	CT_String S[];
+	CT_DateTime D[];
+	CT_Index X[];
 } CT_Record;
 
 // CT_PCDKPIs ...
@@ -876,10 +876,10 @@ typedef struct {
 // CT_PCDSDTCEntries ...
 typedef struct {
 	unsigned int CountAttr; // attr, optional
-	CT_Missing M;
-	CT_Number N;
-	CT_Error E;
-	CT_String S;
+	CT_Missing M[];
+	CT_Number N[];
+	CT_Error E[];
+	CT_String S[];
 } CT_PCDSDTCEntries;
 
 // CT_Tuples ...
@@ -1588,21 +1588,21 @@ typedef struct {
 
 // CT_RPrElt ...
 typedef struct {
-	CT_FontName RFont;
-	CT_IntProperty Charset;
-	CT_IntProperty Family;
-	CT_BooleanProperty B;
-	CT_BooleanProperty I;
-	CT_BooleanProperty Strike;
-	CT_BooleanProperty Outline;
-	CT_BooleanProperty Shadow;
-	CT_BooleanProperty Condense;
-	CT_BooleanProperty Extend;
-	CT_Color Color;
-	CT_FontSize Sz;
-	CT_UnderlineProperty U;
-	CT_VerticalAlignFontProperty VertAlign;
-	CT_FontScheme Scheme;
+	CT_FontName RFont[];
+	CT_IntProperty Charset[];
+	CT_IntProperty Family[];
+	CT_BooleanProperty B[];
+	CT_BooleanProperty I[];
+	CT_BooleanProperty Strike[];
+	CT_BooleanProperty Outline[];
+	CT_BooleanProperty Shadow[];
+	CT_BooleanProperty Condense[];
+	CT_BooleanProperty Extend[];
+	CT_Color Color[];
+	CT_FontSize Sz[];
+	CT_UnderlineProperty U[];
+	CT_VerticalAlignFontProperty VertAlign[];
+	CT_FontScheme Scheme[];
 } CT_RPrElt;
 
 // CT_Rst ...
@@ -3346,21 +3346,21 @@ typedef int ST_FontFamily;
 
 // CT_Font ...
 typedef struct {
-	CT_FontName Name;
-	CT_IntProperty Charset;
-	CT_FontFamily Family;
-	CT_BooleanProperty B;
-	CT_BooleanProperty I;
-	CT_BooleanProperty Strike;
-	CT_BooleanProperty Outline;
-	CT_BooleanProperty Shadow;
-	CT_BooleanProperty Condense;
-	CT_BooleanProperty Extend;
-	CT_Color Color;
-	CT_FontSize Sz;
-	CT_UnderlineProperty U;
-	CT_VerticalAlignFontProperty VertAlign;
-	CT_FontScheme Scheme;
+	CT_FontName Name[];
+	CT_IntProperty Charset[];
+	CT_FontFamily Family[];
+	CT_BooleanProperty B[];
+	CT_BooleanProperty I[];
+	CT_BooleanProperty Strike[];
+	CT_BooleanProperty Outline[];
+	CT_BooleanProperty Shadow[];
+	CT_BooleanProperty Condense[];
+	CT_BooleanProperty Extend[];
+	CT_Color Color[];
+	CT_FontSize Sz[];
+	CT_UnderlineProperty U[];
+	CT_VerticalAlignFontProperty VertAlign[];
+	CT_FontScheme Scheme[];
 } CT_Font;
 
 // AG_AutoFormat ...

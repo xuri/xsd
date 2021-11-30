@@ -164,15 +164,15 @@ pub struct CTGroupShape {
 	#[serde(rename = "grpSpPr")]
 	pub grp_sp_pr: CTGroupShapeProperties,
 	#[serde(rename = "sp")]
-	pub sp: CTShape,
+	pub sp: Vec<CTShape>,
 	#[serde(rename = "grpSp")]
-	pub grp_sp: CTGroupShape,
+	pub grp_sp: Vec<CTGroupShape>,
 	#[serde(rename = "graphicFrame")]
-	pub graphic_frame: CTGraphicalObjectFrame,
+	pub graphic_frame: Vec<CTGraphicalObjectFrame>,
 	#[serde(rename = "cxnSp")]
-	pub cxn_sp: CTConnector,
+	pub cxn_sp: Vec<CTConnector>,
 	#[serde(rename = "pic")]
-	pub pic: CTPicture,
+	pub pic: Vec<CTPicture>,
 }
 
 

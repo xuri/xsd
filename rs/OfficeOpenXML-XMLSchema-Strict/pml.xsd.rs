@@ -382,31 +382,31 @@ pub struct CTTLTimeConditionList {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTTimeNodeList {
 	#[serde(rename = "par")]
-	pub par: CTTLTimeNodeParallel,
+	pub par: Vec<CTTLTimeNodeParallel>,
 	#[serde(rename = "seq")]
-	pub seq: CTTLTimeNodeSequence,
+	pub seq: Vec<CTTLTimeNodeSequence>,
 	#[serde(rename = "excl")]
-	pub excl: CTTLTimeNodeExclusive,
+	pub excl: Vec<CTTLTimeNodeExclusive>,
 	#[serde(rename = "anim")]
-	pub anim: CTTLAnimateBehavior,
+	pub anim: Vec<CTTLAnimateBehavior>,
 	#[serde(rename = "animClr")]
-	pub anim_clr: CTTLAnimateColorBehavior,
+	pub anim_clr: Vec<CTTLAnimateColorBehavior>,
 	#[serde(rename = "animEffect")]
-	pub anim_effect: CTTLAnimateEffectBehavior,
+	pub anim_effect: Vec<CTTLAnimateEffectBehavior>,
 	#[serde(rename = "animMotion")]
-	pub anim_motion: CTTLAnimateMotionBehavior,
+	pub anim_motion: Vec<CTTLAnimateMotionBehavior>,
 	#[serde(rename = "animRot")]
-	pub anim_rot: CTTLAnimateRotationBehavior,
+	pub anim_rot: Vec<CTTLAnimateRotationBehavior>,
 	#[serde(rename = "animScale")]
-	pub anim_scale: CTTLAnimateScaleBehavior,
+	pub anim_scale: Vec<CTTLAnimateScaleBehavior>,
 	#[serde(rename = "cmd")]
-	pub cmd: CTTLCommandBehavior,
+	pub cmd: Vec<CTTLCommandBehavior>,
 	#[serde(rename = "set")]
-	pub set: CTTLSetBehavior,
+	pub set: Vec<CTTLSetBehavior>,
 	#[serde(rename = "audio")]
-	pub audio: CTTLMediaNodeAudio,
+	pub audio: Vec<CTTLMediaNodeAudio>,
 	#[serde(rename = "video")]
-	pub video: CTTLMediaNodeVideo,
+	pub video: Vec<CTTLMediaNodeVideo>,
 }
 
 
@@ -1108,13 +1108,13 @@ pub struct CTTLGraphicalObjectBuild {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTBuildList {
 	#[serde(rename = "bldP")]
-	pub bld_p: CTTLBuildParagraph,
+	pub bld_p: Vec<CTTLBuildParagraph>,
 	#[serde(rename = "bldDgm")]
-	pub bld_dgm: CTTLBuildDiagram,
+	pub bld_dgm: Vec<CTTLBuildDiagram>,
 	#[serde(rename = "bldOleChart")]
-	pub bld_ole_chart: CTTLOleBuildChart,
+	pub bld_ole_chart: Vec<CTTLOleBuildChart>,
 	#[serde(rename = "bldGraphic")]
-	pub bld_graphic: CTTLGraphicalObjectBuild,
+	pub bld_graphic: Vec<CTTLGraphicalObjectBuild>,
 }
 
 
@@ -2062,17 +2062,17 @@ pub struct CTGroupShape {
 	#[serde(rename = "grpSpPr")]
 	pub grp_sp_pr: CTGroupShapeProperties,
 	#[serde(rename = "sp")]
-	pub sp: CTShape,
+	pub sp: Vec<CTShape>,
 	#[serde(rename = "grpSp")]
-	pub grp_sp: CTGroupShape,
+	pub grp_sp: Vec<CTGroupShape>,
 	#[serde(rename = "graphicFrame")]
-	pub graphic_frame: CTGraphicalObjectFrame,
+	pub graphic_frame: Vec<CTGraphicalObjectFrame>,
 	#[serde(rename = "cxnSp")]
-	pub cxn_sp: CTConnector,
+	pub cxn_sp: Vec<CTConnector>,
 	#[serde(rename = "pic")]
-	pub pic: CTPicture,
+	pub pic: Vec<CTPicture>,
 	#[serde(rename = "contentPart")]
-	pub content_part: CTRel,
+	pub content_part: Vec<CTRel>,
 	#[serde(rename = "extLst")]
 	pub ext_lst: CTExtensionListModify,
 }

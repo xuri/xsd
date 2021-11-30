@@ -281,73 +281,73 @@ type CTAlgorithm struct {
 
 // CTLayoutNode ...
 type CTLayoutNode struct {
-	XMLName      xml.Name                     `xml:"CT_LayoutNode"`
-	NameAttr     string                       `xml:"name,attr,omitempty"`
-	StyleLblAttr string                       `xml:"styleLbl,attr,omitempty"`
-	ChOrderAttr  string                       `xml:"chOrder,attr,omitempty"`
-	MoveWithAttr string                       `xml:"moveWith,attr,omitempty"`
-	Alg          *CTAlgorithm                 `xml:"alg"`
-	Shape        *CTShape                     `xml:"shape"`
-	PresOf       *CTPresentationOf            `xml:"presOf"`
-	ConstrLst    *CTConstraints               `xml:"constrLst"`
-	RuleLst      *CTRules                     `xml:"ruleLst"`
-	VarLst       *CTLayoutVariablePropertySet `xml:"varLst"`
-	ForEach      *CTForEach                   `xml:"forEach"`
-	LayoutNode   *CTLayoutNode                `xml:"layoutNode"`
-	Choose       *CTChoose                    `xml:"choose"`
-	ExtLst       *CTOfficeArtExtensionList    `xml:"extLst"`
+	XMLName      xml.Name                       `xml:"CT_LayoutNode"`
+	NameAttr     string                         `xml:"name,attr,omitempty"`
+	StyleLblAttr string                         `xml:"styleLbl,attr,omitempty"`
+	ChOrderAttr  string                         `xml:"chOrder,attr,omitempty"`
+	MoveWithAttr string                         `xml:"moveWith,attr,omitempty"`
+	Alg          []*CTAlgorithm                 `xml:"alg"`
+	Shape        []*CTShape                     `xml:"shape"`
+	PresOf       []*CTPresentationOf            `xml:"presOf"`
+	ConstrLst    []*CTConstraints               `xml:"constrLst"`
+	RuleLst      []*CTRules                     `xml:"ruleLst"`
+	VarLst       []*CTLayoutVariablePropertySet `xml:"varLst"`
+	ForEach      []*CTForEach                   `xml:"forEach"`
+	LayoutNode   []*CTLayoutNode                `xml:"layoutNode"`
+	Choose       []*CTChoose                    `xml:"choose"`
+	ExtLst       []*CTOfficeArtExtensionList    `xml:"extLst"`
 }
 
 // CTForEach ...
 type CTForEach struct {
 	XMLName              xml.Name `xml:"CT_ForEach"`
 	AGIteratorAttributes *AGIteratorAttributes
-	NameAttr             string                    `xml:"name,attr,omitempty"`
-	RefAttr              string                    `xml:"ref,attr,omitempty"`
-	Alg                  *CTAlgorithm              `xml:"alg"`
-	Shape                *CTShape                  `xml:"shape"`
-	PresOf               *CTPresentationOf         `xml:"presOf"`
-	ConstrLst            *CTConstraints            `xml:"constrLst"`
-	RuleLst              *CTRules                  `xml:"ruleLst"`
-	ForEach              *CTForEach                `xml:"forEach"`
-	LayoutNode           *CTLayoutNode             `xml:"layoutNode"`
-	Choose               *CTChoose                 `xml:"choose"`
-	ExtLst               *CTOfficeArtExtensionList `xml:"extLst"`
+	NameAttr             string                      `xml:"name,attr,omitempty"`
+	RefAttr              string                      `xml:"ref,attr,omitempty"`
+	Alg                  []*CTAlgorithm              `xml:"alg"`
+	Shape                []*CTShape                  `xml:"shape"`
+	PresOf               []*CTPresentationOf         `xml:"presOf"`
+	ConstrLst            []*CTConstraints            `xml:"constrLst"`
+	RuleLst              []*CTRules                  `xml:"ruleLst"`
+	ForEach              []*CTForEach                `xml:"forEach"`
+	LayoutNode           []*CTLayoutNode             `xml:"layoutNode"`
+	Choose               []*CTChoose                 `xml:"choose"`
+	ExtLst               []*CTOfficeArtExtensionList `xml:"extLst"`
 }
 
 // CTWhen ...
 type CTWhen struct {
 	XMLName              xml.Name `xml:"CT_When"`
 	AGIteratorAttributes *AGIteratorAttributes
-	NameAttr             string                    `xml:"name,attr,omitempty"`
-	FuncAttr             string                    `xml:"func,attr"`
-	ArgAttr              *STFunctionArgument       `xml:"arg,attr,omitempty"`
-	OpAttr               string                    `xml:"op,attr"`
-	ValAttr              *STFunctionValue          `xml:"val,attr"`
-	Alg                  *CTAlgorithm              `xml:"alg"`
-	Shape                *CTShape                  `xml:"shape"`
-	PresOf               *CTPresentationOf         `xml:"presOf"`
-	ConstrLst            *CTConstraints            `xml:"constrLst"`
-	RuleLst              *CTRules                  `xml:"ruleLst"`
-	ForEach              *CTForEach                `xml:"forEach"`
-	LayoutNode           *CTLayoutNode             `xml:"layoutNode"`
-	Choose               *CTChoose                 `xml:"choose"`
-	ExtLst               *CTOfficeArtExtensionList `xml:"extLst"`
+	NameAttr             string                      `xml:"name,attr,omitempty"`
+	FuncAttr             string                      `xml:"func,attr"`
+	ArgAttr              *STFunctionArgument         `xml:"arg,attr,omitempty"`
+	OpAttr               string                      `xml:"op,attr"`
+	ValAttr              *STFunctionValue            `xml:"val,attr"`
+	Alg                  []*CTAlgorithm              `xml:"alg"`
+	Shape                []*CTShape                  `xml:"shape"`
+	PresOf               []*CTPresentationOf         `xml:"presOf"`
+	ConstrLst            []*CTConstraints            `xml:"constrLst"`
+	RuleLst              []*CTRules                  `xml:"ruleLst"`
+	ForEach              []*CTForEach                `xml:"forEach"`
+	LayoutNode           []*CTLayoutNode             `xml:"layoutNode"`
+	Choose               []*CTChoose                 `xml:"choose"`
+	ExtLst               []*CTOfficeArtExtensionList `xml:"extLst"`
 }
 
 // CTOtherwise ...
 type CTOtherwise struct {
-	XMLName    xml.Name                  `xml:"CT_Otherwise"`
-	NameAttr   string                    `xml:"name,attr,omitempty"`
-	Alg        *CTAlgorithm              `xml:"alg"`
-	Shape      *CTShape                  `xml:"shape"`
-	PresOf     *CTPresentationOf         `xml:"presOf"`
-	ConstrLst  *CTConstraints            `xml:"constrLst"`
-	RuleLst    *CTRules                  `xml:"ruleLst"`
-	ForEach    *CTForEach                `xml:"forEach"`
-	LayoutNode *CTLayoutNode             `xml:"layoutNode"`
-	Choose     *CTChoose                 `xml:"choose"`
-	ExtLst     *CTOfficeArtExtensionList `xml:"extLst"`
+	XMLName    xml.Name                    `xml:"CT_Otherwise"`
+	NameAttr   string                      `xml:"name,attr,omitempty"`
+	Alg        []*CTAlgorithm              `xml:"alg"`
+	Shape      []*CTShape                  `xml:"shape"`
+	PresOf     []*CTPresentationOf         `xml:"presOf"`
+	ConstrLst  []*CTConstraints            `xml:"constrLst"`
+	RuleLst    []*CTRules                  `xml:"ruleLst"`
+	ForEach    []*CTForEach                `xml:"forEach"`
+	LayoutNode []*CTLayoutNode             `xml:"layoutNode"`
+	Choose     []*CTChoose                 `xml:"choose"`
+	ExtLst     []*CTOfficeArtExtensionList `xml:"extLst"`
 }
 
 // CTChoose ...

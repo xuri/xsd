@@ -58,37 +58,37 @@ pub struct CTNameOrCorporateType {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTAuthorType {
 	#[serde(rename = "Artist")]
-	pub artist: CTNameType,
+	pub artist: Vec<CTNameType>,
 	#[serde(rename = "Author")]
-	pub author: CTNameOrCorporateType,
+	pub author: Vec<CTNameOrCorporateType>,
 	#[serde(rename = "BookAuthor")]
-	pub book_author: CTNameType,
+	pub book_author: Vec<CTNameType>,
 	#[serde(rename = "Compiler")]
-	pub compiler: CTNameType,
+	pub compiler: Vec<CTNameType>,
 	#[serde(rename = "Composer")]
-	pub composer: CTNameType,
+	pub composer: Vec<CTNameType>,
 	#[serde(rename = "Conductor")]
-	pub conductor: CTNameType,
+	pub conductor: Vec<CTNameType>,
 	#[serde(rename = "Counsel")]
-	pub counsel: CTNameType,
+	pub counsel: Vec<CTNameType>,
 	#[serde(rename = "Director")]
-	pub director: CTNameType,
+	pub director: Vec<CTNameType>,
 	#[serde(rename = "Editor")]
-	pub editor: CTNameType,
+	pub editor: Vec<CTNameType>,
 	#[serde(rename = "Interviewee")]
-	pub interviewee: CTNameType,
+	pub interviewee: Vec<CTNameType>,
 	#[serde(rename = "Interviewer")]
-	pub interviewer: CTNameType,
+	pub interviewer: Vec<CTNameType>,
 	#[serde(rename = "Inventor")]
-	pub inventor: CTNameType,
+	pub inventor: Vec<CTNameType>,
 	#[serde(rename = "Performer")]
-	pub performer: CTNameOrCorporateType,
+	pub performer: Vec<CTNameOrCorporateType>,
 	#[serde(rename = "ProducerName")]
-	pub producer_name: CTNameType,
+	pub producer_name: Vec<CTNameType>,
 	#[serde(rename = "Translator")]
-	pub translator: CTNameType,
+	pub translator: Vec<CTNameType>,
 	#[serde(rename = "Writer")]
-	pub writer: CTNameType,
+	pub writer: Vec<CTNameType>,
 }
 
 
@@ -96,109 +96,109 @@ pub struct CTAuthorType {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTSourceType {
 	#[serde(rename = "AbbreviatedCaseNumber")]
-	pub abbreviated_case_number: String,
+	pub abbreviated_case_number: Vec<String>,
 	#[serde(rename = "AlbumTitle")]
-	pub album_title: String,
+	pub album_title: Vec<String>,
 	#[serde(rename = "Author")]
-	pub author: CTAuthorType,
+	pub author: Vec<CTAuthorType>,
 	#[serde(rename = "BookTitle")]
-	pub book_title: String,
+	pub book_title: Vec<String>,
 	#[serde(rename = "Broadcaster")]
-	pub broadcaster: String,
+	pub broadcaster: Vec<String>,
 	#[serde(rename = "BroadcastTitle")]
-	pub broadcast_title: String,
+	pub broadcast_title: Vec<String>,
 	#[serde(rename = "CaseNumber")]
-	pub case_number: String,
+	pub case_number: Vec<String>,
 	#[serde(rename = "ChapterNumber")]
-	pub chapter_number: String,
+	pub chapter_number: Vec<String>,
 	#[serde(rename = "City")]
-	pub city: String,
+	pub city: Vec<String>,
 	#[serde(rename = "Comments")]
-	pub comments: String,
+	pub comments: Vec<String>,
 	#[serde(rename = "ConferenceName")]
-	pub conference_name: String,
+	pub conference_name: Vec<String>,
 	#[serde(rename = "CountryRegion")]
-	pub country_region: String,
+	pub country_region: Vec<String>,
 	#[serde(rename = "Court")]
-	pub court: String,
+	pub court: Vec<String>,
 	#[serde(rename = "Day")]
-	pub day: String,
+	pub day: Vec<String>,
 	#[serde(rename = "DayAccessed")]
-	pub day_accessed: String,
+	pub day_accessed: Vec<String>,
 	#[serde(rename = "Department")]
-	pub department: String,
+	pub department: Vec<String>,
 	#[serde(rename = "Distributor")]
-	pub distributor: String,
+	pub distributor: Vec<String>,
 	#[serde(rename = "Edition")]
-	pub edition: String,
+	pub edition: Vec<String>,
 	#[serde(rename = "Guid")]
-	pub guid: String,
+	pub guid: Vec<String>,
 	#[serde(rename = "Institution")]
-	pub institution: String,
+	pub institution: Vec<String>,
 	#[serde(rename = "InternetSiteTitle")]
-	pub internet_site_title: String,
+	pub internet_site_title: Vec<String>,
 	#[serde(rename = "Issue")]
-	pub issue: String,
+	pub issue: Vec<String>,
 	#[serde(rename = "JournalName")]
-	pub journal_name: String,
+	pub journal_name: Vec<String>,
 	#[serde(rename = "LCID")]
-	pub lcid: String,
+	pub lcid: Vec<String>,
 	#[serde(rename = "Medium")]
-	pub medium: String,
+	pub medium: Vec<String>,
 	#[serde(rename = "Month")]
-	pub month: String,
+	pub month: Vec<String>,
 	#[serde(rename = "MonthAccessed")]
-	pub month_accessed: String,
+	pub month_accessed: Vec<String>,
 	#[serde(rename = "NumberVolumes")]
-	pub number_volumes: String,
+	pub number_volumes: Vec<String>,
 	#[serde(rename = "Pages")]
-	pub pages: String,
+	pub pages: Vec<String>,
 	#[serde(rename = "PatentNumber")]
-	pub patent_number: String,
+	pub patent_number: Vec<String>,
 	#[serde(rename = "PeriodicalTitle")]
-	pub periodical_title: String,
+	pub periodical_title: Vec<String>,
 	#[serde(rename = "ProductionCompany")]
-	pub production_company: String,
+	pub production_company: Vec<String>,
 	#[serde(rename = "PublicationTitle")]
-	pub publication_title: String,
+	pub publication_title: Vec<String>,
 	#[serde(rename = "Publisher")]
-	pub publisher: String,
+	pub publisher: Vec<String>,
 	#[serde(rename = "RecordingNumber")]
-	pub recording_number: String,
+	pub recording_number: Vec<String>,
 	#[serde(rename = "RefOrder")]
-	pub ref_order: String,
+	pub ref_order: Vec<String>,
 	#[serde(rename = "Reporter")]
-	pub reporter: String,
+	pub reporter: Vec<String>,
 	#[serde(rename = "SourceType")]
-	pub source_type: String,
+	pub source_type: Vec<String>,
 	#[serde(rename = "ShortTitle")]
-	pub short_title: String,
+	pub short_title: Vec<String>,
 	#[serde(rename = "StandardNumber")]
-	pub standard_number: String,
+	pub standard_number: Vec<String>,
 	#[serde(rename = "StateProvince")]
-	pub state_province: String,
+	pub state_province: Vec<String>,
 	#[serde(rename = "Station")]
-	pub station: String,
+	pub station: Vec<String>,
 	#[serde(rename = "Tag")]
-	pub tag: String,
+	pub tag: Vec<String>,
 	#[serde(rename = "Theater")]
-	pub theater: String,
+	pub theater: Vec<String>,
 	#[serde(rename = "ThesisType")]
-	pub thesis_type: String,
+	pub thesis_type: Vec<String>,
 	#[serde(rename = "Title")]
-	pub title: String,
+	pub title: Vec<String>,
 	#[serde(rename = "Type")]
-	pub type_attr: String,
+	pub type_attr: Vec<String>,
 	#[serde(rename = "URL")]
-	pub url: String,
+	pub url: Vec<String>,
 	#[serde(rename = "Version")]
-	pub version: String,
+	pub version: Vec<String>,
 	#[serde(rename = "Volume")]
-	pub volume: String,
+	pub volume: Vec<String>,
 	#[serde(rename = "Year")]
-	pub year: String,
+	pub year: Vec<String>,
 	#[serde(rename = "YearAccessed")]
-	pub year_accessed: String,
+	pub year_accessed: Vec<String>,
 }
 
 

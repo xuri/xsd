@@ -329,31 +329,31 @@ public class CT_TLTimeConditionList {
 // CT_TimeNodeList ...
 public class CT_TimeNodeList {
 	@XmlElement(required = true, name = "par")
-	protected CT_TLTimeNodeParallel Par;
+	protected List<CT_TLTimeNodeParallel> Par;
 	@XmlElement(required = true, name = "seq")
-	protected CT_TLTimeNodeSequence Seq;
+	protected List<CT_TLTimeNodeSequence> Seq;
 	@XmlElement(required = true, name = "excl")
-	protected CT_TLTimeNodeExclusive Excl;
+	protected List<CT_TLTimeNodeExclusive> Excl;
 	@XmlElement(required = true, name = "anim")
-	protected CT_TLAnimateBehavior Anim;
+	protected List<CT_TLAnimateBehavior> Anim;
 	@XmlElement(required = true, name = "animClr")
-	protected CT_TLAnimateColorBehavior AnimClr;
+	protected List<CT_TLAnimateColorBehavior> AnimClr;
 	@XmlElement(required = true, name = "animEffect")
-	protected CT_TLAnimateEffectBehavior AnimEffect;
+	protected List<CT_TLAnimateEffectBehavior> AnimEffect;
 	@XmlElement(required = true, name = "animMotion")
-	protected CT_TLAnimateMotionBehavior AnimMotion;
+	protected List<CT_TLAnimateMotionBehavior> AnimMotion;
 	@XmlElement(required = true, name = "animRot")
-	protected CT_TLAnimateRotationBehavior AnimRot;
+	protected List<CT_TLAnimateRotationBehavior> AnimRot;
 	@XmlElement(required = true, name = "animScale")
-	protected CT_TLAnimateScaleBehavior AnimScale;
+	protected List<CT_TLAnimateScaleBehavior> AnimScale;
 	@XmlElement(required = true, name = "cmd")
-	protected CT_TLCommandBehavior Cmd;
+	protected List<CT_TLCommandBehavior> Cmd;
 	@XmlElement(required = true, name = "set")
-	protected CT_TLSetBehavior Set;
+	protected List<CT_TLSetBehavior> Set;
 	@XmlElement(required = true, name = "audio")
-	protected CT_TLMediaNodeAudio Audio;
+	protected List<CT_TLMediaNodeAudio> Audio;
 	@XmlElement(required = true, name = "video")
-	protected CT_TLMediaNodeVideo Video;
+	protected List<CT_TLMediaNodeVideo> Video;
 }
 
 // ST_TLTimeNodePresetClassType ...
@@ -960,13 +960,13 @@ public class CT_TLGraphicalObjectBuild {
 // CT_BuildList ...
 public class CT_BuildList {
 	@XmlElement(required = true, name = "bldP")
-	protected CT_TLBuildParagraph BldP;
+	protected List<CT_TLBuildParagraph> BldP;
 	@XmlElement(required = true, name = "bldDgm")
-	protected CT_TLBuildDiagram BldDgm;
+	protected List<CT_TLBuildDiagram> BldDgm;
 	@XmlElement(required = true, name = "bldOleChart")
-	protected CT_TLOleBuildChart BldOleChart;
+	protected List<CT_TLOleBuildChart> BldOleChart;
 	@XmlElement(required = true, name = "bldGraphic")
-	protected CT_TLGraphicalObjectBuild BldGraphic;
+	protected List<CT_TLGraphicalObjectBuild> BldGraphic;
 }
 
 // CT_SlideTiming ...
@@ -1757,17 +1757,17 @@ public class CT_GroupShape {
 	@XmlElement(required = true, name = "grpSpPr")
 	protected CT_GroupShapeProperties GrpSpPr;
 	@XmlElement(required = true, name = "sp")
-	protected CT_Shape Sp;
+	protected List<CT_Shape> Sp;
 	@XmlElement(required = true, name = "grpSp")
-	protected CT_GroupShape GrpSp;
+	protected List<CT_GroupShape> GrpSp;
 	@XmlElement(required = true, name = "graphicFrame")
-	protected CT_GraphicalObjectFrame GraphicFrame;
+	protected List<CT_GraphicalObjectFrame> GraphicFrame;
 	@XmlElement(required = true, name = "cxnSp")
-	protected CT_Connector CxnSp;
+	protected List<CT_Connector> CxnSp;
 	@XmlElement(required = true, name = "pic")
-	protected CT_Picture Pic;
+	protected List<CT_Picture> Pic;
 	@XmlElement(required = true, name = "contentPart")
-	protected CT_Rel ContentPart;
+	protected List<CT_Rel> ContentPart;
 	@XmlElement(required = true, name = "extLst")
 	protected CT_ExtensionListModify ExtLst;
 }

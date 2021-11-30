@@ -910,8 +910,8 @@ public class CT_ParaRPrChange extends CT_TrackChange  {
 
 // CT_RunTrackChange ...
 public class CT_RunTrackChange extends CT_TrackChange  {
-	protected EG_ContentRunContent EG_ContentRunContent;
-	protected EG_OMathMathElements MEG_OMathMathElements;
+	protected List<EG_ContentRunContent> EG_ContentRunContent;
+	protected List<EG_OMathMathElements> MEG_OMathMathElements;
 }
 
 // EG_PContentMath ...
@@ -1203,9 +1203,9 @@ public class ST_ObjectUpdateMode {
 // CT_Drawing ...
 public class CT_Drawing {
 	@XmlElement(required = true, name = "wp:anchor")
-	protected CT_Anchor WpAnchor;
+	protected List<CT_Anchor> WpAnchor;
 	@XmlElement(required = true, name = "wp:inline")
-	protected CT_Inline WpInline;
+	protected List<CT_Inline> WpInline;
 }
 
 // CT_SimpleField ...
@@ -1305,29 +1305,29 @@ public class CT_Hyperlink {
 // CT_FFData ...
 public class CT_FFData {
 	@XmlElement(required = true, name = "name")
-	protected CT_FFName Name;
+	protected List<CT_FFName> Name;
 	@XmlElement(required = true, name = "label")
-	protected CT_DecimalNumber Label;
+	protected List<CT_DecimalNumber> Label;
 	@XmlElement(required = true, name = "tabIndex")
-	protected CT_UnsignedDecimalNumber TabIndex;
+	protected List<CT_UnsignedDecimalNumber> TabIndex;
 	@XmlElement(required = true, name = "enabled")
-	protected CT_OnOff Enabled;
+	protected List<CT_OnOff> Enabled;
 	@XmlElement(required = true, name = "calcOnExit")
-	protected CT_OnOff CalcOnExit;
+	protected List<CT_OnOff> CalcOnExit;
 	@XmlElement(required = true, name = "entryMacro")
-	protected CT_MacroName EntryMacro;
+	protected List<CT_MacroName> EntryMacro;
 	@XmlElement(required = true, name = "exitMacro")
-	protected CT_MacroName ExitMacro;
+	protected List<CT_MacroName> ExitMacro;
 	@XmlElement(required = true, name = "helpText")
-	protected CT_FFHelpText HelpText;
+	protected List<CT_FFHelpText> HelpText;
 	@XmlElement(required = true, name = "statusText")
-	protected CT_FFStatusText StatusText;
+	protected List<CT_FFStatusText> StatusText;
 	@XmlElement(required = true, name = "checkBox")
-	protected CT_FFCheckBox CheckBox;
+	protected List<CT_FFCheckBox> CheckBox;
 	@XmlElement(required = true, name = "ddList")
-	protected CT_FFDDList DdList;
+	protected List<CT_FFDDList> DdList;
 	@XmlElement(required = true, name = "textInput")
-	protected CT_FFTextInput TextInput;
+	protected List<CT_FFTextInput> TextInput;
 }
 
 // CT_FFHelpText ...
@@ -2299,7 +2299,7 @@ public class CT_SdtPr {
 // CT_SdtEndPr ...
 public class CT_SdtEndPr {
 	@XmlElement(required = true, name = "rPr")
-	protected CT_RPr RPr;
+	protected List<CT_RPr> RPr;
 }
 
 // EG_ContentRunContent ...
@@ -2723,29 +2723,29 @@ public class CT_Headers {
 // CT_TrPrBase ...
 public class CT_TrPrBase {
 	@XmlElement(required = true, name = "cnfStyle")
-	protected CT_Cnf CnfStyle;
+	protected List<CT_Cnf> CnfStyle;
 	@XmlElement(required = true, name = "divId")
-	protected CT_DecimalNumber DivId;
+	protected List<CT_DecimalNumber> DivId;
 	@XmlElement(required = true, name = "gridBefore")
-	protected CT_DecimalNumber GridBefore;
+	protected List<CT_DecimalNumber> GridBefore;
 	@XmlElement(required = true, name = "gridAfter")
-	protected CT_DecimalNumber GridAfter;
+	protected List<CT_DecimalNumber> GridAfter;
 	@XmlElement(required = true, name = "wBefore")
-	protected CT_TblWidth WBefore;
+	protected List<CT_TblWidth> WBefore;
 	@XmlElement(required = true, name = "wAfter")
-	protected CT_TblWidth WAfter;
+	protected List<CT_TblWidth> WAfter;
 	@XmlElement(required = true, name = "cantSplit")
-	protected CT_OnOff CantSplit;
+	protected List<CT_OnOff> CantSplit;
 	@XmlElement(required = true, name = "trHeight")
-	protected CT_Height TrHeight;
+	protected List<CT_Height> TrHeight;
 	@XmlElement(required = true, name = "tblHeader")
-	protected CT_OnOff TblHeader;
+	protected List<CT_OnOff> TblHeader;
 	@XmlElement(required = true, name = "tblCellSpacing")
-	protected CT_TblWidth TblCellSpacing;
+	protected List<CT_TblWidth> TblCellSpacing;
 	@XmlElement(required = true, name = "jc")
-	protected CT_JcTable Jc;
+	protected List<CT_JcTable> Jc;
 	@XmlElement(required = true, name = "hidden")
-	protected CT_OnOff Hidden;
+	protected List<CT_OnOff> Hidden;
 }
 
 // CT_TrPr ...

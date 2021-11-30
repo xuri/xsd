@@ -576,8 +576,8 @@ typedef struct {
 
 // CT_RunTrackChange ...
 typedef struct {
-	EG_ContentRunContent EG_ContentRunContent;
-	EG_OMathMathElements MEG_OMathMathElements;
+	EG_ContentRunContent EG_ContentRunContent[];
+	EG_OMathMathElements MEG_OMathMathElements[];
 } CT_RunTrackChange;
 
 // EG_PContentMath ...
@@ -761,8 +761,8 @@ typedef char ST_ObjectUpdateMode;
 
 // CT_Drawing ...
 typedef struct {
-	CT_Anchor WpAnchor;
-	CT_Inline WpInline;
+	CT_Anchor WpAnchor[];
+	CT_Inline WpInline[];
 } CT_Drawing;
 
 // CT_SimpleField ...
@@ -822,18 +822,18 @@ typedef struct {
 
 // CT_FFData ...
 typedef struct {
-	CT_FFName Name;
-	CT_DecimalNumber Label;
-	CT_UnsignedDecimalNumber TabIndex;
-	CT_OnOff Enabled;
-	CT_OnOff CalcOnExit;
-	CT_MacroName EntryMacro;
-	CT_MacroName ExitMacro;
-	CT_FFHelpText HelpText;
-	CT_FFStatusText StatusText;
-	CT_FFCheckBox CheckBox;
-	CT_FFDDList DdList;
-	CT_FFTextInput TextInput;
+	CT_FFName Name[];
+	CT_DecimalNumber Label[];
+	CT_UnsignedDecimalNumber TabIndex[];
+	CT_OnOff Enabled[];
+	CT_OnOff CalcOnExit[];
+	CT_MacroName EntryMacro[];
+	CT_MacroName ExitMacro[];
+	CT_FFHelpText HelpText[];
+	CT_FFStatusText StatusText[];
+	CT_FFCheckBox CheckBox[];
+	CT_FFDDList DdList[];
+	CT_FFTextInput TextInput[];
 } CT_FFData;
 
 // CT_FFHelpText ...
@@ -1448,7 +1448,7 @@ typedef struct {
 
 // CT_SdtEndPr ...
 typedef struct {
-	CT_RPr RPr;
+	CT_RPr RPr[];
 } CT_SdtEndPr;
 
 // EG_ContentRunContent ...
@@ -1748,18 +1748,18 @@ typedef struct {
 
 // CT_TrPrBase ...
 typedef struct {
-	CT_Cnf CnfStyle;
-	CT_DecimalNumber DivId;
-	CT_DecimalNumber GridBefore;
-	CT_DecimalNumber GridAfter;
-	CT_TblWidth WBefore;
-	CT_TblWidth WAfter;
-	CT_OnOff CantSplit;
-	CT_Height TrHeight;
-	CT_OnOff TblHeader;
-	CT_TblWidth TblCellSpacing;
-	CT_JcTable Jc;
-	CT_OnOff Hidden;
+	CT_Cnf CnfStyle[];
+	CT_DecimalNumber DivId[];
+	CT_DecimalNumber GridBefore[];
+	CT_DecimalNumber GridAfter[];
+	CT_TblWidth WBefore[];
+	CT_TblWidth WAfter[];
+	CT_OnOff CantSplit[];
+	CT_Height TrHeight[];
+	CT_OnOff TblHeader[];
+	CT_TblWidth TblCellSpacing[];
+	CT_JcTable Jc[];
+	CT_OnOff Hidden[];
 } CT_TrPrBase;
 
 // CT_TrPr ...

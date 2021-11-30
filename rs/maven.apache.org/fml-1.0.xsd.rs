@@ -502,9 +502,9 @@ pub struct Inline {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Inline {
 	#[serde(rename = "inline")]
-	pub inline: Inline,
+	pub inline: Vec<Inline>,
 	#[serde(rename = "misc.inline")]
-	pub misc_inline: MiscInline,
+	pub misc_inline: Vec<MiscInline>,
 }
 
 
@@ -586,13 +586,13 @@ pub struct Block {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Flow {
 	#[serde(rename = "block")]
-	pub block: Block,
+	pub block: Vec<Block>,
 	#[serde(rename = "inline")]
-	pub inline: Inline,
+	pub inline: Vec<Inline>,
 	#[serde(rename = "misc")]
-	pub misc: Misc,
+	pub misc: Vec<Misc>,
 	#[serde(rename = "form")]
-	pub form: String,
+	pub form: Vec<String>,
 }
 
 
@@ -600,15 +600,15 @@ pub struct Flow {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct AContent {
 	#[serde(rename = "special")]
-	pub special: Special,
+	pub special: Vec<Special>,
 	#[serde(rename = "fontstyle")]
-	pub fontstyle: Fontstyle,
+	pub fontstyle: Vec<Fontstyle>,
 	#[serde(rename = "phrase")]
-	pub phrase: Phrase,
+	pub phrase: Vec<Phrase>,
 	#[serde(rename = "inline.forms")]
-	pub inline_forms: InlineForms,
+	pub inline_forms: Vec<InlineForms>,
 	#[serde(rename = "misc.inline")]
-	pub misc_inline: MiscInline,
+	pub misc_inline: Vec<MiscInline>,
 }
 
 
@@ -617,17 +617,17 @@ pub struct AContent {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct PreContent {
 	#[serde(rename = "special.basic")]
-	pub special_basic: SpecialBasic,
+	pub special_basic: Vec<SpecialBasic>,
 	#[serde(rename = "fontstyle.basic")]
-	pub fontstyle_basic: FontstyleBasic,
+	pub fontstyle_basic: Vec<FontstyleBasic>,
 	#[serde(rename = "phrase.basic")]
-	pub phrase_basic: PhraseBasic,
+	pub phrase_basic: Vec<PhraseBasic>,
 	#[serde(rename = "inline.forms")]
-	pub inline_forms: InlineForms,
+	pub inline_forms: Vec<InlineForms>,
 	#[serde(rename = "misc.inline")]
-	pub misc_inline: MiscInline,
+	pub misc_inline: Vec<MiscInline>,
 	#[serde(rename = "a")]
-	pub a: A,
+	pub a: Vec<A>,
 }
 
 
@@ -635,11 +635,11 @@ pub struct PreContent {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct FormContent {
 	#[serde(rename = "block")]
-	pub block: Block,
+	pub block: Vec<Block>,
 	#[serde(rename = "inline")]
-	pub inline: Inline,
+	pub inline: Vec<Inline>,
 	#[serde(rename = "misc")]
-	pub misc: Misc,
+	pub misc: Vec<Misc>,
 }
 
 
@@ -647,37 +647,37 @@ pub struct FormContent {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct ButtonContent {
 	#[serde(rename = "heading")]
-	pub heading: Heading,
+	pub heading: Vec<Heading>,
 	#[serde(rename = "lists")]
-	pub lists: Lists,
+	pub lists: Vec<Lists>,
 	#[serde(rename = "blocktext")]
-	pub blocktext: Blocktext,
+	pub blocktext: Vec<Blocktext>,
 	#[serde(rename = "fontstyle")]
-	pub fontstyle: Fontstyle,
+	pub fontstyle: Vec<Fontstyle>,
 	#[serde(rename = "phrase")]
-	pub phrase: Phrase,
+	pub phrase: Vec<Phrase>,
 	#[serde(rename = "misc")]
-	pub misc: Misc,
+	pub misc: Vec<Misc>,
 	#[serde(rename = "p")]
-	pub p: P,
+	pub p: Vec<P>,
 	#[serde(rename = "div")]
-	pub div: Div,
+	pub div: Vec<Div>,
 	#[serde(rename = "table")]
-	pub table: Table,
+	pub table: Vec<Table>,
 	#[serde(rename = "br")]
-	pub br: String,
+	pub br: Vec<String>,
 	#[serde(rename = "span")]
-	pub span: Span,
+	pub span: Vec<Span>,
 	#[serde(rename = "bdo")]
-	pub bdo: String,
+	pub bdo: Vec<String>,
 	#[serde(rename = "object")]
-	pub object: String,
+	pub object: Vec<String>,
 	#[serde(rename = "applet")]
-	pub applet: Applet,
+	pub applet: Vec<Applet>,
 	#[serde(rename = "img")]
-	pub img: String,
+	pub img: Vec<String>,
 	#[serde(rename = "map")]
-	pub map: Map,
+	pub map: Vec<Map>,
 }
 
 
@@ -1074,7 +1074,7 @@ pub struct Dl {
 	#[serde(rename = "compact")]
 	pub compact: Option<String>,
 	#[serde(rename = "dt")]
-	pub dt: Dt,
+	pub dt: Vec<Dt>,
 	#[serde(rename = "dl")]
 	pub dl: String,
 }
@@ -1106,11 +1106,11 @@ pub struct Address {
 	#[serde(rename = "attrs")]
 	pub attrs: Vec<Attrs>,
 	#[serde(rename = "inline")]
-	pub inline: Inline,
+	pub inline: Vec<Inline>,
 	#[serde(rename = "misc.inline")]
-	pub misc_inline: MiscInline,
+	pub misc_inline: Vec<MiscInline>,
 	#[serde(rename = "p")]
-	pub p: P,
+	pub p: Vec<P>,
 }
 
 
@@ -1548,13 +1548,13 @@ pub struct Object {
 	#[serde(rename = "vspace")]
 	pub vspace: Option<u32>,
 	#[serde(rename = "block")]
-	pub block: Block,
+	pub block: Vec<Block>,
 	#[serde(rename = "inline")]
-	pub inline: Inline,
+	pub inline: Vec<Inline>,
 	#[serde(rename = "misc")]
-	pub misc: Misc,
+	pub misc: Vec<Misc>,
 	#[serde(rename = "param")]
-	pub param: String,
+	pub param: Vec<String>,
 	#[serde(rename = "object")]
 	pub object: String,
 }
@@ -1604,15 +1604,15 @@ pub struct Applet {
 	#[serde(rename = "vspace")]
 	pub vspace: Option<u32>,
 	#[serde(rename = "block")]
-	pub block: Block,
+	pub block: Vec<Block>,
 	#[serde(rename = "inline")]
-	pub inline: Inline,
+	pub inline: Vec<Inline>,
 	#[serde(rename = "misc")]
-	pub misc: Misc,
+	pub misc: Vec<Misc>,
 	#[serde(rename = "param")]
-	pub param: String,
+	pub param: Vec<String>,
 	#[serde(rename = "form")]
-	pub form: String,
+	pub form: Vec<String>,
 }
 
 
@@ -1666,11 +1666,11 @@ pub struct Map {
 	#[serde(rename = "name")]
 	pub name: Option<char>,
 	#[serde(rename = "block")]
-	pub block: Block,
+	pub block: Vec<Block>,
 	#[serde(rename = "misc")]
-	pub misc: Misc,
+	pub misc: Vec<Misc>,
 	#[serde(rename = "form")]
-	pub form: String,
+	pub form: Vec<String>,
 	#[serde(rename = "area")]
 	pub area: Vec<String>,
 }
@@ -1812,7 +1812,7 @@ pub struct Select {
 	#[serde(rename = "onchange")]
 	pub onchange: Option<String>,
 	#[serde(rename = "optgroup")]
-	pub optgroup: String,
+	pub optgroup: Vec<String>,
 	#[serde(rename = "select")]
 	pub select: String,
 }
@@ -1878,15 +1878,15 @@ pub struct Fieldset {
 	#[serde(rename = "attrs")]
 	pub attrs: Vec<Attrs>,
 	#[serde(rename = "block")]
-	pub block: Block,
+	pub block: Vec<Block>,
 	#[serde(rename = "inline")]
-	pub inline: Inline,
+	pub inline: Vec<Inline>,
 	#[serde(rename = "misc")]
-	pub misc: Misc,
+	pub misc: Vec<Misc>,
 	#[serde(rename = "legend")]
 	pub legend: Legend,
 	#[serde(rename = "form")]
-	pub form: String,
+	pub form: Vec<String>,
 }
 
 
@@ -2147,9 +2147,9 @@ pub struct Tr {
 	#[serde(rename = "bgcolor")]
 	pub bgcolor: Option<String>,
 	#[serde(rename = "th")]
-	pub th: String,
+	pub th: Vec<String>,
 	#[serde(rename = "td")]
-	pub td: String,
+	pub td: Vec<String>,
 }
 
 
@@ -2283,13 +2283,13 @@ pub struct Question {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Answer {
 	#[serde(rename = "block")]
-	pub block: Block,
+	pub block: Vec<Block>,
 	#[serde(rename = "inline")]
-	pub inline: Inline,
+	pub inline: Vec<Inline>,
 	#[serde(rename = "misc")]
-	pub misc: Misc,
+	pub misc: Vec<Misc>,
 	#[serde(rename = "form")]
-	pub form: String,
+	pub form: Vec<String>,
 }
 
 

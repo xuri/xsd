@@ -55,45 +55,45 @@ public class CT_Vector {
 	@XmlAttribute(name = "size", required = true)
 	protected Integer SizeAttr;
 	@XmlElement(required = true, name = "variant")
-	protected CT_Variant Variant;
+	protected List<CT_Variant> Variant;
 	@XmlElement(required = true, name = "i1")
-	protected Byte I1;
+	protected List<Byte> I1;
 	@XmlElement(required = true, name = "i2")
-	protected Integer I2;
+	protected List<Integer> I2;
 	@XmlElement(required = true, name = "i4")
-	protected Integer I4;
+	protected List<Integer> I4;
 	@XmlElement(required = true, name = "i8")
-	protected Long I8;
+	protected List<Long> I8;
 	@XmlElement(required = true, name = "ui1")
-	protected Byte Ui1;
+	protected List<Byte> Ui1;
 	@XmlElement(required = true, name = "ui2")
-	protected Short Ui2;
+	protected List<Short> Ui2;
 	@XmlElement(required = true, name = "ui4")
-	protected Integer Ui4;
+	protected List<Integer> Ui4;
 	@XmlElement(required = true, name = "ui8")
-	protected Long Ui8;
+	protected List<Long> Ui8;
 	@XmlElement(required = true, name = "r4")
-	protected Float R4;
+	protected List<Float> R4;
 	@XmlElement(required = true, name = "r8")
-	protected Float R8;
+	protected List<Float> R8;
 	@XmlElement(required = true, name = "lpstr")
-	protected String Lpstr;
+	protected List<String> Lpstr;
 	@XmlElement(required = true, name = "lpwstr")
-	protected String Lpwstr;
+	protected List<String> Lpwstr;
 	@XmlElement(required = true, name = "bstr")
-	protected String Bstr;
+	protected List<String> Bstr;
 	@XmlElement(required = true, name = "date")
-	protected String Date;
+	protected List<String> Date;
 	@XmlElement(required = true, name = "filetime")
-	protected String Filetime;
+	protected List<String> Filetime;
 	@XmlElement(required = true, name = "bool")
-	protected Boolean Bool;
+	protected List<Boolean> Bool;
 	@XmlElement(required = true, name = "cy")
-	protected String Cy;
+	protected List<String> Cy;
 	@XmlElement(required = true, name = "error")
-	protected String Error;
+	protected List<String> Error;
 	@XmlElement(required = true, name = "clsid")
-	protected String Clsid;
+	protected List<String> Clsid;
 }
 
 // CT_Array ...
@@ -105,39 +105,39 @@ public class CT_Array {
 	@XmlAttribute(name = "baseType", required = true)
 	protected String BaseTypeAttr;
 	@XmlElement(required = true, name = "variant")
-	protected CT_Variant Variant;
+	protected List<CT_Variant> Variant;
 	@XmlElement(required = true, name = "i1")
-	protected Byte I1;
+	protected List<Byte> I1;
 	@XmlElement(required = true, name = "i2")
-	protected Integer I2;
+	protected List<Integer> I2;
 	@XmlElement(required = true, name = "i4")
-	protected Integer I4;
+	protected List<Integer> I4;
 	@XmlElement(required = true, name = "int")
-	protected Integer Int;
+	protected List<Integer> Int;
 	@XmlElement(required = true, name = "ui1")
-	protected Byte Ui1;
+	protected List<Byte> Ui1;
 	@XmlElement(required = true, name = "ui2")
-	protected Short Ui2;
+	protected List<Short> Ui2;
 	@XmlElement(required = true, name = "ui4")
-	protected Integer Ui4;
+	protected List<Integer> Ui4;
 	@XmlElement(required = true, name = "uint")
-	protected Integer Uint;
+	protected List<Integer> Uint;
 	@XmlElement(required = true, name = "r4")
-	protected Float R4;
+	protected List<Float> R4;
 	@XmlElement(required = true, name = "r8")
-	protected Float R8;
+	protected List<Float> R8;
 	@XmlElement(required = true, name = "decimal")
-	protected Float Decimal;
+	protected List<Float> Decimal;
 	@XmlElement(required = true, name = "bstr")
-	protected String Bstr;
+	protected List<String> Bstr;
 	@XmlElement(required = true, name = "date")
-	protected String Date;
+	protected List<String> Date;
 	@XmlElement(required = true, name = "bool")
-	protected Boolean Bool;
+	protected List<Boolean> Bool;
 	@XmlElement(required = true, name = "error")
-	protected String Error;
+	protected List<String> Error;
 	@XmlElement(required = true, name = "cy")
-	protected String Cy;
+	protected List<String> Cy;
 }
 
 // CT_Variant ...

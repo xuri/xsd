@@ -1287,31 +1287,31 @@ type CTValAx struct {
 
 // CTPlotArea ...
 type CTPlotArea struct {
-	XMLName        xml.Name           `xml:"CT_PlotArea"`
-	Layout         *CTLayout          `xml:"layout"`
-	AreaChart      *CTAreaChart       `xml:"areaChart"`
-	Area3DChart    *CTArea3DChart     `xml:"area3DChart"`
-	LineChart      *CTLineChart       `xml:"lineChart"`
-	Line3DChart    *CTLine3DChart     `xml:"line3DChart"`
-	StockChart     *CTStockChart      `xml:"stockChart"`
-	RadarChart     *CTRadarChart      `xml:"radarChart"`
-	ScatterChart   *CTScatterChart    `xml:"scatterChart"`
-	PieChart       *CTPieChart        `xml:"pieChart"`
-	Pie3DChart     *CTPie3DChart      `xml:"pie3DChart"`
-	DoughnutChart  *CTDoughnutChart   `xml:"doughnutChart"`
-	BarChart       *CTBarChart        `xml:"barChart"`
-	Bar3DChart     *CTBar3DChart      `xml:"bar3DChart"`
-	OfPieChart     *CTOfPieChart      `xml:"ofPieChart"`
-	SurfaceChart   *CTSurfaceChart    `xml:"surfaceChart"`
-	Surface3DChart *CTSurface3DChart  `xml:"surface3DChart"`
-	BubbleChart    *CTBubbleChart     `xml:"bubbleChart"`
-	ValAx          *CTValAx           `xml:"valAx"`
-	CatAx          *CTCatAx           `xml:"catAx"`
-	DateAx         *CTDateAx          `xml:"dateAx"`
-	SerAx          *CTSerAx           `xml:"serAx"`
-	DTable         *CTDTable          `xml:"dTable"`
-	SpPr           *CTShapeProperties `xml:"spPr"`
-	ExtLst         *CTExtensionList   `xml:"extLst"`
+	XMLName        xml.Name            `xml:"CT_PlotArea"`
+	Layout         *CTLayout           `xml:"layout"`
+	AreaChart      []*CTAreaChart      `xml:"areaChart"`
+	Area3DChart    []*CTArea3DChart    `xml:"area3DChart"`
+	LineChart      []*CTLineChart      `xml:"lineChart"`
+	Line3DChart    []*CTLine3DChart    `xml:"line3DChart"`
+	StockChart     []*CTStockChart     `xml:"stockChart"`
+	RadarChart     []*CTRadarChart     `xml:"radarChart"`
+	ScatterChart   []*CTScatterChart   `xml:"scatterChart"`
+	PieChart       []*CTPieChart       `xml:"pieChart"`
+	Pie3DChart     []*CTPie3DChart     `xml:"pie3DChart"`
+	DoughnutChart  []*CTDoughnutChart  `xml:"doughnutChart"`
+	BarChart       []*CTBarChart       `xml:"barChart"`
+	Bar3DChart     []*CTBar3DChart     `xml:"bar3DChart"`
+	OfPieChart     []*CTOfPieChart     `xml:"ofPieChart"`
+	SurfaceChart   []*CTSurfaceChart   `xml:"surfaceChart"`
+	Surface3DChart []*CTSurface3DChart `xml:"surface3DChart"`
+	BubbleChart    []*CTBubbleChart    `xml:"bubbleChart"`
+	ValAx          []*CTValAx          `xml:"valAx"`
+	CatAx          []*CTCatAx          `xml:"catAx"`
+	DateAx         []*CTDateAx         `xml:"dateAx"`
+	SerAx          []*CTSerAx          `xml:"serAx"`
+	DTable         *CTDTable           `xml:"dTable"`
+	SpPr           *CTShapeProperties  `xml:"spPr"`
+	ExtLst         *CTExtensionList    `xml:"extLst"`
 }
 
 // CTPivotFmt ...

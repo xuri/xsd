@@ -980,8 +980,8 @@ export class CT_ParaRPrChange extends CT_TrackChange  {
 
 // CT_RunTrackChange ...
 export class CT_RunTrackChange extends CT_TrackChange  {
-	EG_ContentRunContent: EG_ContentRunContent;
-	MEG_OMathMathElements: EG_OMathMathElements;
+	EG_ContentRunContent: Array<EG_ContentRunContent>;
+	MEG_OMathMathElements: Array<EG_OMathMathElements>;
 }
 
 // EG_PContentMath ...
@@ -1177,8 +1177,8 @@ export enum ST_ObjectUpdateMode {
 
 // CT_Drawing ...
 export class CT_Drawing {
-	WpAnchor: CT_Anchor;
-	WpInline: CT_Inline;
+	WpAnchor: Array<CT_Anchor>;
+	WpInline: Array<CT_Inline>;
 }
 
 // CT_SimpleField ...
@@ -1252,18 +1252,18 @@ export class CT_Hyperlink {
 
 // CT_FFData ...
 export class CT_FFData {
-	Name: CT_FFName;
-	Label: CT_DecimalNumber;
-	TabIndex: CT_UnsignedDecimalNumber;
-	Enabled: CT_OnOff;
-	CalcOnExit: CT_OnOff;
-	EntryMacro: CT_MacroName;
-	ExitMacro: CT_MacroName;
-	HelpText: CT_FFHelpText;
-	StatusText: CT_FFStatusText;
-	CheckBox: CT_FFCheckBox;
-	DdList: CT_FFDDList;
-	TextInput: CT_FFTextInput;
+	Name: Array<CT_FFName>;
+	Label: Array<CT_DecimalNumber>;
+	TabIndex: Array<CT_UnsignedDecimalNumber>;
+	Enabled: Array<CT_OnOff>;
+	CalcOnExit: Array<CT_OnOff>;
+	EntryMacro: Array<CT_MacroName>;
+	ExitMacro: Array<CT_MacroName>;
+	HelpText: Array<CT_FFHelpText>;
+	StatusText: Array<CT_FFStatusText>;
+	CheckBox: Array<CT_FFCheckBox>;
+	DdList: Array<CT_FFDDList>;
+	TextInput: Array<CT_FFTextInput>;
 }
 
 // CT_FFHelpText ...
@@ -2054,7 +2054,7 @@ export class CT_SdtPr {
 
 // CT_SdtEndPr ...
 export class CT_SdtEndPr {
-	RPr: CT_RPr;
+	RPr: Array<CT_RPr>;
 }
 
 // EG_ContentRunContent ...
@@ -2365,18 +2365,18 @@ export class CT_Headers {
 
 // CT_TrPrBase ...
 export class CT_TrPrBase {
-	CnfStyle: CT_Cnf;
-	DivId: CT_DecimalNumber;
-	GridBefore: CT_DecimalNumber;
-	GridAfter: CT_DecimalNumber;
-	WBefore: CT_TblWidth;
-	WAfter: CT_TblWidth;
-	CantSplit: CT_OnOff;
-	TrHeight: CT_Height;
-	TblHeader: CT_OnOff;
-	TblCellSpacing: CT_TblWidth;
-	Jc: CT_JcTable;
-	Hidden: CT_OnOff;
+	CnfStyle: Array<CT_Cnf>;
+	DivId: Array<CT_DecimalNumber>;
+	GridBefore: Array<CT_DecimalNumber>;
+	GridAfter: Array<CT_DecimalNumber>;
+	WBefore: Array<CT_TblWidth>;
+	WAfter: Array<CT_TblWidth>;
+	CantSplit: Array<CT_OnOff>;
+	TrHeight: Array<CT_Height>;
+	TblHeader: Array<CT_OnOff>;
+	TblCellSpacing: Array<CT_TblWidth>;
+	Jc: Array<CT_JcTable>;
+	Hidden: Array<CT_OnOff>;
 }
 
 // CT_TrPr ...

@@ -163,9 +163,9 @@ export class CT_Text {
 // CT_R ...
 export class CT_R {
 	WEG_RPr: EG_RPr;
-	WEG_RunInnerContent: EG_RunInnerContent;
+	WEG_RunInnerContent: Array<EG_RunInnerContent>;
 	RPr: CT_RPR;
-	T: CT_Text;
+	T: Array<CT_Text>;
 }
 
 // CT_CtrlPr ...

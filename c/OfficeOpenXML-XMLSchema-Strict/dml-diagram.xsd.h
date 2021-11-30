@@ -247,16 +247,16 @@ typedef struct {
 	char StyleLblAttr; // attr, optional
 	char ChOrderAttr; // attr, optional
 	char MoveWithAttr; // attr, optional
-	CT_Algorithm Alg;
-	CT_Shape Shape;
-	CT_PresentationOf PresOf;
-	CT_Constraints ConstrLst;
-	CT_Rules RuleLst;
-	CT_LayoutVariablePropertySet VarLst;
-	CT_ForEach ForEach;
-	CT_LayoutNode LayoutNode;
-	CT_Choose Choose;
-	CT_OfficeArtExtensionList ExtLst;
+	CT_Algorithm Alg[];
+	CT_Shape Shape[];
+	CT_PresentationOf PresOf[];
+	CT_Constraints ConstrLst[];
+	CT_Rules RuleLst[];
+	CT_LayoutVariablePropertySet VarLst[];
+	CT_ForEach ForEach[];
+	CT_LayoutNode LayoutNode[];
+	CT_Choose Choose[];
+	CT_OfficeArtExtensionList ExtLst[];
 } CT_LayoutNode;
 
 // CT_ForEach ...
@@ -264,15 +264,15 @@ typedef struct {
 	AG_IteratorAttributes AG_IteratorAttributes;
 	char NameAttr; // attr, optional
 	char RefAttr; // attr, optional
-	CT_Algorithm Alg;
-	CT_Shape Shape;
-	CT_PresentationOf PresOf;
-	CT_Constraints ConstrLst;
-	CT_Rules RuleLst;
-	CT_ForEach ForEach;
-	CT_LayoutNode LayoutNode;
-	CT_Choose Choose;
-	CT_OfficeArtExtensionList ExtLst;
+	CT_Algorithm Alg[];
+	CT_Shape Shape[];
+	CT_PresentationOf PresOf[];
+	CT_Constraints ConstrLst[];
+	CT_Rules RuleLst[];
+	CT_ForEach ForEach[];
+	CT_LayoutNode LayoutNode[];
+	CT_Choose Choose[];
+	CT_OfficeArtExtensionList ExtLst[];
 } CT_ForEach;
 
 // CT_When ...
@@ -283,29 +283,29 @@ typedef struct {
 	ST_FunctionArgument ArgAttr; // attr, optional
 	char OpAttr; // attr
 	ST_FunctionValue ValAttr; // attr
-	CT_Algorithm Alg;
-	CT_Shape Shape;
-	CT_PresentationOf PresOf;
-	CT_Constraints ConstrLst;
-	CT_Rules RuleLst;
-	CT_ForEach ForEach;
-	CT_LayoutNode LayoutNode;
-	CT_Choose Choose;
-	CT_OfficeArtExtensionList ExtLst;
+	CT_Algorithm Alg[];
+	CT_Shape Shape[];
+	CT_PresentationOf PresOf[];
+	CT_Constraints ConstrLst[];
+	CT_Rules RuleLst[];
+	CT_ForEach ForEach[];
+	CT_LayoutNode LayoutNode[];
+	CT_Choose Choose[];
+	CT_OfficeArtExtensionList ExtLst[];
 } CT_When;
 
 // CT_Otherwise ...
 typedef struct {
 	char NameAttr; // attr, optional
-	CT_Algorithm Alg;
-	CT_Shape Shape;
-	CT_PresentationOf PresOf;
-	CT_Constraints ConstrLst;
-	CT_Rules RuleLst;
-	CT_ForEach ForEach;
-	CT_LayoutNode LayoutNode;
-	CT_Choose Choose;
-	CT_OfficeArtExtensionList ExtLst;
+	CT_Algorithm Alg[];
+	CT_Shape Shape[];
+	CT_PresentationOf PresOf[];
+	CT_Constraints ConstrLst[];
+	CT_Rules RuleLst[];
+	CT_ForEach ForEach[];
+	CT_LayoutNode LayoutNode[];
+	CT_Choose Choose[];
+	CT_OfficeArtExtensionList ExtLst[];
 } CT_Otherwise;
 
 // CT_Choose ...

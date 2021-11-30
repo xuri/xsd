@@ -136,9 +136,9 @@ typedef struct {
 // CT_R ...
 typedef struct {
 	EG_RPr WEG_RPr;
-	EG_RunInnerContent WEG_RunInnerContent;
+	EG_RunInnerContent WEG_RunInnerContent[];
 	CT_RPR RPr;
-	CT_Text T;
+	CT_Text T[];
 } CT_R;
 
 // CT_CtrlPr ...

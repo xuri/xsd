@@ -60,45 +60,45 @@ pub struct CTVector {
 	#[serde(rename = "size")]
 	pub size: u32,
 	#[serde(rename = "variant")]
-	pub variant: CTVariant,
+	pub variant: Vec<CTVariant>,
 	#[serde(rename = "i1")]
-	pub i1: u8,
+	pub i1: Vec<u8>,
 	#[serde(rename = "i2")]
-	pub i2: i16,
+	pub i2: Vec<i16>,
 	#[serde(rename = "i4")]
-	pub i4: i32,
+	pub i4: Vec<i32>,
 	#[serde(rename = "i8")]
-	pub i8: i64,
+	pub i8: Vec<i64>,
 	#[serde(rename = "ui1")]
-	pub ui1: u8,
+	pub ui1: Vec<u8>,
 	#[serde(rename = "ui2")]
-	pub ui2: u16,
+	pub ui2: Vec<u16>,
 	#[serde(rename = "ui4")]
-	pub ui4: u32,
+	pub ui4: Vec<u32>,
 	#[serde(rename = "ui8")]
-	pub ui8: u64,
+	pub ui8: Vec<u64>,
 	#[serde(rename = "r4")]
-	pub r4: f64,
+	pub r4: Vec<f64>,
 	#[serde(rename = "r8")]
-	pub r8: f64,
+	pub r8: Vec<f64>,
 	#[serde(rename = "lpstr")]
-	pub lpstr: String,
+	pub lpstr: Vec<String>,
 	#[serde(rename = "lpwstr")]
-	pub lpwstr: String,
+	pub lpwstr: Vec<String>,
 	#[serde(rename = "bstr")]
-	pub bstr: String,
+	pub bstr: Vec<String>,
 	#[serde(rename = "date")]
-	pub date: u8,
+	pub date: Vec<u8>,
 	#[serde(rename = "filetime")]
-	pub filetime: u8,
+	pub filetime: Vec<u8>,
 	#[serde(rename = "bool")]
-	pub bool: bool,
+	pub bool: Vec<bool>,
 	#[serde(rename = "cy")]
-	pub cy: String,
+	pub cy: Vec<String>,
 	#[serde(rename = "error")]
-	pub error: String,
+	pub error: Vec<String>,
 	#[serde(rename = "clsid")]
-	pub clsid: String,
+	pub clsid: Vec<String>,
 }
 
 
@@ -112,39 +112,39 @@ pub struct CTArray {
 	#[serde(rename = "baseType")]
 	pub base_type: String,
 	#[serde(rename = "variant")]
-	pub variant: CTVariant,
+	pub variant: Vec<CTVariant>,
 	#[serde(rename = "i1")]
-	pub i1: u8,
+	pub i1: Vec<u8>,
 	#[serde(rename = "i2")]
-	pub i2: i16,
+	pub i2: Vec<i16>,
 	#[serde(rename = "i4")]
-	pub i4: i32,
+	pub i4: Vec<i32>,
 	#[serde(rename = "int")]
-	pub int: i32,
+	pub int: Vec<i32>,
 	#[serde(rename = "ui1")]
-	pub ui1: u8,
+	pub ui1: Vec<u8>,
 	#[serde(rename = "ui2")]
-	pub ui2: u16,
+	pub ui2: Vec<u16>,
 	#[serde(rename = "ui4")]
-	pub ui4: u32,
+	pub ui4: Vec<u32>,
 	#[serde(rename = "uint")]
-	pub uint: u32,
+	pub uint: Vec<u32>,
 	#[serde(rename = "r4")]
-	pub r4: f64,
+	pub r4: Vec<f64>,
 	#[serde(rename = "r8")]
-	pub r8: f64,
+	pub r8: Vec<f64>,
 	#[serde(rename = "decimal")]
-	pub decimal: f64,
+	pub decimal: Vec<f64>,
 	#[serde(rename = "bstr")]
-	pub bstr: String,
+	pub bstr: Vec<String>,
 	#[serde(rename = "date")]
-	pub date: u8,
+	pub date: Vec<u8>,
 	#[serde(rename = "bool")]
-	pub bool: bool,
+	pub bool: Vec<bool>,
 	#[serde(rename = "error")]
-	pub error: String,
+	pub error: Vec<String>,
 	#[serde(rename = "cy")]
-	pub cy: String,
+	pub cy: Vec<String>,
 }
 
 

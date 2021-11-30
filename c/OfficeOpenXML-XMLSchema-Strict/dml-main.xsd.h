@@ -761,12 +761,12 @@ typedef struct {
 typedef struct {
 	CT_GvmlGroupShapeNonVisual NvGrpSpPr;
 	CT_GroupShapeProperties GrpSpPr;
-	CT_GvmlTextShape TxSp;
-	CT_GvmlShape Sp;
-	CT_GvmlConnector CxnSp;
-	CT_GvmlPicture Pic;
-	CT_GvmlGraphicalObjectFrame GraphicFrame;
-	CT_GvmlGroupShape GrpSp;
+	CT_GvmlTextShape TxSp[];
+	CT_GvmlShape Sp[];
+	CT_GvmlConnector CxnSp[];
+	CT_GvmlPicture Pic[];
+	CT_GvmlGraphicalObjectFrame GraphicFrame[];
+	CT_GvmlGroupShape GrpSp[];
 	CT_OfficeArtExtensionList ExtLst;
 } CT_GvmlGroupShape;
 
@@ -1093,23 +1093,23 @@ typedef char ST_BlipCompression;
 typedef struct {
 	AG_Blob AG_Blob;
 	char CstateAttr; // attr, optional
-	CT_AlphaBiLevelEffect AlphaBiLevel;
-	CT_AlphaCeilingEffect AlphaCeiling;
-	CT_AlphaFloorEffect AlphaFloor;
-	CT_AlphaInverseEffect AlphaInv;
-	CT_AlphaModulateEffect AlphaMod;
-	CT_AlphaModulateFixedEffect AlphaModFix;
-	CT_AlphaReplaceEffect AlphaRepl;
-	CT_BiLevelEffect BiLevel;
-	CT_BlurEffect Blur;
-	CT_ColorChangeEffect ClrChange;
-	CT_ColorReplaceEffect ClrRepl;
-	CT_DuotoneEffect Duotone;
-	CT_FillOverlayEffect FillOverlay;
-	CT_GrayscaleEffect Grayscl;
-	CT_HSLEffect Hsl;
-	CT_LuminanceEffect Lum;
-	CT_TintEffect Tint;
+	CT_AlphaBiLevelEffect AlphaBiLevel[];
+	CT_AlphaCeilingEffect AlphaCeiling[];
+	CT_AlphaFloorEffect AlphaFloor[];
+	CT_AlphaInverseEffect AlphaInv[];
+	CT_AlphaModulateEffect AlphaMod[];
+	CT_AlphaModulateFixedEffect AlphaModFix[];
+	CT_AlphaReplaceEffect AlphaRepl[];
+	CT_BiLevelEffect BiLevel[];
+	CT_BlurEffect Blur[];
+	CT_ColorChangeEffect ClrChange[];
+	CT_ColorReplaceEffect ClrRepl[];
+	CT_DuotoneEffect Duotone[];
+	CT_FillOverlayEffect FillOverlay[];
+	CT_GrayscaleEffect Grayscl[];
+	CT_HSLEffect Hsl[];
+	CT_LuminanceEffect Lum[];
+	CT_TintEffect Tint[];
 	CT_OfficeArtExtensionList ExtLst;
 } CT_Blip;
 
@@ -1329,8 +1329,8 @@ typedef struct {
 
 // CT_AdjustHandleList ...
 typedef struct {
-	CT_XYAdjustHandle AhXY;
-	CT_PolarAdjustHandle AhPolar;
+	CT_XYAdjustHandle AhXY[];
+	CT_PolarAdjustHandle AhPolar[];
 } CT_AdjustHandleList;
 
 // CT_ConnectionSiteList ...
@@ -1386,12 +1386,12 @@ typedef struct {
 	char FillAttr; // attr, optional
 	bool StrokeAttr; // attr, optional
 	bool ExtrusionOkAttr; // attr, optional
-	CT_Path2DClose Close;
-	CT_Path2DMoveTo MoveTo;
-	CT_Path2DLineTo LnTo;
-	CT_Path2DArcTo ArcTo;
-	CT_Path2DQuadBezierTo QuadBezTo;
-	CT_Path2DCubicBezierTo CubicBezTo;
+	CT_Path2DClose Close[];
+	CT_Path2DMoveTo MoveTo[];
+	CT_Path2DLineTo LnTo[];
+	CT_Path2DArcTo ArcTo[];
+	CT_Path2DQuadBezierTo QuadBezTo[];
+	CT_Path2DCubicBezierTo CubicBezTo[];
 } CT_Path2D;
 
 // CT_Path2DList ...

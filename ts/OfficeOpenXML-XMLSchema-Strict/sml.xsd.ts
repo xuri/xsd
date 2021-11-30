@@ -495,9 +495,9 @@ export enum ST_ParameterType {
 // CT_Tables ...
 export class CT_Tables {
 	CountAttr: number | null;
-	M: CT_TableMissing;
-	S: CT_XStringElement;
-	X: CT_Index;
+	M: Array<CT_TableMissing>;
+	S: Array<CT_XStringElement>;
+	X: Array<CT_Index>;
 }
 
 // CT_TableMissing ...
@@ -718,12 +718,12 @@ export class CT_SharedItems {
 	MaxDateAttr: string | null;
 	CountAttr: number | null;
 	LongTextAttr: boolean | null;
-	M: CT_Missing;
-	N: CT_Number;
-	B: CT_Boolean;
-	E: CT_Error;
-	S: CT_String;
-	D: CT_DateTime;
+	M: Array<CT_Missing>;
+	N: Array<CT_Number>;
+	B: Array<CT_Boolean>;
+	E: Array<CT_Error>;
+	S: Array<CT_String>;
+	D: Array<CT_DateTime>;
 }
 
 // CT_Missing ...
@@ -859,12 +859,12 @@ export class CT_DiscretePr {
 // CT_GroupItems ...
 export class CT_GroupItems {
 	CountAttr: number | null;
-	M: CT_Missing;
-	N: CT_Number;
-	B: CT_Boolean;
-	E: CT_Error;
-	S: CT_String;
-	D: CT_DateTime;
+	M: Array<CT_Missing>;
+	N: Array<CT_Number>;
+	B: Array<CT_Boolean>;
+	E: Array<CT_Error>;
+	S: Array<CT_String>;
+	D: Array<CT_DateTime>;
 }
 
 // CT_PivotCacheRecords ...
@@ -876,13 +876,13 @@ export class CT_PivotCacheRecords {
 
 // CT_Record ...
 export class CT_Record {
-	M: CT_Missing;
-	N: CT_Number;
-	B: CT_Boolean;
-	E: CT_Error;
-	S: CT_String;
-	D: CT_DateTime;
-	X: CT_Index;
+	M: Array<CT_Missing>;
+	N: Array<CT_Number>;
+	B: Array<CT_Boolean>;
+	E: Array<CT_Error>;
+	S: Array<CT_String>;
+	D: Array<CT_DateTime>;
+	X: Array<CT_Index>;
 }
 
 // CT_PCDKPIs ...
@@ -1020,10 +1020,10 @@ export class CT_ServerFormats {
 // CT_PCDSDTCEntries ...
 export class CT_PCDSDTCEntries {
 	CountAttr: number | null;
-	M: CT_Missing;
-	N: CT_Number;
-	E: CT_Error;
-	S: CT_String;
+	M: Array<CT_Missing>;
+	N: Array<CT_Number>;
+	E: Array<CT_Error>;
+	S: Array<CT_String>;
 }
 
 // CT_Tuples ...
@@ -1880,21 +1880,21 @@ export class CT_RElt {
 
 // CT_RPrElt ...
 export class CT_RPrElt {
-	RFont: CT_FontName;
-	Charset: CT_IntProperty;
-	Family: CT_IntProperty;
-	B: CT_BooleanProperty;
-	I: CT_BooleanProperty;
-	Strike: CT_BooleanProperty;
-	Outline: CT_BooleanProperty;
-	Shadow: CT_BooleanProperty;
-	Condense: CT_BooleanProperty;
-	Extend: CT_BooleanProperty;
-	Color: CT_Color;
-	Sz: CT_FontSize;
-	U: CT_UnderlineProperty;
-	VertAlign: CT_VerticalAlignFontProperty;
-	Scheme: CT_FontScheme;
+	RFont: Array<CT_FontName>;
+	Charset: Array<CT_IntProperty>;
+	Family: Array<CT_IntProperty>;
+	B: Array<CT_BooleanProperty>;
+	I: Array<CT_BooleanProperty>;
+	Strike: Array<CT_BooleanProperty>;
+	Outline: Array<CT_BooleanProperty>;
+	Shadow: Array<CT_BooleanProperty>;
+	Condense: Array<CT_BooleanProperty>;
+	Extend: Array<CT_BooleanProperty>;
+	Color: Array<CT_Color>;
+	Sz: Array<CT_FontSize>;
+	U: Array<CT_UnderlineProperty>;
+	VertAlign: Array<CT_VerticalAlignFontProperty>;
+	Scheme: Array<CT_FontScheme>;
 }
 
 // CT_Rst ...
@@ -3932,21 +3932,21 @@ export type ST_FontFamily = number;
 
 // CT_Font ...
 export class CT_Font {
-	Name: CT_FontName;
-	Charset: CT_IntProperty;
-	Family: CT_FontFamily;
-	B: CT_BooleanProperty;
-	I: CT_BooleanProperty;
-	Strike: CT_BooleanProperty;
-	Outline: CT_BooleanProperty;
-	Shadow: CT_BooleanProperty;
-	Condense: CT_BooleanProperty;
-	Extend: CT_BooleanProperty;
-	Color: CT_Color;
-	Sz: CT_FontSize;
-	U: CT_UnderlineProperty;
-	VertAlign: CT_VerticalAlignFontProperty;
-	Scheme: CT_FontScheme;
+	Name: Array<CT_FontName>;
+	Charset: Array<CT_IntProperty>;
+	Family: Array<CT_FontFamily>;
+	B: Array<CT_BooleanProperty>;
+	I: Array<CT_BooleanProperty>;
+	Strike: Array<CT_BooleanProperty>;
+	Outline: Array<CT_BooleanProperty>;
+	Shadow: Array<CT_BooleanProperty>;
+	Condense: Array<CT_BooleanProperty>;
+	Extend: Array<CT_BooleanProperty>;
+	Color: Array<CT_Color>;
+	Sz: Array<CT_FontSize>;
+	U: Array<CT_UnderlineProperty>;
+	VertAlign: Array<CT_VerticalAlignFontProperty>;
+	Scheme: Array<CT_FontScheme>;
 }
 
 // AG_AutoFormat ...

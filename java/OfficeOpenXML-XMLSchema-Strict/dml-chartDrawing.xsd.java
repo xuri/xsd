@@ -123,15 +123,15 @@ public class CT_GroupShape {
 	@XmlElement(required = true, name = "grpSpPr")
 	protected CT_GroupShapeProperties GrpSpPr;
 	@XmlElement(required = true, name = "sp")
-	protected CT_Shape Sp;
+	protected List<CT_Shape> Sp;
 	@XmlElement(required = true, name = "grpSp")
-	protected CT_GroupShape GrpSp;
+	protected List<CT_GroupShape> GrpSp;
 	@XmlElement(required = true, name = "graphicFrame")
-	protected CT_GraphicFrame GraphicFrame;
+	protected List<CT_GraphicFrame> GraphicFrame;
 	@XmlElement(required = true, name = "cxnSp")
-	protected CT_Connector CxnSp;
+	protected List<CT_Connector> CxnSp;
 	@XmlElement(required = true, name = "pic")
-	protected CT_Picture Pic;
+	protected List<CT_Picture> Pic;
 }
 
 // EG_ObjectChoices ...

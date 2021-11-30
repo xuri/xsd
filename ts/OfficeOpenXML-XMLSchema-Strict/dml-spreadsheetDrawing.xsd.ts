@@ -86,11 +86,11 @@ export class CT_GroupShapeNonVisual {
 export class CT_GroupShape {
 	NvGrpSpPr: CT_GroupShapeNonVisual;
 	GrpSpPr: CT_GroupShapeProperties;
-	Sp: CT_Shape;
-	GrpSp: CT_GroupShape;
-	GraphicFrame: CT_GraphicalObjectFrame;
-	CxnSp: CT_Connector;
-	Pic: CT_Picture;
+	Sp: Array<CT_Shape>;
+	GrpSp: Array<CT_GroupShape>;
+	GraphicFrame: Array<CT_GraphicalObjectFrame>;
+	CxnSp: Array<CT_Connector>;
+	Pic: Array<CT_Picture>;
 }
 
 // EG_ObjectChoices ...

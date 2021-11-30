@@ -260,8 +260,8 @@ typedef struct {
 
 // Inline is "Inline" covers inline or "text-level" element
 typedef struct {
-	Inline Inline;
-	MiscInline MiscInline;
+	Inline Inline[];
+	MiscInline MiscInline[];
 } Inline;
 
 // Heading ...
@@ -307,67 +307,67 @@ typedef struct {
 
 // Flow is "Flow" mixes block and inline and is used for list items etc.
 typedef struct {
-	Block Block;
-	Inline Inline;
-	Misc Misc;
-	char Form;
+	Block Block[];
+	Inline Inline[];
+	Misc Misc[];
+	char Form[];
 } Flow;
 
 // AContent is a elements use "Inline" excluding a
 typedef struct {
-	Special Special;
-	Fontstyle Fontstyle;
-	Phrase Phrase;
-	InlineForms InlineForms;
-	MiscInline MiscInline;
+	Special Special[];
+	Fontstyle Fontstyle[];
+	Phrase Phrase[];
+	InlineForms InlineForms[];
+	MiscInline MiscInline[];
 } AContent;
 
 // PreContent is pre uses "Inline" excluding img, object, applet, big, small,
 //       font, or basefont
 typedef struct {
-	SpecialBasic SpecialBasic;
-	FontstyleBasic FontstyleBasic;
-	PhraseBasic PhraseBasic;
-	InlineForms InlineForms;
-	MiscInline MiscInline;
-	A A;
+	SpecialBasic SpecialBasic[];
+	FontstyleBasic FontstyleBasic[];
+	PhraseBasic PhraseBasic[];
+	InlineForms InlineForms[];
+	MiscInline MiscInline[];
+	A A[];
 } PreContent;
 
 // FormContent is form uses "Flow" excluding form
 typedef struct {
-	Block Block;
-	Inline Inline;
-	Misc Misc;
+	Block Block[];
+	Inline Inline[];
+	Misc Misc[];
 } FormContent;
 
 // ButtonContent is button uses "Flow" but excludes a, form, form controls, iframe
 typedef struct {
-	Heading Heading;
-	Lists Lists;
-	Blocktext Blocktext;
-	Fontstyle Fontstyle;
-	Phrase Phrase;
-	Misc Misc;
-	P P;
-	Div Div;
-	Table Table;
-	char Br;
-	Span Span;
-	char Bdo;
-	char Object;
-	Applet Applet;
-	char Img;
-	Map Map;
+	Heading Heading[];
+	Lists Lists[];
+	Blocktext Blocktext[];
+	Fontstyle Fontstyle[];
+	Phrase Phrase[];
+	Misc Misc[];
+	P P[];
+	Div Div[];
+	Table Table[];
+	char Br[];
+	Span Span[];
+	char Bdo[];
+	char Object[];
+	Applet Applet[];
+	char Img[];
+	Map Map[];
 } ButtonContent;
 
 // HeadMisc ...
 typedef struct {
-	char Script;
-	Style Style;
-	Meta Meta;
-	Link Link;
-	char Object;
-	Isindex Isindex;
+	char Script[];
+	Style Style[];
+	Meta Meta[];
+	Link Link[];
+	char Object[];
+	Isindex Isindex[];
 } HeadMisc;
 
 // Head ...
@@ -570,7 +570,7 @@ typedef struct {
 typedef struct {
 	Attrs Attrs;
 	char CompactAttr; // attr, optional
-	Dt Dt;
+	Dt Dt[];
 	char Dl;
 } Dl;
 
@@ -587,9 +587,9 @@ typedef struct {
 // Address ...
 typedef struct {
 	Attrs Attrs;
-	Inline Inline;
-	MiscInline MiscInline;
-	P P;
+	Inline Inline[];
+	MiscInline MiscInline[];
+	P P[];
 } Address;
 
 // Hr ...
@@ -812,10 +812,10 @@ typedef struct {
 	int BorderAttr; // attr, optional
 	int HspaceAttr; // attr, optional
 	int VspaceAttr; // attr, optional
-	Block Block;
-	Inline Inline;
-	Misc Misc;
-	char Param;
+	Block Block[];
+	Inline Inline[];
+	Misc Misc[];
+	char Param[];
 	char Object;
 } Object;
 
@@ -842,11 +842,11 @@ typedef struct {
 	char AlignAttr; // attr, optional
 	int HspaceAttr; // attr, optional
 	int VspaceAttr; // attr, optional
-	Block Block;
-	Inline Inline;
-	Misc Misc;
-	char Param;
-	char Form;
+	Block Block[];
+	Inline Inline[];
+	Misc Misc[];
+	char Param[];
+	char Form[];
 } Applet;
 
 // Img ...
@@ -875,9 +875,9 @@ typedef struct {
 	char StyleAttr; // attr, optional
 	char TitleAttr; // attr, optional
 	void NameAttr; // attr, optional
-	Block Block;
-	Misc Misc;
-	char Form;
+	Block Block[];
+	Misc Misc[];
+	char Form[];
 	char Area[];
 } Map;
 
@@ -950,7 +950,7 @@ typedef struct {
 	char OnfocusAttr; // attr, optional
 	char OnblurAttr; // attr, optional
 	char OnchangeAttr; // attr, optional
-	char Optgroup;
+	char Optgroup[];
 	char Select;
 } Select;
 
@@ -987,11 +987,11 @@ typedef struct {
 // Fieldset ...
 typedef struct {
 	Attrs Attrs;
-	Block Block;
-	Inline Inline;
-	Misc Misc;
+	Block Block[];
+	Inline Inline[];
+	Misc Misc[];
 	Legend Legend;
-	char Form;
+	char Form[];
 } Fieldset;
 
 // LAlign ...
@@ -1132,8 +1132,8 @@ typedef struct {
 	Cellhalign Cellhalign;
 	Cellvalign Cellvalign;
 	char BgcolorAttr; // attr, optional
-	char Th;
-	char Td;
+	char Th[];
+	char Td[];
 } Tr;
 
 // Scope is Scope is simpler than headers attribute for common tables
@@ -1208,21 +1208,21 @@ typedef struct {
 typedef struct {
 	Attrs Attrs;
 	char NameAttr; // attr
-	Block Block;
-	Inline Inline;
-	Misc Misc;
-	char Form;
-	Subsection Subsection;
+	Block Block[];
+	Inline Inline[];
+	Misc Misc[];
+	char Form[];
+	Subsection Subsection[];
 } Section;
 
 // Subsection ...
 typedef struct {
 	Attrs Attrs;
 	char NameAttr; // attr
-	Block Block;
-	Inline Inline;
-	Misc Misc;
-	char Form;
+	Block Block[];
+	Inline Inline[];
+	Misc Misc[];
+	char Form[];
 } Subsection;
 
 // Source ...
@@ -1232,5 +1232,5 @@ typedef struct {
 // Macro ...
 typedef struct {
 	char NameAttr; // attr
-	char Param;
+	char Param[];
 } Macro;
