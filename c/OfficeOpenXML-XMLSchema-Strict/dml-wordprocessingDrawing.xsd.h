@@ -195,11 +195,11 @@ typedef struct {
 	CT_NonVisualDrawingProps CNvPr;
 	CT_NonVisualGroupDrawingShapeProps CNvGrpSpPr;
 	CT_GroupShapeProperties GrpSpPr;
-	CT_WordprocessingShape Wsp;
-	CT_WordprocessingGroup GrpSp;
-	CT_GraphicFrame GraphicFrame;
-	CT_Picture DpctPic;
-	CT_WordprocessingContentPart ContentPart;
+	CT_WordprocessingShape Wsp[];
+	CT_WordprocessingGroup GrpSp[];
+	CT_GraphicFrame GraphicFrame[];
+	CT_Picture DpctPic[];
+	CT_WordprocessingContentPart ContentPart[];
 	CT_OfficeArtExtensionList ExtLst;
 } CT_WordprocessingGroup;
 
@@ -207,11 +207,11 @@ typedef struct {
 typedef struct {
 	CT_BackgroundFormatting Bg;
 	CT_WholeE2oFormatting Whole;
-	CT_WordprocessingShape Wsp;
-	CT_Picture DpctPic;
-	CT_WordprocessingContentPart ContentPart;
-	CT_WordprocessingGroup Wgp;
-	CT_GraphicFrame GraphicFrame;
+	CT_WordprocessingShape Wsp[];
+	CT_Picture DpctPic[];
+	CT_WordprocessingContentPart ContentPart[];
+	CT_WordprocessingGroup Wgp[];
+	CT_GraphicFrame GraphicFrame[];
 	CT_OfficeArtExtensionList ExtLst;
 } CT_WordprocessingCanvas;
 

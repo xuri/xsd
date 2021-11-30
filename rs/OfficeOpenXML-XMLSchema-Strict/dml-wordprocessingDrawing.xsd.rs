@@ -374,15 +374,15 @@ pub struct CTWordprocessingGroup {
 	#[serde(rename = "grpSpPr")]
 	pub grp_sp_pr: CTGroupShapeProperties,
 	#[serde(rename = "wsp")]
-	pub wsp: CTWordprocessingShape,
+	pub wsp: Vec<CTWordprocessingShape>,
 	#[serde(rename = "grpSp")]
-	pub grp_sp: CTWordprocessingGroup,
+	pub grp_sp: Vec<CTWordprocessingGroup>,
 	#[serde(rename = "graphicFrame")]
-	pub graphic_frame: CTGraphicFrame,
+	pub graphic_frame: Vec<CTGraphicFrame>,
 	#[serde(rename = "dpct:pic")]
-	pub dpct_pic: CTPicture,
+	pub dpct_pic: Vec<CTPicture>,
 	#[serde(rename = "contentPart")]
-	pub content_part: CTWordprocessingContentPart,
+	pub content_part: Vec<CTWordprocessingContentPart>,
 	#[serde(rename = "extLst")]
 	pub ext_lst: CTOfficeArtExtensionList,
 }
@@ -396,15 +396,15 @@ pub struct CTWordprocessingCanvas {
 	#[serde(rename = "whole")]
 	pub whole: CTWholeE2oFormatting,
 	#[serde(rename = "wsp")]
-	pub wsp: CTWordprocessingShape,
+	pub wsp: Vec<CTWordprocessingShape>,
 	#[serde(rename = "dpct:pic")]
-	pub dpct_pic: CTPicture,
+	pub dpct_pic: Vec<CTPicture>,
 	#[serde(rename = "contentPart")]
-	pub content_part: CTWordprocessingContentPart,
+	pub content_part: Vec<CTWordprocessingContentPart>,
 	#[serde(rename = "wgp")]
-	pub wgp: CTWordprocessingGroup,
+	pub wgp: Vec<CTWordprocessingGroup>,
 	#[serde(rename = "graphicFrame")]
-	pub graphic_frame: CTGraphicFrame,
+	pub graphic_frame: Vec<CTGraphicFrame>,
 	#[serde(rename = "extLst")]
 	pub ext_lst: CTOfficeArtExtensionList,
 }

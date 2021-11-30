@@ -217,11 +217,11 @@ public class CT_Text {
 // CT_R ...
 public class CT_R {
 	protected EG_RPr WEG_RPr;
-	protected EG_RunInnerContent WEG_RunInnerContent;
+	protected List<EG_RunInnerContent> WEG_RunInnerContent;
 	@XmlElement(required = true, name = "rPr")
 	protected CT_RPR RPr;
 	@XmlElement(required = true, name = "t")
-	protected CT_Text T;
+	protected List<CT_Text> T;
 }
 
 // CT_CtrlPr ...

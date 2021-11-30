@@ -46,29 +46,29 @@ export class CT_NameOrCorporateType {
 
 // CT_AuthorType ...
 export class CT_AuthorType {
-	Artist: CT_NameType;
-	Author: CT_NameOrCorporateType;
-	BookAuthor: CT_NameType;
-	Compiler: CT_NameType;
-	Composer: CT_NameType;
-	Conductor: CT_NameType;
-	Counsel: CT_NameType;
-	Director: CT_NameType;
-	Editor: CT_NameType;
-	Interviewee: CT_NameType;
-	Interviewer: CT_NameType;
-	Inventor: CT_NameType;
-	Performer: CT_NameOrCorporateType;
-	ProducerName: CT_NameType;
-	Translator: CT_NameType;
-	Writer: CT_NameType;
+	Artist: Array<CT_NameType>;
+	Author: Array<CT_NameOrCorporateType>;
+	BookAuthor: Array<CT_NameType>;
+	Compiler: Array<CT_NameType>;
+	Composer: Array<CT_NameType>;
+	Conductor: Array<CT_NameType>;
+	Counsel: Array<CT_NameType>;
+	Director: Array<CT_NameType>;
+	Editor: Array<CT_NameType>;
+	Interviewee: Array<CT_NameType>;
+	Interviewer: Array<CT_NameType>;
+	Inventor: Array<CT_NameType>;
+	Performer: Array<CT_NameOrCorporateType>;
+	ProducerName: Array<CT_NameType>;
+	Translator: Array<CT_NameType>;
+	Writer: Array<CT_NameType>;
 }
 
 // CT_SourceType ...
 export class CT_SourceType {
 	AbbreviatedCaseNumber: string;
 	AlbumTitle: string;
-	Author: CT_AuthorType;
+	Author: Array<CT_AuthorType>;
 	BookTitle: string;
 	Broadcaster: string;
 	BroadcastTitle: string;

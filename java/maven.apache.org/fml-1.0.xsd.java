@@ -431,8 +431,8 @@ public class Inline {
 
 // Inline is "Inline" covers inline or "text-level" element
 public class Inline {
-	protected Inline Inline;
-	protected MiscInline MiscInline;
+	protected List<Inline> Inline;
+	protected List<MiscInline> MiscInline;
 }
 
 // Heading ...
@@ -500,85 +500,85 @@ public class Block {
 
 // Flow is "Flow" mixes block and inline and is used for list items etc.
 public class Flow {
-	protected Block Block;
-	protected Inline Inline;
-	protected Misc Misc;
+	protected List<Block> Block;
+	protected List<Inline> Inline;
+	protected List<Misc> Misc;
 	@XmlElement(required = true, name = "form")
-	protected String Form;
+	protected List<String> Form;
 }
 
 // AContent is a elements use "Inline" excluding a
 public class AContent {
-	protected Special Special;
-	protected Fontstyle Fontstyle;
-	protected Phrase Phrase;
-	protected InlineForms InlineForms;
-	protected MiscInline MiscInline;
+	protected List<Special> Special;
+	protected List<Fontstyle> Fontstyle;
+	protected List<Phrase> Phrase;
+	protected List<InlineForms> InlineForms;
+	protected List<MiscInline> MiscInline;
 }
 
 // PreContent is pre uses "Inline" excluding img, object, applet, big, small,
 //       font, or basefont
 public class PreContent {
-	protected SpecialBasic SpecialBasic;
-	protected FontstyleBasic FontstyleBasic;
-	protected PhraseBasic PhraseBasic;
-	protected InlineForms InlineForms;
-	protected MiscInline MiscInline;
+	protected List<SpecialBasic> SpecialBasic;
+	protected List<FontstyleBasic> FontstyleBasic;
+	protected List<PhraseBasic> PhraseBasic;
+	protected List<InlineForms> InlineForms;
+	protected List<MiscInline> MiscInline;
 	@XmlElement(required = true, name = "a")
-	protected A A;
+	protected List<A> A;
 }
 
 // FormContent is form uses "Flow" excluding form
 public class FormContent {
-	protected Block Block;
-	protected Inline Inline;
-	protected Misc Misc;
+	protected List<Block> Block;
+	protected List<Inline> Inline;
+	protected List<Misc> Misc;
 }
 
 // ButtonContent is button uses "Flow" but excludes a, form, form controls, iframe
 public class ButtonContent {
-	protected Heading Heading;
-	protected Lists Lists;
-	protected Blocktext Blocktext;
-	protected Fontstyle Fontstyle;
-	protected Phrase Phrase;
-	protected Misc Misc;
+	protected List<Heading> Heading;
+	protected List<Lists> Lists;
+	protected List<Blocktext> Blocktext;
+	protected List<Fontstyle> Fontstyle;
+	protected List<Phrase> Phrase;
+	protected List<Misc> Misc;
 	@XmlElement(required = true, name = "p")
-	protected P P;
+	protected List<P> P;
 	@XmlElement(required = true, name = "div")
-	protected Div Div;
+	protected List<Div> Div;
 	@XmlElement(required = true, name = "table")
-	protected Table Table;
+	protected List<Table> Table;
 	@XmlElement(required = true, name = "br")
-	protected String Br;
+	protected List<String> Br;
 	@XmlElement(required = true, name = "span")
-	protected Span Span;
+	protected List<Span> Span;
 	@XmlElement(required = true, name = "bdo")
-	protected String Bdo;
+	protected List<String> Bdo;
 	@XmlElement(required = true, name = "object")
-	protected String Object;
+	protected List<String> Object;
 	@XmlElement(required = true, name = "applet")
-	protected Applet Applet;
+	protected List<Applet> Applet;
 	@XmlElement(required = true, name = "img")
-	protected String Img;
+	protected List<String> Img;
 	@XmlElement(required = true, name = "map")
-	protected Map Map;
+	protected List<Map> Map;
 }
 
 // HeadMisc ...
 public class HeadMisc {
 	@XmlElement(required = true, name = "script")
-	protected String Script;
+	protected List<String> Script;
 	@XmlElement(required = true, name = "style")
-	protected Style Style;
+	protected List<Style> Style;
 	@XmlElement(required = true, name = "meta")
-	protected Meta Meta;
+	protected List<Meta> Meta;
 	@XmlElement(required = true, name = "link")
-	protected Link Link;
+	protected List<Link> Link;
 	@XmlElement(required = true, name = "object")
-	protected String Object;
+	protected List<String> Object;
 	@XmlElement(required = true, name = "isindex")
-	protected Isindex Isindex;
+	protected List<Isindex> Isindex;
 }
 
 // Head ...
@@ -881,7 +881,7 @@ public class Dl {
 	@XmlAttribute(name = "compact")
 	protected String CompactAttr;
 	@XmlElement(required = true, name = "dt")
-	protected Dt Dt;
+	protected List<Dt> Dt;
 	@XmlElement(required = true, name = "dl")
 	protected String Dl;
 }
@@ -902,10 +902,10 @@ public class Dd extends Flow  {
 public class Address {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
-	protected Inline Inline;
-	protected MiscInline MiscInline;
+	protected List<Inline> Inline;
+	protected List<MiscInline> MiscInline;
 	@XmlElement(required = true, name = "p")
-	protected P P;
+	protected List<P> P;
 }
 
 // Hr ...
@@ -1214,11 +1214,11 @@ public class Object {
 	protected Integer HspaceAttr;
 	@XmlAttribute(name = "vspace")
 	protected Integer VspaceAttr;
-	protected Block Block;
-	protected Inline Inline;
-	protected Misc Misc;
+	protected List<Block> Block;
+	protected List<Inline> Inline;
+	protected List<Misc> Misc;
 	@XmlElement(required = true, name = "param")
-	protected String Param;
+	protected List<String> Param;
 	@XmlElement(required = true, name = "object")
 	protected String Object;
 }
@@ -1263,13 +1263,13 @@ public class Applet {
 	protected Integer HspaceAttr;
 	@XmlAttribute(name = "vspace")
 	protected Integer VspaceAttr;
-	protected Block Block;
-	protected Inline Inline;
-	protected Misc Misc;
+	protected List<Block> Block;
+	protected List<Inline> Inline;
+	protected List<Misc> Misc;
 	@XmlElement(required = true, name = "param")
-	protected String Param;
+	protected List<String> Param;
 	@XmlElement(required = true, name = "form")
-	protected String Form;
+	protected List<String> Form;
 }
 
 // Img ...
@@ -1318,10 +1318,10 @@ public class Map {
 	protected String TitleAttr;
 	@XmlAttribute(name = "name")
 	protected void NameAttr;
-	protected Block Block;
-	protected Misc Misc;
+	protected List<Block> Block;
+	protected List<Misc> Misc;
 	@XmlElement(required = true, name = "form")
-	protected String Form;
+	protected List<String> Form;
 	@XmlElement(required = true, name = "area")
 	protected List<String> Area;
 }
@@ -1448,7 +1448,7 @@ public class Select {
 	@XmlAttribute(name = "onchange")
 	protected String OnchangeAttr;
 	@XmlElement(required = true, name = "optgroup")
-	protected String Optgroup;
+	protected List<String> Optgroup;
 	@XmlElement(required = true, name = "select")
 	protected String Select;
 }
@@ -1505,13 +1505,13 @@ public class Textarea {
 public class Fieldset {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
-	protected Block Block;
-	protected Inline Inline;
-	protected Misc Misc;
+	protected List<Block> Block;
+	protected List<Inline> Inline;
+	protected List<Misc> Misc;
 	@XmlElement(required = true, name = "legend")
 	protected Legend Legend;
 	@XmlElement(required = true, name = "form")
-	protected String Form;
+	protected List<String> Form;
 }
 
 // LAlign ...
@@ -1735,9 +1735,9 @@ public class Tr {
 	@XmlAttribute(name = "bgcolor")
 	protected String BgcolorAttr;
 	@XmlElement(required = true, name = "th")
-	protected String Th;
+	protected List<String> Th;
 	@XmlElement(required = true, name = "td")
-	protected String Td;
+	protected List<String> Td;
 }
 
 // Scope is Scope is simpler than headers attribute for common tables
@@ -1849,11 +1849,11 @@ public class Question {
 
 // Answer ...
 public class Answer {
-	protected Block Block;
-	protected Inline Inline;
-	protected Misc Misc;
+	protected List<Block> Block;
+	protected List<Inline> Inline;
+	protected List<Misc> Misc;
 	@XmlElement(required = true, name = "form")
-	protected String Form;
+	protected List<String> Form;
 }
 
 // Source ...

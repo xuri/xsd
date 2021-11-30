@@ -63,12 +63,12 @@ export class CT_Null {
 export class CT_Vector {
 	BaseTypeAttr: string;
 	SizeAttr: number;
-	Variant: CT_Variant;
-	I1: any;
+	Variant: Array<CT_Variant>;
+	I1: Array<any>;
 	I2: number;
 	I4: number;
 	I8: number;
-	Ui1: any;
+	Ui1: Array<any>;
 	Ui2: number;
 	Ui4: number;
 	Ui8: number;
@@ -90,12 +90,12 @@ export class CT_Array {
 	LBoundsAttr: number;
 	UBoundsAttr: number;
 	BaseTypeAttr: string;
-	Variant: CT_Variant;
-	I1: any;
+	Variant: Array<CT_Variant>;
+	I1: Array<any>;
 	I2: number;
 	I4: number;
 	Int: number;
-	Ui1: any;
+	Ui1: Array<any>;
 	Ui2: number;
 	Ui4: number;
 	Uint: number;

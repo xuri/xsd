@@ -668,11 +668,11 @@ public class CT_Tables {
 	@XmlAttribute(name = "count")
 	protected Integer CountAttr;
 	@XmlElement(required = true, name = "m")
-	protected CT_TableMissing M;
+	protected List<CT_TableMissing> M;
 	@XmlElement(required = true, name = "s")
-	protected CT_XStringElement S;
+	protected List<CT_XStringElement> S;
 	@XmlElement(required = true, name = "x")
-	protected CT_Index X;
+	protected List<CT_Index> X;
 }
 
 // CT_TableMissing ...
@@ -1002,17 +1002,17 @@ public class CT_SharedItems {
 	@XmlAttribute(name = "longText")
 	protected Boolean LongTextAttr;
 	@XmlElement(required = true, name = "m")
-	protected CT_Missing M;
+	protected List<CT_Missing> M;
 	@XmlElement(required = true, name = "n")
-	protected CT_Number N;
+	protected List<CT_Number> N;
 	@XmlElement(required = true, name = "b")
-	protected CT_Boolean B;
+	protected List<CT_Boolean> B;
 	@XmlElement(required = true, name = "e")
-	protected CT_Error E;
+	protected List<CT_Error> E;
 	@XmlElement(required = true, name = "s")
-	protected CT_String S;
+	protected List<CT_String> S;
 	@XmlElement(required = true, name = "d")
-	protected CT_DateTime D;
+	protected List<CT_DateTime> D;
 }
 
 // CT_Missing ...
@@ -1227,17 +1227,17 @@ public class CT_GroupItems {
 	@XmlAttribute(name = "count")
 	protected Integer CountAttr;
 	@XmlElement(required = true, name = "m")
-	protected CT_Missing M;
+	protected List<CT_Missing> M;
 	@XmlElement(required = true, name = "n")
-	protected CT_Number N;
+	protected List<CT_Number> N;
 	@XmlElement(required = true, name = "b")
-	protected CT_Boolean B;
+	protected List<CT_Boolean> B;
 	@XmlElement(required = true, name = "e")
-	protected CT_Error E;
+	protected List<CT_Error> E;
 	@XmlElement(required = true, name = "s")
-	protected CT_String S;
+	protected List<CT_String> S;
 	@XmlElement(required = true, name = "d")
-	protected CT_DateTime D;
+	protected List<CT_DateTime> D;
 }
 
 // CT_PivotCacheRecords ...
@@ -1253,19 +1253,19 @@ public class CT_PivotCacheRecords {
 // CT_Record ...
 public class CT_Record {
 	@XmlElement(required = true, name = "m")
-	protected CT_Missing M;
+	protected List<CT_Missing> M;
 	@XmlElement(required = true, name = "n")
-	protected CT_Number N;
+	protected List<CT_Number> N;
 	@XmlElement(required = true, name = "b")
-	protected CT_Boolean B;
+	protected List<CT_Boolean> B;
 	@XmlElement(required = true, name = "e")
-	protected CT_Error E;
+	protected List<CT_Error> E;
 	@XmlElement(required = true, name = "s")
-	protected CT_String S;
+	protected List<CT_String> S;
 	@XmlElement(required = true, name = "d")
-	protected CT_DateTime D;
+	protected List<CT_DateTime> D;
 	@XmlElement(required = true, name = "x")
-	protected CT_Index X;
+	protected List<CT_Index> X;
 }
 
 // CT_PCDKPIs ...
@@ -1477,13 +1477,13 @@ public class CT_PCDSDTCEntries {
 	@XmlAttribute(name = "count")
 	protected Integer CountAttr;
 	@XmlElement(required = true, name = "m")
-	protected CT_Missing M;
+	protected List<CT_Missing> M;
 	@XmlElement(required = true, name = "n")
-	protected CT_Number N;
+	protected List<CT_Number> N;
 	@XmlElement(required = true, name = "e")
-	protected CT_Error E;
+	protected List<CT_Error> E;
 	@XmlElement(required = true, name = "s")
-	protected CT_String S;
+	protected List<CT_String> S;
 }
 
 // CT_Tuples ...
@@ -2650,35 +2650,35 @@ public class CT_RElt {
 // CT_RPrElt ...
 public class CT_RPrElt {
 	@XmlElement(required = true, name = "rFont")
-	protected CT_FontName RFont;
+	protected List<CT_FontName> RFont;
 	@XmlElement(required = true, name = "charset")
-	protected CT_IntProperty Charset;
+	protected List<CT_IntProperty> Charset;
 	@XmlElement(required = true, name = "family")
-	protected CT_IntProperty Family;
+	protected List<CT_IntProperty> Family;
 	@XmlElement(required = true, name = "b")
-	protected CT_BooleanProperty B;
+	protected List<CT_BooleanProperty> B;
 	@XmlElement(required = true, name = "i")
-	protected CT_BooleanProperty I;
+	protected List<CT_BooleanProperty> I;
 	@XmlElement(required = true, name = "strike")
-	protected CT_BooleanProperty Strike;
+	protected List<CT_BooleanProperty> Strike;
 	@XmlElement(required = true, name = "outline")
-	protected CT_BooleanProperty Outline;
+	protected List<CT_BooleanProperty> Outline;
 	@XmlElement(required = true, name = "shadow")
-	protected CT_BooleanProperty Shadow;
+	protected List<CT_BooleanProperty> Shadow;
 	@XmlElement(required = true, name = "condense")
-	protected CT_BooleanProperty Condense;
+	protected List<CT_BooleanProperty> Condense;
 	@XmlElement(required = true, name = "extend")
-	protected CT_BooleanProperty Extend;
+	protected List<CT_BooleanProperty> Extend;
 	@XmlElement(required = true, name = "color")
-	protected CT_Color Color;
+	protected List<CT_Color> Color;
 	@XmlElement(required = true, name = "sz")
-	protected CT_FontSize Sz;
+	protected List<CT_FontSize> Sz;
 	@XmlElement(required = true, name = "u")
-	protected CT_UnderlineProperty U;
+	protected List<CT_UnderlineProperty> U;
 	@XmlElement(required = true, name = "vertAlign")
-	protected CT_VerticalAlignFontProperty VertAlign;
+	protected List<CT_VerticalAlignFontProperty> VertAlign;
 	@XmlElement(required = true, name = "scheme")
-	protected CT_FontScheme Scheme;
+	protected List<CT_FontScheme> Scheme;
 }
 
 // CT_Rst ...
@@ -5582,35 +5582,35 @@ public class ST_FontFamily {
 // CT_Font ...
 public class CT_Font {
 	@XmlElement(required = true, name = "name")
-	protected CT_FontName Name;
+	protected List<CT_FontName> Name;
 	@XmlElement(required = true, name = "charset")
-	protected CT_IntProperty Charset;
+	protected List<CT_IntProperty> Charset;
 	@XmlElement(required = true, name = "family")
-	protected CT_FontFamily Family;
+	protected List<CT_FontFamily> Family;
 	@XmlElement(required = true, name = "b")
-	protected CT_BooleanProperty B;
+	protected List<CT_BooleanProperty> B;
 	@XmlElement(required = true, name = "i")
-	protected CT_BooleanProperty I;
+	protected List<CT_BooleanProperty> I;
 	@XmlElement(required = true, name = "strike")
-	protected CT_BooleanProperty Strike;
+	protected List<CT_BooleanProperty> Strike;
 	@XmlElement(required = true, name = "outline")
-	protected CT_BooleanProperty Outline;
+	protected List<CT_BooleanProperty> Outline;
 	@XmlElement(required = true, name = "shadow")
-	protected CT_BooleanProperty Shadow;
+	protected List<CT_BooleanProperty> Shadow;
 	@XmlElement(required = true, name = "condense")
-	protected CT_BooleanProperty Condense;
+	protected List<CT_BooleanProperty> Condense;
 	@XmlElement(required = true, name = "extend")
-	protected CT_BooleanProperty Extend;
+	protected List<CT_BooleanProperty> Extend;
 	@XmlElement(required = true, name = "color")
-	protected CT_Color Color;
+	protected List<CT_Color> Color;
 	@XmlElement(required = true, name = "sz")
-	protected CT_FontSize Sz;
+	protected List<CT_FontSize> Sz;
 	@XmlElement(required = true, name = "u")
-	protected CT_UnderlineProperty U;
+	protected List<CT_UnderlineProperty> U;
 	@XmlElement(required = true, name = "vertAlign")
-	protected CT_VerticalAlignFontProperty VertAlign;
+	protected List<CT_VerticalAlignFontProperty> VertAlign;
 	@XmlElement(required = true, name = "scheme")
-	protected CT_FontScheme Scheme;
+	protected List<CT_FontScheme> Scheme;
 }
 
 // AG_AutoFormat ...

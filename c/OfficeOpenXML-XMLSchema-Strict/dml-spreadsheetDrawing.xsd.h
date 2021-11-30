@@ -84,11 +84,11 @@ typedef struct {
 typedef struct {
 	CT_GroupShapeNonVisual NvGrpSpPr;
 	CT_GroupShapeProperties GrpSpPr;
-	CT_Shape Sp;
-	CT_GroupShape GrpSp;
-	CT_GraphicalObjectFrame GraphicFrame;
-	CT_Connector CxnSp;
-	CT_Picture Pic;
+	CT_Shape Sp[];
+	CT_GroupShape GrpSp[];
+	CT_GraphicalObjectFrame GraphicFrame[];
+	CT_Connector CxnSp[];
+	CT_Picture Pic[];
 } CT_GroupShape;
 
 // EG_ObjectChoices ...

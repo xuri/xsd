@@ -2096,45 +2096,45 @@ pub struct CTPlotArea {
 	#[serde(rename = "layout")]
 	pub layout: CTLayout,
 	#[serde(rename = "areaChart")]
-	pub area_chart: CTAreaChart,
+	pub area_chart: Vec<CTAreaChart>,
 	#[serde(rename = "area3DChart")]
-	pub area3_d_chart: CTArea3DChart,
+	pub area3_d_chart: Vec<CTArea3DChart>,
 	#[serde(rename = "lineChart")]
-	pub line_chart: CTLineChart,
+	pub line_chart: Vec<CTLineChart>,
 	#[serde(rename = "line3DChart")]
-	pub line3_d_chart: CTLine3DChart,
+	pub line3_d_chart: Vec<CTLine3DChart>,
 	#[serde(rename = "stockChart")]
-	pub stock_chart: CTStockChart,
+	pub stock_chart: Vec<CTStockChart>,
 	#[serde(rename = "radarChart")]
-	pub radar_chart: CTRadarChart,
+	pub radar_chart: Vec<CTRadarChart>,
 	#[serde(rename = "scatterChart")]
-	pub scatter_chart: CTScatterChart,
+	pub scatter_chart: Vec<CTScatterChart>,
 	#[serde(rename = "pieChart")]
-	pub pie_chart: CTPieChart,
+	pub pie_chart: Vec<CTPieChart>,
 	#[serde(rename = "pie3DChart")]
-	pub pie3_d_chart: CTPie3DChart,
+	pub pie3_d_chart: Vec<CTPie3DChart>,
 	#[serde(rename = "doughnutChart")]
-	pub doughnut_chart: CTDoughnutChart,
+	pub doughnut_chart: Vec<CTDoughnutChart>,
 	#[serde(rename = "barChart")]
-	pub bar_chart: CTBarChart,
+	pub bar_chart: Vec<CTBarChart>,
 	#[serde(rename = "bar3DChart")]
-	pub bar3_d_chart: CTBar3DChart,
+	pub bar3_d_chart: Vec<CTBar3DChart>,
 	#[serde(rename = "ofPieChart")]
-	pub of_pie_chart: CTOfPieChart,
+	pub of_pie_chart: Vec<CTOfPieChart>,
 	#[serde(rename = "surfaceChart")]
-	pub surface_chart: CTSurfaceChart,
+	pub surface_chart: Vec<CTSurfaceChart>,
 	#[serde(rename = "surface3DChart")]
-	pub surface3_d_chart: CTSurface3DChart,
+	pub surface3_d_chart: Vec<CTSurface3DChart>,
 	#[serde(rename = "bubbleChart")]
-	pub bubble_chart: CTBubbleChart,
+	pub bubble_chart: Vec<CTBubbleChart>,
 	#[serde(rename = "valAx")]
-	pub val_ax: CTValAx,
+	pub val_ax: Vec<CTValAx>,
 	#[serde(rename = "catAx")]
-	pub cat_ax: CTCatAx,
+	pub cat_ax: Vec<CTCatAx>,
 	#[serde(rename = "dateAx")]
-	pub date_ax: CTDateAx,
+	pub date_ax: Vec<CTDateAx>,
 	#[serde(rename = "serAx")]
-	pub ser_ax: CTSerAx,
+	pub ser_ax: Vec<CTSerAx>,
 	#[serde(rename = "dTable")]
 	pub d_table: CTDTable,
 	#[serde(rename = "spPr")]

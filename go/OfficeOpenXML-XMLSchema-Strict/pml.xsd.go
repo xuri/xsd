@@ -235,20 +235,20 @@ type CTTLTimeConditionList struct {
 
 // CTTimeNodeList ...
 type CTTimeNodeList struct {
-	XMLName    xml.Name                     `xml:"CT_TimeNodeList"`
-	Par        *CTTLTimeNodeParallel        `xml:"par"`
-	Seq        *CTTLTimeNodeSequence        `xml:"seq"`
-	Excl       *CTTLTimeNodeExclusive       `xml:"excl"`
-	Anim       *CTTLAnimateBehavior         `xml:"anim"`
-	AnimClr    *CTTLAnimateColorBehavior    `xml:"animClr"`
-	AnimEffect *CTTLAnimateEffectBehavior   `xml:"animEffect"`
-	AnimMotion *CTTLAnimateMotionBehavior   `xml:"animMotion"`
-	AnimRot    *CTTLAnimateRotationBehavior `xml:"animRot"`
-	AnimScale  *CTTLAnimateScaleBehavior    `xml:"animScale"`
-	Cmd        *CTTLCommandBehavior         `xml:"cmd"`
-	Set        *CTTLSetBehavior             `xml:"set"`
-	Audio      *CTTLMediaNodeAudio          `xml:"audio"`
-	Video      *CTTLMediaNodeVideo          `xml:"video"`
+	XMLName    xml.Name                       `xml:"CT_TimeNodeList"`
+	Par        []*CTTLTimeNodeParallel        `xml:"par"`
+	Seq        []*CTTLTimeNodeSequence        `xml:"seq"`
+	Excl       []*CTTLTimeNodeExclusive       `xml:"excl"`
+	Anim       []*CTTLAnimateBehavior         `xml:"anim"`
+	AnimClr    []*CTTLAnimateColorBehavior    `xml:"animClr"`
+	AnimEffect []*CTTLAnimateEffectBehavior   `xml:"animEffect"`
+	AnimMotion []*CTTLAnimateMotionBehavior   `xml:"animMotion"`
+	AnimRot    []*CTTLAnimateRotationBehavior `xml:"animRot"`
+	AnimScale  []*CTTLAnimateScaleBehavior    `xml:"animScale"`
+	Cmd        []*CTTLCommandBehavior         `xml:"cmd"`
+	Set        []*CTTLSetBehavior             `xml:"set"`
+	Audio      []*CTTLMediaNodeAudio          `xml:"audio"`
+	Video      []*CTTLMediaNodeVideo          `xml:"video"`
 }
 
 // STTLTimeNodePresetClassType ...
@@ -650,11 +650,11 @@ type CTTLGraphicalObjectBuild struct {
 
 // CTBuildList ...
 type CTBuildList struct {
-	XMLName     xml.Name                  `xml:"CT_BuildList"`
-	BldP        *CTTLBuildParagraph       `xml:"bldP"`
-	BldDgm      *CTTLBuildDiagram         `xml:"bldDgm"`
-	BldOleChart *CTTLOleBuildChart        `xml:"bldOleChart"`
-	BldGraphic  *CTTLGraphicalObjectBuild `xml:"bldGraphic"`
+	XMLName     xml.Name                    `xml:"CT_BuildList"`
+	BldP        []*CTTLBuildParagraph       `xml:"bldP"`
+	BldDgm      []*CTTLBuildDiagram         `xml:"bldDgm"`
+	BldOleChart []*CTTLOleBuildChart        `xml:"bldOleChart"`
+	BldGraphic  []*CTTLGraphicalObjectBuild `xml:"bldGraphic"`
 }
 
 // CTSlideTiming ...
@@ -1231,16 +1231,16 @@ type CTGroupShapeNonVisual struct {
 
 // CTGroupShape ...
 type CTGroupShape struct {
-	XMLName      xml.Name                `xml:"CT_GroupShape"`
-	NvGrpSpPr    *CTGroupShapeNonVisual  `xml:"nvGrpSpPr"`
-	GrpSpPr      *CTGroupShapeProperties `xml:"grpSpPr"`
-	Sp           *CTShape                `xml:"sp"`
-	GrpSp        *CTGroupShape           `xml:"grpSp"`
-	GraphicFrame *CTGraphicalObjectFrame `xml:"graphicFrame"`
-	CxnSp        *CTConnector            `xml:"cxnSp"`
-	Pic          *CTPicture              `xml:"pic"`
-	ContentPart  *CTRel                  `xml:"contentPart"`
-	ExtLst       *CTExtensionListModify  `xml:"extLst"`
+	XMLName      xml.Name                  `xml:"CT_GroupShape"`
+	NvGrpSpPr    *CTGroupShapeNonVisual    `xml:"nvGrpSpPr"`
+	GrpSpPr      *CTGroupShapeProperties   `xml:"grpSpPr"`
+	Sp           []*CTShape                `xml:"sp"`
+	GrpSp        []*CTGroupShape           `xml:"grpSp"`
+	GraphicFrame []*CTGraphicalObjectFrame `xml:"graphicFrame"`
+	CxnSp        []*CTConnector            `xml:"cxnSp"`
+	Pic          []*CTPicture              `xml:"pic"`
+	ContentPart  []*CTRel                  `xml:"contentPart"`
+	ExtLst       *CTExtensionListModify    `xml:"extLst"`
 }
 
 // CTRel ...

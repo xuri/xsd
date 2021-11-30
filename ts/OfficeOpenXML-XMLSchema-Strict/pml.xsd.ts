@@ -249,19 +249,19 @@ export class CT_TLTimeConditionList {
 
 // CT_TimeNodeList ...
 export class CT_TimeNodeList {
-	Par: CT_TLTimeNodeParallel;
-	Seq: CT_TLTimeNodeSequence;
-	Excl: CT_TLTimeNodeExclusive;
-	Anim: CT_TLAnimateBehavior;
-	AnimClr: CT_TLAnimateColorBehavior;
-	AnimEffect: CT_TLAnimateEffectBehavior;
-	AnimMotion: CT_TLAnimateMotionBehavior;
-	AnimRot: CT_TLAnimateRotationBehavior;
-	AnimScale: CT_TLAnimateScaleBehavior;
-	Cmd: CT_TLCommandBehavior;
-	Set: CT_TLSetBehavior;
-	Audio: CT_TLMediaNodeAudio;
-	Video: CT_TLMediaNodeVideo;
+	Par: Array<CT_TLTimeNodeParallel>;
+	Seq: Array<CT_TLTimeNodeSequence>;
+	Excl: Array<CT_TLTimeNodeExclusive>;
+	Anim: Array<CT_TLAnimateBehavior>;
+	AnimClr: Array<CT_TLAnimateColorBehavior>;
+	AnimEffect: Array<CT_TLAnimateEffectBehavior>;
+	AnimMotion: Array<CT_TLAnimateMotionBehavior>;
+	AnimRot: Array<CT_TLAnimateRotationBehavior>;
+	AnimScale: Array<CT_TLAnimateScaleBehavior>;
+	Cmd: Array<CT_TLCommandBehavior>;
+	Set: Array<CT_TLSetBehavior>;
+	Audio: Array<CT_TLMediaNodeAudio>;
+	Video: Array<CT_TLMediaNodeVideo>;
 }
 
 // ST_TLTimeNodePresetClassType ...
@@ -738,10 +738,10 @@ export class CT_TLGraphicalObjectBuild {
 
 // CT_BuildList ...
 export class CT_BuildList {
-	BldP: CT_TLBuildParagraph;
-	BldDgm: CT_TLBuildDiagram;
-	BldOleChart: CT_TLOleBuildChart;
-	BldGraphic: CT_TLGraphicalObjectBuild;
+	BldP: Array<CT_TLBuildParagraph>;
+	BldDgm: Array<CT_TLBuildDiagram>;
+	BldOleChart: Array<CT_TLOleBuildChart>;
+	BldGraphic: Array<CT_TLGraphicalObjectBuild>;
 }
 
 // CT_SlideTiming ...
@@ -1333,12 +1333,12 @@ export class CT_GroupShapeNonVisual {
 export class CT_GroupShape {
 	NvGrpSpPr: CT_GroupShapeNonVisual;
 	GrpSpPr: CT_GroupShapeProperties;
-	Sp: CT_Shape;
-	GrpSp: CT_GroupShape;
-	GraphicFrame: CT_GraphicalObjectFrame;
-	CxnSp: CT_Connector;
-	Pic: CT_Picture;
-	ContentPart: CT_Rel;
+	Sp: Array<CT_Shape>;
+	GrpSp: Array<CT_GroupShape>;
+	GraphicFrame: Array<CT_GraphicalObjectFrame>;
+	CxnSp: Array<CT_Connector>;
+	Pic: Array<CT_Picture>;
+	ContentPart: Array<CT_Rel>;
 	ExtLst: CT_ExtensionListModify;
 }
 

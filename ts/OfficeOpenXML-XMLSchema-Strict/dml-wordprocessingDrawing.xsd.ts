@@ -230,11 +230,11 @@ export class CT_WordprocessingGroup {
 	CNvPr: CT_NonVisualDrawingProps;
 	CNvGrpSpPr: CT_NonVisualGroupDrawingShapeProps;
 	GrpSpPr: CT_GroupShapeProperties;
-	Wsp: CT_WordprocessingShape;
-	GrpSp: CT_WordprocessingGroup;
-	GraphicFrame: CT_GraphicFrame;
-	DpctPic: CT_Picture;
-	ContentPart: CT_WordprocessingContentPart;
+	Wsp: Array<CT_WordprocessingShape>;
+	GrpSp: Array<CT_WordprocessingGroup>;
+	GraphicFrame: Array<CT_GraphicFrame>;
+	DpctPic: Array<CT_Picture>;
+	ContentPart: Array<CT_WordprocessingContentPart>;
 	ExtLst: CT_OfficeArtExtensionList;
 }
 
@@ -242,11 +242,11 @@ export class CT_WordprocessingGroup {
 export class CT_WordprocessingCanvas {
 	Bg: CT_BackgroundFormatting;
 	Whole: CT_WholeE2oFormatting;
-	Wsp: CT_WordprocessingShape;
-	DpctPic: CT_Picture;
-	ContentPart: CT_WordprocessingContentPart;
-	Wgp: CT_WordprocessingGroup;
-	GraphicFrame: CT_GraphicFrame;
+	Wsp: Array<CT_WordprocessingShape>;
+	DpctPic: Array<CT_Picture>;
+	ContentPart: Array<CT_WordprocessingContentPart>;
+	Wgp: Array<CT_WordprocessingGroup>;
+	GraphicFrame: Array<CT_GraphicFrame>;
 	ExtLst: CT_OfficeArtExtensionList;
 }
 

@@ -284,8 +284,8 @@ type Inline struct {
 
 // Inline is "Inline" covers inline or "text-level" element
 type Inline struct {
-	Inline     *Inline
-	MiscInline *MiscInline
+	Inline     []*Inline
+	MiscInline []*MiscInline
 }
 
 // Heading ...
@@ -335,72 +335,72 @@ type Block struct {
 
 // Flow is "Flow" mixes block and inline and is used for list items etc.
 type Flow struct {
-	Block  *Block
-	Inline *Inline
-	Misc   *Misc
-	Form   string `xml:"form"`
+	Block  []*Block
+	Inline []*Inline
+	Misc   []*Misc
+	Form   []string `xml:"form"`
 }
 
 // AContent is a elements use "Inline" excluding a
 type AContent struct {
 	XMLName     xml.Name `xml:"a.content"`
-	Special     *Special
-	Fontstyle   *Fontstyle
-	Phrase      *Phrase
-	InlineForms *InlineForms
-	MiscInline  *MiscInline
+	Special     []*Special
+	Fontstyle   []*Fontstyle
+	Phrase      []*Phrase
+	InlineForms []*InlineForms
+	MiscInline  []*MiscInline
 }
 
 // PreContent is pre uses "Inline" excluding img, object, applet, big, small,
 //       font, or basefont
 type PreContent struct {
 	XMLName        xml.Name `xml:"pre.content"`
-	SpecialBasic   *SpecialBasic
-	FontstyleBasic *FontstyleBasic
-	PhraseBasic    *PhraseBasic
-	InlineForms    *InlineForms
-	MiscInline     *MiscInline
-	A              *A `xml:"a"`
+	SpecialBasic   []*SpecialBasic
+	FontstyleBasic []*FontstyleBasic
+	PhraseBasic    []*PhraseBasic
+	InlineForms    []*InlineForms
+	MiscInline     []*MiscInline
+	A              []*A `xml:"a"`
 }
 
 // FormContent is form uses "Flow" excluding form
 type FormContent struct {
 	XMLName xml.Name `xml:"form.content"`
-	Block   *Block
-	Inline  *Inline
-	Misc    *Misc
+	Block   []*Block
+	Inline  []*Inline
+	Misc    []*Misc
 }
 
 // ButtonContent is button uses "Flow" but excludes a, form, form controls, iframe
 type ButtonContent struct {
 	XMLName   xml.Name `xml:"button.content"`
-	Heading   *Heading
-	Lists     *Lists
-	Blocktext *Blocktext
-	Fontstyle *Fontstyle
-	Phrase    *Phrase
-	Misc      *Misc
-	P         *P      `xml:"p"`
-	Div       *Div    `xml:"div"`
-	Table     *Table  `xml:"table"`
-	Br        string  `xml:"br"`
-	Span      *Span   `xml:"span"`
-	Bdo       string  `xml:"bdo"`
-	Object    string  `xml:"object"`
-	Applet    *Applet `xml:"applet"`
-	Img       string  `xml:"img"`
-	Map       *Map    `xml:"map"`
+	Heading   []*Heading
+	Lists     []*Lists
+	Blocktext []*Blocktext
+	Fontstyle []*Fontstyle
+	Phrase    []*Phrase
+	Misc      []*Misc
+	P         []*P      `xml:"p"`
+	Div       []*Div    `xml:"div"`
+	Table     []*Table  `xml:"table"`
+	Br        []string  `xml:"br"`
+	Span      []*Span   `xml:"span"`
+	Bdo       []string  `xml:"bdo"`
+	Object    []string  `xml:"object"`
+	Applet    []*Applet `xml:"applet"`
+	Img       []string  `xml:"img"`
+	Map       []*Map    `xml:"map"`
 }
 
 // HeadMisc ...
 type HeadMisc struct {
 	XMLName xml.Name `xml:"head.misc"`
-	Script  string
-	Style   *Style
-	Meta    *Meta
-	Link    *Link
-	Object  string
-	Isindex *Isindex
+	Script  []string
+	Style   []*Style
+	Meta    []*Meta
+	Link    []*Link
+	Object  []string
+	Isindex []*Isindex
 }
 
 // Head ...
@@ -639,7 +639,7 @@ type Dl struct {
 	XMLName     xml.Name `xml:"dl"`
 	Attrs       *Attrs
 	CompactAttr string `xml:"compact,attr,omitempty"`
-	Dt          *Dt    `xml:"dt"`
+	Dt          []*Dt  `xml:"dt"`
 	Dl          string `xml:"dl"`
 }
 
@@ -661,9 +661,9 @@ type Dd struct {
 type Address struct {
 	XMLName    xml.Name `xml:"address"`
 	Attrs      *Attrs
-	Inline     *Inline
-	MiscInline *MiscInline
-	P          *P `xml:"p"`
+	Inline     []*Inline
+	MiscInline []*MiscInline
+	P          []*P `xml:"p"`
 }
 
 // Hr ...
@@ -950,11 +950,11 @@ type Object struct {
 	BorderAttr   int    `xml:"border,attr,omitempty"`
 	HspaceAttr   int    `xml:"hspace,attr,omitempty"`
 	VspaceAttr   int    `xml:"vspace,attr,omitempty"`
-	Block        *Block
-	Inline       *Inline
-	Misc         *Misc
-	Param        string `xml:"param"`
-	Object       string `xml:"object"`
+	Block        []*Block
+	Inline       []*Inline
+	Misc         []*Misc
+	Param        []string `xml:"param"`
+	Object       string   `xml:"object"`
 }
 
 // Param ...
@@ -982,11 +982,11 @@ type Applet struct {
 	AlignAttr    string      `xml:"align,attr,omitempty"`
 	HspaceAttr   int         `xml:"hspace,attr,omitempty"`
 	VspaceAttr   int         `xml:"vspace,attr,omitempty"`
-	Block        *Block
-	Inline       *Inline
-	Misc         *Misc
-	Param        string `xml:"param"`
-	Form         string `xml:"form"`
+	Block        []*Block
+	Inline       []*Inline
+	Misc         []*Misc
+	Param        []string `xml:"param"`
+	Form         []string `xml:"form"`
 }
 
 // Img ...
@@ -1017,9 +1017,9 @@ type Map struct {
 	StyleAttr string      `xml:"style,attr,omitempty"`
 	TitleAttr string      `xml:"title,attr,omitempty"`
 	NameAttr  interface{} `xml:"name,attr,omitempty"`
-	Block     *Block
-	Misc      *Misc
-	Form      string   `xml:"form"`
+	Block     []*Block
+	Misc      []*Misc
+	Form      []string `xml:"form"`
 	Area      []string `xml:"area"`
 }
 
@@ -1099,7 +1099,7 @@ type Select struct {
 	OnfocusAttr  string      `xml:"onfocus,attr,omitempty"`
 	OnblurAttr   string      `xml:"onblur,attr,omitempty"`
 	OnchangeAttr string      `xml:"onchange,attr,omitempty"`
-	Optgroup     string      `xml:"optgroup"`
+	Optgroup     []string    `xml:"optgroup"`
 	Select       string      `xml:"select"`
 }
 
@@ -1140,11 +1140,11 @@ type Textarea struct {
 type Fieldset struct {
 	XMLName xml.Name `xml:"fieldset"`
 	Attrs   *Attrs
-	Block   *Block
-	Inline  *Inline
-	Misc    *Misc
-	Legend  *Legend `xml:"legend"`
-	Form    string  `xml:"form"`
+	Block   []*Block
+	Inline  []*Inline
+	Misc    []*Misc
+	Legend  *Legend  `xml:"legend"`
+	Form    []string `xml:"form"`
 }
 
 // LAlign ...
@@ -1300,9 +1300,9 @@ type Tr struct {
 	Attrs       *Attrs
 	Cellhalign  *Cellhalign
 	Cellvalign  *Cellvalign
-	BgcolorAttr string `xml:"bgcolor,attr,omitempty"`
-	Th          string `xml:"th"`
-	Td          string `xml:"td"`
+	BgcolorAttr string   `xml:"bgcolor,attr,omitempty"`
+	Th          []string `xml:"th"`
+	Td          []string `xml:"td"`
 }
 
 // Scope is Scope is simpler than headers attribute for common tables
@@ -1382,10 +1382,10 @@ type Question struct {
 // Answer ...
 type Answer struct {
 	XMLName xml.Name `xml:"answer"`
-	Block   *Block
-	Inline  *Inline
-	Misc    *Misc
-	Form    string `xml:"form"`
+	Block   []*Block
+	Inline  []*Inline
+	Misc    []*Misc
+	Form    []string `xml:"form"`
 }
 
 // Source ...
@@ -1397,5 +1397,5 @@ type Source struct {
 type Macro struct {
 	XMLName  xml.Name `xml:"macro"`
 	NameAttr string   `xml:"name,attr"`
-	Param    string   `xml:"param"`
+	Param    []string `xml:"param"`
 }

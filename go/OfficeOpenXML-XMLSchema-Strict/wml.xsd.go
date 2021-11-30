@@ -673,8 +673,8 @@ type CTParaRPrChange struct {
 // CTRunTrackChange ...
 type CTRunTrackChange struct {
 	XMLName              xml.Name `xml:"CT_RunTrackChange"`
-	EGContentRunContent  *EGContentRunContent
-	MEGOMathMathElements *EGOMathMathElements
+	EGContentRunContent  []*EGContentRunContent
+	MEGOMathMathElements []*EGOMathMathElements
 	*CTTrackChange
 }
 
@@ -880,9 +880,9 @@ type STObjectUpdateMode string
 
 // CTDrawing ...
 type CTDrawing struct {
-	XMLName  xml.Name  `xml:"CT_Drawing"`
-	WpAnchor *CTAnchor `xml:"wp:anchor"`
-	WpInline *CTInline `xml:"wp:inline"`
+	XMLName  xml.Name    `xml:"CT_Drawing"`
+	WpAnchor []*CTAnchor `xml:"wp:anchor"`
+	WpInline []*CTInline `xml:"wp:inline"`
 }
 
 // CTSimpleField ...
@@ -947,19 +947,19 @@ type CTHyperlink struct {
 
 // CTFFData ...
 type CTFFData struct {
-	XMLName    xml.Name                 `xml:"CT_FFData"`
-	Name       *CTFFName                `xml:"name"`
-	Label      *CTDecimalNumber         `xml:"label"`
-	TabIndex   *CTUnsignedDecimalNumber `xml:"tabIndex"`
-	Enabled    *CTOnOff                 `xml:"enabled"`
-	CalcOnExit *CTOnOff                 `xml:"calcOnExit"`
-	EntryMacro *CTMacroName             `xml:"entryMacro"`
-	ExitMacro  *CTMacroName             `xml:"exitMacro"`
-	HelpText   *CTFFHelpText            `xml:"helpText"`
-	StatusText *CTFFStatusText          `xml:"statusText"`
-	CheckBox   *CTFFCheckBox            `xml:"checkBox"`
-	DdList     *CTFFDDList              `xml:"ddList"`
-	TextInput  *CTFFTextInput           `xml:"textInput"`
+	XMLName    xml.Name                   `xml:"CT_FFData"`
+	Name       []*CTFFName                `xml:"name"`
+	Label      []*CTDecimalNumber         `xml:"label"`
+	TabIndex   []*CTUnsignedDecimalNumber `xml:"tabIndex"`
+	Enabled    []*CTOnOff                 `xml:"enabled"`
+	CalcOnExit []*CTOnOff                 `xml:"calcOnExit"`
+	EntryMacro []*CTMacroName             `xml:"entryMacro"`
+	ExitMacro  []*CTMacroName             `xml:"exitMacro"`
+	HelpText   []*CTFFHelpText            `xml:"helpText"`
+	StatusText []*CTFFStatusText          `xml:"statusText"`
+	CheckBox   []*CTFFCheckBox            `xml:"checkBox"`
+	DdList     []*CTFFDDList              `xml:"ddList"`
+	TextInput  []*CTFFTextInput           `xml:"textInput"`
 }
 
 // CTFFHelpText ...
@@ -1649,7 +1649,7 @@ type CTSdtPr struct {
 // CTSdtEndPr ...
 type CTSdtEndPr struct {
 	XMLName xml.Name `xml:"CT_SdtEndPr"`
-	RPr     *CTRPr   `xml:"rPr"`
+	RPr     []*CTRPr `xml:"rPr"`
 }
 
 // EGContentRunContent ...
@@ -1991,19 +1991,19 @@ type CTHeaders struct {
 
 // CTTrPrBase ...
 type CTTrPrBase struct {
-	XMLName        xml.Name         `xml:"CT_TrPrBase"`
-	CnfStyle       *CTCnf           `xml:"cnfStyle"`
-	DivId          *CTDecimalNumber `xml:"divId"`
-	GridBefore     *CTDecimalNumber `xml:"gridBefore"`
-	GridAfter      *CTDecimalNumber `xml:"gridAfter"`
-	WBefore        *CTTblWidth      `xml:"wBefore"`
-	WAfter         *CTTblWidth      `xml:"wAfter"`
-	CantSplit      *CTOnOff         `xml:"cantSplit"`
-	TrHeight       *CTHeight        `xml:"trHeight"`
-	TblHeader      *CTOnOff         `xml:"tblHeader"`
-	TblCellSpacing *CTTblWidth      `xml:"tblCellSpacing"`
-	Jc             *CTJcTable       `xml:"jc"`
-	Hidden         *CTOnOff         `xml:"hidden"`
+	XMLName        xml.Name           `xml:"CT_TrPrBase"`
+	CnfStyle       []*CTCnf           `xml:"cnfStyle"`
+	DivId          []*CTDecimalNumber `xml:"divId"`
+	GridBefore     []*CTDecimalNumber `xml:"gridBefore"`
+	GridAfter      []*CTDecimalNumber `xml:"gridAfter"`
+	WBefore        []*CTTblWidth      `xml:"wBefore"`
+	WAfter         []*CTTblWidth      `xml:"wAfter"`
+	CantSplit      []*CTOnOff         `xml:"cantSplit"`
+	TrHeight       []*CTHeight        `xml:"trHeight"`
+	TblHeader      []*CTOnOff         `xml:"tblHeader"`
+	TblCellSpacing []*CTTblWidth      `xml:"tblCellSpacing"`
+	Jc             []*CTJcTable       `xml:"jc"`
+	Hidden         []*CTOnOff         `xml:"hidden"`
 }
 
 // CTTrPr ...

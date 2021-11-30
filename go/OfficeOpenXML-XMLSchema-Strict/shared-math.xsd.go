@@ -163,9 +163,9 @@ type CTText struct {
 type CTR struct {
 	XMLName            xml.Name `xml:"CT_R"`
 	WEGRPr             *EGRPr
-	WEGRunInnerContent *EGRunInnerContent
-	RPr                *CTRPR  `xml:"rPr"`
-	T                  *CTText `xml:"t"`
+	WEGRunInnerContent []*EGRunInnerContent
+	RPr                *CTRPR    `xml:"rPr"`
+	T                  []*CTText `xml:"t"`
 }
 
 // CTCtrlPr ...

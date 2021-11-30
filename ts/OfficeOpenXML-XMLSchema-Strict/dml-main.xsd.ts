@@ -1063,12 +1063,12 @@ export class CT_GvmlGroupShapeNonVisual {
 export class CT_GvmlGroupShape {
 	NvGrpSpPr: CT_GvmlGroupShapeNonVisual;
 	GrpSpPr: CT_GroupShapeProperties;
-	TxSp: CT_GvmlTextShape;
-	Sp: CT_GvmlShape;
-	CxnSp: CT_GvmlConnector;
-	Pic: CT_GvmlPicture;
-	GraphicFrame: CT_GvmlGraphicalObjectFrame;
-	GrpSp: CT_GvmlGroupShape;
+	TxSp: Array<CT_GvmlTextShape>;
+	Sp: Array<CT_GvmlShape>;
+	CxnSp: Array<CT_GvmlConnector>;
+	Pic: Array<CT_GvmlPicture>;
+	GraphicFrame: Array<CT_GvmlGraphicalObjectFrame>;
+	GrpSp: Array<CT_GvmlGroupShape>;
 	ExtLst: CT_OfficeArtExtensionList;
 }
 
@@ -1560,23 +1560,23 @@ export enum ST_BlipCompression {
 export class CT_Blip {
 	AG_Blob: AG_Blob;
 	CstateAttr: string | null;
-	AlphaBiLevel: CT_AlphaBiLevelEffect;
-	AlphaCeiling: CT_AlphaCeilingEffect;
-	AlphaFloor: CT_AlphaFloorEffect;
-	AlphaInv: CT_AlphaInverseEffect;
-	AlphaMod: CT_AlphaModulateEffect;
-	AlphaModFix: CT_AlphaModulateFixedEffect;
-	AlphaRepl: CT_AlphaReplaceEffect;
-	BiLevel: CT_BiLevelEffect;
-	Blur: CT_BlurEffect;
-	ClrChange: CT_ColorChangeEffect;
-	ClrRepl: CT_ColorReplaceEffect;
-	Duotone: CT_DuotoneEffect;
-	FillOverlay: CT_FillOverlayEffect;
-	Grayscl: CT_GrayscaleEffect;
-	Hsl: CT_HSLEffect;
-	Lum: CT_LuminanceEffect;
-	Tint: CT_TintEffect;
+	AlphaBiLevel: Array<CT_AlphaBiLevelEffect>;
+	AlphaCeiling: Array<CT_AlphaCeilingEffect>;
+	AlphaFloor: Array<CT_AlphaFloorEffect>;
+	AlphaInv: Array<CT_AlphaInverseEffect>;
+	AlphaMod: Array<CT_AlphaModulateEffect>;
+	AlphaModFix: Array<CT_AlphaModulateFixedEffect>;
+	AlphaRepl: Array<CT_AlphaReplaceEffect>;
+	BiLevel: Array<CT_BiLevelEffect>;
+	Blur: Array<CT_BlurEffect>;
+	ClrChange: Array<CT_ColorChangeEffect>;
+	ClrRepl: Array<CT_ColorReplaceEffect>;
+	Duotone: Array<CT_DuotoneEffect>;
+	FillOverlay: Array<CT_FillOverlayEffect>;
+	Grayscl: Array<CT_GrayscaleEffect>;
+	Hsl: Array<CT_HSLEffect>;
+	Lum: Array<CT_LuminanceEffect>;
+	Tint: Array<CT_TintEffect>;
 	ExtLst: CT_OfficeArtExtensionList;
 }
 
@@ -2091,8 +2091,8 @@ export class CT_ConnectionSite {
 
 // CT_AdjustHandleList ...
 export class CT_AdjustHandleList {
-	AhXY: CT_XYAdjustHandle;
-	AhPolar: CT_PolarAdjustHandle;
+	AhXY: Array<CT_XYAdjustHandle>;
+	AhPolar: Array<CT_PolarAdjustHandle>;
 }
 
 // CT_ConnectionSiteList ...
@@ -2155,12 +2155,12 @@ export class CT_Path2D {
 	FillAttr: string | null;
 	StrokeAttr: boolean | null;
 	ExtrusionOkAttr: boolean | null;
-	Close: CT_Path2DClose;
-	MoveTo: CT_Path2DMoveTo;
-	LnTo: CT_Path2DLineTo;
-	ArcTo: CT_Path2DArcTo;
-	QuadBezTo: CT_Path2DQuadBezierTo;
-	CubicBezTo: CT_Path2DCubicBezierTo;
+	Close: Array<CT_Path2DClose>;
+	MoveTo: Array<CT_Path2DMoveTo>;
+	LnTo: Array<CT_Path2DLineTo>;
+	ArcTo: Array<CT_Path2DArcTo>;
+	QuadBezTo: Array<CT_Path2DQuadBezierTo>;
+	CubicBezTo: Array<CT_Path2DCubicBezierTo>;
 }
 
 // CT_Path2DList ...

@@ -1366,17 +1366,17 @@ pub struct CTGvmlGroupShape {
 	#[serde(rename = "grpSpPr")]
 	pub grp_sp_pr: CTGroupShapeProperties,
 	#[serde(rename = "txSp")]
-	pub tx_sp: CTGvmlTextShape,
+	pub tx_sp: Vec<CTGvmlTextShape>,
 	#[serde(rename = "sp")]
-	pub sp: CTGvmlShape,
+	pub sp: Vec<CTGvmlShape>,
 	#[serde(rename = "cxnSp")]
-	pub cxn_sp: CTGvmlConnector,
+	pub cxn_sp: Vec<CTGvmlConnector>,
 	#[serde(rename = "pic")]
-	pub pic: CTGvmlPicture,
+	pub pic: Vec<CTGvmlPicture>,
 	#[serde(rename = "graphicFrame")]
-	pub graphic_frame: CTGvmlGraphicalObjectFrame,
+	pub graphic_frame: Vec<CTGvmlGraphicalObjectFrame>,
 	#[serde(rename = "grpSp")]
-	pub grp_sp: CTGvmlGroupShape,
+	pub grp_sp: Vec<CTGvmlGroupShape>,
 	#[serde(rename = "extLst")]
 	pub ext_lst: CTOfficeArtExtensionList,
 }
@@ -1962,39 +1962,39 @@ pub struct CTBlip {
 	#[serde(rename = "cstate")]
 	pub cstate: Option<String>,
 	#[serde(rename = "alphaBiLevel")]
-	pub alpha_bi_level: CTAlphaBiLevelEffect,
+	pub alpha_bi_level: Vec<CTAlphaBiLevelEffect>,
 	#[serde(rename = "alphaCeiling")]
-	pub alpha_ceiling: CTAlphaCeilingEffect,
+	pub alpha_ceiling: Vec<CTAlphaCeilingEffect>,
 	#[serde(rename = "alphaFloor")]
-	pub alpha_floor: CTAlphaFloorEffect,
+	pub alpha_floor: Vec<CTAlphaFloorEffect>,
 	#[serde(rename = "alphaInv")]
-	pub alpha_inv: CTAlphaInverseEffect,
+	pub alpha_inv: Vec<CTAlphaInverseEffect>,
 	#[serde(rename = "alphaMod")]
-	pub alpha_mod: CTAlphaModulateEffect,
+	pub alpha_mod: Vec<CTAlphaModulateEffect>,
 	#[serde(rename = "alphaModFix")]
-	pub alpha_mod_fix: CTAlphaModulateFixedEffect,
+	pub alpha_mod_fix: Vec<CTAlphaModulateFixedEffect>,
 	#[serde(rename = "alphaRepl")]
-	pub alpha_repl: CTAlphaReplaceEffect,
+	pub alpha_repl: Vec<CTAlphaReplaceEffect>,
 	#[serde(rename = "biLevel")]
-	pub bi_level: CTBiLevelEffect,
+	pub bi_level: Vec<CTBiLevelEffect>,
 	#[serde(rename = "blur")]
-	pub blur: CTBlurEffect,
+	pub blur: Vec<CTBlurEffect>,
 	#[serde(rename = "clrChange")]
-	pub clr_change: CTColorChangeEffect,
+	pub clr_change: Vec<CTColorChangeEffect>,
 	#[serde(rename = "clrRepl")]
-	pub clr_repl: CTColorReplaceEffect,
+	pub clr_repl: Vec<CTColorReplaceEffect>,
 	#[serde(rename = "duotone")]
-	pub duotone: CTDuotoneEffect,
+	pub duotone: Vec<CTDuotoneEffect>,
 	#[serde(rename = "fillOverlay")]
-	pub fill_overlay: CTFillOverlayEffect,
+	pub fill_overlay: Vec<CTFillOverlayEffect>,
 	#[serde(rename = "grayscl")]
-	pub grayscl: CTGrayscaleEffect,
+	pub grayscl: Vec<CTGrayscaleEffect>,
 	#[serde(rename = "hsl")]
-	pub hsl: CTHSLEffect,
+	pub hsl: Vec<CTHSLEffect>,
 	#[serde(rename = "lum")]
-	pub lum: CTLuminanceEffect,
+	pub lum: Vec<CTLuminanceEffect>,
 	#[serde(rename = "tint")]
-	pub tint: CTTintEffect,
+	pub tint: Vec<CTTintEffect>,
 	#[serde(rename = "extLst")]
 	pub ext_lst: CTOfficeArtExtensionList,
 }
@@ -2398,9 +2398,9 @@ pub struct CTConnectionSite {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTAdjustHandleList {
 	#[serde(rename = "ahXY")]
-	pub ah_xy: CTXYAdjustHandle,
+	pub ah_xy: Vec<CTXYAdjustHandle>,
 	#[serde(rename = "ahPolar")]
-	pub ah_polar: CTPolarAdjustHandle,
+	pub ah_polar: Vec<CTPolarAdjustHandle>,
 }
 
 
@@ -2496,17 +2496,17 @@ pub struct CTPath2D {
 	#[serde(rename = "extrusionOk")]
 	pub extrusion_ok: Option<bool>,
 	#[serde(rename = "close")]
-	pub close: CTPath2DClose,
+	pub close: Vec<CTPath2DClose>,
 	#[serde(rename = "moveTo")]
-	pub move_to: CTPath2DMoveTo,
+	pub move_to: Vec<CTPath2DMoveTo>,
 	#[serde(rename = "lnTo")]
-	pub ln_to: CTPath2DLineTo,
+	pub ln_to: Vec<CTPath2DLineTo>,
 	#[serde(rename = "arcTo")]
-	pub arc_to: CTPath2DArcTo,
+	pub arc_to: Vec<CTPath2DArcTo>,
 	#[serde(rename = "quadBezTo")]
-	pub quad_bez_to: CTPath2DQuadBezierTo,
+	pub quad_bez_to: Vec<CTPath2DQuadBezierTo>,
 	#[serde(rename = "cubicBezTo")]
-	pub cubic_bez_to: CTPath2DCubicBezierTo,
+	pub cubic_bez_to: Vec<CTPath2DCubicBezierTo>,
 }
 
 

@@ -1766,45 +1766,45 @@ public class CT_PlotArea {
 	@XmlElement(required = true, name = "layout")
 	protected CT_Layout Layout;
 	@XmlElement(required = true, name = "areaChart")
-	protected CT_AreaChart AreaChart;
+	protected List<CT_AreaChart> AreaChart;
 	@XmlElement(required = true, name = "area3DChart")
-	protected CT_Area3DChart Area3DChart;
+	protected List<CT_Area3DChart> Area3DChart;
 	@XmlElement(required = true, name = "lineChart")
-	protected CT_LineChart LineChart;
+	protected List<CT_LineChart> LineChart;
 	@XmlElement(required = true, name = "line3DChart")
-	protected CT_Line3DChart Line3DChart;
+	protected List<CT_Line3DChart> Line3DChart;
 	@XmlElement(required = true, name = "stockChart")
-	protected CT_StockChart StockChart;
+	protected List<CT_StockChart> StockChart;
 	@XmlElement(required = true, name = "radarChart")
-	protected CT_RadarChart RadarChart;
+	protected List<CT_RadarChart> RadarChart;
 	@XmlElement(required = true, name = "scatterChart")
-	protected CT_ScatterChart ScatterChart;
+	protected List<CT_ScatterChart> ScatterChart;
 	@XmlElement(required = true, name = "pieChart")
-	protected CT_PieChart PieChart;
+	protected List<CT_PieChart> PieChart;
 	@XmlElement(required = true, name = "pie3DChart")
-	protected CT_Pie3DChart Pie3DChart;
+	protected List<CT_Pie3DChart> Pie3DChart;
 	@XmlElement(required = true, name = "doughnutChart")
-	protected CT_DoughnutChart DoughnutChart;
+	protected List<CT_DoughnutChart> DoughnutChart;
 	@XmlElement(required = true, name = "barChart")
-	protected CT_BarChart BarChart;
+	protected List<CT_BarChart> BarChart;
 	@XmlElement(required = true, name = "bar3DChart")
-	protected CT_Bar3DChart Bar3DChart;
+	protected List<CT_Bar3DChart> Bar3DChart;
 	@XmlElement(required = true, name = "ofPieChart")
-	protected CT_OfPieChart OfPieChart;
+	protected List<CT_OfPieChart> OfPieChart;
 	@XmlElement(required = true, name = "surfaceChart")
-	protected CT_SurfaceChart SurfaceChart;
+	protected List<CT_SurfaceChart> SurfaceChart;
 	@XmlElement(required = true, name = "surface3DChart")
-	protected CT_Surface3DChart Surface3DChart;
+	protected List<CT_Surface3DChart> Surface3DChart;
 	@XmlElement(required = true, name = "bubbleChart")
-	protected CT_BubbleChart BubbleChart;
+	protected List<CT_BubbleChart> BubbleChart;
 	@XmlElement(required = true, name = "valAx")
-	protected CT_ValAx ValAx;
+	protected List<CT_ValAx> ValAx;
 	@XmlElement(required = true, name = "catAx")
-	protected CT_CatAx CatAx;
+	protected List<CT_CatAx> CatAx;
 	@XmlElement(required = true, name = "dateAx")
-	protected CT_DateAx DateAx;
+	protected List<CT_DateAx> DateAx;
 	@XmlElement(required = true, name = "serAx")
-	protected CT_SerAx SerAx;
+	protected List<CT_SerAx> SerAx;
 	@XmlElement(required = true, name = "dTable")
 	protected CT_DTable DTable;
 	@XmlElement(required = true, name = "spPr")

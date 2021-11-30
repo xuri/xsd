@@ -100,14 +100,14 @@ type CTGroupShapeNonVisual struct {
 
 // CTGroupShape ...
 type CTGroupShape struct {
-	XMLName      xml.Name                `xml:"CT_GroupShape"`
-	NvGrpSpPr    *CTGroupShapeNonVisual  `xml:"nvGrpSpPr"`
-	GrpSpPr      *CTGroupShapeProperties `xml:"grpSpPr"`
-	Sp           *CTShape                `xml:"sp"`
-	GrpSp        *CTGroupShape           `xml:"grpSp"`
-	GraphicFrame *CTGraphicalObjectFrame `xml:"graphicFrame"`
-	CxnSp        *CTConnector            `xml:"cxnSp"`
-	Pic          *CTPicture              `xml:"pic"`
+	XMLName      xml.Name                  `xml:"CT_GroupShape"`
+	NvGrpSpPr    *CTGroupShapeNonVisual    `xml:"nvGrpSpPr"`
+	GrpSpPr      *CTGroupShapeProperties   `xml:"grpSpPr"`
+	Sp           []*CTShape                `xml:"sp"`
+	GrpSp        []*CTGroupShape           `xml:"grpSp"`
+	GraphicFrame []*CTGraphicalObjectFrame `xml:"graphicFrame"`
+	CxnSp        []*CTConnector            `xml:"cxnSp"`
+	Pic          []*CTPicture              `xml:"pic"`
 }
 
 // EGObjectChoices ...

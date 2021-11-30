@@ -1146,17 +1146,17 @@ public class CT_GvmlGroupShape {
 	@XmlElement(required = true, name = "grpSpPr")
 	protected CT_GroupShapeProperties GrpSpPr;
 	@XmlElement(required = true, name = "txSp")
-	protected CT_GvmlTextShape TxSp;
+	protected List<CT_GvmlTextShape> TxSp;
 	@XmlElement(required = true, name = "sp")
-	protected CT_GvmlShape Sp;
+	protected List<CT_GvmlShape> Sp;
 	@XmlElement(required = true, name = "cxnSp")
-	protected CT_GvmlConnector CxnSp;
+	protected List<CT_GvmlConnector> CxnSp;
 	@XmlElement(required = true, name = "pic")
-	protected CT_GvmlPicture Pic;
+	protected List<CT_GvmlPicture> Pic;
 	@XmlElement(required = true, name = "graphicFrame")
-	protected CT_GvmlGraphicalObjectFrame GraphicFrame;
+	protected List<CT_GvmlGraphicalObjectFrame> GraphicFrame;
 	@XmlElement(required = true, name = "grpSp")
-	protected CT_GvmlGroupShape GrpSp;
+	protected List<CT_GvmlGroupShape> GrpSp;
 	@XmlElement(required = true, name = "extLst")
 	protected CT_OfficeArtExtensionList ExtLst;
 }
@@ -1634,39 +1634,39 @@ public class CT_Blip {
 	@XmlAttribute(name = "cstate")
 	protected String CstateAttr;
 	@XmlElement(required = true, name = "alphaBiLevel")
-	protected CT_AlphaBiLevelEffect AlphaBiLevel;
+	protected List<CT_AlphaBiLevelEffect> AlphaBiLevel;
 	@XmlElement(required = true, name = "alphaCeiling")
-	protected CT_AlphaCeilingEffect AlphaCeiling;
+	protected List<CT_AlphaCeilingEffect> AlphaCeiling;
 	@XmlElement(required = true, name = "alphaFloor")
-	protected CT_AlphaFloorEffect AlphaFloor;
+	protected List<CT_AlphaFloorEffect> AlphaFloor;
 	@XmlElement(required = true, name = "alphaInv")
-	protected CT_AlphaInverseEffect AlphaInv;
+	protected List<CT_AlphaInverseEffect> AlphaInv;
 	@XmlElement(required = true, name = "alphaMod")
-	protected CT_AlphaModulateEffect AlphaMod;
+	protected List<CT_AlphaModulateEffect> AlphaMod;
 	@XmlElement(required = true, name = "alphaModFix")
-	protected CT_AlphaModulateFixedEffect AlphaModFix;
+	protected List<CT_AlphaModulateFixedEffect> AlphaModFix;
 	@XmlElement(required = true, name = "alphaRepl")
-	protected CT_AlphaReplaceEffect AlphaRepl;
+	protected List<CT_AlphaReplaceEffect> AlphaRepl;
 	@XmlElement(required = true, name = "biLevel")
-	protected CT_BiLevelEffect BiLevel;
+	protected List<CT_BiLevelEffect> BiLevel;
 	@XmlElement(required = true, name = "blur")
-	protected CT_BlurEffect Blur;
+	protected List<CT_BlurEffect> Blur;
 	@XmlElement(required = true, name = "clrChange")
-	protected CT_ColorChangeEffect ClrChange;
+	protected List<CT_ColorChangeEffect> ClrChange;
 	@XmlElement(required = true, name = "clrRepl")
-	protected CT_ColorReplaceEffect ClrRepl;
+	protected List<CT_ColorReplaceEffect> ClrRepl;
 	@XmlElement(required = true, name = "duotone")
-	protected CT_DuotoneEffect Duotone;
+	protected List<CT_DuotoneEffect> Duotone;
 	@XmlElement(required = true, name = "fillOverlay")
-	protected CT_FillOverlayEffect FillOverlay;
+	protected List<CT_FillOverlayEffect> FillOverlay;
 	@XmlElement(required = true, name = "grayscl")
-	protected CT_GrayscaleEffect Grayscl;
+	protected List<CT_GrayscaleEffect> Grayscl;
 	@XmlElement(required = true, name = "hsl")
-	protected CT_HSLEffect Hsl;
+	protected List<CT_HSLEffect> Hsl;
 	@XmlElement(required = true, name = "lum")
-	protected CT_LuminanceEffect Lum;
+	protected List<CT_LuminanceEffect> Lum;
 	@XmlElement(required = true, name = "tint")
-	protected CT_TintEffect Tint;
+	protected List<CT_TintEffect> Tint;
 	@XmlElement(required = true, name = "extLst")
 	protected CT_OfficeArtExtensionList ExtLst;
 }
@@ -2009,9 +2009,9 @@ public class CT_ConnectionSite {
 // CT_AdjustHandleList ...
 public class CT_AdjustHandleList {
 	@XmlElement(required = true, name = "ahXY")
-	protected CT_XYAdjustHandle AhXY;
+	protected List<CT_XYAdjustHandle> AhXY;
 	@XmlElement(required = true, name = "ahPolar")
-	protected CT_PolarAdjustHandle AhPolar;
+	protected List<CT_PolarAdjustHandle> AhPolar;
 }
 
 // CT_ConnectionSiteList ...
@@ -2088,17 +2088,17 @@ public class CT_Path2D {
 	@XmlAttribute(name = "extrusionOk")
 	protected Boolean ExtrusionOkAttr;
 	@XmlElement(required = true, name = "close")
-	protected CT_Path2DClose Close;
+	protected List<CT_Path2DClose> Close;
 	@XmlElement(required = true, name = "moveTo")
-	protected CT_Path2DMoveTo MoveTo;
+	protected List<CT_Path2DMoveTo> MoveTo;
 	@XmlElement(required = true, name = "lnTo")
-	protected CT_Path2DLineTo LnTo;
+	protected List<CT_Path2DLineTo> LnTo;
 	@XmlElement(required = true, name = "arcTo")
-	protected CT_Path2DArcTo ArcTo;
+	protected List<CT_Path2DArcTo> ArcTo;
 	@XmlElement(required = true, name = "quadBezTo")
-	protected CT_Path2DQuadBezierTo QuadBezTo;
+	protected List<CT_Path2DQuadBezierTo> QuadBezTo;
 	@XmlElement(required = true, name = "cubicBezTo")
-	protected CT_Path2DCubicBezierTo CubicBezTo;
+	protected List<CT_Path2DCubicBezierTo> CubicBezTo;
 }
 
 // CT_Path2DList ...

@@ -434,11 +434,11 @@ type STParameterType string
 
 // CTTables ...
 type CTTables struct {
-	XMLName   xml.Name          `xml:"CT_Tables"`
-	CountAttr uint32            `xml:"count,attr,omitempty"`
-	M         *CTTableMissing   `xml:"m"`
-	S         *CTXStringElement `xml:"s"`
-	X         *CTIndex          `xml:"x"`
+	XMLName   xml.Name            `xml:"CT_Tables"`
+	CountAttr uint32              `xml:"count,attr,omitempty"`
+	M         []*CTTableMissing   `xml:"m"`
+	S         []*CTXStringElement `xml:"s"`
+	X         []*CTIndex          `xml:"x"`
 }
 
 // CTTableMissing ...
@@ -634,27 +634,27 @@ type CTRangeSet struct {
 
 // CTSharedItems ...
 type CTSharedItems struct {
-	XMLName                    xml.Name    `xml:"CT_SharedItems"`
-	ContainsSemiMixedTypesAttr bool        `xml:"containsSemiMixedTypes,attr,omitempty"`
-	ContainsNonDateAttr        bool        `xml:"containsNonDate,attr,omitempty"`
-	ContainsDateAttr           bool        `xml:"containsDate,attr,omitempty"`
-	ContainsStringAttr         bool        `xml:"containsString,attr,omitempty"`
-	ContainsBlankAttr          bool        `xml:"containsBlank,attr,omitempty"`
-	ContainsMixedTypesAttr     bool        `xml:"containsMixedTypes,attr,omitempty"`
-	ContainsNumberAttr         bool        `xml:"containsNumber,attr,omitempty"`
-	ContainsIntegerAttr        bool        `xml:"containsInteger,attr,omitempty"`
-	MinValueAttr               float64     `xml:"minValue,attr,omitempty"`
-	MaxValueAttr               float64     `xml:"maxValue,attr,omitempty"`
-	MinDateAttr                string      `xml:"minDate,attr,omitempty"`
-	MaxDateAttr                string      `xml:"maxDate,attr,omitempty"`
-	CountAttr                  uint32      `xml:"count,attr,omitempty"`
-	LongTextAttr               bool        `xml:"longText,attr,omitempty"`
-	M                          *CTMissing  `xml:"m"`
-	N                          *CTNumber   `xml:"n"`
-	B                          *CTBoolean  `xml:"b"`
-	E                          *CTError    `xml:"e"`
-	S                          *CTString   `xml:"s"`
-	D                          *CTDateTime `xml:"d"`
+	XMLName                    xml.Name      `xml:"CT_SharedItems"`
+	ContainsSemiMixedTypesAttr bool          `xml:"containsSemiMixedTypes,attr,omitempty"`
+	ContainsNonDateAttr        bool          `xml:"containsNonDate,attr,omitempty"`
+	ContainsDateAttr           bool          `xml:"containsDate,attr,omitempty"`
+	ContainsStringAttr         bool          `xml:"containsString,attr,omitempty"`
+	ContainsBlankAttr          bool          `xml:"containsBlank,attr,omitempty"`
+	ContainsMixedTypesAttr     bool          `xml:"containsMixedTypes,attr,omitempty"`
+	ContainsNumberAttr         bool          `xml:"containsNumber,attr,omitempty"`
+	ContainsIntegerAttr        bool          `xml:"containsInteger,attr,omitempty"`
+	MinValueAttr               float64       `xml:"minValue,attr,omitempty"`
+	MaxValueAttr               float64       `xml:"maxValue,attr,omitempty"`
+	MinDateAttr                string        `xml:"minDate,attr,omitempty"`
+	MaxDateAttr                string        `xml:"maxDate,attr,omitempty"`
+	CountAttr                  uint32        `xml:"count,attr,omitempty"`
+	LongTextAttr               bool          `xml:"longText,attr,omitempty"`
+	M                          []*CTMissing  `xml:"m"`
+	N                          []*CTNumber   `xml:"n"`
+	B                          []*CTBoolean  `xml:"b"`
+	E                          []*CTError    `xml:"e"`
+	S                          []*CTString   `xml:"s"`
+	D                          []*CTDateTime `xml:"d"`
 }
 
 // CTMissing ...
@@ -789,14 +789,14 @@ type CTDiscretePr struct {
 
 // CTGroupItems ...
 type CTGroupItems struct {
-	XMLName   xml.Name    `xml:"CT_GroupItems"`
-	CountAttr uint32      `xml:"count,attr,omitempty"`
-	M         *CTMissing  `xml:"m"`
-	N         *CTNumber   `xml:"n"`
-	B         *CTBoolean  `xml:"b"`
-	E         *CTError    `xml:"e"`
-	S         *CTString   `xml:"s"`
-	D         *CTDateTime `xml:"d"`
+	XMLName   xml.Name      `xml:"CT_GroupItems"`
+	CountAttr uint32        `xml:"count,attr,omitempty"`
+	M         []*CTMissing  `xml:"m"`
+	N         []*CTNumber   `xml:"n"`
+	B         []*CTBoolean  `xml:"b"`
+	E         []*CTError    `xml:"e"`
+	S         []*CTString   `xml:"s"`
+	D         []*CTDateTime `xml:"d"`
 }
 
 // CTPivotCacheRecords ...
@@ -809,14 +809,14 @@ type CTPivotCacheRecords struct {
 
 // CTRecord ...
 type CTRecord struct {
-	XMLName xml.Name    `xml:"CT_Record"`
-	M       *CTMissing  `xml:"m"`
-	N       *CTNumber   `xml:"n"`
-	B       *CTBoolean  `xml:"b"`
-	E       *CTError    `xml:"e"`
-	S       *CTString   `xml:"s"`
-	D       *CTDateTime `xml:"d"`
-	X       *CTIndex    `xml:"x"`
+	XMLName xml.Name      `xml:"CT_Record"`
+	M       []*CTMissing  `xml:"m"`
+	N       []*CTNumber   `xml:"n"`
+	B       []*CTBoolean  `xml:"b"`
+	E       []*CTError    `xml:"e"`
+	S       []*CTString   `xml:"s"`
+	D       []*CTDateTime `xml:"d"`
+	X       []*CTIndex    `xml:"x"`
 }
 
 // CTPCDKPIs ...
@@ -968,12 +968,12 @@ type CTServerFormats struct {
 
 // CTPCDSDTCEntries ...
 type CTPCDSDTCEntries struct {
-	XMLName   xml.Name   `xml:"CT_PCDSDTCEntries"`
-	CountAttr uint32     `xml:"count,attr,omitempty"`
-	M         *CTMissing `xml:"m"`
-	N         *CTNumber  `xml:"n"`
-	E         *CTError   `xml:"e"`
-	S         *CTString  `xml:"s"`
+	XMLName   xml.Name     `xml:"CT_PCDSDTCEntries"`
+	CountAttr uint32       `xml:"count,attr,omitempty"`
+	M         []*CTMissing `xml:"m"`
+	N         []*CTNumber  `xml:"n"`
+	E         []*CTError   `xml:"e"`
+	S         []*CTString  `xml:"s"`
 }
 
 // CTTuples ...
@@ -1750,22 +1750,22 @@ type CTRElt struct {
 
 // CTRPrElt ...
 type CTRPrElt struct {
-	XMLName   xml.Name                     `xml:"CT_RPrElt"`
-	RFont     *CTFontName                  `xml:"rFont"`
-	Charset   *CTIntProperty               `xml:"charset"`
-	Family    *CTIntProperty               `xml:"family"`
-	B         *CTBooleanProperty           `xml:"b"`
-	I         *CTBooleanProperty           `xml:"i"`
-	Strike    *CTBooleanProperty           `xml:"strike"`
-	Outline   *CTBooleanProperty           `xml:"outline"`
-	Shadow    *CTBooleanProperty           `xml:"shadow"`
-	Condense  *CTBooleanProperty           `xml:"condense"`
-	Extend    *CTBooleanProperty           `xml:"extend"`
-	Color     *CTColor                     `xml:"color"`
-	Sz        *CTFontSize                  `xml:"sz"`
-	U         *CTUnderlineProperty         `xml:"u"`
-	VertAlign *CTVerticalAlignFontProperty `xml:"vertAlign"`
-	Scheme    *CTFontScheme                `xml:"scheme"`
+	XMLName   xml.Name                       `xml:"CT_RPrElt"`
+	RFont     []*CTFontName                  `xml:"rFont"`
+	Charset   []*CTIntProperty               `xml:"charset"`
+	Family    []*CTIntProperty               `xml:"family"`
+	B         []*CTBooleanProperty           `xml:"b"`
+	I         []*CTBooleanProperty           `xml:"i"`
+	Strike    []*CTBooleanProperty           `xml:"strike"`
+	Outline   []*CTBooleanProperty           `xml:"outline"`
+	Shadow    []*CTBooleanProperty           `xml:"shadow"`
+	Condense  []*CTBooleanProperty           `xml:"condense"`
+	Extend    []*CTBooleanProperty           `xml:"extend"`
+	Color     []*CTColor                     `xml:"color"`
+	Sz        []*CTFontSize                  `xml:"sz"`
+	U         []*CTUnderlineProperty         `xml:"u"`
+	VertAlign []*CTVerticalAlignFontProperty `xml:"vertAlign"`
+	Scheme    []*CTFontScheme                `xml:"scheme"`
 }
 
 // CTRst ...
@@ -3680,22 +3680,22 @@ type STFontFamily int
 
 // CTFont ...
 type CTFont struct {
-	XMLName   xml.Name                     `xml:"CT_Font"`
-	Name      *CTFontName                  `xml:"name"`
-	Charset   *CTIntProperty               `xml:"charset"`
-	Family    *CTFontFamily                `xml:"family"`
-	B         *CTBooleanProperty           `xml:"b"`
-	I         *CTBooleanProperty           `xml:"i"`
-	Strike    *CTBooleanProperty           `xml:"strike"`
-	Outline   *CTBooleanProperty           `xml:"outline"`
-	Shadow    *CTBooleanProperty           `xml:"shadow"`
-	Condense  *CTBooleanProperty           `xml:"condense"`
-	Extend    *CTBooleanProperty           `xml:"extend"`
-	Color     *CTColor                     `xml:"color"`
-	Sz        *CTFontSize                  `xml:"sz"`
-	U         *CTUnderlineProperty         `xml:"u"`
-	VertAlign *CTVerticalAlignFontProperty `xml:"vertAlign"`
-	Scheme    *CTFontScheme                `xml:"scheme"`
+	XMLName   xml.Name                       `xml:"CT_Font"`
+	Name      []*CTFontName                  `xml:"name"`
+	Charset   []*CTIntProperty               `xml:"charset"`
+	Family    []*CTFontFamily                `xml:"family"`
+	B         []*CTBooleanProperty           `xml:"b"`
+	I         []*CTBooleanProperty           `xml:"i"`
+	Strike    []*CTBooleanProperty           `xml:"strike"`
+	Outline   []*CTBooleanProperty           `xml:"outline"`
+	Shadow    []*CTBooleanProperty           `xml:"shadow"`
+	Condense  []*CTBooleanProperty           `xml:"condense"`
+	Extend    []*CTBooleanProperty           `xml:"extend"`
+	Color     []*CTColor                     `xml:"color"`
+	Sz        []*CTFontSize                  `xml:"sz"`
+	U         []*CTUnderlineProperty         `xml:"u"`
+	VertAlign []*CTVerticalAlignFontProperty `xml:"vertAlign"`
+	Scheme    []*CTFontScheme                `xml:"scheme"`
 }
 
 // AGAutoFormat ...

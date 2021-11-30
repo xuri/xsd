@@ -221,25 +221,25 @@ type CTWordprocessingGroup struct {
 	CNvPr        *CTNonVisualDrawingProps           `xml:"cNvPr"`
 	CNvGrpSpPr   *CTNonVisualGroupDrawingShapeProps `xml:"cNvGrpSpPr"`
 	GrpSpPr      *CTGroupShapeProperties            `xml:"grpSpPr"`
-	Wsp          *CTWordprocessingShape             `xml:"wsp"`
-	GrpSp        *CTWordprocessingGroup             `xml:"grpSp"`
-	GraphicFrame *CTGraphicFrame                    `xml:"graphicFrame"`
-	DpctPic      *CTPicture                         `xml:"dpct:pic"`
-	ContentPart  *CTWordprocessingContentPart       `xml:"contentPart"`
+	Wsp          []*CTWordprocessingShape           `xml:"wsp"`
+	GrpSp        []*CTWordprocessingGroup           `xml:"grpSp"`
+	GraphicFrame []*CTGraphicFrame                  `xml:"graphicFrame"`
+	DpctPic      []*CTPicture                       `xml:"dpct:pic"`
+	ContentPart  []*CTWordprocessingContentPart     `xml:"contentPart"`
 	ExtLst       *CTOfficeArtExtensionList          `xml:"extLst"`
 }
 
 // CTWordprocessingCanvas ...
 type CTWordprocessingCanvas struct {
-	XMLName      xml.Name                     `xml:"CT_WordprocessingCanvas"`
-	Bg           *CTBackgroundFormatting      `xml:"bg"`
-	Whole        *CTWholeE2oFormatting        `xml:"whole"`
-	Wsp          *CTWordprocessingShape       `xml:"wsp"`
-	DpctPic      *CTPicture                   `xml:"dpct:pic"`
-	ContentPart  *CTWordprocessingContentPart `xml:"contentPart"`
-	Wgp          *CTWordprocessingGroup       `xml:"wgp"`
-	GraphicFrame *CTGraphicFrame              `xml:"graphicFrame"`
-	ExtLst       *CTOfficeArtExtensionList    `xml:"extLst"`
+	XMLName      xml.Name                       `xml:"CT_WordprocessingCanvas"`
+	Bg           *CTBackgroundFormatting        `xml:"bg"`
+	Whole        *CTWholeE2oFormatting          `xml:"whole"`
+	Wsp          []*CTWordprocessingShape       `xml:"wsp"`
+	DpctPic      []*CTPicture                   `xml:"dpct:pic"`
+	ContentPart  []*CTWordprocessingContentPart `xml:"contentPart"`
+	Wgp          []*CTWordprocessingGroup       `xml:"wgp"`
+	GraphicFrame []*CTGraphicFrame              `xml:"graphicFrame"`
+	ExtLst       *CTOfficeArtExtensionList      `xml:"extLst"`
 }
 
 // Wpc ...

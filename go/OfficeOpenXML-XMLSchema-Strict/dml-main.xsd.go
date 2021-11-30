@@ -866,16 +866,16 @@ type CTGvmlGroupShapeNonVisual struct {
 
 // CTGvmlGroupShape ...
 type CTGvmlGroupShape struct {
-	XMLName      xml.Name                    `xml:"CT_GvmlGroupShape"`
-	NvGrpSpPr    *CTGvmlGroupShapeNonVisual  `xml:"nvGrpSpPr"`
-	GrpSpPr      *CTGroupShapeProperties     `xml:"grpSpPr"`
-	TxSp         *CTGvmlTextShape            `xml:"txSp"`
-	Sp           *CTGvmlShape                `xml:"sp"`
-	CxnSp        *CTGvmlConnector            `xml:"cxnSp"`
-	Pic          *CTGvmlPicture              `xml:"pic"`
-	GraphicFrame *CTGvmlGraphicalObjectFrame `xml:"graphicFrame"`
-	GrpSp        *CTGvmlGroupShape           `xml:"grpSp"`
-	ExtLst       *CTOfficeArtExtensionList   `xml:"extLst"`
+	XMLName      xml.Name                      `xml:"CT_GvmlGroupShape"`
+	NvGrpSpPr    *CTGvmlGroupShapeNonVisual    `xml:"nvGrpSpPr"`
+	GrpSpPr      *CTGroupShapeProperties       `xml:"grpSpPr"`
+	TxSp         []*CTGvmlTextShape            `xml:"txSp"`
+	Sp           []*CTGvmlShape                `xml:"sp"`
+	CxnSp        []*CTGvmlConnector            `xml:"cxnSp"`
+	Pic          []*CTGvmlPicture              `xml:"pic"`
+	GraphicFrame []*CTGvmlGraphicalObjectFrame `xml:"graphicFrame"`
+	GrpSp        []*CTGvmlGroupShape           `xml:"grpSp"`
+	ExtLst       *CTOfficeArtExtensionList     `xml:"extLst"`
 }
 
 // STPresetCameraType ...
@@ -1244,25 +1244,25 @@ type STBlipCompression string
 type CTBlip struct {
 	XMLName      xml.Name `xml:"CT_Blip"`
 	AGBlob       *AGBlob
-	CstateAttr   string                      `xml:"cstate,attr,omitempty"`
-	AlphaBiLevel *CTAlphaBiLevelEffect       `xml:"alphaBiLevel"`
-	AlphaCeiling *CTAlphaCeilingEffect       `xml:"alphaCeiling"`
-	AlphaFloor   *CTAlphaFloorEffect         `xml:"alphaFloor"`
-	AlphaInv     *CTAlphaInverseEffect       `xml:"alphaInv"`
-	AlphaMod     *CTAlphaModulateEffect      `xml:"alphaMod"`
-	AlphaModFix  *CTAlphaModulateFixedEffect `xml:"alphaModFix"`
-	AlphaRepl    *CTAlphaReplaceEffect       `xml:"alphaRepl"`
-	BiLevel      *CTBiLevelEffect            `xml:"biLevel"`
-	Blur         *CTBlurEffect               `xml:"blur"`
-	ClrChange    *CTColorChangeEffect        `xml:"clrChange"`
-	ClrRepl      *CTColorReplaceEffect       `xml:"clrRepl"`
-	Duotone      *CTDuotoneEffect            `xml:"duotone"`
-	FillOverlay  *CTFillOverlayEffect        `xml:"fillOverlay"`
-	Grayscl      *CTGrayscaleEffect          `xml:"grayscl"`
-	Hsl          *CTHSLEffect                `xml:"hsl"`
-	Lum          *CTLuminanceEffect          `xml:"lum"`
-	Tint         *CTTintEffect               `xml:"tint"`
-	ExtLst       *CTOfficeArtExtensionList   `xml:"extLst"`
+	CstateAttr   string                        `xml:"cstate,attr,omitempty"`
+	AlphaBiLevel []*CTAlphaBiLevelEffect       `xml:"alphaBiLevel"`
+	AlphaCeiling []*CTAlphaCeilingEffect       `xml:"alphaCeiling"`
+	AlphaFloor   []*CTAlphaFloorEffect         `xml:"alphaFloor"`
+	AlphaInv     []*CTAlphaInverseEffect       `xml:"alphaInv"`
+	AlphaMod     []*CTAlphaModulateEffect      `xml:"alphaMod"`
+	AlphaModFix  []*CTAlphaModulateFixedEffect `xml:"alphaModFix"`
+	AlphaRepl    []*CTAlphaReplaceEffect       `xml:"alphaRepl"`
+	BiLevel      []*CTBiLevelEffect            `xml:"biLevel"`
+	Blur         []*CTBlurEffect               `xml:"blur"`
+	ClrChange    []*CTColorChangeEffect        `xml:"clrChange"`
+	ClrRepl      []*CTColorReplaceEffect       `xml:"clrRepl"`
+	Duotone      []*CTDuotoneEffect            `xml:"duotone"`
+	FillOverlay  []*CTFillOverlayEffect        `xml:"fillOverlay"`
+	Grayscl      []*CTGrayscaleEffect          `xml:"grayscl"`
+	Hsl          []*CTHSLEffect                `xml:"hsl"`
+	Lum          []*CTLuminanceEffect          `xml:"lum"`
+	Tint         []*CTTintEffect               `xml:"tint"`
+	ExtLst       *CTOfficeArtExtensionList     `xml:"extLst"`
 }
 
 // CTBlipFillProperties ...
@@ -1506,9 +1506,9 @@ type CTConnectionSite struct {
 
 // CTAdjustHandleList ...
 type CTAdjustHandleList struct {
-	XMLName xml.Name             `xml:"CT_AdjustHandleList"`
-	AhXY    *CTXYAdjustHandle    `xml:"ahXY"`
-	AhPolar *CTPolarAdjustHandle `xml:"ahPolar"`
+	XMLName xml.Name               `xml:"CT_AdjustHandleList"`
+	AhXY    []*CTXYAdjustHandle    `xml:"ahXY"`
+	AhPolar []*CTPolarAdjustHandle `xml:"ahPolar"`
 }
 
 // CTConnectionSiteList ...
@@ -1567,18 +1567,18 @@ type STPathFillMode string
 
 // CTPath2D ...
 type CTPath2D struct {
-	XMLName         xml.Name               `xml:"CT_Path2D"`
-	WAttr           int64                  `xml:"w,attr,omitempty"`
-	HAttr           int64                  `xml:"h,attr,omitempty"`
-	FillAttr        string                 `xml:"fill,attr,omitempty"`
-	StrokeAttr      bool                   `xml:"stroke,attr,omitempty"`
-	ExtrusionOkAttr bool                   `xml:"extrusionOk,attr,omitempty"`
-	Close           *CTPath2DClose         `xml:"close"`
-	MoveTo          *CTPath2DMoveTo        `xml:"moveTo"`
-	LnTo            *CTPath2DLineTo        `xml:"lnTo"`
-	ArcTo           *CTPath2DArcTo         `xml:"arcTo"`
-	QuadBezTo       *CTPath2DQuadBezierTo  `xml:"quadBezTo"`
-	CubicBezTo      *CTPath2DCubicBezierTo `xml:"cubicBezTo"`
+	XMLName         xml.Name                 `xml:"CT_Path2D"`
+	WAttr           int64                    `xml:"w,attr,omitempty"`
+	HAttr           int64                    `xml:"h,attr,omitempty"`
+	FillAttr        string                   `xml:"fill,attr,omitempty"`
+	StrokeAttr      bool                     `xml:"stroke,attr,omitempty"`
+	ExtrusionOkAttr bool                     `xml:"extrusionOk,attr,omitempty"`
+	Close           []*CTPath2DClose         `xml:"close"`
+	MoveTo          []*CTPath2DMoveTo        `xml:"moveTo"`
+	LnTo            []*CTPath2DLineTo        `xml:"lnTo"`
+	ArcTo           []*CTPath2DArcTo         `xml:"arcTo"`
+	QuadBezTo       []*CTPath2DQuadBezierTo  `xml:"quadBezTo"`
+	CubicBezTo      []*CTPath2DCubicBezierTo `xml:"cubicBezTo"`
 }
 
 // CTPath2DList ...

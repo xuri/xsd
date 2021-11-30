@@ -764,11 +764,11 @@ pub struct CTTables {
 	#[serde(rename = "count")]
 	pub count: Option<u32>,
 	#[serde(rename = "m")]
-	pub m: CTTableMissing,
+	pub m: Vec<CTTableMissing>,
 	#[serde(rename = "s")]
-	pub s: CTXStringElement,
+	pub s: Vec<CTXStringElement>,
 	#[serde(rename = "x")]
-	pub x: CTIndex,
+	pub x: Vec<CTIndex>,
 }
 
 
@@ -1140,17 +1140,17 @@ pub struct CTSharedItems {
 	#[serde(rename = "longText")]
 	pub long_text: Option<bool>,
 	#[serde(rename = "m")]
-	pub m: CTMissing,
+	pub m: Vec<CTMissing>,
 	#[serde(rename = "n")]
-	pub n: CTNumber,
+	pub n: Vec<CTNumber>,
 	#[serde(rename = "b")]
-	pub b: CTBoolean,
+	pub b: Vec<CTBoolean>,
 	#[serde(rename = "e")]
-	pub e: CTError,
+	pub e: Vec<CTError>,
 	#[serde(rename = "s")]
-	pub s: CTString,
+	pub s: Vec<CTString>,
 	#[serde(rename = "d")]
-	pub d: CTDateTime,
+	pub d: Vec<CTDateTime>,
 }
 
 
@@ -1386,17 +1386,17 @@ pub struct CTGroupItems {
 	#[serde(rename = "count")]
 	pub count: Option<u32>,
 	#[serde(rename = "m")]
-	pub m: CTMissing,
+	pub m: Vec<CTMissing>,
 	#[serde(rename = "n")]
-	pub n: CTNumber,
+	pub n: Vec<CTNumber>,
 	#[serde(rename = "b")]
-	pub b: CTBoolean,
+	pub b: Vec<CTBoolean>,
 	#[serde(rename = "e")]
-	pub e: CTError,
+	pub e: Vec<CTError>,
 	#[serde(rename = "s")]
-	pub s: CTString,
+	pub s: Vec<CTString>,
 	#[serde(rename = "d")]
-	pub d: CTDateTime,
+	pub d: Vec<CTDateTime>,
 }
 
 
@@ -1416,19 +1416,19 @@ pub struct CTPivotCacheRecords {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTRecord {
 	#[serde(rename = "m")]
-	pub m: CTMissing,
+	pub m: Vec<CTMissing>,
 	#[serde(rename = "n")]
-	pub n: CTNumber,
+	pub n: Vec<CTNumber>,
 	#[serde(rename = "b")]
-	pub b: CTBoolean,
+	pub b: Vec<CTBoolean>,
 	#[serde(rename = "e")]
-	pub e: CTError,
+	pub e: Vec<CTError>,
 	#[serde(rename = "s")]
-	pub s: CTString,
+	pub s: Vec<CTString>,
 	#[serde(rename = "d")]
-	pub d: CTDateTime,
+	pub d: Vec<CTDateTime>,
 	#[serde(rename = "x")]
-	pub x: CTIndex,
+	pub x: Vec<CTIndex>,
 }
 
 
@@ -1672,13 +1672,13 @@ pub struct CTPCDSDTCEntries {
 	#[serde(rename = "count")]
 	pub count: Option<u32>,
 	#[serde(rename = "m")]
-	pub m: CTMissing,
+	pub m: Vec<CTMissing>,
 	#[serde(rename = "n")]
-	pub n: CTNumber,
+	pub n: Vec<CTNumber>,
 	#[serde(rename = "e")]
-	pub e: CTError,
+	pub e: Vec<CTError>,
 	#[serde(rename = "s")]
-	pub s: CTString,
+	pub s: Vec<CTString>,
 }
 
 
@@ -2996,35 +2996,35 @@ pub struct CTRElt {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTRPrElt {
 	#[serde(rename = "rFont")]
-	pub r_font: CTFontName,
+	pub r_font: Vec<CTFontName>,
 	#[serde(rename = "charset")]
-	pub charset: CTIntProperty,
+	pub charset: Vec<CTIntProperty>,
 	#[serde(rename = "family")]
-	pub family: CTIntProperty,
+	pub family: Vec<CTIntProperty>,
 	#[serde(rename = "b")]
-	pub b: CTBooleanProperty,
+	pub b: Vec<CTBooleanProperty>,
 	#[serde(rename = "i")]
-	pub i: CTBooleanProperty,
+	pub i: Vec<CTBooleanProperty>,
 	#[serde(rename = "strike")]
-	pub strike: CTBooleanProperty,
+	pub strike: Vec<CTBooleanProperty>,
 	#[serde(rename = "outline")]
-	pub outline: CTBooleanProperty,
+	pub outline: Vec<CTBooleanProperty>,
 	#[serde(rename = "shadow")]
-	pub shadow: CTBooleanProperty,
+	pub shadow: Vec<CTBooleanProperty>,
 	#[serde(rename = "condense")]
-	pub condense: CTBooleanProperty,
+	pub condense: Vec<CTBooleanProperty>,
 	#[serde(rename = "extend")]
-	pub extend: CTBooleanProperty,
+	pub extend: Vec<CTBooleanProperty>,
 	#[serde(rename = "color")]
-	pub color: CTColor,
+	pub color: Vec<CTColor>,
 	#[serde(rename = "sz")]
-	pub sz: CTFontSize,
+	pub sz: Vec<CTFontSize>,
 	#[serde(rename = "u")]
-	pub u: CTUnderlineProperty,
+	pub u: Vec<CTUnderlineProperty>,
 	#[serde(rename = "vertAlign")]
-	pub vert_align: CTVerticalAlignFontProperty,
+	pub vert_align: Vec<CTVerticalAlignFontProperty>,
 	#[serde(rename = "scheme")]
-	pub scheme: CTFontScheme,
+	pub scheme: Vec<CTFontScheme>,
 }
 
 
@@ -6316,35 +6316,35 @@ pub struct STFontFamily {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTFont {
 	#[serde(rename = "name")]
-	pub name: CTFontName,
+	pub name: Vec<CTFontName>,
 	#[serde(rename = "charset")]
-	pub charset: CTIntProperty,
+	pub charset: Vec<CTIntProperty>,
 	#[serde(rename = "family")]
-	pub family: CTFontFamily,
+	pub family: Vec<CTFontFamily>,
 	#[serde(rename = "b")]
-	pub b: CTBooleanProperty,
+	pub b: Vec<CTBooleanProperty>,
 	#[serde(rename = "i")]
-	pub i: CTBooleanProperty,
+	pub i: Vec<CTBooleanProperty>,
 	#[serde(rename = "strike")]
-	pub strike: CTBooleanProperty,
+	pub strike: Vec<CTBooleanProperty>,
 	#[serde(rename = "outline")]
-	pub outline: CTBooleanProperty,
+	pub outline: Vec<CTBooleanProperty>,
 	#[serde(rename = "shadow")]
-	pub shadow: CTBooleanProperty,
+	pub shadow: Vec<CTBooleanProperty>,
 	#[serde(rename = "condense")]
-	pub condense: CTBooleanProperty,
+	pub condense: Vec<CTBooleanProperty>,
 	#[serde(rename = "extend")]
-	pub extend: CTBooleanProperty,
+	pub extend: Vec<CTBooleanProperty>,
 	#[serde(rename = "color")]
-	pub color: CTColor,
+	pub color: Vec<CTColor>,
 	#[serde(rename = "sz")]
-	pub sz: CTFontSize,
+	pub sz: Vec<CTFontSize>,
 	#[serde(rename = "u")]
-	pub u: CTUnderlineProperty,
+	pub u: Vec<CTUnderlineProperty>,
 	#[serde(rename = "vertAlign")]
-	pub vert_align: CTVerticalAlignFontProperty,
+	pub vert_align: Vec<CTVerticalAlignFontProperty>,
 	#[serde(rename = "scheme")]
-	pub scheme: CTFontScheme,
+	pub scheme: Vec<CTFontScheme>,
 }
 
 

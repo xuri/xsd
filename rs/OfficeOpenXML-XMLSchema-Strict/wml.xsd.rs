@@ -1118,9 +1118,9 @@ pub struct CTParaRPrChange {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTRunTrackChange {
 	#[serde(rename = "EG_ContentRunContent")]
-	pub eg_content_run_content: EGContentRunContent,
+	pub eg_content_run_content: Vec<EGContentRunContent>,
 	#[serde(rename = "m:EG_OMathMathElements")]
-	pub meg_o_math_math_elements: EGOMathMathElements,
+	pub meg_o_math_math_elements: Vec<EGOMathMathElements>,
 	#[serde(flatten)]
 	pub ct_track_change: CTTrackChange,
 }
@@ -1464,9 +1464,9 @@ pub struct STObjectUpdateMode {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTDrawing {
 	#[serde(rename = "wp:anchor")]
-	pub wp_anchor: CTAnchor,
+	pub wp_anchor: Vec<CTAnchor>,
 	#[serde(rename = "wp:inline")]
-	pub wp_inline: CTInline,
+	pub wp_inline: Vec<CTInline>,
 }
 
 
@@ -1586,29 +1586,29 @@ pub struct CTHyperlink {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTFFData {
 	#[serde(rename = "name")]
-	pub name: CTFFName,
+	pub name: Vec<CTFFName>,
 	#[serde(rename = "label")]
-	pub label: CTDecimalNumber,
+	pub label: Vec<CTDecimalNumber>,
 	#[serde(rename = "tabIndex")]
-	pub tab_index: CTUnsignedDecimalNumber,
+	pub tab_index: Vec<CTUnsignedDecimalNumber>,
 	#[serde(rename = "enabled")]
-	pub enabled: CTOnOff,
+	pub enabled: Vec<CTOnOff>,
 	#[serde(rename = "calcOnExit")]
-	pub calc_on_exit: CTOnOff,
+	pub calc_on_exit: Vec<CTOnOff>,
 	#[serde(rename = "entryMacro")]
-	pub entry_macro: CTMacroName,
+	pub entry_macro: Vec<CTMacroName>,
 	#[serde(rename = "exitMacro")]
-	pub exit_macro: CTMacroName,
+	pub exit_macro: Vec<CTMacroName>,
 	#[serde(rename = "helpText")]
-	pub help_text: CTFFHelpText,
+	pub help_text: Vec<CTFFHelpText>,
 	#[serde(rename = "statusText")]
-	pub status_text: CTFFStatusText,
+	pub status_text: Vec<CTFFStatusText>,
 	#[serde(rename = "checkBox")]
-	pub check_box: CTFFCheckBox,
+	pub check_box: Vec<CTFFCheckBox>,
 	#[serde(rename = "ddList")]
-	pub dd_list: CTFFDDList,
+	pub dd_list: Vec<CTFFDDList>,
 	#[serde(rename = "textInput")]
-	pub text_input: CTFFTextInput,
+	pub text_input: Vec<CTFFTextInput>,
 }
 
 
@@ -2768,7 +2768,7 @@ pub struct CTSdtPr {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTSdtEndPr {
 	#[serde(rename = "rPr")]
-	pub r_pr: CTRPr,
+	pub r_pr: Vec<CTRPr>,
 }
 
 
@@ -3298,29 +3298,29 @@ pub struct CTHeaders {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTTrPrBase {
 	#[serde(rename = "cnfStyle")]
-	pub cnf_style: CTCnf,
+	pub cnf_style: Vec<CTCnf>,
 	#[serde(rename = "divId")]
-	pub div_id: CTDecimalNumber,
+	pub div_id: Vec<CTDecimalNumber>,
 	#[serde(rename = "gridBefore")]
-	pub grid_before: CTDecimalNumber,
+	pub grid_before: Vec<CTDecimalNumber>,
 	#[serde(rename = "gridAfter")]
-	pub grid_after: CTDecimalNumber,
+	pub grid_after: Vec<CTDecimalNumber>,
 	#[serde(rename = "wBefore")]
-	pub w_before: CTTblWidth,
+	pub w_before: Vec<CTTblWidth>,
 	#[serde(rename = "wAfter")]
-	pub w_after: CTTblWidth,
+	pub w_after: Vec<CTTblWidth>,
 	#[serde(rename = "cantSplit")]
-	pub cant_split: CTOnOff,
+	pub cant_split: Vec<CTOnOff>,
 	#[serde(rename = "trHeight")]
-	pub tr_height: CTHeight,
+	pub tr_height: Vec<CTHeight>,
 	#[serde(rename = "tblHeader")]
-	pub tbl_header: CTOnOff,
+	pub tbl_header: Vec<CTOnOff>,
 	#[serde(rename = "tblCellSpacing")]
-	pub tbl_cell_spacing: CTTblWidth,
+	pub tbl_cell_spacing: Vec<CTTblWidth>,
 	#[serde(rename = "jc")]
-	pub jc: CTJcTable,
+	pub jc: Vec<CTJcTable>,
 	#[serde(rename = "hidden")]
-	pub hidden: CTOnOff,
+	pub hidden: Vec<CTOnOff>,
 }
 
 

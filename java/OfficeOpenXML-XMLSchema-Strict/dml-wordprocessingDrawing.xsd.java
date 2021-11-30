@@ -330,15 +330,15 @@ public class CT_WordprocessingGroup {
 	@XmlElement(required = true, name = "grpSpPr")
 	protected CT_GroupShapeProperties GrpSpPr;
 	@XmlElement(required = true, name = "wsp")
-	protected CT_WordprocessingShape Wsp;
+	protected List<CT_WordprocessingShape> Wsp;
 	@XmlElement(required = true, name = "grpSp")
-	protected CT_WordprocessingGroup GrpSp;
+	protected List<CT_WordprocessingGroup> GrpSp;
 	@XmlElement(required = true, name = "graphicFrame")
-	protected CT_GraphicFrame GraphicFrame;
+	protected List<CT_GraphicFrame> GraphicFrame;
 	@XmlElement(required = true, name = "dpct:pic")
-	protected CT_Picture DpctPic;
+	protected List<CT_Picture> DpctPic;
 	@XmlElement(required = true, name = "contentPart")
-	protected CT_WordprocessingContentPart ContentPart;
+	protected List<CT_WordprocessingContentPart> ContentPart;
 	@XmlElement(required = true, name = "extLst")
 	protected CT_OfficeArtExtensionList ExtLst;
 }
@@ -350,15 +350,15 @@ public class CT_WordprocessingCanvas {
 	@XmlElement(required = true, name = "whole")
 	protected CT_WholeE2oFormatting Whole;
 	@XmlElement(required = true, name = "wsp")
-	protected CT_WordprocessingShape Wsp;
+	protected List<CT_WordprocessingShape> Wsp;
 	@XmlElement(required = true, name = "dpct:pic")
-	protected CT_Picture DpctPic;
+	protected List<CT_Picture> DpctPic;
 	@XmlElement(required = true, name = "contentPart")
-	protected CT_WordprocessingContentPart ContentPart;
+	protected List<CT_WordprocessingContentPart> ContentPart;
 	@XmlElement(required = true, name = "wgp")
-	protected CT_WordprocessingGroup Wgp;
+	protected List<CT_WordprocessingGroup> Wgp;
 	@XmlElement(required = true, name = "graphicFrame")
-	protected CT_GraphicFrame GraphicFrame;
+	protected List<CT_GraphicFrame> GraphicFrame;
 	@XmlElement(required = true, name = "extLst")
 	protected CT_OfficeArtExtensionList ExtLst;
 }

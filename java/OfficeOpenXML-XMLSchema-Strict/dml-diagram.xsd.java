@@ -405,25 +405,25 @@ public class CT_LayoutNode {
 	@XmlAttribute(name = "moveWith")
 	protected String MoveWithAttr;
 	@XmlElement(required = true, name = "alg")
-	protected CT_Algorithm Alg;
+	protected List<CT_Algorithm> Alg;
 	@XmlElement(required = true, name = "shape")
-	protected CT_Shape Shape;
+	protected List<CT_Shape> Shape;
 	@XmlElement(required = true, name = "presOf")
-	protected CT_PresentationOf PresOf;
+	protected List<CT_PresentationOf> PresOf;
 	@XmlElement(required = true, name = "constrLst")
-	protected CT_Constraints ConstrLst;
+	protected List<CT_Constraints> ConstrLst;
 	@XmlElement(required = true, name = "ruleLst")
-	protected CT_Rules RuleLst;
+	protected List<CT_Rules> RuleLst;
 	@XmlElement(required = true, name = "varLst")
-	protected CT_LayoutVariablePropertySet VarLst;
+	protected List<CT_LayoutVariablePropertySet> VarLst;
 	@XmlElement(required = true, name = "forEach")
-	protected CT_ForEach ForEach;
+	protected List<CT_ForEach> ForEach;
 	@XmlElement(required = true, name = "layoutNode")
-	protected CT_LayoutNode LayoutNode;
+	protected List<CT_LayoutNode> LayoutNode;
 	@XmlElement(required = true, name = "choose")
-	protected CT_Choose Choose;
+	protected List<CT_Choose> Choose;
 	@XmlElement(required = true, name = "extLst")
-	protected CT_OfficeArtExtensionList ExtLst;
+	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
 // CT_ForEach ...
@@ -435,23 +435,23 @@ public class CT_ForEach {
 	@XmlAttribute(name = "ref")
 	protected String RefAttr;
 	@XmlElement(required = true, name = "alg")
-	protected CT_Algorithm Alg;
+	protected List<CT_Algorithm> Alg;
 	@XmlElement(required = true, name = "shape")
-	protected CT_Shape Shape;
+	protected List<CT_Shape> Shape;
 	@XmlElement(required = true, name = "presOf")
-	protected CT_PresentationOf PresOf;
+	protected List<CT_PresentationOf> PresOf;
 	@XmlElement(required = true, name = "constrLst")
-	protected CT_Constraints ConstrLst;
+	protected List<CT_Constraints> ConstrLst;
 	@XmlElement(required = true, name = "ruleLst")
-	protected CT_Rules RuleLst;
+	protected List<CT_Rules> RuleLst;
 	@XmlElement(required = true, name = "forEach")
-	protected CT_ForEach ForEach;
+	protected List<CT_ForEach> ForEach;
 	@XmlElement(required = true, name = "layoutNode")
-	protected CT_LayoutNode LayoutNode;
+	protected List<CT_LayoutNode> LayoutNode;
 	@XmlElement(required = true, name = "choose")
-	protected CT_Choose Choose;
+	protected List<CT_Choose> Choose;
 	@XmlElement(required = true, name = "extLst")
-	protected CT_OfficeArtExtensionList ExtLst;
+	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
 // CT_When ...
@@ -469,23 +469,23 @@ public class CT_When {
 	@XmlAttribute(name = "val", required = true)
 	protected ST_FunctionValue ValAttr;
 	@XmlElement(required = true, name = "alg")
-	protected CT_Algorithm Alg;
+	protected List<CT_Algorithm> Alg;
 	@XmlElement(required = true, name = "shape")
-	protected CT_Shape Shape;
+	protected List<CT_Shape> Shape;
 	@XmlElement(required = true, name = "presOf")
-	protected CT_PresentationOf PresOf;
+	protected List<CT_PresentationOf> PresOf;
 	@XmlElement(required = true, name = "constrLst")
-	protected CT_Constraints ConstrLst;
+	protected List<CT_Constraints> ConstrLst;
 	@XmlElement(required = true, name = "ruleLst")
-	protected CT_Rules RuleLst;
+	protected List<CT_Rules> RuleLst;
 	@XmlElement(required = true, name = "forEach")
-	protected CT_ForEach ForEach;
+	protected List<CT_ForEach> ForEach;
 	@XmlElement(required = true, name = "layoutNode")
-	protected CT_LayoutNode LayoutNode;
+	protected List<CT_LayoutNode> LayoutNode;
 	@XmlElement(required = true, name = "choose")
-	protected CT_Choose Choose;
+	protected List<CT_Choose> Choose;
 	@XmlElement(required = true, name = "extLst")
-	protected CT_OfficeArtExtensionList ExtLst;
+	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
 // CT_Otherwise ...
@@ -493,23 +493,23 @@ public class CT_Otherwise {
 	@XmlAttribute(name = "name")
 	protected String NameAttr;
 	@XmlElement(required = true, name = "alg")
-	protected CT_Algorithm Alg;
+	protected List<CT_Algorithm> Alg;
 	@XmlElement(required = true, name = "shape")
-	protected CT_Shape Shape;
+	protected List<CT_Shape> Shape;
 	@XmlElement(required = true, name = "presOf")
-	protected CT_PresentationOf PresOf;
+	protected List<CT_PresentationOf> PresOf;
 	@XmlElement(required = true, name = "constrLst")
-	protected CT_Constraints ConstrLst;
+	protected List<CT_Constraints> ConstrLst;
 	@XmlElement(required = true, name = "ruleLst")
-	protected CT_Rules RuleLst;
+	protected List<CT_Rules> RuleLst;
 	@XmlElement(required = true, name = "forEach")
-	protected CT_ForEach ForEach;
+	protected List<CT_ForEach> ForEach;
 	@XmlElement(required = true, name = "layoutNode")
-	protected CT_LayoutNode LayoutNode;
+	protected List<CT_LayoutNode> LayoutNode;
 	@XmlElement(required = true, name = "choose")
-	protected CT_Choose Choose;
+	protected List<CT_Choose> Choose;
 	@XmlElement(required = true, name = "extLst")
-	protected CT_OfficeArtExtensionList ExtLst;
+	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
 // CT_Choose ...

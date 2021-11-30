@@ -266,11 +266,11 @@ pub struct CTR {
 	#[serde(rename = "w:EG_RPr")]
 	pub weg_r_pr: EGRPr,
 	#[serde(rename = "w:EG_RunInnerContent")]
-	pub weg_run_inner_content: EGRunInnerContent,
+	pub weg_run_inner_content: Vec<EGRunInnerContent>,
 	#[serde(rename = "rPr")]
 	pub r_pr: CTRPR,
 	#[serde(rename = "t")]
-	pub t: CTText,
+	pub t: Vec<CTText>,
 }
 
 

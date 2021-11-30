@@ -204,19 +204,19 @@ typedef struct {
 
 // CT_TimeNodeList ...
 typedef struct {
-	CT_TLTimeNodeParallel Par;
-	CT_TLTimeNodeSequence Seq;
-	CT_TLTimeNodeExclusive Excl;
-	CT_TLAnimateBehavior Anim;
-	CT_TLAnimateColorBehavior AnimClr;
-	CT_TLAnimateEffectBehavior AnimEffect;
-	CT_TLAnimateMotionBehavior AnimMotion;
-	CT_TLAnimateRotationBehavior AnimRot;
-	CT_TLAnimateScaleBehavior AnimScale;
-	CT_TLCommandBehavior Cmd;
-	CT_TLSetBehavior Set;
-	CT_TLMediaNodeAudio Audio;
-	CT_TLMediaNodeVideo Video;
+	CT_TLTimeNodeParallel Par[];
+	CT_TLTimeNodeSequence Seq[];
+	CT_TLTimeNodeExclusive Excl[];
+	CT_TLAnimateBehavior Anim[];
+	CT_TLAnimateColorBehavior AnimClr[];
+	CT_TLAnimateEffectBehavior AnimEffect[];
+	CT_TLAnimateMotionBehavior AnimMotion[];
+	CT_TLAnimateRotationBehavior AnimRot[];
+	CT_TLAnimateScaleBehavior AnimScale[];
+	CT_TLCommandBehavior Cmd[];
+	CT_TLSetBehavior Set[];
+	CT_TLMediaNodeAudio Audio[];
+	CT_TLMediaNodeVideo Video[];
 } CT_TimeNodeList;
 
 // ST_TLTimeNodePresetClassType ...
@@ -582,10 +582,10 @@ typedef struct {
 
 // CT_BuildList ...
 typedef struct {
-	CT_TLBuildParagraph BldP;
-	CT_TLBuildDiagram BldDgm;
-	CT_TLOleBuildChart BldOleChart;
-	CT_TLGraphicalObjectBuild BldGraphic;
+	CT_TLBuildParagraph BldP[];
+	CT_TLBuildDiagram BldDgm[];
+	CT_TLOleBuildChart BldOleChart[];
+	CT_TLGraphicalObjectBuild BldGraphic[];
 } CT_BuildList;
 
 // CT_SlideTiming ...
@@ -1097,12 +1097,12 @@ typedef struct {
 typedef struct {
 	CT_GroupShapeNonVisual NvGrpSpPr;
 	CT_GroupShapeProperties GrpSpPr;
-	CT_Shape Sp;
-	CT_GroupShape GrpSp;
-	CT_GraphicalObjectFrame GraphicFrame;
-	CT_Connector CxnSp;
-	CT_Picture Pic;
-	CT_Rel ContentPart;
+	CT_Shape Sp[];
+	CT_GroupShape GrpSp[];
+	CT_GraphicalObjectFrame GraphicFrame[];
+	CT_Connector CxnSp[];
+	CT_Picture Pic[];
+	CT_Rel ContentPart[];
 	CT_ExtensionListModify ExtLst;
 } CT_GroupShape;
 

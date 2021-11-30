@@ -270,8 +270,8 @@ export class Inline {
 
 // Inline is "Inline" covers inline or "text-level" element
 export class Inline {
-	Inline: Inline;
-	MiscInline: MiscInline;
+	Inline: Array<Inline>;
+	MiscInline: Array<MiscInline>;
 }
 
 // Heading ...
@@ -317,67 +317,67 @@ export class Block {
 
 // Flow is "Flow" mixes block and inline and is used for list items etc.
 export class Flow {
-	Block: Block;
-	Inline: Inline;
-	Misc: Misc;
+	Block: Array<Block>;
+	Inline: Array<Inline>;
+	Misc: Array<Misc>;
 	Form: string;
 }
 
 // AContent is a elements use "Inline" excluding a
 export class AContent {
-	Special: Special;
-	Fontstyle: Fontstyle;
-	Phrase: Phrase;
-	InlineForms: InlineForms;
-	MiscInline: MiscInline;
+	Special: Array<Special>;
+	Fontstyle: Array<Fontstyle>;
+	Phrase: Array<Phrase>;
+	InlineForms: Array<InlineForms>;
+	MiscInline: Array<MiscInline>;
 }
 
 // PreContent is pre uses "Inline" excluding img, object, applet, big, small,
 //       font, or basefont
 export class PreContent {
-	SpecialBasic: SpecialBasic;
-	FontstyleBasic: FontstyleBasic;
-	PhraseBasic: PhraseBasic;
-	InlineForms: InlineForms;
-	MiscInline: MiscInline;
-	A: A;
+	SpecialBasic: Array<SpecialBasic>;
+	FontstyleBasic: Array<FontstyleBasic>;
+	PhraseBasic: Array<PhraseBasic>;
+	InlineForms: Array<InlineForms>;
+	MiscInline: Array<MiscInline>;
+	A: Array<A>;
 }
 
 // FormContent is form uses "Flow" excluding form
 export class FormContent {
-	Block: Block;
-	Inline: Inline;
-	Misc: Misc;
+	Block: Array<Block>;
+	Inline: Array<Inline>;
+	Misc: Array<Misc>;
 }
 
 // ButtonContent is button uses "Flow" but excludes a, form, form controls, iframe
 export class ButtonContent {
-	Heading: Heading;
-	Lists: Lists;
-	Blocktext: Blocktext;
-	Fontstyle: Fontstyle;
-	Phrase: Phrase;
-	Misc: Misc;
-	P: P;
-	Div: Div;
-	Table: Table;
+	Heading: Array<Heading>;
+	Lists: Array<Lists>;
+	Blocktext: Array<Blocktext>;
+	Fontstyle: Array<Fontstyle>;
+	Phrase: Array<Phrase>;
+	Misc: Array<Misc>;
+	P: Array<P>;
+	Div: Array<Div>;
+	Table: Array<Table>;
 	Br: string;
-	Span: Span;
+	Span: Array<Span>;
 	Bdo: string;
 	Object: string;
-	Applet: Applet;
+	Applet: Array<Applet>;
 	Img: string;
-	Map: Map;
+	Map: Array<Map>;
 }
 
 // HeadMisc ...
 export class HeadMisc {
 	Script: string;
-	Style: Style;
-	Meta: Meta;
-	Link: Link;
+	Style: Array<Style>;
+	Meta: Array<Meta>;
+	Link: Array<Link>;
 	Object: string;
-	Isindex: Isindex;
+	Isindex: Array<Isindex>;
 }
 
 // Head ...
@@ -584,7 +584,7 @@ export class Li extends Flow  {
 export class Dl {
 	Attrs: Attrs;
 	CompactAttr: string | null;
-	Dt: Dt;
+	Dt: Array<Dt>;
 	Dl: string;
 }
 
@@ -601,9 +601,9 @@ export class Dd extends Flow  {
 // Address ...
 export class Address {
 	Attrs: Attrs;
-	Inline: Inline;
-	MiscInline: MiscInline;
-	P: P;
+	Inline: Array<Inline>;
+	MiscInline: Array<MiscInline>;
+	P: Array<P>;
 }
 
 // Hr ...
@@ -826,9 +826,9 @@ export class Object {
 	BorderAttr: number | null;
 	HspaceAttr: number | null;
 	VspaceAttr: number | null;
-	Block: Block;
-	Inline: Inline;
-	Misc: Misc;
+	Block: Array<Block>;
+	Inline: Array<Inline>;
+	Misc: Array<Misc>;
 	Param: string;
 	Object: string;
 }
@@ -856,9 +856,9 @@ export class Applet {
 	AlignAttr: string | null;
 	HspaceAttr: number | null;
 	VspaceAttr: number | null;
-	Block: Block;
-	Inline: Inline;
-	Misc: Misc;
+	Block: Array<Block>;
+	Inline: Array<Inline>;
+	Misc: Array<Misc>;
 	Param: string;
 	Form: string;
 }
@@ -889,8 +889,8 @@ export class Map {
 	StyleAttr: string | null;
 	TitleAttr: string | null;
 	NameAttr: any | null;
-	Block: Block;
-	Misc: Misc;
+	Block: Array<Block>;
+	Misc: Array<Misc>;
 	Form: string;
 	Area: string;
 }
@@ -1012,9 +1012,9 @@ export class Textarea {
 // Fieldset ...
 export class Fieldset {
 	Attrs: Attrs;
-	Block: Block;
-	Inline: Inline;
-	Misc: Misc;
+	Block: Array<Block>;
+	Inline: Array<Inline>;
+	Misc: Array<Misc>;
 	Legend: Legend;
 	Form: string;
 }
@@ -1264,9 +1264,9 @@ export class Question {
 
 // Answer ...
 export class Answer {
-	Block: Block;
-	Inline: Inline;
-	Misc: Misc;
+	Block: Array<Block>;
+	Inline: Array<Inline>;
+	Misc: Array<Misc>;
 	Form: string;
 }
 
