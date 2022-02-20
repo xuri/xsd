@@ -241,8 +241,8 @@ type MarkerType struct {
 // InlineType is The inline type is a extension of the base type to text content or
 //             other inline elements.
 type InlineType struct {
-	Marker *MarkerType `xml:"marker"`
-	Inline *InlineType `xml:"inline"`
+	Marker []*MarkerType `xml:"marker"`
+	Inline []*InlineType `xml:"inline"`
 	*BaseContentType
 }
 
@@ -291,10 +291,10 @@ type Content *ContentType
 //                         either be inline documents or the can be external
 //                         referenced documents.
 type LawDocType struct {
-	Meta     *MetaType     `xml:"meta"`
-	Main     *MainType     `xml:"main"`
-	Block    *BlockType    `xml:"block"`
-	Appendix *AppendixType `xml:"appendix"`
+	Meta     *MetaType       `xml:"meta"`
+	Main     *MainType       `xml:"main"`
+	Block    []*BlockType    `xml:"block"`
+	Appendix []*AppendixType `xml:"appendix"`
 	*BaseBlockType
 }
 
@@ -312,8 +312,8 @@ type GenericDocType struct {
 //                         a person, or another other object related to the
 //                         document.
 type MetaType struct {
-	Property *PropertyType `xml:"property"`
-	Set      *SetType      `xml:"set"`
+	Property []*PropertyType `xml:"property"`
+	Set      []*SetType      `xml:"set"`
 	*BaseBlockType
 }
 
@@ -336,9 +336,9 @@ type PropertyType struct {
 
 // SetType is A set can contain 0 or more sets.
 type SetType struct {
-	TypeAttr string        `xml:"type,attr,omitempty"`
-	Property *PropertyType `xml:"property"`
-	Set      *SetType      `xml:"set"`
+	TypeAttr string          `xml:"type,attr,omitempty"`
+	Property []*PropertyType `xml:"property"`
+	Set      []*SetType      `xml:"set"`
 	*BaseBlockType
 }
 
@@ -349,8 +349,8 @@ type SetType struct {
 type TocType struct {
 	GenerateAttr     bool `xml:"generate,attr,omitempty"`
 	HeadingStructure *HeadingStructure
-	TocItem          *TocItemType `xml:"tocItem"`
-	Layout           *LayoutType  `xml:"layout"`
+	TocItem          []*TocItemType `xml:"tocItem"`
+	Layout           []*LayoutType  `xml:"layout"`
 	*BaseBlockType
 }
 
@@ -368,13 +368,13 @@ type TocItemType struct {
 //                         case when the document is newly created and still in a
 //                         drafting state.
 type MainType struct {
-	NoteStructure     *NoteStructure
+	NoteStructure     []*NoteStructure
 	PreambleStructure *PreambleStructure
 	LevelStructure    *LevelStructure
-	Property          *PropertyType  `xml:"property"`
-	Block             *BlockType     `xml:"block"`
-	Statement         *StatementType `xml:"statement"`
-	Toc               *TocType       `xml:"toc"`
+	Property          []*PropertyType  `xml:"property"`
+	Block             []*BlockType     `xml:"block"`
+	Statement         []*StatementType `xml:"statement"`
+	Toc               []*TocType       `xml:"toc"`
 }
 
 // StatementType is The attributes of the description group can be used to
@@ -382,12 +382,12 @@ type MainType struct {
 //                   generating a table of contents.
 type StatementType struct {
 	DescriptionGroup *DescriptionGroup
-	Marker           *MarkerType  `xml:"marker"`
-	Inline           *InlineType  `xml:"inline"`
-	Block            *BlockType   `xml:"block"`
-	Text             *TextType    `xml:"text"`
-	Content          *ContentType `xml:"content"`
-	Level            *LevelType   `xml:"level"`
+	Marker           []*MarkerType  `xml:"marker"`
+	Inline           []*InlineType  `xml:"inline"`
+	Block            []*BlockType   `xml:"block"`
+	Text             []*TextType    `xml:"text"`
+	Content          []*ContentType `xml:"content"`
+	Level            []*LevelType   `xml:"level"`
 	*BaseContentType
 }
 
@@ -434,8 +434,8 @@ type HeadingType struct {
 //                            action.
 type InstructionType struct {
 	Ref           *RefType           `xml:"ref"`
-	Inline        *InlineType        `xml:"inline"`
-	Marker        *MarkerType        `xml:"marker"`
+	Inline        []*InlineType      `xml:"inline"`
+	Marker        []*MarkerType      `xml:"marker"`
 	Action        []*ActionType      `xml:"action"`
 	Level         []*LevelType       `xml:"level"`
 	QuotedText    *QuotedTextType    `xml:"quotedText"`
@@ -815,12 +815,12 @@ type QuotedContent *QuotedContentType
 //                      structure.
 type LayoutType struct {
 	OrientationAttr string `xml:"orientation,attr,omitempty"`
-	NoteStructure   *NoteStructure
-	Header          *RowType     `xml:"header"`
-	Row             *RowType     `xml:"row"`
-	TocItem         *TocItemType `xml:"tocItem"`
-	Block           *BlockType   `xml:"block"`
-	Content         *ContentType `xml:"content"`
+	NoteStructure   []*NoteStructure
+	Header          []*RowType     `xml:"header"`
+	Row             []*RowType     `xml:"row"`
+	TocItem         []*TocItemType `xml:"tocItem"`
+	Block           []*BlockType   `xml:"block"`
+	Content         []*ContentType `xml:"content"`
 	*BaseBlockType
 }
 

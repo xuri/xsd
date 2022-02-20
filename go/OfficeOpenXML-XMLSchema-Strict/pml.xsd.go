@@ -381,7 +381,7 @@ type CTTLAnimVariantIntegerVal struct {
 // CTTLAnimVariantFloatVal ...
 type CTTLAnimVariantFloatVal struct {
 	XMLName xml.Name `xml:"CT_TLAnimVariantFloatVal"`
-	ValAttr *Float   `xml:"val,attr"`
+	ValAttr float32  `xml:"val,attr"`
 }
 
 // CTTLAnimVariantStringVal ...

@@ -38,7 +38,7 @@ type CTProperty struct {
 	VtUi4          uint32     `xml:"vt:ui4"`
 	VtUi8          uint64     `xml:"vt:ui8"`
 	VtUint         uint32     `xml:"vt:uint"`
-	VtR4           *Float     `xml:"vt:r4"`
+	VtR4           float32    `xml:"vt:r4"`
 	VtR8           float64    `xml:"vt:r8"`
 	VtDecimal      float64    `xml:"vt:decimal"`
 	VtLpstr        string     `xml:"vt:lpstr"`

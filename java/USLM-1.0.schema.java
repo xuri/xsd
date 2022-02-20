@@ -350,9 +350,9 @@ public class MarkerType {
 //             other inline elements.
 public class InlineType extends BaseContentType  {
 	@XmlElement(required = true, name = "marker")
-	protected MarkerType Marker;
+	protected List<MarkerType> Marker;
 	@XmlElement(required = true, name = "inline")
-	protected InlineType Inline;
+	protected List<InlineType> Inline;
 }
 
 // BlockType is The block type is a extension of the base type to content
@@ -405,9 +405,9 @@ public class LawDocType extends BaseBlockType  {
 	@XmlElement(required = true, name = "main")
 	protected MainType Main;
 	@XmlElement(required = true, name = "block")
-	protected BlockType Block;
+	protected List<BlockType> Block;
 	@XmlElement(required = true, name = "appendix")
-	protected AppendixType Appendix;
+	protected List<AppendixType> Appendix;
 }
 
 // GenericDocType is In addition to the content part of the document, a document
@@ -427,9 +427,9 @@ public class GenericDocType extends BaseBlockType  {
 //                         document.
 public class MetaType extends BaseBlockType  {
 	@XmlElement(required = true, name = "property")
-	protected PropertyType Property;
+	protected List<PropertyType> Property;
 	@XmlElement(required = true, name = "set")
-	protected SetType Set;
+	protected List<SetType> Set;
 }
 
 // PropertyType is A property can represent a pointer to either an external
@@ -457,9 +457,9 @@ public class SetType extends BaseBlockType  {
 	@XmlAttribute(name = "type")
 	protected String TypeAttr;
 	@XmlElement(required = true, name = "property")
-	protected PropertyType Property;
+	protected List<PropertyType> Property;
 	@XmlElement(required = true, name = "set")
-	protected SetType Set;
+	protected List<SetType> Set;
 }
 
 // TocType is The items in a table of contents can be arranged in
@@ -471,9 +471,9 @@ public class TocType extends BaseBlockType  {
 	protected Boolean GenerateAttr;
 	protected HeadingStructure HeadingStructure;
 	@XmlElement(required = true, name = "tocItem")
-	protected TocItemType TocItem;
+	protected List<TocItemType> TocItem;
 	@XmlElement(required = true, name = "layout")
-	protected LayoutType Layout;
+	protected List<LayoutType> Layout;
 }
 
 // TocItemType is Use the description group to record the number and title in the
@@ -492,17 +492,17 @@ public class TocItemType extends BaseBlockType  {
 //                         case when the document is newly created and still in a
 //                         drafting state.
 public class MainType {
-	protected NoteStructure NoteStructure;
+	protected List<NoteStructure> NoteStructure;
 	protected PreambleStructure PreambleStructure;
 	protected LevelStructure LevelStructure;
 	@XmlElement(required = true, name = "property")
-	protected PropertyType Property;
+	protected List<PropertyType> Property;
 	@XmlElement(required = true, name = "block")
-	protected BlockType Block;
+	protected List<BlockType> Block;
 	@XmlElement(required = true, name = "statement")
-	protected StatementType Statement;
+	protected List<StatementType> Statement;
 	@XmlElement(required = true, name = "toc")
-	protected TocType Toc;
+	protected List<TocType> Toc;
 }
 
 // StatementType is The attributes of the description group can be used to
@@ -512,17 +512,17 @@ public class StatementType extends BaseContentType  {
 	@XmlElement(required = true)
 	protected DescriptionGroup DescriptionGroup;
 	@XmlElement(required = true, name = "marker")
-	protected MarkerType Marker;
+	protected List<MarkerType> Marker;
 	@XmlElement(required = true, name = "inline")
-	protected InlineType Inline;
+	protected List<InlineType> Inline;
 	@XmlElement(required = true, name = "block")
-	protected BlockType Block;
+	protected List<BlockType> Block;
 	@XmlElement(required = true, name = "text")
-	protected TextType Text;
+	protected List<TextType> Text;
 	@XmlElement(required = true, name = "content")
-	protected ContentType Content;
+	protected List<ContentType> Content;
 	@XmlElement(required = true, name = "level")
-	protected LevelType Level;
+	protected List<LevelType> Level;
 }
 
 // PreambleType is Attributes from the description group may be used to
@@ -570,9 +570,9 @@ public class InstructionType extends BaseContentType  {
 	@XmlElement(required = true, name = "ref")
 	protected RefType Ref;
 	@XmlElement(required = true, name = "inline")
-	protected InlineType Inline;
+	protected List<InlineType> Inline;
 	@XmlElement(required = true, name = "marker")
-	protected MarkerType Marker;
+	protected List<MarkerType> Marker;
 	@XmlElement(required = true, name = "action")
 	protected List<ActionType> Action;
 	@XmlElement(required = true, name = "level")
@@ -976,17 +976,17 @@ public class QuotedContent {
 public class LayoutType extends BaseBlockType  {
 	@XmlAttribute(name = "orientation")
 	protected String OrientationAttr;
-	protected NoteStructure NoteStructure;
+	protected List<NoteStructure> NoteStructure;
 	@XmlElement(required = true, name = "header")
-	protected RowType Header;
+	protected List<RowType> Header;
 	@XmlElement(required = true, name = "row")
-	protected RowType Row;
+	protected List<RowType> Row;
 	@XmlElement(required = true, name = "tocItem")
-	protected TocItemType TocItem;
+	protected List<TocItemType> TocItem;
 	@XmlElement(required = true, name = "block")
-	protected BlockType Block;
+	protected List<BlockType> Block;
 	@XmlElement(required = true, name = "content")
-	protected ContentType Content;
+	protected List<ContentType> Content;
 }
 
 // RowType is A row contains one or more column cells.

@@ -42,7 +42,7 @@ type CTVector struct {
 	Ui2          []uint16     `xml:"ui2"`
 	Ui4          []uint32     `xml:"ui4"`
 	Ui8          []uint64     `xml:"ui8"`
-	R4           []*Float     `xml:"r4"`
+	R4           []float32    `xml:"r4"`
 	R8           []float64    `xml:"r8"`
 	Lpstr        []string     `xml:"lpstr"`
 	Lpwstr       []string     `xml:"lpwstr"`
@@ -70,7 +70,7 @@ type CTArray struct {
 	Ui2          []uint16     `xml:"ui2"`
 	Ui4          []uint32     `xml:"ui4"`
 	Uint         []uint32     `xml:"uint"`
-	R4           []*Float     `xml:"r4"`
+	R4           []float32    `xml:"r4"`
 	R8           []float64    `xml:"r8"`
 	Decimal      []float64    `xml:"decimal"`
 	Bstr         []string     `xml:"bstr"`
@@ -100,7 +100,7 @@ type CTVariant struct {
 	Ui4      uint32     `xml:"ui4"`
 	Ui8      uint64     `xml:"ui8"`
 	Uint     uint32     `xml:"uint"`
-	R4       *Float     `xml:"r4"`
+	R4       float32    `xml:"r4"`
 	R8       float64    `xml:"r8"`
 	Decimal  float64    `xml:"decimal"`
 	Lpstr    string     `xml:"lpstr"`
@@ -178,7 +178,7 @@ type Ui8 uint64
 type Uint uint32
 
 // R4 ...
-type R4 *Float
+type R4 float32
 
 // R8 ...
 type R8 float64

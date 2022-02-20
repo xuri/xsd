@@ -386,9 +386,9 @@ pub struct MarkerType {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct InlineType {
 	#[serde(rename = "marker")]
-	pub marker: MarkerType,
+	pub marker: Vec<MarkerType>,
 	#[serde(rename = "inline")]
-	pub inline: InlineType,
+	pub inline: Vec<InlineType>,
 	#[serde(flatten)]
 	pub base_content_type: BaseContentType,
 }
@@ -475,9 +475,9 @@ pub struct LawDocType {
 	#[serde(rename = "main")]
 	pub main: MainType,
 	#[serde(rename = "block")]
-	pub block: BlockType,
+	pub block: Vec<BlockType>,
 	#[serde(rename = "appendix")]
-	pub appendix: AppendixType,
+	pub appendix: Vec<AppendixType>,
 	#[serde(flatten)]
 	pub base_block_type: BaseBlockType,
 }
@@ -505,9 +505,9 @@ pub struct GenericDocType {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct MetaType {
 	#[serde(rename = "property")]
-	pub property: PropertyType,
+	pub property: Vec<PropertyType>,
 	#[serde(rename = "set")]
-	pub set: SetType,
+	pub set: Vec<SetType>,
 	#[serde(flatten)]
 	pub base_block_type: BaseBlockType,
 }
@@ -543,9 +543,9 @@ pub struct SetType {
 	#[serde(rename = "type")]
 	pub type_attr: Option<String>,
 	#[serde(rename = "property")]
-	pub property: PropertyType,
+	pub property: Vec<PropertyType>,
 	#[serde(rename = "set")]
-	pub set: SetType,
+	pub set: Vec<SetType>,
 	#[serde(flatten)]
 	pub base_block_type: BaseBlockType,
 }
@@ -562,9 +562,9 @@ pub struct TocType {
 	#[serde(rename = "HeadingStructure")]
 	pub heading_structure: HeadingStructure,
 	#[serde(rename = "tocItem")]
-	pub toc_item: TocItemType,
+	pub toc_item: Vec<TocItemType>,
 	#[serde(rename = "layout")]
-	pub layout: LayoutType,
+	pub layout: Vec<LayoutType>,
 	#[serde(flatten)]
 	pub base_block_type: BaseBlockType,
 }
@@ -593,19 +593,19 @@ pub struct TocItemType {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct MainType {
 	#[serde(rename = "NoteStructure")]
-	pub note_structure: NoteStructure,
+	pub note_structure: Vec<NoteStructure>,
 	#[serde(rename = "PreambleStructure")]
 	pub preamble_structure: PreambleStructure,
 	#[serde(rename = "LevelStructure")]
 	pub level_structure: LevelStructure,
 	#[serde(rename = "property")]
-	pub property: PropertyType,
+	pub property: Vec<PropertyType>,
 	#[serde(rename = "block")]
-	pub block: BlockType,
+	pub block: Vec<BlockType>,
 	#[serde(rename = "statement")]
-	pub statement: StatementType,
+	pub statement: Vec<StatementType>,
 	#[serde(rename = "toc")]
-	pub toc: TocType,
+	pub toc: Vec<TocType>,
 }
 
 
@@ -617,17 +617,17 @@ pub struct StatementType {
 	#[serde(rename = "DescriptionGroup")]
 	pub description_group: Vec<DescriptionGroup>,
 	#[serde(rename = "marker")]
-	pub marker: MarkerType,
+	pub marker: Vec<MarkerType>,
 	#[serde(rename = "inline")]
-	pub inline: InlineType,
+	pub inline: Vec<InlineType>,
 	#[serde(rename = "block")]
-	pub block: BlockType,
+	pub block: Vec<BlockType>,
 	#[serde(rename = "text")]
-	pub text: TextType,
+	pub text: Vec<TextType>,
 	#[serde(rename = "content")]
-	pub content: ContentType,
+	pub content: Vec<ContentType>,
 	#[serde(rename = "level")]
-	pub level: LevelType,
+	pub level: Vec<LevelType>,
 	#[serde(flatten)]
 	pub base_content_type: BaseContentType,
 }
@@ -701,9 +701,9 @@ pub struct InstructionType {
 	#[serde(rename = "ref")]
 	pub ref_attr: RefType,
 	#[serde(rename = "inline")]
-	pub inline: InlineType,
+	pub inline: Vec<InlineType>,
 	#[serde(rename = "marker")]
-	pub marker: MarkerType,
+	pub marker: Vec<MarkerType>,
 	#[serde(rename = "action")]
 	pub action: Vec<ActionType>,
 	#[serde(rename = "level")]
@@ -1337,17 +1337,17 @@ pub struct LayoutType {
 	#[serde(rename = "orientation")]
 	pub orientation: Option<String>,
 	#[serde(rename = "NoteStructure")]
-	pub note_structure: NoteStructure,
+	pub note_structure: Vec<NoteStructure>,
 	#[serde(rename = "header")]
-	pub header: RowType,
+	pub header: Vec<RowType>,
 	#[serde(rename = "row")]
-	pub row: RowType,
+	pub row: Vec<RowType>,
 	#[serde(rename = "tocItem")]
-	pub toc_item: TocItemType,
+	pub toc_item: Vec<TocItemType>,
 	#[serde(rename = "block")]
-	pub block: BlockType,
+	pub block: Vec<BlockType>,
 	#[serde(rename = "content")]
-	pub content: ContentType,
+	pub content: Vec<ContentType>,
 	#[serde(flatten)]
 	pub base_block_type: BaseBlockType,
 }

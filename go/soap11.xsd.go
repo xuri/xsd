@@ -96,7 +96,7 @@ type Base64Binary []byte
 type HexBinary []byte
 
 // Float ...
-type Float *Float
+type Float float32
 
 // Double ...
 type Double float64

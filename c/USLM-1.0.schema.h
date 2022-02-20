@@ -234,8 +234,8 @@ typedef struct {
 // InlineType is The inline type is a extension of the base type to text content or
 //             other inline elements.
 typedef struct {
-	MarkerType Marker;
-	InlineType Inline;
+	MarkerType Marker[];
+	InlineType Inline[];
 } InlineType;
 
 // BlockType is The block type is a extension of the base type to content
@@ -268,8 +268,8 @@ typedef ContentType Content;
 typedef struct {
 	MetaType Meta;
 	MainType Main;
-	BlockType Block;
-	AppendixType Appendix;
+	BlockType Block[];
+	AppendixType Appendix[];
 } LawDocType;
 
 // GenericDocType is In addition to the content part of the document, a document
@@ -285,8 +285,8 @@ typedef struct {
 //                         a person, or another other object related to the
 //                         document.
 typedef struct {
-	PropertyType Property;
-	SetType Set;
+	PropertyType Property[];
+	SetType Set[];
 } MetaType;
 
 // PropertyType is A property can represent a pointer to either an external
@@ -308,8 +308,8 @@ typedef struct {
 // SetType is A set can contain 0 or more sets.
 typedef struct {
 	char TypeAttr; // attr, optional
-	PropertyType Property;
-	SetType Set;
+	PropertyType Property[];
+	SetType Set[];
 } SetType;
 
 // TocType is The items in a table of contents can be arranged in
@@ -319,8 +319,8 @@ typedef struct {
 typedef struct {
 	bool GenerateAttr; // attr, optional
 	HeadingStructure HeadingStructure;
-	TocItemType TocItem;
-	LayoutType Layout;
+	TocItemType TocItem[];
+	LayoutType Layout[];
 } TocType;
 
 // TocItemType is Use the description group to record the number and title in the
@@ -336,13 +336,13 @@ typedef struct {
 //                         case when the document is newly created and still in a
 //                         drafting state.
 typedef struct {
-	NoteStructure NoteStructure;
+	NoteStructure NoteStructure[];
 	PreambleStructure PreambleStructure;
 	LevelStructure LevelStructure;
-	PropertyType Property;
-	BlockType Block;
-	StatementType Statement;
-	TocType Toc;
+	PropertyType Property[];
+	BlockType Block[];
+	StatementType Statement[];
+	TocType Toc[];
 } MainType;
 
 // StatementType is The attributes of the description group can be used to
@@ -350,12 +350,12 @@ typedef struct {
 //                   generating a table of contents.
 typedef struct {
 	DescriptionGroup DescriptionGroup;
-	MarkerType Marker;
-	InlineType Inline;
-	BlockType Block;
-	TextType Text;
-	ContentType Content;
-	LevelType Level;
+	MarkerType Marker[];
+	InlineType Inline[];
+	BlockType Block[];
+	TextType Text[];
+	ContentType Content[];
+	LevelType Level[];
 } StatementType;
 
 // PreambleType is Attributes from the description group may be used to
@@ -397,8 +397,8 @@ typedef struct {
 //                            action.
 typedef struct {
 	RefType Ref;
-	InlineType Inline;
-	MarkerType Marker;
+	InlineType Inline[];
+	MarkerType Marker[];
 	ActionType Action[];
 	LevelType Level[];
 	QuotedTextType QuotedText;
@@ -640,12 +640,12 @@ typedef QuotedContentType QuotedContent;
 //                      structure.
 typedef struct {
 	char OrientationAttr; // attr, optional
-	NoteStructure NoteStructure;
-	RowType Header;
-	RowType Row;
-	TocItemType TocItem;
-	BlockType Block;
-	ContentType Content;
+	NoteStructure NoteStructure[];
+	RowType Header[];
+	RowType Row[];
+	TocItemType TocItem[];
+	BlockType Block[];
+	ContentType Content[];
 } LayoutType;
 
 // RowType is A row contains one or more column cells.
