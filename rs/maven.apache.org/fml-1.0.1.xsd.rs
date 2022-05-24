@@ -500,9 +500,9 @@ pub struct Inline {
 }
 
 
-// Inline is "Inline" covers inline or "text-level" element
+// Inline2 is "Inline" covers inline or "text-level" element
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
-pub struct Inline {
+pub struct Inline2 {
 	#[serde(rename = "inline")]
 	pub inline: Vec<Inline>,
 	#[serde(rename = "misc.inline")]
@@ -801,9 +801,9 @@ pub struct Style {
 }
 
 
-// Script ...
+// Script2 ...
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
-pub struct Script {
+pub struct Script2 {
 	#[serde(rename = "id")]
 	pub id: Option<String>,
 	#[serde(rename = "charset")]

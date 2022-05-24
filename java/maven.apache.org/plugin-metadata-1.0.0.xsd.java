@@ -24,8 +24,8 @@ public class Mojos {
 	protected List<Mojo> Mojo;
 }
 
-// PluginMetadata is Root element of a script-based mojo's plugin metadata bindings.
-public class PluginMetadata {
+// PluginMetadata2 is Root element of a script-based mojo's plugin metadata bindings.
+public class PluginMetadata2 {
 	@XmlElement(required = true, name = "mojos")
 	protected Mojos Mojos;
 }

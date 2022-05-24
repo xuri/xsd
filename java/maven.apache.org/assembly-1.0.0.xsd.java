@@ -60,9 +60,9 @@ public class ComponentDescriptors {
 	protected List<String> ComponentDescriptor;
 }
 
-// Assembly is The id of this assembly. This is a symbolic name for a
+// Assembly2 is The id of this assembly. This is a symbolic name for a
 //             particular assembly of files from this project.
-public class Assembly {
+public class Assembly2 {
 	@XmlElement(required = true, name = "id")
 	protected String Id;
 	@XmlElement(required = true, name = "formats")

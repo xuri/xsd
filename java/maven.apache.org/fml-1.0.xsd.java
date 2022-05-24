@@ -429,8 +429,8 @@ public class Inline {
 	protected InlineForms InlineForms;
 }
 
-// Inline is "Inline" covers inline or "text-level" element
-public class Inline {
+// Inline2 is "Inline" covers inline or "text-level" element
+public class Inline2 {
 	protected List<Inline> Inline;
 	protected List<MiscInline> MiscInline;
 }
@@ -668,8 +668,8 @@ public class Style {
 	protected Space XmlSpaceAttr;
 }
 
-// Script ...
-public class Script {
+// Script2 ...
+public class Script2 {
 	@XmlAttribute(name = "id")
 	protected String IdAttr;
 	@XmlAttribute(name = "charset")

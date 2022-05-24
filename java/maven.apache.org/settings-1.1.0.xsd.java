@@ -54,8 +54,8 @@ public class PluginGroups {
 	protected List<String> PluginGroup;
 }
 
-// Settings is Indicate whether maven should operate in offline mode full-time.
-public class Settings {
+// Settings2 is Indicate whether maven should operate in offline mode full-time.
+public class Settings2 {
 	@XmlElement(required = true, name = "localRepository")
 	protected String LocalRepository;
 	@XmlElement(required = true, name = "interactiveMode")

@@ -8,8 +8,8 @@ export class RemoteResources {
 	RemoteResource: string;
 }
 
-// RemoteResourcesBundle is Root element of the remote-resources.xml file.
-export class RemoteResourcesBundle {
+// RemoteResourcesBundle2 is Root element of the remote-resources.xml file.
+export class RemoteResourcesBundle2 {
 	RemoteResources: RemoteResources;
 	SourceEncoding: string;
 }

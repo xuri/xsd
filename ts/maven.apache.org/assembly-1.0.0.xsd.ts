@@ -38,9 +38,9 @@ export class ComponentDescriptors {
 	ComponentDescriptor: string;
 }
 
-// Assembly is The id of this assembly. This is a symbolic name for a
+// Assembly2 is The id of this assembly. This is a symbolic name for a
 //             particular assembly of files from this project.
-export class Assembly {
+export class Assembly2 {
 	Id: string;
 	Formats: Formats;
 	IncludeBaseDirectory: boolean;

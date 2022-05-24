@@ -268,8 +268,8 @@ export class Inline {
 	InlineForms: InlineForms;
 }
 
-// Inline is "Inline" covers inline or "text-level" element
-export class Inline {
+// Inline2 is "Inline" covers inline or "text-level" element
+export class Inline2 {
 	Inline: Array<Inline>;
 	MiscInline: Array<MiscInline>;
 }
@@ -436,8 +436,8 @@ export class Style {
 	XmlSpaceAttr: Space | null;
 }
 
-// Script ...
-export class Script {
+// Script2 ...
+export class Script2 {
 	IdAttr: string | null;
 	CharsetAttr: string | null;
 	TypeAttr: string;

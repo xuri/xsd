@@ -257,11 +257,11 @@ typedef struct {
 	InlineForms InlineForms;
 } Inline;
 
-// Inline is "Inline" covers inline or "text-level" element
+// Inline2 is "Inline" covers inline or "text-level" element
 typedef struct {
 	Inline Inline[];
 	MiscInline MiscInline[];
-} Inline;
+} Inline2;
 
 // Heading ...
 typedef struct {
@@ -425,7 +425,7 @@ typedef struct {
 	Space XmlSpaceAttr; // attr, optional
 } Style;
 
-// Script ...
+// Script2 ...
 typedef struct {
 	char IdAttr; // attr, optional
 	char CharsetAttr; // attr, optional
@@ -434,7 +434,7 @@ typedef struct {
 	char SrcAttr; // attr, optional
 	char DeferAttr; // attr, optional
 	Space XmlSpaceAttr; // attr, optional
-} Script;
+} Script2;
 
 // Noscript ...
 typedef struct {

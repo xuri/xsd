@@ -54,8 +54,8 @@ public class ContainerDescriptorHandlers {
 	protected List<ContainerDescriptorHandlerConfig> ContainerDescriptorHandler;
 }
 
-// Component is Describes the component layout and packaging.
-public class Component {
+// Component2 is Describes the component layout and packaging.
+public class Component2 {
 	@XmlElement(required = true, name = "moduleSets")
 	protected ModuleSets ModuleSets;
 	@XmlElement(required = true, name = "fileSets")

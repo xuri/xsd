@@ -8,8 +8,8 @@ export class Mojos {
 	Mojo: Array<Mojo>;
 }
 
-// PluginMetadata is Root element of a script-based mojo's plugin metadata bindings.
-export class PluginMetadata {
+// PluginMetadata2 is Root element of a script-based mojo's plugin metadata bindings.
+export class PluginMetadata2 {
 	Mojos: Mojos;
 }
 
