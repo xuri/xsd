@@ -24,8 +24,8 @@ public class RemoteResources {
 	protected List<String> RemoteResource;
 }
 
-// RemoteResourcesBundle is Root element of the remote-resources.xml file.
-public class RemoteResourcesBundle {
+// RemoteResourcesBundle2 is Root element of the remote-resources.xml file.
+public class RemoteResourcesBundle2 {
 	@XmlElement(required = true, name = "remoteResources")
 	protected RemoteResources RemoteResources;
 	@XmlElement(required = true, name = "sourceEncoding")

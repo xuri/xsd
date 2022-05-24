@@ -24,8 +24,8 @@ public class Files {
 	protected List<File> File;
 }
 
-// Verifications is Root element of the verifications file.
-public class Verifications {
+// Verifications2 is Root element of the verifications file.
+public class Verifications2 {
 	@XmlElement(required = true, name = "files")
 	protected Files Files;
 }

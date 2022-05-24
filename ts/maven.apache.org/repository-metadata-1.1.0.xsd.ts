@@ -8,8 +8,8 @@ export class Plugins {
 	Plugin: Array<Plugin>;
 }
 
-// Metadata is Versioning information for the artifact.
-export class Metadata {
+// Metadata2 is Versioning information for the artifact.
+export class Metadata2 {
 	ModelVersionAttr: string | null;
 	GroupId: string;
 	ArtifactId: string;

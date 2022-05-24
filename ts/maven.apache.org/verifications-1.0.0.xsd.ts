@@ -8,8 +8,8 @@ export class Files {
 	File: Array<File>;
 }
 
-// Verifications is Root element of the verifications file.
-export class Verifications {
+// Verifications2 is Root element of the verifications file.
+export class Verifications2 {
 	Files: Files;
 }
 

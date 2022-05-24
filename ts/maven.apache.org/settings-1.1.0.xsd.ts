@@ -33,8 +33,8 @@ export class PluginGroups {
 	PluginGroup: string;
 }
 
-// Settings is Indicate whether maven should operate in offline mode full-time.
-export class Settings {
+// Settings2 is Indicate whether maven should operate in offline mode full-time.
+export class Settings2 {
 	LocalRepository: string;
 	InteractiveMode: boolean;
 	UsePluginRegistry: boolean;

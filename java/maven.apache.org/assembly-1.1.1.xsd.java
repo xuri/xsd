@@ -66,12 +66,12 @@ public class ComponentDescriptors {
 	protected List<String> ComponentDescriptor;
 }
 
-// Assembly is Sets the id of this assembly. This is a symbolic name for a
+// Assembly2 is Sets the id of this assembly. This is a symbolic name for a
 //             particular assembly of files from this project. Also, aside from
 //             being used to distinctly name the assembled package by attaching
 //             its value to the generated archive, the id is used as your
 //             artifact's classifier when deploying.
-public class Assembly {
+public class Assembly2 {
 	@XmlElement(required = true, name = "id")
 	protected String Id;
 	@XmlElement(required = true, name = "formats")

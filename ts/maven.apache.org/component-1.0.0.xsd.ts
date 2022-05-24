@@ -18,8 +18,8 @@ export class DependencySets {
 	DependencySet: Array<DependencySet>;
 }
 
-// Component is Describes the component layout and packaging.
-export class Component {
+// Component2 is Describes the component layout and packaging.
+export class Component2 {
 	FileSets: FileSets;
 	Files: Files;
 	DependencySets: DependencySets;

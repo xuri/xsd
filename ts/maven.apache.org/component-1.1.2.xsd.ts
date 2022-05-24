@@ -33,8 +33,8 @@ export class ContainerDescriptorHandlers {
 	ContainerDescriptorHandler: Array<ContainerDescriptorHandlerConfig>;
 }
 
-// Component is Describes the component layout and packaging.
-export class Component {
+// Component2 is Describes the component layout and packaging.
+export class Component2 {
 	ModuleSets: ModuleSets;
 	FileSets: FileSets;
 	Files: Files;

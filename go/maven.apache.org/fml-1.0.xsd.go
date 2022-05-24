@@ -281,8 +281,9 @@ type Inline struct {
 	InlineForms *InlineForms
 }
 
-// Inline is "Inline" covers inline or "text-level" element
-type Inline struct {
+// Inline2 is "Inline" covers inline or "text-level" element
+type Inline2 struct {
+	XMLName    xml.Name `xml:"Inline"`
 	Inline     []*Inline
 	MiscInline []*MiscInline
 }
@@ -464,8 +465,8 @@ type Style struct {
 	XmlSpaceAttr *Space `xml:"xml:space,attr,omitempty"`
 }
 
-// Script ...
-type Script struct {
+// Script2 ...
+type Script2 struct {
 	XMLName      xml.Name    `xml:"script"`
 	IdAttr       string      `xml:"id,attr,omitempty"`
 	CharsetAttr  string      `xml:"charset,attr,omitempty"`
