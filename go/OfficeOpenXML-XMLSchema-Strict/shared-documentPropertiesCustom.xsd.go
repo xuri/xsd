@@ -24,16 +24,16 @@ type CTProperty struct {
 	LinkTargetAttr string     `xml:"linkTarget,attr,omitempty"`
 	VtVector       *CTVector  `xml:"vt:vector"`
 	VtArray        *CTArray   `xml:"vt:array"`
-	VtBlob         []byte     `xml:"vt:blob"`
-	VtOblob        []byte     `xml:"vt:oblob"`
+	VtBlob         string     `xml:"vt:blob"`
+	VtOblob        string     `xml:"vt:oblob"`
 	VtEmpty        *CTEmpty   `xml:"vt:empty"`
 	VtNull         *CTNull    `xml:"vt:null"`
-	VtI1           byte       `xml:"vt:i1"`
+	VtI1           int8       `xml:"vt:i1"`
 	VtI2           int16      `xml:"vt:i2"`
 	VtI4           int        `xml:"vt:i4"`
 	VtI8           int64      `xml:"vt:i8"`
 	VtInt          int        `xml:"vt:int"`
-	VtUi1          byte       `xml:"vt:ui1"`
+	VtUi1          uint8      `xml:"vt:ui1"`
 	VtUi2          uint16     `xml:"vt:ui2"`
 	VtUi4          uint32     `xml:"vt:ui4"`
 	VtUi8          uint64     `xml:"vt:ui8"`
@@ -49,10 +49,10 @@ type CTProperty struct {
 	VtBool         bool       `xml:"vt:bool"`
 	VtCy           string     `xml:"vt:cy"`
 	VtError        string     `xml:"vt:error"`
-	VtStream       []byte     `xml:"vt:stream"`
-	VtOstream      []byte     `xml:"vt:ostream"`
-	VtStorage      []byte     `xml:"vt:storage"`
-	VtOstorage     []byte     `xml:"vt:ostorage"`
+	VtStream       string     `xml:"vt:stream"`
+	VtOstream      string     `xml:"vt:ostream"`
+	VtStorage      string     `xml:"vt:storage"`
+	VtOstorage     string     `xml:"vt:ostorage"`
 	VtVstream      *CTVstream `xml:"vt:vstream"`
 	VtClsid        string     `xml:"vt:clsid"`
 }

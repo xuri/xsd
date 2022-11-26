@@ -34,11 +34,11 @@ type CTVector struct {
 	BaseTypeAttr string       `xml:"baseType,attr"`
 	SizeAttr     uint32       `xml:"size,attr"`
 	Variant      []*CTVariant `xml:"variant"`
-	I1           []byte       `xml:"i1"`
+	I1           []int8       `xml:"i1"`
 	I2           []int16      `xml:"i2"`
 	I4           []int        `xml:"i4"`
 	I8           []int64      `xml:"i8"`
-	Ui1          []byte       `xml:"ui1"`
+	Ui1          []uint8      `xml:"ui1"`
 	Ui2          []uint16     `xml:"ui2"`
 	Ui4          []uint32     `xml:"ui4"`
 	Ui8          []uint64     `xml:"ui8"`
@@ -62,11 +62,11 @@ type CTArray struct {
 	UBoundsAttr  int          `xml:"uBounds,attr"`
 	BaseTypeAttr string       `xml:"baseType,attr"`
 	Variant      []*CTVariant `xml:"variant"`
-	I1           []byte       `xml:"i1"`
+	I1           []int8       `xml:"i1"`
 	I2           []int16      `xml:"i2"`
 	I4           []int        `xml:"i4"`
 	Int          []int        `xml:"int"`
-	Ui1          []byte       `xml:"ui1"`
+	Ui1          []uint8      `xml:"ui1"`
 	Ui2          []uint16     `xml:"ui2"`
 	Ui4          []uint32     `xml:"ui4"`
 	Uint         []uint32     `xml:"uint"`
@@ -86,16 +86,16 @@ type CTVariant struct {
 	Variant  *CTVariant `xml:"variant"`
 	Vector   *CTVector  `xml:"vector"`
 	Array    *CTArray   `xml:"array"`
-	Blob     []byte     `xml:"blob"`
-	Oblob    []byte     `xml:"oblob"`
+	Blob     string     `xml:"blob"`
+	Oblob    string     `xml:"oblob"`
 	Empty    *CTEmpty   `xml:"empty"`
 	Null     *CTNull    `xml:"null"`
-	I1       byte       `xml:"i1"`
+	I1       int8       `xml:"i1"`
 	I2       int16      `xml:"i2"`
 	I4       int        `xml:"i4"`
 	I8       int64      `xml:"i8"`
 	Int      int        `xml:"int"`
-	Ui1      byte       `xml:"ui1"`
+	Ui1      uint8      `xml:"ui1"`
 	Ui2      uint16     `xml:"ui2"`
 	Ui4      uint32     `xml:"ui4"`
 	Ui8      uint64     `xml:"ui8"`
@@ -111,10 +111,10 @@ type CTVariant struct {
 	Bool     bool       `xml:"bool"`
 	Cy       string     `xml:"cy"`
 	Error    string     `xml:"error"`
-	Stream   []byte     `xml:"stream"`
-	Ostream  []byte     `xml:"ostream"`
-	Storage  []byte     `xml:"storage"`
-	Ostorage []byte     `xml:"ostorage"`
+	Stream   string     `xml:"stream"`
+	Ostream  string     `xml:"ostream"`
+	Storage  string     `xml:"storage"`
+	Ostorage string     `xml:"ostorage"`
 	Vstream  *CTVstream `xml:"vstream"`
 	Clsid    string     `xml:"clsid"`
 }
@@ -123,7 +123,7 @@ type CTVariant struct {
 type CTVstream struct {
 	XMLName     xml.Name `xml:"CT_Vstream"`
 	VersionAttr string   `xml:"version,attr,omitempty"`
-	Value       []byte   `xml:",chardata"`
+	Value       string   `xml:",chardata"`
 }
 
 // Variant ...
@@ -136,10 +136,10 @@ type Vector *CTVector
 type Array *CTArray
 
 // Blob ...
-type Blob []byte
+type Blob string
 
 // Oblob ...
-type Oblob []byte
+type Oblob string
 
 // Empty ...
 type Empty *CTEmpty
@@ -148,7 +148,7 @@ type Empty *CTEmpty
 type Null *CTNull
 
 // I1 ...
-type I1 byte
+type I1 int8
 
 // I2 ...
 type I2 int16
@@ -163,7 +163,7 @@ type I8 int64
 type Int int
 
 // Ui1 ...
-type Ui1 byte
+type Ui1 uint8
 
 // Ui2 ...
 type Ui2 uint16
@@ -211,16 +211,16 @@ type Cy string
 type Error string
 
 // Stream ...
-type Stream []byte
+type Stream string
 
 // Ostream ...
-type Ostream []byte
+type Ostream string
 
 // Storage ...
-type Storage []byte
+type Storage string
 
 // Ostorage ...
-type Ostorage []byte
+type Ostorage string
 
 // Vstream ...
 type Vstream *CTVstream

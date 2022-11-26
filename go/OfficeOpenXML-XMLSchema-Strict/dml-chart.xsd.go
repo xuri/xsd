@@ -201,12 +201,12 @@ type CTTitle struct {
 }
 
 // STRotX ...
-type STRotX byte
+type STRotX int8
 
 // CTRotX ...
 type CTRotX struct {
 	XMLName xml.Name `xml:"CT_RotX"`
-	ValAttr byte     `xml:"val,attr,omitempty"`
+	ValAttr int8     `xml:"val,attr,omitempty"`
 }
 
 // STHPercent ...
@@ -249,12 +249,12 @@ type CTDepthPercent struct {
 }
 
 // STPerspective ...
-type STPerspective byte
+type STPerspective uint8
 
 // CTPerspective ...
 type CTPerspective struct {
 	XMLName xml.Name `xml:"CT_Perspective"`
-	ValAttr byte     `xml:"val,attr,omitempty"`
+	ValAttr uint8    `xml:"val,attr,omitempty"`
 }
 
 // CTView3D ...
@@ -498,12 +498,12 @@ type CTMarkerStyle struct {
 }
 
 // STMarkerSize ...
-type STMarkerSize byte
+type STMarkerSize uint8
 
 // CTMarkerSize ...
 type CTMarkerSize struct {
 	XMLName xml.Name `xml:"CT_MarkerSize"`
-	ValAttr byte     `xml:"val,attr,omitempty"`
+	ValAttr uint8    `xml:"val,attr,omitempty"`
 }
 
 // CTMarker ...
@@ -538,12 +538,12 @@ type CTTrendlineType struct {
 }
 
 // STOrder ...
-type STOrder byte
+type STOrder uint8
 
 // CTOrder ...
 type CTOrder struct {
 	XMLName xml.Name `xml:"CT_Order"`
-	ValAttr byte     `xml:"val,attr,omitempty"`
+	ValAttr uint8    `xml:"val,attr,omitempty"`
 }
 
 // STPeriod ...
@@ -1395,12 +1395,12 @@ type CTChart struct {
 }
 
 // STStyle ...
-type STStyle byte
+type STStyle uint8
 
 // CTStyle ...
 type CTStyle struct {
 	XMLName xml.Name `xml:"CT_Style"`
-	ValAttr byte     `xml:"val,attr"`
+	ValAttr uint8    `xml:"val,attr"`
 }
 
 // CTPivotSource ...

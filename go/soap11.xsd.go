@@ -54,7 +54,7 @@ type Array struct {
 type Struct *Struct
 
 // Base64 ...
-type Base64 []byte
+type Base64 string
 
 // Duration ...
 type Duration string
@@ -90,10 +90,10 @@ type GMonth string
 type Boolean bool
 
 // Base64Binary ...
-type Base64Binary []byte
+type Base64Binary string
 
 // HexBinary ...
-type HexBinary []byte
+type HexBinary string
 
 // Float ...
 type Float float32
@@ -168,7 +168,7 @@ type Int int
 type Short int16
 
 // Byte ...
-type Byte byte
+type Byte int8
 
 // NonNegativeInteger ...
 type NonNegativeInteger int
@@ -183,7 +183,7 @@ type UnsignedInt uint32
 type UnsignedShort uint16
 
 // UnsignedByte ...
-type UnsignedByte byte
+type UnsignedByte uint8
 
 // PositiveInteger ...
 type PositiveInteger int
