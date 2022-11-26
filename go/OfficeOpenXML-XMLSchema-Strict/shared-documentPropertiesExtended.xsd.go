@@ -56,5 +56,5 @@ type CTVectorLpstr struct {
 // CTDigSigBlob ...
 type CTDigSigBlob struct {
 	XMLName xml.Name `xml:"CT_DigSigBlob"`
-	VtBlob  []byte   `xml:"vt:blob"`
+	VtBlob  string   `xml:"vt:blob"`
 }

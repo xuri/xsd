@@ -32,7 +32,7 @@ type CTQuickTimeFile struct {
 // CTAudioCDTime ...
 type CTAudioCDTime struct {
 	XMLName   xml.Name `xml:"CT_AudioCDTime"`
-	TrackAttr byte     `xml:"track,attr"`
+	TrackAttr uint8    `xml:"track,attr"`
 	TimeAttr  uint32   `xml:"time,attr,omitempty"`
 }
 
@@ -367,7 +367,7 @@ type CTScRgbColor struct {
 // CTSRgbColor ...
 type CTSRgbColor struct {
 	XMLName          xml.Name `xml:"CT_SRgbColor"`
-	ValAttr          []byte   `xml:"val,attr"`
+	ValAttr          string   `xml:"val,attr"`
 	EGColorTransform []*EGColorTransform
 }
 
@@ -387,7 +387,7 @@ type STSystemColorVal string
 type CTSystemColor struct {
 	XMLName          xml.Name `xml:"CT_SystemColor"`
 	ValAttr          string   `xml:"val,attr"`
-	LastClrAttr      []byte   `xml:"lastClr,attr,omitempty"`
+	LastClrAttr      string   `xml:"lastClr,attr,omitempty"`
 	EGColorTransform []*EGColorTransform
 }
 
@@ -2316,15 +2316,15 @@ type STTextFontSize int
 type STTextTypeface string
 
 // STPitchFamily ...
-type STPitchFamily byte
+type STPitchFamily int8
 
 // CTTextFont ...
 type CTTextFont struct {
 	XMLName         xml.Name `xml:"CT_TextFont"`
 	TypefaceAttr    string   `xml:"typeface,attr"`
-	PanoseAttr      []byte   `xml:"panose,attr,omitempty"`
-	PitchFamilyAttr byte     `xml:"pitchFamily,attr,omitempty"`
-	CharsetAttr     byte     `xml:"charset,attr,omitempty"`
+	PanoseAttr      string   `xml:"panose,attr,omitempty"`
+	PitchFamilyAttr int8     `xml:"pitchFamily,attr,omitempty"`
+	CharsetAttr     int8     `xml:"charset,attr,omitempty"`
 }
 
 // STTextUnderlineType ...

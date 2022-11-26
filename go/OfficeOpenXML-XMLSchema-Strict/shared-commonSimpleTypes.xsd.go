@@ -10,10 +10,10 @@ import (
 type STLang string
 
 // STHexColorRGB ...
-type STHexColorRGB []byte
+type STHexColorRGB string
 
 // STPanose ...
-type STPanose []byte
+type STPanose string
 
 // STCalendarType ...
 type STCalendarType string

@@ -18,19 +18,19 @@ type CTOnOff struct {
 }
 
 // STLongHexNumber ...
-type STLongHexNumber []byte
+type STLongHexNumber string
 
 // CTLongHexNumber ...
 type CTLongHexNumber struct {
 	XMLName xml.Name `xml:"CT_LongHexNumber"`
-	ValAttr []byte   `xml:"val,attr"`
+	ValAttr string   `xml:"val,attr"`
 }
 
 // STShortHexNumber ...
-type STShortHexNumber []byte
+type STShortHexNumber string
 
 // STUcharHexNumber ...
-type STUcharHexNumber []byte
+type STUcharHexNumber string
 
 // CTCharset ...
 type CTCharset struct {
@@ -173,7 +173,7 @@ type STHexColorAuto string
 // STHexColor ...
 type STHexColor struct {
 	XMLName        xml.Name `xml:"ST_HexColor"`
-	STHexColorRGB  []byte
+	STHexColorRGB  string
 	STHexColorAuto string
 }
 
@@ -182,8 +182,8 @@ type CTColor struct {
 	XMLName        xml.Name    `xml:"CT_Color"`
 	ValAttr        *STHexColor `xml:"val,attr"`
 	ThemeColorAttr string      `xml:"themeColor,attr,omitempty"`
-	ThemeTintAttr  []byte      `xml:"themeTint,attr,omitempty"`
-	ThemeShadeAttr []byte      `xml:"themeShade,attr,omitempty"`
+	ThemeTintAttr  string      `xml:"themeTint,attr,omitempty"`
+	ThemeShadeAttr string      `xml:"themeShade,attr,omitempty"`
 }
 
 // CTLang ...
@@ -207,8 +207,8 @@ type CTUnderline struct {
 	ValAttr        string      `xml:"val,attr,omitempty"`
 	ColorAttr      *STHexColor `xml:"color,attr,omitempty"`
 	ThemeColorAttr string      `xml:"themeColor,attr,omitempty"`
-	ThemeTintAttr  []byte      `xml:"themeTint,attr,omitempty"`
-	ThemeShadeAttr []byte      `xml:"themeShade,attr,omitempty"`
+	ThemeTintAttr  string      `xml:"themeTint,attr,omitempty"`
+	ThemeShadeAttr string      `xml:"themeShade,attr,omitempty"`
 }
 
 // STTextEffect ...
@@ -229,8 +229,8 @@ type CTBorder struct {
 	ValAttr        string      `xml:"val,attr"`
 	ColorAttr      *STHexColor `xml:"color,attr,omitempty"`
 	ThemeColorAttr string      `xml:"themeColor,attr,omitempty"`
-	ThemeTintAttr  []byte      `xml:"themeTint,attr,omitempty"`
-	ThemeShadeAttr []byte      `xml:"themeShade,attr,omitempty"`
+	ThemeTintAttr  string      `xml:"themeTint,attr,omitempty"`
+	ThemeShadeAttr string      `xml:"themeShade,attr,omitempty"`
 	SzAttr         uint64      `xml:"sz,attr,omitempty"`
 	SpaceAttr      uint64      `xml:"space,attr,omitempty"`
 	ShadowAttr     *STOnOff    `xml:"shadow,attr,omitempty"`
@@ -246,12 +246,12 @@ type CTShd struct {
 	ValAttr            string      `xml:"val,attr"`
 	ColorAttr          *STHexColor `xml:"color,attr,omitempty"`
 	ThemeColorAttr     string      `xml:"themeColor,attr,omitempty"`
-	ThemeTintAttr      []byte      `xml:"themeTint,attr,omitempty"`
-	ThemeShadeAttr     []byte      `xml:"themeShade,attr,omitempty"`
+	ThemeTintAttr      string      `xml:"themeTint,attr,omitempty"`
+	ThemeShadeAttr     string      `xml:"themeShade,attr,omitempty"`
 	FillAttr           *STHexColor `xml:"fill,attr,omitempty"`
 	ThemeFillAttr      string      `xml:"themeFill,attr,omitempty"`
-	ThemeFillTintAttr  []byte      `xml:"themeFillTint,attr,omitempty"`
-	ThemeFillShadeAttr []byte      `xml:"themeFillShade,attr,omitempty"`
+	ThemeFillTintAttr  string      `xml:"themeFillTint,attr,omitempty"`
+	ThemeFillShadeAttr string      `xml:"themeFillShade,attr,omitempty"`
 }
 
 // CTVerticalAlignRun ...
@@ -449,8 +449,8 @@ type STDocProtect string
 type AGPassword struct {
 	XMLName           xml.Name `xml:"AG_Password"`
 	AlgorithmNameAttr string   `xml:"algorithmName,attr,omitempty"`
-	HashValueAttr     []byte   `xml:"hashValue,attr,omitempty"`
-	SaltValueAttr     []byte   `xml:"saltValue,attr,omitempty"`
+	HashValueAttr     string   `xml:"hashValue,attr,omitempty"`
+	SaltValueAttr     string   `xml:"saltValue,attr,omitempty"`
 	SpinCountAttr     int      `xml:"spinCount,attr,omitempty"`
 }
 
@@ -831,8 +831,8 @@ type CTBackground struct {
 	XMLName        xml.Name    `xml:"CT_Background"`
 	ColorAttr      *STHexColor `xml:"color,attr,omitempty"`
 	ThemeColorAttr string      `xml:"themeColor,attr,omitempty"`
-	ThemeTintAttr  []byte      `xml:"themeTint,attr,omitempty"`
-	ThemeShadeAttr []byte      `xml:"themeShade,attr,omitempty"`
+	ThemeTintAttr  string      `xml:"themeTint,attr,omitempty"`
+	ThemeShadeAttr string      `xml:"themeShade,attr,omitempty"`
 	Drawing        *CTDrawing  `xml:"drawing"`
 }
 
@@ -1203,10 +1203,10 @@ type EGSectPrContents struct {
 // AGSectPrAttributes ...
 type AGSectPrAttributes struct {
 	XMLName      xml.Name `xml:"AG_SectPrAttributes"`
-	RsidRPrAttr  []byte   `xml:"rsidRPr,attr,omitempty"`
-	RsidDelAttr  []byte   `xml:"rsidDel,attr,omitempty"`
-	RsidRAttr    []byte   `xml:"rsidR,attr,omitempty"`
-	RsidSectAttr []byte   `xml:"rsidSect,attr,omitempty"`
+	RsidRPrAttr  string   `xml:"rsidRPr,attr,omitempty"`
+	RsidDelAttr  string   `xml:"rsidDel,attr,omitempty"`
+	RsidRAttr    string   `xml:"rsidR,attr,omitempty"`
+	RsidSectAttr string   `xml:"rsidSect,attr,omitempty"`
 }
 
 // CTSectPrBase ...
@@ -1259,7 +1259,7 @@ type CTPTab struct {
 type CTSym struct {
 	XMLName  xml.Name `xml:"CT_Sym"`
 	FontAttr string   `xml:"font,attr,omitempty"`
-	CharAttr []byte   `xml:"char,attr,omitempty"`
+	CharAttr string   `xml:"char,attr,omitempty"`
 }
 
 // STProofErr ...
@@ -1338,9 +1338,9 @@ type EGRunInnerContent struct {
 // CTR ...
 type CTR struct {
 	XMLName           xml.Name `xml:"CT_R"`
-	RsidRPrAttr       []byte   `xml:"rsidRPr,attr,omitempty"`
-	RsidDelAttr       []byte   `xml:"rsidDel,attr,omitempty"`
-	RsidRAttr         []byte   `xml:"rsidR,attr,omitempty"`
+	RsidRPrAttr       string   `xml:"rsidRPr,attr,omitempty"`
+	RsidDelAttr       string   `xml:"rsidDel,attr,omitempty"`
+	RsidRAttr         string   `xml:"rsidR,attr,omitempty"`
 	EGRPr             *EGRPr
 	EGRunInnerContent []*EGRunInnerContent
 }
@@ -1843,11 +1843,11 @@ type EGPContent struct {
 // CTP ...
 type CTP struct {
 	XMLName          xml.Name `xml:"CT_P"`
-	RsidRPrAttr      []byte   `xml:"rsidRPr,attr,omitempty"`
-	RsidRAttr        []byte   `xml:"rsidR,attr,omitempty"`
-	RsidDelAttr      []byte   `xml:"rsidDel,attr,omitempty"`
-	RsidPAttr        []byte   `xml:"rsidP,attr,omitempty"`
-	RsidRDefaultAttr []byte   `xml:"rsidRDefault,attr,omitempty"`
+	RsidRPrAttr      string   `xml:"rsidRPr,attr,omitempty"`
+	RsidRAttr        string   `xml:"rsidR,attr,omitempty"`
+	RsidDelAttr      string   `xml:"rsidDel,attr,omitempty"`
+	RsidPAttr        string   `xml:"rsidP,attr,omitempty"`
+	RsidRDefaultAttr string   `xml:"rsidRDefault,attr,omitempty"`
 	EGPContent       []*EGPContent
 	PPr              *CTPPr `xml:"pPr"`
 }
@@ -2018,10 +2018,10 @@ type CTTrPr struct {
 // CTRow ...
 type CTRow struct {
 	XMLName              xml.Name `xml:"CT_Row"`
-	RsidRPrAttr          []byte   `xml:"rsidRPr,attr,omitempty"`
-	RsidRAttr            []byte   `xml:"rsidR,attr,omitempty"`
-	RsidDelAttr          []byte   `xml:"rsidDel,attr,omitempty"`
-	RsidTrAttr           []byte   `xml:"rsidTr,attr,omitempty"`
+	RsidRPrAttr          string   `xml:"rsidRPr,attr,omitempty"`
+	RsidRAttr            string   `xml:"rsidR,attr,omitempty"`
+	RsidDelAttr          string   `xml:"rsidDel,attr,omitempty"`
+	RsidTrAttr           string   `xml:"rsidTr,attr,omitempty"`
 	EGContentCellContent []*EGContentCellContent
 	TblPrEx              *CTTblPrEx `xml:"tblPrEx"`
 	TrPr                 *CTTrPr    `xml:"trPr"`
@@ -2253,7 +2253,7 @@ type CTRecipientData struct {
 // CTBase64Binary ...
 type CTBase64Binary struct {
 	XMLName xml.Name `xml:"CT_Base64Binary"`
-	ValAttr []byte   `xml:"val,attr"`
+	ValAttr string   `xml:"val,attr"`
 }
 
 // CTRecipients ...
@@ -2674,7 +2674,7 @@ type CTLevelText struct {
 type CTLvl struct {
 	XMLName        xml.Name         `xml:"CT_Lvl"`
 	IlvlAttr       int              `xml:"ilvl,attr"`
-	TplcAttr       []byte           `xml:"tplc,attr,omitempty"`
+	TplcAttr       string           `xml:"tplc,attr,omitempty"`
 	TentativeAttr  *STOnOff         `xml:"tentative,attr,omitempty"`
 	Start          *CTDecimalNumber `xml:"start"`
 	NumFmt         *CTNumFmt        `xml:"numFmt"`
@@ -2818,7 +2818,7 @@ type CTStyles struct {
 // CTPanose ...
 type CTPanose struct {
 	XMLName xml.Name `xml:"CT_Panose"`
-	ValAttr []byte   `xml:"val,attr"`
+	ValAttr string   `xml:"val,attr"`
 }
 
 // STFontFamily ...
@@ -2842,12 +2842,12 @@ type CTPitch struct {
 // CTFontSig ...
 type CTFontSig struct {
 	XMLName  xml.Name `xml:"CT_FontSig"`
-	Usb0Attr []byte   `xml:"usb0,attr"`
-	Usb1Attr []byte   `xml:"usb1,attr"`
-	Usb2Attr []byte   `xml:"usb2,attr"`
-	Usb3Attr []byte   `xml:"usb3,attr"`
-	Csb0Attr []byte   `xml:"csb0,attr"`
-	Csb1Attr []byte   `xml:"csb1,attr"`
+	Usb0Attr string   `xml:"usb0,attr"`
+	Usb1Attr string   `xml:"usb1,attr"`
+	Usb2Attr string   `xml:"usb2,attr"`
+	Usb3Attr string   `xml:"usb3,attr"`
+	Csb0Attr string   `xml:"csb0,attr"`
+	Csb1Attr string   `xml:"csb1,attr"`
 }
 
 // CTFontRel ...

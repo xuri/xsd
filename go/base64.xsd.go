@@ -7,13 +7,13 @@ import (
 )
 
 // MyType1 ...
-type MyType1 []byte
+type MyType1 string
 
 // MyType2 ...
 type MyType2 struct {
 	XMLName    xml.Name `xml:"myType2"`
 	LengthAttr int      `xml:"length,attr,omitempty"`
-	Value      []byte   `xml:",chardata"`
+	Value      string   `xml:",chardata"`
 }
 
 // MyType3 ...
@@ -27,7 +27,7 @@ type MyType3 struct {
 type MyType4 struct {
 	XMLName   xml.Name `xml:"myType4"`
 	Title     string   `xml:"title"`
-	Blob      []byte   `xml:"blob"`
+	Blob      string   `xml:"blob"`
 	Timestamp string   `xml:"timestamp"`
 }
 

@@ -998,8 +998,8 @@ type STBookmarkIdSeed uint32
 type CTModifyVerifier struct {
 	XMLName           xml.Name `xml:"CT_ModifyVerifier"`
 	AlgorithmNameAttr string   `xml:"algorithmName,attr,omitempty"`
-	HashValueAttr     []byte   `xml:"hashValue,attr,omitempty"`
-	SaltValueAttr     []byte   `xml:"saltValue,attr,omitempty"`
+	HashValueAttr     string   `xml:"hashValue,attr,omitempty"`
+	SaltValueAttr     string   `xml:"saltValue,attr,omitempty"`
 	SpinValueAttr     uint32   `xml:"spinValue,attr,omitempty"`
 }
 
