@@ -58,12 +58,14 @@ export class DocumentAuthor {
 	State: string;
 }
 
-// Authors ...
+// Authors is The authors of the document. The names of the entities that
+//             are primarily responsible for the content of the document.
 export class Authors {
 	Author: Array<DocumentAuthor>;
 }
 
-// KeyWords ...
+// KeyWords is A keyword pertaining to the document. The metadata can contain any
+//             number of keyword elements, each element specifying one keyword.
 export class KeyWords {
 	KeyWord: string;
 }

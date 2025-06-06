@@ -57,12 +57,14 @@ typedef struct {
 	char State;
 } DocumentAuthor;
 
-// Authors ...
+// Authors is The authors of the document. The names of the entities that
+//             are primarily responsible for the content of the document.
 typedef struct {
 	DocumentAuthor Author[];
 } Authors;
 
-// KeyWords ...
+// KeyWords is A keyword pertaining to the document. The metadata can contain any
+//             number of keyword elements, each element specifying one keyword.
 typedef struct {
 	char KeyWord[];
 } KeyWords;

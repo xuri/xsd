@@ -3,17 +3,17 @@
 // Archetypedescriptor is 1.0.0+
 export type Archetypedescriptor = ArchetypeDescriptor;
 
-// RequiredProperties ...
+// RequiredProperties is List of required properties to generate a project from this archetype.
 export class RequiredProperties {
 	RequiredProperty: Array<RequiredProperty>;
 }
 
-// FileSets ...
+// FileSets is File sets definition.
 export class FileSets {
 	FileSet: Array<FileSet>;
 }
 
-// Modules ...
+// Modules is Modules definition.
 export class Modules {
 	Module: Array<ModuleDescriptor>;
 }
@@ -43,12 +43,12 @@ export class ModuleDescriptor {
 	Modules: Modules;
 }
 
-// Includes ...
+// Includes is Inclusion definition "à la" Ant.
 export class Includes {
 	Include: string;
 }
 
-// Excludes ...
+// Excludes is Exclusion definition "à la" Ant.
 export class Excludes {
 	Exclude: string;
 }

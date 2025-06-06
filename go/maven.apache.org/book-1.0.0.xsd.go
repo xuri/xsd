@@ -9,7 +9,7 @@ import (
 // Book is Describes the book layout and packaging.
 type Book *BookModel
 
-// Chapters ...
+// Chapters is Specifies a collection of chapters.
 type Chapters struct {
 	XMLName xml.Name   `xml:"chapters"`
 	Chapter []*Chapter `xml:"chapter"`
@@ -24,7 +24,7 @@ type BookModel struct {
 	Chapters *Chapters `xml:"chapters"`
 }
 
-// Sections ...
+// Sections is Specifies a collection of sections.
 type Sections struct {
 	XMLName xml.Name   `xml:"sections"`
 	Section []*Section `xml:"section"`

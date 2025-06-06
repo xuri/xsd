@@ -2,27 +2,27 @@
 
 typedef ArchetypeModel Archetype;
 
-// Sources ...
+// Sources is Files that will go into <code>src/main/java</code>.
 typedef struct {
 	Source Source[];
 } Sources;
 
-// Resources ...
+// Resources is Files that will go into <code>src/main/resources</code>.
 typedef struct {
 	Resource Resource[];
 } Resources;
 
-// TestSources ...
+// TestSources is Files that will go into <code>src/test/java</code>.
 typedef struct {
 	Source Source[];
 } TestSources;
 
-// TestResources ...
+// TestResources is Files that will go into <code>src/test/resources</code>.
 typedef struct {
 	Resource Resource[];
 } TestResources;
 
-// SiteResources ...
+// SiteResources is Files that will go into <code>src/site</code>.
 typedef struct {
 	Resource Resource[];
 } SiteResources;

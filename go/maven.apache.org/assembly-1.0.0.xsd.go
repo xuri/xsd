@@ -9,43 +9,51 @@ import (
 // Assembly is Describes the assembly layout and packaging.
 type Assembly *Assembly
 
-// Formats ...
+// Formats is Specify the formats of the assembly.  A format is specified by
+//             supplying one of the following values in a &lt;format&gt; subelement:
+//             <ul>
+//               <li><b>"zip"</b> - Creates a ZIP file format</li>
+//               <li><b>"gz"</b> - Creates a GZIP format</li>
+//               <li><b>"tar"</b> - Creates a TAR format</li>
+//               <li><b>"tar.gz"</b> - Creates a gzip'd TAR format</li>
+//               <li><b>"tar.bz2</b> - Creates a bzip'd TAR format</li>
+//             </ul>
 type Formats struct {
 	XMLName xml.Name `xml:"formats"`
 	Format  []string `xml:"format"`
 }
 
-// ModuleSets ...
+// ModuleSets is Specify which modules source files to include in the assembly
 type ModuleSets struct {
 	XMLName   xml.Name     `xml:"moduleSets"`
 	ModuleSet []*ModuleSet `xml:"moduleSet"`
 }
 
-// FileSets ...
+// FileSets is Specify assembly parameters for groups of files.
 type FileSets struct {
 	XMLName xml.Name   `xml:"fileSets"`
 	FileSet []*FileSet `xml:"fileSet"`
 }
 
-// Files ...
+// Files is Specify assembly parameters for single files.
 type Files struct {
 	XMLName xml.Name    `xml:"files"`
 	File    []*FileItem `xml:"file"`
 }
 
-// DependencySets ...
+// DependencySets is Specify assembly behavior for sets of dependencies.
 type DependencySets struct {
 	XMLName       xml.Name         `xml:"dependencySets"`
 	DependencySet []*DependencySet `xml:"dependencySet"`
 }
 
-// Repositories ...
+// Repositories is Specify assembly behavior for sets of repositories.
 type Repositories struct {
 	XMLName    xml.Name      `xml:"repositories"`
 	Repository []*Repository `xml:"repository"`
 }
 
-// ComponentDescriptors ...
+// ComponentDescriptors is File relative to basedir containing Component.
 type ComponentDescriptors struct {
 	XMLName             xml.Name `xml:"componentDescriptors"`
 	ComponentDescriptor []string `xml:"componentDescriptor"`
@@ -66,19 +74,21 @@ type Assembly struct {
 	ComponentDescriptors *ComponentDescriptors `xml:"componentDescriptors"`
 }
 
-// GroupVersionAlignments ...
+// GroupVersionAlignments is Align a group to a version or an individual artifact.
 type GroupVersionAlignments struct {
 	XMLName               xml.Name                 `xml:"groupVersionAlignments"`
 	GroupVersionAlignment []*GroupVersionAlignment `xml:"groupVersionAlignment"`
 }
 
-// Includes ...
+// Includes is When &lt;include&gt; subelements are present, they define
+//             a set of files and directory to include.
 type Includes struct {
 	XMLName xml.Name `xml:"includes"`
 	Include []string `xml:"include"`
 }
 
-// Excludes ...
+// Excludes is When &lt;exclude&gt; subelements are present, they define
+//             a set of files and directory to exclude.
 type Excludes struct {
 	XMLName xml.Name `xml:"excludes"`
 	Exclude []string `xml:"exclude"`

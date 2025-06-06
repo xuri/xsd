@@ -16,7 +16,7 @@ pub struct archetype {
 }
 
 
-// Sources ...
+// Sources is Files that will go into <code>src/main/java</code>.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Sources {
 	#[serde(rename = "source")]
@@ -24,7 +24,7 @@ pub struct Sources {
 }
 
 
-// Resources ...
+// Resources is Files that will go into <code>src/main/resources</code>.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Resources {
 	#[serde(rename = "resource")]
@@ -32,7 +32,7 @@ pub struct Resources {
 }
 
 
-// TestSources ...
+// TestSources is Files that will go into <code>src/test/java</code>.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct TestSources {
 	#[serde(rename = "source")]
@@ -40,7 +40,7 @@ pub struct TestSources {
 }
 
 
-// TestResources ...
+// TestResources is Files that will go into <code>src/test/resources</code>.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct TestResources {
 	#[serde(rename = "resource")]
@@ -48,7 +48,7 @@ pub struct TestResources {
 }
 
 
-// SiteResources ...
+// SiteResources is Files that will go into <code>src/site</code>.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct SiteResources {
 	#[serde(rename = "resource")]

@@ -3,7 +3,7 @@
 // Verifications is Root element of the verifications file.
 export type Verifications = Verifications;
 
-// Files ...
+// Files is List of files and directories to check.
 export class Files {
 	File: Array<File>;
 }

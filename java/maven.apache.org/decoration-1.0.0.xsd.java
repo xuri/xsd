@@ -18,13 +18,13 @@ public class Project {
 	protected DecorationModel Project;
 }
 
-// PoweredBy ...
+// PoweredBy is Powered by logos list.
 public class PoweredBy {
 	@XmlElement(required = true, name = "logo")
 	protected List<Logo> Logo;
 }
 
-// Custom ...
+// Custom is Custom configuration for use with customised Velocity templates.
 public class Custom {
 }
 
@@ -62,17 +62,17 @@ public class Banner {
 	protected String Href;
 }
 
-// Head ...
+// Head is Additional content (like Javascript) to include in the HEAD block of the generated pages.
 public class Head {
 }
 
-// Links ...
+// Links is A list of links to display in the navigation.
 public class Links {
 	@XmlElement(required = true, name = "item")
 	protected List<LinkItem> Item;
 }
 
-// Breadcrumbs ...
+// Breadcrumbs is A list of breadcrumbs to display in the navigation.
 public class Breadcrumbs {
 	@XmlElement(required = true, name = "item")
 	protected List<LinkItem> Item;

@@ -3,17 +3,17 @@
 // Component is Describes the component layout and packaging.
 export type Component = Component;
 
-// FileSets ...
+// FileSets is Specify assembly parameters for groups of files.
 export class FileSets {
 	FileSet: Array<FileSet>;
 }
 
-// Files ...
+// Files is Specify assembly parameters for single files.
 export class Files {
 	File: Array<FileItem>;
 }
 
-// DependencySets ...
+// DependencySets is Specify assembly behavior for sets of dependencies.
 export class DependencySets {
 	DependencySet: Array<DependencySet>;
 }
@@ -25,12 +25,14 @@ export class Component2 {
 	DependencySets: DependencySets;
 }
 
-// Includes ...
+// Includes is When &lt;include&gt; subelements are present, they define
+//             a set of files and directory to include.
 export class Includes {
 	Include: string;
 }
 
-// Excludes ...
+// Excludes is When &lt;exclude&gt; subelements are present, they define
+//             a set of files and directory to exclude.
 export class Excludes {
 	Exclude: string;
 }

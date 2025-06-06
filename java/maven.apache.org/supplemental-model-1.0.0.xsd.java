@@ -24,7 +24,7 @@ public class SupplementalDataModel {
 	protected List<Supplement> Supplement;
 }
 
-// Project ...
+// Project is Snippets of POM xml files used to supplement the data model.
 public class Project {
 }
 

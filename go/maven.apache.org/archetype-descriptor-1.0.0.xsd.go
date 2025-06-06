@@ -9,19 +9,19 @@ import (
 // Archetypedescriptor is 0.0.0+
 type Archetypedescriptor *ArchetypeDescriptor
 
-// RequiredProperties ...
+// RequiredProperties is List of required properties to generate a project from this archetype.
 type RequiredProperties struct {
 	XMLName          xml.Name            `xml:"requiredProperties"`
 	RequiredProperty []*RequiredProperty `xml:"requiredProperty"`
 }
 
-// FileSets ...
+// FileSets is File sets definition.
 type FileSets struct {
 	XMLName xml.Name   `xml:"fileSets"`
 	FileSet []*FileSet `xml:"fileSet"`
 }
 
-// Modules ...
+// Modules is Modules definition.
 type Modules struct {
 	XMLName xml.Name            `xml:"modules"`
 	Module  []*ModuleDescriptor `xml:"module"`
@@ -36,13 +36,13 @@ type ArchetypeDescriptor struct {
 	Modules            *Modules            `xml:"modules"`
 }
 
-// Includes ...
+// Includes is Inclusion definition "à la" Ant.
 type Includes struct {
 	XMLName xml.Name `xml:"includes"`
 	Include []string `xml:"include"`
 }
 
-// Excludes ...
+// Excludes is Exclusion definition "à la" Ant.
 type Excludes struct {
 	XMLName xml.Name `xml:"excludes"`
 	Exclude []string `xml:"exclude"`

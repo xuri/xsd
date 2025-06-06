@@ -18,31 +18,40 @@ public class Component {
 	protected Component Component;
 }
 
-// FileSets ...
+// FileSets is Specifies which groups of files to include in the assembly. A
+//             fileSet is specified by providing one or more of &lt;fileSet&gt;
+//             subelements.
 public class FileSets {
 	@XmlElement(required = true, name = "fileSet")
 	protected List<FileSet> FileSet;
 }
 
-// Files ...
+// Files is Specifies which single files to include in the assembly. A file
+//             is specified by providing one or more of &lt;file&gt;
+//             subelements.
 public class Files {
 	@XmlElement(required = true, name = "file")
 	protected List<FileItem> File;
 }
 
-// DependencySets ...
+// DependencySets is Specifies which dependencies to include in the assembly. A
+//             dependencySet is specified by providing one or more of
+//             &lt;dependencySet&gt; subelements.
 public class DependencySets {
 	@XmlElement(required = true, name = "dependencySet")
 	protected List<DependencySet> DependencySet;
 }
 
-// Repositories ...
+// Repositories is Specifies a set of repositories to include in the assembly. A
+//             repository is specified by providing one or more of
+//             &lt;repository&gt; subelements.
 public class Repositories {
 	@XmlElement(required = true, name = "repository")
 	protected List<Repository> Repository;
 }
 
-// ContainerDescriptorHandlers ...
+// ContainerDescriptorHandlers is Set of components which filter various container descriptors out of
+//             the normal archive stream, so they can be aggregated then added.
 public class ContainerDescriptorHandlers {
 	@XmlElement(required = true, name = "containerDescriptorHandler")
 	protected List<ContainerDescriptorHandlerConfig> ContainerDescriptorHandler;
@@ -62,7 +71,7 @@ public class Component2 {
 	protected ContainerDescriptorHandlers ContainerDescriptorHandlers;
 }
 
-// Configuration ...
+// Configuration is Configuration options for the handler.
 public class Configuration {
 }
 
@@ -74,19 +83,23 @@ public class ContainerDescriptorHandlerConfig {
 	protected Configuration Configuration;
 }
 
-// GroupVersionAlignments ...
+// GroupVersionAlignments is Align a group to a version or an individual artifact.
 public class GroupVersionAlignments {
 	@XmlElement(required = true, name = "groupVersionAlignment")
 	protected List<GroupVersionAlignment> GroupVersionAlignment;
 }
 
-// Includes ...
+// Includes is When &lt;include&gt; subelements are present, they define a set of
+//             files and directory to include. If none is present, then
+//             &lt;includes&gt; represents all valid values.
 public class Includes {
 	@XmlElement(required = true, name = "include")
 	protected List<String> Include;
 }
 
-// Excludes ...
+// Excludes is When &lt;exclude&gt; subelements are present, they define a set of
+//             files and directory to exclude. If none is present, then
+//             &lt;excludes&gt; represents no exclusions.
 public class Excludes {
 	@XmlElement(required = true, name = "exclude")
 	protected List<String> Exclude;

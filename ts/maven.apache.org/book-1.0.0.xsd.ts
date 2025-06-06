@@ -3,7 +3,7 @@
 // Book is Describes the book layout and packaging.
 export type Book = BookModel;
 
-// Chapters ...
+// Chapters is Specifies a collection of chapters.
 export class Chapters {
 	Chapter: Array<Chapter>;
 }
@@ -17,7 +17,7 @@ export class BookModel {
 	Chapters: Chapters;
 }
 
-// Sections ...
+// Sections is Specifies a collection of sections.
 export class Sections {
 	Section: Array<Section>;
 }

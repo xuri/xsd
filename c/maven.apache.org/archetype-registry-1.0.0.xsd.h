@@ -2,12 +2,12 @@
 
 typedef ArchetypeRegistry Archetyperegistry;
 
-// Languages ...
+// Languages is 0.0.0+
 typedef struct {
 	char Language[];
 } Languages;
 
-// FilteredExtensions ...
+// FilteredExtensions is 0.0.0+
 typedef struct {
 	char FilteredExtension[];
 } FilteredExtensions;

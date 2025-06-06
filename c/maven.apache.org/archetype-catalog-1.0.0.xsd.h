@@ -2,7 +2,7 @@
 
 typedef ArchetypeCatalog Archetypecatalog;
 
-// Archetypes ...
+// Archetypes is List of Acthetypes available in this catalog.
 typedef struct {
 	Archetype Archetype[];
 } Archetypes;

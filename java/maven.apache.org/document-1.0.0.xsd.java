@@ -108,13 +108,15 @@ public class DocumentAuthor {
 	protected String State;
 }
 
-// Authors ...
+// Authors is The authors of the document. The names of the entities that
+//             are primarily responsible for the content of the document.
 public class Authors {
 	@XmlElement(required = true, name = "author")
 	protected List<DocumentAuthor> Author;
 }
 
-// KeyWords ...
+// KeyWords is A keyword pertaining to the document. The metadata can contain any
+//             number of keyword elements, each element specifying one keyword.
 public class KeyWords {
 	@XmlElement(required = true, name = "keyWord")
 	protected List<String> KeyWord;

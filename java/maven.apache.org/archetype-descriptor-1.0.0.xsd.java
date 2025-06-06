@@ -18,19 +18,19 @@ public class Archetypedescriptor {
 	protected ArchetypeDescriptor Archetypedescriptor;
 }
 
-// RequiredProperties ...
+// RequiredProperties is List of required properties to generate a project from this archetype.
 public class RequiredProperties {
 	@XmlElement(required = true, name = "requiredProperty")
 	protected List<RequiredProperty> RequiredProperty;
 }
 
-// FileSets ...
+// FileSets is File sets definition.
 public class FileSets {
 	@XmlElement(required = true, name = "fileSet")
 	protected List<FileSet> FileSet;
 }
 
-// Modules ...
+// Modules is Modules definition.
 public class Modules {
 	@XmlElement(required = true, name = "module")
 	protected List<ModuleDescriptor> Module;
@@ -50,13 +50,13 @@ public class ArchetypeDescriptor {
 	protected Modules Modules;
 }
 
-// Includes ...
+// Includes is Inclusion definition "à la" Ant.
 public class Includes {
 	@XmlElement(required = true, name = "include")
 	protected List<String> Include;
 }
 
-// Excludes ...
+// Excludes is Exclusion definition "à la" Ant.
 public class Excludes {
 	@XmlElement(required = true, name = "exclude")
 	protected List<String> Exclude;

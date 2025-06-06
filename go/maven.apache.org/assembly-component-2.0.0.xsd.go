@@ -9,37 +9,48 @@ import (
 // Component is Describes the component layout and packaging.
 type Component *Component
 
-// ModuleSets ...
+// ModuleSets is Specifies which module files to include in the assembly. A moduleSet
+//             is specified by providing one or more of &lt;moduleSet&gt;
+//             subelements.
 type ModuleSets struct {
 	XMLName   xml.Name     `xml:"moduleSets"`
 	ModuleSet []*ModuleSet `xml:"moduleSet"`
 }
 
-// FileSets ...
+// FileSets is Specifies which groups of files to include in the assembly. A
+//             fileSet is specified by providing one or more of &lt;fileSet&gt;
+//             subelements.
 type FileSets struct {
 	XMLName xml.Name   `xml:"fileSets"`
 	FileSet []*FileSet `xml:"fileSet"`
 }
 
-// Files ...
+// Files is Specifies which single files to include in the assembly. A file
+//             is specified by providing one or more of &lt;file&gt;
+//             subelements.
 type Files struct {
 	XMLName xml.Name    `xml:"files"`
 	File    []*FileItem `xml:"file"`
 }
 
-// DependencySets ...
+// DependencySets is Specifies which dependencies to include in the assembly. A
+//             dependencySet is specified by providing one or more of
+//             &lt;dependencySet&gt; subelements.
 type DependencySets struct {
 	XMLName       xml.Name         `xml:"dependencySets"`
 	DependencySet []*DependencySet `xml:"dependencySet"`
 }
 
-// Repositories ...
+// Repositories is Specifies a set of repositories to include in the assembly. A
+//             repository is specified by providing one or more of
+//             &lt;repository&gt; subelements.
 type Repositories struct {
 	XMLName    xml.Name      `xml:"repositories"`
 	Repository []*Repository `xml:"repository"`
 }
 
-// ContainerDescriptorHandlers ...
+// ContainerDescriptorHandlers is Set of components which filter various container descriptors out of
+//             the normal archive stream, so they can be aggregated then added.
 type ContainerDescriptorHandlers struct {
 	XMLName                    xml.Name                            `xml:"containerDescriptorHandlers"`
 	ContainerDescriptorHandler []*ContainerDescriptorHandlerConfig `xml:"containerDescriptorHandler"`
@@ -65,7 +76,7 @@ type FileItem struct {
 	Filtered        bool   `xml:"filtered"`
 }
 
-// Configuration ...
+// Configuration is Configuration options for the handler.
 type Configuration struct {
 	XMLName xml.Name `xml:"configuration"`
 }
@@ -76,13 +87,17 @@ type ContainerDescriptorHandlerConfig struct {
 	Configuration *Configuration `xml:"configuration"`
 }
 
-// Includes ...
+// Includes is When &lt;include&gt; subelements are present, they define a set of
+//             files and directory to include. If none is present, then
+//             &lt;includes&gt; represents all valid values.
 type Includes struct {
 	XMLName xml.Name `xml:"includes"`
 	Include []string `xml:"include"`
 }
 
-// Excludes ...
+// Excludes is When &lt;exclude&gt; subelements are present, they define a set of
+//             files and directory to exclude. If none is present, then
+//             &lt;excludes&gt; represents no exclusions.
 type Excludes struct {
 	XMLName xml.Name `xml:"excludes"`
 	Exclude []string `xml:"exclude"`
@@ -180,7 +195,9 @@ type DependencySet struct {
 	UseTransitiveFiltering    bool           `xml:"useTransitiveFiltering"`
 }
 
-// GroupVersionAlignments ...
+// GroupVersionAlignments is Specifies that you want to align a group of artifacts to a specified
+//             version. A groupVersionAlignment is specified by providing one or
+//             more of &lt;groupVersionAlignment&gt; subelements.
 type GroupVersionAlignments struct {
 	XMLName               xml.Name                 `xml:"groupVersionAlignments"`
 	GroupVersionAlignment []*GroupVersionAlignment `xml:"groupVersionAlignment"`

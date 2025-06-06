@@ -56,7 +56,8 @@ pub struct DocumentTOCItem {
 }
 
 
-// Authors ...
+// Authors is The authors that appear on the cover page.
+//             Only used if author is not given.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Authors {
 	#[serde(rename = "author")]
@@ -132,7 +133,8 @@ pub struct DocumentAuthor {
 }
 
 
-// KeyWords ...
+// KeyWords is A keyword pertaining to the document. The metadata can contain any
+//             number of keyword elements, each element specifying one keyword.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct KeyWords {
 	#[serde(rename = "keyWord")]

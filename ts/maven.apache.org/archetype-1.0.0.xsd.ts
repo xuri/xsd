@@ -3,27 +3,27 @@
 // Archetype is Describes the assembly layout and packaging.
 export type Archetype = ArchetypeModel;
 
-// Sources ...
+// Sources is Files that will go into <code>src/main/java</code>.
 export class Sources {
 	Source: Array<Source>;
 }
 
-// Resources ...
+// Resources is Files that will go into <code>src/main/resources</code>.
 export class Resources {
 	Resource: Array<Resource>;
 }
 
-// TestSources ...
+// TestSources is Files that will go into <code>src/test/java</code>.
 export class TestSources {
 	Source: Array<Source>;
 }
 
-// TestResources ...
+// TestResources is Files that will go into <code>src/test/resources</code>.
 export class TestResources {
 	Resource: Array<Resource>;
 }
 
-// SiteResources ...
+// SiteResources is Files that will go into <code>src/site</code>.
 export class SiteResources {
 	Resource: Array<Resource>;
 }

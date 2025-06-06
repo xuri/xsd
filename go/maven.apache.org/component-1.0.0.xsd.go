@@ -9,19 +9,19 @@ import (
 // Component is Describes the component layout and packaging.
 type Component *Component
 
-// FileSets ...
+// FileSets is Specify assembly parameters for groups of files.
 type FileSets struct {
 	XMLName xml.Name   `xml:"fileSets"`
 	FileSet []*FileSet `xml:"fileSet"`
 }
 
-// Files ...
+// Files is Specify assembly parameters for single files.
 type Files struct {
 	XMLName xml.Name    `xml:"files"`
 	File    []*FileItem `xml:"file"`
 }
 
-// DependencySets ...
+// DependencySets is Specify assembly behavior for sets of dependencies.
 type DependencySets struct {
 	XMLName       xml.Name         `xml:"dependencySets"`
 	DependencySet []*DependencySet `xml:"dependencySet"`
@@ -34,13 +34,15 @@ type Component struct {
 	DependencySets *DependencySets `xml:"dependencySets"`
 }
 
-// Includes ...
+// Includes is When &lt;include&gt; subelements are present, they define
+//             a set of files and directory to include.
 type Includes struct {
 	XMLName xml.Name `xml:"includes"`
 	Include []string `xml:"include"`
 }
 
-// Excludes ...
+// Excludes is When &lt;exclude&gt; subelements are present, they define
+//             a set of files and directory to exclude.
 type Excludes struct {
 	XMLName xml.Name `xml:"excludes"`
 	Exclude []string `xml:"exclude"`

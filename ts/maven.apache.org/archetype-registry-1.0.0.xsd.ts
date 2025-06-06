@@ -3,12 +3,12 @@
 // Archetyperegistry is 0.0.0+
 export type Archetyperegistry = ArchetypeRegistry;
 
-// Languages ...
+// Languages is 0.0.0+
 export class Languages {
 	Language: string;
 }
 
-// FilteredExtensions ...
+// FilteredExtensions is 0.0.0+
 export class FilteredExtensions {
 	FilteredExtension: string;
 }

@@ -9,31 +9,31 @@ import (
 // Archetype is Describes the assembly layout and packaging.
 type Archetype *ArchetypeModel
 
-// Sources ...
+// Sources is Files that will go into <code>src/main/java</code>.
 type Sources struct {
 	XMLName xml.Name  `xml:"sources"`
 	Source  []*Source `xml:"source"`
 }
 
-// Resources ...
+// Resources is Files that will go into <code>src/main/resources</code>.
 type Resources struct {
 	XMLName  xml.Name    `xml:"resources"`
 	Resource []*Resource `xml:"resource"`
 }
 
-// TestSources ...
+// TestSources is Files that will go into <code>src/test/java</code>.
 type TestSources struct {
 	XMLName xml.Name  `xml:"testSources"`
 	Source  []*Source `xml:"source"`
 }
 
-// TestResources ...
+// TestResources is Files that will go into <code>src/test/resources</code>.
 type TestResources struct {
 	XMLName  xml.Name    `xml:"testResources"`
 	Resource []*Resource `xml:"resource"`
 }
 
-// SiteResources ...
+// SiteResources is Files that will go into <code>src/site</code>.
 type SiteResources struct {
 	XMLName  xml.Name    `xml:"siteResources"`
 	Resource []*Resource `xml:"resource"`

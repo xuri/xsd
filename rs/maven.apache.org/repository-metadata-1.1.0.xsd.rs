@@ -16,7 +16,7 @@ pub struct metadata {
 }
 
 
-// Plugins ...
+// Plugins is The set of plugin mappings for the group represented by this directory
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Plugins {
 	#[serde(rename = "plugin")]
@@ -54,7 +54,7 @@ pub struct Plugin {
 }
 
 
-// Versions ...
+// Versions is Versions available of the artifact (both releases and snapshots)
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Versions {
 	#[serde(rename = "version")]
@@ -62,7 +62,7 @@ pub struct Versions {
 }
 
 
-// SnapshotVersions ...
+// SnapshotVersions is Information for each sub-artifact available in this artifact snapshot.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct SnapshotVersions {
 	#[serde(rename = "snapshotVersion")]

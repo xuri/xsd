@@ -18,37 +18,46 @@ public class Settings {
 	protected Settings Settings;
 }
 
-// Proxies ...
+// Proxies is Configuration for different proxy profiles. Multiple proxy profiles
+//             might come in handy for anyone working from a notebook or other
+//             mobile platform, to enable easy switching of entire proxy
+//             configurations by simply specifying the profile id, again either from
+//             the command line or from the defaults section below.
 public class Proxies {
 	@XmlElement(required = true, name = "proxy")
 	protected List<Proxy> Proxy;
 }
 
-// Servers ...
+// Servers is Configuration of server-specific settings, mainly authentication
+//             method. This allows configuration of authentication on a per-server
+//             basis.
 public class Servers {
 	@XmlElement(required = true, name = "server")
 	protected List<Server> Server;
 }
 
-// Mirrors ...
+// Mirrors is Configuration of download mirrors for repositories.
 public class Mirrors {
 	@XmlElement(required = true, name = "mirror")
 	protected List<Mirror> Mirror;
 }
 
-// Profiles ...
+// Profiles is Configuration of build profiles for adjusting the build
+//             according to environmental parameters.
 public class Profiles {
 	@XmlElement(required = true, name = "profile")
 	protected List<Profile> Profile;
 }
 
-// ActiveProfiles ...
+// ActiveProfiles is List of manually-activated build profiles, specified in the order in which
+//             they should be applied.
 public class ActiveProfiles {
 	@XmlElement(required = true, name = "activeProfile")
 	protected List<String> ActiveProfile;
 }
 
-// PluginGroups ...
+// PluginGroups is List of groupIds to search for a plugin when that plugin
+//             groupId is not explicitly provided.
 public class PluginGroups {
 	@XmlElement(required = true, name = "pluginGroup")
 	protected List<String> PluginGroup;
@@ -110,7 +119,7 @@ public class Proxy {
 	protected String Id;
 }
 
-// Configuration ...
+// Configuration is Extra configuration for the transport layer.
 public class Configuration {
 }
 
@@ -134,17 +143,19 @@ public class Server {
 	protected String Id;
 }
 
-// Properties ...
+// Properties is Extended configuration specific to this profile goes here.
+//             Contents take the form of
+//             <property.name>property.value</property.name>
 public class Properties {
 }
 
-// Repositories ...
+// Repositories is The lists of the remote repositories.
 public class Repositories {
 	@XmlElement(required = true, name = "repository")
 	protected List<Repository> Repository;
 }
 
-// PluginRepositories ...
+// PluginRepositories is The lists of the remote repositories for discovering plugins.
 public class PluginRepositories {
 	@XmlElement(required = true, name = "pluginRepository")
 	protected List<Repository> PluginRepository;

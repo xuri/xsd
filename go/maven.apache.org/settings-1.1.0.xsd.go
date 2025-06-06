@@ -9,37 +9,46 @@ import (
 // Settings is Root element of the user configuration file.
 type Settings *Settings
 
-// Proxies ...
+// Proxies is Configuration for different proxy profiles. Multiple proxy profiles
+//             might come in handy for anyone working from a notebook or other
+//             mobile platform, to enable easy switching of entire proxy
+//             configurations by simply specifying the profile id, again either from
+//             the command line or from the defaults section below.
 type Proxies struct {
 	XMLName xml.Name `xml:"proxies"`
 	Proxy   []*Proxy `xml:"proxy"`
 }
 
-// Servers ...
+// Servers is Configuration of server-specific settings, mainly authentication
+//             method. This allows configuration of authentication on a per-server
+//             basis.
 type Servers struct {
 	XMLName xml.Name  `xml:"servers"`
 	Server  []*Server `xml:"server"`
 }
 
-// Mirrors ...
+// Mirrors is Configuration of download mirrors for repositories.
 type Mirrors struct {
 	XMLName xml.Name  `xml:"mirrors"`
 	Mirror  []*Mirror `xml:"mirror"`
 }
 
-// Profiles ...
+// Profiles is Configuration of build profiles for adjusting the build
+//             according to environmental parameters.
 type Profiles struct {
 	XMLName xml.Name   `xml:"profiles"`
 	Profile []*Profile `xml:"profile"`
 }
 
-// ActiveProfiles ...
+// ActiveProfiles is List of manually-activated build profiles, specified in the order in which
+//             they should be applied.
 type ActiveProfiles struct {
 	XMLName       xml.Name `xml:"activeProfiles"`
 	ActiveProfile []string `xml:"activeProfile"`
 }
 
-// PluginGroups ...
+// PluginGroups is List of groupIds to search for a plugin when that plugin
+//             groupId is not explicitly provided.
 type PluginGroups struct {
 	XMLName     xml.Name `xml:"pluginGroups"`
 	PluginGroup []string `xml:"pluginGroup"`
@@ -71,7 +80,7 @@ type Proxy struct {
 	Id            string `xml:"id"`
 }
 
-// Configuration ...
+// Configuration is Extra configuration for the transport layer.
 type Configuration struct {
 	XMLName xml.Name `xml:"configuration"`
 }
@@ -98,18 +107,20 @@ type Mirror struct {
 	Id              string `xml:"id"`
 }
 
-// Properties ...
+// Properties is Extended configuration specific to this profile goes here.
+//             Contents take the form of
+//             <code>&lt;property.name&gt;property.value&lt;/property.name&gt;</code>
 type Properties struct {
 	XMLName xml.Name `xml:"properties"`
 }
 
-// Repositories ...
+// Repositories is The lists of the remote repositories.
 type Repositories struct {
 	XMLName    xml.Name      `xml:"repositories"`
 	Repository []*Repository `xml:"repository"`
 }
 
-// PluginRepositories ...
+// PluginRepositories is The lists of the remote repositories for discovering plugins.
 type PluginRepositories struct {
 	XMLName          xml.Name      `xml:"pluginRepositories"`
 	PluginRepository []*Repository `xml:"pluginRepository"`

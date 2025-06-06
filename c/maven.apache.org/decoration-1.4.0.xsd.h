@@ -2,12 +2,14 @@
 
 typedef DecorationModel Project;
 
-// PoweredBy ...
+// PoweredBy is Powered by logos list.
 typedef struct {
 	Logo Logo[];
 } PoweredBy;
 
-// Custom ...
+// Custom is Custom configuration for use with customized Velocity templates. Data from this field are
+//             accessible in Velocity template from <code>$decoration.custom</code> variable as DOM content.
+//             Example: <code>$decoration.custom.getChild( 'customElement' ).getValue()</code>
 typedef struct {
 } Custom;
 
@@ -44,21 +46,21 @@ typedef struct {
 	char Title;
 } Banner;
 
-// Head ...
+// Head is Additional content (like Javascript) to include in the HEAD block of the generated pages.
 typedef struct {
 } Head;
 
-// Links ...
+// Links is A list of links to display in the navigation.
 typedef struct {
 	LinkItem Item[];
 } Links;
 
-// Breadcrumbs ...
+// Breadcrumbs is A list of breadcrumbs to display in the navigation.
 typedef struct {
 	LinkItem Item[];
 } Breadcrumbs;
 
-// Footer ...
+// Footer is If present, the contained text will be used instead of the generated copyright text.
 typedef struct {
 } Footer;
 

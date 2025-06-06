@@ -2,32 +2,41 @@
 
 typedef Settings Settings;
 
-// Proxies ...
+// Proxies is Configuration for different proxy profiles. Multiple proxy profiles
+//             might come in handy for anyone working from a notebook or other
+//             mobile platform, to enable easy switching of entire proxy
+//             configurations by simply specifying the profile id, again either from
+//             the command line or from the defaults section below.
 typedef struct {
 	Proxy Proxy[];
 } Proxies;
 
-// Servers ...
+// Servers is Configuration of server-specific settings, mainly authentication
+//             method. This allows configuration of authentication on a per-server
+//             basis.
 typedef struct {
 	Server Server[];
 } Servers;
 
-// Mirrors ...
+// Mirrors is Configuration of download mirrors for repositories.
 typedef struct {
 	Mirror Mirror[];
 } Mirrors;
 
-// Profiles ...
+// Profiles is Configuration of build profiles for adjusting the build
+//             according to environmental parameters.
 typedef struct {
 	Profile Profile[];
 } Profiles;
 
-// ActiveProfiles ...
+// ActiveProfiles is List of manually-activated build profiles, specified in the order in which
+//             they should be applied.
 typedef struct {
 	char ActiveProfile[];
 } ActiveProfiles;
 
-// PluginGroups ...
+// PluginGroups is List of groupIds to search for a plugin when that plugin
+//             groupId is not explicitly provided.
 typedef struct {
 	char PluginGroup[];
 } PluginGroups;
@@ -66,7 +75,7 @@ typedef struct {
 	char Id;
 } Proxy;
 
-// Configuration ...
+// Configuration is Extra configuration for the transport layer.
 typedef struct {
 } Configuration;
 
@@ -82,16 +91,18 @@ typedef struct {
 	char Id;
 } Server;
 
-// Properties ...
+// Properties is Extended configuration specific to this profile goes here.
+//             Contents take the form of
+//             <property.name>property.value</property.name>
 typedef struct {
 } Properties;
 
-// Repositories ...
+// Repositories is The lists of the remote repositories.
 typedef struct {
 	Repository Repository[];
 } Repositories;
 
-// PluginRepositories ...
+// PluginRepositories is The lists of the remote repositories for discovering plugins.
 typedef struct {
 	Repository PluginRepository[];
 } PluginRepositories;

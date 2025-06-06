@@ -17,7 +17,13 @@ pub struct project {
 }
 
 
-// Licenses ...
+// Licenses is This element describes all of the licenses for this project.
+//             Each license is described by a <code>license</code> element, which
+//             is then described by additional elements.
+//             Projects should only list the license(s) that applies to the project
+//             and not the licenses that apply to dependencies.
+//             If multiple licenses are listed, it is assumed that the user can select
+//             any of them, not that they must accept all.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Licenses {
 	#[serde(rename = "license")]
@@ -25,7 +31,7 @@ pub struct Licenses {
 }
 
 
-// Developers ...
+// Developers is Describes the committers of a project.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Developers {
 	#[serde(rename = "developer")]
@@ -33,7 +39,7 @@ pub struct Developers {
 }
 
 
-// Contributors ...
+// Contributors is Describes the contributors to a project that are not yet committers.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Contributors {
 	#[serde(rename = "contributor")]
@@ -41,7 +47,7 @@ pub struct Contributors {
 }
 
 
-// MailingLists ...
+// MailingLists is Contains information about a project's mailing lists.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct MailingLists {
 	#[serde(rename = "mailingList")]
@@ -49,7 +55,10 @@ pub struct MailingLists {
 }
 
 
-// Modules ...
+// Modules is The modules (sometimes called subprojects) to build as a part of this
+//             project. Each module listed is a relative path to the directory containing the module.
+//             To be consistent with the way default urls are calculated from parent, it is recommended
+//             to have module names match artifact ids.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Modules {
 	#[serde(rename = "module")]
@@ -57,13 +66,21 @@ pub struct Modules {
 }
 
 
-// Properties ...
+// Properties is Properties that can be used throughout the POM as a substitution, and
+//             are used as filters in resources if enabled.
+//             The format is <code>&lt;name&gt;value&lt;/name&gt;</code>.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Properties {
 }
 
 
-// Dependencies ...
+// Dependencies is This element describes all of the dependencies associated with a
+//             project.
+//             These dependencies are used to construct a classpath for your
+//             project during the build process. They are automatically downloaded from the
+//             repositories defined in this project.
+//             See <a href="https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html">the
+//             dependency mechanism</a> for more information.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Dependencies {
 	#[serde(rename = "dependency")]
@@ -71,7 +88,8 @@ pub struct Dependencies {
 }
 
 
-// Repositories ...
+// Repositories is The lists of the remote repositories for discovering dependencies and
+//             extensions.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Repositories {
 	#[serde(rename = "repository")]
@@ -79,7 +97,8 @@ pub struct Repositories {
 }
 
 
-// PluginRepositories ...
+// PluginRepositories is The lists of the remote repositories for discovering plugins for builds and
+//             reports.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct PluginRepositories {
 	#[serde(rename = "pluginRepository")]
@@ -87,13 +106,14 @@ pub struct PluginRepositories {
 }
 
 
-// Reports ...
+// Reports is <b>Deprecated</b>. Now ignored by Maven.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Reports {
 }
 
 
-// Profiles ...
+// Profiles is A listing of project-local build profiles which will modify the build process
+//             when activated.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Profiles {
 	#[serde(rename = "profile")]
@@ -185,7 +205,8 @@ pub struct License {
 }
 
 
-// Notifiers ...
+// Notifiers is Configuration for notifying developers/users when a build is unsuccessful,
+//             including user information and notification mode.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Notifiers {
 	#[serde(rename = "notifier")]
@@ -206,7 +227,7 @@ pub struct CiManagement {
 }
 
 
-// Configuration ...
+// Configuration is Extended configuration specific to this notifier goes here.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Configuration {
 }
@@ -273,7 +294,8 @@ pub struct DependencyManagement {
 }
 
 
-// Exclusions ...
+// Exclusions is Lists a set of artifacts that should be excluded from this dependency's
+//             artifact list when it comes to calculating transitive dependencies.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Exclusions {
 	#[serde(rename = "exclusion")]
@@ -344,7 +366,9 @@ pub struct Parent {
 }
 
 
-// Roles ...
+// Roles is The roles the contributor plays in the project. Each role is described by a
+//             <code>role</code> element, the body of which is a role name. This can also be used to
+//             describe the contribution.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Roles {
 	#[serde(rename = "role")]
@@ -376,7 +400,7 @@ pub struct Developer {
 }
 
 
-// OtherArchives ...
+// OtherArchives is The link to alternate URLs where you can browse the list archive.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct OtherArchives {
 	#[serde(rename = "otherArchive")]
@@ -527,7 +551,7 @@ pub struct Site {
 }
 
 
-// Plugins ...
+// Plugins is The reporting plugins to use and their configuration.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Plugins {
 	#[serde(rename = "plugin")]
@@ -548,7 +572,8 @@ pub struct Reporting {
 }
 
 
-// ReportSets ...
+// ReportSets is Multiple specifications of a set of reports, each having (possibly) different
+//             configuration. This is the reporting parallel to an <code>execution</code> in the build.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct ReportSets {
 	#[serde(rename = "reportSet")]
@@ -689,7 +714,10 @@ pub struct Repository {
 }
 
 
-// Resources ...
+// Resources is This element describes all of the classpath resources such as properties
+//             files associated with a project. These resources are often included in the final
+//             package.
+//             The default value is <code>src/main/resources</code>.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Resources {
 	#[serde(rename = "resource")]
@@ -697,7 +725,9 @@ pub struct Resources {
 }
 
 
-// TestResources ...
+// TestResources is This element describes all of the classpath resources such as properties
+//             files associated with a project's unit tests.
+//             The default value is <code>src/test/resources</code>.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct TestResources {
 	#[serde(rename = "testResource")]
@@ -705,7 +735,7 @@ pub struct TestResources {
 }
 
 
-// Filters ...
+// Filters is The list of filter properties files that are used when filtering is enabled.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Filters {
 	#[serde(rename = "filter")]
@@ -738,7 +768,8 @@ pub struct BuildBase {
 }
 
 
-// Executions ...
+// Executions is Multiple specifications of a set of goals to execute during the build
+//             lifecycle, each having (possibly) a different configuration.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Executions {
 	#[serde(rename = "execution")]
@@ -746,7 +777,7 @@ pub struct Executions {
 }
 
 
-// Goals ...
+// Goals is <b>Deprecated</b>. Unused by Maven.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Goals {
 }
@@ -796,7 +827,7 @@ pub struct PluginExecution {
 }
 
 
-// Includes ...
+// Includes is A list of patterns to include, e.g. <code>**&#47;*.xml</code>.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Includes {
 	#[serde(rename = "include")]
@@ -804,7 +835,7 @@ pub struct Includes {
 }
 
 
-// Excludes ...
+// Excludes is A list of patterns to exclude, e.g. <code>**&#47;*.xml</code>
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Excludes {
 	#[serde(rename = "exclude")]
@@ -846,7 +877,7 @@ pub struct Prerequisites {
 }
 
 
-// Extensions ...
+// Extensions is A set of build extensions to use from this project.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Extensions {
 	#[serde(rename = "extension")]

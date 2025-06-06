@@ -9,7 +9,7 @@ import (
 // Metadata is 1.0.0+
 type Metadata *Metadata
 
-// Plugins ...
+// Plugins is The set of plugin mappings for the group represented by this directory
 type Plugins struct {
 	XMLName xml.Name  `xml:"plugins"`
 	Plugin  []*Plugin `xml:"plugin"`
@@ -32,13 +32,13 @@ type Plugin struct {
 	ArtifactId string `xml:"artifactId"`
 }
 
-// Versions ...
+// Versions is Versions available of the artifact (both releases and snapshots)
 type Versions struct {
 	XMLName xml.Name `xml:"versions"`
 	Version []string `xml:"version"`
 }
 
-// SnapshotVersions ...
+// SnapshotVersions is Information for each sub-artifact available in this artifact snapshot.
 type SnapshotVersions struct {
 	XMLName         xml.Name           `xml:"snapshotVersions"`
 	SnapshotVersion []*SnapshotVersion `xml:"snapshotVersion"`

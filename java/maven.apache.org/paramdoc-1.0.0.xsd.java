@@ -18,7 +18,8 @@ public class Paramdoc {
 	protected ExpressionDocumentation Paramdoc;
 }
 
-// Expressions ...
+// Expressions is The list of plugin parameter expressions described by this
+//             document.
 public class Expressions {
 	@XmlElement(required = true, name = "expression")
 	protected List<Expression> Expression;
@@ -30,11 +31,11 @@ public class ExpressionDocumentation {
 	protected Expressions Expressions;
 }
 
-// CliOptions ...
+// CliOptions is The command-line switches used to change the value of this expression.
 public class CliOptions {
 }
 
-// ApiMethods ...
+// ApiMethods is The programmatic methods used to change the value of this expression.
 public class ApiMethods {
 }
 

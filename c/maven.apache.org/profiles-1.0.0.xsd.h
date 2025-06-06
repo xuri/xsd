@@ -2,12 +2,14 @@
 
 typedef ProfilesRoot ProfilesXml;
 
-// Profiles ...
+// Profiles is Configuration of build profiles for adjusting the build
+//             according to environmental parameters
 typedef struct {
 	Profile Profile[];
 } Profiles;
 
-// ActiveProfiles ...
+// ActiveProfiles is List of manually-activated build profiles, specified in the order in which
+//             they should be applied.
 typedef struct {
 	char ActiveProfile[];
 } ActiveProfiles;
@@ -18,16 +20,17 @@ typedef struct {
 	ActiveProfiles ActiveProfiles;
 } ProfilesRoot;
 
-// Properties ...
+// Properties is Extended configuration specific to this profile goes
+//             here.
 typedef struct {
 } Properties;
 
-// Repositories ...
+// Repositories is The lists of the remote repositories
 typedef struct {
 	Repository Repository[];
 } Repositories;
 
-// PluginRepositories ...
+// PluginRepositories is The lists of the remote repositories for discovering plugins
 typedef struct {
 	Repository PluginRepository[];
 } PluginRepositories;

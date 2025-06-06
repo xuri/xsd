@@ -3,12 +3,14 @@
 // Project is The <code>&lt;project&gt;</code> element is the root of the site decoration descriptor.
 export type Project = DecorationModel;
 
-// PoweredBy ...
+// PoweredBy is Powered by logos list.
 export class PoweredBy {
 	Logo: Array<Logo>;
 }
 
-// Custom ...
+// Custom is Custom configuration for use with customized Velocity templates. Data from this field are
+//             accessible in Velocity template from <code>$decoration.custom</code> variable as DOM content.
+//             Example: <code>$decoration.custom.getChild( 'customElement' ).getValue()</code>
 export class Custom {
 }
 
@@ -46,21 +48,21 @@ export class Banner {
 	Title: string;
 }
 
-// Head ...
+// Head is Additional content (like Javascript) to include in the HEAD block of the generated pages.
 export class Head {
 }
 
-// Links ...
+// Links is A list of links to display in the navigation.
 export class Links {
 	Item: Array<LinkItem>;
 }
 
-// Breadcrumbs ...
+// Breadcrumbs is A list of breadcrumbs to display in the navigation.
 export class Breadcrumbs {
 	Item: Array<LinkItem>;
 }
 
-// Footer ...
+// Footer is If present, the contained text will be used instead of the generated copyright text.
 export class Footer {
 }
 

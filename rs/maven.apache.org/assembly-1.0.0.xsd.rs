@@ -16,7 +16,15 @@ pub struct assembly {
 }
 
 
-// Formats ...
+// Formats is Specify the formats of the assembly.  A format is specified by 
+//             supplying one of the following values in a &lt;format&gt; subelement:
+//             <ul>
+//               <li><b>"zip"</b> - Creates a ZIP file format</li>
+//               <li><b>"gz"</b> - Creates a GZIP format</li>
+//               <li><b>"tar"</b> - Creates a TAR format</li>
+//               <li><b>"tar.gz"</b> - Creates a gzip'd TAR format</li>
+//               <li><b>"tar.bz2</b> - Creates a bzip'd TAR format</li>
+//             </ul>
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Formats {
 	#[serde(rename = "format")]
@@ -24,7 +32,7 @@ pub struct Formats {
 }
 
 
-// ModuleSets ...
+// ModuleSets is Specify which modules source files to include in the assembly
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct ModuleSets {
 	#[serde(rename = "moduleSet")]
@@ -32,7 +40,7 @@ pub struct ModuleSets {
 }
 
 
-// FileSets ...
+// FileSets is Specify assembly parameters for groups of files.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct FileSets {
 	#[serde(rename = "fileSet")]
@@ -40,7 +48,7 @@ pub struct FileSets {
 }
 
 
-// Files ...
+// Files is Specify assembly parameters for single files.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Files {
 	#[serde(rename = "file")]
@@ -48,7 +56,7 @@ pub struct Files {
 }
 
 
-// DependencySets ...
+// DependencySets is Specify assembly behavior for sets of dependencies.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct DependencySets {
 	#[serde(rename = "dependencySet")]
@@ -56,7 +64,7 @@ pub struct DependencySets {
 }
 
 
-// Repositories ...
+// Repositories is Specify assembly behavior for sets of repositories.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Repositories {
 	#[serde(rename = "repository")]
@@ -64,7 +72,7 @@ pub struct Repositories {
 }
 
 
-// ComponentDescriptors ...
+// ComponentDescriptors is File relative to basedir containing Component.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct ComponentDescriptors {
 	#[serde(rename = "componentDescriptor")]
@@ -99,7 +107,7 @@ pub struct Assembly {
 }
 
 
-// GroupVersionAlignments ...
+// GroupVersionAlignments is Align a group to a version or an individual artifact.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct GroupVersionAlignments {
 	#[serde(rename = "groupVersionAlignment")]
@@ -107,7 +115,8 @@ pub struct GroupVersionAlignments {
 }
 
 
-// Includes ...
+// Includes is When &lt;include&gt; subelements are present, they define
+//             a set of files and directory to include.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Includes {
 	#[serde(rename = "include")]
@@ -115,7 +124,8 @@ pub struct Includes {
 }
 
 
-// Excludes ...
+// Excludes is When &lt;exclude&gt; subelements are present, they define
+//             a set of files and directory to exclude.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Excludes {
 	#[serde(rename = "exclude")]

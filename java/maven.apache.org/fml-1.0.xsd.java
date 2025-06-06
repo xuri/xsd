@@ -581,7 +581,8 @@ public class HeadMisc {
 	protected List<Isindex> Isindex;
 }
 
-// Head ...
+// Head is content model is "head.misc" combined with a single
+//       title and an optional base element in any order
 public class Head {
 	@XmlElement(required = true)
 	protected I18n I18n;
@@ -596,7 +597,9 @@ public class Head {
 	protected Base Base;
 }
 
-// Title ...
+// Title is The title element is not considered part of the flow of text.
+//       It should be displayed, for example as the page header or
+//       window title. Exactly one title is required per document.
 public class Title {
 	@XmlElement(required = true)
 	protected I18n I18n;
@@ -604,7 +607,7 @@ public class Title {
 	protected String IdAttr;
 }
 
-// Base ...
+// Base is document base URI
 public class Base {
 	@XmlAttribute(name = "id")
 	protected String IdAttr;
@@ -614,7 +617,7 @@ public class Base {
 	protected String TargetAttr;
 }
 
-// Meta ...
+// Meta is generic metainformation
 public class Meta {
 	@XmlElement(required = true)
 	protected I18n I18n;
@@ -630,7 +633,17 @@ public class Meta {
 	protected void SchemeAttr;
 }
 
-// Link ...
+// Link is Relationship values can be used in principle:
+// 
+//       a) for document specific toolbars/menus when used
+//          with the link element in document head e.g.
+//            start, contents, previous, next, index, end, help
+//       b) to link to a separate style sheet (rel="stylesheet")
+//       c) to make a link to a script (rel="script")
+//       d) by stylesheets to control how collections of
+//          html nodes are rendered into printed documents
+//       e) to make a link to a printable version of this document
+//          e.g. a PostScript or PDF version (rel="alternate" media="print")
 public class Link {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -652,7 +665,7 @@ public class Link {
 	protected String TargetAttr;
 }
 
-// Style ...
+// Style is style info, which may include CDATA sections
 public class Style {
 	@XmlElement(required = true)
 	protected I18n I18n;
@@ -668,7 +681,7 @@ public class Style {
 	protected Space XmlSpaceAttr;
 }
 
-// Script2 ...
+// Script2 is script statements, which may include CDATA sections
 public class Script2 {
 	@XmlAttribute(name = "id")
 	protected String IdAttr;
@@ -686,13 +699,13 @@ public class Script2 {
 	protected Space XmlSpaceAttr;
 }
 
-// Noscript ...
+// Noscript is alternate content container for non script-based rendering
 public class Noscript extends Flow  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
-// Iframe ...
+// Iframe is inline subwindow
 public class Iframe extends Flow  {
 	@XmlElement(required = true)
 	protected Coreattrs Coreattrs;
@@ -718,13 +731,13 @@ public class Iframe extends Flow  {
 	protected String WidthAttr;
 }
 
-// Noframes ...
+// Noframes is alternate content container for non frame-based rendering
 public class Noframes extends Flow  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
-// Div ...
+// Div is generic language/style container
 public class Div extends Flow  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -795,7 +808,7 @@ public class ULStyle {
 	protected String ULStyle;
 }
 
-// Ul ...
+// Ul is Unordered list
 public class Ul {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -823,7 +836,7 @@ public class OLStyle {
 	protected String OLStyle;
 }
 
-// Ol ...
+// Ol is Ordered (numbered) list
 public class Ol {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -837,7 +850,7 @@ public class Ol {
 	protected String Ol;
 }
 
-// Menu ...
+// Menu is single column list (DEPRECATED)
 public class Menu {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -847,7 +860,7 @@ public class Menu {
 	protected String Menu;
 }
 
-// Dir ...
+// Dir is multiple column list (DEPRECATED)
 public class Dir {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -864,7 +877,7 @@ public class LIStyle {
 	protected String LIStyle;
 }
 
-// Li ...
+// Li is list item
 public class Li extends Flow  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -898,7 +911,7 @@ public class Dd extends Flow  {
 	protected Attrs Attrs;
 }
 
-// Address ...
+// Address is information on author
 public class Address {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -922,7 +935,8 @@ public class Hr {
 	protected String WidthAttr;
 }
 
-// Pre ...
+// Pre is content is "Inline" excluding
+//          "img|object|applet|big|small|sub|sup|font|basefont"
 public class Pre extends PreContent  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -940,7 +954,7 @@ public class Blockquote extends Flow  {
 	protected String CiteAttr;
 }
 
-// Center ...
+// Center is center content
 public class Center extends Flow  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -966,7 +980,7 @@ public class Del extends Flow  {
 	protected String DatetimeAttr;
 }
 
-// A ...
+// A is content is "Inline" except that anchors shouldn't be nested
 public class A extends AContent  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -994,13 +1008,13 @@ public class A extends AContent  {
 	protected String TargetAttr;
 }
 
-// Span ...
+// Span is generic language/style container
 public class Span extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
-// Bdo ...
+// Bdo is I18N BiDi over-ride
 public class Bdo extends Inline  {
 	@XmlElement(required = true)
 	protected Coreattrs Coreattrs;
@@ -1014,7 +1028,7 @@ public class Bdo extends Inline  {
 	protected String DirAttr;
 }
 
-// Br ...
+// Br is forced line break
 public class Br {
 	@XmlElement(required = true)
 	protected Coreattrs Coreattrs;
@@ -1022,67 +1036,67 @@ public class Br {
 	protected String ClearAttr;
 }
 
-// Em ...
+// Em is emphasis
 public class Em extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
-// Strong ...
+// Strong is strong emphasis
 public class Strong extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
-// Dfn ...
+// Dfn is definitional
 public class Dfn extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
-// Code ...
+// Code is program code
 public class Code extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
-// Samp ...
+// Samp is sample
 public class Samp extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
-// Kbd ...
+// Kbd is something user would type
 public class Kbd extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
-// Var ...
+// Var is variable
 public class Var extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
-// Cite ...
+// Cite is citation
 public class Cite extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
-// Abbr ...
+// Abbr is abbreviation
 public class Abbr extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
-// Acronym ...
+// Acronym is acronym
 public class Acronym extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
-// Q ...
+// Q is inlined quote
 public class Q extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1090,67 +1104,67 @@ public class Q extends Inline  {
 	protected String CiteAttr;
 }
 
-// Sub ...
+// Sub is subscript
 public class Sub extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
-// Sup ...
+// Sup is superscript
 public class Sup extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
-// Tt ...
+// Tt is fixed pitch font
 public class Tt extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
-// I ...
+// I is italic font
 public class I extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
-// B ...
+// B is bold font
 public class B extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
-// Big ...
+// Big is bigger font
 public class Big extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
-// Small ...
+// Small is smaller font
 public class Small extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
-// U ...
+// U is underline
 public class U extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
-// S ...
+// S is strike-through
 public class S extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
-// Strike ...
+// Strike is strike-through
 public class Strike extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 }
 
-// Basefont ...
+// Basefont is base font size
 public class Basefont {
 	@XmlAttribute(name = "id")
 	protected String IdAttr;
@@ -1162,7 +1176,7 @@ public class Basefont {
 	protected void FaceAttr;
 }
 
-// Font ...
+// Font is local change to font
 public class Font extends Inline  {
 	@XmlElement(required = true)
 	protected Coreattrs Coreattrs;
@@ -1223,7 +1237,10 @@ public class Object {
 	protected String Object;
 }
 
-// Param ...
+// Param is param is used to supply a named property value.
+//       In XML it would seem natural to follow RDF and support an
+//       abbreviated syntax where the param elements are replaced
+//       by attribute value pairs on the object start tag.
 public class Param {
 	@XmlAttribute(name = "id")
 	protected String IdAttr;
@@ -1368,7 +1385,8 @@ public class Form extends FormContent  {
 	protected String TargetAttr;
 }
 
-// Label ...
+// Label is Each label must not contain more than ONE field
+//       Label elements shouldn't be nested.
 public class Label extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1389,7 +1407,7 @@ public class InputType {
 	protected String InputType;
 }
 
-// Input ...
+// Input is form control
 public class Input {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1427,7 +1445,7 @@ public class Input {
 	protected String AlignAttr;
 }
 
-// Select ...
+// Select is option selector
 public class Select {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1453,7 +1471,7 @@ public class Select {
 	protected String Select;
 }
 
-// Optgroup ...
+// Optgroup is option group
 public class Optgroup {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1465,7 +1483,7 @@ public class Optgroup {
 	protected String Optgroup;
 }
 
-// Option ...
+// Option is selectable choice
 public class Option {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1479,7 +1497,7 @@ public class Option {
 	protected void ValueAttr;
 }
 
-// Textarea ...
+// Textarea is multi-line text field
 public class Textarea {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1501,7 +1519,12 @@ public class Textarea {
 	protected String OnchangeAttr;
 }
 
-// Fieldset ...
+// Fieldset is The fieldset element is used to group form fields.
+//       Only one legend element should occur in the content
+//       and if present should only be preceded by whitespace.
+// 
+//       NOTE: this content model is different from the XHTML 1.0 DTD,
+//       closer to the intended content model in HTML4 DTD
 public class Fieldset {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1521,7 +1544,7 @@ public class LAlign {
 	protected String LAlign;
 }
 
-// Legend ...
+// Legend is fieldset label
 public class Legend extends Inline  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1531,7 +1554,7 @@ public class Legend extends Inline  {
 	protected String AlignAttr;
 }
 
-// Button ...
+// Button is Content is "Flow" excluding a, form and form controls
 public class Button extends ButtonContent  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1547,7 +1570,7 @@ public class Button extends ButtonContent  {
 	protected String DisabledAttr;
 }
 
-// Isindex ...
+// Isindex is single-line text input control (DEPRECATED)
 public class Isindex {
 	@XmlElement(required = true)
 	protected Coreattrs Coreattrs;
@@ -1694,7 +1717,8 @@ public class Tbody {
 	protected List<Tr> Tr;
 }
 
-// Colgroup ...
+// Colgroup is colgroup groups a set of col elements. It allows you to group
+//       several semantically related columns together.
 public class Colgroup {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1710,7 +1734,16 @@ public class Colgroup {
 	protected List<Col> Col;
 }
 
-// Col ...
+// Col is col elements define the alignment properties for cells in
+//       one or more columns.
+// 
+//       The width attribute specifies the width of the columns, e.g.
+// 
+//           width=64        width in screen pixels
+//           width=0.5*      relative width of 0.5
+// 
+//       The span attribute causes the attributes of one
+//       col element to apply to more than one column.
 public class Col {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
@@ -1807,7 +1840,7 @@ public class Td extends Flow  {
 	protected String HeightAttr;
 }
 
-// Faqs ...
+// Faqs is The <faqs/> element is the root of the FML descriptor.
 public class Faqs {
 	@XmlElement(required = true)
 	protected I18n I18n;
@@ -1821,7 +1854,7 @@ public class Faqs {
 	protected List<Part> Part;
 }
 
-// Part ...
+// Part is A part element of the faqs element.
 public class Part {
 	@XmlAttribute(name = "id")
 	protected String IdAttr;
@@ -1831,7 +1864,7 @@ public class Part {
 	protected List<Faq> Faq;
 }
 
-// Faq ...
+// Faq is A faq element.
 public class Faq {
 	@XmlAttribute(name = "id")
 	protected String IdAttr;
@@ -1841,13 +1874,13 @@ public class Faq {
 	protected Answer Answer;
 }
 
-// Question ...
+// Question is A faq question element.
 public class Question {
 	protected List<Fontstyle> Fontstyle;
 	protected List<Phrase> Phrase;
 }
 
-// Answer ...
+// Answer is A faq answer element.
 public class Answer {
 	protected List<Block> Block;
 	protected List<Inline> Inline;
@@ -1856,6 +1889,6 @@ public class Answer {
 	protected List<String> Form;
 }
 
-// Source ...
+// Source is A source element.
 public class Source {
 }

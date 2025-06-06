@@ -9,7 +9,7 @@ import (
 // Archetypecatalog is 0.0.0+
 type Archetypecatalog *ArchetypeCatalog
 
-// Archetypes ...
+// Archetypes is List of Acthetypes available in this catalog.
 type Archetypes struct {
 	XMLName   xml.Name     `xml:"archetypes"`
 	Archetype []*Archetype `xml:"archetype"`

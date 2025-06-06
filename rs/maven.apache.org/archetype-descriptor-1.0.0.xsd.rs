@@ -16,7 +16,7 @@ pub struct archetypedescriptor {
 }
 
 
-// RequiredProperties ...
+// RequiredProperties is List of required properties to generate a project from this archetype.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct RequiredProperties {
 	#[serde(rename = "requiredProperty")]
@@ -24,7 +24,7 @@ pub struct RequiredProperties {
 }
 
 
-// FileSets ...
+// FileSets is File sets definition.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct FileSets {
 	#[serde(rename = "fileSet")]
@@ -32,7 +32,7 @@ pub struct FileSets {
 }
 
 
-// Modules ...
+// Modules is Modules definition.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Modules {
 	#[serde(rename = "module")]
@@ -56,7 +56,7 @@ pub struct ArchetypeDescriptor {
 }
 
 
-// Includes ...
+// Includes is Inclusion definition "à la" Ant.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Includes {
 	#[serde(rename = "include")]
@@ -64,7 +64,7 @@ pub struct Includes {
 }
 
 
-// Excludes ...
+// Excludes is Exclusion definition "à la" Ant.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Excludes {
 	#[serde(rename = "exclude")]

@@ -18,37 +18,48 @@ public class Component {
 	protected Component Component;
 }
 
-// ModuleSets ...
+// ModuleSets is Specifies which module files to include in the assembly. A moduleSet
+//             is specified by providing one or more of &lt;moduleSet&gt;
+//             subelements.
 public class ModuleSets {
 	@XmlElement(required = true, name = "moduleSet")
 	protected List<ModuleSet> ModuleSet;
 }
 
-// FileSets ...
+// FileSets is Specifies which groups of files to include in the assembly. A
+//             fileSet is specified by providing one or more of &lt;fileSet&gt;
+//             subelements.
 public class FileSets {
 	@XmlElement(required = true, name = "fileSet")
 	protected List<FileSet> FileSet;
 }
 
-// Files ...
+// Files is Specifies which single files to include in the assembly. A file
+//             is specified by providing one or more of &lt;file&gt;
+//             subelements.
 public class Files {
 	@XmlElement(required = true, name = "file")
 	protected List<FileItem> File;
 }
 
-// DependencySets ...
+// DependencySets is Specifies which dependencies to include in the assembly. A
+//             dependencySet is specified by providing one or more of
+//             &lt;dependencySet&gt; subelements.
 public class DependencySets {
 	@XmlElement(required = true, name = "dependencySet")
 	protected List<DependencySet> DependencySet;
 }
 
-// Repositories ...
+// Repositories is Specifies a set of repositories to include in the assembly. A
+//             repository is specified by providing one or more of
+//             &lt;repository&gt; subelements.
 public class Repositories {
 	@XmlElement(required = true, name = "repository")
 	protected List<Repository> Repository;
 }
 
-// ContainerDescriptorHandlers ...
+// ContainerDescriptorHandlers is Set of components which filter various container descriptors out of
+//             the normal archive stream, so they can be aggregated then added.
 public class ContainerDescriptorHandlers {
 	@XmlElement(required = true, name = "containerDescriptorHandler")
 	protected List<ContainerDescriptorHandlerConfig> ContainerDescriptorHandler;
@@ -70,13 +81,25 @@ public class Component2 {
 	protected ContainerDescriptorHandlers ContainerDescriptorHandlers;
 }
 
-// Includes ...
+// Includes is When &lt;include&gt; subelements are present, they define a set of
+//             artifact coordinates to include. If none is present, then
+//             &lt;includes&gt; represents all valid values.
+// 
+//             Artifact coordinates may be given in simple groupId:artifactId form,
+//             or they may be fully qualified in the form groupId:artifactId:type[:classifier]:version.
+//             Additionally, wildcards can be used, as in *:maven-*
 public class Includes {
 	@XmlElement(required = true, name = "include")
 	protected List<String> Include;
 }
 
-// Excludes ...
+// Excludes is When &lt;exclude&gt; subelements are present, they define a set of
+//             dependency artifact coordinates to exclude. If none is present, then
+//             &lt;excludes&gt; represents no exclusions.
+// 
+//             Artifact coordinates may be given in simple groupId:artifactId form,
+//             or they may be fully qualified in the form groupId:artifactId:type[:classifier]:version.
+//             Additionally, wildcards can be used, as in *:maven-*
 public class Excludes {
 	@XmlElement(required = true, name = "exclude")
 	protected List<String> Exclude;
@@ -131,7 +154,7 @@ public class UnpackOptions {
 	protected Boolean UseDefaultExcludes;
 }
 
-// Configuration ...
+// Configuration is Configuration options for the handler.
 public class Configuration {
 }
 
@@ -143,7 +166,9 @@ public class ContainerDescriptorHandlerConfig {
 	protected Configuration Configuration;
 }
 
-// GroupVersionAlignments ...
+// GroupVersionAlignments is Specifies that you want to align a group of artifacts to a specified
+//             version. A groupVersionAlignment is specified by providing one or
+//             more of &lt;groupVersionAlignment&gt; subelements.
 public class GroupVersionAlignments {
 	@XmlElement(required = true, name = "groupVersionAlignment")
 	protected List<GroupVersionAlignment> GroupVersionAlignment;

@@ -3,7 +3,7 @@
 // Archetypecatalog is 0.0.0+
 export type Archetypecatalog = ArchetypeCatalog;
 
-// Archetypes ...
+// Archetypes is List of Acthetypes available in this catalog.
 export class Archetypes {
 	Archetype: Array<Archetype>;
 }

@@ -16,7 +16,7 @@ pub struct archetyperegistry {
 }
 
 
-// Languages ...
+// Languages is 0.0.0+
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Languages {
 	#[serde(rename = "Language")]
@@ -24,7 +24,7 @@ pub struct Languages {
 }
 
 
-// FilteredExtensions ...
+// FilteredExtensions is 0.0.0+
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct FilteredExtensions {
 	#[serde(rename = "FilteredExtension")]

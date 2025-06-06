@@ -3,7 +3,7 @@
 // PluginMetadata is Root element of a script-based mojo's plugin metadata bindings.
 export type PluginMetadata = PluginMetadata;
 
-// Mojos ...
+// Mojos is The list of mojos contained in the accompanying script.
 export class Mojos {
 	Mojo: Array<Mojo>;
 }
@@ -13,12 +13,12 @@ export class PluginMetadata2 {
 	Mojos: Mojos;
 }
 
-// Components ...
+// Components is List of plexus components required by this mojo.
 export class Components {
 	Component: Array<Component>;
 }
 
-// Parameters ...
+// Parameters is List of parameters used by this mojo.
 export class Parameters {
 	Parameter: Array<Parameter>;
 }

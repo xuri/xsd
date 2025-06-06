@@ -3,32 +3,41 @@
 // Settings is Root element of the user configuration file.
 export type Settings = Settings;
 
-// Proxies ...
+// Proxies is Configuration for different proxy profiles. Multiple proxy profiles
+//             might come in handy for anyone working from a notebook or other
+//             mobile platform, to enable easy switching of entire proxy
+//             configurations by simply specifying the profile id, again either from
+//             the command line or from the defaults section below.
 export class Proxies {
 	Proxy: Array<Proxy>;
 }
 
-// Servers ...
+// Servers is Configuration of server-specific settings, mainly authentication
+//             method. This allows configuration of authentication on a per-server
+//             basis.
 export class Servers {
 	Server: Array<Server>;
 }
 
-// Mirrors ...
+// Mirrors is Configuration of download mirrors for repositories.
 export class Mirrors {
 	Mirror: Array<Mirror>;
 }
 
-// Profiles ...
+// Profiles is Configuration of build profiles for adjusting the build
+//             according to environmental parameters.
 export class Profiles {
 	Profile: Array<Profile>;
 }
 
-// ActiveProfiles ...
+// ActiveProfiles is List of manually-activated build profiles, specified in the order in which
+//             they should be applied.
 export class ActiveProfiles {
 	ActiveProfile: string;
 }
 
-// PluginGroups ...
+// PluginGroups is List of groupIds to search for a plugin when that plugin
+//             groupId is not explicitly provided.
 export class PluginGroups {
 	PluginGroup: string;
 }
@@ -59,7 +68,7 @@ export class Proxy {
 	Id: string;
 }
 
-// Configuration ...
+// Configuration is Extra configuration for the transport layer.
 export class Configuration {
 }
 
@@ -85,16 +94,18 @@ export class Mirror {
 	Id: string;
 }
 
-// Properties ...
+// Properties is Extended configuration specific to this profile goes here.
+//             Contents take the form of
+//             <code>&lt;property.name&gt;property.value&lt;/property.name&gt;</code>
 export class Properties {
 }
 
-// Repositories ...
+// Repositories is The lists of the remote repositories.
 export class Repositories {
 	Repository: Array<Repository>;
 }
 
-// PluginRepositories ...
+// PluginRepositories is The lists of the remote repositories for discovering plugins.
 export class PluginRepositories {
 	PluginRepository: Array<Repository>;
 }

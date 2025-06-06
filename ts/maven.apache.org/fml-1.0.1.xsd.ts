@@ -381,7 +381,8 @@ export class HeadMisc {
 	Isindex: Array<Isindex>;
 }
 
-// Head ...
+// Head is content model is "head.misc" combined with a single
+//       title and an optional base element in any order
 export class Head {
 	I18n: I18n;
 	IdAttr: string | null;
@@ -391,20 +392,22 @@ export class Head {
 	Base: Base;
 }
 
-// Title ...
+// Title is The title element is not considered part of the flow of text.
+//       It should be displayed, for example as the page header or
+//       window title. Exactly one title is required per document.
 export class Title {
 	I18n: I18n;
 	IdAttr: string | null;
 }
 
-// Base ...
+// Base is document base URI
 export class Base {
 	IdAttr: string | null;
 	HrefAttr: string | null;
 	TargetAttr: string | null;
 }
 
-// Meta ...
+// Meta is generic metainformation
 export class Meta {
 	I18n: I18n;
 	IdAttr: string | null;
@@ -414,7 +417,17 @@ export class Meta {
 	SchemeAttr: any | null;
 }
 
-// Link ...
+// Link is Relationship values can be used in principle:
+// 
+//       a) for document specific toolbars/menus when used
+//          with the link element in document head e.g.
+//            start, contents, previous, next, index, end, help
+//       b) to link to a separate style sheet (rel="stylesheet")
+//       c) to make a link to a script (rel="script")
+//       d) by stylesheets to control how collections of
+//          html nodes are rendered into printed documents
+//       e) to make a link to a printable version of this document
+//          e.g. a PostScript or PDF version (rel="alternate" media="print")
 export class Link {
 	Attrs: Attrs;
 	CharsetAttr: string | null;
@@ -427,7 +440,7 @@ export class Link {
 	TargetAttr: string | null;
 }
 
-// Style ...
+// Style is style info, which may include CDATA sections
 export class Style {
 	I18n: I18n;
 	IdAttr: string | null;
@@ -437,7 +450,7 @@ export class Style {
 	XmlSpaceAttr: Space | null;
 }
 
-// Script2 ...
+// Script2 is script statements, which may include CDATA sections
 export class Script2 {
 	IdAttr: string | null;
 	CharsetAttr: string | null;
@@ -448,12 +461,12 @@ export class Script2 {
 	XmlSpaceAttr: Space | null;
 }
 
-// Noscript ...
+// Noscript is alternate content container for non script-based rendering
 export class Noscript extends Flow  {
 	Attrs: Attrs;
 }
 
-// Iframe ...
+// Iframe is inline subwindow
 export class Iframe extends Flow  {
 	Coreattrs: Coreattrs;
 	LongdescAttr: string | null;
@@ -468,12 +481,12 @@ export class Iframe extends Flow  {
 	WidthAttr: string | null;
 }
 
-// Noframes ...
+// Noframes is alternate content container for non frame-based rendering
 export class Noframes extends Flow  {
 	Attrs: Attrs;
 }
 
-// Div ...
+// Div is generic language/style container
 export class Div extends Flow  {
 	Attrs: Attrs;
 	TextAlign: TextAlign;
@@ -528,7 +541,7 @@ export enum ULStyle {
 	circle = 'circle',
 }
 
-// Ul ...
+// Ul is Unordered list
 export class Ul {
 	Attrs: Attrs;
 	TypeAttr: string | null;
@@ -548,7 +561,7 @@ export class Ul {
 //       is reset to 1 for the first list item in an ordered list.
 export type OLStyle = string;
 
-// Ol ...
+// Ol is Ordered (numbered) list
 export class Ol {
 	Attrs: Attrs;
 	TypeAttr: string | null;
@@ -557,14 +570,14 @@ export class Ol {
 	Ol: string;
 }
 
-// Menu ...
+// Menu is single column list (DEPRECATED)
 export class Menu {
 	Attrs: Attrs;
 	CompactAttr: string | null;
 	Menu: string;
 }
 
-// Dir ...
+// Dir is multiple column list (DEPRECATED)
 export class Dir {
 	Attrs: Attrs;
 	CompactAttr: string | null;
@@ -574,7 +587,7 @@ export class Dir {
 // LIStyle is LIStyle is constrained to: "(ULStyle|OLStyle)"
 export type LIStyle = string;
 
-// Li ...
+// Li is list item
 export class Li extends Flow  {
 	Attrs: Attrs;
 	TypeAttr: string | null;
@@ -599,7 +612,7 @@ export class Dd extends Flow  {
 	Attrs: Attrs;
 }
 
-// Address ...
+// Address is information on author
 export class Address {
 	Attrs: Attrs;
 	Inline: Array<Inline>;
@@ -616,7 +629,8 @@ export class Hr {
 	WidthAttr: string | null;
 }
 
-// Pre ...
+// Pre is content is "Inline" excluding
+//          "img|object|applet|big|small|sub|sup|font|basefont"
 export class Pre extends PreContent  {
 	Attrs: Attrs;
 	WidthAttr: number | null;
@@ -629,7 +643,7 @@ export class Blockquote extends Flow  {
 	CiteAttr: string | null;
 }
 
-// Center ...
+// Center is center content
 export class Center extends Flow  {
 	Attrs: Attrs;
 }
@@ -648,7 +662,7 @@ export class Del extends Flow  {
 	DatetimeAttr: string | null;
 }
 
-// A ...
+// A is content is "Inline" except that anchors shouldn't be nested
 export class A extends AContent  {
 	Attrs: Attrs;
 	Focus: Focus;
@@ -664,12 +678,12 @@ export class A extends AContent  {
 	TargetAttr: string | null;
 }
 
-// Span ...
+// Span is generic language/style container
 export class Span extends Inline  {
 	Attrs: Attrs;
 }
 
-// Bdo ...
+// Bdo is I18N BiDi over-ride
 export class Bdo extends Inline  {
 	Coreattrs: Coreattrs;
 	Events: Events;
@@ -678,119 +692,119 @@ export class Bdo extends Inline  {
 	DirAttr: string;
 }
 
-// Br ...
+// Br is forced line break
 export class Br {
 	Coreattrs: Coreattrs;
 	ClearAttr: string | null;
 }
 
-// Em ...
+// Em is emphasis
 export class Em extends Inline  {
 	Attrs: Attrs;
 }
 
-// Strong ...
+// Strong is strong emphasis
 export class Strong extends Inline  {
 	Attrs: Attrs;
 }
 
-// Dfn ...
+// Dfn is definitional
 export class Dfn extends Inline  {
 	Attrs: Attrs;
 }
 
-// Code ...
+// Code is program code
 export class Code extends Inline  {
 	Attrs: Attrs;
 }
 
-// Samp ...
+// Samp is sample
 export class Samp extends Inline  {
 	Attrs: Attrs;
 }
 
-// Kbd ...
+// Kbd is something user would type
 export class Kbd extends Inline  {
 	Attrs: Attrs;
 }
 
-// Var ...
+// Var is variable
 export class Var extends Inline  {
 	Attrs: Attrs;
 }
 
-// Cite ...
+// Cite is citation
 export class Cite extends Inline  {
 	Attrs: Attrs;
 }
 
-// Abbr ...
+// Abbr is abbreviation
 export class Abbr extends Inline  {
 	Attrs: Attrs;
 }
 
-// Acronym ...
+// Acronym is acronym
 export class Acronym extends Inline  {
 	Attrs: Attrs;
 }
 
-// Q ...
+// Q is inlined quote
 export class Q extends Inline  {
 	Attrs: Attrs;
 	CiteAttr: string | null;
 }
 
-// Sub ...
+// Sub is subscript
 export class Sub extends Inline  {
 	Attrs: Attrs;
 }
 
-// Sup ...
+// Sup is superscript
 export class Sup extends Inline  {
 	Attrs: Attrs;
 }
 
-// Tt ...
+// Tt is fixed pitch font
 export class Tt extends Inline  {
 	Attrs: Attrs;
 }
 
-// I ...
+// I is italic font
 export class I extends Inline  {
 	Attrs: Attrs;
 }
 
-// B ...
+// B is bold font
 export class B extends Inline  {
 	Attrs: Attrs;
 }
 
-// Big ...
+// Big is bigger font
 export class Big extends Inline  {
 	Attrs: Attrs;
 }
 
-// Small ...
+// Small is smaller font
 export class Small extends Inline  {
 	Attrs: Attrs;
 }
 
-// U ...
+// U is underline
 export class U extends Inline  {
 	Attrs: Attrs;
 }
 
-// S ...
+// S is strike-through
 export class S extends Inline  {
 	Attrs: Attrs;
 }
 
-// Strike ...
+// Strike is strike-through
 export class Strike extends Inline  {
 	Attrs: Attrs;
 }
 
-// Basefont ...
+// Basefont is base font size
 export class Basefont {
 	IdAttr: string | null;
 	SizeAttr: any;
@@ -798,7 +812,7 @@ export class Basefont {
 	FaceAttr: any | null;
 }
 
-// Font ...
+// Font is local change to font
 export class Font extends Inline  {
 	Coreattrs: Coreattrs;
 	I18n: I18n;
@@ -834,7 +848,10 @@ export class Object {
 	Object: string;
 }
 
-// Param ...
+// Param is param is used to supply a named property value.
+//       In XML it would seem natural to follow RDF and support an
+//       abbreviated syntax where the param elements are replaced
+//       by attribute value pairs on the object start tag.
 export class Param {
 	IdAttr: string | null;
 	NameAttr: any;
@@ -921,7 +938,8 @@ export class Form extends FormContent  {
 	TargetAttr: string | null;
 }
 
-// Label ...
+// Label is Each label must not contain more than ONE field
+//       Label elements shouldn't be nested.
 export class Label extends Inline  {
 	Attrs: Attrs;
 	ForAttr: string | null;
@@ -944,7 +962,7 @@ export enum InputType {
 	button = 'button',
 }
 
-// Input ...
+// Input is form control
 export class Input {
 	Attrs: Attrs;
 	Focus: Focus;
@@ -965,7 +983,7 @@ export class Input {
 	AlignAttr: string | null;
 }
 
-// Select ...
+// Select is option selector
 export class Select {
 	Attrs: Attrs;
 	NameAttr: any | null;
@@ -980,7 +998,7 @@ export class Select {
 	Select: string;
 }
 
-// Optgroup ...
+// Optgroup is option group
 export class Optgroup {
 	Attrs: Attrs;
 	DisabledAttr: string | null;
@@ -988,7 +1006,7 @@ export class Optgroup {
 	Optgroup: string;
 }
 
-// Option ...
+// Option is selectable choice
 export class Option {
 	Attrs: Attrs;
 	SelectedAttr: string | null;
@@ -997,7 +1015,7 @@ export class Option {
 	ValueAttr: any | null;
 }
 
-// Textarea ...
+// Textarea is multi-line text field
 export class Textarea {
 	Attrs: Attrs;
 	Focus: Focus;
@@ -1010,7 +1028,12 @@ export class Textarea {
 	OnchangeAttr: string | null;
 }
 
-// Fieldset ...
+// Fieldset is The fieldset element is used to group form fields.
+//       Only one legend element should occur in the content
+//       and if present should only be preceded by whitespace.
+// 
+//       NOTE: this content model is different from the XHTML 1.0 DTD,
+//       closer to the intended content model in HTML4 DTD
 export class Fieldset {
 	Attrs: Attrs;
 	Block: Array<Block>;
@@ -1028,14 +1051,14 @@ export enum LAlign {
 	right = 'right',
 }
 
-// Legend ...
+// Legend is fieldset label
 export class Legend extends Inline  {
 	Attrs: Attrs;
 	AccesskeyAttr: string | null;
 	AlignAttr: string | null;
 }
 
-// Button ...
+// Button is Content is "Flow" excluding a, form and form controls
 export class Button extends ButtonContent  {
 	Attrs: Attrs;
 	Focus: Focus;
@@ -1045,7 +1068,7 @@ export class Button extends ButtonContent  {
 	DisabledAttr: string | null;
 }
 
-// Isindex ...
+// Isindex is single-line text input control (DEPRECATED)
 export class Isindex {
 	Coreattrs: Coreattrs;
 	I18n: I18n;
@@ -1163,7 +1186,8 @@ export class Tbody {
 	Tr: Array<Tr>;
 }
 
-// Colgroup ...
+// Colgroup is colgroup groups a set of col elements. It allows you to group
+//       several semantically related columns together.
 export class Colgroup {
 	Attrs: Attrs;
 	Cellhalign: Cellhalign;
@@ -1173,7 +1197,16 @@ export class Colgroup {
 	Col: Array<Col>;
 }
 
-// Col ...
+// Col is col elements define the alignment properties for cells in
+//       one or more columns.
+// 
+//       The width attribute specifies the width of the columns, e.g.
+// 
+//           width=64        width in screen pixels
+//           width=0.5*      relative width of 0.5
+// 
+//       The span attribute causes the attributes of one
+//       col element to apply to more than one column.
 export class Col {
 	Attrs: Attrs;
 	Cellhalign: Cellhalign;
@@ -1234,7 +1267,7 @@ export class Td extends Flow  {
 	HeightAttr: string | null;
 }
 
-// Faqs ...
+// Faqs is The <faqs/> element is the root of the FML descriptor.
 export class Faqs {
 	I18n: I18n;
 	IdAttr: string | null;
@@ -1243,27 +1276,27 @@ export class Faqs {
 	Part: Array<Part>;
 }
 
-// Part ...
+// Part is A part element of the faqs element.
 export class Part {
 	IdAttr: string | null;
 	Title: Title;
 	Faq: Array<Faq>;
 }
 
-// Faq ...
+// Faq is A faq element.
 export class Faq {
 	IdAttr: string | null;
 	Question: Question;
 	Answer: Answer;
 }
 
-// Question ...
+// Question is A faq question element.
 export class Question {
 	Fontstyle: Array<Fontstyle>;
 	Phrase: Array<Phrase>;
 }
 
-// Answer ...
+// Answer is A faq answer element.
 export class Answer {
 	Block: Array<Block>;
 	Inline: Array<Inline>;
@@ -1271,11 +1304,11 @@ export class Answer {
 	Form: string;
 }
 
-// Source ...
+// Source is A source element.
 export class Source {
 }
 
-// Macro ...
+// Macro is A macro element.
 export class Macro {
 	NameAttr: string;
 	Param: string;

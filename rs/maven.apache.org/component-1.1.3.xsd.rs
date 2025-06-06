@@ -16,7 +16,9 @@ pub struct component {
 }
 
 
-// ModuleSets ...
+// ModuleSets is Specifies which module files to include in the assembly. A moduleSet
+//             is specified by providing one or more of &lt;moduleSet&gt;
+//             subelements.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct ModuleSets {
 	#[serde(rename = "moduleSet")]
@@ -24,7 +26,9 @@ pub struct ModuleSets {
 }
 
 
-// FileSets ...
+// FileSets is Specifies which groups of files to include in the assembly. A
+//             fileSet is specified by providing one or more of &lt;fileSet&gt;
+//             subelements.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct FileSets {
 	#[serde(rename = "fileSet")]
@@ -32,7 +36,9 @@ pub struct FileSets {
 }
 
 
-// Files ...
+// Files is Specifies which single files to include in the assembly. A file
+//             is specified by providing one or more of &lt;file&gt;
+//             subelements.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Files {
 	#[serde(rename = "file")]
@@ -40,7 +46,9 @@ pub struct Files {
 }
 
 
-// DependencySets ...
+// DependencySets is Specifies which dependencies to include in the assembly. A
+//             dependencySet is specified by providing one or more of
+//             &lt;dependencySet&gt; subelements.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct DependencySets {
 	#[serde(rename = "dependencySet")]
@@ -48,7 +56,9 @@ pub struct DependencySets {
 }
 
 
-// Repositories ...
+// Repositories is Specifies a set of repositories to include in the assembly. A
+//             repository is specified by providing one or more of
+//             &lt;repository&gt; subelements.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Repositories {
 	#[serde(rename = "repository")]
@@ -56,7 +66,8 @@ pub struct Repositories {
 }
 
 
-// ContainerDescriptorHandlers ...
+// ContainerDescriptorHandlers is Set of components which filter various container descriptors out of
+//             the normal archive stream, so they can be aggregated then added.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct ContainerDescriptorHandlers {
 	#[serde(rename = "containerDescriptorHandler")]
@@ -82,7 +93,13 @@ pub struct Component {
 }
 
 
-// Includes ...
+// Includes is When &lt;include&gt; subelements are present, they define a set of
+//             artifact coordinates to include. If none is present, then
+//             &lt;includes&gt; represents all valid values.
+// 
+//             Artifact coordinates may be given in simple groupId:artifactId form,
+//             or they may be fully qualified in the form groupId:artifactId:type[:classifier]:version.
+//             Additionally, wildcards can be used, as in *:maven-*
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Includes {
 	#[serde(rename = "include")]
@@ -90,7 +107,13 @@ pub struct Includes {
 }
 
 
-// Excludes ...
+// Excludes is When &lt;exclude&gt; subelements are present, they define a set of
+//             dependency artifact coordinates to exclude. If none is present, then
+//             &lt;excludes&gt; represents no exclusions.
+// 
+//             Artifact coordinates may be given in simple groupId:artifactId form,
+//             or they may be fully qualified in the form groupId:artifactId:type[:classifier]:version.
+//             Additionally, wildcards can be used, as in *:maven-*
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Excludes {
 	#[serde(rename = "exclude")]
@@ -153,7 +176,7 @@ pub struct UnpackOptions {
 }
 
 
-// Configuration ...
+// Configuration is Configuration options for the handler.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Configuration {
 }
@@ -169,7 +192,9 @@ pub struct ContainerDescriptorHandlerConfig {
 }
 
 
-// GroupVersionAlignments ...
+// GroupVersionAlignments is Specifies that you want to align a group of artifacts to a specified
+//             version. A groupVersionAlignment is specified by providing one or
+//             more of &lt;groupVersionAlignment&gt; subelements.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct GroupVersionAlignments {
 	#[serde(rename = "groupVersionAlignment")]

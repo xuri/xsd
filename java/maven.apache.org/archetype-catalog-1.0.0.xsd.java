@@ -18,7 +18,7 @@ public class Archetypecatalog {
 	protected ArchetypeCatalog Archetypecatalog;
 }
 
-// Archetypes ...
+// Archetypes is List of Acthetypes available in this catalog.
 public class Archetypes {
 	@XmlElement(required = true, name = "archetype")
 	protected List<Archetype> Archetype;

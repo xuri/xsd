@@ -8,7 +8,7 @@ extern crate serde_xml_rs;
 use serde_xml_rs::from_reader;
 
 
-// DepthValueRecorded ...
+// DepthValueRecorded is An optional collection of elements relating to recorded sample depth.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct DepthValueRecorded {
 	#[serde(rename = "DepthValue")]
@@ -20,7 +20,7 @@ pub struct DepthValueRecorded {
 }
 
 
-// PurgedVolumeRecorded ...
+// PurgedVolumeRecorded is An optional collection of elements relating to recorded sample volume.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct PurgedVolumeRecorded {
 	#[serde(rename = "PurgedVolume")]
@@ -30,7 +30,7 @@ pub struct PurgedVolumeRecorded {
 }
 
 
-// Measurement ...
+// Measurement is This repeating element contains the structure of a Water Quality measurement.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Measurement {
 	#[serde(rename = "DeterminandName")]
@@ -48,7 +48,7 @@ pub struct Measurement {
 }
 
 
-// Sample ...
+// Sample is This element contains the structure of a collection of samples.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Sample {
 	#[serde(rename = "Sampler")]

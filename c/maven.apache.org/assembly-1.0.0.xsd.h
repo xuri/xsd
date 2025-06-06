@@ -2,37 +2,45 @@
 
 typedef Assembly Assembly;
 
-// Formats ...
+// Formats is Specify the formats of the assembly.  A format is specified by 
+//             supplying one of the following values in a &lt;format&gt; subelement:
+//             <ul>
+//               <li><b>"zip"</b> - Creates a ZIP file format</li>
+//               <li><b>"gz"</b> - Creates a GZIP format</li>
+//               <li><b>"tar"</b> - Creates a TAR format</li>
+//               <li><b>"tar.gz"</b> - Creates a gzip'd TAR format</li>
+//               <li><b>"tar.bz2</b> - Creates a bzip'd TAR format</li>
+//             </ul>
 typedef struct {
 	char Format[];
 } Formats;
 
-// ModuleSets ...
+// ModuleSets is Specify which modules source files to include in the assembly
 typedef struct {
 	ModuleSet ModuleSet[];
 } ModuleSets;
 
-// FileSets ...
+// FileSets is Specify assembly parameters for groups of files.
 typedef struct {
 	FileSet FileSet[];
 } FileSets;
 
-// Files ...
+// Files is Specify assembly parameters for single files.
 typedef struct {
 	FileItem File[];
 } Files;
 
-// DependencySets ...
+// DependencySets is Specify assembly behavior for sets of dependencies.
 typedef struct {
 	DependencySet DependencySet[];
 } DependencySets;
 
-// Repositories ...
+// Repositories is Specify assembly behavior for sets of repositories.
 typedef struct {
 	Repository Repository[];
 } Repositories;
 
-// ComponentDescriptors ...
+// ComponentDescriptors is File relative to basedir containing Component.
 typedef struct {
 	char ComponentDescriptor[];
 } ComponentDescriptors;
@@ -52,17 +60,19 @@ typedef struct {
 	ComponentDescriptors ComponentDescriptors;
 } Assembly;
 
-// GroupVersionAlignments ...
+// GroupVersionAlignments is Align a group to a version or an individual artifact.
 typedef struct {
 	GroupVersionAlignment GroupVersionAlignment[];
 } GroupVersionAlignments;
 
-// Includes ...
+// Includes is When &lt;include&gt; subelements are present, they define
+//             a set of files and directory to include.
 typedef struct {
 	char Include[];
 } Includes;
 
-// Excludes ...
+// Excludes is When &lt;exclude&gt; subelements are present, they define
+//             a set of files and directory to exclude.
 typedef struct {
 	char Exclude[];
 } Excludes;

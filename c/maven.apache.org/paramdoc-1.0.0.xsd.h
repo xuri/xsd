@@ -2,7 +2,8 @@
 
 typedef ExpressionDocumentation Paramdoc;
 
-// Expressions ...
+// Expressions is The list of plugin parameter expressions described by this
+//             document.
 typedef struct {
 	Expression Expression[];
 } Expressions;
@@ -12,11 +13,11 @@ typedef struct {
 	Expressions Expressions;
 } ExpressionDocumentation;
 
-// CliOptions ...
+// CliOptions is The command-line switches used to change the value of this expression.
 typedef struct {
 } CliOptions;
 
-// ApiMethods ...
+// ApiMethods is The programmatic methods used to change the value of this expression.
 typedef struct {
 } ApiMethods;
 

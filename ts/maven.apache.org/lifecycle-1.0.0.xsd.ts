@@ -8,7 +8,7 @@ export class LifecycleConfiguration {
 	Lifecycle: Array<Lifecycle>;
 }
 
-// Phases ...
+// Phases is The phase mappings for this lifecycle.
 export class Phases {
 	Phase: Array<Phase>;
 }
@@ -19,12 +19,12 @@ export class Lifecycle {
 	Phases: Phases;
 }
 
-// Executions ...
+// Executions is The goals to execute within the phase.
 export class Executions {
 	Execution: Array<Execution>;
 }
 
-// Configuration ...
+// Configuration is Configuration to pass to all goals run in this phase.
 export class Configuration {
 }
 
@@ -35,7 +35,7 @@ export class Phase {
 	Configuration: Configuration;
 }
 
-// Goals ...
+// Goals is The goals to execute.
 export class Goals {
 	Goal: string;
 }

@@ -52,7 +52,8 @@ public class DocumentTOCItem {
 	protected List<DocumentTOCItem> Item;
 }
 
-// Authors ...
+// Authors is The authors that appear on the cover page.
+//             Only used if author is not given.
 public class Authors {
 	@XmlElement(required = true, name = "author")
 	protected List<DocumentAuthor> Author;
@@ -122,7 +123,8 @@ public class DocumentAuthor {
 	protected String State;
 }
 
-// KeyWords ...
+// KeyWords is A keyword pertaining to the document. The metadata can contain any
+//             number of keyword elements, each element specifying one keyword.
 public class KeyWords {
 	@XmlElement(required = true, name = "keyWord")
 	protected List<String> KeyWord;

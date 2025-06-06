@@ -16,7 +16,7 @@ pub struct archetypecatalog {
 }
 
 
-// Archetypes ...
+// Archetypes is List of Acthetypes available in this catalog.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Archetypes {
 	#[serde(rename = "archetype")]

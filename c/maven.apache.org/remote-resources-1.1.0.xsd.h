@@ -2,7 +2,7 @@
 
 typedef RemoteResourcesBundle RemoteResourcesBundle;
 
-// RemoteResources ...
+// RemoteResources is Remote resources that are contained in a remote resources bundle.
 typedef struct {
 	char RemoteResource[];
 } RemoteResources;

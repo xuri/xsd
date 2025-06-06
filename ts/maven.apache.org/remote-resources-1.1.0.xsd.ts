@@ -3,7 +3,7 @@
 // RemoteResourcesBundle is Root element of the remote-resources.xml file.
 export type RemoteResourcesBundle = RemoteResourcesBundle;
 
-// RemoteResources ...
+// RemoteResources is Remote resources that are contained in a remote resources bundle.
 export class RemoteResources {
 	RemoteResource: string;
 }

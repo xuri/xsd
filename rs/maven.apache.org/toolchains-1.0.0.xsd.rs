@@ -25,13 +25,19 @@ pub struct PersistedToolchains {
 }
 
 
-// Provides ...
+// Provides is <p>Toolchain identification information, which will be matched against project requirements.</p>
+//                     <p>Actual content structure is completely open: each toochain type will define its own format and semantics.</p>
+//                     <p>In general, this is a properties format: <code>&lt;name&gt;value&lt;/name&gt;</code> with
+//                     predefined properties names.</p>
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Provides {
 }
 
 
-// Configuration ...
+// Configuration is <p>Toolchain configuration information, like location or any information that is to be retrieved.</p>
+//                     <p>Actual content structure is completely open: each toochain type will define its own format and semantics.</p>
+//                     <p>In general, this is a properties format: <code>&lt;name&gt;value&lt;/name&gt;</code> wih
+//                     predefined properties names.</p>
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Configuration {
 }

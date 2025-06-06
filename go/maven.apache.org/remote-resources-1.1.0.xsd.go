@@ -9,7 +9,7 @@ import (
 // RemoteResourcesBundle is Root element of the remote-resources.xml file.
 type RemoteResourcesBundle *RemoteResourcesBundle
 
-// RemoteResources ...
+// RemoteResources is Remote resources that are contained in a remote resources bundle.
 type RemoteResources struct {
 	XMLName        xml.Name `xml:"remoteResources"`
 	RemoteResource []string `xml:"remoteResource"`

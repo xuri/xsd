@@ -18,63 +18,83 @@ public class Project {
 	protected Model Project;
 }
 
-// Licenses ...
+// Licenses is This element describes all of the licenses for this project.
+//             Each license is described by a <code>license</code> element, which
+//             is then described by additional elements.
+//             Projects should only list the license(s) that applies to the project
+//             and not the licenses that apply to dependencies.
+//             If multiple licenses are listed, it is assumed that the user can select
+//             any of them, not that they must accept all.
 public class Licenses {
 	@XmlElement(required = true, name = "license")
 	protected List<License> License;
 }
 
-// Developers ...
+// Developers is Describes the committers of a project.
 public class Developers {
 	@XmlElement(required = true, name = "developer")
 	protected List<Developer> Developer;
 }
 
-// Contributors ...
+// Contributors is Describes the contributors to a project that are not yet committers.
 public class Contributors {
 	@XmlElement(required = true, name = "contributor")
 	protected List<Contributor> Contributor;
 }
 
-// MailingLists ...
+// MailingLists is Contains information about a project's mailing lists.
 public class MailingLists {
 	@XmlElement(required = true, name = "mailingList")
 	protected List<MailingList> MailingList;
 }
 
-// Modules ...
+// Modules is The modules (sometimes called subprojects) to build as a part of this
+//             project. Each module listed is a relative path to the directory containing the module.
+//             To be consistent with the way default urls are calculated from parent, it is recommended
+//             to have module names match artifact ids.
 public class Modules {
 	@XmlElement(required = true, name = "module")
 	protected List<String> Module;
 }
 
-// Properties ...
+// Properties is Properties that can be used throughout the POM as a substitution, and
+//             are used as filters in resources if enabled.
+//             The format is <code>&lt;name&gt;value&lt;/name&gt;</code>.
 public class Properties {
 }
 
-// Dependencies ...
+// Dependencies is This element describes all of the dependencies associated with a
+//             project.
+//             These dependencies are used to construct a classpath for your
+//             project during the build process. They are automatically downloaded from the
+//             repositories defined in this project.
+//             See <a href="https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html">the
+//             dependency mechanism</a> for more information.
 public class Dependencies {
 	@XmlElement(required = true, name = "dependency")
 	protected List<Dependency> Dependency;
 }
 
-// Repositories ...
+// Repositories is The lists of the remote repositories for discovering dependencies and
+//             extensions.
 public class Repositories {
 	@XmlElement(required = true, name = "repository")
 	protected List<Repository> Repository;
 }
 
-// PluginRepositories ...
+// PluginRepositories is The lists of the remote repositories for discovering plugins for builds and
+//             reports.
 public class PluginRepositories {
 	@XmlElement(required = true, name = "pluginRepository")
 	protected List<Repository> PluginRepository;
 }
 
-// Reports ...
+// Reports is <b>Deprecated</b>. Now ignored by Maven.
 public class Reports {
 }
 
-// Profiles ...
+// Profiles is A listing of project-local build profiles which will modify the build process
+//             when activated.
 public class Profiles {
 	@XmlElement(required = true, name = "profile")
 	protected List<Profile> Profile;
@@ -160,7 +180,8 @@ public class License {
 	protected String Comments;
 }
 
-// Notifiers ...
+// Notifiers is Configuration for notifying developers/users when a build is unsuccessful,
+//             including user information and notification mode.
 public class Notifiers {
 	@XmlElement(required = true, name = "notifier")
 	protected List<Notifier> Notifier;
@@ -177,7 +198,7 @@ public class CiManagement {
 	protected Notifiers Notifiers;
 }
 
-// Configuration ...
+// Configuration is Extended configuration specific to this notifier goes here.
 public class Configuration {
 }
 
@@ -234,7 +255,8 @@ public class DependencyManagement {
 	protected Dependencies Dependencies;
 }
 
-// Exclusions ...
+// Exclusions is Lists a set of artifacts that should be excluded from this dependency's
+//             artifact list when it comes to calculating transitive dependencies.
 public class Exclusions {
 	@XmlElement(required = true, name = "exclusion")
 	protected List<Exclusion> Exclusion;
@@ -297,7 +319,9 @@ public class Parent {
 	protected String RelativePath;
 }
 
-// Roles ...
+// Roles is The roles the contributor plays in the project. Each role is described by a
+//             <code>role</code> element, the body of which is a role name. This can also be used to
+//             describe the contribution.
 public class Roles {
 	@XmlElement(required = true, name = "role")
 	protected List<String> Role;
@@ -325,7 +349,7 @@ public class Developer {
 	protected Properties Properties;
 }
 
-// OtherArchives ...
+// OtherArchives is The link to alternate URLs where you can browse the list archive.
 public class OtherArchives {
 	@XmlElement(required = true, name = "otherArchive")
 	protected List<String> OtherArchive;
@@ -458,7 +482,7 @@ public class Site {
 	protected String Url;
 }
 
-// Plugins ...
+// Plugins is The reporting plugins to use and their configuration.
 public class Plugins {
 	@XmlElement(required = true, name = "plugin")
 	protected List<ReportPlugin> Plugin;
@@ -475,7 +499,8 @@ public class Reporting {
 	protected Plugins Plugins;
 }
 
-// ReportSets ...
+// ReportSets is Multiple specifications of a set of reports, each having (possibly) different
+//             configuration. This is the reporting parallel to an <code>execution</code> in the build.
 public class ReportSets {
 	@XmlElement(required = true, name = "reportSet")
 	protected List<ReportSet> ReportSet;
@@ -598,19 +623,24 @@ public class Repository {
 	protected String Layout;
 }
 
-// Resources ...
+// Resources is This element describes all of the classpath resources such as properties
+//             files associated with a project. These resources are often included in the final
+//             package.
+//             The default value is <code>src/main/resources</code>.
 public class Resources {
 	@XmlElement(required = true, name = "resource")
 	protected List<Resource> Resource;
 }
 
-// TestResources ...
+// TestResources is This element describes all of the classpath resources such as properties
+//             files associated with a project's unit tests.
+//             The default value is <code>src/test/resources</code>.
 public class TestResources {
 	@XmlElement(required = true, name = "testResource")
 	protected List<Resource> TestResource;
 }
 
-// Filters ...
+// Filters is The list of filter properties files that are used when filtering is enabled.
 public class Filters {
 	@XmlElement(required = true, name = "filter")
 	protected List<String> Filter;
@@ -639,13 +669,14 @@ public class BuildBase {
 	protected Plugins Plugins;
 }
 
-// Executions ...
+// Executions is Multiple specifications of a set of goals to execute during the build
+//             lifecycle, each having (possibly) a different configuration.
 public class Executions {
 	@XmlElement(required = true, name = "execution")
 	protected List<PluginExecution> Execution;
 }
 
-// Goals ...
+// Goals is <b>Deprecated</b>. Unused by Maven.
 public class Goals {
 }
 
@@ -689,13 +720,13 @@ public class PluginExecution {
 	protected Configuration Configuration;
 }
 
-// Includes ...
+// Includes is A list of patterns to include, e.g. <code>**&#47;*.xml</code>.
 public class Includes {
 	@XmlElement(required = true, name = "include")
 	protected List<String> Include;
 }
 
-// Excludes ...
+// Excludes is A list of patterns to exclude, e.g. <code>**&#47;*.xml</code>
 public class Excludes {
 	@XmlElement(required = true, name = "exclude")
 	protected List<String> Exclude;
@@ -729,7 +760,7 @@ public class Prerequisites {
 	protected String Maven;
 }
 
-// Extensions ...
+// Extensions is A set of build extensions to use from this project.
 public class Extensions {
 	@XmlElement(required = true, name = "extension")
 	protected List<Extension> Extension;

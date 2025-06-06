@@ -2,7 +2,7 @@
 
 typedef Verifications Verifications;
 
-// Files ...
+// Files is List of files and directories to check.
 typedef struct {
 	File File[];
 } Files;

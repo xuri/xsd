@@ -3,12 +3,14 @@
 // ProfilesXml is Root element of the profiles.xml file.
 export type ProfilesXml = ProfilesRoot;
 
-// Profiles ...
+// Profiles is Configuration of build profiles for adjusting the build
+//             according to environmental parameters
 export class Profiles {
 	Profile: Array<Profile>;
 }
 
-// ActiveProfiles ...
+// ActiveProfiles is List of manually-activated build profiles, specified in the order in which
+//             they should be applied.
 export class ActiveProfiles {
 	ActiveProfile: string;
 }
@@ -19,16 +21,17 @@ export class ProfilesRoot {
 	ActiveProfiles: ActiveProfiles;
 }
 
-// Properties ...
+// Properties is Extended configuration specific to this profile goes
+//             here.
 export class Properties {
 }
 
-// Repositories ...
+// Repositories is The lists of the remote repositories
 export class Repositories {
 	Repository: Array<Repository>;
 }
 
-// PluginRepositories ...
+// PluginRepositories is The lists of the remote repositories for discovering plugins
 export class PluginRepositories {
 	PluginRepository: Array<Repository>;
 }

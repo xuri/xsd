@@ -2,55 +2,75 @@
 
 typedef Model Project;
 
-// Licenses ...
+// Licenses is This element describes all of the licenses for this project.
+//             Each license is described by a <code>license</code> element, which
+//             is then described by additional elements.
+//             Projects should only list the license(s) that applies to the project
+//             and not the licenses that apply to dependencies.
+//             If multiple licenses are listed, it is assumed that the user can select
+//             any of them, not that they must accept all.
 typedef struct {
 	License License[];
 } Licenses;
 
-// Developers ...
+// Developers is Describes the committers of a project.
 typedef struct {
 	Developer Developer[];
 } Developers;
 
-// Contributors ...
+// Contributors is Describes the contributors to a project that are not yet committers.
 typedef struct {
 	Contributor Contributor[];
 } Contributors;
 
-// MailingLists ...
+// MailingLists is Contains information about a project's mailing lists.
 typedef struct {
 	MailingList MailingList[];
 } MailingLists;
 
-// Modules ...
+// Modules is The modules (sometimes called subprojects) to build as a part of this
+//             project. Each module listed is a relative path to the directory containing the module.
+//             To be consistent with the way default urls are calculated from parent, it is recommended
+//             to have module names match artifact ids.
 typedef struct {
 	char Module[];
 } Modules;
 
-// Properties ...
+// Properties is Properties that can be used throughout the POM as a substitution, and
+//             are used as filters in resources if enabled.
+//             The format is <code>&lt;name&gt;value&lt;/name&gt;</code>.
 typedef struct {
 } Properties;
 
-// Dependencies ...
+// Dependencies is This element describes all of the dependencies associated with a
+//             project.
+//             These dependencies are used to construct a classpath for your
+//             project during the build process. They are automatically downloaded from the
+//             repositories defined in this project.
+//             See <a href="https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html">the
+//             dependency mechanism</a> for more information.
 typedef struct {
 	Dependency Dependency[];
 } Dependencies;
 
-// Repositories ...
+// Repositories is The lists of the remote repositories for discovering dependencies and
+//             extensions.
 typedef struct {
 	Repository Repository[];
 } Repositories;
 
-// PluginRepositories ...
+// PluginRepositories is The lists of the remote repositories for discovering plugins for builds and
+//             reports.
 typedef struct {
 	Repository PluginRepository[];
 } PluginRepositories;
 
-// Reports ...
+// Reports is <b>Deprecated</b>. Now ignored by Maven.
 typedef struct {
 } Reports;
 
-// Profiles ...
+// Profiles is A listing of project-local build profiles which will modify the build process
+//             when activated.
 typedef struct {
 	Profile Profile[];
 } Profiles;
@@ -100,7 +120,8 @@ typedef struct {
 	char Comments;
 } License;
 
-// Notifiers ...
+// Notifiers is Configuration for notifying developers/users when a build is unsuccessful,
+//             including user information and notification mode.
 typedef struct {
 	Notifier Notifier[];
 } Notifiers;
@@ -113,7 +134,7 @@ typedef struct {
 	Notifiers Notifiers;
 } CiManagement;
 
-// Configuration ...
+// Configuration is Extended configuration specific to this notifier goes here.
 typedef struct {
 } Configuration;
 
@@ -153,7 +174,8 @@ typedef struct {
 	Dependencies Dependencies;
 } DependencyManagement;
 
-// Exclusions ...
+// Exclusions is Lists a set of artifacts that should be excluded from this dependency's
+//             artifact list when it comes to calculating transitive dependencies.
 typedef struct {
 	Exclusion Exclusion[];
 } Exclusions;
@@ -200,7 +222,9 @@ typedef struct {
 	char RelativePath;
 } Parent;
 
-// Roles ...
+// Roles is The roles the contributor plays in the project. Each role is described by a
+//             <code>role</code> element, the body of which is a role name. This can also be used to
+//             describe the contribution.
 typedef struct {
 	char Role[];
 } Roles;
@@ -218,7 +242,7 @@ typedef struct {
 	Properties Properties;
 } Developer;
 
-// OtherArchives ...
+// OtherArchives is The link to alternate URLs where you can browse the list archive.
 typedef struct {
 	char OtherArchive[];
 } OtherArchives;
@@ -310,7 +334,7 @@ typedef struct {
 	char Url;
 } Site;
 
-// Plugins ...
+// Plugins is The reporting plugins to use and their configuration.
 typedef struct {
 	ReportPlugin Plugin[];
 } Plugins;
@@ -323,7 +347,8 @@ typedef struct {
 	Plugins Plugins;
 } Reporting;
 
-// ReportSets ...
+// ReportSets is Multiple specifications of a set of reports, each having (possibly) different
+//             configuration. This is the reporting parallel to an <code>execution</code> in the build.
 typedef struct {
 	ReportSet ReportSet[];
 } ReportSets;
@@ -404,17 +429,22 @@ typedef struct {
 	char Layout;
 } Repository;
 
-// Resources ...
+// Resources is This element describes all of the classpath resources such as properties
+//             files associated with a project. These resources are often included in the final
+//             package.
+//             The default value is <code>src/main/resources</code>.
 typedef struct {
 	Resource Resource[];
 } Resources;
 
-// TestResources ...
+// TestResources is This element describes all of the classpath resources such as properties
+//             files associated with a project's unit tests.
+//             The default value is <code>src/test/resources</code>.
 typedef struct {
 	Resource TestResource[];
 } TestResources;
 
-// Filters ...
+// Filters is The list of filter properties files that are used when filtering is enabled.
 typedef struct {
 	char Filter[];
 } Filters;
@@ -434,12 +464,13 @@ typedef struct {
 	Plugins Plugins;
 } BuildBase;
 
-// Executions ...
+// Executions is Multiple specifications of a set of goals to execute during the build
+//             lifecycle, each having (possibly) a different configuration.
 typedef struct {
 	PluginExecution Execution[];
 } Executions;
 
-// Goals ...
+// Goals is <b>Deprecated</b>. Unused by Maven.
 typedef struct {
 } Goals;
 
@@ -469,12 +500,12 @@ typedef struct {
 	Configuration Configuration;
 } PluginExecution;
 
-// Includes ...
+// Includes is A list of patterns to include, e.g. <code>**&#47;*.xml</code>.
 typedef struct {
 	char Include[];
 } Includes;
 
-// Excludes ...
+// Excludes is A list of patterns to exclude, e.g. <code>**&#47;*.xml</code>
 typedef struct {
 	char Exclude[];
 } Excludes;
@@ -500,7 +531,7 @@ typedef struct {
 	char Maven;
 } Prerequisites;
 
-// Extensions ...
+// Extensions is A set of build extensions to use from this project.
 typedef struct {
 	Extension Extension[];
 } Extensions;

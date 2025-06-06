@@ -14,7 +14,7 @@ type LifecycleConfiguration struct {
 	Lifecycle []*Lifecycle `xml:"lifecycle"`
 }
 
-// Phases ...
+// Phases is The phase mappings for this lifecycle.
 type Phases struct {
 	XMLName xml.Name `xml:"phases"`
 	Phase   []*Phase `xml:"phase"`
@@ -26,13 +26,13 @@ type Lifecycle struct {
 	Phases *Phases `xml:"phases"`
 }
 
-// Executions ...
+// Executions is The goals to execute within the phase.
 type Executions struct {
 	XMLName   xml.Name     `xml:"executions"`
 	Execution []*Execution `xml:"execution"`
 }
 
-// Configuration ...
+// Configuration is Configuration to pass to all goals run in this phase.
 type Configuration struct {
 	XMLName xml.Name `xml:"configuration"`
 }
@@ -44,7 +44,7 @@ type Phase struct {
 	Configuration *Configuration `xml:"configuration"`
 }
 
-// Goals ...
+// Goals is The goals to execute.
 type Goals struct {
 	XMLName xml.Name `xml:"goals"`
 	Goal    []string `xml:"goal"`

@@ -10,13 +10,13 @@ import (
 //          The following table lists all of the possible child elements.
 type Project *DecorationModel
 
-// PoweredBy ...
+// PoweredBy is Powered by logos list.
 type PoweredBy struct {
 	XMLName xml.Name `xml:"poweredBy"`
 	Logo    []*Logo  `xml:"logo"`
 }
 
-// Custom ...
+// Custom is Custom configuration for use with customised Velocity templates.
 type Custom struct {
 	XMLName xml.Name `xml:"custom"`
 }
@@ -42,18 +42,18 @@ type Banner struct {
 	Href string `xml:"href"`
 }
 
-// Head ...
+// Head is Additional content (like Javascript) to include in the HEAD block of the generated pages.
 type Head struct {
 	XMLName xml.Name `xml:"head"`
 }
 
-// Links ...
+// Links is A list of links to display in the navigation.
 type Links struct {
 	XMLName xml.Name    `xml:"links"`
 	Item    []*LinkItem `xml:"item"`
 }
 
-// Breadcrumbs ...
+// Breadcrumbs is A list of breadcrumbs to display in the navigation.
 type Breadcrumbs struct {
 	XMLName xml.Name    `xml:"breadcrumbs"`
 	Item    []*LinkItem `xml:"item"`

@@ -9,7 +9,7 @@ import (
 // Verifications is Root element of the verifications file.
 type Verifications *Verifications
 
-// Files ...
+// Files is List of files and directories to check.
 type Files struct {
 	XMLName xml.Name `xml:"files"`
 	File    []*File  `xml:"file"`

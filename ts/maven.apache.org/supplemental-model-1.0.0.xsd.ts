@@ -8,7 +8,7 @@ export class SupplementalDataModel {
 	Supplement: Array<Supplement>;
 }
 
-// Project ...
+// Project is Snippets of POM xml files used to supplement the data model.
 export class Project {
 }
 

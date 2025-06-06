@@ -18,13 +18,15 @@ public class ProfilesXml {
 	protected ProfilesRoot ProfilesXml;
 }
 
-// Profiles ...
+// Profiles is Configuration of build profiles for adjusting the build
+//             according to environmental parameters
 public class Profiles {
 	@XmlElement(required = true, name = "profile")
 	protected List<Profile> Profile;
 }
 
-// ActiveProfiles ...
+// ActiveProfiles is List of manually-activated build profiles, specified in the order in which
+//             they should be applied.
 public class ActiveProfiles {
 	@XmlElement(required = true, name = "activeProfile")
 	protected List<String> ActiveProfile;
@@ -38,17 +40,18 @@ public class ProfilesRoot {
 	protected ActiveProfiles ActiveProfiles;
 }
 
-// Properties ...
+// Properties is Extended configuration specific to this profile goes
+//             here.
 public class Properties {
 }
 
-// Repositories ...
+// Repositories is The lists of the remote repositories
 public class Repositories {
 	@XmlElement(required = true, name = "repository")
 	protected List<Repository> Repository;
 }
 
-// PluginRepositories ...
+// PluginRepositories is The lists of the remote repositories for discovering plugins
 public class PluginRepositories {
 	@XmlElement(required = true, name = "pluginRepository")
 	protected List<Repository> PluginRepository;

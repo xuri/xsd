@@ -16,7 +16,8 @@ pub struct paramdoc {
 }
 
 
-// Expressions ...
+// Expressions is The list of plugin parameter expressions described by this
+//             document.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Expressions {
 	#[serde(rename = "expression")]
@@ -32,13 +33,13 @@ pub struct ExpressionDocumentation {
 }
 
 
-// CliOptions ...
+// CliOptions is The command-line switches used to change the value of this expression.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CliOptions {
 }
 
 
-// ApiMethods ...
+// ApiMethods is The programmatic methods used to change the value of this expression.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct ApiMethods {
 }

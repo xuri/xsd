@@ -18,7 +18,7 @@ public class Verifications {
 	protected Verifications Verifications;
 }
 
-// Files ...
+// Files is List of files and directories to check.
 public class Files {
 	@XmlElement(required = true, name = "file")
 	protected List<File> File;

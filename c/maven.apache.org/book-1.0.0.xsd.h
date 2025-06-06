@@ -2,7 +2,7 @@
 
 typedef BookModel Book;
 
-// Chapters ...
+// Chapters is Specifies a collection of chapters.
 typedef struct {
 	Chapter Chapter[];
 } Chapters;
@@ -16,7 +16,7 @@ typedef struct {
 	Chapters Chapters;
 } BookModel;
 
-// Sections ...
+// Sections is Specifies a collection of sections.
 typedef struct {
 	Section Section[];
 } Sections;

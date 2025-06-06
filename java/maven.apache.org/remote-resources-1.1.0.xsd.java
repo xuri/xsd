@@ -18,7 +18,7 @@ public class RemoteResourcesBundle {
 	protected RemoteResourcesBundle RemoteResourcesBundle;
 }
 
-// RemoteResources ...
+// RemoteResources is Remote resources that are contained in a remote resources bundle.
 public class RemoteResources {
 	@XmlElement(required = true, name = "remoteResource")
 	protected List<String> RemoteResource;

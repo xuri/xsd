@@ -24,7 +24,7 @@ pub struct LifecycleConfiguration {
 }
 
 
-// Phases ...
+// Phases is The phase mappings for this lifecycle.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Phases {
 	#[serde(rename = "phase")]
@@ -42,7 +42,7 @@ pub struct Lifecycle {
 }
 
 
-// Executions ...
+// Executions is The goals to execute within the phase.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Executions {
 	#[serde(rename = "execution")]
@@ -50,7 +50,7 @@ pub struct Executions {
 }
 
 
-// Configuration ...
+// Configuration is Configuration to pass to all goals run in this phase.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Configuration {
 }
@@ -68,7 +68,7 @@ pub struct Phase {
 }
 
 
-// Goals ...
+// Goals is The goals to execute.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Goals {
 	#[serde(rename = "goal")]

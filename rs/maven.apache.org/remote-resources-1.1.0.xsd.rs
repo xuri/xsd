@@ -16,7 +16,7 @@ pub struct remote_resources_bundle {
 }
 
 
-// RemoteResources ...
+// RemoteResources is Remote resources that are contained in a remote resources bundle.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct RemoteResources {
 	#[serde(rename = "remoteResource")]

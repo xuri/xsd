@@ -14,7 +14,7 @@ type SupplementalDataModel struct {
 	Supplement []*Supplement `xml:"supplement"`
 }
 
-// Project ...
+// Project is Snippets of POM xml files used to supplement the data model.
 type Project struct {
 	XMLName xml.Name `xml:"project"`
 }

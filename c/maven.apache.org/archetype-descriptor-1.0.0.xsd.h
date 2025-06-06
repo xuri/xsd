@@ -2,17 +2,17 @@
 
 typedef ArchetypeDescriptor Archetypedescriptor;
 
-// RequiredProperties ...
+// RequiredProperties is List of required properties to generate a project from this archetype.
 typedef struct {
 	RequiredProperty RequiredProperty[];
 } RequiredProperties;
 
-// FileSets ...
+// FileSets is File sets definition.
 typedef struct {
 	FileSet FileSet[];
 } FileSets;
 
-// Modules ...
+// Modules is Modules definition.
 typedef struct {
 	ModuleDescriptor Module[];
 } Modules;
@@ -26,12 +26,12 @@ typedef struct {
 	Modules Modules;
 } ArchetypeDescriptor;
 
-// Includes ...
+// Includes is Inclusion definition "à la" Ant.
 typedef struct {
 	char Include[];
 } Includes;
 
-// Excludes ...
+// Excludes is Exclusion definition "à la" Ant.
 typedef struct {
 	char Exclude[];
 } Excludes;

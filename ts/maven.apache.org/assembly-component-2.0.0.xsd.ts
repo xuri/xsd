@@ -3,32 +3,43 @@
 // Component is Describes the component layout and packaging.
 export type Component = Component;
 
-// ModuleSets ...
+// ModuleSets is Specifies which module files to include in the assembly. A moduleSet
+//             is specified by providing one or more of &lt;moduleSet&gt;
+//             subelements.
 export class ModuleSets {
 	ModuleSet: Array<ModuleSet>;
 }
 
-// FileSets ...
+// FileSets is Specifies which groups of files to include in the assembly. A
+//             fileSet is specified by providing one or more of &lt;fileSet&gt;
+//             subelements.
 export class FileSets {
 	FileSet: Array<FileSet>;
 }
 
-// Files ...
+// Files is Specifies which single files to include in the assembly. A file
+//             is specified by providing one or more of &lt;file&gt;
+//             subelements.
 export class Files {
 	File: Array<FileItem>;
 }
 
-// DependencySets ...
+// DependencySets is Specifies which dependencies to include in the assembly. A
+//             dependencySet is specified by providing one or more of
+//             &lt;dependencySet&gt; subelements.
 export class DependencySets {
 	DependencySet: Array<DependencySet>;
 }
 
-// Repositories ...
+// Repositories is Specifies a set of repositories to include in the assembly. A
+//             repository is specified by providing one or more of
+//             &lt;repository&gt; subelements.
 export class Repositories {
 	Repository: Array<Repository>;
 }
 
-// ContainerDescriptorHandlers ...
+// ContainerDescriptorHandlers is Set of components which filter various container descriptors out of
+//             the normal archive stream, so they can be aggregated then added.
 export class ContainerDescriptorHandlers {
 	ContainerDescriptorHandler: Array<ContainerDescriptorHandlerConfig>;
 }
@@ -53,7 +64,7 @@ export class FileItem {
 	Filtered: boolean;
 }
 
-// Configuration ...
+// Configuration is Configuration options for the handler.
 export class Configuration {
 }
 
@@ -63,12 +74,16 @@ export class ContainerDescriptorHandlerConfig {
 	Configuration: Configuration;
 }
 
-// Includes ...
+// Includes is When &lt;include&gt; subelements are present, they define a set of
+//             files and directory to include. If none is present, then
+//             &lt;includes&gt; represents all valid values.
 export class Includes {
 	Include: string;
 }
 
-// Excludes ...
+// Excludes is When &lt;exclude&gt; subelements are present, they define a set of
+//             files and directory to exclude. If none is present, then
+//             &lt;excludes&gt; represents no exclusions.
 export class Excludes {
 	Exclude: string;
 }
@@ -165,7 +180,9 @@ export class DependencySet {
 	UseTransitiveFiltering: boolean;
 }
 
-// GroupVersionAlignments ...
+// GroupVersionAlignments is Specifies that you want to align a group of artifacts to a specified
+//             version. A groupVersionAlignment is specified by providing one or
+//             more of &lt;groupVersionAlignment&gt; subelements.
 export class GroupVersionAlignments {
 	GroupVersionAlignment: Array<GroupVersionAlignment>;
 }

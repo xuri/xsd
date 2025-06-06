@@ -18,49 +18,91 @@ public class Assembly {
 	protected Assembly Assembly;
 }
 
-// Formats ...
+// Formats is Specifies the formats of the assembly. 
+//             
+//             It is often better to specify the formats via the goal parameter rather
+//             than here. For example, that allows different profiles to generate
+//             different types of archives.
+//             
+//             Multiple formats can be
+//             supplied and the Assembly Plugin will generate an archive for each
+//             of the desired formats. When deploying your project, all file formats
+//             specified will also be deployed. A format is specified by supplying
+//             one of the following values in a &lt;format&gt; subelement:
+//             <ul>
+//               <li><b>"zip"</b> - Creates a ZIP file format</li>
+//               <li><b>"tar"</b> - Creates a TAR format</li>
+//               <li><b>"tar.gz"</b> - Creates a gzip'd TAR format</li>
+//               <li><b>"tar.bz2"</b> - Creates a bzip'd TAR format</li>
+//               <li><b>"jar"</b> - Creates a JAR format</li>
+//               <li><b>"dir"</b> - Creates an exploded directory format</li>
+//               <li><b>"war"</b> - Creates a WAR format</li>
+//             </ul>
 public class Formats {
 	@XmlElement(required = true, name = "format")
 	protected List<String> Format;
 }
 
-// ContainerDescriptorHandlers ...
+// ContainerDescriptorHandlers is Set of components which filter various container descriptors out of
+//             the normal archive stream, so they can be aggregated then added.
 public class ContainerDescriptorHandlers {
 	@XmlElement(required = true, name = "containerDescriptorHandler")
 	protected List<ContainerDescriptorHandlerConfig> ContainerDescriptorHandler;
 }
 
-// ModuleSets ...
+// ModuleSets is Specifies which module files to include in the assembly. A moduleSet
+//             is specified by providing one or more of &lt;moduleSet&gt;
+//             subelements.
 public class ModuleSets {
 	@XmlElement(required = true, name = "moduleSet")
 	protected List<ModuleSet> ModuleSet;
 }
 
-// FileSets ...
+// FileSets is Specifies which groups of files to include in the assembly. A
+//             fileSet is specified by providing one or more of &lt;fileSet&gt;
+//             subelements.
 public class FileSets {
 	@XmlElement(required = true, name = "fileSet")
 	protected List<FileSet> FileSet;
 }
 
-// Files ...
+// Files is Specifies which single files to include in the assembly. A file
+//             is specified by providing one or more of &lt;file&gt;
+//             subelements.
 public class Files {
 	@XmlElement(required = true, name = "file")
 	protected List<FileItem> File;
 }
 
-// DependencySets ...
+// DependencySets is Specifies which dependencies to include in the assembly. A
+//             dependencySet is specified by providing one or more of
+//             &lt;dependencySet&gt; subelements.
 public class DependencySets {
 	@XmlElement(required = true, name = "dependencySet")
 	protected List<DependencySet> DependencySet;
 }
 
-// Repositories ...
+// Repositories is Specifies which repository files to include in the assembly. A
+//             repository is specified by providing one or more of
+//             &lt;repository&gt; subelements.
 public class Repositories {
 	@XmlElement(required = true, name = "repository")
 	protected List<Repository> Repository;
 }
 
-// ComponentDescriptors ...
+// ComponentDescriptors is Specifies the shared components xml file locations to include in the
+//             assembly. The locations specified must be relative to the base location
+//             of the descriptor. If the descriptor was found via a &lt;descriptorRef/&gt; 
+//             element in the
+//             classpath, any components it specifies will also be found on the classpath.
+//             If it is found by pathname via a &lt;descriptor/&gt; element 
+//             the value here will be interpreted
+//             as a path relative to the project basedir.
+//             When multiple componentDescriptors are found, their
+//             contents are merged. Check out the <a href="component.html">
+//             descriptor components</a> for more information. A
+//             componentDescriptor is specified by providing one or more of
+//             &lt;componentDescriptor&gt; subelements.
 public class ComponentDescriptors {
 	@XmlElement(required = true, name = "componentDescriptor")
 	protected List<String> ComponentDescriptor;
@@ -98,13 +140,25 @@ public class Assembly2 {
 	protected ComponentDescriptors ComponentDescriptors;
 }
 
-// Includes ...
+// Includes is When &lt;include&gt; subelements are present, they define a set of
+//             artifact coordinates to include. If none is present, then
+//             &lt;includes&gt; represents all valid values.
+//             
+//             Artifact coordinates may be given in simple groupId:artifactId form,
+//             or they may be fully qualified in the form groupId:artifactId:type[:classifier]:version.
+//             Additionally, wildcards can be used, as in *:maven-*
 public class Includes {
 	@XmlElement(required = true, name = "include")
 	protected List<String> Include;
 }
 
-// Excludes ...
+// Excludes is When &lt;exclude&gt; subelements are present, they define a set of
+//             dependency artifact coordinates to exclude. If none is present, then
+//             &lt;excludes&gt; represents no exclusions.
+//             
+//             Artifact coordinates may be given in simple groupId:artifactId form,
+//             or they may be fully qualified in the form groupId:artifactId:type[:classifier]:version.
+//             Additionally, wildcards can be used, as in *:maven-*
 public class Excludes {
 	@XmlElement(required = true, name = "exclude")
 	protected List<String> Exclude;
@@ -159,7 +213,9 @@ public class UnpackOptions {
 	protected Boolean UseDefaultExcludes;
 }
 
-// GroupVersionAlignments ...
+// GroupVersionAlignments is Specifies that you want to align a group of artifacts to a specified
+//             version. A groupVersionAlignment is specified by providing one or
+//             more of &lt;groupVersionAlignment&gt; subelements.
 public class GroupVersionAlignments {
 	@XmlElement(required = true, name = "groupVersionAlignment")
 	protected List<GroupVersionAlignment> GroupVersionAlignment;
@@ -198,7 +254,7 @@ public class GroupVersionAlignment {
 	protected Excludes Excludes;
 }
 
-// Configuration ...
+// Configuration is Configuration options for the handler.
 public class Configuration {
 }
 

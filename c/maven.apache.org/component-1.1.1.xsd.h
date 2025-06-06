@@ -2,27 +2,36 @@
 
 typedef Component Component;
 
-// FileSets ...
+// FileSets is Specifies which groups of files to include in the assembly. A
+//             fileSet is specified by providing one or more of &lt;fileSet&gt;
+//             subelements.
 typedef struct {
 	FileSet FileSet[];
 } FileSets;
 
-// Files ...
+// Files is Specifies which single files to include in the assembly. A file
+//             is specified by providing one or more of &lt;file&gt;
+//             subelements.
 typedef struct {
 	FileItem File[];
 } Files;
 
-// DependencySets ...
+// DependencySets is Specifies which dependencies to include in the assembly. A
+//             dependencySet is specified by providing one or more of
+//             &lt;dependencySet&gt; subelements.
 typedef struct {
 	DependencySet DependencySet[];
 } DependencySets;
 
-// Repositories ...
+// Repositories is Specifies a set of repositories to include in the assembly. A
+//             repository is specified by providing one or more of
+//             &lt;repository&gt; subelements.
 typedef struct {
 	Repository Repository[];
 } Repositories;
 
-// ContainerDescriptorHandlers ...
+// ContainerDescriptorHandlers is Set of components which filter various container descriptors out of
+//             the normal archive stream, so they can be aggregated then added.
 typedef struct {
 	ContainerDescriptorHandlerConfig ContainerDescriptorHandler[];
 } ContainerDescriptorHandlers;
@@ -36,7 +45,7 @@ typedef struct {
 	ContainerDescriptorHandlers ContainerDescriptorHandlers;
 } Component;
 
-// Configuration ...
+// Configuration is Configuration options for the handler.
 typedef struct {
 } Configuration;
 
@@ -46,17 +55,21 @@ typedef struct {
 	Configuration Configuration;
 } ContainerDescriptorHandlerConfig;
 
-// GroupVersionAlignments ...
+// GroupVersionAlignments is Align a group to a version or an individual artifact.
 typedef struct {
 	GroupVersionAlignment GroupVersionAlignment[];
 } GroupVersionAlignments;
 
-// Includes ...
+// Includes is When &lt;include&gt; subelements are present, they define a set of
+//             files and directory to include. If none is present, then
+//             &lt;includes&gt; represents all valid values.
 typedef struct {
 	char Include[];
 } Includes;
 
-// Excludes ...
+// Excludes is When &lt;exclude&gt; subelements are present, they define a set of
+//             files and directory to exclude. If none is present, then
+//             &lt;excludes&gt; represents no exclusions.
 typedef struct {
 	char Exclude[];
 } Excludes;

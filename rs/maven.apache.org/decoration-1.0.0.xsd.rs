@@ -17,7 +17,7 @@ pub struct project {
 }
 
 
-// PoweredBy ...
+// PoweredBy is Powered by logos list.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct PoweredBy {
 	#[serde(rename = "logo")]
@@ -25,7 +25,7 @@ pub struct PoweredBy {
 }
 
 
-// Custom ...
+// Custom is Custom configuration for use with customised Velocity templates.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Custom {
 }
@@ -69,13 +69,13 @@ pub struct Banner {
 }
 
 
-// Head ...
+// Head is Additional content (like Javascript) to include in the HEAD block of the generated pages.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Head {
 }
 
 
-// Links ...
+// Links is A list of links to display in the navigation.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Links {
 	#[serde(rename = "item")]
@@ -83,7 +83,7 @@ pub struct Links {
 }
 
 
-// Breadcrumbs ...
+// Breadcrumbs is A list of breadcrumbs to display in the navigation.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Breadcrumbs {
 	#[serde(rename = "item")]

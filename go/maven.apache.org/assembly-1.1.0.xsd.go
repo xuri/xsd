@@ -14,49 +14,77 @@ import (
 //         a stand-alone application.
 type Assembly *Assembly
 
-// Formats ...
+// Formats is Specifies the formats of the assembly. Multiple formats can be
+//             supplied and the Assembly Plugin will generate an archive for each
+//             desired formats. When deploying your project, all file formats
+//             specified will also be deployed. A format is specified by supplying
+//             one of the following values in a &lt;format&gt; subelement:
+//             <ul>
+//               <li><b>"zip"</b> - Creates a ZIP file format</li>
+//               <li><b>"gz"</b> - Creates a GZIP format</li>
+//               <li><b>"tar"</b> - Creates a TAR format</li>
+//               <li><b>"tar.gz"</b> - Creates a gzip'd TAR format</li>
+//               <li><b>"tar.bz2"</b> - Creates a bzip'd TAR format</li>
+//             </ul>
 type Formats struct {
 	XMLName xml.Name `xml:"formats"`
 	Format  []string `xml:"format"`
 }
 
-// ContainerDescriptorHandlers ...
+// ContainerDescriptorHandlers is Set of components which filter various container descriptors out of
+//             the normal archive stream, so they can be aggregated then added.
 type ContainerDescriptorHandlers struct {
 	XMLName                    xml.Name                            `xml:"containerDescriptorHandlers"`
 	ContainerDescriptorHandler []*ContainerDescriptorHandlerConfig `xml:"containerDescriptorHandler"`
 }
 
-// ModuleSets ...
+// ModuleSets is Specifies which module files to include in the assembly. A moduleSet
+//             is specified by providing one or more of &lt;moduleSet&gt;
+//             subelements.
 type ModuleSets struct {
 	XMLName   xml.Name     `xml:"moduleSets"`
 	ModuleSet []*ModuleSet `xml:"moduleSet"`
 }
 
-// FileSets ...
+// FileSets is Specifies which groups of files to include in the assembly. A
+//             fileSet is specified by providing one or more of &lt;fileSet&gt;
+//             subelements.
 type FileSets struct {
 	XMLName xml.Name   `xml:"fileSets"`
 	FileSet []*FileSet `xml:"fileSet"`
 }
 
-// Files ...
+// Files is Specifies which single files to include in the assembly. A file
+//             is specified by providing one or more of &lt;file&gt;
+//             subelements.
 type Files struct {
 	XMLName xml.Name    `xml:"files"`
 	File    []*FileItem `xml:"file"`
 }
 
-// DependencySets ...
+// DependencySets is Specifies which dependencies to include in the assembly. A
+//             dependencySet is specified by providing one or more of
+//             &lt;dependencySet&gt; subelements.
 type DependencySets struct {
 	XMLName       xml.Name         `xml:"dependencySets"`
 	DependencySet []*DependencySet `xml:"dependencySet"`
 }
 
-// Repositories ...
+// Repositories is Specifies which repository files to include in the assembly. A
+//             repository is specified by providing one or more of
+//             &lt;repository&gt; subelements.
 type Repositories struct {
 	XMLName    xml.Name      `xml:"repositories"`
 	Repository []*Repository `xml:"repository"`
 }
 
-// ComponentDescriptors ...
+// ComponentDescriptors is Specifies the shared components xml file locations to include in the
+//             assembly. The locations specified must be relative to the basedir of
+//             the project. When multiple componentDescriptors are found, their
+//             contents are merged. Check out the <a href="component.html">
+//             descriptor components</a> for more information. A
+//             componentDescriptor is specified by providing one or more of
+//             &lt;componentDescriptor&gt; subelements.
 type ComponentDescriptors struct {
 	XMLName             xml.Name `xml:"componentDescriptors"`
 	ComponentDescriptor []string `xml:"componentDescriptor"`
@@ -87,19 +115,25 @@ type ContainerDescriptorHandlerConfig struct {
 	HandlerName string `xml:"handlerName"`
 }
 
-// GroupVersionAlignments ...
+// GroupVersionAlignments is Specifies that you want to align a group of artifacts to a specified
+//             version. A groupVersionAlignment is specified by providing one or
+//             more of &lt;groupVersionAlignment&gt; subelements.
 type GroupVersionAlignments struct {
 	XMLName               xml.Name                 `xml:"groupVersionAlignments"`
 	GroupVersionAlignment []*GroupVersionAlignment `xml:"groupVersionAlignment"`
 }
 
-// Includes ...
+// Includes is When &lt;include&gt; subelements are present, they define a set of
+//             files and directory to include. If none is present, then
+//             &lt;includes&gt; represents all valid values.
 type Includes struct {
 	XMLName xml.Name `xml:"includes"`
 	Include []string `xml:"include"`
 }
 
-// Excludes ...
+// Excludes is When &lt;exclude&gt; subelements are present, they define a set of
+//             files and directory to exclude. If none is present, then
+//             &lt;excludes&gt; represents no exclusions.
 type Excludes struct {
 	XMLName xml.Name `xml:"excludes"`
 	Exclude []string `xml:"exclude"`

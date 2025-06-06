@@ -18,19 +18,19 @@ public class Component {
 	protected Component Component;
 }
 
-// FileSets ...
+// FileSets is Specify assembly parameters for groups of files.
 public class FileSets {
 	@XmlElement(required = true, name = "fileSet")
 	protected List<FileSet> FileSet;
 }
 
-// Files ...
+// Files is Specify assembly parameters for single files.
 public class Files {
 	@XmlElement(required = true, name = "file")
 	protected List<FileItem> File;
 }
 
-// DependencySets ...
+// DependencySets is Specify assembly behavior for sets of dependencies.
 public class DependencySets {
 	@XmlElement(required = true, name = "dependencySet")
 	protected List<DependencySet> DependencySet;
@@ -46,13 +46,15 @@ public class Component2 {
 	protected DependencySets DependencySets;
 }
 
-// Includes ...
+// Includes is When &lt;include&gt; subelements are present, they define
+//             a set of files and directory to include.
 public class Includes {
 	@XmlElement(required = true, name = "include")
 	protected List<String> Include;
 }
 
-// Excludes ...
+// Excludes is When &lt;exclude&gt; subelements are present, they define
+//             a set of files and directory to exclude.
 public class Excludes {
 	@XmlElement(required = true, name = "exclude")
 	protected List<String> Exclude;

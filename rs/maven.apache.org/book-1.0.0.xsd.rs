@@ -16,7 +16,7 @@ pub struct book {
 }
 
 
-// Chapters ...
+// Chapters is Specifies a collection of chapters.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Chapters {
 	#[serde(rename = "chapter")]
@@ -40,7 +40,7 @@ pub struct BookModel {
 }
 
 
-// Sections ...
+// Sections is Specifies a collection of sections.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Sections {
 	#[serde(rename = "section")]

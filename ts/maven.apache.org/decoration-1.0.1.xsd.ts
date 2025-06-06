@@ -4,12 +4,12 @@
 //          The following table lists all of the possible child elements.
 export type Project = DecorationModel;
 
-// PoweredBy ...
+// PoweredBy is Powered by logos list.
 export class PoweredBy {
 	Logo: Array<Logo>;
 }
 
-// Custom ...
+// Custom is Custom configuration for use with customized Velocity templates.
 export class Custom {
 }
 
@@ -37,16 +37,16 @@ export class Banner {
 	Height: string;
 }
 
-// Head ...
+// Head is Additional content (like Javascript) to include in the HEAD block of the generated pages.
 export class Head {
 }
 
-// Links ...
+// Links is A list of links to display in the navigation.
 export class Links {
 	Item: Array<LinkItem>;
 }
 
-// Breadcrumbs ...
+// Breadcrumbs is A list of breadcrumbs to display in the navigation.
 export class Breadcrumbs {
 	Item: Array<LinkItem>;
 }

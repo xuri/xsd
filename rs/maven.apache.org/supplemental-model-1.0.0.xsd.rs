@@ -24,7 +24,7 @@ pub struct SupplementalDataModel {
 }
 
 
-// Project ...
+// Project is Snippets of POM xml files used to supplement the data model.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Project {
 }

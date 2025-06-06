@@ -16,7 +16,7 @@ pub struct plugin_metadata {
 }
 
 
-// Mojos ...
+// Mojos is The list of mojos contained in the accompanying script.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Mojos {
 	#[serde(rename = "mojo")]
@@ -32,7 +32,7 @@ pub struct PluginMetadata {
 }
 
 
-// Components ...
+// Components is List of plexus components required by this mojo.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Components {
 	#[serde(rename = "component")]
@@ -40,7 +40,7 @@ pub struct Components {
 }
 
 
-// Parameters ...
+// Parameters is List of parameters used by this mojo.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Parameters {
 	#[serde(rename = "parameter")]

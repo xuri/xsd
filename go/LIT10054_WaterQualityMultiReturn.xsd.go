@@ -2,20 +2,20 @@
 
 package schema
 
-// DepthValueRecorded ...
+// DepthValueRecorded is An optional collection of elements relating to recorded sample depth.
 type DepthValueRecorded struct {
 	DepthValue      float64              `xml:"DepthValue"`
 	DepthValueUnits *MandatoryStringType `xml:"DepthValueUnits"`
 	DepthRelativeTo *MandatoryStringType `xml:"DepthRelativeTo"`
 }
 
-// PurgedVolumeRecorded ...
+// PurgedVolumeRecorded is An optional collection of elements relating to recorded sample volume.
 type PurgedVolumeRecorded struct {
 	PurgedVolume      float64              `xml:"PurgedVolume"`
 	PurgedVolumeUnits *MandatoryStringType `xml:"PurgedVolumeUnits"`
 }
 
-// Measurement ...
+// Measurement is This repeating element contains the structure of a Water Quality measurement.
 type Measurement struct {
 	DeterminandName *MandatoryStringType `xml:"DeterminandName"`
 	ResultType      *MandatoryStringType `xml:"ResultType"`
@@ -25,7 +25,7 @@ type Measurement struct {
 	Comment         string               `xml:"Comment"`
 }
 
-// Sample ...
+// Sample is This element contains the structure of a collection of samples.
 type Sample struct {
 	Sampler                        string                `xml:"Sampler"`
 	SampleType                     *MandatoryStringType  `xml:"SampleType"`

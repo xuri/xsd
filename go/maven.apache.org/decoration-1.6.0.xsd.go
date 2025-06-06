@@ -9,13 +9,15 @@ import (
 // Project is The <code>&lt;project&gt;</code> element is the root of the site decoration descriptor.
 type Project *DecorationModel
 
-// PoweredBy ...
+// PoweredBy is Powered by logos list.
 type PoweredBy struct {
 	XMLName xml.Name `xml:"poweredBy"`
 	Logo    []*Logo  `xml:"logo"`
 }
 
-// Custom ...
+// Custom is Custom configuration for use with customized Velocity templates. Data from this field are
+//             accessible in Velocity template from <code>$decoration.custom</code> variable as DOM content.
+//             Example: <code>$decoration.custom.getChild( 'customElement' ).getValue()</code>
 type Custom struct {
 	XMLName xml.Name `xml:"custom"`
 }
@@ -54,24 +56,24 @@ type Banner struct {
 	Title  string `xml:"title"`
 }
 
-// Head ...
+// Head is Additional content (like Javascript) to include in the HEAD block of the generated pages.
 type Head struct {
 	XMLName xml.Name `xml:"head"`
 }
 
-// Links ...
+// Links is A list of links to display in the navigation.
 type Links struct {
 	XMLName xml.Name    `xml:"links"`
 	Item    []*LinkItem `xml:"item"`
 }
 
-// Breadcrumbs ...
+// Breadcrumbs is A list of breadcrumbs to display in the navigation.
 type Breadcrumbs struct {
 	XMLName xml.Name    `xml:"breadcrumbs"`
 	Item    []*LinkItem `xml:"item"`
 }
 
-// Footer ...
+// Footer is If present, the contained text will be used instead of the generated copyright text.
 type Footer struct {
 	XMLName xml.Name `xml:"footer"`
 }

@@ -9,7 +9,7 @@ import (
 // PluginMetadata is Root element of a script-based mojo's plugin metadata bindings.
 type PluginMetadata *PluginMetadata
 
-// Mojos ...
+// Mojos is The list of mojos contained in the accompanying script.
 type Mojos struct {
 	XMLName xml.Name `xml:"mojos"`
 	Mojo    []*Mojo  `xml:"mojo"`
@@ -20,13 +20,13 @@ type PluginMetadata struct {
 	Mojos *Mojos `xml:"mojos"`
 }
 
-// Components ...
+// Components is List of plexus components required by this mojo.
 type Components struct {
 	XMLName   xml.Name     `xml:"components"`
 	Component []*Component `xml:"component"`
 }
 
-// Parameters ...
+// Parameters is List of parameters used by this mojo.
 type Parameters struct {
 	XMLName   xml.Name     `xml:"parameters"`
 	Parameter []*Parameter `xml:"parameter"`

@@ -370,7 +370,8 @@ typedef struct {
 	Isindex Isindex[];
 } HeadMisc;
 
-// Head ...
+// Head is content model is "head.misc" combined with a single
+//       title and an optional base element in any order
 typedef struct {
 	I18n I18n;
 	char IdAttr; // attr, optional
@@ -380,20 +381,22 @@ typedef struct {
 	Base Base;
 } Head;
 
-// Title ...
+// Title is The title element is not considered part of the flow of text.
+//       It should be displayed, for example as the page header or
+//       window title. Exactly one title is required per document.
 typedef struct {
 	I18n I18n;
 	char IdAttr; // attr, optional
 } Title;
 
-// Base ...
+// Base is document base URI
 typedef struct {
 	char IdAttr; // attr, optional
 	char HrefAttr; // attr, optional
 	char TargetAttr; // attr, optional
 } Base;
 
-// Meta ...
+// Meta is generic metainformation
 typedef struct {
 	I18n I18n;
 	char IdAttr; // attr, optional
@@ -403,7 +406,17 @@ typedef struct {
 	void SchemeAttr; // attr, optional
 } Meta;
 
-// Link ...
+// Link is Relationship values can be used in principle:
+// 
+//       a) for document specific toolbars/menus when used
+//          with the link element in document head e.g.
+//            start, contents, previous, next, index, end, help
+//       b) to link to a separate style sheet (rel="stylesheet")
+//       c) to make a link to a script (rel="script")
+//       d) by stylesheets to control how collections of
+//          html nodes are rendered into printed documents
+//       e) to make a link to a printable version of this document
+//          e.g. a PostScript or PDF version (rel="alternate" media="print")
 typedef struct {
 	Attrs Attrs;
 	char CharsetAttr; // attr, optional
@@ -416,7 +429,7 @@ typedef struct {
 	char TargetAttr; // attr, optional
 } Link;
 
-// Style ...
+// Style is style info, which may include CDATA sections
 typedef struct {
 	I18n I18n;
 	char IdAttr; // attr, optional
@@ -426,7 +439,7 @@ typedef struct {
 	Space XmlSpaceAttr; // attr, optional
 } Style;
 
-// Script2 ...
+// Script2 is script statements, which may include CDATA sections
 typedef struct {
 	char IdAttr; // attr, optional
 	char CharsetAttr; // attr, optional
@@ -437,12 +450,12 @@ typedef struct {
 	Space XmlSpaceAttr; // attr, optional
 } Script2;
 
-// Noscript ...
+// Noscript is alternate content container for non script-based rendering
 typedef struct {
 	Attrs Attrs;
 } Noscript;
 
-// Iframe ...
+// Iframe is inline subwindow
 typedef struct {
 	Coreattrs Coreattrs;
 	char LongdescAttr; // attr, optional
@@ -457,12 +470,12 @@ typedef struct {
 	char WidthAttr; // attr, optional
 } Iframe;
 
-// Noframes ...
+// Noframes is alternate content container for non frame-based rendering
 typedef struct {
 	Attrs Attrs;
 } Noframes;
 
-// Div ...
+// Div is generic language/style container
 typedef struct {
 	Attrs Attrs;
 	TextAlign TextAlign;
@@ -513,7 +526,7 @@ typedef struct {
 // ULStyle is Unordered list bullet styles
 typedef char ULStyle;
 
-// Ul ...
+// Ul is Unordered list
 typedef struct {
 	Attrs Attrs;
 	char TypeAttr; // attr, optional
@@ -533,7 +546,7 @@ typedef struct {
 //       is reset to 1 for the first list item in an ordered list.
 typedef char OLStyle;
 
-// Ol ...
+// Ol is Ordered (numbered) list
 typedef struct {
 	Attrs Attrs;
 	char TypeAttr; // attr, optional
@@ -542,14 +555,14 @@ typedef struct {
 	char Ol;
 } Ol;
 
-// Menu ...
+// Menu is single column list (DEPRECATED)
 typedef struct {
 	Attrs Attrs;
 	char CompactAttr; // attr, optional
 	char Menu;
 } Menu;
 
-// Dir ...
+// Dir is multiple column list (DEPRECATED)
 typedef struct {
 	Attrs Attrs;
 	char CompactAttr; // attr, optional
@@ -559,7 +572,7 @@ typedef struct {
 // LIStyle is LIStyle is constrained to: "(ULStyle|OLStyle)"
 typedef char LIStyle;
 
-// Li ...
+// Li is list item
 typedef struct {
 	Attrs Attrs;
 	char TypeAttr; // attr, optional
@@ -584,7 +597,7 @@ typedef struct {
 	Attrs Attrs;
 } Dd;
 
-// Address ...
+// Address is information on author
 typedef struct {
 	Attrs Attrs;
 	Inline Inline[];
@@ -601,7 +614,8 @@ typedef struct {
 	char WidthAttr; // attr, optional
 } Hr;
 
-// Pre ...
+// Pre is content is "Inline" excluding
+//          "img|object|applet|big|small|sub|sup|font|basefont"
 typedef struct {
 	Attrs Attrs;
 	int WidthAttr; // attr, optional
@@ -614,7 +628,7 @@ typedef struct {
 	char CiteAttr; // attr, optional
 } Blockquote;
 
-// Center ...
+// Center is center content
 typedef struct {
 	Attrs Attrs;
 } Center;
@@ -633,7 +647,7 @@ typedef struct {
 	char DatetimeAttr; // attr, optional
 } Del;
 
-// A ...
+// A is content is "Inline" except that anchors shouldn't be nested
 typedef struct {
 	Attrs Attrs;
 	Focus Focus;
@@ -649,12 +663,12 @@ typedef struct {
 	char TargetAttr; // attr, optional
 } A;
 
-// Span ...
+// Span is generic language/style container
 typedef struct {
 	Attrs Attrs;
 } Span;
 
-// Bdo ...
+// Bdo is I18N BiDi over-ride
 typedef struct {
 	Coreattrs Coreattrs;
 	Events Events;
@@ -663,119 +677,119 @@ typedef struct {
 	char DirAttr; // attr
 } Bdo;
 
-// Br ...
+// Br is forced line break
 typedef struct {
 	Coreattrs Coreattrs;
 	char ClearAttr; // attr, optional
 } Br;
 
-// Em ...
+// Em is emphasis
 typedef struct {
 	Attrs Attrs;
 } Em;
 
-// Strong ...
+// Strong is strong emphasis
 typedef struct {
 	Attrs Attrs;
 } Strong;
 
-// Dfn ...
+// Dfn is definitional
 typedef struct {
 	Attrs Attrs;
 } Dfn;
 
-// Code ...
+// Code is program code
 typedef struct {
 	Attrs Attrs;
 } Code;
 
-// Samp ...
+// Samp is sample
 typedef struct {
 	Attrs Attrs;
 } Samp;
 
-// Kbd ...
+// Kbd is something user would type
 typedef struct {
 	Attrs Attrs;
 } Kbd;
 
-// Var ...
+// Var is variable
 typedef struct {
 	Attrs Attrs;
 } Var;
 
-// Cite ...
+// Cite is citation
 typedef struct {
 	Attrs Attrs;
 } Cite;
 
-// Abbr ...
+// Abbr is abbreviation
 typedef struct {
 	Attrs Attrs;
 } Abbr;
 
-// Acronym ...
+// Acronym is acronym
 typedef struct {
 	Attrs Attrs;
 } Acronym;
 
-// Q ...
+// Q is inlined quote
 typedef struct {
 	Attrs Attrs;
 	char CiteAttr; // attr, optional
 } Q;
 
-// Sub ...
+// Sub is subscript
 typedef struct {
 	Attrs Attrs;
 } Sub;
 
-// Sup ...
+// Sup is superscript
 typedef struct {
 	Attrs Attrs;
 } Sup;
 
-// Tt ...
+// Tt is fixed pitch font
 typedef struct {
 	Attrs Attrs;
 } Tt;
 
-// I ...
+// I is italic font
 typedef struct {
 	Attrs Attrs;
 } I;
 
-// B ...
+// B is bold font
 typedef struct {
 	Attrs Attrs;
 } B;
 
-// Big ...
+// Big is bigger font
 typedef struct {
 	Attrs Attrs;
 } Big;
 
-// Small ...
+// Small is smaller font
 typedef struct {
 	Attrs Attrs;
 } Small;
 
-// U ...
+// U is underline
 typedef struct {
 	Attrs Attrs;
 } U;
 
-// S ...
+// S is strike-through
 typedef struct {
 	Attrs Attrs;
 } S;
 
-// Strike ...
+// Strike is strike-through
 typedef struct {
 	Attrs Attrs;
 } Strike;
 
-// Basefont ...
+// Basefont is base font size
 typedef struct {
 	char IdAttr; // attr, optional
 	void SizeAttr; // attr
@@ -783,7 +797,7 @@ typedef struct {
 	void FaceAttr; // attr, optional
 } Basefont;
 
-// Font ...
+// Font is local change to font
 typedef struct {
 	Coreattrs Coreattrs;
 	I18n I18n;
@@ -819,7 +833,10 @@ typedef struct {
 	char Object;
 } Object;
 
-// Param ...
+// Param is param is used to supply a named property value.
+//       In XML it would seem natural to follow RDF and support an
+//       abbreviated syntax where the param elements are replaced
+//       by attribute value pairs on the object start tag.
 typedef struct {
 	char IdAttr; // attr, optional
 	void NameAttr; // attr
@@ -906,7 +923,8 @@ typedef struct {
 	char TargetAttr; // attr, optional
 } Form;
 
-// Label ...
+// Label is Each label must not contain more than ONE field
+//       Label elements shouldn't be nested.
 typedef struct {
 	Attrs Attrs;
 	char ForAttr; // attr, optional
@@ -918,7 +936,7 @@ typedef struct {
 // InputType ...
 typedef char InputType;
 
-// Input ...
+// Input is form control
 typedef struct {
 	Attrs Attrs;
 	Focus Focus;
@@ -939,7 +957,7 @@ typedef struct {
 	char AlignAttr; // attr, optional
 } Input;
 
-// Select ...
+// Select is option selector
 typedef struct {
 	Attrs Attrs;
 	void NameAttr; // attr, optional
@@ -954,7 +972,7 @@ typedef struct {
 	char Select;
 } Select;
 
-// Optgroup ...
+// Optgroup is option group
 typedef struct {
 	Attrs Attrs;
 	char DisabledAttr; // attr, optional
@@ -962,7 +980,7 @@ typedef struct {
 	char Optgroup;
 } Optgroup;
 
-// Option ...
+// Option is selectable choice
 typedef struct {
 	Attrs Attrs;
 	char SelectedAttr; // attr, optional
@@ -971,7 +989,7 @@ typedef struct {
 	void ValueAttr; // attr, optional
 } Option;
 
-// Textarea ...
+// Textarea is multi-line text field
 typedef struct {
 	Attrs Attrs;
 	Focus Focus;
@@ -984,7 +1002,12 @@ typedef struct {
 	char OnchangeAttr; // attr, optional
 } Textarea;
 
-// Fieldset ...
+// Fieldset is The fieldset element is used to group form fields.
+//       Only one legend element should occur in the content
+//       and if present should only be preceded by whitespace.
+// 
+//       NOTE: this content model is different from the XHTML 1.0 DTD,
+//       closer to the intended content model in HTML4 DTD
 typedef struct {
 	Attrs Attrs;
 	Block Block[];
@@ -997,14 +1020,14 @@ typedef struct {
 // LAlign ...
 typedef char LAlign;
 
-// Legend ...
+// Legend is fieldset label
 typedef struct {
 	Attrs Attrs;
 	char AccesskeyAttr; // attr, optional
 	char AlignAttr; // attr, optional
 } Legend;
 
-// Button ...
+// Button is Content is "Flow" excluding a, form and form controls
 typedef struct {
 	Attrs Attrs;
 	Focus Focus;
@@ -1014,7 +1037,7 @@ typedef struct {
 	char DisabledAttr; // attr, optional
 } Button;
 
-// Isindex ...
+// Isindex is single-line text input control (DEPRECATED)
 typedef struct {
 	Coreattrs Coreattrs;
 	I18n I18n;
@@ -1107,7 +1130,8 @@ typedef struct {
 	Tr Tr[];
 } Tbody;
 
-// Colgroup ...
+// Colgroup is colgroup groups a set of col elements. It allows you to group
+//       several semantically related columns together.
 typedef struct {
 	Attrs Attrs;
 	Cellhalign Cellhalign;
@@ -1117,7 +1141,16 @@ typedef struct {
 	Col Col[];
 } Colgroup;
 
-// Col ...
+// Col is col elements define the alignment properties for cells in
+//       one or more columns.
+// 
+//       The width attribute specifies the width of the columns, e.g.
+// 
+//           width=64        width in screen pixels
+//           width=0.5*      relative width of 0.5
+// 
+//       The span attribute causes the attributes of one
+//       col element to apply to more than one column.
 typedef struct {
 	Attrs Attrs;
 	Cellhalign Cellhalign;
@@ -1173,7 +1206,7 @@ typedef struct {
 	char HeightAttr; // attr, optional
 } Td;
 
-// Document ...
+// Document is The <document/> element is the root of the Xdoc descriptor.
 typedef struct {
 	I18n I18n;
 	char IdAttr; // attr, optional
@@ -1189,22 +1222,23 @@ typedef struct {
 	char Date;
 } Properties;
 
-// Author ...
+// Author is An author element.
 typedef struct {
 	char EmailAttr; // attr, optional
 } Author;
 
-// Date ...
+// Date is An date element. The date is recommended (but it is not a requirement) to be align to
+//         the ISO-8601 standard, i.e.: YYYY-MM-DD.
 typedef struct {
 } Date;
 
-// Body ...
+// Body is The body element.
 typedef struct {
 	Attrs Attrs;
 	Section Section[];
 } Body;
 
-// Section ...
+// Section is A section element.
 typedef struct {
 	Attrs Attrs;
 	char NameAttr; // attr
@@ -1215,7 +1249,7 @@ typedef struct {
 	Subsection Subsection[];
 } Section;
 
-// Subsection ...
+// Subsection is A subsection element.
 typedef struct {
 	Attrs Attrs;
 	char NameAttr; // attr
@@ -1225,11 +1259,11 @@ typedef struct {
 	char Form[];
 } Subsection;
 
-// Source ...
+// Source is A source element.
 typedef struct {
 } Source;
 
-// Macro ...
+// Macro is A macro element.
 typedef struct {
 	char NameAttr; // attr
 	char Param[];

@@ -18,7 +18,7 @@ public class Metadata {
 	protected Metadata Metadata;
 }
 
-// Plugins ...
+// Plugins is The set of plugin mappings for the group represented by this directory
 public class Plugins {
 	@XmlElement(required = true, name = "plugin")
 	protected List<Plugin> Plugin;
@@ -50,13 +50,13 @@ public class Plugin {
 	protected String ArtifactId;
 }
 
-// Versions ...
+// Versions is Versions available of the artifact (both releases and snapshots)
 public class Versions {
 	@XmlElement(required = true, name = "version")
 	protected List<String> Version;
 }
 
-// SnapshotVersions ...
+// SnapshotVersions is Information for each sub-artifact available in this artifact snapshot.
 public class SnapshotVersions {
 	@XmlElement(required = true, name = "snapshotVersion")
 	protected List<SnapshotVersion> SnapshotVersion;

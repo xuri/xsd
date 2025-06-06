@@ -3,7 +3,8 @@
 // Paramdoc is The root of a parameter plugin expression document.
 export type Paramdoc = ExpressionDocumentation;
 
-// Expressions ...
+// Expressions is The list of plugin parameter expressions described by this
+//             document.
 export class Expressions {
 	Expression: Array<Expression>;
 }
@@ -13,11 +14,11 @@ export class ExpressionDocumentation {
 	Expressions: Expressions;
 }
 
-// CliOptions ...
+// CliOptions is The command-line switches used to change the value of this expression.
 export class CliOptions {
 }
 
-// ApiMethods ...
+// ApiMethods is The programmatic methods used to change the value of this expression.
 export class ApiMethods {
 }
 

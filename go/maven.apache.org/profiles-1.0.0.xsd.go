@@ -9,13 +9,15 @@ import (
 // ProfilesXml is Root element of the profiles.xml file.
 type ProfilesXml *ProfilesRoot
 
-// Profiles ...
+// Profiles is Configuration of build profiles for adjusting the build
+//             according to environmental parameters
 type Profiles struct {
 	XMLName xml.Name   `xml:"profiles"`
 	Profile []*Profile `xml:"profile"`
 }
 
-// ActiveProfiles ...
+// ActiveProfiles is List of manually-activated build profiles, specified in the order in which
+//             they should be applied.
 type ActiveProfiles struct {
 	XMLName       xml.Name `xml:"activeProfiles"`
 	ActiveProfile []string `xml:"activeProfile"`
@@ -27,18 +29,19 @@ type ProfilesRoot struct {
 	ActiveProfiles *ActiveProfiles `xml:"activeProfiles"`
 }
 
-// Properties ...
+// Properties is Extended configuration specific to this profile goes
+//             here.
 type Properties struct {
 	XMLName xml.Name `xml:"properties"`
 }
 
-// Repositories ...
+// Repositories is The lists of the remote repositories
 type Repositories struct {
 	XMLName    xml.Name      `xml:"repositories"`
 	Repository []*Repository `xml:"repository"`
 }
 
-// PluginRepositories ...
+// PluginRepositories is The lists of the remote repositories for discovering plugins
 type PluginRepositories struct {
 	XMLName          xml.Name      `xml:"pluginRepositories"`
 	PluginRepository []*Repository `xml:"pluginRepository"`

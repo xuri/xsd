@@ -2,51 +2,121 @@
 
 typedef Model Project;
 
-// MailingLists ...
+// MailingLists is Contains information about a project's mailing lists.  This
+//             is used to generate the <a href="/plugins/site/index.html">front
+//             page</a> of the site's web site.
 typedef struct {
 	MailingList MailingList[];
 } MailingLists;
 
-// Developers ...
+// Developers is Describes the committers to a project.  This is used to
+//             generate the <a href="/plugins/site/index.html">Project Team</a>
+//             page of the project's web site.
 typedef struct {
 	Developer Developer[];
 } Developers;
 
-// Contributors ...
+// Contributors is Describes the contributors to a project.  This is used to generate
+//             the <a href="/plugins/site/index.html">Project Team</a> page of
+//             the project's web site.
 typedef struct {
 	Contributor Contributor[];
 } Contributors;
 
-// Licenses ...
+// Licenses is This element describes all of the licenses for this project.  
+//             Each license is described by a <code>license</code> element, which 
+//             is then described by additional elements (described below).  The 
+//             auto-generated site documentation references this information.  
+//             Projects should only list the license(s) that applies to the project 
+//             and not the licenses that apply to dependencies.
 typedef struct {
 	License License[];
 } Licenses;
 
-// Versions ...
+// Versions is Optional. Contains information on previous versions of the
+//             project. This information is used when invoking the 
+//             <a href="/plugins/dist/index.html"><code>maven:dist</code></a>
+//             target.
 typedef struct {
 	Version Version[];
 } Versions;
 
-// Branches ...
+// Branches is Optional. Contains information on branches of the
+//             project. This information is used when invoking the 
+//             <a href="/plugins/dist/index.html"><code>maven:dist</code></a>
+//             target.
 typedef struct {
 	Branch Branch[];
 } Branches;
 
-// PackageGroups ...
+// PackageGroups is Package groups required for complete javadocs.
 typedef struct {
 	PackageGroup PackageGroup[];
 } PackageGroups;
 
-// Reports ...
+// Reports is This element includes the specification of reports to be
+//             included in a Maven-generated site.  These reports will be run
+//             when a user executes <code>maven site</code>.  All of the
+//             reports will be included in the navigation bar for browsing in
+//             the order they are specified.
 typedef struct {
 	char Report[];
 } Reports;
 
-// Properties ...
+// Properties is Project properties that will be used by various plugins
 typedef struct {
 } Properties;
 
-// Dependencies ...
+// Dependencies is <p>
+//               This element describes all of the dependencies associated with a
+//               project.  Each dependency is described by a
+//               <code>dependency</code> element, which is then described by
+//               additional elements (described below).
+//             </p>
+//             <p>
+//               These dependencies are used to construct a classpath for your 
+//               project during the build process.
+//             </p>
+//             <p>
+//               Maven can automatically download these dependencies from a 
+//               <a href="/user-guide.html#Remote%20Repository%20Layout">remote repository</a>.
+//             </p>
+//             <p>
+//               The filename that Maven downloads from the repository is 
+//               <code>artifactId-version.jar</code> where <code>artifactId</code> 
+//               corresponds to the <code>artifactId</code> element and 
+//               <code>version</code> corresponds to the <code>version</code> element.
+//             </p>
+//             <p>
+//               When Maven goes looking for a dependency in the remote repository, 
+//               it uses the dependency element to construct the URL to download 
+//               from. This URL is defined as:
+//             </p>
+//             <div class="source">
+//               <pre>${repo}/${groupId}/${type}s/${artifactId}-${version}.${type}</pre>
+//             </div>
+//             <p>
+//               Where
+//             </p>
+//             <dl>
+//               <dt>repo</dt>
+//               <dd>
+//                 is the remote repository URL specified by 
+//                 <code>${maven.repo.remote}</code>
+//               </dd>
+//               
+//               <dt>groupId</dt>
+//               <dd>is taken from the dependency element</dd>
+//               
+//               <dt>type</dt>
+//               <dd>is taken from the dependency element</dd>
+//               
+//               <dt>artifactId</dt>
+//               <dd>is taken from the dependency element</dd>
+//               
+//               <dt>version</dt>
+//               <dd>is taken from the dependency element</dd>
+//             </dl>
 typedef struct {
 	Dependency Dependency[];
 } Dependencies;
@@ -90,12 +160,21 @@ typedef struct {
 	Dependencies Dependencies;
 } Model;
 
-// SourceModifications ...
+// SourceModifications is This element describes all of the sourceModifications associated 
+//             with a project.  Each source modification is described by a
+//             <code>sourceModification</code> element, which is then described by
+//              additional elements (described below).  These modifications are used 
+//             to exclude or include various source depending on the environment
+//              the build is running in.
 typedef struct {
 	SourceModification SourceModification[];
 } SourceModifications;
 
-// Resources ...
+// Resources is This element describes all of the resources associated with a 
+//             project or unit tests. Each resource is described by a resource 
+//             element, which is then described by additional elements (described 
+//             <a href="#resource">below</a>). These resources are used to complete 
+//             the jar file or to run unit test.
 typedef struct {
 	Resource Resource[];
 } Resources;
@@ -114,12 +193,12 @@ typedef struct {
 	Resources Resources;
 } Build;
 
-// Includes ...
+// Includes is the description
 typedef struct {
 	char Include[];
 } Includes;
 
-// Excludes ...
+// Excludes is the description
 typedef struct {
 	char Exclude[];
 } Excludes;
@@ -162,7 +241,9 @@ typedef struct {
 	char Logo;
 } Organization;
 
-// Roles ...
+// Roles is The roles the contributor plays in the project.  Each role is
+//             described by a <code>role</code> element, the body of which is a
+//             role name.
 typedef struct {
 	char Role[];
 } Roles;
@@ -249,7 +330,7 @@ typedef struct {
 	char Tag;
 } Branch;
 
-// OtherArchives ...
+// OtherArchives is The link to other URLs where you can browse the list archive.
 typedef struct {
 	char OtherArchive[];
 } OtherArchives;

@@ -2,7 +2,7 @@
 
 typedef Metadata Metadata;
 
-// Plugins ...
+// Plugins is The set of plugin mappings for the group represented by this directory
 typedef struct {
 	Plugin Plugin[];
 } Plugins;
@@ -24,12 +24,12 @@ typedef struct {
 	char ArtifactId;
 } Plugin;
 
-// Versions ...
+// Versions is Versions available of the artifact (both releases and snapshots)
 typedef struct {
 	char Version[];
 } Versions;
 
-// SnapshotVersions ...
+// SnapshotVersions is Information for each sub-artifact available in this artifact snapshot.
 typedef struct {
 	SnapshotVersion SnapshotVersion[];
 } SnapshotVersions;

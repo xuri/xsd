@@ -18,43 +18,51 @@ public class Assembly {
 	protected Assembly Assembly;
 }
 
-// Formats ...
+// Formats is Specify the formats of the assembly.  A format is specified by 
+//             supplying one of the following values in a &lt;format&gt; subelement:
+//             <ul>
+//               <li><b>"zip"</b> - Creates a ZIP file format</li>
+//               <li><b>"gz"</b> - Creates a GZIP format</li>
+//               <li><b>"tar"</b> - Creates a TAR format</li>
+//               <li><b>"tar.gz"</b> - Creates a gzip'd TAR format</li>
+//               <li><b>"tar.bz2</b> - Creates a bzip'd TAR format</li>
+//             </ul>
 public class Formats {
 	@XmlElement(required = true, name = "format")
 	protected List<String> Format;
 }
 
-// ModuleSets ...
+// ModuleSets is Specify which modules source files to include in the assembly
 public class ModuleSets {
 	@XmlElement(required = true, name = "moduleSet")
 	protected List<ModuleSet> ModuleSet;
 }
 
-// FileSets ...
+// FileSets is Specify assembly parameters for groups of files.
 public class FileSets {
 	@XmlElement(required = true, name = "fileSet")
 	protected List<FileSet> FileSet;
 }
 
-// Files ...
+// Files is Specify assembly parameters for single files.
 public class Files {
 	@XmlElement(required = true, name = "file")
 	protected List<FileItem> File;
 }
 
-// DependencySets ...
+// DependencySets is Specify assembly behavior for sets of dependencies.
 public class DependencySets {
 	@XmlElement(required = true, name = "dependencySet")
 	protected List<DependencySet> DependencySet;
 }
 
-// Repositories ...
+// Repositories is Specify assembly behavior for sets of repositories.
 public class Repositories {
 	@XmlElement(required = true, name = "repository")
 	protected List<Repository> Repository;
 }
 
-// ComponentDescriptors ...
+// ComponentDescriptors is File relative to basedir containing Component.
 public class ComponentDescriptors {
 	@XmlElement(required = true, name = "componentDescriptor")
 	protected List<String> ComponentDescriptor;
@@ -85,19 +93,21 @@ public class Assembly2 {
 	protected ComponentDescriptors ComponentDescriptors;
 }
 
-// GroupVersionAlignments ...
+// GroupVersionAlignments is Align a group to a version or an individual artifact.
 public class GroupVersionAlignments {
 	@XmlElement(required = true, name = "groupVersionAlignment")
 	protected List<GroupVersionAlignment> GroupVersionAlignment;
 }
 
-// Includes ...
+// Includes is When &lt;include&gt; subelements are present, they define
+//             a set of files and directory to include.
 public class Includes {
 	@XmlElement(required = true, name = "include")
 	protected List<String> Include;
 }
 
-// Excludes ...
+// Excludes is When &lt;exclude&gt; subelements are present, they define
+//             a set of files and directory to exclude.
 public class Excludes {
 	@XmlElement(required = true, name = "exclude")
 	protected List<String> Exclude;

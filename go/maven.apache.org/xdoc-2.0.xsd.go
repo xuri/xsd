@@ -404,7 +404,8 @@ type HeadMisc struct {
 	Isindex []*Isindex
 }
 
-// Head ...
+// Head is content model is "head.misc" combined with a single
+//       title and an optional base element in any order
 type Head struct {
 	XMLName     xml.Name `xml:"head"`
 	I18n        *I18n
@@ -415,14 +416,16 @@ type Head struct {
 	Base        *Base  `xml:"base"`
 }
 
-// Title ...
+// Title is The title element is not considered part of the flow of text.
+//       It should be displayed, for example as the page header or
+//       window title. Exactly one title is required per document.
 type Title struct {
 	XMLName xml.Name `xml:"title"`
 	I18n    *I18n
 	IdAttr  string `xml:"id,attr,omitempty"`
 }
 
-// Base ...
+// Base is document base URI
 type Base struct {
 	XMLName    xml.Name `xml:"base"`
 	IdAttr     string   `xml:"id,attr,omitempty"`
@@ -430,7 +433,7 @@ type Base struct {
 	TargetAttr string   `xml:"target,attr,omitempty"`
 }
 
-// Meta ...
+// Meta is generic metainformation
 type Meta struct {
 	XMLName       xml.Name `xml:"meta"`
 	I18n          *I18n
@@ -441,7 +444,17 @@ type Meta struct {
 	SchemeAttr    interface{} `xml:"scheme,attr,omitempty"`
 }
 
-// Link ...
+// Link is Relationship values can be used in principle:
+//
+//       a) for document specific toolbars/menus when used
+//          with the link element in document head e.g.
+//            start, contents, previous, next, index, end, help
+//       b) to link to a separate style sheet (rel="stylesheet")
+//       c) to make a link to a script (rel="script")
+//       d) by stylesheets to control how collections of
+//          html nodes are rendered into printed documents
+//       e) to make a link to a printable version of this document
+//          e.g. a PostScript or PDF version (rel="alternate" media="print")
 type Link struct {
 	XMLName      xml.Name `xml:"link"`
 	Attrs        *Attrs
@@ -455,7 +468,7 @@ type Link struct {
 	TargetAttr   string   `xml:"target,attr,omitempty"`
 }
 
-// Style ...
+// Style is style info, which may include CDATA sections
 type Style struct {
 	XMLName      xml.Name `xml:"style"`
 	I18n         *I18n
@@ -466,7 +479,7 @@ type Style struct {
 	XmlSpaceAttr *Space `xml:"xml:space,attr,omitempty"`
 }
 
-// Script2 ...
+// Script2 is script statements, which may include CDATA sections
 type Script2 struct {
 	XMLName      xml.Name    `xml:"script"`
 	IdAttr       string      `xml:"id,attr,omitempty"`
@@ -478,14 +491,14 @@ type Script2 struct {
 	XmlSpaceAttr *Space      `xml:"xml:space,attr,omitempty"`
 }
 
-// Noscript ...
+// Noscript is alternate content container for non script-based rendering
 type Noscript struct {
 	XMLName xml.Name `xml:"noscript"`
 	Attrs   *Attrs
 	*Flow
 }
 
-// Iframe ...
+// Iframe is inline subwindow
 type Iframe struct {
 	XMLName          xml.Name `xml:"iframe"`
 	Coreattrs        *Coreattrs
@@ -502,14 +515,14 @@ type Iframe struct {
 	*Flow
 }
 
-// Noframes ...
+// Noframes is alternate content container for non frame-based rendering
 type Noframes struct {
 	XMLName xml.Name `xml:"noframes"`
 	Attrs   *Attrs
 	*Flow
 }
 
-// Div ...
+// Div is generic language/style container
 type Div struct {
 	XMLName   xml.Name `xml:"div"`
 	Attrs     *Attrs
@@ -576,7 +589,7 @@ type H6 struct {
 // ULStyle is Unordered list bullet styles
 type ULStyle string
 
-// Ul ...
+// Ul is Unordered list
 type Ul struct {
 	XMLName     xml.Name `xml:"ul"`
 	Attrs       *Attrs
@@ -597,7 +610,7 @@ type Ul struct {
 //       is reset to 1 for the first list item in an ordered list.
 type OLStyle string
 
-// Ol ...
+// Ol is Ordered (numbered) list
 type Ol struct {
 	XMLName     xml.Name `xml:"ol"`
 	Attrs       *Attrs
@@ -607,7 +620,7 @@ type Ol struct {
 	Ol          string `xml:"ol"`
 }
 
-// Menu ...
+// Menu is single column list (DEPRECATED)
 type Menu struct {
 	XMLName     xml.Name `xml:"menu"`
 	Attrs       *Attrs
@@ -615,7 +628,7 @@ type Menu struct {
 	Menu        string `xml:"menu"`
 }
 
-// Dir ...
+// Dir is multiple column list (DEPRECATED)
 type Dir struct {
 	XMLName     xml.Name `xml:"dir"`
 	Attrs       *Attrs
@@ -626,7 +639,7 @@ type Dir struct {
 // LIStyle is LIStyle is constrained to: "(ULStyle|OLStyle)"
 type LIStyle string
 
-// Li ...
+// Li is list item
 type Li struct {
 	XMLName   xml.Name `xml:"li"`
 	Attrs     *Attrs
@@ -658,7 +671,7 @@ type Dd struct {
 	*Flow
 }
 
-// Address ...
+// Address is information on author
 type Address struct {
 	XMLName    xml.Name `xml:"address"`
 	Attrs      *Attrs
@@ -677,7 +690,8 @@ type Hr struct {
 	WidthAttr   string `xml:"width,attr,omitempty"`
 }
 
-// Pre ...
+// Pre is content is "Inline" excluding
+//          "img|object|applet|big|small|sub|sup|font|basefont"
 type Pre struct {
 	XMLName      xml.Name `xml:"pre"`
 	Attrs        *Attrs
@@ -694,7 +708,7 @@ type Blockquote struct {
 	*Flow
 }
 
-// Center ...
+// Center is center content
 type Center struct {
 	XMLName xml.Name `xml:"center"`
 	Attrs   *Attrs
@@ -719,7 +733,7 @@ type Del struct {
 	*Flow
 }
 
-// A ...
+// A is content is "Inline" except that anchors shouldn't be nested
 type A struct {
 	XMLName      xml.Name `xml:"a"`
 	Attrs        *Attrs
@@ -737,14 +751,14 @@ type A struct {
 	*AContent
 }
 
-// Span ...
+// Span is generic language/style container
 type Span struct {
 	XMLName xml.Name `xml:"span"`
 	Attrs   *Attrs
 	*Inline
 }
 
-// Bdo ...
+// Bdo is I18N BiDi over-ride
 type Bdo struct {
 	XMLName     xml.Name `xml:"bdo"`
 	Coreattrs   *Coreattrs
@@ -755,84 +769,84 @@ type Bdo struct {
 	*Inline
 }
 
-// Br ...
+// Br is forced line break
 type Br struct {
 	XMLName   xml.Name `xml:"br"`
 	Coreattrs *Coreattrs
 	ClearAttr string `xml:"clear,attr,omitempty"`
 }
 
-// Em ...
+// Em is emphasis
 type Em struct {
 	XMLName xml.Name `xml:"em"`
 	Attrs   *Attrs
 	*Inline
 }
 
-// Strong ...
+// Strong is strong emphasis
 type Strong struct {
 	XMLName xml.Name `xml:"strong"`
 	Attrs   *Attrs
 	*Inline
 }
 
-// Dfn ...
+// Dfn is definitional
 type Dfn struct {
 	XMLName xml.Name `xml:"dfn"`
 	Attrs   *Attrs
 	*Inline
 }
 
-// Code ...
+// Code is program code
 type Code struct {
 	XMLName xml.Name `xml:"code"`
 	Attrs   *Attrs
 	*Inline
 }
 
-// Samp ...
+// Samp is sample
 type Samp struct {
 	XMLName xml.Name `xml:"samp"`
 	Attrs   *Attrs
 	*Inline
 }
 
-// Kbd ...
+// Kbd is something user would type
 type Kbd struct {
 	XMLName xml.Name `xml:"kbd"`
 	Attrs   *Attrs
 	*Inline
 }
 
-// Var ...
+// Var is variable
 type Var struct {
 	XMLName xml.Name `xml:"var"`
 	Attrs   *Attrs
 	*Inline
 }
 
-// Cite ...
+// Cite is citation
 type Cite struct {
 	XMLName xml.Name `xml:"cite"`
 	Attrs   *Attrs
 	*Inline
 }
 
-// Abbr ...
+// Abbr is abbreviation
 type Abbr struct {
 	XMLName xml.Name `xml:"abbr"`
 	Attrs   *Attrs
 	*Inline
 }
 
-// Acronym ...
+// Acronym is acronym
 type Acronym struct {
 	XMLName xml.Name `xml:"acronym"`
 	Attrs   *Attrs
 	*Inline
 }
 
-// Q ...
+// Q is inlined quote
 type Q struct {
 	XMLName  xml.Name `xml:"q"`
 	Attrs    *Attrs
@@ -840,77 +854,77 @@ type Q struct {
 	*Inline
 }
 
-// Sub ...
+// Sub is subscript
 type Sub struct {
 	XMLName xml.Name `xml:"sub"`
 	Attrs   *Attrs
 	*Inline
 }
 
-// Sup ...
+// Sup is superscript
 type Sup struct {
 	XMLName xml.Name `xml:"sup"`
 	Attrs   *Attrs
 	*Inline
 }
 
-// Tt ...
+// Tt is fixed pitch font
 type Tt struct {
 	XMLName xml.Name `xml:"tt"`
 	Attrs   *Attrs
 	*Inline
 }
 
-// I ...
+// I is italic font
 type I struct {
 	XMLName xml.Name `xml:"i"`
 	Attrs   *Attrs
 	*Inline
 }
 
-// B ...
+// B is bold font
 type B struct {
 	XMLName xml.Name `xml:"b"`
 	Attrs   *Attrs
 	*Inline
 }
 
-// Big ...
+// Big is bigger font
 type Big struct {
 	XMLName xml.Name `xml:"big"`
 	Attrs   *Attrs
 	*Inline
 }
 
-// Small ...
+// Small is smaller font
 type Small struct {
 	XMLName xml.Name `xml:"small"`
 	Attrs   *Attrs
 	*Inline
 }
 
-// U ...
+// U is underline
 type U struct {
 	XMLName xml.Name `xml:"u"`
 	Attrs   *Attrs
 	*Inline
 }
 
-// S ...
+// S is strike-through
 type S struct {
 	XMLName xml.Name `xml:"s"`
 	Attrs   *Attrs
 	*Inline
 }
 
-// Strike ...
+// Strike is strike-through
 type Strike struct {
 	XMLName xml.Name `xml:"strike"`
 	Attrs   *Attrs
 	*Inline
 }
 
-// Basefont ...
+// Basefont is base font size
 type Basefont struct {
 	XMLName   xml.Name    `xml:"basefont"`
 	IdAttr    string      `xml:"id,attr,omitempty"`
@@ -919,7 +933,7 @@ type Basefont struct {
 	FaceAttr  interface{} `xml:"face,attr,omitempty"`
 }
 
-// Font ...
+// Font is local change to font
 type Font struct {
 	XMLName   xml.Name `xml:"font"`
 	Coreattrs *Coreattrs
@@ -958,7 +972,10 @@ type Object struct {
 	Object       string   `xml:"object"`
 }
 
-// Param ...
+// Param is param is used to supply a named property value.
+//       In XML it would seem natural to follow RDF and support an
+//       abbreviated syntax where the param elements are replaced
+//       by attribute value pairs on the object start tag.
 type Param struct {
 	XMLName       xml.Name    `xml:"param"`
 	IdAttr        string      `xml:"id,attr,omitempty"`
@@ -1052,7 +1069,8 @@ type Form struct {
 	*FormContent
 }
 
-// Label ...
+// Label is Each label must not contain more than ONE field
+//       Label elements shouldn't be nested.
 type Label struct {
 	XMLName       xml.Name `xml:"label"`
 	Attrs         *Attrs
@@ -1066,7 +1084,7 @@ type Label struct {
 // InputType ...
 type InputType string
 
-// Input ...
+// Input is form control
 type Input struct {
 	XMLName       xml.Name `xml:"input"`
 	Attrs         *Attrs
@@ -1088,7 +1106,7 @@ type Input struct {
 	AlignAttr     string      `xml:"align,attr,omitempty"`
 }
 
-// Select ...
+// Select is option selector
 type Select struct {
 	XMLName      xml.Name `xml:"select"`
 	Attrs        *Attrs
@@ -1104,7 +1122,7 @@ type Select struct {
 	Select       string      `xml:"select"`
 }
 
-// Optgroup ...
+// Optgroup is option group
 type Optgroup struct {
 	XMLName      xml.Name `xml:"optgroup"`
 	Attrs        *Attrs
@@ -1113,7 +1131,7 @@ type Optgroup struct {
 	Optgroup     string `xml:"optgroup"`
 }
 
-// Option ...
+// Option is selectable choice
 type Option struct {
 	XMLName      xml.Name `xml:"option"`
 	Attrs        *Attrs
@@ -1123,7 +1141,7 @@ type Option struct {
 	ValueAttr    interface{} `xml:"value,attr,omitempty"`
 }
 
-// Textarea ...
+// Textarea is multi-line text field
 type Textarea struct {
 	XMLName      xml.Name `xml:"textarea"`
 	Attrs        *Attrs
@@ -1137,7 +1155,12 @@ type Textarea struct {
 	OnchangeAttr string      `xml:"onchange,attr,omitempty"`
 }
 
-// Fieldset ...
+// Fieldset is The fieldset element is used to group form fields.
+//       Only one legend element should occur in the content
+//       and if present should only be preceded by whitespace.
+//
+//       NOTE: this content model is different from the XHTML 1.0 DTD,
+//       closer to the intended content model in HTML4 DTD
 type Fieldset struct {
 	XMLName xml.Name `xml:"fieldset"`
 	Attrs   *Attrs
@@ -1151,7 +1174,7 @@ type Fieldset struct {
 // LAlign ...
 type LAlign string
 
-// Legend ...
+// Legend is fieldset label
 type Legend struct {
 	XMLName       xml.Name `xml:"legend"`
 	Attrs         *Attrs
@@ -1160,7 +1183,7 @@ type Legend struct {
 	*Inline
 }
 
-// Button ...
+// Button is Content is "Flow" excluding a, form and form controls
 type Button struct {
 	XMLName      xml.Name `xml:"button"`
 	Attrs        *Attrs
@@ -1172,7 +1195,7 @@ type Button struct {
 	*ButtonContent
 }
 
-// Isindex ...
+// Isindex is single-line text input control (DEPRECATED)
 type Isindex struct {
 	XMLName    xml.Name `xml:"isindex"`
 	Coreattrs  *Coreattrs
@@ -1274,7 +1297,8 @@ type Tbody struct {
 	Tr         []*Tr `xml:"tr"`
 }
 
-// Colgroup ...
+// Colgroup is colgroup groups a set of col elements. It allows you to group
+//       several semantically related columns together.
 type Colgroup struct {
 	XMLName    xml.Name `xml:"colgroup"`
 	Attrs      *Attrs
@@ -1285,7 +1309,16 @@ type Colgroup struct {
 	Col        []*Col `xml:"col"`
 }
 
-// Col ...
+// Col is col elements define the alignment properties for cells in
+//       one or more columns.
+//
+//       The width attribute specifies the width of the columns, e.g.
+//
+//           width=64        width in screen pixels
+//           width=0.5*      relative width of 0.5
+//
+//       The span attribute causes the attributes of one
+//       col element to apply to more than one column.
 type Col struct {
 	XMLName    xml.Name `xml:"col"`
 	Attrs      *Attrs
@@ -1347,7 +1380,7 @@ type Td struct {
 	*Flow
 }
 
-// Document ...
+// Document is The <document/> element is the root of the Xdoc descriptor.
 type Document struct {
 	XMLName    xml.Name `xml:"document"`
 	I18n       *I18n
@@ -1365,25 +1398,26 @@ type Properties struct {
 	Date    string    `xml:"date"`
 }
 
-// Author ...
+// Author is An author element.
 type Author struct {
 	XMLName   xml.Name `xml:"author"`
 	EmailAttr string   `xml:"email,attr,omitempty"`
 }
 
-// Date ...
+// Date is An date element. The date is recommended (but it is not a requirement) to be align to
+//         the ISO-8601 standard, i.e.: YYYY-MM-DD.
 type Date struct {
 	XMLName xml.Name `xml:"date"`
 }
 
-// Body ...
+// Body is The body element.
 type Body struct {
 	XMLName xml.Name `xml:"body"`
 	Attrs   *Attrs
 	Section []*Section `xml:"section"`
 }
 
-// Section ...
+// Section is A section element.
 type Section struct {
 	XMLName    xml.Name `xml:"section"`
 	Attrs      *Attrs
@@ -1395,7 +1429,7 @@ type Section struct {
 	Subsection []*Subsection `xml:"subsection"`
 }
 
-// Subsection ...
+// Subsection is A subsection element.
 type Subsection struct {
 	XMLName  xml.Name `xml:"subsection"`
 	Attrs    *Attrs
@@ -1406,12 +1440,12 @@ type Subsection struct {
 	Form     []string `xml:"form"`
 }
 
-// Source ...
+// Source is A source element.
 type Source struct {
 	XMLName xml.Name `xml:"source"`
 }
 
-// Macro ...
+// Macro is A macro element.
 type Macro struct {
 	XMLName  xml.Name `xml:"macro"`
 	NameAttr string   `xml:"name,attr"`

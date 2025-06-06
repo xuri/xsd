@@ -12,7 +12,7 @@ import javax.xml.bind.annotation.XmlSchemaType;
 import javax.xml.bind.annotation.XmlType;
 import javax.xml.bind.annotation.XmlValue;
 
-// DepthValueRecorded ...
+// DepthValueRecorded is An optional collection of elements relating to recorded sample depth.
 public class DepthValueRecorded {
 	@XmlElement(required = true, name = "DepthValue")
 	protected Float DepthValue;
@@ -22,7 +22,7 @@ public class DepthValueRecorded {
 	protected MandatoryStringType DepthRelativeTo;
 }
 
-// PurgedVolumeRecorded ...
+// PurgedVolumeRecorded is An optional collection of elements relating to recorded sample volume.
 public class PurgedVolumeRecorded {
 	@XmlElement(required = true, name = "PurgedVolume")
 	protected Float PurgedVolume;
@@ -30,7 +30,7 @@ public class PurgedVolumeRecorded {
 	protected MandatoryStringType PurgedVolumeUnits;
 }
 
-// Measurement ...
+// Measurement is This repeating element contains the structure of a Water Quality measurement.
 public class Measurement {
 	@XmlElement(required = true, name = "DeterminandName")
 	protected MandatoryStringType DeterminandName;
@@ -46,7 +46,7 @@ public class Measurement {
 	protected String Comment;
 }
 
-// Sample ...
+// Sample is This element contains the structure of a collection of samples.
 public class Sample {
 	@XmlElement(required = true, name = "Sampler")
 	protected String Sampler;

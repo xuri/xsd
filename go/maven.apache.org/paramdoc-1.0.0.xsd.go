@@ -9,7 +9,8 @@ import (
 // Paramdoc is The root of a parameter plugin expression document.
 type Paramdoc *ExpressionDocumentation
 
-// Expressions ...
+// Expressions is The list of plugin parameter expressions described by this
+//             document.
 type Expressions struct {
 	XMLName    xml.Name      `xml:"expressions"`
 	Expression []*Expression `xml:"expression"`
@@ -20,12 +21,12 @@ type ExpressionDocumentation struct {
 	Expressions *Expressions `xml:"expressions"`
 }
 
-// CliOptions ...
+// CliOptions is The command-line switches used to change the value of this expression.
 type CliOptions struct {
 	XMLName xml.Name `xml:"cliOptions"`
 }
 
-// ApiMethods ...
+// ApiMethods is The programmatic methods used to change the value of this expression.
 type ApiMethods struct {
 	XMLName xml.Name `xml:"apiMethods"`
 }

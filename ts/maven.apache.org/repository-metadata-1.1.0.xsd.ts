@@ -3,7 +3,7 @@
 // Metadata is 1.0.0+
 export type Metadata = Metadata;
 
-// Plugins ...
+// Plugins is The set of plugin mappings for the group represented by this directory
 export class Plugins {
 	Plugin: Array<Plugin>;
 }
@@ -25,12 +25,12 @@ export class Plugin {
 	ArtifactId: string;
 }
 
-// Versions ...
+// Versions is Versions available of the artifact (both releases and snapshots)
 export class Versions {
 	Version: string;
 }
 
-// SnapshotVersions ...
+// SnapshotVersions is Information for each sub-artifact available in this artifact snapshot.
 export class SnapshotVersions {
 	SnapshotVersion: Array<SnapshotVersion>;
 }

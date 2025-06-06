@@ -16,7 +16,8 @@ pub struct profiles_xml {
 }
 
 
-// Profiles ...
+// Profiles is Configuration of build profiles for adjusting the build
+//             according to environmental parameters
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Profiles {
 	#[serde(rename = "profile")]
@@ -24,7 +25,8 @@ pub struct Profiles {
 }
 
 
-// ActiveProfiles ...
+// ActiveProfiles is List of manually-activated build profiles, specified in the order in which
+//             they should be applied.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct ActiveProfiles {
 	#[serde(rename = "activeProfile")]
@@ -42,13 +44,14 @@ pub struct ProfilesRoot {
 }
 
 
-// Properties ...
+// Properties is Extended configuration specific to this profile goes
+//             here.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Properties {
 }
 
 
-// Repositories ...
+// Repositories is The lists of the remote repositories
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Repositories {
 	#[serde(rename = "repository")]
@@ -56,7 +59,7 @@ pub struct Repositories {
 }
 
 
-// PluginRepositories ...
+// PluginRepositories is The lists of the remote repositories for discovering plugins
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct PluginRepositories {
 	#[serde(rename = "pluginRepository")]

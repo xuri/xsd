@@ -32,7 +32,8 @@ type DocumentTOCItem struct {
 	Item         []*DocumentTOCItem `xml:"item"`
 }
 
-// Authors ...
+// Authors is The authors that appear on the cover page.
+//             Only used if author is not given.
 type Authors struct {
 	XMLName xml.Name          `xml:"authors"`
 	Author  []*DocumentAuthor `xml:"author"`
@@ -75,7 +76,8 @@ type DocumentAuthor struct {
 	State       string `xml:"state"`
 }
 
-// KeyWords ...
+// KeyWords is A keyword pertaining to the document. The metadata can contain any
+//             number of keyword elements, each element specifying one keyword.
 type KeyWords struct {
 	XMLName xml.Name `xml:"keyWords"`
 	KeyWord []string `xml:"keyWord"`

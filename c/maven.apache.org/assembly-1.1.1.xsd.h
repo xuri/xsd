@@ -2,42 +2,70 @@
 
 typedef Assembly Assembly;
 
-// Formats ...
+// Formats is Specifies the formats of the assembly. Multiple formats can be
+//             supplied and the Assembly Plugin will generate an archive for each
+//             desired formats. When deploying your project, all file formats
+//             specified will also be deployed. A format is specified by supplying
+//             one of the following values in a &lt;format&gt; subelement:
+//             <ul>
+//               <li><b>"zip"</b> - Creates a ZIP file format</li>
+//               <li><b>"gz"</b> - Creates a GZIP format</li>
+//               <li><b>"tar"</b> - Creates a TAR format</li>
+//               <li><b>"tar.gz"</b> - Creates a gzip'd TAR format</li>
+//               <li><b>"tar.bz2"</b> - Creates a bzip'd TAR format</li>
+//             </ul>
 typedef struct {
 	char Format[];
 } Formats;
 
-// ContainerDescriptorHandlers ...
+// ContainerDescriptorHandlers is Set of components which filter various container descriptors out of
+//             the normal archive stream, so they can be aggregated then added.
 typedef struct {
 	ContainerDescriptorHandlerConfig ContainerDescriptorHandler[];
 } ContainerDescriptorHandlers;
 
-// ModuleSets ...
+// ModuleSets is Specifies which module files to include in the assembly. A moduleSet
+//             is specified by providing one or more of &lt;moduleSet&gt;
+//             subelements.
 typedef struct {
 	ModuleSet ModuleSet[];
 } ModuleSets;
 
-// FileSets ...
+// FileSets is Specifies which groups of files to include in the assembly. A
+//             fileSet is specified by providing one or more of &lt;fileSet&gt;
+//             subelements.
 typedef struct {
 	FileSet FileSet[];
 } FileSets;
 
-// Files ...
+// Files is Specifies which single files to include in the assembly. A file
+//             is specified by providing one or more of &lt;file&gt;
+//             subelements.
 typedef struct {
 	FileItem File[];
 } Files;
 
-// DependencySets ...
+// DependencySets is Specifies which dependencies to include in the assembly. A
+//             dependencySet is specified by providing one or more of
+//             &lt;dependencySet&gt; subelements.
 typedef struct {
 	DependencySet DependencySet[];
 } DependencySets;
 
-// Repositories ...
+// Repositories is Specifies which repository files to include in the assembly. A
+//             repository is specified by providing one or more of
+//             &lt;repository&gt; subelements.
 typedef struct {
 	Repository Repository[];
 } Repositories;
 
-// ComponentDescriptors ...
+// ComponentDescriptors is Specifies the shared components xml file locations to include in the
+//             assembly. The locations specified must be relative to the basedir of
+//             the project. When multiple componentDescriptors are found, their
+//             contents are merged. Check out the <a href="component.html">
+//             descriptor components</a> for more information. A
+//             componentDescriptor is specified by providing one or more of
+//             &lt;componentDescriptor&gt; subelements.
 typedef struct {
 	char ComponentDescriptor[];
 } ComponentDescriptors;
@@ -62,7 +90,7 @@ typedef struct {
 	ComponentDescriptors ComponentDescriptors;
 } Assembly;
 
-// Configuration ...
+// Configuration is Configuration options for the handler.
 typedef struct {
 } Configuration;
 
@@ -72,17 +100,23 @@ typedef struct {
 	Configuration Configuration;
 } ContainerDescriptorHandlerConfig;
 
-// GroupVersionAlignments ...
+// GroupVersionAlignments is Specifies that you want to align a group of artifacts to a specified
+//             version. A groupVersionAlignment is specified by providing one or
+//             more of &lt;groupVersionAlignment&gt; subelements.
 typedef struct {
 	GroupVersionAlignment GroupVersionAlignment[];
 } GroupVersionAlignments;
 
-// Includes ...
+// Includes is When &lt;include&gt; subelements are present, they define a set of
+//             files and directory to include. If none is present, then
+//             &lt;includes&gt; represents all valid values.
 typedef struct {
 	char Include[];
 } Includes;
 
-// Excludes ...
+// Excludes is When &lt;exclude&gt; subelements are present, they define a set of
+//             files and directory to exclude. If none is present, then
+//             &lt;excludes&gt; represents no exclusions.
 typedef struct {
 	char Exclude[];
 } Excludes;

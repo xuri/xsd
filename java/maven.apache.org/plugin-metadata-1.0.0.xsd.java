@@ -18,7 +18,7 @@ public class PluginMetadata {
 	protected PluginMetadata PluginMetadata;
 }
 
-// Mojos ...
+// Mojos is The list of mojos contained in the accompanying script.
 public class Mojos {
 	@XmlElement(required = true, name = "mojo")
 	protected List<Mojo> Mojo;
@@ -30,13 +30,13 @@ public class PluginMetadata2 {
 	protected Mojos Mojos;
 }
 
-// Components ...
+// Components is List of plexus components required by this mojo.
 public class Components {
 	@XmlElement(required = true, name = "component")
 	protected List<Component> Component;
 }
 
-// Parameters ...
+// Parameters is List of parameters used by this mojo.
 public class Parameters {
 	@XmlElement(required = true, name = "parameter")
 	protected List<Parameter> Parameter;

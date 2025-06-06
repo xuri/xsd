@@ -18,59 +18,129 @@ public class Project {
 	protected Model Project;
 }
 
-// MailingLists ...
+// MailingLists is Contains information about a project's mailing lists.  This
+//             is used to generate the <a href="/plugins/site/index.html">front
+//             page</a> of the site's web site.
 public class MailingLists {
 	@XmlElement(required = true, name = "mailingList")
 	protected List<MailingList> MailingList;
 }
 
-// Developers ...
+// Developers is Describes the committers to a project.  This is used to
+//             generate the <a href="/plugins/site/index.html">Project Team</a>
+//             page of the project's web site.
 public class Developers {
 	@XmlElement(required = true, name = "developer")
 	protected List<Developer> Developer;
 }
 
-// Contributors ...
+// Contributors is Describes the contributors to a project.  This is used to generate
+//             the <a href="/plugins/site/index.html">Project Team</a> page of
+//             the project's web site.
 public class Contributors {
 	@XmlElement(required = true, name = "contributor")
 	protected List<Contributor> Contributor;
 }
 
-// Licenses ...
+// Licenses is This element describes all of the licenses for this project.  
+//             Each license is described by a <code>license</code> element, which 
+//             is then described by additional elements (described below).  The 
+//             auto-generated site documentation references this information.  
+//             Projects should only list the license(s) that applies to the project 
+//             and not the licenses that apply to dependencies.
 public class Licenses {
 	@XmlElement(required = true, name = "license")
 	protected List<License> License;
 }
 
-// Versions ...
+// Versions is Optional. Contains information on previous versions of the
+//             project. This information is used when invoking the 
+//             <a href="/plugins/dist/index.html"><code>maven:dist</code></a>
+//             target.
 public class Versions {
 	@XmlElement(required = true, name = "version")
 	protected List<Version> Version;
 }
 
-// Branches ...
+// Branches is Optional. Contains information on branches of the
+//             project. This information is used when invoking the 
+//             <a href="/plugins/dist/index.html"><code>maven:dist</code></a>
+//             target.
 public class Branches {
 	@XmlElement(required = true, name = "branch")
 	protected List<Branch> Branch;
 }
 
-// PackageGroups ...
+// PackageGroups is Package groups required for complete javadocs.
 public class PackageGroups {
 	@XmlElement(required = true, name = "packageGroup")
 	protected List<PackageGroup> PackageGroup;
 }
 
-// Reports ...
+// Reports is This element includes the specification of reports to be
+//             included in a Maven-generated site.  These reports will be run
+//             when a user executes <code>maven site</code>.  All of the
+//             reports will be included in the navigation bar for browsing in
+//             the order they are specified.
 public class Reports {
 	@XmlElement(required = true, name = "report")
 	protected List<String> Report;
 }
 
-// Properties ...
+// Properties is Project properties that will be used by various plugins
 public class Properties {
 }
 
-// Dependencies ...
+// Dependencies is <p>
+//               This element describes all of the dependencies associated with a
+//               project.  Each dependency is described by a
+//               <code>dependency</code> element, which is then described by
+//               additional elements (described below).
+//             </p>
+//             <p>
+//               These dependencies are used to construct a classpath for your 
+//               project during the build process.
+//             </p>
+//             <p>
+//               Maven can automatically download these dependencies from a 
+//               <a href="/user-guide.html#Remote%20Repository%20Layout">remote repository</a>.
+//             </p>
+//             <p>
+//               The filename that Maven downloads from the repository is 
+//               <code>artifactId-version.jar</code> where <code>artifactId</code> 
+//               corresponds to the <code>artifactId</code> element and 
+//               <code>version</code> corresponds to the <code>version</code> element.
+//             </p>
+//             <p>
+//               When Maven goes looking for a dependency in the remote repository, 
+//               it uses the dependency element to construct the URL to download 
+//               from. This URL is defined as:
+//             </p>
+//             <div class="source">
+//               <pre>${repo}/${groupId}/${type}s/${artifactId}-${version}.${type}</pre>
+//             </div>
+//             <p>
+//               Where
+//             </p>
+//             <dl>
+//               <dt>repo</dt>
+//               <dd>
+//                 is the remote repository URL specified by 
+//                 <code>${maven.repo.remote}</code>
+//               </dd>
+//               
+//               <dt>groupId</dt>
+//               <dd>is taken from the dependency element</dd>
+//               
+//               <dt>type</dt>
+//               <dd>is taken from the dependency element</dd>
+//               
+//               <dt>artifactId</dt>
+//               <dd>is taken from the dependency element</dd>
+//               
+//               <dt>version</dt>
+//               <dd>is taken from the dependency element</dd>
+//             </dl>
 public class Dependencies {
 	@XmlElement(required = true, name = "dependency")
 	protected List<Dependency> Dependency;
@@ -147,13 +217,22 @@ public class Model {
 	protected Dependencies Dependencies;
 }
 
-// SourceModifications ...
+// SourceModifications is This element describes all of the sourceModifications associated 
+//             with a project.  Each source modification is described by a
+//             <code>sourceModification</code> element, which is then described by
+//              additional elements (described below).  These modifications are used 
+//             to exclude or include various source depending on the environment
+//              the build is running in.
 public class SourceModifications {
 	@XmlElement(required = true, name = "sourceModification")
 	protected List<SourceModification> SourceModification;
 }
 
-// Resources ...
+// Resources is This element describes all of the resources associated with a 
+//             project or unit tests. Each resource is described by a resource 
+//             element, which is then described by additional elements (described 
+//             <a href="#resource">below</a>). These resources are used to complete 
+//             the jar file or to run unit test.
 public class Resources {
 	@XmlElement(required = true, name = "resource")
 	protected List<Resource> Resource;
@@ -182,13 +261,13 @@ public class Build {
 	protected Resources Resources;
 }
 
-// Includes ...
+// Includes is the description
 public class Includes {
 	@XmlElement(required = true, name = "include")
 	protected List<String> Include;
 }
 
-// Excludes ...
+// Excludes is the description
 public class Excludes {
 	@XmlElement(required = true, name = "exclude")
 	protected List<String> Exclude;
@@ -248,7 +327,9 @@ public class Organization {
 	protected String Logo;
 }
 
-// Roles ...
+// Roles is The roles the contributor plays in the project.  Each role is
+//             described by a <code>role</code> element, the body of which is a
+//             role name.
 public class Roles {
 	@XmlElement(required = true, name = "role")
 	protected List<String> Role;
@@ -374,7 +455,7 @@ public class Branch {
 	protected String Tag;
 }
 
-// OtherArchives ...
+// OtherArchives is The link to other URLs where you can browse the list archive.
 public class OtherArchives {
 	@XmlElement(required = true, name = "otherArchive")
 	protected List<String> OtherArchive;

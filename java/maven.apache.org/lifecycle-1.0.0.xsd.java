@@ -24,7 +24,7 @@ public class LifecycleConfiguration {
 	protected List<Lifecycle> Lifecycle;
 }
 
-// Phases ...
+// Phases is The phase mappings for this lifecycle.
 public class Phases {
 	@XmlElement(required = true, name = "phase")
 	protected List<Phase> Phase;
@@ -38,13 +38,13 @@ public class Lifecycle {
 	protected Phases Phases;
 }
 
-// Executions ...
+// Executions is The goals to execute within the phase.
 public class Executions {
 	@XmlElement(required = true, name = "execution")
 	protected List<Execution> Execution;
 }
 
-// Configuration ...
+// Configuration is Configuration to pass to all goals run in this phase.
 public class Configuration {
 }
 
@@ -58,7 +58,7 @@ public class Phase {
 	protected Configuration Configuration;
 }
 
-// Goals ...
+// Goals is The goals to execute.
 public class Goals {
 	@XmlElement(required = true, name = "goal")
 	protected List<String> Goal;

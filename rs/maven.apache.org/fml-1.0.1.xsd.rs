@@ -701,7 +701,8 @@ pub struct HeadMisc {
 }
 
 
-// Head ...
+// Head is content model is "head.misc" combined with a single
+//       title and an optional base element in any order
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Head {
 	#[serde(rename = "i18n")]
@@ -719,7 +720,9 @@ pub struct Head {
 }
 
 
-// Title ...
+// Title is The title element is not considered part of the flow of text.
+//       It should be displayed, for example as the page header or
+//       window title. Exactly one title is required per document.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Title {
 	#[serde(rename = "i18n")]
@@ -729,7 +732,7 @@ pub struct Title {
 }
 
 
-// Base ...
+// Base is document base URI
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Base {
 	#[serde(rename = "id")]
@@ -741,7 +744,7 @@ pub struct Base {
 }
 
 
-// Meta ...
+// Meta is generic metainformation
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Meta {
 	#[serde(rename = "i18n")]
@@ -759,7 +762,17 @@ pub struct Meta {
 }
 
 
-// Link ...
+// Link is Relationship values can be used in principle:
+// 
+//       a) for document specific toolbars/menus when used
+//          with the link element in document head e.g.
+//            start, contents, previous, next, index, end, help
+//       b) to link to a separate style sheet (rel="stylesheet")
+//       c) to make a link to a script (rel="script")
+//       d) by stylesheets to control how collections of
+//          html nodes are rendered into printed documents
+//       e) to make a link to a printable version of this document
+//          e.g. a PostScript or PDF version (rel="alternate" media="print")
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Link {
 	#[serde(rename = "attrs")]
@@ -783,7 +796,7 @@ pub struct Link {
 }
 
 
-// Style ...
+// Style is style info, which may include CDATA sections
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Style {
 	#[serde(rename = "i18n")]
@@ -801,7 +814,7 @@ pub struct Style {
 }
 
 
-// Script2 ...
+// Script2 is script statements, which may include CDATA sections
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Script2 {
 	#[serde(rename = "id")]
@@ -821,7 +834,7 @@ pub struct Script2 {
 }
 
 
-// Noscript ...
+// Noscript is alternate content container for non script-based rendering
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Noscript {
 	#[serde(rename = "attrs")]
@@ -831,7 +844,7 @@ pub struct Noscript {
 }
 
 
-// Iframe ...
+// Iframe is inline subwindow
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Iframe {
 	#[serde(rename = "coreattrs")]
@@ -861,7 +874,7 @@ pub struct Iframe {
 }
 
 
-// Noframes ...
+// Noframes is alternate content container for non frame-based rendering
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Noframes {
 	#[serde(rename = "attrs")]
@@ -871,7 +884,7 @@ pub struct Noframes {
 }
 
 
-// Div ...
+// Div is generic language/style container
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Div {
 	#[serde(rename = "attrs")]
@@ -975,7 +988,7 @@ pub struct ULStyle {
 }
 
 
-// Ul ...
+// Ul is Unordered list
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Ul {
 	#[serde(rename = "attrs")]
@@ -1006,7 +1019,7 @@ pub struct OLStyle {
 }
 
 
-// Ol ...
+// Ol is Ordered (numbered) list
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Ol {
 	#[serde(rename = "attrs")]
@@ -1022,7 +1035,7 @@ pub struct Ol {
 }
 
 
-// Menu ...
+// Menu is single column list (DEPRECATED)
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Menu {
 	#[serde(rename = "attrs")]
@@ -1034,7 +1047,7 @@ pub struct Menu {
 }
 
 
-// Dir ...
+// Dir is multiple column list (DEPRECATED)
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Dir {
 	#[serde(rename = "attrs")]
@@ -1054,7 +1067,7 @@ pub struct LIStyle {
 }
 
 
-// Li ...
+// Li is list item
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Li {
 	#[serde(rename = "attrs")]
@@ -1102,7 +1115,7 @@ pub struct Dd {
 }
 
 
-// Address ...
+// Address is information on author
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Address {
 	#[serde(rename = "attrs")]
@@ -1132,7 +1145,8 @@ pub struct Hr {
 }
 
 
-// Pre ...
+// Pre is content is "Inline" excluding
+//          "img|object|applet|big|small|sub|sup|font|basefont"
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Pre {
 	#[serde(rename = "attrs")]
@@ -1158,7 +1172,7 @@ pub struct Blockquote {
 }
 
 
-// Center ...
+// Center is center content
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Center {
 	#[serde(rename = "attrs")]
@@ -1196,7 +1210,7 @@ pub struct Del {
 }
 
 
-// A ...
+// A is content is "Inline" except that anchors shouldn't be nested
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct A {
 	#[serde(rename = "attrs")]
@@ -1228,7 +1242,7 @@ pub struct A {
 }
 
 
-// Span ...
+// Span is generic language/style container
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Span {
 	#[serde(rename = "attrs")]
@@ -1238,7 +1252,7 @@ pub struct Span {
 }
 
 
-// Bdo ...
+// Bdo is I18N BiDi over-ride
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Bdo {
 	#[serde(rename = "coreattrs")]
@@ -1256,7 +1270,7 @@ pub struct Bdo {
 }
 
 
-// Br ...
+// Br is forced line break
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Br {
 	#[serde(rename = "coreattrs")]
@@ -1266,7 +1280,7 @@ pub struct Br {
 }
 
 
-// Em ...
+// Em is emphasis
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Em {
 	#[serde(rename = "attrs")]
@@ -1276,7 +1290,7 @@ pub struct Em {
 }
 
 
-// Strong ...
+// Strong is strong emphasis
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Strong {
 	#[serde(rename = "attrs")]
@@ -1286,7 +1300,7 @@ pub struct Strong {
 }
 
 
-// Dfn ...
+// Dfn is definitional
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Dfn {
 	#[serde(rename = "attrs")]
@@ -1296,7 +1310,7 @@ pub struct Dfn {
 }
 
 
-// Code ...
+// Code is program code
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Code {
 	#[serde(rename = "attrs")]
@@ -1306,7 +1320,7 @@ pub struct Code {
 }
 
 
-// Samp ...
+// Samp is sample
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Samp {
 	#[serde(rename = "attrs")]
@@ -1316,7 +1330,7 @@ pub struct Samp {
 }
 
 
-// Kbd ...
+// Kbd is something user would type
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Kbd {
 	#[serde(rename = "attrs")]
@@ -1326,7 +1340,7 @@ pub struct Kbd {
 }
 
 
-// Var ...
+// Var is variable
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Var {
 	#[serde(rename = "attrs")]
@@ -1336,7 +1350,7 @@ pub struct Var {
 }
 
 
-// Cite ...
+// Cite is citation
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Cite {
 	#[serde(rename = "attrs")]
@@ -1346,7 +1360,7 @@ pub struct Cite {
 }
 
 
-// Abbr ...
+// Abbr is abbreviation
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Abbr {
 	#[serde(rename = "attrs")]
@@ -1356,7 +1370,7 @@ pub struct Abbr {
 }
 
 
-// Acronym ...
+// Acronym is acronym
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Acronym {
 	#[serde(rename = "attrs")]
@@ -1366,7 +1380,7 @@ pub struct Acronym {
 }
 
 
-// Q ...
+// Q is inlined quote
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Q {
 	#[serde(rename = "attrs")]
@@ -1378,7 +1392,7 @@ pub struct Q {
 }
 
 
-// Sub ...
+// Sub is subscript
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Sub {
 	#[serde(rename = "attrs")]
@@ -1388,7 +1402,7 @@ pub struct Sub {
 }
 
 
-// Sup ...
+// Sup is superscript
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Sup {
 	#[serde(rename = "attrs")]
@@ -1398,7 +1412,7 @@ pub struct Sup {
 }
 
 
-// Tt ...
+// Tt is fixed pitch font
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Tt {
 	#[serde(rename = "attrs")]
@@ -1408,7 +1422,7 @@ pub struct Tt {
 }
 
 
-// I ...
+// I is italic font
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct I {
 	#[serde(rename = "attrs")]
@@ -1418,7 +1432,7 @@ pub struct I {
 }
 
 
-// B ...
+// B is bold font
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct B {
 	#[serde(rename = "attrs")]
@@ -1428,7 +1442,7 @@ pub struct B {
 }
 
 
-// Big ...
+// Big is bigger font
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Big {
 	#[serde(rename = "attrs")]
@@ -1438,7 +1452,7 @@ pub struct Big {
 }
 
 
-// Small ...
+// Small is smaller font
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Small {
 	#[serde(rename = "attrs")]
@@ -1448,7 +1462,7 @@ pub struct Small {
 }
 
 
-// U ...
+// U is underline
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct U {
 	#[serde(rename = "attrs")]
@@ -1458,7 +1472,7 @@ pub struct U {
 }
 
 
-// S ...
+// S is strike-through
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct S {
 	#[serde(rename = "attrs")]
@@ -1468,7 +1482,7 @@ pub struct S {
 }
 
 
-// Strike ...
+// Strike is strike-through
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Strike {
 	#[serde(rename = "attrs")]
@@ -1478,7 +1492,7 @@ pub struct Strike {
 }
 
 
-// Basefont ...
+// Basefont is base font size
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Basefont {
 	#[serde(rename = "id")]
@@ -1492,7 +1506,7 @@ pub struct Basefont {
 }
 
 
-// Font ...
+// Font is local change to font
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Font {
 	#[serde(rename = "coreattrs")]
@@ -1562,7 +1576,10 @@ pub struct Object {
 }
 
 
-// Param ...
+// Param is param is used to supply a named property value.
+//       In XML it would seem natural to follow RDF and support an
+//       abbreviated syntax where the param elements are replaced
+//       by attribute value pairs on the object start tag.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Param {
 	#[serde(rename = "id")]
@@ -1726,7 +1743,8 @@ pub struct Form {
 }
 
 
-// Label ...
+// Label is Each label must not contain more than ONE field
+//       Label elements shouldn't be nested.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Label {
 	#[serde(rename = "attrs")]
@@ -1752,7 +1770,7 @@ pub struct InputType {
 }
 
 
-// Input ...
+// Input is form control
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Input {
 	#[serde(rename = "attrs")]
@@ -1792,7 +1810,7 @@ pub struct Input {
 }
 
 
-// Select ...
+// Select is option selector
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Select {
 	#[serde(rename = "attrs")]
@@ -1820,7 +1838,7 @@ pub struct Select {
 }
 
 
-// Optgroup ...
+// Optgroup is option group
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Optgroup {
 	#[serde(rename = "attrs")]
@@ -1834,7 +1852,7 @@ pub struct Optgroup {
 }
 
 
-// Option ...
+// Option is selectable choice
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Option {
 	#[serde(rename = "attrs")]
@@ -1850,7 +1868,7 @@ pub struct Option {
 }
 
 
-// Textarea ...
+// Textarea is multi-line text field
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Textarea {
 	#[serde(rename = "attrs")]
@@ -1874,7 +1892,12 @@ pub struct Textarea {
 }
 
 
-// Fieldset ...
+// Fieldset is The fieldset element is used to group form fields.
+//       Only one legend element should occur in the content
+//       and if present should only be preceded by whitespace.
+// 
+//       NOTE: this content model is different from the XHTML 1.0 DTD,
+//       closer to the intended content model in HTML4 DTD
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Fieldset {
 	#[serde(rename = "attrs")]
@@ -1900,7 +1923,7 @@ pub struct LAlign {
 }
 
 
-// Legend ...
+// Legend is fieldset label
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Legend {
 	#[serde(rename = "attrs")]
@@ -1914,7 +1937,7 @@ pub struct Legend {
 }
 
 
-// Button ...
+// Button is Content is "Flow" excluding a, form and form controls
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Button {
 	#[serde(rename = "attrs")]
@@ -1934,7 +1957,7 @@ pub struct Button {
 }
 
 
-// Isindex ...
+// Isindex is single-line text input control (DEPRECATED)
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Isindex {
 	#[serde(rename = "coreattrs")]
@@ -2103,7 +2126,8 @@ pub struct Tbody {
 }
 
 
-// Colgroup ...
+// Colgroup is colgroup groups a set of col elements. It allows you to group
+//       several semantically related columns together.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Colgroup {
 	#[serde(rename = "attrs")]
@@ -2121,7 +2145,16 @@ pub struct Colgroup {
 }
 
 
-// Col ...
+// Col is col elements define the alignment properties for cells in
+//       one or more columns.
+// 
+//       The width attribute specifies the width of the columns, e.g.
+// 
+//           width=64        width in screen pixels
+//           width=0.5*      relative width of 0.5
+// 
+//       The span attribute causes the attributes of one
+//       col element to apply to more than one column.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Col {
 	#[serde(rename = "attrs")]
@@ -2231,7 +2264,7 @@ pub struct Td {
 }
 
 
-// Faqs ...
+// Faqs is The <faqs/> element is the root of the FML descriptor.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Faqs {
 	#[serde(rename = "i18n")]
@@ -2247,7 +2280,7 @@ pub struct Faqs {
 }
 
 
-// Part ...
+// Part is A part element of the faqs element.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Part {
 	#[serde(rename = "id")]
@@ -2259,7 +2292,7 @@ pub struct Part {
 }
 
 
-// Faq ...
+// Faq is A faq element.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Faq {
 	#[serde(rename = "id")]
@@ -2271,7 +2304,7 @@ pub struct Faq {
 }
 
 
-// Question ...
+// Question is A faq question element.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Question {
 	#[serde(rename = "fontstyle")]
@@ -2281,7 +2314,7 @@ pub struct Question {
 }
 
 
-// Answer ...
+// Answer is A faq answer element.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Answer {
 	#[serde(rename = "block")]
@@ -2295,13 +2328,13 @@ pub struct Answer {
 }
 
 
-// Source ...
+// Source is A source element.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Source {
 }
 
 
-// Macro ...
+// Macro is A macro element.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Macro {
 	#[serde(rename = "name")]

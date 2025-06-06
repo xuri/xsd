@@ -18,7 +18,7 @@ public class Book {
 	protected BookModel Book;
 }
 
-// Chapters ...
+// Chapters is Specifies a collection of chapters.
 public class Chapters {
 	@XmlElement(required = true, name = "chapter")
 	protected List<Chapter> Chapter;
@@ -38,7 +38,7 @@ public class BookModel {
 	protected Chapters Chapters;
 }
 
-// Sections ...
+// Sections is Specifies a collection of sections.
 public class Sections {
 	@XmlElement(required = true, name = "section")
 	protected List<Section> Section;

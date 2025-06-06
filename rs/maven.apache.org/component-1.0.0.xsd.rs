@@ -16,7 +16,7 @@ pub struct component {
 }
 
 
-// FileSets ...
+// FileSets is Specify assembly parameters for groups of files.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct FileSets {
 	#[serde(rename = "fileSet")]
@@ -24,7 +24,7 @@ pub struct FileSets {
 }
 
 
-// Files ...
+// Files is Specify assembly parameters for single files.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Files {
 	#[serde(rename = "file")]
@@ -32,7 +32,7 @@ pub struct Files {
 }
 
 
-// DependencySets ...
+// DependencySets is Specify assembly behavior for sets of dependencies.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct DependencySets {
 	#[serde(rename = "dependencySet")]
@@ -52,7 +52,8 @@ pub struct Component {
 }
 
 
-// Includes ...
+// Includes is When &lt;include&gt; subelements are present, they define
+//             a set of files and directory to include.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Includes {
 	#[serde(rename = "include")]
@@ -60,7 +61,8 @@ pub struct Includes {
 }
 
 
-// Excludes ...
+// Excludes is When &lt;exclude&gt; subelements are present, they define
+//             a set of files and directory to exclude.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Excludes {
 	#[serde(rename = "exclude")]

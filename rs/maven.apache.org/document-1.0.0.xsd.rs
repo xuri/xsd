@@ -116,7 +116,8 @@ pub struct DocumentAuthor {
 }
 
 
-// Authors ...
+// Authors is The authors of the document. The names of the entities that
+//             are primarily responsible for the content of the document.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Authors {
 	#[serde(rename = "author")]
@@ -124,7 +125,8 @@ pub struct Authors {
 }
 
 
-// KeyWords ...
+// KeyWords is A keyword pertaining to the document. The metadata can contain any
+//             number of keyword elements, each element specifying one keyword.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct KeyWords {
 	#[serde(rename = "keyWord")]

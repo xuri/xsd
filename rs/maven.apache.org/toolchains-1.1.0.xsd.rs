@@ -25,13 +25,20 @@ pub struct PersistedToolchains {
 }
 
 
-// Provides ...
+// Provides is <p>Toolchain identification information, which will be matched against project requirements.</p>
+//                     <p>For Maven 2.0.9 to 3.2.3, the actual content structure was completely open: each toolchain type would define its own format and semantics.
+//                     In general, this was a properties format.</p>
+//                     <p>Since Maven 3.2.4, the type for this field has been changed to Properties to match the de-facto format.</p>
+//                     <p>Each toolchain defines its own properties names and semantics.</p>
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Provides {
 }
 
 
-// Configuration ...
+// Configuration is <p>Toolchain configuration information, like location or any information that is to be retrieved.</p>
+//                     <p>Actual content structure is completely open: each toolchain type will define its own format and semantics.</p>
+//                     <p>In general, this is a properties format: <code>&lt;name&gt;value&lt;/name&gt;</code> with
+//                     per-toolchain defined properties names.</p>
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Configuration {
 }

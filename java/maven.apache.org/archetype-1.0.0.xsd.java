@@ -18,31 +18,31 @@ public class Archetype {
 	protected ArchetypeModel Archetype;
 }
 
-// Sources ...
+// Sources is Files that will go into <code>src/main/java</code>.
 public class Sources {
 	@XmlElement(required = true, name = "source")
 	protected List<Source> Source;
 }
 
-// Resources ...
+// Resources is Files that will go into <code>src/main/resources</code>.
 public class Resources {
 	@XmlElement(required = true, name = "resource")
 	protected List<Resource> Resource;
 }
 
-// TestSources ...
+// TestSources is Files that will go into <code>src/test/java</code>.
 public class TestSources {
 	@XmlElement(required = true, name = "source")
 	protected List<Source> Source;
 }
 
-// TestResources ...
+// TestResources is Files that will go into <code>src/test/resources</code>.
 public class TestResources {
 	@XmlElement(required = true, name = "resource")
 	protected List<Resource> Resource;
 }
 
-// SiteResources ...
+// SiteResources is Files that will go into <code>src/site</code>.
 public class SiteResources {
 	@XmlElement(required = true, name = "resource")
 	protected List<Resource> Resource;

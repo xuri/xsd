@@ -16,7 +16,7 @@ pub struct verifications {
 }
 
 
-// Files ...
+// Files is List of files and directories to check.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Files {
 	#[serde(rename = "file")]

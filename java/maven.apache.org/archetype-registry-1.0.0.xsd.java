@@ -18,13 +18,13 @@ public class Archetyperegistry {
 	protected ArchetypeRegistry Archetyperegistry;
 }
 
-// Languages ...
+// Languages is 0.0.0+
 public class Languages {
 	@XmlElement(required = true, name = "Language")
 	protected List<String> Language;
 }
 
-// FilteredExtensions ...
+// FilteredExtensions is 0.0.0+
 public class FilteredExtensions {
 	@XmlElement(required = true, name = "FilteredExtension")
 	protected List<String> FilteredExtension;

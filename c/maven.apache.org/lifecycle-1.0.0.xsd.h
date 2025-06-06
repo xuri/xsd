@@ -7,7 +7,7 @@ typedef struct {
 	Lifecycle Lifecycle[];
 } LifecycleConfiguration;
 
-// Phases ...
+// Phases is The phase mappings for this lifecycle.
 typedef struct {
 	Phase Phase[];
 } Phases;
@@ -18,12 +18,12 @@ typedef struct {
 	Phases Phases;
 } Lifecycle;
 
-// Executions ...
+// Executions is The goals to execute within the phase.
 typedef struct {
 	Execution Execution[];
 } Executions;
 
-// Configuration ...
+// Configuration is Configuration to pass to all goals run in this phase.
 typedef struct {
 } Configuration;
 
@@ -34,7 +34,7 @@ typedef struct {
 	Configuration Configuration;
 } Phase;
 
-// Goals ...
+// Goals is The goals to execute.
 typedef struct {
 	char Goal[];
 } Goals;

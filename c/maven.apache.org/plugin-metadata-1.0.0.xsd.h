@@ -2,7 +2,7 @@
 
 typedef PluginMetadata PluginMetadata;
 
-// Mojos ...
+// Mojos is The list of mojos contained in the accompanying script.
 typedef struct {
 	Mojo Mojo[];
 } Mojos;
@@ -12,12 +12,12 @@ typedef struct {
 	Mojos Mojos;
 } PluginMetadata;
 
-// Components ...
+// Components is List of plexus components required by this mojo.
 typedef struct {
 	Component Component[];
 } Components;
 
-// Parameters ...
+// Parameters is List of parameters used by this mojo.
 typedef struct {
 	Parameter Parameter[];
 } Parameters;

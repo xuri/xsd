@@ -21,7 +21,26 @@ pub struct assembly {
 }
 
 
-// Formats ...
+// Formats is Specifies the formats of the assembly. 
+//             
+//             It is often better to specify the formats via the goal parameter rather
+//             than here. For example, that allows different profiles to generate
+//             different types of archives.
+//             
+//             Multiple formats can be
+//             supplied and the Assembly Plugin will generate an archive for each
+//             of the desired formats. When deploying your project, all file formats
+//             specified will also be deployed. A format is specified by supplying
+//             one of the following values in a &lt;format&gt; subelement:
+//             <ul>
+//               <li><b>"zip"</b> - Creates a ZIP file format</li>
+//               <li><b>"tar"</b> - Creates a TAR format</li>
+//               <li><b>"tar.gz"</b> or <b>"tgz"</b> - Creates a gzip'd TAR format</li>
+//               <li><b>"tar.bz2"</b> or <b>"tbz2"</b> - Creates a bzip'd TAR format</li>
+//               <li><b>"jar"</b> - Creates a JAR format</li>
+//               <li><b>"dir"</b> - Creates an exploded directory format</li>
+//               <li><b>"war"</b> - Creates a WAR format</li>
+//             </ul>
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Formats {
 	#[serde(rename = "format")]
@@ -29,7 +48,8 @@ pub struct Formats {
 }
 
 
-// ContainerDescriptorHandlers ...
+// ContainerDescriptorHandlers is Set of components which filter various container descriptors out of
+//             the normal archive stream, so they can be aggregated then added.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct ContainerDescriptorHandlers {
 	#[serde(rename = "containerDescriptorHandler")]
@@ -37,7 +57,9 @@ pub struct ContainerDescriptorHandlers {
 }
 
 
-// ModuleSets ...
+// ModuleSets is Specifies which module files to include in the assembly. A moduleSet
+//             is specified by providing one or more of &lt;moduleSet&gt;
+//             subelements.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct ModuleSets {
 	#[serde(rename = "moduleSet")]
@@ -45,7 +67,9 @@ pub struct ModuleSets {
 }
 
 
-// FileSets ...
+// FileSets is Specifies which groups of files to include in the assembly. A
+//             fileSet is specified by providing one or more of &lt;fileSet&gt;
+//             subelements.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct FileSets {
 	#[serde(rename = "fileSet")]
@@ -53,7 +77,9 @@ pub struct FileSets {
 }
 
 
-// Files ...
+// Files is Specifies which single files to include in the assembly. A file
+//             is specified by providing one or more of &lt;file&gt;
+//             subelements.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Files {
 	#[serde(rename = "file")]
@@ -61,7 +87,9 @@ pub struct Files {
 }
 
 
-// DependencySets ...
+// DependencySets is Specifies which dependencies to include in the assembly. A
+//             dependencySet is specified by providing one or more of
+//             &lt;dependencySet&gt; subelements.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct DependencySets {
 	#[serde(rename = "dependencySet")]
@@ -69,7 +97,9 @@ pub struct DependencySets {
 }
 
 
-// Repositories ...
+// Repositories is Specifies which repository files to include in the assembly. A
+//             repository is specified by providing one or more of
+//             &lt;repository&gt; subelements.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Repositories {
 	#[serde(rename = "repository")]
@@ -77,7 +107,19 @@ pub struct Repositories {
 }
 
 
-// ComponentDescriptors ...
+// ComponentDescriptors is Specifies the shared components xml file locations to include in the
+//             assembly. The locations specified must be relative to the base location
+//             of the descriptor. If the descriptor was found via a &lt;descriptorRef/&gt; 
+//             element in the
+//             classpath, any components it specifies will also be found on the classpath.
+//             If it is found by pathname via a &lt;descriptor/&gt; element 
+//             the value here will be interpreted
+//             as a path relative to the project basedir.
+//             When multiple componentDescriptors are found, their
+//             contents are merged. Check out the <a href="component.html">
+//             descriptor components</a> for more information. A
+//             componentDescriptor is specified by providing one or more of
+//             &lt;componentDescriptor&gt; subelements.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct ComponentDescriptors {
 	#[serde(rename = "componentDescriptor")]
@@ -119,7 +161,13 @@ pub struct Assembly {
 }
 
 
-// Includes ...
+// Includes is When &lt;include&gt; subelements are present, they define a set of
+//             artifact coordinates to include. If none is present, then
+//             &lt;includes&gt; represents all valid values.
+//             
+//             Artifact coordinates may be given in simple groupId:artifactId form,
+//             or they may be fully qualified in the form groupId:artifactId:type[:classifier]:version.
+//             Additionally, wildcards can be used, as in *:maven-*
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Includes {
 	#[serde(rename = "include")]
@@ -127,7 +175,13 @@ pub struct Includes {
 }
 
 
-// Excludes ...
+// Excludes is When &lt;exclude&gt; subelements are present, they define a set of
+//             dependency artifact coordinates to exclude. If none is present, then
+//             &lt;excludes&gt; represents no exclusions.
+//             
+//             Artifact coordinates may be given in simple groupId:artifactId form,
+//             or they may be fully qualified in the form groupId:artifactId:type[:classifier]:version.
+//             Additionally, wildcards can be used, as in *:maven-*
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Excludes {
 	#[serde(rename = "exclude")]
@@ -190,7 +244,9 @@ pub struct UnpackOptions {
 }
 
 
-// GroupVersionAlignments ...
+// GroupVersionAlignments is Specifies that you want to align a group of artifacts to a specified
+//             version. A groupVersionAlignment is specified by providing one or
+//             more of &lt;groupVersionAlignment&gt; subelements.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct GroupVersionAlignments {
 	#[serde(rename = "groupVersionAlignment")]
@@ -235,7 +291,7 @@ pub struct GroupVersionAlignment {
 }
 
 
-// Configuration ...
+// Configuration is Configuration options for the handler.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Configuration {
 }

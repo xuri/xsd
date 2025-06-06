@@ -16,7 +16,11 @@ pub struct settings {
 }
 
 
-// Proxies ...
+// Proxies is Configuration for different proxy profiles. Multiple proxy profiles
+//             might come in handy for anyone working from a notebook or other
+//             mobile platform, to enable easy switching of entire proxy
+//             configurations by simply specifying the profile id, again either from
+//             the command line or from the defaults section below.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Proxies {
 	#[serde(rename = "proxy")]
@@ -24,7 +28,9 @@ pub struct Proxies {
 }
 
 
-// Servers ...
+// Servers is Configuration of server-specific settings, mainly authentication
+//             method. This allows configuration of authentication on a per-server
+//             basis.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Servers {
 	#[serde(rename = "server")]
@@ -32,7 +38,7 @@ pub struct Servers {
 }
 
 
-// Mirrors ...
+// Mirrors is Configuration of download mirrors for repositories.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Mirrors {
 	#[serde(rename = "mirror")]
@@ -40,7 +46,8 @@ pub struct Mirrors {
 }
 
 
-// Profiles ...
+// Profiles is Configuration of build profiles for adjusting the build
+//             according to environmental parameters.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Profiles {
 	#[serde(rename = "profile")]
@@ -48,7 +55,8 @@ pub struct Profiles {
 }
 
 
-// ActiveProfiles ...
+// ActiveProfiles is List of manually-activated build profiles, specified in the order in which
+//             they should be applied.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct ActiveProfiles {
 	#[serde(rename = "activeProfile")]
@@ -56,7 +64,8 @@ pub struct ActiveProfiles {
 }
 
 
-// PluginGroups ...
+// PluginGroups is List of groupIds to search for a plugin when that plugin
+//             groupId is not explicitly provided.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct PluginGroups {
 	#[serde(rename = "pluginGroup")]
@@ -126,7 +135,7 @@ pub struct Proxy {
 }
 
 
-// Configuration ...
+// Configuration is Extra configuration for the transport layer.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Configuration {
 }
@@ -154,13 +163,15 @@ pub struct Server {
 }
 
 
-// Properties ...
+// Properties is Extended configuration specific to this profile goes here.
+//             Contents take the form of
+//             <property.name>property.value</property.name>
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Properties {
 }
 
 
-// Repositories ...
+// Repositories is The lists of the remote repositories.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Repositories {
 	#[serde(rename = "repository")]
@@ -168,7 +179,7 @@ pub struct Repositories {
 }
 
 
-// PluginRepositories ...
+// PluginRepositories is The lists of the remote repositories for discovering plugins.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct PluginRepositories {
 	#[serde(rename = "pluginRepository")]

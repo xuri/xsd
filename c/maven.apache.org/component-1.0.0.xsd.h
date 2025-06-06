@@ -2,17 +2,17 @@
 
 typedef Component Component;
 
-// FileSets ...
+// FileSets is Specify assembly parameters for groups of files.
 typedef struct {
 	FileSet FileSet[];
 } FileSets;
 
-// Files ...
+// Files is Specify assembly parameters for single files.
 typedef struct {
 	FileItem File[];
 } Files;
 
-// DependencySets ...
+// DependencySets is Specify assembly behavior for sets of dependencies.
 typedef struct {
 	DependencySet DependencySet[];
 } DependencySets;
@@ -24,12 +24,14 @@ typedef struct {
 	DependencySets DependencySets;
 } Component;
 
-// Includes ...
+// Includes is When &lt;include&gt; subelements are present, they define
+//             a set of files and directory to include.
 typedef struct {
 	char Include[];
 } Includes;
 
-// Excludes ...
+// Excludes is When &lt;exclude&gt; subelements are present, they define
+//             a set of files and directory to exclude.
 typedef struct {
 	char Exclude[];
 } Excludes;

@@ -7,7 +7,7 @@ typedef struct {
 	Supplement Supplement[];
 } SupplementalDataModel;
 
-// Project ...
+// Project is Snippets of POM xml files used to supplement the data model.
 typedef struct {
 } Project;
 

@@ -10,65 +10,85 @@ import (
 //         The following table lists all of the possible child elements.
 type Project *Model
 
-// Licenses ...
+// Licenses is This element describes all of the licenses for this project.
+//             Each license is described by a <code>license</code> element, which
+//             is then described by additional elements.
+//             Projects should only list the license(s) that applies to the project
+//             and not the licenses that apply to dependencies.
+//             If multiple licenses are listed, it is assumed that the user can select
+//             any of them, not that they must accept all.
 type Licenses struct {
 	XMLName xml.Name   `xml:"licenses"`
 	License []*License `xml:"license"`
 }
 
-// Developers ...
+// Developers is Describes the committers of a project.
 type Developers struct {
 	XMLName   xml.Name     `xml:"developers"`
 	Developer []*Developer `xml:"developer"`
 }
 
-// Contributors ...
+// Contributors is Describes the contributors to a project that are not yet committers.
 type Contributors struct {
 	XMLName     xml.Name       `xml:"contributors"`
 	Contributor []*Contributor `xml:"contributor"`
 }
 
-// MailingLists ...
+// MailingLists is Contains information about a project's mailing lists.
 type MailingLists struct {
 	XMLName     xml.Name       `xml:"mailingLists"`
 	MailingList []*MailingList `xml:"mailingList"`
 }
 
-// Modules ...
+// Modules is The modules (sometimes called subprojects) to build as a part of this
+//             project. Each module listed is a relative path to the directory containing the module.
+//             To be consistent with the way default urls are calculated from parent, it is recommended
+//             to have module names match artifact ids.
 type Modules struct {
 	XMLName xml.Name `xml:"modules"`
 	Module  []string `xml:"module"`
 }
 
-// Properties ...
+// Properties is Properties that can be used throughout the POM as a substitution, and
+//             are used as filters in resources if enabled.
+//             The format is <code>&lt;name&gt;value&lt;/name&gt;</code>.
 type Properties struct {
 	XMLName xml.Name `xml:"properties"`
 }
 
-// Dependencies ...
+// Dependencies is This element describes all of the dependencies associated with a
+//             project.
+//             These dependencies are used to construct a classpath for your
+//             project during the build process. They are automatically downloaded from the
+//             repositories defined in this project.
+//             See <a href="https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html">the
+//             dependency mechanism</a> for more information.
 type Dependencies struct {
 	XMLName    xml.Name      `xml:"dependencies"`
 	Dependency []*Dependency `xml:"dependency"`
 }
 
-// Repositories ...
+// Repositories is The lists of the remote repositories for discovering dependencies and
+//             extensions.
 type Repositories struct {
 	XMLName    xml.Name      `xml:"repositories"`
 	Repository []*Repository `xml:"repository"`
 }
 
-// PluginRepositories ...
+// PluginRepositories is The lists of the remote repositories for discovering plugins for builds and
+//             reports.
 type PluginRepositories struct {
 	XMLName          xml.Name      `xml:"pluginRepositories"`
 	PluginRepository []*Repository `xml:"pluginRepository"`
 }
 
-// Reports ...
+// Reports is <b>Deprecated</b>. Now ignored by Maven.
 type Reports struct {
 	XMLName xml.Name `xml:"reports"`
 }
 
-// Profiles ...
+// Profiles is A listing of project-local build profiles which will modify the build process
+//             when activated.
 type Profiles struct {
 	XMLName xml.Name   `xml:"profiles"`
 	Profile []*Profile `xml:"profile"`
@@ -119,7 +139,8 @@ type License struct {
 	Comments     string `xml:"comments"`
 }
 
-// Notifiers ...
+// Notifiers is Configuration for notifying developers/users when a build is unsuccessful,
+//             including user information and notification mode.
 type Notifiers struct {
 	XMLName  xml.Name    `xml:"notifiers"`
 	Notifier []*Notifier `xml:"notifier"`
@@ -133,7 +154,7 @@ type CiManagement struct {
 	Notifiers *Notifiers `xml:"notifiers"`
 }
 
-// Configuration ...
+// Configuration is Extended configuration specific to this notifier goes here.
 type Configuration struct {
 	XMLName xml.Name `xml:"configuration"`
 }
@@ -174,7 +195,8 @@ type DependencyManagement struct {
 	Dependencies *Dependencies `xml:"dependencies"`
 }
 
-// Exclusions ...
+// Exclusions is Lists a set of artifacts that should be excluded from this dependency's
+//             artifact list when it comes to calculating transitive dependencies.
 type Exclusions struct {
 	XMLName   xml.Name     `xml:"exclusions"`
 	Exclusion []*Exclusion `xml:"exclusion"`
@@ -222,7 +244,9 @@ type Parent struct {
 	RelativePath string `xml:"relativePath"`
 }
 
-// Roles ...
+// Roles is The roles the contributor plays in the project. Each role is described by a
+//             <code>role</code> element, the body of which is a role name. This can also be used to
+//             describe the contribution.
 type Roles struct {
 	XMLName xml.Name `xml:"roles"`
 	Role    []string `xml:"role"`
@@ -241,7 +265,7 @@ type Developer struct {
 	Properties      *Properties `xml:"properties"`
 }
 
-// OtherArchives ...
+// OtherArchives is The link to alternate URLs where you can browse the list archive.
 type OtherArchives struct {
 	XMLName      xml.Name `xml:"otherArchives"`
 	OtherArchive []string `xml:"otherArchive"`
@@ -334,7 +358,7 @@ type Site struct {
 	Url                               string `xml:"url"`
 }
 
-// Plugins ...
+// Plugins is The reporting plugins to use and their configuration.
 type Plugins struct {
 	XMLName xml.Name        `xml:"plugins"`
 	Plugin  []*ReportPlugin `xml:"plugin"`
@@ -348,7 +372,8 @@ type Reporting struct {
 	Plugins         *Plugins `xml:"plugins"`
 }
 
-// ReportSets ...
+// ReportSets is Multiple specifications of a set of reports, each having (possibly) different
+//             configuration. This is the reporting parallel to an <code>execution</code> in the build.
 type ReportSets struct {
 	XMLName   xml.Name     `xml:"reportSets"`
 	ReportSet []*ReportSet `xml:"reportSet"`
@@ -430,19 +455,24 @@ type Repository struct {
 	Layout    string            `xml:"layout"`
 }
 
-// Resources ...
+// Resources is This element describes all of the classpath resources such as properties
+//             files associated with a project. These resources are often included in the final
+//             package.
+//             The default value is <code>src/main/resources</code>.
 type Resources struct {
 	XMLName  xml.Name    `xml:"resources"`
 	Resource []*Resource `xml:"resource"`
 }
 
-// TestResources ...
+// TestResources is This element describes all of the classpath resources such as properties
+//             files associated with a project's unit tests.
+//             The default value is <code>src/test/resources</code>.
 type TestResources struct {
 	XMLName      xml.Name    `xml:"testResources"`
 	TestResource []*Resource `xml:"testResource"`
 }
 
-// Filters ...
+// Filters is The list of filter properties files that are used when filtering is enabled.
 type Filters struct {
 	XMLName xml.Name `xml:"filters"`
 	Filter  []string `xml:"filter"`
@@ -463,13 +493,14 @@ type BuildBase struct {
 	Plugins          *Plugins          `xml:"plugins"`
 }
 
-// Executions ...
+// Executions is Multiple specifications of a set of goals to execute during the build
+//             lifecycle, each having (possibly) a different configuration.
 type Executions struct {
 	XMLName   xml.Name           `xml:"executions"`
 	Execution []*PluginExecution `xml:"execution"`
 }
 
-// Goals ...
+// Goals is <b>Deprecated</b>. Unused by Maven.
 type Goals struct {
 	XMLName xml.Name `xml:"goals"`
 }
@@ -500,13 +531,13 @@ type PluginExecution struct {
 	Configuration *Configuration `xml:"configuration"`
 }
 
-// Includes ...
+// Includes is A list of patterns to include, e.g. <code>**&#47;*.xml</code>.
 type Includes struct {
 	XMLName xml.Name `xml:"includes"`
 	Include []string `xml:"include"`
 }
 
-// Excludes ...
+// Excludes is A list of patterns to exclude, e.g. <code>**&#47;*.xml</code>
 type Excludes struct {
 	XMLName xml.Name `xml:"excludes"`
 	Exclude []string `xml:"exclude"`
@@ -533,7 +564,7 @@ type Prerequisites struct {
 	Maven string `xml:"maven"`
 }
 
-// Extensions ...
+// Extensions is A set of build extensions to use from this project.
 type Extensions struct {
 	XMLName   xml.Name     `xml:"extensions"`
 	Extension []*Extension `xml:"extension"`

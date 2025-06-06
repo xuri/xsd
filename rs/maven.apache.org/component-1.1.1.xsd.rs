@@ -16,7 +16,9 @@ pub struct component {
 }
 
 
-// FileSets ...
+// FileSets is Specifies which groups of files to include in the assembly. A
+//             fileSet is specified by providing one or more of &lt;fileSet&gt;
+//             subelements.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct FileSets {
 	#[serde(rename = "fileSet")]
@@ -24,7 +26,9 @@ pub struct FileSets {
 }
 
 
-// Files ...
+// Files is Specifies which single files to include in the assembly. A file
+//             is specified by providing one or more of &lt;file&gt;
+//             subelements.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Files {
 	#[serde(rename = "file")]
@@ -32,7 +36,9 @@ pub struct Files {
 }
 
 
-// DependencySets ...
+// DependencySets is Specifies which dependencies to include in the assembly. A
+//             dependencySet is specified by providing one or more of
+//             &lt;dependencySet&gt; subelements.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct DependencySets {
 	#[serde(rename = "dependencySet")]
@@ -40,7 +46,9 @@ pub struct DependencySets {
 }
 
 
-// Repositories ...
+// Repositories is Specifies a set of repositories to include in the assembly. A
+//             repository is specified by providing one or more of
+//             &lt;repository&gt; subelements.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Repositories {
 	#[serde(rename = "repository")]
@@ -48,7 +56,8 @@ pub struct Repositories {
 }
 
 
-// ContainerDescriptorHandlers ...
+// ContainerDescriptorHandlers is Set of components which filter various container descriptors out of
+//             the normal archive stream, so they can be aggregated then added.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct ContainerDescriptorHandlers {
 	#[serde(rename = "containerDescriptorHandler")]
@@ -72,7 +81,7 @@ pub struct Component {
 }
 
 
-// Configuration ...
+// Configuration is Configuration options for the handler.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Configuration {
 }
@@ -88,7 +97,7 @@ pub struct ContainerDescriptorHandlerConfig {
 }
 
 
-// GroupVersionAlignments ...
+// GroupVersionAlignments is Align a group to a version or an individual artifact.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct GroupVersionAlignments {
 	#[serde(rename = "groupVersionAlignment")]
@@ -96,7 +105,9 @@ pub struct GroupVersionAlignments {
 }
 
 
-// Includes ...
+// Includes is When &lt;include&gt; subelements are present, they define a set of
+//             files and directory to include. If none is present, then
+//             &lt;includes&gt; represents all valid values.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Includes {
 	#[serde(rename = "include")]
@@ -104,7 +115,9 @@ pub struct Includes {
 }
 
 
-// Excludes ...
+// Excludes is When &lt;exclude&gt; subelements are present, they define a set of
+//             files and directory to exclude. If none is present, then
+//             &lt;excludes&gt; represents no exclusions.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Excludes {
 	#[serde(rename = "exclude")]
