@@ -318,15 +318,15 @@ pub struct TextAlign {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct SpecialExtra {
 	#[serde(rename = "object")]
-	pub object: String,
+	pub object: char,
 	#[serde(rename = "applet")]
 	pub applet: Applet,
 	#[serde(rename = "img")]
-	pub img: String,
+	pub img: char,
 	#[serde(rename = "map")]
 	pub map: Map,
 	#[serde(rename = "iframe")]
-	pub iframe: String,
+	pub iframe: char,
 	#[serde(rename = "source")]
 	pub source: Source,
 	#[serde(rename = "macro")]
@@ -338,11 +338,11 @@ pub struct SpecialExtra {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct SpecialBasic {
 	#[serde(rename = "br")]
-	pub br: String,
+	pub br: char,
 	#[serde(rename = "span")]
 	pub span: Span,
 	#[serde(rename = "bdo")]
-	pub bdo: String,
+	pub bdo: char,
 }
 
 
@@ -450,15 +450,15 @@ pub struct Phrase {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct InlineForms {
 	#[serde(rename = "input")]
-	pub input: String,
+	pub input: char,
 	#[serde(rename = "select")]
-	pub select: String,
+	pub select: char,
 	#[serde(rename = "textarea")]
-	pub textarea: String,
+	pub textarea: char,
 	#[serde(rename = "label")]
 	pub label: Label,
 	#[serde(rename = "button")]
-	pub button: String,
+	pub button: char,
 }
 
 
@@ -470,7 +470,7 @@ pub struct MiscInline {
 	#[serde(rename = "del")]
 	pub del: Del,
 	#[serde(rename = "script")]
-	pub script: String,
+	pub script: char,
 }
 
 
@@ -532,15 +532,15 @@ pub struct Heading {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Lists {
 	#[serde(rename = "ul")]
-	pub ul: String,
+	pub ul: char,
 	#[serde(rename = "ol")]
-	pub ol: String,
+	pub ol: char,
 	#[serde(rename = "dl")]
-	pub dl: String,
+	pub dl: char,
 	#[serde(rename = "menu")]
-	pub menu: String,
+	pub menu: char,
 	#[serde(rename = "dir")]
-	pub dir: String,
+	pub dir: char,
 }
 
 
@@ -550,7 +550,7 @@ pub struct Blocktext {
 	#[serde(rename = "pre")]
 	pub pre: Pre,
 	#[serde(rename = "hr")]
-	pub hr: String,
+	pub hr: char,
 	#[serde(rename = "blockquote")]
 	pub blockquote: Blockquote,
 	#[serde(rename = "address")]
@@ -594,7 +594,7 @@ pub struct Flow {
 	#[serde(rename = "misc")]
 	pub misc: Vec<Misc>,
 	#[serde(rename = "form")]
-	pub form: Vec<String>,
+	pub form: Vec<char>,
 }
 
 
@@ -667,17 +667,17 @@ pub struct ButtonContent {
 	#[serde(rename = "table")]
 	pub table: Vec<Table>,
 	#[serde(rename = "br")]
-	pub br: Vec<String>,
+	pub br: Vec<char>,
 	#[serde(rename = "span")]
 	pub span: Vec<Span>,
 	#[serde(rename = "bdo")]
-	pub bdo: Vec<String>,
+	pub bdo: Vec<char>,
 	#[serde(rename = "object")]
-	pub object: Vec<String>,
+	pub object: Vec<char>,
 	#[serde(rename = "applet")]
 	pub applet: Vec<Applet>,
 	#[serde(rename = "img")]
-	pub img: Vec<String>,
+	pub img: Vec<char>,
 	#[serde(rename = "map")]
 	pub map: Vec<Map>,
 }
@@ -687,7 +687,7 @@ pub struct ButtonContent {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct HeadMisc {
 	#[serde(rename = "script")]
-	pub script: String,
+	pub script: char,
 	#[serde(rename = "style")]
 	pub style: Style,
 	#[serde(rename = "meta")]
@@ -695,7 +695,7 @@ pub struct HeadMisc {
 	#[serde(rename = "link")]
 	pub link: Link,
 	#[serde(rename = "object")]
-	pub object: String,
+	pub object: char,
 	#[serde(rename = "isindex")]
 	pub isindex: Isindex,
 }
@@ -828,7 +828,7 @@ pub struct Script2 {
 	#[serde(rename = "src")]
 	pub src: Option<String>,
 	#[serde(rename = "defer")]
-	pub defer: Option<String>,
+	pub defer: Option<char>,
 	#[serde(rename = "xml:space")]
 	pub xml_space: Option<Space>,
 }
@@ -856,13 +856,13 @@ pub struct Iframe {
 	#[serde(rename = "src")]
 	pub src: Option<String>,
 	#[serde(rename = "frameborder")]
-	pub frameborder: Option<String>,
+	pub frameborder: Option<char>,
 	#[serde(rename = "marginwidth")]
 	pub marginwidth: Option<u32>,
 	#[serde(rename = "marginheight")]
 	pub marginheight: Option<u32>,
 	#[serde(rename = "scrolling")]
-	pub scrolling: Option<String>,
+	pub scrolling: Option<char>,
 	#[serde(rename = "align")]
 	pub align: Option<String>,
 	#[serde(rename = "height")]
@@ -996,9 +996,9 @@ pub struct Ul {
 	#[serde(rename = "type")]
 	pub type_attr: Option<String>,
 	#[serde(rename = "compact")]
-	pub compact: Option<String>,
+	pub compact: Option<char>,
 	#[serde(rename = "ul")]
-	pub ul: String,
+	pub ul: char,
 }
 
 
@@ -1027,11 +1027,11 @@ pub struct Ol {
 	#[serde(rename = "type")]
 	pub type_attr: Option<String>,
 	#[serde(rename = "compact")]
-	pub compact: Option<String>,
+	pub compact: Option<char>,
 	#[serde(rename = "start")]
 	pub start: Option<u32>,
 	#[serde(rename = "ol")]
-	pub ol: String,
+	pub ol: char,
 }
 
 
@@ -1041,9 +1041,9 @@ pub struct Menu {
 	#[serde(rename = "attrs")]
 	pub attrs: Vec<Attrs>,
 	#[serde(rename = "compact")]
-	pub compact: Option<String>,
+	pub compact: Option<char>,
 	#[serde(rename = "menu")]
-	pub menu: String,
+	pub menu: char,
 }
 
 
@@ -1053,9 +1053,9 @@ pub struct Dir {
 	#[serde(rename = "attrs")]
 	pub attrs: Vec<Attrs>,
 	#[serde(rename = "compact")]
-	pub compact: Option<String>,
+	pub compact: Option<char>,
 	#[serde(rename = "dir")]
-	pub dir: String,
+	pub dir: char,
 }
 
 
@@ -1087,11 +1087,11 @@ pub struct Dl {
 	#[serde(rename = "attrs")]
 	pub attrs: Vec<Attrs>,
 	#[serde(rename = "compact")]
-	pub compact: Option<String>,
+	pub compact: Option<char>,
 	#[serde(rename = "dt")]
 	pub dt: Vec<Dt>,
 	#[serde(rename = "dl")]
-	pub dl: String,
+	pub dl: char,
 }
 
 
@@ -1135,9 +1135,9 @@ pub struct Hr {
 	#[serde(rename = "attrs")]
 	pub attrs: Vec<Attrs>,
 	#[serde(rename = "align")]
-	pub align: Option<String>,
+	pub align: Option<char>,
 	#[serde(rename = "noshade")]
-	pub noshade: Option<String>,
+	pub noshade: Option<char>,
 	#[serde(rename = "size")]
 	pub size: Option<u32>,
 	#[serde(rename = "width")]
@@ -1264,7 +1264,7 @@ pub struct Bdo {
 	#[serde(rename = "xml:lang")]
 	pub xml_lang: Option<Lang>,
 	#[serde(rename = "dir")]
-	pub dir: String,
+	pub dir: char,
 	#[serde(flatten)]
 	pub inline: Inline,
 }
@@ -1276,7 +1276,7 @@ pub struct Br {
 	#[serde(rename = "coreattrs")]
 	pub coreattrs: Vec<Coreattrs>,
 	#[serde(rename = "clear")]
-	pub clear: Option<String>,
+	pub clear: Option<char>,
 }
 
 
@@ -1530,7 +1530,7 @@ pub struct Object {
 	#[serde(rename = "attrs")]
 	pub attrs: Vec<Attrs>,
 	#[serde(rename = "declare")]
-	pub declare: Option<String>,
+	pub declare: Option<char>,
 	#[serde(rename = "classid")]
 	pub classid: Option<String>,
 	#[serde(rename = "codebase")]
@@ -1570,9 +1570,9 @@ pub struct Object {
 	#[serde(rename = "misc")]
 	pub misc: Vec<Misc>,
 	#[serde(rename = "param")]
-	pub param: Vec<String>,
+	pub param: Vec<char>,
 	#[serde(rename = "object")]
-	pub object: String,
+	pub object: char,
 }
 
 
@@ -1589,7 +1589,7 @@ pub struct Param {
 	#[serde(rename = "value")]
 	pub value: Option<char>,
 	#[serde(rename = "valuetype")]
-	pub valuetype: Option<String>,
+	pub valuetype: Option<char>,
 	#[serde(rename = "type")]
 	pub type_attr: Option<String>,
 }
@@ -1629,9 +1629,9 @@ pub struct Applet {
 	#[serde(rename = "misc")]
 	pub misc: Vec<Misc>,
 	#[serde(rename = "param")]
-	pub param: Vec<String>,
+	pub param: Vec<char>,
 	#[serde(rename = "form")]
-	pub form: Vec<String>,
+	pub form: Vec<char>,
 }
 
 
@@ -1655,7 +1655,7 @@ pub struct Img {
 	#[serde(rename = "usemap")]
 	pub usemap: Option<String>,
 	#[serde(rename = "ismap")]
-	pub ismap: Option<String>,
+	pub ismap: Option<char>,
 	#[serde(rename = "align")]
 	pub align: Option<String>,
 	#[serde(rename = "border")]
@@ -1689,9 +1689,9 @@ pub struct Map {
 	#[serde(rename = "misc")]
 	pub misc: Vec<Misc>,
 	#[serde(rename = "form")]
-	pub form: Vec<String>,
+	pub form: Vec<char>,
 	#[serde(rename = "area")]
-	pub area: Vec<String>,
+	pub area: Vec<char>,
 }
 
 
@@ -1709,7 +1709,7 @@ pub struct Area {
 	#[serde(rename = "href")]
 	pub href: Option<String>,
 	#[serde(rename = "nohref")]
-	pub nohref: Option<String>,
+	pub nohref: Option<char>,
 	#[serde(rename = "alt")]
 	pub alt: String,
 	#[serde(rename = "target")]
@@ -1725,7 +1725,7 @@ pub struct Form {
 	#[serde(rename = "action")]
 	pub action: String,
 	#[serde(rename = "method")]
-	pub method: Option<String>,
+	pub method: Option<char>,
 	#[serde(rename = "enctype")]
 	pub enctype: Option<String>,
 	#[serde(rename = "onsubmit")]
@@ -1784,11 +1784,11 @@ pub struct Input {
 	#[serde(rename = "value")]
 	pub value: Option<char>,
 	#[serde(rename = "checked")]
-	pub checked: Option<String>,
+	pub checked: Option<char>,
 	#[serde(rename = "disabled")]
-	pub disabled: Option<String>,
+	pub disabled: Option<char>,
 	#[serde(rename = "readonly")]
-	pub readonly: Option<String>,
+	pub readonly: Option<char>,
 	#[serde(rename = "size")]
 	pub size: Option<char>,
 	#[serde(rename = "maxlength")]
@@ -1820,9 +1820,9 @@ pub struct Select {
 	#[serde(rename = "size")]
 	pub size: Option<u32>,
 	#[serde(rename = "multiple")]
-	pub multiple: Option<String>,
+	pub multiple: Option<char>,
 	#[serde(rename = "disabled")]
-	pub disabled: Option<String>,
+	pub disabled: Option<char>,
 	#[serde(rename = "tabindex")]
 	pub tabindex: Option<u32>,
 	#[serde(rename = "onfocus")]
@@ -1832,9 +1832,9 @@ pub struct Select {
 	#[serde(rename = "onchange")]
 	pub onchange: Option<String>,
 	#[serde(rename = "optgroup")]
-	pub optgroup: Vec<String>,
+	pub optgroup: Vec<char>,
 	#[serde(rename = "select")]
-	pub select: String,
+	pub select: char,
 }
 
 
@@ -1844,11 +1844,11 @@ pub struct Optgroup {
 	#[serde(rename = "attrs")]
 	pub attrs: Vec<Attrs>,
 	#[serde(rename = "disabled")]
-	pub disabled: Option<String>,
+	pub disabled: Option<char>,
 	#[serde(rename = "label")]
 	pub label: String,
 	#[serde(rename = "optgroup")]
-	pub optgroup: String,
+	pub optgroup: char,
 }
 
 
@@ -1858,9 +1858,9 @@ pub struct Option {
 	#[serde(rename = "attrs")]
 	pub attrs: Vec<Attrs>,
 	#[serde(rename = "selected")]
-	pub selected: Option<String>,
+	pub selected: Option<char>,
 	#[serde(rename = "disabled")]
-	pub disabled: Option<String>,
+	pub disabled: Option<char>,
 	#[serde(rename = "label")]
 	pub label: Option<String>,
 	#[serde(rename = "value")]
@@ -1882,9 +1882,9 @@ pub struct Textarea {
 	#[serde(rename = "cols")]
 	pub cols: u32,
 	#[serde(rename = "disabled")]
-	pub disabled: Option<String>,
+	pub disabled: Option<char>,
 	#[serde(rename = "readonly")]
-	pub readonly: Option<String>,
+	pub readonly: Option<char>,
 	#[serde(rename = "onselect")]
 	pub onselect: Option<String>,
 	#[serde(rename = "onchange")]
@@ -1911,7 +1911,7 @@ pub struct Fieldset {
 	#[serde(rename = "legend")]
 	pub legend: Legend,
 	#[serde(rename = "form")]
-	pub form: Vec<String>,
+	pub form: Vec<char>,
 }
 
 
@@ -1949,9 +1949,9 @@ pub struct Button {
 	#[serde(rename = "value")]
 	pub value: Option<char>,
 	#[serde(rename = "type")]
-	pub type_attr: Option<String>,
+	pub type_attr: Option<char>,
 	#[serde(rename = "disabled")]
-	pub disabled: Option<String>,
+	pub disabled: Option<char>,
 	#[serde(flatten)]
 	pub button_content: ButtonContent,
 }
@@ -2182,9 +2182,9 @@ pub struct Tr {
 	#[serde(rename = "bgcolor")]
 	pub bgcolor: Option<String>,
 	#[serde(rename = "th")]
-	pub th: Vec<String>,
+	pub th: Vec<char>,
 	#[serde(rename = "td")]
-	pub td: Vec<String>,
+	pub td: Vec<char>,
 }
 
 
@@ -2218,7 +2218,7 @@ pub struct Th {
 	#[serde(rename = "colspan")]
 	pub colspan: Option<u32>,
 	#[serde(rename = "nowrap")]
-	pub nowrap: Option<String>,
+	pub nowrap: Option<char>,
 	#[serde(rename = "bgcolor")]
 	pub bgcolor: Option<String>,
 	#[serde(rename = "width")]
@@ -2252,7 +2252,7 @@ pub struct Td {
 	#[serde(rename = "colspan")]
 	pub colspan: Option<u32>,
 	#[serde(rename = "nowrap")]
-	pub nowrap: Option<String>,
+	pub nowrap: Option<char>,
 	#[serde(rename = "bgcolor")]
 	pub bgcolor: Option<String>,
 	#[serde(rename = "width")]
@@ -2331,7 +2331,7 @@ pub struct Section {
 	#[serde(rename = "misc")]
 	pub misc: Vec<Misc>,
 	#[serde(rename = "form")]
-	pub form: Vec<String>,
+	pub form: Vec<char>,
 	#[serde(rename = "subsection")]
 	pub subsection: Vec<Subsection>,
 }
@@ -2351,7 +2351,7 @@ pub struct Subsection {
 	#[serde(rename = "misc")]
 	pub misc: Vec<Misc>,
 	#[serde(rename = "form")]
-	pub form: Vec<String>,
+	pub form: Vec<char>,
 }
 
 
@@ -2367,5 +2367,5 @@ pub struct Macro {
 	#[serde(rename = "name")]
 	pub name: String,
 	#[serde(rename = "param")]
-	pub param: Vec<String>,
+	pub param: Vec<char>,
 }

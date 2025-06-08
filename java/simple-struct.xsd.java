@@ -15,5 +15,5 @@ import javax.xml.bind.annotation.XmlValue;
 // ComplexFoo ...
 public class ComplexFoo {
 	@XmlElement(required = true, name = "element1")
-	protected NonEmptyString Element1;
+	protected void Element1;
 }

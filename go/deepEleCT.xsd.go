@@ -4,7 +4,7 @@ package schema
 
 // B ...
 type B struct {
-	C string `xml:"C"`
+	C interface{} `xml:"C"`
 }
 
 // A ...
@@ -18,4 +18,4 @@ type FileUpload struct {
 }
 
 // C ...
-type C string
+type C interface{}

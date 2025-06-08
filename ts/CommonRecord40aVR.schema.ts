@@ -21,7 +21,7 @@ export enum FinancialAwards {
 }
 
 // StudentLevelCode ...
-export type StudentLevelCode = string;
+export type StudentLevelCode = any;
 
 // SchoolNoteMessage ...
-export type SchoolNoteMessage = number;
+export type SchoolNoteMessage = any;

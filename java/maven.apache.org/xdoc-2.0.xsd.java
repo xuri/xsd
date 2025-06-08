@@ -285,15 +285,15 @@ public class TextAlign {
 // SpecialExtra ...
 public class SpecialExtra {
 	@XmlElement(required = true, name = "object")
-	protected String Object;
+	protected void Object;
 	@XmlElement(required = true, name = "applet")
 	protected Applet Applet;
 	@XmlElement(required = true, name = "img")
-	protected String Img;
+	protected void Img;
 	@XmlElement(required = true, name = "map")
 	protected Map Map;
 	@XmlElement(required = true, name = "iframe")
-	protected String Iframe;
+	protected void Iframe;
 	@XmlElement(required = true, name = "source")
 	protected Source Source;
 	@XmlElement(required = true, name = "macro")
@@ -303,11 +303,11 @@ public class SpecialExtra {
 // SpecialBasic ...
 public class SpecialBasic {
 	@XmlElement(required = true, name = "br")
-	protected String Br;
+	protected void Br;
 	@XmlElement(required = true, name = "span")
 	protected Span Span;
 	@XmlElement(required = true, name = "bdo")
-	protected String Bdo;
+	protected void Bdo;
 }
 
 // Special ...
@@ -393,15 +393,15 @@ public class Phrase {
 // InlineForms ...
 public class InlineForms {
 	@XmlElement(required = true, name = "input")
-	protected String Input;
+	protected void Input;
 	@XmlElement(required = true, name = "select")
-	protected String Select;
+	protected void Select;
 	@XmlElement(required = true, name = "textarea")
-	protected String Textarea;
+	protected void Textarea;
 	@XmlElement(required = true, name = "label")
 	protected Label Label;
 	@XmlElement(required = true, name = "button")
-	protected String Button;
+	protected void Button;
 }
 
 // MiscInline ...
@@ -411,7 +411,7 @@ public class MiscInline {
 	@XmlElement(required = true, name = "del")
 	protected Del Del;
 	@XmlElement(required = true, name = "script")
-	protected String Script;
+	protected void Script;
 }
 
 // Misc ...
@@ -456,15 +456,15 @@ public class Heading {
 // Lists ...
 public class Lists {
 	@XmlElement(required = true, name = "ul")
-	protected String Ul;
+	protected void Ul;
 	@XmlElement(required = true, name = "ol")
-	protected String Ol;
+	protected void Ol;
 	@XmlElement(required = true, name = "dl")
-	protected String Dl;
+	protected void Dl;
 	@XmlElement(required = true, name = "menu")
-	protected String Menu;
+	protected void Menu;
 	@XmlElement(required = true, name = "dir")
-	protected String Dir;
+	protected void Dir;
 }
 
 // Blocktext ...
@@ -472,7 +472,7 @@ public class Blocktext {
 	@XmlElement(required = true, name = "pre")
 	protected Pre Pre;
 	@XmlElement(required = true, name = "hr")
-	protected String Hr;
+	protected void Hr;
 	@XmlElement(required = true, name = "blockquote")
 	protected Blockquote Blockquote;
 	@XmlElement(required = true, name = "address")
@@ -506,7 +506,7 @@ public class Flow {
 	protected List<Inline> Inline;
 	protected List<Misc> Misc;
 	@XmlElement(required = true, name = "form")
-	protected List<String> Form;
+	protected List<void> Form;
 }
 
 // AContent is a elements use "Inline" excluding a
@@ -552,17 +552,17 @@ public class ButtonContent {
 	@XmlElement(required = true, name = "table")
 	protected List<Table> Table;
 	@XmlElement(required = true, name = "br")
-	protected List<String> Br;
+	protected List<void> Br;
 	@XmlElement(required = true, name = "span")
 	protected List<Span> Span;
 	@XmlElement(required = true, name = "bdo")
-	protected List<String> Bdo;
+	protected List<void> Bdo;
 	@XmlElement(required = true, name = "object")
-	protected List<String> Object;
+	protected List<void> Object;
 	@XmlElement(required = true, name = "applet")
 	protected List<Applet> Applet;
 	@XmlElement(required = true, name = "img")
-	protected List<String> Img;
+	protected List<void> Img;
 	@XmlElement(required = true, name = "map")
 	protected List<Map> Map;
 }
@@ -570,7 +570,7 @@ public class ButtonContent {
 // HeadMisc ...
 public class HeadMisc {
 	@XmlElement(required = true, name = "script")
-	protected List<String> Script;
+	protected List<void> Script;
 	@XmlElement(required = true, name = "style")
 	protected List<Style> Style;
 	@XmlElement(required = true, name = "meta")
@@ -578,7 +578,7 @@ public class HeadMisc {
 	@XmlElement(required = true, name = "link")
 	protected List<Link> Link;
 	@XmlElement(required = true, name = "object")
-	protected List<String> Object;
+	protected List<void> Object;
 	@XmlElement(required = true, name = "isindex")
 	protected List<Isindex> Isindex;
 }
@@ -696,7 +696,7 @@ public class Script2 {
 	@XmlAttribute(name = "src")
 	protected String SrcAttr;
 	@XmlAttribute(name = "defer")
-	protected String DeferAttr;
+	protected void DeferAttr;
 	@XmlAttribute(name = "xml:space")
 	protected Space XmlSpaceAttr;
 }
@@ -718,13 +718,13 @@ public class Iframe extends Flow  {
 	@XmlAttribute(name = "src")
 	protected String SrcAttr;
 	@XmlAttribute(name = "frameborder")
-	protected String FrameborderAttr;
+	protected void FrameborderAttr;
 	@XmlAttribute(name = "marginwidth")
 	protected Integer MarginwidthAttr;
 	@XmlAttribute(name = "marginheight")
 	protected Integer MarginheightAttr;
 	@XmlAttribute(name = "scrolling")
-	protected String ScrollingAttr;
+	protected void ScrollingAttr;
 	@XmlAttribute(name = "align")
 	protected String AlignAttr;
 	@XmlAttribute(name = "height")
@@ -817,9 +817,9 @@ public class Ul {
 	@XmlAttribute(name = "type")
 	protected String TypeAttr;
 	@XmlAttribute(name = "compact")
-	protected String CompactAttr;
+	protected void CompactAttr;
 	@XmlElement(required = true, name = "ul")
-	protected String Ul;
+	protected void Ul;
 }
 
 // OLStyle is Ordered list numbering style
@@ -845,11 +845,11 @@ public class Ol {
 	@XmlAttribute(name = "type")
 	protected String TypeAttr;
 	@XmlAttribute(name = "compact")
-	protected String CompactAttr;
+	protected void CompactAttr;
 	@XmlAttribute(name = "start")
 	protected Integer StartAttr;
 	@XmlElement(required = true, name = "ol")
-	protected String Ol;
+	protected void Ol;
 }
 
 // Menu is single column list (DEPRECATED)
@@ -857,9 +857,9 @@ public class Menu {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlAttribute(name = "compact")
-	protected String CompactAttr;
+	protected void CompactAttr;
 	@XmlElement(required = true, name = "menu")
-	protected String Menu;
+	protected void Menu;
 }
 
 // Dir is multiple column list (DEPRECATED)
@@ -867,9 +867,9 @@ public class Dir {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlAttribute(name = "compact")
-	protected String CompactAttr;
+	protected void CompactAttr;
 	@XmlElement(required = true, name = "dir")
-	protected String Dir;
+	protected void Dir;
 }
 
 // LIStyle is LIStyle is constrained to: "(ULStyle|OLStyle)"
@@ -894,11 +894,11 @@ public class Dl {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlAttribute(name = "compact")
-	protected String CompactAttr;
+	protected void CompactAttr;
 	@XmlElement(required = true, name = "dt")
 	protected List<Dt> Dt;
 	@XmlElement(required = true, name = "dl")
-	protected String Dl;
+	protected void Dl;
 }
 
 // Dt ...
@@ -928,9 +928,9 @@ public class Hr {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlAttribute(name = "align")
-	protected String AlignAttr;
+	protected void AlignAttr;
 	@XmlAttribute(name = "noshade")
-	protected String NoshadeAttr;
+	protected void NoshadeAttr;
 	@XmlAttribute(name = "size")
 	protected Integer SizeAttr;
 	@XmlAttribute(name = "width")
@@ -1027,7 +1027,7 @@ public class Bdo extends Inline  {
 	@XmlAttribute(name = "xml:lang")
 	protected Lang XmlLangAttr;
 	@XmlAttribute(name = "dir", required = true)
-	protected String DirAttr;
+	protected void DirAttr;
 }
 
 // Br is forced line break
@@ -1035,7 +1035,7 @@ public class Br {
 	@XmlElement(required = true)
 	protected Coreattrs Coreattrs;
 	@XmlAttribute(name = "clear")
-	protected String ClearAttr;
+	protected void ClearAttr;
 }
 
 // Em is emphasis
@@ -1197,7 +1197,7 @@ public class Object {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlAttribute(name = "declare")
-	protected String DeclareAttr;
+	protected void DeclareAttr;
 	@XmlAttribute(name = "classid")
 	protected String ClassidAttr;
 	@XmlAttribute(name = "codebase")
@@ -1234,9 +1234,9 @@ public class Object {
 	protected List<Inline> Inline;
 	protected List<Misc> Misc;
 	@XmlElement(required = true, name = "param")
-	protected List<String> Param;
+	protected List<void> Param;
 	@XmlElement(required = true, name = "object")
-	protected String Object;
+	protected void Object;
 }
 
 // Param is param is used to supply a named property value.
@@ -1251,7 +1251,7 @@ public class Param {
 	@XmlAttribute(name = "value")
 	protected void ValueAttr;
 	@XmlAttribute(name = "valuetype")
-	protected String ValuetypeAttr;
+	protected void ValuetypeAttr;
 	@XmlAttribute(name = "type")
 	protected String TypeAttr;
 }
@@ -1286,9 +1286,9 @@ public class Applet {
 	protected List<Inline> Inline;
 	protected List<Misc> Misc;
 	@XmlElement(required = true, name = "param")
-	protected List<String> Param;
+	protected List<void> Param;
 	@XmlElement(required = true, name = "form")
-	protected List<String> Form;
+	protected List<void> Form;
 }
 
 // Img ...
@@ -1310,7 +1310,7 @@ public class Img {
 	@XmlAttribute(name = "usemap")
 	protected String UsemapAttr;
 	@XmlAttribute(name = "ismap")
-	protected String IsmapAttr;
+	protected void IsmapAttr;
 	@XmlAttribute(name = "align")
 	protected String AlignAttr;
 	@XmlAttribute(name = "border")
@@ -1340,9 +1340,9 @@ public class Map {
 	protected List<Block> Block;
 	protected List<Misc> Misc;
 	@XmlElement(required = true, name = "form")
-	protected List<String> Form;
+	protected List<void> Form;
 	@XmlElement(required = true, name = "area")
-	protected List<String> Area;
+	protected List<void> Area;
 }
 
 // Area ...
@@ -1358,7 +1358,7 @@ public class Area {
 	@XmlAttribute(name = "href")
 	protected String HrefAttr;
 	@XmlAttribute(name = "nohref")
-	protected String NohrefAttr;
+	protected void NohrefAttr;
 	@XmlAttribute(name = "alt", required = true)
 	protected String AltAttr;
 	@XmlAttribute(name = "target")
@@ -1372,7 +1372,7 @@ public class Form extends FormContent  {
 	@XmlAttribute(name = "action", required = true)
 	protected String ActionAttr;
 	@XmlAttribute(name = "method")
-	protected String MethodAttr;
+	protected void MethodAttr;
 	@XmlAttribute(name = "enctype")
 	protected String EnctypeAttr;
 	@XmlAttribute(name = "onsubmit")
@@ -1422,11 +1422,11 @@ public class Input {
 	@XmlAttribute(name = "value")
 	protected void ValueAttr;
 	@XmlAttribute(name = "checked")
-	protected String CheckedAttr;
+	protected void CheckedAttr;
 	@XmlAttribute(name = "disabled")
-	protected String DisabledAttr;
+	protected void DisabledAttr;
 	@XmlAttribute(name = "readonly")
-	protected String ReadonlyAttr;
+	protected void ReadonlyAttr;
 	@XmlAttribute(name = "size")
 	protected void SizeAttr;
 	@XmlAttribute(name = "maxlength")
@@ -1456,9 +1456,9 @@ public class Select {
 	@XmlAttribute(name = "size")
 	protected Integer SizeAttr;
 	@XmlAttribute(name = "multiple")
-	protected String MultipleAttr;
+	protected void MultipleAttr;
 	@XmlAttribute(name = "disabled")
-	protected String DisabledAttr;
+	protected void DisabledAttr;
 	@XmlAttribute(name = "tabindex")
 	protected Integer TabindexAttr;
 	@XmlAttribute(name = "onfocus")
@@ -1468,9 +1468,9 @@ public class Select {
 	@XmlAttribute(name = "onchange")
 	protected String OnchangeAttr;
 	@XmlElement(required = true, name = "optgroup")
-	protected List<String> Optgroup;
+	protected List<void> Optgroup;
 	@XmlElement(required = true, name = "select")
-	protected String Select;
+	protected void Select;
 }
 
 // Optgroup is option group
@@ -1478,11 +1478,11 @@ public class Optgroup {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlAttribute(name = "disabled")
-	protected String DisabledAttr;
+	protected void DisabledAttr;
 	@XmlAttribute(name = "label", required = true)
 	protected String LabelAttr;
 	@XmlElement(required = true, name = "optgroup")
-	protected String Optgroup;
+	protected void Optgroup;
 }
 
 // Option is selectable choice
@@ -1490,9 +1490,9 @@ public class Option {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlAttribute(name = "selected")
-	protected String SelectedAttr;
+	protected void SelectedAttr;
 	@XmlAttribute(name = "disabled")
-	protected String DisabledAttr;
+	protected void DisabledAttr;
 	@XmlAttribute(name = "label")
 	protected String LabelAttr;
 	@XmlAttribute(name = "value")
@@ -1512,9 +1512,9 @@ public class Textarea {
 	@XmlAttribute(name = "cols", required = true)
 	protected Integer ColsAttr;
 	@XmlAttribute(name = "disabled")
-	protected String DisabledAttr;
+	protected void DisabledAttr;
 	@XmlAttribute(name = "readonly")
-	protected String ReadonlyAttr;
+	protected void ReadonlyAttr;
 	@XmlAttribute(name = "onselect")
 	protected String OnselectAttr;
 	@XmlAttribute(name = "onchange")
@@ -1536,7 +1536,7 @@ public class Fieldset {
 	@XmlElement(required = true, name = "legend")
 	protected Legend Legend;
 	@XmlElement(required = true, name = "form")
-	protected List<String> Form;
+	protected List<void> Form;
 }
 
 // LAlign ...
@@ -1567,9 +1567,9 @@ public class Button extends ButtonContent  {
 	@XmlAttribute(name = "value")
 	protected void ValueAttr;
 	@XmlAttribute(name = "type")
-	protected String TypeAttr;
+	protected void TypeAttr;
 	@XmlAttribute(name = "disabled")
-	protected String DisabledAttr;
+	protected void DisabledAttr;
 }
 
 // Isindex is single-line text input control (DEPRECATED)
@@ -1770,9 +1770,9 @@ public class Tr {
 	@XmlAttribute(name = "bgcolor")
 	protected String BgcolorAttr;
 	@XmlElement(required = true, name = "th")
-	protected List<String> Th;
+	protected List<void> Th;
 	@XmlElement(required = true, name = "td")
-	protected List<String> Td;
+	protected List<void> Td;
 }
 
 // Scope is Scope is simpler than headers attribute for common tables
@@ -1803,7 +1803,7 @@ public class Th extends Flow  {
 	@XmlAttribute(name = "colspan")
 	protected Integer ColspanAttr;
 	@XmlAttribute(name = "nowrap")
-	protected String NowrapAttr;
+	protected void NowrapAttr;
 	@XmlAttribute(name = "bgcolor")
 	protected String BgcolorAttr;
 	@XmlAttribute(name = "width")
@@ -1833,7 +1833,7 @@ public class Td extends Flow  {
 	@XmlAttribute(name = "colspan")
 	protected Integer ColspanAttr;
 	@XmlAttribute(name = "nowrap")
-	protected String NowrapAttr;
+	protected void NowrapAttr;
 	@XmlAttribute(name = "bgcolor")
 	protected String BgcolorAttr;
 	@XmlAttribute(name = "width")
@@ -1895,7 +1895,7 @@ public class Section {
 	protected List<Inline> Inline;
 	protected List<Misc> Misc;
 	@XmlElement(required = true, name = "form")
-	protected List<String> Form;
+	protected List<void> Form;
 	@XmlElement(required = true, name = "subsection")
 	protected List<Subsection> Subsection;
 }
@@ -1910,7 +1910,7 @@ public class Subsection {
 	protected List<Inline> Inline;
 	protected List<Misc> Misc;
 	@XmlElement(required = true, name = "form")
-	protected List<String> Form;
+	protected List<void> Form;
 }
 
 // Source is A source element.
@@ -1922,5 +1922,5 @@ public class Macro {
 	@XmlAttribute(name = "name", required = true)
 	protected String NameAttr;
 	@XmlElement(required = true, name = "param")
-	protected List<String> Param;
+	protected List<void> Param;
 }

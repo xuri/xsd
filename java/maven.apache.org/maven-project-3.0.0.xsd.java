@@ -378,13 +378,13 @@ public class License {
 	@XmlElement(required = true, name = "url")
 	protected String Url;
 	@XmlElement(required = true, name = "distribution")
-	protected String Distribution;
+	protected void Distribution;
 }
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlElement(required = true, name = "distribution")
 public class Distribution {
-	protected String Distribution;
+	protected void Distribution;
 }
 
 // Dependencies ...
@@ -576,5 +576,5 @@ public class Properties {
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlElement(required = true, name = "classloader")
 public class Classloader {
-	protected String Classloader;
+	protected void Classloader;
 }

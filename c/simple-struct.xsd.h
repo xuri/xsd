@@ -2,5 +2,5 @@
 
 // ComplexFoo ...
 typedef struct {
-	NonEmptyString Element1;
+	void Element1;
 } ComplexFoo;

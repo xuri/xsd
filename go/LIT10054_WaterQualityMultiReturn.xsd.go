@@ -4,40 +4,40 @@ package schema
 
 // DepthValueRecorded is An optional collection of elements relating to recorded sample depth.
 type DepthValueRecorded struct {
-	DepthValue      float64              `xml:"DepthValue"`
-	DepthValueUnits *MandatoryStringType `xml:"DepthValueUnits"`
-	DepthRelativeTo *MandatoryStringType `xml:"DepthRelativeTo"`
+	DepthValue      float64     `xml:"DepthValue"`
+	DepthValueUnits interface{} `xml:"DepthValueUnits"`
+	DepthRelativeTo interface{} `xml:"DepthRelativeTo"`
 }
 
 // PurgedVolumeRecorded is An optional collection of elements relating to recorded sample volume.
 type PurgedVolumeRecorded struct {
-	PurgedVolume      float64              `xml:"PurgedVolume"`
-	PurgedVolumeUnits *MandatoryStringType `xml:"PurgedVolumeUnits"`
+	PurgedVolume      float64     `xml:"PurgedVolume"`
+	PurgedVolumeUnits interface{} `xml:"PurgedVolumeUnits"`
 }
 
 // Measurement is This repeating element contains the structure of a Water Quality measurement.
 type Measurement struct {
-	DeterminandName *MandatoryStringType `xml:"DeterminandName"`
-	ResultType      *MandatoryStringType `xml:"ResultType"`
-	ResultValue     float64              `xml:"ResultValue"`
-	ResultUnits     *MandatoryStringType `xml:"ResultUnits"`
-	Qualifier       *MandatoryStringType `xml:"Qualifier"`
-	Comment         string               `xml:"Comment"`
+	DeterminandName interface{} `xml:"DeterminandName"`
+	ResultType      interface{} `xml:"ResultType"`
+	ResultValue     float64     `xml:"ResultValue"`
+	ResultUnits     interface{} `xml:"ResultUnits"`
+	Qualifier       interface{} `xml:"Qualifier"`
+	Comment         interface{} `xml:"Comment"`
 }
 
 // Sample is This element contains the structure of a collection of samples.
 type Sample struct {
-	Sampler                        string                `xml:"Sampler"`
-	SampleType                     *MandatoryStringType  `xml:"SampleType"`
-	CustomerSamplePointName        *MandatoryStringType  `xml:"CustomerSamplePointName"`
+	Sampler                        interface{}           `xml:"Sampler"`
+	SampleType                     interface{}           `xml:"SampleType"`
+	CustomerSamplePointName        interface{}           `xml:"CustomerSamplePointName"`
 	SampleDateTime                 string                `xml:"SampleDateTime"`
-	PurposeTypeName                *MandatoryStringType  `xml:"PurposeTypeName"`
-	MaterialName                   *MandatoryStringType  `xml:"MaterialName"`
-	Mechanism                      *MandatoryStringType  `xml:"Mechanism"`
-	CustomersLabSampleRef          *MandatoryStringType  `xml:"CustomersLabSampleRef"`
-	CustomersLabSampleRefSecondary []string              `xml:"CustomersLabSampleRefSecondary"`
-	Comment                        string                `xml:"Comment"`
-	LabName                        *MandatoryStringType  `xml:"LabName"`
+	PurposeTypeName                interface{}           `xml:"PurposeTypeName"`
+	MaterialName                   interface{}           `xml:"MaterialName"`
+	Mechanism                      interface{}           `xml:"Mechanism"`
+	CustomersLabSampleRef          interface{}           `xml:"CustomersLabSampleRef"`
+	CustomersLabSampleRefSecondary []interface{}         `xml:"CustomersLabSampleRefSecondary"`
+	Comment                        interface{}           `xml:"Comment"`
+	LabName                        interface{}           `xml:"LabName"`
 	AnalysisCompleteDateTime       string                `xml:"AnalysisCompleteDateTime"`
 	DepthValueRecorded             *DepthValueRecorded   `xml:"DepthValueRecorded"`
 	PurgedVolumeRecorded           *PurgedVolumeRecorded `xml:"PurgedVolumeRecorded"`
@@ -46,11 +46,11 @@ type Sample struct {
 
 // FileUpload ...
 type FileUpload struct {
-	Source                      string               `xml:"Source"`
-	Sample                      []*Sample            `xml:"Sample"`
-	RegulatedCustomerIdentifier *MandatoryStringType `xml:"RegulatedCustomerIdentifier"`
-	CustomerReference           string               `xml:"CustomerReference"`
+	Source                      interface{} `xml:"Source"`
+	Sample                      []*Sample   `xml:"Sample"`
+	RegulatedCustomerIdentifier interface{} `xml:"RegulatedCustomerIdentifier"`
+	CustomerReference           interface{} `xml:"CustomerReference"`
 }
 
 // CustomerReference is Customer’s own reference.
-type CustomerReference string
+type CustomerReference interface{}

@@ -2,16 +2,16 @@
 
 // Software ...
 export class Software {
-	SoftwareProvider: string;
-	SoftwareVersion: string;
+	SoftwareProvider: any;
+	SoftwareVersion: any;
 }
 
 // TransmissionData ...
 export class TransmissionData {
-	DocumentID: string;
+	DocumentID: any;
 	CreatedDateTime: string;
 	Software: any;
-	FullResponseCode: string;
+	FullResponseCode: any;
 }
 
 // CommonRecordType ...

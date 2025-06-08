@@ -236,14 +236,14 @@ type Licenses struct {
 
 // License ...
 type License struct {
-	XMLName      xml.Name `xml:"license"`
-	Name         string   `xml:"name"`
-	Url          string   `xml:"url"`
-	Distribution string   `xml:"distribution"`
+	XMLName      xml.Name    `xml:"license"`
+	Name         string      `xml:"name"`
+	Url          string      `xml:"url"`
+	Distribution interface{} `xml:"distribution"`
 }
 
 // Distribution ...
-type Distribution string
+type Distribution interface{}
 
 // Dependencies ...
 type Dependencies struct {
@@ -375,4 +375,4 @@ type Properties struct {
 }
 
 // Classloader ...
-type Classloader string
+type Classloader interface{}

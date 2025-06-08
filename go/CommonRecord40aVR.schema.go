@@ -6,7 +6,7 @@ package schema
 type FinancialAwards string
 
 // StudentLevelCode ...
-type StudentLevelCode string
+type StudentLevelCode interface{}
 
 // SchoolNoteMessage ...
-type SchoolNoteMessage float64
+type SchoolNoteMessage interface{}

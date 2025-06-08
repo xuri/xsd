@@ -188,10 +188,10 @@ typedef struct {
 typedef struct {
 	char Name;
 	char Url;
-	char Distribution;
+	void Distribution;
 } License;
 
-typedef char Distribution;
+typedef void Distribution;
 
 // Dependencies ...
 typedef struct {
@@ -298,4 +298,4 @@ typedef struct {
 typedef struct {
 } Properties;
 
-typedef char Classloader;
+typedef void Classloader;

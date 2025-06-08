@@ -2,7 +2,7 @@
 
 // B ...
 export class B {
-	C: string;
+	C: any;
 }
 
 // A ...
@@ -16,4 +16,4 @@ export class FileUpload {
 }
 
 // C ...
-export type C = string;
+export type C = any;

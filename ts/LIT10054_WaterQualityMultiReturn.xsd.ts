@@ -3,39 +3,39 @@
 // DepthValueRecorded is An optional collection of elements relating to recorded sample depth.
 export class DepthValueRecorded {
 	DepthValue: number;
-	DepthValueUnits: MandatoryStringType;
-	DepthRelativeTo: MandatoryStringType;
+	DepthValueUnits: any;
+	DepthRelativeTo: any;
 }
 
 // PurgedVolumeRecorded is An optional collection of elements relating to recorded sample volume.
 export class PurgedVolumeRecorded {
 	PurgedVolume: number;
-	PurgedVolumeUnits: MandatoryStringType;
+	PurgedVolumeUnits: any;
 }
 
 // Measurement is This repeating element contains the structure of a Water Quality measurement.
 export class Measurement {
-	DeterminandName: MandatoryStringType;
-	ResultType: MandatoryStringType;
+	DeterminandName: any;
+	ResultType: any;
 	ResultValue: number;
-	ResultUnits: MandatoryStringType;
-	Qualifier: MandatoryStringType;
-	Comment: string;
+	ResultUnits: any;
+	Qualifier: any;
+	Comment: any;
 }
 
 // Sample is This element contains the structure of a collection of samples.
 export class Sample {
-	Sampler: string;
-	SampleType: MandatoryStringType;
-	CustomerSamplePointName: MandatoryStringType;
+	Sampler: any;
+	SampleType: any;
+	CustomerSamplePointName: any;
 	SampleDateTime: string;
-	PurposeTypeName: MandatoryStringType;
-	MaterialName: MandatoryStringType;
-	Mechanism: MandatoryStringType;
-	CustomersLabSampleRef: MandatoryStringType;
-	CustomersLabSampleRefSecondary: string;
-	Comment: string;
-	LabName: MandatoryStringType;
+	PurposeTypeName: any;
+	MaterialName: any;
+	Mechanism: any;
+	CustomersLabSampleRef: any;
+	CustomersLabSampleRefSecondary: Array<any>;
+	Comment: any;
+	LabName: any;
 	AnalysisCompleteDateTime: string;
 	DepthValueRecorded: DepthValueRecorded;
 	PurgedVolumeRecorded: PurgedVolumeRecorded;
@@ -44,11 +44,11 @@ export class Sample {
 
 // FileUpload ...
 export class FileUpload {
-	Source: string;
+	Source: any;
 	Sample: Array<Sample>;
-	RegulatedCustomerIdentifier: MandatoryStringType;
-	CustomerReference: string;
+	RegulatedCustomerIdentifier: any;
+	CustomerReference: any;
 }
 
 // CustomerReference is Customer’s own reference.
-export type CustomerReference = string;
+export type CustomerReference = any;

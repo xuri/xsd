@@ -466,7 +466,7 @@ pub struct License {
 	#[serde(rename = "url")]
 	pub url: String,
 	#[serde(rename = "distribution")]
-	pub distribution: String,
+	pub distribution: char,
 }
 
 
@@ -474,7 +474,7 @@ pub struct License {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct distribution {
 	#[serde(rename = "distribution")]
-	pub distribution: String,
+	pub distribution: char,
 }
 
 
@@ -716,5 +716,5 @@ pub struct Properties {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct classloader {
 	#[serde(rename = "classloader")]
-	pub classloader: String,
+	pub classloader: char,
 }
