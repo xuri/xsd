@@ -216,11 +216,11 @@ export class Licenses {
 export class License {
 	Name: string;
 	Url: string;
-	Distribution: string;
+	Distribution: any;
 }
 
 // Distribution ...
-export type Distribution = string;
+export type Distribution = any;
 
 // Dependencies ...
 export class Dependencies {
@@ -340,4 +340,4 @@ export class Properties {
 }
 
 // Classloader ...
-export type Classloader = string;
+export type Classloader = any;

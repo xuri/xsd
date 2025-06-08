@@ -166,11 +166,11 @@ type TextAlign struct {
 // SpecialExtra ...
 type SpecialExtra struct {
 	XMLName xml.Name `xml:"special.extra"`
-	Object  string
+	Object  interface{}
 	Applet  *Applet
-	Img     string
+	Img     interface{}
 	Map     *Map
-	Iframe  string
+	Iframe  interface{}
 	Source  *Source
 	Macro   *Macro
 }
@@ -178,9 +178,9 @@ type SpecialExtra struct {
 // SpecialBasic ...
 type SpecialBasic struct {
 	XMLName xml.Name `xml:"special.basic"`
-	Br      string
+	Br      interface{}
 	Span    *Span
-	Bdo     string
+	Bdo     interface{}
 }
 
 // Special ...
@@ -250,11 +250,11 @@ type Phrase struct {
 // InlineForms ...
 type InlineForms struct {
 	XMLName  xml.Name `xml:"inline.forms"`
-	Input    string
-	Select   string
-	Textarea string
+	Input    interface{}
+	Select   interface{}
+	Textarea interface{}
 	Label    *Label
-	Button   string
+	Button   interface{}
 }
 
 // MiscInline ...
@@ -262,7 +262,7 @@ type MiscInline struct {
 	XMLName xml.Name `xml:"misc.inline"`
 	Ins     *Ins
 	Del     *Del
-	Script  string
+	Script  interface{}
 }
 
 // Misc ...
@@ -303,18 +303,18 @@ type Heading struct {
 // Lists ...
 type Lists struct {
 	XMLName xml.Name `xml:"lists"`
-	Ul      string
-	Ol      string
-	Dl      string
-	Menu    string
-	Dir     string
+	Ul      interface{}
+	Ol      interface{}
+	Dl      interface{}
+	Menu    interface{}
+	Dir     interface{}
 }
 
 // Blocktext ...
 type Blocktext struct {
 	XMLName    xml.Name `xml:"blocktext"`
 	Pre        *Pre
-	Hr         string
+	Hr         interface{}
 	Blockquote *Blockquote
 	Address    *Address
 	Center     *Center
@@ -339,7 +339,7 @@ type Flow struct {
 	Block  []*Block
 	Inline []*Inline
 	Misc   []*Misc
-	Form   []string `xml:"form"`
+	Form   []interface{} `xml:"form"`
 }
 
 // AContent is a elements use "Inline" excluding a
@@ -381,26 +381,26 @@ type ButtonContent struct {
 	Fontstyle []*Fontstyle
 	Phrase    []*Phrase
 	Misc      []*Misc
-	P         []*P      `xml:"p"`
-	Div       []*Div    `xml:"div"`
-	Table     []*Table  `xml:"table"`
-	Br        []string  `xml:"br"`
-	Span      []*Span   `xml:"span"`
-	Bdo       []string  `xml:"bdo"`
-	Object    []string  `xml:"object"`
-	Applet    []*Applet `xml:"applet"`
-	Img       []string  `xml:"img"`
-	Map       []*Map    `xml:"map"`
+	P         []*P          `xml:"p"`
+	Div       []*Div        `xml:"div"`
+	Table     []*Table      `xml:"table"`
+	Br        []interface{} `xml:"br"`
+	Span      []*Span       `xml:"span"`
+	Bdo       []interface{} `xml:"bdo"`
+	Object    []interface{} `xml:"object"`
+	Applet    []*Applet     `xml:"applet"`
+	Img       []interface{} `xml:"img"`
+	Map       []*Map        `xml:"map"`
 }
 
 // HeadMisc ...
 type HeadMisc struct {
 	XMLName xml.Name `xml:"head.misc"`
-	Script  []string
+	Script  []interface{}
 	Style   []*Style
 	Meta    []*Meta
 	Link    []*Link
-	Object  []string
+	Object  []interface{}
 	Isindex []*Isindex
 }
 
@@ -487,7 +487,7 @@ type Script2 struct {
 	TypeAttr     string      `xml:"type,attr"`
 	LanguageAttr interface{} `xml:"language,attr,omitempty"`
 	SrcAttr      string      `xml:"src,attr,omitempty"`
-	DeferAttr    string      `xml:"defer,attr,omitempty"`
+	DeferAttr    interface{} `xml:"defer,attr,omitempty"`
 	XmlSpaceAttr *Space      `xml:"xml:space,attr,omitempty"`
 }
 
@@ -502,16 +502,16 @@ type Noscript struct {
 type Iframe struct {
 	XMLName          xml.Name `xml:"iframe"`
 	Coreattrs        *Coreattrs
-	LongdescAttr     string `xml:"longdesc,attr,omitempty"`
-	NameAttr         string `xml:"name,attr,omitempty"`
-	SrcAttr          string `xml:"src,attr,omitempty"`
-	FrameborderAttr  string `xml:"frameborder,attr,omitempty"`
-	MarginwidthAttr  int    `xml:"marginwidth,attr,omitempty"`
-	MarginheightAttr int    `xml:"marginheight,attr,omitempty"`
-	ScrollingAttr    string `xml:"scrolling,attr,omitempty"`
-	AlignAttr        string `xml:"align,attr,omitempty"`
-	HeightAttr       string `xml:"height,attr,omitempty"`
-	WidthAttr        string `xml:"width,attr,omitempty"`
+	LongdescAttr     string      `xml:"longdesc,attr,omitempty"`
+	NameAttr         string      `xml:"name,attr,omitempty"`
+	SrcAttr          string      `xml:"src,attr,omitempty"`
+	FrameborderAttr  interface{} `xml:"frameborder,attr,omitempty"`
+	MarginwidthAttr  int         `xml:"marginwidth,attr,omitempty"`
+	MarginheightAttr int         `xml:"marginheight,attr,omitempty"`
+	ScrollingAttr    interface{} `xml:"scrolling,attr,omitempty"`
+	AlignAttr        string      `xml:"align,attr,omitempty"`
+	HeightAttr       string      `xml:"height,attr,omitempty"`
+	WidthAttr        string      `xml:"width,attr,omitempty"`
 	*Flow
 }
 
@@ -593,9 +593,9 @@ type ULStyle string
 type Ul struct {
 	XMLName     xml.Name `xml:"ul"`
 	Attrs       *Attrs
-	TypeAttr    string `xml:"type,attr,omitempty"`
-	CompactAttr string `xml:"compact,attr,omitempty"`
-	Ul          string `xml:"ul"`
+	TypeAttr    string      `xml:"type,attr,omitempty"`
+	CompactAttr interface{} `xml:"compact,attr,omitempty"`
+	Ul          interface{} `xml:"ul"`
 }
 
 // OLStyle is Ordered list numbering style
@@ -614,26 +614,26 @@ type OLStyle string
 type Ol struct {
 	XMLName     xml.Name `xml:"ol"`
 	Attrs       *Attrs
-	TypeAttr    string `xml:"type,attr,omitempty"`
-	CompactAttr string `xml:"compact,attr,omitempty"`
-	StartAttr   int    `xml:"start,attr,omitempty"`
-	Ol          string `xml:"ol"`
+	TypeAttr    string      `xml:"type,attr,omitempty"`
+	CompactAttr interface{} `xml:"compact,attr,omitempty"`
+	StartAttr   int         `xml:"start,attr,omitempty"`
+	Ol          interface{} `xml:"ol"`
 }
 
 // Menu is single column list (DEPRECATED)
 type Menu struct {
 	XMLName     xml.Name `xml:"menu"`
 	Attrs       *Attrs
-	CompactAttr string `xml:"compact,attr,omitempty"`
-	Menu        string `xml:"menu"`
+	CompactAttr interface{} `xml:"compact,attr,omitempty"`
+	Menu        interface{} `xml:"menu"`
 }
 
 // Dir is multiple column list (DEPRECATED)
 type Dir struct {
 	XMLName     xml.Name `xml:"dir"`
 	Attrs       *Attrs
-	CompactAttr string `xml:"compact,attr,omitempty"`
-	Dir         string `xml:"dir"`
+	CompactAttr interface{} `xml:"compact,attr,omitempty"`
+	Dir         interface{} `xml:"dir"`
 }
 
 // LIStyle is LIStyle is constrained to: "(ULStyle|OLStyle)"
@@ -652,9 +652,9 @@ type Li struct {
 type Dl struct {
 	XMLName     xml.Name `xml:"dl"`
 	Attrs       *Attrs
-	CompactAttr string `xml:"compact,attr,omitempty"`
-	Dt          []*Dt  `xml:"dt"`
-	Dl          string `xml:"dl"`
+	CompactAttr interface{} `xml:"compact,attr,omitempty"`
+	Dt          []*Dt       `xml:"dt"`
+	Dl          interface{} `xml:"dl"`
 }
 
 // Dt ...
@@ -684,10 +684,10 @@ type Address struct {
 type Hr struct {
 	XMLName     xml.Name `xml:"hr"`
 	Attrs       *Attrs
-	AlignAttr   string `xml:"align,attr,omitempty"`
-	NoshadeAttr string `xml:"noshade,attr,omitempty"`
-	SizeAttr    int    `xml:"size,attr,omitempty"`
-	WidthAttr   string `xml:"width,attr,omitempty"`
+	AlignAttr   interface{} `xml:"align,attr,omitempty"`
+	NoshadeAttr interface{} `xml:"noshade,attr,omitempty"`
+	SizeAttr    int         `xml:"size,attr,omitempty"`
+	WidthAttr   string      `xml:"width,attr,omitempty"`
 }
 
 // Pre is content is "Inline" excluding
@@ -763,9 +763,9 @@ type Bdo struct {
 	XMLName     xml.Name `xml:"bdo"`
 	Coreattrs   *Coreattrs
 	Events      *Events
-	LangAttr    string `xml:"lang,attr,omitempty"`
-	XmlLangAttr *Lang  `xml:"xml:lang,attr,omitempty"`
-	DirAttr     string `xml:"dir,attr"`
+	LangAttr    string      `xml:"lang,attr,omitempty"`
+	XmlLangAttr *Lang       `xml:"xml:lang,attr,omitempty"`
+	DirAttr     interface{} `xml:"dir,attr"`
 	*Inline
 }
 
@@ -773,7 +773,7 @@ type Bdo struct {
 type Br struct {
 	XMLName   xml.Name `xml:"br"`
 	Coreattrs *Coreattrs
-	ClearAttr string `xml:"clear,attr,omitempty"`
+	ClearAttr interface{} `xml:"clear,attr,omitempty"`
 }
 
 // Em is emphasis
@@ -948,28 +948,28 @@ type Font struct {
 type Object struct {
 	XMLName      xml.Name `xml:"object"`
 	Attrs        *Attrs
-	DeclareAttr  string `xml:"declare,attr,omitempty"`
-	ClassidAttr  string `xml:"classid,attr,omitempty"`
-	CodebaseAttr string `xml:"codebase,attr,omitempty"`
-	DataAttr     string `xml:"data,attr,omitempty"`
-	TypeAttr     string `xml:"type,attr,omitempty"`
-	CodetypeAttr string `xml:"codetype,attr,omitempty"`
-	ArchiveAttr  string `xml:"archive,attr,omitempty"`
-	StandbyAttr  string `xml:"standby,attr,omitempty"`
-	HeightAttr   string `xml:"height,attr,omitempty"`
-	WidthAttr    string `xml:"width,attr,omitempty"`
-	UsemapAttr   string `xml:"usemap,attr,omitempty"`
-	NameAttr     string `xml:"name,attr,omitempty"`
-	TabindexAttr int    `xml:"tabindex,attr,omitempty"`
-	AlignAttr    string `xml:"align,attr,omitempty"`
-	BorderAttr   int    `xml:"border,attr,omitempty"`
-	HspaceAttr   int    `xml:"hspace,attr,omitempty"`
-	VspaceAttr   int    `xml:"vspace,attr,omitempty"`
+	DeclareAttr  interface{} `xml:"declare,attr,omitempty"`
+	ClassidAttr  string      `xml:"classid,attr,omitempty"`
+	CodebaseAttr string      `xml:"codebase,attr,omitempty"`
+	DataAttr     string      `xml:"data,attr,omitempty"`
+	TypeAttr     string      `xml:"type,attr,omitempty"`
+	CodetypeAttr string      `xml:"codetype,attr,omitempty"`
+	ArchiveAttr  string      `xml:"archive,attr,omitempty"`
+	StandbyAttr  string      `xml:"standby,attr,omitempty"`
+	HeightAttr   string      `xml:"height,attr,omitempty"`
+	WidthAttr    string      `xml:"width,attr,omitempty"`
+	UsemapAttr   string      `xml:"usemap,attr,omitempty"`
+	NameAttr     string      `xml:"name,attr,omitempty"`
+	TabindexAttr int         `xml:"tabindex,attr,omitempty"`
+	AlignAttr    string      `xml:"align,attr,omitempty"`
+	BorderAttr   int         `xml:"border,attr,omitempty"`
+	HspaceAttr   int         `xml:"hspace,attr,omitempty"`
+	VspaceAttr   int         `xml:"vspace,attr,omitempty"`
 	Block        []*Block
 	Inline       []*Inline
 	Misc         []*Misc
-	Param        []string `xml:"param"`
-	Object       string   `xml:"object"`
+	Param        []interface{} `xml:"param"`
+	Object       interface{}   `xml:"object"`
 }
 
 // Param is param is used to supply a named property value.
@@ -981,7 +981,7 @@ type Param struct {
 	IdAttr        string      `xml:"id,attr,omitempty"`
 	NameAttr      interface{} `xml:"name,attr"`
 	ValueAttr     interface{} `xml:"value,attr,omitempty"`
-	ValuetypeAttr string      `xml:"valuetype,attr,omitempty"`
+	ValuetypeAttr interface{} `xml:"valuetype,attr,omitempty"`
 	TypeAttr      string      `xml:"type,attr,omitempty"`
 }
 
@@ -1003,26 +1003,26 @@ type Applet struct {
 	Block        []*Block
 	Inline       []*Inline
 	Misc         []*Misc
-	Param        []string `xml:"param"`
-	Form         []string `xml:"form"`
+	Param        []interface{} `xml:"param"`
+	Form         []interface{} `xml:"form"`
 }
 
 // Img ...
 type Img struct {
 	XMLName      xml.Name `xml:"img"`
 	Attrs        *Attrs
-	SrcAttr      string `xml:"src,attr"`
-	AltAttr      string `xml:"alt,attr"`
-	NameAttr     string `xml:"name,attr,omitempty"`
-	LongdescAttr string `xml:"longdesc,attr,omitempty"`
-	HeightAttr   string `xml:"height,attr,omitempty"`
-	WidthAttr    string `xml:"width,attr,omitempty"`
-	UsemapAttr   string `xml:"usemap,attr,omitempty"`
-	IsmapAttr    string `xml:"ismap,attr,omitempty"`
-	AlignAttr    string `xml:"align,attr,omitempty"`
-	BorderAttr   string `xml:"border,attr,omitempty"`
-	HspaceAttr   int    `xml:"hspace,attr,omitempty"`
-	VspaceAttr   int    `xml:"vspace,attr,omitempty"`
+	SrcAttr      string      `xml:"src,attr"`
+	AltAttr      string      `xml:"alt,attr"`
+	NameAttr     string      `xml:"name,attr,omitempty"`
+	LongdescAttr string      `xml:"longdesc,attr,omitempty"`
+	HeightAttr   string      `xml:"height,attr,omitempty"`
+	WidthAttr    string      `xml:"width,attr,omitempty"`
+	UsemapAttr   string      `xml:"usemap,attr,omitempty"`
+	IsmapAttr    interface{} `xml:"ismap,attr,omitempty"`
+	AlignAttr    string      `xml:"align,attr,omitempty"`
+	BorderAttr   string      `xml:"border,attr,omitempty"`
+	HspaceAttr   int         `xml:"hspace,attr,omitempty"`
+	VspaceAttr   int         `xml:"vspace,attr,omitempty"`
 }
 
 // Map ...
@@ -1037,8 +1037,8 @@ type Map struct {
 	NameAttr  interface{} `xml:"name,attr,omitempty"`
 	Block     []*Block
 	Misc      []*Misc
-	Form      []string `xml:"form"`
-	Area      []string `xml:"area"`
+	Form      []interface{} `xml:"form"`
+	Area      []interface{} `xml:"area"`
 }
 
 // Area ...
@@ -1046,26 +1046,26 @@ type Area struct {
 	XMLName    xml.Name `xml:"area"`
 	Attrs      *Attrs
 	Focus      *Focus
-	ShapeAttr  string `xml:"shape,attr,omitempty"`
-	CoordsAttr string `xml:"coords,attr,omitempty"`
-	HrefAttr   string `xml:"href,attr,omitempty"`
-	NohrefAttr string `xml:"nohref,attr,omitempty"`
-	AltAttr    string `xml:"alt,attr"`
-	TargetAttr string `xml:"target,attr,omitempty"`
+	ShapeAttr  string      `xml:"shape,attr,omitempty"`
+	CoordsAttr string      `xml:"coords,attr,omitempty"`
+	HrefAttr   string      `xml:"href,attr,omitempty"`
+	NohrefAttr interface{} `xml:"nohref,attr,omitempty"`
+	AltAttr    string      `xml:"alt,attr"`
+	TargetAttr string      `xml:"target,attr,omitempty"`
 }
 
 // Form ...
 type Form struct {
 	XMLName           xml.Name `xml:"form"`
 	Attrs             *Attrs
-	ActionAttr        string `xml:"action,attr"`
-	MethodAttr        string `xml:"method,attr,omitempty"`
-	EnctypeAttr       string `xml:"enctype,attr,omitempty"`
-	OnsubmitAttr      string `xml:"onsubmit,attr,omitempty"`
-	OnresetAttr       string `xml:"onreset,attr,omitempty"`
-	AcceptAttr        string `xml:"accept,attr,omitempty"`
-	AcceptcharsetAttr string `xml:"accept-charset,attr,omitempty"`
-	TargetAttr        string `xml:"target,attr,omitempty"`
+	ActionAttr        string      `xml:"action,attr"`
+	MethodAttr        interface{} `xml:"method,attr,omitempty"`
+	EnctypeAttr       string      `xml:"enctype,attr,omitempty"`
+	OnsubmitAttr      string      `xml:"onsubmit,attr,omitempty"`
+	OnresetAttr       string      `xml:"onreset,attr,omitempty"`
+	AcceptAttr        string      `xml:"accept,attr,omitempty"`
+	AcceptcharsetAttr string      `xml:"accept-charset,attr,omitempty"`
+	TargetAttr        string      `xml:"target,attr,omitempty"`
 	*FormContent
 }
 
@@ -1092,9 +1092,9 @@ type Input struct {
 	TypeAttr      string      `xml:"type,attr,omitempty"`
 	NameAttr      interface{} `xml:"name,attr,omitempty"`
 	ValueAttr     interface{} `xml:"value,attr,omitempty"`
-	CheckedAttr   string      `xml:"checked,attr,omitempty"`
-	DisabledAttr  string      `xml:"disabled,attr,omitempty"`
-	ReadonlyAttr  string      `xml:"readonly,attr,omitempty"`
+	CheckedAttr   interface{} `xml:"checked,attr,omitempty"`
+	DisabledAttr  interface{} `xml:"disabled,attr,omitempty"`
+	ReadonlyAttr  interface{} `xml:"readonly,attr,omitempty"`
 	SizeAttr      interface{} `xml:"size,attr,omitempty"`
 	MaxlengthAttr int         `xml:"maxlength,attr,omitempty"`
 	SrcAttr       string      `xml:"src,attr,omitempty"`
@@ -1110,33 +1110,33 @@ type Input struct {
 type Select struct {
 	XMLName      xml.Name `xml:"select"`
 	Attrs        *Attrs
-	NameAttr     interface{} `xml:"name,attr,omitempty"`
-	SizeAttr     int         `xml:"size,attr,omitempty"`
-	MultipleAttr string      `xml:"multiple,attr,omitempty"`
-	DisabledAttr string      `xml:"disabled,attr,omitempty"`
-	TabindexAttr int         `xml:"tabindex,attr,omitempty"`
-	OnfocusAttr  string      `xml:"onfocus,attr,omitempty"`
-	OnblurAttr   string      `xml:"onblur,attr,omitempty"`
-	OnchangeAttr string      `xml:"onchange,attr,omitempty"`
-	Optgroup     []string    `xml:"optgroup"`
-	Select       string      `xml:"select"`
+	NameAttr     interface{}   `xml:"name,attr,omitempty"`
+	SizeAttr     int           `xml:"size,attr,omitempty"`
+	MultipleAttr interface{}   `xml:"multiple,attr,omitempty"`
+	DisabledAttr interface{}   `xml:"disabled,attr,omitempty"`
+	TabindexAttr int           `xml:"tabindex,attr,omitempty"`
+	OnfocusAttr  string        `xml:"onfocus,attr,omitempty"`
+	OnblurAttr   string        `xml:"onblur,attr,omitempty"`
+	OnchangeAttr string        `xml:"onchange,attr,omitempty"`
+	Optgroup     []interface{} `xml:"optgroup"`
+	Select       interface{}   `xml:"select"`
 }
 
 // Optgroup is option group
 type Optgroup struct {
 	XMLName      xml.Name `xml:"optgroup"`
 	Attrs        *Attrs
-	DisabledAttr string `xml:"disabled,attr,omitempty"`
-	LabelAttr    string `xml:"label,attr"`
-	Optgroup     string `xml:"optgroup"`
+	DisabledAttr interface{} `xml:"disabled,attr,omitempty"`
+	LabelAttr    string      `xml:"label,attr"`
+	Optgroup     interface{} `xml:"optgroup"`
 }
 
 // Option is selectable choice
 type Option struct {
 	XMLName      xml.Name `xml:"option"`
 	Attrs        *Attrs
-	SelectedAttr string      `xml:"selected,attr,omitempty"`
-	DisabledAttr string      `xml:"disabled,attr,omitempty"`
+	SelectedAttr interface{} `xml:"selected,attr,omitempty"`
+	DisabledAttr interface{} `xml:"disabled,attr,omitempty"`
 	LabelAttr    string      `xml:"label,attr,omitempty"`
 	ValueAttr    interface{} `xml:"value,attr,omitempty"`
 }
@@ -1149,8 +1149,8 @@ type Textarea struct {
 	NameAttr     interface{} `xml:"name,attr,omitempty"`
 	RowsAttr     int         `xml:"rows,attr"`
 	ColsAttr     int         `xml:"cols,attr"`
-	DisabledAttr string      `xml:"disabled,attr,omitempty"`
-	ReadonlyAttr string      `xml:"readonly,attr,omitempty"`
+	DisabledAttr interface{} `xml:"disabled,attr,omitempty"`
+	ReadonlyAttr interface{} `xml:"readonly,attr,omitempty"`
 	OnselectAttr string      `xml:"onselect,attr,omitempty"`
 	OnchangeAttr string      `xml:"onchange,attr,omitempty"`
 }
@@ -1167,8 +1167,8 @@ type Fieldset struct {
 	Block   []*Block
 	Inline  []*Inline
 	Misc    []*Misc
-	Legend  *Legend  `xml:"legend"`
-	Form    []string `xml:"form"`
+	Legend  *Legend       `xml:"legend"`
+	Form    []interface{} `xml:"form"`
 }
 
 // LAlign ...
@@ -1190,8 +1190,8 @@ type Button struct {
 	Focus        *Focus
 	NameAttr     interface{} `xml:"name,attr,omitempty"`
 	ValueAttr    interface{} `xml:"value,attr,omitempty"`
-	TypeAttr     string      `xml:"type,attr,omitempty"`
-	DisabledAttr string      `xml:"disabled,attr,omitempty"`
+	TypeAttr     interface{} `xml:"type,attr,omitempty"`
+	DisabledAttr interface{} `xml:"disabled,attr,omitempty"`
 	*ButtonContent
 }
 
@@ -1334,9 +1334,9 @@ type Tr struct {
 	Attrs       *Attrs
 	Cellhalign  *Cellhalign
 	Cellvalign  *Cellvalign
-	BgcolorAttr string   `xml:"bgcolor,attr,omitempty"`
-	Th          []string `xml:"th"`
-	Td          []string `xml:"td"`
+	BgcolorAttr string        `xml:"bgcolor,attr,omitempty"`
+	Th          []interface{} `xml:"th"`
+	Td          []interface{} `xml:"td"`
 }
 
 // Scope is Scope is simpler than headers attribute for common tables
@@ -1354,7 +1354,7 @@ type Th struct {
 	ScopeAttr   string      `xml:"scope,attr,omitempty"`
 	RowspanAttr int         `xml:"rowspan,attr,omitempty"`
 	ColspanAttr int         `xml:"colspan,attr,omitempty"`
-	NowrapAttr  string      `xml:"nowrap,attr,omitempty"`
+	NowrapAttr  interface{} `xml:"nowrap,attr,omitempty"`
 	BgcolorAttr string      `xml:"bgcolor,attr,omitempty"`
 	WidthAttr   string      `xml:"width,attr,omitempty"`
 	HeightAttr  string      `xml:"height,attr,omitempty"`
@@ -1373,7 +1373,7 @@ type Td struct {
 	ScopeAttr   string      `xml:"scope,attr,omitempty"`
 	RowspanAttr int         `xml:"rowspan,attr,omitempty"`
 	ColspanAttr int         `xml:"colspan,attr,omitempty"`
-	NowrapAttr  string      `xml:"nowrap,attr,omitempty"`
+	NowrapAttr  interface{} `xml:"nowrap,attr,omitempty"`
 	BgcolorAttr string      `xml:"bgcolor,attr,omitempty"`
 	WidthAttr   string      `xml:"width,attr,omitempty"`
 	HeightAttr  string      `xml:"height,attr,omitempty"`
@@ -1425,7 +1425,7 @@ type Section struct {
 	Block      []*Block
 	Inline     []*Inline
 	Misc       []*Misc
-	Form       []string      `xml:"form"`
+	Form       []interface{} `xml:"form"`
 	Subsection []*Subsection `xml:"subsection"`
 }
 
@@ -1437,7 +1437,7 @@ type Subsection struct {
 	Block    []*Block
 	Inline   []*Inline
 	Misc     []*Misc
-	Form     []string `xml:"form"`
+	Form     []interface{} `xml:"form"`
 }
 
 // Source is A source element.
@@ -1447,7 +1447,7 @@ type Source struct {
 
 // Macro is A macro element.
 type Macro struct {
-	XMLName  xml.Name `xml:"macro"`
-	NameAttr string   `xml:"name,attr"`
-	Param    []string `xml:"param"`
+	XMLName  xml.Name      `xml:"macro"`
+	NameAttr string        `xml:"name,attr"`
+	Param    []interface{} `xml:"param"`
 }

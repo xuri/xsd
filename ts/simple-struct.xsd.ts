@@ -2,5 +2,5 @@
 
 // ComplexFoo ...
 export class ComplexFoo {
-	Element1: NonEmptyString;
+	Element1: any;
 }

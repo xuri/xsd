@@ -8,6 +8,6 @@ import (
 
 // ComplexFoo ...
 type ComplexFoo struct {
-	XMLName  xml.Name        `xml:"complexFoo"`
-	Element1 *NonEmptyString `xml:"element1"`
+	XMLName  xml.Name    `xml:"complexFoo"`
+	Element1 interface{} `xml:"element1"`
 }

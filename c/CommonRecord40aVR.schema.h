@@ -3,6 +3,6 @@
 // FinancialAwards ...
 typedef char FinancialAwards;
 
-typedef char StudentLevelCode;
+typedef void StudentLevelCode;
 
-typedef float SchoolNoteMessage;
+typedef void SchoolNoteMessage;

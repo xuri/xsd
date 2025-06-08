@@ -12,5 +12,5 @@ use serde_xml_rs::from_reader;
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct ComplexFoo {
 	#[serde(rename = "element1")]
-	pub element1: NonEmptyString,
+	pub element1: char,
 }

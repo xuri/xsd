@@ -3,39 +3,39 @@
 // DepthValueRecorded is An optional collection of elements relating to recorded sample depth.
 typedef struct {
 	float DepthValue;
-	MandatoryStringType DepthValueUnits;
-	MandatoryStringType DepthRelativeTo;
+	void DepthValueUnits;
+	void DepthRelativeTo;
 } DepthValueRecorded;
 
 // PurgedVolumeRecorded is An optional collection of elements relating to recorded sample volume.
 typedef struct {
 	float PurgedVolume;
-	MandatoryStringType PurgedVolumeUnits;
+	void PurgedVolumeUnits;
 } PurgedVolumeRecorded;
 
 // Measurement is This repeating element contains the structure of a Water Quality measurement.
 typedef struct {
-	MandatoryStringType DeterminandName;
-	MandatoryStringType ResultType;
+	void DeterminandName;
+	void ResultType;
 	float ResultValue;
-	MandatoryStringType ResultUnits;
-	MandatoryStringType Qualifier;
-	char Comment;
+	void ResultUnits;
+	void Qualifier;
+	void Comment;
 } Measurement;
 
 // Sample is This element contains the structure of a collection of samples.
 typedef struct {
-	char Sampler;
-	MandatoryStringType SampleType;
-	MandatoryStringType CustomerSamplePointName;
+	void Sampler;
+	void SampleType;
+	void CustomerSamplePointName;
 	char SampleDateTime;
-	MandatoryStringType PurposeTypeName;
-	MandatoryStringType MaterialName;
-	MandatoryStringType Mechanism;
-	MandatoryStringType CustomersLabSampleRef;
-	char CustomersLabSampleRefSecondary[];
-	char Comment;
-	MandatoryStringType LabName;
+	void PurposeTypeName;
+	void MaterialName;
+	void Mechanism;
+	void CustomersLabSampleRef;
+	void CustomersLabSampleRefSecondary[];
+	void Comment;
+	void LabName;
 	char AnalysisCompleteDateTime;
 	DepthValueRecorded DepthValueRecorded;
 	PurgedVolumeRecorded PurgedVolumeRecorded;
@@ -44,10 +44,10 @@ typedef struct {
 
 // FileUpload ...
 typedef struct {
-	char Source;
+	void Source;
 	Sample Sample[];
-	MandatoryStringType RegulatedCustomerIdentifier;
-	char CustomerReference;
+	void RegulatedCustomerIdentifier;
+	void CustomerReference;
 } FileUpload;
 
-typedef char CustomerReference;
+typedef void CustomerReference;

@@ -12,7 +12,7 @@ use serde_xml_rs::from_reader;
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct B {
 	#[serde(rename = "C")]
-	pub c: String,
+	pub c: char,
 }
 
 
@@ -36,5 +36,5 @@ pub struct FileUpload {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct c {
 	#[serde(rename = "C")]
-	pub c: String,
+	pub c: char,
 }

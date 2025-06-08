@@ -22,11 +22,11 @@ public class FinancialAwards {
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlElement(required = true, name = "StudentLevelCode")
 public class StudentLevelCode {
-	protected String StudentLevelCode;
+	protected void StudentLevelCode;
 }
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlElement(required = true, name = "SchoolNoteMessage")
 public class SchoolNoteMessage {
-	protected Float SchoolNoteMessage;
+	protected void SchoolNoteMessage;
 }

@@ -14,9 +14,9 @@ pub struct DepthValueRecorded {
 	#[serde(rename = "DepthValue")]
 	pub depth_value: f64,
 	#[serde(rename = "DepthValueUnits")]
-	pub depth_value_units: MandatoryStringType,
+	pub depth_value_units: char,
 	#[serde(rename = "DepthRelativeTo")]
-	pub depth_relative_to: MandatoryStringType,
+	pub depth_relative_to: char,
 }
 
 
@@ -26,7 +26,7 @@ pub struct PurgedVolumeRecorded {
 	#[serde(rename = "PurgedVolume")]
 	pub purged_volume: f64,
 	#[serde(rename = "PurgedVolumeUnits")]
-	pub purged_volume_units: MandatoryStringType,
+	pub purged_volume_units: char,
 }
 
 
@@ -34,17 +34,17 @@ pub struct PurgedVolumeRecorded {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Measurement {
 	#[serde(rename = "DeterminandName")]
-	pub determinand_name: MandatoryStringType,
+	pub determinand_name: char,
 	#[serde(rename = "ResultType")]
-	pub result_type: MandatoryStringType,
+	pub result_type: char,
 	#[serde(rename = "ResultValue")]
 	pub result_value: f64,
 	#[serde(rename = "ResultUnits")]
-	pub result_units: MandatoryStringType,
+	pub result_units: char,
 	#[serde(rename = "Qualifier")]
-	pub qualifier: MandatoryStringType,
+	pub qualifier: char,
 	#[serde(rename = "Comment")]
-	pub comment: String,
+	pub comment: char,
 }
 
 
@@ -52,27 +52,27 @@ pub struct Measurement {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Sample {
 	#[serde(rename = "Sampler")]
-	pub sampler: String,
+	pub sampler: char,
 	#[serde(rename = "SampleType")]
-	pub sample_type: MandatoryStringType,
+	pub sample_type: char,
 	#[serde(rename = "CustomerSamplePointName")]
-	pub customer_sample_point_name: MandatoryStringType,
+	pub customer_sample_point_name: char,
 	#[serde(rename = "SampleDateTime")]
 	pub sample_date_time: u8,
 	#[serde(rename = "PurposeTypeName")]
-	pub purpose_type_name: MandatoryStringType,
+	pub purpose_type_name: char,
 	#[serde(rename = "MaterialName")]
-	pub material_name: MandatoryStringType,
+	pub material_name: char,
 	#[serde(rename = "Mechanism")]
-	pub mechanism: MandatoryStringType,
+	pub mechanism: char,
 	#[serde(rename = "CustomersLabSampleRef")]
-	pub customers_lab_sample_ref: MandatoryStringType,
+	pub customers_lab_sample_ref: char,
 	#[serde(rename = "CustomersLabSampleRefSecondary")]
-	pub customers_lab_sample_ref_secondary: Vec<String>,
+	pub customers_lab_sample_ref_secondary: Vec<char>,
 	#[serde(rename = "Comment")]
-	pub comment: String,
+	pub comment: char,
 	#[serde(rename = "LabName")]
-	pub lab_name: MandatoryStringType,
+	pub lab_name: char,
 	#[serde(rename = "AnalysisCompleteDateTime")]
 	pub analysis_complete_date_time: u8,
 	#[serde(rename = "DepthValueRecorded")]
@@ -88,13 +88,13 @@ pub struct Sample {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct FileUpload {
 	#[serde(rename = "Source")]
-	pub source: String,
+	pub source: char,
 	#[serde(rename = "Sample")]
 	pub sample: Vec<Sample>,
 	#[serde(rename = "RegulatedCustomerIdentifier")]
-	pub regulated_customer_identifier: MandatoryStringType,
+	pub regulated_customer_identifier: char,
 	#[serde(rename = "CustomerReference")]
-	pub customer_reference: String,
+	pub customer_reference: char,
 }
 
 
@@ -102,5 +102,5 @@ pub struct FileUpload {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct customer_reference {
 	#[serde(rename = "CustomerReference")]
-	pub customer_reference: String,
+	pub customer_reference: char,
 }

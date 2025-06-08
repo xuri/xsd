@@ -20,7 +20,7 @@ pub struct FinancialAwards {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct student_level_code {
 	#[serde(rename = "StudentLevelCode")]
-	pub student_level_code: String,
+	pub student_level_code: char,
 }
 
 
@@ -28,5 +28,5 @@ pub struct student_level_code {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct school_note_message {
 	#[serde(rename = "SchoolNoteMessage")]
-	pub school_note_message: f64,
+	pub school_note_message: char,
 }

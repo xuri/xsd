@@ -4,16 +4,16 @@ package schema
 
 // Software ...
 type Software struct {
-	SoftwareProvider string `xml:"SoftwareProvider"`
-	SoftwareVersion  string `xml:"SoftwareVersion"`
+	SoftwareProvider interface{} `xml:"SoftwareProvider"`
+	SoftwareVersion  interface{} `xml:"SoftwareVersion"`
 }
 
 // TransmissionData ...
 type TransmissionData struct {
-	DocumentID       string      `xml:"DocumentID"`
+	DocumentID       interface{} `xml:"DocumentID"`
 	CreatedDateTime  string      `xml:"CreatedDateTime"`
 	Software         interface{} `xml:"Software"`
-	FullResponseCode string      `xml:"FullResponseCode"`
+	FullResponseCode interface{} `xml:"FullResponseCode"`
 }
 
 // CommonRecordType ...

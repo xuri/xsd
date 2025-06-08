@@ -17,9 +17,9 @@ public class DepthValueRecorded {
 	@XmlElement(required = true, name = "DepthValue")
 	protected Float DepthValue;
 	@XmlElement(required = true, name = "DepthValueUnits")
-	protected MandatoryStringType DepthValueUnits;
+	protected void DepthValueUnits;
 	@XmlElement(required = true, name = "DepthRelativeTo")
-	protected MandatoryStringType DepthRelativeTo;
+	protected void DepthRelativeTo;
 }
 
 // PurgedVolumeRecorded is An optional collection of elements relating to recorded sample volume.
@@ -27,49 +27,49 @@ public class PurgedVolumeRecorded {
 	@XmlElement(required = true, name = "PurgedVolume")
 	protected Float PurgedVolume;
 	@XmlElement(required = true, name = "PurgedVolumeUnits")
-	protected MandatoryStringType PurgedVolumeUnits;
+	protected void PurgedVolumeUnits;
 }
 
 // Measurement is This repeating element contains the structure of a Water Quality measurement.
 public class Measurement {
 	@XmlElement(required = true, name = "DeterminandName")
-	protected MandatoryStringType DeterminandName;
+	protected void DeterminandName;
 	@XmlElement(required = true, name = "ResultType")
-	protected MandatoryStringType ResultType;
+	protected void ResultType;
 	@XmlElement(required = true, name = "ResultValue")
 	protected Float ResultValue;
 	@XmlElement(required = true, name = "ResultUnits")
-	protected MandatoryStringType ResultUnits;
+	protected void ResultUnits;
 	@XmlElement(required = true, name = "Qualifier")
-	protected MandatoryStringType Qualifier;
+	protected void Qualifier;
 	@XmlElement(required = true, name = "Comment")
-	protected String Comment;
+	protected void Comment;
 }
 
 // Sample is This element contains the structure of a collection of samples.
 public class Sample {
 	@XmlElement(required = true, name = "Sampler")
-	protected String Sampler;
+	protected void Sampler;
 	@XmlElement(required = true, name = "SampleType")
-	protected MandatoryStringType SampleType;
+	protected void SampleType;
 	@XmlElement(required = true, name = "CustomerSamplePointName")
-	protected MandatoryStringType CustomerSamplePointName;
+	protected void CustomerSamplePointName;
 	@XmlElement(required = true, name = "SampleDateTime")
 	protected String SampleDateTime;
 	@XmlElement(required = true, name = "PurposeTypeName")
-	protected MandatoryStringType PurposeTypeName;
+	protected void PurposeTypeName;
 	@XmlElement(required = true, name = "MaterialName")
-	protected MandatoryStringType MaterialName;
+	protected void MaterialName;
 	@XmlElement(required = true, name = "Mechanism")
-	protected MandatoryStringType Mechanism;
+	protected void Mechanism;
 	@XmlElement(required = true, name = "CustomersLabSampleRef")
-	protected MandatoryStringType CustomersLabSampleRef;
+	protected void CustomersLabSampleRef;
 	@XmlElement(required = true, name = "CustomersLabSampleRefSecondary")
-	protected List<String> CustomersLabSampleRefSecondary;
+	protected List<void> CustomersLabSampleRefSecondary;
 	@XmlElement(required = true, name = "Comment")
-	protected String Comment;
+	protected void Comment;
 	@XmlElement(required = true, name = "LabName")
-	protected MandatoryStringType LabName;
+	protected void LabName;
 	@XmlElement(required = true, name = "AnalysisCompleteDateTime")
 	protected String AnalysisCompleteDateTime;
 	@XmlElement(required = true, name = "DepthValueRecorded")
@@ -83,17 +83,17 @@ public class Sample {
 // FileUpload ...
 public class FileUpload {
 	@XmlElement(required = true, name = "Source")
-	protected String Source;
+	protected void Source;
 	@XmlElement(required = true, name = "Sample")
 	protected List<Sample> Sample;
 	@XmlElement(required = true, name = "RegulatedCustomerIdentifier")
-	protected MandatoryStringType RegulatedCustomerIdentifier;
+	protected void RegulatedCustomerIdentifier;
 	@XmlElement(required = true, name = "CustomerReference")
-	protected String CustomerReference;
+	protected void CustomerReference;
 }
 
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlElement(required = true, name = "CustomerReference")
 public class CustomerReference {
-	protected String CustomerReference;
+	protected void CustomerReference;
 }

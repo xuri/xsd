@@ -2,7 +2,7 @@
 
 // B ...
 typedef struct {
-	char C;
+	void C;
 } B;
 
 // A ...
@@ -15,4 +15,4 @@ typedef struct {
 	A A[];
 } FileUpload;
 
-typedef char C;
+typedef void C;

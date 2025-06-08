@@ -15,7 +15,7 @@ import javax.xml.bind.annotation.XmlValue;
 // B ...
 public class B {
 	@XmlElement(required = true, name = "C")
-	protected String C;
+	protected void C;
 }
 
 // A ...
@@ -33,5 +33,5 @@ public class FileUpload {
 @XmlAccessorType(XmlAccessType.FIELD)
 @XmlElement(required = true, name = "C")
 public class C {
-	protected String C;
+	protected void C;
 }
