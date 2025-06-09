@@ -14,3 +14,11 @@ pub struct ComplexFoo {
 	#[serde(rename = "element1")]
 	pub element1: char,
 }
+
+
+// NonEmptyString ...
+#[derive(Debug, Deserialize, Serialize, PartialEq)]
+pub struct NonEmptyString {
+	#[serde(rename = "nonEmptyString")]
+	pub non_empty_string: String,
+}

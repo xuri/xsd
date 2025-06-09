@@ -318,7 +318,7 @@ pub struct TextAlign {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct SpecialExtra {
 	#[serde(rename = "object")]
-	pub object: char,
+	pub object: Object,
 	#[serde(rename = "applet")]
 	pub applet: Applet,
 	#[serde(rename = "img")]
@@ -450,7 +450,7 @@ pub struct InlineForms {
 	#[serde(rename = "input")]
 	pub input: char,
 	#[serde(rename = "select")]
-	pub select: char,
+	pub select: Select,
 	#[serde(rename = "textarea")]
 	pub textarea: char,
 	#[serde(rename = "label")]
@@ -530,15 +530,15 @@ pub struct Heading {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Lists {
 	#[serde(rename = "ul")]
-	pub ul: char,
+	pub ul: Ul,
 	#[serde(rename = "ol")]
-	pub ol: char,
+	pub ol: Ol,
 	#[serde(rename = "dl")]
-	pub dl: char,
+	pub dl: Dl,
 	#[serde(rename = "menu")]
-	pub menu: char,
+	pub menu: Menu,
 	#[serde(rename = "dir")]
-	pub dir: char,
+	pub dir: Dir,
 }
 
 
@@ -671,7 +671,7 @@ pub struct ButtonContent {
 	#[serde(rename = "bdo")]
 	pub bdo: Vec<char>,
 	#[serde(rename = "object")]
-	pub object: Vec<char>,
+	pub object: Vec<Object>,
 	#[serde(rename = "applet")]
 	pub applet: Vec<Applet>,
 	#[serde(rename = "img")]
@@ -693,7 +693,7 @@ pub struct HeadMisc {
 	#[serde(rename = "link")]
 	pub link: Link,
 	#[serde(rename = "object")]
-	pub object: char,
+	pub object: Object,
 	#[serde(rename = "isindex")]
 	pub isindex: Isindex,
 }
@@ -994,9 +994,9 @@ pub struct Ul {
 	#[serde(rename = "type")]
 	pub type_attr: Option<String>,
 	#[serde(rename = "compact")]
-	pub compact: Option<char>,
-	#[serde(rename = "ul")]
-	pub ul: char,
+	pub compact: Option<String>,
+	#[serde(rename = "li")]
+	pub li: Vec<Li>,
 }
 
 
@@ -1025,11 +1025,11 @@ pub struct Ol {
 	#[serde(rename = "type")]
 	pub type_attr: Option<String>,
 	#[serde(rename = "compact")]
-	pub compact: Option<char>,
+	pub compact: Option<String>,
 	#[serde(rename = "start")]
 	pub start: Option<u32>,
-	#[serde(rename = "ol")]
-	pub ol: char,
+	#[serde(rename = "li")]
+	pub li: Vec<Li>,
 }
 
 
@@ -1039,9 +1039,9 @@ pub struct Menu {
 	#[serde(rename = "attrs")]
 	pub attrs: Vec<Attrs>,
 	#[serde(rename = "compact")]
-	pub compact: Option<char>,
-	#[serde(rename = "menu")]
-	pub menu: char,
+	pub compact: Option<String>,
+	#[serde(rename = "li")]
+	pub li: Vec<Li>,
 }
 
 
@@ -1051,9 +1051,9 @@ pub struct Dir {
 	#[serde(rename = "attrs")]
 	pub attrs: Vec<Attrs>,
 	#[serde(rename = "compact")]
-	pub compact: Option<char>,
-	#[serde(rename = "dir")]
-	pub dir: char,
+	pub compact: Option<String>,
+	#[serde(rename = "li")]
+	pub li: Vec<Li>,
 }
 
 
@@ -1085,11 +1085,11 @@ pub struct Dl {
 	#[serde(rename = "attrs")]
 	pub attrs: Vec<Attrs>,
 	#[serde(rename = "compact")]
-	pub compact: Option<char>,
+	pub compact: Option<String>,
 	#[serde(rename = "dt")]
 	pub dt: Vec<Dt>,
-	#[serde(rename = "dl")]
-	pub dl: char,
+	#[serde(rename = "dd")]
+	pub dd: Vec<Dd>,
 }
 
 
@@ -1528,7 +1528,7 @@ pub struct Object {
 	#[serde(rename = "attrs")]
 	pub attrs: Vec<Attrs>,
 	#[serde(rename = "declare")]
-	pub declare: Option<char>,
+	pub declare: Option<String>,
 	#[serde(rename = "classid")]
 	pub classid: Option<String>,
 	#[serde(rename = "codebase")]
@@ -1569,8 +1569,8 @@ pub struct Object {
 	pub misc: Vec<Misc>,
 	#[serde(rename = "param")]
 	pub param: Vec<char>,
-	#[serde(rename = "object")]
-	pub object: char,
+	#[serde(rename = "form")]
+	pub form: Vec<char>,
 }
 
 
@@ -1818,9 +1818,9 @@ pub struct Select {
 	#[serde(rename = "size")]
 	pub size: Option<u32>,
 	#[serde(rename = "multiple")]
-	pub multiple: Option<char>,
+	pub multiple: Option<String>,
 	#[serde(rename = "disabled")]
-	pub disabled: Option<char>,
+	pub disabled: Option<String>,
 	#[serde(rename = "tabindex")]
 	pub tabindex: Option<u32>,
 	#[serde(rename = "onfocus")]
@@ -1830,9 +1830,9 @@ pub struct Select {
 	#[serde(rename = "onchange")]
 	pub onchange: Option<String>,
 	#[serde(rename = "optgroup")]
-	pub optgroup: Vec<char>,
-	#[serde(rename = "select")]
-	pub select: char,
+	pub optgroup: Vec<Optgroup>,
+	#[serde(rename = "option")]
+	pub option: Vec<char>,
 }
 
 
@@ -1842,11 +1842,11 @@ pub struct Optgroup {
 	#[serde(rename = "attrs")]
 	pub attrs: Vec<Attrs>,
 	#[serde(rename = "disabled")]
-	pub disabled: Option<char>,
+	pub disabled: Option<String>,
 	#[serde(rename = "label")]
 	pub label: String,
-	#[serde(rename = "optgroup")]
-	pub optgroup: char,
+	#[serde(rename = "option")]
+	pub option: Vec<char>,
 }
 
 
@@ -2278,7 +2278,7 @@ pub struct Faqs {
 }
 
 
-// Part is A part element of the faqs element.
+// Part is Required faq element for this part element.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Part {
 	#[serde(rename = "id")]
@@ -2290,7 +2290,7 @@ pub struct Part {
 }
 
 
-// Faq is A faq element.
+// Faq is The answer of this faq element.
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Faq {
 	#[serde(rename = "id")]

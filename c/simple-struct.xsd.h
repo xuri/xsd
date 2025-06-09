@@ -4,3 +4,6 @@
 typedef struct {
 	void Element1;
 } ComplexFoo;
+
+// NonEmptyString ...
+typedef char NonEmptyString;

@@ -14,6 +14,3 @@ export class A {
 export class FileUpload {
 	A: Array<A>;
 }
-
-// C ...
-export type C = any;

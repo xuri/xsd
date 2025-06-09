@@ -16,6 +16,3 @@ type A struct {
 type FileUpload struct {
 	A []*A `xml:"A"`
 }
-
-// C ...
-type C interface{}

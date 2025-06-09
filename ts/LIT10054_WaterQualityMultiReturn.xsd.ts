@@ -50,5 +50,8 @@ export class FileUpload {
 	CustomerReference: any;
 }
 
-// CustomerReference is Customer’s own reference.
-export type CustomerReference = any;
+// MandatoryStringType ...
+export type MandatoryStringType = string;
+
+// EmailFieldType ...
+export type EmailFieldType = string;

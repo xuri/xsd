@@ -50,4 +50,8 @@ typedef struct {
 	void CustomerReference;
 } FileUpload;
 
-typedef void CustomerReference;
+// MandatoryStringType ...
+typedef char MandatoryStringType;
+
+// EmailFieldType ...
+typedef char EmailFieldType;

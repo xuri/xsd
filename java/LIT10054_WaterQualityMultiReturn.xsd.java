@@ -92,8 +92,16 @@ public class FileUpload {
 	protected void CustomerReference;
 }
 
+// MandatoryStringType ...
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlElement(required = true, name = "CustomerReference")
-public class CustomerReference {
-	protected void CustomerReference;
+@XmlAttribute(required = true, name = "MandatoryStringType")
+public class MandatoryStringType {
+	protected String MandatoryStringType;
+}
+
+// EmailFieldType ...
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlAttribute(required = true, name = "EmailFieldType")
+public class EmailFieldType {
+	protected String EmailFieldType;
 }

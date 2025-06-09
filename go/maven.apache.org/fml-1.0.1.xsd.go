@@ -166,7 +166,7 @@ type TextAlign struct {
 // SpecialExtra ...
 type SpecialExtra struct {
 	XMLName xml.Name `xml:"special.extra"`
-	Object  interface{}
+	Object  *Object
 	Applet  *Applet
 	Img     interface{}
 	Map     *Map
@@ -251,7 +251,7 @@ type Phrase struct {
 type InlineForms struct {
 	XMLName  xml.Name `xml:"inline.forms"`
 	Input    interface{}
-	Select   interface{}
+	Select   *Select
 	Textarea interface{}
 	Label    *Label
 	Button   interface{}
@@ -303,11 +303,11 @@ type Heading struct {
 // Lists ...
 type Lists struct {
 	XMLName xml.Name `xml:"lists"`
-	Ul      interface{}
-	Ol      interface{}
-	Dl      interface{}
-	Menu    interface{}
-	Dir     interface{}
+	Ul      *Ul
+	Ol      *Ol
+	Dl      *Dl
+	Menu    *Menu
+	Dir     *Dir
 }
 
 // Blocktext ...
@@ -387,7 +387,7 @@ type ButtonContent struct {
 	Br        []interface{} `xml:"br"`
 	Span      []*Span       `xml:"span"`
 	Bdo       []interface{} `xml:"bdo"`
-	Object    []interface{} `xml:"object"`
+	Object    []*Object     `xml:"object"`
 	Applet    []*Applet     `xml:"applet"`
 	Img       []interface{} `xml:"img"`
 	Map       []*Map        `xml:"map"`
@@ -400,7 +400,7 @@ type HeadMisc struct {
 	Style   []*Style
 	Meta    []*Meta
 	Link    []*Link
-	Object  []interface{}
+	Object  []*Object
 	Isindex []*Isindex
 }
 
@@ -593,9 +593,9 @@ type ULStyle string
 type Ul struct {
 	XMLName     xml.Name `xml:"ul"`
 	Attrs       *Attrs
-	TypeAttr    string      `xml:"type,attr,omitempty"`
-	CompactAttr interface{} `xml:"compact,attr,omitempty"`
-	Ul          interface{} `xml:"ul"`
+	TypeAttr    string `xml:"type,attr,omitempty"`
+	CompactAttr string `xml:"compact,attr,omitempty"`
+	Li          []*Li  `xml:"li"`
 }
 
 // OLStyle is Ordered list numbering style
@@ -614,26 +614,26 @@ type OLStyle string
 type Ol struct {
 	XMLName     xml.Name `xml:"ol"`
 	Attrs       *Attrs
-	TypeAttr    string      `xml:"type,attr,omitempty"`
-	CompactAttr interface{} `xml:"compact,attr,omitempty"`
-	StartAttr   int         `xml:"start,attr,omitempty"`
-	Ol          interface{} `xml:"ol"`
+	TypeAttr    string `xml:"type,attr,omitempty"`
+	CompactAttr string `xml:"compact,attr,omitempty"`
+	StartAttr   int    `xml:"start,attr,omitempty"`
+	Li          []*Li  `xml:"li"`
 }
 
 // Menu is single column list (DEPRECATED)
 type Menu struct {
 	XMLName     xml.Name `xml:"menu"`
 	Attrs       *Attrs
-	CompactAttr interface{} `xml:"compact,attr,omitempty"`
-	Menu        interface{} `xml:"menu"`
+	CompactAttr string `xml:"compact,attr,omitempty"`
+	Li          []*Li  `xml:"li"`
 }
 
 // Dir is multiple column list (DEPRECATED)
 type Dir struct {
 	XMLName     xml.Name `xml:"dir"`
 	Attrs       *Attrs
-	CompactAttr interface{} `xml:"compact,attr,omitempty"`
-	Dir         interface{} `xml:"dir"`
+	CompactAttr string `xml:"compact,attr,omitempty"`
+	Li          []*Li  `xml:"li"`
 }
 
 // LIStyle is LIStyle is constrained to: "(ULStyle|OLStyle)"
@@ -652,9 +652,9 @@ type Li struct {
 type Dl struct {
 	XMLName     xml.Name `xml:"dl"`
 	Attrs       *Attrs
-	CompactAttr interface{} `xml:"compact,attr,omitempty"`
-	Dt          []*Dt       `xml:"dt"`
-	Dl          interface{} `xml:"dl"`
+	CompactAttr string `xml:"compact,attr,omitempty"`
+	Dt          []*Dt  `xml:"dt"`
+	Dd          []*Dd  `xml:"dd"`
 }
 
 // Dt ...
@@ -948,28 +948,28 @@ type Font struct {
 type Object struct {
 	XMLName      xml.Name `xml:"object"`
 	Attrs        *Attrs
-	DeclareAttr  interface{} `xml:"declare,attr,omitempty"`
-	ClassidAttr  string      `xml:"classid,attr,omitempty"`
-	CodebaseAttr string      `xml:"codebase,attr,omitempty"`
-	DataAttr     string      `xml:"data,attr,omitempty"`
-	TypeAttr     string      `xml:"type,attr,omitempty"`
-	CodetypeAttr string      `xml:"codetype,attr,omitempty"`
-	ArchiveAttr  string      `xml:"archive,attr,omitempty"`
-	StandbyAttr  string      `xml:"standby,attr,omitempty"`
-	HeightAttr   string      `xml:"height,attr,omitempty"`
-	WidthAttr    string      `xml:"width,attr,omitempty"`
-	UsemapAttr   string      `xml:"usemap,attr,omitempty"`
-	NameAttr     string      `xml:"name,attr,omitempty"`
-	TabindexAttr int         `xml:"tabindex,attr,omitempty"`
-	AlignAttr    string      `xml:"align,attr,omitempty"`
-	BorderAttr   int         `xml:"border,attr,omitempty"`
-	HspaceAttr   int         `xml:"hspace,attr,omitempty"`
-	VspaceAttr   int         `xml:"vspace,attr,omitempty"`
+	DeclareAttr  string `xml:"declare,attr,omitempty"`
+	ClassidAttr  string `xml:"classid,attr,omitempty"`
+	CodebaseAttr string `xml:"codebase,attr,omitempty"`
+	DataAttr     string `xml:"data,attr,omitempty"`
+	TypeAttr     string `xml:"type,attr,omitempty"`
+	CodetypeAttr string `xml:"codetype,attr,omitempty"`
+	ArchiveAttr  string `xml:"archive,attr,omitempty"`
+	StandbyAttr  string `xml:"standby,attr,omitempty"`
+	HeightAttr   string `xml:"height,attr,omitempty"`
+	WidthAttr    string `xml:"width,attr,omitempty"`
+	UsemapAttr   string `xml:"usemap,attr,omitempty"`
+	NameAttr     string `xml:"name,attr,omitempty"`
+	TabindexAttr int    `xml:"tabindex,attr,omitempty"`
+	AlignAttr    string `xml:"align,attr,omitempty"`
+	BorderAttr   int    `xml:"border,attr,omitempty"`
+	HspaceAttr   int    `xml:"hspace,attr,omitempty"`
+	VspaceAttr   int    `xml:"vspace,attr,omitempty"`
 	Block        []*Block
 	Inline       []*Inline
 	Misc         []*Misc
 	Param        []interface{} `xml:"param"`
-	Object       interface{}   `xml:"object"`
+	Form         []interface{} `xml:"form"`
 }
 
 // Param is param is used to supply a named property value.
@@ -1112,23 +1112,23 @@ type Select struct {
 	Attrs        *Attrs
 	NameAttr     interface{}   `xml:"name,attr,omitempty"`
 	SizeAttr     int           `xml:"size,attr,omitempty"`
-	MultipleAttr interface{}   `xml:"multiple,attr,omitempty"`
-	DisabledAttr interface{}   `xml:"disabled,attr,omitempty"`
+	MultipleAttr string        `xml:"multiple,attr,omitempty"`
+	DisabledAttr string        `xml:"disabled,attr,omitempty"`
 	TabindexAttr int           `xml:"tabindex,attr,omitempty"`
 	OnfocusAttr  string        `xml:"onfocus,attr,omitempty"`
 	OnblurAttr   string        `xml:"onblur,attr,omitempty"`
 	OnchangeAttr string        `xml:"onchange,attr,omitempty"`
-	Optgroup     []interface{} `xml:"optgroup"`
-	Select       interface{}   `xml:"select"`
+	Optgroup     []*Optgroup   `xml:"optgroup"`
+	Option       []interface{} `xml:"option"`
 }
 
 // Optgroup is option group
 type Optgroup struct {
 	XMLName      xml.Name `xml:"optgroup"`
 	Attrs        *Attrs
-	DisabledAttr interface{} `xml:"disabled,attr,omitempty"`
-	LabelAttr    string      `xml:"label,attr"`
-	Optgroup     interface{} `xml:"optgroup"`
+	DisabledAttr string        `xml:"disabled,attr,omitempty"`
+	LabelAttr    string        `xml:"label,attr"`
+	Option       []interface{} `xml:"option"`
 }
 
 // Option is selectable choice
@@ -1390,7 +1390,7 @@ type Faqs struct {
 	Part        []*Part `xml:"part"`
 }
 
-// Part is A part element of the faqs element.
+// Part is Required faq element for this part element.
 type Part struct {
 	XMLName xml.Name `xml:"part"`
 	IdAttr  string   `xml:"id,attr,omitempty"`
@@ -1398,7 +1398,7 @@ type Part struct {
 	Faq     []*Faq   `xml:"faq"`
 }
 
-// Faq is A faq element.
+// Faq is The answer of this faq element.
 type Faq struct {
 	XMLName  xml.Name  `xml:"faq"`
 	IdAttr   string    `xml:"id,attr,omitempty"`

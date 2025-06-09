@@ -52,5 +52,8 @@ type FileUpload struct {
 	CustomerReference           interface{} `xml:"CustomerReference"`
 }
 
-// CustomerReference is Customer’s own reference.
-type CustomerReference interface{}
+// MandatoryStringType ...
+type MandatoryStringType string
+
+// EmailFieldType ...
+type EmailFieldType string
