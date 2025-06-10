@@ -165,7 +165,7 @@ export class TextAlign {
 
 // SpecialExtra ...
 export class SpecialExtra {
-	Object: any;
+	Object: Object;
 	Applet: Applet;
 	Img: any;
 	Map: Map;
@@ -241,7 +241,7 @@ export class Phrase {
 // InlineForms ...
 export class InlineForms {
 	Input: any;
-	Select: any;
+	Select: Select;
 	Textarea: any;
 	Label: Label;
 	Button: any;
@@ -287,11 +287,11 @@ export class Heading {
 
 // Lists ...
 export class Lists {
-	Ul: any;
-	Ol: any;
-	Dl: any;
-	Menu: any;
-	Dir: any;
+	Ul: Ul;
+	Ol: Ol;
+	Dl: Dl;
+	Menu: Menu;
+	Dir: Dir;
 }
 
 // Blocktext ...
@@ -365,7 +365,7 @@ export class ButtonContent {
 	Br: Array<any>;
 	Span: Array<Span>;
 	Bdo: Array<any>;
-	Object: Array<any>;
+	Object: Array<Object>;
 	Applet: Array<Applet>;
 	Img: Array<any>;
 	Map: Array<Map>;
@@ -377,7 +377,7 @@ export class HeadMisc {
 	Style: Array<Style>;
 	Meta: Array<Meta>;
 	Link: Array<Link>;
-	Object: Array<any>;
+	Object: Array<Object>;
 	Isindex: Array<Isindex>;
 }
 
@@ -545,8 +545,8 @@ export enum ULStyle {
 export class Ul {
 	Attrs: Attrs;
 	TypeAttr: string | null;
-	CompactAttr: any | null;
-	Ul: any;
+	CompactAttr: string | null;
+	Li: Array<Li>;
 }
 
 // OLStyle is Ordered list numbering style
@@ -565,23 +565,23 @@ export type OLStyle = string;
 export class Ol {
 	Attrs: Attrs;
 	TypeAttr: string | null;
-	CompactAttr: any | null;
+	CompactAttr: string | null;
 	StartAttr: number | null;
-	Ol: any;
+	Li: Array<Li>;
 }
 
 // Menu is single column list (DEPRECATED)
 export class Menu {
 	Attrs: Attrs;
-	CompactAttr: any | null;
-	Menu: any;
+	CompactAttr: string | null;
+	Li: Array<Li>;
 }
 
 // Dir is multiple column list (DEPRECATED)
 export class Dir {
 	Attrs: Attrs;
-	CompactAttr: any | null;
-	Dir: any;
+	CompactAttr: string | null;
+	Li: Array<Li>;
 }
 
 // LIStyle is LIStyle is constrained to: "(ULStyle|OLStyle)"
@@ -597,9 +597,9 @@ export class Li extends Flow  {
 // Dl ...
 export class Dl {
 	Attrs: Attrs;
-	CompactAttr: any | null;
+	CompactAttr: string | null;
 	Dt: Array<Dt>;
-	Dl: any;
+	Dd: Array<Dd>;
 }
 
 // Dt ...
@@ -824,7 +824,7 @@ export class Font extends Inline  {
 // Object ...
 export class Object {
 	Attrs: Attrs;
-	DeclareAttr: any | null;
+	DeclareAttr: string | null;
 	ClassidAttr: string | null;
 	CodebaseAttr: string | null;
 	DataAttr: string | null;
@@ -845,7 +845,7 @@ export class Object {
 	Inline: Array<Inline>;
 	Misc: Array<Misc>;
 	Param: Array<any>;
-	Object: any;
+	Form: Array<any>;
 }
 
 // Param is param is used to supply a named property value.
@@ -988,22 +988,22 @@ export class Select {
 	Attrs: Attrs;
 	NameAttr: any | null;
 	SizeAttr: number | null;
-	MultipleAttr: any | null;
-	DisabledAttr: any | null;
+	MultipleAttr: string | null;
+	DisabledAttr: string | null;
 	TabindexAttr: number | null;
 	OnfocusAttr: string | null;
 	OnblurAttr: string | null;
 	OnchangeAttr: string | null;
-	Optgroup: Array<any>;
-	Select: any;
+	Optgroup: Array<Optgroup>;
+	Option: Array<any>;
 }
 
 // Optgroup is option group
 export class Optgroup {
 	Attrs: Attrs;
-	DisabledAttr: any | null;
+	DisabledAttr: string | null;
 	LabelAttr: string;
-	Optgroup: any;
+	Option: Array<any>;
 }
 
 // Option is selectable choice
@@ -1267,7 +1267,7 @@ export class Td extends Flow  {
 	HeightAttr: string | null;
 }
 
-// Document is The <document/> element is the root of the Xdoc descriptor.
+// Document is Required body element for this document element.
 export class Document {
 	I18n: I18n;
 	IdAttr: string | null;
@@ -1276,7 +1276,7 @@ export class Document {
 	Body: Body;
 }
 
-// Properties ...
+// Properties is Optional creation/last updated date for the document element.
 export class Properties {
 	Title: Title;
 	Author: Array<Author>;
@@ -1299,7 +1299,7 @@ export class Body {
 	Section: Array<Section>;
 }
 
-// Section is A section element.
+// Section is A subsection in the section element.
 export class Section {
 	Attrs: Attrs;
 	NameAttr: string;

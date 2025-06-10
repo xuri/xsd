@@ -98,9 +98,17 @@ pub struct FileUpload {
 }
 
 
-// customer_reference is Customer’s own reference.
+// MandatoryStringType ...
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
-pub struct customer_reference {
-	#[serde(rename = "CustomerReference")]
-	pub customer_reference: char,
+pub struct MandatoryStringType {
+	#[serde(rename = "MandatoryStringType")]
+	pub mandatory_string_type: String,
+}
+
+
+// EmailFieldType ...
+#[derive(Debug, Deserialize, Serialize, PartialEq)]
+pub struct EmailFieldType {
+	#[serde(rename = "EmailFieldType")]
+	pub email_field_type: String,
 }

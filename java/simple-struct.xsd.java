@@ -17,3 +17,10 @@ public class ComplexFoo {
 	@XmlElement(required = true, name = "element1")
 	protected void Element1;
 }
+
+// NonEmptyString ...
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlAttribute(required = true, name = "nonEmptyString")
+public class NonEmptyString {
+	protected String NonEmptyString;
+}

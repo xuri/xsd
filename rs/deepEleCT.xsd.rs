@@ -30,11 +30,3 @@ pub struct FileUpload {
 	#[serde(rename = "A")]
 	pub a: Vec<A>,
 }
-
-
-// c ...
-#[derive(Debug, Deserialize, Serialize, PartialEq)]
-pub struct c {
-	#[serde(rename = "C")]
-	pub c: char,
-}

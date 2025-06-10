@@ -14,5 +14,3 @@ typedef struct {
 typedef struct {
 	A A[];
 } FileUpload;
-
-typedef void C;

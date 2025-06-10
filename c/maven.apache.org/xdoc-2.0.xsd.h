@@ -154,7 +154,7 @@ typedef struct {
 
 // SpecialExtra ...
 typedef struct {
-	void Object;
+	Object Object;
 	Applet Applet;
 	void Img;
 	Map Map;
@@ -230,7 +230,7 @@ typedef struct {
 // InlineForms ...
 typedef struct {
 	void Input;
-	void Select;
+	Select Select;
 	void Textarea;
 	Label Label;
 	void Button;
@@ -276,11 +276,11 @@ typedef struct {
 
 // Lists ...
 typedef struct {
-	void Ul;
-	void Ol;
-	void Dl;
-	void Menu;
-	void Dir;
+	Ul Ul;
+	Ol Ol;
+	Dl Dl;
+	Menu Menu;
+	Dir Dir;
 } Lists;
 
 // Blocktext ...
@@ -354,7 +354,7 @@ typedef struct {
 	void Br[];
 	Span Span[];
 	void Bdo[];
-	void Object[];
+	Object Object[];
 	Applet Applet[];
 	void Img[];
 	Map Map[];
@@ -366,7 +366,7 @@ typedef struct {
 	Style Style[];
 	Meta Meta[];
 	Link Link[];
-	void Object[];
+	Object Object[];
 	Isindex Isindex[];
 } HeadMisc;
 
@@ -530,8 +530,8 @@ typedef char ULStyle;
 typedef struct {
 	Attrs Attrs;
 	char TypeAttr; // attr, optional
-	void CompactAttr; // attr, optional
-	void Ul;
+	char CompactAttr; // attr, optional
+	Li Li[];
 } Ul;
 
 // OLStyle is Ordered list numbering style
@@ -550,23 +550,23 @@ typedef char OLStyle;
 typedef struct {
 	Attrs Attrs;
 	char TypeAttr; // attr, optional
-	void CompactAttr; // attr, optional
+	char CompactAttr; // attr, optional
 	int StartAttr; // attr, optional
-	void Ol;
+	Li Li[];
 } Ol;
 
 // Menu is single column list (DEPRECATED)
 typedef struct {
 	Attrs Attrs;
-	void CompactAttr; // attr, optional
-	void Menu;
+	char CompactAttr; // attr, optional
+	Li Li[];
 } Menu;
 
 // Dir is multiple column list (DEPRECATED)
 typedef struct {
 	Attrs Attrs;
-	void CompactAttr; // attr, optional
-	void Dir;
+	char CompactAttr; // attr, optional
+	Li Li[];
 } Dir;
 
 // LIStyle is LIStyle is constrained to: "(ULStyle|OLStyle)"
@@ -582,9 +582,9 @@ typedef struct {
 // Dl ...
 typedef struct {
 	Attrs Attrs;
-	void CompactAttr; // attr, optional
+	char CompactAttr; // attr, optional
 	Dt Dt[];
-	void Dl;
+	Dd Dd[];
 } Dl;
 
 // Dt ...
@@ -809,7 +809,7 @@ typedef struct {
 // Object ...
 typedef struct {
 	Attrs Attrs;
-	void DeclareAttr; // attr, optional
+	char DeclareAttr; // attr, optional
 	char ClassidAttr; // attr, optional
 	char CodebaseAttr; // attr, optional
 	char DataAttr; // attr, optional
@@ -830,7 +830,7 @@ typedef struct {
 	Inline Inline[];
 	Misc Misc[];
 	void Param[];
-	void Object;
+	void Form[];
 } Object;
 
 // Param is param is used to supply a named property value.
@@ -962,22 +962,22 @@ typedef struct {
 	Attrs Attrs;
 	void NameAttr; // attr, optional
 	int SizeAttr; // attr, optional
-	void MultipleAttr; // attr, optional
-	void DisabledAttr; // attr, optional
+	char MultipleAttr; // attr, optional
+	char DisabledAttr; // attr, optional
 	int TabindexAttr; // attr, optional
 	char OnfocusAttr; // attr, optional
 	char OnblurAttr; // attr, optional
 	char OnchangeAttr; // attr, optional
-	void Optgroup[];
-	void Select;
+	Optgroup Optgroup[];
+	void Option[];
 } Select;
 
 // Optgroup is option group
 typedef struct {
 	Attrs Attrs;
-	void DisabledAttr; // attr, optional
+	char DisabledAttr; // attr, optional
 	char LabelAttr; // attr
-	void Optgroup;
+	void Option[];
 } Optgroup;
 
 // Option is selectable choice
@@ -1206,7 +1206,7 @@ typedef struct {
 	char HeightAttr; // attr, optional
 } Td;
 
-// Document is The <document/> element is the root of the Xdoc descriptor.
+// Document is Required body element for this document element.
 typedef struct {
 	I18n I18n;
 	char IdAttr; // attr, optional
@@ -1215,7 +1215,7 @@ typedef struct {
 	Body Body;
 } Document;
 
-// Properties ...
+// Properties is Optional creation/last updated date for the document element.
 typedef struct {
 	Title Title;
 	Author Author[];
@@ -1238,7 +1238,7 @@ typedef struct {
 	Section Section[];
 } Body;
 
-// Section is A section element.
+// Section is A subsection in the section element.
 typedef struct {
 	Attrs Attrs;
 	char NameAttr; // attr

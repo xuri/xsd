@@ -4,3 +4,6 @@
 export class ComplexFoo {
 	Element1: any;
 }
+
+// NonEmptyString ...
+export type NonEmptyString = string;

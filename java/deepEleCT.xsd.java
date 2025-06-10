@@ -29,9 +29,3 @@ public class FileUpload {
 	@XmlElement(required = true, name = "A")
 	protected List<A> A;
 }
-
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlElement(required = true, name = "C")
-public class C {
-	protected void C;
-}

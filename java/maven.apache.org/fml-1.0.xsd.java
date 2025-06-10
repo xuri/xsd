@@ -285,7 +285,7 @@ public class TextAlign {
 // SpecialExtra ...
 public class SpecialExtra {
 	@XmlElement(required = true, name = "object")
-	protected void Object;
+	protected Object Object;
 	@XmlElement(required = true, name = "applet")
 	protected Applet Applet;
 	@XmlElement(required = true, name = "img")
@@ -393,7 +393,7 @@ public class InlineForms {
 	@XmlElement(required = true, name = "input")
 	protected void Input;
 	@XmlElement(required = true, name = "select")
-	protected void Select;
+	protected Select Select;
 	@XmlElement(required = true, name = "textarea")
 	protected void Textarea;
 	@XmlElement(required = true, name = "label")
@@ -454,15 +454,15 @@ public class Heading {
 // Lists ...
 public class Lists {
 	@XmlElement(required = true, name = "ul")
-	protected void Ul;
+	protected Ul Ul;
 	@XmlElement(required = true, name = "ol")
-	protected void Ol;
+	protected Ol Ol;
 	@XmlElement(required = true, name = "dl")
-	protected void Dl;
+	protected Dl Dl;
 	@XmlElement(required = true, name = "menu")
-	protected void Menu;
+	protected Menu Menu;
 	@XmlElement(required = true, name = "dir")
-	protected void Dir;
+	protected Dir Dir;
 }
 
 // Blocktext ...
@@ -556,7 +556,7 @@ public class ButtonContent {
 	@XmlElement(required = true, name = "bdo")
 	protected List<void> Bdo;
 	@XmlElement(required = true, name = "object")
-	protected List<void> Object;
+	protected List<Object> Object;
 	@XmlElement(required = true, name = "applet")
 	protected List<Applet> Applet;
 	@XmlElement(required = true, name = "img")
@@ -576,7 +576,7 @@ public class HeadMisc {
 	@XmlElement(required = true, name = "link")
 	protected List<Link> Link;
 	@XmlElement(required = true, name = "object")
-	protected List<void> Object;
+	protected List<Object> Object;
 	@XmlElement(required = true, name = "isindex")
 	protected List<Isindex> Isindex;
 }
@@ -815,9 +815,9 @@ public class Ul {
 	@XmlAttribute(name = "type")
 	protected String TypeAttr;
 	@XmlAttribute(name = "compact")
-	protected void CompactAttr;
-	@XmlElement(required = true, name = "ul")
-	protected void Ul;
+	protected String CompactAttr;
+	@XmlElement(required = true, name = "li")
+	protected List<Li> Li;
 }
 
 // OLStyle is Ordered list numbering style
@@ -843,11 +843,11 @@ public class Ol {
 	@XmlAttribute(name = "type")
 	protected String TypeAttr;
 	@XmlAttribute(name = "compact")
-	protected void CompactAttr;
+	protected String CompactAttr;
 	@XmlAttribute(name = "start")
 	protected Integer StartAttr;
-	@XmlElement(required = true, name = "ol")
-	protected void Ol;
+	@XmlElement(required = true, name = "li")
+	protected List<Li> Li;
 }
 
 // Menu is single column list (DEPRECATED)
@@ -855,9 +855,9 @@ public class Menu {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlAttribute(name = "compact")
-	protected void CompactAttr;
-	@XmlElement(required = true, name = "menu")
-	protected void Menu;
+	protected String CompactAttr;
+	@XmlElement(required = true, name = "li")
+	protected List<Li> Li;
 }
 
 // Dir is multiple column list (DEPRECATED)
@@ -865,9 +865,9 @@ public class Dir {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlAttribute(name = "compact")
-	protected void CompactAttr;
-	@XmlElement(required = true, name = "dir")
-	protected void Dir;
+	protected String CompactAttr;
+	@XmlElement(required = true, name = "li")
+	protected List<Li> Li;
 }
 
 // LIStyle is LIStyle is constrained to: "(ULStyle|OLStyle)"
@@ -892,11 +892,11 @@ public class Dl {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlAttribute(name = "compact")
-	protected void CompactAttr;
+	protected String CompactAttr;
 	@XmlElement(required = true, name = "dt")
 	protected List<Dt> Dt;
-	@XmlElement(required = true, name = "dl")
-	protected void Dl;
+	@XmlElement(required = true, name = "dd")
+	protected List<Dd> Dd;
 }
 
 // Dt ...
@@ -1195,7 +1195,7 @@ public class Object {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlAttribute(name = "declare")
-	protected void DeclareAttr;
+	protected String DeclareAttr;
 	@XmlAttribute(name = "classid")
 	protected String ClassidAttr;
 	@XmlAttribute(name = "codebase")
@@ -1233,8 +1233,8 @@ public class Object {
 	protected List<Misc> Misc;
 	@XmlElement(required = true, name = "param")
 	protected List<void> Param;
-	@XmlElement(required = true, name = "object")
-	protected void Object;
+	@XmlElement(required = true, name = "form")
+	protected List<void> Form;
 }
 
 // Param is param is used to supply a named property value.
@@ -1454,9 +1454,9 @@ public class Select {
 	@XmlAttribute(name = "size")
 	protected Integer SizeAttr;
 	@XmlAttribute(name = "multiple")
-	protected void MultipleAttr;
+	protected String MultipleAttr;
 	@XmlAttribute(name = "disabled")
-	protected void DisabledAttr;
+	protected String DisabledAttr;
 	@XmlAttribute(name = "tabindex")
 	protected Integer TabindexAttr;
 	@XmlAttribute(name = "onfocus")
@@ -1466,9 +1466,9 @@ public class Select {
 	@XmlAttribute(name = "onchange")
 	protected String OnchangeAttr;
 	@XmlElement(required = true, name = "optgroup")
-	protected List<void> Optgroup;
-	@XmlElement(required = true, name = "select")
-	protected void Select;
+	protected List<Optgroup> Optgroup;
+	@XmlElement(required = true, name = "option")
+	protected List<void> Option;
 }
 
 // Optgroup is option group
@@ -1476,11 +1476,11 @@ public class Optgroup {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlAttribute(name = "disabled")
-	protected void DisabledAttr;
+	protected String DisabledAttr;
 	@XmlAttribute(name = "label", required = true)
 	protected String LabelAttr;
-	@XmlElement(required = true, name = "optgroup")
-	protected void Optgroup;
+	@XmlElement(required = true, name = "option")
+	protected List<void> Option;
 }
 
 // Option is selectable choice
@@ -1854,7 +1854,7 @@ public class Faqs {
 	protected List<Part> Part;
 }
 
-// Part is A part element of the faqs element.
+// Part is Required faq element for this part element.
 public class Part {
 	@XmlAttribute(name = "id")
 	protected String IdAttr;
@@ -1864,7 +1864,7 @@ public class Part {
 	protected List<Faq> Faq;
 }
 
-// Faq is A faq element.
+// Faq is The answer of this faq element.
 public class Faq {
 	@XmlAttribute(name = "id")
 	protected String IdAttr;

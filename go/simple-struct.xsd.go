@@ -11,3 +11,6 @@ type ComplexFoo struct {
 	XMLName  xml.Name    `xml:"complexFoo"`
 	Element1 interface{} `xml:"element1"`
 }
+
+// NonEmptyString ...
+type NonEmptyString string
