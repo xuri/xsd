@@ -25,3 +25,34 @@ export type StudentLevelCode = any;
 
 // SchoolNoteMessage ...
 export type SchoolNoteMessage = any;
+
+// DefaultOverpayCodeType ...
+export enum DefaultOverpayCodeType {
+	Y = 'Y',
+	N = 'N',
+	Z = 'Z',
+}
+
+// LargeCurrencyType ...
+export type LargeCurrencyType = number;
+
+// SignedLargeCurrencyType ...
+export type SignedLargeCurrencyType = number;
+
+// SmallCurrencyType ...
+export type SmallCurrencyType = number;
+
+// SignedSmallCurrencyType ...
+export type SignedSmallCurrencyType = number;
+
+// SSNType ...
+export type SSNType = string;
+
+// TotalCountType ...
+export type TotalCountType = number;
+
+// SmallValueType ...
+export type SmallValueType = number;
+
+// SignedSmallValueType ...
+export type SignedSmallValueType = number;

@@ -30,3 +30,75 @@ pub struct school_note_message {
 	#[serde(rename = "SchoolNoteMessage")]
 	pub school_note_message: char,
 }
+
+
+// DefaultOverpayCodeType ...
+#[derive(Debug, Deserialize, Serialize, PartialEq)]
+pub struct DefaultOverpayCodeType {
+	#[serde(rename = "DefaultOverpayCodeType")]
+	pub default_overpay_code_type: String,
+}
+
+
+// LargeCurrencyType ...
+#[derive(Debug, Deserialize, Serialize, PartialEq)]
+pub struct LargeCurrencyType {
+	#[serde(rename = "LargeCurrencyType")]
+	pub large_currency_type: f64,
+}
+
+
+// SignedLargeCurrencyType ...
+#[derive(Debug, Deserialize, Serialize, PartialEq)]
+pub struct SignedLargeCurrencyType {
+	#[serde(rename = "SignedLargeCurrencyType")]
+	pub signed_large_currency_type: f64,
+}
+
+
+// SmallCurrencyType ...
+#[derive(Debug, Deserialize, Serialize, PartialEq)]
+pub struct SmallCurrencyType {
+	#[serde(rename = "SmallCurrencyType")]
+	pub small_currency_type: f64,
+}
+
+
+// SignedSmallCurrencyType ...
+#[derive(Debug, Deserialize, Serialize, PartialEq)]
+pub struct SignedSmallCurrencyType {
+	#[serde(rename = "SignedSmallCurrencyType")]
+	pub signed_small_currency_type: f64,
+}
+
+
+// SSNType ...
+#[derive(Debug, Deserialize, Serialize, PartialEq)]
+pub struct SSNType {
+	#[serde(rename = "SSNType")]
+	pub ssn_type: String,
+}
+
+
+// TotalCountType ...
+#[derive(Debug, Deserialize, Serialize, PartialEq)]
+pub struct TotalCountType {
+	#[serde(rename = "TotalCountType")]
+	pub total_count_type: i32,
+}
+
+
+// SmallValueType ...
+#[derive(Debug, Deserialize, Serialize, PartialEq)]
+pub struct SmallValueType {
+	#[serde(rename = "SmallValueType")]
+	pub small_value_type: f64,
+}
+
+
+// SignedSmallValueType ...
+#[derive(Debug, Deserialize, Serialize, PartialEq)]
+pub struct SignedSmallValueType {
+	#[serde(rename = "SignedSmallValueType")]
+	pub signed_small_value_type: f64,
+}
