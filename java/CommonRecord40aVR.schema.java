@@ -30,3 +30,66 @@ public class StudentLevelCode {
 public class SchoolNoteMessage {
 	protected void SchoolNoteMessage;
 }
+
+// DefaultOverpayCodeType ...
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlAttribute(required = true, name = "DefaultOverpayCodeType")
+public class DefaultOverpayCodeType {
+	protected String DefaultOverpayCodeType;
+}
+
+// LargeCurrencyType ...
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlAttribute(required = true, name = "LargeCurrencyType")
+public class LargeCurrencyType {
+	protected Float LargeCurrencyType;
+}
+
+// SignedLargeCurrencyType ...
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlAttribute(required = true, name = "SignedLargeCurrencyType")
+public class SignedLargeCurrencyType {
+	protected Float SignedLargeCurrencyType;
+}
+
+// SmallCurrencyType ...
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlAttribute(required = true, name = "SmallCurrencyType")
+public class SmallCurrencyType {
+	protected Float SmallCurrencyType;
+}
+
+// SignedSmallCurrencyType ...
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlAttribute(required = true, name = "SignedSmallCurrencyType")
+public class SignedSmallCurrencyType {
+	protected Float SignedSmallCurrencyType;
+}
+
+// SSNType ...
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlAttribute(required = true, name = "SSNType")
+public class SSNType {
+	protected String SSNType;
+}
+
+// TotalCountType ...
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlAttribute(required = true, name = "TotalCountType")
+public class TotalCountType {
+	protected Integer TotalCountType;
+}
+
+// SmallValueType ...
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlAttribute(required = true, name = "SmallValueType")
+public class SmallValueType {
+	protected Float SmallValueType;
+}
+
+// SignedSmallValueType ...
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlAttribute(required = true, name = "SignedSmallValueType")
+public class SignedSmallValueType {
+	protected Float SignedSmallValueType;
+}

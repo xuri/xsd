@@ -289,11 +289,11 @@ public class SpecialExtra {
 	@XmlElement(required = true, name = "applet")
 	protected Applet Applet;
 	@XmlElement(required = true, name = "img")
-	protected void Img;
+	protected Img Img;
 	@XmlElement(required = true, name = "map")
 	protected Map Map;
 	@XmlElement(required = true, name = "iframe")
-	protected void Iframe;
+	protected Iframe Iframe;
 	@XmlElement(required = true, name = "source")
 	protected Source Source;
 }
@@ -301,11 +301,11 @@ public class SpecialExtra {
 // SpecialBasic ...
 public class SpecialBasic {
 	@XmlElement(required = true, name = "br")
-	protected void Br;
+	protected Br Br;
 	@XmlElement(required = true, name = "span")
 	protected Span Span;
 	@XmlElement(required = true, name = "bdo")
-	protected void Bdo;
+	protected Bdo Bdo;
 }
 
 // Special ...
@@ -391,15 +391,15 @@ public class Phrase {
 // InlineForms ...
 public class InlineForms {
 	@XmlElement(required = true, name = "input")
-	protected void Input;
+	protected Input Input;
 	@XmlElement(required = true, name = "select")
 	protected Select Select;
 	@XmlElement(required = true, name = "textarea")
-	protected void Textarea;
+	protected Textarea Textarea;
 	@XmlElement(required = true, name = "label")
 	protected Label Label;
 	@XmlElement(required = true, name = "button")
-	protected void Button;
+	protected Button Button;
 }
 
 // MiscInline ...
@@ -409,7 +409,7 @@ public class MiscInline {
 	@XmlElement(required = true, name = "del")
 	protected Del Del;
 	@XmlElement(required = true, name = "script")
-	protected void Script;
+	protected Script Script;
 }
 
 // Misc ...
@@ -470,7 +470,7 @@ public class Blocktext {
 	@XmlElement(required = true, name = "pre")
 	protected Pre Pre;
 	@XmlElement(required = true, name = "hr")
-	protected void Hr;
+	protected Hr Hr;
 	@XmlElement(required = true, name = "blockquote")
 	protected Blockquote Blockquote;
 	@XmlElement(required = true, name = "address")
@@ -504,7 +504,7 @@ public class Flow {
 	protected List<Inline> Inline;
 	protected List<Misc> Misc;
 	@XmlElement(required = true, name = "form")
-	protected List<void> Form;
+	protected List<Form> Form;
 }
 
 // AContent is a elements use "Inline" excluding a
@@ -550,17 +550,17 @@ public class ButtonContent {
 	@XmlElement(required = true, name = "table")
 	protected List<Table> Table;
 	@XmlElement(required = true, name = "br")
-	protected List<void> Br;
+	protected List<Br> Br;
 	@XmlElement(required = true, name = "span")
 	protected List<Span> Span;
 	@XmlElement(required = true, name = "bdo")
-	protected List<void> Bdo;
+	protected List<Bdo> Bdo;
 	@XmlElement(required = true, name = "object")
 	protected List<Object> Object;
 	@XmlElement(required = true, name = "applet")
 	protected List<Applet> Applet;
 	@XmlElement(required = true, name = "img")
-	protected List<void> Img;
+	protected List<Img> Img;
 	@XmlElement(required = true, name = "map")
 	protected List<Map> Map;
 }
@@ -568,7 +568,7 @@ public class ButtonContent {
 // HeadMisc ...
 public class HeadMisc {
 	@XmlElement(required = true, name = "script")
-	protected List<void> Script;
+	protected List<Script> Script;
 	@XmlElement(required = true, name = "style")
 	protected List<Style> Style;
 	@XmlElement(required = true, name = "meta")
@@ -694,7 +694,7 @@ public class Script2 {
 	@XmlAttribute(name = "src")
 	protected String SrcAttr;
 	@XmlAttribute(name = "defer")
-	protected void DeferAttr;
+	protected String DeferAttr;
 	@XmlAttribute(name = "xml:space")
 	protected Space XmlSpaceAttr;
 }
@@ -716,13 +716,13 @@ public class Iframe extends Flow  {
 	@XmlAttribute(name = "src")
 	protected String SrcAttr;
 	@XmlAttribute(name = "frameborder")
-	protected void FrameborderAttr;
+	protected String FrameborderAttr;
 	@XmlAttribute(name = "marginwidth")
 	protected Integer MarginwidthAttr;
 	@XmlAttribute(name = "marginheight")
 	protected Integer MarginheightAttr;
 	@XmlAttribute(name = "scrolling")
-	protected void ScrollingAttr;
+	protected String ScrollingAttr;
 	@XmlAttribute(name = "align")
 	protected String AlignAttr;
 	@XmlAttribute(name = "height")
@@ -926,9 +926,9 @@ public class Hr {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlAttribute(name = "align")
-	protected void AlignAttr;
+	protected String AlignAttr;
 	@XmlAttribute(name = "noshade")
-	protected void NoshadeAttr;
+	protected String NoshadeAttr;
 	@XmlAttribute(name = "size")
 	protected Integer SizeAttr;
 	@XmlAttribute(name = "width")
@@ -1025,7 +1025,7 @@ public class Bdo extends Inline  {
 	@XmlAttribute(name = "xml:lang")
 	protected Lang XmlLangAttr;
 	@XmlAttribute(name = "dir", required = true)
-	protected void DirAttr;
+	protected String DirAttr;
 }
 
 // Br is forced line break
@@ -1033,7 +1033,7 @@ public class Br {
 	@XmlElement(required = true)
 	protected Coreattrs Coreattrs;
 	@XmlAttribute(name = "clear")
-	protected void ClearAttr;
+	protected String ClearAttr;
 }
 
 // Em is emphasis
@@ -1232,9 +1232,9 @@ public class Object {
 	protected List<Inline> Inline;
 	protected List<Misc> Misc;
 	@XmlElement(required = true, name = "param")
-	protected List<void> Param;
+	protected List<Param> Param;
 	@XmlElement(required = true, name = "form")
-	protected List<void> Form;
+	protected List<Form> Form;
 }
 
 // Param is param is used to supply a named property value.
@@ -1249,7 +1249,7 @@ public class Param {
 	@XmlAttribute(name = "value")
 	protected void ValueAttr;
 	@XmlAttribute(name = "valuetype")
-	protected void ValuetypeAttr;
+	protected String ValuetypeAttr;
 	@XmlAttribute(name = "type")
 	protected String TypeAttr;
 }
@@ -1284,9 +1284,9 @@ public class Applet {
 	protected List<Inline> Inline;
 	protected List<Misc> Misc;
 	@XmlElement(required = true, name = "param")
-	protected List<void> Param;
+	protected List<Param> Param;
 	@XmlElement(required = true, name = "form")
-	protected List<void> Form;
+	protected List<Form> Form;
 }
 
 // Img ...
@@ -1308,7 +1308,7 @@ public class Img {
 	@XmlAttribute(name = "usemap")
 	protected String UsemapAttr;
 	@XmlAttribute(name = "ismap")
-	protected void IsmapAttr;
+	protected String IsmapAttr;
 	@XmlAttribute(name = "align")
 	protected String AlignAttr;
 	@XmlAttribute(name = "border")
@@ -1338,9 +1338,9 @@ public class Map {
 	protected List<Block> Block;
 	protected List<Misc> Misc;
 	@XmlElement(required = true, name = "form")
-	protected List<void> Form;
+	protected List<Form> Form;
 	@XmlElement(required = true, name = "area")
-	protected List<void> Area;
+	protected List<Area> Area;
 }
 
 // Area ...
@@ -1356,7 +1356,7 @@ public class Area {
 	@XmlAttribute(name = "href")
 	protected String HrefAttr;
 	@XmlAttribute(name = "nohref")
-	protected void NohrefAttr;
+	protected String NohrefAttr;
 	@XmlAttribute(name = "alt", required = true)
 	protected String AltAttr;
 	@XmlAttribute(name = "target")
@@ -1370,7 +1370,7 @@ public class Form extends FormContent  {
 	@XmlAttribute(name = "action", required = true)
 	protected String ActionAttr;
 	@XmlAttribute(name = "method")
-	protected void MethodAttr;
+	protected String MethodAttr;
 	@XmlAttribute(name = "enctype")
 	protected String EnctypeAttr;
 	@XmlAttribute(name = "onsubmit")
@@ -1420,11 +1420,11 @@ public class Input {
 	@XmlAttribute(name = "value")
 	protected void ValueAttr;
 	@XmlAttribute(name = "checked")
-	protected void CheckedAttr;
+	protected String CheckedAttr;
 	@XmlAttribute(name = "disabled")
-	protected void DisabledAttr;
+	protected String DisabledAttr;
 	@XmlAttribute(name = "readonly")
-	protected void ReadonlyAttr;
+	protected String ReadonlyAttr;
 	@XmlAttribute(name = "size")
 	protected void SizeAttr;
 	@XmlAttribute(name = "maxlength")
@@ -1468,7 +1468,7 @@ public class Select {
 	@XmlElement(required = true, name = "optgroup")
 	protected List<Optgroup> Optgroup;
 	@XmlElement(required = true, name = "option")
-	protected List<void> Option;
+	protected List<Option> Option;
 }
 
 // Optgroup is option group
@@ -1480,7 +1480,7 @@ public class Optgroup {
 	@XmlAttribute(name = "label", required = true)
 	protected String LabelAttr;
 	@XmlElement(required = true, name = "option")
-	protected List<void> Option;
+	protected List<Option> Option;
 }
 
 // Option is selectable choice
@@ -1488,9 +1488,9 @@ public class Option {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
 	@XmlAttribute(name = "selected")
-	protected void SelectedAttr;
+	protected String SelectedAttr;
 	@XmlAttribute(name = "disabled")
-	protected void DisabledAttr;
+	protected String DisabledAttr;
 	@XmlAttribute(name = "label")
 	protected String LabelAttr;
 	@XmlAttribute(name = "value")
@@ -1510,9 +1510,9 @@ public class Textarea {
 	@XmlAttribute(name = "cols", required = true)
 	protected Integer ColsAttr;
 	@XmlAttribute(name = "disabled")
-	protected void DisabledAttr;
+	protected String DisabledAttr;
 	@XmlAttribute(name = "readonly")
-	protected void ReadonlyAttr;
+	protected String ReadonlyAttr;
 	@XmlAttribute(name = "onselect")
 	protected String OnselectAttr;
 	@XmlAttribute(name = "onchange")
@@ -1534,7 +1534,7 @@ public class Fieldset {
 	@XmlElement(required = true, name = "legend")
 	protected Legend Legend;
 	@XmlElement(required = true, name = "form")
-	protected List<void> Form;
+	protected List<Form> Form;
 }
 
 // LAlign ...
@@ -1565,9 +1565,9 @@ public class Button extends ButtonContent  {
 	@XmlAttribute(name = "value")
 	protected void ValueAttr;
 	@XmlAttribute(name = "type")
-	protected void TypeAttr;
+	protected String TypeAttr;
 	@XmlAttribute(name = "disabled")
-	protected void DisabledAttr;
+	protected String DisabledAttr;
 }
 
 // Isindex is single-line text input control (DEPRECATED)
@@ -1768,9 +1768,9 @@ public class Tr {
 	@XmlAttribute(name = "bgcolor")
 	protected String BgcolorAttr;
 	@XmlElement(required = true, name = "th")
-	protected List<void> Th;
+	protected List<Th> Th;
 	@XmlElement(required = true, name = "td")
-	protected List<void> Td;
+	protected List<Td> Td;
 }
 
 // Scope is Scope is simpler than headers attribute for common tables
@@ -1801,7 +1801,7 @@ public class Th extends Flow  {
 	@XmlAttribute(name = "colspan")
 	protected Integer ColspanAttr;
 	@XmlAttribute(name = "nowrap")
-	protected void NowrapAttr;
+	protected String NowrapAttr;
 	@XmlAttribute(name = "bgcolor")
 	protected String BgcolorAttr;
 	@XmlAttribute(name = "width")
@@ -1831,7 +1831,7 @@ public class Td extends Flow  {
 	@XmlAttribute(name = "colspan")
 	protected Integer ColspanAttr;
 	@XmlAttribute(name = "nowrap")
-	protected void NowrapAttr;
+	protected String NowrapAttr;
 	@XmlAttribute(name = "bgcolor")
 	protected String BgcolorAttr;
 	@XmlAttribute(name = "width")
@@ -1840,7 +1840,7 @@ public class Td extends Flow  {
 	protected String HeightAttr;
 }
 
-// Faqs is The <faqs/> element is the root of the FML descriptor.
+// Faqs is Required part element for this faqs element.
 public class Faqs {
 	@XmlElement(required = true)
 	protected I18n I18n;
@@ -1886,7 +1886,7 @@ public class Answer {
 	protected List<Inline> Inline;
 	protected List<Misc> Misc;
 	@XmlElement(required = true, name = "form")
-	protected List<void> Form;
+	protected List<Form> Form;
 }
 
 // Source is A source element.

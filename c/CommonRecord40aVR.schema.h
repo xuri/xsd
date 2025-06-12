@@ -6,3 +6,30 @@ typedef char FinancialAwards;
 typedef void StudentLevelCode;
 
 typedef void SchoolNoteMessage;
+
+// DefaultOverpayCodeType ...
+typedef char DefaultOverpayCodeType;
+
+// LargeCurrencyType ...
+typedef float LargeCurrencyType;
+
+// SignedLargeCurrencyType ...
+typedef float SignedLargeCurrencyType;
+
+// SmallCurrencyType ...
+typedef float SmallCurrencyType;
+
+// SignedSmallCurrencyType ...
+typedef float SignedSmallCurrencyType;
+
+// SSNType ...
+typedef char SSNType;
+
+// TotalCountType ...
+typedef int TotalCountType;
+
+// SmallValueType ...
+typedef float SmallValueType;
+
+// SignedSmallValueType ...
+typedef float SignedSmallValueType;

@@ -156,18 +156,18 @@ typedef struct {
 typedef struct {
 	Object Object;
 	Applet Applet;
-	void Img;
+	Img Img;
 	Map Map;
-	void Iframe;
+	Iframe Iframe;
 	Source Source;
 	Macro Macro;
 } SpecialExtra;
 
 // SpecialBasic ...
 typedef struct {
-	void Br;
+	Br Br;
 	Span Span;
-	void Bdo;
+	Bdo Bdo;
 } SpecialBasic;
 
 // Special ...
@@ -229,18 +229,18 @@ typedef struct {
 
 // InlineForms ...
 typedef struct {
-	void Input;
+	Input Input;
 	Select Select;
-	void Textarea;
+	Textarea Textarea;
 	Label Label;
-	void Button;
+	Button Button;
 } InlineForms;
 
 // MiscInline ...
 typedef struct {
 	Ins Ins;
 	Del Del;
-	void Script;
+	Script Script;
 } MiscInline;
 
 // Misc ...
@@ -286,7 +286,7 @@ typedef struct {
 // Blocktext ...
 typedef struct {
 	Pre Pre;
-	void Hr;
+	Hr Hr;
 	Blockquote Blockquote;
 	Address Address;
 	Center Center;
@@ -310,7 +310,7 @@ typedef struct {
 	Block Block[];
 	Inline Inline[];
 	Misc Misc[];
-	void Form[];
+	Form Form[];
 } Flow;
 
 // AContent is a elements use "Inline" excluding a
@@ -351,18 +351,18 @@ typedef struct {
 	P P[];
 	Div Div[];
 	Table Table[];
-	void Br[];
+	Br Br[];
 	Span Span[];
-	void Bdo[];
+	Bdo Bdo[];
 	Object Object[];
 	Applet Applet[];
-	void Img[];
+	Img Img[];
 	Map Map[];
 } ButtonContent;
 
 // HeadMisc ...
 typedef struct {
-	void Script[];
+	Script Script[];
 	Style Style[];
 	Meta Meta[];
 	Link Link[];
@@ -446,7 +446,7 @@ typedef struct {
 	char TypeAttr; // attr
 	void LanguageAttr; // attr, optional
 	char SrcAttr; // attr, optional
-	void DeferAttr; // attr, optional
+	char DeferAttr; // attr, optional
 	Space XmlSpaceAttr; // attr, optional
 } Script2;
 
@@ -461,10 +461,10 @@ typedef struct {
 	char LongdescAttr; // attr, optional
 	char NameAttr; // attr, optional
 	char SrcAttr; // attr, optional
-	void FrameborderAttr; // attr, optional
+	char FrameborderAttr; // attr, optional
 	int MarginwidthAttr; // attr, optional
 	int MarginheightAttr; // attr, optional
-	void ScrollingAttr; // attr, optional
+	char ScrollingAttr; // attr, optional
 	char AlignAttr; // attr, optional
 	char HeightAttr; // attr, optional
 	char WidthAttr; // attr, optional
@@ -608,8 +608,8 @@ typedef struct {
 // Hr ...
 typedef struct {
 	Attrs Attrs;
-	void AlignAttr; // attr, optional
-	void NoshadeAttr; // attr, optional
+	char AlignAttr; // attr, optional
+	char NoshadeAttr; // attr, optional
 	int SizeAttr; // attr, optional
 	char WidthAttr; // attr, optional
 } Hr;
@@ -674,13 +674,13 @@ typedef struct {
 	Events Events;
 	char LangAttr; // attr, optional
 	Lang XmlLangAttr; // attr, optional
-	void DirAttr; // attr
+	char DirAttr; // attr
 } Bdo;
 
 // Br is forced line break
 typedef struct {
 	Coreattrs Coreattrs;
-	void ClearAttr; // attr, optional
+	char ClearAttr; // attr, optional
 } Br;
 
 // Em is emphasis
@@ -829,8 +829,8 @@ typedef struct {
 	Block Block[];
 	Inline Inline[];
 	Misc Misc[];
-	void Param[];
-	void Form[];
+	Param Param[];
+	Form Form[];
 } Object;
 
 // Param is param is used to supply a named property value.
@@ -841,7 +841,7 @@ typedef struct {
 	char IdAttr; // attr, optional
 	void NameAttr; // attr
 	void ValueAttr; // attr, optional
-	void ValuetypeAttr; // attr, optional
+	char ValuetypeAttr; // attr, optional
 	char TypeAttr; // attr, optional
 } Param;
 
@@ -862,8 +862,8 @@ typedef struct {
 	Block Block[];
 	Inline Inline[];
 	Misc Misc[];
-	void Param[];
-	void Form[];
+	Param Param[];
+	Form Form[];
 } Applet;
 
 // Img ...
@@ -876,7 +876,7 @@ typedef struct {
 	char HeightAttr; // attr, optional
 	char WidthAttr; // attr, optional
 	char UsemapAttr; // attr, optional
-	void IsmapAttr; // attr, optional
+	char IsmapAttr; // attr, optional
 	char AlignAttr; // attr, optional
 	char BorderAttr; // attr, optional
 	int HspaceAttr; // attr, optional
@@ -894,8 +894,8 @@ typedef struct {
 	void NameAttr; // attr, optional
 	Block Block[];
 	Misc Misc[];
-	void Form[];
-	void Area[];
+	Form Form[];
+	Area Area[];
 } Map;
 
 // Area ...
@@ -905,7 +905,7 @@ typedef struct {
 	char ShapeAttr; // attr, optional
 	char CoordsAttr; // attr, optional
 	char HrefAttr; // attr, optional
-	void NohrefAttr; // attr, optional
+	char NohrefAttr; // attr, optional
 	char AltAttr; // attr
 	char TargetAttr; // attr, optional
 } Area;
@@ -914,7 +914,7 @@ typedef struct {
 typedef struct {
 	Attrs Attrs;
 	char ActionAttr; // attr
-	void MethodAttr; // attr, optional
+	char MethodAttr; // attr, optional
 	char EnctypeAttr; // attr, optional
 	char OnsubmitAttr; // attr, optional
 	char OnresetAttr; // attr, optional
@@ -943,9 +943,9 @@ typedef struct {
 	char TypeAttr; // attr, optional
 	void NameAttr; // attr, optional
 	void ValueAttr; // attr, optional
-	void CheckedAttr; // attr, optional
-	void DisabledAttr; // attr, optional
-	void ReadonlyAttr; // attr, optional
+	char CheckedAttr; // attr, optional
+	char DisabledAttr; // attr, optional
+	char ReadonlyAttr; // attr, optional
 	void SizeAttr; // attr, optional
 	int MaxlengthAttr; // attr, optional
 	char SrcAttr; // attr, optional
@@ -969,7 +969,7 @@ typedef struct {
 	char OnblurAttr; // attr, optional
 	char OnchangeAttr; // attr, optional
 	Optgroup Optgroup[];
-	void Option[];
+	Option Option[];
 } Select;
 
 // Optgroup is option group
@@ -977,14 +977,14 @@ typedef struct {
 	Attrs Attrs;
 	char DisabledAttr; // attr, optional
 	char LabelAttr; // attr
-	void Option[];
+	Option Option[];
 } Optgroup;
 
 // Option is selectable choice
 typedef struct {
 	Attrs Attrs;
-	void SelectedAttr; // attr, optional
-	void DisabledAttr; // attr, optional
+	char SelectedAttr; // attr, optional
+	char DisabledAttr; // attr, optional
 	char LabelAttr; // attr, optional
 	void ValueAttr; // attr, optional
 } Option;
@@ -996,8 +996,8 @@ typedef struct {
 	void NameAttr; // attr, optional
 	int RowsAttr; // attr
 	int ColsAttr; // attr
-	void DisabledAttr; // attr, optional
-	void ReadonlyAttr; // attr, optional
+	char DisabledAttr; // attr, optional
+	char ReadonlyAttr; // attr, optional
 	char OnselectAttr; // attr, optional
 	char OnchangeAttr; // attr, optional
 } Textarea;
@@ -1014,7 +1014,7 @@ typedef struct {
 	Inline Inline[];
 	Misc Misc[];
 	Legend Legend;
-	void Form[];
+	Form Form[];
 } Fieldset;
 
 // LAlign ...
@@ -1033,8 +1033,8 @@ typedef struct {
 	Focus Focus;
 	void NameAttr; // attr, optional
 	void ValueAttr; // attr, optional
-	void TypeAttr; // attr, optional
-	void DisabledAttr; // attr, optional
+	char TypeAttr; // attr, optional
+	char DisabledAttr; // attr, optional
 } Button;
 
 // Isindex is single-line text input control (DEPRECATED)
@@ -1165,8 +1165,8 @@ typedef struct {
 	Cellhalign Cellhalign;
 	Cellvalign Cellvalign;
 	char BgcolorAttr; // attr, optional
-	void Th[];
-	void Td[];
+	Th Th[];
+	Td Td[];
 } Tr;
 
 // Scope is Scope is simpler than headers attribute for common tables
@@ -1183,7 +1183,7 @@ typedef struct {
 	char ScopeAttr; // attr, optional
 	int RowspanAttr; // attr, optional
 	int ColspanAttr; // attr, optional
-	void NowrapAttr; // attr, optional
+	char NowrapAttr; // attr, optional
 	char BgcolorAttr; // attr, optional
 	char WidthAttr; // attr, optional
 	char HeightAttr; // attr, optional
@@ -1200,7 +1200,7 @@ typedef struct {
 	char ScopeAttr; // attr, optional
 	int RowspanAttr; // attr, optional
 	int ColspanAttr; // attr, optional
-	void NowrapAttr; // attr, optional
+	char NowrapAttr; // attr, optional
 	char BgcolorAttr; // attr, optional
 	char WidthAttr; // attr, optional
 	char HeightAttr; // attr, optional
@@ -1232,7 +1232,7 @@ typedef struct {
 typedef struct {
 } Date;
 
-// Body is The body element.
+// Body is A section in the body element.
 typedef struct {
 	Attrs Attrs;
 	Section Section[];
@@ -1245,7 +1245,7 @@ typedef struct {
 	Block Block[];
 	Inline Inline[];
 	Misc Misc[];
-	void Form[];
+	Form Form[];
 	Subsection Subsection[];
 } Section;
 
@@ -1256,7 +1256,7 @@ typedef struct {
 	Block Block[];
 	Inline Inline[];
 	Misc Misc[];
-	void Form[];
+	Form Form[];
 } Subsection;
 
 // Source is A source element.
@@ -1266,5 +1266,5 @@ typedef struct {
 // Macro is A macro element.
 typedef struct {
 	char NameAttr; // attr
-	void Param[];
+	Param Param[];
 } Macro;

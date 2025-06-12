@@ -167,17 +167,17 @@ export class TextAlign {
 export class SpecialExtra {
 	Object: Object;
 	Applet: Applet;
-	Img: any;
+	Img: Img;
 	Map: Map;
-	Iframe: any;
+	Iframe: Iframe;
 	Source: Source;
 }
 
 // SpecialBasic ...
 export class SpecialBasic {
-	Br: any;
+	Br: Br;
 	Span: Span;
-	Bdo: any;
+	Bdo: Bdo;
 }
 
 // Special ...
@@ -239,18 +239,18 @@ export class Phrase {
 
 // InlineForms ...
 export class InlineForms {
-	Input: any;
+	Input: Input;
 	Select: Select;
-	Textarea: any;
+	Textarea: Textarea;
 	Label: Label;
-	Button: any;
+	Button: Button;
 }
 
 // MiscInline ...
 export class MiscInline {
 	Ins: Ins;
 	Del: Del;
-	Script: any;
+	Script: Script;
 }
 
 // Misc ...
@@ -296,7 +296,7 @@ export class Lists {
 // Blocktext ...
 export class Blocktext {
 	Pre: Pre;
-	Hr: any;
+	Hr: Hr;
 	Blockquote: Blockquote;
 	Address: Address;
 	Center: Center;
@@ -320,7 +320,7 @@ export class Flow {
 	Block: Array<Block>;
 	Inline: Array<Inline>;
 	Misc: Array<Misc>;
-	Form: Array<any>;
+	Form: Array<Form>;
 }
 
 // AContent is a elements use "Inline" excluding a
@@ -361,18 +361,18 @@ export class ButtonContent {
 	P: Array<P>;
 	Div: Array<Div>;
 	Table: Array<Table>;
-	Br: Array<any>;
+	Br: Array<Br>;
 	Span: Array<Span>;
-	Bdo: Array<any>;
+	Bdo: Array<Bdo>;
 	Object: Array<Object>;
 	Applet: Array<Applet>;
-	Img: Array<any>;
+	Img: Array<Img>;
 	Map: Array<Map>;
 }
 
 // HeadMisc ...
 export class HeadMisc {
-	Script: Array<any>;
+	Script: Array<Script>;
 	Style: Array<Style>;
 	Meta: Array<Meta>;
 	Link: Array<Link>;
@@ -456,7 +456,7 @@ export class Script2 {
 	TypeAttr: string;
 	LanguageAttr: any | null;
 	SrcAttr: string | null;
-	DeferAttr: any | null;
+	DeferAttr: string | null;
 	XmlSpaceAttr: Space | null;
 }
 
@@ -471,10 +471,10 @@ export class Iframe extends Flow  {
 	LongdescAttr: string | null;
 	NameAttr: string | null;
 	SrcAttr: string | null;
-	FrameborderAttr: any | null;
+	FrameborderAttr: string | null;
 	MarginwidthAttr: number | null;
 	MarginheightAttr: number | null;
-	ScrollingAttr: any | null;
+	ScrollingAttr: string | null;
 	AlignAttr: string | null;
 	HeightAttr: string | null;
 	WidthAttr: string | null;
@@ -622,8 +622,8 @@ export class Address {
 // Hr ...
 export class Hr {
 	Attrs: Attrs;
-	AlignAttr: any | null;
-	NoshadeAttr: any | null;
+	AlignAttr: string | null;
+	NoshadeAttr: string | null;
 	SizeAttr: number | null;
 	WidthAttr: string | null;
 }
@@ -688,13 +688,13 @@ export class Bdo extends Inline  {
 	Events: Events;
 	LangAttr: string | null;
 	XmlLangAttr: Lang | null;
-	DirAttr: any;
+	DirAttr: string;
 }
 
 // Br is forced line break
 export class Br {
 	Coreattrs: Coreattrs;
-	ClearAttr: any | null;
+	ClearAttr: string | null;
 }
 
 // Em is emphasis
@@ -843,8 +843,8 @@ export class Object {
 	Block: Array<Block>;
 	Inline: Array<Inline>;
 	Misc: Array<Misc>;
-	Param: Array<any>;
-	Form: Array<any>;
+	Param: Array<Param>;
+	Form: Array<Form>;
 }
 
 // Param is param is used to supply a named property value.
@@ -855,7 +855,7 @@ export class Param {
 	IdAttr: string | null;
 	NameAttr: any;
 	ValueAttr: any | null;
-	ValuetypeAttr: any | null;
+	ValuetypeAttr: string | null;
 	TypeAttr: string | null;
 }
 
@@ -876,8 +876,8 @@ export class Applet {
 	Block: Array<Block>;
 	Inline: Array<Inline>;
 	Misc: Array<Misc>;
-	Param: Array<any>;
-	Form: Array<any>;
+	Param: Array<Param>;
+	Form: Array<Form>;
 }
 
 // Img ...
@@ -890,7 +890,7 @@ export class Img {
 	HeightAttr: string | null;
 	WidthAttr: string | null;
 	UsemapAttr: string | null;
-	IsmapAttr: any | null;
+	IsmapAttr: string | null;
 	AlignAttr: string | null;
 	BorderAttr: string | null;
 	HspaceAttr: number | null;
@@ -908,8 +908,8 @@ export class Map {
 	NameAttr: any | null;
 	Block: Array<Block>;
 	Misc: Array<Misc>;
-	Form: Array<any>;
-	Area: Array<any>;
+	Form: Array<Form>;
+	Area: Array<Area>;
 }
 
 // Area ...
@@ -919,7 +919,7 @@ export class Area {
 	ShapeAttr: string | null;
 	CoordsAttr: string | null;
 	HrefAttr: string | null;
-	NohrefAttr: any | null;
+	NohrefAttr: string | null;
 	AltAttr: string;
 	TargetAttr: string | null;
 }
@@ -928,7 +928,7 @@ export class Area {
 export class Form extends FormContent  {
 	Attrs: Attrs;
 	ActionAttr: string;
-	MethodAttr: any | null;
+	MethodAttr: string | null;
 	EnctypeAttr: string | null;
 	OnsubmitAttr: string | null;
 	OnresetAttr: string | null;
@@ -968,9 +968,9 @@ export class Input {
 	TypeAttr: string | null;
 	NameAttr: any | null;
 	ValueAttr: any | null;
-	CheckedAttr: any | null;
-	DisabledAttr: any | null;
-	ReadonlyAttr: any | null;
+	CheckedAttr: string | null;
+	DisabledAttr: string | null;
+	ReadonlyAttr: string | null;
 	SizeAttr: any | null;
 	MaxlengthAttr: number | null;
 	SrcAttr: string | null;
@@ -994,7 +994,7 @@ export class Select {
 	OnblurAttr: string | null;
 	OnchangeAttr: string | null;
 	Optgroup: Array<Optgroup>;
-	Option: Array<any>;
+	Option: Array<Option>;
 }
 
 // Optgroup is option group
@@ -1002,14 +1002,14 @@ export class Optgroup {
 	Attrs: Attrs;
 	DisabledAttr: string | null;
 	LabelAttr: string;
-	Option: Array<any>;
+	Option: Array<Option>;
 }
 
 // Option is selectable choice
 export class Option {
 	Attrs: Attrs;
-	SelectedAttr: any | null;
-	DisabledAttr: any | null;
+	SelectedAttr: string | null;
+	DisabledAttr: string | null;
 	LabelAttr: string | null;
 	ValueAttr: any | null;
 }
@@ -1021,8 +1021,8 @@ export class Textarea {
 	NameAttr: any | null;
 	RowsAttr: number;
 	ColsAttr: number;
-	DisabledAttr: any | null;
-	ReadonlyAttr: any | null;
+	DisabledAttr: string | null;
+	ReadonlyAttr: string | null;
 	OnselectAttr: string | null;
 	OnchangeAttr: string | null;
 }
@@ -1039,7 +1039,7 @@ export class Fieldset {
 	Inline: Array<Inline>;
 	Misc: Array<Misc>;
 	Legend: Legend;
-	Form: Array<any>;
+	Form: Array<Form>;
 }
 
 // LAlign ...
@@ -1063,8 +1063,8 @@ export class Button extends ButtonContent  {
 	Focus: Focus;
 	NameAttr: any | null;
 	ValueAttr: any | null;
-	TypeAttr: any | null;
-	DisabledAttr: any | null;
+	TypeAttr: string | null;
+	DisabledAttr: string | null;
 }
 
 // Isindex is single-line text input control (DEPRECATED)
@@ -1220,8 +1220,8 @@ export class Tr {
 	Cellhalign: Cellhalign;
 	Cellvalign: Cellvalign;
 	BgcolorAttr: string | null;
-	Th: Array<any>;
-	Td: Array<any>;
+	Th: Array<Th>;
+	Td: Array<Td>;
 }
 
 // Scope is Scope is simpler than headers attribute for common tables
@@ -1243,7 +1243,7 @@ export class Th extends Flow  {
 	ScopeAttr: string | null;
 	RowspanAttr: number | null;
 	ColspanAttr: number | null;
-	NowrapAttr: any | null;
+	NowrapAttr: string | null;
 	BgcolorAttr: string | null;
 	WidthAttr: string | null;
 	HeightAttr: string | null;
@@ -1260,13 +1260,13 @@ export class Td extends Flow  {
 	ScopeAttr: string | null;
 	RowspanAttr: number | null;
 	ColspanAttr: number | null;
-	NowrapAttr: any | null;
+	NowrapAttr: string | null;
 	BgcolorAttr: string | null;
 	WidthAttr: string | null;
 	HeightAttr: string | null;
 }
 
-// Faqs is The <faqs/> element is the root of the FML descriptor.
+// Faqs is Required part element for this faqs element.
 export class Faqs {
 	I18n: I18n;
 	IdAttr: string | null;
@@ -1300,7 +1300,7 @@ export class Answer {
 	Block: Array<Block>;
 	Inline: Array<Inline>;
 	Misc: Array<Misc>;
-	Form: Array<any>;
+	Form: Array<Form>;
 }
 
 // Source is A source element.
