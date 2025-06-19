@@ -70,13 +70,13 @@ pub struct CTNumVal {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTNumData {
 	#[serde(rename = "formatCode")]
-	pub format_code: String,
+	pub format_code: Option<String>,
 	#[serde(rename = "ptCount")]
-	pub pt_count: CTUnsignedInt,
+	pub pt_count: Option<CTUnsignedInt>,
 	#[serde(rename = "pt")]
 	pub pt: Vec<CTNumVal>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -86,9 +86,9 @@ pub struct CTNumRef {
 	#[serde(rename = "f")]
 	pub f: String,
 	#[serde(rename = "numCache")]
-	pub num_cache: CTNumData,
+	pub num_cache: Option<CTNumData>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -116,11 +116,11 @@ pub struct CTStrVal {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTStrData {
 	#[serde(rename = "ptCount")]
-	pub pt_count: CTUnsignedInt,
+	pub pt_count: Option<CTUnsignedInt>,
 	#[serde(rename = "pt")]
 	pub pt: Vec<CTStrVal>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -130,9 +130,9 @@ pub struct CTStrRef {
 	#[serde(rename = "f")]
 	pub f: String,
 	#[serde(rename = "strCache")]
-	pub str_cache: CTStrData,
+	pub str_cache: Option<CTStrData>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -166,11 +166,11 @@ pub struct CTLvl {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTMultiLvlStrData {
 	#[serde(rename = "ptCount")]
-	pub pt_count: CTUnsignedInt,
+	pub pt_count: Option<CTUnsignedInt>,
 	#[serde(rename = "lvl")]
 	pub lvl: Vec<CTLvl>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -180,9 +180,9 @@ pub struct CTMultiLvlStrRef {
 	#[serde(rename = "f")]
 	pub f: String,
 	#[serde(rename = "multiLvlStrCache")]
-	pub multi_lvl_str_cache: CTMultiLvlStrData,
+	pub multi_lvl_str_cache: Option<CTMultiLvlStrData>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -248,25 +248,25 @@ pub struct CTLayoutMode {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTManualLayout {
 	#[serde(rename = "layoutTarget")]
-	pub layout_target: CTLayoutTarget,
+	pub layout_target: Option<CTLayoutTarget>,
 	#[serde(rename = "xMode")]
-	pub x_mode: CTLayoutMode,
+	pub x_mode: Option<CTLayoutMode>,
 	#[serde(rename = "yMode")]
-	pub y_mode: CTLayoutMode,
+	pub y_mode: Option<CTLayoutMode>,
 	#[serde(rename = "wMode")]
-	pub w_mode: CTLayoutMode,
+	pub w_mode: Option<CTLayoutMode>,
 	#[serde(rename = "hMode")]
-	pub h_mode: CTLayoutMode,
+	pub h_mode: Option<CTLayoutMode>,
 	#[serde(rename = "x")]
-	pub x: CTDouble,
+	pub x: Option<CTDouble>,
 	#[serde(rename = "y")]
-	pub y: CTDouble,
+	pub y: Option<CTDouble>,
 	#[serde(rename = "w")]
-	pub w: CTDouble,
+	pub w: Option<CTDouble>,
 	#[serde(rename = "h")]
-	pub h: CTDouble,
+	pub h: Option<CTDouble>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -274,9 +274,9 @@ pub struct CTManualLayout {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTLayout {
 	#[serde(rename = "manualLayout")]
-	pub manual_layout: CTManualLayout,
+	pub manual_layout: Option<CTManualLayout>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -284,17 +284,17 @@ pub struct CTLayout {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTTitle {
 	#[serde(rename = "tx")]
-	pub tx: CTTx,
+	pub tx: Option<CTTx>,
 	#[serde(rename = "layout")]
-	pub layout: CTLayout,
+	pub layout: Option<CTLayout>,
 	#[serde(rename = "overlay")]
-	pub overlay: CTBoolean,
+	pub overlay: Option<CTBoolean>,
 	#[serde(rename = "spPr")]
-	pub sp_pr: CTShapeProperties,
+	pub sp_pr: Option<CTShapeProperties>,
 	#[serde(rename = "txPr")]
-	pub tx_pr: CTTextBody,
+	pub tx_pr: Option<CTTextBody>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -394,19 +394,19 @@ pub struct CTPerspective {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTView3D {
 	#[serde(rename = "rotX")]
-	pub rot_x: CTRotX,
+	pub rot_x: Option<CTRotX>,
 	#[serde(rename = "hPercent")]
-	pub h_percent: CTHPercent,
+	pub h_percent: Option<CTHPercent>,
 	#[serde(rename = "rotY")]
-	pub rot_y: CTRotY,
+	pub rot_y: Option<CTRotY>,
 	#[serde(rename = "depthPercent")]
-	pub depth_percent: CTDepthPercent,
+	pub depth_percent: Option<CTDepthPercent>,
 	#[serde(rename = "rAngAx")]
-	pub r_ang_ax: CTBoolean,
+	pub r_ang_ax: Option<CTBoolean>,
 	#[serde(rename = "perspective")]
-	pub perspective: CTPerspective,
+	pub perspective: Option<CTPerspective>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -414,13 +414,13 @@ pub struct CTView3D {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTSurface {
 	#[serde(rename = "thickness")]
-	pub thickness: CTThickness,
+	pub thickness: Option<CTThickness>,
 	#[serde(rename = "spPr")]
-	pub sp_pr: CTShapeProperties,
+	pub sp_pr: Option<CTShapeProperties>,
 	#[serde(rename = "pictureOptions")]
-	pub picture_options: CTPictureOptions,
+	pub picture_options: Option<CTPictureOptions>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
@@ -450,19 +450,19 @@ pub struct CTThickness {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTDTable {
 	#[serde(rename = "showHorzBorder")]
-	pub show_horz_border: CTBoolean,
+	pub show_horz_border: Option<CTBoolean>,
 	#[serde(rename = "showVertBorder")]
-	pub show_vert_border: CTBoolean,
+	pub show_vert_border: Option<CTBoolean>,
 	#[serde(rename = "showOutline")]
-	pub show_outline: CTBoolean,
+	pub show_outline: Option<CTBoolean>,
 	#[serde(rename = "showKeys")]
-	pub show_keys: CTBoolean,
+	pub show_keys: Option<CTBoolean>,
 	#[serde(rename = "spPr")]
-	pub sp_pr: CTShapeProperties,
+	pub sp_pr: Option<CTShapeProperties>,
 	#[serde(rename = "txPr")]
-	pub tx_pr: CTTextBody,
+	pub tx_pr: Option<CTTextBody>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
@@ -724,7 +724,7 @@ pub struct CTDLbl {
 	#[serde(rename = "delete")]
 	pub delete: CTBoolean,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -750,7 +750,7 @@ pub struct CTDLbls {
 	#[serde(rename = "delete")]
 	pub delete: CTBoolean,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -790,13 +790,13 @@ pub struct CTMarkerSize {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTMarker {
 	#[serde(rename = "symbol")]
-	pub symbol: CTMarkerStyle,
+	pub symbol: Option<CTMarkerStyle>,
 	#[serde(rename = "size")]
-	pub size: CTMarkerSize,
+	pub size: Option<CTMarkerSize>,
 	#[serde(rename = "spPr")]
-	pub sp_pr: CTShapeProperties,
+	pub sp_pr: Option<CTShapeProperties>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -806,19 +806,19 @@ pub struct CTDPt {
 	#[serde(rename = "idx")]
 	pub idx: CTUnsignedInt,
 	#[serde(rename = "invertIfNegative")]
-	pub invert_if_negative: CTBoolean,
+	pub invert_if_negative: Option<CTBoolean>,
 	#[serde(rename = "marker")]
-	pub marker: CTMarker,
+	pub marker: Option<CTMarker>,
 	#[serde(rename = "bubble3D")]
-	pub bubble3_d: CTBoolean,
+	pub bubble3_d: Option<CTBoolean>,
 	#[serde(rename = "explosion")]
-	pub explosion: CTUnsignedInt,
+	pub explosion: Option<CTUnsignedInt>,
 	#[serde(rename = "spPr")]
-	pub sp_pr: CTShapeProperties,
+	pub sp_pr: Option<CTShapeProperties>,
 	#[serde(rename = "pictureOptions")]
-	pub picture_options: CTPictureOptions,
+	pub picture_options: Option<CTPictureOptions>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -874,17 +874,17 @@ pub struct CTPeriod {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTTrendlineLbl {
 	#[serde(rename = "layout")]
-	pub layout: CTLayout,
+	pub layout: Option<CTLayout>,
 	#[serde(rename = "tx")]
-	pub tx: CTTx,
+	pub tx: Option<CTTx>,
 	#[serde(rename = "numFmt")]
-	pub num_fmt: CTNumFmt,
+	pub num_fmt: Option<CTNumFmt>,
 	#[serde(rename = "spPr")]
-	pub sp_pr: CTShapeProperties,
+	pub sp_pr: Option<CTShapeProperties>,
 	#[serde(rename = "txPr")]
-	pub tx_pr: CTTextBody,
+	pub tx_pr: Option<CTTextBody>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -892,29 +892,29 @@ pub struct CTTrendlineLbl {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTTrendline {
 	#[serde(rename = "name")]
-	pub name: String,
+	pub name: Option<String>,
 	#[serde(rename = "spPr")]
-	pub sp_pr: CTShapeProperties,
+	pub sp_pr: Option<CTShapeProperties>,
 	#[serde(rename = "trendlineType")]
 	pub trendline_type: CTTrendlineType,
 	#[serde(rename = "order")]
-	pub order: CTOrder,
+	pub order: Option<CTOrder>,
 	#[serde(rename = "period")]
-	pub period: CTPeriod,
+	pub period: Option<CTPeriod>,
 	#[serde(rename = "forward")]
-	pub forward: CTDouble,
+	pub forward: Option<CTDouble>,
 	#[serde(rename = "backward")]
-	pub backward: CTDouble,
+	pub backward: Option<CTDouble>,
 	#[serde(rename = "intercept")]
-	pub intercept: CTDouble,
+	pub intercept: Option<CTDouble>,
 	#[serde(rename = "dispRSqr")]
-	pub disp_r_sqr: CTBoolean,
+	pub disp_r_sqr: Option<CTBoolean>,
 	#[serde(rename = "dispEq")]
-	pub disp_eq: CTBoolean,
+	pub disp_eq: Option<CTBoolean>,
 	#[serde(rename = "trendlineLbl")]
-	pub trendline_lbl: CTTrendlineLbl,
+	pub trendline_lbl: Option<CTTrendlineLbl>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -970,23 +970,23 @@ pub struct CTErrValType {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTErrBars {
 	#[serde(rename = "errDir")]
-	pub err_dir: CTErrDir,
+	pub err_dir: Option<CTErrDir>,
 	#[serde(rename = "errBarType")]
 	pub err_bar_type: CTErrBarType,
 	#[serde(rename = "errValType")]
 	pub err_val_type: CTErrValType,
 	#[serde(rename = "noEndCap")]
-	pub no_end_cap: CTBoolean,
+	pub no_end_cap: Option<CTBoolean>,
 	#[serde(rename = "plus")]
-	pub plus: CTNumDataSource,
+	pub plus: Option<CTNumDataSource>,
 	#[serde(rename = "minus")]
-	pub minus: CTNumDataSource,
+	pub minus: Option<CTNumDataSource>,
 	#[serde(rename = "val")]
-	pub val: CTDouble,
+	pub val: Option<CTDouble>,
 	#[serde(rename = "spPr")]
-	pub sp_pr: CTShapeProperties,
+	pub sp_pr: Option<CTShapeProperties>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -994,7 +994,7 @@ pub struct CTErrBars {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTUpDownBar {
 	#[serde(rename = "spPr")]
-	pub sp_pr: CTShapeProperties,
+	pub sp_pr: Option<CTShapeProperties>,
 }
 
 
@@ -1002,13 +1002,13 @@ pub struct CTUpDownBar {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTUpDownBars {
 	#[serde(rename = "gapWidth")]
-	pub gap_width: CTGapAmount,
+	pub gap_width: Option<CTGapAmount>,
 	#[serde(rename = "upBars")]
-	pub up_bars: CTUpDownBar,
+	pub up_bars: Option<CTUpDownBar>,
 	#[serde(rename = "downBars")]
-	pub down_bars: CTUpDownBar,
+	pub down_bars: Option<CTUpDownBar>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1032,23 +1032,23 @@ pub struct CTLineSer {
 	#[serde(rename = "EG_SerShared")]
 	pub eg_ser_shared: Vec<EGSerShared>,
 	#[serde(rename = "marker")]
-	pub marker: CTMarker,
+	pub marker: Option<CTMarker>,
 	#[serde(rename = "dPt")]
 	pub d_pt: Vec<CTDPt>,
 	#[serde(rename = "dLbls")]
-	pub d_lbls: CTDLbls,
+	pub d_lbls: Option<CTDLbls>,
 	#[serde(rename = "trendline")]
 	pub trendline: Vec<CTTrendline>,
 	#[serde(rename = "errBars")]
-	pub err_bars: CTErrBars,
+	pub err_bars: Option<CTErrBars>,
 	#[serde(rename = "cat")]
-	pub cat: CTAxDataSource,
+	pub cat: Option<CTAxDataSource>,
 	#[serde(rename = "val")]
-	pub val: CTNumDataSource,
+	pub val: Option<CTNumDataSource>,
 	#[serde(rename = "smooth")]
-	pub smooth: CTBoolean,
+	pub smooth: Option<CTBoolean>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1058,23 +1058,23 @@ pub struct CTScatterSer {
 	#[serde(rename = "EG_SerShared")]
 	pub eg_ser_shared: Vec<EGSerShared>,
 	#[serde(rename = "marker")]
-	pub marker: CTMarker,
+	pub marker: Option<CTMarker>,
 	#[serde(rename = "dPt")]
 	pub d_pt: Vec<CTDPt>,
 	#[serde(rename = "dLbls")]
-	pub d_lbls: CTDLbls,
+	pub d_lbls: Option<CTDLbls>,
 	#[serde(rename = "trendline")]
 	pub trendline: Vec<CTTrendline>,
 	#[serde(rename = "errBars")]
 	pub err_bars: Vec<CTErrBars>,
 	#[serde(rename = "xVal")]
-	pub x_val: CTAxDataSource,
+	pub x_val: Option<CTAxDataSource>,
 	#[serde(rename = "yVal")]
-	pub y_val: CTNumDataSource,
+	pub y_val: Option<CTNumDataSource>,
 	#[serde(rename = "smooth")]
-	pub smooth: CTBoolean,
+	pub smooth: Option<CTBoolean>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1084,17 +1084,17 @@ pub struct CTRadarSer {
 	#[serde(rename = "EG_SerShared")]
 	pub eg_ser_shared: Vec<EGSerShared>,
 	#[serde(rename = "marker")]
-	pub marker: CTMarker,
+	pub marker: Option<CTMarker>,
 	#[serde(rename = "dPt")]
 	pub d_pt: Vec<CTDPt>,
 	#[serde(rename = "dLbls")]
-	pub d_lbls: CTDLbls,
+	pub d_lbls: Option<CTDLbls>,
 	#[serde(rename = "cat")]
-	pub cat: CTAxDataSource,
+	pub cat: Option<CTAxDataSource>,
 	#[serde(rename = "val")]
-	pub val: CTNumDataSource,
+	pub val: Option<CTNumDataSource>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1104,25 +1104,25 @@ pub struct CTBarSer {
 	#[serde(rename = "EG_SerShared")]
 	pub eg_ser_shared: Vec<EGSerShared>,
 	#[serde(rename = "invertIfNegative")]
-	pub invert_if_negative: CTBoolean,
+	pub invert_if_negative: Option<CTBoolean>,
 	#[serde(rename = "pictureOptions")]
-	pub picture_options: CTPictureOptions,
+	pub picture_options: Option<CTPictureOptions>,
 	#[serde(rename = "dPt")]
 	pub d_pt: Vec<CTDPt>,
 	#[serde(rename = "dLbls")]
-	pub d_lbls: CTDLbls,
+	pub d_lbls: Option<CTDLbls>,
 	#[serde(rename = "trendline")]
 	pub trendline: Vec<CTTrendline>,
 	#[serde(rename = "errBars")]
-	pub err_bars: CTErrBars,
+	pub err_bars: Option<CTErrBars>,
 	#[serde(rename = "cat")]
-	pub cat: CTAxDataSource,
+	pub cat: Option<CTAxDataSource>,
 	#[serde(rename = "val")]
-	pub val: CTNumDataSource,
+	pub val: Option<CTNumDataSource>,
 	#[serde(rename = "shape")]
-	pub shape: CTShape,
+	pub shape: Option<CTShape>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1132,21 +1132,21 @@ pub struct CTAreaSer {
 	#[serde(rename = "EG_SerShared")]
 	pub eg_ser_shared: Vec<EGSerShared>,
 	#[serde(rename = "pictureOptions")]
-	pub picture_options: CTPictureOptions,
+	pub picture_options: Option<CTPictureOptions>,
 	#[serde(rename = "dPt")]
 	pub d_pt: Vec<CTDPt>,
 	#[serde(rename = "dLbls")]
-	pub d_lbls: CTDLbls,
+	pub d_lbls: Option<CTDLbls>,
 	#[serde(rename = "trendline")]
 	pub trendline: Vec<CTTrendline>,
 	#[serde(rename = "errBars")]
 	pub err_bars: Vec<CTErrBars>,
 	#[serde(rename = "cat")]
-	pub cat: CTAxDataSource,
+	pub cat: Option<CTAxDataSource>,
 	#[serde(rename = "val")]
-	pub val: CTNumDataSource,
+	pub val: Option<CTNumDataSource>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1156,17 +1156,17 @@ pub struct CTPieSer {
 	#[serde(rename = "EG_SerShared")]
 	pub eg_ser_shared: Vec<EGSerShared>,
 	#[serde(rename = "explosion")]
-	pub explosion: CTUnsignedInt,
+	pub explosion: Option<CTUnsignedInt>,
 	#[serde(rename = "dPt")]
 	pub d_pt: Vec<CTDPt>,
 	#[serde(rename = "dLbls")]
-	pub d_lbls: CTDLbls,
+	pub d_lbls: Option<CTDLbls>,
 	#[serde(rename = "cat")]
-	pub cat: CTAxDataSource,
+	pub cat: Option<CTAxDataSource>,
 	#[serde(rename = "val")]
-	pub val: CTNumDataSource,
+	pub val: Option<CTNumDataSource>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1176,25 +1176,25 @@ pub struct CTBubbleSer {
 	#[serde(rename = "EG_SerShared")]
 	pub eg_ser_shared: Vec<EGSerShared>,
 	#[serde(rename = "invertIfNegative")]
-	pub invert_if_negative: CTBoolean,
+	pub invert_if_negative: Option<CTBoolean>,
 	#[serde(rename = "dPt")]
 	pub d_pt: Vec<CTDPt>,
 	#[serde(rename = "dLbls")]
-	pub d_lbls: CTDLbls,
+	pub d_lbls: Option<CTDLbls>,
 	#[serde(rename = "trendline")]
 	pub trendline: Vec<CTTrendline>,
 	#[serde(rename = "errBars")]
 	pub err_bars: Vec<CTErrBars>,
 	#[serde(rename = "xVal")]
-	pub x_val: CTAxDataSource,
+	pub x_val: Option<CTAxDataSource>,
 	#[serde(rename = "yVal")]
-	pub y_val: CTNumDataSource,
+	pub y_val: Option<CTNumDataSource>,
 	#[serde(rename = "bubbleSize")]
-	pub bubble_size: CTNumDataSource,
+	pub bubble_size: Option<CTNumDataSource>,
 	#[serde(rename = "bubble3D")]
-	pub bubble3_d: CTBoolean,
+	pub bubble3_d: Option<CTBoolean>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1204,11 +1204,11 @@ pub struct CTSurfaceSer {
 	#[serde(rename = "EG_SerShared")]
 	pub eg_ser_shared: Vec<EGSerShared>,
 	#[serde(rename = "cat")]
-	pub cat: CTAxDataSource,
+	pub cat: Option<CTAxDataSource>,
 	#[serde(rename = "val")]
-	pub val: CTNumDataSource,
+	pub val: Option<CTNumDataSource>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1232,7 +1232,7 @@ pub struct CTGrouping {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTChartLines {
 	#[serde(rename = "spPr")]
-	pub sp_pr: CTShapeProperties,
+	pub sp_pr: Option<CTShapeProperties>,
 }
 
 
@@ -1258,17 +1258,17 @@ pub struct CTLineChart {
 	#[serde(rename = "EG_LineChartShared")]
 	pub eg_line_chart_shared: Vec<EGLineChartShared>,
 	#[serde(rename = "hiLowLines")]
-	pub hi_low_lines: CTChartLines,
+	pub hi_low_lines: Option<CTChartLines>,
 	#[serde(rename = "upDownBars")]
-	pub up_down_bars: CTUpDownBars,
+	pub up_down_bars: Option<CTUpDownBars>,
 	#[serde(rename = "marker")]
-	pub marker: CTBoolean,
+	pub marker: Option<CTBoolean>,
 	#[serde(rename = "smooth")]
-	pub smooth: CTBoolean,
+	pub smooth: Option<CTBoolean>,
 	#[serde(rename = "axId")]
 	pub ax_id: Vec<CTUnsignedInt>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1278,11 +1278,11 @@ pub struct CTLine3DChart {
 	#[serde(rename = "EG_LineChartShared")]
 	pub eg_line_chart_shared: Vec<EGLineChartShared>,
 	#[serde(rename = "gapDepth")]
-	pub gap_depth: CTGapAmount,
+	pub gap_depth: Option<CTGapAmount>,
 	#[serde(rename = "axId")]
 	pub ax_id: Vec<CTUnsignedInt>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1292,17 +1292,17 @@ pub struct CTStockChart {
 	#[serde(rename = "ser")]
 	pub ser: Vec<CTLineSer>,
 	#[serde(rename = "dLbls")]
-	pub d_lbls: CTDLbls,
+	pub d_lbls: Option<CTDLbls>,
 	#[serde(rename = "dropLines")]
-	pub drop_lines: CTChartLines,
+	pub drop_lines: Option<CTChartLines>,
 	#[serde(rename = "hiLowLines")]
-	pub hi_low_lines: CTChartLines,
+	pub hi_low_lines: Option<CTChartLines>,
 	#[serde(rename = "upDownBars")]
-	pub up_down_bars: CTUpDownBars,
+	pub up_down_bars: Option<CTUpDownBars>,
 	#[serde(rename = "axId")]
 	pub ax_id: Vec<CTUnsignedInt>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1328,15 +1328,15 @@ pub struct CTScatterChart {
 	#[serde(rename = "scatterStyle")]
 	pub scatter_style: CTScatterStyle,
 	#[serde(rename = "varyColors")]
-	pub vary_colors: CTBoolean,
+	pub vary_colors: Option<CTBoolean>,
 	#[serde(rename = "ser")]
 	pub ser: Vec<CTScatterSer>,
 	#[serde(rename = "dLbls")]
-	pub d_lbls: CTDLbls,
+	pub d_lbls: Option<CTDLbls>,
 	#[serde(rename = "axId")]
 	pub ax_id: Vec<CTUnsignedInt>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1362,15 +1362,15 @@ pub struct CTRadarChart {
 	#[serde(rename = "radarStyle")]
 	pub radar_style: CTRadarStyle,
 	#[serde(rename = "varyColors")]
-	pub vary_colors: CTBoolean,
+	pub vary_colors: Option<CTBoolean>,
 	#[serde(rename = "ser")]
 	pub ser: Vec<CTRadarSer>,
 	#[serde(rename = "dLbls")]
-	pub d_lbls: CTDLbls,
+	pub d_lbls: Option<CTDLbls>,
 	#[serde(rename = "axId")]
 	pub ax_id: Vec<CTUnsignedInt>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1444,15 +1444,15 @@ pub struct CTBarChart {
 	#[serde(rename = "EG_BarChartShared")]
 	pub eg_bar_chart_shared: Vec<EGBarChartShared>,
 	#[serde(rename = "gapWidth")]
-	pub gap_width: CTGapAmount,
+	pub gap_width: Option<CTGapAmount>,
 	#[serde(rename = "overlap")]
-	pub overlap: CTOverlap,
+	pub overlap: Option<CTOverlap>,
 	#[serde(rename = "serLines")]
 	pub ser_lines: Vec<CTChartLines>,
 	#[serde(rename = "axId")]
 	pub ax_id: Vec<CTUnsignedInt>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1462,15 +1462,15 @@ pub struct CTBar3DChart {
 	#[serde(rename = "EG_BarChartShared")]
 	pub eg_bar_chart_shared: Vec<EGBarChartShared>,
 	#[serde(rename = "gapWidth")]
-	pub gap_width: CTGapAmount,
+	pub gap_width: Option<CTGapAmount>,
 	#[serde(rename = "gapDepth")]
-	pub gap_depth: CTGapAmount,
+	pub gap_depth: Option<CTGapAmount>,
 	#[serde(rename = "shape")]
-	pub shape: CTShape,
+	pub shape: Option<CTShape>,
 	#[serde(rename = "axId")]
 	pub ax_id: Vec<CTUnsignedInt>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1498,7 +1498,7 @@ pub struct CTAreaChart {
 	#[serde(rename = "axId")]
 	pub ax_id: Vec<CTUnsignedInt>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1508,11 +1508,11 @@ pub struct CTArea3DChart {
 	#[serde(rename = "EG_AreaChartShared")]
 	pub eg_area_chart_shared: Vec<EGAreaChartShared>,
 	#[serde(rename = "gapDepth")]
-	pub gap_depth: CTGapAmount,
+	pub gap_depth: Option<CTGapAmount>,
 	#[serde(rename = "axId")]
 	pub ax_id: Vec<CTUnsignedInt>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1534,9 +1534,9 @@ pub struct CTPieChart {
 	#[serde(rename = "EG_PieChartShared")]
 	pub eg_pie_chart_shared: Vec<EGPieChartShared>,
 	#[serde(rename = "firstSliceAng")]
-	pub first_slice_ang: CTFirstSliceAng,
+	pub first_slice_ang: Option<CTFirstSliceAng>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1546,7 +1546,7 @@ pub struct CTPie3DChart {
 	#[serde(rename = "EG_PieChartShared")]
 	pub eg_pie_chart_shared: Vec<EGPieChartShared>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1556,11 +1556,11 @@ pub struct CTDoughnutChart {
 	#[serde(rename = "EG_PieChartShared")]
 	pub eg_pie_chart_shared: Vec<EGPieChartShared>,
 	#[serde(rename = "firstSliceAng")]
-	pub first_slice_ang: CTFirstSliceAng,
+	pub first_slice_ang: Option<CTFirstSliceAng>,
 	#[serde(rename = "holeSize")]
-	pub hole_size: CTHoleSize,
+	pub hole_size: Option<CTHoleSize>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1588,19 +1588,19 @@ pub struct CTOfPieChart {
 	#[serde(rename = "ofPieType")]
 	pub of_pie_type: CTOfPieType,
 	#[serde(rename = "gapWidth")]
-	pub gap_width: CTGapAmount,
+	pub gap_width: Option<CTGapAmount>,
 	#[serde(rename = "splitType")]
-	pub split_type: CTSplitType,
+	pub split_type: Option<CTSplitType>,
 	#[serde(rename = "splitPos")]
-	pub split_pos: CTDouble,
+	pub split_pos: Option<CTDouble>,
 	#[serde(rename = "custSplit")]
-	pub cust_split: CTCustSplit,
+	pub cust_split: Option<CTCustSplit>,
 	#[serde(rename = "secondPieSize")]
-	pub second_pie_size: CTSecondPieSize,
+	pub second_pie_size: Option<CTSecondPieSize>,
 	#[serde(rename = "serLines")]
 	pub ser_lines: Vec<CTChartLines>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1608,23 +1608,23 @@ pub struct CTOfPieChart {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTBubbleChart {
 	#[serde(rename = "varyColors")]
-	pub vary_colors: CTBoolean,
+	pub vary_colors: Option<CTBoolean>,
 	#[serde(rename = "ser")]
 	pub ser: Vec<CTBubbleSer>,
 	#[serde(rename = "dLbls")]
-	pub d_lbls: CTDLbls,
+	pub d_lbls: Option<CTDLbls>,
 	#[serde(rename = "bubble3D")]
-	pub bubble3_d: CTBoolean,
+	pub bubble3_d: Option<CTBoolean>,
 	#[serde(rename = "bubbleScale")]
-	pub bubble_scale: CTBubbleScale,
+	pub bubble_scale: Option<CTBubbleScale>,
 	#[serde(rename = "showNegBubbles")]
-	pub show_neg_bubbles: CTBoolean,
+	pub show_neg_bubbles: Option<CTBoolean>,
 	#[serde(rename = "sizeRepresents")]
-	pub size_represents: CTSizeRepresents,
+	pub size_represents: Option<CTSizeRepresents>,
 	#[serde(rename = "axId")]
 	pub ax_id: Vec<CTUnsignedInt>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1634,7 +1634,7 @@ pub struct CTBandFmt {
 	#[serde(rename = "idx")]
 	pub idx: CTUnsignedInt,
 	#[serde(rename = "spPr")]
-	pub sp_pr: CTShapeProperties,
+	pub sp_pr: Option<CTShapeProperties>,
 }
 
 
@@ -1666,7 +1666,7 @@ pub struct CTSurfaceChart {
 	#[serde(rename = "axId")]
 	pub ax_id: Vec<CTUnsignedInt>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1678,7 +1678,7 @@ pub struct CTSurface3DChart {
 	#[serde(rename = "axId")]
 	pub ax_id: Vec<CTUnsignedInt>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1862,15 +1862,15 @@ pub struct CTPictureStackUnit {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTPictureOptions {
 	#[serde(rename = "applyToFront")]
-	pub apply_to_front: CTBoolean,
+	pub apply_to_front: Option<CTBoolean>,
 	#[serde(rename = "applyToSides")]
-	pub apply_to_sides: CTBoolean,
+	pub apply_to_sides: Option<CTBoolean>,
 	#[serde(rename = "applyToEnd")]
-	pub apply_to_end: CTBoolean,
+	pub apply_to_end: Option<CTBoolean>,
 	#[serde(rename = "pictureFormat")]
-	pub picture_format: CTPictureFormat,
+	pub picture_format: Option<CTPictureFormat>,
 	#[serde(rename = "pictureStackUnit")]
-	pub picture_stack_unit: CTPictureStackUnit,
+	pub picture_stack_unit: Option<CTPictureStackUnit>,
 }
 
 
@@ -1878,13 +1878,13 @@ pub struct CTPictureOptions {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTDispUnitsLbl {
 	#[serde(rename = "layout")]
-	pub layout: CTLayout,
+	pub layout: Option<CTLayout>,
 	#[serde(rename = "tx")]
-	pub tx: CTTx,
+	pub tx: Option<CTTx>,
 	#[serde(rename = "spPr")]
-	pub sp_pr: CTShapeProperties,
+	pub sp_pr: Option<CTShapeProperties>,
 	#[serde(rename = "txPr")]
-	pub tx_pr: CTTextBody,
+	pub tx_pr: Option<CTTextBody>,
 }
 
 
@@ -1896,9 +1896,9 @@ pub struct CTDispUnits {
 	#[serde(rename = "builtInUnit")]
 	pub built_in_unit: CTBuiltInUnit,
 	#[serde(rename = "dispUnitsLbl")]
-	pub disp_units_lbl: CTDispUnitsLbl,
+	pub disp_units_lbl: Option<CTDispUnitsLbl>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1938,15 +1938,15 @@ pub struct CTLogBase {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTScaling {
 	#[serde(rename = "logBase")]
-	pub log_base: CTLogBase,
+	pub log_base: Option<CTLogBase>,
 	#[serde(rename = "orientation")]
-	pub orientation: CTOrientation,
+	pub orientation: Option<CTOrientation>,
 	#[serde(rename = "max")]
-	pub max: CTDouble,
+	pub max: Option<CTDouble>,
 	#[serde(rename = "min")]
-	pub min: CTDouble,
+	pub min: Option<CTDouble>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
@@ -2016,19 +2016,19 @@ pub struct CTCatAx {
 	#[serde(rename = "EG_AxShared")]
 	pub eg_ax_shared: Vec<EGAxShared>,
 	#[serde(rename = "auto")]
-	pub auto: CTBoolean,
+	pub auto: Option<CTBoolean>,
 	#[serde(rename = "lblAlgn")]
-	pub lbl_algn: CTLblAlgn,
+	pub lbl_algn: Option<CTLblAlgn>,
 	#[serde(rename = "lblOffset")]
-	pub lbl_offset: CTLblOffset,
+	pub lbl_offset: Option<CTLblOffset>,
 	#[serde(rename = "tickLblSkip")]
-	pub tick_lbl_skip: CTSkip,
+	pub tick_lbl_skip: Option<CTSkip>,
 	#[serde(rename = "tickMarkSkip")]
-	pub tick_mark_skip: CTSkip,
+	pub tick_mark_skip: Option<CTSkip>,
 	#[serde(rename = "noMultiLvlLbl")]
-	pub no_multi_lvl_lbl: CTBoolean,
+	pub no_multi_lvl_lbl: Option<CTBoolean>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -2038,21 +2038,21 @@ pub struct CTDateAx {
 	#[serde(rename = "EG_AxShared")]
 	pub eg_ax_shared: Vec<EGAxShared>,
 	#[serde(rename = "auto")]
-	pub auto: CTBoolean,
+	pub auto: Option<CTBoolean>,
 	#[serde(rename = "lblOffset")]
-	pub lbl_offset: CTLblOffset,
+	pub lbl_offset: Option<CTLblOffset>,
 	#[serde(rename = "baseTimeUnit")]
-	pub base_time_unit: CTTimeUnit,
+	pub base_time_unit: Option<CTTimeUnit>,
 	#[serde(rename = "majorUnit")]
-	pub major_unit: CTAxisUnit,
+	pub major_unit: Option<CTAxisUnit>,
 	#[serde(rename = "majorTimeUnit")]
-	pub major_time_unit: CTTimeUnit,
+	pub major_time_unit: Option<CTTimeUnit>,
 	#[serde(rename = "minorUnit")]
-	pub minor_unit: CTAxisUnit,
+	pub minor_unit: Option<CTAxisUnit>,
 	#[serde(rename = "minorTimeUnit")]
-	pub minor_time_unit: CTTimeUnit,
+	pub minor_time_unit: Option<CTTimeUnit>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -2062,11 +2062,11 @@ pub struct CTSerAx {
 	#[serde(rename = "EG_AxShared")]
 	pub eg_ax_shared: Vec<EGAxShared>,
 	#[serde(rename = "tickLblSkip")]
-	pub tick_lbl_skip: CTSkip,
+	pub tick_lbl_skip: Option<CTSkip>,
 	#[serde(rename = "tickMarkSkip")]
-	pub tick_mark_skip: CTSkip,
+	pub tick_mark_skip: Option<CTSkip>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -2076,15 +2076,15 @@ pub struct CTValAx {
 	#[serde(rename = "EG_AxShared")]
 	pub eg_ax_shared: Vec<EGAxShared>,
 	#[serde(rename = "crossBetween")]
-	pub cross_between: CTCrossBetween,
+	pub cross_between: Option<CTCrossBetween>,
 	#[serde(rename = "majorUnit")]
-	pub major_unit: CTAxisUnit,
+	pub major_unit: Option<CTAxisUnit>,
 	#[serde(rename = "minorUnit")]
-	pub minor_unit: CTAxisUnit,
+	pub minor_unit: Option<CTAxisUnit>,
 	#[serde(rename = "dispUnits")]
-	pub disp_units: CTDispUnits,
+	pub disp_units: Option<CTDispUnits>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -2092,7 +2092,7 @@ pub struct CTValAx {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTPlotArea {
 	#[serde(rename = "layout")]
-	pub layout: CTLayout,
+	pub layout: Option<CTLayout>,
 	#[serde(rename = "areaChart")]
 	pub area_chart: Vec<CTAreaChart>,
 	#[serde(rename = "area3DChart")]
@@ -2134,11 +2134,11 @@ pub struct CTPlotArea {
 	#[serde(rename = "serAx")]
 	pub ser_ax: Vec<CTSerAx>,
 	#[serde(rename = "dTable")]
-	pub d_table: CTDTable,
+	pub d_table: Option<CTDTable>,
 	#[serde(rename = "spPr")]
-	pub sp_pr: CTShapeProperties,
+	pub sp_pr: Option<CTShapeProperties>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -2148,15 +2148,15 @@ pub struct CTPivotFmt {
 	#[serde(rename = "idx")]
 	pub idx: CTUnsignedInt,
 	#[serde(rename = "spPr")]
-	pub sp_pr: CTShapeProperties,
+	pub sp_pr: Option<CTShapeProperties>,
 	#[serde(rename = "txPr")]
-	pub tx_pr: CTTextBody,
+	pub tx_pr: Option<CTTextBody>,
 	#[serde(rename = "marker")]
-	pub marker: CTMarker,
+	pub marker: Option<CTMarker>,
 	#[serde(rename = "dLbl")]
-	pub d_lbl: CTDLbl,
+	pub d_lbl: Option<CTDLbl>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -2202,7 +2202,7 @@ pub struct CTLegendEntry {
 	#[serde(rename = "delete")]
 	pub delete: CTBoolean,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -2210,19 +2210,19 @@ pub struct CTLegendEntry {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTLegend {
 	#[serde(rename = "legendPos")]
-	pub legend_pos: CTLegendPos,
+	pub legend_pos: Option<CTLegendPos>,
 	#[serde(rename = "legendEntry")]
 	pub legend_entry: Vec<CTLegendEntry>,
 	#[serde(rename = "layout")]
-	pub layout: CTLayout,
+	pub layout: Option<CTLayout>,
 	#[serde(rename = "overlay")]
-	pub overlay: CTBoolean,
+	pub overlay: Option<CTBoolean>,
 	#[serde(rename = "spPr")]
-	pub sp_pr: CTShapeProperties,
+	pub sp_pr: Option<CTShapeProperties>,
 	#[serde(rename = "txPr")]
-	pub tx_pr: CTTextBody,
+	pub tx_pr: Option<CTTextBody>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -2246,31 +2246,31 @@ pub struct CTDispBlanksAs {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTChart {
 	#[serde(rename = "title")]
-	pub title: CTTitle,
+	pub title: Option<CTTitle>,
 	#[serde(rename = "autoTitleDeleted")]
-	pub auto_title_deleted: CTBoolean,
+	pub auto_title_deleted: Option<CTBoolean>,
 	#[serde(rename = "pivotFmts")]
-	pub pivot_fmts: CTPivotFmts,
+	pub pivot_fmts: Option<CTPivotFmts>,
 	#[serde(rename = "view3D")]
-	pub view3_d: CTView3D,
+	pub view3_d: Option<CTView3D>,
 	#[serde(rename = "floor")]
-	pub floor: CTSurface,
+	pub floor: Option<CTSurface>,
 	#[serde(rename = "sideWall")]
-	pub side_wall: CTSurface,
+	pub side_wall: Option<CTSurface>,
 	#[serde(rename = "backWall")]
-	pub back_wall: CTSurface,
+	pub back_wall: Option<CTSurface>,
 	#[serde(rename = "plotArea")]
 	pub plot_area: CTPlotArea,
 	#[serde(rename = "legend")]
-	pub legend: CTLegend,
+	pub legend: Option<CTLegend>,
 	#[serde(rename = "plotVisOnly")]
-	pub plot_vis_only: CTBoolean,
+	pub plot_vis_only: Option<CTBoolean>,
 	#[serde(rename = "dispBlanksAs")]
-	pub disp_blanks_as: CTDispBlanksAs,
+	pub disp_blanks_as: Option<CTDispBlanksAs>,
 	#[serde(rename = "showDLblsOverMax")]
-	pub show_d_lbls_over_max: CTBoolean,
+	pub show_d_lbls_over_max: Option<CTBoolean>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -2306,15 +2306,15 @@ pub struct CTPivotSource {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTProtection {
 	#[serde(rename = "chartObject")]
-	pub chart_object: CTBoolean,
+	pub chart_object: Option<CTBoolean>,
 	#[serde(rename = "data")]
-	pub data: CTBoolean,
+	pub data: Option<CTBoolean>,
 	#[serde(rename = "formatting")]
-	pub formatting: CTBoolean,
+	pub formatting: Option<CTBoolean>,
 	#[serde(rename = "selection")]
-	pub selection: CTBoolean,
+	pub selection: Option<CTBoolean>,
 	#[serde(rename = "userInterface")]
-	pub user_interface: CTBoolean,
+	pub user_interface: Option<CTBoolean>,
 }
 
 
@@ -2328,17 +2328,17 @@ pub struct CTHeaderFooter {
 	#[serde(rename = "differentFirst")]
 	pub different_first: Option<bool>,
 	#[serde(rename = "oddHeader")]
-	pub odd_header: String,
+	pub odd_header: Option<String>,
 	#[serde(rename = "oddFooter")]
-	pub odd_footer: String,
+	pub odd_footer: Option<String>,
 	#[serde(rename = "evenHeader")]
-	pub even_header: String,
+	pub even_header: Option<String>,
 	#[serde(rename = "evenFooter")]
-	pub even_footer: String,
+	pub even_footer: Option<String>,
 	#[serde(rename = "firstHeader")]
-	pub first_header: String,
+	pub first_header: Option<String>,
 	#[serde(rename = "firstFooter")]
-	pub first_footer: String,
+	pub first_footer: Option<String>,
 }
 
 
@@ -2374,7 +2374,7 @@ pub struct CTExternalData {
 	#[serde(rename = "r:id")]
 	pub r_id: String,
 	#[serde(rename = "autoUpdate")]
-	pub auto_update: CTBoolean,
+	pub auto_update: Option<CTBoolean>,
 }
 
 
@@ -2410,11 +2410,11 @@ pub struct CTPageSetup {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTPrintSettings {
 	#[serde(rename = "headerFooter")]
-	pub header_footer: CTHeaderFooter,
+	pub header_footer: Option<CTHeaderFooter>,
 	#[serde(rename = "pageMargins")]
-	pub page_margins: CTPageMargins,
+	pub page_margins: Option<CTPageMargins>,
 	#[serde(rename = "pageSetup")]
-	pub page_setup: CTPageSetup,
+	pub page_setup: Option<CTPageSetup>,
 }
 
 
@@ -2422,33 +2422,33 @@ pub struct CTPrintSettings {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTChartSpace {
 	#[serde(rename = "date1904")]
-	pub date1904: CTBoolean,
+	pub date1904: Option<CTBoolean>,
 	#[serde(rename = "lang")]
-	pub lang: CTTextLanguageID,
+	pub lang: Option<CTTextLanguageID>,
 	#[serde(rename = "roundedCorners")]
-	pub rounded_corners: CTBoolean,
+	pub rounded_corners: Option<CTBoolean>,
 	#[serde(rename = "style")]
-	pub style: CTStyle,
+	pub style: Option<CTStyle>,
 	#[serde(rename = "clrMapOvr")]
-	pub clr_map_ovr: CTColorMapping,
+	pub clr_map_ovr: Option<CTColorMapping>,
 	#[serde(rename = "pivotSource")]
-	pub pivot_source: CTPivotSource,
+	pub pivot_source: Option<CTPivotSource>,
 	#[serde(rename = "protection")]
-	pub protection: CTProtection,
+	pub protection: Option<CTProtection>,
 	#[serde(rename = "chart")]
 	pub chart: CTChart,
 	#[serde(rename = "spPr")]
-	pub sp_pr: CTShapeProperties,
+	pub sp_pr: Option<CTShapeProperties>,
 	#[serde(rename = "txPr")]
-	pub tx_pr: CTTextBody,
+	pub tx_pr: Option<CTTextBody>,
 	#[serde(rename = "externalData")]
-	pub external_data: CTExternalData,
+	pub external_data: Option<CTExternalData>,
 	#[serde(rename = "printSettings")]
-	pub print_settings: CTPrintSettings,
+	pub print_settings: Option<CTPrintSettings>,
 	#[serde(rename = "userShapes")]
-	pub user_shapes: CTRelId,
+	pub user_shapes: Option<CTRelId>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 

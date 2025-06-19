@@ -20,11 +20,11 @@ pub struct DocumentModel {
 	#[serde(rename = "outputName")]
 	pub output_name: Option<String>,
 	#[serde(rename = "meta")]
-	pub meta: DocumentMeta,
+	pub meta: Option<DocumentMeta>,
 	#[serde(rename = "toc")]
-	pub toc: DocumentTOC,
+	pub toc: Option<DocumentTOC>,
 	#[serde(rename = "cover")]
-	pub cover: DocumentCover,
+	pub cover: Option<DocumentCover>,
 }
 
 
@@ -69,29 +69,29 @@ pub struct Authors {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct DocumentCover {
 	#[serde(rename = "coverTitle")]
-	pub cover_title: String,
+	pub cover_title: Option<String>,
 	#[serde(rename = "coverSubTitle")]
-	pub cover_sub_title: String,
+	pub cover_sub_title: Option<String>,
 	#[serde(rename = "coverVersion")]
-	pub cover_version: String,
+	pub cover_version: Option<String>,
 	#[serde(rename = "coverType")]
-	pub cover_type: String,
+	pub cover_type: Option<String>,
 	#[serde(rename = "coverDate")]
-	pub cover_date: u8,
+	pub cover_date: Option<u8>,
 	#[serde(rename = "coverdate")]
-	pub coverdate: String,
+	pub coverdate: Option<String>,
 	#[serde(rename = "authors")]
-	pub authors: Authors,
+	pub authors: Option<Authors>,
 	#[serde(rename = "author")]
-	pub author: String,
+	pub author: Option<String>,
 	#[serde(rename = "projectName")]
-	pub project_name: String,
+	pub project_name: Option<String>,
 	#[serde(rename = "projectLogo")]
-	pub project_logo: String,
+	pub project_logo: Option<String>,
 	#[serde(rename = "companyName")]
-	pub company_name: String,
+	pub company_name: Option<String>,
 	#[serde(rename = "companyLogo")]
-	pub company_logo: String,
+	pub company_logo: Option<String>,
 }
 
 
@@ -99,35 +99,35 @@ pub struct DocumentCover {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct DocumentAuthor {
 	#[serde(rename = "firstName")]
-	pub first_name: String,
+	pub first_name: Option<String>,
 	#[serde(rename = "lastName")]
-	pub last_name: String,
+	pub last_name: Option<String>,
 	#[serde(rename = "name")]
-	pub name: String,
+	pub name: Option<String>,
 	#[serde(rename = "initials")]
-	pub initials: String,
+	pub initials: Option<String>,
 	#[serde(rename = "title")]
-	pub title: String,
+	pub title: Option<String>,
 	#[serde(rename = "position")]
-	pub position: String,
+	pub position: Option<String>,
 	#[serde(rename = "email")]
-	pub email: String,
+	pub email: Option<String>,
 	#[serde(rename = "phoneNumber")]
-	pub phone_number: String,
+	pub phone_number: Option<String>,
 	#[serde(rename = "faxNumber")]
-	pub fax_number: String,
+	pub fax_number: Option<String>,
 	#[serde(rename = "companyName")]
-	pub company_name: String,
+	pub company_name: Option<String>,
 	#[serde(rename = "street")]
-	pub street: String,
+	pub street: Option<String>,
 	#[serde(rename = "city")]
-	pub city: String,
+	pub city: Option<String>,
 	#[serde(rename = "postalCode")]
-	pub postal_code: String,
+	pub postal_code: Option<String>,
 	#[serde(rename = "country")]
-	pub country: String,
+	pub country: Option<String>,
 	#[serde(rename = "state")]
-	pub state: String,
+	pub state: Option<String>,
 }
 
 
@@ -145,57 +145,57 @@ pub struct KeyWords {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct DocumentMeta {
 	#[serde(rename = "title")]
-	pub title: String,
+	pub title: Option<String>,
 	#[serde(rename = "author")]
-	pub author: String,
+	pub author: Option<String>,
 	#[serde(rename = "authors")]
-	pub authors: Authors,
+	pub authors: Option<Authors>,
 	#[serde(rename = "subject")]
-	pub subject: String,
+	pub subject: Option<String>,
 	#[serde(rename = "keywords")]
-	pub keywords: String,
+	pub keywords: Option<String>,
 	#[serde(rename = "keyWords")]
-	pub key_words: KeyWords,
+	pub key_words: Option<KeyWords>,
 	#[serde(rename = "pageSize")]
-	pub page_size: String,
+	pub page_size: Option<String>,
 	#[serde(rename = "generator")]
-	pub generator: String,
+	pub generator: Option<String>,
 	#[serde(rename = "description")]
-	pub description: String,
+	pub description: Option<String>,
 	#[serde(rename = "initialCreator")]
-	pub initial_creator: String,
+	pub initial_creator: Option<String>,
 	#[serde(rename = "creator")]
-	pub creator: String,
+	pub creator: Option<String>,
 	#[serde(rename = "printedBy")]
-	pub printed_by: String,
+	pub printed_by: Option<String>,
 	#[serde(rename = "creationDate")]
-	pub creation_date: u8,
+	pub creation_date: Option<u8>,
 	#[serde(rename = "creationdate")]
-	pub creationdate: String,
+	pub creationdate: Option<String>,
 	#[serde(rename = "date")]
-	pub date: u8,
+	pub date: Option<u8>,
 	#[serde(rename = "modifydate")]
-	pub modifydate: String,
+	pub modifydate: Option<String>,
 	#[serde(rename = "printDate")]
-	pub print_date: u8,
+	pub print_date: Option<u8>,
 	#[serde(rename = "printdate")]
-	pub printdate: String,
+	pub printdate: Option<String>,
 	#[serde(rename = "template")]
-	pub template: DocumentTemplate,
+	pub template: Option<DocumentTemplate>,
 	#[serde(rename = "hyperlinkBehaviour")]
-	pub hyperlink_behaviour: DocumentHyperlinkBehaviour,
+	pub hyperlink_behaviour: Option<DocumentHyperlinkBehaviour>,
 	#[serde(rename = "language")]
-	pub language: String,
+	pub language: Option<String>,
 	#[serde(rename = "editingCycles")]
-	pub editing_cycles: i64,
+	pub editing_cycles: Option<i64>,
 	#[serde(rename = "editingDuration")]
-	pub editing_duration: i64,
+	pub editing_duration: Option<i64>,
 	#[serde(rename = "documentStatistic")]
-	pub document_statistic: DocumentStatistic,
+	pub document_statistic: Option<DocumentStatistic>,
 	#[serde(rename = "confidential")]
-	pub confidential: bool,
+	pub confidential: Option<bool>,
 	#[serde(rename = "draft")]
-	pub draft: bool,
+	pub draft: Option<bool>,
 }
 
 

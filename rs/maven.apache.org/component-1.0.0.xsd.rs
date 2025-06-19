@@ -42,11 +42,11 @@ pub struct DependencySets {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Component {
 	#[serde(rename = "fileSets")]
-	pub file_sets: FileSets,
+	pub file_sets: Option<FileSets>,
 	#[serde(rename = "files")]
-	pub files: Files,
+	pub files: Option<Files>,
 	#[serde(rename = "dependencySets")]
-	pub dependency_sets: DependencySets,
+	pub dependency_sets: Option<DependencySets>,
 }
 
 
@@ -74,21 +74,21 @@ pub struct Excludes {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct DependencySet {
 	#[serde(rename = "outputFileNameMapping")]
-	pub output_file_name_mapping: String,
+	pub output_file_name_mapping: Option<String>,
 	#[serde(rename = "unpack")]
-	pub unpack: bool,
+	pub unpack: Option<bool>,
 	#[serde(rename = "scope")]
-	pub scope: String,
+	pub scope: Option<String>,
 	#[serde(rename = "outputDirectory")]
-	pub output_directory: String,
+	pub output_directory: Option<String>,
 	#[serde(rename = "includes")]
-	pub includes: Includes,
+	pub includes: Option<Includes>,
 	#[serde(rename = "excludes")]
-	pub excludes: Excludes,
+	pub excludes: Option<Excludes>,
 	#[serde(rename = "fileMode")]
-	pub file_mode: String,
+	pub file_mode: Option<String>,
 	#[serde(rename = "directoryMode")]
-	pub directory_mode: String,
+	pub directory_mode: Option<String>,
 }
 
 
@@ -96,17 +96,17 @@ pub struct DependencySet {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct FileItem {
 	#[serde(rename = "source")]
-	pub source: String,
+	pub source: Option<String>,
 	#[serde(rename = "outputDirectory")]
-	pub output_directory: String,
+	pub output_directory: Option<String>,
 	#[serde(rename = "destName")]
-	pub dest_name: String,
+	pub dest_name: Option<String>,
 	#[serde(rename = "fileMode")]
-	pub file_mode: String,
+	pub file_mode: Option<String>,
 	#[serde(rename = "lineEnding")]
-	pub line_ending: String,
+	pub line_ending: Option<String>,
 	#[serde(rename = "filtered")]
-	pub filtered: bool,
+	pub filtered: Option<bool>,
 }
 
 
@@ -116,17 +116,17 @@ pub struct FileItem {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct FileSet {
 	#[serde(rename = "directory")]
-	pub directory: String,
+	pub directory: Option<String>,
 	#[serde(rename = "lineEnding")]
-	pub line_ending: String,
+	pub line_ending: Option<String>,
 	#[serde(rename = "outputDirectory")]
-	pub output_directory: String,
+	pub output_directory: Option<String>,
 	#[serde(rename = "includes")]
-	pub includes: Includes,
+	pub includes: Option<Includes>,
 	#[serde(rename = "excludes")]
-	pub excludes: Excludes,
+	pub excludes: Option<Excludes>,
 	#[serde(rename = "fileMode")]
-	pub file_mode: String,
+	pub file_mode: Option<String>,
 	#[serde(rename = "directoryMode")]
-	pub directory_mode: String,
+	pub directory_mode: Option<String>,
 }

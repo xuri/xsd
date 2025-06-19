@@ -14,7 +14,7 @@ pub struct CTAudioFile {
 	#[serde(rename = "contentType")]
 	pub content_type: Option<String>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -26,7 +26,7 @@ pub struct CTVideoFile {
 	#[serde(rename = "contentType")]
 	pub content_type: Option<String>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -36,7 +36,7 @@ pub struct CTQuickTimeFile {
 	#[serde(rename = "r:link")]
 	pub r_link: String,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -58,7 +58,7 @@ pub struct CTAudioCD {
 	#[serde(rename = "end")]
 	pub end: CTAudioCDTime,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -140,7 +140,7 @@ pub struct CTColorScheme {
 	#[serde(rename = "folHlink")]
 	pub fol_hlink: CTColor,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -184,7 +184,7 @@ pub struct CTFontCollection {
 	#[serde(rename = "font")]
 	pub font: Vec<CTSupplementalFont>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -194,9 +194,9 @@ pub struct CTEffectStyleItem {
 	#[serde(rename = "EG_EffectProperties")]
 	pub eg_effect_properties: Vec<EGEffectProperties>,
 	#[serde(rename = "scene3d")]
-	pub scene3d: CTScene3D,
+	pub scene3d: Option<CTScene3D>,
 	#[serde(rename = "sp3d")]
-	pub sp3d: CTShape3D,
+	pub sp3d: Option<CTShape3D>,
 }
 
 
@@ -210,7 +210,7 @@ pub struct CTFontScheme {
 	#[serde(rename = "minorFont")]
 	pub minor_font: CTFontCollection,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -272,7 +272,7 @@ pub struct CTBaseStyles {
 	#[serde(rename = "fmtScheme")]
 	pub fmt_scheme: CTStyleMatrix,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -680,9 +680,9 @@ pub struct CTTransform2D {
 	#[serde(rename = "flipV")]
 	pub flip_v: Option<bool>,
 	#[serde(rename = "off")]
-	pub off: CTPoint2D,
+	pub off: Option<CTPoint2D>,
 	#[serde(rename = "ext")]
-	pub ext: CTPositiveSize2D,
+	pub ext: Option<CTPositiveSize2D>,
 }
 
 
@@ -696,13 +696,13 @@ pub struct CTGroupTransform2D {
 	#[serde(rename = "flipV")]
 	pub flip_v: Option<bool>,
 	#[serde(rename = "off")]
-	pub off: CTPoint2D,
+	pub off: Option<CTPoint2D>,
 	#[serde(rename = "ext")]
-	pub ext: CTPositiveSize2D,
+	pub ext: Option<CTPositiveSize2D>,
 	#[serde(rename = "chOff")]
-	pub ch_off: CTPoint2D,
+	pub ch_off: Option<CTPoint2D>,
 	#[serde(rename = "chExt")]
-	pub ch_ext: CTPositiveSize2D,
+	pub ch_ext: Option<CTPositiveSize2D>,
 }
 
 
@@ -846,9 +846,9 @@ pub struct CTHyperlink {
 	#[serde(rename = "endSnd")]
 	pub end_snd: Option<bool>,
 	#[serde(rename = "snd")]
-	pub snd: CTEmbeddedWAVAudioFile,
+	pub snd: Option<CTEmbeddedWAVAudioFile>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -892,7 +892,7 @@ pub struct CTConnectorLocking {
 	#[serde(rename = "AG_Locking")]
 	pub ag_locking: Vec<AGLocking>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -904,7 +904,7 @@ pub struct CTShapeLocking {
 	#[serde(rename = "noTextEdit")]
 	pub no_text_edit: Option<bool>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -916,7 +916,7 @@ pub struct CTPictureLocking {
 	#[serde(rename = "noCrop")]
 	pub no_crop: Option<bool>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -938,7 +938,7 @@ pub struct CTGroupLocking {
 	#[serde(rename = "noResize")]
 	pub no_resize: Option<bool>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -958,7 +958,7 @@ pub struct CTGraphicalObjectFrameLocking {
 	#[serde(rename = "noResize")]
 	pub no_resize: Option<bool>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -968,7 +968,7 @@ pub struct CTContentPartLocking {
 	#[serde(rename = "AG_Locking")]
 	pub ag_locking: Vec<AGLocking>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -986,11 +986,11 @@ pub struct CTNonVisualDrawingProps {
 	#[serde(rename = "title")]
 	pub title: Option<String>,
 	#[serde(rename = "hlinkClick")]
-	pub hlink_click: CTHyperlink,
+	pub hlink_click: Option<CTHyperlink>,
 	#[serde(rename = "hlinkHover")]
-	pub hlink_hover: CTHyperlink,
+	pub hlink_hover: Option<CTHyperlink>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -1000,9 +1000,9 @@ pub struct CTNonVisualDrawingShapeProps {
 	#[serde(rename = "txBox")]
 	pub tx_box: Option<bool>,
 	#[serde(rename = "spLocks")]
-	pub sp_locks: CTShapeLocking,
+	pub sp_locks: Option<CTShapeLocking>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -1010,13 +1010,13 @@ pub struct CTNonVisualDrawingShapeProps {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTNonVisualConnectorProperties {
 	#[serde(rename = "cxnSpLocks")]
-	pub cxn_sp_locks: CTConnectorLocking,
+	pub cxn_sp_locks: Option<CTConnectorLocking>,
 	#[serde(rename = "stCxn")]
-	pub st_cxn: CTConnection,
+	pub st_cxn: Option<CTConnection>,
 	#[serde(rename = "endCxn")]
-	pub end_cxn: CTConnection,
+	pub end_cxn: Option<CTConnection>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -1026,9 +1026,9 @@ pub struct CTNonVisualPictureProperties {
 	#[serde(rename = "preferRelativeResize")]
 	pub prefer_relative_resize: Option<bool>,
 	#[serde(rename = "picLocks")]
-	pub pic_locks: CTPictureLocking,
+	pub pic_locks: Option<CTPictureLocking>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -1036,9 +1036,9 @@ pub struct CTNonVisualPictureProperties {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTNonVisualGroupDrawingShapeProps {
 	#[serde(rename = "grpSpLocks")]
-	pub grp_sp_locks: CTGroupLocking,
+	pub grp_sp_locks: Option<CTGroupLocking>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -1046,9 +1046,9 @@ pub struct CTNonVisualGroupDrawingShapeProps {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTNonVisualGraphicFrameProperties {
 	#[serde(rename = "graphicFrameLocks")]
-	pub graphic_frame_locks: CTGraphicalObjectFrameLocking,
+	pub graphic_frame_locks: Option<CTGraphicalObjectFrameLocking>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -1058,9 +1058,9 @@ pub struct CTNonVisualContentPartProperties {
 	#[serde(rename = "isComment")]
 	pub is_comment: Option<bool>,
 	#[serde(rename = "cpLocks")]
-	pub cp_locks: CTContentPartLocking,
+	pub cp_locks: Option<CTContentPartLocking>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -1222,7 +1222,7 @@ pub struct CTWholeE2oFormatting {
 	#[serde(rename = "EG_EffectProperties")]
 	pub eg_effect_properties: Vec<EGEffectProperties>,
 	#[serde(rename = "ln")]
-	pub ln: CTLineProperties,
+	pub ln: Option<CTLineProperties>,
 }
 
 
@@ -1242,7 +1242,7 @@ pub struct CTGvmlTextShape {
 	#[serde(rename = "xfrm")]
 	pub xfrm: CTTransform2D,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -1264,11 +1264,11 @@ pub struct CTGvmlShape {
 	#[serde(rename = "spPr")]
 	pub sp_pr: CTShapeProperties,
 	#[serde(rename = "txSp")]
-	pub tx_sp: CTGvmlTextShape,
+	pub tx_sp: Option<CTGvmlTextShape>,
 	#[serde(rename = "style")]
-	pub style: CTShapeStyle,
+	pub style: Option<CTShapeStyle>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -1290,9 +1290,9 @@ pub struct CTGvmlConnector {
 	#[serde(rename = "spPr")]
 	pub sp_pr: CTShapeProperties,
 	#[serde(rename = "style")]
-	pub style: CTShapeStyle,
+	pub style: Option<CTShapeStyle>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -1316,9 +1316,9 @@ pub struct CTGvmlPicture {
 	#[serde(rename = "spPr")]
 	pub sp_pr: CTShapeProperties,
 	#[serde(rename = "style")]
-	pub style: CTShapeStyle,
+	pub style: Option<CTShapeStyle>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -1342,7 +1342,7 @@ pub struct CTGvmlGraphicalObjectFrame {
 	#[serde(rename = "xfrm")]
 	pub xfrm: CTTransform2D,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -1376,7 +1376,7 @@ pub struct CTGvmlGroupShape {
 	#[serde(rename = "grpSp")]
 	pub grp_sp: Vec<CTGvmlGroupShape>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -1406,7 +1406,7 @@ pub struct CTCamera {
 	#[serde(rename = "zoom")]
 	pub zoom: Option<STPositivePercentage>,
 	#[serde(rename = "rot")]
-	pub rot: CTSphereCoords,
+	pub rot: Option<CTSphereCoords>,
 }
 
 
@@ -1434,7 +1434,7 @@ pub struct CTLightRig {
 	#[serde(rename = "dir")]
 	pub dir: String,
 	#[serde(rename = "rot")]
-	pub rot: CTSphereCoords,
+	pub rot: Option<CTSphereCoords>,
 }
 
 
@@ -1446,9 +1446,9 @@ pub struct CTScene3D {
 	#[serde(rename = "lightRig")]
 	pub light_rig: CTLightRig,
 	#[serde(rename = "backdrop")]
-	pub backdrop: CTBackdrop,
+	pub backdrop: Option<CTBackdrop>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -1462,7 +1462,7 @@ pub struct CTBackdrop {
 	#[serde(rename = "up")]
 	pub up: CTVector3D,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -1506,15 +1506,15 @@ pub struct CTShape3D {
 	#[serde(rename = "prstMaterial")]
 	pub prst_material: Option<String>,
 	#[serde(rename = "bevelT")]
-	pub bevel_t: CTBevel,
+	pub bevel_t: Option<CTBevel>,
 	#[serde(rename = "bevelB")]
-	pub bevel_b: CTBevel,
+	pub bevel_b: Option<CTBevel>,
 	#[serde(rename = "extrusionClr")]
-	pub extrusion_clr: CTColor,
+	pub extrusion_clr: Option<CTColor>,
 	#[serde(rename = "contourClr")]
-	pub contour_clr: CTColor,
+	pub contour_clr: Option<CTColor>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -1852,7 +1852,7 @@ pub struct CTPathShadeProperties {
 	#[serde(rename = "path")]
 	pub path: Option<String>,
 	#[serde(rename = "fillToRect")]
-	pub fill_to_rect: CTRelativeRect,
+	pub fill_to_rect: Option<CTRelativeRect>,
 }
 
 
@@ -1902,9 +1902,9 @@ pub struct CTGradientFillProperties {
 	#[serde(rename = "EG_ShadeProperties")]
 	pub eg_shade_properties: Vec<EGShadeProperties>,
 	#[serde(rename = "gsLst")]
-	pub gs_lst: CTGradientStopList,
+	pub gs_lst: Option<CTGradientStopList>,
 	#[serde(rename = "tileRect")]
-	pub tile_rect: CTRelativeRect,
+	pub tile_rect: Option<CTRelativeRect>,
 }
 
 
@@ -1930,7 +1930,7 @@ pub struct CTTileInfoProperties {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTStretchInfoProperties {
 	#[serde(rename = "fillRect")]
-	pub fill_rect: CTRelativeRect,
+	pub fill_rect: Option<CTRelativeRect>,
 }
 
 
@@ -1994,7 +1994,7 @@ pub struct CTBlip {
 	#[serde(rename = "tint")]
 	pub tint: Vec<CTTintEffect>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -2008,9 +2008,9 @@ pub struct CTBlipFillProperties {
 	#[serde(rename = "EG_FillModeProperties")]
 	pub eg_fill_mode_properties: Vec<EGFillModeProperties>,
 	#[serde(rename = "blip")]
-	pub blip: CTBlip,
+	pub blip: Option<CTBlip>,
 	#[serde(rename = "srcRect")]
-	pub src_rect: CTRelativeRect,
+	pub src_rect: Option<CTRelativeRect>,
 }
 
 
@@ -2028,9 +2028,9 @@ pub struct CTPatternFillProperties {
 	#[serde(rename = "prst")]
 	pub prst: Option<String>,
 	#[serde(rename = "fgClr")]
-	pub fg_clr: CTColor,
+	pub fg_clr: Option<CTColor>,
 	#[serde(rename = "bgClr")]
-	pub bg_clr: CTColor,
+	pub bg_clr: Option<CTColor>,
 }
 
 
@@ -2208,21 +2208,21 @@ pub struct CTBlendEffect {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTEffectList {
 	#[serde(rename = "blur")]
-	pub blur: CTBlurEffect,
+	pub blur: Option<CTBlurEffect>,
 	#[serde(rename = "fillOverlay")]
-	pub fill_overlay: CTFillOverlayEffect,
+	pub fill_overlay: Option<CTFillOverlayEffect>,
 	#[serde(rename = "glow")]
-	pub glow: CTGlowEffect,
+	pub glow: Option<CTGlowEffect>,
 	#[serde(rename = "innerShdw")]
-	pub inner_shdw: CTInnerShadowEffect,
+	pub inner_shdw: Option<CTInnerShadowEffect>,
 	#[serde(rename = "outerShdw")]
-	pub outer_shdw: CTOuterShadowEffect,
+	pub outer_shdw: Option<CTOuterShadowEffect>,
 	#[serde(rename = "prstShdw")]
-	pub prst_shdw: CTPresetShadowEffect,
+	pub prst_shdw: Option<CTPresetShadowEffect>,
 	#[serde(rename = "reflection")]
-	pub reflection: CTReflectionEffect,
+	pub reflection: Option<CTReflectionEffect>,
 	#[serde(rename = "softEdge")]
-	pub soft_edge: CTSoftEdgesEffect,
+	pub soft_edge: Option<CTSoftEdgesEffect>,
 }
 
 
@@ -2522,7 +2522,7 @@ pub struct CTPresetGeometry2D {
 	#[serde(rename = "prst")]
 	pub prst: String,
 	#[serde(rename = "avLst")]
-	pub av_lst: CTGeomGuideList,
+	pub av_lst: Option<CTGeomGuideList>,
 }
 
 
@@ -2532,7 +2532,7 @@ pub struct CTPresetTextShape {
 	#[serde(rename = "prst")]
 	pub prst: String,
 	#[serde(rename = "avLst")]
-	pub av_lst: CTGeomGuideList,
+	pub av_lst: Option<CTGeomGuideList>,
 }
 
 
@@ -2540,15 +2540,15 @@ pub struct CTPresetTextShape {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTCustomGeometry2D {
 	#[serde(rename = "avLst")]
-	pub av_lst: CTGeomGuideList,
+	pub av_lst: Option<CTGeomGuideList>,
 	#[serde(rename = "gdLst")]
-	pub gd_lst: CTGeomGuideList,
+	pub gd_lst: Option<CTGeomGuideList>,
 	#[serde(rename = "ahLst")]
-	pub ah_lst: CTAdjustHandleList,
+	pub ah_lst: Option<CTAdjustHandleList>,
 	#[serde(rename = "cxnLst")]
-	pub cxn_lst: CTConnectionSiteList,
+	pub cxn_lst: Option<CTConnectionSiteList>,
 	#[serde(rename = "rect")]
-	pub rect: CTGeomRect,
+	pub rect: Option<CTGeomRect>,
 	#[serde(rename = "pathLst")]
 	pub path_lst: CTPath2DList,
 }
@@ -2750,11 +2750,11 @@ pub struct CTLineProperties {
 	#[serde(rename = "EG_LineJoinProperties")]
 	pub eg_line_join_properties: Vec<EGLineJoinProperties>,
 	#[serde(rename = "headEnd")]
-	pub head_end: CTLineEndProperties,
+	pub head_end: Option<CTLineEndProperties>,
 	#[serde(rename = "tailEnd")]
-	pub tail_end: CTLineEndProperties,
+	pub tail_end: Option<CTLineEndProperties>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -2778,15 +2778,15 @@ pub struct CTShapeProperties {
 	#[serde(rename = "EG_EffectProperties")]
 	pub eg_effect_properties: Vec<EGEffectProperties>,
 	#[serde(rename = "xfrm")]
-	pub xfrm: CTTransform2D,
+	pub xfrm: Option<CTTransform2D>,
 	#[serde(rename = "ln")]
-	pub ln: CTLineProperties,
+	pub ln: Option<CTLineProperties>,
 	#[serde(rename = "scene3d")]
-	pub scene3d: CTScene3D,
+	pub scene3d: Option<CTScene3D>,
 	#[serde(rename = "sp3d")]
-	pub sp3d: CTShape3D,
+	pub sp3d: Option<CTShape3D>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -2800,11 +2800,11 @@ pub struct CTGroupShapeProperties {
 	#[serde(rename = "EG_EffectProperties")]
 	pub eg_effect_properties: Vec<EGEffectProperties>,
 	#[serde(rename = "xfrm")]
-	pub xfrm: CTGroupTransform2D,
+	pub xfrm: Option<CTGroupTransform2D>,
 	#[serde(rename = "scene3d")]
-	pub scene3d: CTScene3D,
+	pub scene3d: Option<CTScene3D>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -2852,9 +2852,9 @@ pub struct CTDefaultShapeDefinition {
 	#[serde(rename = "lstStyle")]
 	pub lst_style: CTTextListStyle,
 	#[serde(rename = "style")]
-	pub style: CTShapeStyle,
+	pub style: Option<CTShapeStyle>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -2862,13 +2862,13 @@ pub struct CTDefaultShapeDefinition {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTObjectStyleDefaults {
 	#[serde(rename = "spDef")]
-	pub sp_def: CTDefaultShapeDefinition,
+	pub sp_def: Option<CTDefaultShapeDefinition>,
 	#[serde(rename = "lnDef")]
-	pub ln_def: CTDefaultShapeDefinition,
+	pub ln_def: Option<CTDefaultShapeDefinition>,
 	#[serde(rename = "txDef")]
-	pub tx_def: CTDefaultShapeDefinition,
+	pub tx_def: Option<CTDefaultShapeDefinition>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -2906,7 +2906,7 @@ pub struct CTColorMapping {
 	#[serde(rename = "folHlink")]
 	pub fol_hlink: String,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -2926,7 +2926,7 @@ pub struct CTColorSchemeAndMapping {
 	#[serde(rename = "clrScheme")]
 	pub clr_scheme: CTColorScheme,
 	#[serde(rename = "clrMap")]
-	pub clr_map: CTColorMapping,
+	pub clr_map: Option<CTColorMapping>,
 }
 
 
@@ -2946,13 +2946,13 @@ pub struct CTOfficeStyleSheet {
 	#[serde(rename = "themeElements")]
 	pub theme_elements: CTBaseStyles,
 	#[serde(rename = "objectDefaults")]
-	pub object_defaults: CTObjectStyleDefaults,
+	pub object_defaults: Option<CTObjectStyleDefaults>,
 	#[serde(rename = "extraClrSchemeLst")]
-	pub extra_clr_scheme_lst: CTColorSchemeList,
+	pub extra_clr_scheme_lst: Option<CTColorSchemeList>,
 	#[serde(rename = "custClrLst")]
-	pub cust_clr_lst: CTCustomColorList,
+	pub cust_clr_lst: Option<CTCustomColorList>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -2960,11 +2960,11 @@ pub struct CTOfficeStyleSheet {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTBaseStylesOverride {
 	#[serde(rename = "clrScheme")]
-	pub clr_scheme: CTColorScheme,
+	pub clr_scheme: Option<CTColorScheme>,
 	#[serde(rename = "fontScheme")]
-	pub font_scheme: CTFontScheme,
+	pub font_scheme: Option<CTFontScheme>,
 	#[serde(rename = "fmtScheme")]
-	pub fmt_scheme: CTStyleMatrix,
+	pub fmt_scheme: Option<CTStyleMatrix>,
 }
 
 
@@ -3024,23 +3024,23 @@ pub struct CTTableCellProperties {
 	#[serde(rename = "EG_FillProperties")]
 	pub eg_fill_properties: Vec<EGFillProperties>,
 	#[serde(rename = "lnL")]
-	pub ln_l: CTLineProperties,
+	pub ln_l: Option<CTLineProperties>,
 	#[serde(rename = "lnR")]
-	pub ln_r: CTLineProperties,
+	pub ln_r: Option<CTLineProperties>,
 	#[serde(rename = "lnT")]
-	pub ln_t: CTLineProperties,
+	pub ln_t: Option<CTLineProperties>,
 	#[serde(rename = "lnB")]
-	pub ln_b: CTLineProperties,
+	pub ln_b: Option<CTLineProperties>,
 	#[serde(rename = "lnTlToBr")]
-	pub ln_tl_to_br: CTLineProperties,
+	pub ln_tl_to_br: Option<CTLineProperties>,
 	#[serde(rename = "lnBlToTr")]
-	pub ln_bl_to_tr: CTLineProperties,
+	pub ln_bl_to_tr: Option<CTLineProperties>,
 	#[serde(rename = "cell3D")]
-	pub cell3_d: CTCell3D,
+	pub cell3_d: Option<CTCell3D>,
 	#[serde(rename = "headers")]
-	pub headers: CTHeaders,
+	pub headers: Option<CTHeaders>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -3058,7 +3058,7 @@ pub struct CTTableCol {
 	#[serde(rename = "w")]
 	pub w: STCoordinate,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -3084,11 +3084,11 @@ pub struct CTTableCell {
 	#[serde(rename = "id")]
 	pub id: Option<String>,
 	#[serde(rename = "txBody")]
-	pub tx_body: CTTextBody,
+	pub tx_body: Option<CTTextBody>,
 	#[serde(rename = "tcPr")]
-	pub tc_pr: CTTableCellProperties,
+	pub tc_pr: Option<CTTableCellProperties>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -3100,7 +3100,7 @@ pub struct CTTableRow {
 	#[serde(rename = "tc")]
 	pub tc: Vec<CTTableCell>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -3130,7 +3130,7 @@ pub struct CTTableProperties {
 	#[serde(rename = "tableStyleId")]
 	pub table_style_id: String,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -3138,7 +3138,7 @@ pub struct CTTableProperties {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTTable {
 	#[serde(rename = "tblPr")]
-	pub tbl_pr: CTTableProperties,
+	pub tbl_pr: Option<CTTableProperties>,
 	#[serde(rename = "tblGrid")]
 	pub tbl_grid: CTTableGrid,
 	#[serde(rename = "tr")]
@@ -3162,9 +3162,9 @@ pub struct CTCell3D {
 	#[serde(rename = "bevel")]
 	pub bevel: CTBevel,
 	#[serde(rename = "lightRig")]
-	pub light_rig: CTLightRig,
+	pub light_rig: Option<CTLightRig>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -3228,7 +3228,7 @@ pub struct CTTableStyleTextStyle {
 	#[serde(rename = "EG_ColorChoice")]
 	pub eg_color_choice: Vec<EGColorChoice>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -3236,23 +3236,23 @@ pub struct CTTableStyleTextStyle {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTTableCellBorderStyle {
 	#[serde(rename = "left")]
-	pub left: CTThemeableLineStyle,
+	pub left: Option<CTThemeableLineStyle>,
 	#[serde(rename = "right")]
-	pub right: CTThemeableLineStyle,
+	pub right: Option<CTThemeableLineStyle>,
 	#[serde(rename = "top")]
-	pub top: CTThemeableLineStyle,
+	pub top: Option<CTThemeableLineStyle>,
 	#[serde(rename = "bottom")]
-	pub bottom: CTThemeableLineStyle,
+	pub bottom: Option<CTThemeableLineStyle>,
 	#[serde(rename = "insideH")]
-	pub inside_h: CTThemeableLineStyle,
+	pub inside_h: Option<CTThemeableLineStyle>,
 	#[serde(rename = "insideV")]
-	pub inside_v: CTThemeableLineStyle,
+	pub inside_v: Option<CTThemeableLineStyle>,
 	#[serde(rename = "tl2br")]
-	pub tl2br: CTThemeableLineStyle,
+	pub tl2br: Option<CTThemeableLineStyle>,
 	#[serde(rename = "tr2bl")]
-	pub tr2bl: CTThemeableLineStyle,
+	pub tr2bl: Option<CTThemeableLineStyle>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -3272,9 +3272,9 @@ pub struct CTTableStyleCellStyle {
 	#[serde(rename = "EG_ThemeableFillStyle")]
 	pub eg_themeable_fill_style: Vec<EGThemeableFillStyle>,
 	#[serde(rename = "tcBdr")]
-	pub tc_bdr: CTTableCellBorderStyle,
+	pub tc_bdr: Option<CTTableCellBorderStyle>,
 	#[serde(rename = "cell3D")]
-	pub cell3_d: CTCell3D,
+	pub cell3_d: Option<CTCell3D>,
 }
 
 
@@ -3282,9 +3282,9 @@ pub struct CTTableStyleCellStyle {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTTablePartStyle {
 	#[serde(rename = "tcTxStyle")]
-	pub tc_tx_style: CTTableStyleTextStyle,
+	pub tc_tx_style: Option<CTTableStyleTextStyle>,
 	#[serde(rename = "tcStyle")]
-	pub tc_style: CTTableStyleCellStyle,
+	pub tc_style: Option<CTTableStyleCellStyle>,
 }
 
 
@@ -3296,35 +3296,35 @@ pub struct CTTableStyle {
 	#[serde(rename = "styleName")]
 	pub style_name: String,
 	#[serde(rename = "tblBg")]
-	pub tbl_bg: CTTableBackgroundStyle,
+	pub tbl_bg: Option<CTTableBackgroundStyle>,
 	#[serde(rename = "wholeTbl")]
-	pub whole_tbl: CTTablePartStyle,
+	pub whole_tbl: Option<CTTablePartStyle>,
 	#[serde(rename = "band1H")]
-	pub band1_h: CTTablePartStyle,
+	pub band1_h: Option<CTTablePartStyle>,
 	#[serde(rename = "band2H")]
-	pub band2_h: CTTablePartStyle,
+	pub band2_h: Option<CTTablePartStyle>,
 	#[serde(rename = "band1V")]
-	pub band1_v: CTTablePartStyle,
+	pub band1_v: Option<CTTablePartStyle>,
 	#[serde(rename = "band2V")]
-	pub band2_v: CTTablePartStyle,
+	pub band2_v: Option<CTTablePartStyle>,
 	#[serde(rename = "lastCol")]
-	pub last_col: CTTablePartStyle,
+	pub last_col: Option<CTTablePartStyle>,
 	#[serde(rename = "firstCol")]
-	pub first_col: CTTablePartStyle,
+	pub first_col: Option<CTTablePartStyle>,
 	#[serde(rename = "lastRow")]
-	pub last_row: CTTablePartStyle,
+	pub last_row: Option<CTTablePartStyle>,
 	#[serde(rename = "seCell")]
-	pub se_cell: CTTablePartStyle,
+	pub se_cell: Option<CTTablePartStyle>,
 	#[serde(rename = "swCell")]
-	pub sw_cell: CTTablePartStyle,
+	pub sw_cell: Option<CTTablePartStyle>,
 	#[serde(rename = "firstRow")]
-	pub first_row: CTTablePartStyle,
+	pub first_row: Option<CTTablePartStyle>,
 	#[serde(rename = "neCell")]
-	pub ne_cell: CTTablePartStyle,
+	pub ne_cell: Option<CTTablePartStyle>,
 	#[serde(rename = "nwCell")]
-	pub nw_cell: CTTablePartStyle,
+	pub nw_cell: Option<CTTablePartStyle>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -3352,9 +3352,9 @@ pub struct CTTextParagraph {
 	#[serde(rename = "EG_TextRun")]
 	pub eg_text_run: Vec<EGTextRun>,
 	#[serde(rename = "pPr")]
-	pub p_pr: CTTextParagraphProperties,
+	pub p_pr: Option<CTTextParagraphProperties>,
 	#[serde(rename = "endParaRPr")]
-	pub end_para_r_pr: CTTextCharacterProperties,
+	pub end_para_r_pr: Option<CTTextCharacterProperties>,
 }
 
 
@@ -3410,27 +3410,27 @@ pub struct STTextColumnCount {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTTextListStyle {
 	#[serde(rename = "defPPr")]
-	pub def_p_pr: CTTextParagraphProperties,
+	pub def_p_pr: Option<CTTextParagraphProperties>,
 	#[serde(rename = "lvl1pPr")]
-	pub lvl1p_pr: CTTextParagraphProperties,
+	pub lvl1p_pr: Option<CTTextParagraphProperties>,
 	#[serde(rename = "lvl2pPr")]
-	pub lvl2p_pr: CTTextParagraphProperties,
+	pub lvl2p_pr: Option<CTTextParagraphProperties>,
 	#[serde(rename = "lvl3pPr")]
-	pub lvl3p_pr: CTTextParagraphProperties,
+	pub lvl3p_pr: Option<CTTextParagraphProperties>,
 	#[serde(rename = "lvl4pPr")]
-	pub lvl4p_pr: CTTextParagraphProperties,
+	pub lvl4p_pr: Option<CTTextParagraphProperties>,
 	#[serde(rename = "lvl5pPr")]
-	pub lvl5p_pr: CTTextParagraphProperties,
+	pub lvl5p_pr: Option<CTTextParagraphProperties>,
 	#[serde(rename = "lvl6pPr")]
-	pub lvl6p_pr: CTTextParagraphProperties,
+	pub lvl6p_pr: Option<CTTextParagraphProperties>,
 	#[serde(rename = "lvl7pPr")]
-	pub lvl7p_pr: CTTextParagraphProperties,
+	pub lvl7p_pr: Option<CTTextParagraphProperties>,
 	#[serde(rename = "lvl8pPr")]
-	pub lvl8p_pr: CTTextParagraphProperties,
+	pub lvl8p_pr: Option<CTTextParagraphProperties>,
 	#[serde(rename = "lvl9pPr")]
-	pub lvl9p_pr: CTTextParagraphProperties,
+	pub lvl9p_pr: Option<CTTextParagraphProperties>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
@@ -3520,11 +3520,11 @@ pub struct CTTextBodyProperties {
 	#[serde(rename = "EG_Text3D")]
 	pub eg_text3_d: Vec<EGText3D>,
 	#[serde(rename = "prstTxWarp")]
-	pub prst_tx_warp: CTPresetTextShape,
+	pub prst_tx_warp: Option<CTPresetTextShape>,
 	#[serde(rename = "scene3d")]
-	pub scene3d: CTScene3D,
+	pub scene3d: Option<CTScene3D>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -3534,7 +3534,7 @@ pub struct CTTextBody {
 	#[serde(rename = "bodyPr")]
 	pub body_pr: CTTextBodyProperties,
 	#[serde(rename = "lstStyle")]
-	pub lst_style: CTTextListStyle,
+	pub lst_style: Option<CTTextListStyle>,
 	#[serde(rename = "p")]
 	pub p: Vec<CTTextParagraph>,
 }
@@ -3858,25 +3858,25 @@ pub struct CTTextCharacterProperties {
 	#[serde(rename = "EG_TextUnderlineFill")]
 	pub eg_text_underline_fill: Vec<EGTextUnderlineFill>,
 	#[serde(rename = "ln")]
-	pub ln: CTLineProperties,
+	pub ln: Option<CTLineProperties>,
 	#[serde(rename = "highlight")]
-	pub highlight: CTColor,
+	pub highlight: Option<CTColor>,
 	#[serde(rename = "latin")]
-	pub latin: CTTextFont,
+	pub latin: Option<CTTextFont>,
 	#[serde(rename = "ea")]
-	pub ea: CTTextFont,
+	pub ea: Option<CTTextFont>,
 	#[serde(rename = "cs")]
-	pub cs: CTTextFont,
+	pub cs: Option<CTTextFont>,
 	#[serde(rename = "sym")]
-	pub sym: CTTextFont,
+	pub sym: Option<CTTextFont>,
 	#[serde(rename = "hlinkClick")]
-	pub hlink_click: CTHyperlink,
+	pub hlink_click: Option<CTHyperlink>,
 	#[serde(rename = "hlinkMouseOver")]
-	pub hlink_mouse_over: CTHyperlink,
+	pub hlink_mouse_over: Option<CTHyperlink>,
 	#[serde(rename = "rtl")]
-	pub rtl: CTBoolean,
+	pub rtl: Option<CTBoolean>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -3964,7 +3964,7 @@ pub struct CTTextTabStopList {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTTextLineBreak {
 	#[serde(rename = "rPr")]
-	pub r_pr: CTTextCharacterProperties,
+	pub r_pr: Option<CTTextCharacterProperties>,
 }
 
 
@@ -4036,17 +4036,17 @@ pub struct CTTextParagraphProperties {
 	#[serde(rename = "EG_TextBullet")]
 	pub eg_text_bullet: Vec<EGTextBullet>,
 	#[serde(rename = "lnSpc")]
-	pub ln_spc: CTTextSpacing,
+	pub ln_spc: Option<CTTextSpacing>,
 	#[serde(rename = "spcBef")]
-	pub spc_bef: CTTextSpacing,
+	pub spc_bef: Option<CTTextSpacing>,
 	#[serde(rename = "spcAft")]
-	pub spc_aft: CTTextSpacing,
+	pub spc_aft: Option<CTTextSpacing>,
 	#[serde(rename = "tabLst")]
-	pub tab_lst: CTTextTabStopList,
+	pub tab_lst: Option<CTTextTabStopList>,
 	#[serde(rename = "defRPr")]
-	pub def_r_pr: CTTextCharacterProperties,
+	pub def_r_pr: Option<CTTextCharacterProperties>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -4058,11 +4058,11 @@ pub struct CTTextField {
 	#[serde(rename = "type")]
 	pub type_attr: Option<String>,
 	#[serde(rename = "rPr")]
-	pub r_pr: CTTextCharacterProperties,
+	pub r_pr: Option<CTTextCharacterProperties>,
 	#[serde(rename = "pPr")]
-	pub p_pr: CTTextParagraphProperties,
+	pub p_pr: Option<CTTextParagraphProperties>,
 	#[serde(rename = "t")]
-	pub t: String,
+	pub t: Option<String>,
 }
 
 
@@ -4082,7 +4082,7 @@ pub struct EGTextRun {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTRegularTextRun {
 	#[serde(rename = "rPr")]
-	pub r_pr: CTTextCharacterProperties,
+	pub r_pr: Option<CTTextCharacterProperties>,
 	#[serde(rename = "t")]
 	pub t: String,
 }

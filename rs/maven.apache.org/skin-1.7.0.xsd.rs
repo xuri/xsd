@@ -18,9 +18,9 @@ pub struct skin {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct SkinModel {
 	#[serde(rename = "prerequisites")]
-	pub prerequisites: Prerequisites,
+	pub prerequisites: Option<Prerequisites>,
 	#[serde(rename = "encoding")]
-	pub encoding: String,
+	pub encoding: Option<String>,
 }
 
 
@@ -28,5 +28,5 @@ pub struct SkinModel {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Prerequisites {
 	#[serde(rename = "doxia-sitetools")]
-	pub doxiasitetools: String,
+	pub doxiasitetools: Option<String>,
 }

@@ -34,9 +34,9 @@ pub struct Phases {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Lifecycle {
 	#[serde(rename = "id")]
-	pub id: String,
+	pub id: Option<String>,
 	#[serde(rename = "phases")]
-	pub phases: Phases,
+	pub phases: Option<Phases>,
 }
 
 
@@ -58,11 +58,11 @@ pub struct Configuration {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Phase {
 	#[serde(rename = "id")]
-	pub id: String,
+	pub id: Option<String>,
 	#[serde(rename = "executions")]
-	pub executions: Executions,
+	pub executions: Option<Executions>,
 	#[serde(rename = "configuration")]
-	pub configuration: Configuration,
+	pub configuration: Option<Configuration>,
 }
 
 
@@ -78,7 +78,7 @@ pub struct Goals {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Execution {
 	#[serde(rename = "configuration")]
-	pub configuration: Configuration,
+	pub configuration: Option<Configuration>,
 	#[serde(rename = "goals")]
-	pub goals: Goals,
+	pub goals: Option<Goals>,
 }

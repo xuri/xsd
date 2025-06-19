@@ -35,8 +35,8 @@ type CTShape struct {
 	FPublishedAttr bool               `xml:"fPublished,attr,omitempty"`
 	NvSpPr         *CTShapeNonVisual  `xml:"nvSpPr"`
 	SpPr           *CTShapeProperties `xml:"spPr"`
-	Style          *CTShapeStyle      `xml:"style"`
-	TxBody         *CTTextBody        `xml:"txBody"`
+	Style          *CTShapeStyle      `xml:"style,omitempty"`
+	TxBody         *CTTextBody        `xml:"txBody,omitempty"`
 }
 
 // CTConnectorNonVisual ...
@@ -53,7 +53,7 @@ type CTConnector struct {
 	FPublishedAttr bool                  `xml:"fPublished,attr,omitempty"`
 	NvCxnSpPr      *CTConnectorNonVisual `xml:"nvCxnSpPr"`
 	SpPr           *CTShapeProperties    `xml:"spPr"`
-	Style          *CTShapeStyle         `xml:"style"`
+	Style          *CTShapeStyle         `xml:"style,omitempty"`
 }
 
 // CTPictureNonVisual ...
@@ -71,7 +71,7 @@ type CTPicture struct {
 	NvPicPr        *CTPictureNonVisual   `xml:"nvPicPr"`
 	BlipFill       *CTBlipFillProperties `xml:"blipFill"`
 	SpPr           *CTShapeProperties    `xml:"spPr"`
-	Style          *CTShapeStyle         `xml:"style"`
+	Style          *CTShapeStyle         `xml:"style,omitempty"`
 }
 
 // CTGraphicalObjectFrameNonVisual ...

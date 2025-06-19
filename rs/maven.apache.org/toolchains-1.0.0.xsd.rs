@@ -49,9 +49,9 @@ pub struct Configuration {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct ToolchainModel {
 	#[serde(rename = "type")]
-	pub type_attr: String,
+	pub type_attr: Option<String>,
 	#[serde(rename = "provides")]
-	pub provides: Provides,
+	pub provides: Option<Provides>,
 	#[serde(rename = "configuration")]
-	pub configuration: Configuration,
+	pub configuration: Option<Configuration>,
 }

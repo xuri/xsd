@@ -9,31 +9,31 @@ import (
 // PublshInformation ...
 type PublshInformation struct {
 	XMLName     xml.Name `xml:"publshInformation"`
-	PublishDate string   `xml:"Publish_Date"`
-	RecordCount int      `xml:"Record_Count"`
+	PublishDate string   `xml:"Publish_Date,omitempty"`
+	RecordCount int      `xml:"Record_Count,omitempty"`
 }
 
 // ProgramList ...
 type ProgramList struct {
 	XMLName xml.Name `xml:"programList"`
-	Program []string `xml:"program"`
+	Program []string `xml:"program,omitempty"`
 }
 
 // Id ...
 type Id struct {
 	XMLName        xml.Name `xml:"id"`
 	Uid            int      `xml:"uid"`
-	IdType         string   `xml:"idType"`
-	IdNumber       string   `xml:"idNumber"`
-	IdCountry      string   `xml:"idCountry"`
-	IssueDate      string   `xml:"issueDate"`
-	ExpirationDate string   `xml:"expirationDate"`
+	IdType         string   `xml:"idType,omitempty"`
+	IdNumber       string   `xml:"idNumber,omitempty"`
+	IdCountry      string   `xml:"idCountry,omitempty"`
+	IssueDate      string   `xml:"issueDate,omitempty"`
+	ExpirationDate string   `xml:"expirationDate,omitempty"`
 }
 
 // IdList ...
 type IdList struct {
 	XMLName xml.Name `xml:"idList"`
-	Id      []*Id    `xml:"id"`
+	Id      []*Id    `xml:"id,omitempty"`
 }
 
 // Aka ...
@@ -42,33 +42,33 @@ type Aka struct {
 	Uid       int      `xml:"uid"`
 	Type      string   `xml:"type"`
 	Category  string   `xml:"category"`
-	LastName  string   `xml:"lastName"`
-	FirstName string   `xml:"firstName"`
+	LastName  string   `xml:"lastName,omitempty"`
+	FirstName string   `xml:"firstName,omitempty"`
 }
 
 // AkaList ...
 type AkaList struct {
 	XMLName xml.Name `xml:"akaList"`
-	Aka     []*Aka   `xml:"aka"`
+	Aka     []*Aka   `xml:"aka,omitempty"`
 }
 
 // Address ...
 type Address struct {
 	XMLName         xml.Name `xml:"address"`
 	Uid             int      `xml:"uid"`
-	Address1        string   `xml:"address1"`
-	Address2        string   `xml:"address2"`
-	Address3        string   `xml:"address3"`
-	City            string   `xml:"city"`
-	StateOrProvince string   `xml:"stateOrProvince"`
-	PostalCode      string   `xml:"postalCode"`
-	Country         string   `xml:"country"`
+	Address1        string   `xml:"address1,omitempty"`
+	Address2        string   `xml:"address2,omitempty"`
+	Address3        string   `xml:"address3,omitempty"`
+	City            string   `xml:"city,omitempty"`
+	StateOrProvince string   `xml:"stateOrProvince,omitempty"`
+	PostalCode      string   `xml:"postalCode,omitempty"`
+	Country         string   `xml:"country,omitempty"`
 }
 
 // AddressList ...
 type AddressList struct {
 	XMLName xml.Name   `xml:"addressList"`
-	Address []*Address `xml:"address"`
+	Address []*Address `xml:"address,omitempty"`
 }
 
 // Nationality ...
@@ -82,7 +82,7 @@ type Nationality struct {
 // NationalityList ...
 type NationalityList struct {
 	XMLName     xml.Name       `xml:"nationalityList"`
-	Nationality []*Nationality `xml:"nationality"`
+	Nationality []*Nationality `xml:"nationality,omitempty"`
 }
 
 // Citizenship ...
@@ -96,7 +96,7 @@ type Citizenship struct {
 // CitizenshipList ...
 type CitizenshipList struct {
 	XMLName     xml.Name       `xml:"citizenshipList"`
-	Citizenship []*Citizenship `xml:"citizenship"`
+	Citizenship []*Citizenship `xml:"citizenship,omitempty"`
 }
 
 // DateOfBirthItem ...
@@ -110,7 +110,7 @@ type DateOfBirthItem struct {
 // DateOfBirthList ...
 type DateOfBirthList struct {
 	XMLName         xml.Name           `xml:"dateOfBirthList"`
-	DateOfBirthItem []*DateOfBirthItem `xml:"dateOfBirthItem"`
+	DateOfBirthItem []*DateOfBirthItem `xml:"dateOfBirthItem,omitempty"`
 }
 
 // PlaceOfBirthItem ...
@@ -124,38 +124,38 @@ type PlaceOfBirthItem struct {
 // PlaceOfBirthList ...
 type PlaceOfBirthList struct {
 	XMLName          xml.Name            `xml:"placeOfBirthList"`
-	PlaceOfBirthItem []*PlaceOfBirthItem `xml:"placeOfBirthItem"`
+	PlaceOfBirthItem []*PlaceOfBirthItem `xml:"placeOfBirthItem,omitempty"`
 }
 
 // VesselInfo ...
 type VesselInfo struct {
 	XMLName                xml.Name `xml:"vesselInfo"`
-	CallSign               string   `xml:"callSign"`
-	VesselType             string   `xml:"vesselType"`
-	VesselFlag             string   `xml:"vesselFlag"`
-	VesselOwner            string   `xml:"vesselOwner"`
-	Tonnage                int      `xml:"tonnage"`
-	GrossRegisteredTonnage int      `xml:"grossRegisteredTonnage"`
+	CallSign               string   `xml:"callSign,omitempty"`
+	VesselType             string   `xml:"vesselType,omitempty"`
+	VesselFlag             string   `xml:"vesselFlag,omitempty"`
+	VesselOwner            string   `xml:"vesselOwner,omitempty"`
+	Tonnage                int      `xml:"tonnage,omitempty"`
+	GrossRegisteredTonnage int      `xml:"grossRegisteredTonnage,omitempty"`
 }
 
 // SdnEntry ...
 type SdnEntry struct {
 	XMLName          xml.Name          `xml:"sdnEntry"`
 	Uid              int               `xml:"uid"`
-	FirstName        string            `xml:"firstName"`
+	FirstName        string            `xml:"firstName,omitempty"`
 	LastName         string            `xml:"lastName"`
-	Title            string            `xml:"title"`
+	Title            string            `xml:"title,omitempty"`
 	SdnType          string            `xml:"sdnType"`
-	Remarks          string            `xml:"remarks"`
+	Remarks          string            `xml:"remarks,omitempty"`
 	ProgramList      *ProgramList      `xml:"programList"`
-	IdList           *IdList           `xml:"idList"`
-	AkaList          *AkaList          `xml:"akaList"`
-	AddressList      *AddressList      `xml:"addressList"`
-	NationalityList  *NationalityList  `xml:"nationalityList"`
-	CitizenshipList  *CitizenshipList  `xml:"citizenshipList"`
-	DateOfBirthList  *DateOfBirthList  `xml:"dateOfBirthList"`
-	PlaceOfBirthList *PlaceOfBirthList `xml:"placeOfBirthList"`
-	VesselInfo       *VesselInfo       `xml:"vesselInfo"`
+	IdList           *IdList           `xml:"idList,omitempty"`
+	AkaList          *AkaList          `xml:"akaList,omitempty"`
+	AddressList      *AddressList      `xml:"addressList,omitempty"`
+	NationalityList  *NationalityList  `xml:"nationalityList,omitempty"`
+	CitizenshipList  *CitizenshipList  `xml:"citizenshipList,omitempty"`
+	DateOfBirthList  *DateOfBirthList  `xml:"dateOfBirthList,omitempty"`
+	PlaceOfBirthList *PlaceOfBirthList `xml:"placeOfBirthList,omitempty"`
+	VesselInfo       *VesselInfo       `xml:"vesselInfo,omitempty"`
 }
 
 // SdnList ...

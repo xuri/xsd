@@ -42,11 +42,11 @@ pub struct CTInline {
 	#[serde(rename = "extent")]
 	pub extent: CTPositiveSize2D,
 	#[serde(rename = "effectExtent")]
-	pub effect_extent: CTEffectExtent,
+	pub effect_extent: Option<CTEffectExtent>,
 	#[serde(rename = "docPr")]
 	pub doc_pr: CTNonVisualDrawingProps,
 	#[serde(rename = "cNvGraphicFramePr")]
-	pub c_nv_graphic_frame_pr: CTNonVisualGraphicFrameProperties,
+	pub c_nv_graphic_frame_pr: Option<CTNonVisualGraphicFrameProperties>,
 	#[serde(rename = "a:graphic")]
 	pub a_graphic: CTGraphicalObject,
 }
@@ -92,7 +92,7 @@ pub struct CTWrapSquare {
 	#[serde(rename = "distR")]
 	pub dist_r: Option<u32>,
 	#[serde(rename = "effectExtent")]
-	pub effect_extent: CTEffectExtent,
+	pub effect_extent: Option<CTEffectExtent>,
 }
 
 
@@ -132,7 +132,7 @@ pub struct CTWrapTopBottom {
 	#[serde(rename = "distB")]
 	pub dist_b: Option<u32>,
 	#[serde(rename = "effectExtent")]
-	pub effect_extent: CTEffectExtent,
+	pub effect_extent: Option<CTEffectExtent>,
 }
 
 
@@ -252,11 +252,11 @@ pub struct CTAnchor {
 	#[serde(rename = "extent")]
 	pub extent: CTPositiveSize2D,
 	#[serde(rename = "effectExtent")]
-	pub effect_extent: CTEffectExtent,
+	pub effect_extent: Option<CTEffectExtent>,
 	#[serde(rename = "docPr")]
 	pub doc_pr: CTNonVisualDrawingProps,
 	#[serde(rename = "cNvGraphicFramePr")]
-	pub c_nv_graphic_frame_pr: CTNonVisualGraphicFrameProperties,
+	pub c_nv_graphic_frame_pr: Option<CTNonVisualGraphicFrameProperties>,
 	#[serde(rename = "a:graphic")]
 	pub a_graphic: CTGraphicalObject,
 }
@@ -278,7 +278,7 @@ pub struct CTTextboxInfo {
 	#[serde(rename = "txbxContent")]
 	pub txbx_content: CTTxbxContent,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -290,7 +290,7 @@ pub struct CTLinkedTextboxInformation {
 	#[serde(rename = "seq")]
 	pub seq: u16,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -300,7 +300,7 @@ pub struct CTWordprocessingShape {
 	#[serde(rename = "normalEastAsianFlow")]
 	pub normal_east_asian_flow: Option<bool>,
 	#[serde(rename = "cNvPr")]
-	pub c_nv_pr: CTNonVisualDrawingProps,
+	pub c_nv_pr: Option<CTNonVisualDrawingProps>,
 	#[serde(rename = "cNvSpPr")]
 	pub c_nv_sp_pr: CTNonVisualDrawingShapeProps,
 	#[serde(rename = "cNvCnPr")]
@@ -308,9 +308,9 @@ pub struct CTWordprocessingShape {
 	#[serde(rename = "spPr")]
 	pub sp_pr: CTShapeProperties,
 	#[serde(rename = "style")]
-	pub style: CTShapeStyle,
+	pub style: Option<CTShapeStyle>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 	#[serde(rename = "txbx")]
 	pub txbx: CTTextboxInfo,
 	#[serde(rename = "linkedTxbx")]
@@ -332,7 +332,7 @@ pub struct CTGraphicFrame {
 	#[serde(rename = "a:graphic")]
 	pub a_graphic: CTGraphicalObject,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -340,9 +340,9 @@ pub struct CTGraphicFrame {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTWordprocessingContentPartNonVisual {
 	#[serde(rename = "cNvPr")]
-	pub c_nv_pr: CTNonVisualDrawingProps,
+	pub c_nv_pr: Option<CTNonVisualDrawingProps>,
 	#[serde(rename = "cNvContentPartPr")]
-	pub c_nv_content_part_pr: CTNonVisualContentPartProperties,
+	pub c_nv_content_part_pr: Option<CTNonVisualContentPartProperties>,
 }
 
 
@@ -354,11 +354,11 @@ pub struct CTWordprocessingContentPart {
 	#[serde(rename = "r:id")]
 	pub r_id: String,
 	#[serde(rename = "nvContentPartPr")]
-	pub nv_content_part_pr: CTWordprocessingContentPartNonVisual,
+	pub nv_content_part_pr: Option<CTWordprocessingContentPartNonVisual>,
 	#[serde(rename = "xfrm")]
-	pub xfrm: CTTransform2D,
+	pub xfrm: Option<CTTransform2D>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -366,7 +366,7 @@ pub struct CTWordprocessingContentPart {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTWordprocessingGroup {
 	#[serde(rename = "cNvPr")]
-	pub c_nv_pr: CTNonVisualDrawingProps,
+	pub c_nv_pr: Option<CTNonVisualDrawingProps>,
 	#[serde(rename = "cNvGrpSpPr")]
 	pub c_nv_grp_sp_pr: CTNonVisualGroupDrawingShapeProps,
 	#[serde(rename = "grpSpPr")]
@@ -382,7 +382,7 @@ pub struct CTWordprocessingGroup {
 	#[serde(rename = "contentPart")]
 	pub content_part: Vec<CTWordprocessingContentPart>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -390,9 +390,9 @@ pub struct CTWordprocessingGroup {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTWordprocessingCanvas {
 	#[serde(rename = "bg")]
-	pub bg: CTBackgroundFormatting,
+	pub bg: Option<CTBackgroundFormatting>,
 	#[serde(rename = "whole")]
-	pub whole: CTWholeE2oFormatting,
+	pub whole: Option<CTWholeE2oFormatting>,
 	#[serde(rename = "wsp")]
 	pub wsp: Vec<CTWordprocessingShape>,
 	#[serde(rename = "dpct:pic")]
@@ -404,7 +404,7 @@ pub struct CTWordprocessingCanvas {
 	#[serde(rename = "graphicFrame")]
 	pub graphic_frame: Vec<CTGraphicFrame>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 

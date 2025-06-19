@@ -26,7 +26,7 @@ pub struct RemoteResources {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct RemoteResourcesBundle {
 	#[serde(rename = "remoteResources")]
-	pub remote_resources: RemoteResources,
+	pub remote_resources: Option<RemoteResources>,
 	#[serde(rename = "sourceEncoding")]
-	pub source_encoding: String,
+	pub source_encoding: Option<String>,
 }

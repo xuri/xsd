@@ -32,9 +32,9 @@ pub struct CTShape {
 	#[serde(rename = "spPr")]
 	pub sp_pr: CTShapeProperties,
 	#[serde(rename = "style")]
-	pub style: CTShapeStyle,
+	pub style: Option<CTShapeStyle>,
 	#[serde(rename = "txBody")]
-	pub tx_body: CTTextBody,
+	pub tx_body: Option<CTTextBody>,
 }
 
 
@@ -60,7 +60,7 @@ pub struct CTConnector {
 	#[serde(rename = "spPr")]
 	pub sp_pr: CTShapeProperties,
 	#[serde(rename = "style")]
-	pub style: CTShapeStyle,
+	pub style: Option<CTShapeStyle>,
 }
 
 
@@ -88,7 +88,7 @@ pub struct CTPicture {
 	#[serde(rename = "spPr")]
 	pub sp_pr: CTShapeProperties,
 	#[serde(rename = "style")]
-	pub style: CTShapeStyle,
+	pub style: Option<CTShapeStyle>,
 }
 
 

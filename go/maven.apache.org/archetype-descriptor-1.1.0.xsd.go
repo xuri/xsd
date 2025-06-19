@@ -12,35 +12,35 @@ type Archetypedescriptor *ArchetypeDescriptor
 // RequiredProperties is List of required properties to generate a project from this archetype.
 type RequiredProperties struct {
 	XMLName          xml.Name            `xml:"requiredProperties"`
-	RequiredProperty []*RequiredProperty `xml:"requiredProperty"`
+	RequiredProperty []*RequiredProperty `xml:"requiredProperty,omitempty"`
 }
 
 // FileSets is File sets definition.
 type FileSets struct {
 	XMLName xml.Name   `xml:"fileSets"`
-	FileSet []*FileSet `xml:"fileSet"`
+	FileSet []*FileSet `xml:"fileSet,omitempty"`
 }
 
 // Modules is Modules definition.
 type Modules struct {
 	XMLName xml.Name            `xml:"modules"`
-	Module  []*ModuleDescriptor `xml:"module"`
+	Module  []*ModuleDescriptor `xml:"module,omitempty"`
 }
 
 // ArchetypeDescriptor is 1.0.0+
 type ArchetypeDescriptor struct {
 	NameAttr           string              `xml:"name,attr"`
 	PartialAttr        bool                `xml:"partial,attr,omitempty"`
-	RequiredProperties *RequiredProperties `xml:"requiredProperties"`
-	FileSets           *FileSets           `xml:"fileSets"`
-	Modules            *Modules            `xml:"modules"`
+	RequiredProperties *RequiredProperties `xml:"requiredProperties,omitempty"`
+	FileSets           *FileSets           `xml:"fileSets,omitempty"`
+	Modules            *Modules            `xml:"modules,omitempty"`
 }
 
 // RequiredProperty is A regular expression used to validate the property.
 type RequiredProperty struct {
 	KeyAttr         string `xml:"key,attr"`
-	DefaultValue    string `xml:"defaultValue"`
-	ValidationRegex string `xml:"validationRegex"`
+	DefaultValue    string `xml:"defaultValue,omitempty"`
+	ValidationRegex string `xml:"validationRegex,omitempty"`
 }
 
 // ModuleDescriptor is 1.0.0+
@@ -48,20 +48,20 @@ type ModuleDescriptor struct {
 	IdAttr   string    `xml:"id,attr"`
 	DirAttr  string    `xml:"dir,attr"`
 	NameAttr string    `xml:"name,attr"`
-	FileSets *FileSets `xml:"fileSets"`
-	Modules  *Modules  `xml:"modules"`
+	FileSets *FileSets `xml:"fileSets,omitempty"`
+	Modules  *Modules  `xml:"modules,omitempty"`
 }
 
 // Includes is Inclusion definition "à la" Ant.
 type Includes struct {
 	XMLName xml.Name `xml:"includes"`
-	Include []string `xml:"include"`
+	Include []string `xml:"include,omitempty"`
 }
 
 // Excludes is Exclusion definition "à la" Ant.
 type Excludes struct {
 	XMLName xml.Name `xml:"excludes"`
-	Exclude []string `xml:"exclude"`
+	Exclude []string `xml:"exclude,omitempty"`
 }
 
 // FileSet is The directory where the files will be searched for, which is also the directory where the
@@ -70,7 +70,7 @@ type FileSet struct {
 	FilteredAttr bool      `xml:"filtered,attr,omitempty"`
 	PackagedAttr bool      `xml:"packaged,attr,omitempty"`
 	EncodingAttr string    `xml:"encoding,attr,omitempty"`
-	Directory    string    `xml:"directory"`
-	Includes     *Includes `xml:"includes"`
-	Excludes     *Excludes `xml:"excludes"`
+	Directory    string    `xml:"directory,omitempty"`
+	Includes     *Includes `xml:"includes,omitempty"`
+	Excludes     *Excludes `xml:"excludes,omitempty"`
 }

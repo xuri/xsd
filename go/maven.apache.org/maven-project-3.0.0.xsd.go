@@ -9,36 +9,36 @@ import (
 // Project ...
 type Project struct {
 	XMLName               xml.Name      `xml:"project"`
-	Extend                string        `xml:"extend"`
+	Extend                string        `xml:"extend,omitempty"`
 	PomVersion            string        `xml:"pomVersion"`
 	Id                    string        `xml:"id"`
 	Name                  string        `xml:"name"`
-	GroupId               string        `xml:"groupId"`
+	GroupId               string        `xml:"groupId,omitempty"`
 	CurrentVersion        string        `xml:"currentVersion"`
 	Organization          *Organization `xml:"organization"`
 	InceptionYear         string        `xml:"inceptionYear"`
-	Package               string        `xml:"package"`
-	Logo                  string        `xml:"logo"`
-	GumpRepositoryId      string        `xml:"gumpRepositoryId"`
-	Description           string        `xml:"description"`
+	Package               string        `xml:"package,omitempty"`
+	Logo                  string        `xml:"logo,omitempty"`
+	GumpRepositoryId      string        `xml:"gumpRepositoryId,omitempty"`
+	Description           string        `xml:"description,omitempty"`
 	ShortDescription      string        `xml:"shortDescription"`
-	Url                   string        `xml:"url"`
-	IssueTrackingUrl      string        `xml:"issueTrackingUrl"`
-	SiteAddress           string        `xml:"siteAddress"`
-	SiteDirectory         string        `xml:"siteDirectory"`
-	DistributionSite      string        `xml:"distributionSite"`
-	DistributionDirectory string        `xml:"distributionDirectory"`
-	Repository            *Repository   `xml:"repository"`
-	Versions              *Versions     `xml:"versions"`
-	Branches              *Branches     `xml:"branches"`
-	MailingLists          *MailingLists `xml:"mailingLists"`
+	Url                   string        `xml:"url,omitempty"`
+	IssueTrackingUrl      string        `xml:"issueTrackingUrl,omitempty"`
+	SiteAddress           string        `xml:"siteAddress,omitempty"`
+	SiteDirectory         string        `xml:"siteDirectory,omitempty"`
+	DistributionSite      string        `xml:"distributionSite,omitempty"`
+	DistributionDirectory string        `xml:"distributionDirectory,omitempty"`
+	Repository            *Repository   `xml:"repository,omitempty"`
+	Versions              *Versions     `xml:"versions,omitempty"`
+	Branches              *Branches     `xml:"branches,omitempty"`
+	MailingLists          *MailingLists `xml:"mailingLists,omitempty"`
 	Developers            *Developers   `xml:"developers"`
-	Contributors          *Contributors `xml:"contributors"`
-	Licenses              *Licenses     `xml:"licenses"`
-	Dependencies          *Dependencies `xml:"dependencies"`
+	Contributors          *Contributors `xml:"contributors,omitempty"`
+	Licenses              *Licenses     `xml:"licenses,omitempty"`
+	Dependencies          *Dependencies `xml:"dependencies,omitempty"`
 	Build                 *Build        `xml:"build"`
-	Reports               *Reports      `xml:"reports"`
-	Properties            *Properties   `xml:"properties"`
+	Reports               *Reports      `xml:"reports,omitempty"`
+	Properties            *Properties   `xml:"properties,omitempty"`
 }
 
 // Extend ...
@@ -108,22 +108,22 @@ type Url string
 type Repository struct {
 	XMLName             xml.Name `xml:"repository"`
 	Connection          string   `xml:"connection"`
-	DeveloperConnection string   `xml:"developerConnection"`
-	Url                 string   `xml:"url"`
+	DeveloperConnection string   `xml:"developerConnection,omitempty"`
+	Url                 string   `xml:"url,omitempty"`
 }
 
 // Organization ...
 type Organization struct {
 	XMLName xml.Name `xml:"organization"`
 	Name    string   `xml:"name"`
-	Url     string   `xml:"url"`
-	Logo    string   `xml:"logo"`
+	Url     string   `xml:"url,omitempty"`
+	Logo    string   `xml:"logo,omitempty"`
 }
 
 // Versions ...
 type Versions struct {
 	XMLName xml.Name   `xml:"versions"`
-	Version []*Version `xml:"version"`
+	Version []*Version `xml:"version,omitempty"`
 }
 
 // Version ...
@@ -140,7 +140,7 @@ type Tag string
 // Branches ...
 type Branches struct {
 	XMLName xml.Name  `xml:"branches"`
-	Branch  []*Branch `xml:"branch"`
+	Branch  []*Branch `xml:"branch,omitempty"`
 }
 
 // Branch ...
@@ -152,7 +152,7 @@ type Branch struct {
 // MailingLists ...
 type MailingLists struct {
 	XMLName     xml.Name       `xml:"mailingLists"`
-	MailingList []*MailingList `xml:"mailingList"`
+	MailingList []*MailingList `xml:"mailingList,omitempty"`
 }
 
 // MailingList ...
@@ -161,7 +161,7 @@ type MailingList struct {
 	Name        string   `xml:"name"`
 	Subscribe   string   `xml:"subscribe"`
 	Unsubscribe string   `xml:"unsubscribe"`
-	Archive     string   `xml:"archive"`
+	Archive     string   `xml:"archive,omitempty"`
 }
 
 // Subscribe ...
@@ -176,7 +176,7 @@ type Archive string
 // Developers ...
 type Developers struct {
 	XMLName   xml.Name     `xml:"developers"`
-	Developer []*Developer `xml:"developer"`
+	Developer []*Developer `xml:"developer,omitempty"`
 }
 
 // Developer ...
@@ -203,7 +203,7 @@ type Email string
 // Roles ...
 type Roles struct {
 	XMLName xml.Name `xml:"roles"`
-	Role    []string `xml:"role"`
+	Role    []string `xml:"role,omitempty"`
 }
 
 // Role ...
@@ -218,7 +218,7 @@ type Timezone float64
 // Contributors ...
 type Contributors struct {
 	XMLName     xml.Name       `xml:"contributors"`
-	Contributor []*Contributor `xml:"contributor"`
+	Contributor []*Contributor `xml:"contributor,omitempty"`
 }
 
 // Contributor ...
@@ -231,15 +231,15 @@ type Contributor struct {
 // Licenses ...
 type Licenses struct {
 	XMLName xml.Name   `xml:"licenses"`
-	License []*License `xml:"license"`
+	License []*License `xml:"license,omitempty"`
 }
 
 // License ...
 type License struct {
 	XMLName      xml.Name    `xml:"license"`
-	Name         string      `xml:"name"`
-	Url          string      `xml:"url"`
-	Distribution interface{} `xml:"distribution"`
+	Name         string      `xml:"name,omitempty"`
+	Url          string      `xml:"url,omitempty"`
+	Distribution interface{} `xml:"distribution,omitempty"`
 }
 
 // Distribution ...
@@ -248,20 +248,20 @@ type Distribution interface{}
 // Dependencies ...
 type Dependencies struct {
 	XMLName    xml.Name      `xml:"dependencies"`
-	Dependency []*Dependency `xml:"dependency"`
+	Dependency []*Dependency `xml:"dependency,omitempty"`
 }
 
 // Dependency ...
 type Dependency struct {
 	XMLName    xml.Name    `xml:"dependency"`
-	Id         string      `xml:"id"`
-	GroupId    string      `xml:"groupId"`
-	ArtifactId string      `xml:"artifactId"`
+	Id         string      `xml:"id,omitempty"`
+	GroupId    string      `xml:"groupId,omitempty"`
+	ArtifactId string      `xml:"artifactId,omitempty"`
 	Version    string      `xml:"version"`
-	Jar        string      `xml:"jar"`
-	Type       string      `xml:"type"`
-	Url        string      `xml:"url"`
-	Properties *Properties `xml:"properties"`
+	Jar        string      `xml:"jar,omitempty"`
+	Type       string      `xml:"type,omitempty"`
+	Url        string      `xml:"url,omitempty"`
+	Properties *Properties `xml:"properties,omitempty"`
 }
 
 // Type ...
@@ -273,14 +273,14 @@ type Jar string
 // Build ...
 type Build struct {
 	XMLName                            xml.Name             `xml:"build"`
-	NagEmailAddress                    string               `xml:"nagEmailAddress"`
-	SourceDirectory                    string               `xml:"sourceDirectory"`
-	SourceModifications                *SourceModifications `xml:"sourceModifications"`
-	UnitTestSourceDirectory            string               `xml:"unitTestSourceDirectory"`
-	IntegrationUnitTestSourceDirectory string               `xml:"integrationUnitTestSourceDirectory"`
-	AspectSourceDirectory              string               `xml:"aspectSourceDirectory"`
-	UnitTest                           *UnitTest            `xml:"unitTest"`
-	Resources                          *Resources           `xml:"resources"`
+	NagEmailAddress                    string               `xml:"nagEmailAddress,omitempty"`
+	SourceDirectory                    string               `xml:"sourceDirectory,omitempty"`
+	SourceModifications                *SourceModifications `xml:"sourceModifications,omitempty"`
+	UnitTestSourceDirectory            string               `xml:"unitTestSourceDirectory,omitempty"`
+	IntegrationUnitTestSourceDirectory string               `xml:"integrationUnitTestSourceDirectory,omitempty"`
+	AspectSourceDirectory              string               `xml:"aspectSourceDirectory,omitempty"`
+	UnitTest                           *UnitTest            `xml:"unitTest,omitempty"`
+	Resources                          *Resources           `xml:"resources,omitempty"`
 }
 
 // NagEmailAddress ...
@@ -292,15 +292,15 @@ type SourceDirectory string
 // SourceModifications ...
 type SourceModifications struct {
 	XMLName            xml.Name              `xml:"sourceModifications"`
-	SourceModification []*SourceModification `xml:"sourceModification"`
+	SourceModification []*SourceModification `xml:"sourceModification,omitempty"`
 }
 
 // SourceModification ...
 type SourceModification struct {
 	XMLName   xml.Name    `xml:"sourceModification"`
 	ClassName string      `xml:"className"`
-	Includes  []*Includes `xml:"includes"`
-	Excludes  []*Excludes `xml:"excludes"`
+	Includes  []*Includes `xml:"includes,omitempty"`
+	Excludes  []*Excludes `xml:"excludes,omitempty"`
 }
 
 // UnitTestSourceDirectory ...
@@ -315,21 +315,21 @@ type AspectSourceDirectory string
 // UnitTest ...
 type UnitTest struct {
 	XMLName   xml.Name    `xml:"unitTest"`
-	Includes  []*Includes `xml:"includes"`
-	Excludes  []*Excludes `xml:"excludes"`
-	Resources *Resources  `xml:"resources"`
+	Includes  []*Includes `xml:"includes,omitempty"`
+	Excludes  []*Excludes `xml:"excludes,omitempty"`
+	Resources *Resources  `xml:"resources,omitempty"`
 }
 
 // Includes ...
 type Includes struct {
 	XMLName xml.Name `xml:"includes"`
-	Include []string `xml:"include"`
+	Include []string `xml:"include,omitempty"`
 }
 
 // Excludes ...
 type Excludes struct {
 	XMLName xml.Name `xml:"excludes"`
-	Exclude []string `xml:"exclude"`
+	Exclude []string `xml:"exclude,omitempty"`
 }
 
 // Include ...
@@ -341,7 +341,7 @@ type Exclude string
 // Resources ...
 type Resources struct {
 	XMLName  xml.Name    `xml:"resources"`
-	Resource []*Resource `xml:"resource"`
+	Resource []*Resource `xml:"resource,omitempty"`
 }
 
 // Directory ...
@@ -356,17 +356,17 @@ type Filtering bool
 // Resource ...
 type Resource struct {
 	XMLName    xml.Name    `xml:"resource"`
-	Directory  string      `xml:"directory"`
-	TargetPath string      `xml:"targetPath"`
-	Includes   []*Includes `xml:"includes"`
-	Excludes   []*Excludes `xml:"excludes"`
-	Filtering  bool        `xml:"filtering"`
+	Directory  string      `xml:"directory,omitempty"`
+	TargetPath string      `xml:"targetPath,omitempty"`
+	Includes   []*Includes `xml:"includes,omitempty"`
+	Excludes   []*Excludes `xml:"excludes,omitempty"`
+	Filtering  bool        `xml:"filtering,omitempty"`
 }
 
 // Reports ...
 type Reports struct {
 	XMLName xml.Name `xml:"reports"`
-	Report  []string `xml:"report"`
+	Report  []string `xml:"report,omitempty"`
 }
 
 // Properties ...

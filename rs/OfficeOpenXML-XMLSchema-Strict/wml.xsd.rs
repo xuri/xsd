@@ -1076,7 +1076,7 @@ pub struct CTTblPrChange {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTSectPrChange {
 	#[serde(rename = "sectPr")]
-	pub sect_pr: CTSectPrBase,
+	pub sect_pr: Option<CTSectPrBase>,
 	#[serde(flatten)]
 	pub ct_track_change: CTTrackChange,
 }
@@ -1212,11 +1212,11 @@ pub struct EGRangeMarkupElements {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTNumPr {
 	#[serde(rename = "ilvl")]
-	pub ilvl: CTDecimalNumber,
+	pub ilvl: Option<CTDecimalNumber>,
 	#[serde(rename = "numId")]
-	pub num_id: CTDecimalNumber,
+	pub num_id: Option<CTDecimalNumber>,
 	#[serde(rename = "ins")]
-	pub ins: CTTrackChange,
+	pub ins: Option<CTTrackChange>,
 }
 
 
@@ -1224,17 +1224,17 @@ pub struct CTNumPr {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTPBdr {
 	#[serde(rename = "top")]
-	pub top: CTBorder,
+	pub top: Option<CTBorder>,
 	#[serde(rename = "left")]
-	pub left: CTBorder,
+	pub left: Option<CTBorder>,
 	#[serde(rename = "bottom")]
-	pub bottom: CTBorder,
+	pub bottom: Option<CTBorder>,
 	#[serde(rename = "right")]
-	pub right: CTBorder,
+	pub right: Option<CTBorder>,
 	#[serde(rename = "between")]
-	pub between: CTBorder,
+	pub between: Option<CTBorder>,
 	#[serde(rename = "bar")]
-	pub bar: CTBorder,
+	pub bar: Option<CTBorder>,
 }
 
 
@@ -1266,11 +1266,11 @@ pub struct CTTextboxTightWrap {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTPPr {
 	#[serde(rename = "rPr")]
-	pub r_pr: CTParaRPr,
+	pub r_pr: Option<CTParaRPr>,
 	#[serde(rename = "sectPr")]
-	pub sect_pr: CTSectPr,
+	pub sect_pr: Option<CTSectPr>,
 	#[serde(rename = "pPrChange")]
-	pub p_pr_change: CTPPrChange,
+	pub p_pr_change: Option<CTPPrChange>,
 	#[serde(flatten)]
 	pub ctp_pr_base: CTPPrBase,
 }
@@ -1280,71 +1280,71 @@ pub struct CTPPr {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTPPrBase {
 	#[serde(rename = "pStyle")]
-	pub p_style: CTString,
+	pub p_style: Option<CTString>,
 	#[serde(rename = "keepNext")]
-	pub keep_next: CTOnOff,
+	pub keep_next: Option<CTOnOff>,
 	#[serde(rename = "keepLines")]
-	pub keep_lines: CTOnOff,
+	pub keep_lines: Option<CTOnOff>,
 	#[serde(rename = "pageBreakBefore")]
-	pub page_break_before: CTOnOff,
+	pub page_break_before: Option<CTOnOff>,
 	#[serde(rename = "framePr")]
-	pub frame_pr: CTFramePr,
+	pub frame_pr: Option<CTFramePr>,
 	#[serde(rename = "widowControl")]
-	pub widow_control: CTOnOff,
+	pub widow_control: Option<CTOnOff>,
 	#[serde(rename = "numPr")]
-	pub num_pr: CTNumPr,
+	pub num_pr: Option<CTNumPr>,
 	#[serde(rename = "suppressLineNumbers")]
-	pub suppress_line_numbers: CTOnOff,
+	pub suppress_line_numbers: Option<CTOnOff>,
 	#[serde(rename = "pBdr")]
-	pub p_bdr: CTPBdr,
+	pub p_bdr: Option<CTPBdr>,
 	#[serde(rename = "shd")]
-	pub shd: CTShd,
+	pub shd: Option<CTShd>,
 	#[serde(rename = "tabs")]
-	pub tabs: CTTabs,
+	pub tabs: Option<CTTabs>,
 	#[serde(rename = "suppressAutoHyphens")]
-	pub suppress_auto_hyphens: CTOnOff,
+	pub suppress_auto_hyphens: Option<CTOnOff>,
 	#[serde(rename = "kinsoku")]
-	pub kinsoku: CTOnOff,
+	pub kinsoku: Option<CTOnOff>,
 	#[serde(rename = "wordWrap")]
-	pub word_wrap: CTOnOff,
+	pub word_wrap: Option<CTOnOff>,
 	#[serde(rename = "overflowPunct")]
-	pub overflow_punct: CTOnOff,
+	pub overflow_punct: Option<CTOnOff>,
 	#[serde(rename = "topLinePunct")]
-	pub top_line_punct: CTOnOff,
+	pub top_line_punct: Option<CTOnOff>,
 	#[serde(rename = "autoSpaceDE")]
-	pub auto_space_de: CTOnOff,
+	pub auto_space_de: Option<CTOnOff>,
 	#[serde(rename = "autoSpaceDN")]
-	pub auto_space_dn: CTOnOff,
+	pub auto_space_dn: Option<CTOnOff>,
 	#[serde(rename = "bidi")]
-	pub bidi: CTOnOff,
+	pub bidi: Option<CTOnOff>,
 	#[serde(rename = "adjustRightInd")]
-	pub adjust_right_ind: CTOnOff,
+	pub adjust_right_ind: Option<CTOnOff>,
 	#[serde(rename = "snapToGrid")]
-	pub snap_to_grid: CTOnOff,
+	pub snap_to_grid: Option<CTOnOff>,
 	#[serde(rename = "spacing")]
-	pub spacing: CTSpacing,
+	pub spacing: Option<CTSpacing>,
 	#[serde(rename = "ind")]
-	pub ind: CTInd,
+	pub ind: Option<CTInd>,
 	#[serde(rename = "contextualSpacing")]
-	pub contextual_spacing: CTOnOff,
+	pub contextual_spacing: Option<CTOnOff>,
 	#[serde(rename = "mirrorIndents")]
-	pub mirror_indents: CTOnOff,
+	pub mirror_indents: Option<CTOnOff>,
 	#[serde(rename = "suppressOverlap")]
-	pub suppress_overlap: CTOnOff,
+	pub suppress_overlap: Option<CTOnOff>,
 	#[serde(rename = "jc")]
-	pub jc: CTJc,
+	pub jc: Option<CTJc>,
 	#[serde(rename = "textDirection")]
-	pub text_direction: CTTextDirection,
+	pub text_direction: Option<CTTextDirection>,
 	#[serde(rename = "textAlignment")]
-	pub text_alignment: CTTextAlignment,
+	pub text_alignment: Option<CTTextAlignment>,
 	#[serde(rename = "textboxTightWrap")]
-	pub textbox_tight_wrap: CTTextboxTightWrap,
+	pub textbox_tight_wrap: Option<CTTextboxTightWrap>,
 	#[serde(rename = "outlineLvl")]
-	pub outline_lvl: CTDecimalNumber,
+	pub outline_lvl: Option<CTDecimalNumber>,
 	#[serde(rename = "divId")]
-	pub div_id: CTDecimalNumber,
+	pub div_id: Option<CTDecimalNumber>,
 	#[serde(rename = "cnfStyle")]
-	pub cnf_style: CTCnf,
+	pub cnf_style: Option<CTCnf>,
 }
 
 
@@ -1352,7 +1352,7 @@ pub struct CTPPrBase {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTPPrGeneral {
 	#[serde(rename = "pPrChange")]
-	pub p_pr_change: CTPPrChange,
+	pub p_pr_change: Option<CTPPrChange>,
 	#[serde(flatten)]
 	pub ctp_pr_base: CTPPrBase,
 }
@@ -1382,7 +1382,7 @@ pub struct CTBackground {
 	#[serde(rename = "themeShade")]
 	pub theme_shade: Option<String>,
 	#[serde(rename = "drawing")]
-	pub drawing: CTDrawing,
+	pub drawing: Option<CTDrawing>,
 }
 
 
@@ -1402,7 +1402,7 @@ pub struct CTObject {
 	#[serde(rename = "dyaOrig")]
 	pub dya_orig: Option<STTwipsMeasure>,
 	#[serde(rename = "drawing")]
-	pub drawing: CTDrawing,
+	pub drawing: Option<CTDrawing>,
 	#[serde(rename = "control")]
 	pub control: CTControl,
 	#[serde(rename = "objectLink")]
@@ -1556,7 +1556,7 @@ pub struct CTFldChar {
 	#[serde(rename = "dirty")]
 	pub dirty: Option<STOnOff>,
 	#[serde(rename = "ffData")]
-	pub ff_data: CTFFData,
+	pub ff_data: Option<CTFFData>,
 }
 
 
@@ -1638,9 +1638,9 @@ pub struct CTFFCheckBox {
 	#[serde(rename = "sizeAuto")]
 	pub size_auto: CTOnOff,
 	#[serde(rename = "default")]
-	pub default: CTOnOff,
+	pub default: Option<CTOnOff>,
 	#[serde(rename = "checked")]
-	pub checked: CTOnOff,
+	pub checked: Option<CTOnOff>,
 }
 
 
@@ -1648,9 +1648,9 @@ pub struct CTFFCheckBox {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTFFDDList {
 	#[serde(rename = "result")]
-	pub result: CTDecimalNumber,
+	pub result: Option<CTDecimalNumber>,
 	#[serde(rename = "default")]
-	pub default: CTDecimalNumber,
+	pub default: Option<CTDecimalNumber>,
 	#[serde(rename = "listEntry")]
 	pub list_entry: Vec<CTString>,
 }
@@ -1660,13 +1660,13 @@ pub struct CTFFDDList {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTFFTextInput {
 	#[serde(rename = "type")]
-	pub type_attr: CTFFTextType,
+	pub type_attr: Option<CTFFTextType>,
 	#[serde(rename = "default")]
-	pub default: CTString,
+	pub default: Option<CTString>,
 	#[serde(rename = "maxLength")]
-	pub max_length: CTDecimalNumber,
+	pub max_length: Option<CTDecimalNumber>,
 	#[serde(rename = "format")]
-	pub format: CTString,
+	pub format: Option<CTString>,
 }
 
 
@@ -1780,13 +1780,13 @@ pub struct CTPageBorders {
 	#[serde(rename = "offsetFrom")]
 	pub offset_from: Option<String>,
 	#[serde(rename = "top")]
-	pub top: CTTopPageBorder,
+	pub top: Option<CTTopPageBorder>,
 	#[serde(rename = "left")]
-	pub left: CTPageBorder,
+	pub left: Option<CTPageBorder>,
 	#[serde(rename = "bottom")]
-	pub bottom: CTBottomPageBorder,
+	pub bottom: Option<CTBottomPageBorder>,
 	#[serde(rename = "right")]
-	pub right: CTPageBorder,
+	pub right: Option<CTPageBorder>,
 }
 
 
@@ -2052,7 +2052,7 @@ pub struct CTSectPr {
 	#[serde(rename = "EG_SectPrContents")]
 	pub eg_sect_pr_contents: EGSectPrContents,
 	#[serde(rename = "sectPrChange")]
-	pub sect_pr_change: CTSectPrChange,
+	pub sect_pr_change: Option<CTSectPrChange>,
 }
 
 
@@ -2484,7 +2484,7 @@ pub struct CTParaRPr {
 	#[serde(rename = "EG_RPrBase")]
 	pub eg_r_pr_base: Vec<EGRPrBase>,
 	#[serde(rename = "rPrChange")]
-	pub r_pr_change: CTParaRPrChange,
+	pub r_pr_change: Option<CTParaRPrChange>,
 }
 
 
@@ -2508,7 +2508,7 @@ pub struct CTAltChunk {
 	#[serde(rename = "r:id")]
 	pub r_id: Option<String>,
 	#[serde(rename = "altChunkPr")]
-	pub alt_chunk_pr: CTAltChunkPr,
+	pub alt_chunk_pr: Option<CTAltChunkPr>,
 }
 
 
@@ -2516,7 +2516,7 @@ pub struct CTAltChunk {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTAltChunkPr {
 	#[serde(rename = "matchSrc")]
-	pub match_src: CTOnOff,
+	pub match_src: Option<CTOnOff>,
 }
 
 
@@ -2550,7 +2550,7 @@ pub struct CTRubyPr {
 	#[serde(rename = "lid")]
 	pub lid: CTLang,
 	#[serde(rename = "dirty")]
-	pub dirty: CTOnOff,
+	pub dirty: Option<CTOnOff>,
 }
 
 
@@ -2640,13 +2640,13 @@ pub struct CTSdtDate {
 	#[serde(rename = "fullDate")]
 	pub full_date: Option<u8>,
 	#[serde(rename = "dateFormat")]
-	pub date_format: CTString,
+	pub date_format: Option<CTString>,
 	#[serde(rename = "lid")]
-	pub lid: CTLang,
+	pub lid: Option<CTLang>,
 	#[serde(rename = "storeMappedDataAs")]
-	pub store_mapped_data_as: CTSdtDateMappingType,
+	pub store_mapped_data_as: Option<CTSdtDateMappingType>,
 	#[serde(rename = "calendar")]
-	pub calendar: CTCalendarType,
+	pub calendar: Option<CTCalendarType>,
 }
 
 
@@ -2664,11 +2664,11 @@ pub struct CTSdtComboBox {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTSdtDocPart {
 	#[serde(rename = "docPartGallery")]
-	pub doc_part_gallery: CTString,
+	pub doc_part_gallery: Option<CTString>,
 	#[serde(rename = "docPartCategory")]
-	pub doc_part_category: CTString,
+	pub doc_part_category: Option<CTString>,
 	#[serde(rename = "docPartUnique")]
-	pub doc_part_unique: CTOnOff,
+	pub doc_part_unique: Option<CTOnOff>,
 }
 
 
@@ -2714,27 +2714,27 @@ pub struct CTDataBinding {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTSdtPr {
 	#[serde(rename = "rPr")]
-	pub r_pr: CTRPr,
+	pub r_pr: Option<CTRPr>,
 	#[serde(rename = "alias")]
-	pub alias: CTString,
+	pub alias: Option<CTString>,
 	#[serde(rename = "tag")]
-	pub tag: CTString,
+	pub tag: Option<CTString>,
 	#[serde(rename = "id")]
-	pub id: CTDecimalNumber,
+	pub id: Option<CTDecimalNumber>,
 	#[serde(rename = "lock")]
-	pub lock: CTLock,
+	pub lock: Option<CTLock>,
 	#[serde(rename = "placeholder")]
-	pub placeholder: CTPlaceholder,
+	pub placeholder: Option<CTPlaceholder>,
 	#[serde(rename = "temporary")]
-	pub temporary: CTOnOff,
+	pub temporary: Option<CTOnOff>,
 	#[serde(rename = "showingPlcHdr")]
-	pub showing_plc_hdr: CTOnOff,
+	pub showing_plc_hdr: Option<CTOnOff>,
 	#[serde(rename = "dataBinding")]
-	pub data_binding: CTDataBinding,
+	pub data_binding: Option<CTDataBinding>,
 	#[serde(rename = "label")]
-	pub label: CTDecimalNumber,
+	pub label: Option<CTDecimalNumber>,
 	#[serde(rename = "tabIndex")]
-	pub tab_index: CTUnsignedDecimalNumber,
+	pub tab_index: Option<CTUnsignedDecimalNumber>,
 	#[serde(rename = "equation")]
 	pub equation: CTEmpty,
 	#[serde(rename = "comboBox")]
@@ -2898,11 +2898,11 @@ pub struct CTSdtContentCell {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTSdtBlock {
 	#[serde(rename = "sdtPr")]
-	pub sdt_pr: CTSdtPr,
+	pub sdt_pr: Option<CTSdtPr>,
 	#[serde(rename = "sdtEndPr")]
-	pub sdt_end_pr: CTSdtEndPr,
+	pub sdt_end_pr: Option<CTSdtEndPr>,
 	#[serde(rename = "sdtContent")]
-	pub sdt_content: CTSdtContentBlock,
+	pub sdt_content: Option<CTSdtContentBlock>,
 }
 
 
@@ -2910,11 +2910,11 @@ pub struct CTSdtBlock {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTSdtRun {
 	#[serde(rename = "sdtPr")]
-	pub sdt_pr: CTSdtPr,
+	pub sdt_pr: Option<CTSdtPr>,
 	#[serde(rename = "sdtEndPr")]
-	pub sdt_end_pr: CTSdtEndPr,
+	pub sdt_end_pr: Option<CTSdtEndPr>,
 	#[serde(rename = "sdtContent")]
-	pub sdt_content: CTSdtContentRun,
+	pub sdt_content: Option<CTSdtContentRun>,
 }
 
 
@@ -2922,11 +2922,11 @@ pub struct CTSdtRun {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTSdtCell {
 	#[serde(rename = "sdtPr")]
-	pub sdt_pr: CTSdtPr,
+	pub sdt_pr: Option<CTSdtPr>,
 	#[serde(rename = "sdtEndPr")]
-	pub sdt_end_pr: CTSdtEndPr,
+	pub sdt_end_pr: Option<CTSdtEndPr>,
 	#[serde(rename = "sdtContent")]
-	pub sdt_content: CTSdtContentCell,
+	pub sdt_content: Option<CTSdtContentCell>,
 }
 
 
@@ -2934,11 +2934,11 @@ pub struct CTSdtCell {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTSdtRow {
 	#[serde(rename = "sdtPr")]
-	pub sdt_pr: CTSdtPr,
+	pub sdt_pr: Option<CTSdtPr>,
 	#[serde(rename = "sdtEndPr")]
-	pub sdt_end_pr: CTSdtEndPr,
+	pub sdt_end_pr: Option<CTSdtEndPr>,
 	#[serde(rename = "sdtContent")]
-	pub sdt_content: CTSdtContentRow,
+	pub sdt_content: Option<CTSdtContentRow>,
 }
 
 
@@ -2964,7 +2964,7 @@ pub struct CTCustomXmlRun {
 	#[serde(rename = "EG_PContent")]
 	pub eg_p_content: Vec<EGPContent>,
 	#[serde(rename = "customXmlPr")]
-	pub custom_xml_pr: CTCustomXmlPr,
+	pub custom_xml_pr: Option<CTCustomXmlPr>,
 }
 
 
@@ -2978,7 +2978,7 @@ pub struct CTSmartTagRun {
 	#[serde(rename = "EG_PContent")]
 	pub eg_p_content: Vec<EGPContent>,
 	#[serde(rename = "smartTagPr")]
-	pub smart_tag_pr: CTSmartTagPr,
+	pub smart_tag_pr: Option<CTSmartTagPr>,
 }
 
 
@@ -2992,7 +2992,7 @@ pub struct CTCustomXmlBlock {
 	#[serde(rename = "EG_ContentBlockContent")]
 	pub eg_content_block_content: Vec<EGContentBlockContent>,
 	#[serde(rename = "customXmlPr")]
-	pub custom_xml_pr: CTCustomXmlPr,
+	pub custom_xml_pr: Option<CTCustomXmlPr>,
 }
 
 
@@ -3000,7 +3000,7 @@ pub struct CTCustomXmlBlock {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTCustomXmlPr {
 	#[serde(rename = "placeholder")]
-	pub placeholder: CTString,
+	pub placeholder: Option<CTString>,
 	#[serde(rename = "attr")]
 	pub attr: Vec<CTAttr>,
 }
@@ -3016,7 +3016,7 @@ pub struct CTCustomXmlRow {
 	#[serde(rename = "EG_ContentRowContent")]
 	pub eg_content_row_content: Vec<EGContentRowContent>,
 	#[serde(rename = "customXmlPr")]
-	pub custom_xml_pr: CTCustomXmlPr,
+	pub custom_xml_pr: Option<CTCustomXmlPr>,
 }
 
 
@@ -3030,7 +3030,7 @@ pub struct CTCustomXmlCell {
 	#[serde(rename = "EG_ContentCellContent")]
 	pub eg_content_cell_content: Vec<EGContentCellContent>,
 	#[serde(rename = "customXmlPr")]
-	pub custom_xml_pr: CTCustomXmlPr,
+	pub custom_xml_pr: Option<CTCustomXmlPr>,
 }
 
 
@@ -3072,7 +3072,7 @@ pub struct CTP {
 	#[serde(rename = "EG_PContent")]
 	pub eg_p_content: Vec<EGPContent>,
 	#[serde(rename = "pPr")]
-	pub p_pr: CTPPr,
+	pub p_pr: Option<CTPPr>,
 }
 
 
@@ -3132,7 +3132,7 @@ pub struct CTTblGridBase {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTTblGrid {
 	#[serde(rename = "tblGridChange")]
-	pub tbl_grid_change: CTTblGridChange,
+	pub tbl_grid_change: Option<CTTblGridChange>,
 	#[serde(flatten)]
 	pub ct_tbl_grid_base: CTTblGridBase,
 }
@@ -3142,21 +3142,21 @@ pub struct CTTblGrid {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTTcBorders {
 	#[serde(rename = "top")]
-	pub top: CTBorder,
+	pub top: Option<CTBorder>,
 	#[serde(rename = "start")]
-	pub start: CTBorder,
+	pub start: Option<CTBorder>,
 	#[serde(rename = "bottom")]
-	pub bottom: CTBorder,
+	pub bottom: Option<CTBorder>,
 	#[serde(rename = "end")]
-	pub end: CTBorder,
+	pub end: Option<CTBorder>,
 	#[serde(rename = "insideH")]
-	pub inside_h: CTBorder,
+	pub inside_h: Option<CTBorder>,
 	#[serde(rename = "insideV")]
-	pub inside_v: CTBorder,
+	pub inside_v: Option<CTBorder>,
 	#[serde(rename = "tl2br")]
-	pub tl2br: CTBorder,
+	pub tl2br: Option<CTBorder>,
 	#[serde(rename = "tr2bl")]
-	pub tr2bl: CTBorder,
+	pub tr2bl: Option<CTBorder>,
 }
 
 
@@ -3164,13 +3164,13 @@ pub struct CTTcBorders {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTTcMar {
 	#[serde(rename = "top")]
-	pub top: CTTblWidth,
+	pub top: Option<CTTblWidth>,
 	#[serde(rename = "start")]
-	pub start: CTTblWidth,
+	pub start: Option<CTTblWidth>,
 	#[serde(rename = "bottom")]
-	pub bottom: CTTblWidth,
+	pub bottom: Option<CTTblWidth>,
 	#[serde(rename = "end")]
-	pub end: CTTblWidth,
+	pub end: Option<CTTblWidth>,
 }
 
 
@@ -3194,31 +3194,31 @@ pub struct CTVMerge {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTTcPrBase {
 	#[serde(rename = "cnfStyle")]
-	pub cnf_style: CTCnf,
+	pub cnf_style: Option<CTCnf>,
 	#[serde(rename = "tcW")]
-	pub tc_w: CTTblWidth,
+	pub tc_w: Option<CTTblWidth>,
 	#[serde(rename = "gridSpan")]
-	pub grid_span: CTDecimalNumber,
+	pub grid_span: Option<CTDecimalNumber>,
 	#[serde(rename = "vMerge")]
-	pub v_merge: CTVMerge,
+	pub v_merge: Option<CTVMerge>,
 	#[serde(rename = "tcBorders")]
-	pub tc_borders: CTTcBorders,
+	pub tc_borders: Option<CTTcBorders>,
 	#[serde(rename = "shd")]
-	pub shd: CTShd,
+	pub shd: Option<CTShd>,
 	#[serde(rename = "noWrap")]
-	pub no_wrap: CTOnOff,
+	pub no_wrap: Option<CTOnOff>,
 	#[serde(rename = "tcMar")]
-	pub tc_mar: CTTcMar,
+	pub tc_mar: Option<CTTcMar>,
 	#[serde(rename = "textDirection")]
-	pub text_direction: CTTextDirection,
+	pub text_direction: Option<CTTextDirection>,
 	#[serde(rename = "tcFitText")]
-	pub tc_fit_text: CTOnOff,
+	pub tc_fit_text: Option<CTOnOff>,
 	#[serde(rename = "vAlign")]
-	pub v_align: CTVerticalJc,
+	pub v_align: Option<CTVerticalJc>,
 	#[serde(rename = "hideMark")]
-	pub hide_mark: CTOnOff,
+	pub hide_mark: Option<CTOnOff>,
 	#[serde(rename = "headers")]
-	pub headers: CTHeaders,
+	pub headers: Option<CTHeaders>,
 }
 
 
@@ -3226,7 +3226,7 @@ pub struct CTTcPrBase {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTTcPr {
 	#[serde(rename = "tcPrChange")]
-	pub tc_pr_change: CTTcPrChange,
+	pub tc_pr_change: Option<CTTcPrChange>,
 	#[serde(flatten)]
 	pub ct_tc_pr_inner: CTTcPrInner,
 }
@@ -3250,7 +3250,7 @@ pub struct CTTc {
 	#[serde(rename = "EG_BlockLevelElts")]
 	pub eg_block_level_elts: Vec<EGBlockLevelElts>,
 	#[serde(rename = "tcPr")]
-	pub tc_pr: CTTcPr,
+	pub tc_pr: Option<CTTcPr>,
 }
 
 
@@ -3326,11 +3326,11 @@ pub struct CTTrPrBase {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTTrPr {
 	#[serde(rename = "ins")]
-	pub ins: CTTrackChange,
+	pub ins: Option<CTTrackChange>,
 	#[serde(rename = "del")]
-	pub del: CTTrackChange,
+	pub del: Option<CTTrackChange>,
 	#[serde(rename = "trPrChange")]
-	pub tr_pr_change: CTTrPrChange,
+	pub tr_pr_change: Option<CTTrPrChange>,
 	#[serde(flatten)]
 	pub ct_tr_pr_base: CTTrPrBase,
 }
@@ -3350,9 +3350,9 @@ pub struct CTRow {
 	#[serde(rename = "EG_ContentCellContent")]
 	pub eg_content_cell_content: Vec<EGContentCellContent>,
 	#[serde(rename = "tblPrEx")]
-	pub tbl_pr_ex: CTTblPrEx,
+	pub tbl_pr_ex: Option<CTTblPrEx>,
 	#[serde(rename = "trPr")]
-	pub tr_pr: CTTrPr,
+	pub tr_pr: Option<CTTrPr>,
 }
 
 
@@ -3418,13 +3418,13 @@ pub struct CTTblPPr {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTTblCellMar {
 	#[serde(rename = "top")]
-	pub top: CTTblWidth,
+	pub top: Option<CTTblWidth>,
 	#[serde(rename = "start")]
-	pub start: CTTblWidth,
+	pub start: Option<CTTblWidth>,
 	#[serde(rename = "bottom")]
-	pub bottom: CTTblWidth,
+	pub bottom: Option<CTTblWidth>,
 	#[serde(rename = "end")]
-	pub end: CTTblWidth,
+	pub end: Option<CTTblWidth>,
 }
 
 
@@ -3432,17 +3432,17 @@ pub struct CTTblCellMar {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTTblBorders {
 	#[serde(rename = "top")]
-	pub top: CTBorder,
+	pub top: Option<CTBorder>,
 	#[serde(rename = "start")]
-	pub start: CTBorder,
+	pub start: Option<CTBorder>,
 	#[serde(rename = "bottom")]
-	pub bottom: CTBorder,
+	pub bottom: Option<CTBorder>,
 	#[serde(rename = "end")]
-	pub end: CTBorder,
+	pub end: Option<CTBorder>,
 	#[serde(rename = "insideH")]
-	pub inside_h: CTBorder,
+	pub inside_h: Option<CTBorder>,
 	#[serde(rename = "insideV")]
-	pub inside_v: CTBorder,
+	pub inside_v: Option<CTBorder>,
 }
 
 
@@ -3450,39 +3450,39 @@ pub struct CTTblBorders {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTTblPrBase {
 	#[serde(rename = "tblStyle")]
-	pub tbl_style: CTString,
+	pub tbl_style: Option<CTString>,
 	#[serde(rename = "tblpPr")]
-	pub tblp_pr: CTTblPPr,
+	pub tblp_pr: Option<CTTblPPr>,
 	#[serde(rename = "tblOverlap")]
-	pub tbl_overlap: CTTblOverlap,
+	pub tbl_overlap: Option<CTTblOverlap>,
 	#[serde(rename = "bidiVisual")]
-	pub bidi_visual: CTOnOff,
+	pub bidi_visual: Option<CTOnOff>,
 	#[serde(rename = "tblStyleRowBandSize")]
-	pub tbl_style_row_band_size: CTDecimalNumber,
+	pub tbl_style_row_band_size: Option<CTDecimalNumber>,
 	#[serde(rename = "tblStyleColBandSize")]
-	pub tbl_style_col_band_size: CTDecimalNumber,
+	pub tbl_style_col_band_size: Option<CTDecimalNumber>,
 	#[serde(rename = "tblW")]
-	pub tbl_w: CTTblWidth,
+	pub tbl_w: Option<CTTblWidth>,
 	#[serde(rename = "jc")]
-	pub jc: CTJcTable,
+	pub jc: Option<CTJcTable>,
 	#[serde(rename = "tblCellSpacing")]
-	pub tbl_cell_spacing: CTTblWidth,
+	pub tbl_cell_spacing: Option<CTTblWidth>,
 	#[serde(rename = "tblInd")]
-	pub tbl_ind: CTTblWidth,
+	pub tbl_ind: Option<CTTblWidth>,
 	#[serde(rename = "tblBorders")]
-	pub tbl_borders: CTTblBorders,
+	pub tbl_borders: Option<CTTblBorders>,
 	#[serde(rename = "shd")]
-	pub shd: CTShd,
+	pub shd: Option<CTShd>,
 	#[serde(rename = "tblLayout")]
-	pub tbl_layout: CTTblLayoutType,
+	pub tbl_layout: Option<CTTblLayoutType>,
 	#[serde(rename = "tblCellMar")]
-	pub tbl_cell_mar: CTTblCellMar,
+	pub tbl_cell_mar: Option<CTTblCellMar>,
 	#[serde(rename = "tblLook")]
-	pub tbl_look: CTTblLook,
+	pub tbl_look: Option<CTTblLook>,
 	#[serde(rename = "tblCaption")]
-	pub tbl_caption: CTString,
+	pub tbl_caption: Option<CTString>,
 	#[serde(rename = "tblDescription")]
-	pub tbl_description: CTString,
+	pub tbl_description: Option<CTString>,
 }
 
 
@@ -3490,7 +3490,7 @@ pub struct CTTblPrBase {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTTblPr {
 	#[serde(rename = "tblPrChange")]
-	pub tbl_pr_change: CTTblPrChange,
+	pub tbl_pr_change: Option<CTTblPrChange>,
 	#[serde(flatten)]
 	pub ct_tbl_pr_base: CTTblPrBase,
 }
@@ -3500,23 +3500,23 @@ pub struct CTTblPr {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTTblPrExBase {
 	#[serde(rename = "tblW")]
-	pub tbl_w: CTTblWidth,
+	pub tbl_w: Option<CTTblWidth>,
 	#[serde(rename = "jc")]
-	pub jc: CTJcTable,
+	pub jc: Option<CTJcTable>,
 	#[serde(rename = "tblCellSpacing")]
-	pub tbl_cell_spacing: CTTblWidth,
+	pub tbl_cell_spacing: Option<CTTblWidth>,
 	#[serde(rename = "tblInd")]
-	pub tbl_ind: CTTblWidth,
+	pub tbl_ind: Option<CTTblWidth>,
 	#[serde(rename = "tblBorders")]
-	pub tbl_borders: CTTblBorders,
+	pub tbl_borders: Option<CTTblBorders>,
 	#[serde(rename = "shd")]
-	pub shd: CTShd,
+	pub shd: Option<CTShd>,
 	#[serde(rename = "tblLayout")]
-	pub tbl_layout: CTTblLayoutType,
+	pub tbl_layout: Option<CTTblLayoutType>,
 	#[serde(rename = "tblCellMar")]
-	pub tbl_cell_mar: CTTblCellMar,
+	pub tbl_cell_mar: Option<CTTblCellMar>,
 	#[serde(rename = "tblLook")]
-	pub tbl_look: CTTblLook,
+	pub tbl_look: Option<CTTblLook>,
 }
 
 
@@ -3524,7 +3524,7 @@ pub struct CTTblPrExBase {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTTblPrEx {
 	#[serde(rename = "tblPrExChange")]
-	pub tbl_pr_ex_change: CTTblPrExChange,
+	pub tbl_pr_ex_change: Option<CTTblPrExChange>,
 	#[serde(flatten)]
 	pub ct_tbl_pr_ex_base: CTTblPrExBase,
 }
@@ -3666,9 +3666,9 @@ pub struct CTFtnProps {
 	#[serde(rename = "EG_FtnEdnNumProps")]
 	pub eg_ftn_edn_num_props: EGFtnEdnNumProps,
 	#[serde(rename = "pos")]
-	pub pos: CTFtnPos,
+	pub pos: Option<CTFtnPos>,
 	#[serde(rename = "numFmt")]
-	pub num_fmt: CTNumFmt,
+	pub num_fmt: Option<CTNumFmt>,
 }
 
 
@@ -3678,9 +3678,9 @@ pub struct CTEdnProps {
 	#[serde(rename = "EG_FtnEdnNumProps")]
 	pub eg_ftn_edn_num_props: EGFtnEdnNumProps,
 	#[serde(rename = "pos")]
-	pub pos: CTEdnPos,
+	pub pos: Option<CTEdnPos>,
 	#[serde(rename = "numFmt")]
-	pub num_fmt: CTNumFmt,
+	pub num_fmt: Option<CTNumFmt>,
 }
 
 
@@ -3708,7 +3708,7 @@ pub struct CTEdnDocProps {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTRecipientData {
 	#[serde(rename = "active")]
-	pub active: CTOnOff,
+	pub active: Option<CTOnOff>,
 	#[serde(rename = "column")]
 	pub column: CTDecimalNumber,
 	#[serde(rename = "uniqueTag")]
@@ -3744,17 +3744,17 @@ pub struct recipients {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTOdsoFieldMapData {
 	#[serde(rename = "type")]
-	pub type_attr: CTMailMergeOdsoFMDFieldType,
+	pub type_attr: Option<CTMailMergeOdsoFMDFieldType>,
 	#[serde(rename = "name")]
-	pub name: CTString,
+	pub name: Option<CTString>,
 	#[serde(rename = "mappedName")]
-	pub mapped_name: CTString,
+	pub mapped_name: Option<CTString>,
 	#[serde(rename = "column")]
-	pub column: CTDecimalNumber,
+	pub column: Option<CTDecimalNumber>,
 	#[serde(rename = "lid")]
-	pub lid: CTLang,
+	pub lid: Option<CTLang>,
 	#[serde(rename = "dynamicAddress")]
-	pub dynamic_address: CTOnOff,
+	pub dynamic_address: Option<CTOnOff>,
 }
 
 
@@ -3778,17 +3778,17 @@ pub struct CTMailMergeSourceType {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTOdso {
 	#[serde(rename = "udl")]
-	pub udl: CTString,
+	pub udl: Option<CTString>,
 	#[serde(rename = "table")]
-	pub table: CTString,
+	pub table: Option<CTString>,
 	#[serde(rename = "src")]
-	pub src: CTRel,
+	pub src: Option<CTRel>,
 	#[serde(rename = "colDelim")]
-	pub col_delim: CTDecimalNumber,
+	pub col_delim: Option<CTDecimalNumber>,
 	#[serde(rename = "type")]
-	pub type_attr: CTMailMergeSourceType,
+	pub type_attr: Option<CTMailMergeSourceType>,
 	#[serde(rename = "fHdr")]
-	pub f_hdr: CTOnOff,
+	pub f_hdr: Option<CTOnOff>,
 	#[serde(rename = "fieldMapData")]
 	pub field_map_data: Vec<CTOdsoFieldMapData>,
 	#[serde(rename = "recipientData")]
@@ -3802,35 +3802,35 @@ pub struct CTMailMerge {
 	#[serde(rename = "mainDocumentType")]
 	pub main_document_type: CTMailMergeDocType,
 	#[serde(rename = "linkToQuery")]
-	pub link_to_query: CTOnOff,
+	pub link_to_query: Option<CTOnOff>,
 	#[serde(rename = "dataType")]
 	pub data_type: CTMailMergeDataType,
 	#[serde(rename = "connectString")]
-	pub connect_string: CTString,
+	pub connect_string: Option<CTString>,
 	#[serde(rename = "query")]
-	pub query: CTString,
+	pub query: Option<CTString>,
 	#[serde(rename = "dataSource")]
-	pub data_source: CTRel,
+	pub data_source: Option<CTRel>,
 	#[serde(rename = "headerSource")]
-	pub header_source: CTRel,
+	pub header_source: Option<CTRel>,
 	#[serde(rename = "doNotSuppressBlankLines")]
-	pub do_not_suppress_blank_lines: CTOnOff,
+	pub do_not_suppress_blank_lines: Option<CTOnOff>,
 	#[serde(rename = "destination")]
-	pub destination: CTMailMergeDest,
+	pub destination: Option<CTMailMergeDest>,
 	#[serde(rename = "addressFieldName")]
-	pub address_field_name: CTString,
+	pub address_field_name: Option<CTString>,
 	#[serde(rename = "mailSubject")]
-	pub mail_subject: CTString,
+	pub mail_subject: Option<CTString>,
 	#[serde(rename = "mailAsAttachment")]
-	pub mail_as_attachment: CTOnOff,
+	pub mail_as_attachment: Option<CTOnOff>,
 	#[serde(rename = "viewMergedData")]
-	pub view_merged_data: CTOnOff,
+	pub view_merged_data: Option<CTOnOff>,
 	#[serde(rename = "activeRecord")]
-	pub active_record: CTDecimalNumber,
+	pub active_record: Option<CTDecimalNumber>,
 	#[serde(rename = "checkErrors")]
-	pub check_errors: CTDecimalNumber,
+	pub check_errors: Option<CTDecimalNumber>,
 	#[serde(rename = "odso")]
-	pub odso: CTOdso,
+	pub odso: Option<CTOdso>,
 }
 
 
@@ -3854,19 +3854,19 @@ pub struct CTTargetScreenSz {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTCompat {
 	#[serde(rename = "spaceForUL")]
-	pub space_for_ul: CTOnOff,
+	pub space_for_ul: Option<CTOnOff>,
 	#[serde(rename = "balanceSingleByteDoubleByteWidth")]
-	pub balance_single_byte_double_byte_width: CTOnOff,
+	pub balance_single_byte_double_byte_width: Option<CTOnOff>,
 	#[serde(rename = "doNotLeaveBackslashAlone")]
-	pub do_not_leave_backslash_alone: CTOnOff,
+	pub do_not_leave_backslash_alone: Option<CTOnOff>,
 	#[serde(rename = "ulTrailSpace")]
-	pub ul_trail_space: CTOnOff,
+	pub ul_trail_space: Option<CTOnOff>,
 	#[serde(rename = "doNotExpandShiftReturn")]
-	pub do_not_expand_shift_return: CTOnOff,
+	pub do_not_expand_shift_return: Option<CTOnOff>,
 	#[serde(rename = "adjustLineHeightInTable")]
-	pub adjust_line_height_in_table: CTOnOff,
+	pub adjust_line_height_in_table: Option<CTOnOff>,
 	#[serde(rename = "applyBreakingRules")]
-	pub apply_breaking_rules: CTOnOff,
+	pub apply_breaking_rules: Option<CTOnOff>,
 	#[serde(rename = "compatSetting")]
 	pub compat_setting: Vec<CTCompatSetting>,
 }
@@ -3906,7 +3906,7 @@ pub struct CTDocVars {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTDocRsids {
 	#[serde(rename = "rsidRoot")]
-	pub rsid_root: CTLongHexNumber,
+	pub rsid_root: Option<CTLongHexNumber>,
 	#[serde(rename = "rsid")]
 	pub rsid: Vec<CTLongHexNumber>,
 }
@@ -3942,7 +3942,7 @@ pub struct CTSaveThroughXslt {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTRPrDefault {
 	#[serde(rename = "rPr")]
-	pub r_pr: CTRPr,
+	pub r_pr: Option<CTRPr>,
 }
 
 
@@ -3950,7 +3950,7 @@ pub struct CTRPrDefault {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTPPrDefault {
 	#[serde(rename = "pPr")]
-	pub p_pr: CTPPrGeneral,
+	pub p_pr: Option<CTPPrGeneral>,
 }
 
 
@@ -3958,9 +3958,9 @@ pub struct CTPPrDefault {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTDocDefaults {
 	#[serde(rename = "rPrDefault")]
-	pub r_pr_default: CTRPrDefault,
+	pub r_pr_default: Option<CTRPrDefault>,
 	#[serde(rename = "pPrDefault")]
-	pub p_pr_default: CTPPrDefault,
+	pub p_pr_default: Option<CTPPrDefault>,
 }
 
 
@@ -4030,197 +4030,197 @@ pub struct CTWriteProtection {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTSettings {
 	#[serde(rename = "writeProtection")]
-	pub write_protection: CTWriteProtection,
+	pub write_protection: Option<CTWriteProtection>,
 	#[serde(rename = "view")]
-	pub view: CTView,
+	pub view: Option<CTView>,
 	#[serde(rename = "zoom")]
-	pub zoom: CTZoom,
+	pub zoom: Option<CTZoom>,
 	#[serde(rename = "removePersonalInformation")]
-	pub remove_personal_information: CTOnOff,
+	pub remove_personal_information: Option<CTOnOff>,
 	#[serde(rename = "removeDateAndTime")]
-	pub remove_date_and_time: CTOnOff,
+	pub remove_date_and_time: Option<CTOnOff>,
 	#[serde(rename = "doNotDisplayPageBoundaries")]
-	pub do_not_display_page_boundaries: CTOnOff,
+	pub do_not_display_page_boundaries: Option<CTOnOff>,
 	#[serde(rename = "displayBackgroundShape")]
-	pub display_background_shape: CTOnOff,
+	pub display_background_shape: Option<CTOnOff>,
 	#[serde(rename = "printPostScriptOverText")]
-	pub print_post_script_over_text: CTOnOff,
+	pub print_post_script_over_text: Option<CTOnOff>,
 	#[serde(rename = "printFractionalCharacterWidth")]
-	pub print_fractional_character_width: CTOnOff,
+	pub print_fractional_character_width: Option<CTOnOff>,
 	#[serde(rename = "printFormsData")]
-	pub print_forms_data: CTOnOff,
+	pub print_forms_data: Option<CTOnOff>,
 	#[serde(rename = "embedTrueTypeFonts")]
-	pub embed_true_type_fonts: CTOnOff,
+	pub embed_true_type_fonts: Option<CTOnOff>,
 	#[serde(rename = "embedSystemFonts")]
-	pub embed_system_fonts: CTOnOff,
+	pub embed_system_fonts: Option<CTOnOff>,
 	#[serde(rename = "saveSubsetFonts")]
-	pub save_subset_fonts: CTOnOff,
+	pub save_subset_fonts: Option<CTOnOff>,
 	#[serde(rename = "saveFormsData")]
-	pub save_forms_data: CTOnOff,
+	pub save_forms_data: Option<CTOnOff>,
 	#[serde(rename = "mirrorMargins")]
-	pub mirror_margins: CTOnOff,
+	pub mirror_margins: Option<CTOnOff>,
 	#[serde(rename = "alignBordersAndEdges")]
-	pub align_borders_and_edges: CTOnOff,
+	pub align_borders_and_edges: Option<CTOnOff>,
 	#[serde(rename = "bordersDoNotSurroundHeader")]
-	pub borders_do_not_surround_header: CTOnOff,
+	pub borders_do_not_surround_header: Option<CTOnOff>,
 	#[serde(rename = "bordersDoNotSurroundFooter")]
-	pub borders_do_not_surround_footer: CTOnOff,
+	pub borders_do_not_surround_footer: Option<CTOnOff>,
 	#[serde(rename = "gutterAtTop")]
-	pub gutter_at_top: CTOnOff,
+	pub gutter_at_top: Option<CTOnOff>,
 	#[serde(rename = "hideSpellingErrors")]
-	pub hide_spelling_errors: CTOnOff,
+	pub hide_spelling_errors: Option<CTOnOff>,
 	#[serde(rename = "hideGrammaticalErrors")]
-	pub hide_grammatical_errors: CTOnOff,
+	pub hide_grammatical_errors: Option<CTOnOff>,
 	#[serde(rename = "activeWritingStyle")]
 	pub active_writing_style: Vec<CTWritingStyle>,
 	#[serde(rename = "proofState")]
-	pub proof_state: CTProof,
+	pub proof_state: Option<CTProof>,
 	#[serde(rename = "formsDesign")]
-	pub forms_design: CTOnOff,
+	pub forms_design: Option<CTOnOff>,
 	#[serde(rename = "attachedTemplate")]
-	pub attached_template: CTRel,
+	pub attached_template: Option<CTRel>,
 	#[serde(rename = "linkStyles")]
-	pub link_styles: CTOnOff,
+	pub link_styles: Option<CTOnOff>,
 	#[serde(rename = "stylePaneFormatFilter")]
-	pub style_pane_format_filter: CTStylePaneFilter,
+	pub style_pane_format_filter: Option<CTStylePaneFilter>,
 	#[serde(rename = "stylePaneSortMethod")]
-	pub style_pane_sort_method: CTStyleSort,
+	pub style_pane_sort_method: Option<CTStyleSort>,
 	#[serde(rename = "documentType")]
-	pub document_type: CTDocType,
+	pub document_type: Option<CTDocType>,
 	#[serde(rename = "mailMerge")]
-	pub mail_merge: CTMailMerge,
+	pub mail_merge: Option<CTMailMerge>,
 	#[serde(rename = "revisionView")]
-	pub revision_view: CTTrackChangesView,
+	pub revision_view: Option<CTTrackChangesView>,
 	#[serde(rename = "trackRevisions")]
-	pub track_revisions: CTOnOff,
+	pub track_revisions: Option<CTOnOff>,
 	#[serde(rename = "doNotTrackMoves")]
-	pub do_not_track_moves: CTOnOff,
+	pub do_not_track_moves: Option<CTOnOff>,
 	#[serde(rename = "doNotTrackFormatting")]
-	pub do_not_track_formatting: CTOnOff,
+	pub do_not_track_formatting: Option<CTOnOff>,
 	#[serde(rename = "documentProtection")]
-	pub document_protection: CTDocProtect,
+	pub document_protection: Option<CTDocProtect>,
 	#[serde(rename = "autoFormatOverride")]
-	pub auto_format_override: CTOnOff,
+	pub auto_format_override: Option<CTOnOff>,
 	#[serde(rename = "styleLockTheme")]
-	pub style_lock_theme: CTOnOff,
+	pub style_lock_theme: Option<CTOnOff>,
 	#[serde(rename = "styleLockQFSet")]
-	pub style_lock_qf_set: CTOnOff,
+	pub style_lock_qf_set: Option<CTOnOff>,
 	#[serde(rename = "defaultTabStop")]
-	pub default_tab_stop: CTTwipsMeasure,
+	pub default_tab_stop: Option<CTTwipsMeasure>,
 	#[serde(rename = "autoHyphenation")]
-	pub auto_hyphenation: CTOnOff,
+	pub auto_hyphenation: Option<CTOnOff>,
 	#[serde(rename = "consecutiveHyphenLimit")]
-	pub consecutive_hyphen_limit: CTDecimalNumber,
+	pub consecutive_hyphen_limit: Option<CTDecimalNumber>,
 	#[serde(rename = "hyphenationZone")]
-	pub hyphenation_zone: CTTwipsMeasure,
+	pub hyphenation_zone: Option<CTTwipsMeasure>,
 	#[serde(rename = "doNotHyphenateCaps")]
-	pub do_not_hyphenate_caps: CTOnOff,
+	pub do_not_hyphenate_caps: Option<CTOnOff>,
 	#[serde(rename = "showEnvelope")]
-	pub show_envelope: CTOnOff,
+	pub show_envelope: Option<CTOnOff>,
 	#[serde(rename = "summaryLength")]
-	pub summary_length: CTDecimalNumberOrPrecent,
+	pub summary_length: Option<CTDecimalNumberOrPrecent>,
 	#[serde(rename = "clickAndTypeStyle")]
-	pub click_and_type_style: CTString,
+	pub click_and_type_style: Option<CTString>,
 	#[serde(rename = "defaultTableStyle")]
-	pub default_table_style: CTString,
+	pub default_table_style: Option<CTString>,
 	#[serde(rename = "evenAndOddHeaders")]
-	pub even_and_odd_headers: CTOnOff,
+	pub even_and_odd_headers: Option<CTOnOff>,
 	#[serde(rename = "bookFoldRevPrinting")]
-	pub book_fold_rev_printing: CTOnOff,
+	pub book_fold_rev_printing: Option<CTOnOff>,
 	#[serde(rename = "bookFoldPrinting")]
-	pub book_fold_printing: CTOnOff,
+	pub book_fold_printing: Option<CTOnOff>,
 	#[serde(rename = "bookFoldPrintingSheets")]
-	pub book_fold_printing_sheets: CTDecimalNumber,
+	pub book_fold_printing_sheets: Option<CTDecimalNumber>,
 	#[serde(rename = "drawingGridHorizontalSpacing")]
-	pub drawing_grid_horizontal_spacing: CTTwipsMeasure,
+	pub drawing_grid_horizontal_spacing: Option<CTTwipsMeasure>,
 	#[serde(rename = "drawingGridVerticalSpacing")]
-	pub drawing_grid_vertical_spacing: CTTwipsMeasure,
+	pub drawing_grid_vertical_spacing: Option<CTTwipsMeasure>,
 	#[serde(rename = "displayHorizontalDrawingGridEvery")]
-	pub display_horizontal_drawing_grid_every: CTDecimalNumber,
+	pub display_horizontal_drawing_grid_every: Option<CTDecimalNumber>,
 	#[serde(rename = "displayVerticalDrawingGridEvery")]
-	pub display_vertical_drawing_grid_every: CTDecimalNumber,
+	pub display_vertical_drawing_grid_every: Option<CTDecimalNumber>,
 	#[serde(rename = "doNotUseMarginsForDrawingGridOrigin")]
-	pub do_not_use_margins_for_drawing_grid_origin: CTOnOff,
+	pub do_not_use_margins_for_drawing_grid_origin: Option<CTOnOff>,
 	#[serde(rename = "drawingGridHorizontalOrigin")]
-	pub drawing_grid_horizontal_origin: CTTwipsMeasure,
+	pub drawing_grid_horizontal_origin: Option<CTTwipsMeasure>,
 	#[serde(rename = "drawingGridVerticalOrigin")]
-	pub drawing_grid_vertical_origin: CTTwipsMeasure,
+	pub drawing_grid_vertical_origin: Option<CTTwipsMeasure>,
 	#[serde(rename = "doNotShadeFormData")]
-	pub do_not_shade_form_data: CTOnOff,
+	pub do_not_shade_form_data: Option<CTOnOff>,
 	#[serde(rename = "noPunctuationKerning")]
-	pub no_punctuation_kerning: CTOnOff,
+	pub no_punctuation_kerning: Option<CTOnOff>,
 	#[serde(rename = "characterSpacingControl")]
-	pub character_spacing_control: CTCharacterSpacing,
+	pub character_spacing_control: Option<CTCharacterSpacing>,
 	#[serde(rename = "printTwoOnOne")]
-	pub print_two_on_one: CTOnOff,
+	pub print_two_on_one: Option<CTOnOff>,
 	#[serde(rename = "strictFirstAndLastChars")]
-	pub strict_first_and_last_chars: CTOnOff,
+	pub strict_first_and_last_chars: Option<CTOnOff>,
 	#[serde(rename = "noLineBreaksAfter")]
-	pub no_line_breaks_after: CTKinsoku,
+	pub no_line_breaks_after: Option<CTKinsoku>,
 	#[serde(rename = "noLineBreaksBefore")]
-	pub no_line_breaks_before: CTKinsoku,
+	pub no_line_breaks_before: Option<CTKinsoku>,
 	#[serde(rename = "savePreviewPicture")]
-	pub save_preview_picture: CTOnOff,
+	pub save_preview_picture: Option<CTOnOff>,
 	#[serde(rename = "doNotValidateAgainstSchema")]
-	pub do_not_validate_against_schema: CTOnOff,
+	pub do_not_validate_against_schema: Option<CTOnOff>,
 	#[serde(rename = "saveInvalidXml")]
-	pub save_invalid_xml: CTOnOff,
+	pub save_invalid_xml: Option<CTOnOff>,
 	#[serde(rename = "ignoreMixedContent")]
-	pub ignore_mixed_content: CTOnOff,
+	pub ignore_mixed_content: Option<CTOnOff>,
 	#[serde(rename = "alwaysShowPlaceholderText")]
-	pub always_show_placeholder_text: CTOnOff,
+	pub always_show_placeholder_text: Option<CTOnOff>,
 	#[serde(rename = "doNotDemarcateInvalidXml")]
-	pub do_not_demarcate_invalid_xml: CTOnOff,
+	pub do_not_demarcate_invalid_xml: Option<CTOnOff>,
 	#[serde(rename = "saveXmlDataOnly")]
-	pub save_xml_data_only: CTOnOff,
+	pub save_xml_data_only: Option<CTOnOff>,
 	#[serde(rename = "useXSLTWhenSaving")]
-	pub use_xslt_when_saving: CTOnOff,
+	pub use_xslt_when_saving: Option<CTOnOff>,
 	#[serde(rename = "saveThroughXslt")]
-	pub save_through_xslt: CTSaveThroughXslt,
+	pub save_through_xslt: Option<CTSaveThroughXslt>,
 	#[serde(rename = "showXMLTags")]
-	pub show_xml_tags: CTOnOff,
+	pub show_xml_tags: Option<CTOnOff>,
 	#[serde(rename = "alwaysMergeEmptyNamespace")]
-	pub always_merge_empty_namespace: CTOnOff,
+	pub always_merge_empty_namespace: Option<CTOnOff>,
 	#[serde(rename = "updateFields")]
-	pub update_fields: CTOnOff,
+	pub update_fields: Option<CTOnOff>,
 	#[serde(rename = "footnotePr")]
-	pub footnote_pr: CTFtnDocProps,
+	pub footnote_pr: Option<CTFtnDocProps>,
 	#[serde(rename = "endnotePr")]
-	pub endnote_pr: CTEdnDocProps,
+	pub endnote_pr: Option<CTEdnDocProps>,
 	#[serde(rename = "compat")]
-	pub compat: CTCompat,
+	pub compat: Option<CTCompat>,
 	#[serde(rename = "docVars")]
-	pub doc_vars: CTDocVars,
+	pub doc_vars: Option<CTDocVars>,
 	#[serde(rename = "rsids")]
-	pub rsids: CTDocRsids,
+	pub rsids: Option<CTDocRsids>,
 	#[serde(rename = "m:mathPr")]
-	pub m_math_pr: CTMathPr,
+	pub m_math_pr: Option<CTMathPr>,
 	#[serde(rename = "attachedSchema")]
 	pub attached_schema: Vec<CTString>,
 	#[serde(rename = "themeFontLang")]
-	pub theme_font_lang: CTLanguage,
+	pub theme_font_lang: Option<CTLanguage>,
 	#[serde(rename = "clrSchemeMapping")]
-	pub clr_scheme_mapping: CTColorSchemeMapping,
+	pub clr_scheme_mapping: Option<CTColorSchemeMapping>,
 	#[serde(rename = "doNotIncludeSubdocsInStats")]
-	pub do_not_include_subdocs_in_stats: CTOnOff,
+	pub do_not_include_subdocs_in_stats: Option<CTOnOff>,
 	#[serde(rename = "doNotAutoCompressPictures")]
-	pub do_not_auto_compress_pictures: CTOnOff,
+	pub do_not_auto_compress_pictures: Option<CTOnOff>,
 	#[serde(rename = "forceUpgrade")]
-	pub force_upgrade: CTEmpty,
+	pub force_upgrade: Option<CTEmpty>,
 	#[serde(rename = "captions")]
-	pub captions: CTCaptions,
+	pub captions: Option<CTCaptions>,
 	#[serde(rename = "readModeInkLockDown")]
-	pub read_mode_ink_lock_down: CTReadingModeInkLockDown,
+	pub read_mode_ink_lock_down: Option<CTReadingModeInkLockDown>,
 	#[serde(rename = "smartTagType")]
 	pub smart_tag_type: Vec<CTSmartTagType>,
 	#[serde(rename = "sl:schemaLibrary")]
-	pub sl_schema_library: CTSchemaLibrary,
+	pub sl_schema_library: Option<CTSchemaLibrary>,
 	#[serde(rename = "doNotEmbedSmartTags")]
-	pub do_not_embed_smart_tags: CTOnOff,
+	pub do_not_embed_smart_tags: Option<CTOnOff>,
 	#[serde(rename = "decimalSymbol")]
-	pub decimal_symbol: CTString,
+	pub decimal_symbol: Option<CTString>,
 	#[serde(rename = "listSeparator")]
-	pub list_separator: CTString,
+	pub list_separator: Option<CTString>,
 }
 
 
@@ -4280,29 +4280,29 @@ pub struct STStyleSort {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTWebSettings {
 	#[serde(rename = "frameset")]
-	pub frameset: CTFrameset,
+	pub frameset: Option<CTFrameset>,
 	#[serde(rename = "divs")]
-	pub divs: CTDivs,
+	pub divs: Option<CTDivs>,
 	#[serde(rename = "encoding")]
-	pub encoding: CTString,
+	pub encoding: Option<CTString>,
 	#[serde(rename = "optimizeForBrowser")]
-	pub optimize_for_browser: CTOptimizeForBrowser,
+	pub optimize_for_browser: Option<CTOptimizeForBrowser>,
 	#[serde(rename = "allowPNG")]
-	pub allow_png: CTOnOff,
+	pub allow_png: Option<CTOnOff>,
 	#[serde(rename = "doNotRelyOnCSS")]
-	pub do_not_rely_on_css: CTOnOff,
+	pub do_not_rely_on_css: Option<CTOnOff>,
 	#[serde(rename = "doNotSaveAsSingleFile")]
-	pub do_not_save_as_single_file: CTOnOff,
+	pub do_not_save_as_single_file: Option<CTOnOff>,
 	#[serde(rename = "doNotOrganizeInFolder")]
-	pub do_not_organize_in_folder: CTOnOff,
+	pub do_not_organize_in_folder: Option<CTOnOff>,
 	#[serde(rename = "doNotUseLongFileNames")]
-	pub do_not_use_long_file_names: CTOnOff,
+	pub do_not_use_long_file_names: Option<CTOnOff>,
 	#[serde(rename = "pixelsPerInch")]
-	pub pixels_per_inch: CTDecimalNumber,
+	pub pixels_per_inch: Option<CTDecimalNumber>,
 	#[serde(rename = "targetScreenSz")]
-	pub target_screen_sz: CTTargetScreenSz,
+	pub target_screen_sz: Option<CTTargetScreenSz>,
 	#[serde(rename = "saveSmartTagsAsXml")]
-	pub save_smart_tags_as_xml: CTOnOff,
+	pub save_smart_tags_as_xml: Option<CTOnOff>,
 }
 
 
@@ -4336,25 +4336,25 @@ pub struct CTOptimizeForBrowser {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTFrame {
 	#[serde(rename = "sz")]
-	pub sz: CTString,
+	pub sz: Option<CTString>,
 	#[serde(rename = "name")]
-	pub name: CTString,
+	pub name: Option<CTString>,
 	#[serde(rename = "title")]
-	pub title: CTString,
+	pub title: Option<CTString>,
 	#[serde(rename = "longDesc")]
-	pub long_desc: CTRel,
+	pub long_desc: Option<CTRel>,
 	#[serde(rename = "sourceFileName")]
-	pub source_file_name: CTRel,
+	pub source_file_name: Option<CTRel>,
 	#[serde(rename = "marW")]
-	pub mar_w: CTPixelsMeasure,
+	pub mar_w: Option<CTPixelsMeasure>,
 	#[serde(rename = "marH")]
-	pub mar_h: CTPixelsMeasure,
+	pub mar_h: Option<CTPixelsMeasure>,
 	#[serde(rename = "scrollbar")]
-	pub scrollbar: CTFrameScrollbar,
+	pub scrollbar: Option<CTFrameScrollbar>,
 	#[serde(rename = "noResizeAllowed")]
-	pub no_resize_allowed: CTOnOff,
+	pub no_resize_allowed: Option<CTOnOff>,
 	#[serde(rename = "linkedToFile")]
-	pub linked_to_file: CTOnOff,
+	pub linked_to_file: Option<CTOnOff>,
 }
 
 
@@ -4378,13 +4378,13 @@ pub struct CTFrameLayout {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTFramesetSplitbar {
 	#[serde(rename = "w")]
-	pub w: CTTwipsMeasure,
+	pub w: Option<CTTwipsMeasure>,
 	#[serde(rename = "color")]
-	pub color: CTColor,
+	pub color: Option<CTColor>,
 	#[serde(rename = "noBorder")]
-	pub no_border: CTOnOff,
+	pub no_border: Option<CTOnOff>,
 	#[serde(rename = "flatBorders")]
-	pub flat_borders: CTOnOff,
+	pub flat_borders: Option<CTOnOff>,
 }
 
 
@@ -4392,13 +4392,13 @@ pub struct CTFramesetSplitbar {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTFrameset {
 	#[serde(rename = "sz")]
-	pub sz: CTString,
+	pub sz: Option<CTString>,
 	#[serde(rename = "framesetSplitbar")]
-	pub frameset_splitbar: CTFramesetSplitbar,
+	pub frameset_splitbar: Option<CTFramesetSplitbar>,
 	#[serde(rename = "frameLayout")]
-	pub frame_layout: CTFrameLayout,
+	pub frame_layout: Option<CTFrameLayout>,
 	#[serde(rename = "title")]
-	pub title: CTString,
+	pub title: Option<CTString>,
 	#[serde(rename = "frameset")]
 	pub frameset: Vec<CTFrameset>,
 	#[serde(rename = "frame")]
@@ -4452,27 +4452,27 @@ pub struct CTLvl {
 	#[serde(rename = "tentative")]
 	pub tentative: Option<STOnOff>,
 	#[serde(rename = "start")]
-	pub start: CTDecimalNumber,
+	pub start: Option<CTDecimalNumber>,
 	#[serde(rename = "numFmt")]
-	pub num_fmt: CTNumFmt,
+	pub num_fmt: Option<CTNumFmt>,
 	#[serde(rename = "lvlRestart")]
-	pub lvl_restart: CTDecimalNumber,
+	pub lvl_restart: Option<CTDecimalNumber>,
 	#[serde(rename = "pStyle")]
-	pub p_style: CTString,
+	pub p_style: Option<CTString>,
 	#[serde(rename = "isLgl")]
-	pub is_lgl: CTOnOff,
+	pub is_lgl: Option<CTOnOff>,
 	#[serde(rename = "suff")]
-	pub suff: CTLevelSuffix,
+	pub suff: Option<CTLevelSuffix>,
 	#[serde(rename = "lvlText")]
-	pub lvl_text: CTLevelText,
+	pub lvl_text: Option<CTLevelText>,
 	#[serde(rename = "lvlPicBulletId")]
-	pub lvl_pic_bullet_id: CTDecimalNumber,
+	pub lvl_pic_bullet_id: Option<CTDecimalNumber>,
 	#[serde(rename = "lvlJc")]
-	pub lvl_jc: CTJc,
+	pub lvl_jc: Option<CTJc>,
 	#[serde(rename = "pPr")]
-	pub p_pr: CTPPrGeneral,
+	pub p_pr: Option<CTPPrGeneral>,
 	#[serde(rename = "rPr")]
-	pub r_pr: CTRPr,
+	pub r_pr: Option<CTRPr>,
 }
 
 
@@ -4498,17 +4498,17 @@ pub struct CTAbstractNum {
 	#[serde(rename = "abstractNumId")]
 	pub abstract_num_id: i32,
 	#[serde(rename = "nsid")]
-	pub nsid: CTLongHexNumber,
+	pub nsid: Option<CTLongHexNumber>,
 	#[serde(rename = "multiLevelType")]
-	pub multi_level_type: CTMultiLevelType,
+	pub multi_level_type: Option<CTMultiLevelType>,
 	#[serde(rename = "tmpl")]
-	pub tmpl: CTLongHexNumber,
+	pub tmpl: Option<CTLongHexNumber>,
 	#[serde(rename = "name")]
-	pub name: CTString,
+	pub name: Option<CTString>,
 	#[serde(rename = "styleLink")]
-	pub style_link: CTString,
+	pub style_link: Option<CTString>,
 	#[serde(rename = "numStyleLink")]
-	pub num_style_link: CTString,
+	pub num_style_link: Option<CTString>,
 	#[serde(rename = "lvl")]
 	pub lvl: Vec<CTLvl>,
 }
@@ -4520,9 +4520,9 @@ pub struct CTNumLvl {
 	#[serde(rename = "ilvl")]
 	pub ilvl: i32,
 	#[serde(rename = "startOverride")]
-	pub start_override: CTDecimalNumber,
+	pub start_override: Option<CTDecimalNumber>,
 	#[serde(rename = "lvl")]
-	pub lvl: CTLvl,
+	pub lvl: Option<CTLvl>,
 }
 
 
@@ -4548,7 +4548,7 @@ pub struct CTNumbering {
 	#[serde(rename = "num")]
 	pub num: Vec<CTNum>,
 	#[serde(rename = "numIdMacAtCleanup")]
-	pub num_id_mac_at_cleanup: CTDecimalNumber,
+	pub num_id_mac_at_cleanup: Option<CTDecimalNumber>,
 }
 
 
@@ -4566,15 +4566,15 @@ pub struct CTTblStylePr {
 	#[serde(rename = "type")]
 	pub type_attr: String,
 	#[serde(rename = "pPr")]
-	pub p_pr: CTPPrGeneral,
+	pub p_pr: Option<CTPPrGeneral>,
 	#[serde(rename = "rPr")]
-	pub r_pr: CTRPr,
+	pub r_pr: Option<CTRPr>,
 	#[serde(rename = "tblPr")]
-	pub tbl_pr: CTTblPrBase,
+	pub tbl_pr: Option<CTTblPrBase>,
 	#[serde(rename = "trPr")]
-	pub tr_pr: CTTrPr,
+	pub tr_pr: Option<CTTrPr>,
 	#[serde(rename = "tcPr")]
-	pub tc_pr: CTTcPr,
+	pub tc_pr: Option<CTTcPr>,
 }
 
 
@@ -4598,47 +4598,47 @@ pub struct CTStyle {
 	#[serde(rename = "customStyle")]
 	pub custom_style: Option<STOnOff>,
 	#[serde(rename = "name")]
-	pub name: CTString,
+	pub name: Option<CTString>,
 	#[serde(rename = "aliases")]
-	pub aliases: CTString,
+	pub aliases: Option<CTString>,
 	#[serde(rename = "basedOn")]
-	pub based_on: CTString,
+	pub based_on: Option<CTString>,
 	#[serde(rename = "next")]
-	pub next: CTString,
+	pub next: Option<CTString>,
 	#[serde(rename = "link")]
-	pub link: CTString,
+	pub link: Option<CTString>,
 	#[serde(rename = "autoRedefine")]
-	pub auto_redefine: CTOnOff,
+	pub auto_redefine: Option<CTOnOff>,
 	#[serde(rename = "hidden")]
-	pub hidden: CTOnOff,
+	pub hidden: Option<CTOnOff>,
 	#[serde(rename = "uiPriority")]
-	pub ui_priority: CTDecimalNumber,
+	pub ui_priority: Option<CTDecimalNumber>,
 	#[serde(rename = "semiHidden")]
-	pub semi_hidden: CTOnOff,
+	pub semi_hidden: Option<CTOnOff>,
 	#[serde(rename = "unhideWhenUsed")]
-	pub unhide_when_used: CTOnOff,
+	pub unhide_when_used: Option<CTOnOff>,
 	#[serde(rename = "qFormat")]
-	pub q_format: CTOnOff,
+	pub q_format: Option<CTOnOff>,
 	#[serde(rename = "locked")]
-	pub locked: CTOnOff,
+	pub locked: Option<CTOnOff>,
 	#[serde(rename = "personal")]
-	pub personal: CTOnOff,
+	pub personal: Option<CTOnOff>,
 	#[serde(rename = "personalCompose")]
-	pub personal_compose: CTOnOff,
+	pub personal_compose: Option<CTOnOff>,
 	#[serde(rename = "personalReply")]
-	pub personal_reply: CTOnOff,
+	pub personal_reply: Option<CTOnOff>,
 	#[serde(rename = "rsid")]
-	pub rsid: CTLongHexNumber,
+	pub rsid: Option<CTLongHexNumber>,
 	#[serde(rename = "pPr")]
-	pub p_pr: CTPPrGeneral,
+	pub p_pr: Option<CTPPrGeneral>,
 	#[serde(rename = "rPr")]
-	pub r_pr: CTRPr,
+	pub r_pr: Option<CTRPr>,
 	#[serde(rename = "tblPr")]
-	pub tbl_pr: CTTblPrBase,
+	pub tbl_pr: Option<CTTblPrBase>,
 	#[serde(rename = "trPr")]
-	pub tr_pr: CTTrPr,
+	pub tr_pr: Option<CTTrPr>,
 	#[serde(rename = "tcPr")]
-	pub tc_pr: CTTcPr,
+	pub tc_pr: Option<CTTcPr>,
 	#[serde(rename = "tblStylePr")]
 	pub tbl_style_pr: Vec<CTTblStylePr>,
 }
@@ -4686,9 +4686,9 @@ pub struct CTLatentStyles {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTStyles {
 	#[serde(rename = "docDefaults")]
-	pub doc_defaults: CTDocDefaults,
+	pub doc_defaults: Option<CTDocDefaults>,
 	#[serde(rename = "latentStyles")]
-	pub latent_styles: CTLatentStyles,
+	pub latent_styles: Option<CTLatentStyles>,
 	#[serde(rename = "style")]
 	pub style: Vec<CTStyle>,
 }
@@ -4770,27 +4770,27 @@ pub struct CTFont {
 	#[serde(rename = "name")]
 	pub name: String,
 	#[serde(rename = "altName")]
-	pub alt_name: CTString,
+	pub alt_name: Option<CTString>,
 	#[serde(rename = "panose1")]
-	pub panose1: CTPanose,
+	pub panose1: Option<CTPanose>,
 	#[serde(rename = "charset")]
-	pub charset: CTCharset,
+	pub charset: Option<CTCharset>,
 	#[serde(rename = "family")]
-	pub family: CTFontFamily,
+	pub family: Option<CTFontFamily>,
 	#[serde(rename = "notTrueType")]
-	pub not_true_type: CTOnOff,
+	pub not_true_type: Option<CTOnOff>,
 	#[serde(rename = "pitch")]
-	pub pitch: CTPitch,
+	pub pitch: Option<CTPitch>,
 	#[serde(rename = "sig")]
-	pub sig: CTFontSig,
+	pub sig: Option<CTFontSig>,
 	#[serde(rename = "embedRegular")]
-	pub embed_regular: CTFontRel,
+	pub embed_regular: Option<CTFontRel>,
 	#[serde(rename = "embedBold")]
-	pub embed_bold: CTFontRel,
+	pub embed_bold: Option<CTFontRel>,
 	#[serde(rename = "embedItalic")]
-	pub embed_italic: CTFontRel,
+	pub embed_italic: Option<CTFontRel>,
 	#[serde(rename = "embedBoldItalic")]
-	pub embed_bold_italic: CTFontRel,
+	pub embed_bold_italic: Option<CTFontRel>,
 }
 
 
@@ -4806,13 +4806,13 @@ pub struct CTFontsList {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTDivBdr {
 	#[serde(rename = "top")]
-	pub top: CTBorder,
+	pub top: Option<CTBorder>,
 	#[serde(rename = "left")]
-	pub left: CTBorder,
+	pub left: Option<CTBorder>,
 	#[serde(rename = "bottom")]
-	pub bottom: CTBorder,
+	pub bottom: Option<CTBorder>,
 	#[serde(rename = "right")]
-	pub right: CTBorder,
+	pub right: Option<CTBorder>,
 }
 
 
@@ -4822,9 +4822,9 @@ pub struct CTDiv {
 	#[serde(rename = "id")]
 	pub id: i32,
 	#[serde(rename = "blockQuote")]
-	pub block_quote: CTOnOff,
+	pub block_quote: Option<CTOnOff>,
 	#[serde(rename = "bodyDiv")]
-	pub body_div: CTOnOff,
+	pub body_div: Option<CTOnOff>,
 	#[serde(rename = "marLeft")]
 	pub mar_left: CTSignedTwipsMeasure,
 	#[serde(rename = "marRight")]
@@ -4834,7 +4834,7 @@ pub struct CTDiv {
 	#[serde(rename = "marBottom")]
 	pub mar_bottom: CTSignedTwipsMeasure,
 	#[serde(rename = "divBdr")]
-	pub div_bdr: CTDivBdr,
+	pub div_bdr: Option<CTDivBdr>,
 	#[serde(rename = "divsChild")]
 	pub divs_child: Vec<CTDivs>,
 }
@@ -4906,7 +4906,7 @@ pub struct CTBody {
 	#[serde(rename = "EG_BlockLevelElts")]
 	pub eg_block_level_elts: Vec<EGBlockLevelElts>,
 	#[serde(rename = "sectPr")]
-	pub sect_pr: CTSectPr,
+	pub sect_pr: Option<CTSectPr>,
 }
 
 
@@ -4930,7 +4930,7 @@ pub struct comments {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTFootnotes {
 	#[serde(rename = "footnote")]
-	pub footnote: CTFtnEdn,
+	pub footnote: Option<CTFtnEdn>,
 }
 
 
@@ -4946,7 +4946,7 @@ pub struct footnotes {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTEndnotes {
 	#[serde(rename = "endnote")]
-	pub endnote: CTFtnEdn,
+	pub endnote: Option<CTFtnEdn>,
 }
 
 
@@ -5086,17 +5086,17 @@ pub struct CTDocPartPr {
 	#[serde(rename = "name")]
 	pub name: CTDocPartName,
 	#[serde(rename = "style")]
-	pub style: CTString,
+	pub style: Option<CTString>,
 	#[serde(rename = "category")]
-	pub category: CTDocPartCategory,
+	pub category: Option<CTDocPartCategory>,
 	#[serde(rename = "types")]
-	pub types: CTDocPartTypes,
+	pub types: Option<CTDocPartTypes>,
 	#[serde(rename = "behaviors")]
-	pub behaviors: CTDocPartBehaviors,
+	pub behaviors: Option<CTDocPartBehaviors>,
 	#[serde(rename = "description")]
-	pub description: CTString,
+	pub description: Option<CTString>,
 	#[serde(rename = "guid")]
-	pub guid: CTGuid,
+	pub guid: Option<CTGuid>,
 }
 
 
@@ -5104,9 +5104,9 @@ pub struct CTDocPartPr {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTDocPart {
 	#[serde(rename = "docPartPr")]
-	pub doc_part_pr: CTDocPartPr,
+	pub doc_part_pr: Option<CTDocPartPr>,
 	#[serde(rename = "docPartBody")]
-	pub doc_part_body: CTBody,
+	pub doc_part_body: Option<CTBody>,
 }
 
 
@@ -5210,7 +5210,7 @@ pub struct CTCaptions {
 	#[serde(rename = "caption")]
 	pub caption: Vec<CTCaption>,
 	#[serde(rename = "autoCaptions")]
-	pub auto_captions: CTAutoCaptions,
+	pub auto_captions: Option<CTAutoCaptions>,
 }
 
 
@@ -5218,7 +5218,7 @@ pub struct CTCaptions {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTDocumentBase {
 	#[serde(rename = "background")]
-	pub background: CTBackground,
+	pub background: Option<CTBackground>,
 }
 
 
@@ -5228,7 +5228,7 @@ pub struct CTDocument {
 	#[serde(rename = "conformance")]
 	pub conformance: Option<String>,
 	#[serde(rename = "body")]
-	pub body: CTBody,
+	pub body: Option<CTBody>,
 	#[serde(flatten)]
 	pub ct_document_base: CTDocumentBase,
 }
@@ -5238,7 +5238,7 @@ pub struct CTDocument {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTGlossaryDocument {
 	#[serde(rename = "docParts")]
-	pub doc_parts: CTDocParts,
+	pub doc_parts: Option<CTDocParts>,
 	#[serde(flatten)]
 	pub ct_document_base: CTDocumentBase,
 }

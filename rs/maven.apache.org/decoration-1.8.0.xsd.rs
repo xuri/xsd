@@ -39,29 +39,29 @@ pub struct DecorationModel {
 	#[serde(rename = "combine.self")]
 	pub combine_self: Option<String>,
 	#[serde(rename = "bannerLeft")]
-	pub banner_left: Banner,
+	pub banner_left: Option<Banner>,
 	#[serde(rename = "bannerRight")]
-	pub banner_right: Banner,
+	pub banner_right: Option<Banner>,
 	#[serde(rename = "googleAdSenseClient")]
-	pub google_ad_sense_client: String,
+	pub google_ad_sense_client: Option<String>,
 	#[serde(rename = "googleAdSenseSlot")]
-	pub google_ad_sense_slot: String,
+	pub google_ad_sense_slot: Option<String>,
 	#[serde(rename = "googleAnalyticsAccountId")]
-	pub google_analytics_account_id: String,
+	pub google_analytics_account_id: Option<String>,
 	#[serde(rename = "publishDate")]
-	pub publish_date: PublishDate,
+	pub publish_date: Option<PublishDate>,
 	#[serde(rename = "version")]
-	pub version: Version,
+	pub version: Option<Version>,
 	#[serde(rename = "edit")]
-	pub edit: String,
+	pub edit: Option<String>,
 	#[serde(rename = "poweredBy")]
-	pub powered_by: PoweredBy,
+	pub powered_by: Option<PoweredBy>,
 	#[serde(rename = "skin")]
-	pub skin: Skin,
+	pub skin: Option<Skin>,
 	#[serde(rename = "body")]
-	pub body: Body,
+	pub body: Option<Body>,
 	#[serde(rename = "custom")]
-	pub custom: Custom,
+	pub custom: Option<Custom>,
 }
 
 
@@ -77,21 +77,21 @@ pub struct Version {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Banner {
 	#[serde(rename = "name")]
-	pub name: String,
+	pub name: Option<String>,
 	#[serde(rename = "src")]
-	pub src: String,
+	pub src: Option<String>,
 	#[serde(rename = "alt")]
-	pub alt: String,
+	pub alt: Option<String>,
 	#[serde(rename = "href")]
-	pub href: String,
+	pub href: Option<String>,
 	#[serde(rename = "border")]
-	pub border: String,
+	pub border: Option<String>,
 	#[serde(rename = "width")]
-	pub width: String,
+	pub width: Option<String>,
 	#[serde(rename = "height")]
-	pub height: String,
+	pub height: Option<String>,
 	#[serde(rename = "title")]
-	pub title: String,
+	pub title: Option<String>,
 }
 
 
@@ -115,15 +115,15 @@ pub struct Breadcrumbs {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Body {
 	#[serde(rename = "head")]
-	pub head: String,
+	pub head: Option<String>,
 	#[serde(rename = "links")]
-	pub links: Links,
+	pub links: Option<Links>,
 	#[serde(rename = "breadcrumbs")]
-	pub breadcrumbs: Breadcrumbs,
+	pub breadcrumbs: Option<Breadcrumbs>,
 	#[serde(rename = "menu")]
 	pub menu: Vec<Menu>,
 	#[serde(rename = "footer")]
-	pub footer: String,
+	pub footer: Option<String>,
 }
 
 
@@ -211,7 +211,7 @@ pub struct MenuItem {
 	#[serde(rename = "title")]
 	pub title: Option<String>,
 	#[serde(rename = "description")]
-	pub description: String,
+	pub description: Option<String>,
 	#[serde(rename = "item")]
 	pub item: Vec<MenuItem>,
 }
@@ -221,11 +221,11 @@ pub struct MenuItem {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Skin {
 	#[serde(rename = "groupId")]
-	pub group_id: String,
+	pub group_id: Option<String>,
 	#[serde(rename = "artifactId")]
-	pub artifact_id: String,
+	pub artifact_id: Option<String>,
 	#[serde(rename = "version")]
-	pub version: String,
+	pub version: Option<String>,
 }
 
 

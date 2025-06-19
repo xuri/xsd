@@ -30,7 +30,7 @@ type CTCTCategory struct {
 // CTCTCategories ...
 type CTCTCategories struct {
 	XMLName xml.Name        `xml:"CT_CTCategories"`
-	Cat     []*CTCTCategory `xml:"cat"`
+	Cat     []*CTCTCategory `xml:"cat,omitempty"`
 }
 
 // STClrAppMethod ...
@@ -51,13 +51,13 @@ type CTColors struct {
 type CTCTStyleLabel struct {
 	XMLName        xml.Name                  `xml:"CT_CTStyleLabel"`
 	NameAttr       string                    `xml:"name,attr"`
-	FillClrLst     *CTColors                 `xml:"fillClrLst"`
-	LinClrLst      *CTColors                 `xml:"linClrLst"`
-	EffectClrLst   *CTColors                 `xml:"effectClrLst"`
-	TxLinClrLst    *CTColors                 `xml:"txLinClrLst"`
-	TxFillClrLst   *CTColors                 `xml:"txFillClrLst"`
-	TxEffectClrLst *CTColors                 `xml:"txEffectClrLst"`
-	ExtLst         *CTOfficeArtExtensionList `xml:"extLst"`
+	FillClrLst     *CTColors                 `xml:"fillClrLst,omitempty"`
+	LinClrLst      *CTColors                 `xml:"linClrLst,omitempty"`
+	EffectClrLst   *CTColors                 `xml:"effectClrLst,omitempty"`
+	TxLinClrLst    *CTColors                 `xml:"txLinClrLst,omitempty"`
+	TxFillClrLst   *CTColors                 `xml:"txFillClrLst,omitempty"`
+	TxEffectClrLst *CTColors                 `xml:"txEffectClrLst,omitempty"`
+	ExtLst         *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTColorTransform ...
@@ -65,11 +65,11 @@ type CTColorTransform struct {
 	XMLName      xml.Name                  `xml:"CT_ColorTransform"`
 	UniqueIdAttr string                    `xml:"uniqueId,attr,omitempty"`
 	MinVerAttr   string                    `xml:"minVer,attr,omitempty"`
-	Title        []*CTCTName               `xml:"title"`
-	Desc         []*CTCTDescription        `xml:"desc"`
-	CatLst       *CTCTCategories           `xml:"catLst"`
-	StyleLbl     []*CTCTStyleLabel         `xml:"styleLbl"`
-	ExtLst       *CTOfficeArtExtensionList `xml:"extLst"`
+	Title        []*CTCTName               `xml:"title,omitempty"`
+	Desc         []*CTCTDescription        `xml:"desc,omitempty"`
+	CatLst       *CTCTCategories           `xml:"catLst,omitempty"`
+	StyleLbl     []*CTCTStyleLabel         `xml:"styleLbl,omitempty"`
+	ExtLst       *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // ColorsDef ...
@@ -83,8 +83,8 @@ type CTColorTransformHeader struct {
 	ResIdAttr    int                       `xml:"resId,attr,omitempty"`
 	Title        []*CTCTName               `xml:"title"`
 	Desc         []*CTCTDescription        `xml:"desc"`
-	CatLst       *CTCTCategories           `xml:"catLst"`
-	ExtLst       *CTOfficeArtExtensionList `xml:"extLst"`
+	CatLst       *CTCTCategories           `xml:"catLst,omitempty"`
+	ExtLst       *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // ColorsDefHdr ...
@@ -93,7 +93,7 @@ type ColorsDefHdr *CTColorTransformHeader
 // CTColorTransformHeaderLst ...
 type CTColorTransformHeaderLst struct {
 	XMLName      xml.Name                  `xml:"CT_ColorTransformHeaderLst"`
-	ColorsDefHdr []*CTColorTransformHeader `xml:"colorsDefHdr"`
+	ColorsDefHdr []*CTColorTransformHeader `xml:"colorsDefHdr,omitempty"`
 }
 
 // ColorsDefHdrLst ...
@@ -108,16 +108,16 @@ type CTPt struct {
 	ModelIdAttr *STModelId                `xml:"modelId,attr"`
 	TypeAttr    string                    `xml:"type,attr,omitempty"`
 	CxnIdAttr   *STModelId                `xml:"cxnId,attr,omitempty"`
-	PrSet       *CTElemPropSet            `xml:"prSet"`
-	SpPr        *CTShapeProperties        `xml:"spPr"`
-	T           *CTTextBody               `xml:"t"`
-	ExtLst      *CTOfficeArtExtensionList `xml:"extLst"`
+	PrSet       *CTElemPropSet            `xml:"prSet,omitempty"`
+	SpPr        *CTShapeProperties        `xml:"spPr,omitempty"`
+	T           *CTTextBody               `xml:"t,omitempty"`
+	ExtLst      *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTPtList ...
 type CTPtList struct {
 	XMLName xml.Name `xml:"CT_PtList"`
-	Pt      []*CTPt  `xml:"pt"`
+	Pt      []*CTPt  `xml:"pt,omitempty"`
 }
 
 // STCxnType ...
@@ -135,23 +135,23 @@ type CTCxn struct {
 	ParTransIdAttr *STModelId                `xml:"parTransId,attr,omitempty"`
 	SibTransIdAttr *STModelId                `xml:"sibTransId,attr,omitempty"`
 	PresIdAttr     string                    `xml:"presId,attr,omitempty"`
-	ExtLst         *CTOfficeArtExtensionList `xml:"extLst"`
+	ExtLst         *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTCxnList ...
 type CTCxnList struct {
 	XMLName xml.Name `xml:"CT_CxnList"`
-	Cxn     []*CTCxn `xml:"cxn"`
+	Cxn     []*CTCxn `xml:"cxn,omitempty"`
 }
 
 // CTDataModel ...
 type CTDataModel struct {
 	XMLName xml.Name                  `xml:"CT_DataModel"`
 	PtLst   *CTPtList                 `xml:"ptLst"`
-	CxnLst  *CTCxnList                `xml:"cxnLst"`
-	Bg      *CTBackgroundFormatting   `xml:"bg"`
-	Whole   *CTWholeE2oFormatting     `xml:"whole"`
-	ExtLst  *CTOfficeArtExtensionList `xml:"extLst"`
+	CxnLst  *CTCxnList                `xml:"cxnLst,omitempty"`
+	Bg      *CTBackgroundFormatting   `xml:"bg,omitempty"`
+	Whole   *CTWholeE2oFormatting     `xml:"whole,omitempty"`
+	ExtLst  *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // DataModel ...
@@ -194,13 +194,13 @@ type CTConstraint struct {
 	OpAttr                    string                    `xml:"op,attr,omitempty"`
 	ValAttr                   float64                   `xml:"val,attr,omitempty"`
 	FactAttr                  float64                   `xml:"fact,attr,omitempty"`
-	ExtLst                    *CTOfficeArtExtensionList `xml:"extLst"`
+	ExtLst                    *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTConstraints ...
 type CTConstraints struct {
 	XMLName xml.Name        `xml:"CT_Constraints"`
-	Constr  []*CTConstraint `xml:"constr"`
+	Constr  []*CTConstraint `xml:"constr,omitempty"`
 }
 
 // CTNumericRule ...
@@ -210,20 +210,20 @@ type CTNumericRule struct {
 	ValAttr                float64                   `xml:"val,attr,omitempty"`
 	FactAttr               float64                   `xml:"fact,attr,omitempty"`
 	MaxAttr                float64                   `xml:"max,attr,omitempty"`
-	ExtLst                 *CTOfficeArtExtensionList `xml:"extLst"`
+	ExtLst                 *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTRules ...
 type CTRules struct {
 	XMLName xml.Name         `xml:"CT_Rules"`
-	Rule    []*CTNumericRule `xml:"rule"`
+	Rule    []*CTNumericRule `xml:"rule,omitempty"`
 }
 
 // CTPresentationOf ...
 type CTPresentationOf struct {
 	XMLName              xml.Name `xml:"CT_PresentationOf"`
 	AGIteratorAttributes *AGIteratorAttributes
-	ExtLst               *CTOfficeArtExtensionList `xml:"extLst"`
+	ExtLst               *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // STLayoutShapeType ...
@@ -246,7 +246,7 @@ type CTAdj struct {
 // CTAdjLst ...
 type CTAdjLst struct {
 	XMLName xml.Name `xml:"CT_AdjLst"`
-	Adj     []*CTAdj `xml:"adj"`
+	Adj     []*CTAdj `xml:"adj,omitempty"`
 }
 
 // CTShape ...
@@ -259,8 +259,8 @@ type CTShape struct {
 	HideGeomAttr  bool                      `xml:"hideGeom,attr,omitempty"`
 	LkTxEntryAttr bool                      `xml:"lkTxEntry,attr,omitempty"`
 	BlipPhldrAttr bool                      `xml:"blipPhldr,attr,omitempty"`
-	AdjLst        *CTAdjLst                 `xml:"adjLst"`
-	ExtLst        *CTOfficeArtExtensionList `xml:"extLst"`
+	AdjLst        *CTAdjLst                 `xml:"adjLst,omitempty"`
+	ExtLst        *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTParameter ...
@@ -275,8 +275,8 @@ type CTAlgorithm struct {
 	XMLName  xml.Name                  `xml:"CT_Algorithm"`
 	TypeAttr string                    `xml:"type,attr"`
 	RevAttr  uint32                    `xml:"rev,attr,omitempty"`
-	Param    []*CTParameter            `xml:"param"`
-	ExtLst   *CTOfficeArtExtensionList `xml:"extLst"`
+	Param    []*CTParameter            `xml:"param,omitempty"`
+	ExtLst   *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTLayoutNode ...
@@ -286,16 +286,16 @@ type CTLayoutNode struct {
 	StyleLblAttr string                         `xml:"styleLbl,attr,omitempty"`
 	ChOrderAttr  string                         `xml:"chOrder,attr,omitempty"`
 	MoveWithAttr string                         `xml:"moveWith,attr,omitempty"`
-	Alg          []*CTAlgorithm                 `xml:"alg"`
-	Shape        []*CTShape                     `xml:"shape"`
-	PresOf       []*CTPresentationOf            `xml:"presOf"`
-	ConstrLst    []*CTConstraints               `xml:"constrLst"`
-	RuleLst      []*CTRules                     `xml:"ruleLst"`
-	VarLst       []*CTLayoutVariablePropertySet `xml:"varLst"`
+	Alg          []*CTAlgorithm                 `xml:"alg,omitempty"`
+	Shape        []*CTShape                     `xml:"shape,omitempty"`
+	PresOf       []*CTPresentationOf            `xml:"presOf,omitempty"`
+	ConstrLst    []*CTConstraints               `xml:"constrLst,omitempty"`
+	RuleLst      []*CTRules                     `xml:"ruleLst,omitempty"`
+	VarLst       []*CTLayoutVariablePropertySet `xml:"varLst,omitempty"`
 	ForEach      []*CTForEach                   `xml:"forEach"`
 	LayoutNode   []*CTLayoutNode                `xml:"layoutNode"`
 	Choose       []*CTChoose                    `xml:"choose"`
-	ExtLst       []*CTOfficeArtExtensionList    `xml:"extLst"`
+	ExtLst       []*CTOfficeArtExtensionList    `xml:"extLst,omitempty"`
 }
 
 // CTForEach ...
@@ -304,15 +304,15 @@ type CTForEach struct {
 	AGIteratorAttributes *AGIteratorAttributes
 	NameAttr             string                      `xml:"name,attr,omitempty"`
 	RefAttr              string                      `xml:"ref,attr,omitempty"`
-	Alg                  []*CTAlgorithm              `xml:"alg"`
-	Shape                []*CTShape                  `xml:"shape"`
-	PresOf               []*CTPresentationOf         `xml:"presOf"`
-	ConstrLst            []*CTConstraints            `xml:"constrLst"`
-	RuleLst              []*CTRules                  `xml:"ruleLst"`
+	Alg                  []*CTAlgorithm              `xml:"alg,omitempty"`
+	Shape                []*CTShape                  `xml:"shape,omitempty"`
+	PresOf               []*CTPresentationOf         `xml:"presOf,omitempty"`
+	ConstrLst            []*CTConstraints            `xml:"constrLst,omitempty"`
+	RuleLst              []*CTRules                  `xml:"ruleLst,omitempty"`
 	ForEach              []*CTForEach                `xml:"forEach"`
 	LayoutNode           []*CTLayoutNode             `xml:"layoutNode"`
 	Choose               []*CTChoose                 `xml:"choose"`
-	ExtLst               []*CTOfficeArtExtensionList `xml:"extLst"`
+	ExtLst               []*CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTWhen ...
@@ -324,30 +324,30 @@ type CTWhen struct {
 	ArgAttr              *STFunctionArgument         `xml:"arg,attr,omitempty"`
 	OpAttr               string                      `xml:"op,attr"`
 	ValAttr              *STFunctionValue            `xml:"val,attr"`
-	Alg                  []*CTAlgorithm              `xml:"alg"`
-	Shape                []*CTShape                  `xml:"shape"`
-	PresOf               []*CTPresentationOf         `xml:"presOf"`
-	ConstrLst            []*CTConstraints            `xml:"constrLst"`
-	RuleLst              []*CTRules                  `xml:"ruleLst"`
+	Alg                  []*CTAlgorithm              `xml:"alg,omitempty"`
+	Shape                []*CTShape                  `xml:"shape,omitempty"`
+	PresOf               []*CTPresentationOf         `xml:"presOf,omitempty"`
+	ConstrLst            []*CTConstraints            `xml:"constrLst,omitempty"`
+	RuleLst              []*CTRules                  `xml:"ruleLst,omitempty"`
 	ForEach              []*CTForEach                `xml:"forEach"`
 	LayoutNode           []*CTLayoutNode             `xml:"layoutNode"`
 	Choose               []*CTChoose                 `xml:"choose"`
-	ExtLst               []*CTOfficeArtExtensionList `xml:"extLst"`
+	ExtLst               []*CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTOtherwise ...
 type CTOtherwise struct {
 	XMLName    xml.Name                    `xml:"CT_Otherwise"`
 	NameAttr   string                      `xml:"name,attr,omitempty"`
-	Alg        []*CTAlgorithm              `xml:"alg"`
-	Shape      []*CTShape                  `xml:"shape"`
-	PresOf     []*CTPresentationOf         `xml:"presOf"`
-	ConstrLst  []*CTConstraints            `xml:"constrLst"`
-	RuleLst    []*CTRules                  `xml:"ruleLst"`
+	Alg        []*CTAlgorithm              `xml:"alg,omitempty"`
+	Shape      []*CTShape                  `xml:"shape,omitempty"`
+	PresOf     []*CTPresentationOf         `xml:"presOf,omitempty"`
+	ConstrLst  []*CTConstraints            `xml:"constrLst,omitempty"`
+	RuleLst    []*CTRules                  `xml:"ruleLst,omitempty"`
 	ForEach    []*CTForEach                `xml:"forEach"`
 	LayoutNode []*CTLayoutNode             `xml:"layoutNode"`
 	Choose     []*CTChoose                 `xml:"choose"`
-	ExtLst     []*CTOfficeArtExtensionList `xml:"extLst"`
+	ExtLst     []*CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTChoose ...
@@ -355,14 +355,14 @@ type CTChoose struct {
 	XMLName  xml.Name     `xml:"CT_Choose"`
 	NameAttr string       `xml:"name,attr,omitempty"`
 	If       []*CTWhen    `xml:"if"`
-	Else     *CTOtherwise `xml:"else"`
+	Else     *CTOtherwise `xml:"else,omitempty"`
 }
 
 // CTSampleData ...
 type CTSampleData struct {
 	XMLName    xml.Name     `xml:"CT_SampleData"`
 	UseDefAttr bool         `xml:"useDef,attr,omitempty"`
-	DataModel  *CTDataModel `xml:"dataModel"`
+	DataModel  *CTDataModel `xml:"dataModel,omitempty"`
 }
 
 // CTCategory ...
@@ -375,7 +375,7 @@ type CTCategory struct {
 // CTCategories ...
 type CTCategories struct {
 	XMLName xml.Name      `xml:"CT_Categories"`
-	Cat     []*CTCategory `xml:"cat"`
+	Cat     []*CTCategory `xml:"cat,omitempty"`
 }
 
 // CTName ...
@@ -398,14 +398,14 @@ type CTDiagramDefinition struct {
 	UniqueIdAttr string                    `xml:"uniqueId,attr,omitempty"`
 	MinVerAttr   string                    `xml:"minVer,attr,omitempty"`
 	DefStyleAttr string                    `xml:"defStyle,attr,omitempty"`
-	Title        []*CTName                 `xml:"title"`
-	Desc         []*CTDescription          `xml:"desc"`
-	CatLst       *CTCategories             `xml:"catLst"`
-	SampData     *CTSampleData             `xml:"sampData"`
-	StyleData    *CTSampleData             `xml:"styleData"`
-	ClrData      *CTSampleData             `xml:"clrData"`
+	Title        []*CTName                 `xml:"title,omitempty"`
+	Desc         []*CTDescription          `xml:"desc,omitempty"`
+	CatLst       *CTCategories             `xml:"catLst,omitempty"`
+	SampData     *CTSampleData             `xml:"sampData,omitempty"`
+	StyleData    *CTSampleData             `xml:"styleData,omitempty"`
+	ClrData      *CTSampleData             `xml:"clrData,omitempty"`
 	LayoutNode   *CTLayoutNode             `xml:"layoutNode"`
-	ExtLst       *CTOfficeArtExtensionList `xml:"extLst"`
+	ExtLst       *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // LayoutDef ...
@@ -420,8 +420,8 @@ type CTDiagramDefinitionHeader struct {
 	ResIdAttr    int                       `xml:"resId,attr,omitempty"`
 	Title        []*CTName                 `xml:"title"`
 	Desc         []*CTDescription          `xml:"desc"`
-	CatLst       *CTCategories             `xml:"catLst"`
-	ExtLst       *CTOfficeArtExtensionList `xml:"extLst"`
+	CatLst       *CTCategories             `xml:"catLst,omitempty"`
+	ExtLst       *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // LayoutDefHdr ...
@@ -430,7 +430,7 @@ type LayoutDefHdr *CTDiagramDefinitionHeader
 // CTDiagramDefinitionHeaderLst ...
 type CTDiagramDefinitionHeaderLst struct {
 	XMLName      xml.Name                     `xml:"CT_DiagramDefinitionHeaderLst"`
-	LayoutDefHdr []*CTDiagramDefinitionHeader `xml:"layoutDefHdr"`
+	LayoutDefHdr []*CTDiagramDefinitionHeader `xml:"layoutDefHdr,omitempty"`
 }
 
 // LayoutDefHdrLst ...
@@ -533,8 +533,8 @@ type CTElemPropSet struct {
 	CustLinFactNeighborYAttr *STPrSetCustVal              `xml:"custLinFactNeighborY,attr,omitempty"`
 	CustRadScaleRadAttr      *STPrSetCustVal              `xml:"custRadScaleRad,attr,omitempty"`
 	CustRadScaleIncAttr      *STPrSetCustVal              `xml:"custRadScaleInc,attr,omitempty"`
-	PresLayoutVars           *CTLayoutVariablePropertySet `xml:"presLayoutVars"`
-	Style                    *CTShapeStyle                `xml:"style"`
+	PresLayoutVars           *CTLayoutVariablePropertySet `xml:"presLayoutVars,omitempty"`
+	Style                    *CTShapeStyle                `xml:"style,omitempty"`
 }
 
 // STDirection ...
@@ -612,15 +612,15 @@ type CTResizeHandles struct {
 // CTLayoutVariablePropertySet ...
 type CTLayoutVariablePropertySet struct {
 	XMLName       xml.Name           `xml:"CT_LayoutVariablePropertySet"`
-	OrgChart      *CTOrgChart        `xml:"orgChart"`
-	ChMax         *CTChildMax        `xml:"chMax"`
-	ChPref        *CTChildPref       `xml:"chPref"`
-	BulletEnabled *CTBulletEnabled   `xml:"bulletEnabled"`
-	Dir           *CTDirection       `xml:"dir"`
-	HierBranch    *CTHierBranchStyle `xml:"hierBranch"`
-	AnimOne       *CTAnimOne         `xml:"animOne"`
-	AnimLvl       *CTAnimLvl         `xml:"animLvl"`
-	ResizeHandles *CTResizeHandles   `xml:"resizeHandles"`
+	OrgChart      *CTOrgChart        `xml:"orgChart,omitempty"`
+	ChMax         *CTChildMax        `xml:"chMax,omitempty"`
+	ChPref        *CTChildPref       `xml:"chPref,omitempty"`
+	BulletEnabled *CTBulletEnabled   `xml:"bulletEnabled,omitempty"`
+	Dir           *CTDirection       `xml:"dir,omitempty"`
+	HierBranch    *CTHierBranchStyle `xml:"hierBranch,omitempty"`
+	AnimOne       *CTAnimOne         `xml:"animOne,omitempty"`
+	AnimLvl       *CTAnimLvl         `xml:"animLvl,omitempty"`
+	ResizeHandles *CTResizeHandles   `xml:"resizeHandles,omitempty"`
 }
 
 // CTSDName ...
@@ -647,7 +647,7 @@ type CTSDCategory struct {
 // CTSDCategories ...
 type CTSDCategories struct {
 	XMLName xml.Name        `xml:"CT_SDCategories"`
-	Cat     []*CTSDCategory `xml:"cat"`
+	Cat     []*CTSDCategory `xml:"cat,omitempty"`
 }
 
 // CTTextProps ...
@@ -660,11 +660,11 @@ type CTTextProps struct {
 type CTStyleLabel struct {
 	XMLName  xml.Name                  `xml:"CT_StyleLabel"`
 	NameAttr string                    `xml:"name,attr"`
-	Scene3d  *CTScene3D                `xml:"scene3d"`
-	Sp3d     *CTShape3D                `xml:"sp3d"`
-	TxPr     *CTTextProps              `xml:"txPr"`
-	Style    *CTShapeStyle             `xml:"style"`
-	ExtLst   *CTOfficeArtExtensionList `xml:"extLst"`
+	Scene3d  *CTScene3D                `xml:"scene3d,omitempty"`
+	Sp3d     *CTShape3D                `xml:"sp3d,omitempty"`
+	TxPr     *CTTextProps              `xml:"txPr,omitempty"`
+	Style    *CTShapeStyle             `xml:"style,omitempty"`
+	ExtLst   *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTStyleDefinition ...
@@ -672,12 +672,12 @@ type CTStyleDefinition struct {
 	XMLName      xml.Name                  `xml:"CT_StyleDefinition"`
 	UniqueIdAttr string                    `xml:"uniqueId,attr,omitempty"`
 	MinVerAttr   string                    `xml:"minVer,attr,omitempty"`
-	Title        []*CTSDName               `xml:"title"`
-	Desc         []*CTSDDescription        `xml:"desc"`
-	CatLst       *CTSDCategories           `xml:"catLst"`
-	Scene3d      *CTScene3D                `xml:"scene3d"`
+	Title        []*CTSDName               `xml:"title,omitempty"`
+	Desc         []*CTSDDescription        `xml:"desc,omitempty"`
+	CatLst       *CTSDCategories           `xml:"catLst,omitempty"`
+	Scene3d      *CTScene3D                `xml:"scene3d,omitempty"`
 	StyleLbl     []*CTStyleLabel           `xml:"styleLbl"`
-	ExtLst       *CTOfficeArtExtensionList `xml:"extLst"`
+	ExtLst       *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // StyleDef ...
@@ -691,8 +691,8 @@ type CTStyleDefinitionHeader struct {
 	ResIdAttr    int                       `xml:"resId,attr,omitempty"`
 	Title        []*CTSDName               `xml:"title"`
 	Desc         []*CTSDDescription        `xml:"desc"`
-	CatLst       *CTSDCategories           `xml:"catLst"`
-	ExtLst       *CTOfficeArtExtensionList `xml:"extLst"`
+	CatLst       *CTSDCategories           `xml:"catLst,omitempty"`
+	ExtLst       *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // StyleDefHdr ...
@@ -701,7 +701,7 @@ type StyleDefHdr *CTStyleDefinitionHeader
 // CTStyleDefinitionHeaderLst ...
 type CTStyleDefinitionHeaderLst struct {
 	XMLName     xml.Name                   `xml:"CT_StyleDefinitionHeaderLst"`
-	StyleDefHdr []*CTStyleDefinitionHeader `xml:"styleDefHdr"`
+	StyleDefHdr []*CTStyleDefinitionHeader `xml:"styleDefHdr,omitempty"`
 }
 
 // StyleDefHdrLst ...

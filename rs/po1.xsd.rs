@@ -30,7 +30,7 @@ pub struct PurchaseOrderType {
 	#[serde(rename = "billTo")]
 	pub bill_to: USAddress,
 	#[serde(rename = "po:comment")]
-	pub po_comment: String,
+	pub po_comment: Option<String>,
 }
 
 

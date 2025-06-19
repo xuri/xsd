@@ -471,7 +471,7 @@ pub struct LawDocType {
 	#[serde(rename = "meta")]
 	pub meta: MetaType,
 	#[serde(rename = "main")]
-	pub main: MainType,
+	pub main: Option<MainType>,
 	#[serde(rename = "block")]
 	pub block: Vec<BlockType>,
 	#[serde(rename = "appendix")]
@@ -643,7 +643,7 @@ pub struct PreambleType {
 	#[serde(rename = "RecitalStructure")]
 	pub recital_structure: Vec<RecitalStructure>,
 	#[serde(rename = "enactingFormula")]
-	pub enacting_formula: StatementType,
+	pub enacting_formula: Option<StatementType>,
 	#[serde(flatten)]
 	pub base_block_type: BaseBlockType,
 }
@@ -736,7 +736,7 @@ pub struct NotesType {
 	#[serde(rename = "NoteGroup")]
 	pub note_group: Vec<NoteGroup>,
 	#[serde(rename = "heading")]
-	pub heading: HeadingType,
+	pub heading: Option<HeadingType>,
 	#[serde(rename = "subheading")]
 	pub subheading: Vec<HeadingType>,
 	#[serde(rename = "note")]
@@ -796,13 +796,13 @@ pub struct AppendixType {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct SignaturesType {
 	#[serde(rename = "p")]
-	pub p: PType,
+	pub p: Option<PType>,
 	#[serde(rename = "signature")]
 	pub signature: Vec<SignatureType>,
 	#[serde(rename = "layout")]
 	pub layout: LayoutType,
 	#[serde(rename = "date")]
-	pub date: u8,
+	pub date: Option<u8>,
 }
 
 
@@ -834,11 +834,11 @@ pub struct SignatureType {
 	#[serde(rename = "name")]
 	pub name: Name,
 	#[serde(rename = "role")]
-	pub role: Role,
+	pub role: Option<Role>,
 	#[serde(rename = "affiliation")]
-	pub affiliation: Affiliation,
+	pub affiliation: Option<Affiliation>,
 	#[serde(rename = "date")]
-	pub date: u8,
+	pub date: Option<u8>,
 }
 
 

@@ -36,13 +36,13 @@ pub struct Measurement {
 	#[serde(rename = "ResultType")]
 	pub result_type: char,
 	#[serde(rename = "ResultValue")]
-	pub result_value: f64,
+	pub result_value: Option<f64>,
 	#[serde(rename = "ResultUnits")]
-	pub result_units: char,
+	pub result_units: Option<char>,
 	#[serde(rename = "Qualifier")]
-	pub qualifier: char,
+	pub qualifier: Option<char>,
 	#[serde(rename = "Comment")]
-	pub comment: char,
+	pub comment: Option<char>,
 }
 
 
@@ -50,7 +50,7 @@ pub struct Measurement {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Sample {
 	#[serde(rename = "Sampler")]
-	pub sampler: char,
+	pub sampler: Option<char>,
 	#[serde(rename = "SampleType")]
 	pub sample_type: char,
 	#[serde(rename = "CustomerSamplePointName")]
@@ -68,15 +68,15 @@ pub struct Sample {
 	#[serde(rename = "CustomersLabSampleRefSecondary")]
 	pub customers_lab_sample_ref_secondary: Vec<char>,
 	#[serde(rename = "Comment")]
-	pub comment: char,
+	pub comment: Option<char>,
 	#[serde(rename = "LabName")]
 	pub lab_name: char,
 	#[serde(rename = "AnalysisCompleteDateTime")]
 	pub analysis_complete_date_time: u8,
 	#[serde(rename = "DepthValueRecorded")]
-	pub depth_value_recorded: DepthValueRecorded,
+	pub depth_value_recorded: Option<DepthValueRecorded>,
 	#[serde(rename = "PurgedVolumeRecorded")]
-	pub purged_volume_recorded: PurgedVolumeRecorded,
+	pub purged_volume_recorded: Option<PurgedVolumeRecorded>,
 	#[serde(rename = "Measurement")]
 	pub measurement: Vec<Measurement>,
 }
@@ -92,7 +92,7 @@ pub struct FileUpload {
 	#[serde(rename = "RegulatedCustomerIdentifier")]
 	pub regulated_customer_identifier: char,
 	#[serde(rename = "CustomerReference")]
-	pub customer_reference: char,
+	pub customer_reference: Option<char>,
 }
 
 

@@ -10,7 +10,7 @@ use serde_xml_rs::from_reader;
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct B {
 	#[serde(rename = "C")]
-	pub c: char,
+	pub c: Option<char>,
 }
 
 
@@ -18,7 +18,7 @@ pub struct B {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct A {
 	#[serde(rename = "B")]
-	pub b: B,
+	pub b: Option<B>,
 }
 
 

@@ -13,7 +13,7 @@ type Project *DecorationModel
 // PoweredBy is Powered by logos list.
 type PoweredBy struct {
 	XMLName xml.Name `xml:"poweredBy"`
-	Logo    []*Logo  `xml:"logo"`
+	Logo    []*Logo  `xml:"logo,omitempty"`
 }
 
 // Custom is Custom configuration for use with customised Velocity templates.
@@ -24,22 +24,22 @@ type Custom struct {
 // DecorationModel is Modify the version published display properties.
 type DecorationModel struct {
 	NameAttr    string       `xml:"name,attr,omitempty"`
-	BannerLeft  *Banner      `xml:"bannerLeft"`
-	BannerRight *Banner      `xml:"bannerRight"`
-	PublishDate *PublishDate `xml:"publishDate"`
-	Version     *Version     `xml:"version"`
-	PoweredBy   *PoweredBy   `xml:"poweredBy"`
-	Skin        *Skin        `xml:"skin"`
-	Body        *Body        `xml:"body"`
-	Custom      *Custom      `xml:"custom"`
+	BannerLeft  *Banner      `xml:"bannerLeft,omitempty"`
+	BannerRight *Banner      `xml:"bannerRight,omitempty"`
+	PublishDate *PublishDate `xml:"publishDate,omitempty"`
+	Version     *Version     `xml:"version,omitempty"`
+	PoweredBy   *PoweredBy   `xml:"poweredBy,omitempty"`
+	Skin        *Skin        `xml:"skin,omitempty"`
+	Body        *Body        `xml:"body,omitempty"`
+	Custom      *Custom      `xml:"custom,omitempty"`
 }
 
 // Banner is The href of a link to be used for the banner image.
 type Banner struct {
-	Name string `xml:"name"`
-	Src  string `xml:"src"`
-	Alt  string `xml:"alt"`
-	Href string `xml:"href"`
+	Name string `xml:"name,omitempty"`
+	Src  string `xml:"src,omitempty"`
+	Alt  string `xml:"alt,omitempty"`
+	Href string `xml:"href,omitempty"`
 }
 
 // Head is Additional content (like Javascript) to include in the HEAD block of the generated pages.
@@ -50,21 +50,21 @@ type Head struct {
 // Links is A list of links to display in the navigation.
 type Links struct {
 	XMLName xml.Name    `xml:"links"`
-	Item    []*LinkItem `xml:"item"`
+	Item    []*LinkItem `xml:"item,omitempty"`
 }
 
 // Breadcrumbs is A list of breadcrumbs to display in the navigation.
 type Breadcrumbs struct {
 	XMLName xml.Name    `xml:"breadcrumbs"`
-	Item    []*LinkItem `xml:"item"`
+	Item    []*LinkItem `xml:"item,omitempty"`
 }
 
 // Body is The main content decoration.
 type Body struct {
-	Head        *Head        `xml:"head"`
-	Links       *Links       `xml:"links"`
-	Breadcrumbs *Breadcrumbs `xml:"breadcrumbs"`
-	Menu        []*Menu      `xml:"menu"`
+	Head        *Head        `xml:"head,omitempty"`
+	Links       *Links       `xml:"links,omitempty"`
+	Breadcrumbs *Breadcrumbs `xml:"breadcrumbs,omitempty"`
+	Menu        []*Menu      `xml:"menu,omitempty"`
 }
 
 // LinkItem is A link in the navigation.
@@ -80,7 +80,7 @@ type Menu struct {
 	InheritAsRefAttr bool        `xml:"inheritAsRef,attr,omitempty"`
 	RefAttr          string      `xml:"ref,attr,omitempty"`
 	ImgAttr          string      `xml:"img,attr,omitempty"`
-	Item             []*MenuItem `xml:"item"`
+	Item             []*MenuItem `xml:"item,omitempty"`
 }
 
 // MenuItem is Menu item.
@@ -89,15 +89,15 @@ type MenuItem struct {
 	RefAttr      string      `xml:"ref,attr,omitempty"`
 	NameAttr     string      `xml:"name,attr,omitempty"`
 	HrefAttr     string      `xml:"href,attr,omitempty"`
-	Description  string      `xml:"description"`
-	Item         []*MenuItem `xml:"item"`
+	Description  string      `xml:"description,omitempty"`
+	Item         []*MenuItem `xml:"item,omitempty"`
 }
 
 // Skin is The skin version.
 type Skin struct {
-	GroupId    string `xml:"groupId"`
-	ArtifactId string `xml:"artifactId"`
-	Version    string `xml:"version"`
+	GroupId    string `xml:"groupId,omitempty"`
+	ArtifactId string `xml:"artifactId,omitempty"`
+	Version    string `xml:"version,omitempty"`
 }
 
 // Version is Modify display properties for version published.

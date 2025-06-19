@@ -24,9 +24,9 @@ pub struct Person {
 	#[serde(rename = "born")]
 	pub born: u8,
 	#[serde(rename = "dead")]
-	pub dead: u8,
+	pub dead: Option<u8>,
 	#[serde(rename = "qualification")]
-	pub qualification: String,
+	pub qualification: Option<String>,
 }
 
 

@@ -10,9 +10,9 @@ use serde_xml_rs::from_reader;
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct PublshInformation {
 	#[serde(rename = "Publish_Date")]
-	pub publish_date: String,
+	pub publish_date: Option<String>,
 	#[serde(rename = "Record_Count")]
-	pub record_count: i32,
+	pub record_count: Option<i32>,
 }
 
 
@@ -30,15 +30,15 @@ pub struct Id {
 	#[serde(rename = "uid")]
 	pub uid: i32,
 	#[serde(rename = "idType")]
-	pub id_type: String,
+	pub id_type: Option<String>,
 	#[serde(rename = "idNumber")]
-	pub id_number: String,
+	pub id_number: Option<String>,
 	#[serde(rename = "idCountry")]
-	pub id_country: String,
+	pub id_country: Option<String>,
 	#[serde(rename = "issueDate")]
-	pub issue_date: String,
+	pub issue_date: Option<String>,
 	#[serde(rename = "expirationDate")]
-	pub expiration_date: String,
+	pub expiration_date: Option<String>,
 }
 
 
@@ -60,9 +60,9 @@ pub struct Aka {
 	#[serde(rename = "category")]
 	pub category: String,
 	#[serde(rename = "lastName")]
-	pub last_name: String,
+	pub last_name: Option<String>,
 	#[serde(rename = "firstName")]
-	pub first_name: String,
+	pub first_name: Option<String>,
 }
 
 
@@ -80,19 +80,19 @@ pub struct Address {
 	#[serde(rename = "uid")]
 	pub uid: i32,
 	#[serde(rename = "address1")]
-	pub address1: String,
+	pub address1: Option<String>,
 	#[serde(rename = "address2")]
-	pub address2: String,
+	pub address2: Option<String>,
 	#[serde(rename = "address3")]
-	pub address3: String,
+	pub address3: Option<String>,
 	#[serde(rename = "city")]
-	pub city: String,
+	pub city: Option<String>,
 	#[serde(rename = "stateOrProvince")]
-	pub state_or_province: String,
+	pub state_or_province: Option<String>,
 	#[serde(rename = "postalCode")]
-	pub postal_code: String,
+	pub postal_code: Option<String>,
 	#[serde(rename = "country")]
-	pub country: String,
+	pub country: Option<String>,
 }
 
 
@@ -188,17 +188,17 @@ pub struct PlaceOfBirthList {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct VesselInfo {
 	#[serde(rename = "callSign")]
-	pub call_sign: String,
+	pub call_sign: Option<String>,
 	#[serde(rename = "vesselType")]
-	pub vessel_type: String,
+	pub vessel_type: Option<String>,
 	#[serde(rename = "vesselFlag")]
-	pub vessel_flag: String,
+	pub vessel_flag: Option<String>,
 	#[serde(rename = "vesselOwner")]
-	pub vessel_owner: String,
+	pub vessel_owner: Option<String>,
 	#[serde(rename = "tonnage")]
-	pub tonnage: i32,
+	pub tonnage: Option<i32>,
 	#[serde(rename = "grossRegisteredTonnage")]
-	pub gross_registered_tonnage: i32,
+	pub gross_registered_tonnage: Option<i32>,
 }
 
 
@@ -208,33 +208,33 @@ pub struct SdnEntry {
 	#[serde(rename = "uid")]
 	pub uid: i32,
 	#[serde(rename = "firstName")]
-	pub first_name: String,
+	pub first_name: Option<String>,
 	#[serde(rename = "lastName")]
 	pub last_name: String,
 	#[serde(rename = "title")]
-	pub title: String,
+	pub title: Option<String>,
 	#[serde(rename = "sdnType")]
 	pub sdn_type: String,
 	#[serde(rename = "remarks")]
-	pub remarks: String,
+	pub remarks: Option<String>,
 	#[serde(rename = "programList")]
 	pub program_list: ProgramList,
 	#[serde(rename = "idList")]
-	pub id_list: IdList,
+	pub id_list: Option<IdList>,
 	#[serde(rename = "akaList")]
-	pub aka_list: AkaList,
+	pub aka_list: Option<AkaList>,
 	#[serde(rename = "addressList")]
-	pub address_list: AddressList,
+	pub address_list: Option<AddressList>,
 	#[serde(rename = "nationalityList")]
-	pub nationality_list: NationalityList,
+	pub nationality_list: Option<NationalityList>,
 	#[serde(rename = "citizenshipList")]
-	pub citizenship_list: CitizenshipList,
+	pub citizenship_list: Option<CitizenshipList>,
 	#[serde(rename = "dateOfBirthList")]
-	pub date_of_birth_list: DateOfBirthList,
+	pub date_of_birth_list: Option<DateOfBirthList>,
 	#[serde(rename = "placeOfBirthList")]
-	pub place_of_birth_list: PlaceOfBirthList,
+	pub place_of_birth_list: Option<PlaceOfBirthList>,
 	#[serde(rename = "vesselInfo")]
-	pub vessel_info: VesselInfo,
+	pub vessel_info: Option<VesselInfo>,
 }
 
 

@@ -12,11 +12,11 @@ type RemoteResourcesBundle *RemoteResourcesBundle
 // RemoteResources is Remote resources that are contained in a remote resources bundle.
 type RemoteResources struct {
 	XMLName        xml.Name `xml:"remoteResources"`
-	RemoteResource []string `xml:"remoteResource"`
+	RemoteResource []string `xml:"remoteResource,omitempty"`
 }
 
 // RemoteResourcesBundle is Root element of the remote-resources.xml file.
 type RemoteResourcesBundle struct {
-	RemoteResources *RemoteResources `xml:"remoteResources"`
-	SourceEncoding  string           `xml:"sourceEncoding"`
+	RemoteResources *RemoteResources `xml:"remoteResources,omitempty"`
+	SourceEncoding  string           `xml:"sourceEncoding,omitempty"`
 }

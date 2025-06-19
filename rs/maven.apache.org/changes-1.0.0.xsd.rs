@@ -19,9 +19,9 @@ pub struct document {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct ChangesDocument {
 	#[serde(rename = "properties")]
-	pub properties: Properties,
+	pub properties: Option<Properties>,
 	#[serde(rename = "body")]
-	pub body: Body,
+	pub body: Option<Body>,
 }
 
 
@@ -93,9 +93,9 @@ pub struct DueTo {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Properties {
 	#[serde(rename = "title")]
-	pub title: String,
+	pub title: Option<String>,
 	#[serde(rename = "author")]
-	pub author: Author,
+	pub author: Option<Author>,
 }
 
 

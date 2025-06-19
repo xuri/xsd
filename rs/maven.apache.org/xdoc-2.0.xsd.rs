@@ -2046,15 +2046,15 @@ pub struct Table {
 	#[serde(rename = "bgcolor")]
 	pub bgcolor: Option<String>,
 	#[serde(rename = "caption")]
-	pub caption: Caption,
+	pub caption: Option<Caption>,
 	#[serde(rename = "col")]
 	pub col: Vec<Col>,
 	#[serde(rename = "colgroup")]
 	pub colgroup: Vec<Colgroup>,
 	#[serde(rename = "thead")]
-	pub thead: Thead,
+	pub thead: Option<Thead>,
 	#[serde(rename = "tfoot")]
-	pub tfoot: Tfoot,
+	pub tfoot: Option<Tfoot>,
 	#[serde(rename = "tbody")]
 	pub tbody: Vec<Tbody>,
 	#[serde(rename = "tr")]
@@ -2270,9 +2270,9 @@ pub struct Document {
 	#[serde(rename = "id")]
 	pub id: Option<String>,
 	#[serde(rename = "properties")]
-	pub properties: Properties,
+	pub properties: Option<Properties>,
 	#[serde(rename = "head")]
-	pub head: Head,
+	pub head: Option<Head>,
 	#[serde(rename = "body")]
 	pub body: Body,
 }
@@ -2286,7 +2286,7 @@ pub struct Properties {
 	#[serde(rename = "author")]
 	pub author: Vec<Author>,
 	#[serde(rename = "date")]
-	pub date: u8,
+	pub date: Option<u8>,
 }
 
 

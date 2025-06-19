@@ -27,7 +27,7 @@ pub struct Expressions {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct ExpressionDocumentation {
 	#[serde(rename = "expressions")]
-	pub expressions: Expressions,
+	pub expressions: Option<Expressions>,
 }
 
 
@@ -47,19 +47,19 @@ pub struct ApiMethods {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Expression {
 	#[serde(rename = "syntax")]
-	pub syntax: String,
+	pub syntax: Option<String>,
 	#[serde(rename = "description")]
-	pub description: String,
+	pub description: Option<String>,
 	#[serde(rename = "configuration")]
-	pub configuration: String,
+	pub configuration: Option<String>,
 	#[serde(rename = "cliOptions")]
-	pub cli_options: CliOptions,
+	pub cli_options: Option<CliOptions>,
 	#[serde(rename = "apiMethods")]
-	pub api_methods: ApiMethods,
+	pub api_methods: Option<ApiMethods>,
 	#[serde(rename = "deprecation")]
-	pub deprecation: String,
+	pub deprecation: Option<String>,
 	#[serde(rename = "ban")]
-	pub ban: String,
+	pub ban: Option<String>,
 	#[serde(rename = "editable")]
-	pub editable: bool,
+	pub editable: Option<bool>,
 }

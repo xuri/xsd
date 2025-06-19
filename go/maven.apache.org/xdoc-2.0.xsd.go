@@ -1250,11 +1250,11 @@ type Table struct {
 	CellpaddingAttr string      `xml:"cellpadding,attr,omitempty"`
 	AlignAttr       string      `xml:"align,attr,omitempty"`
 	BgcolorAttr     string      `xml:"bgcolor,attr,omitempty"`
-	Caption         *Caption    `xml:"caption"`
-	Col             []*Col      `xml:"col"`
-	Colgroup        []*Colgroup `xml:"colgroup"`
-	Thead           *Thead      `xml:"thead"`
-	Tfoot           *Tfoot      `xml:"tfoot"`
+	Caption         *Caption    `xml:"caption,omitempty"`
+	Col             []*Col      `xml:"col,omitempty"`
+	Colgroup        []*Colgroup `xml:"colgroup,omitempty"`
+	Thead           *Thead      `xml:"thead,omitempty"`
+	Tfoot           *Tfoot      `xml:"tfoot,omitempty"`
 	Tbody           []*Tbody    `xml:"tbody"`
 	Tr              []*Tr       `xml:"tr"`
 }
@@ -1306,7 +1306,7 @@ type Colgroup struct {
 	Cellvalign *Cellvalign
 	SpanAttr   int    `xml:"span,attr,omitempty"`
 	WidthAttr  string `xml:"width,attr,omitempty"`
-	Col        []*Col `xml:"col"`
+	Col        []*Col `xml:"col,omitempty"`
 }
 
 // Col is col elements define the alignment properties for cells in
@@ -1385,8 +1385,8 @@ type Document struct {
 	XMLName    xml.Name `xml:"document"`
 	I18n       *I18n
 	IdAttr     string      `xml:"id,attr,omitempty"`
-	Properties *Properties `xml:"properties"`
-	Head       *Head       `xml:"head"`
+	Properties *Properties `xml:"properties,omitempty"`
+	Head       *Head       `xml:"head,omitempty"`
 	Body       *Body       `xml:"body"`
 }
 
@@ -1394,8 +1394,8 @@ type Document struct {
 type Properties struct {
 	XMLName xml.Name  `xml:"properties"`
 	Title   *Title    `xml:"title"`
-	Author  []*Author `xml:"author"`
-	Date    string    `xml:"date"`
+	Author  []*Author `xml:"author,omitempty"`
+	Date    string    `xml:"date,omitempty"`
 }
 
 // Author is An author element.

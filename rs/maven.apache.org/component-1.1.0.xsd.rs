@@ -67,15 +67,15 @@ pub struct ContainerDescriptorHandlers {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Component {
 	#[serde(rename = "fileSets")]
-	pub file_sets: FileSets,
+	pub file_sets: Option<FileSets>,
 	#[serde(rename = "files")]
-	pub files: Files,
+	pub files: Option<Files>,
 	#[serde(rename = "dependencySets")]
-	pub dependency_sets: DependencySets,
+	pub dependency_sets: Option<DependencySets>,
 	#[serde(rename = "repositories")]
-	pub repositories: Repositories,
+	pub repositories: Option<Repositories>,
 	#[serde(rename = "containerDescriptorHandlers")]
-	pub container_descriptor_handlers: ContainerDescriptorHandlers,
+	pub container_descriptor_handlers: Option<ContainerDescriptorHandlers>,
 }
 
 
@@ -83,7 +83,7 @@ pub struct Component {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct ContainerDescriptorHandlerConfig {
 	#[serde(rename = "handlerName")]
-	pub handler_name: String,
+	pub handler_name: Option<String>,
 }
 
 
@@ -121,25 +121,25 @@ pub struct Excludes {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Repository {
 	#[serde(rename = "includeMetadata")]
-	pub include_metadata: bool,
+	pub include_metadata: Option<bool>,
 	#[serde(rename = "groupVersionAlignments")]
-	pub group_version_alignments: GroupVersionAlignments,
+	pub group_version_alignments: Option<GroupVersionAlignments>,
 	#[serde(rename = "scope")]
-	pub scope: String,
+	pub scope: Option<String>,
 	#[serde(rename = "useStrictFiltering")]
-	pub use_strict_filtering: bool,
+	pub use_strict_filtering: Option<bool>,
 	#[serde(rename = "useDefaultExcludes")]
-	pub use_default_excludes: bool,
+	pub use_default_excludes: Option<bool>,
 	#[serde(rename = "outputDirectory")]
-	pub output_directory: String,
+	pub output_directory: Option<String>,
 	#[serde(rename = "includes")]
-	pub includes: Includes,
+	pub includes: Option<Includes>,
 	#[serde(rename = "excludes")]
-	pub excludes: Excludes,
+	pub excludes: Option<Excludes>,
 	#[serde(rename = "fileMode")]
-	pub file_mode: String,
+	pub file_mode: Option<String>,
 	#[serde(rename = "directoryMode")]
-	pub directory_mode: String,
+	pub directory_mode: Option<String>,
 }
 
 
@@ -147,11 +147,11 @@ pub struct Repository {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct GroupVersionAlignment {
 	#[serde(rename = "id")]
-	pub id: String,
+	pub id: Option<String>,
 	#[serde(rename = "version")]
-	pub version: String,
+	pub version: Option<String>,
 	#[serde(rename = "excludes")]
-	pub excludes: Excludes,
+	pub excludes: Option<Excludes>,
 }
 
 
@@ -159,17 +159,17 @@ pub struct GroupVersionAlignment {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct FileItem {
 	#[serde(rename = "source")]
-	pub source: String,
+	pub source: Option<String>,
 	#[serde(rename = "outputDirectory")]
-	pub output_directory: String,
+	pub output_directory: Option<String>,
 	#[serde(rename = "destName")]
-	pub dest_name: String,
+	pub dest_name: Option<String>,
 	#[serde(rename = "fileMode")]
-	pub file_mode: String,
+	pub file_mode: Option<String>,
 	#[serde(rename = "lineEnding")]
-	pub line_ending: String,
+	pub line_ending: Option<String>,
 	#[serde(rename = "filtered")]
-	pub filtered: bool,
+	pub filtered: Option<bool>,
 }
 
 
@@ -179,25 +179,25 @@ pub struct FileItem {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct FileSet {
 	#[serde(rename = "directory")]
-	pub directory: String,
+	pub directory: Option<String>,
 	#[serde(rename = "lineEnding")]
-	pub line_ending: String,
+	pub line_ending: Option<String>,
 	#[serde(rename = "filtered")]
-	pub filtered: bool,
+	pub filtered: Option<bool>,
 	#[serde(rename = "useStrictFiltering")]
-	pub use_strict_filtering: bool,
+	pub use_strict_filtering: Option<bool>,
 	#[serde(rename = "useDefaultExcludes")]
-	pub use_default_excludes: bool,
+	pub use_default_excludes: Option<bool>,
 	#[serde(rename = "outputDirectory")]
-	pub output_directory: String,
+	pub output_directory: Option<String>,
 	#[serde(rename = "includes")]
-	pub includes: Includes,
+	pub includes: Option<Includes>,
 	#[serde(rename = "excludes")]
-	pub excludes: Excludes,
+	pub excludes: Option<Excludes>,
 	#[serde(rename = "fileMode")]
-	pub file_mode: String,
+	pub file_mode: Option<String>,
 	#[serde(rename = "directoryMode")]
-	pub directory_mode: String,
+	pub directory_mode: Option<String>,
 }
 
 
@@ -207,35 +207,35 @@ pub struct FileSet {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct DependencySet {
 	#[serde(rename = "outputFileNameMapping")]
-	pub output_file_name_mapping: String,
+	pub output_file_name_mapping: Option<String>,
 	#[serde(rename = "unpack")]
-	pub unpack: bool,
+	pub unpack: Option<bool>,
 	#[serde(rename = "unpackOptions")]
-	pub unpack_options: UnpackOptions,
+	pub unpack_options: Option<UnpackOptions>,
 	#[serde(rename = "scope")]
-	pub scope: String,
+	pub scope: Option<String>,
 	#[serde(rename = "useProjectArtifact")]
-	pub use_project_artifact: bool,
+	pub use_project_artifact: Option<bool>,
 	#[serde(rename = "useProjectAttachments")]
-	pub use_project_attachments: bool,
+	pub use_project_attachments: Option<bool>,
 	#[serde(rename = "useTransitiveDependencies")]
-	pub use_transitive_dependencies: bool,
+	pub use_transitive_dependencies: Option<bool>,
 	#[serde(rename = "useTransitiveFiltering")]
-	pub use_transitive_filtering: bool,
+	pub use_transitive_filtering: Option<bool>,
 	#[serde(rename = "useStrictFiltering")]
-	pub use_strict_filtering: bool,
+	pub use_strict_filtering: Option<bool>,
 	#[serde(rename = "useDefaultExcludes")]
-	pub use_default_excludes: bool,
+	pub use_default_excludes: Option<bool>,
 	#[serde(rename = "outputDirectory")]
-	pub output_directory: String,
+	pub output_directory: Option<String>,
 	#[serde(rename = "includes")]
-	pub includes: Includes,
+	pub includes: Option<Includes>,
 	#[serde(rename = "excludes")]
-	pub excludes: Excludes,
+	pub excludes: Option<Excludes>,
 	#[serde(rename = "fileMode")]
-	pub file_mode: String,
+	pub file_mode: Option<String>,
 	#[serde(rename = "directoryMode")]
-	pub directory_mode: String,
+	pub directory_mode: Option<String>,
 }
 
 
@@ -243,9 +243,9 @@ pub struct DependencySet {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct UnpackOptions {
 	#[serde(rename = "includes")]
-	pub includes: Includes,
+	pub includes: Option<Includes>,
 	#[serde(rename = "excludes")]
-	pub excludes: Excludes,
+	pub excludes: Option<Excludes>,
 	#[serde(rename = "filtered")]
-	pub filtered: bool,
+	pub filtered: Option<bool>,
 }

@@ -26,15 +26,15 @@ pub struct Chapters {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct BookModel {
 	#[serde(rename = "id")]
-	pub id: String,
+	pub id: Option<String>,
 	#[serde(rename = "title")]
-	pub title: String,
+	pub title: Option<String>,
 	#[serde(rename = "author")]
-	pub author: String,
+	pub author: Option<String>,
 	#[serde(rename = "date")]
-	pub date: String,
+	pub date: Option<String>,
 	#[serde(rename = "chapters")]
-	pub chapters: Chapters,
+	pub chapters: Option<Chapters>,
 }
 
 
@@ -50,11 +50,11 @@ pub struct Sections {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Chapter {
 	#[serde(rename = "id")]
-	pub id: String,
+	pub id: Option<String>,
 	#[serde(rename = "title")]
-	pub title: String,
+	pub title: Option<String>,
 	#[serde(rename = "sections")]
-	pub sections: Sections,
+	pub sections: Option<Sections>,
 }
 
 
@@ -62,9 +62,9 @@ pub struct Chapter {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Section {
 	#[serde(rename = "id")]
-	pub id: String,
+	pub id: Option<String>,
 	#[serde(rename = "title")]
-	pub title: String,
+	pub title: Option<String>,
 	#[serde(rename = "file")]
-	pub file: String,
+	pub file: Option<String>,
 }

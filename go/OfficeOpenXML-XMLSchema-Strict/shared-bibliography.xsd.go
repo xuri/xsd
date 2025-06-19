@@ -18,9 +18,9 @@ type CTNameListType struct {
 // CTPersonType ...
 type CTPersonType struct {
 	XMLName xml.Name `xml:"CT_PersonType"`
-	Last    []string `xml:"Last"`
-	First   []string `xml:"First"`
-	Middle  []string `xml:"Middle"`
+	Last    []string `xml:"Last,omitempty"`
+	First   []string `xml:"First,omitempty"`
+	Middle  []string `xml:"Middle,omitempty"`
 }
 
 // CTNameType ...
@@ -123,5 +123,5 @@ type CTSources struct {
 	SelectedStyleAttr string          `xml:"SelectedStyle,attr,omitempty"`
 	StyleNameAttr     string          `xml:"StyleName,attr,omitempty"`
 	URIAttr           string          `xml:"URI,attr,omitempty"`
-	Source            []*CTSourceType `xml:"Source"`
+	Source            []*CTSourceType `xml:"Source,omitempty"`
 }

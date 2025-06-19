@@ -26,7 +26,7 @@ pub struct Archetypes {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct ArchetypeCatalog {
 	#[serde(rename = "archetypes")]
-	pub archetypes: Archetypes,
+	pub archetypes: Option<Archetypes>,
 }
 
 
@@ -34,13 +34,13 @@ pub struct ArchetypeCatalog {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Archetype {
 	#[serde(rename = "groupId")]
-	pub group_id: String,
+	pub group_id: Option<String>,
 	#[serde(rename = "artifactId")]
-	pub artifact_id: String,
+	pub artifact_id: Option<String>,
 	#[serde(rename = "version")]
-	pub version: String,
+	pub version: Option<String>,
 	#[serde(rename = "repository")]
-	pub repository: String,
+	pub repository: Option<String>,
 	#[serde(rename = "description")]
-	pub description: String,
+	pub description: Option<String>,
 }

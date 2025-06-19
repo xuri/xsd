@@ -32,5 +32,5 @@ pub struct Project {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Supplement {
 	#[serde(rename = "project")]
-	pub project: Project,
+	pub project: Option<Project>,
 }

@@ -10,9 +10,9 @@ use serde_xml_rs::from_reader;
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Software {
 	#[serde(rename = "SoftwareProvider")]
-	pub software_provider: char,
+	pub software_provider: Option<char>,
 	#[serde(rename = "SoftwareVersion")]
-	pub software_version: char,
+	pub software_version: Option<char>,
 }
 
 
@@ -24,9 +24,9 @@ pub struct TransmissionData {
 	#[serde(rename = "CreatedDateTime")]
 	pub created_date_time: u8,
 	#[serde(rename = "Software")]
-	pub software: char,
+	pub software: Option<char>,
 	#[serde(rename = "FullResponseCode")]
-	pub full_response_code: char,
+	pub full_response_code: Option<char>,
 }
 
 
@@ -36,5 +36,5 @@ pub struct CommonRecordType {
 	#[serde(rename = "TransmissionData")]
 	pub transmission_data: char,
 	#[serde(rename = "Receipt")]
-	pub receipt: u8,
+	pub receipt: Option<u8>,
 }

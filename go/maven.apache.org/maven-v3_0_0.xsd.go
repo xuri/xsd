@@ -18,7 +18,7 @@ type Project *Model
 //             page</a> of the site's web site.
 type MailingLists struct {
 	XMLName     xml.Name       `xml:"mailingLists"`
-	MailingList []*MailingList `xml:"mailingList"`
+	MailingList []*MailingList `xml:"mailingList,omitempty"`
 }
 
 // Developers is Describes the committers to a project.  This is used to
@@ -26,7 +26,7 @@ type MailingLists struct {
 //             page of the project's web site.
 type Developers struct {
 	XMLName   xml.Name     `xml:"developers"`
-	Developer []*Developer `xml:"developer"`
+	Developer []*Developer `xml:"developer,omitempty"`
 }
 
 // Contributors is Describes the contributors to a project.  This is used to generate
@@ -34,7 +34,7 @@ type Developers struct {
 //             the project's web site.
 type Contributors struct {
 	XMLName     xml.Name       `xml:"contributors"`
-	Contributor []*Contributor `xml:"contributor"`
+	Contributor []*Contributor `xml:"contributor,omitempty"`
 }
 
 // Licenses is This element describes all of the licenses for this project.
@@ -45,7 +45,7 @@ type Contributors struct {
 //             and not the licenses that apply to dependencies.
 type Licenses struct {
 	XMLName xml.Name   `xml:"licenses"`
-	License []*License `xml:"license"`
+	License []*License `xml:"license,omitempty"`
 }
 
 // Versions is Optional. Contains information on previous versions of the
@@ -54,7 +54,7 @@ type Licenses struct {
 //             target.
 type Versions struct {
 	XMLName xml.Name   `xml:"versions"`
-	Version []*Version `xml:"version"`
+	Version []*Version `xml:"version,omitempty"`
 }
 
 // Branches is Optional. Contains information on branches of the
@@ -63,13 +63,13 @@ type Versions struct {
 //             target.
 type Branches struct {
 	XMLName xml.Name  `xml:"branches"`
-	Branch  []*Branch `xml:"branch"`
+	Branch  []*Branch `xml:"branch,omitempty"`
 }
 
 // PackageGroups is Package groups required for complete javadocs.
 type PackageGroups struct {
 	XMLName      xml.Name        `xml:"packageGroups"`
-	PackageGroup []*PackageGroup `xml:"packageGroup"`
+	PackageGroup []*PackageGroup `xml:"packageGroup,omitempty"`
 }
 
 // Reports is This element includes the specification of reports to be
@@ -79,7 +79,7 @@ type PackageGroups struct {
 //             the order they are specified.
 type Reports struct {
 	XMLName xml.Name `xml:"reports"`
-	Report  []string `xml:"report"`
+	Report  []string `xml:"report,omitempty"`
 }
 
 // Properties is Project properties that will be used by various plugins
@@ -139,7 +139,7 @@ type Properties struct {
 //             </dl>
 type Dependencies struct {
 	XMLName    xml.Name      `xml:"dependencies"`
-	Dependency []*Dependency `xml:"dependency"`
+	Dependency []*Dependency `xml:"dependency,omitempty"`
 }
 
 // Model is Optional. The directory on the web server where the final
@@ -147,38 +147,38 @@ type Dependencies struct {
 //             distributions are
 //             <a href="/plugins/dist/index.html">deployed</a>.
 type Model struct {
-	Extend                string         `xml:"extend"`
-	PomVersion            string         `xml:"pomVersion"`
-	Id                    string         `xml:"id"`
-	GroupId               string         `xml:"groupId"`
-	ArtifactId            string         `xml:"artifactId"`
-	Name                  string         `xml:"name"`
-	CurrentVersion        string         `xml:"currentVersion"`
-	ShortDescription      string         `xml:"shortDescription"`
-	Description           string         `xml:"description"`
-	Url                   string         `xml:"url"`
-	Logo                  string         `xml:"logo"`
-	IssueTrackingUrl      string         `xml:"issueTrackingUrl"`
-	InceptionYear         string         `xml:"inceptionYear"`
-	GumpRepositoryId      string         `xml:"gumpRepositoryId"`
-	SiteAddress           string         `xml:"siteAddress"`
-	SiteDirectory         string         `xml:"siteDirectory"`
-	DistributionSite      string         `xml:"distributionSite"`
-	DistributionDirectory string         `xml:"distributionDirectory"`
-	MailingLists          *MailingLists  `xml:"mailingLists"`
-	Developers            *Developers    `xml:"developers"`
-	Contributors          *Contributors  `xml:"contributors"`
-	Licenses              *Licenses      `xml:"licenses"`
-	Versions              *Versions      `xml:"versions"`
-	Branches              *Branches      `xml:"branches"`
-	PackageGroups         *PackageGroups `xml:"packageGroups"`
-	Reports               *Reports       `xml:"reports"`
-	Repository            *Repository    `xml:"repository"`
-	Organization          *Organization  `xml:"organization"`
-	Properties            *Properties    `xml:"properties"`
-	Package               string         `xml:"package"`
-	Build                 *Build         `xml:"build"`
-	Dependencies          *Dependencies  `xml:"dependencies"`
+	Extend                string         `xml:"extend,omitempty"`
+	PomVersion            string         `xml:"pomVersion,omitempty"`
+	Id                    string         `xml:"id,omitempty"`
+	GroupId               string         `xml:"groupId,omitempty"`
+	ArtifactId            string         `xml:"artifactId,omitempty"`
+	Name                  string         `xml:"name,omitempty"`
+	CurrentVersion        string         `xml:"currentVersion,omitempty"`
+	ShortDescription      string         `xml:"shortDescription,omitempty"`
+	Description           string         `xml:"description,omitempty"`
+	Url                   string         `xml:"url,omitempty"`
+	Logo                  string         `xml:"logo,omitempty"`
+	IssueTrackingUrl      string         `xml:"issueTrackingUrl,omitempty"`
+	InceptionYear         string         `xml:"inceptionYear,omitempty"`
+	GumpRepositoryId      string         `xml:"gumpRepositoryId,omitempty"`
+	SiteAddress           string         `xml:"siteAddress,omitempty"`
+	SiteDirectory         string         `xml:"siteDirectory,omitempty"`
+	DistributionSite      string         `xml:"distributionSite,omitempty"`
+	DistributionDirectory string         `xml:"distributionDirectory,omitempty"`
+	MailingLists          *MailingLists  `xml:"mailingLists,omitempty"`
+	Developers            *Developers    `xml:"developers,omitempty"`
+	Contributors          *Contributors  `xml:"contributors,omitempty"`
+	Licenses              *Licenses      `xml:"licenses,omitempty"`
+	Versions              *Versions      `xml:"versions,omitempty"`
+	Branches              *Branches      `xml:"branches,omitempty"`
+	PackageGroups         *PackageGroups `xml:"packageGroups,omitempty"`
+	Reports               *Reports       `xml:"reports,omitempty"`
+	Repository            *Repository    `xml:"repository,omitempty"`
+	Organization          *Organization  `xml:"organization,omitempty"`
+	Properties            *Properties    `xml:"properties,omitempty"`
+	Package               string         `xml:"package,omitempty"`
+	Build                 *Build         `xml:"build,omitempty"`
+	Dependencies          *Dependencies  `xml:"dependencies,omitempty"`
 }
 
 // SourceModifications is This element describes all of the sourceModifications associated
@@ -189,7 +189,7 @@ type Model struct {
 //              the build is running in.
 type SourceModifications struct {
 	XMLName            xml.Name              `xml:"sourceModifications"`
-	SourceModification []*SourceModification `xml:"sourceModification"`
+	SourceModification []*SourceModification `xml:"sourceModification,omitempty"`
 }
 
 // Resources is This element describes all of the resources associated with a
@@ -199,60 +199,60 @@ type SourceModifications struct {
 //             the jar file or to run unit test.
 type Resources struct {
 	XMLName  xml.Name    `xml:"resources"`
-	Resource []*Resource `xml:"resource"`
+	Resource []*Resource `xml:"resource,omitempty"`
 }
 
 // Build is This element specifies a directory containing integration test
 //              sources of the project.
 type Build struct {
-	NagEmailAddress                    string               `xml:"nagEmailAddress"`
-	SourceDirectory                    string               `xml:"sourceDirectory"`
-	UnitTestSourceDirectory            string               `xml:"unitTestSourceDirectory"`
-	AspectSourceDirectory              string               `xml:"aspectSourceDirectory"`
-	IntegrationUnitTestSourceDirectory string               `xml:"integrationUnitTestSourceDirectory"`
-	SourceModifications                *SourceModifications `xml:"sourceModifications"`
-	UnitTest                           *UnitTest            `xml:"unitTest"`
-	DefaultGoal                        string               `xml:"defaultGoal"`
-	Resources                          *Resources           `xml:"resources"`
+	NagEmailAddress                    string               `xml:"nagEmailAddress,omitempty"`
+	SourceDirectory                    string               `xml:"sourceDirectory,omitempty"`
+	UnitTestSourceDirectory            string               `xml:"unitTestSourceDirectory,omitempty"`
+	AspectSourceDirectory              string               `xml:"aspectSourceDirectory,omitempty"`
+	IntegrationUnitTestSourceDirectory string               `xml:"integrationUnitTestSourceDirectory,omitempty"`
+	SourceModifications                *SourceModifications `xml:"sourceModifications,omitempty"`
+	UnitTest                           *UnitTest            `xml:"unitTest,omitempty"`
+	DefaultGoal                        string               `xml:"defaultGoal,omitempty"`
+	Resources                          *Resources           `xml:"resources,omitempty"`
 }
 
 // Includes is the description
 type Includes struct {
 	XMLName xml.Name `xml:"includes"`
-	Include []string `xml:"include"`
+	Include []string `xml:"include,omitempty"`
 }
 
 // Excludes is the description
 type Excludes struct {
 	XMLName xml.Name `xml:"excludes"`
-	Exclude []string `xml:"exclude"`
+	Exclude []string `xml:"exclude,omitempty"`
 }
 
 // UnitTest is 3.0.0
 type UnitTest struct {
-	Resources *Resources `xml:"resources"`
-	Includes  *Includes  `xml:"includes"`
-	Excludes  *Excludes  `xml:"excludes"`
+	Resources *Resources `xml:"resources,omitempty"`
+	Includes  *Includes  `xml:"includes,omitempty"`
+	Excludes  *Excludes  `xml:"excludes,omitempty"`
 }
 
 // Resource is Describe the directory where the resource is stored.
 //             The path may be absolute, or relative to the project.xml file.
 type Resource struct {
-	TargetPath string    `xml:"targetPath"`
-	Filtering  bool      `xml:"filtering"`
-	Directory  string    `xml:"directory"`
-	Includes   *Includes `xml:"includes"`
-	Excludes   *Excludes `xml:"excludes"`
+	TargetPath string    `xml:"targetPath,omitempty"`
+	Filtering  bool      `xml:"filtering,omitempty"`
+	Directory  string    `xml:"directory,omitempty"`
+	Includes   *Includes `xml:"includes,omitempty"`
+	Excludes   *Excludes `xml:"excludes,omitempty"`
 }
 
 // SourceModification is Describe the directory where the resource is stored.
 //             The path may be absolute, or relative to the project.xml file.
 type SourceModification struct {
-	ClassName string    `xml:"className"`
-	Property  string    `xml:"property"`
-	Directory string    `xml:"directory"`
-	Includes  *Includes `xml:"includes"`
-	Excludes  *Excludes `xml:"excludes"`
+	ClassName string    `xml:"className,omitempty"`
+	Property  string    `xml:"property,omitempty"`
+	Directory string    `xml:"directory,omitempty"`
+	Includes  *Includes `xml:"includes,omitempty"`
+	Excludes  *Excludes `xml:"excludes,omitempty"`
 }
 
 // Organization is The URL to the organization's logo image.  This can be an URL relative
@@ -261,9 +261,9 @@ type SourceModification struct {
 //             (e.g., <code>http://my.corp/logo.png</code>).  This value is used
 //             when generating the project documentation.
 type Organization struct {
-	Name string `xml:"name"`
-	Url  string `xml:"url"`
-	Logo string `xml:"logo"`
+	Name string `xml:"name,omitempty"`
+	Url  string `xml:"url,omitempty"`
+	Logo string `xml:"logo,omitempty"`
 }
 
 // Roles is The roles the contributor plays in the project.  Each role is
@@ -271,20 +271,20 @@ type Organization struct {
 //             role name.
 type Roles struct {
 	XMLName xml.Name `xml:"roles"`
-	Role    []string `xml:"role"`
+	Role    []string `xml:"role,omitempty"`
 }
 
 // Developer is The URL of the organization.
 type Developer struct {
-	Id              string      `xml:"id"`
-	Name            string      `xml:"name"`
-	Email           string      `xml:"email"`
-	Url             string      `xml:"url"`
-	Organization    string      `xml:"organization"`
-	OrganizationUrl string      `xml:"organizationUrl"`
-	Roles           *Roles      `xml:"roles"`
-	Timezone        string      `xml:"timezone"`
-	Properties      *Properties `xml:"properties"`
+	Id              string      `xml:"id,omitempty"`
+	Name            string      `xml:"name,omitempty"`
+	Email           string      `xml:"email,omitempty"`
+	Url             string      `xml:"url,omitempty"`
+	Organization    string      `xml:"organization,omitempty"`
+	OrganizationUrl string      `xml:"organizationUrl,omitempty"`
+	Roles           *Roles      `xml:"roles,omitempty"`
+	Timezone        string      `xml:"timezone,omitempty"`
+	Properties      *Properties `xml:"properties,omitempty"`
 }
 
 // Dependency is The type of dependency. This defaults to <code>jar</code>.
@@ -295,27 +295,27 @@ type Developer struct {
 //             <li><code>plugin</code></li>
 //             </ul>
 type Dependency struct {
-	Id         string      `xml:"id"`
-	GroupId    string      `xml:"groupId"`
-	ArtifactId string      `xml:"artifactId"`
-	Version    string      `xml:"version"`
-	Url        string      `xml:"url"`
-	Jar        string      `xml:"jar"`
-	Type       string      `xml:"type"`
-	Properties *Properties `xml:"properties"`
+	Id         string      `xml:"id,omitempty"`
+	GroupId    string      `xml:"groupId,omitempty"`
+	ArtifactId string      `xml:"artifactId,omitempty"`
+	Version    string      `xml:"version,omitempty"`
+	Url        string      `xml:"url,omitempty"`
+	Jar        string      `xml:"jar,omitempty"`
+	Type       string      `xml:"type,omitempty"`
+	Properties *Properties `xml:"properties,omitempty"`
 }
 
 // Repository is The URL to the project's browsable CVS repository.
 type Repository struct {
-	Connection          string `xml:"connection"`
-	DeveloperConnection string `xml:"developerConnection"`
-	Url                 string `xml:"url"`
+	Connection          string `xml:"connection,omitempty"`
+	DeveloperConnection string `xml:"developerConnection,omitempty"`
+	Url                 string `xml:"url,omitempty"`
 }
 
 // PackageGroup is the description
 type PackageGroup struct {
-	Title    string `xml:"title"`
-	Packages string `xml:"packages"`
+	Title    string `xml:"title,omitempty"`
+	Packages string `xml:"packages,omitempty"`
 }
 
 // Version is A unique identifier for a version.  This ID is
@@ -324,50 +324,50 @@ type PackageGroup struct {
 //               <code>maven:dist</code>
 //             </a> builds.
 type Version struct {
-	Name string `xml:"name"`
-	Tag  string `xml:"tag"`
-	Id   string `xml:"id"`
+	Name string `xml:"name,omitempty"`
+	Tag  string `xml:"tag,omitempty"`
+	Id   string `xml:"id,omitempty"`
 }
 
 // License is Addendum information pertaining to this license.
 type License struct {
-	Name         string `xml:"name"`
-	Url          string `xml:"url"`
-	Distribution string `xml:"distribution"`
-	Comments     string `xml:"comments"`
+	Name         string `xml:"name,omitempty"`
+	Url          string `xml:"url,omitempty"`
+	Distribution string `xml:"distribution,omitempty"`
+	Comments     string `xml:"comments,omitempty"`
 }
 
 // Contributor is The URL of the organization.
 type Contributor struct {
-	Name            string      `xml:"name"`
-	Email           string      `xml:"email"`
-	Url             string      `xml:"url"`
-	Organization    string      `xml:"organization"`
-	OrganizationUrl string      `xml:"organizationUrl"`
-	Roles           *Roles      `xml:"roles"`
-	Timezone        string      `xml:"timezone"`
-	Properties      *Properties `xml:"properties"`
+	Name            string      `xml:"name,omitempty"`
+	Email           string      `xml:"email,omitempty"`
+	Url             string      `xml:"url,omitempty"`
+	Organization    string      `xml:"organization,omitempty"`
+	OrganizationUrl string      `xml:"organizationUrl,omitempty"`
+	Roles           *Roles      `xml:"roles,omitempty"`
+	Timezone        string      `xml:"timezone,omitempty"`
+	Properties      *Properties `xml:"properties,omitempty"`
 }
 
 // Branch is The branch tag in the version control system (e.g. cvs) used by the
 //             project for the source code associated with this branch of the
 //             project.
 type Branch struct {
-	Tag string `xml:"tag"`
+	Tag string `xml:"tag,omitempty"`
 }
 
 // OtherArchives is The link to other URLs where you can browse the list archive.
 type OtherArchives struct {
 	XMLName      xml.Name `xml:"otherArchives"`
-	OtherArchive []string `xml:"otherArchive"`
+	OtherArchive []string `xml:"otherArchive,omitempty"`
 }
 
 // MailingList is The link to a URL where you can browse the mailing list archive.
 type MailingList struct {
-	Name          string         `xml:"name"`
-	Subscribe     string         `xml:"subscribe"`
-	Unsubscribe   string         `xml:"unsubscribe"`
-	Post          string         `xml:"post"`
-	Archive       string         `xml:"archive"`
-	OtherArchives *OtherArchives `xml:"otherArchives"`
+	Name          string         `xml:"name,omitempty"`
+	Subscribe     string         `xml:"subscribe,omitempty"`
+	Unsubscribe   string         `xml:"unsubscribe,omitempty"`
+	Post          string         `xml:"post,omitempty"`
+	Archive       string         `xml:"archive,omitempty"`
+	OtherArchives *OtherArchives `xml:"otherArchives,omitempty"`
 }

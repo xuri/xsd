@@ -4,12 +4,12 @@ package schema
 
 // B ...
 type B struct {
-	C interface{} `xml:"C"`
+	C interface{} `xml:"C,omitempty"`
 }
 
 // A ...
 type A struct {
-	B *B `xml:"B"`
+	B *B `xml:"B,omitempty"`
 }
 
 // FileUpload ...

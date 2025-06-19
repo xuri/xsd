@@ -46,11 +46,11 @@ pub struct ArchetypeDescriptor {
 	#[serde(rename = "partial")]
 	pub partial: Option<bool>,
 	#[serde(rename = "requiredProperties")]
-	pub required_properties: RequiredProperties,
+	pub required_properties: Option<RequiredProperties>,
 	#[serde(rename = "fileSets")]
-	pub file_sets: FileSets,
+	pub file_sets: Option<FileSets>,
 	#[serde(rename = "modules")]
-	pub modules: Modules,
+	pub modules: Option<Modules>,
 }
 
 
@@ -60,9 +60,9 @@ pub struct RequiredProperty {
 	#[serde(rename = "key")]
 	pub key: String,
 	#[serde(rename = "defaultValue")]
-	pub default_value: String,
+	pub default_value: Option<String>,
 	#[serde(rename = "validationRegex")]
-	pub validation_regex: String,
+	pub validation_regex: Option<String>,
 }
 
 
@@ -76,9 +76,9 @@ pub struct ModuleDescriptor {
 	#[serde(rename = "name")]
 	pub name: String,
 	#[serde(rename = "fileSets")]
-	pub file_sets: FileSets,
+	pub file_sets: Option<FileSets>,
 	#[serde(rename = "modules")]
-	pub modules: Modules,
+	pub modules: Option<Modules>,
 }
 
 
@@ -109,9 +109,9 @@ pub struct FileSet {
 	#[serde(rename = "encoding")]
 	pub encoding: Option<String>,
 	#[serde(rename = "directory")]
-	pub directory: String,
+	pub directory: Option<String>,
 	#[serde(rename = "includes")]
-	pub includes: Includes,
+	pub includes: Option<Includes>,
 	#[serde(rename = "excludes")]
-	pub excludes: Excludes,
+	pub excludes: Option<Excludes>,
 }

@@ -16,7 +16,7 @@ pub struct TDocumentation {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct TDocumented {
 	#[serde(rename = "documentation")]
-	pub documentation: TDocumentation,
+	pub documentation: Option<TDocumentation>,
 }
 
 
@@ -238,9 +238,9 @@ pub struct TBindingOperation {
 	#[serde(rename = "name")]
 	pub name: String,
 	#[serde(rename = "input")]
-	pub input: TBindingOperationMessage,
+	pub input: Option<TBindingOperationMessage>,
 	#[serde(rename = "output")]
-	pub output: TBindingOperationMessage,
+	pub output: Option<TBindingOperationMessage>,
 	#[serde(rename = "fault")]
 	pub fault: Vec<TBindingOperationFault>,
 	#[serde(flatten)]

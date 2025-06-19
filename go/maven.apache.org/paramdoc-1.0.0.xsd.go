@@ -13,12 +13,12 @@ type Paramdoc *ExpressionDocumentation
 //             document.
 type Expressions struct {
 	XMLName    xml.Name      `xml:"expressions"`
-	Expression []*Expression `xml:"expression"`
+	Expression []*Expression `xml:"expression,omitempty"`
 }
 
 // ExpressionDocumentation is The root of a parameter plugin expression document.
 type ExpressionDocumentation struct {
-	Expressions *Expressions `xml:"expressions"`
+	Expressions *Expressions `xml:"expressions,omitempty"`
 }
 
 // CliOptions is The command-line switches used to change the value of this expression.
@@ -33,12 +33,12 @@ type ApiMethods struct {
 
 // Expression is The place and syntax used to change the value of this expression.
 type Expression struct {
-	Syntax        string      `xml:"syntax"`
-	Description   string      `xml:"description"`
-	Configuration string      `xml:"configuration"`
-	CliOptions    *CliOptions `xml:"cliOptions"`
-	ApiMethods    *ApiMethods `xml:"apiMethods"`
-	Deprecation   string      `xml:"deprecation"`
-	Ban           string      `xml:"ban"`
-	Editable      bool        `xml:"editable"`
+	Syntax        string      `xml:"syntax,omitempty"`
+	Description   string      `xml:"description,omitempty"`
+	Configuration string      `xml:"configuration,omitempty"`
+	CliOptions    *CliOptions `xml:"cliOptions,omitempty"`
+	ApiMethods    *ApiMethods `xml:"apiMethods,omitempty"`
+	Deprecation   string      `xml:"deprecation,omitempty"`
+	Ban           string      `xml:"ban,omitempty"`
+	Editable      bool        `xml:"editable,omitempty"`
 }

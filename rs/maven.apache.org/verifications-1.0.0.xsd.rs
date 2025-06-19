@@ -26,7 +26,7 @@ pub struct Files {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Verifications {
 	#[serde(rename = "files")]
-	pub files: Files,
+	pub files: Option<Files>,
 }
 
 
@@ -36,9 +36,9 @@ pub struct Verifications {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct File {
 	#[serde(rename = "location")]
-	pub location: String,
+	pub location: Option<String>,
 	#[serde(rename = "contains")]
-	pub contains: String,
+	pub contains: Option<String>,
 	#[serde(rename = "exists")]
-	pub exists: bool,
+	pub exists: Option<bool>,
 }

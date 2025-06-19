@@ -7,12 +7,12 @@ type Extensions *CoreExtensions
 
 // CoreExtensions is A set of build extensions to use from this project.
 type CoreExtensions struct {
-	Extension []*CoreExtension `xml:"extension"`
+	Extension []*CoreExtension `xml:"extension,omitempty"`
 }
 
 // CoreExtension is The version of the extension.
 type CoreExtension struct {
-	GroupId    string `xml:"groupId"`
-	ArtifactId string `xml:"artifactId"`
-	Version    string `xml:"version"`
+	GroupId    string `xml:"groupId,omitempty"`
+	ArtifactId string `xml:"artifactId,omitempty"`
+	Version    string `xml:"version,omitempty"`
 }

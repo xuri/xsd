@@ -34,7 +34,7 @@ pub struct FilteredExtensions {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct ArchetypeRegistry {
 	#[serde(rename = "Languages")]
-	pub languages: Languages,
+	pub languages: Option<Languages>,
 	#[serde(rename = "FilteredExtensions")]
-	pub filtered_extensions: FilteredExtensions,
+	pub filtered_extensions: Option<FilteredExtensions>,
 }

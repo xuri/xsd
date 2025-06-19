@@ -12,19 +12,19 @@ type Verifications *Verifications
 // Files is List of files and directories to check.
 type Files struct {
 	XMLName xml.Name `xml:"files"`
-	File    []*File  `xml:"file"`
+	File    []*File  `xml:"file,omitempty"`
 }
 
 // Verifications is Root element of the verifications file.
 type Verifications struct {
-	Files *Files `xml:"files"`
+	Files *Files `xml:"files,omitempty"`
 }
 
 // File is When this is set to <code>true</code> the plugin checks that the
 //             file or directory exists. When set to <code>false</code> it checks
 //             that the file or directory does <strong>not</strong> exist.
 type File struct {
-	Location string `xml:"location"`
-	Contains string `xml:"contains"`
-	Exists   bool   `xml:"exists"`
+	Location string `xml:"location,omitempty"`
+	Contains string `xml:"contains,omitempty"`
+	Exists   bool   `xml:"exists,omitempty"`
 }

@@ -36,14 +36,14 @@ type Assembly *Assembly
 //             </ul>
 type Formats struct {
 	XMLName xml.Name `xml:"formats"`
-	Format  []string `xml:"format"`
+	Format  []string `xml:"format,omitempty"`
 }
 
 // ContainerDescriptorHandlers is Set of components which filter various container descriptors out of
 //             the normal archive stream, so they can be aggregated then added.
 type ContainerDescriptorHandlers struct {
 	XMLName                    xml.Name                            `xml:"containerDescriptorHandlers"`
-	ContainerDescriptorHandler []*ContainerDescriptorHandlerConfig `xml:"containerDescriptorHandler"`
+	ContainerDescriptorHandler []*ContainerDescriptorHandlerConfig `xml:"containerDescriptorHandler,omitempty"`
 }
 
 // ModuleSets is Specifies which module files to include in the assembly. A moduleSet
@@ -51,7 +51,7 @@ type ContainerDescriptorHandlers struct {
 //             subelements.
 type ModuleSets struct {
 	XMLName   xml.Name     `xml:"moduleSets"`
-	ModuleSet []*ModuleSet `xml:"moduleSet"`
+	ModuleSet []*ModuleSet `xml:"moduleSet,omitempty"`
 }
 
 // FileSets is Specifies which groups of files to include in the assembly. A
@@ -59,7 +59,7 @@ type ModuleSets struct {
 //             subelements.
 type FileSets struct {
 	XMLName xml.Name   `xml:"fileSets"`
-	FileSet []*FileSet `xml:"fileSet"`
+	FileSet []*FileSet `xml:"fileSet,omitempty"`
 }
 
 // Files is Specifies which single files to include in the assembly. A file
@@ -67,7 +67,7 @@ type FileSets struct {
 //             subelements.
 type Files struct {
 	XMLName xml.Name    `xml:"files"`
-	File    []*FileItem `xml:"file"`
+	File    []*FileItem `xml:"file,omitempty"`
 }
 
 // DependencySets is Specifies which dependencies to include in the assembly. A
@@ -75,7 +75,7 @@ type Files struct {
 //             &lt;dependencySet&gt; subelements.
 type DependencySets struct {
 	XMLName       xml.Name         `xml:"dependencySets"`
-	DependencySet []*DependencySet `xml:"dependencySet"`
+	DependencySet []*DependencySet `xml:"dependencySet,omitempty"`
 }
 
 // Repositories is Specifies which repository files to include in the assembly. A
@@ -83,7 +83,7 @@ type DependencySets struct {
 //             &lt;repository&gt; subelements.
 type Repositories struct {
 	XMLName    xml.Name      `xml:"repositories"`
-	Repository []*Repository `xml:"repository"`
+	Repository []*Repository `xml:"repository,omitempty"`
 }
 
 // ComponentDescriptors is Specifies the shared components xml file locations to include in the
@@ -101,7 +101,7 @@ type Repositories struct {
 //             &lt;componentDescriptor&gt; subelements.
 type ComponentDescriptors struct {
 	XMLName             xml.Name `xml:"componentDescriptors"`
-	ComponentDescriptor []string `xml:"componentDescriptor"`
+	ComponentDescriptor []string `xml:"componentDescriptor,omitempty"`
 }
 
 // Assembly is Sets the id of this assembly. This is a symbolic name for a
@@ -110,18 +110,18 @@ type ComponentDescriptors struct {
 //             its value to the generated archive, the id is used as your
 //             artifact's classifier when deploying.
 type Assembly struct {
-	Id                          string                       `xml:"id"`
-	Formats                     *Formats                     `xml:"formats"`
-	IncludeBaseDirectory        bool                         `xml:"includeBaseDirectory"`
-	BaseDirectory               string                       `xml:"baseDirectory"`
-	IncludeSiteDirectory        bool                         `xml:"includeSiteDirectory"`
-	ContainerDescriptorHandlers *ContainerDescriptorHandlers `xml:"containerDescriptorHandlers"`
-	ModuleSets                  *ModuleSets                  `xml:"moduleSets"`
-	FileSets                    *FileSets                    `xml:"fileSets"`
-	Files                       *Files                       `xml:"files"`
-	DependencySets              *DependencySets              `xml:"dependencySets"`
-	Repositories                *Repositories                `xml:"repositories"`
-	ComponentDescriptors        *ComponentDescriptors        `xml:"componentDescriptors"`
+	Id                          string                       `xml:"id,omitempty"`
+	Formats                     *Formats                     `xml:"formats,omitempty"`
+	IncludeBaseDirectory        bool                         `xml:"includeBaseDirectory,omitempty"`
+	BaseDirectory               string                       `xml:"baseDirectory,omitempty"`
+	IncludeSiteDirectory        bool                         `xml:"includeSiteDirectory,omitempty"`
+	ContainerDescriptorHandlers *ContainerDescriptorHandlers `xml:"containerDescriptorHandlers,omitempty"`
+	ModuleSets                  *ModuleSets                  `xml:"moduleSets,omitempty"`
+	FileSets                    *FileSets                    `xml:"fileSets,omitempty"`
+	Files                       *Files                       `xml:"files,omitempty"`
+	DependencySets              *DependencySets              `xml:"dependencySets,omitempty"`
+	Repositories                *Repositories                `xml:"repositories,omitempty"`
+	ComponentDescriptors        *ComponentDescriptors        `xml:"componentDescriptors,omitempty"`
 }
 
 // Includes is When &lt;include&gt; subelements are present, they define a set of
@@ -133,7 +133,7 @@ type Assembly struct {
 //             Additionally, wildcards can be used, as in *:maven-*
 type Includes struct {
 	XMLName xml.Name `xml:"includes"`
-	Include []string `xml:"include"`
+	Include []string `xml:"include,omitempty"`
 }
 
 // Excludes is When &lt;exclude&gt; subelements are present, they define a set of
@@ -145,7 +145,7 @@ type Includes struct {
 //             Additionally, wildcards can be used, as in *:maven-*
 type Excludes struct {
 	XMLName xml.Name `xml:"excludes"`
-	Exclude []string `xml:"exclude"`
+	Exclude []string `xml:"exclude,omitempty"`
 }
 
 // DependencySet is Sets the output directory relative to the root
@@ -153,29 +153,29 @@ type Excludes struct {
 //             "log" will put the specified files in the log directory,
 //             directly beneath the root of the archive.
 type DependencySet struct {
-	OutputDirectory           string         `xml:"outputDirectory"`
-	Includes                  *Includes      `xml:"includes"`
-	Excludes                  *Excludes      `xml:"excludes"`
-	FileMode                  string         `xml:"fileMode"`
-	DirectoryMode             string         `xml:"directoryMode"`
-	UseStrictFiltering        bool           `xml:"useStrictFiltering"`
-	OutputFileNameMapping     string         `xml:"outputFileNameMapping"`
-	Unpack                    bool           `xml:"unpack"`
-	UnpackOptions             *UnpackOptions `xml:"unpackOptions"`
-	Scope                     string         `xml:"scope"`
-	UseProjectArtifact        bool           `xml:"useProjectArtifact"`
-	UseProjectAttachments     bool           `xml:"useProjectAttachments"`
-	UseTransitiveDependencies bool           `xml:"useTransitiveDependencies"`
-	UseTransitiveFiltering    bool           `xml:"useTransitiveFiltering"`
+	OutputDirectory           string         `xml:"outputDirectory,omitempty"`
+	Includes                  *Includes      `xml:"includes,omitempty"`
+	Excludes                  *Excludes      `xml:"excludes,omitempty"`
+	FileMode                  string         `xml:"fileMode,omitempty"`
+	DirectoryMode             string         `xml:"directoryMode,omitempty"`
+	UseStrictFiltering        bool           `xml:"useStrictFiltering,omitempty"`
+	OutputFileNameMapping     string         `xml:"outputFileNameMapping,omitempty"`
+	Unpack                    bool           `xml:"unpack,omitempty"`
+	UnpackOptions             *UnpackOptions `xml:"unpackOptions,omitempty"`
+	Scope                     string         `xml:"scope,omitempty"`
+	UseProjectArtifact        bool           `xml:"useProjectArtifact,omitempty"`
+	UseProjectAttachments     bool           `xml:"useProjectAttachments,omitempty"`
+	UseTransitiveDependencies bool           `xml:"useTransitiveDependencies,omitempty"`
+	UseTransitiveFiltering    bool           `xml:"useTransitiveFiltering,omitempty"`
 }
 
 // UnpackOptions is Specifies options for including/excluding/filtering items extracted from an archive. (Since 2.2-beta-1)
 type UnpackOptions struct {
-	Includes           *Includes `xml:"includes"`
-	Excludes           *Excludes `xml:"excludes"`
-	Filtered           bool      `xml:"filtered"`
-	LineEnding         string    `xml:"lineEnding"`
-	UseDefaultExcludes bool      `xml:"useDefaultExcludes"`
+	Includes           *Includes `xml:"includes,omitempty"`
+	Excludes           *Excludes `xml:"excludes,omitempty"`
+	Filtered           bool      `xml:"filtered,omitempty"`
+	LineEnding         string    `xml:"lineEnding,omitempty"`
+	UseDefaultExcludes bool      `xml:"useDefaultExcludes,omitempty"`
 }
 
 // GroupVersionAlignments is Specifies that you want to align a group of artifacts to a specified
@@ -183,7 +183,7 @@ type UnpackOptions struct {
 //             more of &lt;groupVersionAlignment&gt; subelements.
 type GroupVersionAlignments struct {
 	XMLName               xml.Name                 `xml:"groupVersionAlignments"`
-	GroupVersionAlignment []*GroupVersionAlignment `xml:"groupVersionAlignment"`
+	GroupVersionAlignment []*GroupVersionAlignment `xml:"groupVersionAlignment,omitempty"`
 }
 
 // Repository is Sets the output directory relative to the root
@@ -191,21 +191,21 @@ type GroupVersionAlignments struct {
 //             "log" will put the specified files in the log directory,
 //             directly beneath the root of the archive.
 type Repository struct {
-	OutputDirectory        string                  `xml:"outputDirectory"`
-	Includes               *Includes               `xml:"includes"`
-	Excludes               *Excludes               `xml:"excludes"`
-	FileMode               string                  `xml:"fileMode"`
-	DirectoryMode          string                  `xml:"directoryMode"`
-	IncludeMetadata        bool                    `xml:"includeMetadata"`
-	GroupVersionAlignments *GroupVersionAlignments `xml:"groupVersionAlignments"`
-	Scope                  string                  `xml:"scope"`
+	OutputDirectory        string                  `xml:"outputDirectory,omitempty"`
+	Includes               *Includes               `xml:"includes,omitempty"`
+	Excludes               *Excludes               `xml:"excludes,omitempty"`
+	FileMode               string                  `xml:"fileMode,omitempty"`
+	DirectoryMode          string                  `xml:"directoryMode,omitempty"`
+	IncludeMetadata        bool                    `xml:"includeMetadata,omitempty"`
+	GroupVersionAlignments *GroupVersionAlignments `xml:"groupVersionAlignments,omitempty"`
+	Scope                  string                  `xml:"scope,omitempty"`
 }
 
 // GroupVersionAlignment is The version you want to align this group to.
 type GroupVersionAlignment struct {
-	Id       string    `xml:"id"`
-	Version  string    `xml:"version"`
-	Excludes *Excludes `xml:"excludes"`
+	Id       string    `xml:"id,omitempty"`
+	Version  string    `xml:"version,omitempty"`
+	Excludes *Excludes `xml:"excludes,omitempty"`
 }
 
 // Configuration is Configuration options for the handler.
@@ -215,19 +215,19 @@ type Configuration struct {
 
 // ContainerDescriptorHandlerConfig is The handler's plexus role-hint, for lookup from the container.
 type ContainerDescriptorHandlerConfig struct {
-	HandlerName   string         `xml:"handlerName"`
-	Configuration *Configuration `xml:"configuration"`
+	HandlerName   string         `xml:"handlerName,omitempty"`
+	Configuration *Configuration `xml:"configuration,omitempty"`
 }
 
 // ModuleSet is If set to false, the plugin will exclude sub-modules from processing in this ModuleSet.
 //           Otherwise, it will process all sub-modules, each subject to include/exclude rules. (Since 2.2-beta-1)
 type ModuleSet struct {
-	UseAllReactorProjects bool            `xml:"useAllReactorProjects"`
-	IncludeSubModules     bool            `xml:"includeSubModules"`
-	Includes              *Includes       `xml:"includes"`
-	Excludes              *Excludes       `xml:"excludes"`
-	Sources               *ModuleSources  `xml:"sources"`
-	Binaries              *ModuleBinaries `xml:"binaries"`
+	UseAllReactorProjects bool            `xml:"useAllReactorProjects,omitempty"`
+	IncludeSubModules     bool            `xml:"includeSubModules,omitempty"`
+	Includes              *Includes       `xml:"includes,omitempty"`
+	Excludes              *Excludes       `xml:"excludes,omitempty"`
+	Sources               *ModuleSources  `xml:"sources,omitempty"`
+	Binaries              *ModuleBinaries `xml:"binaries,omitempty"`
 }
 
 // ModuleBinaries is Sets the output directory relative to the root
@@ -235,56 +235,56 @@ type ModuleSet struct {
 //             "log" will put the specified files in the log directory,
 //             directly beneath the root of the archive.
 type ModuleBinaries struct {
-	OutputDirectory       string          `xml:"outputDirectory"`
-	Includes              *Includes       `xml:"includes"`
-	Excludes              *Excludes       `xml:"excludes"`
-	FileMode              string          `xml:"fileMode"`
-	DirectoryMode         string          `xml:"directoryMode"`
-	AttachmentClassifier  string          `xml:"attachmentClassifier"`
-	IncludeDependencies   bool            `xml:"includeDependencies"`
-	DependencySets        *DependencySets `xml:"dependencySets"`
-	Unpack                bool            `xml:"unpack"`
-	UnpackOptions         *UnpackOptions  `xml:"unpackOptions"`
-	OutputFileNameMapping string          `xml:"outputFileNameMapping"`
+	OutputDirectory       string          `xml:"outputDirectory,omitempty"`
+	Includes              *Includes       `xml:"includes,omitempty"`
+	Excludes              *Excludes       `xml:"excludes,omitempty"`
+	FileMode              string          `xml:"fileMode,omitempty"`
+	DirectoryMode         string          `xml:"directoryMode,omitempty"`
+	AttachmentClassifier  string          `xml:"attachmentClassifier,omitempty"`
+	IncludeDependencies   bool            `xml:"includeDependencies,omitempty"`
+	DependencySets        *DependencySets `xml:"dependencySets,omitempty"`
+	Unpack                bool            `xml:"unpack,omitempty"`
+	UnpackOptions         *UnpackOptions  `xml:"unpackOptions,omitempty"`
+	OutputFileNameMapping string          `xml:"outputFileNameMapping,omitempty"`
 }
 
 // ModuleSources is Sets the output directory relative to the root
 //             of the root directory of the assembly. For example,
 //             "log" will put the specified files in the log directory.
 type ModuleSources struct {
-	UseDefaultExcludes          bool      `xml:"useDefaultExcludes"`
-	OutputDirectory             string    `xml:"outputDirectory"`
-	Includes                    *Includes `xml:"includes"`
-	Excludes                    *Excludes `xml:"excludes"`
-	FileMode                    string    `xml:"fileMode"`
-	DirectoryMode               string    `xml:"directoryMode"`
-	FileSets                    *FileSets `xml:"fileSets"`
-	IncludeModuleDirectory      bool      `xml:"includeModuleDirectory"`
-	ExcludeSubModuleDirectories bool      `xml:"excludeSubModuleDirectories"`
-	OutputDirectoryMapping      string    `xml:"outputDirectoryMapping"`
+	UseDefaultExcludes          bool      `xml:"useDefaultExcludes,omitempty"`
+	OutputDirectory             string    `xml:"outputDirectory,omitempty"`
+	Includes                    *Includes `xml:"includes,omitempty"`
+	Excludes                    *Excludes `xml:"excludes,omitempty"`
+	FileMode                    string    `xml:"fileMode,omitempty"`
+	DirectoryMode               string    `xml:"directoryMode,omitempty"`
+	FileSets                    *FileSets `xml:"fileSets,omitempty"`
+	IncludeModuleDirectory      bool      `xml:"includeModuleDirectory,omitempty"`
+	ExcludeSubModuleDirectories bool      `xml:"excludeSubModuleDirectories,omitempty"`
+	OutputDirectoryMapping      string    `xml:"outputDirectoryMapping,omitempty"`
 }
 
 // FileSet is Sets the output directory relative to the root
 //             of the root directory of the assembly. For example,
 //             "log" will put the specified files in the log directory.
 type FileSet struct {
-	UseDefaultExcludes bool      `xml:"useDefaultExcludes"`
-	OutputDirectory    string    `xml:"outputDirectory"`
-	Includes           *Includes `xml:"includes"`
-	Excludes           *Excludes `xml:"excludes"`
-	FileMode           string    `xml:"fileMode"`
-	DirectoryMode      string    `xml:"directoryMode"`
-	Directory          string    `xml:"directory"`
-	LineEnding         string    `xml:"lineEnding"`
-	Filtered           bool      `xml:"filtered"`
+	UseDefaultExcludes bool      `xml:"useDefaultExcludes,omitempty"`
+	OutputDirectory    string    `xml:"outputDirectory,omitempty"`
+	Includes           *Includes `xml:"includes,omitempty"`
+	Excludes           *Excludes `xml:"excludes,omitempty"`
+	FileMode           string    `xml:"fileMode,omitempty"`
+	DirectoryMode      string    `xml:"directoryMode,omitempty"`
+	Directory          string    `xml:"directory,omitempty"`
+	LineEnding         string    `xml:"lineEnding,omitempty"`
+	Filtered           bool      `xml:"filtered,omitempty"`
 }
 
 // FileItem is Sets whether to determine if the file is filtered.
 type FileItem struct {
-	Source          string `xml:"source"`
-	OutputDirectory string `xml:"outputDirectory"`
-	DestName        string `xml:"destName"`
-	FileMode        string `xml:"fileMode"`
-	LineEnding      string `xml:"lineEnding"`
-	Filtered        bool   `xml:"filtered"`
+	Source          string `xml:"source,omitempty"`
+	OutputDirectory string `xml:"outputDirectory,omitempty"`
+	DestName        string `xml:"destName,omitempty"`
+	FileMode        string `xml:"fileMode,omitempty"`
+	LineEnding      string `xml:"lineEnding,omitempty"`
+	Filtered        bool   `xml:"filtered,omitempty"`
 }

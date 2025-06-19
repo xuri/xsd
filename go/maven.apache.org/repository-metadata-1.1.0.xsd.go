@@ -12,59 +12,59 @@ type Metadata *Metadata
 // Plugins is The set of plugin mappings for the group represented by this directory
 type Plugins struct {
 	XMLName xml.Name  `xml:"plugins"`
-	Plugin  []*Plugin `xml:"plugin"`
+	Plugin  []*Plugin `xml:"plugin,omitempty"`
 }
 
 // Metadata is Versioning information for the artifact.
 type Metadata struct {
 	ModelVersionAttr string      `xml:"modelVersion,attr,omitempty"`
-	GroupId          string      `xml:"groupId"`
-	ArtifactId       string      `xml:"artifactId"`
-	Version          string      `xml:"version"`
-	Versioning       *Versioning `xml:"versioning"`
-	Plugins          *Plugins    `xml:"plugins"`
+	GroupId          string      `xml:"groupId,omitempty"`
+	ArtifactId       string      `xml:"artifactId,omitempty"`
+	Version          string      `xml:"version,omitempty"`
+	Versioning       *Versioning `xml:"versioning,omitempty"`
+	Plugins          *Plugins    `xml:"plugins,omitempty"`
 }
 
 // Plugin is The plugin artifactId
 type Plugin struct {
-	Name       string `xml:"name"`
-	Prefix     string `xml:"prefix"`
-	ArtifactId string `xml:"artifactId"`
+	Name       string `xml:"name,omitempty"`
+	Prefix     string `xml:"prefix,omitempty"`
+	ArtifactId string `xml:"artifactId,omitempty"`
 }
 
 // Versions is Versions available of the artifact (both releases and snapshots)
 type Versions struct {
 	XMLName xml.Name `xml:"versions"`
-	Version []string `xml:"version"`
+	Version []string `xml:"version,omitempty"`
 }
 
 // SnapshotVersions is Information for each sub-artifact available in this artifact snapshot.
 type SnapshotVersions struct {
 	XMLName         xml.Name           `xml:"snapshotVersions"`
-	SnapshotVersion []*SnapshotVersion `xml:"snapshotVersion"`
+	SnapshotVersion []*SnapshotVersion `xml:"snapshotVersion,omitempty"`
 }
 
 // Versioning is The current snapshot data in use for this version (artifact snapshots only)
 type Versioning struct {
-	Latest           string            `xml:"latest"`
-	Release          string            `xml:"release"`
-	Snapshot         *Snapshot         `xml:"snapshot"`
-	Versions         *Versions         `xml:"versions"`
-	LastUpdated      string            `xml:"lastUpdated"`
-	SnapshotVersions *SnapshotVersions `xml:"snapshotVersions"`
+	Latest           string            `xml:"latest,omitempty"`
+	Release          string            `xml:"release,omitempty"`
+	Snapshot         *Snapshot         `xml:"snapshot,omitempty"`
+	Versions         *Versions         `xml:"versions,omitempty"`
+	LastUpdated      string            `xml:"lastUpdated,omitempty"`
+	SnapshotVersions *SnapshotVersions `xml:"snapshotVersions,omitempty"`
 }
 
 // SnapshotVersion is The timestamp when this version information was last updated. The timestamp is expressed using UTC in the format yyyyMMddHHmmss.
 type SnapshotVersion struct {
-	Classifier string `xml:"classifier"`
-	Extension  string `xml:"extension"`
-	Value      string `xml:"value"`
-	Updated    string `xml:"updated"`
+	Classifier string `xml:"classifier,omitempty"`
+	Extension  string `xml:"extension,omitempty"`
+	Value      string `xml:"value,omitempty"`
+	Updated    string `xml:"updated,omitempty"`
 }
 
 // Snapshot is Whether to use a local copy instead (with filename that includes the base version)
 type Snapshot struct {
-	Timestamp   string `xml:"timestamp"`
-	BuildNumber int    `xml:"buildNumber"`
-	LocalCopy   bool   `xml:"localCopy"`
+	Timestamp   string `xml:"timestamp,omitempty"`
+	BuildNumber int    `xml:"buildNumber,omitempty"`
+	LocalCopy   bool   `xml:"localCopy,omitempty"`
 }

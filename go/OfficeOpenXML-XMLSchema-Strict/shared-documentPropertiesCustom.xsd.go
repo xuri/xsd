@@ -12,7 +12,7 @@ type Properties *CTProperties
 // CTProperties ...
 type CTProperties struct {
 	XMLName  xml.Name      `xml:"CT_Properties"`
-	Property []*CTProperty `xml:"property"`
+	Property []*CTProperty `xml:"property,omitempty"`
 }
 
 // CTProperty ...

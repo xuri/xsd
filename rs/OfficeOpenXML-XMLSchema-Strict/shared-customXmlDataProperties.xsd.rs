@@ -28,7 +28,7 @@ pub struct CTDatastoreItem {
 	#[serde(rename = "itemID")]
 	pub item_id: String,
 	#[serde(rename = "schemaRefs")]
-	pub schema_refs: CTDatastoreSchemaRefs,
+	pub schema_refs: Option<CTDatastoreSchemaRefs>,
 }
 
 

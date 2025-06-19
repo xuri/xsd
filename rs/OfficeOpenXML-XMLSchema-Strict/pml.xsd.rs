@@ -184,9 +184,9 @@ pub struct CTSlideTransition {
 	#[serde(rename = "zoom")]
 	pub zoom: CTInOutTransition,
 	#[serde(rename = "sndAc")]
-	pub snd_ac: CTTransitionSoundAction,
+	pub snd_ac: Option<CTTransitionSoundAction>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionListModify,
+	pub ext_lst: Option<CTExtensionListModify>,
 }
 
 
@@ -506,17 +506,17 @@ pub struct CTTLCommonTimeNodeData {
 	#[serde(rename = "nodePh")]
 	pub node_ph: Option<bool>,
 	#[serde(rename = "stCondLst")]
-	pub st_cond_lst: CTTLTimeConditionList,
+	pub st_cond_lst: Option<CTTLTimeConditionList>,
 	#[serde(rename = "endCondLst")]
-	pub end_cond_lst: CTTLTimeConditionList,
+	pub end_cond_lst: Option<CTTLTimeConditionList>,
 	#[serde(rename = "endSync")]
-	pub end_sync: CTTLTimeCondition,
+	pub end_sync: Option<CTTLTimeCondition>,
 	#[serde(rename = "iterate")]
-	pub iterate: CTTLIterateData,
+	pub iterate: Option<CTTLIterateData>,
 	#[serde(rename = "childTnLst")]
-	pub child_tn_lst: CTTimeNodeList,
+	pub child_tn_lst: Option<CTTimeNodeList>,
 	#[serde(rename = "subTnLst")]
-	pub sub_tn_lst: CTTimeNodeList,
+	pub sub_tn_lst: Option<CTTimeNodeList>,
 }
 
 
@@ -556,9 +556,9 @@ pub struct CTTLTimeNodeSequence {
 	#[serde(rename = "cTn")]
 	pub c_tn: CTTLCommonTimeNodeData,
 	#[serde(rename = "prevCondLst")]
-	pub prev_cond_lst: CTTLTimeConditionList,
+	pub prev_cond_lst: Option<CTTLTimeConditionList>,
 	#[serde(rename = "nextCondLst")]
-	pub next_cond_lst: CTTLTimeConditionList,
+	pub next_cond_lst: Option<CTTLTimeConditionList>,
 }
 
 
@@ -634,7 +634,7 @@ pub struct CTTLCommonBehaviorData {
 	#[serde(rename = "tgtEl")]
 	pub tgt_el: CTTLTimeTargetElement,
 	#[serde(rename = "attrNameLst")]
-	pub attr_name_lst: CTTLBehaviorAttributeNameList,
+	pub attr_name_lst: Option<CTTLBehaviorAttributeNameList>,
 }
 
 
@@ -702,7 +702,7 @@ pub struct CTTLTimeAnimateValue {
 	#[serde(rename = "fmla")]
 	pub fmla: Option<String>,
 	#[serde(rename = "val")]
-	pub val: CTTLAnimVariant,
+	pub val: Option<CTTLAnimVariant>,
 }
 
 
@@ -746,7 +746,7 @@ pub struct CTTLAnimateBehavior {
 	#[serde(rename = "cBhvr")]
 	pub c_bhvr: CTTLCommonBehaviorData,
 	#[serde(rename = "tavLst")]
-	pub tav_lst: CTTLTimeAnimateValueList,
+	pub tav_lst: Option<CTTLTimeAnimateValueList>,
 }
 
 
@@ -810,11 +810,11 @@ pub struct CTTLAnimateColorBehavior {
 	#[serde(rename = "cBhvr")]
 	pub c_bhvr: CTTLCommonBehaviorData,
 	#[serde(rename = "by")]
-	pub by: CTTLByAnimateColorTransform,
+	pub by: Option<CTTLByAnimateColorTransform>,
 	#[serde(rename = "from")]
-	pub from: CTColor,
+	pub from: Option<CTColor>,
 	#[serde(rename = "to")]
-	pub to: CTColor,
+	pub to: Option<CTColor>,
 }
 
 
@@ -838,7 +838,7 @@ pub struct CTTLAnimateEffectBehavior {
 	#[serde(rename = "cBhvr")]
 	pub c_bhvr: CTTLCommonBehaviorData,
 	#[serde(rename = "progress")]
-	pub progress: CTTLAnimVariant,
+	pub progress: Option<CTTLAnimVariant>,
 }
 
 
@@ -884,13 +884,13 @@ pub struct CTTLAnimateMotionBehavior {
 	#[serde(rename = "cBhvr")]
 	pub c_bhvr: CTTLCommonBehaviorData,
 	#[serde(rename = "by")]
-	pub by: CTTLPoint,
+	pub by: Option<CTTLPoint>,
 	#[serde(rename = "from")]
-	pub from: CTTLPoint,
+	pub from: Option<CTTLPoint>,
 	#[serde(rename = "to")]
-	pub to: CTTLPoint,
+	pub to: Option<CTTLPoint>,
 	#[serde(rename = "rCtr")]
-	pub r_ctr: CTTLPoint,
+	pub r_ctr: Option<CTTLPoint>,
 }
 
 
@@ -916,11 +916,11 @@ pub struct CTTLAnimateScaleBehavior {
 	#[serde(rename = "cBhvr")]
 	pub c_bhvr: CTTLCommonBehaviorData,
 	#[serde(rename = "by")]
-	pub by: CTTLPoint,
+	pub by: Option<CTTLPoint>,
 	#[serde(rename = "from")]
-	pub from: CTTLPoint,
+	pub from: Option<CTTLPoint>,
 	#[serde(rename = "to")]
-	pub to: CTTLPoint,
+	pub to: Option<CTTLPoint>,
 }
 
 
@@ -950,7 +950,7 @@ pub struct CTTLSetBehavior {
 	#[serde(rename = "cBhvr")]
 	pub c_bhvr: CTTLCommonBehaviorData,
 	#[serde(rename = "to")]
-	pub to: CTTLAnimVariant,
+	pub to: Option<CTTLAnimVariant>,
 }
 
 
@@ -1048,7 +1048,7 @@ pub struct CTTLBuildParagraph {
 	#[serde(rename = "advAuto")]
 	pub adv_auto: Option<STTLTime>,
 	#[serde(rename = "tmplLst")]
-	pub tmpl_lst: CTTLTemplateList,
+	pub tmpl_lst: Option<CTTLTemplateList>,
 }
 
 
@@ -1120,11 +1120,11 @@ pub struct CTBuildList {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTSlideTiming {
 	#[serde(rename = "tnLst")]
-	pub tn_lst: CTTimeNodeList,
+	pub tn_lst: Option<CTTimeNodeList>,
 	#[serde(rename = "bldLst")]
-	pub bld_lst: CTBuildList,
+	pub bld_lst: Option<CTBuildList>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionListModify,
+	pub ext_lst: Option<CTExtensionListModify>,
 }
 
 
@@ -1226,7 +1226,7 @@ pub struct CTCustomerDataList {
 	#[serde(rename = "custData")]
 	pub cust_data: Vec<CTCustomerData>,
 	#[serde(rename = "tags")]
-	pub tags: CTTagsData,
+	pub tags: Option<CTTagsData>,
 }
 
 
@@ -1278,7 +1278,7 @@ pub struct CTCommentAuthor {
 	#[serde(rename = "clrIdx")]
 	pub clr_idx: u32,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1312,7 +1312,7 @@ pub struct CTComment {
 	#[serde(rename = "text")]
 	pub text: String,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionListModify,
+	pub ext_lst: Option<CTExtensionListModify>,
 }
 
 
@@ -1362,7 +1362,7 @@ pub struct CTOleObjectEmbed {
 	#[serde(rename = "followColorScheme")]
 	pub follow_color_scheme: Option<String>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1372,7 +1372,7 @@ pub struct CTOleObjectLink {
 	#[serde(rename = "updateAutomatic")]
 	pub update_automatic: Option<bool>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1406,9 +1406,9 @@ pub struct CTControl {
 	#[serde(rename = "AG_Ole")]
 	pub ag_ole: Vec<AGOle>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 	#[serde(rename = "pic")]
-	pub pic: CTPicture,
+	pub pic: Option<CTPicture>,
 }
 
 
@@ -1436,7 +1436,7 @@ pub struct CTSlideIdListEntry {
 	#[serde(rename = "r:id")]
 	pub r_id: String,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1464,7 +1464,7 @@ pub struct CTSlideMasterIdListEntry {
 	#[serde(rename = "r:id")]
 	pub r_id: String,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1482,7 +1482,7 @@ pub struct CTNotesMasterIdListEntry {
 	#[serde(rename = "r:id")]
 	pub r_id: String,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1490,7 +1490,7 @@ pub struct CTNotesMasterIdListEntry {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTNotesMasterIdList {
 	#[serde(rename = "notesMasterId")]
-	pub notes_master_id: CTNotesMasterIdListEntry,
+	pub notes_master_id: Option<CTNotesMasterIdListEntry>,
 }
 
 
@@ -1500,7 +1500,7 @@ pub struct CTHandoutMasterIdListEntry {
 	#[serde(rename = "r:id")]
 	pub r_id: String,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1508,7 +1508,7 @@ pub struct CTHandoutMasterIdListEntry {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTHandoutMasterIdList {
 	#[serde(rename = "handoutMasterId")]
-	pub handout_master_id: CTHandoutMasterIdListEntry,
+	pub handout_master_id: Option<CTHandoutMasterIdListEntry>,
 }
 
 
@@ -1526,13 +1526,13 @@ pub struct CTEmbeddedFontListEntry {
 	#[serde(rename = "font")]
 	pub font: CTTextFont,
 	#[serde(rename = "regular")]
-	pub regular: CTEmbeddedFontDataId,
+	pub regular: Option<CTEmbeddedFontDataId>,
 	#[serde(rename = "bold")]
-	pub bold: CTEmbeddedFontDataId,
+	pub bold: Option<CTEmbeddedFontDataId>,
 	#[serde(rename = "italic")]
-	pub italic: CTEmbeddedFontDataId,
+	pub italic: Option<CTEmbeddedFontDataId>,
 	#[serde(rename = "boldItalic")]
-	pub bold_italic: CTEmbeddedFontDataId,
+	pub bold_italic: Option<CTEmbeddedFontDataId>,
 }
 
 
@@ -1562,7 +1562,7 @@ pub struct CTCustomShow {
 	#[serde(rename = "sldLst")]
 	pub sld_lst: CTSlideRelationshipList,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1602,7 +1602,7 @@ pub struct CTPhotoAlbum {
 	#[serde(rename = "frame")]
 	pub frame: Option<String>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1696,35 +1696,35 @@ pub struct CTPresentation {
 	#[serde(rename = "conformance")]
 	pub conformance: Option<String>,
 	#[serde(rename = "sldMasterIdLst")]
-	pub sld_master_id_lst: CTSlideMasterIdList,
+	pub sld_master_id_lst: Option<CTSlideMasterIdList>,
 	#[serde(rename = "notesMasterIdLst")]
-	pub notes_master_id_lst: CTNotesMasterIdList,
+	pub notes_master_id_lst: Option<CTNotesMasterIdList>,
 	#[serde(rename = "handoutMasterIdLst")]
-	pub handout_master_id_lst: CTHandoutMasterIdList,
+	pub handout_master_id_lst: Option<CTHandoutMasterIdList>,
 	#[serde(rename = "sldIdLst")]
-	pub sld_id_lst: CTSlideIdList,
+	pub sld_id_lst: Option<CTSlideIdList>,
 	#[serde(rename = "sldSz")]
-	pub sld_sz: CTSlideSize,
+	pub sld_sz: Option<CTSlideSize>,
 	#[serde(rename = "notesSz")]
 	pub notes_sz: CTPositiveSize2D,
 	#[serde(rename = "smartTags")]
-	pub smart_tags: CTSmartTags,
+	pub smart_tags: Option<CTSmartTags>,
 	#[serde(rename = "embeddedFontLst")]
-	pub embedded_font_lst: CTEmbeddedFontList,
+	pub embedded_font_lst: Option<CTEmbeddedFontList>,
 	#[serde(rename = "custShowLst")]
-	pub cust_show_lst: CTCustomShowList,
+	pub cust_show_lst: Option<CTCustomShowList>,
 	#[serde(rename = "photoAlbum")]
-	pub photo_album: CTPhotoAlbum,
+	pub photo_album: Option<CTPhotoAlbum>,
 	#[serde(rename = "custDataLst")]
-	pub cust_data_lst: CTCustomerDataList,
+	pub cust_data_lst: Option<CTCustomerDataList>,
 	#[serde(rename = "kinsoku")]
-	pub kinsoku: CTKinsoku,
+	pub kinsoku: Option<CTKinsoku>,
 	#[serde(rename = "defaultTextStyle")]
-	pub default_text_style: CTTextListStyle,
+	pub default_text_style: Option<CTTextListStyle>,
 	#[serde(rename = "modifyVerifier")]
-	pub modify_verifier: CTModifyVerifier,
+	pub modify_verifier: Option<CTModifyVerifier>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1750,7 +1750,7 @@ pub struct CTHtmlPublishProperties {
 	#[serde(rename = "EG_SlideListChoice")]
 	pub eg_slide_list_choice: Vec<EGSlideListChoice>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1784,7 +1784,7 @@ pub struct CTPrintProperties {
 	#[serde(rename = "frameSlides")]
 	pub frame_slides: Option<bool>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1832,9 +1832,9 @@ pub struct CTShowProperties {
 	#[serde(rename = "EG_SlideListChoice")]
 	pub eg_slide_list_choice: Vec<EGSlideListChoice>,
 	#[serde(rename = "penClr")]
-	pub pen_clr: CTColor,
+	pub pen_clr: Option<CTColor>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1842,13 +1842,13 @@ pub struct CTShowProperties {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTPresentationProperties {
 	#[serde(rename = "prnPr")]
-	pub prn_pr: CTPrintProperties,
+	pub prn_pr: Option<CTPrintProperties>,
 	#[serde(rename = "showPr")]
-	pub show_pr: CTShowProperties,
+	pub show_pr: Option<CTShowProperties>,
 	#[serde(rename = "clrMru")]
-	pub clr_mru: CTColorMRU,
+	pub clr_mru: Option<CTColorMRU>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1872,7 +1872,7 @@ pub struct CTHeaderFooter {
 	#[serde(rename = "dt")]
 	pub dt: Option<bool>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionListModify,
+	pub ext_lst: Option<CTExtensionListModify>,
 }
 
 
@@ -1906,7 +1906,7 @@ pub struct CTPlaceholder {
 	#[serde(rename = "hasCustomPrompt")]
 	pub has_custom_prompt: Option<bool>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionListModify,
+	pub ext_lst: Option<CTExtensionListModify>,
 }
 
 
@@ -1920,11 +1920,11 @@ pub struct CTApplicationNonVisualDrawingProps {
 	#[serde(rename = "a:EG_Media")]
 	pub aeg_media: Vec<EGMedia>,
 	#[serde(rename = "ph")]
-	pub ph: CTPlaceholder,
+	pub ph: Option<CTPlaceholder>,
 	#[serde(rename = "custDataLst")]
-	pub cust_data_lst: CTCustomerDataList,
+	pub cust_data_lst: Option<CTCustomerDataList>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1950,11 +1950,11 @@ pub struct CTShape {
 	#[serde(rename = "spPr")]
 	pub sp_pr: CTShapeProperties,
 	#[serde(rename = "style")]
-	pub style: CTShapeStyle,
+	pub style: Option<CTShapeStyle>,
 	#[serde(rename = "txBody")]
-	pub tx_body: CTTextBody,
+	pub tx_body: Option<CTTextBody>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionListModify,
+	pub ext_lst: Option<CTExtensionListModify>,
 }
 
 
@@ -1978,9 +1978,9 @@ pub struct CTConnector {
 	#[serde(rename = "spPr")]
 	pub sp_pr: CTShapeProperties,
 	#[serde(rename = "style")]
-	pub style: CTShapeStyle,
+	pub style: Option<CTShapeStyle>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionListModify,
+	pub ext_lst: Option<CTExtensionListModify>,
 }
 
 
@@ -2006,9 +2006,9 @@ pub struct CTPicture {
 	#[serde(rename = "spPr")]
 	pub sp_pr: CTShapeProperties,
 	#[serde(rename = "style")]
-	pub style: CTShapeStyle,
+	pub style: Option<CTShapeStyle>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionListModify,
+	pub ext_lst: Option<CTExtensionListModify>,
 }
 
 
@@ -2036,7 +2036,7 @@ pub struct CTGraphicalObjectFrame {
 	#[serde(rename = "a:graphic")]
 	pub a_graphic: CTGraphicalObject,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionListModify,
+	pub ext_lst: Option<CTExtensionListModify>,
 }
 
 
@@ -2072,7 +2072,7 @@ pub struct CTGroupShape {
 	#[serde(rename = "contentPart")]
 	pub content_part: Vec<CTRel>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionListModify,
+	pub ext_lst: Option<CTExtensionListModify>,
 }
 
 
@@ -2120,7 +2120,7 @@ pub struct CTBackgroundProperties {
 	#[serde(rename = "a:EG_EffectProperties")]
 	pub aeg_effect_properties: Vec<EGEffectProperties>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -2150,15 +2150,15 @@ pub struct CTCommonSlideData {
 	#[serde(rename = "name")]
 	pub name: Option<String>,
 	#[serde(rename = "bg")]
-	pub bg: CTBackground,
+	pub bg: Option<CTBackground>,
 	#[serde(rename = "spTree")]
 	pub sp_tree: CTGroupShape,
 	#[serde(rename = "custDataLst")]
-	pub cust_data_lst: CTCustomerDataList,
+	pub cust_data_lst: Option<CTCustomerDataList>,
 	#[serde(rename = "controls")]
-	pub controls: CTControlList,
+	pub controls: Option<CTControlList>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -2174,11 +2174,11 @@ pub struct CTSlide {
 	#[serde(rename = "cSld")]
 	pub c_sld: CTCommonSlideData,
 	#[serde(rename = "transition")]
-	pub transition: CTSlideTransition,
+	pub transition: Option<CTSlideTransition>,
 	#[serde(rename = "timing")]
-	pub timing: CTSlideTiming,
+	pub timing: Option<CTSlideTiming>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionListModify,
+	pub ext_lst: Option<CTExtensionListModify>,
 }
 
 
@@ -2216,13 +2216,13 @@ pub struct CTSlideLayout {
 	#[serde(rename = "cSld")]
 	pub c_sld: CTCommonSlideData,
 	#[serde(rename = "transition")]
-	pub transition: CTSlideTransition,
+	pub transition: Option<CTSlideTransition>,
 	#[serde(rename = "timing")]
-	pub timing: CTSlideTiming,
+	pub timing: Option<CTSlideTiming>,
 	#[serde(rename = "hf")]
-	pub hf: CTHeaderFooter,
+	pub hf: Option<CTHeaderFooter>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionListModify,
+	pub ext_lst: Option<CTExtensionListModify>,
 }
 
 
@@ -2238,13 +2238,13 @@ pub struct sld_layout {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTSlideMasterTextStyles {
 	#[serde(rename = "titleStyle")]
-	pub title_style: CTTextListStyle,
+	pub title_style: Option<CTTextListStyle>,
 	#[serde(rename = "bodyStyle")]
-	pub body_style: CTTextListStyle,
+	pub body_style: Option<CTTextListStyle>,
 	#[serde(rename = "otherStyle")]
-	pub other_style: CTTextListStyle,
+	pub other_style: Option<CTTextListStyle>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -2264,7 +2264,7 @@ pub struct CTSlideLayoutIdListEntry {
 	#[serde(rename = "r:id")]
 	pub r_id: String,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -2286,17 +2286,17 @@ pub struct CTSlideMaster {
 	#[serde(rename = "cSld")]
 	pub c_sld: CTCommonSlideData,
 	#[serde(rename = "sldLayoutIdLst")]
-	pub sld_layout_id_lst: CTSlideLayoutIdList,
+	pub sld_layout_id_lst: Option<CTSlideLayoutIdList>,
 	#[serde(rename = "transition")]
-	pub transition: CTSlideTransition,
+	pub transition: Option<CTSlideTransition>,
 	#[serde(rename = "timing")]
-	pub timing: CTSlideTiming,
+	pub timing: Option<CTSlideTiming>,
 	#[serde(rename = "hf")]
-	pub hf: CTHeaderFooter,
+	pub hf: Option<CTHeaderFooter>,
 	#[serde(rename = "txStyles")]
-	pub tx_styles: CTSlideMasterTextStyles,
+	pub tx_styles: Option<CTSlideMasterTextStyles>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionListModify,
+	pub ext_lst: Option<CTExtensionListModify>,
 }
 
 
@@ -2316,9 +2316,9 @@ pub struct CTHandoutMaster {
 	#[serde(rename = "cSld")]
 	pub c_sld: CTCommonSlideData,
 	#[serde(rename = "hf")]
-	pub hf: CTHeaderFooter,
+	pub hf: Option<CTHeaderFooter>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionListModify,
+	pub ext_lst: Option<CTExtensionListModify>,
 }
 
 
@@ -2338,11 +2338,11 @@ pub struct CTNotesMaster {
 	#[serde(rename = "cSld")]
 	pub c_sld: CTCommonSlideData,
 	#[serde(rename = "hf")]
-	pub hf: CTHeaderFooter,
+	pub hf: Option<CTHeaderFooter>,
 	#[serde(rename = "notesStyle")]
-	pub notes_style: CTTextListStyle,
+	pub notes_style: Option<CTTextListStyle>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionListModify,
+	pub ext_lst: Option<CTExtensionListModify>,
 }
 
 
@@ -2364,7 +2364,7 @@ pub struct CTNotesSlide {
 	#[serde(rename = "cSld")]
 	pub c_sld: CTCommonSlideData,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionListModify,
+	pub ext_lst: Option<CTExtensionListModify>,
 }
 
 
@@ -2386,7 +2386,7 @@ pub struct CTSlideSyncProperties {
 	#[serde(rename = "clientInsertedTime")]
 	pub client_inserted_time: u8,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -2468,7 +2468,7 @@ pub struct CTNormalViewProperties {
 	#[serde(rename = "restoredTop")]
 	pub restored_top: CTNormalViewPortion,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -2490,7 +2490,7 @@ pub struct CTNotesTextViewProperties {
 	#[serde(rename = "cViewPr")]
 	pub c_view_pr: CTCommonViewProperties,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -2518,9 +2518,9 @@ pub struct CTOutlineViewProperties {
 	#[serde(rename = "cViewPr")]
 	pub c_view_pr: CTCommonViewProperties,
 	#[serde(rename = "sldLst")]
-	pub sld_lst: CTOutlineViewSlideList,
+	pub sld_lst: Option<CTOutlineViewSlideList>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -2532,7 +2532,7 @@ pub struct CTSlideSorterViewProperties {
 	#[serde(rename = "cViewPr")]
 	pub c_view_pr: CTCommonViewProperties,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -2566,7 +2566,7 @@ pub struct CTCommonSlideViewProperties {
 	#[serde(rename = "cViewPr")]
 	pub c_view_pr: CTCommonViewProperties,
 	#[serde(rename = "guideLst")]
-	pub guide_lst: CTGuideList,
+	pub guide_lst: Option<CTGuideList>,
 }
 
 
@@ -2576,7 +2576,7 @@ pub struct CTSlideViewProperties {
 	#[serde(rename = "cSldViewPr")]
 	pub c_sld_view_pr: CTCommonSlideViewProperties,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -2586,7 +2586,7 @@ pub struct CTNotesViewProperties {
 	#[serde(rename = "cSldViewPr")]
 	pub c_sld_view_pr: CTCommonSlideViewProperties,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -2598,21 +2598,21 @@ pub struct CTViewProperties {
 	#[serde(rename = "showComments")]
 	pub show_comments: Option<bool>,
 	#[serde(rename = "normalViewPr")]
-	pub normal_view_pr: CTNormalViewProperties,
+	pub normal_view_pr: Option<CTNormalViewProperties>,
 	#[serde(rename = "slideViewPr")]
-	pub slide_view_pr: CTSlideViewProperties,
+	pub slide_view_pr: Option<CTSlideViewProperties>,
 	#[serde(rename = "outlineViewPr")]
-	pub outline_view_pr: CTOutlineViewProperties,
+	pub outline_view_pr: Option<CTOutlineViewProperties>,
 	#[serde(rename = "notesTextViewPr")]
-	pub notes_text_view_pr: CTNotesTextViewProperties,
+	pub notes_text_view_pr: Option<CTNotesTextViewProperties>,
 	#[serde(rename = "sorterViewPr")]
-	pub sorter_view_pr: CTSlideSorterViewProperties,
+	pub sorter_view_pr: Option<CTSlideSorterViewProperties>,
 	#[serde(rename = "notesViewPr")]
-	pub notes_view_pr: CTNotesViewProperties,
+	pub notes_view_pr: Option<CTNotesViewProperties>,
 	#[serde(rename = "gridSpacing")]
-	pub grid_spacing: CTPositiveSize2D,
+	pub grid_spacing: Option<CTPositiveSize2D>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 

@@ -36,9 +36,9 @@ pub struct ActiveProfiles {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct ProfilesRoot {
 	#[serde(rename = "profiles")]
-	pub profiles: Profiles,
+	pub profiles: Option<Profiles>,
 	#[serde(rename = "activeProfiles")]
-	pub active_profiles: ActiveProfiles,
+	pub active_profiles: Option<ActiveProfiles>,
 }
 
 
@@ -70,15 +70,15 @@ pub struct PluginRepositories {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Profile {
 	#[serde(rename = "id")]
-	pub id: String,
+	pub id: Option<String>,
 	#[serde(rename = "activation")]
-	pub activation: Activation,
+	pub activation: Option<Activation>,
 	#[serde(rename = "properties")]
-	pub properties: Properties,
+	pub properties: Option<Properties>,
 	#[serde(rename = "repositories")]
-	pub repositories: Repositories,
+	pub repositories: Option<Repositories>,
 	#[serde(rename = "pluginRepositories")]
-	pub plugin_repositories: PluginRepositories,
+	pub plugin_repositories: Option<PluginRepositories>,
 }
 
 
@@ -86,15 +86,15 @@ pub struct Profile {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Activation {
 	#[serde(rename = "activeByDefault")]
-	pub active_by_default: bool,
+	pub active_by_default: Option<bool>,
 	#[serde(rename = "jdk")]
-	pub jdk: String,
+	pub jdk: Option<String>,
 	#[serde(rename = "os")]
-	pub os: ActivationOS,
+	pub os: Option<ActivationOS>,
 	#[serde(rename = "property")]
-	pub property: ActivationProperty,
+	pub property: Option<ActivationProperty>,
 	#[serde(rename = "file")]
-	pub file: ActivationFile,
+	pub file: Option<ActivationFile>,
 }
 
 
@@ -102,13 +102,13 @@ pub struct Activation {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct ActivationOS {
 	#[serde(rename = "name")]
-	pub name: String,
+	pub name: Option<String>,
 	#[serde(rename = "family")]
-	pub family: String,
+	pub family: Option<String>,
 	#[serde(rename = "arch")]
-	pub arch: String,
+	pub arch: Option<String>,
 	#[serde(rename = "version")]
-	pub version: String,
+	pub version: Option<String>,
 }
 
 
@@ -116,9 +116,9 @@ pub struct ActivationOS {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct ActivationProperty {
 	#[serde(rename = "name")]
-	pub name: String,
+	pub name: Option<String>,
 	#[serde(rename = "value")]
-	pub value: String,
+	pub value: Option<String>,
 }
 
 
@@ -126,9 +126,9 @@ pub struct ActivationProperty {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct ActivationFile {
 	#[serde(rename = "missing")]
-	pub missing: String,
+	pub missing: Option<String>,
 	#[serde(rename = "exists")]
-	pub exists: String,
+	pub exists: Option<String>,
 }
 
 
@@ -137,17 +137,17 @@ pub struct ActivationFile {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Repository {
 	#[serde(rename = "releases")]
-	pub releases: RepositoryPolicy,
+	pub releases: Option<RepositoryPolicy>,
 	#[serde(rename = "snapshots")]
-	pub snapshots: RepositoryPolicy,
+	pub snapshots: Option<RepositoryPolicy>,
 	#[serde(rename = "id")]
-	pub id: String,
+	pub id: Option<String>,
 	#[serde(rename = "name")]
-	pub name: String,
+	pub name: Option<String>,
 	#[serde(rename = "url")]
-	pub url: String,
+	pub url: Option<String>,
 	#[serde(rename = "layout")]
-	pub layout: String,
+	pub layout: Option<String>,
 }
 
 
@@ -156,9 +156,9 @@ pub struct Repository {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct RepositoryPolicy {
 	#[serde(rename = "enabled")]
-	pub enabled: bool,
+	pub enabled: Option<bool>,
 	#[serde(rename = "updatePolicy")]
-	pub update_policy: String,
+	pub update_policy: Option<String>,
 	#[serde(rename = "checksumPolicy")]
-	pub checksum_policy: String,
+	pub checksum_policy: Option<String>,
 }

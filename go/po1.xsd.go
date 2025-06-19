@@ -12,7 +12,7 @@ type Comment string
 type PurchaseOrderType struct {
 	ShipTo    *USAddress `xml:"shipTo"`
 	BillTo    *USAddress `xml:"billTo"`
-	PoComment string     `xml:"po:comment"`
+	PoComment string     `xml:"po:comment,omitempty"`
 }
 
 // USAddress ...

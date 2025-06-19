@@ -18,7 +18,7 @@ type CTSchema struct {
 // CTSchemaLibrary ...
 type CTSchemaLibrary struct {
 	XMLName xml.Name    `xml:"CT_SchemaLibrary"`
-	Schema  []*CTSchema `xml:"schema"`
+	Schema  []*CTSchema `xml:"schema,omitempty"`
 }
 
 // SchemaLibrary ...

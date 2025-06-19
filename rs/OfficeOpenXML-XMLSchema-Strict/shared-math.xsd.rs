@@ -238,13 +238,13 @@ pub struct CTRPR {
 	#[serde(rename = "EG_ScriptStyle")]
 	pub eg_script_style: EGScriptStyle,
 	#[serde(rename = "lit")]
-	pub lit: CTOnOff,
+	pub lit: Option<CTOnOff>,
 	#[serde(rename = "nor")]
-	pub nor: CTOnOff,
+	pub nor: Option<CTOnOff>,
 	#[serde(rename = "brk")]
-	pub brk: CTManualBreak,
+	pub brk: Option<CTManualBreak>,
 	#[serde(rename = "aln")]
-	pub aln: CTOnOff,
+	pub aln: Option<CTOnOff>,
 }
 
 
@@ -266,7 +266,7 @@ pub struct CTR {
 	#[serde(rename = "w:EG_RunInnerContent")]
 	pub weg_run_inner_content: Vec<EGRunInnerContent>,
 	#[serde(rename = "rPr")]
-	pub r_pr: CTRPR,
+	pub r_pr: Option<CTRPR>,
 	#[serde(rename = "t")]
 	pub t: Vec<CTText>,
 }
@@ -284,9 +284,9 @@ pub struct CTCtrlPr {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTAccPr {
 	#[serde(rename = "chr")]
-	pub chr: CTChar,
+	pub chr: Option<CTChar>,
 	#[serde(rename = "ctrlPr")]
-	pub ctrl_pr: CTCtrlPr,
+	pub ctrl_pr: Option<CTCtrlPr>,
 }
 
 
@@ -294,7 +294,7 @@ pub struct CTAccPr {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTAcc {
 	#[serde(rename = "accPr")]
-	pub acc_pr: CTAccPr,
+	pub acc_pr: Option<CTAccPr>,
 	#[serde(rename = "e")]
 	pub e: CTOMathArg,
 }
@@ -304,9 +304,9 @@ pub struct CTAcc {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTBarPr {
 	#[serde(rename = "pos")]
-	pub pos: CTTopBot,
+	pub pos: Option<CTTopBot>,
 	#[serde(rename = "ctrlPr")]
-	pub ctrl_pr: CTCtrlPr,
+	pub ctrl_pr: Option<CTCtrlPr>,
 }
 
 
@@ -314,7 +314,7 @@ pub struct CTBarPr {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTBar {
 	#[serde(rename = "barPr")]
-	pub bar_pr: CTBarPr,
+	pub bar_pr: Option<CTBarPr>,
 	#[serde(rename = "e")]
 	pub e: CTOMathArg,
 }
@@ -324,17 +324,17 @@ pub struct CTBar {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTBoxPr {
 	#[serde(rename = "opEmu")]
-	pub op_emu: CTOnOff,
+	pub op_emu: Option<CTOnOff>,
 	#[serde(rename = "noBreak")]
-	pub no_break: CTOnOff,
+	pub no_break: Option<CTOnOff>,
 	#[serde(rename = "diff")]
-	pub diff: CTOnOff,
+	pub diff: Option<CTOnOff>,
 	#[serde(rename = "brk")]
-	pub brk: CTManualBreak,
+	pub brk: Option<CTManualBreak>,
 	#[serde(rename = "aln")]
-	pub aln: CTOnOff,
+	pub aln: Option<CTOnOff>,
 	#[serde(rename = "ctrlPr")]
-	pub ctrl_pr: CTCtrlPr,
+	pub ctrl_pr: Option<CTCtrlPr>,
 }
 
 
@@ -342,7 +342,7 @@ pub struct CTBoxPr {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTBox {
 	#[serde(rename = "boxPr")]
-	pub box_pr: CTBoxPr,
+	pub box_pr: Option<CTBoxPr>,
 	#[serde(rename = "e")]
 	pub e: CTOMathArg,
 }
@@ -352,23 +352,23 @@ pub struct CTBox {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTBorderBoxPr {
 	#[serde(rename = "hideTop")]
-	pub hide_top: CTOnOff,
+	pub hide_top: Option<CTOnOff>,
 	#[serde(rename = "hideBot")]
-	pub hide_bot: CTOnOff,
+	pub hide_bot: Option<CTOnOff>,
 	#[serde(rename = "hideLeft")]
-	pub hide_left: CTOnOff,
+	pub hide_left: Option<CTOnOff>,
 	#[serde(rename = "hideRight")]
-	pub hide_right: CTOnOff,
+	pub hide_right: Option<CTOnOff>,
 	#[serde(rename = "strikeH")]
-	pub strike_h: CTOnOff,
+	pub strike_h: Option<CTOnOff>,
 	#[serde(rename = "strikeV")]
-	pub strike_v: CTOnOff,
+	pub strike_v: Option<CTOnOff>,
 	#[serde(rename = "strikeBLTR")]
-	pub strike_bltr: CTOnOff,
+	pub strike_bltr: Option<CTOnOff>,
 	#[serde(rename = "strikeTLBR")]
-	pub strike_tlbr: CTOnOff,
+	pub strike_tlbr: Option<CTOnOff>,
 	#[serde(rename = "ctrlPr")]
-	pub ctrl_pr: CTCtrlPr,
+	pub ctrl_pr: Option<CTCtrlPr>,
 }
 
 
@@ -376,7 +376,7 @@ pub struct CTBorderBoxPr {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTBorderBox {
 	#[serde(rename = "borderBoxPr")]
-	pub border_box_pr: CTBorderBoxPr,
+	pub border_box_pr: Option<CTBorderBoxPr>,
 	#[serde(rename = "e")]
 	pub e: CTOMathArg,
 }
@@ -386,17 +386,17 @@ pub struct CTBorderBox {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTDPr {
 	#[serde(rename = "begChr")]
-	pub beg_chr: CTChar,
+	pub beg_chr: Option<CTChar>,
 	#[serde(rename = "sepChr")]
-	pub sep_chr: CTChar,
+	pub sep_chr: Option<CTChar>,
 	#[serde(rename = "endChr")]
-	pub end_chr: CTChar,
+	pub end_chr: Option<CTChar>,
 	#[serde(rename = "grow")]
-	pub grow: CTOnOff,
+	pub grow: Option<CTOnOff>,
 	#[serde(rename = "shp")]
-	pub shp: CTShp,
+	pub shp: Option<CTShp>,
 	#[serde(rename = "ctrlPr")]
-	pub ctrl_pr: CTCtrlPr,
+	pub ctrl_pr: Option<CTCtrlPr>,
 }
 
 
@@ -404,7 +404,7 @@ pub struct CTDPr {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTD {
 	#[serde(rename = "dPr")]
-	pub d_pr: CTDPr,
+	pub d_pr: Option<CTDPr>,
 	#[serde(rename = "e")]
 	pub e: Vec<CTOMathArg>,
 }
@@ -414,17 +414,17 @@ pub struct CTD {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTEqArrPr {
 	#[serde(rename = "baseJc")]
-	pub base_jc: CTYAlign,
+	pub base_jc: Option<CTYAlign>,
 	#[serde(rename = "maxDist")]
-	pub max_dist: CTOnOff,
+	pub max_dist: Option<CTOnOff>,
 	#[serde(rename = "objDist")]
-	pub obj_dist: CTOnOff,
+	pub obj_dist: Option<CTOnOff>,
 	#[serde(rename = "rSpRule")]
-	pub r_sp_rule: CTSpacingRule,
+	pub r_sp_rule: Option<CTSpacingRule>,
 	#[serde(rename = "rSp")]
-	pub r_sp: CTUnSignedInteger,
+	pub r_sp: Option<CTUnSignedInteger>,
 	#[serde(rename = "ctrlPr")]
-	pub ctrl_pr: CTCtrlPr,
+	pub ctrl_pr: Option<CTCtrlPr>,
 }
 
 
@@ -432,7 +432,7 @@ pub struct CTEqArrPr {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTEqArr {
 	#[serde(rename = "eqArrPr")]
-	pub eq_arr_pr: CTEqArrPr,
+	pub eq_arr_pr: Option<CTEqArrPr>,
 	#[serde(rename = "e")]
 	pub e: Vec<CTOMathArg>,
 }
@@ -442,9 +442,9 @@ pub struct CTEqArr {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTFPr {
 	#[serde(rename = "type")]
-	pub type_attr: CTFType,
+	pub type_attr: Option<CTFType>,
 	#[serde(rename = "ctrlPr")]
-	pub ctrl_pr: CTCtrlPr,
+	pub ctrl_pr: Option<CTCtrlPr>,
 }
 
 
@@ -452,7 +452,7 @@ pub struct CTFPr {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTF {
 	#[serde(rename = "fPr")]
-	pub f_pr: CTFPr,
+	pub f_pr: Option<CTFPr>,
 	#[serde(rename = "num")]
 	pub num: CTOMathArg,
 	#[serde(rename = "den")]
@@ -464,7 +464,7 @@ pub struct CTF {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTFuncPr {
 	#[serde(rename = "ctrlPr")]
-	pub ctrl_pr: CTCtrlPr,
+	pub ctrl_pr: Option<CTCtrlPr>,
 }
 
 
@@ -472,7 +472,7 @@ pub struct CTFuncPr {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTFunc {
 	#[serde(rename = "funcPr")]
-	pub func_pr: CTFuncPr,
+	pub func_pr: Option<CTFuncPr>,
 	#[serde(rename = "fName")]
 	pub f_name: CTOMathArg,
 	#[serde(rename = "e")]
@@ -484,13 +484,13 @@ pub struct CTFunc {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTGroupChrPr {
 	#[serde(rename = "chr")]
-	pub chr: CTChar,
+	pub chr: Option<CTChar>,
 	#[serde(rename = "pos")]
-	pub pos: CTTopBot,
+	pub pos: Option<CTTopBot>,
 	#[serde(rename = "vertJc")]
-	pub vert_jc: CTTopBot,
+	pub vert_jc: Option<CTTopBot>,
 	#[serde(rename = "ctrlPr")]
-	pub ctrl_pr: CTCtrlPr,
+	pub ctrl_pr: Option<CTCtrlPr>,
 }
 
 
@@ -498,7 +498,7 @@ pub struct CTGroupChrPr {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTGroupChr {
 	#[serde(rename = "groupChrPr")]
-	pub group_chr_pr: CTGroupChrPr,
+	pub group_chr_pr: Option<CTGroupChrPr>,
 	#[serde(rename = "e")]
 	pub e: CTOMathArg,
 }
@@ -508,7 +508,7 @@ pub struct CTGroupChr {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTLimLowPr {
 	#[serde(rename = "ctrlPr")]
-	pub ctrl_pr: CTCtrlPr,
+	pub ctrl_pr: Option<CTCtrlPr>,
 }
 
 
@@ -516,7 +516,7 @@ pub struct CTLimLowPr {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTLimLow {
 	#[serde(rename = "limLowPr")]
-	pub lim_low_pr: CTLimLowPr,
+	pub lim_low_pr: Option<CTLimLowPr>,
 	#[serde(rename = "e")]
 	pub e: CTOMathArg,
 	#[serde(rename = "lim")]
@@ -528,7 +528,7 @@ pub struct CTLimLow {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTLimUppPr {
 	#[serde(rename = "ctrlPr")]
-	pub ctrl_pr: CTCtrlPr,
+	pub ctrl_pr: Option<CTCtrlPr>,
 }
 
 
@@ -536,7 +536,7 @@ pub struct CTLimUppPr {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTLimUpp {
 	#[serde(rename = "limUppPr")]
-	pub lim_upp_pr: CTLimUppPr,
+	pub lim_upp_pr: Option<CTLimUppPr>,
 	#[serde(rename = "e")]
 	pub e: CTOMathArg,
 	#[serde(rename = "lim")]
@@ -548,9 +548,9 @@ pub struct CTLimUpp {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTMCPr {
 	#[serde(rename = "count")]
-	pub count: CTInteger255,
+	pub count: Option<CTInteger255>,
 	#[serde(rename = "mcJc")]
-	pub mc_jc: CTXAlign,
+	pub mc_jc: Option<CTXAlign>,
 }
 
 
@@ -558,7 +558,7 @@ pub struct CTMCPr {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTMC {
 	#[serde(rename = "mcPr")]
-	pub mc_pr: CTMCPr,
+	pub mc_pr: Option<CTMCPr>,
 }
 
 
@@ -574,23 +574,23 @@ pub struct CTMCS {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTMPr {
 	#[serde(rename = "baseJc")]
-	pub base_jc: CTYAlign,
+	pub base_jc: Option<CTYAlign>,
 	#[serde(rename = "plcHide")]
-	pub plc_hide: CTOnOff,
+	pub plc_hide: Option<CTOnOff>,
 	#[serde(rename = "rSpRule")]
-	pub r_sp_rule: CTSpacingRule,
+	pub r_sp_rule: Option<CTSpacingRule>,
 	#[serde(rename = "cGpRule")]
-	pub c_gp_rule: CTSpacingRule,
+	pub c_gp_rule: Option<CTSpacingRule>,
 	#[serde(rename = "rSp")]
-	pub r_sp: CTUnSignedInteger,
+	pub r_sp: Option<CTUnSignedInteger>,
 	#[serde(rename = "cSp")]
-	pub c_sp: CTUnSignedInteger,
+	pub c_sp: Option<CTUnSignedInteger>,
 	#[serde(rename = "cGp")]
-	pub c_gp: CTUnSignedInteger,
+	pub c_gp: Option<CTUnSignedInteger>,
 	#[serde(rename = "mcs")]
-	pub mcs: CTMCS,
+	pub mcs: Option<CTMCS>,
 	#[serde(rename = "ctrlPr")]
-	pub ctrl_pr: CTCtrlPr,
+	pub ctrl_pr: Option<CTCtrlPr>,
 }
 
 
@@ -606,7 +606,7 @@ pub struct CTMR {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTM {
 	#[serde(rename = "mPr")]
-	pub m_pr: CTMPr,
+	pub m_pr: Option<CTMPr>,
 	#[serde(rename = "mr")]
 	pub mr: Vec<CTMR>,
 }
@@ -616,17 +616,17 @@ pub struct CTM {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTNaryPr {
 	#[serde(rename = "chr")]
-	pub chr: CTChar,
+	pub chr: Option<CTChar>,
 	#[serde(rename = "limLoc")]
-	pub lim_loc: CTLimLoc,
+	pub lim_loc: Option<CTLimLoc>,
 	#[serde(rename = "grow")]
-	pub grow: CTOnOff,
+	pub grow: Option<CTOnOff>,
 	#[serde(rename = "subHide")]
-	pub sub_hide: CTOnOff,
+	pub sub_hide: Option<CTOnOff>,
 	#[serde(rename = "supHide")]
-	pub sup_hide: CTOnOff,
+	pub sup_hide: Option<CTOnOff>,
 	#[serde(rename = "ctrlPr")]
-	pub ctrl_pr: CTCtrlPr,
+	pub ctrl_pr: Option<CTCtrlPr>,
 }
 
 
@@ -634,7 +634,7 @@ pub struct CTNaryPr {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTNary {
 	#[serde(rename = "naryPr")]
-	pub nary_pr: CTNaryPr,
+	pub nary_pr: Option<CTNaryPr>,
 	#[serde(rename = "sub")]
 	pub sub: CTOMathArg,
 	#[serde(rename = "sup")]
@@ -648,17 +648,17 @@ pub struct CTNary {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTPhantPr {
 	#[serde(rename = "show")]
-	pub show: CTOnOff,
+	pub show: Option<CTOnOff>,
 	#[serde(rename = "zeroWid")]
-	pub zero_wid: CTOnOff,
+	pub zero_wid: Option<CTOnOff>,
 	#[serde(rename = "zeroAsc")]
-	pub zero_asc: CTOnOff,
+	pub zero_asc: Option<CTOnOff>,
 	#[serde(rename = "zeroDesc")]
-	pub zero_desc: CTOnOff,
+	pub zero_desc: Option<CTOnOff>,
 	#[serde(rename = "transp")]
-	pub transp: CTOnOff,
+	pub transp: Option<CTOnOff>,
 	#[serde(rename = "ctrlPr")]
-	pub ctrl_pr: CTCtrlPr,
+	pub ctrl_pr: Option<CTCtrlPr>,
 }
 
 
@@ -666,7 +666,7 @@ pub struct CTPhantPr {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTPhant {
 	#[serde(rename = "phantPr")]
-	pub phant_pr: CTPhantPr,
+	pub phant_pr: Option<CTPhantPr>,
 	#[serde(rename = "e")]
 	pub e: CTOMathArg,
 }
@@ -676,9 +676,9 @@ pub struct CTPhant {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTRadPr {
 	#[serde(rename = "degHide")]
-	pub deg_hide: CTOnOff,
+	pub deg_hide: Option<CTOnOff>,
 	#[serde(rename = "ctrlPr")]
-	pub ctrl_pr: CTCtrlPr,
+	pub ctrl_pr: Option<CTCtrlPr>,
 }
 
 
@@ -686,7 +686,7 @@ pub struct CTRadPr {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTRad {
 	#[serde(rename = "radPr")]
-	pub rad_pr: CTRadPr,
+	pub rad_pr: Option<CTRadPr>,
 	#[serde(rename = "deg")]
 	pub deg: CTOMathArg,
 	#[serde(rename = "e")]
@@ -698,7 +698,7 @@ pub struct CTRad {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTSPrePr {
 	#[serde(rename = "ctrlPr")]
-	pub ctrl_pr: CTCtrlPr,
+	pub ctrl_pr: Option<CTCtrlPr>,
 }
 
 
@@ -706,7 +706,7 @@ pub struct CTSPrePr {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTSPre {
 	#[serde(rename = "sPrePr")]
-	pub s_pre_pr: CTSPrePr,
+	pub s_pre_pr: Option<CTSPrePr>,
 	#[serde(rename = "sub")]
 	pub sub: CTOMathArg,
 	#[serde(rename = "sup")]
@@ -720,7 +720,7 @@ pub struct CTSPre {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTSSubPr {
 	#[serde(rename = "ctrlPr")]
-	pub ctrl_pr: CTCtrlPr,
+	pub ctrl_pr: Option<CTCtrlPr>,
 }
 
 
@@ -728,7 +728,7 @@ pub struct CTSSubPr {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTSSub {
 	#[serde(rename = "sSubPr")]
-	pub s_sub_pr: CTSSubPr,
+	pub s_sub_pr: Option<CTSSubPr>,
 	#[serde(rename = "e")]
 	pub e: CTOMathArg,
 	#[serde(rename = "sub")]
@@ -740,9 +740,9 @@ pub struct CTSSub {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTSSubSupPr {
 	#[serde(rename = "alnScr")]
-	pub aln_scr: CTOnOff,
+	pub aln_scr: Option<CTOnOff>,
 	#[serde(rename = "ctrlPr")]
-	pub ctrl_pr: CTCtrlPr,
+	pub ctrl_pr: Option<CTCtrlPr>,
 }
 
 
@@ -750,7 +750,7 @@ pub struct CTSSubSupPr {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTSSubSup {
 	#[serde(rename = "sSubSupPr")]
-	pub s_sub_sup_pr: CTSSubSupPr,
+	pub s_sub_sup_pr: Option<CTSSubSupPr>,
 	#[serde(rename = "e")]
 	pub e: CTOMathArg,
 	#[serde(rename = "sub")]
@@ -764,7 +764,7 @@ pub struct CTSSubSup {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTSSupPr {
 	#[serde(rename = "ctrlPr")]
-	pub ctrl_pr: CTCtrlPr,
+	pub ctrl_pr: Option<CTCtrlPr>,
 }
 
 
@@ -772,7 +772,7 @@ pub struct CTSSupPr {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTSSup {
 	#[serde(rename = "sSupPr")]
-	pub s_sup_pr: CTSSupPr,
+	pub s_sup_pr: Option<CTSSupPr>,
 	#[serde(rename = "e")]
 	pub e: CTOMathArg,
 	#[serde(rename = "sup")]
@@ -840,7 +840,7 @@ pub struct EGOMathElements {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTOMathArgPr {
 	#[serde(rename = "argSz")]
-	pub arg_sz: CTInteger2,
+	pub arg_sz: Option<CTInteger2>,
 }
 
 
@@ -850,9 +850,9 @@ pub struct CTOMathArg {
 	#[serde(rename = "EG_OMathElements")]
 	pub eg_o_math_elements: Vec<EGOMathElements>,
 	#[serde(rename = "argPr")]
-	pub arg_pr: CTOMathArgPr,
+	pub arg_pr: Option<CTOMathArgPr>,
 	#[serde(rename = "ctrlPr")]
-	pub ctrl_pr: CTCtrlPr,
+	pub ctrl_pr: Option<CTCtrlPr>,
 }
 
 
@@ -876,7 +876,7 @@ pub struct CTOMathJc {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTOMathParaPr {
 	#[serde(rename = "jc")]
-	pub jc: CTOMathJc,
+	pub jc: Option<CTOMathJc>,
 }
 
 
@@ -924,37 +924,37 @@ pub struct CTBreakBinSub {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTMathPr {
 	#[serde(rename = "mathFont")]
-	pub math_font: CTString,
+	pub math_font: Option<CTString>,
 	#[serde(rename = "brkBin")]
-	pub brk_bin: CTBreakBin,
+	pub brk_bin: Option<CTBreakBin>,
 	#[serde(rename = "brkBinSub")]
-	pub brk_bin_sub: CTBreakBinSub,
+	pub brk_bin_sub: Option<CTBreakBinSub>,
 	#[serde(rename = "smallFrac")]
-	pub small_frac: CTOnOff,
+	pub small_frac: Option<CTOnOff>,
 	#[serde(rename = "dispDef")]
-	pub disp_def: CTOnOff,
+	pub disp_def: Option<CTOnOff>,
 	#[serde(rename = "lMargin")]
-	pub l_margin: CTTwipsMeasure,
+	pub l_margin: Option<CTTwipsMeasure>,
 	#[serde(rename = "rMargin")]
-	pub r_margin: CTTwipsMeasure,
+	pub r_margin: Option<CTTwipsMeasure>,
 	#[serde(rename = "defJc")]
-	pub def_jc: CTOMathJc,
+	pub def_jc: Option<CTOMathJc>,
 	#[serde(rename = "preSp")]
-	pub pre_sp: CTTwipsMeasure,
+	pub pre_sp: Option<CTTwipsMeasure>,
 	#[serde(rename = "postSp")]
-	pub post_sp: CTTwipsMeasure,
+	pub post_sp: Option<CTTwipsMeasure>,
 	#[serde(rename = "interSp")]
-	pub inter_sp: CTTwipsMeasure,
+	pub inter_sp: Option<CTTwipsMeasure>,
 	#[serde(rename = "intraSp")]
-	pub intra_sp: CTTwipsMeasure,
+	pub intra_sp: Option<CTTwipsMeasure>,
 	#[serde(rename = "wrapIndent")]
 	pub wrap_indent: CTTwipsMeasure,
 	#[serde(rename = "wrapRight")]
 	pub wrap_right: CTOnOff,
 	#[serde(rename = "intLim")]
-	pub int_lim: CTLimLoc,
+	pub int_lim: Option<CTLimLoc>,
 	#[serde(rename = "naryLim")]
-	pub nary_lim: CTLimLoc,
+	pub nary_lim: Option<CTLimLoc>,
 }
 
 
@@ -970,7 +970,7 @@ pub struct math_pr {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTOMathPara {
 	#[serde(rename = "oMathParaPr")]
-	pub o_math_para_pr: CTOMathParaPr,
+	pub o_math_para_pr: Option<CTOMathParaPr>,
 	#[serde(rename = "oMath")]
 	pub o_math: Vec<CTOMath>,
 }

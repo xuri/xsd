@@ -18,59 +18,59 @@ pub struct properties {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTProperties {
 	#[serde(rename = "Template")]
-	pub template: String,
+	pub template: Option<String>,
 	#[serde(rename = "Manager")]
-	pub manager: String,
+	pub manager: Option<String>,
 	#[serde(rename = "Company")]
-	pub company: String,
+	pub company: Option<String>,
 	#[serde(rename = "Pages")]
-	pub pages: i32,
+	pub pages: Option<i32>,
 	#[serde(rename = "Words")]
-	pub words: i32,
+	pub words: Option<i32>,
 	#[serde(rename = "Characters")]
-	pub characters: i32,
+	pub characters: Option<i32>,
 	#[serde(rename = "PresentationFormat")]
-	pub presentation_format: String,
+	pub presentation_format: Option<String>,
 	#[serde(rename = "Lines")]
-	pub lines: i32,
+	pub lines: Option<i32>,
 	#[serde(rename = "Paragraphs")]
-	pub paragraphs: i32,
+	pub paragraphs: Option<i32>,
 	#[serde(rename = "Slides")]
-	pub slides: i32,
+	pub slides: Option<i32>,
 	#[serde(rename = "Notes")]
-	pub notes: i32,
+	pub notes: Option<i32>,
 	#[serde(rename = "TotalTime")]
-	pub total_time: i32,
+	pub total_time: Option<i32>,
 	#[serde(rename = "HiddenSlides")]
-	pub hidden_slides: i32,
+	pub hidden_slides: Option<i32>,
 	#[serde(rename = "MMClips")]
-	pub mm_clips: i32,
+	pub mm_clips: Option<i32>,
 	#[serde(rename = "ScaleCrop")]
-	pub scale_crop: bool,
+	pub scale_crop: Option<bool>,
 	#[serde(rename = "HeadingPairs")]
-	pub heading_pairs: CTVectorVariant,
+	pub heading_pairs: Option<CTVectorVariant>,
 	#[serde(rename = "TitlesOfParts")]
-	pub titles_of_parts: CTVectorLpstr,
+	pub titles_of_parts: Option<CTVectorLpstr>,
 	#[serde(rename = "LinksUpToDate")]
-	pub links_up_to_date: bool,
+	pub links_up_to_date: Option<bool>,
 	#[serde(rename = "CharactersWithSpaces")]
-	pub characters_with_spaces: i32,
+	pub characters_with_spaces: Option<i32>,
 	#[serde(rename = "SharedDoc")]
-	pub shared_doc: bool,
+	pub shared_doc: Option<bool>,
 	#[serde(rename = "HyperlinkBase")]
-	pub hyperlink_base: String,
+	pub hyperlink_base: Option<String>,
 	#[serde(rename = "HLinks")]
-	pub h_links: CTVectorVariant,
+	pub h_links: Option<CTVectorVariant>,
 	#[serde(rename = "HyperlinksChanged")]
-	pub hyperlinks_changed: bool,
+	pub hyperlinks_changed: Option<bool>,
 	#[serde(rename = "DigSig")]
-	pub dig_sig: CTDigSigBlob,
+	pub dig_sig: Option<CTDigSigBlob>,
 	#[serde(rename = "Application")]
-	pub application: String,
+	pub application: Option<String>,
 	#[serde(rename = "AppVersion")]
-	pub app_version: String,
+	pub app_version: Option<String>,
 	#[serde(rename = "DocSecurity")]
-	pub doc_security: i32,
+	pub doc_security: Option<i32>,
 }
 
 

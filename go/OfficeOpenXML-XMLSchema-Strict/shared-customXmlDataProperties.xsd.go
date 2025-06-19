@@ -15,14 +15,14 @@ type CTDatastoreSchemaRef struct {
 // CTDatastoreSchemaRefs ...
 type CTDatastoreSchemaRefs struct {
 	XMLName   xml.Name                `xml:"CT_DatastoreSchemaRefs"`
-	SchemaRef []*CTDatastoreSchemaRef `xml:"schemaRef"`
+	SchemaRef []*CTDatastoreSchemaRef `xml:"schemaRef,omitempty"`
 }
 
 // CTDatastoreItem ...
 type CTDatastoreItem struct {
 	XMLName    xml.Name               `xml:"CT_DatastoreItem"`
 	ItemIDAttr string                 `xml:"itemID,attr"`
-	SchemaRefs *CTDatastoreSchemaRefs `xml:"schemaRefs"`
+	SchemaRefs *CTDatastoreSchemaRefs `xml:"schemaRefs,omitempty"`
 }
 
 // DatastoreItem ...

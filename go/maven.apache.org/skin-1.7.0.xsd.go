@@ -7,11 +7,11 @@ type Skin *SkinModel
 
 // SkinModel is Encoding of text content, like the Velocity template itself.
 type SkinModel struct {
-	Prerequisites *Prerequisites `xml:"prerequisites"`
-	Encoding      string         `xml:"encoding"`
+	Prerequisites *Prerequisites `xml:"prerequisites,omitempty"`
+	Encoding      string         `xml:"encoding,omitempty"`
 }
 
 // Prerequisites is The minimum version of Doxia Sitetools required to use the resulting skin.
 type Prerequisites struct {
-	Doxiasitetools string `xml:"doxia-sitetools"`
+	Doxiasitetools string `xml:"doxia-sitetools,omitempty"`
 }

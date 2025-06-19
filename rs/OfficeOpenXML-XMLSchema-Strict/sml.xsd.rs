@@ -14,9 +14,9 @@ pub struct CTAutoFilter {
 	#[serde(rename = "filterColumn")]
 	pub filter_column: Vec<CTFilterColumn>,
 	#[serde(rename = "sortState")]
-	pub sort_state: CTSortState,
+	pub sort_state: Option<CTSortState>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -30,19 +30,19 @@ pub struct CTFilterColumn {
 	#[serde(rename = "showButton")]
 	pub show_button: Option<bool>,
 	#[serde(rename = "filters")]
-	pub filters: CTFilters,
+	pub filters: Option<CTFilters>,
 	#[serde(rename = "top10")]
-	pub top10: CTTop10,
+	pub top10: Option<CTTop10>,
 	#[serde(rename = "customFilters")]
-	pub custom_filters: CTCustomFilters,
+	pub custom_filters: Option<CTCustomFilters>,
 	#[serde(rename = "dynamicFilter")]
-	pub dynamic_filter: CTDynamicFilter,
+	pub dynamic_filter: Option<CTDynamicFilter>,
 	#[serde(rename = "colorFilter")]
-	pub color_filter: CTColorFilter,
+	pub color_filter: Option<CTColorFilter>,
 	#[serde(rename = "iconFilter")]
-	pub icon_filter: CTIconFilter,
+	pub icon_filter: Option<CTIconFilter>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -174,7 +174,7 @@ pub struct CTSortState {
 	#[serde(rename = "sortCondition")]
 	pub sort_condition: Vec<CTSortCondition>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -350,7 +350,7 @@ pub struct CTCalcChain {
 	#[serde(rename = "c")]
 	pub c: Vec<CTCalcCell>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -388,7 +388,7 @@ pub struct CTComments {
 	#[serde(rename = "commentList")]
 	pub comment_list: CTCommentList,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -422,7 +422,7 @@ pub struct CTComment {
 	#[serde(rename = "text")]
 	pub text: CTRst,
 	#[serde(rename = "commentPr")]
-	pub comment_pr: CTCommentPr,
+	pub comment_pr: Option<CTCommentPr>,
 }
 
 
@@ -530,7 +530,7 @@ pub struct CTMap {
 	#[serde(rename = "PreserveFormat")]
 	pub preserve_format: bool,
 	#[serde(rename = "DataBinding")]
-	pub data_binding: CTDataBinding,
+	pub data_binding: Option<CTDataBinding>,
 }
 
 
@@ -610,17 +610,17 @@ pub struct CTConnection {
 	#[serde(rename = "singleSignOnId")]
 	pub single_sign_on_id: Option<String>,
 	#[serde(rename = "dbPr")]
-	pub db_pr: CTDbPr,
+	pub db_pr: Option<CTDbPr>,
 	#[serde(rename = "olapPr")]
-	pub olap_pr: CTOlapPr,
+	pub olap_pr: Option<CTOlapPr>,
 	#[serde(rename = "webPr")]
-	pub web_pr: CTWebPr,
+	pub web_pr: Option<CTWebPr>,
 	#[serde(rename = "textPr")]
-	pub text_pr: CTTextPr,
+	pub text_pr: Option<CTTextPr>,
 	#[serde(rename = "parameters")]
-	pub parameters: CTParameters,
+	pub parameters: Option<CTParameters>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -700,7 +700,7 @@ pub struct CTWebPr {
 	#[serde(rename = "editPage")]
 	pub edit_page: Option<String>,
 	#[serde(rename = "tables")]
-	pub tables: CTTables,
+	pub tables: Option<CTTables>,
 }
 
 
@@ -810,7 +810,7 @@ pub struct CTTextPr {
 	#[serde(rename = "delimiter")]
 	pub delimiter: Option<String>,
 	#[serde(rename = "textFields")]
-	pub text_fields: CTTextFields,
+	pub text_fields: Option<CTTextFields>,
 }
 
 
@@ -926,23 +926,23 @@ pub struct CTPivotCacheDefinition {
 	#[serde(rename = "cacheFields")]
 	pub cache_fields: CTCacheFields,
 	#[serde(rename = "cacheHierarchies")]
-	pub cache_hierarchies: CTCacheHierarchies,
+	pub cache_hierarchies: Option<CTCacheHierarchies>,
 	#[serde(rename = "kpis")]
-	pub kpis: CTPCDKPIs,
+	pub kpis: Option<CTPCDKPIs>,
 	#[serde(rename = "tupleCache")]
-	pub tuple_cache: CTTupleCache,
+	pub tuple_cache: Option<CTTupleCache>,
 	#[serde(rename = "calculatedItems")]
-	pub calculated_items: CTCalculatedItems,
+	pub calculated_items: Option<CTCalculatedItems>,
 	#[serde(rename = "calculatedMembers")]
-	pub calculated_members: CTCalculatedMembers,
+	pub calculated_members: Option<CTCalculatedMembers>,
 	#[serde(rename = "dimensions")]
-	pub dimensions: CTDimensions,
+	pub dimensions: Option<CTDimensions>,
 	#[serde(rename = "measureGroups")]
-	pub measure_groups: CTMeasureGroups,
+	pub measure_groups: Option<CTMeasureGroups>,
 	#[serde(rename = "maps")]
-	pub maps: CTMeasureDimensionMaps,
+	pub maps: Option<CTMeasureDimensionMaps>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -986,13 +986,13 @@ pub struct CTCacheField {
 	#[serde(rename = "memberPropertyField")]
 	pub member_property_field: Option<bool>,
 	#[serde(rename = "sharedItems")]
-	pub shared_items: CTSharedItems,
+	pub shared_items: Option<CTSharedItems>,
 	#[serde(rename = "fieldGroup")]
-	pub field_group: CTFieldGroup,
+	pub field_group: Option<CTFieldGroup>,
 	#[serde(rename = "mpMap")]
 	pub mp_map: Vec<CTX>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1008,7 +1008,7 @@ pub struct CTCacheSource {
 	#[serde(rename = "consolidation")]
 	pub consolidation: CTConsolidation,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1040,7 +1040,7 @@ pub struct CTConsolidation {
 	#[serde(rename = "autoPage")]
 	pub auto_page: Option<bool>,
 	#[serde(rename = "pages")]
-	pub pages: CTPages,
+	pub pages: Option<CTPages>,
 	#[serde(rename = "rangeSets")]
 	pub range_sets: CTRangeSets,
 }
@@ -1264,7 +1264,7 @@ pub struct CTError {
 	#[serde(rename = "b")]
 	pub b: Option<bool>,
 	#[serde(rename = "tpls")]
-	pub tpls: CTTuples,
+	pub tpls: Option<CTTuples>,
 	#[serde(rename = "x")]
 	pub x: Vec<CTX>,
 }
@@ -1330,11 +1330,11 @@ pub struct CTFieldGroup {
 	#[serde(rename = "base")]
 	pub base: Option<u32>,
 	#[serde(rename = "rangePr")]
-	pub range_pr: CTRangePr,
+	pub range_pr: Option<CTRangePr>,
 	#[serde(rename = "discretePr")]
-	pub discrete_pr: CTDiscretePr,
+	pub discrete_pr: Option<CTDiscretePr>,
 	#[serde(rename = "groupItems")]
-	pub group_items: CTGroupItems,
+	pub group_items: Option<CTGroupItems>,
 }
 
 
@@ -1406,7 +1406,7 @@ pub struct CTPivotCacheRecords {
 	#[serde(rename = "r")]
 	pub r: Vec<CTRecord>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1526,11 +1526,11 @@ pub struct CTCacheHierarchy {
 	#[serde(rename = "hidden")]
 	pub hidden: Option<bool>,
 	#[serde(rename = "fieldsUsage")]
-	pub fields_usage: CTFieldsUsage,
+	pub fields_usage: Option<CTFieldsUsage>,
 	#[serde(rename = "groupLevels")]
-	pub group_levels: CTGroupLevels,
+	pub group_levels: Option<CTGroupLevels>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1574,9 +1574,9 @@ pub struct CTGroupLevel {
 	#[serde(rename = "customRollUp")]
 	pub custom_roll_up: Option<bool>,
 	#[serde(rename = "groups")]
-	pub groups: CTGroups,
+	pub groups: Option<CTGroups>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1632,15 +1632,15 @@ pub struct CTGroupMember {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTTupleCache {
 	#[serde(rename = "entries")]
-	pub entries: CTPCDSDTCEntries,
+	pub entries: Option<CTPCDSDTCEntries>,
 	#[serde(rename = "sets")]
-	pub sets: CTSets,
+	pub sets: Option<CTSets>,
 	#[serde(rename = "queryCache")]
-	pub query_cache: CTQueryCache,
+	pub query_cache: Option<CTQueryCache>,
 	#[serde(rename = "serverFormats")]
-	pub server_formats: CTServerFormats,
+	pub server_formats: Option<CTServerFormats>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1728,7 +1728,7 @@ pub struct CTSet {
 	#[serde(rename = "tpls")]
 	pub tpls: Vec<CTTuples>,
 	#[serde(rename = "sortByTuple")]
-	pub sort_by_tuple: CTTuples,
+	pub sort_by_tuple: Option<CTTuples>,
 }
 
 
@@ -1756,7 +1756,7 @@ pub struct CTQuery {
 	#[serde(rename = "mdx")]
 	pub mdx: String,
 	#[serde(rename = "tpls")]
-	pub tpls: CTTuples,
+	pub tpls: Option<CTTuples>,
 }
 
 
@@ -1780,7 +1780,7 @@ pub struct CTCalculatedItem {
 	#[serde(rename = "pivotArea")]
 	pub pivot_area: CTPivotArea,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1812,7 +1812,7 @@ pub struct CTCalculatedMember {
 	#[serde(rename = "set")]
 	pub set: Option<bool>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -1946,37 +1946,37 @@ pub struct CTpivotTableDefinition {
 	#[serde(rename = "location")]
 	pub location: CTLocation,
 	#[serde(rename = "pivotFields")]
-	pub pivot_fields: CTPivotFields,
+	pub pivot_fields: Option<CTPivotFields>,
 	#[serde(rename = "rowFields")]
-	pub row_fields: CTRowFields,
+	pub row_fields: Option<CTRowFields>,
 	#[serde(rename = "rowItems")]
-	pub row_items: CTrowItems,
+	pub row_items: Option<CTrowItems>,
 	#[serde(rename = "colFields")]
-	pub col_fields: CTColFields,
+	pub col_fields: Option<CTColFields>,
 	#[serde(rename = "colItems")]
-	pub col_items: CTcolItems,
+	pub col_items: Option<CTcolItems>,
 	#[serde(rename = "pageFields")]
-	pub page_fields: CTPageFields,
+	pub page_fields: Option<CTPageFields>,
 	#[serde(rename = "dataFields")]
-	pub data_fields: CTDataFields,
+	pub data_fields: Option<CTDataFields>,
 	#[serde(rename = "formats")]
-	pub formats: CTFormats,
+	pub formats: Option<CTFormats>,
 	#[serde(rename = "conditionalFormats")]
-	pub conditional_formats: CTConditionalFormats,
+	pub conditional_formats: Option<CTConditionalFormats>,
 	#[serde(rename = "chartFormats")]
-	pub chart_formats: CTChartFormats,
+	pub chart_formats: Option<CTChartFormats>,
 	#[serde(rename = "pivotHierarchies")]
-	pub pivot_hierarchies: CTPivotHierarchies,
+	pub pivot_hierarchies: Option<CTPivotHierarchies>,
 	#[serde(rename = "pivotTableStyleInfo")]
-	pub pivot_table_style_info: CTPivotTableStyle,
+	pub pivot_table_style_info: Option<CTPivotTableStyle>,
 	#[serde(rename = "filters")]
-	pub filters: CTPivotFilters,
+	pub filters: Option<CTPivotFilters>,
 	#[serde(rename = "rowHierarchiesUsage")]
-	pub row_hierarchies_usage: CTRowHierarchiesUsage,
+	pub row_hierarchies_usage: Option<CTRowHierarchiesUsage>,
 	#[serde(rename = "colHierarchiesUsage")]
-	pub col_hierarchies_usage: CTColHierarchiesUsage,
+	pub col_hierarchies_usage: Option<CTColHierarchiesUsage>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -2108,11 +2108,11 @@ pub struct CTPivotField {
 	#[serde(rename = "defaultAttributeDrillState")]
 	pub default_attribute_drill_state: Option<bool>,
 	#[serde(rename = "items")]
-	pub items: CTItems,
+	pub items: Option<CTItems>,
 	#[serde(rename = "autoSortScope")]
-	pub auto_sort_scope: CTAutoSortScope,
+	pub auto_sort_scope: Option<CTAutoSortScope>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -2186,7 +2186,7 @@ pub struct CTPageField {
 	#[serde(rename = "cap")]
 	pub cap: Option<String>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -2218,7 +2218,7 @@ pub struct CTDataField {
 	#[serde(rename = "numFmtId")]
 	pub num_fmt_id: Option<u32>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -2312,7 +2312,7 @@ pub struct CTFormat {
 	#[serde(rename = "pivotArea")]
 	pub pivot_area: CTPivotArea,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -2338,7 +2338,7 @@ pub struct CTConditionalFormat {
 	#[serde(rename = "pivotAreas")]
 	pub pivot_areas: CTPivotAreas,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -2428,11 +2428,11 @@ pub struct CTPivotHierarchy {
 	#[serde(rename = "caption")]
 	pub caption: Option<String>,
 	#[serde(rename = "mps")]
-	pub mps: CTMemberProperties,
+	pub mps: Option<CTMemberProperties>,
 	#[serde(rename = "members")]
 	pub members: Vec<CTMembers>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -2638,7 +2638,7 @@ pub struct CTPivotFilter {
 	#[serde(rename = "autoFilter")]
 	pub auto_filter: CTAutoFilter,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -2710,9 +2710,9 @@ pub struct CTPivotArea {
 	#[serde(rename = "fieldPosition")]
 	pub field_position: Option<u32>,
 	#[serde(rename = "references")]
-	pub references: CTPivotAreaReferences,
+	pub references: Option<CTPivotAreaReferences>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -2774,7 +2774,7 @@ pub struct CTPivotAreaReference {
 	#[serde(rename = "x")]
 	pub x: Vec<CTIndex>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -2838,9 +2838,9 @@ pub struct CTQueryTable {
 	#[serde(rename = "connectionId")]
 	pub connection_id: u32,
 	#[serde(rename = "queryTableRefresh")]
-	pub query_table_refresh: CTQueryTableRefresh,
+	pub query_table_refresh: Option<CTQueryTableRefresh>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -2864,11 +2864,11 @@ pub struct CTQueryTableRefresh {
 	#[serde(rename = "queryTableFields")]
 	pub query_table_fields: CTQueryTableFields,
 	#[serde(rename = "queryTableDeletedFields")]
-	pub query_table_deleted_fields: CTQueryTableDeletedFields,
+	pub query_table_deleted_fields: Option<CTQueryTableDeletedFields>,
 	#[serde(rename = "sortState")]
-	pub sort_state: CTSortState,
+	pub sort_state: Option<CTSortState>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -2918,7 +2918,7 @@ pub struct CTQueryTableField {
 	#[serde(rename = "tableColumnId")]
 	pub table_column_id: Option<u32>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -2948,7 +2948,7 @@ pub struct CTSst {
 	#[serde(rename = "si")]
 	pub si: Vec<CTRst>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -2984,7 +2984,7 @@ pub struct CTPhoneticRun {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTRElt {
 	#[serde(rename = "rPr")]
-	pub r_pr: CTRPrElt,
+	pub r_pr: Option<CTRPrElt>,
 	#[serde(rename = "t")]
 	pub t: String,
 }
@@ -3030,13 +3030,13 @@ pub struct CTRPrElt {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTRst {
 	#[serde(rename = "t")]
-	pub t: String,
+	pub t: Option<String>,
 	#[serde(rename = "r")]
 	pub r: Vec<CTRElt>,
 	#[serde(rename = "rPh")]
 	pub r_ph: Vec<CTPhoneticRun>,
 	#[serde(rename = "phoneticPr")]
-	pub phonetic_pr: CTPhoneticPr,
+	pub phonetic_pr: Option<CTPhoneticPr>,
 }
 
 
@@ -3162,9 +3162,9 @@ pub struct CTRevisionHeader {
 	#[serde(rename = "sheetIdMap")]
 	pub sheet_id_map: CTSheetIdMap,
 	#[serde(rename = "reviewedList")]
-	pub reviewed_list: CTReviewedRevisions,
+	pub reviewed_list: Option<CTReviewedRevisions>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -3300,7 +3300,7 @@ pub struct CTRevisionSheetRename {
 	#[serde(rename = "newName")]
 	pub new_name: String,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -3346,15 +3346,15 @@ pub struct CTRevisionCellChange {
 	#[serde(rename = "endOfListFormulaUpdate")]
 	pub end_of_list_formula_update: Option<bool>,
 	#[serde(rename = "oc")]
-	pub oc: CTCell,
+	pub oc: Option<CTCell>,
 	#[serde(rename = "nc")]
 	pub nc: CTCell,
 	#[serde(rename = "odxf")]
-	pub odxf: CTDxf,
+	pub odxf: Option<CTDxf>,
 	#[serde(rename = "ndxf")]
-	pub ndxf: CTDxf,
+	pub ndxf: Option<CTDxf>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -3374,9 +3374,9 @@ pub struct CTRevisionFormatting {
 	#[serde(rename = "length")]
 	pub length: Option<u32>,
 	#[serde(rename = "dxf")]
-	pub dxf: CTDxf,
+	pub dxf: Option<CTDxf>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -3468,11 +3468,11 @@ pub struct CTRevisionDefinedName {
 	#[serde(rename = "oldComment")]
 	pub old_comment: Option<String>,
 	#[serde(rename = "formula")]
-	pub formula: String,
+	pub formula: Option<String>,
 	#[serde(rename = "oldFormula")]
-	pub old_formula: String,
+	pub old_formula: Option<String>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -3552,7 +3552,7 @@ pub struct CTSharedUser {
 	#[serde(rename = "dateTime")]
 	pub date_time: u8,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -3584,55 +3584,55 @@ pub struct dialogsheet {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTMacrosheet {
 	#[serde(rename = "sheetPr")]
-	pub sheet_pr: CTSheetPr,
+	pub sheet_pr: Option<CTSheetPr>,
 	#[serde(rename = "dimension")]
-	pub dimension: CTSheetDimension,
+	pub dimension: Option<CTSheetDimension>,
 	#[serde(rename = "sheetViews")]
-	pub sheet_views: CTSheetViews,
+	pub sheet_views: Option<CTSheetViews>,
 	#[serde(rename = "sheetFormatPr")]
-	pub sheet_format_pr: CTSheetFormatPr,
+	pub sheet_format_pr: Option<CTSheetFormatPr>,
 	#[serde(rename = "cols")]
 	pub cols: Vec<CTCols>,
 	#[serde(rename = "sheetData")]
 	pub sheet_data: CTSheetData,
 	#[serde(rename = "sheetProtection")]
-	pub sheet_protection: CTSheetProtection,
+	pub sheet_protection: Option<CTSheetProtection>,
 	#[serde(rename = "autoFilter")]
-	pub auto_filter: CTAutoFilter,
+	pub auto_filter: Option<CTAutoFilter>,
 	#[serde(rename = "sortState")]
-	pub sort_state: CTSortState,
+	pub sort_state: Option<CTSortState>,
 	#[serde(rename = "dataConsolidate")]
-	pub data_consolidate: CTDataConsolidate,
+	pub data_consolidate: Option<CTDataConsolidate>,
 	#[serde(rename = "customSheetViews")]
-	pub custom_sheet_views: CTCustomSheetViews,
+	pub custom_sheet_views: Option<CTCustomSheetViews>,
 	#[serde(rename = "phoneticPr")]
-	pub phonetic_pr: CTPhoneticPr,
+	pub phonetic_pr: Option<CTPhoneticPr>,
 	#[serde(rename = "conditionalFormatting")]
 	pub conditional_formatting: Vec<CTConditionalFormatting>,
 	#[serde(rename = "printOptions")]
-	pub print_options: CTPrintOptions,
+	pub print_options: Option<CTPrintOptions>,
 	#[serde(rename = "pageMargins")]
-	pub page_margins: CTPageMargins,
+	pub page_margins: Option<CTPageMargins>,
 	#[serde(rename = "pageSetup")]
-	pub page_setup: CTPageSetup,
+	pub page_setup: Option<CTPageSetup>,
 	#[serde(rename = "headerFooter")]
-	pub header_footer: CTHeaderFooter,
+	pub header_footer: Option<CTHeaderFooter>,
 	#[serde(rename = "rowBreaks")]
-	pub row_breaks: CTPageBreak,
+	pub row_breaks: Option<CTPageBreak>,
 	#[serde(rename = "colBreaks")]
-	pub col_breaks: CTPageBreak,
+	pub col_breaks: Option<CTPageBreak>,
 	#[serde(rename = "customProperties")]
-	pub custom_properties: CTCustomProperties,
+	pub custom_properties: Option<CTCustomProperties>,
 	#[serde(rename = "drawing")]
-	pub drawing: CTDrawing,
+	pub drawing: Option<CTDrawing>,
 	#[serde(rename = "drawingHF")]
-	pub drawing_hf: CTDrawingHF,
+	pub drawing_hf: Option<CTDrawingHF>,
 	#[serde(rename = "picture")]
-	pub picture: CTSheetBackgroundPicture,
+	pub picture: Option<CTSheetBackgroundPicture>,
 	#[serde(rename = "oleObjects")]
-	pub ole_objects: CTOleObjects,
+	pub ole_objects: Option<CTOleObjects>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -3640,33 +3640,33 @@ pub struct CTMacrosheet {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTDialogsheet {
 	#[serde(rename = "sheetPr")]
-	pub sheet_pr: CTSheetPr,
+	pub sheet_pr: Option<CTSheetPr>,
 	#[serde(rename = "sheetViews")]
-	pub sheet_views: CTSheetViews,
+	pub sheet_views: Option<CTSheetViews>,
 	#[serde(rename = "sheetFormatPr")]
-	pub sheet_format_pr: CTSheetFormatPr,
+	pub sheet_format_pr: Option<CTSheetFormatPr>,
 	#[serde(rename = "sheetProtection")]
-	pub sheet_protection: CTSheetProtection,
+	pub sheet_protection: Option<CTSheetProtection>,
 	#[serde(rename = "customSheetViews")]
-	pub custom_sheet_views: CTCustomSheetViews,
+	pub custom_sheet_views: Option<CTCustomSheetViews>,
 	#[serde(rename = "printOptions")]
-	pub print_options: CTPrintOptions,
+	pub print_options: Option<CTPrintOptions>,
 	#[serde(rename = "pageMargins")]
-	pub page_margins: CTPageMargins,
+	pub page_margins: Option<CTPageMargins>,
 	#[serde(rename = "pageSetup")]
-	pub page_setup: CTPageSetup,
+	pub page_setup: Option<CTPageSetup>,
 	#[serde(rename = "headerFooter")]
-	pub header_footer: CTHeaderFooter,
+	pub header_footer: Option<CTHeaderFooter>,
 	#[serde(rename = "drawing")]
-	pub drawing: CTDrawing,
+	pub drawing: Option<CTDrawing>,
 	#[serde(rename = "drawingHF")]
-	pub drawing_hf: CTDrawingHF,
+	pub drawing_hf: Option<CTDrawingHF>,
 	#[serde(rename = "oleObjects")]
-	pub ole_objects: CTOleObjects,
+	pub ole_objects: Option<CTOleObjects>,
 	#[serde(rename = "controls")]
-	pub controls: CTControls,
+	pub controls: Option<CTControls>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -3674,79 +3674,79 @@ pub struct CTDialogsheet {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTWorksheet {
 	#[serde(rename = "sheetPr")]
-	pub sheet_pr: CTSheetPr,
+	pub sheet_pr: Option<CTSheetPr>,
 	#[serde(rename = "dimension")]
-	pub dimension: CTSheetDimension,
+	pub dimension: Option<CTSheetDimension>,
 	#[serde(rename = "sheetViews")]
-	pub sheet_views: CTSheetViews,
+	pub sheet_views: Option<CTSheetViews>,
 	#[serde(rename = "sheetFormatPr")]
-	pub sheet_format_pr: CTSheetFormatPr,
+	pub sheet_format_pr: Option<CTSheetFormatPr>,
 	#[serde(rename = "cols")]
 	pub cols: Vec<CTCols>,
 	#[serde(rename = "sheetData")]
 	pub sheet_data: CTSheetData,
 	#[serde(rename = "sheetCalcPr")]
-	pub sheet_calc_pr: CTSheetCalcPr,
+	pub sheet_calc_pr: Option<CTSheetCalcPr>,
 	#[serde(rename = "sheetProtection")]
-	pub sheet_protection: CTSheetProtection,
+	pub sheet_protection: Option<CTSheetProtection>,
 	#[serde(rename = "protectedRanges")]
-	pub protected_ranges: CTProtectedRanges,
+	pub protected_ranges: Option<CTProtectedRanges>,
 	#[serde(rename = "scenarios")]
-	pub scenarios: CTScenarios,
+	pub scenarios: Option<CTScenarios>,
 	#[serde(rename = "autoFilter")]
-	pub auto_filter: CTAutoFilter,
+	pub auto_filter: Option<CTAutoFilter>,
 	#[serde(rename = "sortState")]
-	pub sort_state: CTSortState,
+	pub sort_state: Option<CTSortState>,
 	#[serde(rename = "dataConsolidate")]
-	pub data_consolidate: CTDataConsolidate,
+	pub data_consolidate: Option<CTDataConsolidate>,
 	#[serde(rename = "customSheetViews")]
-	pub custom_sheet_views: CTCustomSheetViews,
+	pub custom_sheet_views: Option<CTCustomSheetViews>,
 	#[serde(rename = "mergeCells")]
-	pub merge_cells: CTMergeCells,
+	pub merge_cells: Option<CTMergeCells>,
 	#[serde(rename = "phoneticPr")]
-	pub phonetic_pr: CTPhoneticPr,
+	pub phonetic_pr: Option<CTPhoneticPr>,
 	#[serde(rename = "conditionalFormatting")]
 	pub conditional_formatting: Vec<CTConditionalFormatting>,
 	#[serde(rename = "dataValidations")]
-	pub data_validations: CTDataValidations,
+	pub data_validations: Option<CTDataValidations>,
 	#[serde(rename = "hyperlinks")]
-	pub hyperlinks: CTHyperlinks,
+	pub hyperlinks: Option<CTHyperlinks>,
 	#[serde(rename = "printOptions")]
-	pub print_options: CTPrintOptions,
+	pub print_options: Option<CTPrintOptions>,
 	#[serde(rename = "pageMargins")]
-	pub page_margins: CTPageMargins,
+	pub page_margins: Option<CTPageMargins>,
 	#[serde(rename = "pageSetup")]
-	pub page_setup: CTPageSetup,
+	pub page_setup: Option<CTPageSetup>,
 	#[serde(rename = "headerFooter")]
-	pub header_footer: CTHeaderFooter,
+	pub header_footer: Option<CTHeaderFooter>,
 	#[serde(rename = "rowBreaks")]
-	pub row_breaks: CTPageBreak,
+	pub row_breaks: Option<CTPageBreak>,
 	#[serde(rename = "colBreaks")]
-	pub col_breaks: CTPageBreak,
+	pub col_breaks: Option<CTPageBreak>,
 	#[serde(rename = "customProperties")]
-	pub custom_properties: CTCustomProperties,
+	pub custom_properties: Option<CTCustomProperties>,
 	#[serde(rename = "cellWatches")]
-	pub cell_watches: CTCellWatches,
+	pub cell_watches: Option<CTCellWatches>,
 	#[serde(rename = "ignoredErrors")]
-	pub ignored_errors: CTIgnoredErrors,
+	pub ignored_errors: Option<CTIgnoredErrors>,
 	#[serde(rename = "smartTags")]
-	pub smart_tags: CTSmartTags,
+	pub smart_tags: Option<CTSmartTags>,
 	#[serde(rename = "drawing")]
-	pub drawing: CTDrawing,
+	pub drawing: Option<CTDrawing>,
 	#[serde(rename = "drawingHF")]
-	pub drawing_hf: CTDrawingHF,
+	pub drawing_hf: Option<CTDrawingHF>,
 	#[serde(rename = "picture")]
-	pub picture: CTSheetBackgroundPicture,
+	pub picture: Option<CTSheetBackgroundPicture>,
 	#[serde(rename = "oleObjects")]
-	pub ole_objects: CTOleObjects,
+	pub ole_objects: Option<CTOleObjects>,
 	#[serde(rename = "controls")]
-	pub controls: CTControls,
+	pub controls: Option<CTControls>,
 	#[serde(rename = "webPublishItems")]
-	pub web_publish_items: CTWebPublishItems,
+	pub web_publish_items: Option<CTWebPublishItems>,
 	#[serde(rename = "tableParts")]
-	pub table_parts: CTTableParts,
+	pub table_parts: Option<CTTableParts>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -3870,7 +3870,7 @@ pub struct CTRow {
 	#[serde(rename = "c")]
 	pub c: Vec<CTCell>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -3890,13 +3890,13 @@ pub struct CTCell {
 	#[serde(rename = "ph")]
 	pub ph: Option<bool>,
 	#[serde(rename = "f")]
-	pub f: CTCellFormula,
+	pub f: Option<CTCellFormula>,
 	#[serde(rename = "v")]
-	pub v: String,
+	pub v: Option<String>,
 	#[serde(rename = "is")]
-	pub is: CTRst,
+	pub is: Option<CTRst>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -3938,11 +3938,11 @@ pub struct CTSheetPr {
 	#[serde(rename = "enableFormatConditionsCalculation")]
 	pub enable_format_conditions_calculation: Option<bool>,
 	#[serde(rename = "tabColor")]
-	pub tab_color: CTColor,
+	pub tab_color: Option<CTColor>,
 	#[serde(rename = "outlinePr")]
-	pub outline_pr: CTOutlinePr,
+	pub outline_pr: Option<CTOutlinePr>,
 	#[serde(rename = "pageSetUpPr")]
-	pub page_set_up_pr: CTPageSetUpPr,
+	pub page_set_up_pr: Option<CTPageSetUpPr>,
 }
 
 
@@ -3960,7 +3960,7 @@ pub struct CTSheetViews {
 	#[serde(rename = "sheetView")]
 	pub sheet_view: Vec<CTSheetView>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -4006,13 +4006,13 @@ pub struct CTSheetView {
 	#[serde(rename = "workbookViewId")]
 	pub workbook_view_id: u32,
 	#[serde(rename = "pane")]
-	pub pane: CTPane,
+	pub pane: Option<CTPane>,
 	#[serde(rename = "selection")]
 	pub selection: Vec<CTSelection>,
 	#[serde(rename = "pivotSelection")]
 	pub pivot_selection: Vec<CTPivotSelection>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -4168,7 +4168,7 @@ pub struct CTDataConsolidate {
 	#[serde(rename = "link")]
 	pub link: Option<bool>,
 	#[serde(rename = "dataRefs")]
-	pub data_refs: CTDataRefs,
+	pub data_refs: Option<CTDataRefs>,
 }
 
 
@@ -4368,25 +4368,25 @@ pub struct CTCustomSheetView {
 	#[serde(rename = "topLeftCell")]
 	pub top_left_cell: Option<String>,
 	#[serde(rename = "pane")]
-	pub pane: CTPane,
+	pub pane: Option<CTPane>,
 	#[serde(rename = "selection")]
-	pub selection: CTSelection,
+	pub selection: Option<CTSelection>,
 	#[serde(rename = "rowBreaks")]
-	pub row_breaks: CTPageBreak,
+	pub row_breaks: Option<CTPageBreak>,
 	#[serde(rename = "colBreaks")]
-	pub col_breaks: CTPageBreak,
+	pub col_breaks: Option<CTPageBreak>,
 	#[serde(rename = "pageMargins")]
-	pub page_margins: CTPageMargins,
+	pub page_margins: Option<CTPageMargins>,
 	#[serde(rename = "printOptions")]
-	pub print_options: CTPrintOptions,
+	pub print_options: Option<CTPrintOptions>,
 	#[serde(rename = "pageSetup")]
-	pub page_setup: CTPageSetup,
+	pub page_setup: Option<CTPageSetup>,
 	#[serde(rename = "headerFooter")]
-	pub header_footer: CTHeaderFooter,
+	pub header_footer: Option<CTHeaderFooter>,
 	#[serde(rename = "autoFilter")]
-	pub auto_filter: CTAutoFilter,
+	pub auto_filter: Option<CTAutoFilter>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -4436,9 +4436,9 @@ pub struct CTDataValidation {
 	#[serde(rename = "sqref")]
 	pub sqref: STSqref,
 	#[serde(rename = "formula1")]
-	pub formula1: String,
+	pub formula1: Option<String>,
 	#[serde(rename = "formula2")]
-	pub formula2: String,
+	pub formula2: Option<String>,
 }
 
 
@@ -4516,7 +4516,7 @@ pub struct CTConditionalFormatting {
 	#[serde(rename = "cfRule")]
 	pub cf_rule: Vec<CTCfRule>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -4552,13 +4552,13 @@ pub struct CTCfRule {
 	#[serde(rename = "formula")]
 	pub formula: Vec<String>,
 	#[serde(rename = "colorScale")]
-	pub color_scale: CTColorScale,
+	pub color_scale: Option<CTColorScale>,
 	#[serde(rename = "dataBar")]
-	pub data_bar: CTDataBar,
+	pub data_bar: Option<CTDataBar>,
 	#[serde(rename = "iconSet")]
-	pub icon_set: CTIconSet,
+	pub icon_set: Option<CTIconSet>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -4670,7 +4670,7 @@ pub struct CTCfvo {
 	#[serde(rename = "gte")]
 	pub gte: Option<bool>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -4788,17 +4788,17 @@ pub struct CTHeaderFooter {
 	#[serde(rename = "alignWithMargins")]
 	pub align_with_margins: Option<bool>,
 	#[serde(rename = "oddHeader")]
-	pub odd_header: String,
+	pub odd_header: Option<String>,
 	#[serde(rename = "oddFooter")]
-	pub odd_footer: String,
+	pub odd_footer: Option<String>,
 	#[serde(rename = "evenHeader")]
-	pub even_header: String,
+	pub even_header: Option<String>,
 	#[serde(rename = "evenFooter")]
-	pub even_footer: String,
+	pub even_footer: Option<String>,
 	#[serde(rename = "firstHeader")]
-	pub first_header: String,
+	pub first_header: Option<String>,
 	#[serde(rename = "firstFooter")]
-	pub first_footer: String,
+	pub first_footer: Option<String>,
 }
 
 
@@ -4954,29 +4954,29 @@ pub struct CTCellWatch {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTChartsheet {
 	#[serde(rename = "sheetPr")]
-	pub sheet_pr: CTChartsheetPr,
+	pub sheet_pr: Option<CTChartsheetPr>,
 	#[serde(rename = "sheetViews")]
 	pub sheet_views: CTChartsheetViews,
 	#[serde(rename = "sheetProtection")]
-	pub sheet_protection: CTChartsheetProtection,
+	pub sheet_protection: Option<CTChartsheetProtection>,
 	#[serde(rename = "customSheetViews")]
-	pub custom_sheet_views: CTCustomChartsheetViews,
+	pub custom_sheet_views: Option<CTCustomChartsheetViews>,
 	#[serde(rename = "pageMargins")]
-	pub page_margins: CTPageMargins,
+	pub page_margins: Option<CTPageMargins>,
 	#[serde(rename = "pageSetup")]
-	pub page_setup: CTCsPageSetup,
+	pub page_setup: Option<CTCsPageSetup>,
 	#[serde(rename = "headerFooter")]
-	pub header_footer: CTHeaderFooter,
+	pub header_footer: Option<CTHeaderFooter>,
 	#[serde(rename = "drawing")]
 	pub drawing: CTDrawing,
 	#[serde(rename = "drawingHF")]
-	pub drawing_hf: CTDrawingHF,
+	pub drawing_hf: Option<CTDrawingHF>,
 	#[serde(rename = "picture")]
-	pub picture: CTSheetBackgroundPicture,
+	pub picture: Option<CTSheetBackgroundPicture>,
 	#[serde(rename = "webPublishItems")]
-	pub web_publish_items: CTWebPublishItems,
+	pub web_publish_items: Option<CTWebPublishItems>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -4988,7 +4988,7 @@ pub struct CTChartsheetPr {
 	#[serde(rename = "codeName")]
 	pub code_name: Option<String>,
 	#[serde(rename = "tabColor")]
-	pub tab_color: CTColor,
+	pub tab_color: Option<CTColor>,
 }
 
 
@@ -4998,7 +4998,7 @@ pub struct CTChartsheetViews {
 	#[serde(rename = "sheetView")]
 	pub sheet_view: Vec<CTChartsheetView>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -5014,7 +5014,7 @@ pub struct CTChartsheetView {
 	#[serde(rename = "zoomToFit")]
 	pub zoom_to_fit: Option<bool>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -5088,11 +5088,11 @@ pub struct CTCustomChartsheetView {
 	#[serde(rename = "zoomToFit")]
 	pub zoom_to_fit: Option<bool>,
 	#[serde(rename = "pageMargins")]
-	pub page_margins: CTPageMargins,
+	pub page_margins: Option<CTPageMargins>,
 	#[serde(rename = "pageSetup")]
-	pub page_setup: CTCsPageSetup,
+	pub page_setup: Option<CTCsPageSetup>,
 	#[serde(rename = "headerFooter")]
-	pub header_footer: CTHeaderFooter,
+	pub header_footer: Option<CTHeaderFooter>,
 }
 
 
@@ -5140,7 +5140,7 @@ pub struct CTOleObject {
 	#[serde(rename = "r:id")]
 	pub r_id: Option<String>,
 	#[serde(rename = "objectPr")]
-	pub object_pr: CTObjectPr,
+	pub object_pr: Option<CTObjectPr>,
 }
 
 
@@ -5242,7 +5242,7 @@ pub struct CTControl {
 	#[serde(rename = "name")]
 	pub name: Option<String>,
 	#[serde(rename = "controlPr")]
-	pub control_pr: CTControlPr,
+	pub control_pr: Option<CTControlPr>,
 }
 
 
@@ -5298,7 +5298,7 @@ pub struct CTIgnoredErrors {
 	#[serde(rename = "ignoredError")]
 	pub ignored_error: Vec<CTIgnoredError>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -5366,19 +5366,19 @@ pub struct metadata {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTMetadata {
 	#[serde(rename = "metadataTypes")]
-	pub metadata_types: CTMetadataTypes,
+	pub metadata_types: Option<CTMetadataTypes>,
 	#[serde(rename = "metadataStrings")]
-	pub metadata_strings: CTMetadataStrings,
+	pub metadata_strings: Option<CTMetadataStrings>,
 	#[serde(rename = "mdxMetadata")]
-	pub mdx_metadata: CTMdxMetadata,
+	pub mdx_metadata: Option<CTMdxMetadata>,
 	#[serde(rename = "futureMetadata")]
 	pub future_metadata: Vec<CTFutureMetadata>,
 	#[serde(rename = "cellMetadata")]
-	pub cell_metadata: CTMetadataBlocks,
+	pub cell_metadata: Option<CTMetadataBlocks>,
 	#[serde(rename = "valueMetadata")]
-	pub value_metadata: CTMetadataBlocks,
+	pub value_metadata: Option<CTMetadataBlocks>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -5492,7 +5492,7 @@ pub struct CTFutureMetadata {
 	#[serde(rename = "bk")]
 	pub bk: Vec<CTFutureMetadataBlock>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -5500,7 +5500,7 @@ pub struct CTFutureMetadata {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTFutureMetadataBlock {
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -5668,7 +5668,7 @@ pub struct CTSingleXmlCell {
 	#[serde(rename = "xmlCellPr")]
 	pub xml_cell_pr: CTXmlCellPr,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -5682,7 +5682,7 @@ pub struct CTXmlCellPr {
 	#[serde(rename = "xmlPr")]
 	pub xml_pr: CTXmlPr,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -5696,7 +5696,7 @@ pub struct CTXmlPr {
 	#[serde(rename = "xmlDataType")]
 	pub xml_data_type: String,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -5712,27 +5712,27 @@ pub struct style_sheet {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTStylesheet {
 	#[serde(rename = "numFmts")]
-	pub num_fmts: CTNumFmts,
+	pub num_fmts: Option<CTNumFmts>,
 	#[serde(rename = "fonts")]
-	pub fonts: CTFonts,
+	pub fonts: Option<CTFonts>,
 	#[serde(rename = "fills")]
-	pub fills: CTFills,
+	pub fills: Option<CTFills>,
 	#[serde(rename = "borders")]
-	pub borders: CTBorders,
+	pub borders: Option<CTBorders>,
 	#[serde(rename = "cellStyleXfs")]
-	pub cell_style_xfs: CTCellStyleXfs,
+	pub cell_style_xfs: Option<CTCellStyleXfs>,
 	#[serde(rename = "cellXfs")]
-	pub cell_xfs: CTCellXfs,
+	pub cell_xfs: Option<CTCellXfs>,
 	#[serde(rename = "cellStyles")]
-	pub cell_styles: CTCellStyles,
+	pub cell_styles: Option<CTCellStyles>,
 	#[serde(rename = "dxfs")]
-	pub dxfs: CTDxfs,
+	pub dxfs: Option<CTDxfs>,
 	#[serde(rename = "tableStyles")]
-	pub table_styles: CTTableStyles,
+	pub table_styles: Option<CTTableStyles>,
 	#[serde(rename = "colors")]
-	pub colors: CTColors,
+	pub colors: Option<CTColors>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -5796,19 +5796,19 @@ pub struct CTBorder {
 	#[serde(rename = "outline")]
 	pub outline: Option<bool>,
 	#[serde(rename = "start")]
-	pub start: CTBorderPr,
+	pub start: Option<CTBorderPr>,
 	#[serde(rename = "end")]
-	pub end: CTBorderPr,
+	pub end: Option<CTBorderPr>,
 	#[serde(rename = "top")]
-	pub top: CTBorderPr,
+	pub top: Option<CTBorderPr>,
 	#[serde(rename = "bottom")]
-	pub bottom: CTBorderPr,
+	pub bottom: Option<CTBorderPr>,
 	#[serde(rename = "diagonal")]
-	pub diagonal: CTBorderPr,
+	pub diagonal: Option<CTBorderPr>,
 	#[serde(rename = "vertical")]
-	pub vertical: CTBorderPr,
+	pub vertical: Option<CTBorderPr>,
 	#[serde(rename = "horizontal")]
-	pub horizontal: CTBorderPr,
+	pub horizontal: Option<CTBorderPr>,
 }
 
 
@@ -5818,7 +5818,7 @@ pub struct CTBorderPr {
 	#[serde(rename = "style")]
 	pub style: Option<String>,
 	#[serde(rename = "color")]
-	pub color: CTColor,
+	pub color: Option<CTColor>,
 }
 
 
@@ -5856,9 +5856,9 @@ pub struct CTFills {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTFill {
 	#[serde(rename = "patternFill")]
-	pub pattern_fill: CTPatternFill,
+	pub pattern_fill: Option<CTPatternFill>,
 	#[serde(rename = "gradientFill")]
-	pub gradient_fill: CTGradientFill,
+	pub gradient_fill: Option<CTGradientFill>,
 }
 
 
@@ -5868,9 +5868,9 @@ pub struct CTPatternFill {
 	#[serde(rename = "patternType")]
 	pub pattern_type: Option<String>,
 	#[serde(rename = "fgColor")]
-	pub fg_color: CTColor,
+	pub fg_color: Option<CTColor>,
 	#[serde(rename = "bgColor")]
-	pub bg_color: CTColor,
+	pub bg_color: Option<CTColor>,
 }
 
 
@@ -6022,11 +6022,11 @@ pub struct CTXf {
 	#[serde(rename = "applyProtection")]
 	pub apply_protection: Option<bool>,
 	#[serde(rename = "alignment")]
-	pub alignment: CTCellAlignment,
+	pub alignment: Option<CTCellAlignment>,
 	#[serde(rename = "protection")]
-	pub protection: CTCellProtection,
+	pub protection: Option<CTCellProtection>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -6056,7 +6056,7 @@ pub struct CTCellStyle {
 	#[serde(rename = "customBuiltin")]
 	pub custom_builtin: Option<bool>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -6074,19 +6074,19 @@ pub struct CTDxfs {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTDxf {
 	#[serde(rename = "font")]
-	pub font: CTFont,
+	pub font: Option<CTFont>,
 	#[serde(rename = "numFmt")]
-	pub num_fmt: CTNumFmt,
+	pub num_fmt: Option<CTNumFmt>,
 	#[serde(rename = "fill")]
-	pub fill: CTFill,
+	pub fill: Option<CTFill>,
 	#[serde(rename = "alignment")]
-	pub alignment: CTCellAlignment,
+	pub alignment: Option<CTCellAlignment>,
 	#[serde(rename = "border")]
-	pub border: CTBorder,
+	pub border: Option<CTBorder>,
 	#[serde(rename = "protection")]
-	pub protection: CTCellProtection,
+	pub protection: Option<CTCellProtection>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -6142,9 +6142,9 @@ pub struct STDxfId {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTColors {
 	#[serde(rename = "indexedColors")]
-	pub indexed_colors: CTIndexedColors,
+	pub indexed_colors: Option<CTIndexedColors>,
 	#[serde(rename = "mruColors")]
-	pub mru_colors: CTMRUColors,
+	pub mru_colors: Option<CTMRUColors>,
 }
 
 
@@ -6378,13 +6378,13 @@ pub struct external_link {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTExternalLink {
 	#[serde(rename = "externalBook")]
-	pub external_book: CTExternalBook,
+	pub external_book: Option<CTExternalBook>,
 	#[serde(rename = "ddeLink")]
-	pub dde_link: CTDdeLink,
+	pub dde_link: Option<CTDdeLink>,
 	#[serde(rename = "oleLink")]
-	pub ole_link: CTOleLink,
+	pub ole_link: Option<CTOleLink>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -6394,11 +6394,11 @@ pub struct CTExternalBook {
 	#[serde(rename = "r:id")]
 	pub r_id: String,
 	#[serde(rename = "sheetNames")]
-	pub sheet_names: CTExternalSheetNames,
+	pub sheet_names: Option<CTExternalSheetNames>,
 	#[serde(rename = "definedNames")]
-	pub defined_names: CTExternalDefinedNames,
+	pub defined_names: Option<CTExternalDefinedNames>,
 	#[serde(rename = "sheetDataSet")]
-	pub sheet_data_set: CTExternalSheetDataSet,
+	pub sheet_data_set: Option<CTExternalSheetDataSet>,
 }
 
 
@@ -6478,7 +6478,7 @@ pub struct CTExternalCell {
 	#[serde(rename = "vm")]
 	pub vm: Option<u32>,
 	#[serde(rename = "v")]
-	pub v: String,
+	pub v: Option<String>,
 }
 
 
@@ -6490,7 +6490,7 @@ pub struct CTDdeLink {
 	#[serde(rename = "ddeTopic")]
 	pub dde_topic: String,
 	#[serde(rename = "ddeItems")]
-	pub dde_items: CTDdeItems,
+	pub dde_items: Option<CTDdeItems>,
 }
 
 
@@ -6514,7 +6514,7 @@ pub struct CTDdeItem {
 	#[serde(rename = "preferPic")]
 	pub prefer_pic: Option<bool>,
 	#[serde(rename = "values")]
-	pub values: CTDdeValues,
+	pub values: Option<CTDdeValues>,
 }
 
 
@@ -6556,7 +6556,7 @@ pub struct CTOleLink {
 	#[serde(rename = "progId")]
 	pub prog_id: String,
 	#[serde(rename = "oleItems")]
-	pub ole_items: CTOleItems,
+	pub ole_items: Option<CTOleItems>,
 }
 
 
@@ -6638,15 +6638,15 @@ pub struct CTTable {
 	#[serde(rename = "connectionId")]
 	pub connection_id: Option<u32>,
 	#[serde(rename = "autoFilter")]
-	pub auto_filter: CTAutoFilter,
+	pub auto_filter: Option<CTAutoFilter>,
 	#[serde(rename = "sortState")]
-	pub sort_state: CTSortState,
+	pub sort_state: Option<CTSortState>,
 	#[serde(rename = "tableColumns")]
 	pub table_columns: CTTableColumns,
 	#[serde(rename = "tableStyleInfo")]
-	pub table_style_info: CTTableStyleInfo,
+	pub table_style_info: Option<CTTableStyleInfo>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -6712,13 +6712,13 @@ pub struct CTTableColumn {
 	#[serde(rename = "totalsRowCellStyle")]
 	pub totals_row_cell_style: Option<String>,
 	#[serde(rename = "calculatedColumnFormula")]
-	pub calculated_column_formula: CTTableFormula,
+	pub calculated_column_formula: Option<CTTableFormula>,
 	#[serde(rename = "totalsRowFormula")]
-	pub totals_row_formula: CTTableFormula,
+	pub totals_row_formula: Option<CTTableFormula>,
 	#[serde(rename = "xmlColumnPr")]
-	pub xml_column_pr: CTXmlColumnPr,
+	pub xml_column_pr: Option<CTXmlColumnPr>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -6752,7 +6752,7 @@ pub struct CTXmlColumnPr {
 	#[serde(rename = "xmlDataType")]
 	pub xml_data_type: String,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -6778,7 +6778,7 @@ pub struct CTVolTypes {
 	#[serde(rename = "volType")]
 	pub vol_type: Vec<CTVolType>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -6856,43 +6856,43 @@ pub struct CTWorkbook {
 	#[serde(rename = "conformance")]
 	pub conformance: Option<String>,
 	#[serde(rename = "fileVersion")]
-	pub file_version: CTFileVersion,
+	pub file_version: Option<CTFileVersion>,
 	#[serde(rename = "fileSharing")]
-	pub file_sharing: CTFileSharing,
+	pub file_sharing: Option<CTFileSharing>,
 	#[serde(rename = "workbookPr")]
-	pub workbook_pr: CTWorkbookPr,
+	pub workbook_pr: Option<CTWorkbookPr>,
 	#[serde(rename = "workbookProtection")]
-	pub workbook_protection: CTWorkbookProtection,
+	pub workbook_protection: Option<CTWorkbookProtection>,
 	#[serde(rename = "bookViews")]
-	pub book_views: CTBookViews,
+	pub book_views: Option<CTBookViews>,
 	#[serde(rename = "sheets")]
 	pub sheets: CTSheets,
 	#[serde(rename = "functionGroups")]
-	pub function_groups: CTFunctionGroups,
+	pub function_groups: Option<CTFunctionGroups>,
 	#[serde(rename = "externalReferences")]
-	pub external_references: CTExternalReferences,
+	pub external_references: Option<CTExternalReferences>,
 	#[serde(rename = "definedNames")]
-	pub defined_names: CTDefinedNames,
+	pub defined_names: Option<CTDefinedNames>,
 	#[serde(rename = "calcPr")]
-	pub calc_pr: CTCalcPr,
+	pub calc_pr: Option<CTCalcPr>,
 	#[serde(rename = "oleSize")]
-	pub ole_size: CTOleSize,
+	pub ole_size: Option<CTOleSize>,
 	#[serde(rename = "customWorkbookViews")]
-	pub custom_workbook_views: CTCustomWorkbookViews,
+	pub custom_workbook_views: Option<CTCustomWorkbookViews>,
 	#[serde(rename = "pivotCaches")]
-	pub pivot_caches: CTPivotCaches,
+	pub pivot_caches: Option<CTPivotCaches>,
 	#[serde(rename = "smartTagPr")]
-	pub smart_tag_pr: CTSmartTagPr,
+	pub smart_tag_pr: Option<CTSmartTagPr>,
 	#[serde(rename = "smartTagTypes")]
-	pub smart_tag_types: CTSmartTagTypes,
+	pub smart_tag_types: Option<CTSmartTagTypes>,
 	#[serde(rename = "webPublishing")]
-	pub web_publishing: CTWebPublishing,
+	pub web_publishing: Option<CTWebPublishing>,
 	#[serde(rename = "fileRecoveryPr")]
 	pub file_recovery_pr: Vec<CTFileRecoveryPr>,
 	#[serde(rename = "webPublishObjects")]
-	pub web_publish_objects: CTWebPublishObjects,
+	pub web_publish_objects: Option<CTWebPublishObjects>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -6950,7 +6950,7 @@ pub struct CTBookView {
 	#[serde(rename = "autoFilterDateGrouping")]
 	pub auto_filter_date_grouping: Option<bool>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -7022,7 +7022,7 @@ pub struct CTCustomWorkbookView {
 	#[serde(rename = "showObjects")]
 	pub show_objects: Option<String>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTExtensionList,
+	pub ext_lst: Option<CTExtensionList>,
 }
 
 
@@ -7400,7 +7400,7 @@ pub struct CTFunctionGroups {
 	#[serde(rename = "builtInGroupCount")]
 	pub built_in_group_count: Option<u32>,
 	#[serde(rename = "functionGroup")]
-	pub function_group: CTFunctionGroup,
+	pub function_group: Option<CTFunctionGroup>,
 }
 
 

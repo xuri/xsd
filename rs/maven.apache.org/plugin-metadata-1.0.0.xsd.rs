@@ -26,7 +26,7 @@ pub struct Mojos {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct PluginMetadata {
 	#[serde(rename = "mojos")]
-	pub mojos: Mojos,
+	pub mojos: Option<Mojos>,
 }
 
 
@@ -50,35 +50,35 @@ pub struct Parameters {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Mojo {
 	#[serde(rename = "goal")]
-	pub goal: String,
+	pub goal: Option<String>,
 	#[serde(rename = "phase")]
-	pub phase: String,
+	pub phase: Option<String>,
 	#[serde(rename = "aggregator")]
-	pub aggregator: bool,
+	pub aggregator: Option<bool>,
 	#[serde(rename = "requiresDependencyResolution")]
-	pub requires_dependency_resolution: String,
+	pub requires_dependency_resolution: Option<String>,
 	#[serde(rename = "requiresProject")]
-	pub requires_project: bool,
+	pub requires_project: Option<bool>,
 	#[serde(rename = "requiresReports")]
-	pub requires_reports: bool,
+	pub requires_reports: Option<bool>,
 	#[serde(rename = "requiresOnline")]
-	pub requires_online: bool,
+	pub requires_online: Option<bool>,
 	#[serde(rename = "inheritByDefault")]
-	pub inherit_by_default: bool,
+	pub inherit_by_default: Option<bool>,
 	#[serde(rename = "requiresDirectInvocation")]
-	pub requires_direct_invocation: bool,
+	pub requires_direct_invocation: Option<bool>,
 	#[serde(rename = "execution")]
-	pub execution: LifecycleExecution,
+	pub execution: Option<LifecycleExecution>,
 	#[serde(rename = "components")]
-	pub components: Components,
+	pub components: Option<Components>,
 	#[serde(rename = "parameters")]
-	pub parameters: Parameters,
+	pub parameters: Option<Parameters>,
 	#[serde(rename = "description")]
-	pub description: String,
+	pub description: Option<String>,
 	#[serde(rename = "deprecated")]
-	pub deprecated: String,
+	pub deprecated: Option<String>,
 	#[serde(rename = "call")]
-	pub call: String,
+	pub call: Option<String>,
 }
 
 
@@ -86,25 +86,25 @@ pub struct Mojo {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Parameter {
 	#[serde(rename = "name")]
-	pub name: String,
+	pub name: Option<String>,
 	#[serde(rename = "alias")]
-	pub alias: String,
+	pub alias: Option<String>,
 	#[serde(rename = "property")]
-	pub property: String,
+	pub property: Option<String>,
 	#[serde(rename = "required")]
-	pub required: bool,
+	pub required: Option<bool>,
 	#[serde(rename = "readonly")]
-	pub readonly: bool,
+	pub readonly: Option<bool>,
 	#[serde(rename = "expression")]
-	pub expression: String,
+	pub expression: Option<String>,
 	#[serde(rename = "defaultValue")]
-	pub default_value: String,
+	pub default_value: Option<String>,
 	#[serde(rename = "type")]
-	pub type_attr: String,
+	pub type_attr: Option<String>,
 	#[serde(rename = "description")]
-	pub description: String,
+	pub description: Option<String>,
 	#[serde(rename = "deprecated")]
-	pub deprecated: String,
+	pub deprecated: Option<String>,
 }
 
 
@@ -112,11 +112,11 @@ pub struct Parameter {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct LifecycleExecution {
 	#[serde(rename = "lifecycle")]
-	pub lifecycle: String,
+	pub lifecycle: Option<String>,
 	#[serde(rename = "phase")]
-	pub phase: String,
+	pub phase: Option<String>,
 	#[serde(rename = "goal")]
-	pub goal: String,
+	pub goal: Option<String>,
 }
 
 
@@ -124,7 +124,7 @@ pub struct LifecycleExecution {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Component {
 	#[serde(rename = "role")]
-	pub role: String,
+	pub role: Option<String>,
 	#[serde(rename = "hint")]
-	pub hint: String,
+	pub hint: Option<String>,
 }

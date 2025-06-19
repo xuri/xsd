@@ -20,166 +20,166 @@ type Assembly *Assembly
 //             </ul>
 type Formats struct {
 	XMLName xml.Name `xml:"formats"`
-	Format  []string `xml:"format"`
+	Format  []string `xml:"format,omitempty"`
 }
 
 // ModuleSets is Specify which modules source files to include in the assembly
 type ModuleSets struct {
 	XMLName   xml.Name     `xml:"moduleSets"`
-	ModuleSet []*ModuleSet `xml:"moduleSet"`
+	ModuleSet []*ModuleSet `xml:"moduleSet,omitempty"`
 }
 
 // FileSets is Specify assembly parameters for groups of files.
 type FileSets struct {
 	XMLName xml.Name   `xml:"fileSets"`
-	FileSet []*FileSet `xml:"fileSet"`
+	FileSet []*FileSet `xml:"fileSet,omitempty"`
 }
 
 // Files is Specify assembly parameters for single files.
 type Files struct {
 	XMLName xml.Name    `xml:"files"`
-	File    []*FileItem `xml:"file"`
+	File    []*FileItem `xml:"file,omitempty"`
 }
 
 // DependencySets is Specify assembly behavior for sets of dependencies.
 type DependencySets struct {
 	XMLName       xml.Name         `xml:"dependencySets"`
-	DependencySet []*DependencySet `xml:"dependencySet"`
+	DependencySet []*DependencySet `xml:"dependencySet,omitempty"`
 }
 
 // Repositories is Specify assembly behavior for sets of repositories.
 type Repositories struct {
 	XMLName    xml.Name      `xml:"repositories"`
-	Repository []*Repository `xml:"repository"`
+	Repository []*Repository `xml:"repository,omitempty"`
 }
 
 // ComponentDescriptors is File relative to basedir containing Component.
 type ComponentDescriptors struct {
 	XMLName             xml.Name `xml:"componentDescriptors"`
-	ComponentDescriptor []string `xml:"componentDescriptor"`
+	ComponentDescriptor []string `xml:"componentDescriptor,omitempty"`
 }
 
 // Assembly is The id of this assembly. This is a symbolic name for a
 //             particular assembly of files from this project.
 type Assembly struct {
-	Id                   string                `xml:"id"`
-	Formats              *Formats              `xml:"formats"`
-	IncludeBaseDirectory bool                  `xml:"includeBaseDirectory"`
-	IncludeSiteDirectory bool                  `xml:"includeSiteDirectory"`
-	ModuleSets           *ModuleSets           `xml:"moduleSets"`
-	FileSets             *FileSets             `xml:"fileSets"`
-	Files                *Files                `xml:"files"`
-	DependencySets       *DependencySets       `xml:"dependencySets"`
-	Repositories         *Repositories         `xml:"repositories"`
-	ComponentDescriptors *ComponentDescriptors `xml:"componentDescriptors"`
+	Id                   string                `xml:"id,omitempty"`
+	Formats              *Formats              `xml:"formats,omitempty"`
+	IncludeBaseDirectory bool                  `xml:"includeBaseDirectory,omitempty"`
+	IncludeSiteDirectory bool                  `xml:"includeSiteDirectory,omitempty"`
+	ModuleSets           *ModuleSets           `xml:"moduleSets,omitempty"`
+	FileSets             *FileSets             `xml:"fileSets,omitempty"`
+	Files                *Files                `xml:"files,omitempty"`
+	DependencySets       *DependencySets       `xml:"dependencySets,omitempty"`
+	Repositories         *Repositories         `xml:"repositories,omitempty"`
+	ComponentDescriptors *ComponentDescriptors `xml:"componentDescriptors,omitempty"`
 }
 
 // GroupVersionAlignments is Align a group to a version or an individual artifact.
 type GroupVersionAlignments struct {
 	XMLName               xml.Name                 `xml:"groupVersionAlignments"`
-	GroupVersionAlignment []*GroupVersionAlignment `xml:"groupVersionAlignment"`
+	GroupVersionAlignment []*GroupVersionAlignment `xml:"groupVersionAlignment,omitempty"`
 }
 
 // Includes is When &lt;include&gt; subelements are present, they define
 //             a set of files and directory to include.
 type Includes struct {
 	XMLName xml.Name `xml:"includes"`
-	Include []string `xml:"include"`
+	Include []string `xml:"include,omitempty"`
 }
 
 // Excludes is When &lt;exclude&gt; subelements are present, they define
 //             a set of files and directory to exclude.
 type Excludes struct {
 	XMLName xml.Name `xml:"excludes"`
-	Exclude []string `xml:"exclude"`
+	Exclude []string `xml:"exclude,omitempty"`
 }
 
 // Repository is If set to true, this property will trigger the creation of repository
 //             metadata which will allow the repository to be used as a functional remote
 //             repository.
 type Repository struct {
-	IncludeMetadata        bool                    `xml:"includeMetadata"`
-	GroupVersionAlignments *GroupVersionAlignments `xml:"groupVersionAlignments"`
-	OutputDirectory        string                  `xml:"outputDirectory"`
-	Includes               *Includes               `xml:"includes"`
-	Excludes               *Excludes               `xml:"excludes"`
-	FileMode               string                  `xml:"fileMode"`
-	DirectoryMode          string                  `xml:"directoryMode"`
+	IncludeMetadata        bool                    `xml:"includeMetadata,omitempty"`
+	GroupVersionAlignments *GroupVersionAlignments `xml:"groupVersionAlignments,omitempty"`
+	OutputDirectory        string                  `xml:"outputDirectory,omitempty"`
+	Includes               *Includes               `xml:"includes,omitempty"`
+	Excludes               *Excludes               `xml:"excludes,omitempty"`
+	FileMode               string                  `xml:"fileMode,omitempty"`
+	DirectoryMode          string                  `xml:"directoryMode,omitempty"`
 }
 
 // GroupVersionAlignment is The version you want to align this group to.
 type GroupVersionAlignment struct {
-	Id       string    `xml:"id"`
-	Version  string    `xml:"version"`
-	Excludes *Excludes `xml:"excludes"`
+	Id       string    `xml:"id,omitempty"`
+	Version  string    `xml:"version,omitempty"`
+	Excludes *Excludes `xml:"excludes,omitempty"`
 }
 
 // DependencySet is Specifies the output directory relative to the root
 //             of the root directory of the assembly. For example,
 //             "log" will put the specified files in the log directory.
 type DependencySet struct {
-	OutputFileNameMapping string    `xml:"outputFileNameMapping"`
-	Unpack                bool      `xml:"unpack"`
-	Scope                 string    `xml:"scope"`
-	OutputDirectory       string    `xml:"outputDirectory"`
-	Includes              *Includes `xml:"includes"`
-	Excludes              *Excludes `xml:"excludes"`
-	FileMode              string    `xml:"fileMode"`
-	DirectoryMode         string    `xml:"directoryMode"`
+	OutputFileNameMapping string    `xml:"outputFileNameMapping,omitempty"`
+	Unpack                bool      `xml:"unpack,omitempty"`
+	Scope                 string    `xml:"scope,omitempty"`
+	OutputDirectory       string    `xml:"outputDirectory,omitempty"`
+	Includes              *Includes `xml:"includes,omitempty"`
+	Excludes              *Excludes `xml:"excludes,omitempty"`
+	FileMode              string    `xml:"fileMode,omitempty"`
+	DirectoryMode         string    `xml:"directoryMode,omitempty"`
 }
 
 // ModuleSet is 1.0.0
 type ModuleSet struct {
-	Includes *Includes       `xml:"includes"`
-	Excludes *Excludes       `xml:"excludes"`
-	Sources  *ModuleSources  `xml:"sources"`
-	Binaries *ModuleBinaries `xml:"binaries"`
+	Includes *Includes       `xml:"includes,omitempty"`
+	Excludes *Excludes       `xml:"excludes,omitempty"`
+	Sources  *ModuleSources  `xml:"sources,omitempty"`
+	Binaries *ModuleBinaries `xml:"binaries,omitempty"`
 }
 
 // ModuleSources is Specifies the output directory relative to the root
 //             of the root directory of the assembly. For example,
 //             "log" will put the specified files in the log directory.
 type ModuleSources struct {
-	OutputDirectory string    `xml:"outputDirectory"`
-	Includes        *Includes `xml:"includes"`
-	Excludes        *Excludes `xml:"excludes"`
-	FileMode        string    `xml:"fileMode"`
-	DirectoryMode   string    `xml:"directoryMode"`
+	OutputDirectory string    `xml:"outputDirectory,omitempty"`
+	Includes        *Includes `xml:"includes,omitempty"`
+	Excludes        *Excludes `xml:"excludes,omitempty"`
+	FileMode        string    `xml:"fileMode,omitempty"`
+	DirectoryMode   string    `xml:"directoryMode,omitempty"`
 }
 
 // ModuleBinaries is Specifies the output directory relative to the root
 //             of the root directory of the assembly. For example,
 //             "log" will put the specified files in the log directory.
 type ModuleBinaries struct {
-	IncludeDependencies   bool      `xml:"includeDependencies"`
-	Unpack                bool      `xml:"unpack"`
-	OutputFileNameMapping string    `xml:"outputFileNameMapping"`
-	OutputDirectory       string    `xml:"outputDirectory"`
-	Includes              *Includes `xml:"includes"`
-	Excludes              *Excludes `xml:"excludes"`
-	FileMode              string    `xml:"fileMode"`
-	DirectoryMode         string    `xml:"directoryMode"`
+	IncludeDependencies   bool      `xml:"includeDependencies,omitempty"`
+	Unpack                bool      `xml:"unpack,omitempty"`
+	OutputFileNameMapping string    `xml:"outputFileNameMapping,omitempty"`
+	OutputDirectory       string    `xml:"outputDirectory,omitempty"`
+	Includes              *Includes `xml:"includes,omitempty"`
+	Excludes              *Excludes `xml:"excludes,omitempty"`
+	FileMode              string    `xml:"fileMode,omitempty"`
+	DirectoryMode         string    `xml:"directoryMode,omitempty"`
 }
 
 // FileItem is Flag used to determine if the file is filtered.
 type FileItem struct {
-	Source          string `xml:"source"`
-	OutputDirectory string `xml:"outputDirectory"`
-	DestName        string `xml:"destName"`
-	FileMode        string `xml:"fileMode"`
-	LineEnding      string `xml:"lineEnding"`
-	Filtered        bool   `xml:"filtered"`
+	Source          string `xml:"source,omitempty"`
+	OutputDirectory string `xml:"outputDirectory,omitempty"`
+	DestName        string `xml:"destName,omitempty"`
+	FileMode        string `xml:"fileMode,omitempty"`
+	LineEnding      string `xml:"lineEnding,omitempty"`
+	Filtered        bool   `xml:"filtered,omitempty"`
 }
 
 // FileSet is Specifies the output directory relative to the root
 //             of the root directory of the assembly. For example,
 //             "log" will put the specified files in the log directory.
 type FileSet struct {
-	Directory       string    `xml:"directory"`
-	LineEnding      string    `xml:"lineEnding"`
-	OutputDirectory string    `xml:"outputDirectory"`
-	Includes        *Includes `xml:"includes"`
-	Excludes        *Excludes `xml:"excludes"`
-	FileMode        string    `xml:"fileMode"`
-	DirectoryMode   string    `xml:"directoryMode"`
+	Directory       string    `xml:"directory,omitempty"`
+	LineEnding      string    `xml:"lineEnding,omitempty"`
+	OutputDirectory string    `xml:"outputDirectory,omitempty"`
+	Includes        *Includes `xml:"includes,omitempty"`
+	Excludes        *Excludes `xml:"excludes,omitempty"`
+	FileMode        string    `xml:"fileMode,omitempty"`
+	DirectoryMode   string    `xml:"directoryMode,omitempty"`
 }

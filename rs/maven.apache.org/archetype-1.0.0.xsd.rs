@@ -59,19 +59,19 @@ pub struct SiteResources {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct ArchetypeModel {
 	#[serde(rename = "id")]
-	pub id: String,
+	pub id: Option<String>,
 	#[serde(rename = "allowPartial")]
-	pub allow_partial: bool,
+	pub allow_partial: Option<bool>,
 	#[serde(rename = "sources")]
-	pub sources: Sources,
+	pub sources: Option<Sources>,
 	#[serde(rename = "resources")]
-	pub resources: Resources,
+	pub resources: Option<Resources>,
 	#[serde(rename = "testSources")]
-	pub test_sources: TestSources,
+	pub test_sources: Option<TestSources>,
 	#[serde(rename = "testResources")]
-	pub test_resources: TestResources,
+	pub test_resources: Option<TestResources>,
 	#[serde(rename = "siteResources")]
-	pub site_resources: SiteResources,
+	pub site_resources: Option<SiteResources>,
 }
 
 

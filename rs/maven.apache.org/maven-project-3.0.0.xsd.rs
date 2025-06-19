@@ -10,7 +10,7 @@ use serde_xml_rs::from_reader;
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Project {
 	#[serde(rename = "extend")]
-	pub extend: String,
+	pub extend: Option<String>,
 	#[serde(rename = "pomVersion")]
 	pub pom_version: String,
 	#[serde(rename = "id")]
@@ -18,7 +18,7 @@ pub struct Project {
 	#[serde(rename = "name")]
 	pub name: String,
 	#[serde(rename = "groupId")]
-	pub group_id: String,
+	pub group_id: Option<String>,
 	#[serde(rename = "currentVersion")]
 	pub current_version: String,
 	#[serde(rename = "organization")]
@@ -26,49 +26,49 @@ pub struct Project {
 	#[serde(rename = "inceptionYear")]
 	pub inception_year: String,
 	#[serde(rename = "package")]
-	pub package: String,
+	pub package: Option<String>,
 	#[serde(rename = "logo")]
-	pub logo: String,
+	pub logo: Option<String>,
 	#[serde(rename = "gumpRepositoryId")]
-	pub gump_repository_id: String,
+	pub gump_repository_id: Option<String>,
 	#[serde(rename = "description")]
-	pub description: String,
+	pub description: Option<String>,
 	#[serde(rename = "shortDescription")]
 	pub short_description: String,
 	#[serde(rename = "url")]
-	pub url: String,
+	pub url: Option<String>,
 	#[serde(rename = "issueTrackingUrl")]
-	pub issue_tracking_url: String,
+	pub issue_tracking_url: Option<String>,
 	#[serde(rename = "siteAddress")]
-	pub site_address: String,
+	pub site_address: Option<String>,
 	#[serde(rename = "siteDirectory")]
-	pub site_directory: String,
+	pub site_directory: Option<String>,
 	#[serde(rename = "distributionSite")]
-	pub distribution_site: String,
+	pub distribution_site: Option<String>,
 	#[serde(rename = "distributionDirectory")]
-	pub distribution_directory: String,
+	pub distribution_directory: Option<String>,
 	#[serde(rename = "repository")]
-	pub repository: Repository,
+	pub repository: Option<Repository>,
 	#[serde(rename = "versions")]
-	pub versions: Versions,
+	pub versions: Option<Versions>,
 	#[serde(rename = "branches")]
-	pub branches: Branches,
+	pub branches: Option<Branches>,
 	#[serde(rename = "mailingLists")]
-	pub mailing_lists: MailingLists,
+	pub mailing_lists: Option<MailingLists>,
 	#[serde(rename = "developers")]
 	pub developers: Developers,
 	#[serde(rename = "contributors")]
-	pub contributors: Contributors,
+	pub contributors: Option<Contributors>,
 	#[serde(rename = "licenses")]
-	pub licenses: Licenses,
+	pub licenses: Option<Licenses>,
 	#[serde(rename = "dependencies")]
-	pub dependencies: Dependencies,
+	pub dependencies: Option<Dependencies>,
 	#[serde(rename = "build")]
 	pub build: Build,
 	#[serde(rename = "reports")]
-	pub reports: Reports,
+	pub reports: Option<Reports>,
 	#[serde(rename = "properties")]
-	pub properties: Properties,
+	pub properties: Option<Properties>,
 }
 
 
@@ -246,9 +246,9 @@ pub struct Repository {
 	#[serde(rename = "connection")]
 	pub connection: String,
 	#[serde(rename = "developerConnection")]
-	pub developer_connection: String,
+	pub developer_connection: Option<String>,
 	#[serde(rename = "url")]
-	pub url: String,
+	pub url: Option<String>,
 }
 
 
@@ -258,9 +258,9 @@ pub struct Organization {
 	#[serde(rename = "name")]
 	pub name: String,
 	#[serde(rename = "url")]
-	pub url: String,
+	pub url: Option<String>,
 	#[serde(rename = "logo")]
-	pub logo: String,
+	pub logo: Option<String>,
 }
 
 
@@ -326,7 +326,7 @@ pub struct MailingList {
 	#[serde(rename = "unsubscribe")]
 	pub unsubscribe: String,
 	#[serde(rename = "archive")]
-	pub archive: String,
+	pub archive: Option<String>,
 }
 
 
@@ -460,11 +460,11 @@ pub struct Licenses {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct License {
 	#[serde(rename = "name")]
-	pub name: String,
+	pub name: Option<String>,
 	#[serde(rename = "url")]
-	pub url: String,
+	pub url: Option<String>,
 	#[serde(rename = "distribution")]
-	pub distribution: char,
+	pub distribution: Option<char>,
 }
 
 
@@ -488,21 +488,21 @@ pub struct Dependencies {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Dependency {
 	#[serde(rename = "id")]
-	pub id: String,
+	pub id: Option<String>,
 	#[serde(rename = "groupId")]
-	pub group_id: String,
+	pub group_id: Option<String>,
 	#[serde(rename = "artifactId")]
-	pub artifact_id: String,
+	pub artifact_id: Option<String>,
 	#[serde(rename = "version")]
 	pub version: String,
 	#[serde(rename = "jar")]
-	pub jar: String,
+	pub jar: Option<String>,
 	#[serde(rename = "type")]
-	pub type_attr: String,
+	pub type_attr: Option<String>,
 	#[serde(rename = "url")]
-	pub url: String,
+	pub url: Option<String>,
 	#[serde(rename = "properties")]
-	pub properties: Properties,
+	pub properties: Option<Properties>,
 }
 
 
@@ -526,21 +526,21 @@ pub struct jar {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Build {
 	#[serde(rename = "nagEmailAddress")]
-	pub nag_email_address: String,
+	pub nag_email_address: Option<String>,
 	#[serde(rename = "sourceDirectory")]
-	pub source_directory: String,
+	pub source_directory: Option<String>,
 	#[serde(rename = "sourceModifications")]
-	pub source_modifications: SourceModifications,
+	pub source_modifications: Option<SourceModifications>,
 	#[serde(rename = "unitTestSourceDirectory")]
-	pub unit_test_source_directory: String,
+	pub unit_test_source_directory: Option<String>,
 	#[serde(rename = "integrationUnitTestSourceDirectory")]
-	pub integration_unit_test_source_directory: String,
+	pub integration_unit_test_source_directory: Option<String>,
 	#[serde(rename = "aspectSourceDirectory")]
-	pub aspect_source_directory: String,
+	pub aspect_source_directory: Option<String>,
 	#[serde(rename = "unitTest")]
-	pub unit_test: UnitTest,
+	pub unit_test: Option<UnitTest>,
 	#[serde(rename = "resources")]
-	pub resources: Resources,
+	pub resources: Option<Resources>,
 }
 
 
@@ -612,7 +612,7 @@ pub struct UnitTest {
 	#[serde(rename = "excludes")]
 	pub excludes: Vec<Excludes>,
 	#[serde(rename = "resources")]
-	pub resources: Resources,
+	pub resources: Option<Resources>,
 }
 
 
@@ -684,15 +684,15 @@ pub struct filtering {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Resource {
 	#[serde(rename = "directory")]
-	pub directory: String,
+	pub directory: Option<String>,
 	#[serde(rename = "targetPath")]
-	pub target_path: String,
+	pub target_path: Option<String>,
 	#[serde(rename = "includes")]
 	pub includes: Vec<Includes>,
 	#[serde(rename = "excludes")]
 	pub excludes: Vec<Excludes>,
 	#[serde(rename = "filtering")]
-	pub filtering: bool,
+	pub filtering: Option<bool>,
 }
 
 

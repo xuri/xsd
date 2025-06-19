@@ -78,19 +78,19 @@ pub struct CTCTStyleLabel {
 	#[serde(rename = "name")]
 	pub name: String,
 	#[serde(rename = "fillClrLst")]
-	pub fill_clr_lst: CTColors,
+	pub fill_clr_lst: Option<CTColors>,
 	#[serde(rename = "linClrLst")]
-	pub lin_clr_lst: CTColors,
+	pub lin_clr_lst: Option<CTColors>,
 	#[serde(rename = "effectClrLst")]
-	pub effect_clr_lst: CTColors,
+	pub effect_clr_lst: Option<CTColors>,
 	#[serde(rename = "txLinClrLst")]
-	pub tx_lin_clr_lst: CTColors,
+	pub tx_lin_clr_lst: Option<CTColors>,
 	#[serde(rename = "txFillClrLst")]
-	pub tx_fill_clr_lst: CTColors,
+	pub tx_fill_clr_lst: Option<CTColors>,
 	#[serde(rename = "txEffectClrLst")]
-	pub tx_effect_clr_lst: CTColors,
+	pub tx_effect_clr_lst: Option<CTColors>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -106,11 +106,11 @@ pub struct CTColorTransform {
 	#[serde(rename = "desc")]
 	pub desc: Vec<CTCTDescription>,
 	#[serde(rename = "catLst")]
-	pub cat_lst: CTCTCategories,
+	pub cat_lst: Option<CTCTCategories>,
 	#[serde(rename = "styleLbl")]
 	pub style_lbl: Vec<CTCTStyleLabel>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -136,9 +136,9 @@ pub struct CTColorTransformHeader {
 	#[serde(rename = "desc")]
 	pub desc: Vec<CTCTDescription>,
 	#[serde(rename = "catLst")]
-	pub cat_lst: CTCTCategories,
+	pub cat_lst: Option<CTCTCategories>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -184,13 +184,13 @@ pub struct CTPt {
 	#[serde(rename = "cxnId")]
 	pub cxn_id: Option<STModelId>,
 	#[serde(rename = "prSet")]
-	pub pr_set: CTElemPropSet,
+	pub pr_set: Option<CTElemPropSet>,
 	#[serde(rename = "spPr")]
-	pub sp_pr: CTShapeProperties,
+	pub sp_pr: Option<CTShapeProperties>,
 	#[serde(rename = "t")]
-	pub t: CTTextBody,
+	pub t: Option<CTTextBody>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -232,7 +232,7 @@ pub struct CTCxn {
 	#[serde(rename = "presId")]
 	pub pres_id: Option<String>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -250,13 +250,13 @@ pub struct CTDataModel {
 	#[serde(rename = "ptLst")]
 	pub pt_lst: CTPtList,
 	#[serde(rename = "cxnLst")]
-	pub cxn_lst: CTCxnList,
+	pub cxn_lst: Option<CTCxnList>,
 	#[serde(rename = "bg")]
-	pub bg: CTBackgroundFormatting,
+	pub bg: Option<CTBackgroundFormatting>,
 	#[serde(rename = "whole")]
-	pub whole: CTWholeE2oFormatting,
+	pub whole: Option<CTWholeE2oFormatting>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -328,7 +328,7 @@ pub struct CTConstraint {
 	#[serde(rename = "fact")]
 	pub fact: Option<f64>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -352,7 +352,7 @@ pub struct CTNumericRule {
 	#[serde(rename = "max")]
 	pub max: Option<f64>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -370,7 +370,7 @@ pub struct CTPresentationOf {
 	#[serde(rename = "AG_IteratorAttributes")]
 	pub ag_iterator_attributes: Vec<AGIteratorAttributes>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
@@ -426,9 +426,9 @@ pub struct CTShape {
 	#[serde(rename = "blipPhldr")]
 	pub blip_phldr: Option<bool>,
 	#[serde(rename = "adjLst")]
-	pub adj_lst: CTAdjLst,
+	pub adj_lst: Option<CTAdjLst>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -452,7 +452,7 @@ pub struct CTAlgorithm {
 	#[serde(rename = "param")]
 	pub param: Vec<CTParameter>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -590,7 +590,7 @@ pub struct CTChoose {
 	#[serde(rename = "if")]
 	pub if_attr: Vec<CTWhen>,
 	#[serde(rename = "else")]
-	pub else_attr: CTOtherwise,
+	pub else_attr: Option<CTOtherwise>,
 }
 
 
@@ -600,7 +600,7 @@ pub struct CTSampleData {
 	#[serde(rename = "useDef")]
 	pub use_def: Option<bool>,
 	#[serde(rename = "dataModel")]
-	pub data_model: CTDataModel,
+	pub data_model: Option<CTDataModel>,
 }
 
 
@@ -656,17 +656,17 @@ pub struct CTDiagramDefinition {
 	#[serde(rename = "desc")]
 	pub desc: Vec<CTDescription>,
 	#[serde(rename = "catLst")]
-	pub cat_lst: CTCategories,
+	pub cat_lst: Option<CTCategories>,
 	#[serde(rename = "sampData")]
-	pub samp_data: CTSampleData,
+	pub samp_data: Option<CTSampleData>,
 	#[serde(rename = "styleData")]
-	pub style_data: CTSampleData,
+	pub style_data: Option<CTSampleData>,
 	#[serde(rename = "clrData")]
-	pub clr_data: CTSampleData,
+	pub clr_data: Option<CTSampleData>,
 	#[serde(rename = "layoutNode")]
 	pub layout_node: CTLayoutNode,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -694,9 +694,9 @@ pub struct CTDiagramDefinitionHeader {
 	#[serde(rename = "desc")]
 	pub desc: Vec<CTDescription>,
 	#[serde(rename = "catLst")]
-	pub cat_lst: CTCategories,
+	pub cat_lst: Option<CTCategories>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -896,9 +896,9 @@ pub struct CTElemPropSet {
 	#[serde(rename = "custRadScaleInc")]
 	pub cust_rad_scale_inc: Option<STPrSetCustVal>,
 	#[serde(rename = "presLayoutVars")]
-	pub pres_layout_vars: CTLayoutVariablePropertySet,
+	pub pres_layout_vars: Option<CTLayoutVariablePropertySet>,
 	#[serde(rename = "style")]
-	pub style: CTShapeStyle,
+	pub style: Option<CTShapeStyle>,
 }
 
 
@@ -1026,23 +1026,23 @@ pub struct CTResizeHandles {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTLayoutVariablePropertySet {
 	#[serde(rename = "orgChart")]
-	pub org_chart: CTOrgChart,
+	pub org_chart: Option<CTOrgChart>,
 	#[serde(rename = "chMax")]
-	pub ch_max: CTChildMax,
+	pub ch_max: Option<CTChildMax>,
 	#[serde(rename = "chPref")]
-	pub ch_pref: CTChildPref,
+	pub ch_pref: Option<CTChildPref>,
 	#[serde(rename = "bulletEnabled")]
-	pub bullet_enabled: CTBulletEnabled,
+	pub bullet_enabled: Option<CTBulletEnabled>,
 	#[serde(rename = "dir")]
-	pub dir: CTDirection,
+	pub dir: Option<CTDirection>,
 	#[serde(rename = "hierBranch")]
-	pub hier_branch: CTHierBranchStyle,
+	pub hier_branch: Option<CTHierBranchStyle>,
 	#[serde(rename = "animOne")]
-	pub anim_one: CTAnimOne,
+	pub anim_one: Option<CTAnimOne>,
 	#[serde(rename = "animLvl")]
-	pub anim_lvl: CTAnimLvl,
+	pub anim_lvl: Option<CTAnimLvl>,
 	#[serde(rename = "resizeHandles")]
-	pub resize_handles: CTResizeHandles,
+	pub resize_handles: Option<CTResizeHandles>,
 }
 
 
@@ -1098,15 +1098,15 @@ pub struct CTStyleLabel {
 	#[serde(rename = "name")]
 	pub name: String,
 	#[serde(rename = "scene3d")]
-	pub scene3d: CTScene3D,
+	pub scene3d: Option<CTScene3D>,
 	#[serde(rename = "sp3d")]
-	pub sp3d: CTShape3D,
+	pub sp3d: Option<CTShape3D>,
 	#[serde(rename = "txPr")]
-	pub tx_pr: CTTextProps,
+	pub tx_pr: Option<CTTextProps>,
 	#[serde(rename = "style")]
-	pub style: CTShapeStyle,
+	pub style: Option<CTShapeStyle>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -1122,13 +1122,13 @@ pub struct CTStyleDefinition {
 	#[serde(rename = "desc")]
 	pub desc: Vec<CTSDDescription>,
 	#[serde(rename = "catLst")]
-	pub cat_lst: CTSDCategories,
+	pub cat_lst: Option<CTSDCategories>,
 	#[serde(rename = "scene3d")]
-	pub scene3d: CTScene3D,
+	pub scene3d: Option<CTScene3D>,
 	#[serde(rename = "styleLbl")]
 	pub style_lbl: Vec<CTStyleLabel>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 
@@ -1154,9 +1154,9 @@ pub struct CTStyleDefinitionHeader {
 	#[serde(rename = "desc")]
 	pub desc: Vec<CTSDDescription>,
 	#[serde(rename = "catLst")]
-	pub cat_lst: CTSDCategories,
+	pub cat_lst: Option<CTSDCategories>,
 	#[serde(rename = "extLst")]
-	pub ext_lst: CTOfficeArtExtensionList,
+	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
 
 

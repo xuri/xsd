@@ -12,7 +12,7 @@ type Project *DecorationModel
 // PoweredBy is Powered by logos list.
 type PoweredBy struct {
 	XMLName xml.Name `xml:"poweredBy"`
-	Logo    []*Logo  `xml:"logo"`
+	Logo    []*Logo  `xml:"logo,omitempty"`
 }
 
 // Custom is Custom configuration for use with customized Velocity templates. Data from this field are
@@ -27,18 +27,18 @@ type Custom struct {
 type DecorationModel struct {
 	NameAttr                 string       `xml:"name,attr,omitempty"`
 	CombineSelfAttr          string       `xml:"combine.self,attr,omitempty"`
-	BannerLeft               *Banner      `xml:"bannerLeft"`
-	BannerRight              *Banner      `xml:"bannerRight"`
-	GoogleAdSenseClient      string       `xml:"googleAdSenseClient"`
-	GoogleAdSenseSlot        string       `xml:"googleAdSenseSlot"`
-	GoogleAnalyticsAccountId string       `xml:"googleAnalyticsAccountId"`
-	PublishDate              *PublishDate `xml:"publishDate"`
-	Version                  *Version     `xml:"version"`
-	Edit                     string       `xml:"edit"`
-	PoweredBy                *PoweredBy   `xml:"poweredBy"`
-	Skin                     *Skin        `xml:"skin"`
-	Body                     *Body        `xml:"body"`
-	Custom                   *Custom      `xml:"custom"`
+	BannerLeft               *Banner      `xml:"bannerLeft,omitempty"`
+	BannerRight              *Banner      `xml:"bannerRight,omitempty"`
+	GoogleAdSenseClient      string       `xml:"googleAdSenseClient,omitempty"`
+	GoogleAdSenseSlot        string       `xml:"googleAdSenseSlot,omitempty"`
+	GoogleAnalyticsAccountId string       `xml:"googleAnalyticsAccountId,omitempty"`
+	PublishDate              *PublishDate `xml:"publishDate,omitempty"`
+	Version                  *Version     `xml:"version,omitempty"`
+	Edit                     string       `xml:"edit,omitempty"`
+	PoweredBy                *PoweredBy   `xml:"poweredBy,omitempty"`
+	Skin                     *Skin        `xml:"skin,omitempty"`
+	Body                     *Body        `xml:"body,omitempty"`
+	Custom                   *Custom      `xml:"custom,omitempty"`
 }
 
 // Version is Modify display properties for version published.
@@ -48,35 +48,35 @@ type Version struct {
 
 // Banner is The title for the banner image.
 type Banner struct {
-	Name   string `xml:"name"`
-	Src    string `xml:"src"`
-	Alt    string `xml:"alt"`
-	Href   string `xml:"href"`
-	Border string `xml:"border"`
-	Width  string `xml:"width"`
-	Height string `xml:"height"`
-	Title  string `xml:"title"`
+	Name   string `xml:"name,omitempty"`
+	Src    string `xml:"src,omitempty"`
+	Alt    string `xml:"alt,omitempty"`
+	Href   string `xml:"href,omitempty"`
+	Border string `xml:"border,omitempty"`
+	Width  string `xml:"width,omitempty"`
+	Height string `xml:"height,omitempty"`
+	Title  string `xml:"title,omitempty"`
 }
 
 // Links is A list of links to display in the navigation.
 type Links struct {
 	XMLName xml.Name    `xml:"links"`
-	Item    []*LinkItem `xml:"item"`
+	Item    []*LinkItem `xml:"item,omitempty"`
 }
 
 // Breadcrumbs is A list of breadcrumbs to display in the navigation.
 type Breadcrumbs struct {
 	XMLName xml.Name    `xml:"breadcrumbs"`
-	Item    []*LinkItem `xml:"item"`
+	Item    []*LinkItem `xml:"item,omitempty"`
 }
 
 // Body is Additional content (like JavaScript) to include in the HEAD block of the generated pages.
 type Body struct {
-	Head        string       `xml:"head"`
-	Links       *Links       `xml:"links"`
-	Breadcrumbs *Breadcrumbs `xml:"breadcrumbs"`
-	Menu        []*Menu      `xml:"menu"`
-	Footer      string       `xml:"footer"`
+	Head        string       `xml:"head,omitempty"`
+	Links       *Links       `xml:"links,omitempty"`
+	Breadcrumbs *Breadcrumbs `xml:"breadcrumbs,omitempty"`
+	Menu        []*Menu      `xml:"menu,omitempty"`
+	Footer      string       `xml:"footer,omitempty"`
 }
 
 // LinkItem is A link in the navigation.
@@ -106,7 +106,7 @@ type Menu struct {
 	WidthAttr        string      `xml:"width,attr,omitempty"`
 	HeightAttr       string      `xml:"height,attr,omitempty"`
 	TitleAttr        string      `xml:"title,attr,omitempty"`
-	Item             []*MenuItem `xml:"item"`
+	Item             []*MenuItem `xml:"item,omitempty"`
 }
 
 // MenuItem is A list of menu item.
@@ -123,15 +123,15 @@ type MenuItem struct {
 	HeightAttr   string      `xml:"height,attr,omitempty"`
 	TargetAttr   string      `xml:"target,attr,omitempty"`
 	TitleAttr    string      `xml:"title,attr,omitempty"`
-	Description  string      `xml:"description"`
-	Item         []*MenuItem `xml:"item"`
+	Description  string      `xml:"description,omitempty"`
+	Item         []*MenuItem `xml:"item,omitempty"`
 }
 
 // Skin is The skin version.
 type Skin struct {
-	GroupId    string `xml:"groupId"`
-	ArtifactId string `xml:"artifactId"`
-	Version    string `xml:"version"`
+	GroupId    string `xml:"groupId,omitempty"`
+	ArtifactId string `xml:"artifactId,omitempty"`
+	Version    string `xml:"version,omitempty"`
 }
 
 // Logo is Power by logo on the navigation.

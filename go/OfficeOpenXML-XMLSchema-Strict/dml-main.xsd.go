@@ -11,7 +11,7 @@ type CTAudioFile struct {
 	XMLName         xml.Name                  `xml:"CT_AudioFile"`
 	RLinkAttr       string                    `xml:"r:link,attr"`
 	ContentTypeAttr string                    `xml:"contentType,attr,omitempty"`
-	ExtLst          *CTOfficeArtExtensionList `xml:"extLst"`
+	ExtLst          *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTVideoFile ...
@@ -19,14 +19,14 @@ type CTVideoFile struct {
 	XMLName         xml.Name                  `xml:"CT_VideoFile"`
 	RLinkAttr       string                    `xml:"r:link,attr"`
 	ContentTypeAttr string                    `xml:"contentType,attr,omitempty"`
-	ExtLst          *CTOfficeArtExtensionList `xml:"extLst"`
+	ExtLst          *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTQuickTimeFile ...
 type CTQuickTimeFile struct {
 	XMLName   xml.Name                  `xml:"CT_QuickTimeFile"`
 	RLinkAttr string                    `xml:"r:link,attr"`
-	ExtLst    *CTOfficeArtExtensionList `xml:"extLst"`
+	ExtLst    *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTAudioCDTime ...
@@ -41,7 +41,7 @@ type CTAudioCD struct {
 	XMLName xml.Name                  `xml:"CT_AudioCD"`
 	St      *CTAudioCDTime            `xml:"st"`
 	End     *CTAudioCDTime            `xml:"end"`
-	ExtLst  *CTOfficeArtExtensionList `xml:"extLst"`
+	ExtLst  *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // EGMedia ...
@@ -82,7 +82,7 @@ type CTColorScheme struct {
 	Accent6  *CTColor                  `xml:"accent6"`
 	Hlink    *CTColor                  `xml:"hlink"`
 	FolHlink *CTColor                  `xml:"folHlink"`
-	ExtLst   *CTOfficeArtExtensionList `xml:"extLst"`
+	ExtLst   *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTCustomColor ...
@@ -102,7 +102,7 @@ type CTSupplementalFont struct {
 // CTCustomColorList ...
 type CTCustomColorList struct {
 	XMLName xml.Name         `xml:"CT_CustomColorList"`
-	CustClr []*CTCustomColor `xml:"custClr"`
+	CustClr []*CTCustomColor `xml:"custClr,omitempty"`
 }
 
 // CTFontCollection ...
@@ -111,16 +111,16 @@ type CTFontCollection struct {
 	Latin   *CTTextFont               `xml:"latin"`
 	Ea      *CTTextFont               `xml:"ea"`
 	Cs      *CTTextFont               `xml:"cs"`
-	Font    []*CTSupplementalFont     `xml:"font"`
-	ExtLst  *CTOfficeArtExtensionList `xml:"extLst"`
+	Font    []*CTSupplementalFont     `xml:"font,omitempty"`
+	ExtLst  *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTEffectStyleItem ...
 type CTEffectStyleItem struct {
 	XMLName            xml.Name `xml:"CT_EffectStyleItem"`
 	EGEffectProperties []*EGEffectProperties
-	Scene3d            *CTScene3D `xml:"scene3d"`
-	Sp3d               *CTShape3D `xml:"sp3d"`
+	Scene3d            *CTScene3D `xml:"scene3d,omitempty"`
+	Sp3d               *CTShape3D `xml:"sp3d,omitempty"`
 }
 
 // CTFontScheme ...
@@ -129,7 +129,7 @@ type CTFontScheme struct {
 	NameAttr  string                    `xml:"name,attr"`
 	MajorFont *CTFontCollection         `xml:"majorFont"`
 	MinorFont *CTFontCollection         `xml:"minorFont"`
-	ExtLst    *CTOfficeArtExtensionList `xml:"extLst"`
+	ExtLst    *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTFillStyleList ...
@@ -172,7 +172,7 @@ type CTBaseStyles struct {
 	ClrScheme  *CTColorScheme            `xml:"clrScheme"`
 	FontScheme *CTFontScheme             `xml:"fontScheme"`
 	FmtScheme  *CTStyleMatrix            `xml:"fmtScheme"`
-	ExtLst     *CTOfficeArtExtensionList `xml:"extLst"`
+	ExtLst     *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTOfficeArtExtension ...
@@ -436,8 +436,8 @@ type CTTransform2D struct {
 	RotAttr   int               `xml:"rot,attr,omitempty"`
 	FlipHAttr bool              `xml:"flipH,attr,omitempty"`
 	FlipVAttr bool              `xml:"flipV,attr,omitempty"`
-	Off       *CTPoint2D        `xml:"off"`
-	Ext       *CTPositiveSize2D `xml:"ext"`
+	Off       *CTPoint2D        `xml:"off,omitempty"`
+	Ext       *CTPositiveSize2D `xml:"ext,omitempty"`
 }
 
 // CTGroupTransform2D ...
@@ -446,10 +446,10 @@ type CTGroupTransform2D struct {
 	RotAttr   int               `xml:"rot,attr,omitempty"`
 	FlipHAttr bool              `xml:"flipH,attr,omitempty"`
 	FlipVAttr bool              `xml:"flipV,attr,omitempty"`
-	Off       *CTPoint2D        `xml:"off"`
-	Ext       *CTPositiveSize2D `xml:"ext"`
-	ChOff     *CTPoint2D        `xml:"chOff"`
-	ChExt     *CTPositiveSize2D `xml:"chExt"`
+	Off       *CTPoint2D        `xml:"off,omitempty"`
+	Ext       *CTPositiveSize2D `xml:"ext,omitempty"`
+	ChOff     *CTPoint2D        `xml:"chOff,omitempty"`
+	ChExt     *CTPositiveSize2D `xml:"chExt,omitempty"`
 }
 
 // CTPoint3D ...
@@ -539,8 +539,8 @@ type CTHyperlink struct {
 	HistoryAttr        bool                      `xml:"history,attr,omitempty"`
 	HighlightClickAttr bool                      `xml:"highlightClick,attr,omitempty"`
 	EndSndAttr         bool                      `xml:"endSnd,attr,omitempty"`
-	Snd                *CTEmbeddedWAVAudioFile   `xml:"snd"`
-	ExtLst             *CTOfficeArtExtensionList `xml:"extLst"`
+	Snd                *CTEmbeddedWAVAudioFile   `xml:"snd,omitempty"`
+	ExtLst             *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // STDrawingElementId ...
@@ -565,7 +565,7 @@ type AGLocking struct {
 type CTConnectorLocking struct {
 	XMLName   xml.Name `xml:"CT_ConnectorLocking"`
 	AGLocking *AGLocking
-	ExtLst    *CTOfficeArtExtensionList `xml:"extLst"`
+	ExtLst    *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTShapeLocking ...
@@ -573,7 +573,7 @@ type CTShapeLocking struct {
 	XMLName        xml.Name `xml:"CT_ShapeLocking"`
 	AGLocking      *AGLocking
 	NoTextEditAttr bool                      `xml:"noTextEdit,attr,omitempty"`
-	ExtLst         *CTOfficeArtExtensionList `xml:"extLst"`
+	ExtLst         *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTPictureLocking ...
@@ -581,7 +581,7 @@ type CTPictureLocking struct {
 	XMLName    xml.Name `xml:"CT_PictureLocking"`
 	AGLocking  *AGLocking
 	NoCropAttr bool                      `xml:"noCrop,attr,omitempty"`
-	ExtLst     *CTOfficeArtExtensionList `xml:"extLst"`
+	ExtLst     *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTGroupLocking ...
@@ -594,7 +594,7 @@ type CTGroupLocking struct {
 	NoChangeAspectAttr bool                      `xml:"noChangeAspect,attr,omitempty"`
 	NoMoveAttr         bool                      `xml:"noMove,attr,omitempty"`
 	NoResizeAttr       bool                      `xml:"noResize,attr,omitempty"`
-	ExtLst             *CTOfficeArtExtensionList `xml:"extLst"`
+	ExtLst             *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTGraphicalObjectFrameLocking ...
@@ -606,14 +606,14 @@ type CTGraphicalObjectFrameLocking struct {
 	NoChangeAspectAttr bool                      `xml:"noChangeAspect,attr,omitempty"`
 	NoMoveAttr         bool                      `xml:"noMove,attr,omitempty"`
 	NoResizeAttr       bool                      `xml:"noResize,attr,omitempty"`
-	ExtLst             *CTOfficeArtExtensionList `xml:"extLst"`
+	ExtLst             *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTContentPartLocking ...
 type CTContentPartLocking struct {
 	XMLName   xml.Name `xml:"CT_ContentPartLocking"`
 	AGLocking *AGLocking
-	ExtLst    *CTOfficeArtExtensionList `xml:"extLst"`
+	ExtLst    *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTNonVisualDrawingProps ...
@@ -624,56 +624,56 @@ type CTNonVisualDrawingProps struct {
 	DescrAttr  string                    `xml:"descr,attr,omitempty"`
 	HiddenAttr bool                      `xml:"hidden,attr,omitempty"`
 	TitleAttr  string                    `xml:"title,attr,omitempty"`
-	HlinkClick *CTHyperlink              `xml:"hlinkClick"`
-	HlinkHover *CTHyperlink              `xml:"hlinkHover"`
-	ExtLst     *CTOfficeArtExtensionList `xml:"extLst"`
+	HlinkClick *CTHyperlink              `xml:"hlinkClick,omitempty"`
+	HlinkHover *CTHyperlink              `xml:"hlinkHover,omitempty"`
+	ExtLst     *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTNonVisualDrawingShapeProps ...
 type CTNonVisualDrawingShapeProps struct {
 	XMLName   xml.Name                  `xml:"CT_NonVisualDrawingShapeProps"`
 	TxBoxAttr bool                      `xml:"txBox,attr,omitempty"`
-	SpLocks   *CTShapeLocking           `xml:"spLocks"`
-	ExtLst    *CTOfficeArtExtensionList `xml:"extLst"`
+	SpLocks   *CTShapeLocking           `xml:"spLocks,omitempty"`
+	ExtLst    *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTNonVisualConnectorProperties ...
 type CTNonVisualConnectorProperties struct {
 	XMLName    xml.Name                  `xml:"CT_NonVisualConnectorProperties"`
-	CxnSpLocks *CTConnectorLocking       `xml:"cxnSpLocks"`
-	StCxn      *CTConnection             `xml:"stCxn"`
-	EndCxn     *CTConnection             `xml:"endCxn"`
-	ExtLst     *CTOfficeArtExtensionList `xml:"extLst"`
+	CxnSpLocks *CTConnectorLocking       `xml:"cxnSpLocks,omitempty"`
+	StCxn      *CTConnection             `xml:"stCxn,omitempty"`
+	EndCxn     *CTConnection             `xml:"endCxn,omitempty"`
+	ExtLst     *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTNonVisualPictureProperties ...
 type CTNonVisualPictureProperties struct {
 	XMLName                  xml.Name                  `xml:"CT_NonVisualPictureProperties"`
 	PreferRelativeResizeAttr bool                      `xml:"preferRelativeResize,attr,omitempty"`
-	PicLocks                 *CTPictureLocking         `xml:"picLocks"`
-	ExtLst                   *CTOfficeArtExtensionList `xml:"extLst"`
+	PicLocks                 *CTPictureLocking         `xml:"picLocks,omitempty"`
+	ExtLst                   *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTNonVisualGroupDrawingShapeProps ...
 type CTNonVisualGroupDrawingShapeProps struct {
 	XMLName    xml.Name                  `xml:"CT_NonVisualGroupDrawingShapeProps"`
-	GrpSpLocks *CTGroupLocking           `xml:"grpSpLocks"`
-	ExtLst     *CTOfficeArtExtensionList `xml:"extLst"`
+	GrpSpLocks *CTGroupLocking           `xml:"grpSpLocks,omitempty"`
+	ExtLst     *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTNonVisualGraphicFrameProperties ...
 type CTNonVisualGraphicFrameProperties struct {
 	XMLName           xml.Name                       `xml:"CT_NonVisualGraphicFrameProperties"`
-	GraphicFrameLocks *CTGraphicalObjectFrameLocking `xml:"graphicFrameLocks"`
-	ExtLst            *CTOfficeArtExtensionList      `xml:"extLst"`
+	GraphicFrameLocks *CTGraphicalObjectFrameLocking `xml:"graphicFrameLocks,omitempty"`
+	ExtLst            *CTOfficeArtExtensionList      `xml:"extLst,omitempty"`
 }
 
 // CTNonVisualContentPartProperties ...
 type CTNonVisualContentPartProperties struct {
 	XMLName       xml.Name                  `xml:"CT_NonVisualContentPartProperties"`
 	IsCommentAttr bool                      `xml:"isComment,attr,omitempty"`
-	CpLocks       *CTContentPartLocking     `xml:"cpLocks"`
-	ExtLst        *CTOfficeArtExtensionList `xml:"extLst"`
+	CpLocks       *CTContentPartLocking     `xml:"cpLocks,omitempty"`
+	ExtLst        *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTGraphicalObjectData ...
@@ -774,7 +774,7 @@ type CTBackgroundFormatting struct {
 type CTWholeE2oFormatting struct {
 	XMLName            xml.Name `xml:"CT_WholeE2oFormatting"`
 	EGEffectProperties []*EGEffectProperties
-	Ln                 *CTLineProperties `xml:"ln"`
+	Ln                 *CTLineProperties `xml:"ln,omitempty"`
 }
 
 // CTGvmlUseShapeRectangle ...
@@ -788,7 +788,7 @@ type CTGvmlTextShape struct {
 	TxBody    *CTTextBody               `xml:"txBody"`
 	UseSpRect *CTGvmlUseShapeRectangle  `xml:"useSpRect"`
 	Xfrm      *CTTransform2D            `xml:"xfrm"`
-	ExtLst    *CTOfficeArtExtensionList `xml:"extLst"`
+	ExtLst    *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTGvmlShapeNonVisual ...
@@ -803,9 +803,9 @@ type CTGvmlShape struct {
 	XMLName xml.Name                  `xml:"CT_GvmlShape"`
 	NvSpPr  *CTGvmlShapeNonVisual     `xml:"nvSpPr"`
 	SpPr    *CTShapeProperties        `xml:"spPr"`
-	TxSp    *CTGvmlTextShape          `xml:"txSp"`
-	Style   *CTShapeStyle             `xml:"style"`
-	ExtLst  *CTOfficeArtExtensionList `xml:"extLst"`
+	TxSp    *CTGvmlTextShape          `xml:"txSp,omitempty"`
+	Style   *CTShapeStyle             `xml:"style,omitempty"`
+	ExtLst  *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTGvmlConnectorNonVisual ...
@@ -820,8 +820,8 @@ type CTGvmlConnector struct {
 	XMLName   xml.Name                  `xml:"CT_GvmlConnector"`
 	NvCxnSpPr *CTGvmlConnectorNonVisual `xml:"nvCxnSpPr"`
 	SpPr      *CTShapeProperties        `xml:"spPr"`
-	Style     *CTShapeStyle             `xml:"style"`
-	ExtLst    *CTOfficeArtExtensionList `xml:"extLst"`
+	Style     *CTShapeStyle             `xml:"style,omitempty"`
+	ExtLst    *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTGvmlPictureNonVisual ...
@@ -837,8 +837,8 @@ type CTGvmlPicture struct {
 	NvPicPr  *CTGvmlPictureNonVisual   `xml:"nvPicPr"`
 	BlipFill *CTBlipFillProperties     `xml:"blipFill"`
 	SpPr     *CTShapeProperties        `xml:"spPr"`
-	Style    *CTShapeStyle             `xml:"style"`
-	ExtLst   *CTOfficeArtExtensionList `xml:"extLst"`
+	Style    *CTShapeStyle             `xml:"style,omitempty"`
+	ExtLst   *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTGvmlGraphicFrameNonVisual ...
@@ -854,7 +854,7 @@ type CTGvmlGraphicalObjectFrame struct {
 	NvGraphicFramePr *CTGvmlGraphicFrameNonVisual `xml:"nvGraphicFramePr"`
 	Graphic          *CTGraphicalObject           `xml:"graphic"`
 	Xfrm             *CTTransform2D               `xml:"xfrm"`
-	ExtLst           *CTOfficeArtExtensionList    `xml:"extLst"`
+	ExtLst           *CTOfficeArtExtensionList    `xml:"extLst,omitempty"`
 }
 
 // CTGvmlGroupShapeNonVisual ...
@@ -875,7 +875,7 @@ type CTGvmlGroupShape struct {
 	Pic          []*CTGvmlPicture              `xml:"pic"`
 	GraphicFrame []*CTGvmlGraphicalObjectFrame `xml:"graphicFrame"`
 	GrpSp        []*CTGvmlGroupShape           `xml:"grpSp"`
-	ExtLst       *CTOfficeArtExtensionList     `xml:"extLst"`
+	ExtLst       *CTOfficeArtExtensionList     `xml:"extLst,omitempty"`
 }
 
 // STPresetCameraType ...
@@ -890,7 +890,7 @@ type CTCamera struct {
 	PrstAttr string                `xml:"prst,attr"`
 	FovAttr  int                   `xml:"fov,attr,omitempty"`
 	ZoomAttr *STPositivePercentage `xml:"zoom,attr,omitempty"`
-	Rot      *CTSphereCoords       `xml:"rot"`
+	Rot      *CTSphereCoords       `xml:"rot,omitempty"`
 }
 
 // STLightRigDirection ...
@@ -904,7 +904,7 @@ type CTLightRig struct {
 	XMLName xml.Name        `xml:"CT_LightRig"`
 	RigAttr string          `xml:"rig,attr"`
 	DirAttr string          `xml:"dir,attr"`
-	Rot     *CTSphereCoords `xml:"rot"`
+	Rot     *CTSphereCoords `xml:"rot,omitempty"`
 }
 
 // CTScene3D ...
@@ -912,8 +912,8 @@ type CTScene3D struct {
 	XMLName  xml.Name                  `xml:"CT_Scene3D"`
 	Camera   *CTCamera                 `xml:"camera"`
 	LightRig *CTLightRig               `xml:"lightRig"`
-	Backdrop *CTBackdrop               `xml:"backdrop"`
-	ExtLst   *CTOfficeArtExtensionList `xml:"extLst"`
+	Backdrop *CTBackdrop               `xml:"backdrop,omitempty"`
+	ExtLst   *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTBackdrop ...
@@ -922,7 +922,7 @@ type CTBackdrop struct {
 	Anchor  *CTPoint3D                `xml:"anchor"`
 	Norm    *CTVector3D               `xml:"norm"`
 	Up      *CTVector3D               `xml:"up"`
-	ExtLst  *CTOfficeArtExtensionList `xml:"extLst"`
+	ExtLst  *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // STBevelPresetType ...
@@ -946,11 +946,11 @@ type CTShape3D struct {
 	ExtrusionHAttr   int64                     `xml:"extrusionH,attr,omitempty"`
 	ContourWAttr     int64                     `xml:"contourW,attr,omitempty"`
 	PrstMaterialAttr string                    `xml:"prstMaterial,attr,omitempty"`
-	BevelT           *CTBevel                  `xml:"bevelT"`
-	BevelB           *CTBevel                  `xml:"bevelB"`
-	ExtrusionClr     *CTColor                  `xml:"extrusionClr"`
-	ContourClr       *CTColor                  `xml:"contourClr"`
-	ExtLst           *CTOfficeArtExtensionList `xml:"extLst"`
+	BevelT           *CTBevel                  `xml:"bevelT,omitempty"`
+	BevelB           *CTBevel                  `xml:"bevelB,omitempty"`
+	ExtrusionClr     *CTColor                  `xml:"extrusionClr,omitempty"`
+	ContourClr       *CTColor                  `xml:"contourClr,omitempty"`
+	ExtLst           *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTFlatText ...
@@ -1177,7 +1177,7 @@ type STPathShadeType string
 type CTPathShadeProperties struct {
 	XMLName    xml.Name        `xml:"CT_PathShadeProperties"`
 	PathAttr   string          `xml:"path,attr,omitempty"`
-	FillToRect *CTRelativeRect `xml:"fillToRect"`
+	FillToRect *CTRelativeRect `xml:"fillToRect,omitempty"`
 }
 
 // EGShadeProperties ...
@@ -1209,8 +1209,8 @@ type CTGradientFillProperties struct {
 	FlipAttr          string   `xml:"flip,attr,omitempty"`
 	RotWithShapeAttr  bool     `xml:"rotWithShape,attr,omitempty"`
 	EGShadeProperties []*EGShadeProperties
-	GsLst             *CTGradientStopList `xml:"gsLst"`
-	TileRect          *CTRelativeRect     `xml:"tileRect"`
+	GsLst             *CTGradientStopList `xml:"gsLst,omitempty"`
+	TileRect          *CTRelativeRect     `xml:"tileRect,omitempty"`
 }
 
 // CTTileInfoProperties ...
@@ -1227,7 +1227,7 @@ type CTTileInfoProperties struct {
 // CTStretchInfoProperties ...
 type CTStretchInfoProperties struct {
 	XMLName  xml.Name        `xml:"CT_StretchInfoProperties"`
-	FillRect *CTRelativeRect `xml:"fillRect"`
+	FillRect *CTRelativeRect `xml:"fillRect,omitempty"`
 }
 
 // EGFillModeProperties ...
@@ -1262,7 +1262,7 @@ type CTBlip struct {
 	Hsl          []*CTHSLEffect                `xml:"hsl"`
 	Lum          []*CTLuminanceEffect          `xml:"lum"`
 	Tint         []*CTTintEffect               `xml:"tint"`
-	ExtLst       *CTOfficeArtExtensionList     `xml:"extLst"`
+	ExtLst       *CTOfficeArtExtensionList     `xml:"extLst,omitempty"`
 }
 
 // CTBlipFillProperties ...
@@ -1271,8 +1271,8 @@ type CTBlipFillProperties struct {
 	DpiAttr              uint32   `xml:"dpi,attr,omitempty"`
 	RotWithShapeAttr     bool     `xml:"rotWithShape,attr,omitempty"`
 	EGFillModeProperties []*EGFillModeProperties
-	Blip                 *CTBlip         `xml:"blip"`
-	SrcRect              *CTRelativeRect `xml:"srcRect"`
+	Blip                 *CTBlip         `xml:"blip,omitempty"`
+	SrcRect              *CTRelativeRect `xml:"srcRect,omitempty"`
 }
 
 // STPresetPatternVal ...
@@ -1282,8 +1282,8 @@ type STPresetPatternVal string
 type CTPatternFillProperties struct {
 	XMLName  xml.Name `xml:"CT_PatternFillProperties"`
 	PrstAttr string   `xml:"prst,attr,omitempty"`
-	FgClr    *CTColor `xml:"fgClr"`
-	BgClr    *CTColor `xml:"bgClr"`
+	FgClr    *CTColor `xml:"fgClr,omitempty"`
+	BgClr    *CTColor `xml:"bgClr,omitempty"`
 }
 
 // CTGroupFillProperties ...
@@ -1392,14 +1392,14 @@ type CTBlendEffect struct {
 // CTEffectList ...
 type CTEffectList struct {
 	XMLName     xml.Name              `xml:"CT_EffectList"`
-	Blur        *CTBlurEffect         `xml:"blur"`
-	FillOverlay *CTFillOverlayEffect  `xml:"fillOverlay"`
-	Glow        *CTGlowEffect         `xml:"glow"`
-	InnerShdw   *CTInnerShadowEffect  `xml:"innerShdw"`
-	OuterShdw   *CTOuterShadowEffect  `xml:"outerShdw"`
-	PrstShdw    *CTPresetShadowEffect `xml:"prstShdw"`
-	Reflection  *CTReflectionEffect   `xml:"reflection"`
-	SoftEdge    *CTSoftEdgesEffect    `xml:"softEdge"`
+	Blur        *CTBlurEffect         `xml:"blur,omitempty"`
+	FillOverlay *CTFillOverlayEffect  `xml:"fillOverlay,omitempty"`
+	Glow        *CTGlowEffect         `xml:"glow,omitempty"`
+	InnerShdw   *CTInnerShadowEffect  `xml:"innerShdw,omitempty"`
+	OuterShdw   *CTOuterShadowEffect  `xml:"outerShdw,omitempty"`
+	PrstShdw    *CTPresetShadowEffect `xml:"prstShdw,omitempty"`
+	Reflection  *CTReflectionEffect   `xml:"reflection,omitempty"`
+	SoftEdge    *CTSoftEdgesEffect    `xml:"softEdge,omitempty"`
 }
 
 // EGEffectProperties ...
@@ -1440,7 +1440,7 @@ type CTGeomGuide struct {
 // CTGeomGuideList ...
 type CTGeomGuideList struct {
 	XMLName xml.Name       `xml:"CT_GeomGuideList"`
-	Gd      []*CTGeomGuide `xml:"gd"`
+	Gd      []*CTGeomGuide `xml:"gd,omitempty"`
 }
 
 // STAdjCoordinate ...
@@ -1514,7 +1514,7 @@ type CTAdjustHandleList struct {
 // CTConnectionSiteList ...
 type CTConnectionSiteList struct {
 	XMLName xml.Name            `xml:"CT_ConnectionSiteList"`
-	Cxn     []*CTConnectionSite `xml:"cxn"`
+	Cxn     []*CTConnectionSite `xml:"cxn,omitempty"`
 }
 
 // CTConnection ...
@@ -1584,31 +1584,31 @@ type CTPath2D struct {
 // CTPath2DList ...
 type CTPath2DList struct {
 	XMLName xml.Name    `xml:"CT_Path2DList"`
-	Path    []*CTPath2D `xml:"path"`
+	Path    []*CTPath2D `xml:"path,omitempty"`
 }
 
 // CTPresetGeometry2D ...
 type CTPresetGeometry2D struct {
 	XMLName  xml.Name         `xml:"CT_PresetGeometry2D"`
 	PrstAttr string           `xml:"prst,attr"`
-	AvLst    *CTGeomGuideList `xml:"avLst"`
+	AvLst    *CTGeomGuideList `xml:"avLst,omitempty"`
 }
 
 // CTPresetTextShape ...
 type CTPresetTextShape struct {
 	XMLName  xml.Name         `xml:"CT_PresetTextShape"`
 	PrstAttr string           `xml:"prst,attr"`
-	AvLst    *CTGeomGuideList `xml:"avLst"`
+	AvLst    *CTGeomGuideList `xml:"avLst,omitempty"`
 }
 
 // CTCustomGeometry2D ...
 type CTCustomGeometry2D struct {
 	XMLName xml.Name              `xml:"CT_CustomGeometry2D"`
-	AvLst   *CTGeomGuideList      `xml:"avLst"`
-	GdLst   *CTGeomGuideList      `xml:"gdLst"`
-	AhLst   *CTAdjustHandleList   `xml:"ahLst"`
-	CxnLst  *CTConnectionSiteList `xml:"cxnLst"`
-	Rect    *CTGeomRect           `xml:"rect"`
+	AvLst   *CTGeomGuideList      `xml:"avLst,omitempty"`
+	GdLst   *CTGeomGuideList      `xml:"gdLst,omitempty"`
+	AhLst   *CTAdjustHandleList   `xml:"ahLst,omitempty"`
+	CxnLst  *CTConnectionSiteList `xml:"cxnLst,omitempty"`
+	Rect    *CTGeomRect           `xml:"rect,omitempty"`
 	PathLst *CTPath2DList         `xml:"pathLst"`
 }
 
@@ -1695,7 +1695,7 @@ type CTDashStop struct {
 // CTDashStopList ...
 type CTDashStopList struct {
 	XMLName xml.Name      `xml:"CT_DashStopList"`
-	Ds      []*CTDashStop `xml:"ds"`
+	Ds      []*CTDashStop `xml:"ds,omitempty"`
 }
 
 // EGLineDashProperties ...
@@ -1727,9 +1727,9 @@ type CTLineProperties struct {
 	EGLineFillProperties []*EGLineFillProperties
 	EGLineDashProperties []*EGLineDashProperties
 	EGLineJoinProperties []*EGLineJoinProperties
-	HeadEnd              *CTLineEndProperties      `xml:"headEnd"`
-	TailEnd              *CTLineEndProperties      `xml:"tailEnd"`
-	ExtLst               *CTOfficeArtExtensionList `xml:"extLst"`
+	HeadEnd              *CTLineEndProperties      `xml:"headEnd,omitempty"`
+	TailEnd              *CTLineEndProperties      `xml:"tailEnd,omitempty"`
+	ExtLst               *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // STShapeID ...
@@ -1742,11 +1742,11 @@ type CTShapeProperties struct {
 	EGGeometry         []*EGGeometry
 	EGFillProperties   []*EGFillProperties
 	EGEffectProperties []*EGEffectProperties
-	Xfrm               *CTTransform2D            `xml:"xfrm"`
-	Ln                 *CTLineProperties         `xml:"ln"`
-	Scene3d            *CTScene3D                `xml:"scene3d"`
-	Sp3d               *CTShape3D                `xml:"sp3d"`
-	ExtLst             *CTOfficeArtExtensionList `xml:"extLst"`
+	Xfrm               *CTTransform2D            `xml:"xfrm,omitempty"`
+	Ln                 *CTLineProperties         `xml:"ln,omitempty"`
+	Scene3d            *CTScene3D                `xml:"scene3d,omitempty"`
+	Sp3d               *CTShape3D                `xml:"sp3d,omitempty"`
+	ExtLst             *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTGroupShapeProperties ...
@@ -1755,9 +1755,9 @@ type CTGroupShapeProperties struct {
 	BwModeAttr         string   `xml:"bwMode,attr,omitempty"`
 	EGFillProperties   []*EGFillProperties
 	EGEffectProperties []*EGEffectProperties
-	Xfrm               *CTGroupTransform2D       `xml:"xfrm"`
-	Scene3d            *CTScene3D                `xml:"scene3d"`
-	ExtLst             *CTOfficeArtExtensionList `xml:"extLst"`
+	Xfrm               *CTGroupTransform2D       `xml:"xfrm,omitempty"`
+	Scene3d            *CTScene3D                `xml:"scene3d,omitempty"`
+	ExtLst             *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTStyleMatrixReference ...
@@ -1789,17 +1789,17 @@ type CTDefaultShapeDefinition struct {
 	SpPr     *CTShapeProperties        `xml:"spPr"`
 	BodyPr   *CTTextBodyProperties     `xml:"bodyPr"`
 	LstStyle *CTTextListStyle          `xml:"lstStyle"`
-	Style    *CTShapeStyle             `xml:"style"`
-	ExtLst   *CTOfficeArtExtensionList `xml:"extLst"`
+	Style    *CTShapeStyle             `xml:"style,omitempty"`
+	ExtLst   *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTObjectStyleDefaults ...
 type CTObjectStyleDefaults struct {
 	XMLName xml.Name                  `xml:"CT_ObjectStyleDefaults"`
-	SpDef   *CTDefaultShapeDefinition `xml:"spDef"`
-	LnDef   *CTDefaultShapeDefinition `xml:"lnDef"`
-	TxDef   *CTDefaultShapeDefinition `xml:"txDef"`
-	ExtLst  *CTOfficeArtExtensionList `xml:"extLst"`
+	SpDef   *CTDefaultShapeDefinition `xml:"spDef,omitempty"`
+	LnDef   *CTDefaultShapeDefinition `xml:"lnDef,omitempty"`
+	TxDef   *CTDefaultShapeDefinition `xml:"txDef,omitempty"`
+	ExtLst  *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTEmptyElement ...
@@ -1822,7 +1822,7 @@ type CTColorMapping struct {
 	Accent6Attr  string                    `xml:"accent6,attr"`
 	HlinkAttr    string                    `xml:"hlink,attr"`
 	FolHlinkAttr string                    `xml:"folHlink,attr"`
-	ExtLst       *CTOfficeArtExtensionList `xml:"extLst"`
+	ExtLst       *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTColorMappingOverride ...
@@ -1836,13 +1836,13 @@ type CTColorMappingOverride struct {
 type CTColorSchemeAndMapping struct {
 	XMLName   xml.Name        `xml:"CT_ColorSchemeAndMapping"`
 	ClrScheme *CTColorScheme  `xml:"clrScheme"`
-	ClrMap    *CTColorMapping `xml:"clrMap"`
+	ClrMap    *CTColorMapping `xml:"clrMap,omitempty"`
 }
 
 // CTColorSchemeList ...
 type CTColorSchemeList struct {
 	XMLName        xml.Name                   `xml:"CT_ColorSchemeList"`
-	ExtraClrScheme []*CTColorSchemeAndMapping `xml:"extraClrScheme"`
+	ExtraClrScheme []*CTColorSchemeAndMapping `xml:"extraClrScheme,omitempty"`
 }
 
 // CTOfficeStyleSheet ...
@@ -1850,18 +1850,18 @@ type CTOfficeStyleSheet struct {
 	XMLName           xml.Name                  `xml:"CT_OfficeStyleSheet"`
 	NameAttr          string                    `xml:"name,attr,omitempty"`
 	ThemeElements     *CTBaseStyles             `xml:"themeElements"`
-	ObjectDefaults    *CTObjectStyleDefaults    `xml:"objectDefaults"`
-	ExtraClrSchemeLst *CTColorSchemeList        `xml:"extraClrSchemeLst"`
-	CustClrLst        *CTCustomColorList        `xml:"custClrLst"`
-	ExtLst            *CTOfficeArtExtensionList `xml:"extLst"`
+	ObjectDefaults    *CTObjectStyleDefaults    `xml:"objectDefaults,omitempty"`
+	ExtraClrSchemeLst *CTColorSchemeList        `xml:"extraClrSchemeLst,omitempty"`
+	CustClrLst        *CTCustomColorList        `xml:"custClrLst,omitempty"`
+	ExtLst            *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTBaseStylesOverride ...
 type CTBaseStylesOverride struct {
 	XMLName    xml.Name       `xml:"CT_BaseStylesOverride"`
-	ClrScheme  *CTColorScheme `xml:"clrScheme"`
-	FontScheme *CTFontScheme  `xml:"fontScheme"`
-	FmtScheme  *CTStyleMatrix `xml:"fmtScheme"`
+	ClrScheme  *CTColorScheme `xml:"clrScheme,omitempty"`
+	FontScheme *CTFontScheme  `xml:"fontScheme,omitempty"`
+	FmtScheme  *CTStyleMatrix `xml:"fmtScheme,omitempty"`
 }
 
 // CTClipboardStyleSheet ...
@@ -1892,15 +1892,15 @@ type CTTableCellProperties struct {
 	AnchorCtrAttr    bool            `xml:"anchorCtr,attr,omitempty"`
 	HorzOverflowAttr string          `xml:"horzOverflow,attr,omitempty"`
 	EGFillProperties []*EGFillProperties
-	LnL              *CTLineProperties         `xml:"lnL"`
-	LnR              *CTLineProperties         `xml:"lnR"`
-	LnT              *CTLineProperties         `xml:"lnT"`
-	LnB              *CTLineProperties         `xml:"lnB"`
-	LnTlToBr         *CTLineProperties         `xml:"lnTlToBr"`
-	LnBlToTr         *CTLineProperties         `xml:"lnBlToTr"`
-	Cell3D           *CTCell3D                 `xml:"cell3D"`
-	Headers          *CTHeaders                `xml:"headers"`
-	ExtLst           *CTOfficeArtExtensionList `xml:"extLst"`
+	LnL              *CTLineProperties         `xml:"lnL,omitempty"`
+	LnR              *CTLineProperties         `xml:"lnR,omitempty"`
+	LnT              *CTLineProperties         `xml:"lnT,omitempty"`
+	LnB              *CTLineProperties         `xml:"lnB,omitempty"`
+	LnTlToBr         *CTLineProperties         `xml:"lnTlToBr,omitempty"`
+	LnBlToTr         *CTLineProperties         `xml:"lnBlToTr,omitempty"`
+	Cell3D           *CTCell3D                 `xml:"cell3D,omitempty"`
+	Headers          *CTHeaders                `xml:"headers,omitempty"`
+	ExtLst           *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTHeaders ...
@@ -1913,13 +1913,13 @@ type CTHeaders struct {
 type CTTableCol struct {
 	XMLName xml.Name                  `xml:"CT_TableCol"`
 	WAttr   *STCoordinate             `xml:"w,attr"`
-	ExtLst  *CTOfficeArtExtensionList `xml:"extLst"`
+	ExtLst  *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTTableGrid ...
 type CTTableGrid struct {
 	XMLName xml.Name      `xml:"CT_TableGrid"`
-	GridCol []*CTTableCol `xml:"gridCol"`
+	GridCol []*CTTableCol `xml:"gridCol,omitempty"`
 }
 
 // CTTableCell ...
@@ -1930,17 +1930,17 @@ type CTTableCell struct {
 	HMergeAttr   bool                      `xml:"hMerge,attr,omitempty"`
 	VMergeAttr   bool                      `xml:"vMerge,attr,omitempty"`
 	IdAttr       string                    `xml:"id,attr,omitempty"`
-	TxBody       *CTTextBody               `xml:"txBody"`
-	TcPr         *CTTableCellProperties    `xml:"tcPr"`
-	ExtLst       *CTOfficeArtExtensionList `xml:"extLst"`
+	TxBody       *CTTextBody               `xml:"txBody,omitempty"`
+	TcPr         *CTTableCellProperties    `xml:"tcPr,omitempty"`
+	ExtLst       *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTTableRow ...
 type CTTableRow struct {
 	XMLName xml.Name                  `xml:"CT_TableRow"`
 	HAttr   *STCoordinate             `xml:"h,attr"`
-	Tc      []*CTTableCell            `xml:"tc"`
-	ExtLst  *CTOfficeArtExtensionList `xml:"extLst"`
+	Tc      []*CTTableCell            `xml:"tc,omitempty"`
+	ExtLst  *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTTableProperties ...
@@ -1957,15 +1957,15 @@ type CTTableProperties struct {
 	EGEffectProperties []*EGEffectProperties
 	TableStyle         *CTTableStyle             `xml:"tableStyle"`
 	TableStyleId       string                    `xml:"tableStyleId"`
-	ExtLst             *CTOfficeArtExtensionList `xml:"extLst"`
+	ExtLst             *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTTable ...
 type CTTable struct {
 	XMLName xml.Name           `xml:"CT_Table"`
-	TblPr   *CTTableProperties `xml:"tblPr"`
+	TblPr   *CTTableProperties `xml:"tblPr,omitempty"`
 	TblGrid *CTTableGrid       `xml:"tblGrid"`
-	Tr      []*CTTableRow      `xml:"tr"`
+	Tr      []*CTTableRow      `xml:"tr,omitempty"`
 }
 
 // Tbl ...
@@ -1976,8 +1976,8 @@ type CTCell3D struct {
 	XMLName          xml.Name                  `xml:"CT_Cell3D"`
 	PrstMaterialAttr string                    `xml:"prstMaterial,attr,omitempty"`
 	Bevel            *CTBevel                  `xml:"bevel"`
-	LightRig         *CTLightRig               `xml:"lightRig"`
-	ExtLst           *CTOfficeArtExtensionList `xml:"extLst"`
+	LightRig         *CTLightRig               `xml:"lightRig,omitempty"`
+	ExtLst           *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // EGThemeableFillStyle ...
@@ -2018,21 +2018,21 @@ type CTTableStyleTextStyle struct {
 	IAttr                 string   `xml:"i,attr,omitempty"`
 	EGThemeableFontStyles []*EGThemeableFontStyles
 	EGColorChoice         []*EGColorChoice
-	ExtLst                *CTOfficeArtExtensionList `xml:"extLst"`
+	ExtLst                *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTTableCellBorderStyle ...
 type CTTableCellBorderStyle struct {
 	XMLName xml.Name                  `xml:"CT_TableCellBorderStyle"`
-	Left    *CTThemeableLineStyle     `xml:"left"`
-	Right   *CTThemeableLineStyle     `xml:"right"`
-	Top     *CTThemeableLineStyle     `xml:"top"`
-	Bottom  *CTThemeableLineStyle     `xml:"bottom"`
-	InsideH *CTThemeableLineStyle     `xml:"insideH"`
-	InsideV *CTThemeableLineStyle     `xml:"insideV"`
-	Tl2br   *CTThemeableLineStyle     `xml:"tl2br"`
-	Tr2bl   *CTThemeableLineStyle     `xml:"tr2bl"`
-	ExtLst  *CTOfficeArtExtensionList `xml:"extLst"`
+	Left    *CTThemeableLineStyle     `xml:"left,omitempty"`
+	Right   *CTThemeableLineStyle     `xml:"right,omitempty"`
+	Top     *CTThemeableLineStyle     `xml:"top,omitempty"`
+	Bottom  *CTThemeableLineStyle     `xml:"bottom,omitempty"`
+	InsideH *CTThemeableLineStyle     `xml:"insideH,omitempty"`
+	InsideV *CTThemeableLineStyle     `xml:"insideV,omitempty"`
+	Tl2br   *CTThemeableLineStyle     `xml:"tl2br,omitempty"`
+	Tr2bl   *CTThemeableLineStyle     `xml:"tr2bl,omitempty"`
+	ExtLst  *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTTableBackgroundStyle ...
@@ -2046,15 +2046,15 @@ type CTTableBackgroundStyle struct {
 type CTTableStyleCellStyle struct {
 	XMLName              xml.Name `xml:"CT_TableStyleCellStyle"`
 	EGThemeableFillStyle []*EGThemeableFillStyle
-	TcBdr                *CTTableCellBorderStyle `xml:"tcBdr"`
-	Cell3D               *CTCell3D               `xml:"cell3D"`
+	TcBdr                *CTTableCellBorderStyle `xml:"tcBdr,omitempty"`
+	Cell3D               *CTCell3D               `xml:"cell3D,omitempty"`
 }
 
 // CTTablePartStyle ...
 type CTTablePartStyle struct {
 	XMLName   xml.Name               `xml:"CT_TablePartStyle"`
-	TcTxStyle *CTTableStyleTextStyle `xml:"tcTxStyle"`
-	TcStyle   *CTTableStyleCellStyle `xml:"tcStyle"`
+	TcTxStyle *CTTableStyleTextStyle `xml:"tcTxStyle,omitempty"`
+	TcStyle   *CTTableStyleCellStyle `xml:"tcStyle,omitempty"`
 }
 
 // CTTableStyle ...
@@ -2062,28 +2062,28 @@ type CTTableStyle struct {
 	XMLName       xml.Name                  `xml:"CT_TableStyle"`
 	StyleIdAttr   string                    `xml:"styleId,attr"`
 	StyleNameAttr string                    `xml:"styleName,attr"`
-	TblBg         *CTTableBackgroundStyle   `xml:"tblBg"`
-	WholeTbl      *CTTablePartStyle         `xml:"wholeTbl"`
-	Band1H        *CTTablePartStyle         `xml:"band1H"`
-	Band2H        *CTTablePartStyle         `xml:"band2H"`
-	Band1V        *CTTablePartStyle         `xml:"band1V"`
-	Band2V        *CTTablePartStyle         `xml:"band2V"`
-	LastCol       *CTTablePartStyle         `xml:"lastCol"`
-	FirstCol      *CTTablePartStyle         `xml:"firstCol"`
-	LastRow       *CTTablePartStyle         `xml:"lastRow"`
-	SeCell        *CTTablePartStyle         `xml:"seCell"`
-	SwCell        *CTTablePartStyle         `xml:"swCell"`
-	FirstRow      *CTTablePartStyle         `xml:"firstRow"`
-	NeCell        *CTTablePartStyle         `xml:"neCell"`
-	NwCell        *CTTablePartStyle         `xml:"nwCell"`
-	ExtLst        *CTOfficeArtExtensionList `xml:"extLst"`
+	TblBg         *CTTableBackgroundStyle   `xml:"tblBg,omitempty"`
+	WholeTbl      *CTTablePartStyle         `xml:"wholeTbl,omitempty"`
+	Band1H        *CTTablePartStyle         `xml:"band1H,omitempty"`
+	Band2H        *CTTablePartStyle         `xml:"band2H,omitempty"`
+	Band1V        *CTTablePartStyle         `xml:"band1V,omitempty"`
+	Band2V        *CTTablePartStyle         `xml:"band2V,omitempty"`
+	LastCol       *CTTablePartStyle         `xml:"lastCol,omitempty"`
+	FirstCol      *CTTablePartStyle         `xml:"firstCol,omitempty"`
+	LastRow       *CTTablePartStyle         `xml:"lastRow,omitempty"`
+	SeCell        *CTTablePartStyle         `xml:"seCell,omitempty"`
+	SwCell        *CTTablePartStyle         `xml:"swCell,omitempty"`
+	FirstRow      *CTTablePartStyle         `xml:"firstRow,omitempty"`
+	NeCell        *CTTablePartStyle         `xml:"neCell,omitempty"`
+	NwCell        *CTTablePartStyle         `xml:"nwCell,omitempty"`
+	ExtLst        *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTTableStyleList ...
 type CTTableStyleList struct {
 	XMLName  xml.Name        `xml:"CT_TableStyleList"`
 	DefAttr  string          `xml:"def,attr"`
-	TblStyle []*CTTableStyle `xml:"tblStyle"`
+	TblStyle []*CTTableStyle `xml:"tblStyle,omitempty"`
 }
 
 // TblStyleLst ...
@@ -2093,8 +2093,8 @@ type TblStyleLst *CTTableStyleList
 type CTTextParagraph struct {
 	XMLName    xml.Name `xml:"CT_TextParagraph"`
 	EGTextRun  []*EGTextRun
-	PPr        *CTTextParagraphProperties `xml:"pPr"`
-	EndParaRPr *CTTextCharacterProperties `xml:"endParaRPr"`
+	PPr        *CTTextParagraphProperties `xml:"pPr,omitempty"`
+	EndParaRPr *CTTextCharacterProperties `xml:"endParaRPr,omitempty"`
 }
 
 // STTextAnchoringType ...
@@ -2118,17 +2118,17 @@ type STTextColumnCount int
 // CTTextListStyle ...
 type CTTextListStyle struct {
 	XMLName xml.Name                   `xml:"CT_TextListStyle"`
-	DefPPr  *CTTextParagraphProperties `xml:"defPPr"`
-	Lvl1pPr *CTTextParagraphProperties `xml:"lvl1pPr"`
-	Lvl2pPr *CTTextParagraphProperties `xml:"lvl2pPr"`
-	Lvl3pPr *CTTextParagraphProperties `xml:"lvl3pPr"`
-	Lvl4pPr *CTTextParagraphProperties `xml:"lvl4pPr"`
-	Lvl5pPr *CTTextParagraphProperties `xml:"lvl5pPr"`
-	Lvl6pPr *CTTextParagraphProperties `xml:"lvl6pPr"`
-	Lvl7pPr *CTTextParagraphProperties `xml:"lvl7pPr"`
-	Lvl8pPr *CTTextParagraphProperties `xml:"lvl8pPr"`
-	Lvl9pPr *CTTextParagraphProperties `xml:"lvl9pPr"`
-	ExtLst  *CTOfficeArtExtensionList  `xml:"extLst"`
+	DefPPr  *CTTextParagraphProperties `xml:"defPPr,omitempty"`
+	Lvl1pPr *CTTextParagraphProperties `xml:"lvl1pPr,omitempty"`
+	Lvl2pPr *CTTextParagraphProperties `xml:"lvl2pPr,omitempty"`
+	Lvl3pPr *CTTextParagraphProperties `xml:"lvl3pPr,omitempty"`
+	Lvl4pPr *CTTextParagraphProperties `xml:"lvl4pPr,omitempty"`
+	Lvl5pPr *CTTextParagraphProperties `xml:"lvl5pPr,omitempty"`
+	Lvl6pPr *CTTextParagraphProperties `xml:"lvl6pPr,omitempty"`
+	Lvl7pPr *CTTextParagraphProperties `xml:"lvl7pPr,omitempty"`
+	Lvl8pPr *CTTextParagraphProperties `xml:"lvl8pPr,omitempty"`
+	Lvl9pPr *CTTextParagraphProperties `xml:"lvl9pPr,omitempty"`
+	ExtLst  *CTOfficeArtExtensionList  `xml:"extLst,omitempty"`
 }
 
 // STTextFontScalePercentOrPercentString ...
@@ -2186,16 +2186,16 @@ type CTTextBodyProperties struct {
 	CompatLnSpcAttr      bool            `xml:"compatLnSpc,attr,omitempty"`
 	EGTextAutofit        []*EGTextAutofit
 	EGText3D             []*EGText3D
-	PrstTxWarp           *CTPresetTextShape        `xml:"prstTxWarp"`
-	Scene3d              *CTScene3D                `xml:"scene3d"`
-	ExtLst               *CTOfficeArtExtensionList `xml:"extLst"`
+	PrstTxWarp           *CTPresetTextShape        `xml:"prstTxWarp,omitempty"`
+	Scene3d              *CTScene3D                `xml:"scene3d,omitempty"`
+	ExtLst               *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTTextBody ...
 type CTTextBody struct {
 	XMLName  xml.Name              `xml:"CT_TextBody"`
 	BodyPr   *CTTextBodyProperties `xml:"bodyPr"`
-	LstStyle *CTTextListStyle      `xml:"lstStyle"`
+	LstStyle *CTTextListStyle      `xml:"lstStyle,omitempty"`
 	P        []*CTTextParagraph    `xml:"p"`
 }
 
@@ -2392,16 +2392,16 @@ type CTTextCharacterProperties struct {
 	EGEffectProperties  []*EGEffectProperties
 	EGTextUnderlineLine []*EGTextUnderlineLine
 	EGTextUnderlineFill []*EGTextUnderlineFill
-	Ln                  *CTLineProperties         `xml:"ln"`
-	Highlight           *CTColor                  `xml:"highlight"`
-	Latin               *CTTextFont               `xml:"latin"`
-	Ea                  *CTTextFont               `xml:"ea"`
-	Cs                  *CTTextFont               `xml:"cs"`
-	Sym                 *CTTextFont               `xml:"sym"`
-	HlinkClick          *CTHyperlink              `xml:"hlinkClick"`
-	HlinkMouseOver      *CTHyperlink              `xml:"hlinkMouseOver"`
-	Rtl                 *CTBoolean                `xml:"rtl"`
-	ExtLst              *CTOfficeArtExtensionList `xml:"extLst"`
+	Ln                  *CTLineProperties         `xml:"ln,omitempty"`
+	Highlight           *CTColor                  `xml:"highlight,omitempty"`
+	Latin               *CTTextFont               `xml:"latin,omitempty"`
+	Ea                  *CTTextFont               `xml:"ea,omitempty"`
+	Cs                  *CTTextFont               `xml:"cs,omitempty"`
+	Sym                 *CTTextFont               `xml:"sym,omitempty"`
+	HlinkClick          *CTHyperlink              `xml:"hlinkClick,omitempty"`
+	HlinkMouseOver      *CTHyperlink              `xml:"hlinkMouseOver,omitempty"`
+	Rtl                 *CTBoolean                `xml:"rtl,omitempty"`
+	ExtLst              *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTBoolean ...
@@ -2450,13 +2450,13 @@ type CTTextTabStop struct {
 // CTTextTabStopList ...
 type CTTextTabStopList struct {
 	XMLName xml.Name         `xml:"CT_TextTabStopList"`
-	Tab     []*CTTextTabStop `xml:"tab"`
+	Tab     []*CTTextTabStop `xml:"tab,omitempty"`
 }
 
 // CTTextLineBreak ...
 type CTTextLineBreak struct {
 	XMLName xml.Name                   `xml:"CT_TextLineBreak"`
-	RPr     *CTTextCharacterProperties `xml:"rPr"`
+	RPr     *CTTextCharacterProperties `xml:"rPr,omitempty"`
 }
 
 // CTTextSpacing ...
@@ -2493,12 +2493,12 @@ type CTTextParagraphProperties struct {
 	EGTextBulletSize     []*EGTextBulletSize
 	EGTextBulletTypeface []*EGTextBulletTypeface
 	EGTextBullet         []*EGTextBullet
-	LnSpc                *CTTextSpacing             `xml:"lnSpc"`
-	SpcBef               *CTTextSpacing             `xml:"spcBef"`
-	SpcAft               *CTTextSpacing             `xml:"spcAft"`
-	TabLst               *CTTextTabStopList         `xml:"tabLst"`
-	DefRPr               *CTTextCharacterProperties `xml:"defRPr"`
-	ExtLst               *CTOfficeArtExtensionList  `xml:"extLst"`
+	LnSpc                *CTTextSpacing             `xml:"lnSpc,omitempty"`
+	SpcBef               *CTTextSpacing             `xml:"spcBef,omitempty"`
+	SpcAft               *CTTextSpacing             `xml:"spcAft,omitempty"`
+	TabLst               *CTTextTabStopList         `xml:"tabLst,omitempty"`
+	DefRPr               *CTTextCharacterProperties `xml:"defRPr,omitempty"`
+	ExtLst               *CTOfficeArtExtensionList  `xml:"extLst,omitempty"`
 }
 
 // CTTextField ...
@@ -2506,9 +2506,9 @@ type CTTextField struct {
 	XMLName  xml.Name                   `xml:"CT_TextField"`
 	IdAttr   string                     `xml:"id,attr"`
 	TypeAttr string                     `xml:"type,attr,omitempty"`
-	RPr      *CTTextCharacterProperties `xml:"rPr"`
-	PPr      *CTTextParagraphProperties `xml:"pPr"`
-	T        string                     `xml:"t"`
+	RPr      *CTTextCharacterProperties `xml:"rPr,omitempty"`
+	PPr      *CTTextParagraphProperties `xml:"pPr,omitempty"`
+	T        string                     `xml:"t,omitempty"`
 }
 
 // EGTextRun ...
@@ -2522,6 +2522,6 @@ type EGTextRun struct {
 // CTRegularTextRun ...
 type CTRegularTextRun struct {
 	XMLName xml.Name                   `xml:"CT_RegularTextRun"`
-	RPr     *CTTextCharacterProperties `xml:"rPr"`
+	RPr     *CTTextCharacterProperties `xml:"rPr,omitempty"`
 	T       string                     `xml:"t"`
 }

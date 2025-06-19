@@ -28,15 +28,15 @@ pub struct Metadata {
 	#[serde(rename = "modelVersion")]
 	pub model_version: Option<String>,
 	#[serde(rename = "groupId")]
-	pub group_id: String,
+	pub group_id: Option<String>,
 	#[serde(rename = "artifactId")]
-	pub artifact_id: String,
+	pub artifact_id: Option<String>,
 	#[serde(rename = "version")]
-	pub version: String,
+	pub version: Option<String>,
 	#[serde(rename = "versioning")]
-	pub versioning: Versioning,
+	pub versioning: Option<Versioning>,
 	#[serde(rename = "plugins")]
-	pub plugins: Plugins,
+	pub plugins: Option<Plugins>,
 }
 
 
@@ -44,11 +44,11 @@ pub struct Metadata {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Plugin {
 	#[serde(rename = "name")]
-	pub name: String,
+	pub name: Option<String>,
 	#[serde(rename = "prefix")]
-	pub prefix: String,
+	pub prefix: Option<String>,
 	#[serde(rename = "artifactId")]
-	pub artifact_id: String,
+	pub artifact_id: Option<String>,
 }
 
 
@@ -72,17 +72,17 @@ pub struct SnapshotVersions {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Versioning {
 	#[serde(rename = "latest")]
-	pub latest: String,
+	pub latest: Option<String>,
 	#[serde(rename = "release")]
-	pub release: String,
+	pub release: Option<String>,
 	#[serde(rename = "snapshot")]
-	pub snapshot: Snapshot,
+	pub snapshot: Option<Snapshot>,
 	#[serde(rename = "versions")]
-	pub versions: Versions,
+	pub versions: Option<Versions>,
 	#[serde(rename = "lastUpdated")]
-	pub last_updated: String,
+	pub last_updated: Option<String>,
 	#[serde(rename = "snapshotVersions")]
-	pub snapshot_versions: SnapshotVersions,
+	pub snapshot_versions: Option<SnapshotVersions>,
 }
 
 
@@ -90,13 +90,13 @@ pub struct Versioning {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct SnapshotVersion {
 	#[serde(rename = "classifier")]
-	pub classifier: String,
+	pub classifier: Option<String>,
 	#[serde(rename = "extension")]
-	pub extension: String,
+	pub extension: Option<String>,
 	#[serde(rename = "value")]
-	pub value: String,
+	pub value: Option<String>,
 	#[serde(rename = "updated")]
-	pub updated: String,
+	pub updated: Option<String>,
 }
 
 
@@ -104,9 +104,9 @@ pub struct SnapshotVersion {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct Snapshot {
 	#[serde(rename = "timestamp")]
-	pub timestamp: String,
+	pub timestamp: Option<String>,
 	#[serde(rename = "buildNumber")]
-	pub build_number: i32,
+	pub build_number: Option<i32>,
 	#[serde(rename = "localCopy")]
-	pub local_copy: bool,
+	pub local_copy: Option<bool>,
 }

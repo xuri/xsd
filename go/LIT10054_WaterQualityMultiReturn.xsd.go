@@ -19,15 +19,15 @@ type PurgedVolumeRecorded struct {
 type Measurement struct {
 	DeterminandName interface{} `xml:"DeterminandName"`
 	ResultType      interface{} `xml:"ResultType"`
-	ResultValue     float64     `xml:"ResultValue"`
-	ResultUnits     interface{} `xml:"ResultUnits"`
-	Qualifier       interface{} `xml:"Qualifier"`
-	Comment         interface{} `xml:"Comment"`
+	ResultValue     float64     `xml:"ResultValue,omitempty"`
+	ResultUnits     interface{} `xml:"ResultUnits,omitempty"`
+	Qualifier       interface{} `xml:"Qualifier,omitempty"`
+	Comment         interface{} `xml:"Comment,omitempty"`
 }
 
 // Sample is This element contains the structure of a collection of samples.
 type Sample struct {
-	Sampler                        interface{}           `xml:"Sampler"`
+	Sampler                        interface{}           `xml:"Sampler,omitempty"`
 	SampleType                     interface{}           `xml:"SampleType"`
 	CustomerSamplePointName        interface{}           `xml:"CustomerSamplePointName"`
 	SampleDateTime                 string                `xml:"SampleDateTime"`
@@ -35,12 +35,12 @@ type Sample struct {
 	MaterialName                   interface{}           `xml:"MaterialName"`
 	Mechanism                      interface{}           `xml:"Mechanism"`
 	CustomersLabSampleRef          interface{}           `xml:"CustomersLabSampleRef"`
-	CustomersLabSampleRefSecondary []interface{}         `xml:"CustomersLabSampleRefSecondary"`
-	Comment                        interface{}           `xml:"Comment"`
+	CustomersLabSampleRefSecondary []interface{}         `xml:"CustomersLabSampleRefSecondary,omitempty"`
+	Comment                        interface{}           `xml:"Comment,omitempty"`
 	LabName                        interface{}           `xml:"LabName"`
 	AnalysisCompleteDateTime       string                `xml:"AnalysisCompleteDateTime"`
-	DepthValueRecorded             *DepthValueRecorded   `xml:"DepthValueRecorded"`
-	PurgedVolumeRecorded           *PurgedVolumeRecorded `xml:"PurgedVolumeRecorded"`
+	DepthValueRecorded             *DepthValueRecorded   `xml:"DepthValueRecorded,omitempty"`
+	PurgedVolumeRecorded           *PurgedVolumeRecorded `xml:"PurgedVolumeRecorded,omitempty"`
 	Measurement                    []*Measurement        `xml:"Measurement"`
 }
 
@@ -49,7 +49,7 @@ type FileUpload struct {
 	Source                      interface{} `xml:"Source"`
 	Sample                      []*Sample   `xml:"Sample"`
 	RegulatedCustomerIdentifier interface{} `xml:"RegulatedCustomerIdentifier"`
-	CustomerReference           interface{} `xml:"CustomerReference"`
+	CustomerReference           interface{} `xml:"CustomerReference,omitempty"`
 }
 
 // MandatoryStringType ...

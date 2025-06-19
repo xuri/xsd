@@ -11,7 +11,7 @@ type SupplementalDataModels *SupplementalDataModel
 
 // SupplementalDataModel is Snippets of POM xml files used to supplement the data model.
 type SupplementalDataModel struct {
-	Supplement []*Supplement `xml:"supplement"`
+	Supplement []*Supplement `xml:"supplement,omitempty"`
 }
 
 // Project is Snippets of POM xml files used to supplement the data model.
@@ -21,5 +21,5 @@ type Project struct {
 
 // Supplement is A single supplement
 type Supplement struct {
-	Project *Project `xml:"project"`
+	Project *Project `xml:"project,omitempty"`
 }
