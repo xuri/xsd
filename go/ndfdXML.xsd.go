@@ -89,12 +89,12 @@ type WeatherParametersType struct {
 	Prcpblw30d   bool     `xml:"prcpblw30d"`
 	Prcpabv90d   bool     `xml:"prcpabv90d"`
 	Prcpblw90d   bool     `xml:"prcpblw90d"`
-	Precipar     bool     `xml:"precipa_r"`
-	Skyr         bool     `xml:"sky_r"`
-	Tdr          bool     `xml:"td_r"`
-	Tempr        bool     `xml:"temp_r"`
-	Wdirr        bool     `xml:"wdir_r"`
-	Wspdr        bool     `xml:"wspd_r"`
+	PrecipaR     bool     `xml:"precipa_r"`
+	SkyR         bool     `xml:"sky_r"`
+	TdR          bool     `xml:"td_r"`
+	TempR        bool     `xml:"temp_r"`
+	WdirR        bool     `xml:"wdir_r"`
+	WspdR        bool     `xml:"wspd_r"`
 	Wwa          bool     `xml:"wwa"`
 	Wgust        bool     `xml:"wgust"`
 	Iceaccum     bool     `xml:"iceaccum"`

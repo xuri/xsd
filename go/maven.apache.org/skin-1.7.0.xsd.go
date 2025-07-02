@@ -13,5 +13,5 @@ type SkinModel struct {
 
 // Prerequisites is The minimum version of Doxia Sitetools required to use the resulting skin.
 type Prerequisites struct {
-	Doxiasitetools string `xml:"doxia-sitetools,omitempty"`
+	DoxiaSitetools string `xml:"doxia-sitetools,omitempty"`
 }

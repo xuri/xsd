@@ -6,8 +6,8 @@ import (
 	"encoding/xml"
 )
 
-// Archetypecatalog is 0.0.0+
-type Archetypecatalog *ArchetypeCatalog
+// ArchetypeCatalog is 0.0.0+
+type ArchetypeCatalog *ArchetypeCatalog
 
 // Archetypes is List of Acthetypes available in this catalog.
 type Archetypes struct {

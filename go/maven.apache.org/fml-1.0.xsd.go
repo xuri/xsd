@@ -437,7 +437,7 @@ type Meta struct {
 	XMLName       xml.Name `xml:"meta"`
 	I18n          *I18n
 	IdAttr        string      `xml:"id,attr,omitempty"`
-	HttpequivAttr interface{} `xml:"http-equiv,attr,omitempty"`
+	HttpEquivAttr interface{} `xml:"http-equiv,attr,omitempty"`
 	NameAttr      interface{} `xml:"name,attr,omitempty"`
 	ContentAttr   interface{} `xml:"content,attr"`
 	SchemeAttr    interface{} `xml:"scheme,attr,omitempty"`
@@ -1063,7 +1063,7 @@ type Form struct {
 	OnsubmitAttr      string `xml:"onsubmit,attr,omitempty"`
 	OnresetAttr       string `xml:"onreset,attr,omitempty"`
 	AcceptAttr        string `xml:"accept,attr,omitempty"`
-	AcceptcharsetAttr string `xml:"accept-charset,attr,omitempty"`
+	AcceptCharsetAttr string `xml:"accept-charset,attr,omitempty"`
 	TargetAttr        string `xml:"target,attr,omitempty"`
 	*FormContent
 }

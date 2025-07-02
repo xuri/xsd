@@ -28,8 +28,8 @@ type Release struct {
 // Action is A list of contibutors for this issue.
 type Action struct {
 	DevAttr        string        `xml:"dev,attr,omitempty"`
-	DuetoAttr      string        `xml:"due-to,attr,omitempty"`
-	DuetoemailAttr string        `xml:"due-to-email,attr,omitempty"`
+	DueToAttr      string        `xml:"due-to,attr,omitempty"`
+	DueToEmailAttr string        `xml:"due-to-email,attr,omitempty"`
 	IssueAttr      string        `xml:"issue,attr,omitempty"`
 	TypeAttr       string        `xml:"type,attr,omitempty"`
 	SystemAttr     string        `xml:"system,attr,omitempty"`

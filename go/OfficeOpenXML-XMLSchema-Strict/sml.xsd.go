@@ -497,7 +497,7 @@ type PivotCacheDefinition *CTPivotCacheDefinition
 type PivotCacheRecords *CTPivotCacheRecords
 
 // PivotTableDefinition ...
-type PivotTableDefinition *CTpivotTableDefinition
+type PivotTableDefinition *CTPivotTableDefinition
 
 // CTPivotCacheDefinition ...
 type CTPivotCacheDefinition struct {
@@ -1063,8 +1063,8 @@ type CTCalculatedMember struct {
 	ExtLst         *CTExtensionList `xml:"extLst,omitempty"`
 }
 
-// CTpivotTableDefinition ...
-type CTpivotTableDefinition struct {
+// CTPivotTableDefinition ...
+type CTPivotTableDefinition struct {
 	XMLName                    xml.Name `xml:"CT_pivotTableDefinition"`
 	AGAutoFormat               *AGAutoFormat
 	NameAttr                   string                 `xml:"name,attr"`
@@ -1131,9 +1131,9 @@ type CTpivotTableDefinition struct {
 	Location                   *CTLocation            `xml:"location"`
 	PivotFields                *CTPivotFields         `xml:"pivotFields,omitempty"`
 	RowFields                  *CTRowFields           `xml:"rowFields,omitempty"`
-	RowItems                   *CTrowItems            `xml:"rowItems,omitempty"`
+	RowItems                   *CTRowItems            `xml:"rowItems,omitempty"`
 	ColFields                  *CTColFields           `xml:"colFields,omitempty"`
-	ColItems                   *CTcolItems            `xml:"colItems,omitempty"`
+	ColItems                   *CTColItems            `xml:"colItems,omitempty"`
 	PageFields                 *CTPageFields          `xml:"pageFields,omitempty"`
 	DataFields                 *CTDataFields          `xml:"dataFields,omitempty"`
 	Formats                    *CTFormats             `xml:"formats,omitempty"`
@@ -1288,15 +1288,15 @@ type CTDataField struct {
 	ExtLst         *CTExtensionList `xml:"extLst,omitempty"`
 }
 
-// CTrowItems ...
-type CTrowItems struct {
+// CTRowItems ...
+type CTRowItems struct {
 	XMLName   xml.Name `xml:"CT_rowItems"`
 	CountAttr uint32   `xml:"count,attr,omitempty"`
 	I         []*CTI   `xml:"i"`
 }
 
-// CTcolItems ...
-type CTcolItems struct {
+// CTColItems ...
+type CTColItems struct {
 	XMLName   xml.Name `xml:"CT_colItems"`
 	CountAttr uint32   `xml:"count,attr,omitempty"`
 	I         []*CTI   `xml:"i"`
@@ -2048,8 +2048,8 @@ type CTRevisionQueryTableField struct {
 	FieldIdAttr uint32   `xml:"fieldId,attr"`
 }
 
-// STrwColActionType ...
-type STrwColActionType string
+// STRwColActionType ...
+type STRwColActionType string
 
 // STRevisionAction ...
 type STRevisionAction string

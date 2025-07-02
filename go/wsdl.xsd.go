@@ -96,21 +96,21 @@ type TOperation struct {
 	XMLName                                    xml.Name `xml:"tOperation"`
 	NameAttr                                   string   `xml:"name,attr"`
 	ParameterOrderAttr                         []string `xml:"parameterOrder,attr,omitempty"`
-	WsdlRequestresponseoronewayoperation       *Requestresponseoronewayoperation
-	WsdlSolicitresponseornotificationoperation *Solicitresponseornotificationoperation
+	WsdlRequestResponseOrOneWayOperation       *RequestResponseOrOneWayOperation
+	WsdlSolicitResponseOrNotificationOperation *SolicitResponseOrNotificationOperation
 	*TExtensibleDocumented
 }
 
-// Requestresponseoronewayoperation ...
-type Requestresponseoronewayoperation struct {
+// RequestResponseOrOneWayOperation ...
+type RequestResponseOrOneWayOperation struct {
 	XMLName xml.Name `xml:"request-response-or-one-way-operation"`
 	Input   *TParam
 	Output  *TParam
 	Fault   []*TFault
 }
 
-// Solicitresponseornotificationoperation ...
-type Solicitresponseornotificationoperation struct {
+// SolicitResponseOrNotificationOperation ...
+type SolicitResponseOrNotificationOperation struct {
 	XMLName xml.Name `xml:"solicit-response-or-notification-operation"`
 	Output  *TParam
 	Input   *TParam

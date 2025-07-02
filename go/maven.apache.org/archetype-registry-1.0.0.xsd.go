@@ -2,8 +2,8 @@
 
 package schema
 
-// Archetyperegistry is 0.0.0+
-type Archetyperegistry *ArchetypeRegistry
+// ArchetypeRegistry is 0.0.0+
+type ArchetypeRegistry *ArchetypeRegistry
 
 // Languages is 0.0.0+
 type Languages struct {

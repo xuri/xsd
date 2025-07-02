@@ -6,8 +6,8 @@ import (
 	"encoding/xml"
 )
 
-// Archetypedescriptor is 1.0.0+
-type Archetypedescriptor *ArchetypeDescriptor
+// ArchetypeDescriptor is 1.0.0+
+type ArchetypeDescriptor *ArchetypeDescriptor
 
 // RequiredProperties is List of required properties to generate a project from this archetype.
 type RequiredProperties struct {
