@@ -2717,7 +2717,7 @@ public class CT_Cnf {
 // CT_Headers ...
 public class CT_Headers {
 	@XmlElement(required = true, name = "header")
-	protected CT_String Header;
+	protected List<CT_String> Header;
 }
 
 // CT_TrPrBase ...
@@ -4071,7 +4071,7 @@ public class CT_Div {
 // CT_Divs ...
 public class CT_Divs {
 	@XmlElement(required = true, name = "div")
-	protected CT_Div Div;
+	protected List<CT_Div> Div;
 }
 
 // EG_MathContent ...
@@ -4136,7 +4136,7 @@ public class Comments {
 // CT_Footnotes ...
 public class CT_Footnotes {
 	@XmlElement(required = true, name = "footnote")
-	protected CT_FtnEdn Footnote;
+	protected List<CT_FtnEdn> Footnote;
 }
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -4148,7 +4148,7 @@ public class Footnotes {
 // CT_Endnotes ...
 public class CT_Endnotes {
 	@XmlElement(required = true, name = "endnote")
-	protected CT_FtnEdn Endnote;
+	protected List<CT_FtnEdn> Endnote;
 }
 
 @XmlAccessorType(XmlAccessType.FIELD)

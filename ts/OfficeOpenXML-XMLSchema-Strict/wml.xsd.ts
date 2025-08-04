@@ -2360,7 +2360,7 @@ export class CT_Cnf {
 
 // CT_Headers ...
 export class CT_Headers {
-	Header: CT_String;
+	Header: Array<CT_String>;
 }
 
 // CT_TrPrBase ...
@@ -3303,7 +3303,7 @@ export class CT_Div {
 
 // CT_Divs ...
 export class CT_Divs {
-	Div: CT_Div;
+	Div: Array<CT_Div>;
 }
 
 // EG_MathContent ...
@@ -3352,7 +3352,7 @@ export type Comments = CT_Comments;
 
 // CT_Footnotes ...
 export class CT_Footnotes {
-	Footnote: CT_FtnEdn;
+	Footnote: Array<CT_FtnEdn>;
 }
 
 // Footnotes ...
@@ -3360,7 +3360,7 @@ export type Footnotes = CT_Footnotes;
 
 // CT_Endnotes ...
 export class CT_Endnotes {
-	Endnote: CT_FtnEdn;
+	Endnote: Array<CT_FtnEdn>;
 }
 
 // Endnotes ...

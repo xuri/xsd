@@ -6533,7 +6533,7 @@ public class CT_FunctionGroups {
 	@XmlAttribute(name = "builtInGroupCount")
 	protected Integer BuiltInGroupCountAttr;
 	@XmlElement(required = true, name = "functionGroup")
-	protected CT_FunctionGroup FunctionGroup;
+	protected List<CT_FunctionGroup> FunctionGroup;
 }
 
 // CT_FunctionGroup ...

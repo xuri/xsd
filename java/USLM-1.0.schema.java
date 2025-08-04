@@ -578,9 +578,9 @@ public class InstructionType extends BaseContentType  {
 	@XmlElement(required = true, name = "level")
 	protected List<LevelType> Level;
 	@XmlElement(required = true, name = "quotedText")
-	protected QuotedTextType QuotedText;
+	protected List<QuotedTextType> QuotedText;
 	@XmlElement(required = true, name = "quotedContent")
-	protected QuotedContentType QuotedContent;
+	protected List<QuotedContentType> QuotedContent;
 }
 
 // ActionType is Use the @action attribute to describe the action being taken.
@@ -784,11 +784,11 @@ public class LevelStructure {
 	@XmlElement(required = true, name = "content")
 	protected List<ContentType> Content;
 	@XmlElement(required = true, name = "text")
-	protected TextType Text;
+	protected List<TextType> Text;
 	@XmlElement(required = true, name = "level")
-	protected LevelType Level;
+	protected List<LevelType> Level;
 	@XmlElement(required = true, name = "crossHeading")
-	protected HeadingType CrossHeading;
+	protected List<HeadingType> CrossHeading;
 	protected List<NoteStructure> NoteStructure;
 	protected List<NoteStructure> NoteStructure;
 	protected List<NoteStructure> NoteStructure;

@@ -478,8 +478,8 @@ export class InstructionType extends BaseContentType  {
 	Marker: Array<MarkerType>;
 	Action: Array<ActionType>;
 	Level: Array<LevelType>;
-	QuotedText: QuotedTextType;
-	QuotedContent: QuotedContentType;
+	QuotedText: Array<QuotedTextType>;
+	QuotedContent: Array<QuotedContentType>;
 }
 
 // ActionType is Use the @action attribute to describe the action being taken.
@@ -644,9 +644,9 @@ export class PreambleStructure {
 export class LevelStructure {
 	Instruction: Array<InstructionType>;
 	Content: Array<ContentType>;
-	Text: TextType;
-	Level: LevelType;
-	CrossHeading: HeadingType;
+	Text: Array<TextType>;
+	Level: Array<LevelType>;
+	CrossHeading: Array<HeadingType>;
 	NoteStructure: Array<NoteStructure>;
 	NoteStructure: Array<NoteStructure>;
 	NoteStructure: Array<NoteStructure>;

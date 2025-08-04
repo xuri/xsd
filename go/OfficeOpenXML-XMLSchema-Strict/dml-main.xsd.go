@@ -1906,7 +1906,7 @@ type CTTableCellProperties struct {
 // CTHeaders ...
 type CTHeaders struct {
 	XMLName xml.Name `xml:"CT_Headers"`
-	Header  string   `xml:"header"`
+	Header  []string `xml:"header"`
 }
 
 // CTTableCol ...

@@ -2548,7 +2548,7 @@ public class CT_TableCellProperties {
 // CT_Headers ...
 public class CT_Headers {
 	@XmlElement(required = true, name = "header")
-	protected String Header;
+	protected List<String> Header;
 }
 
 // CT_TableCol ...

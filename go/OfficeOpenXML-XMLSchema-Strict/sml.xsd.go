@@ -4315,9 +4315,9 @@ type STTargetScreenSize string
 
 // CTFunctionGroups ...
 type CTFunctionGroups struct {
-	XMLName               xml.Name         `xml:"CT_FunctionGroups"`
-	BuiltInGroupCountAttr uint32           `xml:"builtInGroupCount,attr,omitempty"`
-	FunctionGroup         *CTFunctionGroup `xml:"functionGroup,omitempty"`
+	XMLName               xml.Name           `xml:"CT_FunctionGroups"`
+	BuiltInGroupCountAttr uint32             `xml:"builtInGroupCount,attr,omitempty"`
+	FunctionGroup         []*CTFunctionGroup `xml:"functionGroup,omitempty"`
 }
 
 // CTFunctionGroup ...
