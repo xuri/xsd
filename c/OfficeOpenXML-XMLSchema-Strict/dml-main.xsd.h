@@ -1682,7 +1682,7 @@ typedef struct {
 
 // CT_Headers ...
 typedef struct {
-	char Header[];
+	char Header;
 } CT_Headers;
 
 // CT_TableCol ...

@@ -433,13 +433,13 @@ type HeadingType struct {
 //                            action (by position) as part of the processing
 //                            action.
 type InstructionType struct {
-	Ref           *RefType             `xml:"ref"`
-	Inline        []*InlineType        `xml:"inline"`
-	Marker        []*MarkerType        `xml:"marker"`
-	Action        []*ActionType        `xml:"action"`
-	Level         []*LevelType         `xml:"level"`
-	QuotedText    []*QuotedTextType    `xml:"quotedText"`
-	QuotedContent []*QuotedContentType `xml:"quotedContent"`
+	Ref           *RefType           `xml:"ref"`
+	Inline        []*InlineType      `xml:"inline"`
+	Marker        []*MarkerType      `xml:"marker"`
+	Action        []*ActionType      `xml:"action"`
+	Level         []*LevelType       `xml:"level"`
+	QuotedText    *QuotedTextType    `xml:"quotedText"`
+	QuotedContent *QuotedContentType `xml:"quotedContent"`
 	*BaseContentType
 }
 
@@ -615,9 +615,9 @@ type PreambleStructure struct {
 type LevelStructure struct {
 	Instruction   []*InstructionType
 	Content       []*ContentType
-	Text          []*TextType
-	Level         []*LevelType
-	CrossHeading  []*HeadingType
+	Text          *TextType
+	Level         *LevelType
+	CrossHeading  *HeadingType
 	NoteStructure []*NoteStructure
 	NoteStructure []*NoteStructure
 	NoteStructure []*NoteStructure

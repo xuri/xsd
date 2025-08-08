@@ -3920,7 +3920,7 @@ typedef char ST_TargetScreenSize;
 // CT_FunctionGroups ...
 typedef struct {
 	unsigned int BuiltInGroupCountAttr; // attr, optional
-	CT_FunctionGroup FunctionGroup[];
+	CT_FunctionGroup FunctionGroup;
 } CT_FunctionGroups;
 
 // CT_FunctionGroup ...

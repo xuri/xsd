@@ -3288,7 +3288,7 @@ pub struct CTCnf {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTHeaders {
 	#[serde(rename = "header")]
-	pub header: Vec<CTString>,
+	pub header: CTString,
 }
 
 
@@ -4844,7 +4844,7 @@ pub struct CTDiv {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTDivs {
 	#[serde(rename = "div")]
-	pub div: Vec<CTDiv>,
+	pub div: CTDiv,
 }
 
 
@@ -4930,7 +4930,7 @@ pub struct comments {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTFootnotes {
 	#[serde(rename = "footnote")]
-	pub footnote: Vec<CTFtnEdn>,
+	pub footnote: Option<CTFtnEdn>,
 }
 
 
@@ -4946,7 +4946,7 @@ pub struct footnotes {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTEndnotes {
 	#[serde(rename = "endnote")]
-	pub endnote: Vec<CTFtnEdn>,
+	pub endnote: Option<CTFtnEdn>,
 }
 
 

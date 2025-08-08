@@ -1743,7 +1743,7 @@ typedef struct {
 
 // CT_Headers ...
 typedef struct {
-	CT_String Header[];
+	CT_String Header;
 } CT_Headers;
 
 // CT_TrPrBase ...
@@ -2575,7 +2575,7 @@ typedef struct {
 
 // CT_Divs ...
 typedef struct {
-	CT_Div Div[];
+	CT_Div Div;
 } CT_Divs;
 
 // EG_MathContent ...
@@ -2623,14 +2623,14 @@ typedef CT_Comments Comments;
 
 // CT_Footnotes ...
 typedef struct {
-	CT_FtnEdn Footnote[];
+	CT_FtnEdn Footnote;
 } CT_Footnotes;
 
 typedef CT_Footnotes Footnotes;
 
 // CT_Endnotes ...
 typedef struct {
-	CT_FtnEdn Endnote[];
+	CT_FtnEdn Endnote;
 } CT_Endnotes;
 
 typedef CT_Endnotes Endnotes;

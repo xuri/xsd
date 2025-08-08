@@ -4584,7 +4584,7 @@ export enum ST_TargetScreenSize {
 // CT_FunctionGroups ...
 export class CT_FunctionGroups {
 	BuiltInGroupCountAttr: number | null;
-	FunctionGroup: Array<CT_FunctionGroup>;
+	FunctionGroup: CT_FunctionGroup;
 }
 
 // CT_FunctionGroup ...

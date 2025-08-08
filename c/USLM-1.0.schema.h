@@ -401,8 +401,8 @@ typedef struct {
 	MarkerType Marker[];
 	ActionType Action[];
 	LevelType Level[];
-	QuotedTextType QuotedText[];
-	QuotedContentType QuotedContent[];
+	QuotedTextType QuotedText;
+	QuotedContentType QuotedContent;
 } InstructionType;
 
 // ActionType is Use the @action attribute to describe the action being taken.
@@ -567,9 +567,9 @@ typedef struct {
 typedef struct {
 	InstructionType Instruction[];
 	ContentType Content[];
-	TextType Text[];
-	LevelType Level[];
-	HeadingType CrossHeading[];
+	TextType Text;
+	LevelType Level;
+	HeadingType CrossHeading;
 	NoteStructure NoteStructure[];
 	NoteStructure NoteStructure[];
 	NoteStructure NoteStructure[];
