@@ -34,46 +34,46 @@ type Parameters struct {
 
 // Mojo is Information about a sub-execution of the Maven lifecycle which should be processed.
 type Mojo struct {
-	Goal                         string              `xml:"goal,omitempty"`
-	Phase                        string              `xml:"phase,omitempty"`
-	Aggregator                   bool                `xml:"aggregator,omitempty"`
-	RequiresDependencyResolution string              `xml:"requiresDependencyResolution,omitempty"`
-	RequiresProject              bool                `xml:"requiresProject,omitempty"`
-	RequiresReports              bool                `xml:"requiresReports,omitempty"`
-	RequiresOnline               bool                `xml:"requiresOnline,omitempty"`
-	InheritByDefault             bool                `xml:"inheritByDefault,omitempty"`
-	RequiresDirectInvocation     bool                `xml:"requiresDirectInvocation,omitempty"`
+	Goal                         *string             `xml:"goal"`
+	Phase                        *string             `xml:"phase"`
+	Aggregator                   *bool               `xml:"aggregator"`
+	RequiresDependencyResolution *string             `xml:"requiresDependencyResolution"`
+	RequiresProject              *bool               `xml:"requiresProject"`
+	RequiresReports              *bool               `xml:"requiresReports"`
+	RequiresOnline               *bool               `xml:"requiresOnline"`
+	InheritByDefault             *bool               `xml:"inheritByDefault"`
+	RequiresDirectInvocation     *bool               `xml:"requiresDirectInvocation"`
 	Execution                    *LifecycleExecution `xml:"execution,omitempty"`
 	Components                   *Components         `xml:"components,omitempty"`
 	Parameters                   *Parameters         `xml:"parameters,omitempty"`
-	Description                  string              `xml:"description,omitempty"`
-	Deprecated                   string              `xml:"deprecated,omitempty"`
-	Call                         string              `xml:"call,omitempty"`
+	Description                  *string             `xml:"description"`
+	Deprecated                   *string             `xml:"deprecated"`
+	Call                         *string             `xml:"call"`
 }
 
 // Parameter is A deprecation message for this mojo parameter.
 type Parameter struct {
-	Name         string `xml:"name,omitempty"`
-	Alias        string `xml:"alias,omitempty"`
-	Property     string `xml:"property,omitempty"`
-	Required     bool   `xml:"required,omitempty"`
-	Readonly     bool   `xml:"readonly,omitempty"`
-	Expression   string `xml:"expression,omitempty"`
-	DefaultValue string `xml:"defaultValue,omitempty"`
-	Type         string `xml:"type,omitempty"`
-	Description  string `xml:"description,omitempty"`
-	Deprecated   string `xml:"deprecated,omitempty"`
+	Name         *string `xml:"name"`
+	Alias        *string `xml:"alias"`
+	Property     *string `xml:"property"`
+	Required     *bool   `xml:"required"`
+	Readonly     *bool   `xml:"readonly"`
+	Expression   *string `xml:"expression"`
+	DefaultValue *string `xml:"defaultValue"`
+	Type         *string `xml:"type"`
+	Description  *string `xml:"description"`
+	Deprecated   *string `xml:"deprecated"`
 }
 
 // LifecycleExecution is A goal, not attached to a lifecycle phase, which should be executed ahead of this mojo.
 type LifecycleExecution struct {
-	Lifecycle string `xml:"lifecycle,omitempty"`
-	Phase     string `xml:"phase,omitempty"`
-	Goal      string `xml:"goal,omitempty"`
+	Lifecycle *string `xml:"lifecycle"`
+	Phase     *string `xml:"phase"`
+	Goal      *string `xml:"goal"`
 }
 
 // Component is The role-hint to lookup.
 type Component struct {
-	Role string `xml:"role,omitempty"`
-	Hint string `xml:"hint,omitempty"`
+	Role *string `xml:"role"`
+	Hint *string `xml:"hint"`
 }

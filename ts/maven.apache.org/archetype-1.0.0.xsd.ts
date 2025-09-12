@@ -5,39 +5,39 @@ export type Archetype = ArchetypeModel;
 
 // Sources is Files that will go into <code>src/main/java</code>.
 export class Sources {
-	Source: Array<Source>;
+	Source?: Array<Source>;
 }
 
 // Resources is Files that will go into <code>src/main/resources</code>.
 export class Resources {
-	Resource: Array<Resource>;
+	Resource?: Array<Resource>;
 }
 
 // TestSources is Files that will go into <code>src/test/java</code>.
 export class TestSources {
-	Source: Array<Source>;
+	Source?: Array<Source>;
 }
 
 // TestResources is Files that will go into <code>src/test/resources</code>.
 export class TestResources {
-	Resource: Array<Resource>;
+	Resource?: Array<Resource>;
 }
 
 // SiteResources is Files that will go into <code>src/site</code>.
 export class SiteResources {
-	Resource: Array<Resource>;
+	Resource?: Array<Resource>;
 }
 
 // ArchetypeModel is Setting this option to <code>true</code> makes it possible to run the
 //             <code>archetype:create</code> even on existing projects.
 export class ArchetypeModel {
-	Id: string;
-	AllowPartial: boolean;
-	Sources: Sources;
-	Resources: Resources;
-	TestSources: TestSources;
-	TestResources: TestResources;
-	SiteResources: SiteResources;
+	Id?: string;
+	AllowPartial?: boolean;
+	Sources?: Sources;
+	Resources?: Resources;
+	TestSources?: TestSources;
+	TestResources?: TestResources;
+	SiteResources?: SiteResources;
 }
 
 // Source is Describes a source file. Note that source files are always filtered, unlike resources that

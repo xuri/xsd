@@ -11,21 +11,21 @@ export type Project = Model;
 //             is used to generate the <a href="/plugins/site/index.html">front
 //             page</a> of the site's web site.
 export class MailingLists {
-	MailingList: Array<MailingList>;
+	MailingList?: Array<MailingList>;
 }
 
 // Developers is Describes the committers to a project.  This is used to
 //             generate the <a href="/plugins/site/index.html">Project Team</a>
 //             page of the project's web site.
 export class Developers {
-	Developer: Array<Developer>;
+	Developer?: Array<Developer>;
 }
 
 // Contributors is Describes the contributors to a project.  This is used to generate
 //             the <a href="/plugins/site/index.html">Project Team</a> page of
 //             the project's web site.
 export class Contributors {
-	Contributor: Array<Contributor>;
+	Contributor?: Array<Contributor>;
 }
 
 // Licenses is This element describes all of the licenses for this project.  
@@ -35,7 +35,7 @@ export class Contributors {
 //             Projects should only list the license(s) that applies to the project 
 //             and not the licenses that apply to dependencies.
 export class Licenses {
-	License: Array<License>;
+	License?: Array<License>;
 }
 
 // Versions is Optional. Contains information on previous versions of the
@@ -43,7 +43,7 @@ export class Licenses {
 //             <a href="/plugins/dist/index.html"><code>maven:dist</code></a>
 //             target.
 export class Versions {
-	Version: Array<Version>;
+	Version?: Array<Version>;
 }
 
 // Branches is Optional. Contains information on branches of the
@@ -51,12 +51,12 @@ export class Versions {
 //             <a href="/plugins/dist/index.html"><code>maven:dist</code></a>
 //             target.
 export class Branches {
-	Branch: Array<Branch>;
+	Branch?: Array<Branch>;
 }
 
 // PackageGroups is Package groups required for complete javadocs.
 export class PackageGroups {
-	PackageGroup: Array<PackageGroup>;
+	PackageGroup?: Array<PackageGroup>;
 }
 
 // Reports is This element includes the specification of reports to be
@@ -65,7 +65,7 @@ export class PackageGroups {
 //             reports will be included in the navigation bar for browsing in
 //             the order they are specified.
 export class Reports {
-	Report: string;
+	Report?: string;
 }
 
 // Properties is Project properties that will be used by various plugins
@@ -123,7 +123,7 @@ export class Properties {
 //               <dd>is taken from the dependency element</dd>
 //             </dl>
 export class Dependencies {
-	Dependency: Array<Dependency>;
+	Dependency?: Array<Dependency>;
 }
 
 // Model is Optional. The directory on the web server where the final
@@ -131,38 +131,38 @@ export class Dependencies {
 //             distributions are
 //             <a href="/plugins/dist/index.html">deployed</a>.
 export class Model {
-	Extend: string;
-	PomVersion: string;
-	Id: string;
-	GroupId: string;
-	ArtifactId: string;
-	Name: string;
-	CurrentVersion: string;
-	ShortDescription: string;
-	Description: string;
-	Url: string;
-	Logo: string;
-	IssueTrackingUrl: string;
-	InceptionYear: string;
-	GumpRepositoryId: string;
-	SiteAddress: string;
-	SiteDirectory: string;
-	DistributionSite: string;
-	DistributionDirectory: string;
-	MailingLists: MailingLists;
-	Developers: Developers;
-	Contributors: Contributors;
-	Licenses: Licenses;
-	Versions: Versions;
-	Branches: Branches;
-	PackageGroups: PackageGroups;
-	Reports: Reports;
-	Repository: Repository;
-	Organization: Organization;
-	Properties: Properties;
-	Package: string;
-	Build: Build;
-	Dependencies: Dependencies;
+	Extend?: string;
+	PomVersion?: string;
+	Id?: string;
+	GroupId?: string;
+	ArtifactId?: string;
+	Name?: string;
+	CurrentVersion?: string;
+	ShortDescription?: string;
+	Description?: string;
+	Url?: string;
+	Logo?: string;
+	IssueTrackingUrl?: string;
+	InceptionYear?: string;
+	GumpRepositoryId?: string;
+	SiteAddress?: string;
+	SiteDirectory?: string;
+	DistributionSite?: string;
+	DistributionDirectory?: string;
+	MailingLists?: MailingLists;
+	Developers?: Developers;
+	Contributors?: Contributors;
+	Licenses?: Licenses;
+	Versions?: Versions;
+	Branches?: Branches;
+	PackageGroups?: PackageGroups;
+	Reports?: Reports;
+	Repository?: Repository;
+	Organization?: Organization;
+	Properties?: Properties;
+	Package?: string;
+	Build?: Build;
+	Dependencies?: Dependencies;
 }
 
 // SourceModifications is This element describes all of the sourceModifications associated 
@@ -172,7 +172,7 @@ export class Model {
 //             to exclude or include various source depending on the environment
 //              the build is running in.
 export class SourceModifications {
-	SourceModification: Array<SourceModification>;
+	SourceModification?: Array<SourceModification>;
 }
 
 // Resources is This element describes all of the resources associated with a 
@@ -181,58 +181,58 @@ export class SourceModifications {
 //             <a href="#resource">below</a>). These resources are used to complete 
 //             the jar file or to run unit test.
 export class Resources {
-	Resource: Array<Resource>;
+	Resource?: Array<Resource>;
 }
 
 // Build is This element specifies a directory containing integration test    
 //              sources of the project.
 export class Build {
-	NagEmailAddress: string;
-	SourceDirectory: string;
-	UnitTestSourceDirectory: string;
-	AspectSourceDirectory: string;
-	IntegrationUnitTestSourceDirectory: string;
-	SourceModifications: SourceModifications;
-	UnitTest: UnitTest;
-	DefaultGoal: string;
-	Resources: Resources;
+	NagEmailAddress?: string;
+	SourceDirectory?: string;
+	UnitTestSourceDirectory?: string;
+	AspectSourceDirectory?: string;
+	IntegrationUnitTestSourceDirectory?: string;
+	SourceModifications?: SourceModifications;
+	UnitTest?: UnitTest;
+	DefaultGoal?: string;
+	Resources?: Resources;
 }
 
 // Includes is the description
 export class Includes {
-	Include: string;
+	Include?: string;
 }
 
 // Excludes is the description
 export class Excludes {
-	Exclude: string;
+	Exclude?: string;
 }
 
 // UnitTest is 3.0.0
 export class UnitTest {
-	Resources: Resources;
-	Includes: Includes;
-	Excludes: Excludes;
+	Resources?: Resources;
+	Includes?: Includes;
+	Excludes?: Excludes;
 }
 
 // Resource is Describe the directory where the resource is stored.
 //             The path may be absolute, or relative to the project.xml file.
 export class Resource {
-	TargetPath: string;
-	Filtering: boolean;
-	Directory: string;
-	Includes: Includes;
-	Excludes: Excludes;
+	TargetPath?: string;
+	Filtering?: boolean;
+	Directory?: string;
+	Includes?: Includes;
+	Excludes?: Excludes;
 }
 
 // SourceModification is Describe the directory where the resource is stored.
 //             The path may be absolute, or relative to the project.xml file.
 export class SourceModification {
-	ClassName: string;
-	Property: string;
-	Directory: string;
-	Includes: Includes;
-	Excludes: Excludes;
+	ClassName?: string;
+	Property?: string;
+	Directory?: string;
+	Includes?: Includes;
+	Excludes?: Excludes;
 }
 
 // Organization is The URL to the organization's logo image.  This can be an URL relative
@@ -241,29 +241,29 @@ export class SourceModification {
 //             (e.g., <code>http://my.corp/logo.png</code>).  This value is used
 //             when generating the project documentation.
 export class Organization {
-	Name: string;
-	Url: string;
-	Logo: string;
+	Name?: string;
+	Url?: string;
+	Logo?: string;
 }
 
 // Roles is The roles the contributor plays in the project.  Each role is
 //             described by a <code>role</code> element, the body of which is a
 //             role name.
 export class Roles {
-	Role: string;
+	Role?: string;
 }
 
 // Developer is The URL of the organization.
 export class Developer {
-	Id: string;
-	Name: string;
-	Email: string;
-	Url: string;
-	Organization: string;
-	OrganizationUrl: string;
-	Roles: Roles;
-	Timezone: string;
-	Properties: Properties;
+	Id?: string;
+	Name?: string;
+	Email?: string;
+	Url?: string;
+	Organization?: string;
+	OrganizationUrl?: string;
+	Roles?: Roles;
+	Timezone?: string;
+	Properties?: Properties;
 }
 
 // Dependency is The type of dependency. This defaults to <code>jar</code>.
@@ -274,27 +274,27 @@ export class Developer {
 //             <li><code>plugin</code></li>
 //             </ul>
 export class Dependency {
-	Id: string;
-	GroupId: string;
-	ArtifactId: string;
-	Version: string;
-	Url: string;
-	Jar: string;
-	Type: string;
-	Properties: Properties;
+	Id?: string;
+	GroupId?: string;
+	ArtifactId?: string;
+	Version?: string;
+	Url?: string;
+	Jar?: string;
+	Type?: string;
+	Properties?: Properties;
 }
 
 // Repository is The URL to the project's browsable CVS repository.
 export class Repository {
-	Connection: string;
-	DeveloperConnection: string;
-	Url: string;
+	Connection?: string;
+	DeveloperConnection?: string;
+	Url?: string;
 }
 
 // PackageGroup is the description
 export class PackageGroup {
-	Title: string;
-	Packages: string;
+	Title?: string;
+	Packages?: string;
 }
 
 // Version is A unique identifier for a version.  This ID is
@@ -303,49 +303,49 @@ export class PackageGroup {
 //               <code>maven:dist</code>
 //             </a> builds.
 export class Version {
-	Name: string;
-	Tag: string;
-	Id: string;
+	Name?: string;
+	Tag?: string;
+	Id?: string;
 }
 
 // License is Addendum information pertaining to this license.
 export class License {
-	Name: string;
-	Url: string;
-	Distribution: string;
-	Comments: string;
+	Name?: string;
+	Url?: string;
+	Distribution?: string;
+	Comments?: string;
 }
 
 // Contributor is The URL of the organization.
 export class Contributor {
-	Name: string;
-	Email: string;
-	Url: string;
-	Organization: string;
-	OrganizationUrl: string;
-	Roles: Roles;
-	Timezone: string;
-	Properties: Properties;
+	Name?: string;
+	Email?: string;
+	Url?: string;
+	Organization?: string;
+	OrganizationUrl?: string;
+	Roles?: Roles;
+	Timezone?: string;
+	Properties?: Properties;
 }
 
 // Branch is The branch tag in the version control system (e.g. cvs) used by the 
 //             project for the source code associated with this branch of the
 //             project.
 export class Branch {
-	Tag: string;
+	Tag?: string;
 }
 
 // OtherArchives is The link to other URLs where you can browse the list archive.
 export class OtherArchives {
-	OtherArchive: string;
+	OtherArchive?: string;
 }
 
 // MailingList is The link to a URL where you can browse the mailing list archive.
 export class MailingList {
-	Name: string;
-	Subscribe: string;
-	Unsubscribe: string;
-	Post: string;
-	Archive: string;
-	OtherArchives: OtherArchives;
+	Name?: string;
+	Subscribe?: string;
+	Unsubscribe?: string;
+	Post?: string;
+	Archive?: string;
+	OtherArchives?: OtherArchives;
 }

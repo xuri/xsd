@@ -2,7 +2,7 @@
 
 // CT_AdditionalCharacteristics ...
 export class CT_AdditionalCharacteristics {
-	Characteristic: Array<CT_Characteristic>;
+	Characteristic?: Array<CT_Characteristic>;
 }
 
 // CT_Characteristic ...

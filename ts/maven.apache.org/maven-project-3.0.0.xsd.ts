@@ -2,36 +2,36 @@
 
 // Project ...
 export class Project {
-	Extend: string;
+	Extend?: string;
 	PomVersion: string;
 	Id: string;
 	Name: string;
-	GroupId: string;
+	GroupId?: string;
 	CurrentVersion: string;
 	Organization: Organization;
 	InceptionYear: string;
-	Package: string;
-	Logo: string;
-	GumpRepositoryId: string;
-	Description: string;
+	Package?: string;
+	Logo?: string;
+	GumpRepositoryId?: string;
+	Description?: string;
 	ShortDescription: string;
-	Url: string;
-	IssueTrackingUrl: string;
-	SiteAddress: string;
-	SiteDirectory: string;
-	DistributionSite: string;
-	DistributionDirectory: string;
-	Repository: Repository;
-	Versions: Versions;
-	Branches: Branches;
-	MailingLists: MailingLists;
+	Url?: string;
+	IssueTrackingUrl?: string;
+	SiteAddress?: string;
+	SiteDirectory?: string;
+	DistributionSite?: string;
+	DistributionDirectory?: string;
+	Repository?: Repository;
+	Versions?: Versions;
+	Branches?: Branches;
+	MailingLists?: MailingLists;
 	Developers: Developers;
-	Contributors: Contributors;
-	Licenses: Licenses;
-	Dependencies: Dependencies;
+	Contributors?: Contributors;
+	Licenses?: Licenses;
+	Dependencies?: Dependencies;
 	Build: Build;
-	Reports: Reports;
-	Properties: Properties;
+	Reports?: Reports;
+	Properties?: Properties;
 }
 
 // Extend ...
@@ -100,20 +100,20 @@ export type Url = string;
 // Repository ...
 export class Repository {
 	Connection: string;
-	DeveloperConnection: string;
-	Url: string;
+	DeveloperConnection?: string;
+	Url?: string;
 }
 
 // Organization ...
 export class Organization {
 	Name: string;
-	Url: string;
-	Logo: string;
+	Url?: string;
+	Logo?: string;
 }
 
 // Versions ...
 export class Versions {
-	Version: Array<Version>;
+	Version?: Array<Version>;
 }
 
 // Version ...
@@ -128,7 +128,7 @@ export type Tag = string;
 
 // Branches ...
 export class Branches {
-	Branch: Array<Branch>;
+	Branch?: Array<Branch>;
 }
 
 // Branch ...
@@ -138,7 +138,7 @@ export class Branch {
 
 // MailingLists ...
 export class MailingLists {
-	MailingList: Array<MailingList>;
+	MailingList?: Array<MailingList>;
 }
 
 // MailingList ...
@@ -146,7 +146,7 @@ export class MailingList {
 	Name: string;
 	Subscribe: string;
 	Unsubscribe: string;
-	Archive: string;
+	Archive?: string;
 }
 
 // Subscribe ...
@@ -160,7 +160,7 @@ export type Archive = string;
 
 // Developers ...
 export class Developers {
-	Developer: Array<Developer>;
+	Developer?: Array<Developer>;
 }
 
 // Developer ...
@@ -184,7 +184,7 @@ export type Email = string;
 
 // Roles ...
 export class Roles {
-	Role: string;
+	Role?: string;
 }
 
 // Role ...
@@ -198,7 +198,7 @@ export type Timezone = number;
 
 // Contributors ...
 export class Contributors {
-	Contributor: Array<Contributor>;
+	Contributor?: Array<Contributor>;
 }
 
 // Contributor ...
@@ -209,14 +209,14 @@ export class Contributor {
 
 // Licenses ...
 export class Licenses {
-	License: Array<License>;
+	License?: Array<License>;
 }
 
 // License ...
 export class License {
-	Name: string;
-	Url: string;
-	Distribution: any;
+	Name?: string;
+	Url?: string;
+	Distribution?: any;
 }
 
 // Distribution ...
@@ -224,19 +224,19 @@ export type Distribution = any;
 
 // Dependencies ...
 export class Dependencies {
-	Dependency: Array<Dependency>;
+	Dependency?: Array<Dependency>;
 }
 
 // Dependency ...
 export class Dependency {
-	Id: string;
-	GroupId: string;
-	ArtifactId: string;
+	Id?: string;
+	GroupId?: string;
+	ArtifactId?: string;
 	Version: string;
-	Jar: string;
-	Type: string;
-	Url: string;
-	Properties: Properties;
+	Jar?: string;
+	Type?: string;
+	Url?: string;
+	Properties?: Properties;
 }
 
 // Type ...
@@ -247,14 +247,14 @@ export type Jar = string;
 
 // Build ...
 export class Build {
-	NagEmailAddress: string;
-	SourceDirectory: string;
-	SourceModifications: SourceModifications;
-	UnitTestSourceDirectory: string;
-	IntegrationUnitTestSourceDirectory: string;
-	AspectSourceDirectory: string;
-	UnitTest: UnitTest;
-	Resources: Resources;
+	NagEmailAddress?: string;
+	SourceDirectory?: string;
+	SourceModifications?: SourceModifications;
+	UnitTestSourceDirectory?: string;
+	IntegrationUnitTestSourceDirectory?: string;
+	AspectSourceDirectory?: string;
+	UnitTest?: UnitTest;
+	Resources?: Resources;
 }
 
 // NagEmailAddress ...
@@ -265,14 +265,14 @@ export type SourceDirectory = string;
 
 // SourceModifications ...
 export class SourceModifications {
-	SourceModification: Array<SourceModification>;
+	SourceModification?: Array<SourceModification>;
 }
 
 // SourceModification ...
 export class SourceModification {
 	ClassName: string;
-	Includes: Array<Includes>;
-	Excludes: Array<Excludes>;
+	Includes?: Array<Includes>;
+	Excludes?: Array<Excludes>;
 }
 
 // UnitTestSourceDirectory ...
@@ -286,19 +286,19 @@ export type AspectSourceDirectory = string;
 
 // UnitTest ...
 export class UnitTest {
-	Includes: Array<Includes>;
-	Excludes: Array<Excludes>;
-	Resources: Resources;
+	Includes?: Array<Includes>;
+	Excludes?: Array<Excludes>;
+	Resources?: Resources;
 }
 
 // Includes ...
 export class Includes {
-	Include: string;
+	Include?: string;
 }
 
 // Excludes ...
 export class Excludes {
-	Exclude: string;
+	Exclude?: string;
 }
 
 // Include ...
@@ -309,7 +309,7 @@ export type Exclude = string;
 
 // Resources ...
 export class Resources {
-	Resource: Array<Resource>;
+	Resource?: Array<Resource>;
 }
 
 // Directory ...
@@ -323,16 +323,16 @@ export type Filtering = boolean;
 
 // Resource ...
 export class Resource {
-	Directory: string;
-	TargetPath: string;
-	Includes: Array<Includes>;
-	Excludes: Array<Excludes>;
-	Filtering: boolean;
+	Directory?: string;
+	TargetPath?: string;
+	Includes?: Array<Includes>;
+	Excludes?: Array<Excludes>;
+	Filtering?: boolean;
 }
 
 // Reports ...
 export class Reports {
-	Report: string;
+	Report?: string;
 }
 
 // Properties ...

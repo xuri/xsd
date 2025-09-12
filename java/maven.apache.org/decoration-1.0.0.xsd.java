@@ -20,7 +20,7 @@ public class Project {
 
 // PoweredBy is Powered by logos list.
 public class PoweredBy {
-	@XmlElement(required = true, name = "logo")
+	@XmlElement(name = "logo")
 	protected List<Logo> Logo;
 }
 
@@ -32,33 +32,33 @@ public class Custom {
 public class DecorationModel {
 	@XmlAttribute(name = "name")
 	protected String NameAttr;
-	@XmlElement(required = true, name = "bannerLeft")
+	@XmlElement(name = "bannerLeft")
 	protected Banner BannerLeft;
-	@XmlElement(required = true, name = "bannerRight")
+	@XmlElement(name = "bannerRight")
 	protected Banner BannerRight;
-	@XmlElement(required = true, name = "publishDate")
+	@XmlElement(name = "publishDate")
 	protected PublishDate PublishDate;
-	@XmlElement(required = true, name = "version")
+	@XmlElement(name = "version")
 	protected Version Version;
-	@XmlElement(required = true, name = "poweredBy")
+	@XmlElement(name = "poweredBy")
 	protected PoweredBy PoweredBy;
-	@XmlElement(required = true, name = "skin")
+	@XmlElement(name = "skin")
 	protected Skin Skin;
-	@XmlElement(required = true, name = "body")
+	@XmlElement(name = "body")
 	protected Body Body;
-	@XmlElement(required = true, name = "custom")
+	@XmlElement(name = "custom")
 	protected Custom Custom;
 }
 
 // Banner is The href of a link to be used for the banner image.
 public class Banner {
-	@XmlElement(required = true, name = "name")
+	@XmlElement(name = "name")
 	protected String Name;
-	@XmlElement(required = true, name = "src")
+	@XmlElement(name = "src")
 	protected String Src;
-	@XmlElement(required = true, name = "alt")
+	@XmlElement(name = "alt")
 	protected String Alt;
-	@XmlElement(required = true, name = "href")
+	@XmlElement(name = "href")
 	protected String Href;
 }
 
@@ -68,25 +68,25 @@ public class Head {
 
 // Links is A list of links to display in the navigation.
 public class Links {
-	@XmlElement(required = true, name = "item")
+	@XmlElement(name = "item")
 	protected List<LinkItem> Item;
 }
 
 // Breadcrumbs is A list of breadcrumbs to display in the navigation.
 public class Breadcrumbs {
-	@XmlElement(required = true, name = "item")
+	@XmlElement(name = "item")
 	protected List<LinkItem> Item;
 }
 
 // Body is The main content decoration.
 public class Body {
-	@XmlElement(required = true, name = "head")
+	@XmlElement(name = "head")
 	protected Head Head;
-	@XmlElement(required = true, name = "links")
+	@XmlElement(name = "links")
 	protected Links Links;
-	@XmlElement(required = true, name = "breadcrumbs")
+	@XmlElement(name = "breadcrumbs")
 	protected Breadcrumbs Breadcrumbs;
-	@XmlElement(required = true, name = "menu")
+	@XmlElement(name = "menu")
 	protected List<Menu> Menu;
 }
 
@@ -110,7 +110,7 @@ public class Menu {
 	protected String RefAttr;
 	@XmlAttribute(name = "img")
 	protected String ImgAttr;
-	@XmlElement(required = true, name = "item")
+	@XmlElement(name = "item")
 	protected List<MenuItem> Item;
 }
 
@@ -124,19 +124,19 @@ public class MenuItem {
 	protected String NameAttr;
 	@XmlAttribute(name = "href")
 	protected String HrefAttr;
-	@XmlElement(required = true, name = "description")
+	@XmlElement(name = "description")
 	protected String Description;
-	@XmlElement(required = true, name = "item")
+	@XmlElement(name = "item")
 	protected List<MenuItem> Item;
 }
 
 // Skin is The skin version.
 public class Skin {
-	@XmlElement(required = true, name = "groupId")
+	@XmlElement(name = "groupId")
 	protected String GroupId;
-	@XmlElement(required = true, name = "artifactId")
+	@XmlElement(name = "artifactId")
 	protected String ArtifactId;
-	@XmlElement(required = true, name = "version")
+	@XmlElement(name = "version")
 	protected String Version;
 }
 

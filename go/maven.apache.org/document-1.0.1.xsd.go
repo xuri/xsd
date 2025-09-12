@@ -43,37 +43,37 @@ type Authors struct {
 //             Only used if <code>coverDate</code> is not set.
 //             @since 1.1.1
 type DocumentCover struct {
-	CoverTitle    string   `xml:"coverTitle,omitempty"`
-	CoverSubTitle string   `xml:"coverSubTitle,omitempty"`
-	CoverVersion  string   `xml:"coverVersion,omitempty"`
-	CoverType     string   `xml:"coverType,omitempty"`
-	CoverDate     string   `xml:"coverDate,omitempty"`
-	Coverdate     string   `xml:"coverdate,omitempty"`
+	CoverTitle    *string  `xml:"coverTitle"`
+	CoverSubTitle *string  `xml:"coverSubTitle"`
+	CoverVersion  *string  `xml:"coverVersion"`
+	CoverType     *string  `xml:"coverType"`
+	CoverDate     *string  `xml:"coverDate"`
+	Coverdate     *string  `xml:"coverdate"`
 	Authors       *Authors `xml:"authors,omitempty"`
-	Author        string   `xml:"author,omitempty"`
-	ProjectName   string   `xml:"projectName,omitempty"`
-	ProjectLogo   string   `xml:"projectLogo,omitempty"`
-	CompanyName   string   `xml:"companyName,omitempty"`
-	CompanyLogo   string   `xml:"companyLogo,omitempty"`
+	Author        *string  `xml:"author"`
+	ProjectName   *string  `xml:"projectName"`
+	ProjectLogo   *string  `xml:"projectLogo"`
+	CompanyName   *string  `xml:"companyName"`
+	CompanyLogo   *string  `xml:"companyLogo"`
 }
 
 // DocumentAuthor is The state or province of the address of the author, if applicable.
 type DocumentAuthor struct {
-	FirstName   string `xml:"firstName,omitempty"`
-	LastName    string `xml:"lastName,omitempty"`
-	Name        string `xml:"name,omitempty"`
-	Initials    string `xml:"initials,omitempty"`
-	Title       string `xml:"title,omitempty"`
-	Position    string `xml:"position,omitempty"`
-	Email       string `xml:"email,omitempty"`
-	PhoneNumber string `xml:"phoneNumber,omitempty"`
-	FaxNumber   string `xml:"faxNumber,omitempty"`
-	CompanyName string `xml:"companyName,omitempty"`
-	Street      string `xml:"street,omitempty"`
-	City        string `xml:"city,omitempty"`
-	PostalCode  string `xml:"postalCode,omitempty"`
-	Country     string `xml:"country,omitempty"`
-	State       string `xml:"state,omitempty"`
+	FirstName   *string `xml:"firstName"`
+	LastName    *string `xml:"lastName"`
+	Name        *string `xml:"name"`
+	Initials    *string `xml:"initials"`
+	Title       *string `xml:"title"`
+	Position    *string `xml:"position"`
+	Email       *string `xml:"email"`
+	PhoneNumber *string `xml:"phoneNumber"`
+	FaxNumber   *string `xml:"faxNumber"`
+	CompanyName *string `xml:"companyName"`
+	Street      *string `xml:"street"`
+	City        *string `xml:"city"`
+	PostalCode  *string `xml:"postalCode"`
+	Country     *string `xml:"country"`
+	State       *string `xml:"state"`
 }
 
 // KeyWords is A keyword pertaining to the document. The metadata can contain any
@@ -86,32 +86,32 @@ type KeyWords struct {
 // DocumentMeta is The unique author of the document, usually as a String of "firstName lastName". For
 //             more authors, you could use the &lt;authors/&gt; tag.
 type DocumentMeta struct {
-	Title              string                      `xml:"title,omitempty"`
-	Author             string                      `xml:"author,omitempty"`
+	Title              *string                     `xml:"title"`
+	Author             *string                     `xml:"author"`
 	Authors            *Authors                    `xml:"authors,omitempty"`
-	Subject            string                      `xml:"subject,omitempty"`
-	Keywords           string                      `xml:"keywords,omitempty"`
+	Subject            *string                     `xml:"subject"`
+	Keywords           *string                     `xml:"keywords"`
 	KeyWords           *KeyWords                   `xml:"keyWords,omitempty"`
-	PageSize           string                      `xml:"pageSize,omitempty"`
-	Generator          string                      `xml:"generator,omitempty"`
-	Description        string                      `xml:"description,omitempty"`
-	InitialCreator     string                      `xml:"initialCreator,omitempty"`
-	Creator            string                      `xml:"creator,omitempty"`
-	PrintedBy          string                      `xml:"printedBy,omitempty"`
-	CreationDate       string                      `xml:"creationDate,omitempty"`
-	Creationdate       string                      `xml:"creationdate,omitempty"`
-	Date               string                      `xml:"date,omitempty"`
-	Modifydate         string                      `xml:"modifydate,omitempty"`
-	PrintDate          string                      `xml:"printDate,omitempty"`
-	Printdate          string                      `xml:"printdate,omitempty"`
+	PageSize           *string                     `xml:"pageSize"`
+	Generator          *string                     `xml:"generator"`
+	Description        *string                     `xml:"description"`
+	InitialCreator     *string                     `xml:"initialCreator"`
+	Creator            *string                     `xml:"creator"`
+	PrintedBy          *string                     `xml:"printedBy"`
+	CreationDate       *string                     `xml:"creationDate"`
+	Creationdate       *string                     `xml:"creationdate"`
+	Date               *string                     `xml:"date"`
+	Modifydate         *string                     `xml:"modifydate"`
+	PrintDate          *string                     `xml:"printDate"`
+	Printdate          *string                     `xml:"printdate"`
 	Template           *DocumentTemplate           `xml:"template,omitempty"`
 	HyperlinkBehaviour *DocumentHyperlinkBehaviour `xml:"hyperlinkBehaviour,omitempty"`
-	Language           string                      `xml:"language,omitempty"`
-	EditingCycles      int64                       `xml:"editingCycles,omitempty"`
-	EditingDuration    int64                       `xml:"editingDuration,omitempty"`
+	Language           *string                     `xml:"language"`
+	EditingCycles      *int64                      `xml:"editingCycles"`
+	EditingDuration    *int64                      `xml:"editingDuration"`
 	DocumentStatistic  *DocumentStatistic          `xml:"documentStatistic,omitempty"`
-	Confidential       bool                        `xml:"confidential,omitempty"`
-	Draft              bool                        `xml:"draft,omitempty"`
+	Confidential       *bool                       `xml:"confidential"`
+	Draft              *bool                       `xml:"draft"`
 }
 
 // DocumentTemplate is A template that was used to create the document.

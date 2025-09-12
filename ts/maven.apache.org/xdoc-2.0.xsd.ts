@@ -1139,11 +1139,11 @@ export class Table {
 	CellpaddingAttr: string | null;
 	AlignAttr: string | null;
 	BgcolorAttr: string | null;
-	Caption: Caption;
-	Col: Array<Col>;
-	Colgroup: Array<Colgroup>;
-	Thead: Thead;
-	Tfoot: Tfoot;
+	Caption?: Caption;
+	Col?: Array<Col>;
+	Colgroup?: Array<Colgroup>;
+	Thead?: Thead;
+	Tfoot?: Tfoot;
 	Tbody: Array<Tbody>;
 	Tr: Array<Tr>;
 }
@@ -1194,7 +1194,7 @@ export class Colgroup {
 	Cellvalign: Cellvalign;
 	SpanAttr: number | null;
 	WidthAttr: string | null;
-	Col: Array<Col>;
+	Col?: Array<Col>;
 }
 
 // Col is col elements define the alignment properties for cells in
@@ -1271,16 +1271,16 @@ export class Td extends Flow  {
 export class Document {
 	I18n: I18n;
 	IdAttr: string | null;
-	Properties: Properties;
-	Head: Head;
+	Properties?: Properties;
+	Head?: Head;
 	Body: Body;
 }
 
 // Properties is Optional creation/last updated date for the document element.
 export class Properties {
 	Title: Title;
-	Author: Array<Author>;
-	Date: string;
+	Author?: Array<Author>;
+	Date?: string;
 }
 
 // Author is An author element.

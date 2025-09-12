@@ -21,15 +21,15 @@ public class Document {
 // ChangesDocument is Contains the releases of this project with the actions taken
 //             for each of the releases.
 public class ChangesDocument {
-	@XmlElement(required = true, name = "properties")
+	@XmlElement(name = "properties")
 	protected Properties Properties;
-	@XmlElement(required = true, name = "body")
+	@XmlElement(name = "body")
 	protected Body Body;
 }
 
 // Body is The list of releases for this project.
 public class Body {
-	@XmlElement(required = true, name = "release")
+	@XmlElement(name = "release")
 	protected List<Release> Release;
 }
 
@@ -41,7 +41,7 @@ public class Release {
 	protected String DateAttr;
 	@XmlAttribute(name = "description")
 	protected String DescriptionAttr;
-	@XmlElement(required = true, name = "action")
+	@XmlElement(name = "action")
 	protected List<Action> Action;
 }
 
@@ -61,9 +61,9 @@ public class Action {
 	protected String SystemAttr;
 	@XmlAttribute(name = "date")
 	protected String DateAttr;
-	@XmlElement(required = true, name = "fixes")
+	@XmlElement(name = "fixes")
 	protected List<FixedIssue> Fixes;
-	@XmlElement(required = true, name = "dueto")
+	@XmlElement(name = "dueto")
 	protected List<DueTo> Dueto;
 }
 
@@ -83,9 +83,9 @@ public class DueTo {
 
 // Properties is Page Author
 public class Properties {
-	@XmlElement(required = true, name = "title")
+	@XmlElement(name = "title")
 	protected String Title;
-	@XmlElement(required = true, name = "author")
+	@XmlElement(name = "author")
 	protected Author Author;
 }
 

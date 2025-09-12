@@ -5,19 +5,19 @@ export type Archetypecatalog = ArchetypeCatalog;
 
 // Archetypes is List of Acthetypes available in this catalog.
 export class Archetypes {
-	Archetype: Array<Archetype>;
+	Archetype?: Array<Archetype>;
 }
 
 // ArchetypeCatalog is 0.0.0+
 export class ArchetypeCatalog {
-	Archetypes: Archetypes;
+	Archetypes?: Archetypes;
 }
 
 // Archetype is The description of the archetype.
 export class Archetype {
-	GroupId: string;
-	ArtifactId: string;
-	Version: string;
-	Repository: string;
-	Description: string;
+	GroupId?: string;
+	ArtifactId?: string;
+	Version?: string;
+	Repository?: string;
+	Description?: string;
 }

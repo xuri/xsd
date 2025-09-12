@@ -20,50 +20,50 @@ public class Archetype {
 
 // Sources is Files that will go into <code>src/main/java</code>.
 public class Sources {
-	@XmlElement(required = true, name = "source")
+	@XmlElement(name = "source")
 	protected List<Source> Source;
 }
 
 // Resources is Files that will go into <code>src/main/resources</code>.
 public class Resources {
-	@XmlElement(required = true, name = "resource")
+	@XmlElement(name = "resource")
 	protected List<Resource> Resource;
 }
 
 // TestSources is Files that will go into <code>src/test/java</code>.
 public class TestSources {
-	@XmlElement(required = true, name = "source")
+	@XmlElement(name = "source")
 	protected List<Source> Source;
 }
 
 // TestResources is Files that will go into <code>src/test/resources</code>.
 public class TestResources {
-	@XmlElement(required = true, name = "resource")
+	@XmlElement(name = "resource")
 	protected List<Resource> Resource;
 }
 
 // SiteResources is Files that will go into <code>src/site</code>.
 public class SiteResources {
-	@XmlElement(required = true, name = "resource")
+	@XmlElement(name = "resource")
 	protected List<Resource> Resource;
 }
 
 // ArchetypeModel is Setting this option to <code>true</code> makes it possible to run the
 //             <code>archetype:create</code> even on existing projects.
 public class ArchetypeModel {
-	@XmlElement(required = true, name = "id")
+	@XmlElement(name = "id")
 	protected String Id;
-	@XmlElement(required = true, name = "allowPartial")
+	@XmlElement(name = "allowPartial")
 	protected Boolean AllowPartial;
-	@XmlElement(required = true, name = "sources")
+	@XmlElement(name = "sources")
 	protected Sources Sources;
-	@XmlElement(required = true, name = "resources")
+	@XmlElement(name = "resources")
 	protected Resources Resources;
-	@XmlElement(required = true, name = "testSources")
+	@XmlElement(name = "testSources")
 	protected TestSources TestSources;
-	@XmlElement(required = true, name = "testResources")
+	@XmlElement(name = "testResources")
 	protected TestResources TestResources;
-	@XmlElement(required = true, name = "siteResources")
+	@XmlElement(name = "siteResources")
 	protected SiteResources SiteResources;
 }
 

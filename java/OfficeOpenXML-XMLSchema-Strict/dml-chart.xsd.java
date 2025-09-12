@@ -44,7 +44,7 @@ public class CT_Extension {
 
 // CT_ExtensionList ...
 public class CT_ExtensionList {
-	@XmlElement(required = true, name = "ext")
+	@XmlElement(name = "ext")
 	protected List<CT_Extension> Ext;
 }
 
@@ -60,13 +60,13 @@ public class CT_NumVal {
 
 // CT_NumData ...
 public class CT_NumData {
-	@XmlElement(required = true, name = "formatCode")
+	@XmlElement(name = "formatCode")
 	protected String FormatCode;
-	@XmlElement(required = true, name = "ptCount")
+	@XmlElement(name = "ptCount")
 	protected CT_UnsignedInt PtCount;
-	@XmlElement(required = true, name = "pt")
+	@XmlElement(name = "pt")
 	protected List<CT_NumVal> Pt;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
@@ -74,9 +74,9 @@ public class CT_NumData {
 public class CT_NumRef {
 	@XmlElement(required = true, name = "f")
 	protected String F;
-	@XmlElement(required = true, name = "numCache")
+	@XmlElement(name = "numCache")
 	protected CT_NumData NumCache;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
@@ -98,11 +98,11 @@ public class CT_StrVal {
 
 // CT_StrData ...
 public class CT_StrData {
-	@XmlElement(required = true, name = "ptCount")
+	@XmlElement(name = "ptCount")
 	protected CT_UnsignedInt PtCount;
-	@XmlElement(required = true, name = "pt")
+	@XmlElement(name = "pt")
 	protected List<CT_StrVal> Pt;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
@@ -110,9 +110,9 @@ public class CT_StrData {
 public class CT_StrRef {
 	@XmlElement(required = true, name = "f")
 	protected String F;
-	@XmlElement(required = true, name = "strCache")
+	@XmlElement(name = "strCache")
 	protected CT_StrData StrCache;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
@@ -132,17 +132,17 @@ public class CT_TextLanguageID {
 
 // CT_Lvl ...
 public class CT_Lvl {
-	@XmlElement(required = true, name = "pt")
+	@XmlElement(name = "pt")
 	protected List<CT_StrVal> Pt;
 }
 
 // CT_MultiLvlStrData ...
 public class CT_MultiLvlStrData {
-	@XmlElement(required = true, name = "ptCount")
+	@XmlElement(name = "ptCount")
 	protected CT_UnsignedInt PtCount;
-	@XmlElement(required = true, name = "lvl")
+	@XmlElement(name = "lvl")
 	protected List<CT_Lvl> Lvl;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
@@ -150,9 +150,9 @@ public class CT_MultiLvlStrData {
 public class CT_MultiLvlStrRef {
 	@XmlElement(required = true, name = "f")
 	protected String F;
-	@XmlElement(required = true, name = "multiLvlStrCache")
+	@XmlElement(name = "multiLvlStrCache")
 	protected CT_MultiLvlStrData MultiLvlStrCache;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
@@ -206,49 +206,49 @@ public class CT_LayoutMode {
 
 // CT_ManualLayout ...
 public class CT_ManualLayout {
-	@XmlElement(required = true, name = "layoutTarget")
+	@XmlElement(name = "layoutTarget")
 	protected CT_LayoutTarget LayoutTarget;
-	@XmlElement(required = true, name = "xMode")
+	@XmlElement(name = "xMode")
 	protected CT_LayoutMode XMode;
-	@XmlElement(required = true, name = "yMode")
+	@XmlElement(name = "yMode")
 	protected CT_LayoutMode YMode;
-	@XmlElement(required = true, name = "wMode")
+	@XmlElement(name = "wMode")
 	protected CT_LayoutMode WMode;
-	@XmlElement(required = true, name = "hMode")
+	@XmlElement(name = "hMode")
 	protected CT_LayoutMode HMode;
-	@XmlElement(required = true, name = "x")
+	@XmlElement(name = "x")
 	protected CT_Double X;
-	@XmlElement(required = true, name = "y")
+	@XmlElement(name = "y")
 	protected CT_Double Y;
-	@XmlElement(required = true, name = "w")
+	@XmlElement(name = "w")
 	protected CT_Double W;
-	@XmlElement(required = true, name = "h")
+	@XmlElement(name = "h")
 	protected CT_Double H;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
 // CT_Layout ...
 public class CT_Layout {
-	@XmlElement(required = true, name = "manualLayout")
+	@XmlElement(name = "manualLayout")
 	protected CT_ManualLayout ManualLayout;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
 // CT_Title ...
 public class CT_Title {
-	@XmlElement(required = true, name = "tx")
+	@XmlElement(name = "tx")
 	protected CT_Tx Tx;
-	@XmlElement(required = true, name = "layout")
+	@XmlElement(name = "layout")
 	protected CT_Layout Layout;
-	@XmlElement(required = true, name = "overlay")
+	@XmlElement(name = "overlay")
 	protected CT_Boolean Overlay;
-	@XmlElement(required = true, name = "spPr")
+	@XmlElement(name = "spPr")
 	protected CT_ShapeProperties SpPr;
-	@XmlElement(required = true, name = "txPr")
+	@XmlElement(name = "txPr")
 	protected CT_TextBody TxPr;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
@@ -331,31 +331,31 @@ public class CT_Perspective {
 
 // CT_View3D ...
 public class CT_View3D {
-	@XmlElement(required = true, name = "rotX")
+	@XmlElement(name = "rotX")
 	protected CT_RotX RotX;
-	@XmlElement(required = true, name = "hPercent")
+	@XmlElement(name = "hPercent")
 	protected CT_HPercent HPercent;
-	@XmlElement(required = true, name = "rotY")
+	@XmlElement(name = "rotY")
 	protected CT_RotY RotY;
-	@XmlElement(required = true, name = "depthPercent")
+	@XmlElement(name = "depthPercent")
 	protected CT_DepthPercent DepthPercent;
-	@XmlElement(required = true, name = "rAngAx")
+	@XmlElement(name = "rAngAx")
 	protected CT_Boolean RAngAx;
-	@XmlElement(required = true, name = "perspective")
+	@XmlElement(name = "perspective")
 	protected CT_Perspective Perspective;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
 // CT_Surface ...
 public class CT_Surface {
-	@XmlElement(required = true, name = "thickness")
+	@XmlElement(name = "thickness")
 	protected CT_Thickness Thickness;
-	@XmlElement(required = true, name = "spPr")
+	@XmlElement(name = "spPr")
 	protected CT_ShapeProperties SpPr;
-	@XmlElement(required = true, name = "pictureOptions")
+	@XmlElement(name = "pictureOptions")
 	protected CT_PictureOptions PictureOptions;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
@@ -380,19 +380,19 @@ public class CT_Thickness {
 
 // CT_DTable ...
 public class CT_DTable {
-	@XmlElement(required = true, name = "showHorzBorder")
+	@XmlElement(name = "showHorzBorder")
 	protected CT_Boolean ShowHorzBorder;
-	@XmlElement(required = true, name = "showVertBorder")
+	@XmlElement(name = "showVertBorder")
 	protected CT_Boolean ShowVertBorder;
-	@XmlElement(required = true, name = "showOutline")
+	@XmlElement(name = "showOutline")
 	protected CT_Boolean ShowOutline;
-	@XmlElement(required = true, name = "showKeys")
+	@XmlElement(name = "showKeys")
 	protected CT_Boolean ShowKeys;
-	@XmlElement(required = true, name = "spPr")
+	@XmlElement(name = "spPr")
 	protected CT_ShapeProperties SpPr;
-	@XmlElement(required = true, name = "txPr")
+	@XmlElement(name = "txPr")
 	protected CT_TextBody TxPr;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
@@ -513,7 +513,7 @@ public class CT_SplitType {
 
 // CT_CustSplit ...
 public class CT_CustSplit {
-	@XmlElement(required = true, name = "secondPiePt")
+	@XmlElement(name = "secondPiePt")
 	protected List<CT_UnsignedInt> SecondPiePt;
 }
 
@@ -612,7 +612,7 @@ public class CT_DLbl {
 	protected CT_UnsignedInt Idx;
 	@XmlElement(required = true, name = "delete")
 	protected CT_Boolean Delete;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
@@ -628,11 +628,11 @@ public class Group_DLbls {
 // CT_DLbls ...
 public class CT_DLbls {
 	protected List<Group_DLbls> Group_DLbls;
-	@XmlElement(required = true, name = "dLbl")
+	@XmlElement(name = "dLbl")
 	protected List<CT_DLbl> DLbl;
 	@XmlElement(required = true, name = "delete")
 	protected CT_Boolean Delete;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
@@ -664,13 +664,13 @@ public class CT_MarkerSize {
 
 // CT_Marker ...
 public class CT_Marker {
-	@XmlElement(required = true, name = "symbol")
+	@XmlElement(name = "symbol")
 	protected CT_MarkerStyle Symbol;
-	@XmlElement(required = true, name = "size")
+	@XmlElement(name = "size")
 	protected CT_MarkerSize Size;
-	@XmlElement(required = true, name = "spPr")
+	@XmlElement(name = "spPr")
 	protected CT_ShapeProperties SpPr;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
@@ -678,19 +678,19 @@ public class CT_Marker {
 public class CT_DPt {
 	@XmlElement(required = true, name = "idx")
 	protected CT_UnsignedInt Idx;
-	@XmlElement(required = true, name = "invertIfNegative")
+	@XmlElement(name = "invertIfNegative")
 	protected CT_Boolean InvertIfNegative;
-	@XmlElement(required = true, name = "marker")
+	@XmlElement(name = "marker")
 	protected CT_Marker Marker;
-	@XmlElement(required = true, name = "bubble3D")
+	@XmlElement(name = "bubble3D")
 	protected CT_Boolean Bubble3D;
-	@XmlElement(required = true, name = "explosion")
+	@XmlElement(name = "explosion")
 	protected CT_UnsignedInt Explosion;
-	@XmlElement(required = true, name = "spPr")
+	@XmlElement(name = "spPr")
 	protected CT_ShapeProperties SpPr;
-	@XmlElement(required = true, name = "pictureOptions")
+	@XmlElement(name = "pictureOptions")
 	protected CT_PictureOptions PictureOptions;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
@@ -735,45 +735,45 @@ public class CT_Period {
 
 // CT_TrendlineLbl ...
 public class CT_TrendlineLbl {
-	@XmlElement(required = true, name = "layout")
+	@XmlElement(name = "layout")
 	protected CT_Layout Layout;
-	@XmlElement(required = true, name = "tx")
+	@XmlElement(name = "tx")
 	protected CT_Tx Tx;
-	@XmlElement(required = true, name = "numFmt")
+	@XmlElement(name = "numFmt")
 	protected CT_NumFmt NumFmt;
-	@XmlElement(required = true, name = "spPr")
+	@XmlElement(name = "spPr")
 	protected CT_ShapeProperties SpPr;
-	@XmlElement(required = true, name = "txPr")
+	@XmlElement(name = "txPr")
 	protected CT_TextBody TxPr;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
 // CT_Trendline ...
 public class CT_Trendline {
-	@XmlElement(required = true, name = "name")
+	@XmlElement(name = "name")
 	protected String Name;
-	@XmlElement(required = true, name = "spPr")
+	@XmlElement(name = "spPr")
 	protected CT_ShapeProperties SpPr;
 	@XmlElement(required = true, name = "trendlineType")
 	protected CT_TrendlineType TrendlineType;
-	@XmlElement(required = true, name = "order")
+	@XmlElement(name = "order")
 	protected CT_Order Order;
-	@XmlElement(required = true, name = "period")
+	@XmlElement(name = "period")
 	protected CT_Period Period;
-	@XmlElement(required = true, name = "forward")
+	@XmlElement(name = "forward")
 	protected CT_Double Forward;
-	@XmlElement(required = true, name = "backward")
+	@XmlElement(name = "backward")
 	protected CT_Double Backward;
-	@XmlElement(required = true, name = "intercept")
+	@XmlElement(name = "intercept")
 	protected CT_Double Intercept;
-	@XmlElement(required = true, name = "dispRSqr")
+	@XmlElement(name = "dispRSqr")
 	protected CT_Boolean DispRSqr;
-	@XmlElement(required = true, name = "dispEq")
+	@XmlElement(name = "dispEq")
 	protected CT_Boolean DispEq;
-	@XmlElement(required = true, name = "trendlineLbl")
+	@XmlElement(name = "trendlineLbl")
 	protected CT_TrendlineLbl TrendlineLbl;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
@@ -818,41 +818,41 @@ public class CT_ErrValType {
 
 // CT_ErrBars ...
 public class CT_ErrBars {
-	@XmlElement(required = true, name = "errDir")
+	@XmlElement(name = "errDir")
 	protected CT_ErrDir ErrDir;
 	@XmlElement(required = true, name = "errBarType")
 	protected CT_ErrBarType ErrBarType;
 	@XmlElement(required = true, name = "errValType")
 	protected CT_ErrValType ErrValType;
-	@XmlElement(required = true, name = "noEndCap")
+	@XmlElement(name = "noEndCap")
 	protected CT_Boolean NoEndCap;
-	@XmlElement(required = true, name = "plus")
+	@XmlElement(name = "plus")
 	protected CT_NumDataSource Plus;
-	@XmlElement(required = true, name = "minus")
+	@XmlElement(name = "minus")
 	protected CT_NumDataSource Minus;
-	@XmlElement(required = true, name = "val")
+	@XmlElement(name = "val")
 	protected CT_Double Val;
-	@XmlElement(required = true, name = "spPr")
+	@XmlElement(name = "spPr")
 	protected CT_ShapeProperties SpPr;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
 // CT_UpDownBar ...
 public class CT_UpDownBar {
-	@XmlElement(required = true, name = "spPr")
+	@XmlElement(name = "spPr")
 	protected CT_ShapeProperties SpPr;
 }
 
 // CT_UpDownBars ...
 public class CT_UpDownBars {
-	@XmlElement(required = true, name = "gapWidth")
+	@XmlElement(name = "gapWidth")
 	protected CT_GapAmount GapWidth;
-	@XmlElement(required = true, name = "upBars")
+	@XmlElement(name = "upBars")
 	protected CT_UpDownBar UpBars;
-	@XmlElement(required = true, name = "downBars")
+	@XmlElement(name = "downBars")
 	protected CT_UpDownBar DownBars;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
@@ -871,162 +871,162 @@ public class EG_SerShared {
 // CT_LineSer ...
 public class CT_LineSer {
 	protected List<EG_SerShared> EG_SerShared;
-	@XmlElement(required = true, name = "marker")
+	@XmlElement(name = "marker")
 	protected CT_Marker Marker;
-	@XmlElement(required = true, name = "dPt")
+	@XmlElement(name = "dPt")
 	protected List<CT_DPt> DPt;
-	@XmlElement(required = true, name = "dLbls")
+	@XmlElement(name = "dLbls")
 	protected CT_DLbls DLbls;
-	@XmlElement(required = true, name = "trendline")
+	@XmlElement(name = "trendline")
 	protected List<CT_Trendline> Trendline;
-	@XmlElement(required = true, name = "errBars")
+	@XmlElement(name = "errBars")
 	protected CT_ErrBars ErrBars;
-	@XmlElement(required = true, name = "cat")
+	@XmlElement(name = "cat")
 	protected CT_AxDataSource Cat;
-	@XmlElement(required = true, name = "val")
+	@XmlElement(name = "val")
 	protected CT_NumDataSource Val;
-	@XmlElement(required = true, name = "smooth")
+	@XmlElement(name = "smooth")
 	protected CT_Boolean Smooth;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
 // CT_ScatterSer ...
 public class CT_ScatterSer {
 	protected List<EG_SerShared> EG_SerShared;
-	@XmlElement(required = true, name = "marker")
+	@XmlElement(name = "marker")
 	protected CT_Marker Marker;
-	@XmlElement(required = true, name = "dPt")
+	@XmlElement(name = "dPt")
 	protected List<CT_DPt> DPt;
-	@XmlElement(required = true, name = "dLbls")
+	@XmlElement(name = "dLbls")
 	protected CT_DLbls DLbls;
-	@XmlElement(required = true, name = "trendline")
+	@XmlElement(name = "trendline")
 	protected List<CT_Trendline> Trendline;
-	@XmlElement(required = true, name = "errBars")
+	@XmlElement(name = "errBars")
 	protected List<CT_ErrBars> ErrBars;
-	@XmlElement(required = true, name = "xVal")
+	@XmlElement(name = "xVal")
 	protected CT_AxDataSource XVal;
-	@XmlElement(required = true, name = "yVal")
+	@XmlElement(name = "yVal")
 	protected CT_NumDataSource YVal;
-	@XmlElement(required = true, name = "smooth")
+	@XmlElement(name = "smooth")
 	protected CT_Boolean Smooth;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
 // CT_RadarSer ...
 public class CT_RadarSer {
 	protected List<EG_SerShared> EG_SerShared;
-	@XmlElement(required = true, name = "marker")
+	@XmlElement(name = "marker")
 	protected CT_Marker Marker;
-	@XmlElement(required = true, name = "dPt")
+	@XmlElement(name = "dPt")
 	protected List<CT_DPt> DPt;
-	@XmlElement(required = true, name = "dLbls")
+	@XmlElement(name = "dLbls")
 	protected CT_DLbls DLbls;
-	@XmlElement(required = true, name = "cat")
+	@XmlElement(name = "cat")
 	protected CT_AxDataSource Cat;
-	@XmlElement(required = true, name = "val")
+	@XmlElement(name = "val")
 	protected CT_NumDataSource Val;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
 // CT_BarSer ...
 public class CT_BarSer {
 	protected List<EG_SerShared> EG_SerShared;
-	@XmlElement(required = true, name = "invertIfNegative")
+	@XmlElement(name = "invertIfNegative")
 	protected CT_Boolean InvertIfNegative;
-	@XmlElement(required = true, name = "pictureOptions")
+	@XmlElement(name = "pictureOptions")
 	protected CT_PictureOptions PictureOptions;
-	@XmlElement(required = true, name = "dPt")
+	@XmlElement(name = "dPt")
 	protected List<CT_DPt> DPt;
-	@XmlElement(required = true, name = "dLbls")
+	@XmlElement(name = "dLbls")
 	protected CT_DLbls DLbls;
-	@XmlElement(required = true, name = "trendline")
+	@XmlElement(name = "trendline")
 	protected List<CT_Trendline> Trendline;
-	@XmlElement(required = true, name = "errBars")
+	@XmlElement(name = "errBars")
 	protected CT_ErrBars ErrBars;
-	@XmlElement(required = true, name = "cat")
+	@XmlElement(name = "cat")
 	protected CT_AxDataSource Cat;
-	@XmlElement(required = true, name = "val")
+	@XmlElement(name = "val")
 	protected CT_NumDataSource Val;
-	@XmlElement(required = true, name = "shape")
+	@XmlElement(name = "shape")
 	protected CT_Shape Shape;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
 // CT_AreaSer ...
 public class CT_AreaSer {
 	protected List<EG_SerShared> EG_SerShared;
-	@XmlElement(required = true, name = "pictureOptions")
+	@XmlElement(name = "pictureOptions")
 	protected CT_PictureOptions PictureOptions;
-	@XmlElement(required = true, name = "dPt")
+	@XmlElement(name = "dPt")
 	protected List<CT_DPt> DPt;
-	@XmlElement(required = true, name = "dLbls")
+	@XmlElement(name = "dLbls")
 	protected CT_DLbls DLbls;
-	@XmlElement(required = true, name = "trendline")
+	@XmlElement(name = "trendline")
 	protected List<CT_Trendline> Trendline;
-	@XmlElement(required = true, name = "errBars")
+	@XmlElement(name = "errBars")
 	protected List<CT_ErrBars> ErrBars;
-	@XmlElement(required = true, name = "cat")
+	@XmlElement(name = "cat")
 	protected CT_AxDataSource Cat;
-	@XmlElement(required = true, name = "val")
+	@XmlElement(name = "val")
 	protected CT_NumDataSource Val;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
 // CT_PieSer ...
 public class CT_PieSer {
 	protected List<EG_SerShared> EG_SerShared;
-	@XmlElement(required = true, name = "explosion")
+	@XmlElement(name = "explosion")
 	protected CT_UnsignedInt Explosion;
-	@XmlElement(required = true, name = "dPt")
+	@XmlElement(name = "dPt")
 	protected List<CT_DPt> DPt;
-	@XmlElement(required = true, name = "dLbls")
+	@XmlElement(name = "dLbls")
 	protected CT_DLbls DLbls;
-	@XmlElement(required = true, name = "cat")
+	@XmlElement(name = "cat")
 	protected CT_AxDataSource Cat;
-	@XmlElement(required = true, name = "val")
+	@XmlElement(name = "val")
 	protected CT_NumDataSource Val;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
 // CT_BubbleSer ...
 public class CT_BubbleSer {
 	protected List<EG_SerShared> EG_SerShared;
-	@XmlElement(required = true, name = "invertIfNegative")
+	@XmlElement(name = "invertIfNegative")
 	protected CT_Boolean InvertIfNegative;
-	@XmlElement(required = true, name = "dPt")
+	@XmlElement(name = "dPt")
 	protected List<CT_DPt> DPt;
-	@XmlElement(required = true, name = "dLbls")
+	@XmlElement(name = "dLbls")
 	protected CT_DLbls DLbls;
-	@XmlElement(required = true, name = "trendline")
+	@XmlElement(name = "trendline")
 	protected List<CT_Trendline> Trendline;
-	@XmlElement(required = true, name = "errBars")
+	@XmlElement(name = "errBars")
 	protected List<CT_ErrBars> ErrBars;
-	@XmlElement(required = true, name = "xVal")
+	@XmlElement(name = "xVal")
 	protected CT_AxDataSource XVal;
-	@XmlElement(required = true, name = "yVal")
+	@XmlElement(name = "yVal")
 	protected CT_NumDataSource YVal;
-	@XmlElement(required = true, name = "bubbleSize")
+	@XmlElement(name = "bubbleSize")
 	protected CT_NumDataSource BubbleSize;
-	@XmlElement(required = true, name = "bubble3D")
+	@XmlElement(name = "bubble3D")
 	protected CT_Boolean Bubble3D;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
 // CT_SurfaceSer ...
 public class CT_SurfaceSer {
 	protected List<EG_SerShared> EG_SerShared;
-	@XmlElement(required = true, name = "cat")
+	@XmlElement(name = "cat")
 	protected CT_AxDataSource Cat;
-	@XmlElement(required = true, name = "val")
+	@XmlElement(name = "val")
 	protected CT_NumDataSource Val;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
@@ -1045,7 +1045,7 @@ public class CT_Grouping {
 
 // CT_ChartLines ...
 public class CT_ChartLines {
-	@XmlElement(required = true, name = "spPr")
+	@XmlElement(name = "spPr")
 	protected CT_ShapeProperties SpPr;
 }
 
@@ -1066,28 +1066,28 @@ public class EG_LineChartShared {
 // CT_LineChart ...
 public class CT_LineChart {
 	protected List<EG_LineChartShared> EG_LineChartShared;
-	@XmlElement(required = true, name = "hiLowLines")
+	@XmlElement(name = "hiLowLines")
 	protected CT_ChartLines HiLowLines;
-	@XmlElement(required = true, name = "upDownBars")
+	@XmlElement(name = "upDownBars")
 	protected CT_UpDownBars UpDownBars;
-	@XmlElement(required = true, name = "marker")
+	@XmlElement(name = "marker")
 	protected CT_Boolean Marker;
-	@XmlElement(required = true, name = "smooth")
+	@XmlElement(name = "smooth")
 	protected CT_Boolean Smooth;
 	@XmlElement(required = true, name = "axId")
 	protected List<CT_UnsignedInt> AxId;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
 // CT_Line3DChart ...
 public class CT_Line3DChart {
 	protected List<EG_LineChartShared> EG_LineChartShared;
-	@XmlElement(required = true, name = "gapDepth")
+	@XmlElement(name = "gapDepth")
 	protected CT_GapAmount GapDepth;
 	@XmlElement(required = true, name = "axId")
 	protected List<CT_UnsignedInt> AxId;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
@@ -1095,17 +1095,17 @@ public class CT_Line3DChart {
 public class CT_StockChart {
 	@XmlElement(required = true, name = "ser")
 	protected List<CT_LineSer> Ser;
-	@XmlElement(required = true, name = "dLbls")
+	@XmlElement(name = "dLbls")
 	protected CT_DLbls DLbls;
-	@XmlElement(required = true, name = "dropLines")
+	@XmlElement(name = "dropLines")
 	protected CT_ChartLines DropLines;
-	@XmlElement(required = true, name = "hiLowLines")
+	@XmlElement(name = "hiLowLines")
 	protected CT_ChartLines HiLowLines;
-	@XmlElement(required = true, name = "upDownBars")
+	@XmlElement(name = "upDownBars")
 	protected CT_UpDownBars UpDownBars;
 	@XmlElement(required = true, name = "axId")
 	protected List<CT_UnsignedInt> AxId;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
@@ -1126,15 +1126,15 @@ public class CT_ScatterStyle {
 public class CT_ScatterChart {
 	@XmlElement(required = true, name = "scatterStyle")
 	protected CT_ScatterStyle ScatterStyle;
-	@XmlElement(required = true, name = "varyColors")
+	@XmlElement(name = "varyColors")
 	protected CT_Boolean VaryColors;
-	@XmlElement(required = true, name = "ser")
+	@XmlElement(name = "ser")
 	protected List<CT_ScatterSer> Ser;
-	@XmlElement(required = true, name = "dLbls")
+	@XmlElement(name = "dLbls")
 	protected CT_DLbls DLbls;
 	@XmlElement(required = true, name = "axId")
 	protected List<CT_UnsignedInt> AxId;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
@@ -1155,15 +1155,15 @@ public class CT_RadarStyle {
 public class CT_RadarChart {
 	@XmlElement(required = true, name = "radarStyle")
 	protected CT_RadarStyle RadarStyle;
-	@XmlElement(required = true, name = "varyColors")
+	@XmlElement(name = "varyColors")
 	protected CT_Boolean VaryColors;
-	@XmlElement(required = true, name = "ser")
+	@XmlElement(name = "ser")
 	protected List<CT_RadarSer> Ser;
-	@XmlElement(required = true, name = "dLbls")
+	@XmlElement(name = "dLbls")
 	protected CT_DLbls DLbls;
 	@XmlElement(required = true, name = "axId")
 	protected List<CT_UnsignedInt> AxId;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
@@ -1223,30 +1223,30 @@ public class EG_BarChartShared {
 // CT_BarChart ...
 public class CT_BarChart {
 	protected List<EG_BarChartShared> EG_BarChartShared;
-	@XmlElement(required = true, name = "gapWidth")
+	@XmlElement(name = "gapWidth")
 	protected CT_GapAmount GapWidth;
-	@XmlElement(required = true, name = "overlap")
+	@XmlElement(name = "overlap")
 	protected CT_Overlap Overlap;
-	@XmlElement(required = true, name = "serLines")
+	@XmlElement(name = "serLines")
 	protected List<CT_ChartLines> SerLines;
 	@XmlElement(required = true, name = "axId")
 	protected List<CT_UnsignedInt> AxId;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
 // CT_Bar3DChart ...
 public class CT_Bar3DChart {
 	protected List<EG_BarChartShared> EG_BarChartShared;
-	@XmlElement(required = true, name = "gapWidth")
+	@XmlElement(name = "gapWidth")
 	protected CT_GapAmount GapWidth;
-	@XmlElement(required = true, name = "gapDepth")
+	@XmlElement(name = "gapDepth")
 	protected CT_GapAmount GapDepth;
-	@XmlElement(required = true, name = "shape")
+	@XmlElement(name = "shape")
 	protected CT_Shape Shape;
 	@XmlElement(required = true, name = "axId")
 	protected List<CT_UnsignedInt> AxId;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
@@ -1269,18 +1269,18 @@ public class CT_AreaChart {
 	protected List<EG_AreaChartShared> EG_AreaChartShared;
 	@XmlElement(required = true, name = "axId")
 	protected List<CT_UnsignedInt> AxId;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
 // CT_Area3DChart ...
 public class CT_Area3DChart {
 	protected List<EG_AreaChartShared> EG_AreaChartShared;
-	@XmlElement(required = true, name = "gapDepth")
+	@XmlElement(name = "gapDepth")
 	protected CT_GapAmount GapDepth;
 	@XmlElement(required = true, name = "axId")
 	protected List<CT_UnsignedInt> AxId;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
@@ -1297,27 +1297,27 @@ public class EG_PieChartShared {
 // CT_PieChart ...
 public class CT_PieChart {
 	protected List<EG_PieChartShared> EG_PieChartShared;
-	@XmlElement(required = true, name = "firstSliceAng")
+	@XmlElement(name = "firstSliceAng")
 	protected CT_FirstSliceAng FirstSliceAng;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
 // CT_Pie3DChart ...
 public class CT_Pie3DChart {
 	protected List<EG_PieChartShared> EG_PieChartShared;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
 // CT_DoughnutChart ...
 public class CT_DoughnutChart {
 	protected List<EG_PieChartShared> EG_PieChartShared;
-	@XmlElement(required = true, name = "firstSliceAng")
+	@XmlElement(name = "firstSliceAng")
 	protected CT_FirstSliceAng FirstSliceAng;
-	@XmlElement(required = true, name = "holeSize")
+	@XmlElement(name = "holeSize")
 	protected CT_HoleSize HoleSize;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
@@ -1339,41 +1339,41 @@ public class CT_OfPieChart {
 	protected List<EG_PieChartShared> EG_PieChartShared;
 	@XmlElement(required = true, name = "ofPieType")
 	protected CT_OfPieType OfPieType;
-	@XmlElement(required = true, name = "gapWidth")
+	@XmlElement(name = "gapWidth")
 	protected CT_GapAmount GapWidth;
-	@XmlElement(required = true, name = "splitType")
+	@XmlElement(name = "splitType")
 	protected CT_SplitType SplitType;
-	@XmlElement(required = true, name = "splitPos")
+	@XmlElement(name = "splitPos")
 	protected CT_Double SplitPos;
-	@XmlElement(required = true, name = "custSplit")
+	@XmlElement(name = "custSplit")
 	protected CT_CustSplit CustSplit;
-	@XmlElement(required = true, name = "secondPieSize")
+	@XmlElement(name = "secondPieSize")
 	protected CT_SecondPieSize SecondPieSize;
-	@XmlElement(required = true, name = "serLines")
+	@XmlElement(name = "serLines")
 	protected List<CT_ChartLines> SerLines;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
 // CT_BubbleChart ...
 public class CT_BubbleChart {
-	@XmlElement(required = true, name = "varyColors")
+	@XmlElement(name = "varyColors")
 	protected CT_Boolean VaryColors;
-	@XmlElement(required = true, name = "ser")
+	@XmlElement(name = "ser")
 	protected List<CT_BubbleSer> Ser;
-	@XmlElement(required = true, name = "dLbls")
+	@XmlElement(name = "dLbls")
 	protected CT_DLbls DLbls;
-	@XmlElement(required = true, name = "bubble3D")
+	@XmlElement(name = "bubble3D")
 	protected CT_Boolean Bubble3D;
-	@XmlElement(required = true, name = "bubbleScale")
+	@XmlElement(name = "bubbleScale")
 	protected CT_BubbleScale BubbleScale;
-	@XmlElement(required = true, name = "showNegBubbles")
+	@XmlElement(name = "showNegBubbles")
 	protected CT_Boolean ShowNegBubbles;
-	@XmlElement(required = true, name = "sizeRepresents")
+	@XmlElement(name = "sizeRepresents")
 	protected CT_SizeRepresents SizeRepresents;
 	@XmlElement(required = true, name = "axId")
 	protected List<CT_UnsignedInt> AxId;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
@@ -1381,13 +1381,13 @@ public class CT_BubbleChart {
 public class CT_BandFmt {
 	@XmlElement(required = true, name = "idx")
 	protected CT_UnsignedInt Idx;
-	@XmlElement(required = true, name = "spPr")
+	@XmlElement(name = "spPr")
 	protected CT_ShapeProperties SpPr;
 }
 
 // CT_BandFmts ...
 public class CT_BandFmts {
-	@XmlElement(required = true, name = "bandFmt")
+	@XmlElement(name = "bandFmt")
 	protected List<CT_BandFmt> BandFmt;
 }
 
@@ -1406,7 +1406,7 @@ public class CT_SurfaceChart {
 	protected List<EG_SurfaceChartShared> EG_SurfaceChartShared;
 	@XmlElement(required = true, name = "axId")
 	protected List<CT_UnsignedInt> AxId;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
@@ -1415,7 +1415,7 @@ public class CT_Surface3DChart {
 	protected List<EG_SurfaceChartShared> EG_SurfaceChartShared;
 	@XmlElement(required = true, name = "axId")
 	protected List<CT_UnsignedInt> AxId;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
@@ -1564,27 +1564,27 @@ public class CT_PictureStackUnit {
 
 // CT_PictureOptions ...
 public class CT_PictureOptions {
-	@XmlElement(required = true, name = "applyToFront")
+	@XmlElement(name = "applyToFront")
 	protected CT_Boolean ApplyToFront;
-	@XmlElement(required = true, name = "applyToSides")
+	@XmlElement(name = "applyToSides")
 	protected CT_Boolean ApplyToSides;
-	@XmlElement(required = true, name = "applyToEnd")
+	@XmlElement(name = "applyToEnd")
 	protected CT_Boolean ApplyToEnd;
-	@XmlElement(required = true, name = "pictureFormat")
+	@XmlElement(name = "pictureFormat")
 	protected CT_PictureFormat PictureFormat;
-	@XmlElement(required = true, name = "pictureStackUnit")
+	@XmlElement(name = "pictureStackUnit")
 	protected CT_PictureStackUnit PictureStackUnit;
 }
 
 // CT_DispUnitsLbl ...
 public class CT_DispUnitsLbl {
-	@XmlElement(required = true, name = "layout")
+	@XmlElement(name = "layout")
 	protected CT_Layout Layout;
-	@XmlElement(required = true, name = "tx")
+	@XmlElement(name = "tx")
 	protected CT_Tx Tx;
-	@XmlElement(required = true, name = "spPr")
+	@XmlElement(name = "spPr")
 	protected CT_ShapeProperties SpPr;
-	@XmlElement(required = true, name = "txPr")
+	@XmlElement(name = "txPr")
 	protected CT_TextBody TxPr;
 }
 
@@ -1594,9 +1594,9 @@ public class CT_DispUnits {
 	protected CT_Double CustUnit;
 	@XmlElement(required = true, name = "builtInUnit")
 	protected CT_BuiltInUnit BuiltInUnit;
-	@XmlElement(required = true, name = "dispUnitsLbl")
+	@XmlElement(name = "dispUnitsLbl")
 	protected CT_DispUnitsLbl DispUnitsLbl;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
@@ -1628,15 +1628,15 @@ public class CT_LogBase {
 
 // CT_Scaling ...
 public class CT_Scaling {
-	@XmlElement(required = true, name = "logBase")
+	@XmlElement(name = "logBase")
 	protected CT_LogBase LogBase;
-	@XmlElement(required = true, name = "orientation")
+	@XmlElement(name = "orientation")
 	protected CT_Orientation Orientation;
-	@XmlElement(required = true, name = "max")
+	@XmlElement(name = "max")
 	protected CT_Double Max;
-	@XmlElement(required = true, name = "min")
+	@XmlElement(name = "min")
 	protected CT_Double Min;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
@@ -1698,72 +1698,72 @@ public class EG_AxShared {
 // CT_CatAx ...
 public class CT_CatAx {
 	protected List<EG_AxShared> EG_AxShared;
-	@XmlElement(required = true, name = "auto")
+	@XmlElement(name = "auto")
 	protected CT_Boolean Auto;
-	@XmlElement(required = true, name = "lblAlgn")
+	@XmlElement(name = "lblAlgn")
 	protected CT_LblAlgn LblAlgn;
-	@XmlElement(required = true, name = "lblOffset")
+	@XmlElement(name = "lblOffset")
 	protected CT_LblOffset LblOffset;
-	@XmlElement(required = true, name = "tickLblSkip")
+	@XmlElement(name = "tickLblSkip")
 	protected CT_Skip TickLblSkip;
-	@XmlElement(required = true, name = "tickMarkSkip")
+	@XmlElement(name = "tickMarkSkip")
 	protected CT_Skip TickMarkSkip;
-	@XmlElement(required = true, name = "noMultiLvlLbl")
+	@XmlElement(name = "noMultiLvlLbl")
 	protected CT_Boolean NoMultiLvlLbl;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
 // CT_DateAx ...
 public class CT_DateAx {
 	protected List<EG_AxShared> EG_AxShared;
-	@XmlElement(required = true, name = "auto")
+	@XmlElement(name = "auto")
 	protected CT_Boolean Auto;
-	@XmlElement(required = true, name = "lblOffset")
+	@XmlElement(name = "lblOffset")
 	protected CT_LblOffset LblOffset;
-	@XmlElement(required = true, name = "baseTimeUnit")
+	@XmlElement(name = "baseTimeUnit")
 	protected CT_TimeUnit BaseTimeUnit;
-	@XmlElement(required = true, name = "majorUnit")
+	@XmlElement(name = "majorUnit")
 	protected CT_AxisUnit MajorUnit;
-	@XmlElement(required = true, name = "majorTimeUnit")
+	@XmlElement(name = "majorTimeUnit")
 	protected CT_TimeUnit MajorTimeUnit;
-	@XmlElement(required = true, name = "minorUnit")
+	@XmlElement(name = "minorUnit")
 	protected CT_AxisUnit MinorUnit;
-	@XmlElement(required = true, name = "minorTimeUnit")
+	@XmlElement(name = "minorTimeUnit")
 	protected CT_TimeUnit MinorTimeUnit;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
 // CT_SerAx ...
 public class CT_SerAx {
 	protected List<EG_AxShared> EG_AxShared;
-	@XmlElement(required = true, name = "tickLblSkip")
+	@XmlElement(name = "tickLblSkip")
 	protected CT_Skip TickLblSkip;
-	@XmlElement(required = true, name = "tickMarkSkip")
+	@XmlElement(name = "tickMarkSkip")
 	protected CT_Skip TickMarkSkip;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
 // CT_ValAx ...
 public class CT_ValAx {
 	protected List<EG_AxShared> EG_AxShared;
-	@XmlElement(required = true, name = "crossBetween")
+	@XmlElement(name = "crossBetween")
 	protected CT_CrossBetween CrossBetween;
-	@XmlElement(required = true, name = "majorUnit")
+	@XmlElement(name = "majorUnit")
 	protected CT_AxisUnit MajorUnit;
-	@XmlElement(required = true, name = "minorUnit")
+	@XmlElement(name = "minorUnit")
 	protected CT_AxisUnit MinorUnit;
-	@XmlElement(required = true, name = "dispUnits")
+	@XmlElement(name = "dispUnits")
 	protected CT_DispUnits DispUnits;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
 // CT_PlotArea ...
 public class CT_PlotArea {
-	@XmlElement(required = true, name = "layout")
+	@XmlElement(name = "layout")
 	protected CT_Layout Layout;
 	@XmlElement(required = true, name = "areaChart")
 	protected List<CT_AreaChart> AreaChart;
@@ -1805,11 +1805,11 @@ public class CT_PlotArea {
 	protected List<CT_DateAx> DateAx;
 	@XmlElement(required = true, name = "serAx")
 	protected List<CT_SerAx> SerAx;
-	@XmlElement(required = true, name = "dTable")
+	@XmlElement(name = "dTable")
 	protected CT_DTable DTable;
-	@XmlElement(required = true, name = "spPr")
+	@XmlElement(name = "spPr")
 	protected CT_ShapeProperties SpPr;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
@@ -1817,21 +1817,21 @@ public class CT_PlotArea {
 public class CT_PivotFmt {
 	@XmlElement(required = true, name = "idx")
 	protected CT_UnsignedInt Idx;
-	@XmlElement(required = true, name = "spPr")
+	@XmlElement(name = "spPr")
 	protected CT_ShapeProperties SpPr;
-	@XmlElement(required = true, name = "txPr")
+	@XmlElement(name = "txPr")
 	protected CT_TextBody TxPr;
-	@XmlElement(required = true, name = "marker")
+	@XmlElement(name = "marker")
 	protected CT_Marker Marker;
-	@XmlElement(required = true, name = "dLbl")
+	@XmlElement(name = "dLbl")
 	protected CT_DLbl DLbl;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
 // CT_PivotFmts ...
 public class CT_PivotFmts {
-	@XmlElement(required = true, name = "pivotFmt")
+	@XmlElement(name = "pivotFmt")
 	protected List<CT_PivotFmt> PivotFmt;
 }
 
@@ -1861,25 +1861,25 @@ public class CT_LegendEntry {
 	protected CT_UnsignedInt Idx;
 	@XmlElement(required = true, name = "delete")
 	protected CT_Boolean Delete;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
 // CT_Legend ...
 public class CT_Legend {
-	@XmlElement(required = true, name = "legendPos")
+	@XmlElement(name = "legendPos")
 	protected CT_LegendPos LegendPos;
-	@XmlElement(required = true, name = "legendEntry")
+	@XmlElement(name = "legendEntry")
 	protected List<CT_LegendEntry> LegendEntry;
-	@XmlElement(required = true, name = "layout")
+	@XmlElement(name = "layout")
 	protected CT_Layout Layout;
-	@XmlElement(required = true, name = "overlay")
+	@XmlElement(name = "overlay")
 	protected CT_Boolean Overlay;
-	@XmlElement(required = true, name = "spPr")
+	@XmlElement(name = "spPr")
 	protected CT_ShapeProperties SpPr;
-	@XmlElement(required = true, name = "txPr")
+	@XmlElement(name = "txPr")
 	protected CT_TextBody TxPr;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
@@ -1898,31 +1898,31 @@ public class CT_DispBlanksAs {
 
 // CT_Chart ...
 public class CT_Chart {
-	@XmlElement(required = true, name = "title")
+	@XmlElement(name = "title")
 	protected CT_Title Title;
-	@XmlElement(required = true, name = "autoTitleDeleted")
+	@XmlElement(name = "autoTitleDeleted")
 	protected CT_Boolean AutoTitleDeleted;
-	@XmlElement(required = true, name = "pivotFmts")
+	@XmlElement(name = "pivotFmts")
 	protected CT_PivotFmts PivotFmts;
-	@XmlElement(required = true, name = "view3D")
+	@XmlElement(name = "view3D")
 	protected CT_View3D View3D;
-	@XmlElement(required = true, name = "floor")
+	@XmlElement(name = "floor")
 	protected CT_Surface Floor;
-	@XmlElement(required = true, name = "sideWall")
+	@XmlElement(name = "sideWall")
 	protected CT_Surface SideWall;
-	@XmlElement(required = true, name = "backWall")
+	@XmlElement(name = "backWall")
 	protected CT_Surface BackWall;
 	@XmlElement(required = true, name = "plotArea")
 	protected CT_PlotArea PlotArea;
-	@XmlElement(required = true, name = "legend")
+	@XmlElement(name = "legend")
 	protected CT_Legend Legend;
-	@XmlElement(required = true, name = "plotVisOnly")
+	@XmlElement(name = "plotVisOnly")
 	protected CT_Boolean PlotVisOnly;
-	@XmlElement(required = true, name = "dispBlanksAs")
+	@XmlElement(name = "dispBlanksAs")
 	protected CT_DispBlanksAs DispBlanksAs;
-	@XmlElement(required = true, name = "showDLblsOverMax")
+	@XmlElement(name = "showDLblsOverMax")
 	protected CT_Boolean ShowDLblsOverMax;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 
@@ -1945,21 +1945,21 @@ public class CT_PivotSource {
 	protected String Name;
 	@XmlElement(required = true, name = "fmtId")
 	protected CT_UnsignedInt FmtId;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected List<CT_ExtensionList> ExtLst;
 }
 
 // CT_Protection ...
 public class CT_Protection {
-	@XmlElement(required = true, name = "chartObject")
+	@XmlElement(name = "chartObject")
 	protected CT_Boolean ChartObject;
-	@XmlElement(required = true, name = "data")
+	@XmlElement(name = "data")
 	protected CT_Boolean Data;
-	@XmlElement(required = true, name = "formatting")
+	@XmlElement(name = "formatting")
 	protected CT_Boolean Formatting;
-	@XmlElement(required = true, name = "selection")
+	@XmlElement(name = "selection")
 	protected CT_Boolean Selection;
-	@XmlElement(required = true, name = "userInterface")
+	@XmlElement(name = "userInterface")
 	protected CT_Boolean UserInterface;
 }
 
@@ -1971,17 +1971,17 @@ public class CT_HeaderFooter {
 	protected Boolean DifferentOddEvenAttr;
 	@XmlAttribute(name = "differentFirst")
 	protected Boolean DifferentFirstAttr;
-	@XmlElement(required = true, name = "oddHeader")
+	@XmlElement(name = "oddHeader")
 	protected String OddHeader;
-	@XmlElement(required = true, name = "oddFooter")
+	@XmlElement(name = "oddFooter")
 	protected String OddFooter;
-	@XmlElement(required = true, name = "evenHeader")
+	@XmlElement(name = "evenHeader")
 	protected String EvenHeader;
-	@XmlElement(required = true, name = "evenFooter")
+	@XmlElement(name = "evenFooter")
 	protected String EvenFooter;
-	@XmlElement(required = true, name = "firstHeader")
+	@XmlElement(name = "firstHeader")
 	protected String FirstHeader;
-	@XmlElement(required = true, name = "firstFooter")
+	@XmlElement(name = "firstFooter")
 	protected String FirstFooter;
 }
 
@@ -2012,7 +2012,7 @@ public class ST_PageSetupOrientation {
 public class CT_ExternalData {
 	@XmlAttribute(name = "r:id", required = true)
 	protected String RIdAttr;
-	@XmlElement(required = true, name = "autoUpdate")
+	@XmlElement(name = "autoUpdate")
 	protected CT_Boolean AutoUpdate;
 }
 
@@ -2044,43 +2044,43 @@ public class CT_PageSetup {
 
 // CT_PrintSettings ...
 public class CT_PrintSettings {
-	@XmlElement(required = true, name = "headerFooter")
+	@XmlElement(name = "headerFooter")
 	protected CT_HeaderFooter HeaderFooter;
-	@XmlElement(required = true, name = "pageMargins")
+	@XmlElement(name = "pageMargins")
 	protected CT_PageMargins PageMargins;
-	@XmlElement(required = true, name = "pageSetup")
+	@XmlElement(name = "pageSetup")
 	protected CT_PageSetup PageSetup;
 }
 
 // CT_ChartSpace ...
 public class CT_ChartSpace {
-	@XmlElement(required = true, name = "date1904")
+	@XmlElement(name = "date1904")
 	protected CT_Boolean Date1904;
-	@XmlElement(required = true, name = "lang")
+	@XmlElement(name = "lang")
 	protected CT_TextLanguageID Lang;
-	@XmlElement(required = true, name = "roundedCorners")
+	@XmlElement(name = "roundedCorners")
 	protected CT_Boolean RoundedCorners;
-	@XmlElement(required = true, name = "style")
+	@XmlElement(name = "style")
 	protected CT_Style Style;
-	@XmlElement(required = true, name = "clrMapOvr")
+	@XmlElement(name = "clrMapOvr")
 	protected CT_ColorMapping ClrMapOvr;
-	@XmlElement(required = true, name = "pivotSource")
+	@XmlElement(name = "pivotSource")
 	protected CT_PivotSource PivotSource;
-	@XmlElement(required = true, name = "protection")
+	@XmlElement(name = "protection")
 	protected CT_Protection Protection;
 	@XmlElement(required = true, name = "chart")
 	protected CT_Chart Chart;
-	@XmlElement(required = true, name = "spPr")
+	@XmlElement(name = "spPr")
 	protected CT_ShapeProperties SpPr;
-	@XmlElement(required = true, name = "txPr")
+	@XmlElement(name = "txPr")
 	protected CT_TextBody TxPr;
-	@XmlElement(required = true, name = "externalData")
+	@XmlElement(name = "externalData")
 	protected CT_ExternalData ExternalData;
-	@XmlElement(required = true, name = "printSettings")
+	@XmlElement(name = "printSettings")
 	protected CT_PrintSettings PrintSettings;
-	@XmlElement(required = true, name = "userShapes")
+	@XmlElement(name = "userShapes")
 	protected CT_RelId UserShapes;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
 }
 

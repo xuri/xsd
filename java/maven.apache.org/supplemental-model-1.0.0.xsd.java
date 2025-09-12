@@ -20,7 +20,7 @@ public class SupplementalDataModels {
 
 // SupplementalDataModel is Snippets of POM xml files used to supplement the data model.
 public class SupplementalDataModel {
-	@XmlElement(required = true, name = "supplement")
+	@XmlElement(name = "supplement")
 	protected List<Supplement> Supplement;
 }
 
@@ -30,6 +30,6 @@ public class Project {
 
 // Supplement is A single supplement
 public class Supplement {
-	@XmlElement(required = true, name = "project")
+	@XmlElement(name = "project")
 	protected Project Project;
 }

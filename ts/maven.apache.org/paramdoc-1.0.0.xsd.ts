@@ -6,12 +6,12 @@ export type Paramdoc = ExpressionDocumentation;
 // Expressions is The list of plugin parameter expressions described by this
 //             document.
 export class Expressions {
-	Expression: Array<Expression>;
+	Expression?: Array<Expression>;
 }
 
 // ExpressionDocumentation is The root of a parameter plugin expression document.
 export class ExpressionDocumentation {
-	Expressions: Expressions;
+	Expressions?: Expressions;
 }
 
 // CliOptions is The command-line switches used to change the value of this expression.
@@ -24,12 +24,12 @@ export class ApiMethods {
 
 // Expression is The place and syntax used to change the value of this expression.
 export class Expression {
-	Syntax: string;
-	Description: string;
-	Configuration: string;
-	CliOptions: CliOptions;
-	ApiMethods: ApiMethods;
-	Deprecation: string;
-	Ban: string;
-	Editable: boolean;
+	Syntax?: string;
+	Description?: string;
+	Configuration?: string;
+	CliOptions?: CliOptions;
+	ApiMethods?: ApiMethods;
+	Deprecation?: string;
+	Ban?: string;
+	Editable?: boolean;
 }

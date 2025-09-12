@@ -20,14 +20,14 @@ public class RemoteResourcesBundle {
 
 // RemoteResources is Remote resources that are contained in a remote resources bundle.
 public class RemoteResources {
-	@XmlElement(required = true, name = "remoteResource")
+	@XmlElement(name = "remoteResource")
 	protected List<String> RemoteResource;
 }
 
 // RemoteResourcesBundle2 is Root element of the remote-resources.xml file.
 public class RemoteResourcesBundle2 {
-	@XmlElement(required = true, name = "remoteResources")
+	@XmlElement(name = "remoteResources")
 	protected RemoteResources RemoteResources;
-	@XmlElement(required = true, name = "sourceEncoding")
+	@XmlElement(name = "sourceEncoding")
 	protected String SourceEncoding;
 }

@@ -39,7 +39,7 @@ type Configuration struct {
 //                     <a href="https://maven.apache.org/plugins/maven-toolchains-plugin/toolchains/custom.html">Custom Toolchain</a></li>
 //                     </ul>
 type ToolchainModel struct {
-	Type          string         `xml:"type,omitempty"`
+	Type          *string        `xml:"type"`
 	Provides      *Provides      `xml:"provides,omitempty"`
 	Configuration *Configuration `xml:"configuration,omitempty"`
 }

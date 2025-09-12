@@ -99,16 +99,16 @@ type Profiles struct {
 //             copyright notices and links).
 type Model struct {
 	ChildProjectUrlInheritAppendPathAttr string                  `xml:"child.project.url.inherit.append.path,attr,omitempty"`
-	ModelVersion                         string                  `xml:"modelVersion,omitempty"`
+	ModelVersion                         *string                 `xml:"modelVersion"`
 	Parent                               *Parent                 `xml:"parent,omitempty"`
-	GroupId                              string                  `xml:"groupId,omitempty"`
-	ArtifactId                           string                  `xml:"artifactId,omitempty"`
-	Version                              string                  `xml:"version,omitempty"`
-	Packaging                            string                  `xml:"packaging,omitempty"`
-	Name                                 string                  `xml:"name,omitempty"`
-	Description                          string                  `xml:"description,omitempty"`
-	Url                                  string                  `xml:"url,omitempty"`
-	InceptionYear                        string                  `xml:"inceptionYear,omitempty"`
+	GroupId                              *string                 `xml:"groupId"`
+	ArtifactId                           *string                 `xml:"artifactId"`
+	Version                              *string                 `xml:"version"`
+	Packaging                            *string                 `xml:"packaging"`
+	Name                                 *string                 `xml:"name"`
+	Description                          *string                 `xml:"description"`
+	Url                                  *string                 `xml:"url"`
+	InceptionYear                        *string                 `xml:"inceptionYear"`
 	Organization                         *Organization           `xml:"organization,omitempty"`
 	Licenses                             *Licenses               `xml:"licenses,omitempty"`
 	Developers                           *Developers             `xml:"developers,omitempty"`
@@ -133,10 +133,10 @@ type Model struct {
 
 // License is Addendum information pertaining to this license.
 type License struct {
-	Name         string `xml:"name,omitempty"`
-	Url          string `xml:"url,omitempty"`
-	Distribution string `xml:"distribution,omitempty"`
-	Comments     string `xml:"comments,omitempty"`
+	Name         *string `xml:"name"`
+	Url          *string `xml:"url"`
+	Distribution *string `xml:"distribution"`
+	Comments     *string `xml:"comments"`
 }
 
 // Notifiers is Configuration for notifying developers/users when a build is unsuccessful,
@@ -149,8 +149,8 @@ type Notifiers struct {
 // CiManagement is URL for the continuous integration system used by the project if it has a web
 //             interface.
 type CiManagement struct {
-	System    string     `xml:"system,omitempty"`
-	Url       string     `xml:"url,omitempty"`
+	System    *string    `xml:"system"`
+	Url       *string    `xml:"url"`
 	Notifiers *Notifiers `xml:"notifiers,omitempty"`
 }
 
@@ -161,12 +161,12 @@ type Configuration struct {
 
 // Notifier is <b>Deprecated</b>. Where to send the notification to - eg email address.
 type Notifier struct {
-	Type          string         `xml:"type,omitempty"`
-	SendOnError   bool           `xml:"sendOnError,omitempty"`
-	SendOnFailure bool           `xml:"sendOnFailure,omitempty"`
-	SendOnSuccess bool           `xml:"sendOnSuccess,omitempty"`
-	SendOnWarning bool           `xml:"sendOnWarning,omitempty"`
-	Address       string         `xml:"address,omitempty"`
+	Type          *string        `xml:"type"`
+	SendOnError   *bool          `xml:"sendOnError"`
+	SendOnFailure *bool          `xml:"sendOnFailure"`
+	SendOnSuccess *bool          `xml:"sendOnSuccess"`
+	SendOnWarning *bool          `xml:"sendOnWarning"`
+	Address       *string        `xml:"address"`
 	Configuration *Configuration `xml:"configuration,omitempty"`
 }
 
@@ -174,19 +174,19 @@ type Notifier struct {
 //             <br><b>Default value is</b>: parent value [+ path adjustment] + (artifactId or project.directory property), or just parent value if
 //             scm's <code>child.scm.url.inherit.append.path="false"</code>
 type Scm struct {
-	ChildScmConnectionInheritAppendPathAttr          string `xml:"child.scm.connection.inherit.append.path,attr,omitempty"`
-	ChildScmDeveloperConnectionInheritAppendPathAttr string `xml:"child.scm.developerConnection.inherit.append.path,attr,omitempty"`
-	ChildScmUrlInheritAppendPathAttr                 string `xml:"child.scm.url.inherit.append.path,attr,omitempty"`
-	Connection                                       string `xml:"connection,omitempty"`
-	DeveloperConnection                              string `xml:"developerConnection,omitempty"`
-	Tag                                              string `xml:"tag,omitempty"`
-	Url                                              string `xml:"url,omitempty"`
+	ChildScmConnectionInheritAppendPathAttr          string  `xml:"child.scm.connection.inherit.append.path,attr,omitempty"`
+	ChildScmDeveloperConnectionInheritAppendPathAttr string  `xml:"child.scm.developerConnection.inherit.append.path,attr,omitempty"`
+	ChildScmUrlInheritAppendPathAttr                 string  `xml:"child.scm.url.inherit.append.path,attr,omitempty"`
+	Connection                                       *string `xml:"connection"`
+	DeveloperConnection                              *string `xml:"developerConnection"`
+	Tag                                              *string `xml:"tag"`
+	Url                                              *string `xml:"url"`
 }
 
 // IssueManagement is URL for the issue management system used by the project.
 type IssueManagement struct {
-	System string `xml:"system,omitempty"`
-	Url    string `xml:"url,omitempty"`
+	System *string `xml:"system"`
+	Url    *string `xml:"url"`
 }
 
 // DependencyManagement is Section for management of default dependency information for use in a group of
@@ -209,21 +209,21 @@ type Exclusions struct {
 //             Use a property that gives the machine specific absolute path,
 //             e.g. <code>${java.home}</code>.
 type Dependency struct {
-	GroupId    string      `xml:"groupId,omitempty"`
-	ArtifactId string      `xml:"artifactId,omitempty"`
-	Version    string      `xml:"version,omitempty"`
-	Type       string      `xml:"type,omitempty"`
-	Classifier string      `xml:"classifier,omitempty"`
-	Scope      string      `xml:"scope,omitempty"`
-	SystemPath string      `xml:"systemPath,omitempty"`
+	GroupId    *string     `xml:"groupId"`
+	ArtifactId *string     `xml:"artifactId"`
+	Version    *string     `xml:"version"`
+	Type       *string     `xml:"type"`
+	Classifier *string     `xml:"classifier"`
+	Scope      *string     `xml:"scope"`
+	SystemPath *string     `xml:"systemPath"`
 	Exclusions *Exclusions `xml:"exclusions,omitempty"`
-	Optional   string      `xml:"optional,omitempty"`
+	Optional   *string     `xml:"optional"`
 }
 
 // Exclusion is The group ID of the project to exclude.
 type Exclusion struct {
-	ArtifactId string `xml:"artifactId,omitempty"`
-	GroupId    string `xml:"groupId,omitempty"`
+	ArtifactId *string `xml:"artifactId"`
+	GroupId    *string `xml:"groupId"`
 }
 
 // Parent is The relative path of the parent <code>pom.xml</code> file within the check out.
@@ -238,10 +238,10 @@ type Exclusion struct {
 //             Set the value to an empty string in case you want to disable the feature and always resolve
 //             the parent POM from the repositories.
 type Parent struct {
-	GroupId      string `xml:"groupId,omitempty"`
-	ArtifactId   string `xml:"artifactId,omitempty"`
-	Version      string `xml:"version,omitempty"`
-	RelativePath string `xml:"relativePath,omitempty"`
+	GroupId      *string `xml:"groupId"`
+	ArtifactId   *string `xml:"artifactId"`
+	Version      *string `xml:"version"`
+	RelativePath *string `xml:"relativePath"`
 }
 
 // Roles is The roles the contributor plays in the project. Each role is described by a
@@ -254,14 +254,14 @@ type Roles struct {
 
 // Developer is The URL of the organization.
 type Developer struct {
-	Id              string      `xml:"id,omitempty"`
-	Name            string      `xml:"name,omitempty"`
-	Email           string      `xml:"email,omitempty"`
-	Url             string      `xml:"url,omitempty"`
-	Organization    string      `xml:"organization,omitempty"`
-	OrganizationUrl string      `xml:"organizationUrl,omitempty"`
+	Id              *string     `xml:"id"`
+	Name            *string     `xml:"name"`
+	Email           *string     `xml:"email"`
+	Url             *string     `xml:"url"`
+	Organization    *string     `xml:"organization"`
+	OrganizationUrl *string     `xml:"organizationUrl"`
 	Roles           *Roles      `xml:"roles,omitempty"`
-	Timezone        string      `xml:"timezone,omitempty"`
+	Timezone        *string     `xml:"timezone"`
 	Properties      *Properties `xml:"properties,omitempty"`
 }
 
@@ -273,30 +273,30 @@ type OtherArchives struct {
 
 // MailingList is The link to a URL where you can browse the mailing list archive.
 type MailingList struct {
-	Name          string         `xml:"name,omitempty"`
-	Subscribe     string         `xml:"subscribe,omitempty"`
-	Unsubscribe   string         `xml:"unsubscribe,omitempty"`
-	Post          string         `xml:"post,omitempty"`
-	Archive       string         `xml:"archive,omitempty"`
+	Name          *string        `xml:"name"`
+	Subscribe     *string        `xml:"subscribe"`
+	Unsubscribe   *string        `xml:"unsubscribe"`
+	Post          *string        `xml:"post"`
+	Archive       *string        `xml:"archive"`
 	OtherArchives *OtherArchives `xml:"otherArchives,omitempty"`
 }
 
 // Contributor is The URL of the organization.
 type Contributor struct {
-	Name            string      `xml:"name,omitempty"`
-	Email           string      `xml:"email,omitempty"`
-	Url             string      `xml:"url,omitempty"`
-	Organization    string      `xml:"organization,omitempty"`
-	OrganizationUrl string      `xml:"organizationUrl,omitempty"`
+	Name            *string     `xml:"name"`
+	Email           *string     `xml:"email"`
+	Url             *string     `xml:"url"`
+	Organization    *string     `xml:"organization"`
+	OrganizationUrl *string     `xml:"organizationUrl"`
 	Roles           *Roles      `xml:"roles,omitempty"`
-	Timezone        string      `xml:"timezone,omitempty"`
+	Timezone        *string     `xml:"timezone"`
 	Properties      *Properties `xml:"properties,omitempty"`
 }
 
 // Organization is The URL to the organization's home page.
 type Organization struct {
-	Name string `xml:"name,omitempty"`
-	Url  string `xml:"url,omitempty"`
+	Name *string `xml:"name"`
+	Url  *string `xml:"url"`
 }
 
 // DistributionManagement is Gives the status of this artifact in the remote repository.
@@ -310,21 +310,21 @@ type DistributionManagement struct {
 	Repository         *DeploymentRepository `xml:"repository,omitempty"`
 	SnapshotRepository *DeploymentRepository `xml:"snapshotRepository,omitempty"`
 	Site               *Site                 `xml:"site,omitempty"`
-	DownloadUrl        string                `xml:"downloadUrl,omitempty"`
+	DownloadUrl        *string               `xml:"downloadUrl"`
 	Relocation         *Relocation           `xml:"relocation,omitempty"`
-	Status             string                `xml:"status,omitempty"`
+	Status             *string               `xml:"status"`
 }
 
 // DeploymentRepository is The type of layout this repository uses for locating and storing artifacts -
 //             can be <code>legacy</code> or <code>default</code>.
 type DeploymentRepository struct {
-	UniqueVersion bool              `xml:"uniqueVersion,omitempty"`
+	UniqueVersion *bool             `xml:"uniqueVersion"`
 	Releases      *RepositoryPolicy `xml:"releases,omitempty"`
 	Snapshots     *RepositoryPolicy `xml:"snapshots,omitempty"`
-	Id            string            `xml:"id,omitempty"`
-	Name          string            `xml:"name,omitempty"`
-	Url           string            `xml:"url,omitempty"`
-	Layout        string            `xml:"layout,omitempty"`
+	Id            *string           `xml:"id"`
+	Name          *string           `xml:"name"`
+	Url           *string           `xml:"url"`
+	Layout        *string           `xml:"layout"`
 }
 
 // RepositoryPolicy is What to do when verification of an artifact checksum fails. Valid values are
@@ -335,27 +335,27 @@ type DeploymentRepository struct {
 //             <code>warn</code>
 //             (the default).
 type RepositoryPolicy struct {
-	Enabled        string `xml:"enabled,omitempty"`
-	UpdatePolicy   string `xml:"updatePolicy,omitempty"`
-	ChecksumPolicy string `xml:"checksumPolicy,omitempty"`
+	Enabled        *string `xml:"enabled"`
+	UpdatePolicy   *string `xml:"updatePolicy"`
+	ChecksumPolicy *string `xml:"checksumPolicy"`
 }
 
 // Relocation is An additional message to show the user about the move, such as the reason.
 type Relocation struct {
-	GroupId    string `xml:"groupId,omitempty"`
-	ArtifactId string `xml:"artifactId,omitempty"`
-	Version    string `xml:"version,omitempty"`
-	Message    string `xml:"message,omitempty"`
+	GroupId    *string `xml:"groupId"`
+	ArtifactId *string `xml:"artifactId"`
+	Version    *string `xml:"version"`
+	Message    *string `xml:"message"`
 }
 
 // Site is The url of the location where website is deployed, in the form <code>protocol://hostname/path</code>.
 //             <br><b>Default value is</b>: parent value [+ path adjustment] + (artifactId or project.directory property), or just parent value if
 //             site's <code>child.site.url.inherit.append.path="false"</code>
 type Site struct {
-	ChildSiteUrlInheritAppendPathAttr string `xml:"child.site.url.inherit.append.path,attr,omitempty"`
-	Id                                string `xml:"id,omitempty"`
-	Name                              string `xml:"name,omitempty"`
-	Url                               string `xml:"url,omitempty"`
+	ChildSiteUrlInheritAppendPathAttr string  `xml:"child.site.url.inherit.append.path,attr,omitempty"`
+	Id                                *string `xml:"id"`
+	Name                              *string `xml:"name"`
+	Url                               *string `xml:"url"`
 }
 
 // Plugins is The reporting plugins to use and their configuration.
@@ -367,8 +367,8 @@ type Plugins struct {
 // Reporting is Where to store all of the generated reports. The default is
 //             <code>${project.build.directory}/site</code>.
 type Reporting struct {
-	ExcludeDefaults string   `xml:"excludeDefaults,omitempty"`
-	OutputDirectory string   `xml:"outputDirectory,omitempty"`
+	ExcludeDefaults *string  `xml:"excludeDefaults"`
+	OutputDirectory *string  `xml:"outputDirectory"`
 	Plugins         *Plugins `xml:"plugins,omitempty"`
 }
 
@@ -381,26 +381,26 @@ type ReportSets struct {
 
 // ReportPlugin is The version of the reporting plugin to be used.
 type ReportPlugin struct {
-	GroupId       string         `xml:"groupId,omitempty"`
-	ArtifactId    string         `xml:"artifactId,omitempty"`
-	Version       string         `xml:"version,omitempty"`
+	GroupId       *string        `xml:"groupId"`
+	ArtifactId    *string        `xml:"artifactId"`
+	Version       *string        `xml:"version"`
 	ReportSets    *ReportSets    `xml:"reportSets,omitempty"`
-	Inherited     string         `xml:"inherited,omitempty"`
+	Inherited     *string        `xml:"inherited"`
 	Configuration *Configuration `xml:"configuration,omitempty"`
 }
 
 // ReportSet is The unique id for this report set, to be used during POM inheritance and profile injection
 //             for merging of report sets.
 type ReportSet struct {
-	Id            string         `xml:"id,omitempty"`
+	Id            *string        `xml:"id"`
 	Reports       *Reports       `xml:"reports,omitempty"`
-	Inherited     string         `xml:"inherited,omitempty"`
+	Inherited     *string        `xml:"inherited"`
 	Configuration *Configuration `xml:"configuration,omitempty"`
 }
 
 // Profile is Information required to build the project.
 type Profile struct {
-	Id                     string                  `xml:"id,omitempty"`
+	Id                     *string                 `xml:"id"`
 	Activation             *Activation             `xml:"activation,omitempty"`
 	Build                  *BuildBase              `xml:"build,omitempty"`
 	Modules                *Modules                `xml:"modules,omitempty"`
@@ -416,8 +416,8 @@ type Profile struct {
 
 // Activation is Specifies that this profile will be activated based on existence of a file.
 type Activation struct {
-	ActiveByDefault bool                `xml:"activeByDefault,omitempty"`
-	Jdk             string              `xml:"jdk,omitempty"`
+	ActiveByDefault *bool               `xml:"activeByDefault"`
+	Jdk             *string             `xml:"jdk"`
 	Os              *ActivationOS       `xml:"os,omitempty"`
 	Property        *ActivationProperty `xml:"property,omitempty"`
 	File            *ActivationFile     `xml:"file,omitempty"`
@@ -425,23 +425,23 @@ type Activation struct {
 
 // ActivationProperty is The value of the property required to activate a profile.
 type ActivationProperty struct {
-	Name  string `xml:"name,omitempty"`
-	Value string `xml:"value,omitempty"`
+	Name  *string `xml:"name"`
+	Value *string `xml:"value"`
 }
 
 // ActivationFile is The name of the file that must exist to activate the profile.
 type ActivationFile struct {
-	Missing string `xml:"missing,omitempty"`
-	Exists  string `xml:"exists,omitempty"`
+	Missing *string `xml:"missing"`
+	Exists  *string `xml:"exists"`
 }
 
 // ActivationOS is The version of the operating system to be used to activate the
 //           profile.
 type ActivationOS struct {
-	Name    string `xml:"name,omitempty"`
-	Family  string `xml:"family,omitempty"`
-	Arch    string `xml:"arch,omitempty"`
-	Version string `xml:"version,omitempty"`
+	Name    *string `xml:"name"`
+	Family  *string `xml:"family"`
+	Arch    *string `xml:"arch"`
+	Version *string `xml:"version"`
 }
 
 // Repository is The type of layout this repository uses for locating and storing artifacts -
@@ -449,10 +449,10 @@ type ActivationOS struct {
 type Repository struct {
 	Releases  *RepositoryPolicy `xml:"releases,omitempty"`
 	Snapshots *RepositoryPolicy `xml:"snapshots,omitempty"`
-	Id        string            `xml:"id,omitempty"`
-	Name      string            `xml:"name,omitempty"`
-	Url       string            `xml:"url,omitempty"`
-	Layout    string            `xml:"layout,omitempty"`
+	Id        *string           `xml:"id"`
+	Name      *string           `xml:"name"`
+	Url       *string           `xml:"url"`
+	Layout    *string           `xml:"layout"`
 }
 
 // Resources is This element describes all of the classpath resources such as properties
@@ -483,11 +483,11 @@ type Filters struct {
 //             project is relevant, i.e. the default goals of child modules are ignored. Since Maven 3,
 //             multiple goals/phases can be separated by whitespace.
 type BuildBase struct {
-	DefaultGoal      string            `xml:"defaultGoal,omitempty"`
+	DefaultGoal      *string           `xml:"defaultGoal"`
 	Resources        *Resources        `xml:"resources,omitempty"`
 	TestResources    *TestResources    `xml:"testResources,omitempty"`
-	Directory        string            `xml:"directory,omitempty"`
-	FinalName        string            `xml:"finalName,omitempty"`
+	Directory        *string           `xml:"directory"`
+	FinalName        *string           `xml:"finalName"`
 	Filters          *Filters          `xml:"filters,omitempty"`
 	PluginManagement *PluginManagement `xml:"pluginManagement,omitempty"`
 	Plugins          *Plugins          `xml:"plugins,omitempty"`
@@ -510,24 +510,24 @@ type Goals struct {
 //             of this field is <code>String</code> for technical reasons, the semantic type is actually
 //             <code>Boolean</code>. Default value is <code>false</code>.
 type Plugin struct {
-	GroupId       string         `xml:"groupId,omitempty"`
-	ArtifactId    string         `xml:"artifactId,omitempty"`
-	Version       string         `xml:"version,omitempty"`
-	Extensions    string         `xml:"extensions,omitempty"`
+	GroupId       *string        `xml:"groupId"`
+	ArtifactId    *string        `xml:"artifactId"`
+	Version       *string        `xml:"version"`
+	Extensions    *string        `xml:"extensions"`
 	Executions    *Executions    `xml:"executions,omitempty"`
 	Dependencies  *Dependencies  `xml:"dependencies,omitempty"`
 	Goals         *Goals         `xml:"goals,omitempty"`
-	Inherited     string         `xml:"inherited,omitempty"`
+	Inherited     *string        `xml:"inherited"`
 	Configuration *Configuration `xml:"configuration,omitempty"`
 }
 
 // PluginExecution is The build lifecycle phase to bind the goals in this execution to. If omitted,
 //             the goals will be bound to the default phase specified by the plugin.
 type PluginExecution struct {
-	Id            string         `xml:"id,omitempty"`
-	Phase         string         `xml:"phase,omitempty"`
+	Id            *string        `xml:"id"`
+	Phase         *string        `xml:"phase"`
 	Goals         *Goals         `xml:"goals,omitempty"`
-	Inherited     string         `xml:"inherited,omitempty"`
+	Inherited     *string        `xml:"inherited"`
 	Configuration *Configuration `xml:"configuration,omitempty"`
 }
 
@@ -546,9 +546,9 @@ type Excludes struct {
 // Resource is Describe the directory where the resources are stored. The path is relative
 //             to the POM.
 type Resource struct {
-	TargetPath string    `xml:"targetPath,omitempty"`
-	Filtering  string    `xml:"filtering,omitempty"`
-	Directory  string    `xml:"directory,omitempty"`
+	TargetPath *string   `xml:"targetPath"`
+	Filtering  *string   `xml:"filtering"`
+	Directory  *string   `xml:"directory"`
 	Includes   *Includes `xml:"includes,omitempty"`
 	Excludes   *Excludes `xml:"excludes,omitempty"`
 }
@@ -561,7 +561,7 @@ type PluginManagement struct {
 // Prerequisites is For a plugin project (packaging is <code>maven-plugin</code>), the minimum version of
 //             Maven required to use the resulting plugin.<br>
 type Prerequisites struct {
-	Maven string `xml:"maven,omitempty"`
+	Maven *string `xml:"maven"`
 }
 
 // Extensions is A set of build extensions to use from this project.
@@ -573,17 +573,17 @@ type Extensions struct {
 // Build is The directory where compiled test classes are placed.
 //             The default value is <code>target/test-classes</code>.
 type Build struct {
-	SourceDirectory       string            `xml:"sourceDirectory,omitempty"`
-	ScriptSourceDirectory string            `xml:"scriptSourceDirectory,omitempty"`
-	TestSourceDirectory   string            `xml:"testSourceDirectory,omitempty"`
-	OutputDirectory       string            `xml:"outputDirectory,omitempty"`
-	TestOutputDirectory   string            `xml:"testOutputDirectory,omitempty"`
+	SourceDirectory       *string           `xml:"sourceDirectory"`
+	ScriptSourceDirectory *string           `xml:"scriptSourceDirectory"`
+	TestSourceDirectory   *string           `xml:"testSourceDirectory"`
+	OutputDirectory       *string           `xml:"outputDirectory"`
+	TestOutputDirectory   *string           `xml:"testOutputDirectory"`
 	Extensions            *Extensions       `xml:"extensions,omitempty"`
-	DefaultGoal           string            `xml:"defaultGoal,omitempty"`
+	DefaultGoal           *string           `xml:"defaultGoal"`
 	Resources             *Resources        `xml:"resources,omitempty"`
 	TestResources         *TestResources    `xml:"testResources,omitempty"`
-	Directory             string            `xml:"directory,omitempty"`
-	FinalName             string            `xml:"finalName,omitempty"`
+	Directory             *string           `xml:"directory"`
+	FinalName             *string           `xml:"finalName"`
 	Filters               *Filters          `xml:"filters,omitempty"`
 	PluginManagement      *PluginManagement `xml:"pluginManagement,omitempty"`
 	Plugins               *Plugins          `xml:"plugins,omitempty"`
@@ -591,7 +591,7 @@ type Build struct {
 
 // Extension is The version of the extension.
 type Extension struct {
-	GroupId    string `xml:"groupId,omitempty"`
-	ArtifactId string `xml:"artifactId,omitempty"`
-	Version    string `xml:"version,omitempty"`
+	GroupId    *string `xml:"groupId"`
+	ArtifactId *string `xml:"artifactId"`
+	Version    *string `xml:"version"`
 }

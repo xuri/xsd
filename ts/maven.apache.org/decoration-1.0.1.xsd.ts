@@ -6,7 +6,7 @@ export type Project = DecorationModel;
 
 // PoweredBy is Powered by logos list.
 export class PoweredBy {
-	Logo: Array<Logo>;
+	Logo?: Array<Logo>;
 }
 
 // Custom is Custom configuration for use with customized Velocity templates.
@@ -16,25 +16,25 @@ export class Custom {
 // DecorationModel is Modify the version published display properties.
 export class DecorationModel {
 	NameAttr: string | null;
-	BannerLeft: Banner;
-	BannerRight: Banner;
-	PublishDate: PublishDate;
-	Version: Version;
-	PoweredBy: PoweredBy;
-	Skin: Skin;
-	Body: Body;
-	Custom: Custom;
+	BannerLeft?: Banner;
+	BannerRight?: Banner;
+	PublishDate?: PublishDate;
+	Version?: Version;
+	PoweredBy?: PoweredBy;
+	Skin?: Skin;
+	Body?: Body;
+	Custom?: Custom;
 }
 
 // Banner is The height to use for the banner image.
 export class Banner {
-	Name: string;
-	Src: string;
-	Alt: string;
-	Href: string;
-	Border: string;
-	Width: string;
-	Height: string;
+	Name?: string;
+	Src?: string;
+	Alt?: string;
+	Href?: string;
+	Border?: string;
+	Width?: string;
+	Height?: string;
 }
 
 // Head is Additional content (like Javascript) to include in the HEAD block of the generated pages.
@@ -43,20 +43,20 @@ export class Head {
 
 // Links is A list of links to display in the navigation.
 export class Links {
-	Item: Array<LinkItem>;
+	Item?: Array<LinkItem>;
 }
 
 // Breadcrumbs is A list of breadcrumbs to display in the navigation.
 export class Breadcrumbs {
-	Item: Array<LinkItem>;
+	Item?: Array<LinkItem>;
 }
 
 // Body is The main content decoration.
 export class Body {
-	Head: Head;
-	Links: Links;
-	Breadcrumbs: Breadcrumbs;
-	Menu: Array<Menu>;
+	Head?: Head;
+	Links?: Links;
+	Breadcrumbs?: Breadcrumbs;
+	Menu?: Array<Menu>;
 }
 
 // LinkItem is A link in the navigation.
@@ -84,7 +84,7 @@ export class Menu {
 	BorderAttr: string | null;
 	WidthAttr: string | null;
 	HeightAttr: string | null;
-	Item: Array<MenuItem>;
+	Item?: Array<MenuItem>;
 }
 
 // MenuItem is A list of menu item.
@@ -100,15 +100,15 @@ export class MenuItem {
 	WidthAttr: string | null;
 	HeightAttr: string | null;
 	TargetAttr: string | null;
-	Description: string;
-	Item: Array<MenuItem>;
+	Description?: string;
+	Item?: Array<MenuItem>;
 }
 
 // Skin is The skin version.
 export class Skin {
-	GroupId: string;
-	ArtifactId: string;
-	Version: string;
+	GroupId?: string;
+	ArtifactId?: string;
+	Version?: string;
 }
 
 // Version is Modify display properties for version published.

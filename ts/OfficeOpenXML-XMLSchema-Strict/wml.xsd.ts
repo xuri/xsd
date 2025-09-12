@@ -960,7 +960,7 @@ export class CT_TblPrChange extends CT_TrackChange  {
 
 // CT_SectPrChange ...
 export class CT_SectPrChange extends CT_TrackChange  {
-	SectPr: CT_SectPrBase;
+	SectPr?: CT_SectPrBase;
 }
 
 // CT_PPrChange ...
@@ -1033,19 +1033,19 @@ export class EG_RangeMarkupElements {
 
 // CT_NumPr ...
 export class CT_NumPr {
-	Ilvl: CT_DecimalNumber;
-	NumId: CT_DecimalNumber;
-	Ins: CT_TrackChange;
+	Ilvl?: CT_DecimalNumber;
+	NumId?: CT_DecimalNumber;
+	Ins?: CT_TrackChange;
 }
 
 // CT_PBdr ...
 export class CT_PBdr {
-	Top: CT_Border;
-	Left: CT_Border;
-	Bottom: CT_Border;
-	Right: CT_Border;
-	Between: CT_Border;
-	Bar: CT_Border;
+	Top?: CT_Border;
+	Left?: CT_Border;
+	Bottom?: CT_Border;
+	Right?: CT_Border;
+	Between?: CT_Border;
+	Bar?: CT_Border;
 }
 
 // CT_Tabs ...
@@ -1069,51 +1069,51 @@ export class CT_TextboxTightWrap {
 
 // CT_PPr ...
 export class CT_PPr extends CT_PPrBase  {
-	RPr: CT_ParaRPr;
-	SectPr: CT_SectPr;
-	PPrChange: CT_PPrChange;
+	RPr?: CT_ParaRPr;
+	SectPr?: CT_SectPr;
+	PPrChange?: CT_PPrChange;
 }
 
 // CT_PPrBase ...
 export class CT_PPrBase {
-	PStyle: CT_String;
-	KeepNext: CT_OnOff;
-	KeepLines: CT_OnOff;
-	PageBreakBefore: CT_OnOff;
-	FramePr: CT_FramePr;
-	WidowControl: CT_OnOff;
-	NumPr: CT_NumPr;
-	SuppressLineNumbers: CT_OnOff;
-	PBdr: CT_PBdr;
-	Shd: CT_Shd;
-	Tabs: CT_Tabs;
-	SuppressAutoHyphens: CT_OnOff;
-	Kinsoku: CT_OnOff;
-	WordWrap: CT_OnOff;
-	OverflowPunct: CT_OnOff;
-	TopLinePunct: CT_OnOff;
-	AutoSpaceDE: CT_OnOff;
-	AutoSpaceDN: CT_OnOff;
-	Bidi: CT_OnOff;
-	AdjustRightInd: CT_OnOff;
-	SnapToGrid: CT_OnOff;
-	Spacing: CT_Spacing;
-	Ind: CT_Ind;
-	ContextualSpacing: CT_OnOff;
-	MirrorIndents: CT_OnOff;
-	SuppressOverlap: CT_OnOff;
-	Jc: CT_Jc;
-	TextDirection: CT_TextDirection;
-	TextAlignment: CT_TextAlignment;
-	TextboxTightWrap: CT_TextboxTightWrap;
-	OutlineLvl: CT_DecimalNumber;
-	DivId: CT_DecimalNumber;
-	CnfStyle: CT_Cnf;
+	PStyle?: CT_String;
+	KeepNext?: CT_OnOff;
+	KeepLines?: CT_OnOff;
+	PageBreakBefore?: CT_OnOff;
+	FramePr?: CT_FramePr;
+	WidowControl?: CT_OnOff;
+	NumPr?: CT_NumPr;
+	SuppressLineNumbers?: CT_OnOff;
+	PBdr?: CT_PBdr;
+	Shd?: CT_Shd;
+	Tabs?: CT_Tabs;
+	SuppressAutoHyphens?: CT_OnOff;
+	Kinsoku?: CT_OnOff;
+	WordWrap?: CT_OnOff;
+	OverflowPunct?: CT_OnOff;
+	TopLinePunct?: CT_OnOff;
+	AutoSpaceDE?: CT_OnOff;
+	AutoSpaceDN?: CT_OnOff;
+	Bidi?: CT_OnOff;
+	AdjustRightInd?: CT_OnOff;
+	SnapToGrid?: CT_OnOff;
+	Spacing?: CT_Spacing;
+	Ind?: CT_Ind;
+	ContextualSpacing?: CT_OnOff;
+	MirrorIndents?: CT_OnOff;
+	SuppressOverlap?: CT_OnOff;
+	Jc?: CT_Jc;
+	TextDirection?: CT_TextDirection;
+	TextAlignment?: CT_TextAlignment;
+	TextboxTightWrap?: CT_TextboxTightWrap;
+	OutlineLvl?: CT_DecimalNumber;
+	DivId?: CT_DecimalNumber;
+	CnfStyle?: CT_Cnf;
 }
 
 // CT_PPrGeneral ...
 export class CT_PPrGeneral extends CT_PPrBase  {
-	PPrChange: CT_PPrChange;
+	PPrChange?: CT_PPrChange;
 }
 
 // CT_Control ...
@@ -1129,7 +1129,7 @@ export class CT_Background {
 	ThemeColorAttr: string | null;
 	ThemeTintAttr: Uint8Array | null;
 	ThemeShadeAttr: Uint8Array | null;
-	Drawing: CT_Drawing;
+	Drawing?: CT_Drawing;
 }
 
 // CT_Rel ...
@@ -1141,7 +1141,7 @@ export class CT_Rel {
 export class CT_Object {
 	DxaOrigAttr: ST_TwipsMeasure | null;
 	DyaOrigAttr: ST_TwipsMeasure | null;
-	Drawing: CT_Drawing;
+	Drawing?: CT_Drawing;
 	Control: CT_Control;
 	ObjectLink: CT_ObjectLink;
 	ObjectEmbed: CT_ObjectEmbed;
@@ -1177,8 +1177,8 @@ export enum ST_ObjectUpdateMode {
 
 // CT_Drawing ...
 export class CT_Drawing {
-	WpAnchor: Array<CT_Anchor>;
-	WpInline: Array<CT_Inline>;
+	WpAnchor?: Array<CT_Anchor>;
+	WpInline?: Array<CT_Inline>;
 }
 
 // CT_SimpleField ...
@@ -1236,7 +1236,7 @@ export class CT_FldChar {
 	FldCharTypeAttr: string;
 	FldLockAttr: ST_OnOff | null;
 	DirtyAttr: ST_OnOff | null;
-	FfData: CT_FFData;
+	FfData?: CT_FFData;
 }
 
 // CT_Hyperlink ...
@@ -1253,14 +1253,14 @@ export class CT_Hyperlink {
 // CT_FFData ...
 export class CT_FFData {
 	Name: Array<CT_FFName>;
-	Label: Array<CT_DecimalNumber>;
-	TabIndex: Array<CT_UnsignedDecimalNumber>;
+	Label?: Array<CT_DecimalNumber>;
+	TabIndex?: Array<CT_UnsignedDecimalNumber>;
 	Enabled: Array<CT_OnOff>;
 	CalcOnExit: Array<CT_OnOff>;
-	EntryMacro: Array<CT_MacroName>;
-	ExitMacro: Array<CT_MacroName>;
-	HelpText: Array<CT_FFHelpText>;
-	StatusText: Array<CT_FFStatusText>;
+	EntryMacro?: Array<CT_MacroName>;
+	ExitMacro?: Array<CT_MacroName>;
+	HelpText?: Array<CT_FFHelpText>;
+	StatusText?: Array<CT_FFStatusText>;
 	CheckBox: Array<CT_FFCheckBox>;
 	DdList: Array<CT_FFDDList>;
 	TextInput: Array<CT_FFTextInput>;
@@ -1282,23 +1282,23 @@ export class CT_FFStatusText {
 export class CT_FFCheckBox {
 	Size: CT_HpsMeasure;
 	SizeAuto: CT_OnOff;
-	Default: CT_OnOff;
-	Checked: CT_OnOff;
+	Default?: CT_OnOff;
+	Checked?: CT_OnOff;
 }
 
 // CT_FFDDList ...
 export class CT_FFDDList {
-	Result: CT_DecimalNumber;
-	Default: CT_DecimalNumber;
-	ListEntry: Array<CT_String>;
+	Result?: CT_DecimalNumber;
+	Default?: CT_DecimalNumber;
+	ListEntry?: Array<CT_String>;
 }
 
 // CT_FFTextInput ...
 export class CT_FFTextInput {
-	Type: CT_FFTextType;
-	Default: CT_String;
-	MaxLength: CT_DecimalNumber;
-	Format: CT_String;
+	Type?: CT_FFTextType;
+	Default?: CT_String;
+	MaxLength?: CT_DecimalNumber;
+	Format?: CT_String;
 }
 
 // ST_SectionMark ...
@@ -1437,10 +1437,10 @@ export class CT_PageBorders {
 	ZOrderAttr: string | null;
 	DisplayAttr: string | null;
 	OffsetFromAttr: string | null;
-	Top: CT_TopPageBorder;
-	Left: CT_PageBorder;
-	Bottom: CT_BottomPageBorder;
-	Right: CT_PageBorder;
+	Top?: CT_TopPageBorder;
+	Left?: CT_PageBorder;
+	Bottom?: CT_BottomPageBorder;
+	Right?: CT_PageBorder;
 }
 
 // CT_PageBorder ...
@@ -1608,7 +1608,7 @@ export class CT_SectPr {
 	AG_SectPrAttributes: AG_SectPrAttributes;
 	EG_HdrFtrReferences: Array<EG_HdrFtrReferences>;
 	EG_SectPrContents: EG_SectPrContents;
-	SectPrChange: CT_SectPrChange;
+	SectPrChange?: CT_SectPrChange;
 }
 
 // ST_BrType ...
@@ -1879,7 +1879,7 @@ export class CT_ParaRPrOriginal {
 export class CT_ParaRPr {
 	EG_ParaRPrTrackChanges: EG_ParaRPrTrackChanges;
 	EG_RPrBase: Array<EG_RPrBase>;
-	RPrChange: CT_ParaRPrChange;
+	RPrChange?: CT_ParaRPrChange;
 }
 
 // EG_ParaRPrTrackChanges ...
@@ -1893,12 +1893,12 @@ export class EG_ParaRPrTrackChanges {
 // CT_AltChunk ...
 export class CT_AltChunk {
 	RIdAttr: string | null;
-	AltChunkPr: CT_AltChunkPr;
+	AltChunkPr?: CT_AltChunkPr;
 }
 
 // CT_AltChunkPr ...
 export class CT_AltChunkPr {
-	MatchSrc: CT_OnOff;
+	MatchSrc?: CT_OnOff;
 }
 
 // ST_RubyAlign ...
@@ -1923,7 +1923,7 @@ export class CT_RubyPr {
 	HpsRaise: CT_HpsMeasure;
 	HpsBaseText: CT_HpsMeasure;
 	Lid: CT_Lang;
-	Dirty: CT_OnOff;
+	Dirty?: CT_OnOff;
 }
 
 // EG_RubyContent ...
@@ -1983,29 +1983,29 @@ export class CT_CalendarType {
 // CT_SdtDate ...
 export class CT_SdtDate {
 	FullDateAttr: string | null;
-	DateFormat: CT_String;
-	Lid: CT_Lang;
-	StoreMappedDataAs: CT_SdtDateMappingType;
-	Calendar: CT_CalendarType;
+	DateFormat?: CT_String;
+	Lid?: CT_Lang;
+	StoreMappedDataAs?: CT_SdtDateMappingType;
+	Calendar?: CT_CalendarType;
 }
 
 // CT_SdtComboBox ...
 export class CT_SdtComboBox {
 	LastValueAttr: string | null;
-	ListItem: Array<CT_SdtListItem>;
+	ListItem?: Array<CT_SdtListItem>;
 }
 
 // CT_SdtDocPart ...
 export class CT_SdtDocPart {
-	DocPartGallery: CT_String;
-	DocPartCategory: CT_String;
-	DocPartUnique: CT_OnOff;
+	DocPartGallery?: CT_String;
+	DocPartCategory?: CT_String;
+	DocPartUnique?: CT_OnOff;
 }
 
 // CT_SdtDropDownList ...
 export class CT_SdtDropDownList {
 	LastValueAttr: string | null;
-	ListItem: Array<CT_SdtListItem>;
+	ListItem?: Array<CT_SdtListItem>;
 }
 
 // CT_Placeholder ...
@@ -2027,17 +2027,17 @@ export class CT_DataBinding {
 
 // CT_SdtPr ...
 export class CT_SdtPr {
-	RPr: CT_RPr;
-	Alias: CT_String;
-	Tag: CT_String;
-	Id: CT_DecimalNumber;
-	Lock: CT_Lock;
-	Placeholder: CT_Placeholder;
-	Temporary: CT_OnOff;
-	ShowingPlcHdr: CT_OnOff;
-	DataBinding: CT_DataBinding;
-	Label: CT_DecimalNumber;
-	TabIndex: CT_UnsignedDecimalNumber;
+	RPr?: CT_RPr;
+	Alias?: CT_String;
+	Tag?: CT_String;
+	Id?: CT_DecimalNumber;
+	Lock?: CT_Lock;
+	Placeholder?: CT_Placeholder;
+	Temporary?: CT_OnOff;
+	ShowingPlcHdr?: CT_OnOff;
+	DataBinding?: CT_DataBinding;
+	Label?: CT_DecimalNumber;
+	TabIndex?: CT_UnsignedDecimalNumber;
 	Equation: CT_Empty;
 	ComboBox: CT_SdtComboBox;
 	Date: CT_SdtDate;
@@ -2054,7 +2054,7 @@ export class CT_SdtPr {
 
 // CT_SdtEndPr ...
 export class CT_SdtEndPr {
-	RPr: Array<CT_RPr>;
+	RPr?: Array<CT_RPr>;
 }
 
 // EG_ContentRunContent ...
@@ -2133,30 +2133,30 @@ export class CT_SdtContentCell {
 
 // CT_SdtBlock ...
 export class CT_SdtBlock {
-	SdtPr: CT_SdtPr;
-	SdtEndPr: CT_SdtEndPr;
-	SdtContent: CT_SdtContentBlock;
+	SdtPr?: CT_SdtPr;
+	SdtEndPr?: CT_SdtEndPr;
+	SdtContent?: CT_SdtContentBlock;
 }
 
 // CT_SdtRun ...
 export class CT_SdtRun {
-	SdtPr: CT_SdtPr;
-	SdtEndPr: CT_SdtEndPr;
-	SdtContent: CT_SdtContentRun;
+	SdtPr?: CT_SdtPr;
+	SdtEndPr?: CT_SdtEndPr;
+	SdtContent?: CT_SdtContentRun;
 }
 
 // CT_SdtCell ...
 export class CT_SdtCell {
-	SdtPr: CT_SdtPr;
-	SdtEndPr: CT_SdtEndPr;
-	SdtContent: CT_SdtContentCell;
+	SdtPr?: CT_SdtPr;
+	SdtEndPr?: CT_SdtEndPr;
+	SdtContent?: CT_SdtContentCell;
 }
 
 // CT_SdtRow ...
 export class CT_SdtRow {
-	SdtPr: CT_SdtPr;
-	SdtEndPr: CT_SdtEndPr;
-	SdtContent: CT_SdtContentRow;
+	SdtPr?: CT_SdtPr;
+	SdtEndPr?: CT_SdtEndPr;
+	SdtContent?: CT_SdtContentRow;
 }
 
 // CT_Attr ...
@@ -2171,7 +2171,7 @@ export class CT_CustomXmlRun {
 	UriAttr: string | null;
 	ElementAttr: string;
 	EG_PContent: Array<EG_PContent>;
-	CustomXmlPr: CT_CustomXmlPr;
+	CustomXmlPr?: CT_CustomXmlPr;
 }
 
 // CT_SmartTagRun ...
@@ -2179,7 +2179,7 @@ export class CT_SmartTagRun {
 	UriAttr: string | null;
 	ElementAttr: string;
 	EG_PContent: Array<EG_PContent>;
-	SmartTagPr: CT_SmartTagPr;
+	SmartTagPr?: CT_SmartTagPr;
 }
 
 // CT_CustomXmlBlock ...
@@ -2187,13 +2187,13 @@ export class CT_CustomXmlBlock {
 	UriAttr: string | null;
 	ElementAttr: string;
 	EG_ContentBlockContent: Array<EG_ContentBlockContent>;
-	CustomXmlPr: CT_CustomXmlPr;
+	CustomXmlPr?: CT_CustomXmlPr;
 }
 
 // CT_CustomXmlPr ...
 export class CT_CustomXmlPr {
-	Placeholder: CT_String;
-	Attr: Array<CT_Attr>;
+	Placeholder?: CT_String;
+	Attr?: Array<CT_Attr>;
 }
 
 // CT_CustomXmlRow ...
@@ -2201,7 +2201,7 @@ export class CT_CustomXmlRow {
 	UriAttr: string | null;
 	ElementAttr: string;
 	EG_ContentRowContent: Array<EG_ContentRowContent>;
-	CustomXmlPr: CT_CustomXmlPr;
+	CustomXmlPr?: CT_CustomXmlPr;
 }
 
 // CT_CustomXmlCell ...
@@ -2209,12 +2209,12 @@ export class CT_CustomXmlCell {
 	UriAttr: string | null;
 	ElementAttr: string;
 	EG_ContentCellContent: Array<EG_ContentCellContent>;
-	CustomXmlPr: CT_CustomXmlPr;
+	CustomXmlPr?: CT_CustomXmlPr;
 }
 
 // CT_SmartTagPr ...
 export class CT_SmartTagPr {
-	Attr: Array<CT_Attr>;
+	Attr?: Array<CT_Attr>;
 }
 
 // EG_PContent ...
@@ -2233,7 +2233,7 @@ export class CT_P {
 	RsidPAttr: Uint8Array | null;
 	RsidRDefaultAttr: Uint8Array | null;
 	EG_PContent: Array<EG_PContent>;
-	PPr: CT_PPr;
+	PPr?: CT_PPr;
 }
 
 // ST_TblWidth ...
@@ -2269,32 +2269,32 @@ export class CT_TblGridCol {
 
 // CT_TblGridBase ...
 export class CT_TblGridBase {
-	GridCol: Array<CT_TblGridCol>;
+	GridCol?: Array<CT_TblGridCol>;
 }
 
 // CT_TblGrid ...
 export class CT_TblGrid extends CT_TblGridBase  {
-	TblGridChange: CT_TblGridChange;
+	TblGridChange?: CT_TblGridChange;
 }
 
 // CT_TcBorders ...
 export class CT_TcBorders {
-	Top: CT_Border;
-	Start: CT_Border;
-	Bottom: CT_Border;
-	End: CT_Border;
-	InsideH: CT_Border;
-	InsideV: CT_Border;
-	Tl2br: CT_Border;
-	Tr2bl: CT_Border;
+	Top?: CT_Border;
+	Start?: CT_Border;
+	Bottom?: CT_Border;
+	End?: CT_Border;
+	InsideH?: CT_Border;
+	InsideV?: CT_Border;
+	Tl2br?: CT_Border;
+	Tr2bl?: CT_Border;
 }
 
 // CT_TcMar ...
 export class CT_TcMar {
-	Top: CT_TblWidth;
-	Start: CT_TblWidth;
-	Bottom: CT_TblWidth;
-	End: CT_TblWidth;
+	Top?: CT_TblWidth;
+	Start?: CT_TblWidth;
+	Bottom?: CT_TblWidth;
+	End?: CT_TblWidth;
 }
 
 // ST_Merge ...
@@ -2310,24 +2310,24 @@ export class CT_VMerge {
 
 // CT_TcPrBase ...
 export class CT_TcPrBase {
-	CnfStyle: CT_Cnf;
-	TcW: CT_TblWidth;
-	GridSpan: CT_DecimalNumber;
-	VMerge: CT_VMerge;
-	TcBorders: CT_TcBorders;
-	Shd: CT_Shd;
-	NoWrap: CT_OnOff;
-	TcMar: CT_TcMar;
-	TextDirection: CT_TextDirection;
-	TcFitText: CT_OnOff;
-	VAlign: CT_VerticalJc;
-	HideMark: CT_OnOff;
-	Headers: CT_Headers;
+	CnfStyle?: CT_Cnf;
+	TcW?: CT_TblWidth;
+	GridSpan?: CT_DecimalNumber;
+	VMerge?: CT_VMerge;
+	TcBorders?: CT_TcBorders;
+	Shd?: CT_Shd;
+	NoWrap?: CT_OnOff;
+	TcMar?: CT_TcMar;
+	TextDirection?: CT_TextDirection;
+	TcFitText?: CT_OnOff;
+	VAlign?: CT_VerticalJc;
+	HideMark?: CT_OnOff;
+	Headers?: CT_Headers;
 }
 
 // CT_TcPr ...
 export class CT_TcPr extends CT_TcPrInner  {
-	TcPrChange: CT_TcPrChange;
+	TcPrChange?: CT_TcPrChange;
 }
 
 // CT_TcPrInner ...
@@ -2339,7 +2339,7 @@ export class CT_TcPrInner extends CT_TcPrBase  {
 export class CT_Tc {
 	IdAttr: string | null;
 	EG_BlockLevelElts: Array<EG_BlockLevelElts>;
-	TcPr: CT_TcPr;
+	TcPr?: CT_TcPr;
 }
 
 // CT_Cnf ...
@@ -2360,30 +2360,30 @@ export class CT_Cnf {
 
 // CT_Headers ...
 export class CT_Headers {
-	Header: CT_String;
+	Header: Array<CT_String>;
 }
 
 // CT_TrPrBase ...
 export class CT_TrPrBase {
-	CnfStyle: Array<CT_Cnf>;
-	DivId: Array<CT_DecimalNumber>;
-	GridBefore: Array<CT_DecimalNumber>;
-	GridAfter: Array<CT_DecimalNumber>;
-	WBefore: Array<CT_TblWidth>;
-	WAfter: Array<CT_TblWidth>;
-	CantSplit: Array<CT_OnOff>;
-	TrHeight: Array<CT_Height>;
-	TblHeader: Array<CT_OnOff>;
-	TblCellSpacing: Array<CT_TblWidth>;
-	Jc: Array<CT_JcTable>;
-	Hidden: Array<CT_OnOff>;
+	CnfStyle?: Array<CT_Cnf>;
+	DivId?: Array<CT_DecimalNumber>;
+	GridBefore?: Array<CT_DecimalNumber>;
+	GridAfter?: Array<CT_DecimalNumber>;
+	WBefore?: Array<CT_TblWidth>;
+	WAfter?: Array<CT_TblWidth>;
+	CantSplit?: Array<CT_OnOff>;
+	TrHeight?: Array<CT_Height>;
+	TblHeader?: Array<CT_OnOff>;
+	TblCellSpacing?: Array<CT_TblWidth>;
+	Jc?: Array<CT_JcTable>;
+	Hidden?: Array<CT_OnOff>;
 }
 
 // CT_TrPr ...
 export class CT_TrPr extends CT_TrPrBase  {
-	Ins: CT_TrackChange;
-	Del: CT_TrackChange;
-	TrPrChange: CT_TrPrChange;
+	Ins?: CT_TrackChange;
+	Del?: CT_TrackChange;
+	TrPrChange?: CT_TrPrChange;
 }
 
 // CT_Row ...
@@ -2393,8 +2393,8 @@ export class CT_Row {
 	RsidDelAttr: Uint8Array | null;
 	RsidTrAttr: Uint8Array | null;
 	EG_ContentCellContent: Array<EG_ContentCellContent>;
-	TblPrEx: CT_TblPrEx;
-	TrPr: CT_TrPr;
+	TblPrEx?: CT_TblPrEx;
+	TrPr?: CT_TrPr;
 }
 
 // ST_TblLayoutType ...
@@ -2435,64 +2435,64 @@ export class CT_TblPPr {
 
 // CT_TblCellMar ...
 export class CT_TblCellMar {
-	Top: CT_TblWidth;
-	Start: CT_TblWidth;
-	Bottom: CT_TblWidth;
-	End: CT_TblWidth;
+	Top?: CT_TblWidth;
+	Start?: CT_TblWidth;
+	Bottom?: CT_TblWidth;
+	End?: CT_TblWidth;
 }
 
 // CT_TblBorders ...
 export class CT_TblBorders {
-	Top: CT_Border;
-	Start: CT_Border;
-	Bottom: CT_Border;
-	End: CT_Border;
-	InsideH: CT_Border;
-	InsideV: CT_Border;
+	Top?: CT_Border;
+	Start?: CT_Border;
+	Bottom?: CT_Border;
+	End?: CT_Border;
+	InsideH?: CT_Border;
+	InsideV?: CT_Border;
 }
 
 // CT_TblPrBase ...
 export class CT_TblPrBase {
-	TblStyle: CT_String;
-	TblpPr: CT_TblPPr;
-	TblOverlap: CT_TblOverlap;
-	BidiVisual: CT_OnOff;
-	TblStyleRowBandSize: CT_DecimalNumber;
-	TblStyleColBandSize: CT_DecimalNumber;
-	TblW: CT_TblWidth;
-	Jc: CT_JcTable;
-	TblCellSpacing: CT_TblWidth;
-	TblInd: CT_TblWidth;
-	TblBorders: CT_TblBorders;
-	Shd: CT_Shd;
-	TblLayout: CT_TblLayoutType;
-	TblCellMar: CT_TblCellMar;
-	TblLook: CT_TblLook;
-	TblCaption: CT_String;
-	TblDescription: CT_String;
+	TblStyle?: CT_String;
+	TblpPr?: CT_TblPPr;
+	TblOverlap?: CT_TblOverlap;
+	BidiVisual?: CT_OnOff;
+	TblStyleRowBandSize?: CT_DecimalNumber;
+	TblStyleColBandSize?: CT_DecimalNumber;
+	TblW?: CT_TblWidth;
+	Jc?: CT_JcTable;
+	TblCellSpacing?: CT_TblWidth;
+	TblInd?: CT_TblWidth;
+	TblBorders?: CT_TblBorders;
+	Shd?: CT_Shd;
+	TblLayout?: CT_TblLayoutType;
+	TblCellMar?: CT_TblCellMar;
+	TblLook?: CT_TblLook;
+	TblCaption?: CT_String;
+	TblDescription?: CT_String;
 }
 
 // CT_TblPr ...
 export class CT_TblPr extends CT_TblPrBase  {
-	TblPrChange: CT_TblPrChange;
+	TblPrChange?: CT_TblPrChange;
 }
 
 // CT_TblPrExBase ...
 export class CT_TblPrExBase {
-	TblW: CT_TblWidth;
-	Jc: CT_JcTable;
-	TblCellSpacing: CT_TblWidth;
-	TblInd: CT_TblWidth;
-	TblBorders: CT_TblBorders;
-	Shd: CT_Shd;
-	TblLayout: CT_TblLayoutType;
-	TblCellMar: CT_TblCellMar;
-	TblLook: CT_TblLook;
+	TblW?: CT_TblWidth;
+	Jc?: CT_JcTable;
+	TblCellSpacing?: CT_TblWidth;
+	TblInd?: CT_TblWidth;
+	TblBorders?: CT_TblBorders;
+	Shd?: CT_Shd;
+	TblLayout?: CT_TblLayoutType;
+	TblCellMar?: CT_TblCellMar;
+	TblLook?: CT_TblLook;
 }
 
 // CT_TblPrEx ...
 export class CT_TblPrEx extends CT_TblPrExBase  {
-	TblPrExChange: CT_TblPrExChange;
+	TblPrExChange?: CT_TblPrExChange;
 }
 
 // CT_Tbl ...
@@ -2582,30 +2582,30 @@ export class EG_FtnEdnNumProps {
 // CT_FtnProps ...
 export class CT_FtnProps {
 	EG_FtnEdnNumProps: EG_FtnEdnNumProps;
-	Pos: CT_FtnPos;
-	NumFmt: CT_NumFmt;
+	Pos?: CT_FtnPos;
+	NumFmt?: CT_NumFmt;
 }
 
 // CT_EdnProps ...
 export class CT_EdnProps {
 	EG_FtnEdnNumProps: EG_FtnEdnNumProps;
-	Pos: CT_EdnPos;
-	NumFmt: CT_NumFmt;
+	Pos?: CT_EdnPos;
+	NumFmt?: CT_NumFmt;
 }
 
 // CT_FtnDocProps ...
 export class CT_FtnDocProps extends CT_FtnProps  {
-	Footnote: Array<CT_FtnEdnSepRef>;
+	Footnote?: Array<CT_FtnEdnSepRef>;
 }
 
 // CT_EdnDocProps ...
 export class CT_EdnDocProps extends CT_EdnProps  {
-	Endnote: Array<CT_FtnEdnSepRef>;
+	Endnote?: Array<CT_FtnEdnSepRef>;
 }
 
 // CT_RecipientData ...
 export class CT_RecipientData {
-	Active: CT_OnOff;
+	Active?: CT_OnOff;
 	Column: CT_DecimalNumber;
 	UniqueTag: CT_Base64Binary;
 }
@@ -2625,12 +2625,12 @@ export type Recipients = CT_Recipients;
 
 // CT_OdsoFieldMapData ...
 export class CT_OdsoFieldMapData {
-	Type: CT_MailMergeOdsoFMDFieldType;
-	Name: CT_String;
-	MappedName: CT_String;
-	Column: CT_DecimalNumber;
-	Lid: CT_Lang;
-	DynamicAddress: CT_OnOff;
+	Type?: CT_MailMergeOdsoFMDFieldType;
+	Name?: CT_String;
+	MappedName?: CT_String;
+	Column?: CT_DecimalNumber;
+	Lid?: CT_Lang;
+	DynamicAddress?: CT_OnOff;
 }
 
 // ST_MailMergeSourceType ...
@@ -2653,34 +2653,34 @@ export class CT_MailMergeSourceType {
 
 // CT_Odso ...
 export class CT_Odso {
-	Udl: CT_String;
-	Table: CT_String;
-	Src: CT_Rel;
-	ColDelim: CT_DecimalNumber;
-	Type: CT_MailMergeSourceType;
-	FHdr: CT_OnOff;
-	FieldMapData: Array<CT_OdsoFieldMapData>;
-	RecipientData: Array<CT_Rel>;
+	Udl?: CT_String;
+	Table?: CT_String;
+	Src?: CT_Rel;
+	ColDelim?: CT_DecimalNumber;
+	Type?: CT_MailMergeSourceType;
+	FHdr?: CT_OnOff;
+	FieldMapData?: Array<CT_OdsoFieldMapData>;
+	RecipientData?: Array<CT_Rel>;
 }
 
 // CT_MailMerge ...
 export class CT_MailMerge {
 	MainDocumentType: CT_MailMergeDocType;
-	LinkToQuery: CT_OnOff;
+	LinkToQuery?: CT_OnOff;
 	DataType: CT_MailMergeDataType;
-	ConnectString: CT_String;
-	Query: CT_String;
-	DataSource: CT_Rel;
-	HeaderSource: CT_Rel;
-	DoNotSuppressBlankLines: CT_OnOff;
-	Destination: CT_MailMergeDest;
-	AddressFieldName: CT_String;
-	MailSubject: CT_String;
-	MailAsAttachment: CT_OnOff;
-	ViewMergedData: CT_OnOff;
-	ActiveRecord: CT_DecimalNumber;
-	CheckErrors: CT_DecimalNumber;
-	Odso: CT_Odso;
+	ConnectString?: CT_String;
+	Query?: CT_String;
+	DataSource?: CT_Rel;
+	HeaderSource?: CT_Rel;
+	DoNotSuppressBlankLines?: CT_OnOff;
+	Destination?: CT_MailMergeDest;
+	AddressFieldName?: CT_String;
+	MailSubject?: CT_String;
+	MailAsAttachment?: CT_OnOff;
+	ViewMergedData?: CT_OnOff;
+	ActiveRecord?: CT_DecimalNumber;
+	CheckErrors?: CT_DecimalNumber;
+	Odso?: CT_Odso;
 }
 
 // ST_TargetScreenSz ...
@@ -2705,14 +2705,14 @@ export class CT_TargetScreenSz {
 
 // CT_Compat ...
 export class CT_Compat {
-	SpaceForUL: CT_OnOff;
-	BalanceSingleByteDoubleByteWidth: CT_OnOff;
-	DoNotLeaveBackslashAlone: CT_OnOff;
-	UlTrailSpace: CT_OnOff;
-	DoNotExpandShiftReturn: CT_OnOff;
-	AdjustLineHeightInTable: CT_OnOff;
-	ApplyBreakingRules: CT_OnOff;
-	CompatSetting: Array<CT_CompatSetting>;
+	SpaceForUL?: CT_OnOff;
+	BalanceSingleByteDoubleByteWidth?: CT_OnOff;
+	DoNotLeaveBackslashAlone?: CT_OnOff;
+	UlTrailSpace?: CT_OnOff;
+	DoNotExpandShiftReturn?: CT_OnOff;
+	AdjustLineHeightInTable?: CT_OnOff;
+	ApplyBreakingRules?: CT_OnOff;
+	CompatSetting?: Array<CT_CompatSetting>;
 }
 
 // CT_CompatSetting ...
@@ -2730,13 +2730,13 @@ export class CT_DocVar {
 
 // CT_DocVars ...
 export class CT_DocVars {
-	DocVar: Array<CT_DocVar>;
+	DocVar?: Array<CT_DocVar>;
 }
 
 // CT_DocRsids ...
 export class CT_DocRsids {
-	RsidRoot: CT_LongHexNumber;
-	Rsid: Array<CT_LongHexNumber>;
+	RsidRoot?: CT_LongHexNumber;
+	Rsid?: Array<CT_LongHexNumber>;
 }
 
 // ST_CharacterSpacing ...
@@ -2759,18 +2759,18 @@ export class CT_SaveThroughXslt {
 
 // CT_RPrDefault ...
 export class CT_RPrDefault {
-	RPr: CT_RPr;
+	RPr?: CT_RPr;
 }
 
 // CT_PPrDefault ...
 export class CT_PPrDefault {
-	PPr: CT_PPrGeneral;
+	PPr?: CT_PPrGeneral;
 }
 
 // CT_DocDefaults ...
 export class CT_DocDefaults {
-	RPrDefault: CT_RPrDefault;
-	PPrDefault: CT_PPrDefault;
+	RPrDefault?: CT_RPrDefault;
+	PPrDefault?: CT_PPrDefault;
 }
 
 // ST_WmlColorSchemeIndex ...
@@ -2821,102 +2821,102 @@ export class CT_WriteProtection {
 
 // CT_Settings ...
 export class CT_Settings {
-	WriteProtection: CT_WriteProtection;
-	View: CT_View;
-	Zoom: CT_Zoom;
-	RemovePersonalInformation: CT_OnOff;
-	RemoveDateAndTime: CT_OnOff;
-	DoNotDisplayPageBoundaries: CT_OnOff;
-	DisplayBackgroundShape: CT_OnOff;
-	PrintPostScriptOverText: CT_OnOff;
-	PrintFractionalCharacterWidth: CT_OnOff;
-	PrintFormsData: CT_OnOff;
-	EmbedTrueTypeFonts: CT_OnOff;
-	EmbedSystemFonts: CT_OnOff;
-	SaveSubsetFonts: CT_OnOff;
-	SaveFormsData: CT_OnOff;
-	MirrorMargins: CT_OnOff;
-	AlignBordersAndEdges: CT_OnOff;
-	BordersDoNotSurroundHeader: CT_OnOff;
-	BordersDoNotSurroundFooter: CT_OnOff;
-	GutterAtTop: CT_OnOff;
-	HideSpellingErrors: CT_OnOff;
-	HideGrammaticalErrors: CT_OnOff;
-	ActiveWritingStyle: Array<CT_WritingStyle>;
-	ProofState: CT_Proof;
-	FormsDesign: CT_OnOff;
-	AttachedTemplate: CT_Rel;
-	LinkStyles: CT_OnOff;
-	StylePaneFormatFilter: CT_StylePaneFilter;
-	StylePaneSortMethod: CT_StyleSort;
-	DocumentType: CT_DocType;
-	MailMerge: CT_MailMerge;
-	RevisionView: CT_TrackChangesView;
-	TrackRevisions: CT_OnOff;
-	DoNotTrackMoves: CT_OnOff;
-	DoNotTrackFormatting: CT_OnOff;
-	DocumentProtection: CT_DocProtect;
-	AutoFormatOverride: CT_OnOff;
-	StyleLockTheme: CT_OnOff;
-	StyleLockQFSet: CT_OnOff;
-	DefaultTabStop: CT_TwipsMeasure;
-	AutoHyphenation: CT_OnOff;
-	ConsecutiveHyphenLimit: CT_DecimalNumber;
-	HyphenationZone: CT_TwipsMeasure;
-	DoNotHyphenateCaps: CT_OnOff;
-	ShowEnvelope: CT_OnOff;
-	SummaryLength: CT_DecimalNumberOrPrecent;
-	ClickAndTypeStyle: CT_String;
-	DefaultTableStyle: CT_String;
-	EvenAndOddHeaders: CT_OnOff;
-	BookFoldRevPrinting: CT_OnOff;
-	BookFoldPrinting: CT_OnOff;
-	BookFoldPrintingSheets: CT_DecimalNumber;
-	DrawingGridHorizontalSpacing: CT_TwipsMeasure;
-	DrawingGridVerticalSpacing: CT_TwipsMeasure;
-	DisplayHorizontalDrawingGridEvery: CT_DecimalNumber;
-	DisplayVerticalDrawingGridEvery: CT_DecimalNumber;
-	DoNotUseMarginsForDrawingGridOrigin: CT_OnOff;
-	DrawingGridHorizontalOrigin: CT_TwipsMeasure;
-	DrawingGridVerticalOrigin: CT_TwipsMeasure;
-	DoNotShadeFormData: CT_OnOff;
-	NoPunctuationKerning: CT_OnOff;
-	CharacterSpacingControl: CT_CharacterSpacing;
-	PrintTwoOnOne: CT_OnOff;
-	StrictFirstAndLastChars: CT_OnOff;
-	NoLineBreaksAfter: CT_Kinsoku;
-	NoLineBreaksBefore: CT_Kinsoku;
-	SavePreviewPicture: CT_OnOff;
-	DoNotValidateAgainstSchema: CT_OnOff;
-	SaveInvalidXml: CT_OnOff;
-	IgnoreMixedContent: CT_OnOff;
-	AlwaysShowPlaceholderText: CT_OnOff;
-	DoNotDemarcateInvalidXml: CT_OnOff;
-	SaveXmlDataOnly: CT_OnOff;
-	UseXSLTWhenSaving: CT_OnOff;
-	SaveThroughXslt: CT_SaveThroughXslt;
-	ShowXMLTags: CT_OnOff;
-	AlwaysMergeEmptyNamespace: CT_OnOff;
-	UpdateFields: CT_OnOff;
-	FootnotePr: CT_FtnDocProps;
-	EndnotePr: CT_EdnDocProps;
-	Compat: CT_Compat;
-	DocVars: CT_DocVars;
-	Rsids: CT_DocRsids;
-	MMathPr: CT_MathPr;
-	AttachedSchema: Array<CT_String>;
-	ThemeFontLang: CT_Language;
-	ClrSchemeMapping: CT_ColorSchemeMapping;
-	DoNotIncludeSubdocsInStats: CT_OnOff;
-	DoNotAutoCompressPictures: CT_OnOff;
-	ForceUpgrade: CT_Empty;
-	Captions: CT_Captions;
-	ReadModeInkLockDown: CT_ReadingModeInkLockDown;
-	SmartTagType: Array<CT_SmartTagType>;
-	SlSchemaLibrary: CT_SchemaLibrary;
-	DoNotEmbedSmartTags: CT_OnOff;
-	DecimalSymbol: CT_String;
-	ListSeparator: CT_String;
+	WriteProtection?: CT_WriteProtection;
+	View?: CT_View;
+	Zoom?: CT_Zoom;
+	RemovePersonalInformation?: CT_OnOff;
+	RemoveDateAndTime?: CT_OnOff;
+	DoNotDisplayPageBoundaries?: CT_OnOff;
+	DisplayBackgroundShape?: CT_OnOff;
+	PrintPostScriptOverText?: CT_OnOff;
+	PrintFractionalCharacterWidth?: CT_OnOff;
+	PrintFormsData?: CT_OnOff;
+	EmbedTrueTypeFonts?: CT_OnOff;
+	EmbedSystemFonts?: CT_OnOff;
+	SaveSubsetFonts?: CT_OnOff;
+	SaveFormsData?: CT_OnOff;
+	MirrorMargins?: CT_OnOff;
+	AlignBordersAndEdges?: CT_OnOff;
+	BordersDoNotSurroundHeader?: CT_OnOff;
+	BordersDoNotSurroundFooter?: CT_OnOff;
+	GutterAtTop?: CT_OnOff;
+	HideSpellingErrors?: CT_OnOff;
+	HideGrammaticalErrors?: CT_OnOff;
+	ActiveWritingStyle?: Array<CT_WritingStyle>;
+	ProofState?: CT_Proof;
+	FormsDesign?: CT_OnOff;
+	AttachedTemplate?: CT_Rel;
+	LinkStyles?: CT_OnOff;
+	StylePaneFormatFilter?: CT_StylePaneFilter;
+	StylePaneSortMethod?: CT_StyleSort;
+	DocumentType?: CT_DocType;
+	MailMerge?: CT_MailMerge;
+	RevisionView?: CT_TrackChangesView;
+	TrackRevisions?: CT_OnOff;
+	DoNotTrackMoves?: CT_OnOff;
+	DoNotTrackFormatting?: CT_OnOff;
+	DocumentProtection?: CT_DocProtect;
+	AutoFormatOverride?: CT_OnOff;
+	StyleLockTheme?: CT_OnOff;
+	StyleLockQFSet?: CT_OnOff;
+	DefaultTabStop?: CT_TwipsMeasure;
+	AutoHyphenation?: CT_OnOff;
+	ConsecutiveHyphenLimit?: CT_DecimalNumber;
+	HyphenationZone?: CT_TwipsMeasure;
+	DoNotHyphenateCaps?: CT_OnOff;
+	ShowEnvelope?: CT_OnOff;
+	SummaryLength?: CT_DecimalNumberOrPrecent;
+	ClickAndTypeStyle?: CT_String;
+	DefaultTableStyle?: CT_String;
+	EvenAndOddHeaders?: CT_OnOff;
+	BookFoldRevPrinting?: CT_OnOff;
+	BookFoldPrinting?: CT_OnOff;
+	BookFoldPrintingSheets?: CT_DecimalNumber;
+	DrawingGridHorizontalSpacing?: CT_TwipsMeasure;
+	DrawingGridVerticalSpacing?: CT_TwipsMeasure;
+	DisplayHorizontalDrawingGridEvery?: CT_DecimalNumber;
+	DisplayVerticalDrawingGridEvery?: CT_DecimalNumber;
+	DoNotUseMarginsForDrawingGridOrigin?: CT_OnOff;
+	DrawingGridHorizontalOrigin?: CT_TwipsMeasure;
+	DrawingGridVerticalOrigin?: CT_TwipsMeasure;
+	DoNotShadeFormData?: CT_OnOff;
+	NoPunctuationKerning?: CT_OnOff;
+	CharacterSpacingControl?: CT_CharacterSpacing;
+	PrintTwoOnOne?: CT_OnOff;
+	StrictFirstAndLastChars?: CT_OnOff;
+	NoLineBreaksAfter?: CT_Kinsoku;
+	NoLineBreaksBefore?: CT_Kinsoku;
+	SavePreviewPicture?: CT_OnOff;
+	DoNotValidateAgainstSchema?: CT_OnOff;
+	SaveInvalidXml?: CT_OnOff;
+	IgnoreMixedContent?: CT_OnOff;
+	AlwaysShowPlaceholderText?: CT_OnOff;
+	DoNotDemarcateInvalidXml?: CT_OnOff;
+	SaveXmlDataOnly?: CT_OnOff;
+	UseXSLTWhenSaving?: CT_OnOff;
+	SaveThroughXslt?: CT_SaveThroughXslt;
+	ShowXMLTags?: CT_OnOff;
+	AlwaysMergeEmptyNamespace?: CT_OnOff;
+	UpdateFields?: CT_OnOff;
+	FootnotePr?: CT_FtnDocProps;
+	EndnotePr?: CT_EdnDocProps;
+	Compat?: CT_Compat;
+	DocVars?: CT_DocVars;
+	Rsids?: CT_DocRsids;
+	MMathPr?: CT_MathPr;
+	AttachedSchema?: Array<CT_String>;
+	ThemeFontLang?: CT_Language;
+	ClrSchemeMapping?: CT_ColorSchemeMapping;
+	DoNotIncludeSubdocsInStats?: CT_OnOff;
+	DoNotAutoCompressPictures?: CT_OnOff;
+	ForceUpgrade?: CT_Empty;
+	Captions?: CT_Captions;
+	ReadModeInkLockDown?: CT_ReadingModeInkLockDown;
+	SmartTagType?: Array<CT_SmartTagType>;
+	SlSchemaLibrary?: CT_SchemaLibrary;
+	DoNotEmbedSmartTags?: CT_OnOff;
+	DecimalSymbol?: CT_String;
+	ListSeparator?: CT_String;
 }
 
 // CT_StyleSort ...
@@ -2955,18 +2955,18 @@ export enum ST_StyleSort {
 
 // CT_WebSettings ...
 export class CT_WebSettings {
-	Frameset: CT_Frameset;
-	Divs: CT_Divs;
-	Encoding: CT_String;
-	OptimizeForBrowser: CT_OptimizeForBrowser;
-	AllowPNG: CT_OnOff;
-	DoNotRelyOnCSS: CT_OnOff;
-	DoNotSaveAsSingleFile: CT_OnOff;
-	DoNotOrganizeInFolder: CT_OnOff;
-	DoNotUseLongFileNames: CT_OnOff;
-	PixelsPerInch: CT_DecimalNumber;
-	TargetScreenSz: CT_TargetScreenSz;
-	SaveSmartTagsAsXml: CT_OnOff;
+	Frameset?: CT_Frameset;
+	Divs?: CT_Divs;
+	Encoding?: CT_String;
+	OptimizeForBrowser?: CT_OptimizeForBrowser;
+	AllowPNG?: CT_OnOff;
+	DoNotRelyOnCSS?: CT_OnOff;
+	DoNotSaveAsSingleFile?: CT_OnOff;
+	DoNotOrganizeInFolder?: CT_OnOff;
+	DoNotUseLongFileNames?: CT_OnOff;
+	PixelsPerInch?: CT_DecimalNumber;
+	TargetScreenSz?: CT_TargetScreenSz;
+	SaveSmartTagsAsXml?: CT_OnOff;
 }
 
 // ST_FrameScrollbar ...
@@ -2988,16 +2988,16 @@ export class CT_OptimizeForBrowser extends CT_OnOff  {
 
 // CT_Frame ...
 export class CT_Frame {
-	Sz: CT_String;
-	Name: CT_String;
-	Title: CT_String;
-	LongDesc: CT_Rel;
-	SourceFileName: CT_Rel;
-	MarW: CT_PixelsMeasure;
-	MarH: CT_PixelsMeasure;
-	Scrollbar: CT_FrameScrollbar;
-	NoResizeAllowed: CT_OnOff;
-	LinkedToFile: CT_OnOff;
+	Sz?: CT_String;
+	Name?: CT_String;
+	Title?: CT_String;
+	LongDesc?: CT_Rel;
+	SourceFileName?: CT_Rel;
+	MarW?: CT_PixelsMeasure;
+	MarH?: CT_PixelsMeasure;
+	Scrollbar?: CT_FrameScrollbar;
+	NoResizeAllowed?: CT_OnOff;
+	LinkedToFile?: CT_OnOff;
 }
 
 // ST_FrameLayout ...
@@ -3014,20 +3014,20 @@ export class CT_FrameLayout {
 
 // CT_FramesetSplitbar ...
 export class CT_FramesetSplitbar {
-	W: CT_TwipsMeasure;
-	Color: CT_Color;
-	NoBorder: CT_OnOff;
-	FlatBorders: CT_OnOff;
+	W?: CT_TwipsMeasure;
+	Color?: CT_Color;
+	NoBorder?: CT_OnOff;
+	FlatBorders?: CT_OnOff;
 }
 
 // CT_Frameset ...
 export class CT_Frameset {
-	Sz: CT_String;
-	FramesetSplitbar: CT_FramesetSplitbar;
-	FrameLayout: CT_FrameLayout;
-	Title: CT_String;
-	Frameset: Array<CT_Frameset>;
-	Frame: Array<CT_Frame>;
+	Sz?: CT_String;
+	FramesetSplitbar?: CT_FramesetSplitbar;
+	FrameLayout?: CT_FrameLayout;
+	Title?: CT_String;
+	Frameset?: Array<CT_Frameset>;
+	Frame?: Array<CT_Frame>;
 }
 
 // CT_NumPicBullet ...
@@ -3059,17 +3059,17 @@ export class CT_Lvl {
 	IlvlAttr: number;
 	TplcAttr: Uint8Array | null;
 	TentativeAttr: ST_OnOff | null;
-	Start: CT_DecimalNumber;
-	NumFmt: CT_NumFmt;
-	LvlRestart: CT_DecimalNumber;
-	PStyle: CT_String;
-	IsLgl: CT_OnOff;
-	Suff: CT_LevelSuffix;
-	LvlText: CT_LevelText;
-	LvlPicBulletId: CT_DecimalNumber;
-	LvlJc: CT_Jc;
-	PPr: CT_PPrGeneral;
-	RPr: CT_RPr;
+	Start?: CT_DecimalNumber;
+	NumFmt?: CT_NumFmt;
+	LvlRestart?: CT_DecimalNumber;
+	PStyle?: CT_String;
+	IsLgl?: CT_OnOff;
+	Suff?: CT_LevelSuffix;
+	LvlText?: CT_LevelText;
+	LvlPicBulletId?: CT_DecimalNumber;
+	LvlJc?: CT_Jc;
+	PPr?: CT_PPrGeneral;
+	RPr?: CT_RPr;
 }
 
 // ST_MultiLevelType ...
@@ -3087,35 +3087,35 @@ export class CT_MultiLevelType {
 // CT_AbstractNum ...
 export class CT_AbstractNum {
 	AbstractNumIdAttr: number;
-	Nsid: CT_LongHexNumber;
-	MultiLevelType: CT_MultiLevelType;
-	Tmpl: CT_LongHexNumber;
-	Name: CT_String;
-	StyleLink: CT_String;
-	NumStyleLink: CT_String;
-	Lvl: Array<CT_Lvl>;
+	Nsid?: CT_LongHexNumber;
+	MultiLevelType?: CT_MultiLevelType;
+	Tmpl?: CT_LongHexNumber;
+	Name?: CT_String;
+	StyleLink?: CT_String;
+	NumStyleLink?: CT_String;
+	Lvl?: Array<CT_Lvl>;
 }
 
 // CT_NumLvl ...
 export class CT_NumLvl {
 	IlvlAttr: number;
-	StartOverride: CT_DecimalNumber;
-	Lvl: CT_Lvl;
+	StartOverride?: CT_DecimalNumber;
+	Lvl?: CT_Lvl;
 }
 
 // CT_Num ...
 export class CT_Num {
 	NumIdAttr: number;
 	AbstractNumId: CT_DecimalNumber;
-	LvlOverride: Array<CT_NumLvl>;
+	LvlOverride?: Array<CT_NumLvl>;
 }
 
 // CT_Numbering ...
 export class CT_Numbering {
-	NumPicBullet: Array<CT_NumPicBullet>;
-	AbstractNum: Array<CT_AbstractNum>;
-	Num: Array<CT_Num>;
-	NumIdMacAtCleanup: CT_DecimalNumber;
+	NumPicBullet?: Array<CT_NumPicBullet>;
+	AbstractNum?: Array<CT_AbstractNum>;
+	Num?: Array<CT_Num>;
+	NumIdMacAtCleanup?: CT_DecimalNumber;
 }
 
 // ST_TblStyleOverrideType ...
@@ -3138,11 +3138,11 @@ export enum ST_TblStyleOverrideType {
 // CT_TblStylePr ...
 export class CT_TblStylePr {
 	TypeAttr: string;
-	PPr: CT_PPrGeneral;
-	RPr: CT_RPr;
-	TblPr: CT_TblPrBase;
-	TrPr: CT_TrPr;
-	TcPr: CT_TcPr;
+	PPr?: CT_PPrGeneral;
+	RPr?: CT_RPr;
+	TblPr?: CT_TblPrBase;
+	TrPr?: CT_TrPr;
+	TcPr?: CT_TcPr;
 }
 
 // ST_StyleType ...
@@ -3159,28 +3159,28 @@ export class CT_Style {
 	StyleIdAttr: string | null;
 	DefaultAttr: ST_OnOff | null;
 	CustomStyleAttr: ST_OnOff | null;
-	Name: CT_String;
-	Aliases: CT_String;
-	BasedOn: CT_String;
-	Next: CT_String;
-	Link: CT_String;
-	AutoRedefine: CT_OnOff;
-	Hidden: CT_OnOff;
-	UiPriority: CT_DecimalNumber;
-	SemiHidden: CT_OnOff;
-	UnhideWhenUsed: CT_OnOff;
-	QFormat: CT_OnOff;
-	Locked: CT_OnOff;
-	Personal: CT_OnOff;
-	PersonalCompose: CT_OnOff;
-	PersonalReply: CT_OnOff;
-	Rsid: CT_LongHexNumber;
-	PPr: CT_PPrGeneral;
-	RPr: CT_RPr;
-	TblPr: CT_TblPrBase;
-	TrPr: CT_TrPr;
-	TcPr: CT_TcPr;
-	TblStylePr: Array<CT_TblStylePr>;
+	Name?: CT_String;
+	Aliases?: CT_String;
+	BasedOn?: CT_String;
+	Next?: CT_String;
+	Link?: CT_String;
+	AutoRedefine?: CT_OnOff;
+	Hidden?: CT_OnOff;
+	UiPriority?: CT_DecimalNumber;
+	SemiHidden?: CT_OnOff;
+	UnhideWhenUsed?: CT_OnOff;
+	QFormat?: CT_OnOff;
+	Locked?: CT_OnOff;
+	Personal?: CT_OnOff;
+	PersonalCompose?: CT_OnOff;
+	PersonalReply?: CT_OnOff;
+	Rsid?: CT_LongHexNumber;
+	PPr?: CT_PPrGeneral;
+	RPr?: CT_RPr;
+	TblPr?: CT_TblPrBase;
+	TrPr?: CT_TrPr;
+	TcPr?: CT_TcPr;
+	TblStylePr?: Array<CT_TblStylePr>;
 }
 
 // CT_LsdException ...
@@ -3201,14 +3201,14 @@ export class CT_LatentStyles {
 	DefUnhideWhenUsedAttr: ST_OnOff | null;
 	DefQFormatAttr: ST_OnOff | null;
 	CountAttr: number | null;
-	LsdException: Array<CT_LsdException>;
+	LsdException?: Array<CT_LsdException>;
 }
 
 // CT_Styles ...
 export class CT_Styles {
-	DocDefaults: CT_DocDefaults;
-	LatentStyles: CT_LatentStyles;
-	Style: Array<CT_Style>;
+	DocDefaults?: CT_DocDefaults;
+	LatentStyles?: CT_LatentStyles;
+	Style?: Array<CT_Style>;
 }
 
 // CT_Panose ...
@@ -3262,48 +3262,48 @@ export class CT_FontRel extends CT_Rel  {
 // CT_Font ...
 export class CT_Font {
 	NameAttr: string;
-	AltName: CT_String;
-	Panose1: CT_Panose;
-	Charset: CT_Charset;
-	Family: CT_FontFamily;
-	NotTrueType: CT_OnOff;
-	Pitch: CT_Pitch;
-	Sig: CT_FontSig;
-	EmbedRegular: CT_FontRel;
-	EmbedBold: CT_FontRel;
-	EmbedItalic: CT_FontRel;
-	EmbedBoldItalic: CT_FontRel;
+	AltName?: CT_String;
+	Panose1?: CT_Panose;
+	Charset?: CT_Charset;
+	Family?: CT_FontFamily;
+	NotTrueType?: CT_OnOff;
+	Pitch?: CT_Pitch;
+	Sig?: CT_FontSig;
+	EmbedRegular?: CT_FontRel;
+	EmbedBold?: CT_FontRel;
+	EmbedItalic?: CT_FontRel;
+	EmbedBoldItalic?: CT_FontRel;
 }
 
 // CT_FontsList ...
 export class CT_FontsList {
-	Font: Array<CT_Font>;
+	Font?: Array<CT_Font>;
 }
 
 // CT_DivBdr ...
 export class CT_DivBdr {
-	Top: CT_Border;
-	Left: CT_Border;
-	Bottom: CT_Border;
-	Right: CT_Border;
+	Top?: CT_Border;
+	Left?: CT_Border;
+	Bottom?: CT_Border;
+	Right?: CT_Border;
 }
 
 // CT_Div ...
 export class CT_Div {
 	IdAttr: number;
-	BlockQuote: CT_OnOff;
-	BodyDiv: CT_OnOff;
+	BlockQuote?: CT_OnOff;
+	BodyDiv?: CT_OnOff;
 	MarLeft: CT_SignedTwipsMeasure;
 	MarRight: CT_SignedTwipsMeasure;
 	MarTop: CT_SignedTwipsMeasure;
 	MarBottom: CT_SignedTwipsMeasure;
-	DivBdr: CT_DivBdr;
-	DivsChild: Array<CT_Divs>;
+	DivBdr?: CT_DivBdr;
+	DivsChild?: Array<CT_Divs>;
 }
 
 // CT_Divs ...
 export class CT_Divs {
-	Div: CT_Div;
+	Div: Array<CT_Div>;
 }
 
 // EG_MathContent ...
@@ -3339,12 +3339,12 @@ export class EG_RunLevelElts {
 // CT_Body ...
 export class CT_Body {
 	EG_BlockLevelElts: Array<EG_BlockLevelElts>;
-	SectPr: CT_SectPr;
+	SectPr?: CT_SectPr;
 }
 
 // CT_Comments ...
 export class CT_Comments {
-	Comment: Array<CT_Comment>;
+	Comment?: Array<CT_Comment>;
 }
 
 // Comments ...
@@ -3352,7 +3352,7 @@ export type Comments = CT_Comments;
 
 // CT_Footnotes ...
 export class CT_Footnotes {
-	Footnote: CT_FtnEdn;
+	Footnote?: Array<CT_FtnEdn>;
 }
 
 // Footnotes ...
@@ -3360,7 +3360,7 @@ export type Footnotes = CT_Footnotes;
 
 // CT_Endnotes ...
 export class CT_Endnotes {
-	Endnote: CT_FtnEdn;
+	Endnote?: Array<CT_FtnEdn>;
 }
 
 // Endnotes ...
@@ -3501,18 +3501,18 @@ export class CT_DocPartName {
 // CT_DocPartPr ...
 export class CT_DocPartPr {
 	Name: CT_DocPartName;
-	Style: CT_String;
-	Category: CT_DocPartCategory;
-	Types: CT_DocPartTypes;
-	Behaviors: CT_DocPartBehaviors;
-	Description: CT_String;
-	Guid: CT_Guid;
+	Style?: CT_String;
+	Category?: CT_DocPartCategory;
+	Types?: CT_DocPartTypes;
+	Behaviors?: CT_DocPartBehaviors;
+	Description?: CT_String;
+	Guid?: CT_Guid;
 }
 
 // CT_DocPart ...
 export class CT_DocPart {
-	DocPartPr: CT_DocPartPr;
-	DocPartBody: CT_Body;
+	DocPartPr?: CT_DocPartPr;
+	DocPartBody?: CT_Body;
 }
 
 // CT_DocParts ...
@@ -3568,23 +3568,23 @@ export class CT_AutoCaptions {
 // CT_Captions ...
 export class CT_Captions {
 	Caption: Array<CT_Caption>;
-	AutoCaptions: CT_AutoCaptions;
+	AutoCaptions?: CT_AutoCaptions;
 }
 
 // CT_DocumentBase ...
 export class CT_DocumentBase {
-	Background: CT_Background;
+	Background?: CT_Background;
 }
 
 // CT_Document ...
 export class CT_Document extends CT_DocumentBase  {
 	ConformanceAttr: string | null;
-	Body: CT_Body;
+	Body?: CT_Body;
 }
 
 // CT_GlossaryDocument ...
 export class CT_GlossaryDocument extends CT_DocumentBase  {
-	DocParts: CT_DocParts;
+	DocParts?: CT_DocParts;
 }
 
 // Document ...

@@ -37,7 +37,7 @@ type Configuration struct {
 //                     <li>...</li>
 //                     </ul>
 type ToolchainModel struct {
-	Type          string         `xml:"type,omitempty"`
+	Type          *string        `xml:"type"`
 	Provides      *Provides      `xml:"provides,omitempty"`
 	Configuration *Configuration `xml:"configuration,omitempty"`
 }

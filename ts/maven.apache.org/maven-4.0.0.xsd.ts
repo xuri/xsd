@@ -12,22 +12,22 @@ export type Project = Model;
 //             If multiple licenses are listed, it is assumed that the user can select
 //             any of them, not that they must accept all.
 export class Licenses {
-	License: Array<License>;
+	License?: Array<License>;
 }
 
 // Developers is Describes the committers of a project.
 export class Developers {
-	Developer: Array<Developer>;
+	Developer?: Array<Developer>;
 }
 
 // Contributors is Describes the contributors to a project that are not yet committers.
 export class Contributors {
-	Contributor: Array<Contributor>;
+	Contributor?: Array<Contributor>;
 }
 
 // MailingLists is Contains information about a project's mailing lists.
 export class MailingLists {
-	MailingList: Array<MailingList>;
+	MailingList?: Array<MailingList>;
 }
 
 // Modules is The modules (sometimes called subprojects) to build as a part of this
@@ -35,7 +35,7 @@ export class MailingLists {
 //             To be consistent with the way default urls are calculated from parent, it is recommended
 //             to have module names match artifact ids.
 export class Modules {
-	Module: string;
+	Module?: string;
 }
 
 // Properties is Properties that can be used throughout the POM as a substitution, and
@@ -52,19 +52,19 @@ export class Properties {
 //             See <a href="https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html">the
 //             dependency mechanism</a> for more information.
 export class Dependencies {
-	Dependency: Array<Dependency>;
+	Dependency?: Array<Dependency>;
 }
 
 // Repositories is The lists of the remote repositories for discovering dependencies and
 //             extensions.
 export class Repositories {
-	Repository: Array<Repository>;
+	Repository?: Array<Repository>;
 }
 
 // PluginRepositories is The lists of the remote repositories for discovering plugins for builds and
 //             reports.
 export class PluginRepositories {
-	PluginRepository: Array<Repository>;
+	PluginRepository?: Array<Repository>;
 }
 
 // Reports is <b>Deprecated</b>. Now ignored by Maven.
@@ -74,7 +74,7 @@ export class Reports {
 // Profiles is A listing of project-local build profiles which will modify the build process
 //             when activated.
 export class Profiles {
-	Profile: Array<Profile>;
+	Profile?: Array<Profile>;
 }
 
 // Model is This element describes various attributes of the organization to which the
@@ -82,58 +82,58 @@ export class Profiles {
 //             copyright notices and links).
 export class Model {
 	ChildProjectUrlInheritAppendPathAttr: string | null;
-	ModelVersion: string;
-	Parent: Parent;
-	GroupId: string;
-	ArtifactId: string;
-	Version: string;
-	Packaging: string;
-	Name: string;
-	Description: string;
-	Url: string;
-	InceptionYear: string;
-	Organization: Organization;
-	Licenses: Licenses;
-	Developers: Developers;
-	Contributors: Contributors;
-	MailingLists: MailingLists;
-	Prerequisites: Prerequisites;
-	Modules: Modules;
-	Scm: Scm;
-	IssueManagement: IssueManagement;
-	CiManagement: CiManagement;
-	DistributionManagement: DistributionManagement;
-	Properties: Properties;
-	DependencyManagement: DependencyManagement;
-	Dependencies: Dependencies;
-	Repositories: Repositories;
-	PluginRepositories: PluginRepositories;
-	Build: Build;
-	Reports: Reports;
-	Reporting: Reporting;
-	Profiles: Profiles;
+	ModelVersion?: string;
+	Parent?: Parent;
+	GroupId?: string;
+	ArtifactId?: string;
+	Version?: string;
+	Packaging?: string;
+	Name?: string;
+	Description?: string;
+	Url?: string;
+	InceptionYear?: string;
+	Organization?: Organization;
+	Licenses?: Licenses;
+	Developers?: Developers;
+	Contributors?: Contributors;
+	MailingLists?: MailingLists;
+	Prerequisites?: Prerequisites;
+	Modules?: Modules;
+	Scm?: Scm;
+	IssueManagement?: IssueManagement;
+	CiManagement?: CiManagement;
+	DistributionManagement?: DistributionManagement;
+	Properties?: Properties;
+	DependencyManagement?: DependencyManagement;
+	Dependencies?: Dependencies;
+	Repositories?: Repositories;
+	PluginRepositories?: PluginRepositories;
+	Build?: Build;
+	Reports?: Reports;
+	Reporting?: Reporting;
+	Profiles?: Profiles;
 }
 
 // License is Addendum information pertaining to this license.
 export class License {
-	Name: string;
-	Url: string;
-	Distribution: string;
-	Comments: string;
+	Name?: string;
+	Url?: string;
+	Distribution?: string;
+	Comments?: string;
 }
 
 // Notifiers is Configuration for notifying developers/users when a build is unsuccessful,
 //             including user information and notification mode.
 export class Notifiers {
-	Notifier: Array<Notifier>;
+	Notifier?: Array<Notifier>;
 }
 
 // CiManagement is URL for the continuous integration system used by the project if it has a web
 //             interface.
 export class CiManagement {
-	System: string;
-	Url: string;
-	Notifiers: Notifiers;
+	System?: string;
+	Url?: string;
+	Notifiers?: Notifiers;
 }
 
 // Configuration is Extended configuration specific to this notifier goes here.
@@ -142,13 +142,13 @@ export class Configuration {
 
 // Notifier is <b>Deprecated</b>. Where to send the notification to - eg email address.
 export class Notifier {
-	Type: string;
-	SendOnError: boolean;
-	SendOnFailure: boolean;
-	SendOnSuccess: boolean;
-	SendOnWarning: boolean;
-	Address: string;
-	Configuration: Configuration;
+	Type?: string;
+	SendOnError?: boolean;
+	SendOnFailure?: boolean;
+	SendOnSuccess?: boolean;
+	SendOnWarning?: boolean;
+	Address?: string;
+	Configuration?: Configuration;
 }
 
 // Scm is The URL to the project's browsable SCM repository, such as ViewVC or Fisheye.
@@ -158,28 +158,28 @@ export class Scm {
 	ChildScmConnectionInheritAppendPathAttr: string | null;
 	ChildScmDeveloperConnectionInheritAppendPathAttr: string | null;
 	ChildScmUrlInheritAppendPathAttr: string | null;
-	Connection: string;
-	DeveloperConnection: string;
-	Tag: string;
-	Url: string;
+	Connection?: string;
+	DeveloperConnection?: string;
+	Tag?: string;
+	Url?: string;
 }
 
 // IssueManagement is URL for the issue management system used by the project.
 export class IssueManagement {
-	System: string;
-	Url: string;
+	System?: string;
+	Url?: string;
 }
 
 // DependencyManagement is Section for management of default dependency information for use in a group of
 //         POMs.
 export class DependencyManagement {
-	Dependencies: Dependencies;
+	Dependencies?: Dependencies;
 }
 
 // Exclusions is Lists a set of artifacts that should be excluded from this dependency's
 //             artifact list when it comes to calculating transitive dependencies.
 export class Exclusions {
-	Exclusion: Array<Exclusion>;
+	Exclusion?: Array<Exclusion>;
 }
 
 // Dependency is FOR SYSTEM SCOPE ONLY. Note that use of this property is <b>discouraged</b>
@@ -189,21 +189,21 @@ export class Exclusions {
 //             Use a property that gives the machine specific absolute path,
 //             e.g. <code>${java.home}</code>.
 export class Dependency {
-	GroupId: string;
-	ArtifactId: string;
-	Version: string;
-	Type: string;
-	Classifier: string;
-	Scope: string;
-	SystemPath: string;
-	Exclusions: Exclusions;
-	Optional: string;
+	GroupId?: string;
+	ArtifactId?: string;
+	Version?: string;
+	Type?: string;
+	Classifier?: string;
+	Scope?: string;
+	SystemPath?: string;
+	Exclusions?: Exclusions;
+	Optional?: string;
 }
 
 // Exclusion is The group ID of the project to exclude.
 export class Exclusion {
-	ArtifactId: string;
-	GroupId: string;
+	ArtifactId?: string;
+	GroupId?: string;
 }
 
 // Parent is The relative path of the parent <code>pom.xml</code> file within the check out.
@@ -218,63 +218,63 @@ export class Exclusion {
 //             Set the value to an empty string in case you want to disable the feature and always resolve
 //             the parent POM from the repositories.
 export class Parent {
-	GroupId: string;
-	ArtifactId: string;
-	Version: string;
-	RelativePath: string;
+	GroupId?: string;
+	ArtifactId?: string;
+	Version?: string;
+	RelativePath?: string;
 }
 
 // Roles is The roles the contributor plays in the project. Each role is described by a
 //             <code>role</code> element, the body of which is a role name. This can also be used to
 //             describe the contribution.
 export class Roles {
-	Role: string;
+	Role?: string;
 }
 
 // Developer is The URL of the organization.
 export class Developer {
-	Id: string;
-	Name: string;
-	Email: string;
-	Url: string;
-	Organization: string;
-	OrganizationUrl: string;
-	Roles: Roles;
-	Timezone: string;
-	Properties: Properties;
+	Id?: string;
+	Name?: string;
+	Email?: string;
+	Url?: string;
+	Organization?: string;
+	OrganizationUrl?: string;
+	Roles?: Roles;
+	Timezone?: string;
+	Properties?: Properties;
 }
 
 // OtherArchives is The link to alternate URLs where you can browse the list archive.
 export class OtherArchives {
-	OtherArchive: string;
+	OtherArchive?: string;
 }
 
 // MailingList is The link to a URL where you can browse the mailing list archive.
 export class MailingList {
-	Name: string;
-	Subscribe: string;
-	Unsubscribe: string;
-	Post: string;
-	Archive: string;
-	OtherArchives: OtherArchives;
+	Name?: string;
+	Subscribe?: string;
+	Unsubscribe?: string;
+	Post?: string;
+	Archive?: string;
+	OtherArchives?: OtherArchives;
 }
 
 // Contributor is The URL of the organization.
 export class Contributor {
-	Name: string;
-	Email: string;
-	Url: string;
-	Organization: string;
-	OrganizationUrl: string;
-	Roles: Roles;
-	Timezone: string;
-	Properties: Properties;
+	Name?: string;
+	Email?: string;
+	Url?: string;
+	Organization?: string;
+	OrganizationUrl?: string;
+	Roles?: Roles;
+	Timezone?: string;
+	Properties?: Properties;
 }
 
 // Organization is The URL to the organization's home page.
 export class Organization {
-	Name: string;
-	Url: string;
+	Name?: string;
+	Url?: string;
 }
 
 // DistributionManagement is Gives the status of this artifact in the remote repository.
@@ -285,24 +285,24 @@ export class Organization {
 //             (directly synced from a partner Maven 2 repository), <code>deployed</code> (was deployed from a Maven 2
 //             instance), <code>verified</code> (has been hand verified as correct and final).
 export class DistributionManagement {
-	Repository: DeploymentRepository;
-	SnapshotRepository: DeploymentRepository;
-	Site: Site;
-	DownloadUrl: string;
-	Relocation: Relocation;
-	Status: string;
+	Repository?: DeploymentRepository;
+	SnapshotRepository?: DeploymentRepository;
+	Site?: Site;
+	DownloadUrl?: string;
+	Relocation?: Relocation;
+	Status?: string;
 }
 
 // DeploymentRepository is The type of layout this repository uses for locating and storing artifacts -
 //             can be <code>legacy</code> or <code>default</code>.
 export class DeploymentRepository {
-	UniqueVersion: boolean;
-	Releases: RepositoryPolicy;
-	Snapshots: RepositoryPolicy;
-	Id: string;
-	Name: string;
-	Url: string;
-	Layout: string;
+	UniqueVersion?: boolean;
+	Releases?: RepositoryPolicy;
+	Snapshots?: RepositoryPolicy;
+	Id?: string;
+	Name?: string;
+	Url?: string;
+	Layout?: string;
 }
 
 // RepositoryPolicy is What to do when verification of an artifact checksum fails. Valid values are
@@ -313,17 +313,17 @@ export class DeploymentRepository {
 //             <code>warn</code>
 //             (the default).
 export class RepositoryPolicy {
-	Enabled: string;
-	UpdatePolicy: string;
-	ChecksumPolicy: string;
+	Enabled?: string;
+	UpdatePolicy?: string;
+	ChecksumPolicy?: string;
 }
 
 // Relocation is An additional message to show the user about the move, such as the reason.
 export class Relocation {
-	GroupId: string;
-	ArtifactId: string;
-	Version: string;
-	Message: string;
+	GroupId?: string;
+	ArtifactId?: string;
+	Version?: string;
+	Message?: string;
 }
 
 // Site is The url of the location where website is deployed, in the form <code>protocol://hostname/path</code>.
@@ -331,104 +331,104 @@ export class Relocation {
 //             site's <code>child.site.url.inherit.append.path="false"</code>
 export class Site {
 	ChildSiteUrlInheritAppendPathAttr: string | null;
-	Id: string;
-	Name: string;
-	Url: string;
+	Id?: string;
+	Name?: string;
+	Url?: string;
 }
 
 // Plugins is The reporting plugins to use and their configuration.
 export class Plugins {
-	Plugin: Array<ReportPlugin>;
+	Plugin?: Array<ReportPlugin>;
 }
 
 // Reporting is Where to store all of the generated reports. The default is
 //             <code>${project.build.directory}/site</code>.
 export class Reporting {
-	ExcludeDefaults: string;
-	OutputDirectory: string;
-	Plugins: Plugins;
+	ExcludeDefaults?: string;
+	OutputDirectory?: string;
+	Plugins?: Plugins;
 }
 
 // ReportSets is Multiple specifications of a set of reports, each having (possibly) different
 //             configuration. This is the reporting parallel to an <code>execution</code> in the build.
 export class ReportSets {
-	ReportSet: Array<ReportSet>;
+	ReportSet?: Array<ReportSet>;
 }
 
 // ReportPlugin is The version of the reporting plugin to be used.
 export class ReportPlugin {
-	GroupId: string;
-	ArtifactId: string;
-	Version: string;
-	ReportSets: ReportSets;
-	Inherited: string;
-	Configuration: Configuration;
+	GroupId?: string;
+	ArtifactId?: string;
+	Version?: string;
+	ReportSets?: ReportSets;
+	Inherited?: string;
+	Configuration?: Configuration;
 }
 
 // ReportSet is The unique id for this report set, to be used during POM inheritance and profile injection
 //             for merging of report sets.
 export class ReportSet {
-	Id: string;
-	Reports: Reports;
-	Inherited: string;
-	Configuration: Configuration;
+	Id?: string;
+	Reports?: Reports;
+	Inherited?: string;
+	Configuration?: Configuration;
 }
 
 // Profile is Information required to build the project.
 export class Profile {
-	Id: string;
-	Activation: Activation;
-	Build: BuildBase;
-	Modules: Modules;
-	DistributionManagement: DistributionManagement;
-	Properties: Properties;
-	DependencyManagement: DependencyManagement;
-	Dependencies: Dependencies;
-	Repositories: Repositories;
-	PluginRepositories: PluginRepositories;
-	Reports: Reports;
-	Reporting: Reporting;
+	Id?: string;
+	Activation?: Activation;
+	Build?: BuildBase;
+	Modules?: Modules;
+	DistributionManagement?: DistributionManagement;
+	Properties?: Properties;
+	DependencyManagement?: DependencyManagement;
+	Dependencies?: Dependencies;
+	Repositories?: Repositories;
+	PluginRepositories?: PluginRepositories;
+	Reports?: Reports;
+	Reporting?: Reporting;
 }
 
 // Activation is Specifies that this profile will be activated based on existence of a file.
 export class Activation {
-	ActiveByDefault: boolean;
-	Jdk: string;
-	Os: ActivationOS;
-	Property: ActivationProperty;
-	File: ActivationFile;
+	ActiveByDefault?: boolean;
+	Jdk?: string;
+	Os?: ActivationOS;
+	Property?: ActivationProperty;
+	File?: ActivationFile;
 }
 
 // ActivationProperty is The value of the property required to activate a profile.
 export class ActivationProperty {
-	Name: string;
-	Value: string;
+	Name?: string;
+	Value?: string;
 }
 
 // ActivationFile is The name of the file that must exist to activate the profile.
 export class ActivationFile {
-	Missing: string;
-	Exists: string;
+	Missing?: string;
+	Exists?: string;
 }
 
 // ActivationOS is The version of the operating system to be used to activate the
 //           profile.
 export class ActivationOS {
-	Name: string;
-	Family: string;
-	Arch: string;
-	Version: string;
+	Name?: string;
+	Family?: string;
+	Arch?: string;
+	Version?: string;
 }
 
 // Repository is The type of layout this repository uses for locating and storing artifacts -
 //             can be <code>legacy</code> or <code>default</code>.
 export class Repository {
-	Releases: RepositoryPolicy;
-	Snapshots: RepositoryPolicy;
-	Id: string;
-	Name: string;
-	Url: string;
-	Layout: string;
+	Releases?: RepositoryPolicy;
+	Snapshots?: RepositoryPolicy;
+	Id?: string;
+	Name?: string;
+	Url?: string;
+	Layout?: string;
 }
 
 // Resources is This element describes all of the classpath resources such as properties
@@ -436,19 +436,19 @@ export class Repository {
 //             package.
 //             The default value is <code>src/main/resources</code>.
 export class Resources {
-	Resource: Array<Resource>;
+	Resource?: Array<Resource>;
 }
 
 // TestResources is This element describes all of the classpath resources such as properties
 //             files associated with a project's unit tests.
 //             The default value is <code>src/test/resources</code>.
 export class TestResources {
-	TestResource: Array<Resource>;
+	TestResource?: Array<Resource>;
 }
 
 // Filters is The list of filter properties files that are used when filtering is enabled.
 export class Filters {
-	Filter: string;
+	Filter?: string;
 }
 
 // BuildBase is The default goal (or phase in Maven 2) to execute when none is specified for
@@ -456,20 +456,20 @@ export class Filters {
 //             project is relevant, i.e. the default goals of child modules are ignored. Since Maven 3,
 //             multiple goals/phases can be separated by whitespace.
 export class BuildBase {
-	DefaultGoal: string;
-	Resources: Resources;
-	TestResources: TestResources;
-	Directory: string;
-	FinalName: string;
-	Filters: Filters;
-	PluginManagement: PluginManagement;
-	Plugins: Plugins;
+	DefaultGoal?: string;
+	Resources?: Resources;
+	TestResources?: TestResources;
+	Directory?: string;
+	FinalName?: string;
+	Filters?: Filters;
+	PluginManagement?: PluginManagement;
+	Plugins?: Plugins;
 }
 
 // Executions is Multiple specifications of a set of goals to execute during the build
 //             lifecycle, each having (possibly) a different configuration.
 export class Executions {
-	Execution: Array<PluginExecution>;
+	Execution?: Array<PluginExecution>;
 }
 
 // Goals is <b>Deprecated</b>. Unused by Maven.
@@ -481,85 +481,85 @@ export class Goals {
 //             of this field is <code>String</code> for technical reasons, the semantic type is actually
 //             <code>Boolean</code>. Default value is <code>false</code>.
 export class Plugin {
-	GroupId: string;
-	ArtifactId: string;
-	Version: string;
-	Extensions: string;
-	Executions: Executions;
-	Dependencies: Dependencies;
-	Goals: Goals;
-	Inherited: string;
-	Configuration: Configuration;
+	GroupId?: string;
+	ArtifactId?: string;
+	Version?: string;
+	Extensions?: string;
+	Executions?: Executions;
+	Dependencies?: Dependencies;
+	Goals?: Goals;
+	Inherited?: string;
+	Configuration?: Configuration;
 }
 
 // PluginExecution is The build lifecycle phase to bind the goals in this execution to. If omitted,
 //             the goals will be bound to the default phase specified by the plugin.
 export class PluginExecution {
-	Id: string;
-	Phase: string;
-	Goals: Goals;
-	Inherited: string;
-	Configuration: Configuration;
+	Id?: string;
+	Phase?: string;
+	Goals?: Goals;
+	Inherited?: string;
+	Configuration?: Configuration;
 }
 
 // Includes is A list of patterns to include, e.g. <code>**&#47;*.xml</code>.
 export class Includes {
-	Include: string;
+	Include?: string;
 }
 
 // Excludes is A list of patterns to exclude, e.g. <code>**&#47;*.xml</code>
 export class Excludes {
-	Exclude: string;
+	Exclude?: string;
 }
 
 // Resource is Describe the directory where the resources are stored. The path is relative
 //             to the POM.
 export class Resource {
-	TargetPath: string;
-	Filtering: string;
-	Directory: string;
-	Includes: Includes;
-	Excludes: Excludes;
+	TargetPath?: string;
+	Filtering?: string;
+	Directory?: string;
+	Includes?: Includes;
+	Excludes?: Excludes;
 }
 
 // PluginManagement is Section for management of default plugin information for use in a group of POMs.
 export class PluginManagement {
-	Plugins: Plugins;
+	Plugins?: Plugins;
 }
 
 // Prerequisites is For a plugin project (packaging is <code>maven-plugin</code>), the minimum version of
 //             Maven required to use the resulting plugin.<br>
 export class Prerequisites {
-	Maven: string;
+	Maven?: string;
 }
 
 // Extensions is A set of build extensions to use from this project.
 export class Extensions {
-	Extension: Array<Extension>;
+	Extension?: Array<Extension>;
 }
 
 // Build is The directory where compiled test classes are placed.
 //             The default value is <code>target/test-classes</code>.
 export class Build {
-	SourceDirectory: string;
-	ScriptSourceDirectory: string;
-	TestSourceDirectory: string;
-	OutputDirectory: string;
-	TestOutputDirectory: string;
-	Extensions: Extensions;
-	DefaultGoal: string;
-	Resources: Resources;
-	TestResources: TestResources;
-	Directory: string;
-	FinalName: string;
-	Filters: Filters;
-	PluginManagement: PluginManagement;
-	Plugins: Plugins;
+	SourceDirectory?: string;
+	ScriptSourceDirectory?: string;
+	TestSourceDirectory?: string;
+	OutputDirectory?: string;
+	TestOutputDirectory?: string;
+	Extensions?: Extensions;
+	DefaultGoal?: string;
+	Resources?: Resources;
+	TestResources?: TestResources;
+	Directory?: string;
+	FinalName?: string;
+	Filters?: Filters;
+	PluginManagement?: PluginManagement;
+	Plugins?: Plugins;
 }
 
 // Extension is The version of the extension.
 export class Extension {
-	GroupId: string;
-	ArtifactId: string;
-	Version: string;
+	GroupId?: string;
+	ArtifactId?: string;
+	Version?: string;
 }

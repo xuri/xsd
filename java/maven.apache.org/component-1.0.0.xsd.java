@@ -20,43 +20,43 @@ public class Component {
 
 // FileSets is Specify assembly parameters for groups of files.
 public class FileSets {
-	@XmlElement(required = true, name = "fileSet")
+	@XmlElement(name = "fileSet")
 	protected List<FileSet> FileSet;
 }
 
 // Files is Specify assembly parameters for single files.
 public class Files {
-	@XmlElement(required = true, name = "file")
+	@XmlElement(name = "file")
 	protected List<FileItem> File;
 }
 
 // DependencySets is Specify assembly behavior for sets of dependencies.
 public class DependencySets {
-	@XmlElement(required = true, name = "dependencySet")
+	@XmlElement(name = "dependencySet")
 	protected List<DependencySet> DependencySet;
 }
 
 // Component2 is Describes the component layout and packaging.
 public class Component2 {
-	@XmlElement(required = true, name = "fileSets")
+	@XmlElement(name = "fileSets")
 	protected FileSets FileSets;
-	@XmlElement(required = true, name = "files")
+	@XmlElement(name = "files")
 	protected Files Files;
-	@XmlElement(required = true, name = "dependencySets")
+	@XmlElement(name = "dependencySets")
 	protected DependencySets DependencySets;
 }
 
 // Includes is When &lt;include&gt; subelements are present, they define
 //             a set of files and directory to include.
 public class Includes {
-	@XmlElement(required = true, name = "include")
+	@XmlElement(name = "include")
 	protected List<String> Include;
 }
 
 // Excludes is When &lt;exclude&gt; subelements are present, they define
 //             a set of files and directory to exclude.
 public class Excludes {
-	@XmlElement(required = true, name = "exclude")
+	@XmlElement(name = "exclude")
 	protected List<String> Exclude;
 }
 
@@ -64,37 +64,37 @@ public class Excludes {
 //             of the root directory of the assembly. For example,
 //             "log" will put the specified files in the log directory.
 public class DependencySet {
-	@XmlElement(required = true, name = "outputFileNameMapping")
+	@XmlElement(name = "outputFileNameMapping")
 	protected String OutputFileNameMapping;
-	@XmlElement(required = true, name = "unpack")
+	@XmlElement(name = "unpack")
 	protected Boolean Unpack;
-	@XmlElement(required = true, name = "scope")
+	@XmlElement(name = "scope")
 	protected String Scope;
-	@XmlElement(required = true, name = "outputDirectory")
+	@XmlElement(name = "outputDirectory")
 	protected String OutputDirectory;
-	@XmlElement(required = true, name = "includes")
+	@XmlElement(name = "includes")
 	protected Includes Includes;
-	@XmlElement(required = true, name = "excludes")
+	@XmlElement(name = "excludes")
 	protected Excludes Excludes;
-	@XmlElement(required = true, name = "fileMode")
+	@XmlElement(name = "fileMode")
 	protected String FileMode;
-	@XmlElement(required = true, name = "directoryMode")
+	@XmlElement(name = "directoryMode")
 	protected String DirectoryMode;
 }
 
 // FileItem is Flag used to determine if the file is filtered.
 public class FileItem {
-	@XmlElement(required = true, name = "source")
+	@XmlElement(name = "source")
 	protected String Source;
-	@XmlElement(required = true, name = "outputDirectory")
+	@XmlElement(name = "outputDirectory")
 	protected String OutputDirectory;
-	@XmlElement(required = true, name = "destName")
+	@XmlElement(name = "destName")
 	protected String DestName;
-	@XmlElement(required = true, name = "fileMode")
+	@XmlElement(name = "fileMode")
 	protected String FileMode;
-	@XmlElement(required = true, name = "lineEnding")
+	@XmlElement(name = "lineEnding")
 	protected String LineEnding;
-	@XmlElement(required = true, name = "filtered")
+	@XmlElement(name = "filtered")
 	protected Boolean Filtered;
 }
 
@@ -102,18 +102,18 @@ public class FileItem {
 //             of the root directory of the assembly. For example,
 //             "log" will put the specified files in the log directory.
 public class FileSet {
-	@XmlElement(required = true, name = "directory")
+	@XmlElement(name = "directory")
 	protected String Directory;
-	@XmlElement(required = true, name = "lineEnding")
+	@XmlElement(name = "lineEnding")
 	protected String LineEnding;
-	@XmlElement(required = true, name = "outputDirectory")
+	@XmlElement(name = "outputDirectory")
 	protected String OutputDirectory;
-	@XmlElement(required = true, name = "includes")
+	@XmlElement(name = "includes")
 	protected Includes Includes;
-	@XmlElement(required = true, name = "excludes")
+	@XmlElement(name = "excludes")
 	protected Excludes Excludes;
-	@XmlElement(required = true, name = "fileMode")
+	@XmlElement(name = "fileMode")
 	protected String FileMode;
-	@XmlElement(required = true, name = "directoryMode")
+	@XmlElement(name = "directoryMode")
 	protected String DirectoryMode;
 }

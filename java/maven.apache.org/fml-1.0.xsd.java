@@ -1650,15 +1650,15 @@ public class Table {
 	protected String AlignAttr;
 	@XmlAttribute(name = "bgcolor")
 	protected String BgcolorAttr;
-	@XmlElement(required = true, name = "caption")
+	@XmlElement(name = "caption")
 	protected Caption Caption;
-	@XmlElement(required = true, name = "col")
+	@XmlElement(name = "col")
 	protected List<Col> Col;
-	@XmlElement(required = true, name = "colgroup")
+	@XmlElement(name = "colgroup")
 	protected List<Colgroup> Colgroup;
-	@XmlElement(required = true, name = "thead")
+	@XmlElement(name = "thead")
 	protected Thead Thead;
-	@XmlElement(required = true, name = "tfoot")
+	@XmlElement(name = "tfoot")
 	protected Tfoot Tfoot;
 	@XmlElement(required = true, name = "tbody")
 	protected List<Tbody> Tbody;
@@ -1730,7 +1730,7 @@ public class Colgroup {
 	protected Integer SpanAttr;
 	@XmlAttribute(name = "width")
 	protected String WidthAttr;
-	@XmlElement(required = true, name = "col")
+	@XmlElement(name = "col")
 	protected List<Col> Col;
 }
 
@@ -1858,7 +1858,7 @@ public class Faqs {
 public class Part {
 	@XmlAttribute(name = "id")
 	protected String IdAttr;
-	@XmlElement(required = true, name = "title")
+	@XmlElement(name = "title")
 	protected Title Title;
 	@XmlElement(required = true, name = "faq")
 	protected List<Faq> Faq;

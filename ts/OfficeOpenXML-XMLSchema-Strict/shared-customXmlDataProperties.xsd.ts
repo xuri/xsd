@@ -7,13 +7,13 @@ export class CT_DatastoreSchemaRef {
 
 // CT_DatastoreSchemaRefs ...
 export class CT_DatastoreSchemaRefs {
-	SchemaRef: Array<CT_DatastoreSchemaRef>;
+	SchemaRef?: Array<CT_DatastoreSchemaRef>;
 }
 
 // CT_DatastoreItem ...
 export class CT_DatastoreItem {
 	ItemIDAttr: string;
-	SchemaRefs: CT_DatastoreSchemaRefs;
+	SchemaRefs?: CT_DatastoreSchemaRefs;
 }
 
 // DatastoreItem ...

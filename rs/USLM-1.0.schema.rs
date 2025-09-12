@@ -707,9 +707,9 @@ pub struct InstructionType {
 	#[serde(rename = "level")]
 	pub level: Vec<LevelType>,
 	#[serde(rename = "quotedText")]
-	pub quoted_text: QuotedTextType,
+	pub quoted_text: Vec<QuotedTextType>,
 	#[serde(rename = "quotedContent")]
-	pub quoted_content: QuotedContentType,
+	pub quoted_content: Vec<QuotedContentType>,
 	#[serde(flatten)]
 	pub base_content_type: BaseContentType,
 }

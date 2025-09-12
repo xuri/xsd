@@ -114,8 +114,8 @@ export class CT_SlideTransition {
 	Wheel: CT_WheelTransition;
 	Wipe: CT_SideDirectionTransition;
 	Zoom: CT_InOutTransition;
-	SndAc: CT_TransitionSoundAction;
-	ExtLst: CT_ExtensionListModify;
+	SndAc?: CT_TransitionSoundAction;
+	ExtLst?: CT_ExtensionListModify;
 }
 
 // ST_TLTimeIndefinite ...
@@ -340,12 +340,12 @@ export class CT_TLCommonTimeNodeData {
 	AfterEffectAttr: boolean | null;
 	NodeTypeAttr: string | null;
 	NodePhAttr: boolean | null;
-	StCondLst: CT_TLTimeConditionList;
-	EndCondLst: CT_TLTimeConditionList;
-	EndSync: CT_TLTimeCondition;
-	Iterate: CT_TLIterateData;
-	ChildTnLst: CT_TimeNodeList;
-	SubTnLst: CT_TimeNodeList;
+	StCondLst?: CT_TLTimeConditionList;
+	EndCondLst?: CT_TLTimeConditionList;
+	EndSync?: CT_TLTimeCondition;
+	Iterate?: CT_TLIterateData;
+	ChildTnLst?: CT_TimeNodeList;
+	SubTnLst?: CT_TimeNodeList;
 }
 
 // CT_TLTimeNodeParallel ...
@@ -371,8 +371,8 @@ export class CT_TLTimeNodeSequence {
 	PrevAcAttr: string | null;
 	NextAcAttr: string | null;
 	CTn: CT_TLCommonTimeNodeData;
-	PrevCondLst: CT_TLTimeConditionList;
-	NextCondLst: CT_TLTimeConditionList;
+	PrevCondLst?: CT_TLTimeConditionList;
+	NextCondLst?: CT_TLTimeConditionList;
 }
 
 // CT_TLTimeNodeExclusive ...
@@ -424,7 +424,7 @@ export class CT_TLCommonBehaviorData {
 	OverrideAttr: string | null;
 	CTn: CT_TLCommonTimeNodeData;
 	TgtEl: CT_TLTimeTargetElement;
-	AttrNameLst: CT_TLBehaviorAttributeNameList;
+	AttrNameLst?: CT_TLBehaviorAttributeNameList;
 }
 
 // CT_TLAnimVariantBooleanVal ...
@@ -466,12 +466,12 @@ export class ST_TLTimeAnimateValueTime {
 export class CT_TLTimeAnimateValue {
 	TmAttr: ST_TLTimeAnimateValueTime | null;
 	FmlaAttr: string | null;
-	Val: CT_TLAnimVariant;
+	Val?: CT_TLAnimVariant;
 }
 
 // CT_TLTimeAnimateValueList ...
 export class CT_TLTimeAnimateValueList {
-	Tav: Array<CT_TLTimeAnimateValue>;
+	Tav?: Array<CT_TLTimeAnimateValue>;
 }
 
 // ST_TLAnimateBehaviorCalcMode ...
@@ -496,7 +496,7 @@ export class CT_TLAnimateBehavior {
 	CalcmodeAttr: string | null;
 	ValueTypeAttr: string | null;
 	CBhvr: CT_TLCommonBehaviorData;
-	TavLst: CT_TLTimeAnimateValueList;
+	TavLst?: CT_TLTimeAnimateValueList;
 }
 
 // CT_TLByRgbColorTransform ...
@@ -536,9 +536,9 @@ export class CT_TLAnimateColorBehavior {
 	ClrSpcAttr: string | null;
 	DirAttr: string | null;
 	CBhvr: CT_TLCommonBehaviorData;
-	By: CT_TLByAnimateColorTransform;
-	From: CT_Color;
-	To: CT_Color;
+	By?: CT_TLByAnimateColorTransform;
+	From?: CT_Color;
+	To?: CT_Color;
 }
 
 // ST_TLAnimateEffectTransition ...
@@ -554,7 +554,7 @@ export class CT_TLAnimateEffectBehavior {
 	FilterAttr: string | null;
 	PrLstAttr: string | null;
 	CBhvr: CT_TLCommonBehaviorData;
-	Progress: CT_TLAnimVariant;
+	Progress?: CT_TLAnimVariant;
 }
 
 // ST_TLAnimateMotionBehaviorOrigin ...
@@ -583,10 +583,10 @@ export class CT_TLAnimateMotionBehavior {
 	RAngAttr: number | null;
 	PtsTypesAttr: string | null;
 	CBhvr: CT_TLCommonBehaviorData;
-	By: CT_TLPoint;
-	From: CT_TLPoint;
-	To: CT_TLPoint;
-	RCtr: CT_TLPoint;
+	By?: CT_TLPoint;
+	From?: CT_TLPoint;
+	To?: CT_TLPoint;
+	RCtr?: CT_TLPoint;
 }
 
 // CT_TLAnimateRotationBehavior ...
@@ -601,9 +601,9 @@ export class CT_TLAnimateRotationBehavior {
 export class CT_TLAnimateScaleBehavior {
 	ZoomContentsAttr: boolean | null;
 	CBhvr: CT_TLCommonBehaviorData;
-	By: CT_TLPoint;
-	From: CT_TLPoint;
-	To: CT_TLPoint;
+	By?: CT_TLPoint;
+	From?: CT_TLPoint;
+	To?: CT_TLPoint;
 }
 
 // ST_TLCommandType ...
@@ -623,7 +623,7 @@ export class CT_TLCommandBehavior {
 // CT_TLSetBehavior ...
 export class CT_TLSetBehavior {
 	CBhvr: CT_TLCommonBehaviorData;
-	To: CT_TLAnimVariant;
+	To?: CT_TLAnimVariant;
 }
 
 // CT_TLCommonMediaNodeData ...
@@ -663,7 +663,7 @@ export class CT_TLTemplate {
 
 // CT_TLTemplateList ...
 export class CT_TLTemplateList {
-	Tmpl: Array<CT_TLTemplate>;
+	Tmpl?: Array<CT_TLTemplate>;
 }
 
 // ST_TLParaBuildType ...
@@ -683,7 +683,7 @@ export class CT_TLBuildParagraph {
 	AutoUpdateAnimBgAttr: boolean | null;
 	RevAttr: boolean | null;
 	AdvAutoAttr: ST_TLTime | null;
-	TmplLst: CT_TLTemplateList;
+	TmplLst?: CT_TLTemplateList;
 }
 
 // ST_TLDiagramBuildType ...
@@ -746,9 +746,9 @@ export class CT_BuildList {
 
 // CT_SlideTiming ...
 export class CT_SlideTiming {
-	TnLst: CT_TimeNodeList;
-	BldLst: CT_BuildList;
-	ExtLst: CT_ExtensionListModify;
+	TnLst?: CT_TimeNodeList;
+	BldLst?: CT_BuildList;
+	ExtLst?: CT_ExtensionListModify;
 }
 
 // CT_Empty ...
@@ -780,7 +780,7 @@ export class CT_SlideRelationshipListEntry {
 
 // CT_SlideRelationshipList ...
 export class CT_SlideRelationshipList {
-	Sld: Array<CT_SlideRelationshipListEntry>;
+	Sld?: Array<CT_SlideRelationshipListEntry>;
 }
 
 // CT_CustomShowId ...
@@ -807,8 +807,8 @@ export class CT_TagsData {
 
 // CT_CustomerDataList ...
 export class CT_CustomerDataList {
-	CustData: Array<CT_CustomerData>;
-	Tags: CT_TagsData;
+	CustData?: Array<CT_CustomerData>;
+	Tags?: CT_TagsData;
 }
 
 // CT_Extension ...
@@ -839,12 +839,12 @@ export class CT_CommentAuthor {
 	InitialsAttr: string;
 	LastIdxAttr: number;
 	ClrIdxAttr: number;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_CommentAuthorList ...
 export class CT_CommentAuthorList {
-	CmAuthor: Array<CT_CommentAuthor>;
+	CmAuthor?: Array<CT_CommentAuthor>;
 }
 
 // CmAuthorLst ...
@@ -857,12 +857,12 @@ export class CT_Comment {
 	IdxAttr: number;
 	Pos: CT_Point2D;
 	Text: string;
-	ExtLst: CT_ExtensionListModify;
+	ExtLst?: CT_ExtensionListModify;
 }
 
 // CT_CommentList ...
 export class CT_CommentList {
-	Cm: Array<CT_Comment>;
+	Cm?: Array<CT_Comment>;
 }
 
 // CmLst ...
@@ -887,13 +887,13 @@ export enum ST_OleObjectFollowColorScheme {
 // CT_OleObjectEmbed ...
 export class CT_OleObjectEmbed {
 	FollowColorSchemeAttr: string | null;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_OleObjectLink ...
 export class CT_OleObjectLink {
 	UpdateAutomaticAttr: boolean | null;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_OleObject ...
@@ -911,13 +911,13 @@ export type OleObj = CT_OleObject;
 // CT_Control ...
 export class CT_Control {
 	AG_Ole: AG_Ole;
-	ExtLst: CT_ExtensionList;
-	Pic: CT_Picture;
+	ExtLst?: CT_ExtensionList;
+	Pic?: CT_Picture;
 }
 
 // CT_ControlList ...
 export class CT_ControlList {
-	Control: Array<CT_Control>;
+	Control?: Array<CT_Control>;
 }
 
 // ST_SlideId ...
@@ -927,12 +927,12 @@ export type ST_SlideId = number;
 export class CT_SlideIdListEntry {
 	IdAttr: number;
 	RIdAttr: string;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_SlideIdList ...
 export class CT_SlideIdList {
-	SldId: Array<CT_SlideIdListEntry>;
+	SldId?: Array<CT_SlideIdListEntry>;
 }
 
 // ST_SlideMasterId ...
@@ -942,34 +942,34 @@ export type ST_SlideMasterId = number;
 export class CT_SlideMasterIdListEntry {
 	IdAttr: number | null;
 	RIdAttr: string;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_SlideMasterIdList ...
 export class CT_SlideMasterIdList {
-	SldMasterId: Array<CT_SlideMasterIdListEntry>;
+	SldMasterId?: Array<CT_SlideMasterIdListEntry>;
 }
 
 // CT_NotesMasterIdListEntry ...
 export class CT_NotesMasterIdListEntry {
 	RIdAttr: string;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_NotesMasterIdList ...
 export class CT_NotesMasterIdList {
-	NotesMasterId: CT_NotesMasterIdListEntry;
+	NotesMasterId?: CT_NotesMasterIdListEntry;
 }
 
 // CT_HandoutMasterIdListEntry ...
 export class CT_HandoutMasterIdListEntry {
 	RIdAttr: string;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_HandoutMasterIdList ...
 export class CT_HandoutMasterIdList {
-	HandoutMasterId: CT_HandoutMasterIdListEntry;
+	HandoutMasterId?: CT_HandoutMasterIdListEntry;
 }
 
 // CT_EmbeddedFontDataId ...
@@ -980,15 +980,15 @@ export class CT_EmbeddedFontDataId {
 // CT_EmbeddedFontListEntry ...
 export class CT_EmbeddedFontListEntry {
 	Font: CT_TextFont;
-	Regular: CT_EmbeddedFontDataId;
-	Bold: CT_EmbeddedFontDataId;
-	Italic: CT_EmbeddedFontDataId;
-	BoldItalic: CT_EmbeddedFontDataId;
+	Regular?: CT_EmbeddedFontDataId;
+	Bold?: CT_EmbeddedFontDataId;
+	Italic?: CT_EmbeddedFontDataId;
+	BoldItalic?: CT_EmbeddedFontDataId;
 }
 
 // CT_EmbeddedFontList ...
 export class CT_EmbeddedFontList {
-	EmbeddedFont: Array<CT_EmbeddedFontListEntry>;
+	EmbeddedFont?: Array<CT_EmbeddedFontListEntry>;
 }
 
 // CT_SmartTags ...
@@ -1001,12 +1001,12 @@ export class CT_CustomShow {
 	NameAttr: string;
 	IdAttr: number;
 	SldLst: CT_SlideRelationshipList;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_CustomShowList ...
 export class CT_CustomShowList {
-	CustShow: Array<CT_CustomShow>;
+	CustShow?: Array<CT_CustomShow>;
 }
 
 // ST_PhotoAlbumLayout ...
@@ -1037,7 +1037,7 @@ export class CT_PhotoAlbum {
 	ShowCaptionsAttr: boolean | null;
 	LayoutAttr: string | null;
 	FrameAttr: string | null;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // ST_SlideSizeCoordinate ...
@@ -1102,21 +1102,21 @@ export class CT_Presentation {
 	AutoCompressPicturesAttr: boolean | null;
 	BookmarkIdSeedAttr: number | null;
 	ConformanceAttr: string | null;
-	SldMasterIdLst: CT_SlideMasterIdList;
-	NotesMasterIdLst: CT_NotesMasterIdList;
-	HandoutMasterIdLst: CT_HandoutMasterIdList;
-	SldIdLst: CT_SlideIdList;
-	SldSz: CT_SlideSize;
+	SldMasterIdLst?: CT_SlideMasterIdList;
+	NotesMasterIdLst?: CT_NotesMasterIdList;
+	HandoutMasterIdLst?: CT_HandoutMasterIdList;
+	SldIdLst?: CT_SlideIdList;
+	SldSz?: CT_SlideSize;
 	NotesSz: CT_PositiveSize2D;
-	SmartTags: CT_SmartTags;
-	EmbeddedFontLst: CT_EmbeddedFontList;
-	CustShowLst: CT_CustomShowList;
-	PhotoAlbum: CT_PhotoAlbum;
-	CustDataLst: CT_CustomerDataList;
-	Kinsoku: CT_Kinsoku;
-	DefaultTextStyle: CT_TextListStyle;
-	ModifyVerifier: CT_ModifyVerifier;
-	ExtLst: CT_ExtensionList;
+	SmartTags?: CT_SmartTags;
+	EmbeddedFontLst?: CT_EmbeddedFontList;
+	CustShowLst?: CT_CustomShowList;
+	PhotoAlbum?: CT_PhotoAlbum;
+	CustDataLst?: CT_CustomerDataList;
+	Kinsoku?: CT_Kinsoku;
+	DefaultTextStyle?: CT_TextListStyle;
+	ModifyVerifier?: CT_ModifyVerifier;
+	ExtLst?: CT_ExtensionList;
 }
 
 // Presentation ...
@@ -1129,7 +1129,7 @@ export class CT_HtmlPublishProperties {
 	TitleAttr: string | null;
 	RIdAttr: string;
 	EG_SlideListChoice: Array<EG_SlideListChoice>;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // ST_PrintWhat ...
@@ -1159,7 +1159,7 @@ export class CT_PrintProperties {
 	HiddenSlidesAttr: boolean | null;
 	ScaleToFitPaperAttr: boolean | null;
 	FrameSlidesAttr: boolean | null;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_ShowInfoBrowse ...
@@ -1187,16 +1187,16 @@ export class CT_ShowProperties {
 	UseTimingsAttr: boolean | null;
 	EG_ShowType: Array<EG_ShowType>;
 	EG_SlideListChoice: Array<EG_SlideListChoice>;
-	PenClr: CT_Color;
-	ExtLst: CT_ExtensionList;
+	PenClr?: CT_Color;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_PresentationProperties ...
 export class CT_PresentationProperties {
-	PrnPr: CT_PrintProperties;
-	ShowPr: CT_ShowProperties;
-	ClrMru: CT_ColorMRU;
-	ExtLst: CT_ExtensionList;
+	PrnPr?: CT_PrintProperties;
+	ShowPr?: CT_ShowProperties;
+	ClrMru?: CT_ColorMRU;
+	ExtLst?: CT_ExtensionList;
 }
 
 // PresentationPr ...
@@ -1208,7 +1208,7 @@ export class CT_HeaderFooter {
 	HdrAttr: boolean | null;
 	FtrAttr: boolean | null;
 	DtAttr: boolean | null;
-	ExtLst: CT_ExtensionListModify;
+	ExtLst?: CT_ExtensionListModify;
 }
 
 // ST_PlaceholderType ...
@@ -1245,7 +1245,7 @@ export class CT_Placeholder {
 	SzAttr: string | null;
 	IdxAttr: number | null;
 	HasCustomPromptAttr: boolean | null;
-	ExtLst: CT_ExtensionListModify;
+	ExtLst?: CT_ExtensionListModify;
 }
 
 // CT_ApplicationNonVisualDrawingProps ...
@@ -1253,9 +1253,9 @@ export class CT_ApplicationNonVisualDrawingProps {
 	IsPhotoAttr: boolean | null;
 	UserDrawnAttr: boolean | null;
 	AEG_Media: Array<EG_Media>;
-	Ph: CT_Placeholder;
-	CustDataLst: CT_CustomerDataList;
-	ExtLst: CT_ExtensionList;
+	Ph?: CT_Placeholder;
+	CustDataLst?: CT_CustomerDataList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_ShapeNonVisual ...
@@ -1270,9 +1270,9 @@ export class CT_Shape {
 	UseBgFillAttr: boolean | null;
 	NvSpPr: CT_ShapeNonVisual;
 	SpPr: CT_ShapeProperties;
-	Style: CT_ShapeStyle;
-	TxBody: CT_TextBody;
-	ExtLst: CT_ExtensionListModify;
+	Style?: CT_ShapeStyle;
+	TxBody?: CT_TextBody;
+	ExtLst?: CT_ExtensionListModify;
 }
 
 // CT_ConnectorNonVisual ...
@@ -1286,8 +1286,8 @@ export class CT_ConnectorNonVisual {
 export class CT_Connector {
 	NvCxnSpPr: CT_ConnectorNonVisual;
 	SpPr: CT_ShapeProperties;
-	Style: CT_ShapeStyle;
-	ExtLst: CT_ExtensionListModify;
+	Style?: CT_ShapeStyle;
+	ExtLst?: CT_ExtensionListModify;
 }
 
 // CT_PictureNonVisual ...
@@ -1302,8 +1302,8 @@ export class CT_Picture {
 	NvPicPr: CT_PictureNonVisual;
 	BlipFill: CT_BlipFillProperties;
 	SpPr: CT_ShapeProperties;
-	Style: CT_ShapeStyle;
-	ExtLst: CT_ExtensionListModify;
+	Style?: CT_ShapeStyle;
+	ExtLst?: CT_ExtensionListModify;
 }
 
 // CT_GraphicalObjectFrameNonVisual ...
@@ -1319,7 +1319,7 @@ export class CT_GraphicalObjectFrame {
 	NvGraphicFramePr: CT_GraphicalObjectFrameNonVisual;
 	Xfrm: CT_Transform2D;
 	AGraphic: CT_GraphicalObject;
-	ExtLst: CT_ExtensionListModify;
+	ExtLst?: CT_ExtensionListModify;
 }
 
 // CT_GroupShapeNonVisual ...
@@ -1339,7 +1339,7 @@ export class CT_GroupShape {
 	CxnSp: Array<CT_Connector>;
 	Pic: Array<CT_Picture>;
 	ContentPart: Array<CT_Rel>;
-	ExtLst: CT_ExtensionListModify;
+	ExtLst?: CT_ExtensionListModify;
 }
 
 // CT_Rel ...
@@ -1368,7 +1368,7 @@ export class CT_BackgroundProperties {
 	ShadeToTitleAttr: boolean | null;
 	AEG_FillProperties: Array<EG_FillProperties>;
 	AEG_EffectProperties: Array<EG_EffectProperties>;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // EG_Background ...
@@ -1386,11 +1386,11 @@ export class CT_Background {
 // CT_CommonSlideData ...
 export class CT_CommonSlideData {
 	NameAttr: string | null;
-	Bg: CT_Background;
+	Bg?: CT_Background;
 	SpTree: CT_GroupShape;
-	CustDataLst: CT_CustomerDataList;
-	Controls: CT_ControlList;
-	ExtLst: CT_ExtensionList;
+	CustDataLst?: CT_CustomerDataList;
+	Controls?: CT_ControlList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_Slide ...
@@ -1399,9 +1399,9 @@ export class CT_Slide {
 	ShowAttr: boolean | null;
 	EG_ChildSlide: Array<EG_ChildSlide>;
 	CSld: CT_CommonSlideData;
-	Transition: CT_SlideTransition;
-	Timing: CT_SlideTiming;
-	ExtLst: CT_ExtensionListModify;
+	Transition?: CT_SlideTransition;
+	Timing?: CT_SlideTiming;
+	ExtLst?: CT_ExtensionListModify;
 }
 
 // Sld ...
@@ -1456,10 +1456,10 @@ export class CT_SlideLayout {
 	UserDrawnAttr: boolean | null;
 	EG_ChildSlide: Array<EG_ChildSlide>;
 	CSld: CT_CommonSlideData;
-	Transition: CT_SlideTransition;
-	Timing: CT_SlideTiming;
-	Hf: CT_HeaderFooter;
-	ExtLst: CT_ExtensionListModify;
+	Transition?: CT_SlideTransition;
+	Timing?: CT_SlideTiming;
+	Hf?: CT_HeaderFooter;
+	ExtLst?: CT_ExtensionListModify;
 }
 
 // SldLayout ...
@@ -1467,10 +1467,10 @@ export type SldLayout = CT_SlideLayout;
 
 // CT_SlideMasterTextStyles ...
 export class CT_SlideMasterTextStyles {
-	TitleStyle: CT_TextListStyle;
-	BodyStyle: CT_TextListStyle;
-	OtherStyle: CT_TextListStyle;
-	ExtLst: CT_ExtensionList;
+	TitleStyle?: CT_TextListStyle;
+	BodyStyle?: CT_TextListStyle;
+	OtherStyle?: CT_TextListStyle;
+	ExtLst?: CT_ExtensionList;
 }
 
 // ST_SlideLayoutId ...
@@ -1480,12 +1480,12 @@ export type ST_SlideLayoutId = number;
 export class CT_SlideLayoutIdListEntry {
 	IdAttr: number | null;
 	RIdAttr: string;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_SlideLayoutIdList ...
 export class CT_SlideLayoutIdList {
-	SldLayoutId: Array<CT_SlideLayoutIdListEntry>;
+	SldLayoutId?: Array<CT_SlideLayoutIdListEntry>;
 }
 
 // CT_SlideMaster ...
@@ -1493,12 +1493,12 @@ export class CT_SlideMaster {
 	PreserveAttr: boolean | null;
 	EG_TopLevelSlide: Array<EG_TopLevelSlide>;
 	CSld: CT_CommonSlideData;
-	SldLayoutIdLst: CT_SlideLayoutIdList;
-	Transition: CT_SlideTransition;
-	Timing: CT_SlideTiming;
-	Hf: CT_HeaderFooter;
-	TxStyles: CT_SlideMasterTextStyles;
-	ExtLst: CT_ExtensionListModify;
+	SldLayoutIdLst?: CT_SlideLayoutIdList;
+	Transition?: CT_SlideTransition;
+	Timing?: CT_SlideTiming;
+	Hf?: CT_HeaderFooter;
+	TxStyles?: CT_SlideMasterTextStyles;
+	ExtLst?: CT_ExtensionListModify;
 }
 
 // SldMaster ...
@@ -1508,8 +1508,8 @@ export type SldMaster = CT_SlideMaster;
 export class CT_HandoutMaster {
 	EG_TopLevelSlide: Array<EG_TopLevelSlide>;
 	CSld: CT_CommonSlideData;
-	Hf: CT_HeaderFooter;
-	ExtLst: CT_ExtensionListModify;
+	Hf?: CT_HeaderFooter;
+	ExtLst?: CT_ExtensionListModify;
 }
 
 // HandoutMaster ...
@@ -1519,9 +1519,9 @@ export type HandoutMaster = CT_HandoutMaster;
 export class CT_NotesMaster {
 	EG_TopLevelSlide: Array<EG_TopLevelSlide>;
 	CSld: CT_CommonSlideData;
-	Hf: CT_HeaderFooter;
-	NotesStyle: CT_TextListStyle;
-	ExtLst: CT_ExtensionListModify;
+	Hf?: CT_HeaderFooter;
+	NotesStyle?: CT_TextListStyle;
+	ExtLst?: CT_ExtensionListModify;
 }
 
 // NotesMaster ...
@@ -1532,7 +1532,7 @@ export class CT_NotesSlide {
 	AG_ChildSlide: AG_ChildSlide;
 	EG_ChildSlide: Array<EG_ChildSlide>;
 	CSld: CT_CommonSlideData;
-	ExtLst: CT_ExtensionListModify;
+	ExtLst?: CT_ExtensionListModify;
 }
 
 // Notes ...
@@ -1543,7 +1543,7 @@ export class CT_SlideSyncProperties {
 	ServerSldIdAttr: string;
 	ServerSldModifiedTimeAttr: string;
 	ClientInsertedTimeAttr: string;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // SldSyncPr ...
@@ -1557,7 +1557,7 @@ export class CT_StringTag {
 
 // CT_TagList ...
 export class CT_TagList {
-	Tag: Array<CT_StringTag>;
+	Tag?: Array<CT_StringTag>;
 }
 
 // TagLst ...
@@ -1597,7 +1597,7 @@ export class CT_NormalViewProperties {
 	PreferSingleViewAttr: boolean | null;
 	RestoredLeft: CT_NormalViewPortion;
 	RestoredTop: CT_NormalViewPortion;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_CommonViewProperties ...
@@ -1610,7 +1610,7 @@ export class CT_CommonViewProperties {
 // CT_NotesTextViewProperties ...
 export class CT_NotesTextViewProperties {
 	CViewPr: CT_CommonViewProperties;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_OutlineViewSlideEntry ...
@@ -1621,21 +1621,21 @@ export class CT_OutlineViewSlideEntry {
 
 // CT_OutlineViewSlideList ...
 export class CT_OutlineViewSlideList {
-	Sld: Array<CT_OutlineViewSlideEntry>;
+	Sld?: Array<CT_OutlineViewSlideEntry>;
 }
 
 // CT_OutlineViewProperties ...
 export class CT_OutlineViewProperties {
 	CViewPr: CT_CommonViewProperties;
-	SldLst: CT_OutlineViewSlideList;
-	ExtLst: CT_ExtensionList;
+	SldLst?: CT_OutlineViewSlideList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_SlideSorterViewProperties ...
 export class CT_SlideSorterViewProperties {
 	ShowFormattingAttr: boolean | null;
 	CViewPr: CT_CommonViewProperties;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_Guide ...
@@ -1646,7 +1646,7 @@ export class CT_Guide {
 
 // CT_GuideList ...
 export class CT_GuideList {
-	Guide: Array<CT_Guide>;
+	Guide?: Array<CT_Guide>;
 }
 
 // CT_CommonSlideViewProperties ...
@@ -1655,33 +1655,33 @@ export class CT_CommonSlideViewProperties {
 	SnapToObjectsAttr: boolean | null;
 	ShowGuidesAttr: boolean | null;
 	CViewPr: CT_CommonViewProperties;
-	GuideLst: CT_GuideList;
+	GuideLst?: CT_GuideList;
 }
 
 // CT_SlideViewProperties ...
 export class CT_SlideViewProperties {
 	CSldViewPr: CT_CommonSlideViewProperties;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_NotesViewProperties ...
 export class CT_NotesViewProperties {
 	CSldViewPr: CT_CommonSlideViewProperties;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_ViewProperties ...
 export class CT_ViewProperties {
 	LastViewAttr: string | null;
 	ShowCommentsAttr: boolean | null;
-	NormalViewPr: CT_NormalViewProperties;
-	SlideViewPr: CT_SlideViewProperties;
-	OutlineViewPr: CT_OutlineViewProperties;
-	NotesTextViewPr: CT_NotesTextViewProperties;
-	SorterViewPr: CT_SlideSorterViewProperties;
-	NotesViewPr: CT_NotesViewProperties;
-	GridSpacing: CT_PositiveSize2D;
-	ExtLst: CT_ExtensionList;
+	NormalViewPr?: CT_NormalViewProperties;
+	SlideViewPr?: CT_SlideViewProperties;
+	OutlineViewPr?: CT_OutlineViewProperties;
+	NotesTextViewPr?: CT_NotesTextViewProperties;
+	SorterViewPr?: CT_SlideSorterViewProperties;
+	NotesViewPr?: CT_NotesViewProperties;
+	GridSpacing?: CT_PositiveSize2D;
+	ExtLst?: CT_ExtensionList;
 }
 
 // ViewPr ...

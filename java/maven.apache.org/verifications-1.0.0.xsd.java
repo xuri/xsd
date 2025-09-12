@@ -20,13 +20,13 @@ public class Verifications {
 
 // Files is List of files and directories to check.
 public class Files {
-	@XmlElement(required = true, name = "file")
+	@XmlElement(name = "file")
 	protected List<File> File;
 }
 
 // Verifications2 is Root element of the verifications file.
 public class Verifications2 {
-	@XmlElement(required = true, name = "files")
+	@XmlElement(name = "files")
 	protected Files Files;
 }
 
@@ -34,10 +34,10 @@ public class Verifications2 {
 //             file or directory exists. When set to <code>false</code> it checks
 //             that the file or directory does <strong>not</strong> exist.
 public class File {
-	@XmlElement(required = true, name = "location")
+	@XmlElement(name = "location")
 	protected String Location;
-	@XmlElement(required = true, name = "contains")
+	@XmlElement(name = "contains")
 	protected String Contains;
-	@XmlElement(required = true, name = "exists")
+	@XmlElement(name = "exists")
 	protected Boolean Exists;
 }

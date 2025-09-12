@@ -53,7 +53,7 @@ type CTNumVal struct {
 // CTNumData ...
 type CTNumData struct {
 	XMLName    xml.Name         `xml:"CT_NumData"`
-	FormatCode string           `xml:"formatCode,omitempty"`
+	FormatCode *string          `xml:"formatCode"`
 	PtCount    *CTUnsignedInt   `xml:"ptCount,omitempty"`
 	Pt         []*CTNumVal      `xml:"pt,omitempty"`
 	ExtLst     *CTExtensionList `xml:"extLst,omitempty"`
@@ -569,7 +569,7 @@ type CTTrendlineLbl struct {
 // CTTrendline ...
 type CTTrendline struct {
 	XMLName       xml.Name           `xml:"CT_Trendline"`
-	Name          string             `xml:"name,omitempty"`
+	Name          *string            `xml:"name"`
 	SpPr          *CTShapeProperties `xml:"spPr,omitempty"`
 	TrendlineType *CTTrendlineType   `xml:"trendlineType"`
 	Order         *CTOrder           `xml:"order,omitempty"`
@@ -1427,12 +1427,12 @@ type CTHeaderFooter struct {
 	AlignWithMarginsAttr bool     `xml:"alignWithMargins,attr,omitempty"`
 	DifferentOddEvenAttr bool     `xml:"differentOddEven,attr,omitempty"`
 	DifferentFirstAttr   bool     `xml:"differentFirst,attr,omitempty"`
-	OddHeader            string   `xml:"oddHeader,omitempty"`
-	OddFooter            string   `xml:"oddFooter,omitempty"`
-	EvenHeader           string   `xml:"evenHeader,omitempty"`
-	EvenFooter           string   `xml:"evenFooter,omitempty"`
-	FirstHeader          string   `xml:"firstHeader,omitempty"`
-	FirstFooter          string   `xml:"firstFooter,omitempty"`
+	OddHeader            *string  `xml:"oddHeader"`
+	OddFooter            *string  `xml:"oddFooter"`
+	EvenHeader           *string  `xml:"evenHeader"`
+	EvenFooter           *string  `xml:"evenFooter"`
+	FirstHeader          *string  `xml:"firstHeader"`
+	FirstFooter          *string  `xml:"firstFooter"`
 }
 
 // CTPageMargins ...

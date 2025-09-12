@@ -38,9 +38,9 @@ type ArchetypeDescriptor struct {
 
 // RequiredProperty is A regular expression used to validate the property.
 type RequiredProperty struct {
-	KeyAttr         string `xml:"key,attr"`
-	DefaultValue    string `xml:"defaultValue,omitempty"`
-	ValidationRegex string `xml:"validationRegex,omitempty"`
+	KeyAttr         string  `xml:"key,attr"`
+	DefaultValue    *string `xml:"defaultValue"`
+	ValidationRegex *string `xml:"validationRegex"`
 }
 
 // ModuleDescriptor is 1.0.0+
@@ -70,7 +70,7 @@ type FileSet struct {
 	FilteredAttr bool      `xml:"filtered,attr,omitempty"`
 	PackagedAttr bool      `xml:"packaged,attr,omitempty"`
 	EncodingAttr string    `xml:"encoding,attr,omitempty"`
-	Directory    string    `xml:"directory,omitempty"`
+	Directory    *string   `xml:"directory"`
 	Includes     *Includes `xml:"includes,omitempty"`
 	Excludes     *Excludes `xml:"excludes,omitempty"`
 }

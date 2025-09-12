@@ -54,15 +54,15 @@ type FileSet struct {
 	FilteredAttr bool      `xml:"filtered,attr,omitempty"`
 	PackagedAttr bool      `xml:"packaged,attr,omitempty"`
 	EncodingAttr string    `xml:"encoding,attr,omitempty"`
-	Directory    string    `xml:"directory,omitempty"`
+	Directory    *string   `xml:"directory"`
 	Includes     *Includes `xml:"includes,omitempty"`
 	Excludes     *Excludes `xml:"excludes,omitempty"`
 }
 
 // RequiredProperty is Default value of the property.
 type RequiredProperty struct {
-	KeyAttr      string `xml:"key,attr,omitempty"`
-	DefaultValue string `xml:"defaultValue,omitempty"`
+	KeyAttr      string  `xml:"key,attr,omitempty"`
+	DefaultValue *string `xml:"defaultValue"`
 }
 
 // ModuleDescriptor is 0.0.0+

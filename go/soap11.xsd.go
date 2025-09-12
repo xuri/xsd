@@ -51,8 +51,7 @@ type Array struct {
 }
 
 // Struct ...
-type Struct struct {
-}
+type Struct *Struct
 
 // Base64 ...
 type Base64 string
@@ -109,11 +108,7 @@ type AnyURI string
 type QName xml.Name
 
 // String ...
-type String struct {
-	XMLName             xml.Name `xml:"string"`
-	TnsCommonAttributes *CommonAttributes
-	Value               string `xml:",chardata"`
-}
+type String string
 
 // NormalizedString ...
 type NormalizedString string
@@ -167,11 +162,7 @@ type NegativeInteger int
 type Long int64
 
 // Int ...
-type Int struct {
-	XMLName             xml.Name `xml:"int"`
-	TnsCommonAttributes *CommonAttributes
-	Value               int `xml:",chardata"`
-}
+type Int int
 
 // Short ...
 type Short int16

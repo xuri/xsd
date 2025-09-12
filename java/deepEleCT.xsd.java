@@ -14,13 +14,13 @@ import javax.xml.bind.annotation.XmlValue;
 
 // B ...
 public class B {
-	@XmlElement(required = true, name = "C")
+	@XmlElement(name = "C")
 	protected void C;
 }
 
 // A ...
 public class A {
-	@XmlElement(required = true, name = "B")
+	@XmlElement(name = "B")
 	protected B B;
 }
 

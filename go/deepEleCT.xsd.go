@@ -4,7 +4,7 @@ package schema
 
 // B ...
 type B struct {
-	C interface{} `xml:"C,omitempty"`
+	C *interface{} `xml:"C"`
 }
 
 // A ...

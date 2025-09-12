@@ -20,7 +20,7 @@ public class Toolchains {
 
 // PersistedToolchains is The toolchain instance definition.
 public class PersistedToolchains {
-	@XmlElement(required = true, name = "toolchain")
+	@XmlElement(name = "toolchain")
 	protected List<ToolchainModel> Toolchain;
 }
 
@@ -44,10 +44,10 @@ public class Configuration {
 //                     <li>...</li>
 //                     </ul>
 public class ToolchainModel {
-	@XmlElement(required = true, name = "type")
+	@XmlElement(name = "type")
 	protected String Type;
-	@XmlElement(required = true, name = "provides")
+	@XmlElement(name = "provides")
 	protected Provides Provides;
-	@XmlElement(required = true, name = "configuration")
+	@XmlElement(name = "configuration")
 	protected Configuration Configuration;
 }

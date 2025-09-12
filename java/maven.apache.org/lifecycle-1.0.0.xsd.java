@@ -20,27 +20,27 @@ public class Lifecycles {
 
 // LifecycleConfiguration is 1.0.0
 public class LifecycleConfiguration {
-	@XmlElement(required = true, name = "lifecycle")
+	@XmlElement(name = "lifecycle")
 	protected List<Lifecycle> Lifecycle;
 }
 
 // Phases is The phase mappings for this lifecycle.
 public class Phases {
-	@XmlElement(required = true, name = "phase")
+	@XmlElement(name = "phase")
 	protected List<Phase> Phase;
 }
 
 // Lifecycle is The ID of this lifecycle, for identification in the mojo descriptor.
 public class Lifecycle {
-	@XmlElement(required = true, name = "id")
+	@XmlElement(name = "id")
 	protected String Id;
-	@XmlElement(required = true, name = "phases")
+	@XmlElement(name = "phases")
 	protected Phases Phases;
 }
 
 // Executions is The goals to execute within the phase.
 public class Executions {
-	@XmlElement(required = true, name = "execution")
+	@XmlElement(name = "execution")
 	protected List<Execution> Execution;
 }
 
@@ -50,24 +50,24 @@ public class Configuration {
 
 // Phase is The ID of this phase, e.g., <code>generate-sources</code>.
 public class Phase {
-	@XmlElement(required = true, name = "id")
+	@XmlElement(name = "id")
 	protected String Id;
-	@XmlElement(required = true, name = "executions")
+	@XmlElement(name = "executions")
 	protected Executions Executions;
-	@XmlElement(required = true, name = "configuration")
+	@XmlElement(name = "configuration")
 	protected Configuration Configuration;
 }
 
 // Goals is The goals to execute.
 public class Goals {
-	@XmlElement(required = true, name = "goal")
+	@XmlElement(name = "goal")
 	protected List<String> Goal;
 }
 
 // Execution is A set of goals to execute.
 public class Execution {
-	@XmlElement(required = true, name = "configuration")
+	@XmlElement(name = "configuration")
 	protected Configuration Configuration;
-	@XmlElement(required = true, name = "goals")
+	@XmlElement(name = "goals")
 	protected Goals Goals;
 }

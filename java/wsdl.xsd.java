@@ -18,7 +18,7 @@ public class TDocumentation {
 
 // TDocumented is This type is extended by  component types to allow them to be documented
 public class TDocumented {
-	@XmlElement(required = true, name = "documentation")
+	@XmlElement(name = "documentation")
 	protected TDocumentation Documentation;
 }
 
@@ -77,7 +77,7 @@ public class TTypes extends TExtensibleDocumented  {
 public class TMessage extends TExtensibleDocumented  {
 	@XmlAttribute(name = "name", required = true)
 	protected String NameAttr;
-	@XmlElement(required = true, name = "part")
+	@XmlElement(name = "part")
 	protected List<TPart> Part;
 }
 
@@ -95,7 +95,7 @@ public class TPart extends TExtensibleAttributesDocumented  {
 public class TPortType extends TExtensibleAttributesDocumented  {
 	@XmlAttribute(name = "name", required = true)
 	protected String NameAttr;
-	@XmlElement(required = true, name = "operation")
+	@XmlElement(name = "operation")
 	protected List<TOperation> Operation;
 }
 
@@ -151,7 +151,7 @@ public class TBinding extends TExtensibleDocumented  {
 	protected String NameAttr;
 	@XmlAttribute(name = "type", required = true)
 	protected String TypeAttr;
-	@XmlElement(required = true, name = "operation")
+	@XmlElement(name = "operation")
 	protected List<TBindingOperation> Operation;
 }
 
@@ -171,11 +171,11 @@ public class TBindingOperationFault extends TExtensibleDocumented  {
 public class TBindingOperation extends TExtensibleDocumented  {
 	@XmlAttribute(name = "name", required = true)
 	protected String NameAttr;
-	@XmlElement(required = true, name = "input")
+	@XmlElement(name = "input")
 	protected TBindingOperationMessage Input;
-	@XmlElement(required = true, name = "output")
+	@XmlElement(name = "output")
 	protected TBindingOperationMessage Output;
-	@XmlElement(required = true, name = "fault")
+	@XmlElement(name = "fault")
 	protected List<TBindingOperationFault> Fault;
 }
 
@@ -183,7 +183,7 @@ public class TBindingOperation extends TExtensibleDocumented  {
 public class TService extends TExtensibleDocumented  {
 	@XmlAttribute(name = "name", required = true)
 	protected String NameAttr;
-	@XmlElement(required = true, name = "port")
+	@XmlElement(name = "port")
 	protected List<TPort> Port;
 }
 

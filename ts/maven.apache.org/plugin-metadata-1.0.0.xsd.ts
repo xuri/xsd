@@ -5,66 +5,66 @@ export type PluginMetadata = PluginMetadata;
 
 // Mojos is The list of mojos contained in the accompanying script.
 export class Mojos {
-	Mojo: Array<Mojo>;
+	Mojo?: Array<Mojo>;
 }
 
 // PluginMetadata2 is Root element of a script-based mojo's plugin metadata bindings.
 export class PluginMetadata2 {
-	Mojos: Mojos;
+	Mojos?: Mojos;
 }
 
 // Components is List of plexus components required by this mojo.
 export class Components {
-	Component: Array<Component>;
+	Component?: Array<Component>;
 }
 
 // Parameters is List of parameters used by this mojo.
 export class Parameters {
-	Parameter: Array<Parameter>;
+	Parameter?: Array<Parameter>;
 }
 
 // Mojo is Information about a sub-execution of the Maven lifecycle which should be processed.
 export class Mojo {
-	Goal: string;
-	Phase: string;
-	Aggregator: boolean;
-	RequiresDependencyResolution: string;
-	RequiresProject: boolean;
-	RequiresReports: boolean;
-	RequiresOnline: boolean;
-	InheritByDefault: boolean;
-	RequiresDirectInvocation: boolean;
-	Execution: LifecycleExecution;
-	Components: Components;
-	Parameters: Parameters;
-	Description: string;
-	Deprecated: string;
-	Call: string;
+	Goal?: string;
+	Phase?: string;
+	Aggregator?: boolean;
+	RequiresDependencyResolution?: string;
+	RequiresProject?: boolean;
+	RequiresReports?: boolean;
+	RequiresOnline?: boolean;
+	InheritByDefault?: boolean;
+	RequiresDirectInvocation?: boolean;
+	Execution?: LifecycleExecution;
+	Components?: Components;
+	Parameters?: Parameters;
+	Description?: string;
+	Deprecated?: string;
+	Call?: string;
 }
 
 // Parameter is A deprecation message for this mojo parameter.
 export class Parameter {
-	Name: string;
-	Alias: string;
-	Property: string;
-	Required: boolean;
-	Readonly: boolean;
-	Expression: string;
-	DefaultValue: string;
-	Type: string;
-	Description: string;
-	Deprecated: string;
+	Name?: string;
+	Alias?: string;
+	Property?: string;
+	Required?: boolean;
+	Readonly?: boolean;
+	Expression?: string;
+	DefaultValue?: string;
+	Type?: string;
+	Description?: string;
+	Deprecated?: string;
 }
 
 // LifecycleExecution is A goal, not attached to a lifecycle phase, which should be executed ahead of this mojo.
 export class LifecycleExecution {
-	Lifecycle: string;
-	Phase: string;
-	Goal: string;
+	Lifecycle?: string;
+	Phase?: string;
+	Goal?: string;
 }
 
 // Component is The role-hint to lookup.
 export class Component {
-	Role: string;
-	Hint: string;
+	Role?: string;
+	Hint?: string;
 }

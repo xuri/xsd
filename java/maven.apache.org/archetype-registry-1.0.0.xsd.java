@@ -20,20 +20,20 @@ public class Archetyperegistry {
 
 // Languages is 0.0.0+
 public class Languages {
-	@XmlElement(required = true, name = "Language")
+	@XmlElement(name = "Language")
 	protected List<String> Language;
 }
 
 // FilteredExtensions is 0.0.0+
 public class FilteredExtensions {
-	@XmlElement(required = true, name = "FilteredExtension")
+	@XmlElement(name = "FilteredExtension")
 	protected List<String> FilteredExtension;
 }
 
 // ArchetypeRegistry is 0.0.0+
 public class ArchetypeRegistry {
-	@XmlElement(required = true, name = "Languages")
+	@XmlElement(name = "Languages")
 	protected Languages Languages;
-	@XmlElement(required = true, name = "FilteredExtensions")
+	@XmlElement(name = "FilteredExtensions")
 	protected FilteredExtensions FilteredExtensions;
 }

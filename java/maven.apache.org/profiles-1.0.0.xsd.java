@@ -21,22 +21,22 @@ public class ProfilesXml {
 // Profiles is Configuration of build profiles for adjusting the build
 //             according to environmental parameters
 public class Profiles {
-	@XmlElement(required = true, name = "profile")
+	@XmlElement(name = "profile")
 	protected List<Profile> Profile;
 }
 
 // ActiveProfiles is List of manually-activated build profiles, specified in the order in which
 //             they should be applied.
 public class ActiveProfiles {
-	@XmlElement(required = true, name = "activeProfile")
+	@XmlElement(name = "activeProfile")
 	protected List<String> ActiveProfile;
 }
 
 // ProfilesRoot is Root element of the profiles.xml file.
 public class ProfilesRoot {
-	@XmlElement(required = true, name = "profiles")
+	@XmlElement(name = "profiles")
 	protected Profiles Profiles;
-	@XmlElement(required = true, name = "activeProfiles")
+	@XmlElement(name = "activeProfiles")
 	protected ActiveProfiles ActiveProfiles;
 }
 
@@ -47,97 +47,97 @@ public class Properties {
 
 // Repositories is The lists of the remote repositories
 public class Repositories {
-	@XmlElement(required = true, name = "repository")
+	@XmlElement(name = "repository")
 	protected List<Repository> Repository;
 }
 
 // PluginRepositories is The lists of the remote repositories for discovering plugins
 public class PluginRepositories {
-	@XmlElement(required = true, name = "pluginRepository")
+	@XmlElement(name = "pluginRepository")
 	protected List<Repository> PluginRepository;
 }
 
 // Profile is The conditional logic which will automatically
 //             trigger the inclusion of this profile.
 public class Profile {
-	@XmlElement(required = true, name = "id")
+	@XmlElement(name = "id")
 	protected String Id;
-	@XmlElement(required = true, name = "activation")
+	@XmlElement(name = "activation")
 	protected Activation Activation;
-	@XmlElement(required = true, name = "properties")
+	@XmlElement(name = "properties")
 	protected Properties Properties;
-	@XmlElement(required = true, name = "repositories")
+	@XmlElement(name = "repositories")
 	protected Repositories Repositories;
-	@XmlElement(required = true, name = "pluginRepositories")
+	@XmlElement(name = "pluginRepositories")
 	protected PluginRepositories PluginRepositories;
 }
 
 // Activation is Specifies that this profile will be activated based on existence of a file.
 public class Activation {
-	@XmlElement(required = true, name = "activeByDefault")
+	@XmlElement(name = "activeByDefault")
 	protected Boolean ActiveByDefault;
-	@XmlElement(required = true, name = "jdk")
+	@XmlElement(name = "jdk")
 	protected String Jdk;
-	@XmlElement(required = true, name = "os")
+	@XmlElement(name = "os")
 	protected ActivationOS Os;
-	@XmlElement(required = true, name = "property")
+	@XmlElement(name = "property")
 	protected ActivationProperty Property;
-	@XmlElement(required = true, name = "file")
+	@XmlElement(name = "file")
 	protected ActivationFile File;
 }
 
 // ActivationOS is The version of the OS to be used to activate a profile
 public class ActivationOS {
-	@XmlElement(required = true, name = "name")
+	@XmlElement(name = "name")
 	protected String Name;
-	@XmlElement(required = true, name = "family")
+	@XmlElement(name = "family")
 	protected String Family;
-	@XmlElement(required = true, name = "arch")
+	@XmlElement(name = "arch")
 	protected String Arch;
-	@XmlElement(required = true, name = "version")
+	@XmlElement(name = "version")
 	protected String Version;
 }
 
 // ActivationProperty is The value of the property to be used to activate a profile
 public class ActivationProperty {
-	@XmlElement(required = true, name = "name")
+	@XmlElement(name = "name")
 	protected String Name;
-	@XmlElement(required = true, name = "value")
+	@XmlElement(name = "value")
 	protected String Value;
 }
 
 // ActivationFile is The name of the file that should exist to activate a profile
 public class ActivationFile {
-	@XmlElement(required = true, name = "missing")
+	@XmlElement(name = "missing")
 	protected String Missing;
-	@XmlElement(required = true, name = "exists")
+	@XmlElement(name = "exists")
 	protected String Exists;
 }
 
 // Repository is The type of layout this repository uses for locating and storing artifacts - can be "legacy" or
 //             "default".
 public class Repository {
-	@XmlElement(required = true, name = "releases")
+	@XmlElement(name = "releases")
 	protected RepositoryPolicy Releases;
-	@XmlElement(required = true, name = "snapshots")
+	@XmlElement(name = "snapshots")
 	protected RepositoryPolicy Snapshots;
-	@XmlElement(required = true, name = "id")
+	@XmlElement(name = "id")
 	protected String Id;
-	@XmlElement(required = true, name = "name")
+	@XmlElement(name = "name")
 	protected String Name;
-	@XmlElement(required = true, name = "url")
+	@XmlElement(name = "url")
 	protected String Url;
-	@XmlElement(required = true, name = "layout")
+	@XmlElement(name = "layout")
 	protected String Layout;
 }
 
 // RepositoryPolicy is What to do when verification of an artifact checksum fails - warn, fail, etc. Valid values are
 //             "fail" or "warn"
 public class RepositoryPolicy {
-	@XmlElement(required = true, name = "enabled")
+	@XmlElement(name = "enabled")
 	protected Boolean Enabled;
-	@XmlElement(required = true, name = "updatePolicy")
+	@XmlElement(name = "updatePolicy")
 	protected String UpdatePolicy;
-	@XmlElement(required = true, name = "checksumPolicy")
+	@XmlElement(name = "checksumPolicy")
 	protected String ChecksumPolicy;
 }

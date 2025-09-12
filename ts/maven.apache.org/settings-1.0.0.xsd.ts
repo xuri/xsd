@@ -9,71 +9,71 @@ export type Settings = Settings;
 //             configurations by simply specifying the profile id, again either from
 //             the command line or from the defaults section below.
 export class Proxies {
-	Proxy: Array<Proxy>;
+	Proxy?: Array<Proxy>;
 }
 
 // Servers is Configuration of server-specific settings, mainly authentication
 //             method. This allows configuration of authentication on a per-server
 //             basis.
 export class Servers {
-	Server: Array<Server>;
+	Server?: Array<Server>;
 }
 
 // Mirrors is Configuration of download mirrors for repositories.
 export class Mirrors {
-	Mirror: Array<Mirror>;
+	Mirror?: Array<Mirror>;
 }
 
 // Profiles is Configuration of build profiles for adjusting the build
 //             according to environmental parameters.
 export class Profiles {
-	Profile: Array<Profile>;
+	Profile?: Array<Profile>;
 }
 
 // ActiveProfiles is List of manually-activated build profiles, specified in the order in which
 //             they should be applied.
 export class ActiveProfiles {
-	ActiveProfile: string;
+	ActiveProfile?: string;
 }
 
 // PluginGroups is List of groupIds to search for a plugin when that plugin
 //             groupId is not explicitly provided.
 export class PluginGroups {
-	PluginGroup: string;
+	PluginGroup?: string;
 }
 
 // Settings2 is Indicate whether maven should operate in offline mode full-time.
 export class Settings2 {
-	LocalRepository: string;
-	InteractiveMode: boolean;
-	UsePluginRegistry: boolean;
-	Offline: boolean;
-	Proxies: Proxies;
-	Servers: Servers;
-	Mirrors: Mirrors;
-	Profiles: Profiles;
-	ActiveProfiles: ActiveProfiles;
-	PluginGroups: PluginGroups;
+	LocalRepository?: string;
+	InteractiveMode?: boolean;
+	UsePluginRegistry?: boolean;
+	Offline?: boolean;
+	Proxies?: Proxies;
+	Servers?: Servers;
+	Mirrors?: Mirrors;
+	Profiles?: Profiles;
+	ActiveProfiles?: ActiveProfiles;
+	PluginGroups?: PluginGroups;
 }
 
 // Mirror is 1.0.0
 export class Mirror {
-	MirrorOf: string;
-	Name: string;
-	Url: string;
-	Id: string;
+	MirrorOf?: string;
+	Name?: string;
+	Url?: string;
+	Id?: string;
 }
 
 // Proxy is 1.0.0
 export class Proxy {
-	Active: boolean;
-	Protocol: string;
-	Username: string;
-	Password: string;
-	Port: number;
-	Host: string;
-	NonProxyHosts: string;
-	Id: string;
+	Active?: boolean;
+	Protocol?: string;
+	Username?: string;
+	Password?: string;
+	Port?: number;
+	Host?: string;
+	NonProxyHosts?: string;
+	Id?: string;
 }
 
 // Configuration is Extra configuration for the transport layer.
@@ -82,14 +82,14 @@ export class Configuration {
 
 // Server is The permissions for directories when they are created.
 export class Server {
-	Username: string;
-	Password: string;
-	PrivateKey: string;
-	Passphrase: string;
-	FilePermissions: string;
-	DirectoryPermissions: string;
-	Configuration: Configuration;
-	Id: string;
+	Username?: string;
+	Password?: string;
+	PrivateKey?: string;
+	Passphrase?: string;
+	FilePermissions?: string;
+	DirectoryPermissions?: string;
+	Configuration?: Configuration;
+	Id?: string;
 }
 
 // Properties is Extended configuration specific to this profile goes here.
@@ -100,68 +100,68 @@ export class Properties {
 
 // Repositories is The lists of the remote repositories.
 export class Repositories {
-	Repository: Array<Repository>;
+	Repository?: Array<Repository>;
 }
 
 // PluginRepositories is The lists of the remote repositories for discovering plugins.
 export class PluginRepositories {
-	PluginRepository: Array<Repository>;
+	PluginRepository?: Array<Repository>;
 }
 
 // Profile is The conditional logic which will automatically
 //             trigger the inclusion of this profile.
 export class Profile {
-	Activation: Activation;
-	Properties: Properties;
-	Repositories: Repositories;
-	PluginRepositories: PluginRepositories;
-	Id: string;
+	Activation?: Activation;
+	Properties?: Properties;
+	Repositories?: Repositories;
+	PluginRepositories?: PluginRepositories;
+	Id?: string;
 }
 
 // Repository is The type of layout this repository uses for locating and
 //             storing artifacts - can be "legacy" or "default".
 export class Repository {
-	Releases: RepositoryPolicy;
-	Snapshots: RepositoryPolicy;
-	Id: string;
-	Name: string;
-	Url: string;
-	Layout: string;
+	Releases?: RepositoryPolicy;
+	Snapshots?: RepositoryPolicy;
+	Id?: string;
+	Name?: string;
+	Url?: string;
+	Layout?: string;
 }
 
 // RepositoryPolicy is What to do when verification of an artifact checksum fails -
 //             warn, fail, etc. Valid values are "fail" or "warn".
 export class RepositoryPolicy {
-	Enabled: boolean;
-	UpdatePolicy: string;
-	ChecksumPolicy: string;
+	Enabled?: boolean;
+	UpdatePolicy?: string;
+	ChecksumPolicy?: string;
 }
 
 // Activation is Specifies that this profile will be activated based on existence of a file.
 export class Activation {
-	ActiveByDefault: boolean;
-	Jdk: string;
-	Os: ActivationOS;
-	Property: ActivationProperty;
-	File: ActivationFile;
+	ActiveByDefault?: boolean;
+	Jdk?: string;
+	Os?: ActivationOS;
+	Property?: ActivationProperty;
+	File?: ActivationFile;
 }
 
 // ActivationFile is The name of the file that should exist to activate a profile.
 export class ActivationFile {
-	Missing: string;
-	Exists: string;
+	Missing?: string;
+	Exists?: string;
 }
 
 // ActivationOS is The version of the OS to be used to activate a profile.
 export class ActivationOS {
-	Name: string;
-	Family: string;
-	Arch: string;
-	Version: string;
+	Name?: string;
+	Family?: string;
+	Arch?: string;
+	Version?: string;
 }
 
 // ActivationProperty is The value of the property to be used to activate a profile.
 export class ActivationProperty {
-	Name: string;
-	Value: string;
+	Name?: string;
+	Value?: string;
 }

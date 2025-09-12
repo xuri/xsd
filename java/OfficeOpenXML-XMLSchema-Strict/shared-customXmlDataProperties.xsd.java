@@ -20,7 +20,7 @@ public class CT_DatastoreSchemaRef {
 
 // CT_DatastoreSchemaRefs ...
 public class CT_DatastoreSchemaRefs {
-	@XmlElement(required = true, name = "schemaRef")
+	@XmlElement(name = "schemaRef")
 	protected List<CT_DatastoreSchemaRef> SchemaRef;
 }
 
@@ -28,7 +28,7 @@ public class CT_DatastoreSchemaRefs {
 public class CT_DatastoreItem {
 	@XmlAttribute(name = "itemID", required = true)
 	protected String ItemIDAttr;
-	@XmlElement(required = true, name = "schemaRefs")
+	@XmlElement(name = "schemaRefs")
 	protected CT_DatastoreSchemaRefs SchemaRefs;
 }
 

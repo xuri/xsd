@@ -5,16 +5,16 @@ export type Archetyperegistry = ArchetypeRegistry;
 
 // Languages is 0.0.0+
 export class Languages {
-	Language: string;
+	Language?: string;
 }
 
 // FilteredExtensions is 0.0.0+
 export class FilteredExtensions {
-	FilteredExtension: string;
+	FilteredExtension?: string;
 }
 
 // ArchetypeRegistry is 0.0.0+
 export class ArchetypeRegistry {
-	Languages: Languages;
-	FilteredExtensions: FilteredExtensions;
+	Languages?: Languages;
+	FilteredExtensions?: FilteredExtensions;
 }

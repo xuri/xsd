@@ -3,9 +3,9 @@
 // CT_AutoFilter ...
 export class CT_AutoFilter {
 	RefAttr: string | null;
-	FilterColumn: Array<CT_FilterColumn>;
-	SortState: CT_SortState;
-	ExtLst: CT_ExtensionList;
+	FilterColumn?: Array<CT_FilterColumn>;
+	SortState?: CT_SortState;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_FilterColumn ...
@@ -13,21 +13,21 @@ export class CT_FilterColumn {
 	ColIdAttr: number;
 	HiddenButtonAttr: boolean | null;
 	ShowButtonAttr: boolean | null;
-	Filters: CT_Filters;
-	Top10: CT_Top10;
-	CustomFilters: CT_CustomFilters;
-	DynamicFilter: CT_DynamicFilter;
-	ColorFilter: CT_ColorFilter;
-	IconFilter: CT_IconFilter;
-	ExtLst: CT_ExtensionList;
+	Filters?: CT_Filters;
+	Top10?: CT_Top10;
+	CustomFilters?: CT_CustomFilters;
+	DynamicFilter?: CT_DynamicFilter;
+	ColorFilter?: CT_ColorFilter;
+	IconFilter?: CT_IconFilter;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_Filters ...
 export class CT_Filters {
 	BlankAttr: boolean | null;
 	CalendarTypeAttr: string | null;
-	Filter: Array<CT_Filter>;
-	DateGroupItem: Array<CT_DateGroupItem>;
+	Filter?: Array<CT_Filter>;
+	DateGroupItem?: Array<CT_DateGroupItem>;
 }
 
 // CT_Filter ...
@@ -151,8 +151,8 @@ export class CT_SortState {
 	CaseSensitiveAttr: boolean | null;
 	SortMethodAttr: string | null;
 	RefAttr: string;
-	SortCondition: Array<CT_SortCondition>;
-	ExtLst: CT_ExtensionList;
+	SortCondition?: Array<CT_SortCondition>;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_SortCondition ...
@@ -254,7 +254,7 @@ export type CalcChain = CT_CalcChain;
 // CT_CalcChain ...
 export class CT_CalcChain {
 	C: Array<CT_CalcCell>;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_CalcCell ...
@@ -274,17 +274,17 @@ export type Comments = CT_Comments;
 export class CT_Comments {
 	Authors: CT_Authors;
 	CommentList: CT_CommentList;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_Authors ...
 export class CT_Authors {
-	Author: string;
+	Author?: string;
 }
 
 // CT_CommentList ...
 export class CT_CommentList {
-	Comment: Array<CT_Comment>;
+	Comment?: Array<CT_Comment>;
 }
 
 // CT_Comment ...
@@ -294,7 +294,7 @@ export class CT_Comment {
 	GuidAttr: string | null;
 	ShapeIdAttr: number | null;
 	Text: CT_Rst;
-	CommentPr: CT_CommentPr;
+	CommentPr?: CT_CommentPr;
 }
 
 // CT_CommentPr ...
@@ -361,7 +361,7 @@ export class CT_Map {
 	AppendAttr: boolean;
 	PreserveSortAFLayoutAttr: boolean;
 	PreserveFormatAttr: boolean;
-	DataBinding: CT_DataBinding;
+	DataBinding?: CT_DataBinding;
 }
 
 // CT_DataBinding ...
@@ -403,12 +403,12 @@ export class CT_Connection {
 	SaveDataAttr: boolean | null;
 	CredentialsAttr: string | null;
 	SingleSignOnIdAttr: string | null;
-	DbPr: CT_DbPr;
-	OlapPr: CT_OlapPr;
-	WebPr: CT_WebPr;
-	TextPr: CT_TextPr;
-	Parameters: CT_Parameters;
-	ExtLst: CT_ExtensionList;
+	DbPr?: CT_DbPr;
+	OlapPr?: CT_OlapPr;
+	WebPr?: CT_WebPr;
+	TextPr?: CT_TextPr;
+	Parameters?: CT_Parameters;
+	ExtLst?: CT_ExtensionList;
 }
 
 // ST_CredMethod ...
@@ -455,7 +455,7 @@ export class CT_WebPr {
 	HtmlTablesAttr: boolean | null;
 	HtmlFormatAttr: string | null;
 	EditPageAttr: string | null;
-	Tables: CT_Tables;
+	Tables?: CT_Tables;
 }
 
 // ST_HtmlFmt ...
@@ -521,7 +521,7 @@ export class CT_TextPr {
 	ConsecutiveAttr: boolean | null;
 	QualifierAttr: string | null;
 	DelimiterAttr: string | null;
-	TextFields: CT_TextFields;
+	TextFields?: CT_TextFields;
 }
 
 // ST_FileType ...
@@ -597,21 +597,21 @@ export class CT_PivotCacheDefinition {
 	SupportAdvancedDrillAttr: boolean | null;
 	CacheSource: CT_CacheSource;
 	CacheFields: CT_CacheFields;
-	CacheHierarchies: CT_CacheHierarchies;
-	Kpis: CT_PCDKPIs;
-	TupleCache: CT_TupleCache;
-	CalculatedItems: CT_CalculatedItems;
-	CalculatedMembers: CT_CalculatedMembers;
-	Dimensions: CT_Dimensions;
-	MeasureGroups: CT_MeasureGroups;
-	Maps: CT_MeasureDimensionMaps;
-	ExtLst: CT_ExtensionList;
+	CacheHierarchies?: CT_CacheHierarchies;
+	Kpis?: CT_PCDKPIs;
+	TupleCache?: CT_TupleCache;
+	CalculatedItems?: CT_CalculatedItems;
+	CalculatedMembers?: CT_CalculatedMembers;
+	Dimensions?: CT_Dimensions;
+	MeasureGroups?: CT_MeasureGroups;
+	Maps?: CT_MeasureDimensionMaps;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_CacheFields ...
 export class CT_CacheFields {
 	CountAttr: number | null;
-	CacheField: Array<CT_CacheField>;
+	CacheField?: Array<CT_CacheField>;
 }
 
 // CT_CacheField ...
@@ -629,10 +629,10 @@ export class CT_CacheField {
 	DatabaseFieldAttr: boolean | null;
 	MappingCountAttr: number | null;
 	MemberPropertyFieldAttr: boolean | null;
-	SharedItems: CT_SharedItems;
-	FieldGroup: CT_FieldGroup;
-	MpMap: Array<CT_X>;
-	ExtLst: CT_ExtensionList;
+	SharedItems?: CT_SharedItems;
+	FieldGroup?: CT_FieldGroup;
+	MpMap?: Array<CT_X>;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_CacheSource ...
@@ -641,7 +641,7 @@ export class CT_CacheSource {
 	ConnectionIdAttr: number | null;
 	WorksheetSource: CT_WorksheetSource;
 	Consolidation: CT_Consolidation;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // ST_SourceType ...
@@ -663,7 +663,7 @@ export class CT_WorksheetSource {
 // CT_Consolidation ...
 export class CT_Consolidation {
 	AutoPageAttr: boolean | null;
-	Pages: CT_Pages;
+	Pages?: CT_Pages;
 	RangeSets: CT_RangeSets;
 }
 
@@ -676,7 +676,7 @@ export class CT_Pages {
 // CT_PCDSCPage ...
 export class CT_PCDSCPage {
 	CountAttr: number | null;
-	PageItem: Array<CT_PageItem>;
+	PageItem?: Array<CT_PageItem>;
 }
 
 // CT_PageItem ...
@@ -739,8 +739,8 @@ export class CT_Missing {
 	UnAttr: boolean | null;
 	StAttr: boolean | null;
 	BAttr: boolean | null;
-	Tpls: Array<CT_Tuples>;
-	X: Array<CT_X>;
+	Tpls?: Array<CT_Tuples>;
+	X?: Array<CT_X>;
 }
 
 // CT_Number ...
@@ -757,8 +757,8 @@ export class CT_Number {
 	UnAttr: boolean | null;
 	StAttr: boolean | null;
 	BAttr: boolean | null;
-	Tpls: Array<CT_Tuples>;
-	X: Array<CT_X>;
+	Tpls?: Array<CT_Tuples>;
+	X?: Array<CT_X>;
 }
 
 // CT_Boolean ...
@@ -768,7 +768,7 @@ export class CT_Boolean {
 	FAttr: boolean | null;
 	CAttr: string | null;
 	CpAttr: number | null;
-	X: Array<CT_X>;
+	X?: Array<CT_X>;
 }
 
 // CT_Error ...
@@ -785,8 +785,8 @@ export class CT_Error {
 	UnAttr: boolean | null;
 	StAttr: boolean | null;
 	BAttr: boolean | null;
-	Tpls: CT_Tuples;
-	X: Array<CT_X>;
+	Tpls?: CT_Tuples;
+	X?: Array<CT_X>;
 }
 
 // CT_String ...
@@ -803,8 +803,8 @@ export class CT_String {
 	UnAttr: boolean | null;
 	StAttr: boolean | null;
 	BAttr: boolean | null;
-	Tpls: Array<CT_Tuples>;
-	X: Array<CT_X>;
+	Tpls?: Array<CT_Tuples>;
+	X?: Array<CT_X>;
 }
 
 // CT_DateTime ...
@@ -814,16 +814,16 @@ export class CT_DateTime {
 	FAttr: boolean | null;
 	CAttr: string | null;
 	CpAttr: number | null;
-	X: Array<CT_X>;
+	X?: Array<CT_X>;
 }
 
 // CT_FieldGroup ...
 export class CT_FieldGroup {
 	ParAttr: number | null;
 	BaseAttr: number | null;
-	RangePr: CT_RangePr;
-	DiscretePr: CT_DiscretePr;
-	GroupItems: CT_GroupItems;
+	RangePr?: CT_RangePr;
+	DiscretePr?: CT_DiscretePr;
+	GroupItems?: CT_GroupItems;
 }
 
 // CT_RangePr ...
@@ -870,8 +870,8 @@ export class CT_GroupItems {
 // CT_PivotCacheRecords ...
 export class CT_PivotCacheRecords {
 	CountAttr: number | null;
-	R: Array<CT_Record>;
-	ExtLst: CT_ExtensionList;
+	R?: Array<CT_Record>;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_Record ...
@@ -888,7 +888,7 @@ export class CT_Record {
 // CT_PCDKPIs ...
 export class CT_PCDKPIs {
 	CountAttr: number | null;
-	Kpi: Array<CT_PCDKPI>;
+	Kpi?: Array<CT_PCDKPI>;
 }
 
 // CT_PCDKPI ...
@@ -909,7 +909,7 @@ export class CT_PCDKPI {
 // CT_CacheHierarchies ...
 export class CT_CacheHierarchies {
 	CountAttr: number | null;
-	CacheHierarchy: Array<CT_CacheHierarchy>;
+	CacheHierarchy?: Array<CT_CacheHierarchy>;
 }
 
 // CT_CacheHierarchy ...
@@ -936,15 +936,15 @@ export class CT_CacheHierarchy {
 	UnbalancedAttr: boolean | null;
 	UnbalancedGroupAttr: boolean | null;
 	HiddenAttr: boolean | null;
-	FieldsUsage: CT_FieldsUsage;
-	GroupLevels: CT_GroupLevels;
-	ExtLst: CT_ExtensionList;
+	FieldsUsage?: CT_FieldsUsage;
+	GroupLevels?: CT_GroupLevels;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_FieldsUsage ...
 export class CT_FieldsUsage {
 	CountAttr: number | null;
-	FieldUsage: Array<CT_FieldUsage>;
+	FieldUsage?: Array<CT_FieldUsage>;
 }
 
 // CT_FieldUsage ...
@@ -964,8 +964,8 @@ export class CT_GroupLevel {
 	CaptionAttr: string;
 	UserAttr: boolean | null;
 	CustomRollUpAttr: boolean | null;
-	Groups: CT_Groups;
-	ExtLst: CT_ExtensionList;
+	Groups?: CT_Groups;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_Groups ...
@@ -998,11 +998,11 @@ export class CT_GroupMember {
 
 // CT_TupleCache ...
 export class CT_TupleCache {
-	Entries: CT_PCDSDTCEntries;
-	Sets: CT_Sets;
-	QueryCache: CT_QueryCache;
-	ServerFormats: CT_ServerFormats;
-	ExtLst: CT_ExtensionList;
+	Entries?: CT_PCDSDTCEntries;
+	Sets?: CT_Sets;
+	QueryCache?: CT_QueryCache;
+	ServerFormats?: CT_ServerFormats;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_ServerFormat ...
@@ -1014,7 +1014,7 @@ export class CT_ServerFormat {
 // CT_ServerFormats ...
 export class CT_ServerFormats {
 	CountAttr: number | null;
-	ServerFormat: Array<CT_ServerFormat>;
+	ServerFormat?: Array<CT_ServerFormat>;
 }
 
 // CT_PCDSDTCEntries ...
@@ -1052,8 +1052,8 @@ export class CT_Set {
 	SetDefinitionAttr: string;
 	SortTypeAttr: string | null;
 	QueryFailedAttr: boolean | null;
-	Tpls: Array<CT_Tuples>;
-	SortByTuple: CT_Tuples;
+	Tpls?: Array<CT_Tuples>;
+	SortByTuple?: CT_Tuples;
 }
 
 // ST_SortType ...
@@ -1076,7 +1076,7 @@ export class CT_QueryCache {
 // CT_Query ...
 export class CT_Query {
 	MdxAttr: string;
-	Tpls: CT_Tuples;
+	Tpls?: CT_Tuples;
 }
 
 // CT_CalculatedItems ...
@@ -1090,7 +1090,7 @@ export class CT_CalculatedItem {
 	FieldAttr: number | null;
 	FormulaAttr: string | null;
 	PivotArea: CT_PivotArea;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_CalculatedMembers ...
@@ -1108,7 +1108,7 @@ export class CT_CalculatedMember {
 	ParentAttr: string | null;
 	SolveOrderAttr: number | null;
 	SetAttr: boolean | null;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_pivotTableDefinition ...
@@ -1176,22 +1176,22 @@ export class CT_pivotTableDefinition {
 	MdxSubqueriesAttr: boolean | null;
 	CustomListSortAttr: boolean | null;
 	Location: CT_Location;
-	PivotFields: CT_PivotFields;
-	RowFields: CT_RowFields;
-	RowItems: CT_rowItems;
-	ColFields: CT_ColFields;
-	ColItems: CT_colItems;
-	PageFields: CT_PageFields;
-	DataFields: CT_DataFields;
-	Formats: CT_Formats;
-	ConditionalFormats: CT_ConditionalFormats;
-	ChartFormats: CT_ChartFormats;
-	PivotHierarchies: CT_PivotHierarchies;
-	PivotTableStyleInfo: CT_PivotTableStyle;
-	Filters: CT_PivotFilters;
-	RowHierarchiesUsage: CT_RowHierarchiesUsage;
-	ColHierarchiesUsage: CT_ColHierarchiesUsage;
-	ExtLst: CT_ExtensionList;
+	PivotFields?: CT_PivotFields;
+	RowFields?: CT_RowFields;
+	RowItems?: CT_rowItems;
+	ColFields?: CT_ColFields;
+	ColItems?: CT_colItems;
+	PageFields?: CT_PageFields;
+	DataFields?: CT_DataFields;
+	Formats?: CT_Formats;
+	ConditionalFormats?: CT_ConditionalFormats;
+	ChartFormats?: CT_ChartFormats;
+	PivotHierarchies?: CT_PivotHierarchies;
+	PivotTableStyleInfo?: CT_PivotTableStyle;
+	Filters?: CT_PivotFilters;
+	RowHierarchiesUsage?: CT_RowHierarchiesUsage;
+	ColHierarchiesUsage?: CT_ColHierarchiesUsage;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_Location ...
@@ -1260,9 +1260,9 @@ export class CT_PivotField {
 	ShowPropTipAttr: boolean | null;
 	ShowPropAsCaptionAttr: boolean | null;
 	DefaultAttributeDrillStateAttr: boolean | null;
-	Items: CT_Items;
-	AutoSortScope: CT_AutoSortScope;
-	ExtLst: CT_ExtensionList;
+	Items?: CT_Items;
+	AutoSortScope?: CT_AutoSortScope;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_AutoSortScope ...
@@ -1304,7 +1304,7 @@ export class CT_PageField {
 	HierAttr: number | null;
 	NameAttr: string | null;
 	CapAttr: string | null;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_DataFields ...
@@ -1322,7 +1322,7 @@ export class CT_DataField {
 	BaseFieldAttr: number | null;
 	BaseItemAttr: number | null;
 	NumFmtIdAttr: number | null;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_rowItems ...
@@ -1342,7 +1342,7 @@ export class CT_I {
 	TAttr: string | null;
 	RAttr: number | null;
 	IAttr: number | null;
-	X: Array<CT_X>;
+	X?: Array<CT_X>;
 }
 
 // CT_X ...
@@ -1378,7 +1378,7 @@ export class CT_Format {
 	ActionAttr: string | null;
 	DxfIdAttr: number | null;
 	PivotArea: CT_PivotArea;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_ConditionalFormats ...
@@ -1393,13 +1393,13 @@ export class CT_ConditionalFormat {
 	TypeAttr: string | null;
 	PriorityAttr: number;
 	PivotAreas: CT_PivotAreas;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_PivotAreas ...
 export class CT_PivotAreas {
 	CountAttr: number | null;
-	PivotArea: Array<CT_PivotArea>;
+	PivotArea?: Array<CT_PivotArea>;
 }
 
 // ST_Scope ...
@@ -1450,9 +1450,9 @@ export class CT_PivotHierarchy {
 	DragOffAttr: boolean | null;
 	IncludeNewItemsInFilterAttr: boolean | null;
 	CaptionAttr: string | null;
-	Mps: CT_MemberProperties;
-	Members: Array<CT_Members>;
-	ExtLst: CT_ExtensionList;
+	Mps?: CT_MemberProperties;
+	Members?: Array<CT_Members>;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_RowHierarchiesUsage ...
@@ -1506,7 +1506,7 @@ export class CT_Member {
 // CT_Dimensions ...
 export class CT_Dimensions {
 	CountAttr: number | null;
-	Dimension: Array<CT_PivotDimension>;
+	Dimension?: Array<CT_PivotDimension>;
 }
 
 // CT_PivotDimension ...
@@ -1520,13 +1520,13 @@ export class CT_PivotDimension {
 // CT_MeasureGroups ...
 export class CT_MeasureGroups {
 	CountAttr: number | null;
-	MeasureGroup: Array<CT_MeasureGroup>;
+	MeasureGroup?: Array<CT_MeasureGroup>;
 }
 
 // CT_MeasureDimensionMaps ...
 export class CT_MeasureDimensionMaps {
 	CountAttr: number | null;
-	Map: Array<CT_MeasureDimensionMap>;
+	Map?: Array<CT_MeasureDimensionMap>;
 }
 
 // CT_MeasureGroup ...
@@ -1554,7 +1554,7 @@ export class CT_PivotTableStyle {
 // CT_PivotFilters ...
 export class CT_PivotFilters {
 	CountAttr: number | null;
-	Filter: Array<CT_PivotFilter>;
+	Filter?: Array<CT_PivotFilter>;
 }
 
 // CT_PivotFilter ...
@@ -1571,7 +1571,7 @@ export class CT_PivotFilter {
 	StringValue1Attr: string | null;
 	StringValue2Attr: string | null;
 	AutoFilter: CT_AutoFilter;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // ST_ShowDataAs ...
@@ -1705,8 +1705,8 @@ export class CT_PivotArea {
 	CollapsedLevelsAreSubtotalsAttr: boolean | null;
 	AxisAttr: string | null;
 	FieldPositionAttr: number | null;
-	References: CT_PivotAreaReferences;
-	ExtLst: CT_ExtensionList;
+	References?: CT_PivotAreaReferences;
+	ExtLst?: CT_ExtensionList;
 }
 
 // ST_PivotAreaType ...
@@ -1745,8 +1745,8 @@ export class CT_PivotAreaReference {
 	StdDevPSubtotalAttr: boolean | null;
 	VarSubtotalAttr: boolean | null;
 	VarPSubtotalAttr: boolean | null;
-	X: Array<CT_Index>;
-	ExtLst: CT_ExtensionList;
+	X?: Array<CT_Index>;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_Index ...
@@ -1783,8 +1783,8 @@ export class CT_QueryTable {
 	AdjustColumnWidthAttr: boolean | null;
 	IntermediateAttr: boolean | null;
 	ConnectionIdAttr: number;
-	QueryTableRefresh: CT_QueryTableRefresh;
-	ExtLst: CT_ExtensionList;
+	QueryTableRefresh?: CT_QueryTableRefresh;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_QueryTableRefresh ...
@@ -1797,9 +1797,9 @@ export class CT_QueryTableRefresh {
 	UnboundColumnsLeftAttr: number | null;
 	UnboundColumnsRightAttr: number | null;
 	QueryTableFields: CT_QueryTableFields;
-	QueryTableDeletedFields: CT_QueryTableDeletedFields;
-	SortState: CT_SortState;
-	ExtLst: CT_ExtensionList;
+	QueryTableDeletedFields?: CT_QueryTableDeletedFields;
+	SortState?: CT_SortState;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_QueryTableDeletedFields ...
@@ -1816,7 +1816,7 @@ export class CT_DeletedField {
 // CT_QueryTableFields ...
 export class CT_QueryTableFields {
 	CountAttr: number | null;
-	QueryTableField: Array<CT_QueryTableField>;
+	QueryTableField?: Array<CT_QueryTableField>;
 }
 
 // CT_QueryTableField ...
@@ -1828,7 +1828,7 @@ export class CT_QueryTableField {
 	FillFormulasAttr: boolean | null;
 	ClippedAttr: boolean | null;
 	TableColumnIdAttr: number | null;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // ST_GrowShrinkType ...
@@ -1845,8 +1845,8 @@ export type Sst = CT_Sst;
 export class CT_Sst {
 	CountAttr: number | null;
 	UniqueCountAttr: number | null;
-	Si: Array<CT_Rst>;
-	ExtLst: CT_ExtensionList;
+	Si?: Array<CT_Rst>;
+	ExtLst?: CT_ExtensionList;
 }
 
 // ST_PhoneticType ...
@@ -1874,35 +1874,35 @@ export class CT_PhoneticRun {
 
 // CT_RElt ...
 export class CT_RElt {
-	RPr: CT_RPrElt;
+	RPr?: CT_RPrElt;
 	T: string;
 }
 
 // CT_RPrElt ...
 export class CT_RPrElt {
-	RFont: Array<CT_FontName>;
-	Charset: Array<CT_IntProperty>;
-	Family: Array<CT_IntProperty>;
-	B: Array<CT_BooleanProperty>;
-	I: Array<CT_BooleanProperty>;
-	Strike: Array<CT_BooleanProperty>;
-	Outline: Array<CT_BooleanProperty>;
-	Shadow: Array<CT_BooleanProperty>;
-	Condense: Array<CT_BooleanProperty>;
-	Extend: Array<CT_BooleanProperty>;
-	Color: Array<CT_Color>;
-	Sz: Array<CT_FontSize>;
-	U: Array<CT_UnderlineProperty>;
-	VertAlign: Array<CT_VerticalAlignFontProperty>;
-	Scheme: Array<CT_FontScheme>;
+	RFont?: Array<CT_FontName>;
+	Charset?: Array<CT_IntProperty>;
+	Family?: Array<CT_IntProperty>;
+	B?: Array<CT_BooleanProperty>;
+	I?: Array<CT_BooleanProperty>;
+	Strike?: Array<CT_BooleanProperty>;
+	Outline?: Array<CT_BooleanProperty>;
+	Shadow?: Array<CT_BooleanProperty>;
+	Condense?: Array<CT_BooleanProperty>;
+	Extend?: Array<CT_BooleanProperty>;
+	Color?: Array<CT_Color>;
+	Sz?: Array<CT_FontSize>;
+	U?: Array<CT_UnderlineProperty>;
+	VertAlign?: Array<CT_VerticalAlignFontProperty>;
+	Scheme?: Array<CT_FontScheme>;
 }
 
 // CT_Rst ...
 export class CT_Rst {
-	T: string;
-	R: Array<CT_RElt>;
-	RPh: Array<CT_PhoneticRun>;
-	PhoneticPr: CT_PhoneticPr;
+	T?: string;
+	R?: Array<CT_RElt>;
+	RPh?: Array<CT_PhoneticRun>;
+	PhoneticPr?: CT_PhoneticPr;
 }
 
 // CT_PhoneticPr ...
@@ -1937,18 +1937,18 @@ export class CT_RevisionHeaders {
 
 // CT_Revisions ...
 export class CT_Revisions {
-	Rrc: Array<CT_RevisionRowColumn>;
-	Rm: Array<CT_RevisionMove>;
-	Rcv: Array<CT_RevisionCustomView>;
-	Rsnm: Array<CT_RevisionSheetRename>;
-	Ris: Array<CT_RevisionInsertSheet>;
-	Rcc: Array<CT_RevisionCellChange>;
-	Rfmt: Array<CT_RevisionFormatting>;
-	Raf: Array<CT_RevisionAutoFormatting>;
-	Rdn: Array<CT_RevisionDefinedName>;
-	Rcmt: Array<CT_RevisionComment>;
-	Rqt: Array<CT_RevisionQueryTableField>;
-	Rcft: Array<CT_RevisionConflict>;
+	Rrc?: Array<CT_RevisionRowColumn>;
+	Rm?: Array<CT_RevisionMove>;
+	Rcv?: Array<CT_RevisionCustomView>;
+	Rsnm?: Array<CT_RevisionSheetRename>;
+	Ris?: Array<CT_RevisionInsertSheet>;
+	Rcc?: Array<CT_RevisionCellChange>;
+	Rfmt?: Array<CT_RevisionFormatting>;
+	Raf?: Array<CT_RevisionAutoFormatting>;
+	Rdn?: Array<CT_RevisionDefinedName>;
+	Rcmt?: Array<CT_RevisionComment>;
+	Rqt?: Array<CT_RevisionQueryTableField>;
+	Rcft?: Array<CT_RevisionConflict>;
 }
 
 // AG_RevData ...
@@ -1968,8 +1968,8 @@ export class CT_RevisionHeader {
 	MinRIdAttr: number | null;
 	MaxRIdAttr: number | null;
 	SheetIdMap: CT_SheetIdMap;
-	ReviewedList: CT_ReviewedRevisions;
-	ExtLst: CT_ExtensionList;
+	ReviewedList?: CT_ReviewedRevisions;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_SheetIdMap ...
@@ -2017,9 +2017,9 @@ export class CT_RevisionRowColumn {
 	RefAttr: string;
 	ActionAttr: string;
 	EdgeAttr: boolean | null;
-	Undo: Array<CT_UndoInfo>;
-	Rcc: Array<CT_RevisionCellChange>;
-	Rfmt: Array<CT_RevisionFormatting>;
+	Undo?: Array<CT_UndoInfo>;
+	Rcc?: Array<CT_RevisionCellChange>;
+	Rfmt?: Array<CT_RevisionFormatting>;
 }
 
 // CT_RevisionMove ...
@@ -2029,9 +2029,9 @@ export class CT_RevisionMove {
 	SourceAttr: string;
 	DestinationAttr: string;
 	SourceSheetIdAttr: number | null;
-	Undo: Array<CT_UndoInfo>;
-	Rcc: Array<CT_RevisionCellChange>;
-	Rfmt: Array<CT_RevisionFormatting>;
+	Undo?: Array<CT_UndoInfo>;
+	Rcc?: Array<CT_RevisionCellChange>;
+	Rfmt?: Array<CT_RevisionFormatting>;
 }
 
 // CT_RevisionCustomView ...
@@ -2046,7 +2046,7 @@ export class CT_RevisionSheetRename {
 	SheetIdAttr: number;
 	OldNameAttr: string;
 	NewNameAttr: string;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_RevisionInsertSheet ...
@@ -2071,11 +2071,11 @@ export class CT_RevisionCellChange {
 	PhAttr: boolean | null;
 	OldPhAttr: boolean | null;
 	EndOfListFormulaUpdateAttr: boolean | null;
-	Oc: CT_Cell;
+	Oc?: CT_Cell;
 	Nc: CT_Cell;
-	Odxf: CT_Dxf;
-	Ndxf: CT_Dxf;
-	ExtLst: CT_ExtensionList;
+	Odxf?: CT_Dxf;
+	Ndxf?: CT_Dxf;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_RevisionFormatting ...
@@ -2086,8 +2086,8 @@ export class CT_RevisionFormatting {
 	SqrefAttr: ST_Sqref;
 	StartAttr: number | null;
 	LengthAttr: number | null;
-	Dxf: CT_Dxf;
-	ExtLst: CT_ExtensionList;
+	Dxf?: CT_Dxf;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_RevisionAutoFormatting ...
@@ -2136,9 +2136,9 @@ export class CT_RevisionDefinedName {
 	OldStatusBarAttr: string | null;
 	CommentAttr: string | null;
 	OldCommentAttr: string | null;
-	Formula: string;
-	OldFormula: string;
-	ExtLst: CT_ExtensionList;
+	Formula?: string;
+	OldFormula?: string;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_RevisionConflict ...
@@ -2183,7 +2183,7 @@ export type Users = CT_Users;
 // CT_Users ...
 export class CT_Users {
 	CountAttr: number | null;
-	UserInfo: Array<CT_SharedUser>;
+	UserInfo?: Array<CT_SharedUser>;
 }
 
 // CT_SharedUser ...
@@ -2192,7 +2192,7 @@ export class CT_SharedUser {
 	NameAttr: string;
 	IdAttr: number;
 	DateTimeAttr: string;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // Worksheet ...
@@ -2206,95 +2206,95 @@ export type Dialogsheet = CT_Dialogsheet;
 
 // CT_Macrosheet ...
 export class CT_Macrosheet {
-	SheetPr: CT_SheetPr;
-	Dimension: CT_SheetDimension;
-	SheetViews: CT_SheetViews;
-	SheetFormatPr: CT_SheetFormatPr;
-	Cols: Array<CT_Cols>;
+	SheetPr?: CT_SheetPr;
+	Dimension?: CT_SheetDimension;
+	SheetViews?: CT_SheetViews;
+	SheetFormatPr?: CT_SheetFormatPr;
+	Cols?: Array<CT_Cols>;
 	SheetData: CT_SheetData;
-	SheetProtection: CT_SheetProtection;
-	AutoFilter: CT_AutoFilter;
-	SortState: CT_SortState;
-	DataConsolidate: CT_DataConsolidate;
-	CustomSheetViews: CT_CustomSheetViews;
-	PhoneticPr: CT_PhoneticPr;
-	ConditionalFormatting: Array<CT_ConditionalFormatting>;
-	PrintOptions: CT_PrintOptions;
-	PageMargins: CT_PageMargins;
-	PageSetup: CT_PageSetup;
-	HeaderFooter: CT_HeaderFooter;
-	RowBreaks: CT_PageBreak;
-	ColBreaks: CT_PageBreak;
-	CustomProperties: CT_CustomProperties;
-	Drawing: CT_Drawing;
-	DrawingHF: CT_DrawingHF;
-	Picture: CT_SheetBackgroundPicture;
-	OleObjects: CT_OleObjects;
-	ExtLst: CT_ExtensionList;
+	SheetProtection?: CT_SheetProtection;
+	AutoFilter?: CT_AutoFilter;
+	SortState?: CT_SortState;
+	DataConsolidate?: CT_DataConsolidate;
+	CustomSheetViews?: CT_CustomSheetViews;
+	PhoneticPr?: CT_PhoneticPr;
+	ConditionalFormatting?: Array<CT_ConditionalFormatting>;
+	PrintOptions?: CT_PrintOptions;
+	PageMargins?: CT_PageMargins;
+	PageSetup?: CT_PageSetup;
+	HeaderFooter?: CT_HeaderFooter;
+	RowBreaks?: CT_PageBreak;
+	ColBreaks?: CT_PageBreak;
+	CustomProperties?: CT_CustomProperties;
+	Drawing?: CT_Drawing;
+	DrawingHF?: CT_DrawingHF;
+	Picture?: CT_SheetBackgroundPicture;
+	OleObjects?: CT_OleObjects;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_Dialogsheet ...
 export class CT_Dialogsheet {
-	SheetPr: CT_SheetPr;
-	SheetViews: CT_SheetViews;
-	SheetFormatPr: CT_SheetFormatPr;
-	SheetProtection: CT_SheetProtection;
-	CustomSheetViews: CT_CustomSheetViews;
-	PrintOptions: CT_PrintOptions;
-	PageMargins: CT_PageMargins;
-	PageSetup: CT_PageSetup;
-	HeaderFooter: CT_HeaderFooter;
-	Drawing: CT_Drawing;
-	DrawingHF: CT_DrawingHF;
-	OleObjects: CT_OleObjects;
-	Controls: CT_Controls;
-	ExtLst: CT_ExtensionList;
+	SheetPr?: CT_SheetPr;
+	SheetViews?: CT_SheetViews;
+	SheetFormatPr?: CT_SheetFormatPr;
+	SheetProtection?: CT_SheetProtection;
+	CustomSheetViews?: CT_CustomSheetViews;
+	PrintOptions?: CT_PrintOptions;
+	PageMargins?: CT_PageMargins;
+	PageSetup?: CT_PageSetup;
+	HeaderFooter?: CT_HeaderFooter;
+	Drawing?: CT_Drawing;
+	DrawingHF?: CT_DrawingHF;
+	OleObjects?: CT_OleObjects;
+	Controls?: CT_Controls;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_Worksheet ...
 export class CT_Worksheet {
-	SheetPr: CT_SheetPr;
-	Dimension: CT_SheetDimension;
-	SheetViews: CT_SheetViews;
-	SheetFormatPr: CT_SheetFormatPr;
-	Cols: Array<CT_Cols>;
+	SheetPr?: CT_SheetPr;
+	Dimension?: CT_SheetDimension;
+	SheetViews?: CT_SheetViews;
+	SheetFormatPr?: CT_SheetFormatPr;
+	Cols?: Array<CT_Cols>;
 	SheetData: CT_SheetData;
-	SheetCalcPr: CT_SheetCalcPr;
-	SheetProtection: CT_SheetProtection;
-	ProtectedRanges: CT_ProtectedRanges;
-	Scenarios: CT_Scenarios;
-	AutoFilter: CT_AutoFilter;
-	SortState: CT_SortState;
-	DataConsolidate: CT_DataConsolidate;
-	CustomSheetViews: CT_CustomSheetViews;
-	MergeCells: CT_MergeCells;
-	PhoneticPr: CT_PhoneticPr;
-	ConditionalFormatting: Array<CT_ConditionalFormatting>;
-	DataValidations: CT_DataValidations;
-	Hyperlinks: CT_Hyperlinks;
-	PrintOptions: CT_PrintOptions;
-	PageMargins: CT_PageMargins;
-	PageSetup: CT_PageSetup;
-	HeaderFooter: CT_HeaderFooter;
-	RowBreaks: CT_PageBreak;
-	ColBreaks: CT_PageBreak;
-	CustomProperties: CT_CustomProperties;
-	CellWatches: CT_CellWatches;
-	IgnoredErrors: CT_IgnoredErrors;
-	SmartTags: CT_SmartTags;
-	Drawing: CT_Drawing;
-	DrawingHF: CT_DrawingHF;
-	Picture: CT_SheetBackgroundPicture;
-	OleObjects: CT_OleObjects;
-	Controls: CT_Controls;
-	WebPublishItems: CT_WebPublishItems;
-	TableParts: CT_TableParts;
-	ExtLst: CT_ExtensionList;
+	SheetCalcPr?: CT_SheetCalcPr;
+	SheetProtection?: CT_SheetProtection;
+	ProtectedRanges?: CT_ProtectedRanges;
+	Scenarios?: CT_Scenarios;
+	AutoFilter?: CT_AutoFilter;
+	SortState?: CT_SortState;
+	DataConsolidate?: CT_DataConsolidate;
+	CustomSheetViews?: CT_CustomSheetViews;
+	MergeCells?: CT_MergeCells;
+	PhoneticPr?: CT_PhoneticPr;
+	ConditionalFormatting?: Array<CT_ConditionalFormatting>;
+	DataValidations?: CT_DataValidations;
+	Hyperlinks?: CT_Hyperlinks;
+	PrintOptions?: CT_PrintOptions;
+	PageMargins?: CT_PageMargins;
+	PageSetup?: CT_PageSetup;
+	HeaderFooter?: CT_HeaderFooter;
+	RowBreaks?: CT_PageBreak;
+	ColBreaks?: CT_PageBreak;
+	CustomProperties?: CT_CustomProperties;
+	CellWatches?: CT_CellWatches;
+	IgnoredErrors?: CT_IgnoredErrors;
+	SmartTags?: CT_SmartTags;
+	Drawing?: CT_Drawing;
+	DrawingHF?: CT_DrawingHF;
+	Picture?: CT_SheetBackgroundPicture;
+	OleObjects?: CT_OleObjects;
+	Controls?: CT_Controls;
+	WebPublishItems?: CT_WebPublishItems;
+	TableParts?: CT_TableParts;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_SheetData ...
 export class CT_SheetData {
-	Row: Array<CT_Row>;
+	Row?: Array<CT_Row>;
 }
 
 // CT_SheetCalcPr ...
@@ -2354,8 +2354,8 @@ export class CT_Row {
 	ThickTopAttr: boolean | null;
 	ThickBotAttr: boolean | null;
 	PhAttr: boolean | null;
-	C: Array<CT_Cell>;
-	ExtLst: CT_ExtensionList;
+	C?: Array<CT_Cell>;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_Cell ...
@@ -2366,10 +2366,10 @@ export class CT_Cell {
 	CmAttr: number | null;
 	VmAttr: number | null;
 	PhAttr: boolean | null;
-	F: CT_CellFormula;
-	V: string;
-	Is: CT_Rst;
-	ExtLst: CT_ExtensionList;
+	F?: CT_CellFormula;
+	V?: string;
+	Is?: CT_Rst;
+	ExtLst?: CT_ExtensionList;
 }
 
 // ST_CellType ...
@@ -2402,9 +2402,9 @@ export class CT_SheetPr {
 	CodeNameAttr: string | null;
 	FilterModeAttr: boolean | null;
 	EnableFormatConditionsCalculationAttr: boolean | null;
-	TabColor: CT_Color;
-	OutlinePr: CT_OutlinePr;
-	PageSetUpPr: CT_PageSetUpPr;
+	TabColor?: CT_Color;
+	OutlinePr?: CT_OutlinePr;
+	PageSetUpPr?: CT_PageSetUpPr;
 }
 
 // CT_SheetDimension ...
@@ -2415,7 +2415,7 @@ export class CT_SheetDimension {
 // CT_SheetViews ...
 export class CT_SheetViews {
 	SheetView: Array<CT_SheetView>;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_SheetView ...
@@ -2439,10 +2439,10 @@ export class CT_SheetView {
 	ZoomScaleSheetLayoutViewAttr: number | null;
 	ZoomScalePageLayoutViewAttr: number | null;
 	WorkbookViewIdAttr: number;
-	Pane: CT_Pane;
-	Selection: Array<CT_Selection>;
-	PivotSelection: Array<CT_PivotSelection>;
-	ExtLst: CT_ExtensionList;
+	Pane?: CT_Pane;
+	Selection?: Array<CT_Selection>;
+	PivotSelection?: Array<CT_PivotSelection>;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_Pane ...
@@ -2496,7 +2496,7 @@ export enum ST_Pane {
 export class CT_PageBreak {
 	CountAttr: number | null;
 	ManualBreakCountAttr: number | null;
-	Brk: Array<CT_Break>;
+	Brk?: Array<CT_Break>;
 }
 
 // CT_Break ...
@@ -2535,7 +2535,7 @@ export class CT_DataConsolidate {
 	StartLabelsAttr: boolean | null;
 	TopLabelsAttr: boolean | null;
 	LinkAttr: boolean | null;
-	DataRefs: CT_DataRefs;
+	DataRefs?: CT_DataRefs;
 }
 
 // ST_DataConsolidateFunction ...
@@ -2556,7 +2556,7 @@ export enum ST_DataConsolidateFunction {
 // CT_DataRefs ...
 export class CT_DataRefs {
 	CountAttr: number | null;
-	DataRef: Array<CT_DataRef>;
+	DataRef?: Array<CT_DataRef>;
 }
 
 // CT_DataRef ...
@@ -2594,7 +2594,7 @@ export class CT_CellSmartTag {
 	TypeAttr: number;
 	DeletedAttr: boolean | null;
 	XmlBasedAttr: boolean | null;
-	CellSmartTagPr: Array<CT_CellSmartTagPr>;
+	CellSmartTagPr?: Array<CT_CellSmartTagPr>;
 }
 
 // CT_CellSmartTagPr ...
@@ -2658,16 +2658,16 @@ export class CT_CustomSheetView {
 	ViewAttr: string | null;
 	ShowRulerAttr: boolean | null;
 	TopLeftCellAttr: string | null;
-	Pane: CT_Pane;
-	Selection: CT_Selection;
-	RowBreaks: CT_PageBreak;
-	ColBreaks: CT_PageBreak;
-	PageMargins: CT_PageMargins;
-	PrintOptions: CT_PrintOptions;
-	PageSetup: CT_PageSetup;
-	HeaderFooter: CT_HeaderFooter;
-	AutoFilter: CT_AutoFilter;
-	ExtLst: CT_ExtensionList;
+	Pane?: CT_Pane;
+	Selection?: CT_Selection;
+	RowBreaks?: CT_PageBreak;
+	ColBreaks?: CT_PageBreak;
+	PageMargins?: CT_PageMargins;
+	PrintOptions?: CT_PrintOptions;
+	PageSetup?: CT_PageSetup;
+	HeaderFooter?: CT_HeaderFooter;
+	AutoFilter?: CT_AutoFilter;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_DataValidations ...
@@ -2694,8 +2694,8 @@ export class CT_DataValidation {
 	PromptTitleAttr: string | null;
 	PromptAttr: string | null;
 	SqrefAttr: ST_Sqref;
-	Formula1: string;
-	Formula2: string;
+	Formula1?: string;
+	Formula2?: string;
 }
 
 // ST_DataValidationType ...
@@ -2811,7 +2811,7 @@ export class CT_ConditionalFormatting {
 	PivotAttr: boolean | null;
 	SqrefAttr: ST_Sqref | null;
 	CfRule: Array<CT_CfRule>;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_CfRule ...
@@ -2829,11 +2829,11 @@ export class CT_CfRule {
 	RankAttr: number | null;
 	StdDevAttr: number | null;
 	EqualAverageAttr: boolean | null;
-	Formula: string;
-	ColorScale: CT_ColorScale;
-	DataBar: CT_DataBar;
-	IconSet: CT_IconSet;
-	ExtLst: CT_ExtensionList;
+	Formula?: string;
+	ColorScale?: CT_ColorScale;
+	DataBar?: CT_DataBar;
+	IconSet?: CT_IconSet;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_Hyperlinks ...
@@ -2896,7 +2896,7 @@ export class CT_Cfvo {
 	TypeAttr: string;
 	ValAttr: string | null;
 	GteAttr: boolean | null;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_PageMargins ...
@@ -2967,12 +2967,12 @@ export class CT_HeaderFooter {
 	DifferentFirstAttr: boolean | null;
 	ScaleWithDocAttr: boolean | null;
 	AlignWithMarginsAttr: boolean | null;
-	OddHeader: string;
-	OddFooter: string;
-	EvenHeader: string;
-	EvenFooter: string;
-	FirstHeader: string;
-	FirstFooter: string;
+	OddHeader?: string;
+	OddFooter?: string;
+	EvenHeader?: string;
+	EvenFooter?: string;
+	FirstHeader?: string;
+	FirstFooter?: string;
 }
 
 // ST_PrintError ...
@@ -3028,7 +3028,7 @@ export class CT_ProtectedRange {
 	HashValueAttr: Uint8Array | null;
 	SaltValueAttr: Uint8Array | null;
 	SpinCountAttr: number | null;
-	SecurityDescriptor: string;
+	SecurityDescriptor?: string;
 }
 
 // CT_Scenario ...
@@ -3063,31 +3063,31 @@ export class CT_CellWatch {
 
 // CT_Chartsheet ...
 export class CT_Chartsheet {
-	SheetPr: CT_ChartsheetPr;
+	SheetPr?: CT_ChartsheetPr;
 	SheetViews: CT_ChartsheetViews;
-	SheetProtection: CT_ChartsheetProtection;
-	CustomSheetViews: CT_CustomChartsheetViews;
-	PageMargins: CT_PageMargins;
-	PageSetup: CT_CsPageSetup;
-	HeaderFooter: CT_HeaderFooter;
+	SheetProtection?: CT_ChartsheetProtection;
+	CustomSheetViews?: CT_CustomChartsheetViews;
+	PageMargins?: CT_PageMargins;
+	PageSetup?: CT_CsPageSetup;
+	HeaderFooter?: CT_HeaderFooter;
 	Drawing: CT_Drawing;
-	DrawingHF: CT_DrawingHF;
-	Picture: CT_SheetBackgroundPicture;
-	WebPublishItems: CT_WebPublishItems;
-	ExtLst: CT_ExtensionList;
+	DrawingHF?: CT_DrawingHF;
+	Picture?: CT_SheetBackgroundPicture;
+	WebPublishItems?: CT_WebPublishItems;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_ChartsheetPr ...
 export class CT_ChartsheetPr {
 	PublishedAttr: boolean | null;
 	CodeNameAttr: string | null;
-	TabColor: CT_Color;
+	TabColor?: CT_Color;
 }
 
 // CT_ChartsheetViews ...
 export class CT_ChartsheetViews {
 	SheetView: Array<CT_ChartsheetView>;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_ChartsheetView ...
@@ -3096,7 +3096,7 @@ export class CT_ChartsheetView {
 	ZoomScaleAttr: number | null;
 	WorkbookViewIdAttr: number;
 	ZoomToFitAttr: boolean | null;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_ChartsheetProtection ...
@@ -3128,7 +3128,7 @@ export class CT_CsPageSetup {
 
 // CT_CustomChartsheetViews ...
 export class CT_CustomChartsheetViews {
-	CustomSheetView: Array<CT_CustomChartsheetView>;
+	CustomSheetView?: Array<CT_CustomChartsheetView>;
 }
 
 // CT_CustomChartsheetView ...
@@ -3137,9 +3137,9 @@ export class CT_CustomChartsheetView {
 	ScaleAttr: number | null;
 	StateAttr: string | null;
 	ZoomToFitAttr: boolean | null;
-	PageMargins: CT_PageMargins;
-	PageSetup: CT_CsPageSetup;
-	HeaderFooter: CT_HeaderFooter;
+	PageMargins?: CT_PageMargins;
+	PageSetup?: CT_CsPageSetup;
+	HeaderFooter?: CT_HeaderFooter;
 }
 
 // CT_CustomProperties ...
@@ -3167,7 +3167,7 @@ export class CT_OleObject {
 	AutoLoadAttr: boolean | null;
 	ShapeIdAttr: number;
 	RIdAttr: string | null;
-	ObjectPr: CT_ObjectPr;
+	ObjectPr?: CT_ObjectPr;
 }
 
 // CT_ObjectPr ...
@@ -3227,7 +3227,7 @@ export class CT_Control {
 	ShapeIdAttr: number;
 	RIdAttr: string;
 	NameAttr: string | null;
-	ControlPr: CT_ControlPr;
+	ControlPr?: CT_ControlPr;
 }
 
 // CT_ControlPr ...
@@ -3265,7 +3265,7 @@ export enum ST_WebSourceType {
 // CT_IgnoredErrors ...
 export class CT_IgnoredErrors {
 	IgnoredError: Array<CT_IgnoredError>;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_IgnoredError ...
@@ -3292,7 +3292,7 @@ export enum ST_PaneState {
 // CT_TableParts ...
 export class CT_TableParts {
 	CountAttr: number | null;
-	TablePart: Array<CT_TablePart>;
+	TablePart?: Array<CT_TablePart>;
 }
 
 // CT_TablePart ...
@@ -3305,13 +3305,13 @@ export type Metadata = CT_Metadata;
 
 // CT_Metadata ...
 export class CT_Metadata {
-	MetadataTypes: CT_MetadataTypes;
-	MetadataStrings: CT_MetadataStrings;
-	MdxMetadata: CT_MdxMetadata;
-	FutureMetadata: Array<CT_FutureMetadata>;
-	CellMetadata: CT_MetadataBlocks;
-	ValueMetadata: CT_MetadataBlocks;
-	ExtLst: CT_ExtensionList;
+	MetadataTypes?: CT_MetadataTypes;
+	MetadataStrings?: CT_MetadataStrings;
+	MdxMetadata?: CT_MdxMetadata;
+	FutureMetadata?: Array<CT_FutureMetadata>;
+	CellMetadata?: CT_MetadataBlocks;
+	ValueMetadata?: CT_MetadataBlocks;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_MetadataTypes ...
@@ -3373,13 +3373,13 @@ export class CT_MetadataRecord {
 export class CT_FutureMetadata {
 	NameAttr: string;
 	CountAttr: number | null;
-	Bk: Array<CT_FutureMetadataBlock>;
-	ExtLst: CT_ExtensionList;
+	Bk?: Array<CT_FutureMetadataBlock>;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_FutureMetadataBlock ...
 export class CT_FutureMetadataBlock {
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_MdxMetadata ...
@@ -3421,7 +3421,7 @@ export class CT_MdxTuple {
 	UAttr: boolean | null;
 	StAttr: boolean | null;
 	BAttr: boolean | null;
-	N: Array<CT_MetadataStringIndex>;
+	N?: Array<CT_MetadataStringIndex>;
 }
 
 // CT_MdxSet ...
@@ -3429,7 +3429,7 @@ export class CT_MdxSet {
 	NsAttr: number;
 	CAttr: number | null;
 	OAttr: string | null;
-	N: Array<CT_MetadataStringIndex>;
+	N?: Array<CT_MetadataStringIndex>;
 }
 
 // ST_MdxSetOrder ...
@@ -3492,7 +3492,7 @@ export class CT_SingleXmlCell {
 	RAttr: string;
 	ConnectionIdAttr: number;
 	XmlCellPr: CT_XmlCellPr;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_XmlCellPr ...
@@ -3500,7 +3500,7 @@ export class CT_XmlCellPr {
 	IdAttr: number;
 	UniqueNameAttr: string | null;
 	XmlPr: CT_XmlPr;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_XmlPr ...
@@ -3508,7 +3508,7 @@ export class CT_XmlPr {
 	MapIdAttr: number;
 	XpathAttr: string;
 	XmlDataTypeAttr: string;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // StyleSheet ...
@@ -3516,17 +3516,17 @@ export type StyleSheet = CT_Stylesheet;
 
 // CT_Stylesheet ...
 export class CT_Stylesheet {
-	NumFmts: CT_NumFmts;
-	Fonts: CT_Fonts;
-	Fills: CT_Fills;
-	Borders: CT_Borders;
-	CellStyleXfs: CT_CellStyleXfs;
-	CellXfs: CT_CellXfs;
-	CellStyles: CT_CellStyles;
-	Dxfs: CT_Dxfs;
-	TableStyles: CT_TableStyles;
-	Colors: CT_Colors;
-	ExtLst: CT_ExtensionList;
+	NumFmts?: CT_NumFmts;
+	Fonts?: CT_Fonts;
+	Fills?: CT_Fills;
+	Borders?: CT_Borders;
+	CellStyleXfs?: CT_CellStyleXfs;
+	CellXfs?: CT_CellXfs;
+	CellStyles?: CT_CellStyles;
+	Dxfs?: CT_Dxfs;
+	TableStyles?: CT_TableStyles;
+	Colors?: CT_Colors;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_CellAlignment ...
@@ -3568,7 +3568,7 @@ export enum ST_BorderStyle {
 // CT_Borders ...
 export class CT_Borders {
 	CountAttr: number | null;
-	Border: Array<CT_Border>;
+	Border?: Array<CT_Border>;
 }
 
 // CT_Border ...
@@ -3576,19 +3576,19 @@ export class CT_Border {
 	DiagonalUpAttr: boolean | null;
 	DiagonalDownAttr: boolean | null;
 	OutlineAttr: boolean | null;
-	Start: CT_BorderPr;
-	End: CT_BorderPr;
-	Top: CT_BorderPr;
-	Bottom: CT_BorderPr;
-	Diagonal: CT_BorderPr;
-	Vertical: CT_BorderPr;
-	Horizontal: CT_BorderPr;
+	Start?: CT_BorderPr;
+	End?: CT_BorderPr;
+	Top?: CT_BorderPr;
+	Bottom?: CT_BorderPr;
+	Diagonal?: CT_BorderPr;
+	Vertical?: CT_BorderPr;
+	Horizontal?: CT_BorderPr;
 }
 
 // CT_BorderPr ...
 export class CT_BorderPr {
 	StyleAttr: string | null;
-	Color: CT_Color;
+	Color?: CT_Color;
 }
 
 // CT_CellProtection ...
@@ -3600,26 +3600,26 @@ export class CT_CellProtection {
 // CT_Fonts ...
 export class CT_Fonts {
 	CountAttr: number | null;
-	Font: Array<CT_Font>;
+	Font?: Array<CT_Font>;
 }
 
 // CT_Fills ...
 export class CT_Fills {
 	CountAttr: number | null;
-	Fill: Array<CT_Fill>;
+	Fill?: Array<CT_Fill>;
 }
 
 // CT_Fill ...
 export class CT_Fill {
-	PatternFill: CT_PatternFill;
-	GradientFill: CT_GradientFill;
+	PatternFill?: CT_PatternFill;
+	GradientFill?: CT_GradientFill;
 }
 
 // CT_PatternFill ...
 export class CT_PatternFill {
 	PatternTypeAttr: string | null;
-	FgColor: CT_Color;
-	BgColor: CT_Color;
+	FgColor?: CT_Color;
+	BgColor?: CT_Color;
 }
 
 // CT_Color ...
@@ -3662,7 +3662,7 @@ export class CT_GradientFill {
 	RightAttr: number | null;
 	TopAttr: number | null;
 	BottomAttr: number | null;
-	Stop: Array<CT_GradientStop>;
+	Stop?: Array<CT_GradientStop>;
 }
 
 // CT_GradientStop ...
@@ -3701,7 +3701,7 @@ export enum ST_VerticalAlignment {
 // CT_NumFmts ...
 export class CT_NumFmts {
 	CountAttr: number | null;
-	NumFmt: Array<CT_NumFmt>;
+	NumFmt?: Array<CT_NumFmt>;
 }
 
 // CT_NumFmt ...
@@ -3737,9 +3737,9 @@ export class CT_Xf {
 	ApplyBorderAttr: boolean | null;
 	ApplyAlignmentAttr: boolean | null;
 	ApplyProtectionAttr: boolean | null;
-	Alignment: CT_CellAlignment;
-	Protection: CT_CellProtection;
-	ExtLst: CT_ExtensionList;
+	Alignment?: CT_CellAlignment;
+	Protection?: CT_CellProtection;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_CellStyles ...
@@ -3756,24 +3756,24 @@ export class CT_CellStyle {
 	ILevelAttr: number | null;
 	HiddenAttr: boolean | null;
 	CustomBuiltinAttr: boolean | null;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_Dxfs ...
 export class CT_Dxfs {
 	CountAttr: number | null;
-	Dxf: Array<CT_Dxf>;
+	Dxf?: Array<CT_Dxf>;
 }
 
 // CT_Dxf ...
 export class CT_Dxf {
-	Font: CT_Font;
-	NumFmt: CT_NumFmt;
-	Fill: CT_Fill;
-	Alignment: CT_CellAlignment;
-	Border: CT_Border;
-	Protection: CT_CellProtection;
-	ExtLst: CT_ExtensionList;
+	Font?: CT_Font;
+	NumFmt?: CT_NumFmt;
+	Fill?: CT_Fill;
+	Alignment?: CT_CellAlignment;
+	Border?: CT_Border;
+	Protection?: CT_CellProtection;
+	ExtLst?: CT_ExtensionList;
 }
 
 // ST_NumFmtId ...
@@ -3796,8 +3796,8 @@ export type ST_DxfId = number;
 
 // CT_Colors ...
 export class CT_Colors {
-	IndexedColors: CT_IndexedColors;
-	MruColors: CT_MRUColors;
+	IndexedColors?: CT_IndexedColors;
+	MruColors?: CT_MRUColors;
 }
 
 // CT_IndexedColors ...
@@ -3820,7 +3820,7 @@ export class CT_TableStyles {
 	CountAttr: number | null;
 	DefaultTableStyleAttr: string | null;
 	DefaultPivotStyleAttr: string | null;
-	TableStyle: Array<CT_TableStyle>;
+	TableStyle?: Array<CT_TableStyle>;
 }
 
 // CT_TableStyle ...
@@ -3829,7 +3829,7 @@ export class CT_TableStyle {
 	PivotAttr: boolean | null;
 	TableAttr: boolean | null;
 	CountAttr: number | null;
-	TableStyleElement: Array<CT_TableStyleElement>;
+	TableStyleElement?: Array<CT_TableStyleElement>;
 }
 
 // CT_TableStyleElement ...
@@ -3932,21 +3932,21 @@ export type ST_FontFamily = number;
 
 // CT_Font ...
 export class CT_Font {
-	Name: Array<CT_FontName>;
-	Charset: Array<CT_IntProperty>;
-	Family: Array<CT_FontFamily>;
-	B: Array<CT_BooleanProperty>;
-	I: Array<CT_BooleanProperty>;
-	Strike: Array<CT_BooleanProperty>;
-	Outline: Array<CT_BooleanProperty>;
-	Shadow: Array<CT_BooleanProperty>;
-	Condense: Array<CT_BooleanProperty>;
-	Extend: Array<CT_BooleanProperty>;
-	Color: Array<CT_Color>;
-	Sz: Array<CT_FontSize>;
-	U: Array<CT_UnderlineProperty>;
-	VertAlign: Array<CT_VerticalAlignFontProperty>;
-	Scheme: Array<CT_FontScheme>;
+	Name?: Array<CT_FontName>;
+	Charset?: Array<CT_IntProperty>;
+	Family?: Array<CT_FontFamily>;
+	B?: Array<CT_BooleanProperty>;
+	I?: Array<CT_BooleanProperty>;
+	Strike?: Array<CT_BooleanProperty>;
+	Outline?: Array<CT_BooleanProperty>;
+	Shadow?: Array<CT_BooleanProperty>;
+	Condense?: Array<CT_BooleanProperty>;
+	Extend?: Array<CT_BooleanProperty>;
+	Color?: Array<CT_Color>;
+	Sz?: Array<CT_FontSize>;
+	U?: Array<CT_UnderlineProperty>;
+	VertAlign?: Array<CT_VerticalAlignFontProperty>;
+	Scheme?: Array<CT_FontScheme>;
 }
 
 // AG_AutoFormat ...
@@ -3965,18 +3965,18 @@ export type ExternalLink = CT_ExternalLink;
 
 // CT_ExternalLink ...
 export class CT_ExternalLink {
-	ExternalBook: CT_ExternalBook;
-	DdeLink: CT_DdeLink;
-	OleLink: CT_OleLink;
-	ExtLst: CT_ExtensionList;
+	ExternalBook?: CT_ExternalBook;
+	DdeLink?: CT_DdeLink;
+	OleLink?: CT_OleLink;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_ExternalBook ...
 export class CT_ExternalBook {
 	RIdAttr: string;
-	SheetNames: CT_ExternalSheetNames;
-	DefinedNames: CT_ExternalDefinedNames;
-	SheetDataSet: CT_ExternalSheetDataSet;
+	SheetNames?: CT_ExternalSheetNames;
+	DefinedNames?: CT_ExternalDefinedNames;
+	SheetDataSet?: CT_ExternalSheetDataSet;
 }
 
 // CT_ExternalSheetNames ...
@@ -3991,7 +3991,7 @@ export class CT_ExternalSheetName {
 
 // CT_ExternalDefinedNames ...
 export class CT_ExternalDefinedNames {
-	DefinedName: Array<CT_ExternalDefinedName>;
+	DefinedName?: Array<CT_ExternalDefinedName>;
 }
 
 // CT_ExternalDefinedName ...
@@ -4010,13 +4010,13 @@ export class CT_ExternalSheetDataSet {
 export class CT_ExternalSheetData {
 	SheetIdAttr: number;
 	RefreshErrorAttr: boolean | null;
-	Row: Array<CT_ExternalRow>;
+	Row?: Array<CT_ExternalRow>;
 }
 
 // CT_ExternalRow ...
 export class CT_ExternalRow {
 	RAttr: number;
-	Cell: Array<CT_ExternalCell>;
+	Cell?: Array<CT_ExternalCell>;
 }
 
 // CT_ExternalCell ...
@@ -4024,19 +4024,19 @@ export class CT_ExternalCell {
 	RAttr: string | null;
 	TAttr: string | null;
 	VmAttr: number | null;
-	V: string;
+	V?: string;
 }
 
 // CT_DdeLink ...
 export class CT_DdeLink {
 	DdeServiceAttr: string;
 	DdeTopicAttr: string;
-	DdeItems: CT_DdeItems;
+	DdeItems?: CT_DdeItems;
 }
 
 // CT_DdeItems ...
 export class CT_DdeItems {
-	DdeItem: Array<CT_DdeItem>;
+	DdeItem?: Array<CT_DdeItem>;
 }
 
 // CT_DdeItem ...
@@ -4045,7 +4045,7 @@ export class CT_DdeItem {
 	OleAttr: boolean | null;
 	AdviseAttr: boolean | null;
 	PreferPicAttr: boolean | null;
-	Values: CT_DdeValues;
+	Values?: CT_DdeValues;
 }
 
 // CT_DdeValues ...
@@ -4074,12 +4074,12 @@ export enum ST_DdeValueType {
 export class CT_OleLink {
 	RIdAttr: string;
 	ProgIdAttr: string;
-	OleItems: CT_OleItems;
+	OleItems?: CT_OleItems;
 }
 
 // CT_OleItems ...
 export class CT_OleItems {
-	OleItem: Array<CT_OleItem>;
+	OleItem?: Array<CT_OleItem>;
 }
 
 // CT_OleItem ...
@@ -4117,11 +4117,11 @@ export class CT_Table {
 	DataCellStyleAttr: string | null;
 	TotalsRowCellStyleAttr: string | null;
 	ConnectionIdAttr: number | null;
-	AutoFilter: CT_AutoFilter;
-	SortState: CT_SortState;
+	AutoFilter?: CT_AutoFilter;
+	SortState?: CT_SortState;
 	TableColumns: CT_TableColumns;
-	TableStyleInfo: CT_TableStyleInfo;
-	ExtLst: CT_ExtensionList;
+	TableStyleInfo?: CT_TableStyleInfo;
+	ExtLst?: CT_ExtensionList;
 }
 
 // ST_TableType ...
@@ -4160,10 +4160,10 @@ export class CT_TableColumn {
 	HeaderRowCellStyleAttr: string | null;
 	DataCellStyleAttr: string | null;
 	TotalsRowCellStyleAttr: string | null;
-	CalculatedColumnFormula: CT_TableFormula;
-	TotalsRowFormula: CT_TableFormula;
-	XmlColumnPr: CT_XmlColumnPr;
-	ExtLst: CT_ExtensionList;
+	CalculatedColumnFormula?: CT_TableFormula;
+	TotalsRowFormula?: CT_TableFormula;
+	XmlColumnPr?: CT_XmlColumnPr;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_TableFormula ...
@@ -4192,7 +4192,7 @@ export class CT_XmlColumnPr {
 	XpathAttr: string;
 	DenormalizedAttr: boolean | null;
 	XmlDataTypeAttr: string;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // ST_XmlDataType ...
@@ -4204,7 +4204,7 @@ export type VolTypes = CT_VolTypes;
 // CT_VolTypes ...
 export class CT_VolTypes {
 	VolType: Array<CT_VolType>;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_VolType ...
@@ -4223,7 +4223,7 @@ export class CT_VolMain {
 export class CT_VolTopic {
 	TAttr: string | null;
 	V: string;
-	Stp: string;
+	Stp?: string;
 	Tr: Array<CT_VolTopicRef>;
 }
 
@@ -4253,25 +4253,25 @@ export type Workbook = CT_Workbook;
 // CT_Workbook ...
 export class CT_Workbook {
 	ConformanceAttr: string | null;
-	FileVersion: CT_FileVersion;
-	FileSharing: CT_FileSharing;
-	WorkbookPr: CT_WorkbookPr;
-	WorkbookProtection: CT_WorkbookProtection;
-	BookViews: CT_BookViews;
+	FileVersion?: CT_FileVersion;
+	FileSharing?: CT_FileSharing;
+	WorkbookPr?: CT_WorkbookPr;
+	WorkbookProtection?: CT_WorkbookProtection;
+	BookViews?: CT_BookViews;
 	Sheets: CT_Sheets;
-	FunctionGroups: CT_FunctionGroups;
-	ExternalReferences: CT_ExternalReferences;
-	DefinedNames: CT_DefinedNames;
-	CalcPr: CT_CalcPr;
-	OleSize: CT_OleSize;
-	CustomWorkbookViews: CT_CustomWorkbookViews;
-	PivotCaches: CT_PivotCaches;
-	SmartTagPr: CT_SmartTagPr;
-	SmartTagTypes: CT_SmartTagTypes;
-	WebPublishing: CT_WebPublishing;
-	FileRecoveryPr: Array<CT_FileRecoveryPr>;
-	WebPublishObjects: CT_WebPublishObjects;
-	ExtLst: CT_ExtensionList;
+	FunctionGroups?: CT_FunctionGroups;
+	ExternalReferences?: CT_ExternalReferences;
+	DefinedNames?: CT_DefinedNames;
+	CalcPr?: CT_CalcPr;
+	OleSize?: CT_OleSize;
+	CustomWorkbookViews?: CT_CustomWorkbookViews;
+	PivotCaches?: CT_PivotCaches;
+	SmartTagPr?: CT_SmartTagPr;
+	SmartTagTypes?: CT_SmartTagTypes;
+	WebPublishing?: CT_WebPublishing;
+	FileRecoveryPr?: Array<CT_FileRecoveryPr>;
+	WebPublishObjects?: CT_WebPublishObjects;
+	ExtLst?: CT_ExtensionList;
 }
 
 // CT_FileVersion ...
@@ -4303,7 +4303,7 @@ export class CT_BookView {
 	FirstSheetAttr: number | null;
 	ActiveTabAttr: number | null;
 	AutoFilterDateGroupingAttr: boolean | null;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // ST_Visibility ...
@@ -4344,7 +4344,7 @@ export class CT_CustomWorkbookView {
 	ShowStatusbarAttr: boolean | null;
 	ShowCommentsAttr: string | null;
 	ShowObjectsAttr: string | null;
-	ExtLst: CT_ExtensionList;
+	ExtLst?: CT_ExtensionList;
 }
 
 // ST_Comments ...
@@ -4425,7 +4425,7 @@ export enum ST_SmartTagShow {
 
 // CT_SmartTagTypes ...
 export class CT_SmartTagTypes {
-	SmartTagType: Array<CT_SmartTagType>;
+	SmartTagType?: Array<CT_SmartTagType>;
 }
 
 // CT_SmartTagType ...
@@ -4475,7 +4475,7 @@ export enum ST_RefMode {
 
 // CT_DefinedNames ...
 export class CT_DefinedNames {
-	DefinedName: Array<CT_DefinedName>;
+	DefinedName?: Array<CT_DefinedName>;
 }
 
 // CT_DefinedName ...
@@ -4584,7 +4584,7 @@ export enum ST_TargetScreenSize {
 // CT_FunctionGroups ...
 export class CT_FunctionGroups {
 	BuiltInGroupCountAttr: number | null;
-	FunctionGroup: CT_FunctionGroup;
+	FunctionGroup?: Array<CT_FunctionGroup>;
 }
 
 // CT_FunctionGroup ...

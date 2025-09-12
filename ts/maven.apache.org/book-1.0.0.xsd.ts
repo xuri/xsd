@@ -5,33 +5,33 @@ export type Book = BookModel;
 
 // Chapters is Specifies a collection of chapters.
 export class Chapters {
-	Chapter: Array<Chapter>;
+	Chapter?: Array<Chapter>;
 }
 
 // BookModel is Specifies the date of this book.
 export class BookModel {
-	Id: string;
-	Title: string;
-	Author: string;
-	Date: string;
-	Chapters: Chapters;
+	Id?: string;
+	Title?: string;
+	Author?: string;
+	Date?: string;
+	Chapters?: Chapters;
 }
 
 // Sections is Specifies a collection of sections.
 export class Sections {
-	Section: Array<Section>;
+	Section?: Array<Section>;
 }
 
 // Chapter is Specifies the title of this chapter.
 export class Chapter {
-	Id: string;
-	Title: string;
-	Sections: Sections;
+	Id?: string;
+	Title?: string;
+	Sections?: Sections;
 }
 
 // Section is Specifies the file of this section.
 export class Section {
-	Id: string;
-	Title: string;
-	File: string;
+	Id?: string;
+	Title?: string;
+	File?: string;
 }

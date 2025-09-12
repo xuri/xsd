@@ -36,19 +36,19 @@ public class Measurement {
 	protected void DeterminandName;
 	@XmlElement(required = true, name = "ResultType")
 	protected void ResultType;
-	@XmlElement(required = true, name = "ResultValue")
+	@XmlElement(name = "ResultValue")
 	protected Float ResultValue;
-	@XmlElement(required = true, name = "ResultUnits")
+	@XmlElement(name = "ResultUnits")
 	protected void ResultUnits;
-	@XmlElement(required = true, name = "Qualifier")
+	@XmlElement(name = "Qualifier")
 	protected void Qualifier;
-	@XmlElement(required = true, name = "Comment")
+	@XmlElement(name = "Comment")
 	protected void Comment;
 }
 
 // Sample is This element contains the structure of a collection of samples.
 public class Sample {
-	@XmlElement(required = true, name = "Sampler")
+	@XmlElement(name = "Sampler")
 	protected void Sampler;
 	@XmlElement(required = true, name = "SampleType")
 	protected void SampleType;
@@ -64,17 +64,17 @@ public class Sample {
 	protected void Mechanism;
 	@XmlElement(required = true, name = "CustomersLabSampleRef")
 	protected void CustomersLabSampleRef;
-	@XmlElement(required = true, name = "CustomersLabSampleRefSecondary")
+	@XmlElement(name = "CustomersLabSampleRefSecondary")
 	protected List<void> CustomersLabSampleRefSecondary;
-	@XmlElement(required = true, name = "Comment")
+	@XmlElement(name = "Comment")
 	protected void Comment;
 	@XmlElement(required = true, name = "LabName")
 	protected void LabName;
 	@XmlElement(required = true, name = "AnalysisCompleteDateTime")
 	protected String AnalysisCompleteDateTime;
-	@XmlElement(required = true, name = "DepthValueRecorded")
+	@XmlElement(name = "DepthValueRecorded")
 	protected DepthValueRecorded DepthValueRecorded;
-	@XmlElement(required = true, name = "PurgedVolumeRecorded")
+	@XmlElement(name = "PurgedVolumeRecorded")
 	protected PurgedVolumeRecorded PurgedVolumeRecorded;
 	@XmlElement(required = true, name = "Measurement")
 	protected List<Measurement> Measurement;
@@ -88,7 +88,7 @@ public class FileUpload {
 	protected List<Sample> Sample;
 	@XmlElement(required = true, name = "RegulatedCustomerIdentifier")
 	protected void RegulatedCustomerIdentifier;
-	@XmlElement(required = true, name = "CustomerReference")
+	@XmlElement(name = "CustomerReference")
 	protected void CustomerReference;
 }
 

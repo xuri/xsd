@@ -22,9 +22,9 @@ type ArchetypeCatalog struct {
 
 // Archetype is The description of the archetype.
 type Archetype struct {
-	GroupId     string `xml:"groupId,omitempty"`
-	ArtifactId  string `xml:"artifactId,omitempty"`
-	Version     string `xml:"version,omitempty"`
-	Repository  string `xml:"repository,omitempty"`
-	Description string `xml:"description,omitempty"`
+	GroupId     *string `xml:"groupId"`
+	ArtifactId  *string `xml:"artifactId"`
+	Version     *string `xml:"version"`
+	Repository  *string `xml:"repository"`
+	Description *string `xml:"description"`
 }

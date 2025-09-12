@@ -26,8 +26,8 @@ export class CT_Shape {
 	FPublishedAttr: boolean | null;
 	NvSpPr: CT_ShapeNonVisual;
 	SpPr: CT_ShapeProperties;
-	Style: CT_ShapeStyle;
-	TxBody: CT_TextBody;
+	Style?: CT_ShapeStyle;
+	TxBody?: CT_TextBody;
 }
 
 // CT_ConnectorNonVisual ...
@@ -42,7 +42,7 @@ export class CT_Connector {
 	FPublishedAttr: boolean | null;
 	NvCxnSpPr: CT_ConnectorNonVisual;
 	SpPr: CT_ShapeProperties;
-	Style: CT_ShapeStyle;
+	Style?: CT_ShapeStyle;
 }
 
 // CT_PictureNonVisual ...
@@ -58,7 +58,7 @@ export class CT_Picture {
 	NvPicPr: CT_PictureNonVisual;
 	BlipFill: CT_BlipFillProperties;
 	SpPr: CT_ShapeProperties;
-	Style: CT_ShapeStyle;
+	Style?: CT_ShapeStyle;
 }
 
 // CT_GraphicalObjectFrameNonVisual ...

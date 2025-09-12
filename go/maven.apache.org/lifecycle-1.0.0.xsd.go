@@ -22,7 +22,7 @@ type Phases struct {
 
 // Lifecycle is The ID of this lifecycle, for identification in the mojo descriptor.
 type Lifecycle struct {
-	Id     string  `xml:"id,omitempty"`
+	Id     *string `xml:"id"`
 	Phases *Phases `xml:"phases,omitempty"`
 }
 
@@ -39,7 +39,7 @@ type Configuration struct {
 
 // Phase is The ID of this phase, e.g., <code>generate-sources</code>.
 type Phase struct {
-	Id            string         `xml:"id,omitempty"`
+	Id            *string        `xml:"id"`
 	Executions    *Executions    `xml:"executions,omitempty"`
 	Configuration *Configuration `xml:"configuration,omitempty"`
 }

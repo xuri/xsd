@@ -28,88 +28,88 @@ public class Assembly {
 //               <li><b>"tar.bz2</b> - Creates a bzip'd TAR format</li>
 //             </ul>
 public class Formats {
-	@XmlElement(required = true, name = "format")
+	@XmlElement(name = "format")
 	protected List<String> Format;
 }
 
 // ModuleSets is Specify which modules source files to include in the assembly
 public class ModuleSets {
-	@XmlElement(required = true, name = "moduleSet")
+	@XmlElement(name = "moduleSet")
 	protected List<ModuleSet> ModuleSet;
 }
 
 // FileSets is Specify assembly parameters for groups of files.
 public class FileSets {
-	@XmlElement(required = true, name = "fileSet")
+	@XmlElement(name = "fileSet")
 	protected List<FileSet> FileSet;
 }
 
 // Files is Specify assembly parameters for single files.
 public class Files {
-	@XmlElement(required = true, name = "file")
+	@XmlElement(name = "file")
 	protected List<FileItem> File;
 }
 
 // DependencySets is Specify assembly behavior for sets of dependencies.
 public class DependencySets {
-	@XmlElement(required = true, name = "dependencySet")
+	@XmlElement(name = "dependencySet")
 	protected List<DependencySet> DependencySet;
 }
 
 // Repositories is Specify assembly behavior for sets of repositories.
 public class Repositories {
-	@XmlElement(required = true, name = "repository")
+	@XmlElement(name = "repository")
 	protected List<Repository> Repository;
 }
 
 // ComponentDescriptors is File relative to basedir containing Component.
 public class ComponentDescriptors {
-	@XmlElement(required = true, name = "componentDescriptor")
+	@XmlElement(name = "componentDescriptor")
 	protected List<String> ComponentDescriptor;
 }
 
 // Assembly2 is The id of this assembly. This is a symbolic name for a
 //             particular assembly of files from this project.
 public class Assembly2 {
-	@XmlElement(required = true, name = "id")
+	@XmlElement(name = "id")
 	protected String Id;
-	@XmlElement(required = true, name = "formats")
+	@XmlElement(name = "formats")
 	protected Formats Formats;
-	@XmlElement(required = true, name = "includeBaseDirectory")
+	@XmlElement(name = "includeBaseDirectory")
 	protected Boolean IncludeBaseDirectory;
-	@XmlElement(required = true, name = "includeSiteDirectory")
+	@XmlElement(name = "includeSiteDirectory")
 	protected Boolean IncludeSiteDirectory;
-	@XmlElement(required = true, name = "moduleSets")
+	@XmlElement(name = "moduleSets")
 	protected ModuleSets ModuleSets;
-	@XmlElement(required = true, name = "fileSets")
+	@XmlElement(name = "fileSets")
 	protected FileSets FileSets;
-	@XmlElement(required = true, name = "files")
+	@XmlElement(name = "files")
 	protected Files Files;
-	@XmlElement(required = true, name = "dependencySets")
+	@XmlElement(name = "dependencySets")
 	protected DependencySets DependencySets;
-	@XmlElement(required = true, name = "repositories")
+	@XmlElement(name = "repositories")
 	protected Repositories Repositories;
-	@XmlElement(required = true, name = "componentDescriptors")
+	@XmlElement(name = "componentDescriptors")
 	protected ComponentDescriptors ComponentDescriptors;
 }
 
 // GroupVersionAlignments is Align a group to a version or an individual artifact.
 public class GroupVersionAlignments {
-	@XmlElement(required = true, name = "groupVersionAlignment")
+	@XmlElement(name = "groupVersionAlignment")
 	protected List<GroupVersionAlignment> GroupVersionAlignment;
 }
 
 // Includes is When &lt;include&gt; subelements are present, they define
 //             a set of files and directory to include.
 public class Includes {
-	@XmlElement(required = true, name = "include")
+	@XmlElement(name = "include")
 	protected List<String> Include;
 }
 
 // Excludes is When &lt;exclude&gt; subelements are present, they define
 //             a set of files and directory to exclude.
 public class Excludes {
-	@XmlElement(required = true, name = "exclude")
+	@XmlElement(name = "exclude")
 	protected List<String> Exclude;
 }
 
@@ -117,29 +117,29 @@ public class Excludes {
 //             metadata which will allow the repository to be used as a functional remote
 //             repository.
 public class Repository {
-	@XmlElement(required = true, name = "includeMetadata")
+	@XmlElement(name = "includeMetadata")
 	protected Boolean IncludeMetadata;
-	@XmlElement(required = true, name = "groupVersionAlignments")
+	@XmlElement(name = "groupVersionAlignments")
 	protected GroupVersionAlignments GroupVersionAlignments;
-	@XmlElement(required = true, name = "outputDirectory")
+	@XmlElement(name = "outputDirectory")
 	protected String OutputDirectory;
-	@XmlElement(required = true, name = "includes")
+	@XmlElement(name = "includes")
 	protected Includes Includes;
-	@XmlElement(required = true, name = "excludes")
+	@XmlElement(name = "excludes")
 	protected Excludes Excludes;
-	@XmlElement(required = true, name = "fileMode")
+	@XmlElement(name = "fileMode")
 	protected String FileMode;
-	@XmlElement(required = true, name = "directoryMode")
+	@XmlElement(name = "directoryMode")
 	protected String DirectoryMode;
 }
 
 // GroupVersionAlignment is The version you want to align this group to.
 public class GroupVersionAlignment {
-	@XmlElement(required = true, name = "id")
+	@XmlElement(name = "id")
 	protected String Id;
-	@XmlElement(required = true, name = "version")
+	@XmlElement(name = "version")
 	protected String Version;
-	@XmlElement(required = true, name = "excludes")
+	@XmlElement(name = "excludes")
 	protected Excludes Excludes;
 }
 
@@ -147,33 +147,33 @@ public class GroupVersionAlignment {
 //             of the root directory of the assembly. For example,
 //             "log" will put the specified files in the log directory.
 public class DependencySet {
-	@XmlElement(required = true, name = "outputFileNameMapping")
+	@XmlElement(name = "outputFileNameMapping")
 	protected String OutputFileNameMapping;
-	@XmlElement(required = true, name = "unpack")
+	@XmlElement(name = "unpack")
 	protected Boolean Unpack;
-	@XmlElement(required = true, name = "scope")
+	@XmlElement(name = "scope")
 	protected String Scope;
-	@XmlElement(required = true, name = "outputDirectory")
+	@XmlElement(name = "outputDirectory")
 	protected String OutputDirectory;
-	@XmlElement(required = true, name = "includes")
+	@XmlElement(name = "includes")
 	protected Includes Includes;
-	@XmlElement(required = true, name = "excludes")
+	@XmlElement(name = "excludes")
 	protected Excludes Excludes;
-	@XmlElement(required = true, name = "fileMode")
+	@XmlElement(name = "fileMode")
 	protected String FileMode;
-	@XmlElement(required = true, name = "directoryMode")
+	@XmlElement(name = "directoryMode")
 	protected String DirectoryMode;
 }
 
 // ModuleSet is 1.0.0
 public class ModuleSet {
-	@XmlElement(required = true, name = "includes")
+	@XmlElement(name = "includes")
 	protected Includes Includes;
-	@XmlElement(required = true, name = "excludes")
+	@XmlElement(name = "excludes")
 	protected Excludes Excludes;
-	@XmlElement(required = true, name = "sources")
+	@XmlElement(name = "sources")
 	protected ModuleSources Sources;
-	@XmlElement(required = true, name = "binaries")
+	@XmlElement(name = "binaries")
 	protected ModuleBinaries Binaries;
 }
 
@@ -181,15 +181,15 @@ public class ModuleSet {
 //             of the root directory of the assembly. For example,
 //             "log" will put the specified files in the log directory.
 public class ModuleSources {
-	@XmlElement(required = true, name = "outputDirectory")
+	@XmlElement(name = "outputDirectory")
 	protected String OutputDirectory;
-	@XmlElement(required = true, name = "includes")
+	@XmlElement(name = "includes")
 	protected Includes Includes;
-	@XmlElement(required = true, name = "excludes")
+	@XmlElement(name = "excludes")
 	protected Excludes Excludes;
-	@XmlElement(required = true, name = "fileMode")
+	@XmlElement(name = "fileMode")
 	protected String FileMode;
-	@XmlElement(required = true, name = "directoryMode")
+	@XmlElement(name = "directoryMode")
 	protected String DirectoryMode;
 }
 
@@ -197,37 +197,37 @@ public class ModuleSources {
 //             of the root directory of the assembly. For example,
 //             "log" will put the specified files in the log directory.
 public class ModuleBinaries {
-	@XmlElement(required = true, name = "includeDependencies")
+	@XmlElement(name = "includeDependencies")
 	protected Boolean IncludeDependencies;
-	@XmlElement(required = true, name = "unpack")
+	@XmlElement(name = "unpack")
 	protected Boolean Unpack;
-	@XmlElement(required = true, name = "outputFileNameMapping")
+	@XmlElement(name = "outputFileNameMapping")
 	protected String OutputFileNameMapping;
-	@XmlElement(required = true, name = "outputDirectory")
+	@XmlElement(name = "outputDirectory")
 	protected String OutputDirectory;
-	@XmlElement(required = true, name = "includes")
+	@XmlElement(name = "includes")
 	protected Includes Includes;
-	@XmlElement(required = true, name = "excludes")
+	@XmlElement(name = "excludes")
 	protected Excludes Excludes;
-	@XmlElement(required = true, name = "fileMode")
+	@XmlElement(name = "fileMode")
 	protected String FileMode;
-	@XmlElement(required = true, name = "directoryMode")
+	@XmlElement(name = "directoryMode")
 	protected String DirectoryMode;
 }
 
 // FileItem is Flag used to determine if the file is filtered.
 public class FileItem {
-	@XmlElement(required = true, name = "source")
+	@XmlElement(name = "source")
 	protected String Source;
-	@XmlElement(required = true, name = "outputDirectory")
+	@XmlElement(name = "outputDirectory")
 	protected String OutputDirectory;
-	@XmlElement(required = true, name = "destName")
+	@XmlElement(name = "destName")
 	protected String DestName;
-	@XmlElement(required = true, name = "fileMode")
+	@XmlElement(name = "fileMode")
 	protected String FileMode;
-	@XmlElement(required = true, name = "lineEnding")
+	@XmlElement(name = "lineEnding")
 	protected String LineEnding;
-	@XmlElement(required = true, name = "filtered")
+	@XmlElement(name = "filtered")
 	protected Boolean Filtered;
 }
 
@@ -235,18 +235,18 @@ public class FileItem {
 //             of the root directory of the assembly. For example,
 //             "log" will put the specified files in the log directory.
 public class FileSet {
-	@XmlElement(required = true, name = "directory")
+	@XmlElement(name = "directory")
 	protected String Directory;
-	@XmlElement(required = true, name = "lineEnding")
+	@XmlElement(name = "lineEnding")
 	protected String LineEnding;
-	@XmlElement(required = true, name = "outputDirectory")
+	@XmlElement(name = "outputDirectory")
 	protected String OutputDirectory;
-	@XmlElement(required = true, name = "includes")
+	@XmlElement(name = "includes")
 	protected Includes Includes;
-	@XmlElement(required = true, name = "excludes")
+	@XmlElement(name = "excludes")
 	protected Excludes Excludes;
-	@XmlElement(required = true, name = "fileMode")
+	@XmlElement(name = "fileMode")
 	protected String FileMode;
-	@XmlElement(required = true, name = "directoryMode")
+	@XmlElement(name = "directoryMode")
 	protected String DirectoryMode;
 }

@@ -14,7 +14,7 @@ import javax.xml.bind.annotation.XmlValue;
 
 // CT_AdditionalCharacteristics ...
 public class CT_AdditionalCharacteristics {
-	@XmlElement(required = true, name = "characteristic")
+	@XmlElement(name = "characteristic")
 	protected List<CT_Characteristic> Characteristic;
 }
 

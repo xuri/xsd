@@ -17,10 +17,10 @@ type Chapters struct {
 
 // BookModel is Specifies the date of this book.
 type BookModel struct {
-	Id       string    `xml:"id,omitempty"`
-	Title    string    `xml:"title,omitempty"`
-	Author   string    `xml:"author,omitempty"`
-	Date     string    `xml:"date,omitempty"`
+	Id       *string   `xml:"id"`
+	Title    *string   `xml:"title"`
+	Author   *string   `xml:"author"`
+	Date     *string   `xml:"date"`
 	Chapters *Chapters `xml:"chapters,omitempty"`
 }
 
@@ -32,14 +32,14 @@ type Sections struct {
 
 // Chapter is Specifies the title of this chapter.
 type Chapter struct {
-	Id       string    `xml:"id,omitempty"`
-	Title    string    `xml:"title,omitempty"`
+	Id       *string   `xml:"id"`
+	Title    *string   `xml:"title"`
 	Sections *Sections `xml:"sections,omitempty"`
 }
 
 // Section is Specifies the file of this section.
 type Section struct {
-	Id    string `xml:"id,omitempty"`
-	Title string `xml:"title,omitempty"`
-	File  string `xml:"file,omitempty"`
+	Id    *string `xml:"id"`
+	Title *string `xml:"title"`
+	File  *string `xml:"file"`
 }

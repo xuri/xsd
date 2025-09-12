@@ -30,7 +30,7 @@ public class PurchaseOrderType {
 	protected USAddress ShipTo;
 	@XmlElement(required = true, name = "billTo")
 	protected USAddress BillTo;
-	@XmlElement(required = true, name = "po:comment")
+	@XmlElement(name = "po:comment")
 	protected String PoComment;
 }
 

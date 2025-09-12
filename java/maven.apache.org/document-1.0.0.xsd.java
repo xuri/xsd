@@ -22,11 +22,11 @@ public class Document {
 public class DocumentModel {
 	@XmlAttribute(name = "outputName")
 	protected String OutputNameAttr;
-	@XmlElement(required = true, name = "meta")
+	@XmlElement(name = "meta")
 	protected DocumentMeta Meta;
-	@XmlElement(required = true, name = "toc")
+	@XmlElement(name = "toc")
 	protected DocumentTOC Toc;
-	@XmlElement(required = true, name = "cover")
+	@XmlElement(name = "cover")
 	protected DocumentCover Cover;
 }
 
@@ -36,7 +36,7 @@ public class DocumentTOC {
 	protected String NameAttr;
 	@XmlAttribute(name = "depth")
 	protected Integer DepthAttr;
-	@XmlElement(required = true, name = "item")
+	@XmlElement(name = "item")
 	protected List<DocumentTOCItem> Item;
 }
 
@@ -48,128 +48,128 @@ public class DocumentTOCItem {
 	protected String RefAttr;
 	@XmlAttribute(name = "collapse")
 	protected Boolean CollapseAttr;
-	@XmlElement(required = true, name = "item")
+	@XmlElement(name = "item")
 	protected List<DocumentTOCItem> Item;
 }
 
 // DocumentCover is The location of an image file that represents the company logo.
 public class DocumentCover {
-	@XmlElement(required = true, name = "coverTitle")
+	@XmlElement(name = "coverTitle")
 	protected String CoverTitle;
-	@XmlElement(required = true, name = "coverSubTitle")
+	@XmlElement(name = "coverSubTitle")
 	protected String CoverSubTitle;
-	@XmlElement(required = true, name = "coverVersion")
+	@XmlElement(name = "coverVersion")
 	protected String CoverVersion;
-	@XmlElement(required = true, name = "coverType")
+	@XmlElement(name = "coverType")
 	protected String CoverType;
-	@XmlElement(required = true, name = "coverDate")
+	@XmlElement(name = "coverDate")
 	protected String CoverDate;
-	@XmlElement(required = true, name = "author")
+	@XmlElement(name = "author")
 	protected List<DocumentAuthor> Author;
-	@XmlElement(required = true, name = "projectName")
+	@XmlElement(name = "projectName")
 	protected String ProjectName;
-	@XmlElement(required = true, name = "projectLogo")
+	@XmlElement(name = "projectLogo")
 	protected String ProjectLogo;
-	@XmlElement(required = true, name = "companyName")
+	@XmlElement(name = "companyName")
 	protected String CompanyName;
-	@XmlElement(required = true, name = "companyLogo")
+	@XmlElement(name = "companyLogo")
 	protected String CompanyLogo;
 }
 
 // DocumentAuthor is The state or province of the address of the author, if applicable.
 public class DocumentAuthor {
-	@XmlElement(required = true, name = "firstName")
+	@XmlElement(name = "firstName")
 	protected String FirstName;
-	@XmlElement(required = true, name = "lastName")
+	@XmlElement(name = "lastName")
 	protected String LastName;
-	@XmlElement(required = true, name = "initials")
+	@XmlElement(name = "initials")
 	protected String Initials;
-	@XmlElement(required = true, name = "title")
+	@XmlElement(name = "title")
 	protected String Title;
-	@XmlElement(required = true, name = "position")
+	@XmlElement(name = "position")
 	protected String Position;
-	@XmlElement(required = true, name = "email")
+	@XmlElement(name = "email")
 	protected String Email;
-	@XmlElement(required = true, name = "phoneNumber")
+	@XmlElement(name = "phoneNumber")
 	protected String PhoneNumber;
-	@XmlElement(required = true, name = "faxNumber")
+	@XmlElement(name = "faxNumber")
 	protected String FaxNumber;
-	@XmlElement(required = true, name = "companyName")
+	@XmlElement(name = "companyName")
 	protected String CompanyName;
-	@XmlElement(required = true, name = "street")
+	@XmlElement(name = "street")
 	protected String Street;
-	@XmlElement(required = true, name = "city")
+	@XmlElement(name = "city")
 	protected String City;
-	@XmlElement(required = true, name = "postalCode")
+	@XmlElement(name = "postalCode")
 	protected String PostalCode;
-	@XmlElement(required = true, name = "country")
+	@XmlElement(name = "country")
 	protected String Country;
-	@XmlElement(required = true, name = "state")
+	@XmlElement(name = "state")
 	protected String State;
 }
 
 // Authors is The authors of the document. The names of the entities that
 //             are primarily responsible for the content of the document.
 public class Authors {
-	@XmlElement(required = true, name = "author")
+	@XmlElement(name = "author")
 	protected List<DocumentAuthor> Author;
 }
 
 // KeyWords is A keyword pertaining to the document. The metadata can contain any
 //             number of keyword elements, each element specifying one keyword.
 public class KeyWords {
-	@XmlElement(required = true, name = "keyWord")
+	@XmlElement(name = "keyWord")
 	protected List<String> KeyWord;
 }
 
 // DocumentMeta is A shortcut for the unique author of the document, usually as a String of "firstName lastName". For
 //             more authors, you could use the <authors/> tag.
 public class DocumentMeta {
-	@XmlElement(required = true, name = "title")
+	@XmlElement(name = "title")
 	protected String Title;
-	@XmlElement(required = true, name = "author")
+	@XmlElement(name = "author")
 	protected String Author;
-	@XmlElement(required = true, name = "authors")
+	@XmlElement(name = "authors")
 	protected Authors Authors;
-	@XmlElement(required = true, name = "subject")
+	@XmlElement(name = "subject")
 	protected String Subject;
-	@XmlElement(required = true, name = "keywords")
+	@XmlElement(name = "keywords")
 	protected String Keywords;
-	@XmlElement(required = true, name = "keyWords")
+	@XmlElement(name = "keyWords")
 	protected KeyWords KeyWords;
-	@XmlElement(required = true, name = "pageSize")
+	@XmlElement(name = "pageSize")
 	protected String PageSize;
-	@XmlElement(required = true, name = "generator")
+	@XmlElement(name = "generator")
 	protected String Generator;
-	@XmlElement(required = true, name = "description")
+	@XmlElement(name = "description")
 	protected String Description;
-	@XmlElement(required = true, name = "initialCreator")
+	@XmlElement(name = "initialCreator")
 	protected String InitialCreator;
-	@XmlElement(required = true, name = "creator")
+	@XmlElement(name = "creator")
 	protected String Creator;
-	@XmlElement(required = true, name = "printedBy")
+	@XmlElement(name = "printedBy")
 	protected String PrintedBy;
-	@XmlElement(required = true, name = "creationDate")
+	@XmlElement(name = "creationDate")
 	protected String CreationDate;
-	@XmlElement(required = true, name = "date")
+	@XmlElement(name = "date")
 	protected String Date;
-	@XmlElement(required = true, name = "printDate")
+	@XmlElement(name = "printDate")
 	protected String PrintDate;
-	@XmlElement(required = true, name = "template")
+	@XmlElement(name = "template")
 	protected DocumentTemplate Template;
-	@XmlElement(required = true, name = "hyperlinkBehaviour")
+	@XmlElement(name = "hyperlinkBehaviour")
 	protected DocumentHyperlinkBehaviour HyperlinkBehaviour;
-	@XmlElement(required = true, name = "language")
+	@XmlElement(name = "language")
 	protected String Language;
-	@XmlElement(required = true, name = "editingCycles")
+	@XmlElement(name = "editingCycles")
 	protected Long EditingCycles;
-	@XmlElement(required = true, name = "editingDuration")
+	@XmlElement(name = "editingDuration")
 	protected Long EditingDuration;
-	@XmlElement(required = true, name = "documentStatistic")
+	@XmlElement(name = "documentStatistic")
 	protected DocumentStatistic DocumentStatistic;
-	@XmlElement(required = true, name = "confidential")
+	@XmlElement(name = "confidential")
 	protected Boolean Confidential;
-	@XmlElement(required = true, name = "draft")
+	@XmlElement(name = "draft")
 	protected Boolean Draft;
 }
 

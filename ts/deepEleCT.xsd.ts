@@ -2,12 +2,12 @@
 
 // B ...
 export class B {
-	C: any;
+	C?: any;
 }
 
 // A ...
 export class A {
-	B: B;
+	B?: B;
 }
 
 // FileUpload ...

@@ -28,9 +28,9 @@ export class CT_NameListType {
 
 // CT_PersonType ...
 export class CT_PersonType {
-	Last: string;
-	First: string;
-	Middle: string;
+	Last?: string;
+	First?: string;
+	Middle?: string;
 }
 
 // CT_NameType ...
@@ -128,5 +128,5 @@ export class CT_Sources {
 	SelectedStyleAttr: string | null;
 	StyleNameAttr: string | null;
 	URIAttr: string | null;
-	Source: Array<CT_SourceType>;
+	Source?: Array<CT_SourceType>;
 }

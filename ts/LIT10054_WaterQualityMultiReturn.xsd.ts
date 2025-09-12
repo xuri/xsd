@@ -17,15 +17,15 @@ export class PurgedVolumeRecorded {
 export class Measurement {
 	DeterminandName: any;
 	ResultType: any;
-	ResultValue: number;
-	ResultUnits: any;
-	Qualifier: any;
-	Comment: any;
+	ResultValue?: number;
+	ResultUnits?: any;
+	Qualifier?: any;
+	Comment?: any;
 }
 
 // Sample is This element contains the structure of a collection of samples.
 export class Sample {
-	Sampler: any;
+	Sampler?: any;
 	SampleType: any;
 	CustomerSamplePointName: any;
 	SampleDateTime: string;
@@ -33,12 +33,12 @@ export class Sample {
 	MaterialName: any;
 	Mechanism: any;
 	CustomersLabSampleRef: any;
-	CustomersLabSampleRefSecondary: Array<any>;
-	Comment: any;
+	CustomersLabSampleRefSecondary?: Array<any>;
+	Comment?: any;
 	LabName: any;
 	AnalysisCompleteDateTime: string;
-	DepthValueRecorded: DepthValueRecorded;
-	PurgedVolumeRecorded: PurgedVolumeRecorded;
+	DepthValueRecorded?: DepthValueRecorded;
+	PurgedVolumeRecorded?: PurgedVolumeRecorded;
 	Measurement: Array<Measurement>;
 }
 
@@ -47,7 +47,7 @@ export class FileUpload {
 	Source: any;
 	Sample: Array<Sample>;
 	RegulatedCustomerIdentifier: any;
-	CustomerReference: any;
+	CustomerReference?: any;
 }
 
 // MandatoryStringType ...

@@ -18,5 +18,5 @@ type RemoteResources struct {
 // RemoteResourcesBundle is Root element of the remote-resources.xml file.
 type RemoteResourcesBundle struct {
 	RemoteResources *RemoteResources `xml:"remoteResources,omitempty"`
-	SourceEncoding  string           `xml:"sourceEncoding,omitempty"`
+	SourceEncoding  *string          `xml:"sourceEncoding"`
 }

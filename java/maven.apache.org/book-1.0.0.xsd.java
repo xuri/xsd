@@ -20,46 +20,46 @@ public class Book {
 
 // Chapters is Specifies a collection of chapters.
 public class Chapters {
-	@XmlElement(required = true, name = "chapter")
+	@XmlElement(name = "chapter")
 	protected List<Chapter> Chapter;
 }
 
 // BookModel is Specifies the date of this book.
 public class BookModel {
-	@XmlElement(required = true, name = "id")
+	@XmlElement(name = "id")
 	protected String Id;
-	@XmlElement(required = true, name = "title")
+	@XmlElement(name = "title")
 	protected String Title;
-	@XmlElement(required = true, name = "author")
+	@XmlElement(name = "author")
 	protected String Author;
-	@XmlElement(required = true, name = "date")
+	@XmlElement(name = "date")
 	protected String Date;
-	@XmlElement(required = true, name = "chapters")
+	@XmlElement(name = "chapters")
 	protected Chapters Chapters;
 }
 
 // Sections is Specifies a collection of sections.
 public class Sections {
-	@XmlElement(required = true, name = "section")
+	@XmlElement(name = "section")
 	protected List<Section> Section;
 }
 
 // Chapter is Specifies the title of this chapter.
 public class Chapter {
-	@XmlElement(required = true, name = "id")
+	@XmlElement(name = "id")
 	protected String Id;
-	@XmlElement(required = true, name = "title")
+	@XmlElement(name = "title")
 	protected String Title;
-	@XmlElement(required = true, name = "sections")
+	@XmlElement(name = "sections")
 	protected Sections Sections;
 }
 
 // Section is Specifies the file of this section.
 public class Section {
-	@XmlElement(required = true, name = "id")
+	@XmlElement(name = "id")
 	protected String Id;
-	@XmlElement(required = true, name = "title")
+	@XmlElement(name = "title")
 	protected String Title;
-	@XmlElement(required = true, name = "file")
+	@XmlElement(name = "file")
 	protected String File;
 }

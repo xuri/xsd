@@ -159,6 +159,9 @@ type I4 int
 // I8 ...
 type I8 int64
 
+// Int ...
+type Int int
+
 // Ui1 ...
 type Ui1 uint8
 
@@ -197,6 +200,9 @@ type Date string
 
 // Filetime ...
 type Filetime string
+
+// Bool ...
+type Bool bool
 
 // Cy ...
 type Cy string

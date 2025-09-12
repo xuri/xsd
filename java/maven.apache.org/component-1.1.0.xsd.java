@@ -22,7 +22,7 @@ public class Component {
 //             fileSet is specified by providing one or more of &lt;fileSet&gt;
 //             subelements.
 public class FileSets {
-	@XmlElement(required = true, name = "fileSet")
+	@XmlElement(name = "fileSet")
 	protected List<FileSet> FileSet;
 }
 
@@ -30,7 +30,7 @@ public class FileSets {
 //             is specified by providing one or more of &lt;file&gt;
 //             subelements.
 public class Files {
-	@XmlElement(required = true, name = "file")
+	@XmlElement(name = "file")
 	protected List<FileItem> File;
 }
 
@@ -38,7 +38,7 @@ public class Files {
 //             dependencySet is specified by providing one or more of
 //             &lt;dependencySet&gt; subelements.
 public class DependencySets {
-	@XmlElement(required = true, name = "dependencySet")
+	@XmlElement(name = "dependencySet")
 	protected List<DependencySet> DependencySet;
 }
 
@@ -46,40 +46,40 @@ public class DependencySets {
 //             repository is specified by providing one or more of
 //             &lt;repository&gt; subelements.
 public class Repositories {
-	@XmlElement(required = true, name = "repository")
+	@XmlElement(name = "repository")
 	protected List<Repository> Repository;
 }
 
 // ContainerDescriptorHandlers is Set of components which filter various container descriptors out of
 //             the normal archive stream, so they can be aggregated then added.
 public class ContainerDescriptorHandlers {
-	@XmlElement(required = true, name = "containerDescriptorHandler")
+	@XmlElement(name = "containerDescriptorHandler")
 	protected List<ContainerDescriptorHandlerConfig> ContainerDescriptorHandler;
 }
 
 // Component2 is Describes the component layout and packaging.
 public class Component2 {
-	@XmlElement(required = true, name = "fileSets")
+	@XmlElement(name = "fileSets")
 	protected FileSets FileSets;
-	@XmlElement(required = true, name = "files")
+	@XmlElement(name = "files")
 	protected Files Files;
-	@XmlElement(required = true, name = "dependencySets")
+	@XmlElement(name = "dependencySets")
 	protected DependencySets DependencySets;
-	@XmlElement(required = true, name = "repositories")
+	@XmlElement(name = "repositories")
 	protected Repositories Repositories;
-	@XmlElement(required = true, name = "containerDescriptorHandlers")
+	@XmlElement(name = "containerDescriptorHandlers")
 	protected ContainerDescriptorHandlers ContainerDescriptorHandlers;
 }
 
 // ContainerDescriptorHandlerConfig is The handler's plexus role-hint, for lookup from the container.
 public class ContainerDescriptorHandlerConfig {
-	@XmlElement(required = true, name = "handlerName")
+	@XmlElement(name = "handlerName")
 	protected String HandlerName;
 }
 
 // GroupVersionAlignments is Align a group to a version or an individual artifact.
 public class GroupVersionAlignments {
-	@XmlElement(required = true, name = "groupVersionAlignment")
+	@XmlElement(name = "groupVersionAlignment")
 	protected List<GroupVersionAlignment> GroupVersionAlignment;
 }
 
@@ -87,7 +87,7 @@ public class GroupVersionAlignments {
 //             files and directory to include. If none is present, then
 //             &lt;includes&gt; represents all valid values.
 public class Includes {
-	@XmlElement(required = true, name = "include")
+	@XmlElement(name = "include")
 	protected List<String> Include;
 }
 
@@ -95,7 +95,7 @@ public class Includes {
 //             files and directory to exclude. If none is present, then
 //             &lt;excludes&gt; represents no exclusions.
 public class Excludes {
-	@XmlElement(required = true, name = "exclude")
+	@XmlElement(name = "exclude")
 	protected List<String> Exclude;
 }
 
@@ -103,51 +103,51 @@ public class Excludes {
 //             metadata which will allow the repository to be used as a functional remote
 //             repository.
 public class Repository {
-	@XmlElement(required = true, name = "includeMetadata")
+	@XmlElement(name = "includeMetadata")
 	protected Boolean IncludeMetadata;
-	@XmlElement(required = true, name = "groupVersionAlignments")
+	@XmlElement(name = "groupVersionAlignments")
 	protected GroupVersionAlignments GroupVersionAlignments;
-	@XmlElement(required = true, name = "scope")
+	@XmlElement(name = "scope")
 	protected String Scope;
-	@XmlElement(required = true, name = "useStrictFiltering")
+	@XmlElement(name = "useStrictFiltering")
 	protected Boolean UseStrictFiltering;
-	@XmlElement(required = true, name = "useDefaultExcludes")
+	@XmlElement(name = "useDefaultExcludes")
 	protected Boolean UseDefaultExcludes;
-	@XmlElement(required = true, name = "outputDirectory")
+	@XmlElement(name = "outputDirectory")
 	protected String OutputDirectory;
-	@XmlElement(required = true, name = "includes")
+	@XmlElement(name = "includes")
 	protected Includes Includes;
-	@XmlElement(required = true, name = "excludes")
+	@XmlElement(name = "excludes")
 	protected Excludes Excludes;
-	@XmlElement(required = true, name = "fileMode")
+	@XmlElement(name = "fileMode")
 	protected String FileMode;
-	@XmlElement(required = true, name = "directoryMode")
+	@XmlElement(name = "directoryMode")
 	protected String DirectoryMode;
 }
 
 // GroupVersionAlignment is The version you want to align this group to.
 public class GroupVersionAlignment {
-	@XmlElement(required = true, name = "id")
+	@XmlElement(name = "id")
 	protected String Id;
-	@XmlElement(required = true, name = "version")
+	@XmlElement(name = "version")
 	protected String Version;
-	@XmlElement(required = true, name = "excludes")
+	@XmlElement(name = "excludes")
 	protected Excludes Excludes;
 }
 
 // FileItem is Sets whether to determine if the file is filtered.
 public class FileItem {
-	@XmlElement(required = true, name = "source")
+	@XmlElement(name = "source")
 	protected String Source;
-	@XmlElement(required = true, name = "outputDirectory")
+	@XmlElement(name = "outputDirectory")
 	protected String OutputDirectory;
-	@XmlElement(required = true, name = "destName")
+	@XmlElement(name = "destName")
 	protected String DestName;
-	@XmlElement(required = true, name = "fileMode")
+	@XmlElement(name = "fileMode")
 	protected String FileMode;
-	@XmlElement(required = true, name = "lineEnding")
+	@XmlElement(name = "lineEnding")
 	protected String LineEnding;
-	@XmlElement(required = true, name = "filtered")
+	@XmlElement(name = "filtered")
 	protected Boolean Filtered;
 }
 
@@ -155,25 +155,25 @@ public class FileItem {
 //             of the root directory of the assembly. For example,
 //             "log" will put the specified files in the log directory.
 public class FileSet {
-	@XmlElement(required = true, name = "directory")
+	@XmlElement(name = "directory")
 	protected String Directory;
-	@XmlElement(required = true, name = "lineEnding")
+	@XmlElement(name = "lineEnding")
 	protected String LineEnding;
-	@XmlElement(required = true, name = "filtered")
+	@XmlElement(name = "filtered")
 	protected Boolean Filtered;
-	@XmlElement(required = true, name = "useStrictFiltering")
+	@XmlElement(name = "useStrictFiltering")
 	protected Boolean UseStrictFiltering;
-	@XmlElement(required = true, name = "useDefaultExcludes")
+	@XmlElement(name = "useDefaultExcludes")
 	protected Boolean UseDefaultExcludes;
-	@XmlElement(required = true, name = "outputDirectory")
+	@XmlElement(name = "outputDirectory")
 	protected String OutputDirectory;
-	@XmlElement(required = true, name = "includes")
+	@XmlElement(name = "includes")
 	protected Includes Includes;
-	@XmlElement(required = true, name = "excludes")
+	@XmlElement(name = "excludes")
 	protected Excludes Excludes;
-	@XmlElement(required = true, name = "fileMode")
+	@XmlElement(name = "fileMode")
 	protected String FileMode;
-	@XmlElement(required = true, name = "directoryMode")
+	@XmlElement(name = "directoryMode")
 	protected String DirectoryMode;
 }
 
@@ -181,44 +181,44 @@ public class FileSet {
 //             of the root directory of the assembly. For example,
 //             "log" will put the specified files in the log directory.
 public class DependencySet {
-	@XmlElement(required = true, name = "outputFileNameMapping")
+	@XmlElement(name = "outputFileNameMapping")
 	protected String OutputFileNameMapping;
-	@XmlElement(required = true, name = "unpack")
+	@XmlElement(name = "unpack")
 	protected Boolean Unpack;
-	@XmlElement(required = true, name = "unpackOptions")
+	@XmlElement(name = "unpackOptions")
 	protected UnpackOptions UnpackOptions;
-	@XmlElement(required = true, name = "scope")
+	@XmlElement(name = "scope")
 	protected String Scope;
-	@XmlElement(required = true, name = "useProjectArtifact")
+	@XmlElement(name = "useProjectArtifact")
 	protected Boolean UseProjectArtifact;
-	@XmlElement(required = true, name = "useProjectAttachments")
+	@XmlElement(name = "useProjectAttachments")
 	protected Boolean UseProjectAttachments;
-	@XmlElement(required = true, name = "useTransitiveDependencies")
+	@XmlElement(name = "useTransitiveDependencies")
 	protected Boolean UseTransitiveDependencies;
-	@XmlElement(required = true, name = "useTransitiveFiltering")
+	@XmlElement(name = "useTransitiveFiltering")
 	protected Boolean UseTransitiveFiltering;
-	@XmlElement(required = true, name = "useStrictFiltering")
+	@XmlElement(name = "useStrictFiltering")
 	protected Boolean UseStrictFiltering;
-	@XmlElement(required = true, name = "useDefaultExcludes")
+	@XmlElement(name = "useDefaultExcludes")
 	protected Boolean UseDefaultExcludes;
-	@XmlElement(required = true, name = "outputDirectory")
+	@XmlElement(name = "outputDirectory")
 	protected String OutputDirectory;
-	@XmlElement(required = true, name = "includes")
+	@XmlElement(name = "includes")
 	protected Includes Includes;
-	@XmlElement(required = true, name = "excludes")
+	@XmlElement(name = "excludes")
 	protected Excludes Excludes;
-	@XmlElement(required = true, name = "fileMode")
+	@XmlElement(name = "fileMode")
 	protected String FileMode;
-	@XmlElement(required = true, name = "directoryMode")
+	@XmlElement(name = "directoryMode")
 	protected String DirectoryMode;
 }
 
 // UnpackOptions is Specifies options for including/excluding/filtering items extracted from an archive.
 public class UnpackOptions {
-	@XmlElement(required = true, name = "includes")
+	@XmlElement(name = "includes")
 	protected Includes Includes;
-	@XmlElement(required = true, name = "excludes")
+	@XmlElement(name = "excludes")
 	protected Excludes Excludes;
-	@XmlElement(required = true, name = "filtered")
+	@XmlElement(name = "filtered")
 	protected Boolean Filtered;
 }

@@ -12,7 +12,7 @@ type CoreExtensions struct {
 
 // CoreExtension is The version of the extension.
 type CoreExtension struct {
-	GroupId    string `xml:"groupId,omitempty"`
-	ArtifactId string `xml:"artifactId,omitempty"`
-	Version    string `xml:"version,omitempty"`
+	GroupId    *string `xml:"groupId"`
+	ArtifactId *string `xml:"artifactId"`
+	Version    *string `xml:"version"`
 }

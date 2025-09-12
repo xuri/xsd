@@ -6,13 +6,13 @@ export type Document = ChangesDocument;
 // ChangesDocument is Contains the releases of this project with the actions taken
 //             for each of the releases.
 export class ChangesDocument {
-	Properties: Properties;
-	Body: Body;
+	Properties?: Properties;
+	Body?: Body;
 }
 
 // Body is The list of releases for this project.
 export class Body {
-	Release: Array<Release>;
+	Release?: Array<Release>;
 }
 
 // Release is The list of actions taken for this release.
@@ -20,7 +20,7 @@ export class Release {
 	VersionAttr: string | null;
 	DateAttr: string | null;
 	DescriptionAttr: string | null;
-	Action: Array<Action>;
+	Action?: Array<Action>;
 }
 
 // Action is A list of contibutors for this issue.
@@ -32,8 +32,8 @@ export class Action {
 	TypeAttr: string | null;
 	SystemAttr: string | null;
 	DateAttr: string | null;
-	Fixes: Array<FixedIssue>;
-	Dueto: Array<DueTo>;
+	Fixes?: Array<FixedIssue>;
+	Dueto?: Array<DueTo>;
 }
 
 // FixedIssue is A fixed issue.
@@ -49,8 +49,8 @@ export class DueTo {
 
 // Properties is Page Author
 export class Properties {
-	Title: string;
-	Author: Author;
+	Title?: string;
+	Author?: Author;
 }
 
 // Author is A description of the author page.

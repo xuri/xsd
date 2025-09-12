@@ -20,19 +20,19 @@ public class Archetypedescriptor {
 
 // RequiredProperties is List of required properties to generate a project from this archetype.
 public class RequiredProperties {
-	@XmlElement(required = true, name = "requiredProperty")
+	@XmlElement(name = "requiredProperty")
 	protected List<RequiredProperty> RequiredProperty;
 }
 
 // FileSets is File sets definition.
 public class FileSets {
-	@XmlElement(required = true, name = "fileSet")
+	@XmlElement(name = "fileSet")
 	protected List<FileSet> FileSet;
 }
 
 // Modules is Modules definition.
 public class Modules {
-	@XmlElement(required = true, name = "module")
+	@XmlElement(name = "module")
 	protected List<ModuleDescriptor> Module;
 }
 
@@ -42,11 +42,11 @@ public class ArchetypeDescriptor {
 	protected String NameAttr;
 	@XmlAttribute(name = "partial")
 	protected Boolean PartialAttr;
-	@XmlElement(required = true, name = "requiredProperties")
+	@XmlElement(name = "requiredProperties")
 	protected RequiredProperties RequiredProperties;
-	@XmlElement(required = true, name = "fileSets")
+	@XmlElement(name = "fileSets")
 	protected FileSets FileSets;
-	@XmlElement(required = true, name = "modules")
+	@XmlElement(name = "modules")
 	protected Modules Modules;
 }
 
@@ -54,9 +54,9 @@ public class ArchetypeDescriptor {
 public class RequiredProperty {
 	@XmlAttribute(name = "key", required = true)
 	protected String KeyAttr;
-	@XmlElement(required = true, name = "defaultValue")
+	@XmlElement(name = "defaultValue")
 	protected String DefaultValue;
-	@XmlElement(required = true, name = "validationRegex")
+	@XmlElement(name = "validationRegex")
 	protected String ValidationRegex;
 }
 
@@ -68,21 +68,21 @@ public class ModuleDescriptor {
 	protected String DirAttr;
 	@XmlAttribute(name = "name", required = true)
 	protected String NameAttr;
-	@XmlElement(required = true, name = "fileSets")
+	@XmlElement(name = "fileSets")
 	protected FileSets FileSets;
-	@XmlElement(required = true, name = "modules")
+	@XmlElement(name = "modules")
 	protected Modules Modules;
 }
 
 // Includes is Inclusion definition "à la" Ant.
 public class Includes {
-	@XmlElement(required = true, name = "include")
+	@XmlElement(name = "include")
 	protected List<String> Include;
 }
 
 // Excludes is Exclusion definition "à la" Ant.
 public class Excludes {
-	@XmlElement(required = true, name = "exclude")
+	@XmlElement(name = "exclude")
 	protected List<String> Exclude;
 }
 
@@ -95,10 +95,10 @@ public class FileSet {
 	protected Boolean PackagedAttr;
 	@XmlAttribute(name = "encoding")
 	protected String EncodingAttr;
-	@XmlElement(required = true, name = "directory")
+	@XmlElement(name = "directory")
 	protected String Directory;
-	@XmlElement(required = true, name = "includes")
+	@XmlElement(name = "includes")
 	protected Includes Includes;
-	@XmlElement(required = true, name = "excludes")
+	@XmlElement(name = "excludes")
 	protected Excludes Excludes;
 }

@@ -5,12 +5,12 @@ export type Extensions = CoreExtensions;
 
 // CoreExtensions is A set of build extensions to use from this project.
 export class CoreExtensions {
-	Extension: Array<CoreExtension>;
+	Extension?: Array<CoreExtension>;
 }
 
 // CoreExtension is The version of the extension.
 export class CoreExtension {
-	GroupId: string;
-	ArtifactId: string;
-	Version: string;
+	GroupId?: string;
+	ArtifactId?: string;
+	Version?: string;
 }

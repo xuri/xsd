@@ -6,7 +6,7 @@ export type Project = DecorationModel;
 
 // PoweredBy is Powered by logos list.
 export class PoweredBy {
-	Logo: Array<Logo>;
+	Logo?: Array<Logo>;
 }
 
 // Custom is Custom configuration for use with customised Velocity templates.
@@ -16,22 +16,22 @@ export class Custom {
 // DecorationModel is Modify the version published display properties.
 export class DecorationModel {
 	NameAttr: string | null;
-	BannerLeft: Banner;
-	BannerRight: Banner;
-	PublishDate: PublishDate;
-	Version: Version;
-	PoweredBy: PoweredBy;
-	Skin: Skin;
-	Body: Body;
-	Custom: Custom;
+	BannerLeft?: Banner;
+	BannerRight?: Banner;
+	PublishDate?: PublishDate;
+	Version?: Version;
+	PoweredBy?: PoweredBy;
+	Skin?: Skin;
+	Body?: Body;
+	Custom?: Custom;
 }
 
 // Banner is The href of a link to be used for the banner image.
 export class Banner {
-	Name: string;
-	Src: string;
-	Alt: string;
-	Href: string;
+	Name?: string;
+	Src?: string;
+	Alt?: string;
+	Href?: string;
 }
 
 // Head is Additional content (like Javascript) to include in the HEAD block of the generated pages.
@@ -40,20 +40,20 @@ export class Head {
 
 // Links is A list of links to display in the navigation.
 export class Links {
-	Item: Array<LinkItem>;
+	Item?: Array<LinkItem>;
 }
 
 // Breadcrumbs is A list of breadcrumbs to display in the navigation.
 export class Breadcrumbs {
-	Item: Array<LinkItem>;
+	Item?: Array<LinkItem>;
 }
 
 // Body is The main content decoration.
 export class Body {
-	Head: Head;
-	Links: Links;
-	Breadcrumbs: Breadcrumbs;
-	Menu: Array<Menu>;
+	Head?: Head;
+	Links?: Links;
+	Breadcrumbs?: Breadcrumbs;
+	Menu?: Array<Menu>;
 }
 
 // LinkItem is A link in the navigation.
@@ -69,7 +69,7 @@ export class Menu {
 	InheritAsRefAttr: boolean | null;
 	RefAttr: string | null;
 	ImgAttr: string | null;
-	Item: Array<MenuItem>;
+	Item?: Array<MenuItem>;
 }
 
 // MenuItem is Menu item.
@@ -78,15 +78,15 @@ export class MenuItem {
 	RefAttr: string | null;
 	NameAttr: string | null;
 	HrefAttr: string | null;
-	Description: string;
-	Item: Array<MenuItem>;
+	Description?: string;
+	Item?: Array<MenuItem>;
 }
 
 // Skin is The skin version.
 export class Skin {
-	GroupId: string;
-	ArtifactId: string;
-	Version: string;
+	GroupId?: string;
+	ArtifactId?: string;
+	Version?: string;
 }
 
 // Version is Modify display properties for version published.

@@ -20,100 +20,100 @@ public class PluginMetadata {
 
 // Mojos is The list of mojos contained in the accompanying script.
 public class Mojos {
-	@XmlElement(required = true, name = "mojo")
+	@XmlElement(name = "mojo")
 	protected List<Mojo> Mojo;
 }
 
 // PluginMetadata2 is Root element of a script-based mojo's plugin metadata bindings.
 public class PluginMetadata2 {
-	@XmlElement(required = true, name = "mojos")
+	@XmlElement(name = "mojos")
 	protected Mojos Mojos;
 }
 
 // Components is List of plexus components required by this mojo.
 public class Components {
-	@XmlElement(required = true, name = "component")
+	@XmlElement(name = "component")
 	protected List<Component> Component;
 }
 
 // Parameters is List of parameters used by this mojo.
 public class Parameters {
-	@XmlElement(required = true, name = "parameter")
+	@XmlElement(name = "parameter")
 	protected List<Parameter> Parameter;
 }
 
 // Mojo is Information about a sub-execution of the Maven lifecycle which should be processed.
 public class Mojo {
-	@XmlElement(required = true, name = "goal")
+	@XmlElement(name = "goal")
 	protected String Goal;
-	@XmlElement(required = true, name = "phase")
+	@XmlElement(name = "phase")
 	protected String Phase;
-	@XmlElement(required = true, name = "aggregator")
+	@XmlElement(name = "aggregator")
 	protected Boolean Aggregator;
-	@XmlElement(required = true, name = "requiresDependencyResolution")
+	@XmlElement(name = "requiresDependencyResolution")
 	protected String RequiresDependencyResolution;
-	@XmlElement(required = true, name = "requiresProject")
+	@XmlElement(name = "requiresProject")
 	protected Boolean RequiresProject;
-	@XmlElement(required = true, name = "requiresReports")
+	@XmlElement(name = "requiresReports")
 	protected Boolean RequiresReports;
-	@XmlElement(required = true, name = "requiresOnline")
+	@XmlElement(name = "requiresOnline")
 	protected Boolean RequiresOnline;
-	@XmlElement(required = true, name = "inheritByDefault")
+	@XmlElement(name = "inheritByDefault")
 	protected Boolean InheritByDefault;
-	@XmlElement(required = true, name = "requiresDirectInvocation")
+	@XmlElement(name = "requiresDirectInvocation")
 	protected Boolean RequiresDirectInvocation;
-	@XmlElement(required = true, name = "execution")
+	@XmlElement(name = "execution")
 	protected LifecycleExecution Execution;
-	@XmlElement(required = true, name = "components")
+	@XmlElement(name = "components")
 	protected Components Components;
-	@XmlElement(required = true, name = "parameters")
+	@XmlElement(name = "parameters")
 	protected Parameters Parameters;
-	@XmlElement(required = true, name = "description")
+	@XmlElement(name = "description")
 	protected String Description;
-	@XmlElement(required = true, name = "deprecated")
+	@XmlElement(name = "deprecated")
 	protected String Deprecated;
-	@XmlElement(required = true, name = "call")
+	@XmlElement(name = "call")
 	protected String Call;
 }
 
 // Parameter is A deprecation message for this mojo parameter.
 public class Parameter {
-	@XmlElement(required = true, name = "name")
+	@XmlElement(name = "name")
 	protected String Name;
-	@XmlElement(required = true, name = "alias")
+	@XmlElement(name = "alias")
 	protected String Alias;
-	@XmlElement(required = true, name = "property")
+	@XmlElement(name = "property")
 	protected String Property;
-	@XmlElement(required = true, name = "required")
+	@XmlElement(name = "required")
 	protected Boolean Required;
-	@XmlElement(required = true, name = "readonly")
+	@XmlElement(name = "readonly")
 	protected Boolean Readonly;
-	@XmlElement(required = true, name = "expression")
+	@XmlElement(name = "expression")
 	protected String Expression;
-	@XmlElement(required = true, name = "defaultValue")
+	@XmlElement(name = "defaultValue")
 	protected String DefaultValue;
-	@XmlElement(required = true, name = "type")
+	@XmlElement(name = "type")
 	protected String Type;
-	@XmlElement(required = true, name = "description")
+	@XmlElement(name = "description")
 	protected String Description;
-	@XmlElement(required = true, name = "deprecated")
+	@XmlElement(name = "deprecated")
 	protected String Deprecated;
 }
 
 // LifecycleExecution is A goal, not attached to a lifecycle phase, which should be executed ahead of this mojo.
 public class LifecycleExecution {
-	@XmlElement(required = true, name = "lifecycle")
+	@XmlElement(name = "lifecycle")
 	protected String Lifecycle;
-	@XmlElement(required = true, name = "phase")
+	@XmlElement(name = "phase")
 	protected String Phase;
-	@XmlElement(required = true, name = "goal")
+	@XmlElement(name = "goal")
 	protected String Goal;
 }
 
 // Component is The role-hint to lookup.
 public class Component {
-	@XmlElement(required = true, name = "role")
+	@XmlElement(name = "role")
 	protected String Role;
-	@XmlElement(required = true, name = "hint")
+	@XmlElement(name = "hint")
 	protected String Hint;
 }

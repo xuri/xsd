@@ -7400,7 +7400,7 @@ pub struct CTFunctionGroups {
 	#[serde(rename = "builtInGroupCount")]
 	pub built_in_group_count: Option<u32>,
 	#[serde(rename = "functionGroup")]
-	pub function_group: Option<CTFunctionGroup>,
+	pub function_group: Vec<CTFunctionGroup>,
 }
 
 

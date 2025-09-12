@@ -4,20 +4,20 @@ package schema
 
 // Software ...
 type Software struct {
-	SoftwareProvider interface{} `xml:"SoftwareProvider,omitempty"`
-	SoftwareVersion  interface{} `xml:"SoftwareVersion,omitempty"`
+	SoftwareProvider *interface{} `xml:"SoftwareProvider"`
+	SoftwareVersion  *interface{} `xml:"SoftwareVersion"`
 }
 
 // TransmissionData ...
 type TransmissionData struct {
-	DocumentID       interface{} `xml:"DocumentID"`
-	CreatedDateTime  string      `xml:"CreatedDateTime"`
-	Software         interface{} `xml:"Software,omitempty"`
-	FullResponseCode interface{} `xml:"FullResponseCode,omitempty"`
+	DocumentID       interface{}  `xml:"DocumentID"`
+	CreatedDateTime  string       `xml:"CreatedDateTime"`
+	Software         *interface{} `xml:"Software"`
+	FullResponseCode *interface{} `xml:"FullResponseCode"`
 }
 
 // CommonRecordType ...
 type CommonRecordType struct {
 	TransmissionData interface{} `xml:"TransmissionData"`
-	Receipt          string      `xml:"Receipt,omitempty"`
+	Receipt          *string     `xml:"Receipt"`
 }

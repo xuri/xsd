@@ -20,59 +20,59 @@ public class Properties {
 
 // CT_Properties ...
 public class CT_Properties {
-	@XmlElement(required = true, name = "Template")
+	@XmlElement(name = "Template")
 	protected String Template;
-	@XmlElement(required = true, name = "Manager")
+	@XmlElement(name = "Manager")
 	protected String Manager;
-	@XmlElement(required = true, name = "Company")
+	@XmlElement(name = "Company")
 	protected String Company;
-	@XmlElement(required = true, name = "Pages")
+	@XmlElement(name = "Pages")
 	protected Integer Pages;
-	@XmlElement(required = true, name = "Words")
+	@XmlElement(name = "Words")
 	protected Integer Words;
-	@XmlElement(required = true, name = "Characters")
+	@XmlElement(name = "Characters")
 	protected Integer Characters;
-	@XmlElement(required = true, name = "PresentationFormat")
+	@XmlElement(name = "PresentationFormat")
 	protected String PresentationFormat;
-	@XmlElement(required = true, name = "Lines")
+	@XmlElement(name = "Lines")
 	protected Integer Lines;
-	@XmlElement(required = true, name = "Paragraphs")
+	@XmlElement(name = "Paragraphs")
 	protected Integer Paragraphs;
-	@XmlElement(required = true, name = "Slides")
+	@XmlElement(name = "Slides")
 	protected Integer Slides;
-	@XmlElement(required = true, name = "Notes")
+	@XmlElement(name = "Notes")
 	protected Integer Notes;
-	@XmlElement(required = true, name = "TotalTime")
+	@XmlElement(name = "TotalTime")
 	protected Integer TotalTime;
-	@XmlElement(required = true, name = "HiddenSlides")
+	@XmlElement(name = "HiddenSlides")
 	protected Integer HiddenSlides;
-	@XmlElement(required = true, name = "MMClips")
+	@XmlElement(name = "MMClips")
 	protected Integer MMClips;
-	@XmlElement(required = true, name = "ScaleCrop")
+	@XmlElement(name = "ScaleCrop")
 	protected Boolean ScaleCrop;
-	@XmlElement(required = true, name = "HeadingPairs")
+	@XmlElement(name = "HeadingPairs")
 	protected CT_VectorVariant HeadingPairs;
-	@XmlElement(required = true, name = "TitlesOfParts")
+	@XmlElement(name = "TitlesOfParts")
 	protected CT_VectorLpstr TitlesOfParts;
-	@XmlElement(required = true, name = "LinksUpToDate")
+	@XmlElement(name = "LinksUpToDate")
 	protected Boolean LinksUpToDate;
-	@XmlElement(required = true, name = "CharactersWithSpaces")
+	@XmlElement(name = "CharactersWithSpaces")
 	protected Integer CharactersWithSpaces;
-	@XmlElement(required = true, name = "SharedDoc")
+	@XmlElement(name = "SharedDoc")
 	protected Boolean SharedDoc;
-	@XmlElement(required = true, name = "HyperlinkBase")
+	@XmlElement(name = "HyperlinkBase")
 	protected String HyperlinkBase;
-	@XmlElement(required = true, name = "HLinks")
+	@XmlElement(name = "HLinks")
 	protected CT_VectorVariant HLinks;
-	@XmlElement(required = true, name = "HyperlinksChanged")
+	@XmlElement(name = "HyperlinksChanged")
 	protected Boolean HyperlinksChanged;
-	@XmlElement(required = true, name = "DigSig")
+	@XmlElement(name = "DigSig")
 	protected CT_DigSigBlob DigSig;
-	@XmlElement(required = true, name = "Application")
+	@XmlElement(name = "Application")
 	protected String Application;
-	@XmlElement(required = true, name = "AppVersion")
+	@XmlElement(name = "AppVersion")
 	protected String AppVersion;
-	@XmlElement(required = true, name = "DocSecurity")
+	@XmlElement(name = "DocSecurity")
 	protected Integer DocSecurity;
 }
 

@@ -62,10 +62,10 @@ type ComponentDescriptors struct {
 // Assembly is The id of this assembly. This is a symbolic name for a
 //             particular assembly of files from this project.
 type Assembly struct {
-	Id                   string                `xml:"id,omitempty"`
+	Id                   *string               `xml:"id"`
 	Formats              *Formats              `xml:"formats,omitempty"`
-	IncludeBaseDirectory bool                  `xml:"includeBaseDirectory,omitempty"`
-	IncludeSiteDirectory bool                  `xml:"includeSiteDirectory,omitempty"`
+	IncludeBaseDirectory *bool                 `xml:"includeBaseDirectory"`
+	IncludeSiteDirectory *bool                 `xml:"includeSiteDirectory"`
 	ModuleSets           *ModuleSets           `xml:"moduleSets,omitempty"`
 	FileSets             *FileSets             `xml:"fileSets,omitempty"`
 	Files                *Files                `xml:"files,omitempty"`
@@ -98,19 +98,19 @@ type Excludes struct {
 //             metadata which will allow the repository to be used as a functional remote
 //             repository.
 type Repository struct {
-	IncludeMetadata        bool                    `xml:"includeMetadata,omitempty"`
+	IncludeMetadata        *bool                   `xml:"includeMetadata"`
 	GroupVersionAlignments *GroupVersionAlignments `xml:"groupVersionAlignments,omitempty"`
-	OutputDirectory        string                  `xml:"outputDirectory,omitempty"`
+	OutputDirectory        *string                 `xml:"outputDirectory"`
 	Includes               *Includes               `xml:"includes,omitempty"`
 	Excludes               *Excludes               `xml:"excludes,omitempty"`
-	FileMode               string                  `xml:"fileMode,omitempty"`
-	DirectoryMode          string                  `xml:"directoryMode,omitempty"`
+	FileMode               *string                 `xml:"fileMode"`
+	DirectoryMode          *string                 `xml:"directoryMode"`
 }
 
 // GroupVersionAlignment is The version you want to align this group to.
 type GroupVersionAlignment struct {
-	Id       string    `xml:"id,omitempty"`
-	Version  string    `xml:"version,omitempty"`
+	Id       *string   `xml:"id"`
+	Version  *string   `xml:"version"`
 	Excludes *Excludes `xml:"excludes,omitempty"`
 }
 
@@ -118,14 +118,14 @@ type GroupVersionAlignment struct {
 //             of the root directory of the assembly. For example,
 //             "log" will put the specified files in the log directory.
 type DependencySet struct {
-	OutputFileNameMapping string    `xml:"outputFileNameMapping,omitempty"`
-	Unpack                bool      `xml:"unpack,omitempty"`
-	Scope                 string    `xml:"scope,omitempty"`
-	OutputDirectory       string    `xml:"outputDirectory,omitempty"`
+	OutputFileNameMapping *string   `xml:"outputFileNameMapping"`
+	Unpack                *bool     `xml:"unpack"`
+	Scope                 *string   `xml:"scope"`
+	OutputDirectory       *string   `xml:"outputDirectory"`
 	Includes              *Includes `xml:"includes,omitempty"`
 	Excludes              *Excludes `xml:"excludes,omitempty"`
-	FileMode              string    `xml:"fileMode,omitempty"`
-	DirectoryMode         string    `xml:"directoryMode,omitempty"`
+	FileMode              *string   `xml:"fileMode"`
+	DirectoryMode         *string   `xml:"directoryMode"`
 }
 
 // ModuleSet is 1.0.0
@@ -140,46 +140,46 @@ type ModuleSet struct {
 //             of the root directory of the assembly. For example,
 //             "log" will put the specified files in the log directory.
 type ModuleSources struct {
-	OutputDirectory string    `xml:"outputDirectory,omitempty"`
+	OutputDirectory *string   `xml:"outputDirectory"`
 	Includes        *Includes `xml:"includes,omitempty"`
 	Excludes        *Excludes `xml:"excludes,omitempty"`
-	FileMode        string    `xml:"fileMode,omitempty"`
-	DirectoryMode   string    `xml:"directoryMode,omitempty"`
+	FileMode        *string   `xml:"fileMode"`
+	DirectoryMode   *string   `xml:"directoryMode"`
 }
 
 // ModuleBinaries is Specifies the output directory relative to the root
 //             of the root directory of the assembly. For example,
 //             "log" will put the specified files in the log directory.
 type ModuleBinaries struct {
-	IncludeDependencies   bool      `xml:"includeDependencies,omitempty"`
-	Unpack                bool      `xml:"unpack,omitempty"`
-	OutputFileNameMapping string    `xml:"outputFileNameMapping,omitempty"`
-	OutputDirectory       string    `xml:"outputDirectory,omitempty"`
+	IncludeDependencies   *bool     `xml:"includeDependencies"`
+	Unpack                *bool     `xml:"unpack"`
+	OutputFileNameMapping *string   `xml:"outputFileNameMapping"`
+	OutputDirectory       *string   `xml:"outputDirectory"`
 	Includes              *Includes `xml:"includes,omitempty"`
 	Excludes              *Excludes `xml:"excludes,omitempty"`
-	FileMode              string    `xml:"fileMode,omitempty"`
-	DirectoryMode         string    `xml:"directoryMode,omitempty"`
+	FileMode              *string   `xml:"fileMode"`
+	DirectoryMode         *string   `xml:"directoryMode"`
 }
 
 // FileItem is Flag used to determine if the file is filtered.
 type FileItem struct {
-	Source          string `xml:"source,omitempty"`
-	OutputDirectory string `xml:"outputDirectory,omitempty"`
-	DestName        string `xml:"destName,omitempty"`
-	FileMode        string `xml:"fileMode,omitempty"`
-	LineEnding      string `xml:"lineEnding,omitempty"`
-	Filtered        bool   `xml:"filtered,omitempty"`
+	Source          *string `xml:"source"`
+	OutputDirectory *string `xml:"outputDirectory"`
+	DestName        *string `xml:"destName"`
+	FileMode        *string `xml:"fileMode"`
+	LineEnding      *string `xml:"lineEnding"`
+	Filtered        *bool   `xml:"filtered"`
 }
 
 // FileSet is Specifies the output directory relative to the root
 //             of the root directory of the assembly. For example,
 //             "log" will put the specified files in the log directory.
 type FileSet struct {
-	Directory       string    `xml:"directory,omitempty"`
-	LineEnding      string    `xml:"lineEnding,omitempty"`
-	OutputDirectory string    `xml:"outputDirectory,omitempty"`
+	Directory       *string   `xml:"directory"`
+	LineEnding      *string   `xml:"lineEnding"`
+	OutputDirectory *string   `xml:"outputDirectory"`
 	Includes        *Includes `xml:"includes,omitempty"`
 	Excludes        *Excludes `xml:"excludes,omitempty"`
-	FileMode        string    `xml:"fileMode,omitempty"`
-	DirectoryMode   string    `xml:"directoryMode,omitempty"`
+	FileMode        *string   `xml:"fileMode"`
+	DirectoryMode   *string   `xml:"directoryMode"`
 }

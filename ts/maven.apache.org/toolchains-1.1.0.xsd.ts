@@ -6,7 +6,7 @@ export type Toolchains = PersistedToolchains;
 
 // PersistedToolchains is The toolchain instance definition.
 export class PersistedToolchains {
-	Toolchain: Array<ToolchainModel>;
+	Toolchain?: Array<ToolchainModel>;
 }
 
 // Provides is <p>Toolchain identification information, which will be matched against project requirements.</p>
@@ -31,7 +31,7 @@ export class Configuration {
 //                     <a href="https://maven.apache.org/plugins/maven-toolchains-plugin/toolchains/custom.html">Custom Toolchain</a></li>
 //                     </ul>
 export class ToolchainModel {
-	Type: string;
-	Provides: Provides;
-	Configuration: Configuration;
+	Type?: string;
+	Provides?: Provides;
+	Configuration?: Configuration;
 }

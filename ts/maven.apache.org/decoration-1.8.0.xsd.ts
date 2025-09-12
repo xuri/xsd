@@ -5,7 +5,7 @@ export type Project = DecorationModel;
 
 // PoweredBy is Powered by logos list.
 export class PoweredBy {
-	Logo: Array<Logo>;
+	Logo?: Array<Logo>;
 }
 
 // Custom is Custom configuration for use with customized Velocity templates. Data from this field are
@@ -19,18 +19,18 @@ export class Custom {
 export class DecorationModel {
 	NameAttr: string | null;
 	CombineSelfAttr: string | null;
-	BannerLeft: Banner;
-	BannerRight: Banner;
-	GoogleAdSenseClient: string;
-	GoogleAdSenseSlot: string;
-	GoogleAnalyticsAccountId: string;
-	PublishDate: PublishDate;
-	Version: Version;
-	Edit: string;
-	PoweredBy: PoweredBy;
-	Skin: Skin;
-	Body: Body;
-	Custom: Custom;
+	BannerLeft?: Banner;
+	BannerRight?: Banner;
+	GoogleAdSenseClient?: string;
+	GoogleAdSenseSlot?: string;
+	GoogleAnalyticsAccountId?: string;
+	PublishDate?: PublishDate;
+	Version?: Version;
+	Edit?: string;
+	PoweredBy?: PoweredBy;
+	Skin?: Skin;
+	Body?: Body;
+	Custom?: Custom;
 }
 
 // Version is Modify display properties for version published.
@@ -40,33 +40,33 @@ export class Version {
 
 // Banner is The title for the banner image.
 export class Banner {
-	Name: string;
-	Src: string;
-	Alt: string;
-	Href: string;
-	Border: string;
-	Width: string;
-	Height: string;
-	Title: string;
+	Name?: string;
+	Src?: string;
+	Alt?: string;
+	Href?: string;
+	Border?: string;
+	Width?: string;
+	Height?: string;
+	Title?: string;
 }
 
 // Links is A list of links to display in the navigation.
 export class Links {
-	Item: Array<LinkItem>;
+	Item?: Array<LinkItem>;
 }
 
 // Breadcrumbs is A list of breadcrumbs to display in the navigation.
 export class Breadcrumbs {
-	Item: Array<LinkItem>;
+	Item?: Array<LinkItem>;
 }
 
 // Body is Additional content (like JavaScript) to include in the HEAD block of the generated pages.
 export class Body {
-	Head: string;
-	Links: Links;
-	Breadcrumbs: Breadcrumbs;
-	Menu: Array<Menu>;
-	Footer: string;
+	Head?: string;
+	Links?: Links;
+	Breadcrumbs?: Breadcrumbs;
+	Menu?: Array<Menu>;
+	Footer?: string;
 }
 
 // LinkItem is A link in the navigation.
@@ -96,7 +96,7 @@ export class Menu {
 	WidthAttr: string | null;
 	HeightAttr: string | null;
 	TitleAttr: string | null;
-	Item: Array<MenuItem>;
+	Item?: Array<MenuItem>;
 }
 
 // MenuItem is A list of menu item.
@@ -113,15 +113,15 @@ export class MenuItem {
 	HeightAttr: string | null;
 	TargetAttr: string | null;
 	TitleAttr: string | null;
-	Description: string;
-	Item: Array<MenuItem>;
+	Description?: string;
+	Item?: Array<MenuItem>;
 }
 
 // Skin is The skin version.
 export class Skin {
-	GroupId: string;
-	ArtifactId: string;
-	Version: string;
+	GroupId?: string;
+	ArtifactId?: string;
+	Version?: string;
 }
 
 // Logo is Power by logo on the navigation.

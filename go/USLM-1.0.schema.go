@@ -433,13 +433,13 @@ type HeadingType struct {
 //                            action (by position) as part of the processing
 //                            action.
 type InstructionType struct {
-	Ref           *RefType           `xml:"ref"`
-	Inline        []*InlineType      `xml:"inline"`
-	Marker        []*MarkerType      `xml:"marker"`
-	Action        []*ActionType      `xml:"action"`
-	Level         []*LevelType       `xml:"level"`
-	QuotedText    *QuotedTextType    `xml:"quotedText"`
-	QuotedContent *QuotedContentType `xml:"quotedContent"`
+	Ref           *RefType             `xml:"ref"`
+	Inline        []*InlineType        `xml:"inline"`
+	Marker        []*MarkerType        `xml:"marker"`
+	Action        []*ActionType        `xml:"action"`
+	Level         []*LevelType         `xml:"level"`
+	QuotedText    []*QuotedTextType    `xml:"quotedText"`
+	QuotedContent []*QuotedContentType `xml:"quotedContent"`
 	*BaseContentType
 }
 
@@ -495,7 +495,7 @@ type SignaturesType struct {
 	P         *PType           `xml:"p,omitempty"`
 	Signature []*SignatureType `xml:"signature"`
 	Layout    *LayoutType      `xml:"layout"`
-	Date      string           `xml:"date,omitempty"`
+	Date      *string          `xml:"date"`
 }
 
 // Name ...
@@ -522,7 +522,7 @@ type SignatureType struct {
 	Name        *Name        `xml:"name"`
 	Role        *Role        `xml:"role,omitempty"`
 	Affiliation *Affiliation `xml:"affiliation,omitempty"`
-	Date        string       `xml:"date,omitempty"`
+	Date        *string      `xml:"date"`
 }
 
 // RefType is Use the @pos and other attributes to describe
@@ -615,9 +615,9 @@ type PreambleStructure struct {
 type LevelStructure struct {
 	Instruction   []*InstructionType
 	Content       []*ContentType
-	Text          *TextType
-	Level         *LevelType
-	CrossHeading  *HeadingType
+	Text          []*TextType
+	Level         []*LevelType
+	CrossHeading  []*HeadingType
 	NoteStructure []*NoteStructure
 	NoteStructure []*NoteStructure
 	NoteStructure []*NoteStructure

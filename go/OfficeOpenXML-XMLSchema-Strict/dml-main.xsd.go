@@ -1906,7 +1906,7 @@ type CTTableCellProperties struct {
 // CTHeaders ...
 type CTHeaders struct {
 	XMLName xml.Name `xml:"CT_Headers"`
-	Header  string   `xml:"header"`
+	Header  []string `xml:"header"`
 }
 
 // CTTableCol ...
@@ -2508,7 +2508,7 @@ type CTTextField struct {
 	TypeAttr string                     `xml:"type,attr,omitempty"`
 	RPr      *CTTextCharacterProperties `xml:"rPr,omitempty"`
 	PPr      *CTTextParagraphProperties `xml:"pPr,omitempty"`
-	T        string                     `xml:"t,omitempty"`
+	T        *string                    `xml:"t"`
 }
 
 // EGTextRun ...

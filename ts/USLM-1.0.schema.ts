@@ -344,7 +344,7 @@ export type Content = ContentType;
 //                         referenced documents.
 export class LawDocType extends BaseBlockType  {
 	Meta: MetaType;
-	Main: MainType;
+	Main?: MainType;
 	Block: Array<BlockType>;
 	Appendix: Array<AppendixType>;
 }
@@ -354,7 +354,7 @@ export class LawDocType extends BaseBlockType  {
 export class GenericDocType extends BaseBlockType  {
 	Meta: MetaType;
 	Content: ContentType;
-	Appendix: Array<AppendixType>;
+	Appendix?: Array<AppendixType>;
 }
 
 // MetaType is Properties can be grouped into sets. These set can
@@ -405,7 +405,7 @@ export class TocType extends BaseBlockType  {
 export class TocItemType extends BaseBlockType  {
 	DescriptionGroup: DescriptionGroup;
 	HeadingStructure: HeadingStructure;
-	TocItem: Array<TocItemType>;
+	TocItem?: Array<TocItemType>;
 	Content: Array<ContentType>;
 }
 
@@ -442,7 +442,7 @@ export class PreambleType extends BaseBlockType  {
 	DescriptionGroup: DescriptionGroup;
 	HeadingStructure: HeadingStructure;
 	RecitalStructure: Array<RecitalStructure>;
-	EnactingFormula: StatementType;
+	EnactingFormula?: StatementType;
 }
 
 // LevelType is Use the description group to record information in the
@@ -478,8 +478,8 @@ export class InstructionType extends BaseContentType  {
 	Marker: Array<MarkerType>;
 	Action: Array<ActionType>;
 	Level: Array<LevelType>;
-	QuotedText: QuotedTextType;
-	QuotedContent: QuotedContentType;
+	QuotedText: Array<QuotedTextType>;
+	QuotedContent: Array<QuotedContentType>;
 }
 
 // ActionType is Use the @action attribute to describe the action being taken.
@@ -493,8 +493,8 @@ export class ActionType extends InlineType  {
 //                      and the @topic attribute to categorize the notes.
 export class NotesType extends BaseBlockType  {
 	NoteGroup: NoteGroup;
-	Heading: HeadingType;
-	Subheading: Array<HeadingType>;
+	Heading?: HeadingType;
+	Subheading?: Array<HeadingType>;
 	Note: Array<NoteType>;
 	Layout: LayoutType;
 }
@@ -527,10 +527,10 @@ export class AppendixType extends BaseBlockType  {
 //             The signatures may either be specified serially in a grid-like
 //             layout.
 export class SignaturesType {
-	P: PType;
+	P?: PType;
 	Signature: Array<SignatureType>;
 	Layout: LayoutType;
-	Date: string;
+	Date?: string;
 }
 
 // Name ...
@@ -552,9 +552,9 @@ export class Affiliation {
 //             their affiliation.
 export class SignatureType {
 	Name: Name;
-	Role: Role;
-	Affiliation: Affiliation;
-	Date: string;
+	Role?: Role;
+	Affiliation?: Affiliation;
+	Date?: string;
 }
 
 // RefType is Use the @pos and other attributes to describe
@@ -644,9 +644,9 @@ export class PreambleStructure {
 export class LevelStructure {
 	Instruction: Array<InstructionType>;
 	Content: Array<ContentType>;
-	Text: TextType;
-	Level: LevelType;
-	CrossHeading: HeadingType;
+	Text: Array<TextType>;
+	Level: Array<LevelType>;
+	CrossHeading: Array<HeadingType>;
 	NoteStructure: Array<NoteStructure>;
 	NoteStructure: Array<NoteStructure>;
 	NoteStructure: Array<NoteStructure>;

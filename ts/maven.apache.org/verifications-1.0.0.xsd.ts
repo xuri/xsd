@@ -5,19 +5,19 @@ export type Verifications = Verifications;
 
 // Files is List of files and directories to check.
 export class Files {
-	File: Array<File>;
+	File?: Array<File>;
 }
 
 // Verifications2 is Root element of the verifications file.
 export class Verifications2 {
-	Files: Files;
+	Files?: Files;
 }
 
 // File is When this is set to <code>true</code> the plugin checks that the
 //             file or directory exists. When set to <code>false</code> it checks
 //             that the file or directory does <strong>not</strong> exist.
 export class File {
-	Location: string;
-	Contains: string;
-	Exists: boolean;
+	Location?: string;
+	Contains?: string;
+	Exists?: boolean;
 }

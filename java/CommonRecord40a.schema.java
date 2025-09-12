@@ -14,9 +14,9 @@ import javax.xml.bind.annotation.XmlValue;
 
 // Software ...
 public class Software {
-	@XmlElement(required = true, name = "SoftwareProvider")
+	@XmlElement(name = "SoftwareProvider")
 	protected void SoftwareProvider;
-	@XmlElement(required = true, name = "SoftwareVersion")
+	@XmlElement(name = "SoftwareVersion")
 	protected void SoftwareVersion;
 }
 
@@ -26,9 +26,9 @@ public class TransmissionData {
 	protected void DocumentID;
 	@XmlElement(required = true, name = "CreatedDateTime")
 	protected String CreatedDateTime;
-	@XmlElement(required = true, name = "Software")
+	@XmlElement(name = "Software")
 	protected void Software;
-	@XmlElement(required = true, name = "FullResponseCode")
+	@XmlElement(name = "FullResponseCode")
 	protected void FullResponseCode;
 }
 
@@ -36,6 +36,6 @@ public class TransmissionData {
 public class CommonRecordType {
 	@XmlElement(required = true, name = "TransmissionData")
 	protected void TransmissionData;
-	@XmlElement(required = true, name = "Receipt")
+	@XmlElement(name = "Receipt")
 	protected String Receipt;
 }

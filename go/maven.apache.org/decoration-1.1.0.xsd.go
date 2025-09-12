@@ -26,7 +26,7 @@ type DecorationModel struct {
 	NameAttr                 string       `xml:"name,attr,omitempty"`
 	BannerLeft               *Banner      `xml:"bannerLeft,omitempty"`
 	BannerRight              *Banner      `xml:"bannerRight,omitempty"`
-	GoogleAnalyticsAccountId string       `xml:"googleAnalyticsAccountId,omitempty"`
+	GoogleAnalyticsAccountId *string      `xml:"googleAnalyticsAccountId"`
 	PublishDate              *PublishDate `xml:"publishDate,omitempty"`
 	Version                  *Version     `xml:"version,omitempty"`
 	PoweredBy                *PoweredBy   `xml:"poweredBy,omitempty"`
@@ -37,13 +37,13 @@ type DecorationModel struct {
 
 // Banner is The height to use for the banner image.
 type Banner struct {
-	Name   string `xml:"name,omitempty"`
-	Src    string `xml:"src,omitempty"`
-	Alt    string `xml:"alt,omitempty"`
-	Href   string `xml:"href,omitempty"`
-	Border string `xml:"border,omitempty"`
-	Width  string `xml:"width,omitempty"`
-	Height string `xml:"height,omitempty"`
+	Name   *string `xml:"name"`
+	Src    *string `xml:"src"`
+	Alt    *string `xml:"alt"`
+	Href   *string `xml:"href"`
+	Border *string `xml:"border"`
+	Width  *string `xml:"width"`
+	Height *string `xml:"height"`
 }
 
 // Head is Additional content (like Javascript) to include in the HEAD block of the generated pages.
@@ -118,15 +118,15 @@ type MenuItem struct {
 	WidthAttr    string      `xml:"width,attr,omitempty"`
 	HeightAttr   string      `xml:"height,attr,omitempty"`
 	TargetAttr   string      `xml:"target,attr,omitempty"`
-	Description  string      `xml:"description,omitempty"`
+	Description  *string     `xml:"description"`
 	Item         []*MenuItem `xml:"item,omitempty"`
 }
 
 // Skin is The skin version.
 type Skin struct {
-	GroupId    string `xml:"groupId,omitempty"`
-	ArtifactId string `xml:"artifactId,omitempty"`
-	Version    string `xml:"version,omitempty"`
+	GroupId    *string `xml:"groupId"`
+	ArtifactId *string `xml:"artifactId"`
+	Version    *string `xml:"version"`
 }
 
 // Version is Modify display properties for version published.

@@ -5,57 +5,57 @@ export type Metadata = Metadata;
 
 // Plugins is The set of plugin mappings for the group represented by this directory
 export class Plugins {
-	Plugin: Array<Plugin>;
+	Plugin?: Array<Plugin>;
 }
 
 // Metadata2 is Versioning information for the artifact.
 export class Metadata2 {
 	ModelVersionAttr: string | null;
-	GroupId: string;
-	ArtifactId: string;
-	Version: string;
-	Versioning: Versioning;
-	Plugins: Plugins;
+	GroupId?: string;
+	ArtifactId?: string;
+	Version?: string;
+	Versioning?: Versioning;
+	Plugins?: Plugins;
 }
 
 // Plugin is The plugin artifactId
 export class Plugin {
-	Name: string;
-	Prefix: string;
-	ArtifactId: string;
+	Name?: string;
+	Prefix?: string;
+	ArtifactId?: string;
 }
 
 // Versions is Versions available of the artifact (both releases and snapshots)
 export class Versions {
-	Version: string;
+	Version?: string;
 }
 
 // SnapshotVersions is Information for each sub-artifact available in this artifact snapshot.
 export class SnapshotVersions {
-	SnapshotVersion: Array<SnapshotVersion>;
+	SnapshotVersion?: Array<SnapshotVersion>;
 }
 
 // Versioning is The current snapshot data in use for this version (artifact snapshots only)
 export class Versioning {
-	Latest: string;
-	Release: string;
-	Snapshot: Snapshot;
-	Versions: Versions;
-	LastUpdated: string;
-	SnapshotVersions: SnapshotVersions;
+	Latest?: string;
+	Release?: string;
+	Snapshot?: Snapshot;
+	Versions?: Versions;
+	LastUpdated?: string;
+	SnapshotVersions?: SnapshotVersions;
 }
 
 // SnapshotVersion is The timestamp when this version information was last updated. The timestamp is expressed using UTC in the format yyyyMMddHHmmss.
 export class SnapshotVersion {
-	Classifier: string;
-	Extension: string;
-	Value: string;
-	Updated: string;
+	Classifier?: string;
+	Extension?: string;
+	Value?: string;
+	Updated?: string;
 }
 
 // Snapshot is Whether to use a local copy instead (with filename that includes the base version)
 export class Snapshot {
-	Timestamp: string;
-	BuildNumber: number;
-	LocalCopy: boolean;
+	Timestamp?: string;
+	BuildNumber?: number;
+	LocalCopy?: boolean;
 }

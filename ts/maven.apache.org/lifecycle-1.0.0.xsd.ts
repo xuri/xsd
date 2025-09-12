@@ -5,23 +5,23 @@ export type Lifecycles = LifecycleConfiguration;
 
 // LifecycleConfiguration is 1.0.0
 export class LifecycleConfiguration {
-	Lifecycle: Array<Lifecycle>;
+	Lifecycle?: Array<Lifecycle>;
 }
 
 // Phases is The phase mappings for this lifecycle.
 export class Phases {
-	Phase: Array<Phase>;
+	Phase?: Array<Phase>;
 }
 
 // Lifecycle is The ID of this lifecycle, for identification in the mojo descriptor.
 export class Lifecycle {
-	Id: string;
-	Phases: Phases;
+	Id?: string;
+	Phases?: Phases;
 }
 
 // Executions is The goals to execute within the phase.
 export class Executions {
-	Execution: Array<Execution>;
+	Execution?: Array<Execution>;
 }
 
 // Configuration is Configuration to pass to all goals run in this phase.
@@ -30,18 +30,18 @@ export class Configuration {
 
 // Phase is The ID of this phase, e.g., <code>generate-sources</code>.
 export class Phase {
-	Id: string;
-	Executions: Executions;
-	Configuration: Configuration;
+	Id?: string;
+	Executions?: Executions;
+	Configuration?: Configuration;
 }
 
 // Goals is The goals to execute.
 export class Goals {
-	Goal: string;
+	Goal?: string;
 }
 
 // Execution is A set of goals to execute.
 export class Execution {
-	Configuration: Configuration;
-	Goals: Goals;
+	Configuration?: Configuration;
+	Goals?: Goals;
 }

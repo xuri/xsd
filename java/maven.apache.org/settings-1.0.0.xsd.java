@@ -24,7 +24,7 @@ public class Settings {
 //             configurations by simply specifying the profile id, again either from
 //             the command line or from the defaults section below.
 public class Proxies {
-	@XmlElement(required = true, name = "proxy")
+	@XmlElement(name = "proxy")
 	protected List<Proxy> Proxy;
 }
 
@@ -32,90 +32,90 @@ public class Proxies {
 //             method. This allows configuration of authentication on a per-server
 //             basis.
 public class Servers {
-	@XmlElement(required = true, name = "server")
+	@XmlElement(name = "server")
 	protected List<Server> Server;
 }
 
 // Mirrors is Configuration of download mirrors for repositories.
 public class Mirrors {
-	@XmlElement(required = true, name = "mirror")
+	@XmlElement(name = "mirror")
 	protected List<Mirror> Mirror;
 }
 
 // Profiles is Configuration of build profiles for adjusting the build
 //             according to environmental parameters.
 public class Profiles {
-	@XmlElement(required = true, name = "profile")
+	@XmlElement(name = "profile")
 	protected List<Profile> Profile;
 }
 
 // ActiveProfiles is List of manually-activated build profiles, specified in the order in which
 //             they should be applied.
 public class ActiveProfiles {
-	@XmlElement(required = true, name = "activeProfile")
+	@XmlElement(name = "activeProfile")
 	protected List<String> ActiveProfile;
 }
 
 // PluginGroups is List of groupIds to search for a plugin when that plugin
 //             groupId is not explicitly provided.
 public class PluginGroups {
-	@XmlElement(required = true, name = "pluginGroup")
+	@XmlElement(name = "pluginGroup")
 	protected List<String> PluginGroup;
 }
 
 // Settings2 is Indicate whether maven should operate in offline mode full-time.
 public class Settings2 {
-	@XmlElement(required = true, name = "localRepository")
+	@XmlElement(name = "localRepository")
 	protected String LocalRepository;
-	@XmlElement(required = true, name = "interactiveMode")
+	@XmlElement(name = "interactiveMode")
 	protected Boolean InteractiveMode;
-	@XmlElement(required = true, name = "usePluginRegistry")
+	@XmlElement(name = "usePluginRegistry")
 	protected Boolean UsePluginRegistry;
-	@XmlElement(required = true, name = "offline")
+	@XmlElement(name = "offline")
 	protected Boolean Offline;
-	@XmlElement(required = true, name = "proxies")
+	@XmlElement(name = "proxies")
 	protected Proxies Proxies;
-	@XmlElement(required = true, name = "servers")
+	@XmlElement(name = "servers")
 	protected Servers Servers;
-	@XmlElement(required = true, name = "mirrors")
+	@XmlElement(name = "mirrors")
 	protected Mirrors Mirrors;
-	@XmlElement(required = true, name = "profiles")
+	@XmlElement(name = "profiles")
 	protected Profiles Profiles;
-	@XmlElement(required = true, name = "activeProfiles")
+	@XmlElement(name = "activeProfiles")
 	protected ActiveProfiles ActiveProfiles;
-	@XmlElement(required = true, name = "pluginGroups")
+	@XmlElement(name = "pluginGroups")
 	protected PluginGroups PluginGroups;
 }
 
 // Mirror is 1.0.0
 public class Mirror {
-	@XmlElement(required = true, name = "mirrorOf")
+	@XmlElement(name = "mirrorOf")
 	protected String MirrorOf;
-	@XmlElement(required = true, name = "name")
+	@XmlElement(name = "name")
 	protected String Name;
-	@XmlElement(required = true, name = "url")
+	@XmlElement(name = "url")
 	protected String Url;
-	@XmlElement(required = true, name = "id")
+	@XmlElement(name = "id")
 	protected String Id;
 }
 
 // Proxy is 1.0.0
 public class Proxy {
-	@XmlElement(required = true, name = "active")
+	@XmlElement(name = "active")
 	protected Boolean Active;
-	@XmlElement(required = true, name = "protocol")
+	@XmlElement(name = "protocol")
 	protected String Protocol;
-	@XmlElement(required = true, name = "username")
+	@XmlElement(name = "username")
 	protected String Username;
-	@XmlElement(required = true, name = "password")
+	@XmlElement(name = "password")
 	protected String Password;
-	@XmlElement(required = true, name = "port")
+	@XmlElement(name = "port")
 	protected Integer Port;
-	@XmlElement(required = true, name = "host")
+	@XmlElement(name = "host")
 	protected String Host;
-	@XmlElement(required = true, name = "nonProxyHosts")
+	@XmlElement(name = "nonProxyHosts")
 	protected String NonProxyHosts;
-	@XmlElement(required = true, name = "id")
+	@XmlElement(name = "id")
 	protected String Id;
 }
 
@@ -125,21 +125,21 @@ public class Configuration {
 
 // Server is The permissions for directories when they are created.
 public class Server {
-	@XmlElement(required = true, name = "username")
+	@XmlElement(name = "username")
 	protected String Username;
-	@XmlElement(required = true, name = "password")
+	@XmlElement(name = "password")
 	protected String Password;
-	@XmlElement(required = true, name = "privateKey")
+	@XmlElement(name = "privateKey")
 	protected String PrivateKey;
-	@XmlElement(required = true, name = "passphrase")
+	@XmlElement(name = "passphrase")
 	protected String Passphrase;
-	@XmlElement(required = true, name = "filePermissions")
+	@XmlElement(name = "filePermissions")
 	protected String FilePermissions;
-	@XmlElement(required = true, name = "directoryPermissions")
+	@XmlElement(name = "directoryPermissions")
 	protected String DirectoryPermissions;
-	@XmlElement(required = true, name = "configuration")
+	@XmlElement(name = "configuration")
 	protected Configuration Configuration;
-	@XmlElement(required = true, name = "id")
+	@XmlElement(name = "id")
 	protected String Id;
 }
 
@@ -151,97 +151,97 @@ public class Properties {
 
 // Repositories is The lists of the remote repositories.
 public class Repositories {
-	@XmlElement(required = true, name = "repository")
+	@XmlElement(name = "repository")
 	protected List<Repository> Repository;
 }
 
 // PluginRepositories is The lists of the remote repositories for discovering plugins.
 public class PluginRepositories {
-	@XmlElement(required = true, name = "pluginRepository")
+	@XmlElement(name = "pluginRepository")
 	protected List<Repository> PluginRepository;
 }
 
 // Profile is The conditional logic which will automatically
 //             trigger the inclusion of this profile.
 public class Profile {
-	@XmlElement(required = true, name = "activation")
+	@XmlElement(name = "activation")
 	protected Activation Activation;
-	@XmlElement(required = true, name = "properties")
+	@XmlElement(name = "properties")
 	protected Properties Properties;
-	@XmlElement(required = true, name = "repositories")
+	@XmlElement(name = "repositories")
 	protected Repositories Repositories;
-	@XmlElement(required = true, name = "pluginRepositories")
+	@XmlElement(name = "pluginRepositories")
 	protected PluginRepositories PluginRepositories;
-	@XmlElement(required = true, name = "id")
+	@XmlElement(name = "id")
 	protected String Id;
 }
 
 // Repository is The type of layout this repository uses for locating and
 //             storing artifacts - can be "legacy" or "default".
 public class Repository {
-	@XmlElement(required = true, name = "releases")
+	@XmlElement(name = "releases")
 	protected RepositoryPolicy Releases;
-	@XmlElement(required = true, name = "snapshots")
+	@XmlElement(name = "snapshots")
 	protected RepositoryPolicy Snapshots;
-	@XmlElement(required = true, name = "id")
+	@XmlElement(name = "id")
 	protected String Id;
-	@XmlElement(required = true, name = "name")
+	@XmlElement(name = "name")
 	protected String Name;
-	@XmlElement(required = true, name = "url")
+	@XmlElement(name = "url")
 	protected String Url;
-	@XmlElement(required = true, name = "layout")
+	@XmlElement(name = "layout")
 	protected String Layout;
 }
 
 // RepositoryPolicy is What to do when verification of an artifact checksum fails -
 //             warn, fail, etc. Valid values are "fail" or "warn".
 public class RepositoryPolicy {
-	@XmlElement(required = true, name = "enabled")
+	@XmlElement(name = "enabled")
 	protected Boolean Enabled;
-	@XmlElement(required = true, name = "updatePolicy")
+	@XmlElement(name = "updatePolicy")
 	protected String UpdatePolicy;
-	@XmlElement(required = true, name = "checksumPolicy")
+	@XmlElement(name = "checksumPolicy")
 	protected String ChecksumPolicy;
 }
 
 // Activation is Specifies that this profile will be activated based on existence of a file.
 public class Activation {
-	@XmlElement(required = true, name = "activeByDefault")
+	@XmlElement(name = "activeByDefault")
 	protected Boolean ActiveByDefault;
-	@XmlElement(required = true, name = "jdk")
+	@XmlElement(name = "jdk")
 	protected String Jdk;
-	@XmlElement(required = true, name = "os")
+	@XmlElement(name = "os")
 	protected ActivationOS Os;
-	@XmlElement(required = true, name = "property")
+	@XmlElement(name = "property")
 	protected ActivationProperty Property;
-	@XmlElement(required = true, name = "file")
+	@XmlElement(name = "file")
 	protected ActivationFile File;
 }
 
 // ActivationFile is The name of the file that should exist to activate a profile.
 public class ActivationFile {
-	@XmlElement(required = true, name = "missing")
+	@XmlElement(name = "missing")
 	protected String Missing;
-	@XmlElement(required = true, name = "exists")
+	@XmlElement(name = "exists")
 	protected String Exists;
 }
 
 // ActivationOS is The version of the OS to be used to activate a profile.
 public class ActivationOS {
-	@XmlElement(required = true, name = "name")
+	@XmlElement(name = "name")
 	protected String Name;
-	@XmlElement(required = true, name = "family")
+	@XmlElement(name = "family")
 	protected String Family;
-	@XmlElement(required = true, name = "arch")
+	@XmlElement(name = "arch")
 	protected String Arch;
-	@XmlElement(required = true, name = "version")
+	@XmlElement(name = "version")
 	protected String Version;
 }
 
 // ActivationProperty is The value of the property to be used to activate a profile.
 public class ActivationProperty {
-	@XmlElement(required = true, name = "name")
+	@XmlElement(name = "name")
 	protected String Name;
-	@XmlElement(required = true, name = "value")
+	@XmlElement(name = "value")
 	protected String Value;
 }

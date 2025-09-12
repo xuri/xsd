@@ -42,8 +42,8 @@ type SiteResources struct {
 // ArchetypeModel is Setting this option to <code>true</code> makes it possible to run the
 //             <code>archetype:create</code> even on existing projects.
 type ArchetypeModel struct {
-	Id            string         `xml:"id,omitempty"`
-	AllowPartial  bool           `xml:"allowPartial,omitempty"`
+	Id            *string        `xml:"id"`
+	AllowPartial  *bool          `xml:"allowPartial"`
 	Sources       *Sources       `xml:"sources,omitempty"`
 	Resources     *Resources     `xml:"resources,omitempty"`
 	TestSources   *TestSources   `xml:"testSources,omitempty"`

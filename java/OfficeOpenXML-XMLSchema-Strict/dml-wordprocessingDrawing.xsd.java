@@ -43,11 +43,11 @@ public class CT_Inline {
 	protected Integer DistRAttr;
 	@XmlElement(required = true, name = "extent")
 	protected CT_PositiveSize2D Extent;
-	@XmlElement(required = true, name = "effectExtent")
+	@XmlElement(name = "effectExtent")
 	protected CT_EffectExtent EffectExtent;
 	@XmlElement(required = true, name = "docPr")
 	protected CT_NonVisualDrawingProps DocPr;
-	@XmlElement(required = true, name = "cNvGraphicFramePr")
+	@XmlElement(name = "cNvGraphicFramePr")
 	protected CT_NonVisualGraphicFrameProperties CNvGraphicFramePr;
 	@XmlElement(required = true, name = "a:graphic")
 	protected CT_GraphicalObject AGraphic;
@@ -86,7 +86,7 @@ public class CT_WrapSquare {
 	protected Integer DistLAttr;
 	@XmlAttribute(name = "distR")
 	protected Integer DistRAttr;
-	@XmlElement(required = true, name = "effectExtent")
+	@XmlElement(name = "effectExtent")
 	protected CT_EffectExtent EffectExtent;
 }
 
@@ -120,7 +120,7 @@ public class CT_WrapTopBottom {
 	protected Integer DistTAttr;
 	@XmlAttribute(name = "distB")
 	protected Integer DistBAttr;
-	@XmlElement(required = true, name = "effectExtent")
+	@XmlElement(name = "effectExtent")
 	protected CT_EffectExtent EffectExtent;
 }
 
@@ -226,11 +226,11 @@ public class CT_Anchor {
 	protected CT_PosV PositionV;
 	@XmlElement(required = true, name = "extent")
 	protected CT_PositiveSize2D Extent;
-	@XmlElement(required = true, name = "effectExtent")
+	@XmlElement(name = "effectExtent")
 	protected CT_EffectExtent EffectExtent;
 	@XmlElement(required = true, name = "docPr")
 	protected CT_NonVisualDrawingProps DocPr;
-	@XmlElement(required = true, name = "cNvGraphicFramePr")
+	@XmlElement(name = "cNvGraphicFramePr")
 	protected CT_NonVisualGraphicFrameProperties CNvGraphicFramePr;
 	@XmlElement(required = true, name = "a:graphic")
 	protected CT_GraphicalObject AGraphic;
@@ -247,7 +247,7 @@ public class CT_TextboxInfo {
 	protected Short IdAttr;
 	@XmlElement(required = true, name = "txbxContent")
 	protected CT_TxbxContent TxbxContent;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_OfficeArtExtensionList ExtLst;
 }
 
@@ -257,7 +257,7 @@ public class CT_LinkedTextboxInformation {
 	protected Short IdAttr;
 	@XmlAttribute(name = "seq", required = true)
 	protected Short SeqAttr;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_OfficeArtExtensionList ExtLst;
 }
 
@@ -265,7 +265,7 @@ public class CT_LinkedTextboxInformation {
 public class CT_WordprocessingShape {
 	@XmlAttribute(name = "normalEastAsianFlow")
 	protected Boolean NormalEastAsianFlowAttr;
-	@XmlElement(required = true, name = "cNvPr")
+	@XmlElement(name = "cNvPr")
 	protected CT_NonVisualDrawingProps CNvPr;
 	@XmlElement(required = true, name = "cNvSpPr")
 	protected CT_NonVisualDrawingShapeProps CNvSpPr;
@@ -273,9 +273,9 @@ public class CT_WordprocessingShape {
 	protected CT_NonVisualConnectorProperties CNvCnPr;
 	@XmlElement(required = true, name = "spPr")
 	protected CT_ShapeProperties SpPr;
-	@XmlElement(required = true, name = "style")
+	@XmlElement(name = "style")
 	protected CT_ShapeStyle Style;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_OfficeArtExtensionList ExtLst;
 	@XmlElement(required = true, name = "txbx")
 	protected CT_TextboxInfo Txbx;
@@ -295,15 +295,15 @@ public class CT_GraphicFrame {
 	protected CT_Transform2D Xfrm;
 	@XmlElement(required = true, name = "a:graphic")
 	protected CT_GraphicalObject AGraphic;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_OfficeArtExtensionList ExtLst;
 }
 
 // CT_WordprocessingContentPartNonVisual ...
 public class CT_WordprocessingContentPartNonVisual {
-	@XmlElement(required = true, name = "cNvPr")
+	@XmlElement(name = "cNvPr")
 	protected CT_NonVisualDrawingProps CNvPr;
-	@XmlElement(required = true, name = "cNvContentPartPr")
+	@XmlElement(name = "cNvContentPartPr")
 	protected CT_NonVisualContentPartProperties CNvContentPartPr;
 }
 
@@ -313,17 +313,17 @@ public class CT_WordprocessingContentPart {
 	protected String BwModeAttr;
 	@XmlAttribute(name = "r:id", required = true)
 	protected String RIdAttr;
-	@XmlElement(required = true, name = "nvContentPartPr")
+	@XmlElement(name = "nvContentPartPr")
 	protected CT_WordprocessingContentPartNonVisual NvContentPartPr;
-	@XmlElement(required = true, name = "xfrm")
+	@XmlElement(name = "xfrm")
 	protected CT_Transform2D Xfrm;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_OfficeArtExtensionList ExtLst;
 }
 
 // CT_WordprocessingGroup ...
 public class CT_WordprocessingGroup {
-	@XmlElement(required = true, name = "cNvPr")
+	@XmlElement(name = "cNvPr")
 	protected CT_NonVisualDrawingProps CNvPr;
 	@XmlElement(required = true, name = "cNvGrpSpPr")
 	protected CT_NonVisualGroupDrawingShapeProps CNvGrpSpPr;
@@ -339,15 +339,15 @@ public class CT_WordprocessingGroup {
 	protected List<CT_Picture> DpctPic;
 	@XmlElement(required = true, name = "contentPart")
 	protected List<CT_WordprocessingContentPart> ContentPart;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_OfficeArtExtensionList ExtLst;
 }
 
 // CT_WordprocessingCanvas ...
 public class CT_WordprocessingCanvas {
-	@XmlElement(required = true, name = "bg")
+	@XmlElement(name = "bg")
 	protected CT_BackgroundFormatting Bg;
-	@XmlElement(required = true, name = "whole")
+	@XmlElement(name = "whole")
 	protected CT_WholeE2oFormatting Whole;
 	@XmlElement(required = true, name = "wsp")
 	protected List<CT_WordprocessingShape> Wsp;
@@ -359,7 +359,7 @@ public class CT_WordprocessingCanvas {
 	protected List<CT_WordprocessingGroup> Wgp;
 	@XmlElement(required = true, name = "graphicFrame")
 	protected List<CT_GraphicFrame> GraphicFrame;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_OfficeArtExtensionList ExtLst;
 }
 

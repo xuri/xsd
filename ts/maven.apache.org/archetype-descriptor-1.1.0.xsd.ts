@@ -5,33 +5,33 @@ export type Archetypedescriptor = ArchetypeDescriptor;
 
 // RequiredProperties is List of required properties to generate a project from this archetype.
 export class RequiredProperties {
-	RequiredProperty: Array<RequiredProperty>;
+	RequiredProperty?: Array<RequiredProperty>;
 }
 
 // FileSets is File sets definition.
 export class FileSets {
-	FileSet: Array<FileSet>;
+	FileSet?: Array<FileSet>;
 }
 
 // Modules is Modules definition.
 export class Modules {
-	Module: Array<ModuleDescriptor>;
+	Module?: Array<ModuleDescriptor>;
 }
 
 // ArchetypeDescriptor is 1.0.0+
 export class ArchetypeDescriptor {
 	NameAttr: string;
 	PartialAttr: boolean | null;
-	RequiredProperties: RequiredProperties;
-	FileSets: FileSets;
-	Modules: Modules;
+	RequiredProperties?: RequiredProperties;
+	FileSets?: FileSets;
+	Modules?: Modules;
 }
 
 // RequiredProperty is A regular expression used to validate the property.
 export class RequiredProperty {
 	KeyAttr: string;
-	DefaultValue: string;
-	ValidationRegex: string;
+	DefaultValue?: string;
+	ValidationRegex?: string;
 }
 
 // ModuleDescriptor is 1.0.0+
@@ -39,18 +39,18 @@ export class ModuleDescriptor {
 	IdAttr: string;
 	DirAttr: string;
 	NameAttr: string;
-	FileSets: FileSets;
-	Modules: Modules;
+	FileSets?: FileSets;
+	Modules?: Modules;
 }
 
 // Includes is Inclusion definition "à la" Ant.
 export class Includes {
-	Include: string;
+	Include?: string;
 }
 
 // Excludes is Exclusion definition "à la" Ant.
 export class Excludes {
-	Exclude: string;
+	Exclude?: string;
 }
 
 // FileSet is The directory where the files will be searched for, which is also the directory where the
@@ -59,7 +59,7 @@ export class FileSet {
 	FilteredAttr: boolean | null;
 	PackagedAttr: boolean | null;
 	EncodingAttr: string | null;
-	Directory: string;
-	Includes: Includes;
-	Excludes: Excludes;
+	Directory?: string;
+	Includes?: Includes;
+	Excludes?: Excludes;
 }

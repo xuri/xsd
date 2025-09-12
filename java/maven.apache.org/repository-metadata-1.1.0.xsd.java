@@ -20,7 +20,7 @@ public class Metadata {
 
 // Plugins is The set of plugin mappings for the group represented by this directory
 public class Plugins {
-	@XmlElement(required = true, name = "plugin")
+	@XmlElement(name = "plugin")
 	protected List<Plugin> Plugin;
 }
 
@@ -28,74 +28,74 @@ public class Plugins {
 public class Metadata2 {
 	@XmlAttribute(name = "modelVersion")
 	protected String ModelVersionAttr;
-	@XmlElement(required = true, name = "groupId")
+	@XmlElement(name = "groupId")
 	protected String GroupId;
-	@XmlElement(required = true, name = "artifactId")
+	@XmlElement(name = "artifactId")
 	protected String ArtifactId;
-	@XmlElement(required = true, name = "version")
+	@XmlElement(name = "version")
 	protected String Version;
-	@XmlElement(required = true, name = "versioning")
+	@XmlElement(name = "versioning")
 	protected Versioning Versioning;
-	@XmlElement(required = true, name = "plugins")
+	@XmlElement(name = "plugins")
 	protected Plugins Plugins;
 }
 
 // Plugin is The plugin artifactId
 public class Plugin {
-	@XmlElement(required = true, name = "name")
+	@XmlElement(name = "name")
 	protected String Name;
-	@XmlElement(required = true, name = "prefix")
+	@XmlElement(name = "prefix")
 	protected String Prefix;
-	@XmlElement(required = true, name = "artifactId")
+	@XmlElement(name = "artifactId")
 	protected String ArtifactId;
 }
 
 // Versions is Versions available of the artifact (both releases and snapshots)
 public class Versions {
-	@XmlElement(required = true, name = "version")
+	@XmlElement(name = "version")
 	protected List<String> Version;
 }
 
 // SnapshotVersions is Information for each sub-artifact available in this artifact snapshot.
 public class SnapshotVersions {
-	@XmlElement(required = true, name = "snapshotVersion")
+	@XmlElement(name = "snapshotVersion")
 	protected List<SnapshotVersion> SnapshotVersion;
 }
 
 // Versioning is The current snapshot data in use for this version (artifact snapshots only)
 public class Versioning {
-	@XmlElement(required = true, name = "latest")
+	@XmlElement(name = "latest")
 	protected String Latest;
-	@XmlElement(required = true, name = "release")
+	@XmlElement(name = "release")
 	protected String Release;
-	@XmlElement(required = true, name = "snapshot")
+	@XmlElement(name = "snapshot")
 	protected Snapshot Snapshot;
-	@XmlElement(required = true, name = "versions")
+	@XmlElement(name = "versions")
 	protected Versions Versions;
-	@XmlElement(required = true, name = "lastUpdated")
+	@XmlElement(name = "lastUpdated")
 	protected String LastUpdated;
-	@XmlElement(required = true, name = "snapshotVersions")
+	@XmlElement(name = "snapshotVersions")
 	protected SnapshotVersions SnapshotVersions;
 }
 
 // SnapshotVersion is The timestamp when this version information was last updated. The timestamp is expressed using UTC in the format yyyyMMddHHmmss.
 public class SnapshotVersion {
-	@XmlElement(required = true, name = "classifier")
+	@XmlElement(name = "classifier")
 	protected String Classifier;
-	@XmlElement(required = true, name = "extension")
+	@XmlElement(name = "extension")
 	protected String Extension;
-	@XmlElement(required = true, name = "value")
+	@XmlElement(name = "value")
 	protected String Value;
-	@XmlElement(required = true, name = "updated")
+	@XmlElement(name = "updated")
 	protected String Updated;
 }
 
 // Snapshot is Whether to use a local copy instead (with filename that includes the base version)
 public class Snapshot {
-	@XmlElement(required = true, name = "timestamp")
+	@XmlElement(name = "timestamp")
 	protected String Timestamp;
-	@XmlElement(required = true, name = "buildNumber")
+	@XmlElement(name = "buildNumber")
 	protected Integer BuildNumber;
-	@XmlElement(required = true, name = "localCopy")
+	@XmlElement(name = "localCopy")
 	protected Boolean LocalCopy;
 }

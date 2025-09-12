@@ -2,20 +2,20 @@
 
 // Software ...
 export class Software {
-	SoftwareProvider: any;
-	SoftwareVersion: any;
+	SoftwareProvider?: any;
+	SoftwareVersion?: any;
 }
 
 // TransmissionData ...
 export class TransmissionData {
 	DocumentID: any;
 	CreatedDateTime: string;
-	Software: any;
-	FullResponseCode: any;
+	Software?: any;
+	FullResponseCode?: any;
 }
 
 // CommonRecordType ...
 export class CommonRecordType {
 	TransmissionData: any;
-	Receipt: string;
+	Receipt?: string;
 }

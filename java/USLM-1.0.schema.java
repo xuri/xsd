@@ -402,7 +402,7 @@ public class Content {
 public class LawDocType extends BaseBlockType  {
 	@XmlElement(required = true, name = "meta")
 	protected MetaType Meta;
-	@XmlElement(required = true, name = "main")
+	@XmlElement(name = "main")
 	protected MainType Main;
 	@XmlElement(required = true, name = "block")
 	protected List<BlockType> Block;
@@ -417,7 +417,7 @@ public class GenericDocType extends BaseBlockType  {
 	protected MetaType Meta;
 	@XmlElement(required = true, name = "content")
 	protected ContentType Content;
-	@XmlElement(required = true, name = "appendix")
+	@XmlElement(name = "appendix")
 	protected List<AppendixType> Appendix;
 }
 
@@ -482,7 +482,7 @@ public class TocItemType extends BaseBlockType  {
 	@XmlElement(required = true)
 	protected DescriptionGroup DescriptionGroup;
 	protected HeadingStructure HeadingStructure;
-	@XmlElement(required = true, name = "tocItem")
+	@XmlElement(name = "tocItem")
 	protected List<TocItemType> TocItem;
 	@XmlElement(required = true, name = "content")
 	protected List<ContentType> Content;
@@ -533,7 +533,7 @@ public class PreambleType extends BaseBlockType  {
 	protected DescriptionGroup DescriptionGroup;
 	protected HeadingStructure HeadingStructure;
 	protected List<RecitalStructure> RecitalStructure;
-	@XmlElement(required = true, name = "enactingFormula")
+	@XmlElement(name = "enactingFormula")
 	protected StatementType EnactingFormula;
 }
 
@@ -578,9 +578,9 @@ public class InstructionType extends BaseContentType  {
 	@XmlElement(required = true, name = "level")
 	protected List<LevelType> Level;
 	@XmlElement(required = true, name = "quotedText")
-	protected QuotedTextType QuotedText;
+	protected List<QuotedTextType> QuotedText;
 	@XmlElement(required = true, name = "quotedContent")
-	protected QuotedContentType QuotedContent;
+	protected List<QuotedContentType> QuotedContent;
 }
 
 // ActionType is Use the @action attribute to describe the action being taken.
@@ -598,9 +598,9 @@ public class ActionType extends InlineType  {
 public class NotesType extends BaseBlockType  {
 	@XmlElement(required = true)
 	protected NoteGroup NoteGroup;
-	@XmlElement(required = true, name = "heading")
+	@XmlElement(name = "heading")
 	protected HeadingType Heading;
-	@XmlElement(required = true, name = "subheading")
+	@XmlElement(name = "subheading")
 	protected List<HeadingType> Subheading;
 	@XmlElement(required = true, name = "note")
 	protected List<NoteType> Note;
@@ -642,13 +642,13 @@ public class AppendixType extends BaseBlockType  {
 //             The signatures may either be specified serially in a grid-like
 //             layout.
 public class SignaturesType {
-	@XmlElement(required = true, name = "p")
+	@XmlElement(name = "p")
 	protected PType P;
 	@XmlElement(required = true, name = "signature")
 	protected List<SignatureType> Signature;
 	@XmlElement(required = true, name = "layout")
 	protected LayoutType Layout;
-	@XmlElement(required = true, name = "date")
+	@XmlElement(name = "date")
 	protected String Date;
 }
 
@@ -672,11 +672,11 @@ public class Affiliation {
 public class SignatureType {
 	@XmlElement(required = true, name = "name")
 	protected Name Name;
-	@XmlElement(required = true, name = "role")
+	@XmlElement(name = "role")
 	protected Role Role;
-	@XmlElement(required = true, name = "affiliation")
+	@XmlElement(name = "affiliation")
 	protected Affiliation Affiliation;
-	@XmlElement(required = true, name = "date")
+	@XmlElement(name = "date")
 	protected String Date;
 }
 
@@ -784,11 +784,11 @@ public class LevelStructure {
 	@XmlElement(required = true, name = "content")
 	protected List<ContentType> Content;
 	@XmlElement(required = true, name = "text")
-	protected TextType Text;
+	protected List<TextType> Text;
 	@XmlElement(required = true, name = "level")
-	protected LevelType Level;
+	protected List<LevelType> Level;
 	@XmlElement(required = true, name = "crossHeading")
-	protected HeadingType CrossHeading;
+	protected List<HeadingType> CrossHeading;
 	protected List<NoteStructure> NoteStructure;
 	protected List<NoteStructure> NoteStructure;
 	protected List<NoteStructure> NoteStructure;

@@ -28,9 +28,9 @@ type DecorationModel struct {
 	CombineSelfAttr          string       `xml:"combine.self,attr,omitempty"`
 	BannerLeft               *Banner      `xml:"bannerLeft,omitempty"`
 	BannerRight              *Banner      `xml:"bannerRight,omitempty"`
-	GoogleAdSenseClient      string       `xml:"googleAdSenseClient,omitempty"`
-	GoogleAdSenseSlot        string       `xml:"googleAdSenseSlot,omitempty"`
-	GoogleAnalyticsAccountId string       `xml:"googleAnalyticsAccountId,omitempty"`
+	GoogleAdSenseClient      *string      `xml:"googleAdSenseClient"`
+	GoogleAdSenseSlot        *string      `xml:"googleAdSenseSlot"`
+	GoogleAnalyticsAccountId *string      `xml:"googleAnalyticsAccountId"`
 	PublishDate              *PublishDate `xml:"publishDate,omitempty"`
 	Version                  *Version     `xml:"version,omitempty"`
 	PoweredBy                *PoweredBy   `xml:"poweredBy,omitempty"`
@@ -46,14 +46,14 @@ type Version struct {
 
 // Banner is The title for the banner image.
 type Banner struct {
-	Name   string `xml:"name,omitempty"`
-	Src    string `xml:"src,omitempty"`
-	Alt    string `xml:"alt,omitempty"`
-	Href   string `xml:"href,omitempty"`
-	Border string `xml:"border,omitempty"`
-	Width  string `xml:"width,omitempty"`
-	Height string `xml:"height,omitempty"`
-	Title  string `xml:"title,omitempty"`
+	Name   *string `xml:"name"`
+	Src    *string `xml:"src"`
+	Alt    *string `xml:"alt"`
+	Href   *string `xml:"href"`
+	Border *string `xml:"border"`
+	Width  *string `xml:"width"`
+	Height *string `xml:"height"`
+	Title  *string `xml:"title"`
 }
 
 // Head is Additional content (like Javascript) to include in the HEAD block of the generated pages.
@@ -131,15 +131,15 @@ type MenuItem struct {
 	HeightAttr   string      `xml:"height,attr,omitempty"`
 	TargetAttr   string      `xml:"target,attr,omitempty"`
 	TitleAttr    string      `xml:"title,attr,omitempty"`
-	Description  string      `xml:"description,omitempty"`
+	Description  *string     `xml:"description"`
 	Item         []*MenuItem `xml:"item,omitempty"`
 }
 
 // Skin is The skin version.
 type Skin struct {
-	GroupId    string `xml:"groupId,omitempty"`
-	ArtifactId string `xml:"artifactId,omitempty"`
-	Version    string `xml:"version,omitempty"`
+	GroupId    *string `xml:"groupId"`
+	ArtifactId *string `xml:"artifactId"`
+	Version    *string `xml:"version"`
 }
 
 // Logo is Power by logo on the navigation.

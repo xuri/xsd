@@ -34,9 +34,9 @@ public class CT_Shape {
 	protected CT_ShapeNonVisual NvSpPr;
 	@XmlElement(required = true, name = "spPr")
 	protected CT_ShapeProperties SpPr;
-	@XmlElement(required = true, name = "style")
+	@XmlElement(name = "style")
 	protected CT_ShapeStyle Style;
-	@XmlElement(required = true, name = "txBody")
+	@XmlElement(name = "txBody")
 	protected CT_TextBody TxBody;
 }
 
@@ -58,7 +58,7 @@ public class CT_Connector {
 	protected CT_ConnectorNonVisual NvCxnSpPr;
 	@XmlElement(required = true, name = "spPr")
 	protected CT_ShapeProperties SpPr;
-	@XmlElement(required = true, name = "style")
+	@XmlElement(name = "style")
 	protected CT_ShapeStyle Style;
 }
 
@@ -82,7 +82,7 @@ public class CT_Picture {
 	protected CT_BlipFillProperties BlipFill;
 	@XmlElement(required = true, name = "spPr")
 	protected CT_ShapeProperties SpPr;
-	@XmlElement(required = true, name = "style")
+	@XmlElement(name = "style")
 	protected CT_ShapeStyle Style;
 }
 

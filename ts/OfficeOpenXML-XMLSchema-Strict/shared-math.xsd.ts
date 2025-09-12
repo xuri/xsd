@@ -148,10 +148,10 @@ export class EG_ScriptStyle {
 // CT_RPR ...
 export class CT_RPR {
 	EG_ScriptStyle: EG_ScriptStyle;
-	Lit: CT_OnOff;
-	Nor: CT_OnOff;
-	Brk: CT_ManualBreak;
-	Aln: CT_OnOff;
+	Lit?: CT_OnOff;
+	Nor?: CT_OnOff;
+	Brk?: CT_ManualBreak;
+	Aln?: CT_OnOff;
 }
 
 // CT_Text ...
@@ -164,8 +164,8 @@ export class CT_Text {
 export class CT_R {
 	WEG_RPr: EG_RPr;
 	WEG_RunInnerContent: Array<EG_RunInnerContent>;
-	RPr: CT_RPR;
-	T: Array<CT_Text>;
+	RPr?: CT_RPR;
+	T?: Array<CT_Text>;
 }
 
 // CT_CtrlPr ...
@@ -175,167 +175,167 @@ export class CT_CtrlPr {
 
 // CT_AccPr ...
 export class CT_AccPr {
-	Chr: CT_Char;
-	CtrlPr: CT_CtrlPr;
+	Chr?: CT_Char;
+	CtrlPr?: CT_CtrlPr;
 }
 
 // CT_Acc ...
 export class CT_Acc {
-	AccPr: CT_AccPr;
+	AccPr?: CT_AccPr;
 	E: CT_OMathArg;
 }
 
 // CT_BarPr ...
 export class CT_BarPr {
-	Pos: CT_TopBot;
-	CtrlPr: CT_CtrlPr;
+	Pos?: CT_TopBot;
+	CtrlPr?: CT_CtrlPr;
 }
 
 // CT_Bar ...
 export class CT_Bar {
-	BarPr: CT_BarPr;
+	BarPr?: CT_BarPr;
 	E: CT_OMathArg;
 }
 
 // CT_BoxPr ...
 export class CT_BoxPr {
-	OpEmu: CT_OnOff;
-	NoBreak: CT_OnOff;
-	Diff: CT_OnOff;
-	Brk: CT_ManualBreak;
-	Aln: CT_OnOff;
-	CtrlPr: CT_CtrlPr;
+	OpEmu?: CT_OnOff;
+	NoBreak?: CT_OnOff;
+	Diff?: CT_OnOff;
+	Brk?: CT_ManualBreak;
+	Aln?: CT_OnOff;
+	CtrlPr?: CT_CtrlPr;
 }
 
 // CT_Box ...
 export class CT_Box {
-	BoxPr: CT_BoxPr;
+	BoxPr?: CT_BoxPr;
 	E: CT_OMathArg;
 }
 
 // CT_BorderBoxPr ...
 export class CT_BorderBoxPr {
-	HideTop: CT_OnOff;
-	HideBot: CT_OnOff;
-	HideLeft: CT_OnOff;
-	HideRight: CT_OnOff;
-	StrikeH: CT_OnOff;
-	StrikeV: CT_OnOff;
-	StrikeBLTR: CT_OnOff;
-	StrikeTLBR: CT_OnOff;
-	CtrlPr: CT_CtrlPr;
+	HideTop?: CT_OnOff;
+	HideBot?: CT_OnOff;
+	HideLeft?: CT_OnOff;
+	HideRight?: CT_OnOff;
+	StrikeH?: CT_OnOff;
+	StrikeV?: CT_OnOff;
+	StrikeBLTR?: CT_OnOff;
+	StrikeTLBR?: CT_OnOff;
+	CtrlPr?: CT_CtrlPr;
 }
 
 // CT_BorderBox ...
 export class CT_BorderBox {
-	BorderBoxPr: CT_BorderBoxPr;
+	BorderBoxPr?: CT_BorderBoxPr;
 	E: CT_OMathArg;
 }
 
 // CT_DPr ...
 export class CT_DPr {
-	BegChr: CT_Char;
-	SepChr: CT_Char;
-	EndChr: CT_Char;
-	Grow: CT_OnOff;
-	Shp: CT_Shp;
-	CtrlPr: CT_CtrlPr;
+	BegChr?: CT_Char;
+	SepChr?: CT_Char;
+	EndChr?: CT_Char;
+	Grow?: CT_OnOff;
+	Shp?: CT_Shp;
+	CtrlPr?: CT_CtrlPr;
 }
 
 // CT_D ...
 export class CT_D {
-	DPr: CT_DPr;
+	DPr?: CT_DPr;
 	E: Array<CT_OMathArg>;
 }
 
 // CT_EqArrPr ...
 export class CT_EqArrPr {
-	BaseJc: CT_YAlign;
-	MaxDist: CT_OnOff;
-	ObjDist: CT_OnOff;
-	RSpRule: CT_SpacingRule;
-	RSp: CT_UnSignedInteger;
-	CtrlPr: CT_CtrlPr;
+	BaseJc?: CT_YAlign;
+	MaxDist?: CT_OnOff;
+	ObjDist?: CT_OnOff;
+	RSpRule?: CT_SpacingRule;
+	RSp?: CT_UnSignedInteger;
+	CtrlPr?: CT_CtrlPr;
 }
 
 // CT_EqArr ...
 export class CT_EqArr {
-	EqArrPr: CT_EqArrPr;
+	EqArrPr?: CT_EqArrPr;
 	E: Array<CT_OMathArg>;
 }
 
 // CT_FPr ...
 export class CT_FPr {
-	Type: CT_FType;
-	CtrlPr: CT_CtrlPr;
+	Type?: CT_FType;
+	CtrlPr?: CT_CtrlPr;
 }
 
 // CT_F ...
 export class CT_F {
-	FPr: CT_FPr;
+	FPr?: CT_FPr;
 	Num: CT_OMathArg;
 	Den: CT_OMathArg;
 }
 
 // CT_FuncPr ...
 export class CT_FuncPr {
-	CtrlPr: CT_CtrlPr;
+	CtrlPr?: CT_CtrlPr;
 }
 
 // CT_Func ...
 export class CT_Func {
-	FuncPr: CT_FuncPr;
+	FuncPr?: CT_FuncPr;
 	FName: CT_OMathArg;
 	E: CT_OMathArg;
 }
 
 // CT_GroupChrPr ...
 export class CT_GroupChrPr {
-	Chr: CT_Char;
-	Pos: CT_TopBot;
-	VertJc: CT_TopBot;
-	CtrlPr: CT_CtrlPr;
+	Chr?: CT_Char;
+	Pos?: CT_TopBot;
+	VertJc?: CT_TopBot;
+	CtrlPr?: CT_CtrlPr;
 }
 
 // CT_GroupChr ...
 export class CT_GroupChr {
-	GroupChrPr: CT_GroupChrPr;
+	GroupChrPr?: CT_GroupChrPr;
 	E: CT_OMathArg;
 }
 
 // CT_LimLowPr ...
 export class CT_LimLowPr {
-	CtrlPr: CT_CtrlPr;
+	CtrlPr?: CT_CtrlPr;
 }
 
 // CT_LimLow ...
 export class CT_LimLow {
-	LimLowPr: CT_LimLowPr;
+	LimLowPr?: CT_LimLowPr;
 	E: CT_OMathArg;
 	Lim: CT_OMathArg;
 }
 
 // CT_LimUppPr ...
 export class CT_LimUppPr {
-	CtrlPr: CT_CtrlPr;
+	CtrlPr?: CT_CtrlPr;
 }
 
 // CT_LimUpp ...
 export class CT_LimUpp {
-	LimUppPr: CT_LimUppPr;
+	LimUppPr?: CT_LimUppPr;
 	E: CT_OMathArg;
 	Lim: CT_OMathArg;
 }
 
 // CT_MCPr ...
 export class CT_MCPr {
-	Count: CT_Integer255;
-	McJc: CT_XAlign;
+	Count?: CT_Integer255;
+	McJc?: CT_XAlign;
 }
 
 // CT_MC ...
 export class CT_MC {
-	McPr: CT_MCPr;
+	McPr?: CT_MCPr;
 }
 
 // CT_MCS ...
@@ -345,15 +345,15 @@ export class CT_MCS {
 
 // CT_MPr ...
 export class CT_MPr {
-	BaseJc: CT_YAlign;
-	PlcHide: CT_OnOff;
-	RSpRule: CT_SpacingRule;
-	CGpRule: CT_SpacingRule;
-	RSp: CT_UnSignedInteger;
-	CSp: CT_UnSignedInteger;
-	CGp: CT_UnSignedInteger;
-	Mcs: CT_MCS;
-	CtrlPr: CT_CtrlPr;
+	BaseJc?: CT_YAlign;
+	PlcHide?: CT_OnOff;
+	RSpRule?: CT_SpacingRule;
+	CGpRule?: CT_SpacingRule;
+	RSp?: CT_UnSignedInteger;
+	CSp?: CT_UnSignedInteger;
+	CGp?: CT_UnSignedInteger;
+	Mcs?: CT_MCS;
+	CtrlPr?: CT_CtrlPr;
 }
 
 // CT_MR ...
@@ -363,23 +363,23 @@ export class CT_MR {
 
 // CT_M ...
 export class CT_M {
-	MPr: CT_MPr;
+	MPr?: CT_MPr;
 	Mr: Array<CT_MR>;
 }
 
 // CT_NaryPr ...
 export class CT_NaryPr {
-	Chr: CT_Char;
-	LimLoc: CT_LimLoc;
-	Grow: CT_OnOff;
-	SubHide: CT_OnOff;
-	SupHide: CT_OnOff;
-	CtrlPr: CT_CtrlPr;
+	Chr?: CT_Char;
+	LimLoc?: CT_LimLoc;
+	Grow?: CT_OnOff;
+	SubHide?: CT_OnOff;
+	SupHide?: CT_OnOff;
+	CtrlPr?: CT_CtrlPr;
 }
 
 // CT_Nary ...
 export class CT_Nary {
-	NaryPr: CT_NaryPr;
+	NaryPr?: CT_NaryPr;
 	Sub: CT_OMathArg;
 	Sup: CT_OMathArg;
 	E: CT_OMathArg;
@@ -387,41 +387,41 @@ export class CT_Nary {
 
 // CT_PhantPr ...
 export class CT_PhantPr {
-	Show: CT_OnOff;
-	ZeroWid: CT_OnOff;
-	ZeroAsc: CT_OnOff;
-	ZeroDesc: CT_OnOff;
-	Transp: CT_OnOff;
-	CtrlPr: CT_CtrlPr;
+	Show?: CT_OnOff;
+	ZeroWid?: CT_OnOff;
+	ZeroAsc?: CT_OnOff;
+	ZeroDesc?: CT_OnOff;
+	Transp?: CT_OnOff;
+	CtrlPr?: CT_CtrlPr;
 }
 
 // CT_Phant ...
 export class CT_Phant {
-	PhantPr: CT_PhantPr;
+	PhantPr?: CT_PhantPr;
 	E: CT_OMathArg;
 }
 
 // CT_RadPr ...
 export class CT_RadPr {
-	DegHide: CT_OnOff;
-	CtrlPr: CT_CtrlPr;
+	DegHide?: CT_OnOff;
+	CtrlPr?: CT_CtrlPr;
 }
 
 // CT_Rad ...
 export class CT_Rad {
-	RadPr: CT_RadPr;
+	RadPr?: CT_RadPr;
 	Deg: CT_OMathArg;
 	E: CT_OMathArg;
 }
 
 // CT_SPrePr ...
 export class CT_SPrePr {
-	CtrlPr: CT_CtrlPr;
+	CtrlPr?: CT_CtrlPr;
 }
 
 // CT_SPre ...
 export class CT_SPre {
-	SPrePr: CT_SPrePr;
+	SPrePr?: CT_SPrePr;
 	Sub: CT_OMathArg;
 	Sup: CT_OMathArg;
 	E: CT_OMathArg;
@@ -429,25 +429,25 @@ export class CT_SPre {
 
 // CT_SSubPr ...
 export class CT_SSubPr {
-	CtrlPr: CT_CtrlPr;
+	CtrlPr?: CT_CtrlPr;
 }
 
 // CT_SSub ...
 export class CT_SSub {
-	SSubPr: CT_SSubPr;
+	SSubPr?: CT_SSubPr;
 	E: CT_OMathArg;
 	Sub: CT_OMathArg;
 }
 
 // CT_SSubSupPr ...
 export class CT_SSubSupPr {
-	AlnScr: CT_OnOff;
-	CtrlPr: CT_CtrlPr;
+	AlnScr?: CT_OnOff;
+	CtrlPr?: CT_CtrlPr;
 }
 
 // CT_SSubSup ...
 export class CT_SSubSup {
-	SSubSupPr: CT_SSubSupPr;
+	SSubSupPr?: CT_SSubSupPr;
 	E: CT_OMathArg;
 	Sub: CT_OMathArg;
 	Sup: CT_OMathArg;
@@ -455,12 +455,12 @@ export class CT_SSubSup {
 
 // CT_SSupPr ...
 export class CT_SSupPr {
-	CtrlPr: CT_CtrlPr;
+	CtrlPr?: CT_CtrlPr;
 }
 
 // CT_SSup ...
 export class CT_SSup {
-	SSupPr: CT_SSupPr;
+	SSupPr?: CT_SSupPr;
 	E: CT_OMathArg;
 	Sup: CT_OMathArg;
 }
@@ -497,14 +497,14 @@ export class EG_OMathElements {
 
 // CT_OMathArgPr ...
 export class CT_OMathArgPr {
-	ArgSz: CT_Integer2;
+	ArgSz?: CT_Integer2;
 }
 
 // CT_OMathArg ...
 export class CT_OMathArg {
 	EG_OMathElements: Array<EG_OMathElements>;
-	ArgPr: CT_OMathArgPr;
-	CtrlPr: CT_CtrlPr;
+	ArgPr?: CT_OMathArgPr;
+	CtrlPr?: CT_CtrlPr;
 }
 
 // ST_Jc ...
@@ -522,7 +522,7 @@ export class CT_OMathJc {
 
 // CT_OMathParaPr ...
 export class CT_OMathParaPr {
-	Jc: CT_OMathJc;
+	Jc?: CT_OMathJc;
 }
 
 // CT_TwipsMeasure ...
@@ -556,22 +556,22 @@ export class CT_BreakBinSub {
 
 // CT_MathPr ...
 export class CT_MathPr {
-	MathFont: CT_String;
-	BrkBin: CT_BreakBin;
-	BrkBinSub: CT_BreakBinSub;
-	SmallFrac: CT_OnOff;
-	DispDef: CT_OnOff;
-	LMargin: CT_TwipsMeasure;
-	RMargin: CT_TwipsMeasure;
-	DefJc: CT_OMathJc;
-	PreSp: CT_TwipsMeasure;
-	PostSp: CT_TwipsMeasure;
-	InterSp: CT_TwipsMeasure;
-	IntraSp: CT_TwipsMeasure;
+	MathFont?: CT_String;
+	BrkBin?: CT_BreakBin;
+	BrkBinSub?: CT_BreakBinSub;
+	SmallFrac?: CT_OnOff;
+	DispDef?: CT_OnOff;
+	LMargin?: CT_TwipsMeasure;
+	RMargin?: CT_TwipsMeasure;
+	DefJc?: CT_OMathJc;
+	PreSp?: CT_TwipsMeasure;
+	PostSp?: CT_TwipsMeasure;
+	InterSp?: CT_TwipsMeasure;
+	IntraSp?: CT_TwipsMeasure;
 	WrapIndent: CT_TwipsMeasure;
 	WrapRight: CT_OnOff;
-	IntLim: CT_LimLoc;
-	NaryLim: CT_LimLoc;
+	IntLim?: CT_LimLoc;
+	NaryLim?: CT_LimLoc;
 }
 
 // MathPr ...
@@ -579,7 +579,7 @@ export type MathPr = CT_MathPr;
 
 // CT_OMathPara ...
 export class CT_OMathPara {
-	OMathParaPr: CT_OMathParaPr;
+	OMathParaPr?: CT_OMathParaPr;
 	OMath: Array<CT_OMath>;
 }
 

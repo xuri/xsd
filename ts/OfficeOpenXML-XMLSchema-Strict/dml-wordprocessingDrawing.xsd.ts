@@ -18,9 +18,9 @@ export class CT_Inline {
 	DistLAttr: number | null;
 	DistRAttr: number | null;
 	Extent: CT_PositiveSize2D;
-	EffectExtent: CT_EffectExtent;
+	EffectExtent?: CT_EffectExtent;
 	DocPr: CT_NonVisualDrawingProps;
-	CNvGraphicFramePr: CT_NonVisualGraphicFrameProperties;
+	CNvGraphicFramePr?: CT_NonVisualGraphicFrameProperties;
 	AGraphic: CT_GraphicalObject;
 }
 
@@ -50,7 +50,7 @@ export class CT_WrapSquare {
 	DistBAttr: number | null;
 	DistLAttr: number | null;
 	DistRAttr: number | null;
-	EffectExtent: CT_EffectExtent;
+	EffectExtent?: CT_EffectExtent;
 }
 
 // CT_WrapTight ...
@@ -73,7 +73,7 @@ export class CT_WrapThrough {
 export class CT_WrapTopBottom {
 	DistTAttr: number | null;
 	DistBAttr: number | null;
-	EffectExtent: CT_EffectExtent;
+	EffectExtent?: CT_EffectExtent;
 }
 
 // EG_WrapType ...
@@ -162,9 +162,9 @@ export class CT_Anchor {
 	PositionH: CT_PosH;
 	PositionV: CT_PosV;
 	Extent: CT_PositiveSize2D;
-	EffectExtent: CT_EffectExtent;
+	EffectExtent?: CT_EffectExtent;
 	DocPr: CT_NonVisualDrawingProps;
-	CNvGraphicFramePr: CT_NonVisualGraphicFrameProperties;
+	CNvGraphicFramePr?: CT_NonVisualGraphicFrameProperties;
 	AGraphic: CT_GraphicalObject;
 }
 
@@ -177,25 +177,25 @@ export class CT_TxbxContent {
 export class CT_TextboxInfo {
 	IdAttr: number | null;
 	TxbxContent: CT_TxbxContent;
-	ExtLst: CT_OfficeArtExtensionList;
+	ExtLst?: CT_OfficeArtExtensionList;
 }
 
 // CT_LinkedTextboxInformation ...
 export class CT_LinkedTextboxInformation {
 	IdAttr: number;
 	SeqAttr: number;
-	ExtLst: CT_OfficeArtExtensionList;
+	ExtLst?: CT_OfficeArtExtensionList;
 }
 
 // CT_WordprocessingShape ...
 export class CT_WordprocessingShape {
 	NormalEastAsianFlowAttr: boolean | null;
-	CNvPr: CT_NonVisualDrawingProps;
+	CNvPr?: CT_NonVisualDrawingProps;
 	CNvSpPr: CT_NonVisualDrawingShapeProps;
 	CNvCnPr: CT_NonVisualConnectorProperties;
 	SpPr: CT_ShapeProperties;
-	Style: CT_ShapeStyle;
-	ExtLst: CT_OfficeArtExtensionList;
+	Style?: CT_ShapeStyle;
+	ExtLst?: CT_OfficeArtExtensionList;
 	Txbx: CT_TextboxInfo;
 	LinkedTxbx: CT_LinkedTextboxInformation;
 	BodyPr: CT_TextBodyProperties;
@@ -207,27 +207,27 @@ export class CT_GraphicFrame {
 	CNvFrPr: CT_NonVisualGraphicFrameProperties;
 	Xfrm: CT_Transform2D;
 	AGraphic: CT_GraphicalObject;
-	ExtLst: CT_OfficeArtExtensionList;
+	ExtLst?: CT_OfficeArtExtensionList;
 }
 
 // CT_WordprocessingContentPartNonVisual ...
 export class CT_WordprocessingContentPartNonVisual {
-	CNvPr: CT_NonVisualDrawingProps;
-	CNvContentPartPr: CT_NonVisualContentPartProperties;
+	CNvPr?: CT_NonVisualDrawingProps;
+	CNvContentPartPr?: CT_NonVisualContentPartProperties;
 }
 
 // CT_WordprocessingContentPart ...
 export class CT_WordprocessingContentPart {
 	BwModeAttr: string | null;
 	RIdAttr: string;
-	NvContentPartPr: CT_WordprocessingContentPartNonVisual;
-	Xfrm: CT_Transform2D;
-	ExtLst: CT_OfficeArtExtensionList;
+	NvContentPartPr?: CT_WordprocessingContentPartNonVisual;
+	Xfrm?: CT_Transform2D;
+	ExtLst?: CT_OfficeArtExtensionList;
 }
 
 // CT_WordprocessingGroup ...
 export class CT_WordprocessingGroup {
-	CNvPr: CT_NonVisualDrawingProps;
+	CNvPr?: CT_NonVisualDrawingProps;
 	CNvGrpSpPr: CT_NonVisualGroupDrawingShapeProps;
 	GrpSpPr: CT_GroupShapeProperties;
 	Wsp: Array<CT_WordprocessingShape>;
@@ -235,19 +235,19 @@ export class CT_WordprocessingGroup {
 	GraphicFrame: Array<CT_GraphicFrame>;
 	DpctPic: Array<CT_Picture>;
 	ContentPart: Array<CT_WordprocessingContentPart>;
-	ExtLst: CT_OfficeArtExtensionList;
+	ExtLst?: CT_OfficeArtExtensionList;
 }
 
 // CT_WordprocessingCanvas ...
 export class CT_WordprocessingCanvas {
-	Bg: CT_BackgroundFormatting;
-	Whole: CT_WholeE2oFormatting;
+	Bg?: CT_BackgroundFormatting;
+	Whole?: CT_WholeE2oFormatting;
 	Wsp: Array<CT_WordprocessingShape>;
 	DpctPic: Array<CT_Picture>;
 	ContentPart: Array<CT_WordprocessingContentPart>;
 	Wgp: Array<CT_WordprocessingGroup>;
 	GraphicFrame: Array<CT_GraphicFrame>;
-	ExtLst: CT_OfficeArtExtensionList;
+	ExtLst?: CT_OfficeArtExtensionList;
 }
 
 // Wpc ...

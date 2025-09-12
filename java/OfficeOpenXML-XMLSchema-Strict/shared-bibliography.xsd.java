@@ -27,11 +27,11 @@ public class CT_NameListType {
 
 // CT_PersonType ...
 public class CT_PersonType {
-	@XmlElement(required = true, name = "Last")
+	@XmlElement(name = "Last")
 	protected List<String> Last;
-	@XmlElement(required = true, name = "First")
+	@XmlElement(name = "First")
 	protected List<String> First;
-	@XmlElement(required = true, name = "Middle")
+	@XmlElement(name = "Middle")
 	protected List<String> Middle;
 }
 
@@ -207,6 +207,6 @@ public class CT_Sources {
 	protected String StyleNameAttr;
 	@XmlAttribute(name = "URI")
 	protected String URIAttr;
-	@XmlElement(required = true, name = "Source")
+	@XmlElement(name = "Source")
 	protected List<CT_SourceType> Source;
 }

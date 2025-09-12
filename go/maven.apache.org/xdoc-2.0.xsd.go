@@ -1395,7 +1395,7 @@ type Properties struct {
 	XMLName xml.Name  `xml:"properties"`
 	Title   *Title    `xml:"title"`
 	Author  []*Author `xml:"author,omitempty"`
-	Date    string    `xml:"date,omitempty"`
+	Date    *string   `xml:"date"`
 }
 
 // Author is An author element.

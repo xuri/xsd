@@ -17,17 +17,17 @@ type PurgedVolumeRecorded struct {
 
 // Measurement is This repeating element contains the structure of a Water Quality measurement.
 type Measurement struct {
-	DeterminandName interface{} `xml:"DeterminandName"`
-	ResultType      interface{} `xml:"ResultType"`
-	ResultValue     float64     `xml:"ResultValue,omitempty"`
-	ResultUnits     interface{} `xml:"ResultUnits,omitempty"`
-	Qualifier       interface{} `xml:"Qualifier,omitempty"`
-	Comment         interface{} `xml:"Comment,omitempty"`
+	DeterminandName interface{}  `xml:"DeterminandName"`
+	ResultType      interface{}  `xml:"ResultType"`
+	ResultValue     *float64     `xml:"ResultValue"`
+	ResultUnits     *interface{} `xml:"ResultUnits"`
+	Qualifier       *interface{} `xml:"Qualifier"`
+	Comment         *interface{} `xml:"Comment"`
 }
 
 // Sample is This element contains the structure of a collection of samples.
 type Sample struct {
-	Sampler                        interface{}           `xml:"Sampler,omitempty"`
+	Sampler                        *interface{}          `xml:"Sampler"`
 	SampleType                     interface{}           `xml:"SampleType"`
 	CustomerSamplePointName        interface{}           `xml:"CustomerSamplePointName"`
 	SampleDateTime                 string                `xml:"SampleDateTime"`
@@ -36,7 +36,7 @@ type Sample struct {
 	Mechanism                      interface{}           `xml:"Mechanism"`
 	CustomersLabSampleRef          interface{}           `xml:"CustomersLabSampleRef"`
 	CustomersLabSampleRefSecondary []interface{}         `xml:"CustomersLabSampleRefSecondary,omitempty"`
-	Comment                        interface{}           `xml:"Comment,omitempty"`
+	Comment                        *interface{}          `xml:"Comment"`
 	LabName                        interface{}           `xml:"LabName"`
 	AnalysisCompleteDateTime       string                `xml:"AnalysisCompleteDateTime"`
 	DepthValueRecorded             *DepthValueRecorded   `xml:"DepthValueRecorded,omitempty"`
@@ -46,10 +46,10 @@ type Sample struct {
 
 // FileUpload ...
 type FileUpload struct {
-	Source                      interface{} `xml:"Source"`
-	Sample                      []*Sample   `xml:"Sample"`
-	RegulatedCustomerIdentifier interface{} `xml:"RegulatedCustomerIdentifier"`
-	CustomerReference           interface{} `xml:"CustomerReference,omitempty"`
+	Source                      interface{}  `xml:"Source"`
+	Sample                      []*Sample    `xml:"Sample"`
+	RegulatedCustomerIdentifier interface{}  `xml:"RegulatedCustomerIdentifier"`
+	CustomerReference           *interface{} `xml:"CustomerReference"`
 }
 
 // MandatoryStringType ...

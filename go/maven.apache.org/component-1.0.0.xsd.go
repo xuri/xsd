@@ -52,35 +52,35 @@ type Excludes struct {
 //             of the root directory of the assembly. For example,
 //             "log" will put the specified files in the log directory.
 type DependencySet struct {
-	OutputFileNameMapping string    `xml:"outputFileNameMapping,omitempty"`
-	Unpack                bool      `xml:"unpack,omitempty"`
-	Scope                 string    `xml:"scope,omitempty"`
-	OutputDirectory       string    `xml:"outputDirectory,omitempty"`
+	OutputFileNameMapping *string   `xml:"outputFileNameMapping"`
+	Unpack                *bool     `xml:"unpack"`
+	Scope                 *string   `xml:"scope"`
+	OutputDirectory       *string   `xml:"outputDirectory"`
 	Includes              *Includes `xml:"includes,omitempty"`
 	Excludes              *Excludes `xml:"excludes,omitempty"`
-	FileMode              string    `xml:"fileMode,omitempty"`
-	DirectoryMode         string    `xml:"directoryMode,omitempty"`
+	FileMode              *string   `xml:"fileMode"`
+	DirectoryMode         *string   `xml:"directoryMode"`
 }
 
 // FileItem is Flag used to determine if the file is filtered.
 type FileItem struct {
-	Source          string `xml:"source,omitempty"`
-	OutputDirectory string `xml:"outputDirectory,omitempty"`
-	DestName        string `xml:"destName,omitempty"`
-	FileMode        string `xml:"fileMode,omitempty"`
-	LineEnding      string `xml:"lineEnding,omitempty"`
-	Filtered        bool   `xml:"filtered,omitempty"`
+	Source          *string `xml:"source"`
+	OutputDirectory *string `xml:"outputDirectory"`
+	DestName        *string `xml:"destName"`
+	FileMode        *string `xml:"fileMode"`
+	LineEnding      *string `xml:"lineEnding"`
+	Filtered        *bool   `xml:"filtered"`
 }
 
 // FileSet is Specifies the output directory relative to the root
 //             of the root directory of the assembly. For example,
 //             "log" will put the specified files in the log directory.
 type FileSet struct {
-	Directory       string    `xml:"directory,omitempty"`
-	LineEnding      string    `xml:"lineEnding,omitempty"`
-	OutputDirectory string    `xml:"outputDirectory,omitempty"`
+	Directory       *string   `xml:"directory"`
+	LineEnding      *string   `xml:"lineEnding"`
+	OutputDirectory *string   `xml:"outputDirectory"`
 	Includes        *Includes `xml:"includes,omitempty"`
 	Excludes        *Excludes `xml:"excludes,omitempty"`
-	FileMode        string    `xml:"fileMode,omitempty"`
-	DirectoryMode   string    `xml:"directoryMode,omitempty"`
+	FileMode        *string   `xml:"fileMode"`
+	DirectoryMode   *string   `xml:"directoryMode"`
 }

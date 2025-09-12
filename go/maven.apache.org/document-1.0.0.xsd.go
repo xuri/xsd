@@ -34,34 +34,34 @@ type DocumentTOCItem struct {
 
 // DocumentCover is The location of an image file that represents the company logo.
 type DocumentCover struct {
-	CoverTitle    string            `xml:"coverTitle,omitempty"`
-	CoverSubTitle string            `xml:"coverSubTitle,omitempty"`
-	CoverVersion  string            `xml:"coverVersion,omitempty"`
-	CoverType     string            `xml:"coverType,omitempty"`
-	CoverDate     string            `xml:"coverDate,omitempty"`
+	CoverTitle    *string           `xml:"coverTitle"`
+	CoverSubTitle *string           `xml:"coverSubTitle"`
+	CoverVersion  *string           `xml:"coverVersion"`
+	CoverType     *string           `xml:"coverType"`
+	CoverDate     *string           `xml:"coverDate"`
 	Author        []*DocumentAuthor `xml:"author,omitempty"`
-	ProjectName   string            `xml:"projectName,omitempty"`
-	ProjectLogo   string            `xml:"projectLogo,omitempty"`
-	CompanyName   string            `xml:"companyName,omitempty"`
-	CompanyLogo   string            `xml:"companyLogo,omitempty"`
+	ProjectName   *string           `xml:"projectName"`
+	ProjectLogo   *string           `xml:"projectLogo"`
+	CompanyName   *string           `xml:"companyName"`
+	CompanyLogo   *string           `xml:"companyLogo"`
 }
 
 // DocumentAuthor is The state or province of the address of the author, if applicable.
 type DocumentAuthor struct {
-	FirstName   string `xml:"firstName,omitempty"`
-	LastName    string `xml:"lastName,omitempty"`
-	Initials    string `xml:"initials,omitempty"`
-	Title       string `xml:"title,omitempty"`
-	Position    string `xml:"position,omitempty"`
-	Email       string `xml:"email,omitempty"`
-	PhoneNumber string `xml:"phoneNumber,omitempty"`
-	FaxNumber   string `xml:"faxNumber,omitempty"`
-	CompanyName string `xml:"companyName,omitempty"`
-	Street      string `xml:"street,omitempty"`
-	City        string `xml:"city,omitempty"`
-	PostalCode  string `xml:"postalCode,omitempty"`
-	Country     string `xml:"country,omitempty"`
-	State       string `xml:"state,omitempty"`
+	FirstName   *string `xml:"firstName"`
+	LastName    *string `xml:"lastName"`
+	Initials    *string `xml:"initials"`
+	Title       *string `xml:"title"`
+	Position    *string `xml:"position"`
+	Email       *string `xml:"email"`
+	PhoneNumber *string `xml:"phoneNumber"`
+	FaxNumber   *string `xml:"faxNumber"`
+	CompanyName *string `xml:"companyName"`
+	Street      *string `xml:"street"`
+	City        *string `xml:"city"`
+	PostalCode  *string `xml:"postalCode"`
+	Country     *string `xml:"country"`
+	State       *string `xml:"state"`
 }
 
 // Authors is The authors of the document. The names of the entities that
@@ -81,29 +81,29 @@ type KeyWords struct {
 // DocumentMeta is A shortcut for the unique author of the document, usually as a String of "firstName lastName". For
 //             more authors, you could use the <authors/> tag.
 type DocumentMeta struct {
-	Title              string                      `xml:"title,omitempty"`
-	Author             string                      `xml:"author,omitempty"`
+	Title              *string                     `xml:"title"`
+	Author             *string                     `xml:"author"`
 	Authors            *Authors                    `xml:"authors,omitempty"`
-	Subject            string                      `xml:"subject,omitempty"`
-	Keywords           string                      `xml:"keywords,omitempty"`
+	Subject            *string                     `xml:"subject"`
+	Keywords           *string                     `xml:"keywords"`
 	KeyWords           *KeyWords                   `xml:"keyWords,omitempty"`
-	PageSize           string                      `xml:"pageSize,omitempty"`
-	Generator          string                      `xml:"generator,omitempty"`
-	Description        string                      `xml:"description,omitempty"`
-	InitialCreator     string                      `xml:"initialCreator,omitempty"`
-	Creator            string                      `xml:"creator,omitempty"`
-	PrintedBy          string                      `xml:"printedBy,omitempty"`
-	CreationDate       string                      `xml:"creationDate,omitempty"`
-	Date               string                      `xml:"date,omitempty"`
-	PrintDate          string                      `xml:"printDate,omitempty"`
+	PageSize           *string                     `xml:"pageSize"`
+	Generator          *string                     `xml:"generator"`
+	Description        *string                     `xml:"description"`
+	InitialCreator     *string                     `xml:"initialCreator"`
+	Creator            *string                     `xml:"creator"`
+	PrintedBy          *string                     `xml:"printedBy"`
+	CreationDate       *string                     `xml:"creationDate"`
+	Date               *string                     `xml:"date"`
+	PrintDate          *string                     `xml:"printDate"`
 	Template           *DocumentTemplate           `xml:"template,omitempty"`
 	HyperlinkBehaviour *DocumentHyperlinkBehaviour `xml:"hyperlinkBehaviour,omitempty"`
-	Language           string                      `xml:"language,omitempty"`
-	EditingCycles      int64                       `xml:"editingCycles,omitempty"`
-	EditingDuration    int64                       `xml:"editingDuration,omitempty"`
+	Language           *string                     `xml:"language"`
+	EditingCycles      *int64                      `xml:"editingCycles"`
+	EditingDuration    *int64                      `xml:"editingDuration"`
 	DocumentStatistic  *DocumentStatistic          `xml:"documentStatistic,omitempty"`
-	Confidential       bool                        `xml:"confidential,omitempty"`
-	Draft              bool                        `xml:"draft,omitempty"`
+	Confidential       *bool                       `xml:"confidential"`
+	Draft              *bool                       `xml:"draft"`
 }
 
 // DocumentTemplate is A template that was used to create the document.

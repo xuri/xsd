@@ -38,7 +38,7 @@ public class CT_CTCategory {
 
 // CT_CTCategories ...
 public class CT_CTCategories {
-	@XmlElement(required = true, name = "cat")
+	@XmlElement(name = "cat")
 	protected List<CT_CTCategory> Cat;
 }
 
@@ -69,19 +69,19 @@ public class CT_Colors {
 public class CT_CTStyleLabel {
 	@XmlAttribute(name = "name", required = true)
 	protected String NameAttr;
-	@XmlElement(required = true, name = "fillClrLst")
+	@XmlElement(name = "fillClrLst")
 	protected CT_Colors FillClrLst;
-	@XmlElement(required = true, name = "linClrLst")
+	@XmlElement(name = "linClrLst")
 	protected CT_Colors LinClrLst;
-	@XmlElement(required = true, name = "effectClrLst")
+	@XmlElement(name = "effectClrLst")
 	protected CT_Colors EffectClrLst;
-	@XmlElement(required = true, name = "txLinClrLst")
+	@XmlElement(name = "txLinClrLst")
 	protected CT_Colors TxLinClrLst;
-	@XmlElement(required = true, name = "txFillClrLst")
+	@XmlElement(name = "txFillClrLst")
 	protected CT_Colors TxFillClrLst;
-	@XmlElement(required = true, name = "txEffectClrLst")
+	@XmlElement(name = "txEffectClrLst")
 	protected CT_Colors TxEffectClrLst;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_OfficeArtExtensionList ExtLst;
 }
 
@@ -91,15 +91,15 @@ public class CT_ColorTransform {
 	protected String UniqueIdAttr;
 	@XmlAttribute(name = "minVer")
 	protected String MinVerAttr;
-	@XmlElement(required = true, name = "title")
+	@XmlElement(name = "title")
 	protected List<CT_CTName> Title;
-	@XmlElement(required = true, name = "desc")
+	@XmlElement(name = "desc")
 	protected List<CT_CTDescription> Desc;
-	@XmlElement(required = true, name = "catLst")
+	@XmlElement(name = "catLst")
 	protected CT_CTCategories CatLst;
-	@XmlElement(required = true, name = "styleLbl")
+	@XmlElement(name = "styleLbl")
 	protected List<CT_CTStyleLabel> StyleLbl;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_OfficeArtExtensionList ExtLst;
 }
 
@@ -121,9 +121,9 @@ public class CT_ColorTransformHeader {
 	protected List<CT_CTName> Title;
 	@XmlElement(required = true, name = "desc")
 	protected List<CT_CTDescription> Desc;
-	@XmlElement(required = true, name = "catLst")
+	@XmlElement(name = "catLst")
 	protected CT_CTCategories CatLst;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_OfficeArtExtensionList ExtLst;
 }
 
@@ -135,7 +135,7 @@ public class ColorsDefHdr {
 
 // CT_ColorTransformHeaderLst ...
 public class CT_ColorTransformHeaderLst {
-	@XmlElement(required = true, name = "colorsDefHdr")
+	@XmlElement(name = "colorsDefHdr")
 	protected List<CT_ColorTransformHeader> ColorsDefHdr;
 }
 
@@ -160,19 +160,19 @@ public class CT_Pt {
 	protected String TypeAttr;
 	@XmlAttribute(name = "cxnId")
 	protected ST_ModelId CxnIdAttr;
-	@XmlElement(required = true, name = "prSet")
+	@XmlElement(name = "prSet")
 	protected CT_ElemPropSet PrSet;
-	@XmlElement(required = true, name = "spPr")
+	@XmlElement(name = "spPr")
 	protected CT_ShapeProperties SpPr;
-	@XmlElement(required = true, name = "t")
+	@XmlElement(name = "t")
 	protected CT_TextBody T;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_OfficeArtExtensionList ExtLst;
 }
 
 // CT_PtList ...
 public class CT_PtList {
-	@XmlElement(required = true, name = "pt")
+	@XmlElement(name = "pt")
 	protected List<CT_Pt> Pt;
 }
 
@@ -203,13 +203,13 @@ public class CT_Cxn {
 	protected ST_ModelId SibTransIdAttr;
 	@XmlAttribute(name = "presId")
 	protected String PresIdAttr;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_OfficeArtExtensionList ExtLst;
 }
 
 // CT_CxnList ...
 public class CT_CxnList {
-	@XmlElement(required = true, name = "cxn")
+	@XmlElement(name = "cxn")
 	protected List<CT_Cxn> Cxn;
 }
 
@@ -217,13 +217,13 @@ public class CT_CxnList {
 public class CT_DataModel {
 	@XmlElement(required = true, name = "ptLst")
 	protected CT_PtList PtLst;
-	@XmlElement(required = true, name = "cxnLst")
+	@XmlElement(name = "cxnLst")
 	protected CT_CxnList CxnLst;
-	@XmlElement(required = true, name = "bg")
+	@XmlElement(name = "bg")
 	protected CT_BackgroundFormatting Bg;
-	@XmlElement(required = true, name = "whole")
+	@XmlElement(name = "whole")
 	protected CT_WholeE2oFormatting Whole;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_OfficeArtExtensionList ExtLst;
 }
 
@@ -285,13 +285,13 @@ public class CT_Constraint {
 	protected Float ValAttr;
 	@XmlAttribute(name = "fact")
 	protected Float FactAttr;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_OfficeArtExtensionList ExtLst;
 }
 
 // CT_Constraints ...
 public class CT_Constraints {
-	@XmlElement(required = true, name = "constr")
+	@XmlElement(name = "constr")
 	protected List<CT_Constraint> Constr;
 }
 
@@ -305,13 +305,13 @@ public class CT_NumericRule {
 	protected Float FactAttr;
 	@XmlAttribute(name = "max")
 	protected Float MaxAttr;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_OfficeArtExtensionList ExtLst;
 }
 
 // CT_Rules ...
 public class CT_Rules {
-	@XmlElement(required = true, name = "rule")
+	@XmlElement(name = "rule")
 	protected List<CT_NumericRule> Rule;
 }
 
@@ -319,7 +319,7 @@ public class CT_Rules {
 public class CT_PresentationOf {
 	@XmlElement(required = true)
 	protected AG_IteratorAttributes AG_IteratorAttributes;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_OfficeArtExtensionList ExtLst;
 }
 
@@ -348,7 +348,7 @@ public class CT_Adj {
 
 // CT_AdjLst ...
 public class CT_AdjLst {
-	@XmlElement(required = true, name = "adj")
+	@XmlElement(name = "adj")
 	protected List<CT_Adj> Adj;
 }
 
@@ -368,9 +368,9 @@ public class CT_Shape {
 	protected Boolean LkTxEntryAttr;
 	@XmlAttribute(name = "blipPhldr")
 	protected Boolean BlipPhldrAttr;
-	@XmlElement(required = true, name = "adjLst")
+	@XmlElement(name = "adjLst")
 	protected CT_AdjLst AdjLst;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_OfficeArtExtensionList ExtLst;
 }
 
@@ -388,9 +388,9 @@ public class CT_Algorithm {
 	protected String TypeAttr;
 	@XmlAttribute(name = "rev")
 	protected Integer RevAttr;
-	@XmlElement(required = true, name = "param")
+	@XmlElement(name = "param")
 	protected List<CT_Parameter> Param;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_OfficeArtExtensionList ExtLst;
 }
 
@@ -404,17 +404,17 @@ public class CT_LayoutNode {
 	protected String ChOrderAttr;
 	@XmlAttribute(name = "moveWith")
 	protected String MoveWithAttr;
-	@XmlElement(required = true, name = "alg")
+	@XmlElement(name = "alg")
 	protected List<CT_Algorithm> Alg;
-	@XmlElement(required = true, name = "shape")
+	@XmlElement(name = "shape")
 	protected List<CT_Shape> Shape;
-	@XmlElement(required = true, name = "presOf")
+	@XmlElement(name = "presOf")
 	protected List<CT_PresentationOf> PresOf;
-	@XmlElement(required = true, name = "constrLst")
+	@XmlElement(name = "constrLst")
 	protected List<CT_Constraints> ConstrLst;
-	@XmlElement(required = true, name = "ruleLst")
+	@XmlElement(name = "ruleLst")
 	protected List<CT_Rules> RuleLst;
-	@XmlElement(required = true, name = "varLst")
+	@XmlElement(name = "varLst")
 	protected List<CT_LayoutVariablePropertySet> VarLst;
 	@XmlElement(required = true, name = "forEach")
 	protected List<CT_ForEach> ForEach;
@@ -422,7 +422,7 @@ public class CT_LayoutNode {
 	protected List<CT_LayoutNode> LayoutNode;
 	@XmlElement(required = true, name = "choose")
 	protected List<CT_Choose> Choose;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
@@ -434,15 +434,15 @@ public class CT_ForEach {
 	protected String NameAttr;
 	@XmlAttribute(name = "ref")
 	protected String RefAttr;
-	@XmlElement(required = true, name = "alg")
+	@XmlElement(name = "alg")
 	protected List<CT_Algorithm> Alg;
-	@XmlElement(required = true, name = "shape")
+	@XmlElement(name = "shape")
 	protected List<CT_Shape> Shape;
-	@XmlElement(required = true, name = "presOf")
+	@XmlElement(name = "presOf")
 	protected List<CT_PresentationOf> PresOf;
-	@XmlElement(required = true, name = "constrLst")
+	@XmlElement(name = "constrLst")
 	protected List<CT_Constraints> ConstrLst;
-	@XmlElement(required = true, name = "ruleLst")
+	@XmlElement(name = "ruleLst")
 	protected List<CT_Rules> RuleLst;
 	@XmlElement(required = true, name = "forEach")
 	protected List<CT_ForEach> ForEach;
@@ -450,7 +450,7 @@ public class CT_ForEach {
 	protected List<CT_LayoutNode> LayoutNode;
 	@XmlElement(required = true, name = "choose")
 	protected List<CT_Choose> Choose;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
@@ -468,15 +468,15 @@ public class CT_When {
 	protected String OpAttr;
 	@XmlAttribute(name = "val", required = true)
 	protected ST_FunctionValue ValAttr;
-	@XmlElement(required = true, name = "alg")
+	@XmlElement(name = "alg")
 	protected List<CT_Algorithm> Alg;
-	@XmlElement(required = true, name = "shape")
+	@XmlElement(name = "shape")
 	protected List<CT_Shape> Shape;
-	@XmlElement(required = true, name = "presOf")
+	@XmlElement(name = "presOf")
 	protected List<CT_PresentationOf> PresOf;
-	@XmlElement(required = true, name = "constrLst")
+	@XmlElement(name = "constrLst")
 	protected List<CT_Constraints> ConstrLst;
-	@XmlElement(required = true, name = "ruleLst")
+	@XmlElement(name = "ruleLst")
 	protected List<CT_Rules> RuleLst;
 	@XmlElement(required = true, name = "forEach")
 	protected List<CT_ForEach> ForEach;
@@ -484,7 +484,7 @@ public class CT_When {
 	protected List<CT_LayoutNode> LayoutNode;
 	@XmlElement(required = true, name = "choose")
 	protected List<CT_Choose> Choose;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
@@ -492,15 +492,15 @@ public class CT_When {
 public class CT_Otherwise {
 	@XmlAttribute(name = "name")
 	protected String NameAttr;
-	@XmlElement(required = true, name = "alg")
+	@XmlElement(name = "alg")
 	protected List<CT_Algorithm> Alg;
-	@XmlElement(required = true, name = "shape")
+	@XmlElement(name = "shape")
 	protected List<CT_Shape> Shape;
-	@XmlElement(required = true, name = "presOf")
+	@XmlElement(name = "presOf")
 	protected List<CT_PresentationOf> PresOf;
-	@XmlElement(required = true, name = "constrLst")
+	@XmlElement(name = "constrLst")
 	protected List<CT_Constraints> ConstrLst;
-	@XmlElement(required = true, name = "ruleLst")
+	@XmlElement(name = "ruleLst")
 	protected List<CT_Rules> RuleLst;
 	@XmlElement(required = true, name = "forEach")
 	protected List<CT_ForEach> ForEach;
@@ -508,7 +508,7 @@ public class CT_Otherwise {
 	protected List<CT_LayoutNode> LayoutNode;
 	@XmlElement(required = true, name = "choose")
 	protected List<CT_Choose> Choose;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected List<CT_OfficeArtExtensionList> ExtLst;
 }
 
@@ -518,7 +518,7 @@ public class CT_Choose {
 	protected String NameAttr;
 	@XmlElement(required = true, name = "if")
 	protected List<CT_When> If;
-	@XmlElement(required = true, name = "else")
+	@XmlElement(name = "else")
 	protected CT_Otherwise Else;
 }
 
@@ -526,7 +526,7 @@ public class CT_Choose {
 public class CT_SampleData {
 	@XmlAttribute(name = "useDef")
 	protected Boolean UseDefAttr;
-	@XmlElement(required = true, name = "dataModel")
+	@XmlElement(name = "dataModel")
 	protected CT_DataModel DataModel;
 }
 
@@ -540,7 +540,7 @@ public class CT_Category {
 
 // CT_Categories ...
 public class CT_Categories {
-	@XmlElement(required = true, name = "cat")
+	@XmlElement(name = "cat")
 	protected List<CT_Category> Cat;
 }
 
@@ -568,21 +568,21 @@ public class CT_DiagramDefinition {
 	protected String MinVerAttr;
 	@XmlAttribute(name = "defStyle")
 	protected String DefStyleAttr;
-	@XmlElement(required = true, name = "title")
+	@XmlElement(name = "title")
 	protected List<CT_Name> Title;
-	@XmlElement(required = true, name = "desc")
+	@XmlElement(name = "desc")
 	protected List<CT_Description> Desc;
-	@XmlElement(required = true, name = "catLst")
+	@XmlElement(name = "catLst")
 	protected CT_Categories CatLst;
-	@XmlElement(required = true, name = "sampData")
+	@XmlElement(name = "sampData")
 	protected CT_SampleData SampData;
-	@XmlElement(required = true, name = "styleData")
+	@XmlElement(name = "styleData")
 	protected CT_SampleData StyleData;
-	@XmlElement(required = true, name = "clrData")
+	@XmlElement(name = "clrData")
 	protected CT_SampleData ClrData;
 	@XmlElement(required = true, name = "layoutNode")
 	protected CT_LayoutNode LayoutNode;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_OfficeArtExtensionList ExtLst;
 }
 
@@ -606,9 +606,9 @@ public class CT_DiagramDefinitionHeader {
 	protected List<CT_Name> Title;
 	@XmlElement(required = true, name = "desc")
 	protected List<CT_Description> Desc;
-	@XmlElement(required = true, name = "catLst")
+	@XmlElement(name = "catLst")
 	protected CT_Categories CatLst;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_OfficeArtExtensionList ExtLst;
 }
 
@@ -620,7 +620,7 @@ public class LayoutDefHdr {
 
 // CT_DiagramDefinitionHeaderLst ...
 public class CT_DiagramDefinitionHeaderLst {
-	@XmlElement(required = true, name = "layoutDefHdr")
+	@XmlElement(name = "layoutDefHdr")
 	protected List<CT_DiagramDefinitionHeader> LayoutDefHdr;
 }
 
@@ -796,9 +796,9 @@ public class CT_ElemPropSet {
 	protected ST_PrSetCustVal CustRadScaleRadAttr;
 	@XmlAttribute(name = "custRadScaleInc")
 	protected ST_PrSetCustVal CustRadScaleIncAttr;
-	@XmlElement(required = true, name = "presLayoutVars")
+	@XmlElement(name = "presLayoutVars")
 	protected CT_LayoutVariablePropertySet PresLayoutVars;
-	@XmlElement(required = true, name = "style")
+	@XmlElement(name = "style")
 	protected CT_ShapeStyle Style;
 }
 
@@ -900,23 +900,23 @@ public class CT_ResizeHandles {
 
 // CT_LayoutVariablePropertySet ...
 public class CT_LayoutVariablePropertySet {
-	@XmlElement(required = true, name = "orgChart")
+	@XmlElement(name = "orgChart")
 	protected CT_OrgChart OrgChart;
-	@XmlElement(required = true, name = "chMax")
+	@XmlElement(name = "chMax")
 	protected CT_ChildMax ChMax;
-	@XmlElement(required = true, name = "chPref")
+	@XmlElement(name = "chPref")
 	protected CT_ChildPref ChPref;
-	@XmlElement(required = true, name = "bulletEnabled")
+	@XmlElement(name = "bulletEnabled")
 	protected CT_BulletEnabled BulletEnabled;
-	@XmlElement(required = true, name = "dir")
+	@XmlElement(name = "dir")
 	protected CT_Direction Dir;
-	@XmlElement(required = true, name = "hierBranch")
+	@XmlElement(name = "hierBranch")
 	protected CT_HierBranchStyle HierBranch;
-	@XmlElement(required = true, name = "animOne")
+	@XmlElement(name = "animOne")
 	protected CT_AnimOne AnimOne;
-	@XmlElement(required = true, name = "animLvl")
+	@XmlElement(name = "animLvl")
 	protected CT_AnimLvl AnimLvl;
-	@XmlElement(required = true, name = "resizeHandles")
+	@XmlElement(name = "resizeHandles")
 	protected CT_ResizeHandles ResizeHandles;
 }
 
@@ -946,7 +946,7 @@ public class CT_SDCategory {
 
 // CT_SDCategories ...
 public class CT_SDCategories {
-	@XmlElement(required = true, name = "cat")
+	@XmlElement(name = "cat")
 	protected List<CT_SDCategory> Cat;
 }
 
@@ -959,15 +959,15 @@ public class CT_TextProps {
 public class CT_StyleLabel {
 	@XmlAttribute(name = "name", required = true)
 	protected String NameAttr;
-	@XmlElement(required = true, name = "scene3d")
+	@XmlElement(name = "scene3d")
 	protected CT_Scene3D Scene3d;
-	@XmlElement(required = true, name = "sp3d")
+	@XmlElement(name = "sp3d")
 	protected CT_Shape3D Sp3d;
-	@XmlElement(required = true, name = "txPr")
+	@XmlElement(name = "txPr")
 	protected CT_TextProps TxPr;
-	@XmlElement(required = true, name = "style")
+	@XmlElement(name = "style")
 	protected CT_ShapeStyle Style;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_OfficeArtExtensionList ExtLst;
 }
 
@@ -977,17 +977,17 @@ public class CT_StyleDefinition {
 	protected String UniqueIdAttr;
 	@XmlAttribute(name = "minVer")
 	protected String MinVerAttr;
-	@XmlElement(required = true, name = "title")
+	@XmlElement(name = "title")
 	protected List<CT_SDName> Title;
-	@XmlElement(required = true, name = "desc")
+	@XmlElement(name = "desc")
 	protected List<CT_SDDescription> Desc;
-	@XmlElement(required = true, name = "catLst")
+	@XmlElement(name = "catLst")
 	protected CT_SDCategories CatLst;
-	@XmlElement(required = true, name = "scene3d")
+	@XmlElement(name = "scene3d")
 	protected CT_Scene3D Scene3d;
 	@XmlElement(required = true, name = "styleLbl")
 	protected List<CT_StyleLabel> StyleLbl;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_OfficeArtExtensionList ExtLst;
 }
 
@@ -1009,9 +1009,9 @@ public class CT_StyleDefinitionHeader {
 	protected List<CT_SDName> Title;
 	@XmlElement(required = true, name = "desc")
 	protected List<CT_SDDescription> Desc;
-	@XmlElement(required = true, name = "catLst")
+	@XmlElement(name = "catLst")
 	protected CT_SDCategories CatLst;
-	@XmlElement(required = true, name = "extLst")
+	@XmlElement(name = "extLst")
 	protected CT_OfficeArtExtensionList ExtLst;
 }
 
@@ -1023,7 +1023,7 @@ public class StyleDefHdr {
 
 // CT_StyleDefinitionHeaderLst ...
 public class CT_StyleDefinitionHeaderLst {
-	@XmlElement(required = true, name = "styleDefHdr")
+	@XmlElement(name = "styleDefHdr")
 	protected List<CT_StyleDefinitionHeader> StyleDefHdr;
 }
 

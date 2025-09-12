@@ -6,7 +6,7 @@ export class TDocumentation {
 
 // TDocumented is This type is extended by  component types to allow them to be documented
 export class TDocumented {
-	Documentation: TDocumentation;
+	Documentation?: TDocumentation;
 }
 
 // TExtensibleAttributesDocumented is This type is extended by component types to allow attributes from other namespaces to be added.
@@ -50,7 +50,7 @@ export class TTypes extends TExtensibleDocumented  {
 // TMessage ...
 export class TMessage extends TExtensibleDocumented  {
 	NameAttr: string;
-	Part: Array<TPart>;
+	Part?: Array<TPart>;
 }
 
 // TPart ...
@@ -63,7 +63,7 @@ export class TPart extends TExtensibleAttributesDocumented  {
 // TPortType ...
 export class TPortType extends TExtensibleAttributesDocumented  {
 	NameAttr: string;
-	Operation: Array<TOperation>;
+	Operation?: Array<TOperation>;
 }
 
 // TOperation ...
@@ -104,7 +104,7 @@ export class TFault extends TExtensibleAttributesDocumented  {
 export class TBinding extends TExtensibleDocumented  {
 	NameAttr: string;
 	TypeAttr: any;
-	Operation: Array<TBindingOperation>;
+	Operation?: Array<TBindingOperation>;
 }
 
 // TBindingOperationMessage ...
@@ -120,15 +120,15 @@ export class TBindingOperationFault extends TExtensibleDocumented  {
 // TBindingOperation ...
 export class TBindingOperation extends TExtensibleDocumented  {
 	NameAttr: string;
-	Input: TBindingOperationMessage;
-	Output: TBindingOperationMessage;
-	Fault: Array<TBindingOperationFault>;
+	Input?: TBindingOperationMessage;
+	Output?: TBindingOperationMessage;
+	Fault?: Array<TBindingOperationFault>;
 }
 
 // TService ...
 export class TService extends TExtensibleDocumented  {
 	NameAttr: string;
-	Port: Array<TPort>;
+	Port?: Array<TPort>;
 }
 
 // TPort ...

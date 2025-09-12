@@ -20,26 +20,26 @@ public class Archetypecatalog {
 
 // Archetypes is List of Acthetypes available in this catalog.
 public class Archetypes {
-	@XmlElement(required = true, name = "archetype")
+	@XmlElement(name = "archetype")
 	protected List<Archetype> Archetype;
 }
 
 // ArchetypeCatalog is 0.0.0+
 public class ArchetypeCatalog {
-	@XmlElement(required = true, name = "archetypes")
+	@XmlElement(name = "archetypes")
 	protected Archetypes Archetypes;
 }
 
 // Archetype is The description of the archetype.
 public class Archetype {
-	@XmlElement(required = true, name = "groupId")
+	@XmlElement(name = "groupId")
 	protected String GroupId;
-	@XmlElement(required = true, name = "artifactId")
+	@XmlElement(name = "artifactId")
 	protected String ArtifactId;
-	@XmlElement(required = true, name = "version")
+	@XmlElement(name = "version")
 	protected String Version;
-	@XmlElement(required = true, name = "repository")
+	@XmlElement(name = "repository")
 	protected String Repository;
-	@XmlElement(required = true, name = "description")
+	@XmlElement(name = "description")
 	protected String Description;
 }

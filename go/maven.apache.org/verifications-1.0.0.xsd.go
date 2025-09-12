@@ -24,7 +24,7 @@ type Verifications struct {
 //             file or directory exists. When set to <code>false</code> it checks
 //             that the file or directory does <strong>not</strong> exist.
 type File struct {
-	Location string `xml:"location,omitempty"`
-	Contains string `xml:"contains,omitempty"`
-	Exists   bool   `xml:"exists,omitempty"`
+	Location *string `xml:"location"`
+	Contains *string `xml:"contains"`
+	Exists   *bool   `xml:"exists"`
 }

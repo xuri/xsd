@@ -10,7 +10,7 @@ export type Comment = string;
 export class PurchaseOrderType {
 	ShipTo: USAddress;
 	BillTo: USAddress;
-	PoComment: string;
+	PoComment?: string;
 }
 
 // USAddress ...

@@ -10,8 +10,8 @@ export class Person {
 	IdAttr: string;
 	Name: string;
 	Born: string;
-	Dead: string;
-	Qualification: string;
+	Dead?: string;
+	Qualification?: string;
 }
 
 // Authors ...

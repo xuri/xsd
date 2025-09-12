@@ -1985,8 +1985,8 @@ type CTCnf struct {
 
 // CTHeaders ...
 type CTHeaders struct {
-	XMLName xml.Name  `xml:"CT_Headers"`
-	Header  *CTString `xml:"header"`
+	XMLName xml.Name    `xml:"CT_Headers"`
+	Header  []*CTString `xml:"header"`
 }
 
 // CTTrPrBase ...
@@ -2907,7 +2907,7 @@ type CTDiv struct {
 // CTDivs ...
 type CTDivs struct {
 	XMLName xml.Name `xml:"CT_Divs"`
-	Div     *CTDiv   `xml:"div"`
+	Div     []*CTDiv `xml:"div"`
 }
 
 // EGMathContent ...
@@ -2962,8 +2962,8 @@ type Comments *CTComments
 
 // CTFootnotes ...
 type CTFootnotes struct {
-	XMLName  xml.Name  `xml:"CT_Footnotes"`
-	Footnote *CTFtnEdn `xml:"footnote,omitempty"`
+	XMLName  xml.Name    `xml:"CT_Footnotes"`
+	Footnote []*CTFtnEdn `xml:"footnote,omitempty"`
 }
 
 // Footnotes ...
@@ -2971,8 +2971,8 @@ type Footnotes *CTFootnotes
 
 // CTEndnotes ...
 type CTEndnotes struct {
-	XMLName xml.Name  `xml:"CT_Endnotes"`
-	Endnote *CTFtnEdn `xml:"endnote,omitempty"`
+	XMLName xml.Name    `xml:"CT_Endnotes"`
+	Endnote []*CTFtnEdn `xml:"endnote,omitempty"`
 }
 
 // Endnotes ...

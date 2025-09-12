@@ -5,71 +5,71 @@ export type Component = Component;
 
 // FileSets is Specify assembly parameters for groups of files.
 export class FileSets {
-	FileSet: Array<FileSet>;
+	FileSet?: Array<FileSet>;
 }
 
 // Files is Specify assembly parameters for single files.
 export class Files {
-	File: Array<FileItem>;
+	File?: Array<FileItem>;
 }
 
 // DependencySets is Specify assembly behavior for sets of dependencies.
 export class DependencySets {
-	DependencySet: Array<DependencySet>;
+	DependencySet?: Array<DependencySet>;
 }
 
 // Component2 is Describes the component layout and packaging.
 export class Component2 {
-	FileSets: FileSets;
-	Files: Files;
-	DependencySets: DependencySets;
+	FileSets?: FileSets;
+	Files?: Files;
+	DependencySets?: DependencySets;
 }
 
 // Includes is When &lt;include&gt; subelements are present, they define
 //             a set of files and directory to include.
 export class Includes {
-	Include: string;
+	Include?: string;
 }
 
 // Excludes is When &lt;exclude&gt; subelements are present, they define
 //             a set of files and directory to exclude.
 export class Excludes {
-	Exclude: string;
+	Exclude?: string;
 }
 
 // DependencySet is Specifies the output directory relative to the root
 //             of the root directory of the assembly. For example,
 //             "log" will put the specified files in the log directory.
 export class DependencySet {
-	OutputFileNameMapping: string;
-	Unpack: boolean;
-	Scope: string;
-	OutputDirectory: string;
-	Includes: Includes;
-	Excludes: Excludes;
-	FileMode: string;
-	DirectoryMode: string;
+	OutputFileNameMapping?: string;
+	Unpack?: boolean;
+	Scope?: string;
+	OutputDirectory?: string;
+	Includes?: Includes;
+	Excludes?: Excludes;
+	FileMode?: string;
+	DirectoryMode?: string;
 }
 
 // FileItem is Flag used to determine if the file is filtered.
 export class FileItem {
-	Source: string;
-	OutputDirectory: string;
-	DestName: string;
-	FileMode: string;
-	LineEnding: string;
-	Filtered: boolean;
+	Source?: string;
+	OutputDirectory?: string;
+	DestName?: string;
+	FileMode?: string;
+	LineEnding?: string;
+	Filtered?: boolean;
 }
 
 // FileSet is Specifies the output directory relative to the root
 //             of the root directory of the assembly. For example,
 //             "log" will put the specified files in the log directory.
 export class FileSet {
-	Directory: string;
-	LineEnding: string;
-	OutputDirectory: string;
-	Includes: Includes;
-	Excludes: Excludes;
-	FileMode: string;
-	DirectoryMode: string;
+	Directory?: string;
+	LineEnding?: string;
+	OutputDirectory?: string;
+	Includes?: Includes;
+	Excludes?: Excludes;
+	FileMode?: string;
+	DirectoryMode?: string;
 }

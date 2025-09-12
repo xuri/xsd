@@ -22,7 +22,7 @@ public class Project {
 //             is used to generate the <a href="/plugins/site/index.html">front
 //             page</a> of the site's web site.
 public class MailingLists {
-	@XmlElement(required = true, name = "mailingList")
+	@XmlElement(name = "mailingList")
 	protected List<MailingList> MailingList;
 }
 
@@ -30,7 +30,7 @@ public class MailingLists {
 //             generate the <a href="/plugins/site/index.html">Project Team</a>
 //             page of the project's web site.
 public class Developers {
-	@XmlElement(required = true, name = "developer")
+	@XmlElement(name = "developer")
 	protected List<Developer> Developer;
 }
 
@@ -38,7 +38,7 @@ public class Developers {
 //             the <a href="/plugins/site/index.html">Project Team</a> page of
 //             the project's web site.
 public class Contributors {
-	@XmlElement(required = true, name = "contributor")
+	@XmlElement(name = "contributor")
 	protected List<Contributor> Contributor;
 }
 
@@ -49,7 +49,7 @@ public class Contributors {
 //             Projects should only list the license(s) that applies to the project 
 //             and not the licenses that apply to dependencies.
 public class Licenses {
-	@XmlElement(required = true, name = "license")
+	@XmlElement(name = "license")
 	protected List<License> License;
 }
 
@@ -58,7 +58,7 @@ public class Licenses {
 //             <a href="/plugins/dist/index.html"><code>maven:dist</code></a>
 //             target.
 public class Versions {
-	@XmlElement(required = true, name = "version")
+	@XmlElement(name = "version")
 	protected List<Version> Version;
 }
 
@@ -67,13 +67,13 @@ public class Versions {
 //             <a href="/plugins/dist/index.html"><code>maven:dist</code></a>
 //             target.
 public class Branches {
-	@XmlElement(required = true, name = "branch")
+	@XmlElement(name = "branch")
 	protected List<Branch> Branch;
 }
 
 // PackageGroups is Package groups required for complete javadocs.
 public class PackageGroups {
-	@XmlElement(required = true, name = "packageGroup")
+	@XmlElement(name = "packageGroup")
 	protected List<PackageGroup> PackageGroup;
 }
 
@@ -83,7 +83,7 @@ public class PackageGroups {
 //             reports will be included in the navigation bar for browsing in
 //             the order they are specified.
 public class Reports {
-	@XmlElement(required = true, name = "report")
+	@XmlElement(name = "report")
 	protected List<String> Report;
 }
 
@@ -142,7 +142,7 @@ public class Properties {
 //               <dd>is taken from the dependency element</dd>
 //             </dl>
 public class Dependencies {
-	@XmlElement(required = true, name = "dependency")
+	@XmlElement(name = "dependency")
 	protected List<Dependency> Dependency;
 }
 
@@ -151,69 +151,69 @@ public class Dependencies {
 //             distributions are
 //             <a href="/plugins/dist/index.html">deployed</a>.
 public class Model {
-	@XmlElement(required = true, name = "extend")
+	@XmlElement(name = "extend")
 	protected String Extend;
-	@XmlElement(required = true, name = "pomVersion")
+	@XmlElement(name = "pomVersion")
 	protected String PomVersion;
-	@XmlElement(required = true, name = "id")
+	@XmlElement(name = "id")
 	protected String Id;
-	@XmlElement(required = true, name = "groupId")
+	@XmlElement(name = "groupId")
 	protected String GroupId;
-	@XmlElement(required = true, name = "artifactId")
+	@XmlElement(name = "artifactId")
 	protected String ArtifactId;
-	@XmlElement(required = true, name = "name")
+	@XmlElement(name = "name")
 	protected String Name;
-	@XmlElement(required = true, name = "currentVersion")
+	@XmlElement(name = "currentVersion")
 	protected String CurrentVersion;
-	@XmlElement(required = true, name = "shortDescription")
+	@XmlElement(name = "shortDescription")
 	protected String ShortDescription;
-	@XmlElement(required = true, name = "description")
+	@XmlElement(name = "description")
 	protected String Description;
-	@XmlElement(required = true, name = "url")
+	@XmlElement(name = "url")
 	protected String Url;
-	@XmlElement(required = true, name = "logo")
+	@XmlElement(name = "logo")
 	protected String Logo;
-	@XmlElement(required = true, name = "issueTrackingUrl")
+	@XmlElement(name = "issueTrackingUrl")
 	protected String IssueTrackingUrl;
-	@XmlElement(required = true, name = "inceptionYear")
+	@XmlElement(name = "inceptionYear")
 	protected String InceptionYear;
-	@XmlElement(required = true, name = "gumpRepositoryId")
+	@XmlElement(name = "gumpRepositoryId")
 	protected String GumpRepositoryId;
-	@XmlElement(required = true, name = "siteAddress")
+	@XmlElement(name = "siteAddress")
 	protected String SiteAddress;
-	@XmlElement(required = true, name = "siteDirectory")
+	@XmlElement(name = "siteDirectory")
 	protected String SiteDirectory;
-	@XmlElement(required = true, name = "distributionSite")
+	@XmlElement(name = "distributionSite")
 	protected String DistributionSite;
-	@XmlElement(required = true, name = "distributionDirectory")
+	@XmlElement(name = "distributionDirectory")
 	protected String DistributionDirectory;
-	@XmlElement(required = true, name = "mailingLists")
+	@XmlElement(name = "mailingLists")
 	protected MailingLists MailingLists;
-	@XmlElement(required = true, name = "developers")
+	@XmlElement(name = "developers")
 	protected Developers Developers;
-	@XmlElement(required = true, name = "contributors")
+	@XmlElement(name = "contributors")
 	protected Contributors Contributors;
-	@XmlElement(required = true, name = "licenses")
+	@XmlElement(name = "licenses")
 	protected Licenses Licenses;
-	@XmlElement(required = true, name = "versions")
+	@XmlElement(name = "versions")
 	protected Versions Versions;
-	@XmlElement(required = true, name = "branches")
+	@XmlElement(name = "branches")
 	protected Branches Branches;
-	@XmlElement(required = true, name = "packageGroups")
+	@XmlElement(name = "packageGroups")
 	protected PackageGroups PackageGroups;
-	@XmlElement(required = true, name = "reports")
+	@XmlElement(name = "reports")
 	protected Reports Reports;
-	@XmlElement(required = true, name = "repository")
+	@XmlElement(name = "repository")
 	protected Repository Repository;
-	@XmlElement(required = true, name = "organization")
+	@XmlElement(name = "organization")
 	protected Organization Organization;
-	@XmlElement(required = true, name = "properties")
+	@XmlElement(name = "properties")
 	protected Properties Properties;
-	@XmlElement(required = true, name = "package")
+	@XmlElement(name = "package")
 	protected String Package;
-	@XmlElement(required = true, name = "build")
+	@XmlElement(name = "build")
 	protected Build Build;
-	@XmlElement(required = true, name = "dependencies")
+	@XmlElement(name = "dependencies")
 	protected Dependencies Dependencies;
 }
 
@@ -224,7 +224,7 @@ public class Model {
 //             to exclude or include various source depending on the environment
 //              the build is running in.
 public class SourceModifications {
-	@XmlElement(required = true, name = "sourceModification")
+	@XmlElement(name = "sourceModification")
 	protected List<SourceModification> SourceModification;
 }
 
@@ -234,82 +234,82 @@ public class SourceModifications {
 //             <a href="#resource">below</a>). These resources are used to complete 
 //             the jar file or to run unit test.
 public class Resources {
-	@XmlElement(required = true, name = "resource")
+	@XmlElement(name = "resource")
 	protected List<Resource> Resource;
 }
 
 // Build is This element specifies a directory containing integration test    
 //              sources of the project.
 public class Build {
-	@XmlElement(required = true, name = "nagEmailAddress")
+	@XmlElement(name = "nagEmailAddress")
 	protected String NagEmailAddress;
-	@XmlElement(required = true, name = "sourceDirectory")
+	@XmlElement(name = "sourceDirectory")
 	protected String SourceDirectory;
-	@XmlElement(required = true, name = "unitTestSourceDirectory")
+	@XmlElement(name = "unitTestSourceDirectory")
 	protected String UnitTestSourceDirectory;
-	@XmlElement(required = true, name = "aspectSourceDirectory")
+	@XmlElement(name = "aspectSourceDirectory")
 	protected String AspectSourceDirectory;
-	@XmlElement(required = true, name = "integrationUnitTestSourceDirectory")
+	@XmlElement(name = "integrationUnitTestSourceDirectory")
 	protected String IntegrationUnitTestSourceDirectory;
-	@XmlElement(required = true, name = "sourceModifications")
+	@XmlElement(name = "sourceModifications")
 	protected SourceModifications SourceModifications;
-	@XmlElement(required = true, name = "unitTest")
+	@XmlElement(name = "unitTest")
 	protected UnitTest UnitTest;
-	@XmlElement(required = true, name = "defaultGoal")
+	@XmlElement(name = "defaultGoal")
 	protected String DefaultGoal;
-	@XmlElement(required = true, name = "resources")
+	@XmlElement(name = "resources")
 	protected Resources Resources;
 }
 
 // Includes is the description
 public class Includes {
-	@XmlElement(required = true, name = "include")
+	@XmlElement(name = "include")
 	protected List<String> Include;
 }
 
 // Excludes is the description
 public class Excludes {
-	@XmlElement(required = true, name = "exclude")
+	@XmlElement(name = "exclude")
 	protected List<String> Exclude;
 }
 
 // UnitTest is 3.0.0
 public class UnitTest {
-	@XmlElement(required = true, name = "resources")
+	@XmlElement(name = "resources")
 	protected Resources Resources;
-	@XmlElement(required = true, name = "includes")
+	@XmlElement(name = "includes")
 	protected Includes Includes;
-	@XmlElement(required = true, name = "excludes")
+	@XmlElement(name = "excludes")
 	protected Excludes Excludes;
 }
 
 // Resource is Describe the directory where the resource is stored.
 //             The path may be absolute, or relative to the project.xml file.
 public class Resource {
-	@XmlElement(required = true, name = "targetPath")
+	@XmlElement(name = "targetPath")
 	protected String TargetPath;
-	@XmlElement(required = true, name = "filtering")
+	@XmlElement(name = "filtering")
 	protected Boolean Filtering;
-	@XmlElement(required = true, name = "directory")
+	@XmlElement(name = "directory")
 	protected String Directory;
-	@XmlElement(required = true, name = "includes")
+	@XmlElement(name = "includes")
 	protected Includes Includes;
-	@XmlElement(required = true, name = "excludes")
+	@XmlElement(name = "excludes")
 	protected Excludes Excludes;
 }
 
 // SourceModification is Describe the directory where the resource is stored.
 //             The path may be absolute, or relative to the project.xml file.
 public class SourceModification {
-	@XmlElement(required = true, name = "className")
+	@XmlElement(name = "className")
 	protected String ClassName;
-	@XmlElement(required = true, name = "property")
+	@XmlElement(name = "property")
 	protected String Property;
-	@XmlElement(required = true, name = "directory")
+	@XmlElement(name = "directory")
 	protected String Directory;
-	@XmlElement(required = true, name = "includes")
+	@XmlElement(name = "includes")
 	protected Includes Includes;
-	@XmlElement(required = true, name = "excludes")
+	@XmlElement(name = "excludes")
 	protected Excludes Excludes;
 }
 
@@ -319,11 +319,11 @@ public class SourceModification {
 //             (e.g., <code>http://my.corp/logo.png</code>).  This value is used
 //             when generating the project documentation.
 public class Organization {
-	@XmlElement(required = true, name = "name")
+	@XmlElement(name = "name")
 	protected String Name;
-	@XmlElement(required = true, name = "url")
+	@XmlElement(name = "url")
 	protected String Url;
-	@XmlElement(required = true, name = "logo")
+	@XmlElement(name = "logo")
 	protected String Logo;
 }
 
@@ -331,29 +331,29 @@ public class Organization {
 //             described by a <code>role</code> element, the body of which is a
 //             role name.
 public class Roles {
-	@XmlElement(required = true, name = "role")
+	@XmlElement(name = "role")
 	protected List<String> Role;
 }
 
 // Developer is The URL of the organization.
 public class Developer {
-	@XmlElement(required = true, name = "id")
+	@XmlElement(name = "id")
 	protected String Id;
-	@XmlElement(required = true, name = "name")
+	@XmlElement(name = "name")
 	protected String Name;
-	@XmlElement(required = true, name = "email")
+	@XmlElement(name = "email")
 	protected String Email;
-	@XmlElement(required = true, name = "url")
+	@XmlElement(name = "url")
 	protected String Url;
-	@XmlElement(required = true, name = "organization")
+	@XmlElement(name = "organization")
 	protected String Organization;
-	@XmlElement(required = true, name = "organizationUrl")
+	@XmlElement(name = "organizationUrl")
 	protected String OrganizationUrl;
-	@XmlElement(required = true, name = "roles")
+	@XmlElement(name = "roles")
 	protected Roles Roles;
-	@XmlElement(required = true, name = "timezone")
+	@XmlElement(name = "timezone")
 	protected String Timezone;
-	@XmlElement(required = true, name = "properties")
+	@XmlElement(name = "properties")
 	protected Properties Properties;
 }
 
@@ -365,39 +365,39 @@ public class Developer {
 //             <li><code>plugin</code></li>
 //             </ul>
 public class Dependency {
-	@XmlElement(required = true, name = "id")
+	@XmlElement(name = "id")
 	protected String Id;
-	@XmlElement(required = true, name = "groupId")
+	@XmlElement(name = "groupId")
 	protected String GroupId;
-	@XmlElement(required = true, name = "artifactId")
+	@XmlElement(name = "artifactId")
 	protected String ArtifactId;
-	@XmlElement(required = true, name = "version")
+	@XmlElement(name = "version")
 	protected String Version;
-	@XmlElement(required = true, name = "url")
+	@XmlElement(name = "url")
 	protected String Url;
-	@XmlElement(required = true, name = "jar")
+	@XmlElement(name = "jar")
 	protected String Jar;
-	@XmlElement(required = true, name = "type")
+	@XmlElement(name = "type")
 	protected String Type;
-	@XmlElement(required = true, name = "properties")
+	@XmlElement(name = "properties")
 	protected Properties Properties;
 }
 
 // Repository is The URL to the project's browsable CVS repository.
 public class Repository {
-	@XmlElement(required = true, name = "connection")
+	@XmlElement(name = "connection")
 	protected String Connection;
-	@XmlElement(required = true, name = "developerConnection")
+	@XmlElement(name = "developerConnection")
 	protected String DeveloperConnection;
-	@XmlElement(required = true, name = "url")
+	@XmlElement(name = "url")
 	protected String Url;
 }
 
 // PackageGroup is the description
 public class PackageGroup {
-	@XmlElement(required = true, name = "title")
+	@XmlElement(name = "title")
 	protected String Title;
-	@XmlElement(required = true, name = "packages")
+	@XmlElement(name = "packages")
 	protected String Packages;
 }
 
@@ -407,43 +407,43 @@ public class PackageGroup {
 //               <code>maven:dist</code>
 //             </a> builds.
 public class Version {
-	@XmlElement(required = true, name = "name")
+	@XmlElement(name = "name")
 	protected String Name;
-	@XmlElement(required = true, name = "tag")
+	@XmlElement(name = "tag")
 	protected String Tag;
-	@XmlElement(required = true, name = "id")
+	@XmlElement(name = "id")
 	protected String Id;
 }
 
 // License is Addendum information pertaining to this license.
 public class License {
-	@XmlElement(required = true, name = "name")
+	@XmlElement(name = "name")
 	protected String Name;
-	@XmlElement(required = true, name = "url")
+	@XmlElement(name = "url")
 	protected String Url;
-	@XmlElement(required = true, name = "distribution")
+	@XmlElement(name = "distribution")
 	protected String Distribution;
-	@XmlElement(required = true, name = "comments")
+	@XmlElement(name = "comments")
 	protected String Comments;
 }
 
 // Contributor is The URL of the organization.
 public class Contributor {
-	@XmlElement(required = true, name = "name")
+	@XmlElement(name = "name")
 	protected String Name;
-	@XmlElement(required = true, name = "email")
+	@XmlElement(name = "email")
 	protected String Email;
-	@XmlElement(required = true, name = "url")
+	@XmlElement(name = "url")
 	protected String Url;
-	@XmlElement(required = true, name = "organization")
+	@XmlElement(name = "organization")
 	protected String Organization;
-	@XmlElement(required = true, name = "organizationUrl")
+	@XmlElement(name = "organizationUrl")
 	protected String OrganizationUrl;
-	@XmlElement(required = true, name = "roles")
+	@XmlElement(name = "roles")
 	protected Roles Roles;
-	@XmlElement(required = true, name = "timezone")
+	@XmlElement(name = "timezone")
 	protected String Timezone;
-	@XmlElement(required = true, name = "properties")
+	@XmlElement(name = "properties")
 	protected Properties Properties;
 }
 
@@ -451,28 +451,28 @@ public class Contributor {
 //             project for the source code associated with this branch of the
 //             project.
 public class Branch {
-	@XmlElement(required = true, name = "tag")
+	@XmlElement(name = "tag")
 	protected String Tag;
 }
 
 // OtherArchives is The link to other URLs where you can browse the list archive.
 public class OtherArchives {
-	@XmlElement(required = true, name = "otherArchive")
+	@XmlElement(name = "otherArchive")
 	protected List<String> OtherArchive;
 }
 
 // MailingList is The link to a URL where you can browse the mailing list archive.
 public class MailingList {
-	@XmlElement(required = true, name = "name")
+	@XmlElement(name = "name")
 	protected String Name;
-	@XmlElement(required = true, name = "subscribe")
+	@XmlElement(name = "subscribe")
 	protected String Subscribe;
-	@XmlElement(required = true, name = "unsubscribe")
+	@XmlElement(name = "unsubscribe")
 	protected String Unsubscribe;
-	@XmlElement(required = true, name = "post")
+	@XmlElement(name = "post")
 	protected String Post;
-	@XmlElement(required = true, name = "archive")
+	@XmlElement(name = "archive")
 	protected String Archive;
-	@XmlElement(required = true, name = "otherArchives")
+	@XmlElement(name = "otherArchives")
 	protected OtherArchives OtherArchives;
 }

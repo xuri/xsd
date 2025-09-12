@@ -18,8 +18,8 @@ type Person struct {
 	IdAttr        string   `xml:"id,attr"`
 	Name          string   `xml:"name"`
 	Born          string   `xml:"born"`
-	Dead          string   `xml:"dead,omitempty"`
-	Qualification string   `xml:"qualification,omitempty"`
+	Dead          *string  `xml:"dead"`
+	Qualification *string  `xml:"qualification"`
 }
 
 // Authors ...

@@ -6,19 +6,19 @@ export type ProfilesXml = ProfilesRoot;
 // Profiles is Configuration of build profiles for adjusting the build
 //             according to environmental parameters
 export class Profiles {
-	Profile: Array<Profile>;
+	Profile?: Array<Profile>;
 }
 
 // ActiveProfiles is List of manually-activated build profiles, specified in the order in which
 //             they should be applied.
 export class ActiveProfiles {
-	ActiveProfile: string;
+	ActiveProfile?: string;
 }
 
 // ProfilesRoot is Root element of the profiles.xml file.
 export class ProfilesRoot {
-	Profiles: Profiles;
-	ActiveProfiles: ActiveProfiles;
+	Profiles?: Profiles;
+	ActiveProfiles?: ActiveProfiles;
 }
 
 // Properties is Extended configuration specific to this profile goes
@@ -28,68 +28,68 @@ export class Properties {
 
 // Repositories is The lists of the remote repositories
 export class Repositories {
-	Repository: Array<Repository>;
+	Repository?: Array<Repository>;
 }
 
 // PluginRepositories is The lists of the remote repositories for discovering plugins
 export class PluginRepositories {
-	PluginRepository: Array<Repository>;
+	PluginRepository?: Array<Repository>;
 }
 
 // Profile is The conditional logic which will automatically
 //             trigger the inclusion of this profile.
 export class Profile {
-	Id: string;
-	Activation: Activation;
-	Properties: Properties;
-	Repositories: Repositories;
-	PluginRepositories: PluginRepositories;
+	Id?: string;
+	Activation?: Activation;
+	Properties?: Properties;
+	Repositories?: Repositories;
+	PluginRepositories?: PluginRepositories;
 }
 
 // Activation is Specifies that this profile will be activated based on existence of a file.
 export class Activation {
-	ActiveByDefault: boolean;
-	Jdk: string;
-	Os: ActivationOS;
-	Property: ActivationProperty;
-	File: ActivationFile;
+	ActiveByDefault?: boolean;
+	Jdk?: string;
+	Os?: ActivationOS;
+	Property?: ActivationProperty;
+	File?: ActivationFile;
 }
 
 // ActivationOS is The version of the OS to be used to activate a profile
 export class ActivationOS {
-	Name: string;
-	Family: string;
-	Arch: string;
-	Version: string;
+	Name?: string;
+	Family?: string;
+	Arch?: string;
+	Version?: string;
 }
 
 // ActivationProperty is The value of the property to be used to activate a profile
 export class ActivationProperty {
-	Name: string;
-	Value: string;
+	Name?: string;
+	Value?: string;
 }
 
 // ActivationFile is The name of the file that should exist to activate a profile
 export class ActivationFile {
-	Missing: string;
-	Exists: string;
+	Missing?: string;
+	Exists?: string;
 }
 
 // Repository is The type of layout this repository uses for locating and storing artifacts - can be "legacy" or
 //             "default".
 export class Repository {
-	Releases: RepositoryPolicy;
-	Snapshots: RepositoryPolicy;
-	Id: string;
-	Name: string;
-	Url: string;
-	Layout: string;
+	Releases?: RepositoryPolicy;
+	Snapshots?: RepositoryPolicy;
+	Id?: string;
+	Name?: string;
+	Url?: string;
+	Layout?: string;
 }
 
 // RepositoryPolicy is What to do when verification of an artifact checksum fails - warn, fail, etc. Valid values are
 //             "fail" or "warn"
 export class RepositoryPolicy {
-	Enabled: boolean;
-	UpdatePolicy: string;
-	ChecksumPolicy: string;
+	Enabled?: boolean;
+	UpdatePolicy?: string;
+	ChecksumPolicy?: string;
 }

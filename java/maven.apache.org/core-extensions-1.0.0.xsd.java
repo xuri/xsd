@@ -20,16 +20,16 @@ public class Extensions {
 
 // CoreExtensions is A set of build extensions to use from this project.
 public class CoreExtensions {
-	@XmlElement(required = true, name = "extension")
+	@XmlElement(name = "extension")
 	protected List<CoreExtension> Extension;
 }
 
 // CoreExtension is The version of the extension.
 public class CoreExtension {
-	@XmlElement(required = true, name = "groupId")
+	@XmlElement(name = "groupId")
 	protected String GroupId;
-	@XmlElement(required = true, name = "artifactId")
+	@XmlElement(name = "artifactId")
 	protected String ArtifactId;
-	@XmlElement(required = true, name = "version")
+	@XmlElement(name = "version")
 	protected String Version;
 }

@@ -26,9 +26,9 @@ public class Person {
 	protected String Name;
 	@XmlElement(required = true, name = "born")
 	protected String Born;
-	@XmlElement(required = true, name = "dead")
+	@XmlElement(name = "dead")
 	protected String Dead;
-	@XmlElement(required = true, name = "qualification")
+	@XmlElement(name = "qualification")
 	protected String Qualification;
 }
 

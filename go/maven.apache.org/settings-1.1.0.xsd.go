@@ -56,10 +56,10 @@ type PluginGroups struct {
 
 // Settings is Indicate whether maven should operate in offline mode full-time.
 type Settings struct {
-	LocalRepository   string          `xml:"localRepository,omitempty"`
-	InteractiveMode   bool            `xml:"interactiveMode,omitempty"`
-	UsePluginRegistry bool            `xml:"usePluginRegistry,omitempty"`
-	Offline           bool            `xml:"offline,omitempty"`
+	LocalRepository   *string         `xml:"localRepository"`
+	InteractiveMode   *bool           `xml:"interactiveMode"`
+	UsePluginRegistry *bool           `xml:"usePluginRegistry"`
+	Offline           *bool           `xml:"offline"`
 	Proxies           *Proxies        `xml:"proxies,omitempty"`
 	Servers           *Servers        `xml:"servers,omitempty"`
 	Mirrors           *Mirrors        `xml:"mirrors,omitempty"`
@@ -70,14 +70,14 @@ type Settings struct {
 
 // Proxy is 1.0.0+
 type Proxy struct {
-	Active        bool   `xml:"active,omitempty"`
-	Protocol      string `xml:"protocol,omitempty"`
-	Username      string `xml:"username,omitempty"`
-	Password      string `xml:"password,omitempty"`
-	Port          int    `xml:"port,omitempty"`
-	Host          string `xml:"host,omitempty"`
-	NonProxyHosts string `xml:"nonProxyHosts,omitempty"`
-	Id            string `xml:"id,omitempty"`
+	Active        *bool   `xml:"active"`
+	Protocol      *string `xml:"protocol"`
+	Username      *string `xml:"username"`
+	Password      *string `xml:"password"`
+	Port          *int    `xml:"port"`
+	Host          *string `xml:"host"`
+	NonProxyHosts *string `xml:"nonProxyHosts"`
+	Id            *string `xml:"id"`
 }
 
 // Configuration is Extra configuration for the transport layer.
@@ -87,24 +87,24 @@ type Configuration struct {
 
 // Server is The permissions for directories when they are created.
 type Server struct {
-	Username             string         `xml:"username,omitempty"`
-	Password             string         `xml:"password,omitempty"`
-	PrivateKey           string         `xml:"privateKey,omitempty"`
-	Passphrase           string         `xml:"passphrase,omitempty"`
-	FilePermissions      string         `xml:"filePermissions,omitempty"`
-	DirectoryPermissions string         `xml:"directoryPermissions,omitempty"`
+	Username             *string        `xml:"username"`
+	Password             *string        `xml:"password"`
+	PrivateKey           *string        `xml:"privateKey"`
+	Passphrase           *string        `xml:"passphrase"`
+	FilePermissions      *string        `xml:"filePermissions"`
+	DirectoryPermissions *string        `xml:"directoryPermissions"`
 	Configuration        *Configuration `xml:"configuration,omitempty"`
-	Id                   string         `xml:"id,omitempty"`
+	Id                   *string        `xml:"id"`
 }
 
 // Mirror is 1.0.0+
 type Mirror struct {
-	MirrorOf        string `xml:"mirrorOf,omitempty"`
-	Name            string `xml:"name,omitempty"`
-	Url             string `xml:"url,omitempty"`
-	Layout          string `xml:"layout,omitempty"`
-	MirrorOfLayouts string `xml:"mirrorOfLayouts,omitempty"`
-	Id              string `xml:"id,omitempty"`
+	MirrorOf        *string `xml:"mirrorOf"`
+	Name            *string `xml:"name"`
+	Url             *string `xml:"url"`
+	Layout          *string `xml:"layout"`
+	MirrorOfLayouts *string `xml:"mirrorOfLayouts"`
+	Id              *string `xml:"id"`
 }
 
 // Properties is Extended configuration specific to this profile goes here.
@@ -133,7 +133,7 @@ type Profile struct {
 	Properties         *Properties         `xml:"properties,omitempty"`
 	Repositories       *Repositories       `xml:"repositories,omitempty"`
 	PluginRepositories *PluginRepositories `xml:"pluginRepositories,omitempty"`
-	Id                 string              `xml:"id,omitempty"`
+	Id                 *string             `xml:"id"`
 }
 
 // Repository is The type of layout this repository uses for locating and
@@ -141,24 +141,24 @@ type Profile struct {
 type Repository struct {
 	Releases  *RepositoryPolicy `xml:"releases,omitempty"`
 	Snapshots *RepositoryPolicy `xml:"snapshots,omitempty"`
-	Id        string            `xml:"id,omitempty"`
-	Name      string            `xml:"name,omitempty"`
-	Url       string            `xml:"url,omitempty"`
-	Layout    string            `xml:"layout,omitempty"`
+	Id        *string           `xml:"id"`
+	Name      *string           `xml:"name"`
+	Url       *string           `xml:"url"`
+	Layout    *string           `xml:"layout"`
 }
 
 // RepositoryPolicy is What to do when verification of an artifact checksum fails -
 //             warn, fail, etc. Valid values are "fail" or "warn".
 type RepositoryPolicy struct {
-	Enabled        bool   `xml:"enabled,omitempty"`
-	UpdatePolicy   string `xml:"updatePolicy,omitempty"`
-	ChecksumPolicy string `xml:"checksumPolicy,omitempty"`
+	Enabled        *bool   `xml:"enabled"`
+	UpdatePolicy   *string `xml:"updatePolicy"`
+	ChecksumPolicy *string `xml:"checksumPolicy"`
 }
 
 // Activation is Specifies that this profile will be activated based on existence of a file.
 type Activation struct {
-	ActiveByDefault bool                `xml:"activeByDefault,omitempty"`
-	Jdk             string              `xml:"jdk,omitempty"`
+	ActiveByDefault *bool               `xml:"activeByDefault"`
+	Jdk             *string             `xml:"jdk"`
 	Os              *ActivationOS       `xml:"os,omitempty"`
 	Property        *ActivationProperty `xml:"property,omitempty"`
 	File            *ActivationFile     `xml:"file,omitempty"`
@@ -166,20 +166,20 @@ type Activation struct {
 
 // ActivationOS is The version of the OS to be used to activate a profile.
 type ActivationOS struct {
-	Name    string `xml:"name,omitempty"`
-	Family  string `xml:"family,omitempty"`
-	Arch    string `xml:"arch,omitempty"`
-	Version string `xml:"version,omitempty"`
+	Name    *string `xml:"name"`
+	Family  *string `xml:"family"`
+	Arch    *string `xml:"arch"`
+	Version *string `xml:"version"`
 }
 
 // ActivationProperty is The value of the property to be used to activate a profile.
 type ActivationProperty struct {
-	Name  string `xml:"name,omitempty"`
-	Value string `xml:"value,omitempty"`
+	Name  *string `xml:"name"`
+	Value *string `xml:"value"`
 }
 
 // ActivationFile is The name of the file that should exist to activate a profile.
 type ActivationFile struct {
-	Missing string `xml:"missing,omitempty"`
-	Exists  string `xml:"exists,omitempty"`
+	Missing *string `xml:"missing"`
+	Exists  *string `xml:"exists"`
 }

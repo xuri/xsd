@@ -9,8 +9,8 @@ import (
 // PublshInformation ...
 type PublshInformation struct {
 	XMLName     xml.Name `xml:"publshInformation"`
-	PublishDate string   `xml:"Publish_Date,omitempty"`
-	RecordCount int      `xml:"Record_Count,omitempty"`
+	PublishDate *string  `xml:"Publish_Date"`
+	RecordCount *int     `xml:"Record_Count"`
 }
 
 // ProgramList ...
@@ -23,11 +23,11 @@ type ProgramList struct {
 type Id struct {
 	XMLName        xml.Name `xml:"id"`
 	Uid            int      `xml:"uid"`
-	IdType         string   `xml:"idType,omitempty"`
-	IdNumber       string   `xml:"idNumber,omitempty"`
-	IdCountry      string   `xml:"idCountry,omitempty"`
-	IssueDate      string   `xml:"issueDate,omitempty"`
-	ExpirationDate string   `xml:"expirationDate,omitempty"`
+	IdType         *string  `xml:"idType"`
+	IdNumber       *string  `xml:"idNumber"`
+	IdCountry      *string  `xml:"idCountry"`
+	IssueDate      *string  `xml:"issueDate"`
+	ExpirationDate *string  `xml:"expirationDate"`
 }
 
 // IdList ...
@@ -42,8 +42,8 @@ type Aka struct {
 	Uid       int      `xml:"uid"`
 	Type      string   `xml:"type"`
 	Category  string   `xml:"category"`
-	LastName  string   `xml:"lastName,omitempty"`
-	FirstName string   `xml:"firstName,omitempty"`
+	LastName  *string  `xml:"lastName"`
+	FirstName *string  `xml:"firstName"`
 }
 
 // AkaList ...
@@ -56,13 +56,13 @@ type AkaList struct {
 type Address struct {
 	XMLName         xml.Name `xml:"address"`
 	Uid             int      `xml:"uid"`
-	Address1        string   `xml:"address1,omitempty"`
-	Address2        string   `xml:"address2,omitempty"`
-	Address3        string   `xml:"address3,omitempty"`
-	City            string   `xml:"city,omitempty"`
-	StateOrProvince string   `xml:"stateOrProvince,omitempty"`
-	PostalCode      string   `xml:"postalCode,omitempty"`
-	Country         string   `xml:"country,omitempty"`
+	Address1        *string  `xml:"address1"`
+	Address2        *string  `xml:"address2"`
+	Address3        *string  `xml:"address3"`
+	City            *string  `xml:"city"`
+	StateOrProvince *string  `xml:"stateOrProvince"`
+	PostalCode      *string  `xml:"postalCode"`
+	Country         *string  `xml:"country"`
 }
 
 // AddressList ...
@@ -130,23 +130,23 @@ type PlaceOfBirthList struct {
 // VesselInfo ...
 type VesselInfo struct {
 	XMLName                xml.Name `xml:"vesselInfo"`
-	CallSign               string   `xml:"callSign,omitempty"`
-	VesselType             string   `xml:"vesselType,omitempty"`
-	VesselFlag             string   `xml:"vesselFlag,omitempty"`
-	VesselOwner            string   `xml:"vesselOwner,omitempty"`
-	Tonnage                int      `xml:"tonnage,omitempty"`
-	GrossRegisteredTonnage int      `xml:"grossRegisteredTonnage,omitempty"`
+	CallSign               *string  `xml:"callSign"`
+	VesselType             *string  `xml:"vesselType"`
+	VesselFlag             *string  `xml:"vesselFlag"`
+	VesselOwner            *string  `xml:"vesselOwner"`
+	Tonnage                *int     `xml:"tonnage"`
+	GrossRegisteredTonnage *int     `xml:"grossRegisteredTonnage"`
 }
 
 // SdnEntry ...
 type SdnEntry struct {
 	XMLName          xml.Name          `xml:"sdnEntry"`
 	Uid              int               `xml:"uid"`
-	FirstName        string            `xml:"firstName,omitempty"`
+	FirstName        *string           `xml:"firstName"`
 	LastName         string            `xml:"lastName"`
-	Title            string            `xml:"title,omitempty"`
+	Title            *string           `xml:"title"`
 	SdnType          string            `xml:"sdnType"`
-	Remarks          string            `xml:"remarks,omitempty"`
+	Remarks          *string           `xml:"remarks"`
 	ProgramList      *ProgramList      `xml:"programList"`
 	IdList           *IdList           `xml:"idList,omitempty"`
 	AkaList          *AkaList          `xml:"akaList,omitempty"`

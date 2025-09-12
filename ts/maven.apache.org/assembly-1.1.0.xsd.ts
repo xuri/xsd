@@ -21,48 +21,48 @@ export type Assembly = Assembly;
 //               <li><b>"tar.bz2"</b> - Creates a bzip'd TAR format</li>
 //             </ul>
 export class Formats {
-	Format: string;
+	Format?: string;
 }
 
 // ContainerDescriptorHandlers is Set of components which filter various container descriptors out of
 //             the normal archive stream, so they can be aggregated then added.
 export class ContainerDescriptorHandlers {
-	ContainerDescriptorHandler: Array<ContainerDescriptorHandlerConfig>;
+	ContainerDescriptorHandler?: Array<ContainerDescriptorHandlerConfig>;
 }
 
 // ModuleSets is Specifies which module files to include in the assembly. A moduleSet
 //             is specified by providing one or more of &lt;moduleSet&gt;
 //             subelements.
 export class ModuleSets {
-	ModuleSet: Array<ModuleSet>;
+	ModuleSet?: Array<ModuleSet>;
 }
 
 // FileSets is Specifies which groups of files to include in the assembly. A
 //             fileSet is specified by providing one or more of &lt;fileSet&gt;
 //             subelements.
 export class FileSets {
-	FileSet: Array<FileSet>;
+	FileSet?: Array<FileSet>;
 }
 
 // Files is Specifies which single files to include in the assembly. A file
 //             is specified by providing one or more of &lt;file&gt;
 //             subelements.
 export class Files {
-	File: Array<FileItem>;
+	File?: Array<FileItem>;
 }
 
 // DependencySets is Specifies which dependencies to include in the assembly. A
 //             dependencySet is specified by providing one or more of
 //             &lt;dependencySet&gt; subelements.
 export class DependencySets {
-	DependencySet: Array<DependencySet>;
+	DependencySet?: Array<DependencySet>;
 }
 
 // Repositories is Specifies which repository files to include in the assembly. A
 //             repository is specified by providing one or more of
 //             &lt;repository&gt; subelements.
 export class Repositories {
-	Repository: Array<Repository>;
+	Repository?: Array<Repository>;
 }
 
 // ComponentDescriptors is Specifies the shared components xml file locations to include in the
@@ -73,7 +73,7 @@ export class Repositories {
 //             componentDescriptor is specified by providing one or more of
 //             &lt;componentDescriptor&gt; subelements.
 export class ComponentDescriptors {
-	ComponentDescriptor: string;
+	ComponentDescriptor?: string;
 }
 
 // Assembly2 is Sets the id of this assembly. This is a symbolic name for a
@@ -82,165 +82,165 @@ export class ComponentDescriptors {
 //             its value to the generated archive, the id is used as your
 //             artifact's classifier when deploying.
 export class Assembly2 {
-	Id: string;
-	Formats: Formats;
-	IncludeBaseDirectory: boolean;
-	BaseDirectory: string;
-	IncludeSiteDirectory: boolean;
-	ContainerDescriptorHandlers: ContainerDescriptorHandlers;
-	ModuleSets: ModuleSets;
-	FileSets: FileSets;
-	Files: Files;
-	DependencySets: DependencySets;
-	Repositories: Repositories;
-	ComponentDescriptors: ComponentDescriptors;
+	Id?: string;
+	Formats?: Formats;
+	IncludeBaseDirectory?: boolean;
+	BaseDirectory?: string;
+	IncludeSiteDirectory?: boolean;
+	ContainerDescriptorHandlers?: ContainerDescriptorHandlers;
+	ModuleSets?: ModuleSets;
+	FileSets?: FileSets;
+	Files?: Files;
+	DependencySets?: DependencySets;
+	Repositories?: Repositories;
+	ComponentDescriptors?: ComponentDescriptors;
 }
 
 // ContainerDescriptorHandlerConfig is The handler's plexus role-hint, for lookup from the container.
 export class ContainerDescriptorHandlerConfig {
-	HandlerName: string;
+	HandlerName?: string;
 }
 
 // GroupVersionAlignments is Specifies that you want to align a group of artifacts to a specified
 //             version. A groupVersionAlignment is specified by providing one or
 //             more of &lt;groupVersionAlignment&gt; subelements.
 export class GroupVersionAlignments {
-	GroupVersionAlignment: Array<GroupVersionAlignment>;
+	GroupVersionAlignment?: Array<GroupVersionAlignment>;
 }
 
 // Includes is When &lt;include&gt; subelements are present, they define a set of
 //             files and directory to include. If none is present, then
 //             &lt;includes&gt; represents all valid values.
 export class Includes {
-	Include: string;
+	Include?: string;
 }
 
 // Excludes is When &lt;exclude&gt; subelements are present, they define a set of
 //             files and directory to exclude. If none is present, then
 //             &lt;excludes&gt; represents no exclusions.
 export class Excludes {
-	Exclude: string;
+	Exclude?: string;
 }
 
 // Repository is If set to true, this property will trigger the creation of repository
 //             metadata which will allow the repository to be used as a functional remote
 //             repository. Default value is false.
 export class Repository {
-	IncludeMetadata: boolean;
-	GroupVersionAlignments: GroupVersionAlignments;
-	Scope: string;
-	UseStrictFiltering: boolean;
-	UseDefaultExcludes: boolean;
-	OutputDirectory: string;
-	Includes: Includes;
-	Excludes: Excludes;
-	FileMode: string;
-	DirectoryMode: string;
+	IncludeMetadata?: boolean;
+	GroupVersionAlignments?: GroupVersionAlignments;
+	Scope?: string;
+	UseStrictFiltering?: boolean;
+	UseDefaultExcludes?: boolean;
+	OutputDirectory?: string;
+	Includes?: Includes;
+	Excludes?: Excludes;
+	FileMode?: string;
+	DirectoryMode?: string;
 }
 
 // GroupVersionAlignment is The version you want to align this group to.
 export class GroupVersionAlignment {
-	Id: string;
-	Version: string;
-	Excludes: Excludes;
+	Id?: string;
+	Version?: string;
+	Excludes?: Excludes;
 }
 
 // FileItem is Sets whether to determine if the file is filtered.
 export class FileItem {
-	Source: string;
-	OutputDirectory: string;
-	DestName: string;
-	FileMode: string;
-	LineEnding: string;
-	Filtered: boolean;
+	Source?: string;
+	OutputDirectory?: string;
+	DestName?: string;
+	FileMode?: string;
+	LineEnding?: string;
+	Filtered?: boolean;
 }
 
 // FileSet is Sets the output directory relative to the root
 //             of the root directory of the assembly. For example,
 //             "log" will put the specified files in the log directory.
 export class FileSet {
-	Directory: string;
-	LineEnding: string;
-	Filtered: boolean;
-	UseStrictFiltering: boolean;
-	UseDefaultExcludes: boolean;
-	OutputDirectory: string;
-	Includes: Includes;
-	Excludes: Excludes;
-	FileMode: string;
-	DirectoryMode: string;
+	Directory?: string;
+	LineEnding?: string;
+	Filtered?: boolean;
+	UseStrictFiltering?: boolean;
+	UseDefaultExcludes?: boolean;
+	OutputDirectory?: string;
+	Includes?: Includes;
+	Excludes?: Excludes;
+	FileMode?: string;
+	DirectoryMode?: string;
 }
 
 // ModuleSet is If set to false, the plugin will exclude sub-modules from processing in this ModuleSet.
 //           Otherwise, it will process all sub-modules, each subject to include/exclude rules.
 //           Default value is true. (Since 2.2)
 export class ModuleSet {
-	IncludeSubModules: boolean;
-	Includes: Includes;
-	Excludes: Excludes;
-	Sources: ModuleSources;
-	Binaries: ModuleBinaries;
+	IncludeSubModules?: boolean;
+	Includes?: Includes;
+	Excludes?: Excludes;
+	Sources?: ModuleSources;
+	Binaries?: ModuleBinaries;
 }
 
 // ModuleSources is Contains configuration options for including the source files of a
 //         project module in an assembly.
 export class ModuleSources {
-	FileSets: FileSets;
-	IncludeModuleDirectory: boolean;
-	ExcludeSubModuleDirectories: boolean;
-	OutputDirectoryMapping: string;
-	UseStrictFiltering: boolean;
-	UseDefaultExcludes: boolean;
-	OutputDirectory: string;
-	Includes: Includes;
-	Excludes: Excludes;
-	FileMode: string;
-	DirectoryMode: string;
+	FileSets?: FileSets;
+	IncludeModuleDirectory?: boolean;
+	ExcludeSubModuleDirectories?: boolean;
+	OutputDirectoryMapping?: string;
+	UseStrictFiltering?: boolean;
+	UseDefaultExcludes?: boolean;
+	OutputDirectory?: string;
+	Includes?: Includes;
+	Excludes?: Excludes;
+	FileMode?: string;
+	DirectoryMode?: string;
 }
 
 // ModuleBinaries is If set to true, the plugin will include the direct and transitive dependencies of
 //           of the project modules included here.  Otherwise, it will only include the module
 //           packages only. Default value is true.
 export class ModuleBinaries {
-	AttachmentClassifier: string;
-	IncludeDependencies: boolean;
-	DependencySets: DependencySets;
-	Unpack: boolean;
-	UnpackOptions: UnpackOptions;
-	OutputFileNameMapping: string;
-	UseStrictFiltering: boolean;
-	UseDefaultExcludes: boolean;
-	OutputDirectory: string;
-	Includes: Includes;
-	Excludes: Excludes;
-	FileMode: string;
-	DirectoryMode: string;
+	AttachmentClassifier?: string;
+	IncludeDependencies?: boolean;
+	DependencySets?: DependencySets;
+	Unpack?: boolean;
+	UnpackOptions?: UnpackOptions;
+	OutputFileNameMapping?: string;
+	UseStrictFiltering?: boolean;
+	UseDefaultExcludes?: boolean;
+	OutputDirectory?: string;
+	Includes?: Includes;
+	Excludes?: Excludes;
+	FileMode?: string;
+	DirectoryMode?: string;
 }
 
 // UnpackOptions is Specifies options for including/excluding/filtering items extracted from an archive. (Since 2.2)
 export class UnpackOptions {
-	Includes: Includes;
-	Excludes: Excludes;
-	Filtered: boolean;
+	Includes?: Includes;
+	Excludes?: Excludes;
+	Filtered?: boolean;
 }
 
 // DependencySet is Sets the output directory relative to the root
 //             of the root directory of the assembly. For example,
 //             "log" will put the specified files in the log directory.
 export class DependencySet {
-	OutputFileNameMapping: string;
-	Unpack: boolean;
-	UnpackOptions: UnpackOptions;
-	Scope: string;
-	UseProjectArtifact: boolean;
-	UseProjectAttachments: boolean;
-	UseTransitiveDependencies: boolean;
-	UseTransitiveFiltering: boolean;
-	UseStrictFiltering: boolean;
-	UseDefaultExcludes: boolean;
-	OutputDirectory: string;
-	Includes: Includes;
-	Excludes: Excludes;
-	FileMode: string;
-	DirectoryMode: string;
+	OutputFileNameMapping?: string;
+	Unpack?: boolean;
+	UnpackOptions?: UnpackOptions;
+	Scope?: string;
+	UseProjectArtifact?: boolean;
+	UseProjectAttachments?: boolean;
+	UseTransitiveDependencies?: boolean;
+	UseTransitiveFiltering?: boolean;
+	UseStrictFiltering?: boolean;
+	UseDefaultExcludes?: boolean;
+	OutputDirectory?: string;
+	Includes?: Includes;
+	Excludes?: Excludes;
+	FileMode?: string;
+	DirectoryMode?: string;
 }

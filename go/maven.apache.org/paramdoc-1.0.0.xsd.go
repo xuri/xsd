@@ -33,12 +33,12 @@ type ApiMethods struct {
 
 // Expression is The place and syntax used to change the value of this expression.
 type Expression struct {
-	Syntax        string      `xml:"syntax,omitempty"`
-	Description   string      `xml:"description,omitempty"`
-	Configuration string      `xml:"configuration,omitempty"`
+	Syntax        *string     `xml:"syntax"`
+	Description   *string     `xml:"description"`
+	Configuration *string     `xml:"configuration"`
 	CliOptions    *CliOptions `xml:"cliOptions,omitempty"`
 	ApiMethods    *ApiMethods `xml:"apiMethods,omitempty"`
-	Deprecation   string      `xml:"deprecation,omitempty"`
-	Ban           string      `xml:"ban,omitempty"`
-	Editable      bool        `xml:"editable,omitempty"`
+	Deprecation   *string     `xml:"deprecation"`
+	Ban           *string     `xml:"ban"`
+	Editable      *bool       `xml:"editable"`
 }

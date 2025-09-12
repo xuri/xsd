@@ -3048,7 +3048,7 @@ pub struct CTTableCellProperties {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTHeaders {
 	#[serde(rename = "header")]
-	pub header: String,
+	pub header: Vec<String>,
 }
 
 

@@ -20,7 +20,7 @@ public class Properties {
 
 // CT_Properties ...
 public class CT_Properties {
-	@XmlElement(required = true, name = "property")
+	@XmlElement(name = "property")
 	protected List<CT_Property> Property;
 }
 

@@ -10,7 +10,7 @@ export class CT_Schema {
 
 // CT_SchemaLibrary ...
 export class CT_SchemaLibrary {
-	Schema: Array<CT_Schema>;
+	Schema?: Array<CT_Schema>;
 }
 
 // SchemaLibrary ...

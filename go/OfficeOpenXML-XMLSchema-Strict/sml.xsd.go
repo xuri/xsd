@@ -1771,7 +1771,7 @@ type CTRPrElt struct {
 // CTRst ...
 type CTRst struct {
 	XMLName    xml.Name         `xml:"CT_Rst"`
-	T          string           `xml:"t,omitempty"`
+	T          *string          `xml:"t"`
 	R          []*CTRElt        `xml:"r,omitempty"`
 	RPh        []*CTPhoneticRun `xml:"rPh,omitempty"`
 	PhoneticPr *CTPhoneticPr    `xml:"phoneticPr,omitempty"`
@@ -2028,8 +2028,8 @@ type CTRevisionDefinedName struct {
 	OldStatusBarAttr       string           `xml:"oldStatusBar,attr,omitempty"`
 	CommentAttr            string           `xml:"comment,attr,omitempty"`
 	OldCommentAttr         string           `xml:"oldComment,attr,omitempty"`
-	Formula                string           `xml:"formula,omitempty"`
-	OldFormula             string           `xml:"oldFormula,omitempty"`
+	Formula                *string          `xml:"formula"`
+	OldFormula             *string          `xml:"oldFormula"`
 	ExtLst                 *CTExtensionList `xml:"extLst,omitempty"`
 }
 
@@ -2259,7 +2259,7 @@ type CTCell struct {
 	VmAttr  uint32           `xml:"vm,attr,omitempty"`
 	PhAttr  bool             `xml:"ph,attr,omitempty"`
 	F       *CTCellFormula   `xml:"f,omitempty"`
-	V       string           `xml:"v,omitempty"`
+	V       *string          `xml:"v"`
 	Is      *CTRst           `xml:"is,omitempty"`
 	ExtLst  *CTExtensionList `xml:"extLst,omitempty"`
 }
@@ -2578,8 +2578,8 @@ type CTDataValidation struct {
 	PromptTitleAttr      string   `xml:"promptTitle,attr,omitempty"`
 	PromptAttr           string   `xml:"prompt,attr,omitempty"`
 	SqrefAttr            *STSqref `xml:"sqref,attr"`
-	Formula1             string   `xml:"formula1,omitempty"`
-	Formula2             string   `xml:"formula2,omitempty"`
+	Formula1             *string  `xml:"formula1"`
+	Formula2             *string  `xml:"formula2"`
 }
 
 // STDataValidationType ...
@@ -2769,12 +2769,12 @@ type CTHeaderFooter struct {
 	DifferentFirstAttr   bool     `xml:"differentFirst,attr,omitempty"`
 	ScaleWithDocAttr     bool     `xml:"scaleWithDoc,attr,omitempty"`
 	AlignWithMarginsAttr bool     `xml:"alignWithMargins,attr,omitempty"`
-	OddHeader            string   `xml:"oddHeader,omitempty"`
-	OddFooter            string   `xml:"oddFooter,omitempty"`
-	EvenHeader           string   `xml:"evenHeader,omitempty"`
-	EvenFooter           string   `xml:"evenFooter,omitempty"`
-	FirstHeader          string   `xml:"firstHeader,omitempty"`
-	FirstFooter          string   `xml:"firstFooter,omitempty"`
+	OddHeader            *string  `xml:"oddHeader"`
+	OddFooter            *string  `xml:"oddFooter"`
+	EvenHeader           *string  `xml:"evenHeader"`
+	EvenFooter           *string  `xml:"evenFooter"`
+	FirstHeader          *string  `xml:"firstHeader"`
+	FirstFooter          *string  `xml:"firstFooter"`
 }
 
 // STPrintError ...
@@ -3784,7 +3784,7 @@ type CTExternalCell struct {
 	RAttr   string   `xml:"r,attr,omitempty"`
 	TAttr   string   `xml:"t,attr,omitempty"`
 	VmAttr  uint32   `xml:"vm,attr,omitempty"`
-	V       string   `xml:"v,omitempty"`
+	V       *string  `xml:"v"`
 }
 
 // CTDdeLink ...
@@ -4315,9 +4315,9 @@ type STTargetScreenSize string
 
 // CTFunctionGroups ...
 type CTFunctionGroups struct {
-	XMLName               xml.Name         `xml:"CT_FunctionGroups"`
-	BuiltInGroupCountAttr uint32           `xml:"builtInGroupCount,attr,omitempty"`
-	FunctionGroup         *CTFunctionGroup `xml:"functionGroup,omitempty"`
+	XMLName               xml.Name           `xml:"CT_FunctionGroups"`
+	BuiltInGroupCountAttr uint32             `xml:"builtInGroupCount,attr,omitempty"`
+	FunctionGroup         []*CTFunctionGroup `xml:"functionGroup,omitempty"`
 }
 
 // CTFunctionGroup ...

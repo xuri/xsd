@@ -5,7 +5,7 @@ export type Properties = CT_Properties;
 
 // CT_Properties ...
 export class CT_Properties {
-	Property: Array<CT_Property>;
+	Property?: Array<CT_Property>;
 }
 
 // CT_Property ...

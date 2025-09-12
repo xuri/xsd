@@ -21,13 +21,13 @@ public class Paramdoc {
 // Expressions is The list of plugin parameter expressions described by this
 //             document.
 public class Expressions {
-	@XmlElement(required = true, name = "expression")
+	@XmlElement(name = "expression")
 	protected List<Expression> Expression;
 }
 
 // ExpressionDocumentation is The root of a parameter plugin expression document.
 public class ExpressionDocumentation {
-	@XmlElement(required = true, name = "expressions")
+	@XmlElement(name = "expressions")
 	protected Expressions Expressions;
 }
 
@@ -41,20 +41,20 @@ public class ApiMethods {
 
 // Expression is The place and syntax used to change the value of this expression.
 public class Expression {
-	@XmlElement(required = true, name = "syntax")
+	@XmlElement(name = "syntax")
 	protected String Syntax;
-	@XmlElement(required = true, name = "description")
+	@XmlElement(name = "description")
 	protected String Description;
-	@XmlElement(required = true, name = "configuration")
+	@XmlElement(name = "configuration")
 	protected String Configuration;
-	@XmlElement(required = true, name = "cliOptions")
+	@XmlElement(name = "cliOptions")
 	protected CliOptions CliOptions;
-	@XmlElement(required = true, name = "apiMethods")
+	@XmlElement(name = "apiMethods")
 	protected ApiMethods ApiMethods;
-	@XmlElement(required = true, name = "deprecation")
+	@XmlElement(name = "deprecation")
 	protected String Deprecation;
-	@XmlElement(required = true, name = "ban")
+	@XmlElement(name = "ban")
 	protected String Ban;
-	@XmlElement(required = true, name = "editable")
+	@XmlElement(name = "editable")
 	protected Boolean Editable;
 }

@@ -1139,11 +1139,11 @@ export class Table {
 	CellpaddingAttr: string | null;
 	AlignAttr: string | null;
 	BgcolorAttr: string | null;
-	Caption: Caption;
-	Col: Array<Col>;
-	Colgroup: Array<Colgroup>;
-	Thead: Thead;
-	Tfoot: Tfoot;
+	Caption?: Caption;
+	Col?: Array<Col>;
+	Colgroup?: Array<Colgroup>;
+	Thead?: Thead;
+	Tfoot?: Tfoot;
 	Tbody: Array<Tbody>;
 	Tr: Array<Tr>;
 }
@@ -1194,7 +1194,7 @@ export class Colgroup {
 	Cellvalign: Cellvalign;
 	SpanAttr: number | null;
 	WidthAttr: string | null;
-	Col: Array<Col>;
+	Col?: Array<Col>;
 }
 
 // Col is col elements define the alignment properties for cells in
@@ -1279,7 +1279,7 @@ export class Faqs {
 // Part is Required faq element for this part element.
 export class Part {
 	IdAttr: string | null;
-	Title: Title;
+	Title?: Title;
 	Faq: Array<Faq>;
 }
 

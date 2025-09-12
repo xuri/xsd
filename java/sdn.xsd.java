@@ -14,15 +14,15 @@ import javax.xml.bind.annotation.XmlValue;
 
 // PublshInformation ...
 public class PublshInformation {
-	@XmlElement(required = true, name = "Publish_Date")
+	@XmlElement(name = "Publish_Date")
 	protected String Publish_Date;
-	@XmlElement(required = true, name = "Record_Count")
+	@XmlElement(name = "Record_Count")
 	protected Integer Record_Count;
 }
 
 // ProgramList ...
 public class ProgramList {
-	@XmlElement(required = true, name = "program")
+	@XmlElement(name = "program")
 	protected List<String> Program;
 }
 
@@ -30,21 +30,21 @@ public class ProgramList {
 public class Id {
 	@XmlElement(required = true, name = "uid")
 	protected Integer Uid;
-	@XmlElement(required = true, name = "idType")
+	@XmlElement(name = "idType")
 	protected String IdType;
-	@XmlElement(required = true, name = "idNumber")
+	@XmlElement(name = "idNumber")
 	protected String IdNumber;
-	@XmlElement(required = true, name = "idCountry")
+	@XmlElement(name = "idCountry")
 	protected String IdCountry;
-	@XmlElement(required = true, name = "issueDate")
+	@XmlElement(name = "issueDate")
 	protected String IssueDate;
-	@XmlElement(required = true, name = "expirationDate")
+	@XmlElement(name = "expirationDate")
 	protected String ExpirationDate;
 }
 
 // IdList ...
 public class IdList {
-	@XmlElement(required = true, name = "id")
+	@XmlElement(name = "id")
 	protected List<Id> Id;
 }
 
@@ -56,15 +56,15 @@ public class Aka {
 	protected String Type;
 	@XmlElement(required = true, name = "category")
 	protected String Category;
-	@XmlElement(required = true, name = "lastName")
+	@XmlElement(name = "lastName")
 	protected String LastName;
-	@XmlElement(required = true, name = "firstName")
+	@XmlElement(name = "firstName")
 	protected String FirstName;
 }
 
 // AkaList ...
 public class AkaList {
-	@XmlElement(required = true, name = "aka")
+	@XmlElement(name = "aka")
 	protected List<Aka> Aka;
 }
 
@@ -72,25 +72,25 @@ public class AkaList {
 public class Address {
 	@XmlElement(required = true, name = "uid")
 	protected Integer Uid;
-	@XmlElement(required = true, name = "address1")
+	@XmlElement(name = "address1")
 	protected String Address1;
-	@XmlElement(required = true, name = "address2")
+	@XmlElement(name = "address2")
 	protected String Address2;
-	@XmlElement(required = true, name = "address3")
+	@XmlElement(name = "address3")
 	protected String Address3;
-	@XmlElement(required = true, name = "city")
+	@XmlElement(name = "city")
 	protected String City;
-	@XmlElement(required = true, name = "stateOrProvince")
+	@XmlElement(name = "stateOrProvince")
 	protected String StateOrProvince;
-	@XmlElement(required = true, name = "postalCode")
+	@XmlElement(name = "postalCode")
 	protected String PostalCode;
-	@XmlElement(required = true, name = "country")
+	@XmlElement(name = "country")
 	protected String Country;
 }
 
 // AddressList ...
 public class AddressList {
-	@XmlElement(required = true, name = "address")
+	@XmlElement(name = "address")
 	protected List<Address> Address;
 }
 
@@ -106,7 +106,7 @@ public class Nationality {
 
 // NationalityList ...
 public class NationalityList {
-	@XmlElement(required = true, name = "nationality")
+	@XmlElement(name = "nationality")
 	protected List<Nationality> Nationality;
 }
 
@@ -122,7 +122,7 @@ public class Citizenship {
 
 // CitizenshipList ...
 public class CitizenshipList {
-	@XmlElement(required = true, name = "citizenship")
+	@XmlElement(name = "citizenship")
 	protected List<Citizenship> Citizenship;
 }
 
@@ -138,7 +138,7 @@ public class DateOfBirthItem {
 
 // DateOfBirthList ...
 public class DateOfBirthList {
-	@XmlElement(required = true, name = "dateOfBirthItem")
+	@XmlElement(name = "dateOfBirthItem")
 	protected List<DateOfBirthItem> DateOfBirthItem;
 }
 
@@ -154,23 +154,23 @@ public class PlaceOfBirthItem {
 
 // PlaceOfBirthList ...
 public class PlaceOfBirthList {
-	@XmlElement(required = true, name = "placeOfBirthItem")
+	@XmlElement(name = "placeOfBirthItem")
 	protected List<PlaceOfBirthItem> PlaceOfBirthItem;
 }
 
 // VesselInfo ...
 public class VesselInfo {
-	@XmlElement(required = true, name = "callSign")
+	@XmlElement(name = "callSign")
 	protected String CallSign;
-	@XmlElement(required = true, name = "vesselType")
+	@XmlElement(name = "vesselType")
 	protected String VesselType;
-	@XmlElement(required = true, name = "vesselFlag")
+	@XmlElement(name = "vesselFlag")
 	protected String VesselFlag;
-	@XmlElement(required = true, name = "vesselOwner")
+	@XmlElement(name = "vesselOwner")
 	protected String VesselOwner;
-	@XmlElement(required = true, name = "tonnage")
+	@XmlElement(name = "tonnage")
 	protected Integer Tonnage;
-	@XmlElement(required = true, name = "grossRegisteredTonnage")
+	@XmlElement(name = "grossRegisteredTonnage")
 	protected Integer GrossRegisteredTonnage;
 }
 
@@ -178,33 +178,33 @@ public class VesselInfo {
 public class SdnEntry {
 	@XmlElement(required = true, name = "uid")
 	protected Integer Uid;
-	@XmlElement(required = true, name = "firstName")
+	@XmlElement(name = "firstName")
 	protected String FirstName;
 	@XmlElement(required = true, name = "lastName")
 	protected String LastName;
-	@XmlElement(required = true, name = "title")
+	@XmlElement(name = "title")
 	protected String Title;
 	@XmlElement(required = true, name = "sdnType")
 	protected String SdnType;
-	@XmlElement(required = true, name = "remarks")
+	@XmlElement(name = "remarks")
 	protected String Remarks;
 	@XmlElement(required = true, name = "programList")
 	protected ProgramList ProgramList;
-	@XmlElement(required = true, name = "idList")
+	@XmlElement(name = "idList")
 	protected IdList IdList;
-	@XmlElement(required = true, name = "akaList")
+	@XmlElement(name = "akaList")
 	protected AkaList AkaList;
-	@XmlElement(required = true, name = "addressList")
+	@XmlElement(name = "addressList")
 	protected AddressList AddressList;
-	@XmlElement(required = true, name = "nationalityList")
+	@XmlElement(name = "nationalityList")
 	protected NationalityList NationalityList;
-	@XmlElement(required = true, name = "citizenshipList")
+	@XmlElement(name = "citizenshipList")
 	protected CitizenshipList CitizenshipList;
-	@XmlElement(required = true, name = "dateOfBirthList")
+	@XmlElement(name = "dateOfBirthList")
 	protected DateOfBirthList DateOfBirthList;
-	@XmlElement(required = true, name = "placeOfBirthList")
+	@XmlElement(name = "placeOfBirthList")
 	protected PlaceOfBirthList PlaceOfBirthList;
-	@XmlElement(required = true, name = "vesselInfo")
+	@XmlElement(name = "vesselInfo")
 	protected VesselInfo VesselInfo;
 }
 

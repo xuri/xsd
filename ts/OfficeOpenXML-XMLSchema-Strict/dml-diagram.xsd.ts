@@ -20,7 +20,7 @@ export class CT_CTCategory {
 
 // CT_CTCategories ...
 export class CT_CTCategories {
-	Cat: Array<CT_CTCategory>;
+	Cat?: Array<CT_CTCategory>;
 }
 
 // ST_ClrAppMethod ...
@@ -46,24 +46,24 @@ export class CT_Colors {
 // CT_CTStyleLabel ...
 export class CT_CTStyleLabel {
 	NameAttr: string;
-	FillClrLst: CT_Colors;
-	LinClrLst: CT_Colors;
-	EffectClrLst: CT_Colors;
-	TxLinClrLst: CT_Colors;
-	TxFillClrLst: CT_Colors;
-	TxEffectClrLst: CT_Colors;
-	ExtLst: CT_OfficeArtExtensionList;
+	FillClrLst?: CT_Colors;
+	LinClrLst?: CT_Colors;
+	EffectClrLst?: CT_Colors;
+	TxLinClrLst?: CT_Colors;
+	TxFillClrLst?: CT_Colors;
+	TxEffectClrLst?: CT_Colors;
+	ExtLst?: CT_OfficeArtExtensionList;
 }
 
 // CT_ColorTransform ...
 export class CT_ColorTransform {
 	UniqueIdAttr: string | null;
 	MinVerAttr: string | null;
-	Title: Array<CT_CTName>;
-	Desc: Array<CT_CTDescription>;
-	CatLst: CT_CTCategories;
-	StyleLbl: Array<CT_CTStyleLabel>;
-	ExtLst: CT_OfficeArtExtensionList;
+	Title?: Array<CT_CTName>;
+	Desc?: Array<CT_CTDescription>;
+	CatLst?: CT_CTCategories;
+	StyleLbl?: Array<CT_CTStyleLabel>;
+	ExtLst?: CT_OfficeArtExtensionList;
 }
 
 // ColorsDef ...
@@ -76,8 +76,8 @@ export class CT_ColorTransformHeader {
 	ResIdAttr: number | null;
 	Title: Array<CT_CTName>;
 	Desc: Array<CT_CTDescription>;
-	CatLst: CT_CTCategories;
-	ExtLst: CT_OfficeArtExtensionList;
+	CatLst?: CT_CTCategories;
+	ExtLst?: CT_OfficeArtExtensionList;
 }
 
 // ColorsDefHdr ...
@@ -85,7 +85,7 @@ export type ColorsDefHdr = CT_ColorTransformHeader;
 
 // CT_ColorTransformHeaderLst ...
 export class CT_ColorTransformHeaderLst {
-	ColorsDefHdr: Array<CT_ColorTransformHeader>;
+	ColorsDefHdr?: Array<CT_ColorTransformHeader>;
 }
 
 // ColorsDefHdrLst ...
@@ -106,15 +106,15 @@ export class CT_Pt {
 	ModelIdAttr: ST_ModelId;
 	TypeAttr: string | null;
 	CxnIdAttr: ST_ModelId | null;
-	PrSet: CT_ElemPropSet;
-	SpPr: CT_ShapeProperties;
-	T: CT_TextBody;
-	ExtLst: CT_OfficeArtExtensionList;
+	PrSet?: CT_ElemPropSet;
+	SpPr?: CT_ShapeProperties;
+	T?: CT_TextBody;
+	ExtLst?: CT_OfficeArtExtensionList;
 }
 
 // CT_PtList ...
 export class CT_PtList {
-	Pt: Array<CT_Pt>;
+	Pt?: Array<CT_Pt>;
 }
 
 // ST_CxnType ...
@@ -136,21 +136,21 @@ export class CT_Cxn {
 	ParTransIdAttr: ST_ModelId | null;
 	SibTransIdAttr: ST_ModelId | null;
 	PresIdAttr: string | null;
-	ExtLst: CT_OfficeArtExtensionList;
+	ExtLst?: CT_OfficeArtExtensionList;
 }
 
 // CT_CxnList ...
 export class CT_CxnList {
-	Cxn: Array<CT_Cxn>;
+	Cxn?: Array<CT_Cxn>;
 }
 
 // CT_DataModel ...
 export class CT_DataModel {
 	PtLst: CT_PtList;
-	CxnLst: CT_CxnList;
-	Bg: CT_BackgroundFormatting;
-	Whole: CT_WholeE2oFormatting;
-	ExtLst: CT_OfficeArtExtensionList;
+	CxnLst?: CT_CxnList;
+	Bg?: CT_BackgroundFormatting;
+	Whole?: CT_WholeE2oFormatting;
+	ExtLst?: CT_OfficeArtExtensionList;
 }
 
 // DataModel ...
@@ -189,12 +189,12 @@ export class CT_Constraint {
 	OpAttr: string | null;
 	ValAttr: number | null;
 	FactAttr: number | null;
-	ExtLst: CT_OfficeArtExtensionList;
+	ExtLst?: CT_OfficeArtExtensionList;
 }
 
 // CT_Constraints ...
 export class CT_Constraints {
-	Constr: Array<CT_Constraint>;
+	Constr?: Array<CT_Constraint>;
 }
 
 // CT_NumericRule ...
@@ -203,18 +203,18 @@ export class CT_NumericRule {
 	ValAttr: number | null;
 	FactAttr: number | null;
 	MaxAttr: number | null;
-	ExtLst: CT_OfficeArtExtensionList;
+	ExtLst?: CT_OfficeArtExtensionList;
 }
 
 // CT_Rules ...
 export class CT_Rules {
-	Rule: Array<CT_NumericRule>;
+	Rule?: Array<CT_NumericRule>;
 }
 
 // CT_PresentationOf ...
 export class CT_PresentationOf {
 	AG_IteratorAttributes: AG_IteratorAttributes;
-	ExtLst: CT_OfficeArtExtensionList;
+	ExtLst?: CT_OfficeArtExtensionList;
 }
 
 // ST_LayoutShapeType ...
@@ -234,7 +234,7 @@ export class CT_Adj {
 
 // CT_AdjLst ...
 export class CT_AdjLst {
-	Adj: Array<CT_Adj>;
+	Adj?: Array<CT_Adj>;
 }
 
 // CT_Shape ...
@@ -246,8 +246,8 @@ export class CT_Shape {
 	HideGeomAttr: boolean | null;
 	LkTxEntryAttr: boolean | null;
 	BlipPhldrAttr: boolean | null;
-	AdjLst: CT_AdjLst;
-	ExtLst: CT_OfficeArtExtensionList;
+	AdjLst?: CT_AdjLst;
+	ExtLst?: CT_OfficeArtExtensionList;
 }
 
 // CT_Parameter ...
@@ -260,8 +260,8 @@ export class CT_Parameter {
 export class CT_Algorithm {
 	TypeAttr: string;
 	RevAttr: number | null;
-	Param: Array<CT_Parameter>;
-	ExtLst: CT_OfficeArtExtensionList;
+	Param?: Array<CT_Parameter>;
+	ExtLst?: CT_OfficeArtExtensionList;
 }
 
 // CT_LayoutNode ...
@@ -270,16 +270,16 @@ export class CT_LayoutNode {
 	StyleLblAttr: string | null;
 	ChOrderAttr: string | null;
 	MoveWithAttr: string | null;
-	Alg: Array<CT_Algorithm>;
-	Shape: Array<CT_Shape>;
-	PresOf: Array<CT_PresentationOf>;
-	ConstrLst: Array<CT_Constraints>;
-	RuleLst: Array<CT_Rules>;
-	VarLst: Array<CT_LayoutVariablePropertySet>;
+	Alg?: Array<CT_Algorithm>;
+	Shape?: Array<CT_Shape>;
+	PresOf?: Array<CT_PresentationOf>;
+	ConstrLst?: Array<CT_Constraints>;
+	RuleLst?: Array<CT_Rules>;
+	VarLst?: Array<CT_LayoutVariablePropertySet>;
 	ForEach: Array<CT_ForEach>;
 	LayoutNode: Array<CT_LayoutNode>;
 	Choose: Array<CT_Choose>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst?: Array<CT_OfficeArtExtensionList>;
 }
 
 // CT_ForEach ...
@@ -287,15 +287,15 @@ export class CT_ForEach {
 	AG_IteratorAttributes: AG_IteratorAttributes;
 	NameAttr: string | null;
 	RefAttr: string | null;
-	Alg: Array<CT_Algorithm>;
-	Shape: Array<CT_Shape>;
-	PresOf: Array<CT_PresentationOf>;
-	ConstrLst: Array<CT_Constraints>;
-	RuleLst: Array<CT_Rules>;
+	Alg?: Array<CT_Algorithm>;
+	Shape?: Array<CT_Shape>;
+	PresOf?: Array<CT_PresentationOf>;
+	ConstrLst?: Array<CT_Constraints>;
+	RuleLst?: Array<CT_Rules>;
 	ForEach: Array<CT_ForEach>;
 	LayoutNode: Array<CT_LayoutNode>;
 	Choose: Array<CT_Choose>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst?: Array<CT_OfficeArtExtensionList>;
 }
 
 // CT_When ...
@@ -306,42 +306,42 @@ export class CT_When {
 	ArgAttr: ST_FunctionArgument | null;
 	OpAttr: string;
 	ValAttr: ST_FunctionValue;
-	Alg: Array<CT_Algorithm>;
-	Shape: Array<CT_Shape>;
-	PresOf: Array<CT_PresentationOf>;
-	ConstrLst: Array<CT_Constraints>;
-	RuleLst: Array<CT_Rules>;
+	Alg?: Array<CT_Algorithm>;
+	Shape?: Array<CT_Shape>;
+	PresOf?: Array<CT_PresentationOf>;
+	ConstrLst?: Array<CT_Constraints>;
+	RuleLst?: Array<CT_Rules>;
 	ForEach: Array<CT_ForEach>;
 	LayoutNode: Array<CT_LayoutNode>;
 	Choose: Array<CT_Choose>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst?: Array<CT_OfficeArtExtensionList>;
 }
 
 // CT_Otherwise ...
 export class CT_Otherwise {
 	NameAttr: string | null;
-	Alg: Array<CT_Algorithm>;
-	Shape: Array<CT_Shape>;
-	PresOf: Array<CT_PresentationOf>;
-	ConstrLst: Array<CT_Constraints>;
-	RuleLst: Array<CT_Rules>;
+	Alg?: Array<CT_Algorithm>;
+	Shape?: Array<CT_Shape>;
+	PresOf?: Array<CT_PresentationOf>;
+	ConstrLst?: Array<CT_Constraints>;
+	RuleLst?: Array<CT_Rules>;
 	ForEach: Array<CT_ForEach>;
 	LayoutNode: Array<CT_LayoutNode>;
 	Choose: Array<CT_Choose>;
-	ExtLst: Array<CT_OfficeArtExtensionList>;
+	ExtLst?: Array<CT_OfficeArtExtensionList>;
 }
 
 // CT_Choose ...
 export class CT_Choose {
 	NameAttr: string | null;
 	If: Array<CT_When>;
-	Else: CT_Otherwise;
+	Else?: CT_Otherwise;
 }
 
 // CT_SampleData ...
 export class CT_SampleData {
 	UseDefAttr: boolean | null;
-	DataModel: CT_DataModel;
+	DataModel?: CT_DataModel;
 }
 
 // CT_Category ...
@@ -352,7 +352,7 @@ export class CT_Category {
 
 // CT_Categories ...
 export class CT_Categories {
-	Cat: Array<CT_Category>;
+	Cat?: Array<CT_Category>;
 }
 
 // CT_Name ...
@@ -372,14 +372,14 @@ export class CT_DiagramDefinition {
 	UniqueIdAttr: string | null;
 	MinVerAttr: string | null;
 	DefStyleAttr: string | null;
-	Title: Array<CT_Name>;
-	Desc: Array<CT_Description>;
-	CatLst: CT_Categories;
-	SampData: CT_SampleData;
-	StyleData: CT_SampleData;
-	ClrData: CT_SampleData;
+	Title?: Array<CT_Name>;
+	Desc?: Array<CT_Description>;
+	CatLst?: CT_Categories;
+	SampData?: CT_SampleData;
+	StyleData?: CT_SampleData;
+	ClrData?: CT_SampleData;
 	LayoutNode: CT_LayoutNode;
-	ExtLst: CT_OfficeArtExtensionList;
+	ExtLst?: CT_OfficeArtExtensionList;
 }
 
 // LayoutDef ...
@@ -393,8 +393,8 @@ export class CT_DiagramDefinitionHeader {
 	ResIdAttr: number | null;
 	Title: Array<CT_Name>;
 	Desc: Array<CT_Description>;
-	CatLst: CT_Categories;
-	ExtLst: CT_OfficeArtExtensionList;
+	CatLst?: CT_Categories;
+	ExtLst?: CT_OfficeArtExtensionList;
 }
 
 // LayoutDefHdr ...
@@ -402,7 +402,7 @@ export type LayoutDefHdr = CT_DiagramDefinitionHeader;
 
 // CT_DiagramDefinitionHeaderLst ...
 export class CT_DiagramDefinitionHeaderLst {
-	LayoutDefHdr: Array<CT_DiagramDefinitionHeader>;
+	LayoutDefHdr?: Array<CT_DiagramDefinitionHeader>;
 }
 
 // LayoutDefHdrLst ...
@@ -500,8 +500,8 @@ export class CT_ElemPropSet {
 	CustLinFactNeighborYAttr: ST_PrSetCustVal | null;
 	CustRadScaleRadAttr: ST_PrSetCustVal | null;
 	CustRadScaleIncAttr: ST_PrSetCustVal | null;
-	PresLayoutVars: CT_LayoutVariablePropertySet;
-	Style: CT_ShapeStyle;
+	PresLayoutVars?: CT_LayoutVariablePropertySet;
+	Style?: CT_ShapeStyle;
 }
 
 // ST_Direction ...
@@ -589,15 +589,15 @@ export class CT_ResizeHandles {
 
 // CT_LayoutVariablePropertySet ...
 export class CT_LayoutVariablePropertySet {
-	OrgChart: CT_OrgChart;
-	ChMax: CT_ChildMax;
-	ChPref: CT_ChildPref;
-	BulletEnabled: CT_BulletEnabled;
-	Dir: CT_Direction;
-	HierBranch: CT_HierBranchStyle;
-	AnimOne: CT_AnimOne;
-	AnimLvl: CT_AnimLvl;
-	ResizeHandles: CT_ResizeHandles;
+	OrgChart?: CT_OrgChart;
+	ChMax?: CT_ChildMax;
+	ChPref?: CT_ChildPref;
+	BulletEnabled?: CT_BulletEnabled;
+	Dir?: CT_Direction;
+	HierBranch?: CT_HierBranchStyle;
+	AnimOne?: CT_AnimOne;
+	AnimLvl?: CT_AnimLvl;
+	ResizeHandles?: CT_ResizeHandles;
 }
 
 // CT_SDName ...
@@ -620,7 +620,7 @@ export class CT_SDCategory {
 
 // CT_SDCategories ...
 export class CT_SDCategories {
-	Cat: Array<CT_SDCategory>;
+	Cat?: Array<CT_SDCategory>;
 }
 
 // CT_TextProps ...
@@ -631,23 +631,23 @@ export class CT_TextProps {
 // CT_StyleLabel ...
 export class CT_StyleLabel {
 	NameAttr: string;
-	Scene3d: CT_Scene3D;
-	Sp3d: CT_Shape3D;
-	TxPr: CT_TextProps;
-	Style: CT_ShapeStyle;
-	ExtLst: CT_OfficeArtExtensionList;
+	Scene3d?: CT_Scene3D;
+	Sp3d?: CT_Shape3D;
+	TxPr?: CT_TextProps;
+	Style?: CT_ShapeStyle;
+	ExtLst?: CT_OfficeArtExtensionList;
 }
 
 // CT_StyleDefinition ...
 export class CT_StyleDefinition {
 	UniqueIdAttr: string | null;
 	MinVerAttr: string | null;
-	Title: Array<CT_SDName>;
-	Desc: Array<CT_SDDescription>;
-	CatLst: CT_SDCategories;
-	Scene3d: CT_Scene3D;
+	Title?: Array<CT_SDName>;
+	Desc?: Array<CT_SDDescription>;
+	CatLst?: CT_SDCategories;
+	Scene3d?: CT_Scene3D;
 	StyleLbl: Array<CT_StyleLabel>;
-	ExtLst: CT_OfficeArtExtensionList;
+	ExtLst?: CT_OfficeArtExtensionList;
 }
 
 // StyleDef ...
@@ -660,8 +660,8 @@ export class CT_StyleDefinitionHeader {
 	ResIdAttr: number | null;
 	Title: Array<CT_SDName>;
 	Desc: Array<CT_SDDescription>;
-	CatLst: CT_SDCategories;
-	ExtLst: CT_OfficeArtExtensionList;
+	CatLst?: CT_SDCategories;
+	ExtLst?: CT_OfficeArtExtensionList;
 }
 
 // StyleDefHdr ...
@@ -669,7 +669,7 @@ export type StyleDefHdr = CT_StyleDefinitionHeader;
 
 // CT_StyleDefinitionHeaderLst ...
 export class CT_StyleDefinitionHeaderLst {
-	StyleDefHdr: Array<CT_StyleDefinitionHeader>;
+	StyleDefHdr?: Array<CT_StyleDefinitionHeader>;
 }
 
 // StyleDefHdrLst ...

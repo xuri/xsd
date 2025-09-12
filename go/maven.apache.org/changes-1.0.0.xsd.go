@@ -51,7 +51,7 @@ type DueTo struct {
 
 // Properties is Page Author
 type Properties struct {
-	Title  string  `xml:"title,omitempty"`
+	Title  *string `xml:"title"`
 	Author *Author `xml:"author,omitempty"`
 }
 

@@ -18,18 +18,18 @@ type Plugins struct {
 // Metadata is Versioning information for the artifact.
 type Metadata struct {
 	ModelVersionAttr string      `xml:"modelVersion,attr,omitempty"`
-	GroupId          string      `xml:"groupId,omitempty"`
-	ArtifactId       string      `xml:"artifactId,omitempty"`
-	Version          string      `xml:"version,omitempty"`
+	GroupId          *string     `xml:"groupId"`
+	ArtifactId       *string     `xml:"artifactId"`
+	Version          *string     `xml:"version"`
 	Versioning       *Versioning `xml:"versioning,omitempty"`
 	Plugins          *Plugins    `xml:"plugins,omitempty"`
 }
 
 // Plugin is The plugin artifactId
 type Plugin struct {
-	Name       string `xml:"name,omitempty"`
-	Prefix     string `xml:"prefix,omitempty"`
-	ArtifactId string `xml:"artifactId,omitempty"`
+	Name       *string `xml:"name"`
+	Prefix     *string `xml:"prefix"`
+	ArtifactId *string `xml:"artifactId"`
 }
 
 // Versions is Versions available of the artifact (both releases and snapshots)
@@ -46,25 +46,25 @@ type SnapshotVersions struct {
 
 // Versioning is The current snapshot data in use for this version (artifact snapshots only)
 type Versioning struct {
-	Latest           string            `xml:"latest,omitempty"`
-	Release          string            `xml:"release,omitempty"`
+	Latest           *string           `xml:"latest"`
+	Release          *string           `xml:"release"`
 	Snapshot         *Snapshot         `xml:"snapshot,omitempty"`
 	Versions         *Versions         `xml:"versions,omitempty"`
-	LastUpdated      string            `xml:"lastUpdated,omitempty"`
+	LastUpdated      *string           `xml:"lastUpdated"`
 	SnapshotVersions *SnapshotVersions `xml:"snapshotVersions,omitempty"`
 }
 
 // SnapshotVersion is The timestamp when this version information was last updated. The timestamp is expressed using UTC in the format yyyyMMddHHmmss.
 type SnapshotVersion struct {
-	Classifier string `xml:"classifier,omitempty"`
-	Extension  string `xml:"extension,omitempty"`
-	Value      string `xml:"value,omitempty"`
-	Updated    string `xml:"updated,omitempty"`
+	Classifier *string `xml:"classifier"`
+	Extension  *string `xml:"extension"`
+	Value      *string `xml:"value"`
+	Updated    *string `xml:"updated"`
 }
 
 // Snapshot is Whether to use a local copy instead (with filename that includes the base version)
 type Snapshot struct {
-	Timestamp   string `xml:"timestamp,omitempty"`
-	BuildNumber int    `xml:"buildNumber,omitempty"`
-	LocalCopy   bool   `xml:"localCopy,omitempty"`
+	Timestamp   *string `xml:"timestamp"`
+	BuildNumber *int    `xml:"buildNumber"`
+	LocalCopy   *bool   `xml:"localCopy"`
 }

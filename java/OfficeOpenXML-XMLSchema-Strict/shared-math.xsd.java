@@ -196,13 +196,13 @@ public class EG_ScriptStyle {
 // CT_RPR ...
 public class CT_RPR {
 	protected EG_ScriptStyle EG_ScriptStyle;
-	@XmlElement(required = true, name = "lit")
+	@XmlElement(name = "lit")
 	protected CT_OnOff Lit;
-	@XmlElement(required = true, name = "nor")
+	@XmlElement(name = "nor")
 	protected CT_OnOff Nor;
-	@XmlElement(required = true, name = "brk")
+	@XmlElement(name = "brk")
 	protected CT_ManualBreak Brk;
-	@XmlElement(required = true, name = "aln")
+	@XmlElement(name = "aln")
 	protected CT_OnOff Aln;
 }
 
@@ -218,9 +218,9 @@ public class CT_Text {
 public class CT_R {
 	protected EG_RPr WEG_RPr;
 	protected List<EG_RunInnerContent> WEG_RunInnerContent;
-	@XmlElement(required = true, name = "rPr")
+	@XmlElement(name = "rPr")
 	protected CT_RPR RPr;
-	@XmlElement(required = true, name = "t")
+	@XmlElement(name = "t")
 	protected List<CT_Text> T;
 }
 
@@ -231,15 +231,15 @@ public class CT_CtrlPr {
 
 // CT_AccPr ...
 public class CT_AccPr {
-	@XmlElement(required = true, name = "chr")
+	@XmlElement(name = "chr")
 	protected CT_Char Chr;
-	@XmlElement(required = true, name = "ctrlPr")
+	@XmlElement(name = "ctrlPr")
 	protected CT_CtrlPr CtrlPr;
 }
 
 // CT_Acc ...
 public class CT_Acc {
-	@XmlElement(required = true, name = "accPr")
+	@XmlElement(name = "accPr")
 	protected CT_AccPr AccPr;
 	@XmlElement(required = true, name = "e")
 	protected CT_OMathArg E;
@@ -247,15 +247,15 @@ public class CT_Acc {
 
 // CT_BarPr ...
 public class CT_BarPr {
-	@XmlElement(required = true, name = "pos")
+	@XmlElement(name = "pos")
 	protected CT_TopBot Pos;
-	@XmlElement(required = true, name = "ctrlPr")
+	@XmlElement(name = "ctrlPr")
 	protected CT_CtrlPr CtrlPr;
 }
 
 // CT_Bar ...
 public class CT_Bar {
-	@XmlElement(required = true, name = "barPr")
+	@XmlElement(name = "barPr")
 	protected CT_BarPr BarPr;
 	@XmlElement(required = true, name = "e")
 	protected CT_OMathArg E;
@@ -263,23 +263,23 @@ public class CT_Bar {
 
 // CT_BoxPr ...
 public class CT_BoxPr {
-	@XmlElement(required = true, name = "opEmu")
+	@XmlElement(name = "opEmu")
 	protected CT_OnOff OpEmu;
-	@XmlElement(required = true, name = "noBreak")
+	@XmlElement(name = "noBreak")
 	protected CT_OnOff NoBreak;
-	@XmlElement(required = true, name = "diff")
+	@XmlElement(name = "diff")
 	protected CT_OnOff Diff;
-	@XmlElement(required = true, name = "brk")
+	@XmlElement(name = "brk")
 	protected CT_ManualBreak Brk;
-	@XmlElement(required = true, name = "aln")
+	@XmlElement(name = "aln")
 	protected CT_OnOff Aln;
-	@XmlElement(required = true, name = "ctrlPr")
+	@XmlElement(name = "ctrlPr")
 	protected CT_CtrlPr CtrlPr;
 }
 
 // CT_Box ...
 public class CT_Box {
-	@XmlElement(required = true, name = "boxPr")
+	@XmlElement(name = "boxPr")
 	protected CT_BoxPr BoxPr;
 	@XmlElement(required = true, name = "e")
 	protected CT_OMathArg E;
@@ -287,29 +287,29 @@ public class CT_Box {
 
 // CT_BorderBoxPr ...
 public class CT_BorderBoxPr {
-	@XmlElement(required = true, name = "hideTop")
+	@XmlElement(name = "hideTop")
 	protected CT_OnOff HideTop;
-	@XmlElement(required = true, name = "hideBot")
+	@XmlElement(name = "hideBot")
 	protected CT_OnOff HideBot;
-	@XmlElement(required = true, name = "hideLeft")
+	@XmlElement(name = "hideLeft")
 	protected CT_OnOff HideLeft;
-	@XmlElement(required = true, name = "hideRight")
+	@XmlElement(name = "hideRight")
 	protected CT_OnOff HideRight;
-	@XmlElement(required = true, name = "strikeH")
+	@XmlElement(name = "strikeH")
 	protected CT_OnOff StrikeH;
-	@XmlElement(required = true, name = "strikeV")
+	@XmlElement(name = "strikeV")
 	protected CT_OnOff StrikeV;
-	@XmlElement(required = true, name = "strikeBLTR")
+	@XmlElement(name = "strikeBLTR")
 	protected CT_OnOff StrikeBLTR;
-	@XmlElement(required = true, name = "strikeTLBR")
+	@XmlElement(name = "strikeTLBR")
 	protected CT_OnOff StrikeTLBR;
-	@XmlElement(required = true, name = "ctrlPr")
+	@XmlElement(name = "ctrlPr")
 	protected CT_CtrlPr CtrlPr;
 }
 
 // CT_BorderBox ...
 public class CT_BorderBox {
-	@XmlElement(required = true, name = "borderBoxPr")
+	@XmlElement(name = "borderBoxPr")
 	protected CT_BorderBoxPr BorderBoxPr;
 	@XmlElement(required = true, name = "e")
 	protected CT_OMathArg E;
@@ -317,23 +317,23 @@ public class CT_BorderBox {
 
 // CT_DPr ...
 public class CT_DPr {
-	@XmlElement(required = true, name = "begChr")
+	@XmlElement(name = "begChr")
 	protected CT_Char BegChr;
-	@XmlElement(required = true, name = "sepChr")
+	@XmlElement(name = "sepChr")
 	protected CT_Char SepChr;
-	@XmlElement(required = true, name = "endChr")
+	@XmlElement(name = "endChr")
 	protected CT_Char EndChr;
-	@XmlElement(required = true, name = "grow")
+	@XmlElement(name = "grow")
 	protected CT_OnOff Grow;
-	@XmlElement(required = true, name = "shp")
+	@XmlElement(name = "shp")
 	protected CT_Shp Shp;
-	@XmlElement(required = true, name = "ctrlPr")
+	@XmlElement(name = "ctrlPr")
 	protected CT_CtrlPr CtrlPr;
 }
 
 // CT_D ...
 public class CT_D {
-	@XmlElement(required = true, name = "dPr")
+	@XmlElement(name = "dPr")
 	protected CT_DPr DPr;
 	@XmlElement(required = true, name = "e")
 	protected List<CT_OMathArg> E;
@@ -341,23 +341,23 @@ public class CT_D {
 
 // CT_EqArrPr ...
 public class CT_EqArrPr {
-	@XmlElement(required = true, name = "baseJc")
+	@XmlElement(name = "baseJc")
 	protected CT_YAlign BaseJc;
-	@XmlElement(required = true, name = "maxDist")
+	@XmlElement(name = "maxDist")
 	protected CT_OnOff MaxDist;
-	@XmlElement(required = true, name = "objDist")
+	@XmlElement(name = "objDist")
 	protected CT_OnOff ObjDist;
-	@XmlElement(required = true, name = "rSpRule")
+	@XmlElement(name = "rSpRule")
 	protected CT_SpacingRule RSpRule;
-	@XmlElement(required = true, name = "rSp")
+	@XmlElement(name = "rSp")
 	protected CT_UnSignedInteger RSp;
-	@XmlElement(required = true, name = "ctrlPr")
+	@XmlElement(name = "ctrlPr")
 	protected CT_CtrlPr CtrlPr;
 }
 
 // CT_EqArr ...
 public class CT_EqArr {
-	@XmlElement(required = true, name = "eqArrPr")
+	@XmlElement(name = "eqArrPr")
 	protected CT_EqArrPr EqArrPr;
 	@XmlElement(required = true, name = "e")
 	protected List<CT_OMathArg> E;
@@ -365,15 +365,15 @@ public class CT_EqArr {
 
 // CT_FPr ...
 public class CT_FPr {
-	@XmlElement(required = true, name = "type")
+	@XmlElement(name = "type")
 	protected CT_FType Type;
-	@XmlElement(required = true, name = "ctrlPr")
+	@XmlElement(name = "ctrlPr")
 	protected CT_CtrlPr CtrlPr;
 }
 
 // CT_F ...
 public class CT_F {
-	@XmlElement(required = true, name = "fPr")
+	@XmlElement(name = "fPr")
 	protected CT_FPr FPr;
 	@XmlElement(required = true, name = "num")
 	protected CT_OMathArg Num;
@@ -383,13 +383,13 @@ public class CT_F {
 
 // CT_FuncPr ...
 public class CT_FuncPr {
-	@XmlElement(required = true, name = "ctrlPr")
+	@XmlElement(name = "ctrlPr")
 	protected CT_CtrlPr CtrlPr;
 }
 
 // CT_Func ...
 public class CT_Func {
-	@XmlElement(required = true, name = "funcPr")
+	@XmlElement(name = "funcPr")
 	protected CT_FuncPr FuncPr;
 	@XmlElement(required = true, name = "fName")
 	protected CT_OMathArg FName;
@@ -399,19 +399,19 @@ public class CT_Func {
 
 // CT_GroupChrPr ...
 public class CT_GroupChrPr {
-	@XmlElement(required = true, name = "chr")
+	@XmlElement(name = "chr")
 	protected CT_Char Chr;
-	@XmlElement(required = true, name = "pos")
+	@XmlElement(name = "pos")
 	protected CT_TopBot Pos;
-	@XmlElement(required = true, name = "vertJc")
+	@XmlElement(name = "vertJc")
 	protected CT_TopBot VertJc;
-	@XmlElement(required = true, name = "ctrlPr")
+	@XmlElement(name = "ctrlPr")
 	protected CT_CtrlPr CtrlPr;
 }
 
 // CT_GroupChr ...
 public class CT_GroupChr {
-	@XmlElement(required = true, name = "groupChrPr")
+	@XmlElement(name = "groupChrPr")
 	protected CT_GroupChrPr GroupChrPr;
 	@XmlElement(required = true, name = "e")
 	protected CT_OMathArg E;
@@ -419,13 +419,13 @@ public class CT_GroupChr {
 
 // CT_LimLowPr ...
 public class CT_LimLowPr {
-	@XmlElement(required = true, name = "ctrlPr")
+	@XmlElement(name = "ctrlPr")
 	protected CT_CtrlPr CtrlPr;
 }
 
 // CT_LimLow ...
 public class CT_LimLow {
-	@XmlElement(required = true, name = "limLowPr")
+	@XmlElement(name = "limLowPr")
 	protected CT_LimLowPr LimLowPr;
 	@XmlElement(required = true, name = "e")
 	protected CT_OMathArg E;
@@ -435,13 +435,13 @@ public class CT_LimLow {
 
 // CT_LimUppPr ...
 public class CT_LimUppPr {
-	@XmlElement(required = true, name = "ctrlPr")
+	@XmlElement(name = "ctrlPr")
 	protected CT_CtrlPr CtrlPr;
 }
 
 // CT_LimUpp ...
 public class CT_LimUpp {
-	@XmlElement(required = true, name = "limUppPr")
+	@XmlElement(name = "limUppPr")
 	protected CT_LimUppPr LimUppPr;
 	@XmlElement(required = true, name = "e")
 	protected CT_OMathArg E;
@@ -451,15 +451,15 @@ public class CT_LimUpp {
 
 // CT_MCPr ...
 public class CT_MCPr {
-	@XmlElement(required = true, name = "count")
+	@XmlElement(name = "count")
 	protected CT_Integer255 Count;
-	@XmlElement(required = true, name = "mcJc")
+	@XmlElement(name = "mcJc")
 	protected CT_XAlign McJc;
 }
 
 // CT_MC ...
 public class CT_MC {
-	@XmlElement(required = true, name = "mcPr")
+	@XmlElement(name = "mcPr")
 	protected CT_MCPr McPr;
 }
 
@@ -471,23 +471,23 @@ public class CT_MCS {
 
 // CT_MPr ...
 public class CT_MPr {
-	@XmlElement(required = true, name = "baseJc")
+	@XmlElement(name = "baseJc")
 	protected CT_YAlign BaseJc;
-	@XmlElement(required = true, name = "plcHide")
+	@XmlElement(name = "plcHide")
 	protected CT_OnOff PlcHide;
-	@XmlElement(required = true, name = "rSpRule")
+	@XmlElement(name = "rSpRule")
 	protected CT_SpacingRule RSpRule;
-	@XmlElement(required = true, name = "cGpRule")
+	@XmlElement(name = "cGpRule")
 	protected CT_SpacingRule CGpRule;
-	@XmlElement(required = true, name = "rSp")
+	@XmlElement(name = "rSp")
 	protected CT_UnSignedInteger RSp;
-	@XmlElement(required = true, name = "cSp")
+	@XmlElement(name = "cSp")
 	protected CT_UnSignedInteger CSp;
-	@XmlElement(required = true, name = "cGp")
+	@XmlElement(name = "cGp")
 	protected CT_UnSignedInteger CGp;
-	@XmlElement(required = true, name = "mcs")
+	@XmlElement(name = "mcs")
 	protected CT_MCS Mcs;
-	@XmlElement(required = true, name = "ctrlPr")
+	@XmlElement(name = "ctrlPr")
 	protected CT_CtrlPr CtrlPr;
 }
 
@@ -499,7 +499,7 @@ public class CT_MR {
 
 // CT_M ...
 public class CT_M {
-	@XmlElement(required = true, name = "mPr")
+	@XmlElement(name = "mPr")
 	protected CT_MPr MPr;
 	@XmlElement(required = true, name = "mr")
 	protected List<CT_MR> Mr;
@@ -507,23 +507,23 @@ public class CT_M {
 
 // CT_NaryPr ...
 public class CT_NaryPr {
-	@XmlElement(required = true, name = "chr")
+	@XmlElement(name = "chr")
 	protected CT_Char Chr;
-	@XmlElement(required = true, name = "limLoc")
+	@XmlElement(name = "limLoc")
 	protected CT_LimLoc LimLoc;
-	@XmlElement(required = true, name = "grow")
+	@XmlElement(name = "grow")
 	protected CT_OnOff Grow;
-	@XmlElement(required = true, name = "subHide")
+	@XmlElement(name = "subHide")
 	protected CT_OnOff SubHide;
-	@XmlElement(required = true, name = "supHide")
+	@XmlElement(name = "supHide")
 	protected CT_OnOff SupHide;
-	@XmlElement(required = true, name = "ctrlPr")
+	@XmlElement(name = "ctrlPr")
 	protected CT_CtrlPr CtrlPr;
 }
 
 // CT_Nary ...
 public class CT_Nary {
-	@XmlElement(required = true, name = "naryPr")
+	@XmlElement(name = "naryPr")
 	protected CT_NaryPr NaryPr;
 	@XmlElement(required = true, name = "sub")
 	protected CT_OMathArg Sub;
@@ -535,23 +535,23 @@ public class CT_Nary {
 
 // CT_PhantPr ...
 public class CT_PhantPr {
-	@XmlElement(required = true, name = "show")
+	@XmlElement(name = "show")
 	protected CT_OnOff Show;
-	@XmlElement(required = true, name = "zeroWid")
+	@XmlElement(name = "zeroWid")
 	protected CT_OnOff ZeroWid;
-	@XmlElement(required = true, name = "zeroAsc")
+	@XmlElement(name = "zeroAsc")
 	protected CT_OnOff ZeroAsc;
-	@XmlElement(required = true, name = "zeroDesc")
+	@XmlElement(name = "zeroDesc")
 	protected CT_OnOff ZeroDesc;
-	@XmlElement(required = true, name = "transp")
+	@XmlElement(name = "transp")
 	protected CT_OnOff Transp;
-	@XmlElement(required = true, name = "ctrlPr")
+	@XmlElement(name = "ctrlPr")
 	protected CT_CtrlPr CtrlPr;
 }
 
 // CT_Phant ...
 public class CT_Phant {
-	@XmlElement(required = true, name = "phantPr")
+	@XmlElement(name = "phantPr")
 	protected CT_PhantPr PhantPr;
 	@XmlElement(required = true, name = "e")
 	protected CT_OMathArg E;
@@ -559,15 +559,15 @@ public class CT_Phant {
 
 // CT_RadPr ...
 public class CT_RadPr {
-	@XmlElement(required = true, name = "degHide")
+	@XmlElement(name = "degHide")
 	protected CT_OnOff DegHide;
-	@XmlElement(required = true, name = "ctrlPr")
+	@XmlElement(name = "ctrlPr")
 	protected CT_CtrlPr CtrlPr;
 }
 
 // CT_Rad ...
 public class CT_Rad {
-	@XmlElement(required = true, name = "radPr")
+	@XmlElement(name = "radPr")
 	protected CT_RadPr RadPr;
 	@XmlElement(required = true, name = "deg")
 	protected CT_OMathArg Deg;
@@ -577,13 +577,13 @@ public class CT_Rad {
 
 // CT_SPrePr ...
 public class CT_SPrePr {
-	@XmlElement(required = true, name = "ctrlPr")
+	@XmlElement(name = "ctrlPr")
 	protected CT_CtrlPr CtrlPr;
 }
 
 // CT_SPre ...
 public class CT_SPre {
-	@XmlElement(required = true, name = "sPrePr")
+	@XmlElement(name = "sPrePr")
 	protected CT_SPrePr SPrePr;
 	@XmlElement(required = true, name = "sub")
 	protected CT_OMathArg Sub;
@@ -595,13 +595,13 @@ public class CT_SPre {
 
 // CT_SSubPr ...
 public class CT_SSubPr {
-	@XmlElement(required = true, name = "ctrlPr")
+	@XmlElement(name = "ctrlPr")
 	protected CT_CtrlPr CtrlPr;
 }
 
 // CT_SSub ...
 public class CT_SSub {
-	@XmlElement(required = true, name = "sSubPr")
+	@XmlElement(name = "sSubPr")
 	protected CT_SSubPr SSubPr;
 	@XmlElement(required = true, name = "e")
 	protected CT_OMathArg E;
@@ -611,15 +611,15 @@ public class CT_SSub {
 
 // CT_SSubSupPr ...
 public class CT_SSubSupPr {
-	@XmlElement(required = true, name = "alnScr")
+	@XmlElement(name = "alnScr")
 	protected CT_OnOff AlnScr;
-	@XmlElement(required = true, name = "ctrlPr")
+	@XmlElement(name = "ctrlPr")
 	protected CT_CtrlPr CtrlPr;
 }
 
 // CT_SSubSup ...
 public class CT_SSubSup {
-	@XmlElement(required = true, name = "sSubSupPr")
+	@XmlElement(name = "sSubSupPr")
 	protected CT_SSubSupPr SSubSupPr;
 	@XmlElement(required = true, name = "e")
 	protected CT_OMathArg E;
@@ -631,13 +631,13 @@ public class CT_SSubSup {
 
 // CT_SSupPr ...
 public class CT_SSupPr {
-	@XmlElement(required = true, name = "ctrlPr")
+	@XmlElement(name = "ctrlPr")
 	protected CT_CtrlPr CtrlPr;
 }
 
 // CT_SSup ...
 public class CT_SSup {
-	@XmlElement(required = true, name = "sSupPr")
+	@XmlElement(name = "sSupPr")
 	protected CT_SSupPr SSupPr;
 	@XmlElement(required = true, name = "e")
 	protected CT_OMathArg E;
@@ -697,16 +697,16 @@ public class EG_OMathElements {
 
 // CT_OMathArgPr ...
 public class CT_OMathArgPr {
-	@XmlElement(required = true, name = "argSz")
+	@XmlElement(name = "argSz")
 	protected CT_Integer2 ArgSz;
 }
 
 // CT_OMathArg ...
 public class CT_OMathArg {
 	protected List<EG_OMathElements> EG_OMathElements;
-	@XmlElement(required = true, name = "argPr")
+	@XmlElement(name = "argPr")
 	protected CT_OMathArgPr ArgPr;
-	@XmlElement(required = true, name = "ctrlPr")
+	@XmlElement(name = "ctrlPr")
 	protected CT_CtrlPr CtrlPr;
 }
 
@@ -725,7 +725,7 @@ public class CT_OMathJc {
 
 // CT_OMathParaPr ...
 public class CT_OMathParaPr {
-	@XmlElement(required = true, name = "jc")
+	@XmlElement(name = "jc")
 	protected CT_OMathJc Jc;
 }
 
@@ -763,37 +763,37 @@ public class CT_BreakBinSub {
 
 // CT_MathPr ...
 public class CT_MathPr {
-	@XmlElement(required = true, name = "mathFont")
+	@XmlElement(name = "mathFont")
 	protected CT_String MathFont;
-	@XmlElement(required = true, name = "brkBin")
+	@XmlElement(name = "brkBin")
 	protected CT_BreakBin BrkBin;
-	@XmlElement(required = true, name = "brkBinSub")
+	@XmlElement(name = "brkBinSub")
 	protected CT_BreakBinSub BrkBinSub;
-	@XmlElement(required = true, name = "smallFrac")
+	@XmlElement(name = "smallFrac")
 	protected CT_OnOff SmallFrac;
-	@XmlElement(required = true, name = "dispDef")
+	@XmlElement(name = "dispDef")
 	protected CT_OnOff DispDef;
-	@XmlElement(required = true, name = "lMargin")
+	@XmlElement(name = "lMargin")
 	protected CT_TwipsMeasure LMargin;
-	@XmlElement(required = true, name = "rMargin")
+	@XmlElement(name = "rMargin")
 	protected CT_TwipsMeasure RMargin;
-	@XmlElement(required = true, name = "defJc")
+	@XmlElement(name = "defJc")
 	protected CT_OMathJc DefJc;
-	@XmlElement(required = true, name = "preSp")
+	@XmlElement(name = "preSp")
 	protected CT_TwipsMeasure PreSp;
-	@XmlElement(required = true, name = "postSp")
+	@XmlElement(name = "postSp")
 	protected CT_TwipsMeasure PostSp;
-	@XmlElement(required = true, name = "interSp")
+	@XmlElement(name = "interSp")
 	protected CT_TwipsMeasure InterSp;
-	@XmlElement(required = true, name = "intraSp")
+	@XmlElement(name = "intraSp")
 	protected CT_TwipsMeasure IntraSp;
 	@XmlElement(required = true, name = "wrapIndent")
 	protected CT_TwipsMeasure WrapIndent;
 	@XmlElement(required = true, name = "wrapRight")
 	protected CT_OnOff WrapRight;
-	@XmlElement(required = true, name = "intLim")
+	@XmlElement(name = "intLim")
 	protected CT_LimLoc IntLim;
-	@XmlElement(required = true, name = "naryLim")
+	@XmlElement(name = "naryLim")
 	protected CT_LimLoc NaryLim;
 }
 
@@ -805,7 +805,7 @@ public class MathPr {
 
 // CT_OMathPara ...
 public class CT_OMathPara {
-	@XmlElement(required = true, name = "oMathParaPr")
+	@XmlElement(name = "oMathParaPr")
 	protected CT_OMathParaPr OMathParaPr;
 	@XmlElement(required = true, name = "oMath")
 	protected List<CT_OMath> OMath;

@@ -886,7 +886,7 @@ public class CT_TblPrChange extends CT_TrackChange  {
 
 // CT_SectPrChange ...
 public class CT_SectPrChange extends CT_TrackChange  {
-	@XmlElement(required = true, name = "sectPr")
+	@XmlElement(name = "sectPr")
 	protected CT_SectPrBase SectPr;
 }
 
@@ -987,27 +987,27 @@ public class EG_RangeMarkupElements {
 
 // CT_NumPr ...
 public class CT_NumPr {
-	@XmlElement(required = true, name = "ilvl")
+	@XmlElement(name = "ilvl")
 	protected CT_DecimalNumber Ilvl;
-	@XmlElement(required = true, name = "numId")
+	@XmlElement(name = "numId")
 	protected CT_DecimalNumber NumId;
-	@XmlElement(required = true, name = "ins")
+	@XmlElement(name = "ins")
 	protected CT_TrackChange Ins;
 }
 
 // CT_PBdr ...
 public class CT_PBdr {
-	@XmlElement(required = true, name = "top")
+	@XmlElement(name = "top")
 	protected CT_Border Top;
-	@XmlElement(required = true, name = "left")
+	@XmlElement(name = "left")
 	protected CT_Border Left;
-	@XmlElement(required = true, name = "bottom")
+	@XmlElement(name = "bottom")
 	protected CT_Border Bottom;
-	@XmlElement(required = true, name = "right")
+	@XmlElement(name = "right")
 	protected CT_Border Right;
-	@XmlElement(required = true, name = "between")
+	@XmlElement(name = "between")
 	protected CT_Border Between;
-	@XmlElement(required = true, name = "bar")
+	@XmlElement(name = "bar")
 	protected CT_Border Bar;
 }
 
@@ -1032,87 +1032,87 @@ public class CT_TextboxTightWrap {
 
 // CT_PPr ...
 public class CT_PPr extends CT_PPrBase  {
-	@XmlElement(required = true, name = "rPr")
+	@XmlElement(name = "rPr")
 	protected CT_ParaRPr RPr;
-	@XmlElement(required = true, name = "sectPr")
+	@XmlElement(name = "sectPr")
 	protected CT_SectPr SectPr;
-	@XmlElement(required = true, name = "pPrChange")
+	@XmlElement(name = "pPrChange")
 	protected CT_PPrChange PPrChange;
 }
 
 // CT_PPrBase ...
 public class CT_PPrBase {
-	@XmlElement(required = true, name = "pStyle")
+	@XmlElement(name = "pStyle")
 	protected CT_String PStyle;
-	@XmlElement(required = true, name = "keepNext")
+	@XmlElement(name = "keepNext")
 	protected CT_OnOff KeepNext;
-	@XmlElement(required = true, name = "keepLines")
+	@XmlElement(name = "keepLines")
 	protected CT_OnOff KeepLines;
-	@XmlElement(required = true, name = "pageBreakBefore")
+	@XmlElement(name = "pageBreakBefore")
 	protected CT_OnOff PageBreakBefore;
-	@XmlElement(required = true, name = "framePr")
+	@XmlElement(name = "framePr")
 	protected CT_FramePr FramePr;
-	@XmlElement(required = true, name = "widowControl")
+	@XmlElement(name = "widowControl")
 	protected CT_OnOff WidowControl;
-	@XmlElement(required = true, name = "numPr")
+	@XmlElement(name = "numPr")
 	protected CT_NumPr NumPr;
-	@XmlElement(required = true, name = "suppressLineNumbers")
+	@XmlElement(name = "suppressLineNumbers")
 	protected CT_OnOff SuppressLineNumbers;
-	@XmlElement(required = true, name = "pBdr")
+	@XmlElement(name = "pBdr")
 	protected CT_PBdr PBdr;
-	@XmlElement(required = true, name = "shd")
+	@XmlElement(name = "shd")
 	protected CT_Shd Shd;
-	@XmlElement(required = true, name = "tabs")
+	@XmlElement(name = "tabs")
 	protected CT_Tabs Tabs;
-	@XmlElement(required = true, name = "suppressAutoHyphens")
+	@XmlElement(name = "suppressAutoHyphens")
 	protected CT_OnOff SuppressAutoHyphens;
-	@XmlElement(required = true, name = "kinsoku")
+	@XmlElement(name = "kinsoku")
 	protected CT_OnOff Kinsoku;
-	@XmlElement(required = true, name = "wordWrap")
+	@XmlElement(name = "wordWrap")
 	protected CT_OnOff WordWrap;
-	@XmlElement(required = true, name = "overflowPunct")
+	@XmlElement(name = "overflowPunct")
 	protected CT_OnOff OverflowPunct;
-	@XmlElement(required = true, name = "topLinePunct")
+	@XmlElement(name = "topLinePunct")
 	protected CT_OnOff TopLinePunct;
-	@XmlElement(required = true, name = "autoSpaceDE")
+	@XmlElement(name = "autoSpaceDE")
 	protected CT_OnOff AutoSpaceDE;
-	@XmlElement(required = true, name = "autoSpaceDN")
+	@XmlElement(name = "autoSpaceDN")
 	protected CT_OnOff AutoSpaceDN;
-	@XmlElement(required = true, name = "bidi")
+	@XmlElement(name = "bidi")
 	protected CT_OnOff Bidi;
-	@XmlElement(required = true, name = "adjustRightInd")
+	@XmlElement(name = "adjustRightInd")
 	protected CT_OnOff AdjustRightInd;
-	@XmlElement(required = true, name = "snapToGrid")
+	@XmlElement(name = "snapToGrid")
 	protected CT_OnOff SnapToGrid;
-	@XmlElement(required = true, name = "spacing")
+	@XmlElement(name = "spacing")
 	protected CT_Spacing Spacing;
-	@XmlElement(required = true, name = "ind")
+	@XmlElement(name = "ind")
 	protected CT_Ind Ind;
-	@XmlElement(required = true, name = "contextualSpacing")
+	@XmlElement(name = "contextualSpacing")
 	protected CT_OnOff ContextualSpacing;
-	@XmlElement(required = true, name = "mirrorIndents")
+	@XmlElement(name = "mirrorIndents")
 	protected CT_OnOff MirrorIndents;
-	@XmlElement(required = true, name = "suppressOverlap")
+	@XmlElement(name = "suppressOverlap")
 	protected CT_OnOff SuppressOverlap;
-	@XmlElement(required = true, name = "jc")
+	@XmlElement(name = "jc")
 	protected CT_Jc Jc;
-	@XmlElement(required = true, name = "textDirection")
+	@XmlElement(name = "textDirection")
 	protected CT_TextDirection TextDirection;
-	@XmlElement(required = true, name = "textAlignment")
+	@XmlElement(name = "textAlignment")
 	protected CT_TextAlignment TextAlignment;
-	@XmlElement(required = true, name = "textboxTightWrap")
+	@XmlElement(name = "textboxTightWrap")
 	protected CT_TextboxTightWrap TextboxTightWrap;
-	@XmlElement(required = true, name = "outlineLvl")
+	@XmlElement(name = "outlineLvl")
 	protected CT_DecimalNumber OutlineLvl;
-	@XmlElement(required = true, name = "divId")
+	@XmlElement(name = "divId")
 	protected CT_DecimalNumber DivId;
-	@XmlElement(required = true, name = "cnfStyle")
+	@XmlElement(name = "cnfStyle")
 	protected CT_Cnf CnfStyle;
 }
 
 // CT_PPrGeneral ...
 public class CT_PPrGeneral extends CT_PPrBase  {
-	@XmlElement(required = true, name = "pPrChange")
+	@XmlElement(name = "pPrChange")
 	protected CT_PPrChange PPrChange;
 }
 
@@ -1136,7 +1136,7 @@ public class CT_Background {
 	protected List<Byte> ThemeTintAttr;
 	@XmlAttribute(name = "themeShade")
 	protected List<Byte> ThemeShadeAttr;
-	@XmlElement(required = true, name = "drawing")
+	@XmlElement(name = "drawing")
 	protected CT_Drawing Drawing;
 }
 
@@ -1152,7 +1152,7 @@ public class CT_Object {
 	protected ST_TwipsMeasure DxaOrigAttr;
 	@XmlAttribute(name = "dyaOrig")
 	protected ST_TwipsMeasure DyaOrigAttr;
-	@XmlElement(required = true, name = "drawing")
+	@XmlElement(name = "drawing")
 	protected CT_Drawing Drawing;
 	@XmlElement(required = true, name = "control")
 	protected CT_Control Control;
@@ -1202,9 +1202,9 @@ public class ST_ObjectUpdateMode {
 
 // CT_Drawing ...
 public class CT_Drawing {
-	@XmlElement(required = true, name = "wp:anchor")
+	@XmlElement(name = "wp:anchor")
 	protected List<CT_Anchor> WpAnchor;
-	@XmlElement(required = true, name = "wp:inline")
+	@XmlElement(name = "wp:inline")
 	protected List<CT_Inline> WpInline;
 }
 
@@ -1281,7 +1281,7 @@ public class CT_FldChar {
 	protected ST_OnOff FldLockAttr;
 	@XmlAttribute(name = "dirty")
 	protected ST_OnOff DirtyAttr;
-	@XmlElement(required = true, name = "ffData")
+	@XmlElement(name = "ffData")
 	protected CT_FFData FfData;
 }
 
@@ -1306,21 +1306,21 @@ public class CT_Hyperlink {
 public class CT_FFData {
 	@XmlElement(required = true, name = "name")
 	protected List<CT_FFName> Name;
-	@XmlElement(required = true, name = "label")
+	@XmlElement(name = "label")
 	protected List<CT_DecimalNumber> Label;
-	@XmlElement(required = true, name = "tabIndex")
+	@XmlElement(name = "tabIndex")
 	protected List<CT_UnsignedDecimalNumber> TabIndex;
 	@XmlElement(required = true, name = "enabled")
 	protected List<CT_OnOff> Enabled;
 	@XmlElement(required = true, name = "calcOnExit")
 	protected List<CT_OnOff> CalcOnExit;
-	@XmlElement(required = true, name = "entryMacro")
+	@XmlElement(name = "entryMacro")
 	protected List<CT_MacroName> EntryMacro;
-	@XmlElement(required = true, name = "exitMacro")
+	@XmlElement(name = "exitMacro")
 	protected List<CT_MacroName> ExitMacro;
-	@XmlElement(required = true, name = "helpText")
+	@XmlElement(name = "helpText")
 	protected List<CT_FFHelpText> HelpText;
-	@XmlElement(required = true, name = "statusText")
+	@XmlElement(name = "statusText")
 	protected List<CT_FFStatusText> StatusText;
 	@XmlElement(required = true, name = "checkBox")
 	protected List<CT_FFCheckBox> CheckBox;
@@ -1352,31 +1352,31 @@ public class CT_FFCheckBox {
 	protected CT_HpsMeasure Size;
 	@XmlElement(required = true, name = "sizeAuto")
 	protected CT_OnOff SizeAuto;
-	@XmlElement(required = true, name = "default")
+	@XmlElement(name = "default")
 	protected CT_OnOff Default;
-	@XmlElement(required = true, name = "checked")
+	@XmlElement(name = "checked")
 	protected CT_OnOff Checked;
 }
 
 // CT_FFDDList ...
 public class CT_FFDDList {
-	@XmlElement(required = true, name = "result")
+	@XmlElement(name = "result")
 	protected CT_DecimalNumber Result;
-	@XmlElement(required = true, name = "default")
+	@XmlElement(name = "default")
 	protected CT_DecimalNumber Default;
-	@XmlElement(required = true, name = "listEntry")
+	@XmlElement(name = "listEntry")
 	protected List<CT_String> ListEntry;
 }
 
 // CT_FFTextInput ...
 public class CT_FFTextInput {
-	@XmlElement(required = true, name = "type")
+	@XmlElement(name = "type")
 	protected CT_FFTextType Type;
-	@XmlElement(required = true, name = "default")
+	@XmlElement(name = "default")
 	protected CT_String Default;
-	@XmlElement(required = true, name = "maxLength")
+	@XmlElement(name = "maxLength")
 	protected CT_DecimalNumber MaxLength;
-	@XmlElement(required = true, name = "format")
+	@XmlElement(name = "format")
 	protected CT_String Format;
 }
 
@@ -1474,13 +1474,13 @@ public class CT_PageBorders {
 	protected String DisplayAttr;
 	@XmlAttribute(name = "offsetFrom")
 	protected String OffsetFromAttr;
-	@XmlElement(required = true, name = "top")
+	@XmlElement(name = "top")
 	protected CT_TopPageBorder Top;
-	@XmlElement(required = true, name = "left")
+	@XmlElement(name = "left")
 	protected CT_PageBorder Left;
-	@XmlElement(required = true, name = "bottom")
+	@XmlElement(name = "bottom")
 	protected CT_BottomPageBorder Bottom;
-	@XmlElement(required = true, name = "right")
+	@XmlElement(name = "right")
 	protected CT_PageBorder Right;
 }
 
@@ -1696,7 +1696,7 @@ public class CT_SectPr {
 	protected AG_SectPrAttributes AG_SectPrAttributes;
 	protected List<EG_HdrFtrReferences> EG_HdrFtrReferences;
 	protected EG_SectPrContents EG_SectPrContents;
-	@XmlElement(required = true, name = "sectPrChange")
+	@XmlElement(name = "sectPrChange")
 	protected CT_SectPrChange SectPrChange;
 }
 
@@ -2063,7 +2063,7 @@ public class CT_ParaRPrOriginal {
 public class CT_ParaRPr {
 	protected EG_ParaRPrTrackChanges EG_ParaRPrTrackChanges;
 	protected List<EG_RPrBase> EG_RPrBase;
-	@XmlElement(required = true, name = "rPrChange")
+	@XmlElement(name = "rPrChange")
 	protected CT_ParaRPrChange RPrChange;
 }
 
@@ -2083,13 +2083,13 @@ public class EG_ParaRPrTrackChanges {
 public class CT_AltChunk {
 	@XmlAttribute(name = "r:id")
 	protected String RIdAttr;
-	@XmlElement(required = true, name = "altChunkPr")
+	@XmlElement(name = "altChunkPr")
 	protected CT_AltChunkPr AltChunkPr;
 }
 
 // CT_AltChunkPr ...
 public class CT_AltChunkPr {
-	@XmlElement(required = true, name = "matchSrc")
+	@XmlElement(name = "matchSrc")
 	protected CT_OnOff MatchSrc;
 }
 
@@ -2118,7 +2118,7 @@ public class CT_RubyPr {
 	protected CT_HpsMeasure HpsBaseText;
 	@XmlElement(required = true, name = "lid")
 	protected CT_Lang Lid;
-	@XmlElement(required = true, name = "dirty")
+	@XmlElement(name = "dirty")
 	protected CT_OnOff Dirty;
 }
 
@@ -2188,13 +2188,13 @@ public class CT_CalendarType {
 public class CT_SdtDate {
 	@XmlAttribute(name = "fullDate")
 	protected String FullDateAttr;
-	@XmlElement(required = true, name = "dateFormat")
+	@XmlElement(name = "dateFormat")
 	protected CT_String DateFormat;
-	@XmlElement(required = true, name = "lid")
+	@XmlElement(name = "lid")
 	protected CT_Lang Lid;
-	@XmlElement(required = true, name = "storeMappedDataAs")
+	@XmlElement(name = "storeMappedDataAs")
 	protected CT_SdtDateMappingType StoreMappedDataAs;
-	@XmlElement(required = true, name = "calendar")
+	@XmlElement(name = "calendar")
 	protected CT_CalendarType Calendar;
 }
 
@@ -2202,17 +2202,17 @@ public class CT_SdtDate {
 public class CT_SdtComboBox {
 	@XmlAttribute(name = "lastValue")
 	protected String LastValueAttr;
-	@XmlElement(required = true, name = "listItem")
+	@XmlElement(name = "listItem")
 	protected List<CT_SdtListItem> ListItem;
 }
 
 // CT_SdtDocPart ...
 public class CT_SdtDocPart {
-	@XmlElement(required = true, name = "docPartGallery")
+	@XmlElement(name = "docPartGallery")
 	protected CT_String DocPartGallery;
-	@XmlElement(required = true, name = "docPartCategory")
+	@XmlElement(name = "docPartCategory")
 	protected CT_String DocPartCategory;
-	@XmlElement(required = true, name = "docPartUnique")
+	@XmlElement(name = "docPartUnique")
 	protected CT_OnOff DocPartUnique;
 }
 
@@ -2220,7 +2220,7 @@ public class CT_SdtDocPart {
 public class CT_SdtDropDownList {
 	@XmlAttribute(name = "lastValue")
 	protected String LastValueAttr;
-	@XmlElement(required = true, name = "listItem")
+	@XmlElement(name = "listItem")
 	protected List<CT_SdtListItem> ListItem;
 }
 
@@ -2248,27 +2248,27 @@ public class CT_DataBinding {
 
 // CT_SdtPr ...
 public class CT_SdtPr {
-	@XmlElement(required = true, name = "rPr")
+	@XmlElement(name = "rPr")
 	protected CT_RPr RPr;
-	@XmlElement(required = true, name = "alias")
+	@XmlElement(name = "alias")
 	protected CT_String Alias;
-	@XmlElement(required = true, name = "tag")
+	@XmlElement(name = "tag")
 	protected CT_String Tag;
-	@XmlElement(required = true, name = "id")
+	@XmlElement(name = "id")
 	protected CT_DecimalNumber Id;
-	@XmlElement(required = true, name = "lock")
+	@XmlElement(name = "lock")
 	protected CT_Lock Lock;
-	@XmlElement(required = true, name = "placeholder")
+	@XmlElement(name = "placeholder")
 	protected CT_Placeholder Placeholder;
-	@XmlElement(required = true, name = "temporary")
+	@XmlElement(name = "temporary")
 	protected CT_OnOff Temporary;
-	@XmlElement(required = true, name = "showingPlcHdr")
+	@XmlElement(name = "showingPlcHdr")
 	protected CT_OnOff ShowingPlcHdr;
-	@XmlElement(required = true, name = "dataBinding")
+	@XmlElement(name = "dataBinding")
 	protected CT_DataBinding DataBinding;
-	@XmlElement(required = true, name = "label")
+	@XmlElement(name = "label")
 	protected CT_DecimalNumber Label;
-	@XmlElement(required = true, name = "tabIndex")
+	@XmlElement(name = "tabIndex")
 	protected CT_UnsignedDecimalNumber TabIndex;
 	@XmlElement(required = true, name = "equation")
 	protected CT_Empty Equation;
@@ -2298,7 +2298,7 @@ public class CT_SdtPr {
 
 // CT_SdtEndPr ...
 public class CT_SdtEndPr {
-	@XmlElement(required = true, name = "rPr")
+	@XmlElement(name = "rPr")
 	protected List<CT_RPr> RPr;
 }
 
@@ -2397,41 +2397,41 @@ public class CT_SdtContentCell {
 
 // CT_SdtBlock ...
 public class CT_SdtBlock {
-	@XmlElement(required = true, name = "sdtPr")
+	@XmlElement(name = "sdtPr")
 	protected CT_SdtPr SdtPr;
-	@XmlElement(required = true, name = "sdtEndPr")
+	@XmlElement(name = "sdtEndPr")
 	protected CT_SdtEndPr SdtEndPr;
-	@XmlElement(required = true, name = "sdtContent")
+	@XmlElement(name = "sdtContent")
 	protected CT_SdtContentBlock SdtContent;
 }
 
 // CT_SdtRun ...
 public class CT_SdtRun {
-	@XmlElement(required = true, name = "sdtPr")
+	@XmlElement(name = "sdtPr")
 	protected CT_SdtPr SdtPr;
-	@XmlElement(required = true, name = "sdtEndPr")
+	@XmlElement(name = "sdtEndPr")
 	protected CT_SdtEndPr SdtEndPr;
-	@XmlElement(required = true, name = "sdtContent")
+	@XmlElement(name = "sdtContent")
 	protected CT_SdtContentRun SdtContent;
 }
 
 // CT_SdtCell ...
 public class CT_SdtCell {
-	@XmlElement(required = true, name = "sdtPr")
+	@XmlElement(name = "sdtPr")
 	protected CT_SdtPr SdtPr;
-	@XmlElement(required = true, name = "sdtEndPr")
+	@XmlElement(name = "sdtEndPr")
 	protected CT_SdtEndPr SdtEndPr;
-	@XmlElement(required = true, name = "sdtContent")
+	@XmlElement(name = "sdtContent")
 	protected CT_SdtContentCell SdtContent;
 }
 
 // CT_SdtRow ...
 public class CT_SdtRow {
-	@XmlElement(required = true, name = "sdtPr")
+	@XmlElement(name = "sdtPr")
 	protected CT_SdtPr SdtPr;
-	@XmlElement(required = true, name = "sdtEndPr")
+	@XmlElement(name = "sdtEndPr")
 	protected CT_SdtEndPr SdtEndPr;
-	@XmlElement(required = true, name = "sdtContent")
+	@XmlElement(name = "sdtContent")
 	protected CT_SdtContentRow SdtContent;
 }
 
@@ -2452,7 +2452,7 @@ public class CT_CustomXmlRun {
 	@XmlAttribute(name = "element", required = true)
 	protected String ElementAttr;
 	protected List<EG_PContent> EG_PContent;
-	@XmlElement(required = true, name = "customXmlPr")
+	@XmlElement(name = "customXmlPr")
 	protected CT_CustomXmlPr CustomXmlPr;
 }
 
@@ -2463,7 +2463,7 @@ public class CT_SmartTagRun {
 	@XmlAttribute(name = "element", required = true)
 	protected String ElementAttr;
 	protected List<EG_PContent> EG_PContent;
-	@XmlElement(required = true, name = "smartTagPr")
+	@XmlElement(name = "smartTagPr")
 	protected CT_SmartTagPr SmartTagPr;
 }
 
@@ -2474,15 +2474,15 @@ public class CT_CustomXmlBlock {
 	@XmlAttribute(name = "element", required = true)
 	protected String ElementAttr;
 	protected List<EG_ContentBlockContent> EG_ContentBlockContent;
-	@XmlElement(required = true, name = "customXmlPr")
+	@XmlElement(name = "customXmlPr")
 	protected CT_CustomXmlPr CustomXmlPr;
 }
 
 // CT_CustomXmlPr ...
 public class CT_CustomXmlPr {
-	@XmlElement(required = true, name = "placeholder")
+	@XmlElement(name = "placeholder")
 	protected CT_String Placeholder;
-	@XmlElement(required = true, name = "attr")
+	@XmlElement(name = "attr")
 	protected List<CT_Attr> Attr;
 }
 
@@ -2493,7 +2493,7 @@ public class CT_CustomXmlRow {
 	@XmlAttribute(name = "element", required = true)
 	protected String ElementAttr;
 	protected List<EG_ContentRowContent> EG_ContentRowContent;
-	@XmlElement(required = true, name = "customXmlPr")
+	@XmlElement(name = "customXmlPr")
 	protected CT_CustomXmlPr CustomXmlPr;
 }
 
@@ -2504,13 +2504,13 @@ public class CT_CustomXmlCell {
 	@XmlAttribute(name = "element", required = true)
 	protected String ElementAttr;
 	protected List<EG_ContentCellContent> EG_ContentCellContent;
-	@XmlElement(required = true, name = "customXmlPr")
+	@XmlElement(name = "customXmlPr")
 	protected CT_CustomXmlPr CustomXmlPr;
 }
 
 // CT_SmartTagPr ...
 public class CT_SmartTagPr {
-	@XmlElement(required = true, name = "attr")
+	@XmlElement(name = "attr")
 	protected List<CT_Attr> Attr;
 }
 
@@ -2538,7 +2538,7 @@ public class CT_P {
 	@XmlAttribute(name = "rsidRDefault")
 	protected List<Byte> RsidRDefaultAttr;
 	protected List<EG_PContent> EG_PContent;
-	@XmlElement(required = true, name = "pPr")
+	@XmlElement(name = "pPr")
 	protected CT_PPr PPr;
 }
 
@@ -2581,45 +2581,45 @@ public class CT_TblGridCol {
 
 // CT_TblGridBase ...
 public class CT_TblGridBase {
-	@XmlElement(required = true, name = "gridCol")
+	@XmlElement(name = "gridCol")
 	protected List<CT_TblGridCol> GridCol;
 }
 
 // CT_TblGrid ...
 public class CT_TblGrid extends CT_TblGridBase  {
-	@XmlElement(required = true, name = "tblGridChange")
+	@XmlElement(name = "tblGridChange")
 	protected CT_TblGridChange TblGridChange;
 }
 
 // CT_TcBorders ...
 public class CT_TcBorders {
-	@XmlElement(required = true, name = "top")
+	@XmlElement(name = "top")
 	protected CT_Border Top;
-	@XmlElement(required = true, name = "start")
+	@XmlElement(name = "start")
 	protected CT_Border Start;
-	@XmlElement(required = true, name = "bottom")
+	@XmlElement(name = "bottom")
 	protected CT_Border Bottom;
-	@XmlElement(required = true, name = "end")
+	@XmlElement(name = "end")
 	protected CT_Border End;
-	@XmlElement(required = true, name = "insideH")
+	@XmlElement(name = "insideH")
 	protected CT_Border InsideH;
-	@XmlElement(required = true, name = "insideV")
+	@XmlElement(name = "insideV")
 	protected CT_Border InsideV;
-	@XmlElement(required = true, name = "tl2br")
+	@XmlElement(name = "tl2br")
 	protected CT_Border Tl2br;
-	@XmlElement(required = true, name = "tr2bl")
+	@XmlElement(name = "tr2bl")
 	protected CT_Border Tr2bl;
 }
 
 // CT_TcMar ...
 public class CT_TcMar {
-	@XmlElement(required = true, name = "top")
+	@XmlElement(name = "top")
 	protected CT_TblWidth Top;
-	@XmlElement(required = true, name = "start")
+	@XmlElement(name = "start")
 	protected CT_TblWidth Start;
-	@XmlElement(required = true, name = "bottom")
+	@XmlElement(name = "bottom")
 	protected CT_TblWidth Bottom;
-	@XmlElement(required = true, name = "end")
+	@XmlElement(name = "end")
 	protected CT_TblWidth End;
 }
 
@@ -2638,37 +2638,37 @@ public class CT_VMerge {
 
 // CT_TcPrBase ...
 public class CT_TcPrBase {
-	@XmlElement(required = true, name = "cnfStyle")
+	@XmlElement(name = "cnfStyle")
 	protected CT_Cnf CnfStyle;
-	@XmlElement(required = true, name = "tcW")
+	@XmlElement(name = "tcW")
 	protected CT_TblWidth TcW;
-	@XmlElement(required = true, name = "gridSpan")
+	@XmlElement(name = "gridSpan")
 	protected CT_DecimalNumber GridSpan;
-	@XmlElement(required = true, name = "vMerge")
+	@XmlElement(name = "vMerge")
 	protected CT_VMerge VMerge;
-	@XmlElement(required = true, name = "tcBorders")
+	@XmlElement(name = "tcBorders")
 	protected CT_TcBorders TcBorders;
-	@XmlElement(required = true, name = "shd")
+	@XmlElement(name = "shd")
 	protected CT_Shd Shd;
-	@XmlElement(required = true, name = "noWrap")
+	@XmlElement(name = "noWrap")
 	protected CT_OnOff NoWrap;
-	@XmlElement(required = true, name = "tcMar")
+	@XmlElement(name = "tcMar")
 	protected CT_TcMar TcMar;
-	@XmlElement(required = true, name = "textDirection")
+	@XmlElement(name = "textDirection")
 	protected CT_TextDirection TextDirection;
-	@XmlElement(required = true, name = "tcFitText")
+	@XmlElement(name = "tcFitText")
 	protected CT_OnOff TcFitText;
-	@XmlElement(required = true, name = "vAlign")
+	@XmlElement(name = "vAlign")
 	protected CT_VerticalJc VAlign;
-	@XmlElement(required = true, name = "hideMark")
+	@XmlElement(name = "hideMark")
 	protected CT_OnOff HideMark;
-	@XmlElement(required = true, name = "headers")
+	@XmlElement(name = "headers")
 	protected CT_Headers Headers;
 }
 
 // CT_TcPr ...
 public class CT_TcPr extends CT_TcPrInner  {
-	@XmlElement(required = true, name = "tcPrChange")
+	@XmlElement(name = "tcPrChange")
 	protected CT_TcPrChange TcPrChange;
 }
 
@@ -2682,7 +2682,7 @@ public class CT_Tc {
 	@XmlAttribute(name = "id")
 	protected String IdAttr;
 	protected List<EG_BlockLevelElts> EG_BlockLevelElts;
-	@XmlElement(required = true, name = "tcPr")
+	@XmlElement(name = "tcPr")
 	protected CT_TcPr TcPr;
 }
 
@@ -2717,44 +2717,44 @@ public class CT_Cnf {
 // CT_Headers ...
 public class CT_Headers {
 	@XmlElement(required = true, name = "header")
-	protected CT_String Header;
+	protected List<CT_String> Header;
 }
 
 // CT_TrPrBase ...
 public class CT_TrPrBase {
-	@XmlElement(required = true, name = "cnfStyle")
+	@XmlElement(name = "cnfStyle")
 	protected List<CT_Cnf> CnfStyle;
-	@XmlElement(required = true, name = "divId")
+	@XmlElement(name = "divId")
 	protected List<CT_DecimalNumber> DivId;
-	@XmlElement(required = true, name = "gridBefore")
+	@XmlElement(name = "gridBefore")
 	protected List<CT_DecimalNumber> GridBefore;
-	@XmlElement(required = true, name = "gridAfter")
+	@XmlElement(name = "gridAfter")
 	protected List<CT_DecimalNumber> GridAfter;
-	@XmlElement(required = true, name = "wBefore")
+	@XmlElement(name = "wBefore")
 	protected List<CT_TblWidth> WBefore;
-	@XmlElement(required = true, name = "wAfter")
+	@XmlElement(name = "wAfter")
 	protected List<CT_TblWidth> WAfter;
-	@XmlElement(required = true, name = "cantSplit")
+	@XmlElement(name = "cantSplit")
 	protected List<CT_OnOff> CantSplit;
-	@XmlElement(required = true, name = "trHeight")
+	@XmlElement(name = "trHeight")
 	protected List<CT_Height> TrHeight;
-	@XmlElement(required = true, name = "tblHeader")
+	@XmlElement(name = "tblHeader")
 	protected List<CT_OnOff> TblHeader;
-	@XmlElement(required = true, name = "tblCellSpacing")
+	@XmlElement(name = "tblCellSpacing")
 	protected List<CT_TblWidth> TblCellSpacing;
-	@XmlElement(required = true, name = "jc")
+	@XmlElement(name = "jc")
 	protected List<CT_JcTable> Jc;
-	@XmlElement(required = true, name = "hidden")
+	@XmlElement(name = "hidden")
 	protected List<CT_OnOff> Hidden;
 }
 
 // CT_TrPr ...
 public class CT_TrPr extends CT_TrPrBase  {
-	@XmlElement(required = true, name = "ins")
+	@XmlElement(name = "ins")
 	protected CT_TrackChange Ins;
-	@XmlElement(required = true, name = "del")
+	@XmlElement(name = "del")
 	protected CT_TrackChange Del;
-	@XmlElement(required = true, name = "trPrChange")
+	@XmlElement(name = "trPrChange")
 	protected CT_TrPrChange TrPrChange;
 }
 
@@ -2769,9 +2769,9 @@ public class CT_Row {
 	@XmlAttribute(name = "rsidTr")
 	protected List<Byte> RsidTrAttr;
 	protected List<EG_ContentCellContent> EG_ContentCellContent;
-	@XmlElement(required = true, name = "tblPrEx")
+	@XmlElement(name = "tblPrEx")
 	protected CT_TblPrEx TblPrEx;
-	@XmlElement(required = true, name = "trPr")
+	@XmlElement(name = "trPr")
 	protected CT_TrPr TrPr;
 }
 
@@ -2827,101 +2827,101 @@ public class CT_TblPPr {
 
 // CT_TblCellMar ...
 public class CT_TblCellMar {
-	@XmlElement(required = true, name = "top")
+	@XmlElement(name = "top")
 	protected CT_TblWidth Top;
-	@XmlElement(required = true, name = "start")
+	@XmlElement(name = "start")
 	protected CT_TblWidth Start;
-	@XmlElement(required = true, name = "bottom")
+	@XmlElement(name = "bottom")
 	protected CT_TblWidth Bottom;
-	@XmlElement(required = true, name = "end")
+	@XmlElement(name = "end")
 	protected CT_TblWidth End;
 }
 
 // CT_TblBorders ...
 public class CT_TblBorders {
-	@XmlElement(required = true, name = "top")
+	@XmlElement(name = "top")
 	protected CT_Border Top;
-	@XmlElement(required = true, name = "start")
+	@XmlElement(name = "start")
 	protected CT_Border Start;
-	@XmlElement(required = true, name = "bottom")
+	@XmlElement(name = "bottom")
 	protected CT_Border Bottom;
-	@XmlElement(required = true, name = "end")
+	@XmlElement(name = "end")
 	protected CT_Border End;
-	@XmlElement(required = true, name = "insideH")
+	@XmlElement(name = "insideH")
 	protected CT_Border InsideH;
-	@XmlElement(required = true, name = "insideV")
+	@XmlElement(name = "insideV")
 	protected CT_Border InsideV;
 }
 
 // CT_TblPrBase ...
 public class CT_TblPrBase {
-	@XmlElement(required = true, name = "tblStyle")
+	@XmlElement(name = "tblStyle")
 	protected CT_String TblStyle;
-	@XmlElement(required = true, name = "tblpPr")
+	@XmlElement(name = "tblpPr")
 	protected CT_TblPPr TblpPr;
-	@XmlElement(required = true, name = "tblOverlap")
+	@XmlElement(name = "tblOverlap")
 	protected CT_TblOverlap TblOverlap;
-	@XmlElement(required = true, name = "bidiVisual")
+	@XmlElement(name = "bidiVisual")
 	protected CT_OnOff BidiVisual;
-	@XmlElement(required = true, name = "tblStyleRowBandSize")
+	@XmlElement(name = "tblStyleRowBandSize")
 	protected CT_DecimalNumber TblStyleRowBandSize;
-	@XmlElement(required = true, name = "tblStyleColBandSize")
+	@XmlElement(name = "tblStyleColBandSize")
 	protected CT_DecimalNumber TblStyleColBandSize;
-	@XmlElement(required = true, name = "tblW")
+	@XmlElement(name = "tblW")
 	protected CT_TblWidth TblW;
-	@XmlElement(required = true, name = "jc")
+	@XmlElement(name = "jc")
 	protected CT_JcTable Jc;
-	@XmlElement(required = true, name = "tblCellSpacing")
+	@XmlElement(name = "tblCellSpacing")
 	protected CT_TblWidth TblCellSpacing;
-	@XmlElement(required = true, name = "tblInd")
+	@XmlElement(name = "tblInd")
 	protected CT_TblWidth TblInd;
-	@XmlElement(required = true, name = "tblBorders")
+	@XmlElement(name = "tblBorders")
 	protected CT_TblBorders TblBorders;
-	@XmlElement(required = true, name = "shd")
+	@XmlElement(name = "shd")
 	protected CT_Shd Shd;
-	@XmlElement(required = true, name = "tblLayout")
+	@XmlElement(name = "tblLayout")
 	protected CT_TblLayoutType TblLayout;
-	@XmlElement(required = true, name = "tblCellMar")
+	@XmlElement(name = "tblCellMar")
 	protected CT_TblCellMar TblCellMar;
-	@XmlElement(required = true, name = "tblLook")
+	@XmlElement(name = "tblLook")
 	protected CT_TblLook TblLook;
-	@XmlElement(required = true, name = "tblCaption")
+	@XmlElement(name = "tblCaption")
 	protected CT_String TblCaption;
-	@XmlElement(required = true, name = "tblDescription")
+	@XmlElement(name = "tblDescription")
 	protected CT_String TblDescription;
 }
 
 // CT_TblPr ...
 public class CT_TblPr extends CT_TblPrBase  {
-	@XmlElement(required = true, name = "tblPrChange")
+	@XmlElement(name = "tblPrChange")
 	protected CT_TblPrChange TblPrChange;
 }
 
 // CT_TblPrExBase ...
 public class CT_TblPrExBase {
-	@XmlElement(required = true, name = "tblW")
+	@XmlElement(name = "tblW")
 	protected CT_TblWidth TblW;
-	@XmlElement(required = true, name = "jc")
+	@XmlElement(name = "jc")
 	protected CT_JcTable Jc;
-	@XmlElement(required = true, name = "tblCellSpacing")
+	@XmlElement(name = "tblCellSpacing")
 	protected CT_TblWidth TblCellSpacing;
-	@XmlElement(required = true, name = "tblInd")
+	@XmlElement(name = "tblInd")
 	protected CT_TblWidth TblInd;
-	@XmlElement(required = true, name = "tblBorders")
+	@XmlElement(name = "tblBorders")
 	protected CT_TblBorders TblBorders;
-	@XmlElement(required = true, name = "shd")
+	@XmlElement(name = "shd")
 	protected CT_Shd Shd;
-	@XmlElement(required = true, name = "tblLayout")
+	@XmlElement(name = "tblLayout")
 	protected CT_TblLayoutType TblLayout;
-	@XmlElement(required = true, name = "tblCellMar")
+	@XmlElement(name = "tblCellMar")
 	protected CT_TblCellMar TblCellMar;
-	@XmlElement(required = true, name = "tblLook")
+	@XmlElement(name = "tblLook")
 	protected CT_TblLook TblLook;
 }
 
 // CT_TblPrEx ...
 public class CT_TblPrEx extends CT_TblPrExBase  {
-	@XmlElement(required = true, name = "tblPrExChange")
+	@XmlElement(name = "tblPrExChange")
 	protected CT_TblPrExChange TblPrExChange;
 }
 
@@ -3032,36 +3032,36 @@ public class EG_FtnEdnNumProps {
 // CT_FtnProps ...
 public class CT_FtnProps {
 	protected EG_FtnEdnNumProps EG_FtnEdnNumProps;
-	@XmlElement(required = true, name = "pos")
+	@XmlElement(name = "pos")
 	protected CT_FtnPos Pos;
-	@XmlElement(required = true, name = "numFmt")
+	@XmlElement(name = "numFmt")
 	protected CT_NumFmt NumFmt;
 }
 
 // CT_EdnProps ...
 public class CT_EdnProps {
 	protected EG_FtnEdnNumProps EG_FtnEdnNumProps;
-	@XmlElement(required = true, name = "pos")
+	@XmlElement(name = "pos")
 	protected CT_EdnPos Pos;
-	@XmlElement(required = true, name = "numFmt")
+	@XmlElement(name = "numFmt")
 	protected CT_NumFmt NumFmt;
 }
 
 // CT_FtnDocProps ...
 public class CT_FtnDocProps extends CT_FtnProps  {
-	@XmlElement(required = true, name = "footnote")
+	@XmlElement(name = "footnote")
 	protected List<CT_FtnEdnSepRef> Footnote;
 }
 
 // CT_EdnDocProps ...
 public class CT_EdnDocProps extends CT_EdnProps  {
-	@XmlElement(required = true, name = "endnote")
+	@XmlElement(name = "endnote")
 	protected List<CT_FtnEdnSepRef> Endnote;
 }
 
 // CT_RecipientData ...
 public class CT_RecipientData {
-	@XmlElement(required = true, name = "active")
+	@XmlElement(name = "active")
 	protected CT_OnOff Active;
 	@XmlElement(required = true, name = "column")
 	protected CT_DecimalNumber Column;
@@ -3089,17 +3089,17 @@ public class Recipients {
 
 // CT_OdsoFieldMapData ...
 public class CT_OdsoFieldMapData {
-	@XmlElement(required = true, name = "type")
+	@XmlElement(name = "type")
 	protected CT_MailMergeOdsoFMDFieldType Type;
-	@XmlElement(required = true, name = "name")
+	@XmlElement(name = "name")
 	protected CT_String Name;
-	@XmlElement(required = true, name = "mappedName")
+	@XmlElement(name = "mappedName")
 	protected CT_String MappedName;
-	@XmlElement(required = true, name = "column")
+	@XmlElement(name = "column")
 	protected CT_DecimalNumber Column;
-	@XmlElement(required = true, name = "lid")
+	@XmlElement(name = "lid")
 	protected CT_Lang Lid;
-	@XmlElement(required = true, name = "dynamicAddress")
+	@XmlElement(name = "dynamicAddress")
 	protected CT_OnOff DynamicAddress;
 }
 
@@ -3118,21 +3118,21 @@ public class CT_MailMergeSourceType {
 
 // CT_Odso ...
 public class CT_Odso {
-	@XmlElement(required = true, name = "udl")
+	@XmlElement(name = "udl")
 	protected CT_String Udl;
-	@XmlElement(required = true, name = "table")
+	@XmlElement(name = "table")
 	protected CT_String Table;
-	@XmlElement(required = true, name = "src")
+	@XmlElement(name = "src")
 	protected CT_Rel Src;
-	@XmlElement(required = true, name = "colDelim")
+	@XmlElement(name = "colDelim")
 	protected CT_DecimalNumber ColDelim;
-	@XmlElement(required = true, name = "type")
+	@XmlElement(name = "type")
 	protected CT_MailMergeSourceType Type;
-	@XmlElement(required = true, name = "fHdr")
+	@XmlElement(name = "fHdr")
 	protected CT_OnOff FHdr;
-	@XmlElement(required = true, name = "fieldMapData")
+	@XmlElement(name = "fieldMapData")
 	protected List<CT_OdsoFieldMapData> FieldMapData;
-	@XmlElement(required = true, name = "recipientData")
+	@XmlElement(name = "recipientData")
 	protected List<CT_Rel> RecipientData;
 }
 
@@ -3140,35 +3140,35 @@ public class CT_Odso {
 public class CT_MailMerge {
 	@XmlElement(required = true, name = "mainDocumentType")
 	protected CT_MailMergeDocType MainDocumentType;
-	@XmlElement(required = true, name = "linkToQuery")
+	@XmlElement(name = "linkToQuery")
 	protected CT_OnOff LinkToQuery;
 	@XmlElement(required = true, name = "dataType")
 	protected CT_MailMergeDataType DataType;
-	@XmlElement(required = true, name = "connectString")
+	@XmlElement(name = "connectString")
 	protected CT_String ConnectString;
-	@XmlElement(required = true, name = "query")
+	@XmlElement(name = "query")
 	protected CT_String Query;
-	@XmlElement(required = true, name = "dataSource")
+	@XmlElement(name = "dataSource")
 	protected CT_Rel DataSource;
-	@XmlElement(required = true, name = "headerSource")
+	@XmlElement(name = "headerSource")
 	protected CT_Rel HeaderSource;
-	@XmlElement(required = true, name = "doNotSuppressBlankLines")
+	@XmlElement(name = "doNotSuppressBlankLines")
 	protected CT_OnOff DoNotSuppressBlankLines;
-	@XmlElement(required = true, name = "destination")
+	@XmlElement(name = "destination")
 	protected CT_MailMergeDest Destination;
-	@XmlElement(required = true, name = "addressFieldName")
+	@XmlElement(name = "addressFieldName")
 	protected CT_String AddressFieldName;
-	@XmlElement(required = true, name = "mailSubject")
+	@XmlElement(name = "mailSubject")
 	protected CT_String MailSubject;
-	@XmlElement(required = true, name = "mailAsAttachment")
+	@XmlElement(name = "mailAsAttachment")
 	protected CT_OnOff MailAsAttachment;
-	@XmlElement(required = true, name = "viewMergedData")
+	@XmlElement(name = "viewMergedData")
 	protected CT_OnOff ViewMergedData;
-	@XmlElement(required = true, name = "activeRecord")
+	@XmlElement(name = "activeRecord")
 	protected CT_DecimalNumber ActiveRecord;
-	@XmlElement(required = true, name = "checkErrors")
+	@XmlElement(name = "checkErrors")
 	protected CT_DecimalNumber CheckErrors;
-	@XmlElement(required = true, name = "odso")
+	@XmlElement(name = "odso")
 	protected CT_Odso Odso;
 }
 
@@ -3187,21 +3187,21 @@ public class CT_TargetScreenSz {
 
 // CT_Compat ...
 public class CT_Compat {
-	@XmlElement(required = true, name = "spaceForUL")
+	@XmlElement(name = "spaceForUL")
 	protected CT_OnOff SpaceForUL;
-	@XmlElement(required = true, name = "balanceSingleByteDoubleByteWidth")
+	@XmlElement(name = "balanceSingleByteDoubleByteWidth")
 	protected CT_OnOff BalanceSingleByteDoubleByteWidth;
-	@XmlElement(required = true, name = "doNotLeaveBackslashAlone")
+	@XmlElement(name = "doNotLeaveBackslashAlone")
 	protected CT_OnOff DoNotLeaveBackslashAlone;
-	@XmlElement(required = true, name = "ulTrailSpace")
+	@XmlElement(name = "ulTrailSpace")
 	protected CT_OnOff UlTrailSpace;
-	@XmlElement(required = true, name = "doNotExpandShiftReturn")
+	@XmlElement(name = "doNotExpandShiftReturn")
 	protected CT_OnOff DoNotExpandShiftReturn;
-	@XmlElement(required = true, name = "adjustLineHeightInTable")
+	@XmlElement(name = "adjustLineHeightInTable")
 	protected CT_OnOff AdjustLineHeightInTable;
-	@XmlElement(required = true, name = "applyBreakingRules")
+	@XmlElement(name = "applyBreakingRules")
 	protected CT_OnOff ApplyBreakingRules;
-	@XmlElement(required = true, name = "compatSetting")
+	@XmlElement(name = "compatSetting")
 	protected List<CT_CompatSetting> CompatSetting;
 }
 
@@ -3225,15 +3225,15 @@ public class CT_DocVar {
 
 // CT_DocVars ...
 public class CT_DocVars {
-	@XmlElement(required = true, name = "docVar")
+	@XmlElement(name = "docVar")
 	protected List<CT_DocVar> DocVar;
 }
 
 // CT_DocRsids ...
 public class CT_DocRsids {
-	@XmlElement(required = true, name = "rsidRoot")
+	@XmlElement(name = "rsidRoot")
 	protected CT_LongHexNumber RsidRoot;
-	@XmlElement(required = true, name = "rsid")
+	@XmlElement(name = "rsid")
 	protected List<CT_LongHexNumber> Rsid;
 }
 
@@ -3260,21 +3260,21 @@ public class CT_SaveThroughXslt {
 
 // CT_RPrDefault ...
 public class CT_RPrDefault {
-	@XmlElement(required = true, name = "rPr")
+	@XmlElement(name = "rPr")
 	protected CT_RPr RPr;
 }
 
 // CT_PPrDefault ...
 public class CT_PPrDefault {
-	@XmlElement(required = true, name = "pPr")
+	@XmlElement(name = "pPr")
 	protected CT_PPrGeneral PPr;
 }
 
 // CT_DocDefaults ...
 public class CT_DocDefaults {
-	@XmlElement(required = true, name = "rPrDefault")
+	@XmlElement(name = "rPrDefault")
 	protected CT_RPrDefault RPrDefault;
-	@XmlElement(required = true, name = "pPrDefault")
+	@XmlElement(name = "pPrDefault")
 	protected CT_PPrDefault PPrDefault;
 }
 
@@ -3335,197 +3335,197 @@ public class CT_WriteProtection {
 
 // CT_Settings ...
 public class CT_Settings {
-	@XmlElement(required = true, name = "writeProtection")
+	@XmlElement(name = "writeProtection")
 	protected CT_WriteProtection WriteProtection;
-	@XmlElement(required = true, name = "view")
+	@XmlElement(name = "view")
 	protected CT_View View;
-	@XmlElement(required = true, name = "zoom")
+	@XmlElement(name = "zoom")
 	protected CT_Zoom Zoom;
-	@XmlElement(required = true, name = "removePersonalInformation")
+	@XmlElement(name = "removePersonalInformation")
 	protected CT_OnOff RemovePersonalInformation;
-	@XmlElement(required = true, name = "removeDateAndTime")
+	@XmlElement(name = "removeDateAndTime")
 	protected CT_OnOff RemoveDateAndTime;
-	@XmlElement(required = true, name = "doNotDisplayPageBoundaries")
+	@XmlElement(name = "doNotDisplayPageBoundaries")
 	protected CT_OnOff DoNotDisplayPageBoundaries;
-	@XmlElement(required = true, name = "displayBackgroundShape")
+	@XmlElement(name = "displayBackgroundShape")
 	protected CT_OnOff DisplayBackgroundShape;
-	@XmlElement(required = true, name = "printPostScriptOverText")
+	@XmlElement(name = "printPostScriptOverText")
 	protected CT_OnOff PrintPostScriptOverText;
-	@XmlElement(required = true, name = "printFractionalCharacterWidth")
+	@XmlElement(name = "printFractionalCharacterWidth")
 	protected CT_OnOff PrintFractionalCharacterWidth;
-	@XmlElement(required = true, name = "printFormsData")
+	@XmlElement(name = "printFormsData")
 	protected CT_OnOff PrintFormsData;
-	@XmlElement(required = true, name = "embedTrueTypeFonts")
+	@XmlElement(name = "embedTrueTypeFonts")
 	protected CT_OnOff EmbedTrueTypeFonts;
-	@XmlElement(required = true, name = "embedSystemFonts")
+	@XmlElement(name = "embedSystemFonts")
 	protected CT_OnOff EmbedSystemFonts;
-	@XmlElement(required = true, name = "saveSubsetFonts")
+	@XmlElement(name = "saveSubsetFonts")
 	protected CT_OnOff SaveSubsetFonts;
-	@XmlElement(required = true, name = "saveFormsData")
+	@XmlElement(name = "saveFormsData")
 	protected CT_OnOff SaveFormsData;
-	@XmlElement(required = true, name = "mirrorMargins")
+	@XmlElement(name = "mirrorMargins")
 	protected CT_OnOff MirrorMargins;
-	@XmlElement(required = true, name = "alignBordersAndEdges")
+	@XmlElement(name = "alignBordersAndEdges")
 	protected CT_OnOff AlignBordersAndEdges;
-	@XmlElement(required = true, name = "bordersDoNotSurroundHeader")
+	@XmlElement(name = "bordersDoNotSurroundHeader")
 	protected CT_OnOff BordersDoNotSurroundHeader;
-	@XmlElement(required = true, name = "bordersDoNotSurroundFooter")
+	@XmlElement(name = "bordersDoNotSurroundFooter")
 	protected CT_OnOff BordersDoNotSurroundFooter;
-	@XmlElement(required = true, name = "gutterAtTop")
+	@XmlElement(name = "gutterAtTop")
 	protected CT_OnOff GutterAtTop;
-	@XmlElement(required = true, name = "hideSpellingErrors")
+	@XmlElement(name = "hideSpellingErrors")
 	protected CT_OnOff HideSpellingErrors;
-	@XmlElement(required = true, name = "hideGrammaticalErrors")
+	@XmlElement(name = "hideGrammaticalErrors")
 	protected CT_OnOff HideGrammaticalErrors;
-	@XmlElement(required = true, name = "activeWritingStyle")
+	@XmlElement(name = "activeWritingStyle")
 	protected List<CT_WritingStyle> ActiveWritingStyle;
-	@XmlElement(required = true, name = "proofState")
+	@XmlElement(name = "proofState")
 	protected CT_Proof ProofState;
-	@XmlElement(required = true, name = "formsDesign")
+	@XmlElement(name = "formsDesign")
 	protected CT_OnOff FormsDesign;
-	@XmlElement(required = true, name = "attachedTemplate")
+	@XmlElement(name = "attachedTemplate")
 	protected CT_Rel AttachedTemplate;
-	@XmlElement(required = true, name = "linkStyles")
+	@XmlElement(name = "linkStyles")
 	protected CT_OnOff LinkStyles;
-	@XmlElement(required = true, name = "stylePaneFormatFilter")
+	@XmlElement(name = "stylePaneFormatFilter")
 	protected CT_StylePaneFilter StylePaneFormatFilter;
-	@XmlElement(required = true, name = "stylePaneSortMethod")
+	@XmlElement(name = "stylePaneSortMethod")
 	protected CT_StyleSort StylePaneSortMethod;
-	@XmlElement(required = true, name = "documentType")
+	@XmlElement(name = "documentType")
 	protected CT_DocType DocumentType;
-	@XmlElement(required = true, name = "mailMerge")
+	@XmlElement(name = "mailMerge")
 	protected CT_MailMerge MailMerge;
-	@XmlElement(required = true, name = "revisionView")
+	@XmlElement(name = "revisionView")
 	protected CT_TrackChangesView RevisionView;
-	@XmlElement(required = true, name = "trackRevisions")
+	@XmlElement(name = "trackRevisions")
 	protected CT_OnOff TrackRevisions;
-	@XmlElement(required = true, name = "doNotTrackMoves")
+	@XmlElement(name = "doNotTrackMoves")
 	protected CT_OnOff DoNotTrackMoves;
-	@XmlElement(required = true, name = "doNotTrackFormatting")
+	@XmlElement(name = "doNotTrackFormatting")
 	protected CT_OnOff DoNotTrackFormatting;
-	@XmlElement(required = true, name = "documentProtection")
+	@XmlElement(name = "documentProtection")
 	protected CT_DocProtect DocumentProtection;
-	@XmlElement(required = true, name = "autoFormatOverride")
+	@XmlElement(name = "autoFormatOverride")
 	protected CT_OnOff AutoFormatOverride;
-	@XmlElement(required = true, name = "styleLockTheme")
+	@XmlElement(name = "styleLockTheme")
 	protected CT_OnOff StyleLockTheme;
-	@XmlElement(required = true, name = "styleLockQFSet")
+	@XmlElement(name = "styleLockQFSet")
 	protected CT_OnOff StyleLockQFSet;
-	@XmlElement(required = true, name = "defaultTabStop")
+	@XmlElement(name = "defaultTabStop")
 	protected CT_TwipsMeasure DefaultTabStop;
-	@XmlElement(required = true, name = "autoHyphenation")
+	@XmlElement(name = "autoHyphenation")
 	protected CT_OnOff AutoHyphenation;
-	@XmlElement(required = true, name = "consecutiveHyphenLimit")
+	@XmlElement(name = "consecutiveHyphenLimit")
 	protected CT_DecimalNumber ConsecutiveHyphenLimit;
-	@XmlElement(required = true, name = "hyphenationZone")
+	@XmlElement(name = "hyphenationZone")
 	protected CT_TwipsMeasure HyphenationZone;
-	@XmlElement(required = true, name = "doNotHyphenateCaps")
+	@XmlElement(name = "doNotHyphenateCaps")
 	protected CT_OnOff DoNotHyphenateCaps;
-	@XmlElement(required = true, name = "showEnvelope")
+	@XmlElement(name = "showEnvelope")
 	protected CT_OnOff ShowEnvelope;
-	@XmlElement(required = true, name = "summaryLength")
+	@XmlElement(name = "summaryLength")
 	protected CT_DecimalNumberOrPrecent SummaryLength;
-	@XmlElement(required = true, name = "clickAndTypeStyle")
+	@XmlElement(name = "clickAndTypeStyle")
 	protected CT_String ClickAndTypeStyle;
-	@XmlElement(required = true, name = "defaultTableStyle")
+	@XmlElement(name = "defaultTableStyle")
 	protected CT_String DefaultTableStyle;
-	@XmlElement(required = true, name = "evenAndOddHeaders")
+	@XmlElement(name = "evenAndOddHeaders")
 	protected CT_OnOff EvenAndOddHeaders;
-	@XmlElement(required = true, name = "bookFoldRevPrinting")
+	@XmlElement(name = "bookFoldRevPrinting")
 	protected CT_OnOff BookFoldRevPrinting;
-	@XmlElement(required = true, name = "bookFoldPrinting")
+	@XmlElement(name = "bookFoldPrinting")
 	protected CT_OnOff BookFoldPrinting;
-	@XmlElement(required = true, name = "bookFoldPrintingSheets")
+	@XmlElement(name = "bookFoldPrintingSheets")
 	protected CT_DecimalNumber BookFoldPrintingSheets;
-	@XmlElement(required = true, name = "drawingGridHorizontalSpacing")
+	@XmlElement(name = "drawingGridHorizontalSpacing")
 	protected CT_TwipsMeasure DrawingGridHorizontalSpacing;
-	@XmlElement(required = true, name = "drawingGridVerticalSpacing")
+	@XmlElement(name = "drawingGridVerticalSpacing")
 	protected CT_TwipsMeasure DrawingGridVerticalSpacing;
-	@XmlElement(required = true, name = "displayHorizontalDrawingGridEvery")
+	@XmlElement(name = "displayHorizontalDrawingGridEvery")
 	protected CT_DecimalNumber DisplayHorizontalDrawingGridEvery;
-	@XmlElement(required = true, name = "displayVerticalDrawingGridEvery")
+	@XmlElement(name = "displayVerticalDrawingGridEvery")
 	protected CT_DecimalNumber DisplayVerticalDrawingGridEvery;
-	@XmlElement(required = true, name = "doNotUseMarginsForDrawingGridOrigin")
+	@XmlElement(name = "doNotUseMarginsForDrawingGridOrigin")
 	protected CT_OnOff DoNotUseMarginsForDrawingGridOrigin;
-	@XmlElement(required = true, name = "drawingGridHorizontalOrigin")
+	@XmlElement(name = "drawingGridHorizontalOrigin")
 	protected CT_TwipsMeasure DrawingGridHorizontalOrigin;
-	@XmlElement(required = true, name = "drawingGridVerticalOrigin")
+	@XmlElement(name = "drawingGridVerticalOrigin")
 	protected CT_TwipsMeasure DrawingGridVerticalOrigin;
-	@XmlElement(required = true, name = "doNotShadeFormData")
+	@XmlElement(name = "doNotShadeFormData")
 	protected CT_OnOff DoNotShadeFormData;
-	@XmlElement(required = true, name = "noPunctuationKerning")
+	@XmlElement(name = "noPunctuationKerning")
 	protected CT_OnOff NoPunctuationKerning;
-	@XmlElement(required = true, name = "characterSpacingControl")
+	@XmlElement(name = "characterSpacingControl")
 	protected CT_CharacterSpacing CharacterSpacingControl;
-	@XmlElement(required = true, name = "printTwoOnOne")
+	@XmlElement(name = "printTwoOnOne")
 	protected CT_OnOff PrintTwoOnOne;
-	@XmlElement(required = true, name = "strictFirstAndLastChars")
+	@XmlElement(name = "strictFirstAndLastChars")
 	protected CT_OnOff StrictFirstAndLastChars;
-	@XmlElement(required = true, name = "noLineBreaksAfter")
+	@XmlElement(name = "noLineBreaksAfter")
 	protected CT_Kinsoku NoLineBreaksAfter;
-	@XmlElement(required = true, name = "noLineBreaksBefore")
+	@XmlElement(name = "noLineBreaksBefore")
 	protected CT_Kinsoku NoLineBreaksBefore;
-	@XmlElement(required = true, name = "savePreviewPicture")
+	@XmlElement(name = "savePreviewPicture")
 	protected CT_OnOff SavePreviewPicture;
-	@XmlElement(required = true, name = "doNotValidateAgainstSchema")
+	@XmlElement(name = "doNotValidateAgainstSchema")
 	protected CT_OnOff DoNotValidateAgainstSchema;
-	@XmlElement(required = true, name = "saveInvalidXml")
+	@XmlElement(name = "saveInvalidXml")
 	protected CT_OnOff SaveInvalidXml;
-	@XmlElement(required = true, name = "ignoreMixedContent")
+	@XmlElement(name = "ignoreMixedContent")
 	protected CT_OnOff IgnoreMixedContent;
-	@XmlElement(required = true, name = "alwaysShowPlaceholderText")
+	@XmlElement(name = "alwaysShowPlaceholderText")
 	protected CT_OnOff AlwaysShowPlaceholderText;
-	@XmlElement(required = true, name = "doNotDemarcateInvalidXml")
+	@XmlElement(name = "doNotDemarcateInvalidXml")
 	protected CT_OnOff DoNotDemarcateInvalidXml;
-	@XmlElement(required = true, name = "saveXmlDataOnly")
+	@XmlElement(name = "saveXmlDataOnly")
 	protected CT_OnOff SaveXmlDataOnly;
-	@XmlElement(required = true, name = "useXSLTWhenSaving")
+	@XmlElement(name = "useXSLTWhenSaving")
 	protected CT_OnOff UseXSLTWhenSaving;
-	@XmlElement(required = true, name = "saveThroughXslt")
+	@XmlElement(name = "saveThroughXslt")
 	protected CT_SaveThroughXslt SaveThroughXslt;
-	@XmlElement(required = true, name = "showXMLTags")
+	@XmlElement(name = "showXMLTags")
 	protected CT_OnOff ShowXMLTags;
-	@XmlElement(required = true, name = "alwaysMergeEmptyNamespace")
+	@XmlElement(name = "alwaysMergeEmptyNamespace")
 	protected CT_OnOff AlwaysMergeEmptyNamespace;
-	@XmlElement(required = true, name = "updateFields")
+	@XmlElement(name = "updateFields")
 	protected CT_OnOff UpdateFields;
-	@XmlElement(required = true, name = "footnotePr")
+	@XmlElement(name = "footnotePr")
 	protected CT_FtnDocProps FootnotePr;
-	@XmlElement(required = true, name = "endnotePr")
+	@XmlElement(name = "endnotePr")
 	protected CT_EdnDocProps EndnotePr;
-	@XmlElement(required = true, name = "compat")
+	@XmlElement(name = "compat")
 	protected CT_Compat Compat;
-	@XmlElement(required = true, name = "docVars")
+	@XmlElement(name = "docVars")
 	protected CT_DocVars DocVars;
-	@XmlElement(required = true, name = "rsids")
+	@XmlElement(name = "rsids")
 	protected CT_DocRsids Rsids;
-	@XmlElement(required = true, name = "m:mathPr")
+	@XmlElement(name = "m:mathPr")
 	protected CT_MathPr MMathPr;
-	@XmlElement(required = true, name = "attachedSchema")
+	@XmlElement(name = "attachedSchema")
 	protected List<CT_String> AttachedSchema;
-	@XmlElement(required = true, name = "themeFontLang")
+	@XmlElement(name = "themeFontLang")
 	protected CT_Language ThemeFontLang;
-	@XmlElement(required = true, name = "clrSchemeMapping")
+	@XmlElement(name = "clrSchemeMapping")
 	protected CT_ColorSchemeMapping ClrSchemeMapping;
-	@XmlElement(required = true, name = "doNotIncludeSubdocsInStats")
+	@XmlElement(name = "doNotIncludeSubdocsInStats")
 	protected CT_OnOff DoNotIncludeSubdocsInStats;
-	@XmlElement(required = true, name = "doNotAutoCompressPictures")
+	@XmlElement(name = "doNotAutoCompressPictures")
 	protected CT_OnOff DoNotAutoCompressPictures;
-	@XmlElement(required = true, name = "forceUpgrade")
+	@XmlElement(name = "forceUpgrade")
 	protected CT_Empty ForceUpgrade;
-	@XmlElement(required = true, name = "captions")
+	@XmlElement(name = "captions")
 	protected CT_Captions Captions;
-	@XmlElement(required = true, name = "readModeInkLockDown")
+	@XmlElement(name = "readModeInkLockDown")
 	protected CT_ReadingModeInkLockDown ReadModeInkLockDown;
-	@XmlElement(required = true, name = "smartTagType")
+	@XmlElement(name = "smartTagType")
 	protected List<CT_SmartTagType> SmartTagType;
-	@XmlElement(required = true, name = "sl:schemaLibrary")
+	@XmlElement(name = "sl:schemaLibrary")
 	protected CT_SchemaLibrary SlSchemaLibrary;
-	@XmlElement(required = true, name = "doNotEmbedSmartTags")
+	@XmlElement(name = "doNotEmbedSmartTags")
 	protected CT_OnOff DoNotEmbedSmartTags;
-	@XmlElement(required = true, name = "decimalSymbol")
+	@XmlElement(name = "decimalSymbol")
 	protected CT_String DecimalSymbol;
-	@XmlElement(required = true, name = "listSeparator")
+	@XmlElement(name = "listSeparator")
 	protected CT_String ListSeparator;
 }
 
@@ -3578,29 +3578,29 @@ public class ST_StyleSort {
 
 // CT_WebSettings ...
 public class CT_WebSettings {
-	@XmlElement(required = true, name = "frameset")
+	@XmlElement(name = "frameset")
 	protected CT_Frameset Frameset;
-	@XmlElement(required = true, name = "divs")
+	@XmlElement(name = "divs")
 	protected CT_Divs Divs;
-	@XmlElement(required = true, name = "encoding")
+	@XmlElement(name = "encoding")
 	protected CT_String Encoding;
-	@XmlElement(required = true, name = "optimizeForBrowser")
+	@XmlElement(name = "optimizeForBrowser")
 	protected CT_OptimizeForBrowser OptimizeForBrowser;
-	@XmlElement(required = true, name = "allowPNG")
+	@XmlElement(name = "allowPNG")
 	protected CT_OnOff AllowPNG;
-	@XmlElement(required = true, name = "doNotRelyOnCSS")
+	@XmlElement(name = "doNotRelyOnCSS")
 	protected CT_OnOff DoNotRelyOnCSS;
-	@XmlElement(required = true, name = "doNotSaveAsSingleFile")
+	@XmlElement(name = "doNotSaveAsSingleFile")
 	protected CT_OnOff DoNotSaveAsSingleFile;
-	@XmlElement(required = true, name = "doNotOrganizeInFolder")
+	@XmlElement(name = "doNotOrganizeInFolder")
 	protected CT_OnOff DoNotOrganizeInFolder;
-	@XmlElement(required = true, name = "doNotUseLongFileNames")
+	@XmlElement(name = "doNotUseLongFileNames")
 	protected CT_OnOff DoNotUseLongFileNames;
-	@XmlElement(required = true, name = "pixelsPerInch")
+	@XmlElement(name = "pixelsPerInch")
 	protected CT_DecimalNumber PixelsPerInch;
-	@XmlElement(required = true, name = "targetScreenSz")
+	@XmlElement(name = "targetScreenSz")
 	protected CT_TargetScreenSz TargetScreenSz;
-	@XmlElement(required = true, name = "saveSmartTagsAsXml")
+	@XmlElement(name = "saveSmartTagsAsXml")
 	protected CT_OnOff SaveSmartTagsAsXml;
 }
 
@@ -3625,25 +3625,25 @@ public class CT_OptimizeForBrowser extends CT_OnOff  {
 
 // CT_Frame ...
 public class CT_Frame {
-	@XmlElement(required = true, name = "sz")
+	@XmlElement(name = "sz")
 	protected CT_String Sz;
-	@XmlElement(required = true, name = "name")
+	@XmlElement(name = "name")
 	protected CT_String Name;
-	@XmlElement(required = true, name = "title")
+	@XmlElement(name = "title")
 	protected CT_String Title;
-	@XmlElement(required = true, name = "longDesc")
+	@XmlElement(name = "longDesc")
 	protected CT_Rel LongDesc;
-	@XmlElement(required = true, name = "sourceFileName")
+	@XmlElement(name = "sourceFileName")
 	protected CT_Rel SourceFileName;
-	@XmlElement(required = true, name = "marW")
+	@XmlElement(name = "marW")
 	protected CT_PixelsMeasure MarW;
-	@XmlElement(required = true, name = "marH")
+	@XmlElement(name = "marH")
 	protected CT_PixelsMeasure MarH;
-	@XmlElement(required = true, name = "scrollbar")
+	@XmlElement(name = "scrollbar")
 	protected CT_FrameScrollbar Scrollbar;
-	@XmlElement(required = true, name = "noResizeAllowed")
+	@XmlElement(name = "noResizeAllowed")
 	protected CT_OnOff NoResizeAllowed;
-	@XmlElement(required = true, name = "linkedToFile")
+	@XmlElement(name = "linkedToFile")
 	protected CT_OnOff LinkedToFile;
 }
 
@@ -3662,29 +3662,29 @@ public class CT_FrameLayout {
 
 // CT_FramesetSplitbar ...
 public class CT_FramesetSplitbar {
-	@XmlElement(required = true, name = "w")
+	@XmlElement(name = "w")
 	protected CT_TwipsMeasure W;
-	@XmlElement(required = true, name = "color")
+	@XmlElement(name = "color")
 	protected CT_Color Color;
-	@XmlElement(required = true, name = "noBorder")
+	@XmlElement(name = "noBorder")
 	protected CT_OnOff NoBorder;
-	@XmlElement(required = true, name = "flatBorders")
+	@XmlElement(name = "flatBorders")
 	protected CT_OnOff FlatBorders;
 }
 
 // CT_Frameset ...
 public class CT_Frameset {
-	@XmlElement(required = true, name = "sz")
+	@XmlElement(name = "sz")
 	protected CT_String Sz;
-	@XmlElement(required = true, name = "framesetSplitbar")
+	@XmlElement(name = "framesetSplitbar")
 	protected CT_FramesetSplitbar FramesetSplitbar;
-	@XmlElement(required = true, name = "frameLayout")
+	@XmlElement(name = "frameLayout")
 	protected CT_FrameLayout FrameLayout;
-	@XmlElement(required = true, name = "title")
+	@XmlElement(name = "title")
 	protected CT_String Title;
-	@XmlElement(required = true, name = "frameset")
+	@XmlElement(name = "frameset")
 	protected List<CT_Frameset> Frameset;
-	@XmlElement(required = true, name = "frame")
+	@XmlElement(name = "frame")
 	protected List<CT_Frame> Frame;
 }
 
@@ -3725,27 +3725,27 @@ public class CT_Lvl {
 	protected List<Byte> TplcAttr;
 	@XmlAttribute(name = "tentative")
 	protected ST_OnOff TentativeAttr;
-	@XmlElement(required = true, name = "start")
+	@XmlElement(name = "start")
 	protected CT_DecimalNumber Start;
-	@XmlElement(required = true, name = "numFmt")
+	@XmlElement(name = "numFmt")
 	protected CT_NumFmt NumFmt;
-	@XmlElement(required = true, name = "lvlRestart")
+	@XmlElement(name = "lvlRestart")
 	protected CT_DecimalNumber LvlRestart;
-	@XmlElement(required = true, name = "pStyle")
+	@XmlElement(name = "pStyle")
 	protected CT_String PStyle;
-	@XmlElement(required = true, name = "isLgl")
+	@XmlElement(name = "isLgl")
 	protected CT_OnOff IsLgl;
-	@XmlElement(required = true, name = "suff")
+	@XmlElement(name = "suff")
 	protected CT_LevelSuffix Suff;
-	@XmlElement(required = true, name = "lvlText")
+	@XmlElement(name = "lvlText")
 	protected CT_LevelText LvlText;
-	@XmlElement(required = true, name = "lvlPicBulletId")
+	@XmlElement(name = "lvlPicBulletId")
 	protected CT_DecimalNumber LvlPicBulletId;
-	@XmlElement(required = true, name = "lvlJc")
+	@XmlElement(name = "lvlJc")
 	protected CT_Jc LvlJc;
-	@XmlElement(required = true, name = "pPr")
+	@XmlElement(name = "pPr")
 	protected CT_PPrGeneral PPr;
-	@XmlElement(required = true, name = "rPr")
+	@XmlElement(name = "rPr")
 	protected CT_RPr RPr;
 }
 
@@ -3766,19 +3766,19 @@ public class CT_MultiLevelType {
 public class CT_AbstractNum {
 	@XmlAttribute(name = "abstractNumId", required = true)
 	protected Integer AbstractNumIdAttr;
-	@XmlElement(required = true, name = "nsid")
+	@XmlElement(name = "nsid")
 	protected CT_LongHexNumber Nsid;
-	@XmlElement(required = true, name = "multiLevelType")
+	@XmlElement(name = "multiLevelType")
 	protected CT_MultiLevelType MultiLevelType;
-	@XmlElement(required = true, name = "tmpl")
+	@XmlElement(name = "tmpl")
 	protected CT_LongHexNumber Tmpl;
-	@XmlElement(required = true, name = "name")
+	@XmlElement(name = "name")
 	protected CT_String Name;
-	@XmlElement(required = true, name = "styleLink")
+	@XmlElement(name = "styleLink")
 	protected CT_String StyleLink;
-	@XmlElement(required = true, name = "numStyleLink")
+	@XmlElement(name = "numStyleLink")
 	protected CT_String NumStyleLink;
-	@XmlElement(required = true, name = "lvl")
+	@XmlElement(name = "lvl")
 	protected List<CT_Lvl> Lvl;
 }
 
@@ -3786,9 +3786,9 @@ public class CT_AbstractNum {
 public class CT_NumLvl {
 	@XmlAttribute(name = "ilvl", required = true)
 	protected Integer IlvlAttr;
-	@XmlElement(required = true, name = "startOverride")
+	@XmlElement(name = "startOverride")
 	protected CT_DecimalNumber StartOverride;
-	@XmlElement(required = true, name = "lvl")
+	@XmlElement(name = "lvl")
 	protected CT_Lvl Lvl;
 }
 
@@ -3798,19 +3798,19 @@ public class CT_Num {
 	protected Integer NumIdAttr;
 	@XmlElement(required = true, name = "abstractNumId")
 	protected CT_DecimalNumber AbstractNumId;
-	@XmlElement(required = true, name = "lvlOverride")
+	@XmlElement(name = "lvlOverride")
 	protected List<CT_NumLvl> LvlOverride;
 }
 
 // CT_Numbering ...
 public class CT_Numbering {
-	@XmlElement(required = true, name = "numPicBullet")
+	@XmlElement(name = "numPicBullet")
 	protected List<CT_NumPicBullet> NumPicBullet;
-	@XmlElement(required = true, name = "abstractNum")
+	@XmlElement(name = "abstractNum")
 	protected List<CT_AbstractNum> AbstractNum;
-	@XmlElement(required = true, name = "num")
+	@XmlElement(name = "num")
 	protected List<CT_Num> Num;
-	@XmlElement(required = true, name = "numIdMacAtCleanup")
+	@XmlElement(name = "numIdMacAtCleanup")
 	protected CT_DecimalNumber NumIdMacAtCleanup;
 }
 
@@ -3825,15 +3825,15 @@ public class ST_TblStyleOverrideType {
 public class CT_TblStylePr {
 	@XmlAttribute(name = "type", required = true)
 	protected String TypeAttr;
-	@XmlElement(required = true, name = "pPr")
+	@XmlElement(name = "pPr")
 	protected CT_PPrGeneral PPr;
-	@XmlElement(required = true, name = "rPr")
+	@XmlElement(name = "rPr")
 	protected CT_RPr RPr;
-	@XmlElement(required = true, name = "tblPr")
+	@XmlElement(name = "tblPr")
 	protected CT_TblPrBase TblPr;
-	@XmlElement(required = true, name = "trPr")
+	@XmlElement(name = "trPr")
 	protected CT_TrPr TrPr;
-	@XmlElement(required = true, name = "tcPr")
+	@XmlElement(name = "tcPr")
 	protected CT_TcPr TcPr;
 }
 
@@ -3854,49 +3854,49 @@ public class CT_Style {
 	protected ST_OnOff DefaultAttr;
 	@XmlAttribute(name = "customStyle")
 	protected ST_OnOff CustomStyleAttr;
-	@XmlElement(required = true, name = "name")
+	@XmlElement(name = "name")
 	protected CT_String Name;
-	@XmlElement(required = true, name = "aliases")
+	@XmlElement(name = "aliases")
 	protected CT_String Aliases;
-	@XmlElement(required = true, name = "basedOn")
+	@XmlElement(name = "basedOn")
 	protected CT_String BasedOn;
-	@XmlElement(required = true, name = "next")
+	@XmlElement(name = "next")
 	protected CT_String Next;
-	@XmlElement(required = true, name = "link")
+	@XmlElement(name = "link")
 	protected CT_String Link;
-	@XmlElement(required = true, name = "autoRedefine")
+	@XmlElement(name = "autoRedefine")
 	protected CT_OnOff AutoRedefine;
-	@XmlElement(required = true, name = "hidden")
+	@XmlElement(name = "hidden")
 	protected CT_OnOff Hidden;
-	@XmlElement(required = true, name = "uiPriority")
+	@XmlElement(name = "uiPriority")
 	protected CT_DecimalNumber UiPriority;
-	@XmlElement(required = true, name = "semiHidden")
+	@XmlElement(name = "semiHidden")
 	protected CT_OnOff SemiHidden;
-	@XmlElement(required = true, name = "unhideWhenUsed")
+	@XmlElement(name = "unhideWhenUsed")
 	protected CT_OnOff UnhideWhenUsed;
-	@XmlElement(required = true, name = "qFormat")
+	@XmlElement(name = "qFormat")
 	protected CT_OnOff QFormat;
-	@XmlElement(required = true, name = "locked")
+	@XmlElement(name = "locked")
 	protected CT_OnOff Locked;
-	@XmlElement(required = true, name = "personal")
+	@XmlElement(name = "personal")
 	protected CT_OnOff Personal;
-	@XmlElement(required = true, name = "personalCompose")
+	@XmlElement(name = "personalCompose")
 	protected CT_OnOff PersonalCompose;
-	@XmlElement(required = true, name = "personalReply")
+	@XmlElement(name = "personalReply")
 	protected CT_OnOff PersonalReply;
-	@XmlElement(required = true, name = "rsid")
+	@XmlElement(name = "rsid")
 	protected CT_LongHexNumber Rsid;
-	@XmlElement(required = true, name = "pPr")
+	@XmlElement(name = "pPr")
 	protected CT_PPrGeneral PPr;
-	@XmlElement(required = true, name = "rPr")
+	@XmlElement(name = "rPr")
 	protected CT_RPr RPr;
-	@XmlElement(required = true, name = "tblPr")
+	@XmlElement(name = "tblPr")
 	protected CT_TblPrBase TblPr;
-	@XmlElement(required = true, name = "trPr")
+	@XmlElement(name = "trPr")
 	protected CT_TrPr TrPr;
-	@XmlElement(required = true, name = "tcPr")
+	@XmlElement(name = "tcPr")
 	protected CT_TcPr TcPr;
-	@XmlElement(required = true, name = "tblStylePr")
+	@XmlElement(name = "tblStylePr")
 	protected List<CT_TblStylePr> TblStylePr;
 }
 
@@ -3930,17 +3930,17 @@ public class CT_LatentStyles {
 	protected ST_OnOff DefQFormatAttr;
 	@XmlAttribute(name = "count")
 	protected Integer CountAttr;
-	@XmlElement(required = true, name = "lsdException")
+	@XmlElement(name = "lsdException")
 	protected List<CT_LsdException> LsdException;
 }
 
 // CT_Styles ...
 public class CT_Styles {
-	@XmlElement(required = true, name = "docDefaults")
+	@XmlElement(name = "docDefaults")
 	protected CT_DocDefaults DocDefaults;
-	@XmlElement(required = true, name = "latentStyles")
+	@XmlElement(name = "latentStyles")
 	protected CT_LatentStyles LatentStyles;
-	@XmlElement(required = true, name = "style")
+	@XmlElement(name = "style")
 	protected List<CT_Style> Style;
 }
 
@@ -4004,45 +4004,45 @@ public class CT_FontRel extends CT_Rel  {
 public class CT_Font {
 	@XmlAttribute(name = "name", required = true)
 	protected String NameAttr;
-	@XmlElement(required = true, name = "altName")
+	@XmlElement(name = "altName")
 	protected CT_String AltName;
-	@XmlElement(required = true, name = "panose1")
+	@XmlElement(name = "panose1")
 	protected CT_Panose Panose1;
-	@XmlElement(required = true, name = "charset")
+	@XmlElement(name = "charset")
 	protected CT_Charset Charset;
-	@XmlElement(required = true, name = "family")
+	@XmlElement(name = "family")
 	protected CT_FontFamily Family;
-	@XmlElement(required = true, name = "notTrueType")
+	@XmlElement(name = "notTrueType")
 	protected CT_OnOff NotTrueType;
-	@XmlElement(required = true, name = "pitch")
+	@XmlElement(name = "pitch")
 	protected CT_Pitch Pitch;
-	@XmlElement(required = true, name = "sig")
+	@XmlElement(name = "sig")
 	protected CT_FontSig Sig;
-	@XmlElement(required = true, name = "embedRegular")
+	@XmlElement(name = "embedRegular")
 	protected CT_FontRel EmbedRegular;
-	@XmlElement(required = true, name = "embedBold")
+	@XmlElement(name = "embedBold")
 	protected CT_FontRel EmbedBold;
-	@XmlElement(required = true, name = "embedItalic")
+	@XmlElement(name = "embedItalic")
 	protected CT_FontRel EmbedItalic;
-	@XmlElement(required = true, name = "embedBoldItalic")
+	@XmlElement(name = "embedBoldItalic")
 	protected CT_FontRel EmbedBoldItalic;
 }
 
 // CT_FontsList ...
 public class CT_FontsList {
-	@XmlElement(required = true, name = "font")
+	@XmlElement(name = "font")
 	protected List<CT_Font> Font;
 }
 
 // CT_DivBdr ...
 public class CT_DivBdr {
-	@XmlElement(required = true, name = "top")
+	@XmlElement(name = "top")
 	protected CT_Border Top;
-	@XmlElement(required = true, name = "left")
+	@XmlElement(name = "left")
 	protected CT_Border Left;
-	@XmlElement(required = true, name = "bottom")
+	@XmlElement(name = "bottom")
 	protected CT_Border Bottom;
-	@XmlElement(required = true, name = "right")
+	@XmlElement(name = "right")
 	protected CT_Border Right;
 }
 
@@ -4050,9 +4050,9 @@ public class CT_DivBdr {
 public class CT_Div {
 	@XmlAttribute(name = "id", required = true)
 	protected Integer IdAttr;
-	@XmlElement(required = true, name = "blockQuote")
+	@XmlElement(name = "blockQuote")
 	protected CT_OnOff BlockQuote;
-	@XmlElement(required = true, name = "bodyDiv")
+	@XmlElement(name = "bodyDiv")
 	protected CT_OnOff BodyDiv;
 	@XmlElement(required = true, name = "marLeft")
 	protected CT_SignedTwipsMeasure MarLeft;
@@ -4062,16 +4062,16 @@ public class CT_Div {
 	protected CT_SignedTwipsMeasure MarTop;
 	@XmlElement(required = true, name = "marBottom")
 	protected CT_SignedTwipsMeasure MarBottom;
-	@XmlElement(required = true, name = "divBdr")
+	@XmlElement(name = "divBdr")
 	protected CT_DivBdr DivBdr;
-	@XmlElement(required = true, name = "divsChild")
+	@XmlElement(name = "divsChild")
 	protected List<CT_Divs> DivsChild;
 }
 
 // CT_Divs ...
 public class CT_Divs {
 	@XmlElement(required = true, name = "div")
-	protected CT_Div Div;
+	protected List<CT_Div> Div;
 }
 
 // EG_MathContent ...
@@ -4117,13 +4117,13 @@ public class EG_RunLevelElts {
 // CT_Body ...
 public class CT_Body {
 	protected List<EG_BlockLevelElts> EG_BlockLevelElts;
-	@XmlElement(required = true, name = "sectPr")
+	@XmlElement(name = "sectPr")
 	protected CT_SectPr SectPr;
 }
 
 // CT_Comments ...
 public class CT_Comments {
-	@XmlElement(required = true, name = "comment")
+	@XmlElement(name = "comment")
 	protected List<CT_Comment> Comment;
 }
 
@@ -4135,8 +4135,8 @@ public class Comments {
 
 // CT_Footnotes ...
 public class CT_Footnotes {
-	@XmlElement(required = true, name = "footnote")
-	protected CT_FtnEdn Footnote;
+	@XmlElement(name = "footnote")
+	protected List<CT_FtnEdn> Footnote;
 }
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -4147,8 +4147,8 @@ public class Footnotes {
 
 // CT_Endnotes ...
 public class CT_Endnotes {
-	@XmlElement(required = true, name = "endnote")
-	protected CT_FtnEdn Endnote;
+	@XmlElement(name = "endnote")
+	protected List<CT_FtnEdn> Endnote;
 }
 
 @XmlAccessorType(XmlAccessType.FIELD)
@@ -4259,25 +4259,25 @@ public class CT_DocPartName {
 public class CT_DocPartPr {
 	@XmlElement(required = true, name = "name")
 	protected CT_DocPartName Name;
-	@XmlElement(required = true, name = "style")
+	@XmlElement(name = "style")
 	protected CT_String Style;
-	@XmlElement(required = true, name = "category")
+	@XmlElement(name = "category")
 	protected CT_DocPartCategory Category;
-	@XmlElement(required = true, name = "types")
+	@XmlElement(name = "types")
 	protected CT_DocPartTypes Types;
-	@XmlElement(required = true, name = "behaviors")
+	@XmlElement(name = "behaviors")
 	protected CT_DocPartBehaviors Behaviors;
-	@XmlElement(required = true, name = "description")
+	@XmlElement(name = "description")
 	protected CT_String Description;
-	@XmlElement(required = true, name = "guid")
+	@XmlElement(name = "guid")
 	protected CT_Guid Guid;
 }
 
 // CT_DocPart ...
 public class CT_DocPart {
-	@XmlElement(required = true, name = "docPartPr")
+	@XmlElement(name = "docPartPr")
 	protected CT_DocPartPr DocPartPr;
-	@XmlElement(required = true, name = "docPartBody")
+	@XmlElement(name = "docPartBody")
 	protected CT_Body DocPartBody;
 }
 
@@ -4360,13 +4360,13 @@ public class CT_AutoCaptions {
 public class CT_Captions {
 	@XmlElement(required = true, name = "caption")
 	protected List<CT_Caption> Caption;
-	@XmlElement(required = true, name = "autoCaptions")
+	@XmlElement(name = "autoCaptions")
 	protected CT_AutoCaptions AutoCaptions;
 }
 
 // CT_DocumentBase ...
 public class CT_DocumentBase {
-	@XmlElement(required = true, name = "background")
+	@XmlElement(name = "background")
 	protected CT_Background Background;
 }
 
@@ -4374,13 +4374,13 @@ public class CT_DocumentBase {
 public class CT_Document extends CT_DocumentBase  {
 	@XmlAttribute(name = "conformance")
 	protected String ConformanceAttr;
-	@XmlElement(required = true, name = "body")
+	@XmlElement(name = "body")
 	protected CT_Body Body;
 }
 
 // CT_GlossaryDocument ...
 public class CT_GlossaryDocument extends CT_DocumentBase  {
-	@XmlElement(required = true, name = "docParts")
+	@XmlElement(name = "docParts")
 	protected CT_DocParts DocParts;
 }
 

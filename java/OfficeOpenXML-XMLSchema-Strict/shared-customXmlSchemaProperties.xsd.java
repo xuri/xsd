@@ -26,7 +26,7 @@ public class CT_Schema {
 
 // CT_SchemaLibrary ...
 public class CT_SchemaLibrary {
-	@XmlElement(required = true, name = "schema")
+	@XmlElement(name = "schema")
 	protected List<CT_Schema> Schema;
 }
 

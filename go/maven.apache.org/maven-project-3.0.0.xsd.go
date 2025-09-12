@@ -9,25 +9,25 @@ import (
 // Project ...
 type Project struct {
 	XMLName               xml.Name      `xml:"project"`
-	Extend                string        `xml:"extend,omitempty"`
+	Extend                *string       `xml:"extend"`
 	PomVersion            string        `xml:"pomVersion"`
 	Id                    string        `xml:"id"`
 	Name                  string        `xml:"name"`
-	GroupId               string        `xml:"groupId,omitempty"`
+	GroupId               *string       `xml:"groupId"`
 	CurrentVersion        string        `xml:"currentVersion"`
 	Organization          *Organization `xml:"organization"`
 	InceptionYear         string        `xml:"inceptionYear"`
-	Package               string        `xml:"package,omitempty"`
-	Logo                  string        `xml:"logo,omitempty"`
-	GumpRepositoryId      string        `xml:"gumpRepositoryId,omitempty"`
-	Description           string        `xml:"description,omitempty"`
+	Package               *string       `xml:"package"`
+	Logo                  *string       `xml:"logo"`
+	GumpRepositoryId      *string       `xml:"gumpRepositoryId"`
+	Description           *string       `xml:"description"`
 	ShortDescription      string        `xml:"shortDescription"`
-	Url                   string        `xml:"url,omitempty"`
-	IssueTrackingUrl      string        `xml:"issueTrackingUrl,omitempty"`
-	SiteAddress           string        `xml:"siteAddress,omitempty"`
-	SiteDirectory         string        `xml:"siteDirectory,omitempty"`
-	DistributionSite      string        `xml:"distributionSite,omitempty"`
-	DistributionDirectory string        `xml:"distributionDirectory,omitempty"`
+	Url                   *string       `xml:"url"`
+	IssueTrackingUrl      *string       `xml:"issueTrackingUrl"`
+	SiteAddress           *string       `xml:"siteAddress"`
+	SiteDirectory         *string       `xml:"siteDirectory"`
+	DistributionSite      *string       `xml:"distributionSite"`
+	DistributionDirectory *string       `xml:"distributionDirectory"`
 	Repository            *Repository   `xml:"repository,omitempty"`
 	Versions              *Versions     `xml:"versions,omitempty"`
 	Branches              *Branches     `xml:"branches,omitempty"`
@@ -108,16 +108,16 @@ type Url string
 type Repository struct {
 	XMLName             xml.Name `xml:"repository"`
 	Connection          string   `xml:"connection"`
-	DeveloperConnection string   `xml:"developerConnection,omitempty"`
-	Url                 string   `xml:"url,omitempty"`
+	DeveloperConnection *string  `xml:"developerConnection"`
+	Url                 *string  `xml:"url"`
 }
 
 // Organization ...
 type Organization struct {
 	XMLName xml.Name `xml:"organization"`
 	Name    string   `xml:"name"`
-	Url     string   `xml:"url,omitempty"`
-	Logo    string   `xml:"logo,omitempty"`
+	Url     *string  `xml:"url"`
+	Logo    *string  `xml:"logo"`
 }
 
 // Versions ...
@@ -161,7 +161,7 @@ type MailingList struct {
 	Name        string   `xml:"name"`
 	Subscribe   string   `xml:"subscribe"`
 	Unsubscribe string   `xml:"unsubscribe"`
-	Archive     string   `xml:"archive,omitempty"`
+	Archive     *string  `xml:"archive"`
 }
 
 // Subscribe ...
@@ -236,10 +236,10 @@ type Licenses struct {
 
 // License ...
 type License struct {
-	XMLName      xml.Name    `xml:"license"`
-	Name         string      `xml:"name,omitempty"`
-	Url          string      `xml:"url,omitempty"`
-	Distribution interface{} `xml:"distribution,omitempty"`
+	XMLName      xml.Name     `xml:"license"`
+	Name         *string      `xml:"name"`
+	Url          *string      `xml:"url"`
+	Distribution *interface{} `xml:"distribution"`
 }
 
 // Distribution ...
@@ -254,13 +254,13 @@ type Dependencies struct {
 // Dependency ...
 type Dependency struct {
 	XMLName    xml.Name    `xml:"dependency"`
-	Id         string      `xml:"id,omitempty"`
-	GroupId    string      `xml:"groupId,omitempty"`
-	ArtifactId string      `xml:"artifactId,omitempty"`
+	Id         *string     `xml:"id"`
+	GroupId    *string     `xml:"groupId"`
+	ArtifactId *string     `xml:"artifactId"`
 	Version    string      `xml:"version"`
-	Jar        string      `xml:"jar,omitempty"`
-	Type       string      `xml:"type,omitempty"`
-	Url        string      `xml:"url,omitempty"`
+	Jar        *string     `xml:"jar"`
+	Type       *string     `xml:"type"`
+	Url        *string     `xml:"url"`
 	Properties *Properties `xml:"properties,omitempty"`
 }
 
@@ -273,12 +273,12 @@ type Jar string
 // Build ...
 type Build struct {
 	XMLName                            xml.Name             `xml:"build"`
-	NagEmailAddress                    string               `xml:"nagEmailAddress,omitempty"`
-	SourceDirectory                    string               `xml:"sourceDirectory,omitempty"`
+	NagEmailAddress                    *string              `xml:"nagEmailAddress"`
+	SourceDirectory                    *string              `xml:"sourceDirectory"`
 	SourceModifications                *SourceModifications `xml:"sourceModifications,omitempty"`
-	UnitTestSourceDirectory            string               `xml:"unitTestSourceDirectory,omitempty"`
-	IntegrationUnitTestSourceDirectory string               `xml:"integrationUnitTestSourceDirectory,omitempty"`
-	AspectSourceDirectory              string               `xml:"aspectSourceDirectory,omitempty"`
+	UnitTestSourceDirectory            *string              `xml:"unitTestSourceDirectory"`
+	IntegrationUnitTestSourceDirectory *string              `xml:"integrationUnitTestSourceDirectory"`
+	AspectSourceDirectory              *string              `xml:"aspectSourceDirectory"`
 	UnitTest                           *UnitTest            `xml:"unitTest,omitempty"`
 	Resources                          *Resources           `xml:"resources,omitempty"`
 }
@@ -356,11 +356,11 @@ type Filtering bool
 // Resource ...
 type Resource struct {
 	XMLName    xml.Name    `xml:"resource"`
-	Directory  string      `xml:"directory,omitempty"`
-	TargetPath string      `xml:"targetPath,omitempty"`
+	Directory  *string     `xml:"directory"`
+	TargetPath *string     `xml:"targetPath"`
 	Includes   []*Includes `xml:"includes,omitempty"`
 	Excludes   []*Excludes `xml:"excludes,omitempty"`
-	Filtering  bool        `xml:"filtering,omitempty"`
+	Filtering  *bool       `xml:"filtering"`
 }
 
 // Reports ...
