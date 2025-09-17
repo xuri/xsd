@@ -18,7 +18,7 @@ type CTCharacteristic struct {
 	NameAttr       string   `xml:"name,attr"`
 	RelationAttr   string   `xml:"relation,attr"`
 	ValAttr        string   `xml:"val,attr"`
-	VocabularyAttr string   `xml:"vocabulary,attr,omitempty"`
+	VocabularyAttr *string  `xml:"vocabulary,attr"`
 }
 
 // STRelation ...

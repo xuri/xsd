@@ -122,7 +122,7 @@ type CTVariant struct {
 // CTVstream ...
 type CTVstream struct {
 	XMLName     xml.Name `xml:"CT_Vstream"`
-	VersionAttr string   `xml:"version,attr,omitempty"`
+	VersionAttr *string  `xml:"version,attr"`
 	Value       string   `xml:",chardata"`
 }
 

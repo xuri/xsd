@@ -149,7 +149,7 @@ export class CT_Variant {
 
 // CT_Vstream ...
 export class CT_Vstream {
-	VersionAttr: string | null;
+	VersionAttr?: string;
 	Value: Uint8Array;
 }
 

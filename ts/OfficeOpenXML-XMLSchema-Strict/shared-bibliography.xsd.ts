@@ -125,8 +125,8 @@ export type Sources = CT_Sources;
 
 // CT_Sources ...
 export class CT_Sources {
-	SelectedStyleAttr: string | null;
-	StyleNameAttr: string | null;
-	URIAttr: string | null;
+	SelectedStyleAttr?: string;
+	StyleNameAttr?: string;
+	URIAttr?: string;
 	Source?: Array<CT_SourceType>;
 }

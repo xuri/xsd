@@ -312,7 +312,7 @@ export class TextType extends BaseContentType  {
 
 // ContentType is The content type is a broad base type allowing any content.
 export class ContentType extends BaseContentType  {
-	OrientationAttr: string | null;
+	OrientationAttr?: string;
 }
 
 // Marker is The <marker> element is a primitive element to be used to mark or
@@ -379,12 +379,12 @@ export class PropertyType extends InlineType  {
 	DateGroup: DateGroup;
 	ValueGroup: ValueGroup;
 	ReferenceGroup: ReferenceGroup;
-	TypeAttr: string | null;
+	TypeAttr?: string;
 }
 
 // SetType is A set can contain 0 or more sets.
 export class SetType extends BaseBlockType  {
-	TypeAttr: string | null;
+	TypeAttr?: string;
 	Property: Array<PropertyType>;
 	Set: Array<SetType>;
 }
@@ -394,7 +394,7 @@ export class SetType extends BaseBlockType  {
 //                         When a layout is specified, use <column> elements
 //                         within each <tocItem> to indicate specific columns.
 export class TocType extends BaseBlockType  {
-	GenerateAttr: boolean | null;
+	GenerateAttr?: boolean;
 	HeadingStructure: HeadingStructure;
 	TocItem: Array<TocItemType>;
 	Layout: Array<LayoutType>;
@@ -512,7 +512,7 @@ export class NoteType extends ContentType  {
 export class AppendixType extends BaseBlockType  {
 	DescriptionGroup: DescriptionGroup;
 	LinkGroup: LinkGroup;
-	OrientationAttr: string | null;
+	OrientationAttr?: string;
 	NumStructure: NumStructure;
 	HeadingStructure: HeadingStructure;
 	TocStructure: TocStructure;
@@ -582,7 +582,7 @@ export class DateType {
 //             Use the @identifier attribute to establish the referencing context
 //             of the quoted text.
 export class QuotedTextType extends InlineType  {
-	OriginAttr: string | null;
+	OriginAttr?: string;
 }
 
 // QuotedContentType is A quotedContentType is used for an extraction of potentially structured
@@ -593,7 +593,7 @@ export class QuotedTextType extends InlineType  {
 //             Use the @identifier attribute to establish the referencing context
 //             of the quoted structure
 export class QuotedContentType extends ContentType  {
-	OriginAttr: string | null;
+	OriginAttr?: string;
 }
 
 // NoteStructure ...
@@ -843,7 +843,7 @@ export type QuotedContent = QuotedContentType;
 //                      are treated as rows when found directly within a layout
 //                      structure.
 export class LayoutType extends BaseBlockType  {
-	OrientationAttr: string | null;
+	OrientationAttr?: string;
 	NoteStructure: Array<NoteStructure>;
 	Header: Array<RowType>;
 	Row: Array<RowType>;
@@ -876,7 +876,7 @@ export class BrType extends MarkerType  {
 //             image is to be inserted.
 export class ImgType extends MarkerType  {
 	LinkGroup: LinkGroup;
-	OrientationAttr: string | null;
+	OrientationAttr?: string;
 }
 
 // Layout is A <layout> element is used to denote an area of text intended to

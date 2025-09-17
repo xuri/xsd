@@ -35,7 +35,7 @@ type STUcharHexNumber string
 // CTCharset ...
 type CTCharset struct {
 	XMLName          xml.Name `xml:"CT_Charset"`
-	CharacterSetAttr string   `xml:"characterSet,attr,omitempty"`
+	CharacterSetAttr *string  `xml:"characterSet,attr"`
 }
 
 // STDecimalNumberOrPercent ...
@@ -181,9 +181,9 @@ type STHexColor struct {
 type CTColor struct {
 	XMLName        xml.Name    `xml:"CT_Color"`
 	ValAttr        *STHexColor `xml:"val,attr"`
-	ThemeColorAttr string      `xml:"themeColor,attr,omitempty"`
-	ThemeTintAttr  string      `xml:"themeTint,attr,omitempty"`
-	ThemeShadeAttr string      `xml:"themeShade,attr,omitempty"`
+	ThemeColorAttr *string     `xml:"themeColor,attr"`
+	ThemeTintAttr  *string     `xml:"themeTint,attr"`
+	ThemeShadeAttr *string     `xml:"themeShade,attr"`
 }
 
 // CTLang ...
@@ -195,7 +195,7 @@ type CTLang struct {
 // CTGuid ...
 type CTGuid struct {
 	XMLName xml.Name `xml:"CT_Guid"`
-	ValAttr string   `xml:"val,attr,omitempty"`
+	ValAttr *string  `xml:"val,attr"`
 }
 
 // STUnderline ...
@@ -204,11 +204,11 @@ type STUnderline string
 // CTUnderline ...
 type CTUnderline struct {
 	XMLName        xml.Name    `xml:"CT_Underline"`
-	ValAttr        string      `xml:"val,attr,omitempty"`
+	ValAttr        *string     `xml:"val,attr"`
 	ColorAttr      *STHexColor `xml:"color,attr,omitempty"`
-	ThemeColorAttr string      `xml:"themeColor,attr,omitempty"`
-	ThemeTintAttr  string      `xml:"themeTint,attr,omitempty"`
-	ThemeShadeAttr string      `xml:"themeShade,attr,omitempty"`
+	ThemeColorAttr *string     `xml:"themeColor,attr"`
+	ThemeTintAttr  *string     `xml:"themeTint,attr"`
+	ThemeShadeAttr *string     `xml:"themeShade,attr"`
 }
 
 // STTextEffect ...
@@ -228,11 +228,11 @@ type CTBorder struct {
 	XMLName        xml.Name    `xml:"CT_Border"`
 	ValAttr        string      `xml:"val,attr"`
 	ColorAttr      *STHexColor `xml:"color,attr,omitempty"`
-	ThemeColorAttr string      `xml:"themeColor,attr,omitempty"`
-	ThemeTintAttr  string      `xml:"themeTint,attr,omitempty"`
-	ThemeShadeAttr string      `xml:"themeShade,attr,omitempty"`
-	SzAttr         uint64      `xml:"sz,attr,omitempty"`
-	SpaceAttr      uint64      `xml:"space,attr,omitempty"`
+	ThemeColorAttr *string     `xml:"themeColor,attr"`
+	ThemeTintAttr  *string     `xml:"themeTint,attr"`
+	ThemeShadeAttr *string     `xml:"themeShade,attr"`
+	SzAttr         *uint64     `xml:"sz,attr"`
+	SpaceAttr      *uint64     `xml:"space,attr"`
 	ShadowAttr     *STOnOff    `xml:"shadow,attr,omitempty"`
 	FrameAttr      *STOnOff    `xml:"frame,attr,omitempty"`
 }
@@ -245,13 +245,13 @@ type CTShd struct {
 	XMLName            xml.Name    `xml:"CT_Shd"`
 	ValAttr            string      `xml:"val,attr"`
 	ColorAttr          *STHexColor `xml:"color,attr,omitempty"`
-	ThemeColorAttr     string      `xml:"themeColor,attr,omitempty"`
-	ThemeTintAttr      string      `xml:"themeTint,attr,omitempty"`
-	ThemeShadeAttr     string      `xml:"themeShade,attr,omitempty"`
+	ThemeColorAttr     *string     `xml:"themeColor,attr"`
+	ThemeTintAttr      *string     `xml:"themeTint,attr"`
+	ThemeShadeAttr     *string     `xml:"themeShade,attr"`
 	FillAttr           *STHexColor `xml:"fill,attr,omitempty"`
-	ThemeFillAttr      string      `xml:"themeFill,attr,omitempty"`
-	ThemeFillTintAttr  string      `xml:"themeFillTint,attr,omitempty"`
-	ThemeFillShadeAttr string      `xml:"themeFillShade,attr,omitempty"`
+	ThemeFillAttr      *string     `xml:"themeFill,attr"`
+	ThemeFillTintAttr  *string     `xml:"themeFillTint,attr"`
+	ThemeFillShadeAttr *string     `xml:"themeFillShade,attr"`
 }
 
 // CTVerticalAlignRun ...
@@ -264,7 +264,7 @@ type CTVerticalAlignRun struct {
 type CTFitText struct {
 	XMLName xml.Name        `xml:"CT_FitText"`
 	ValAttr *STTwipsMeasure `xml:"val,attr"`
-	IdAttr  int             `xml:"id,attr,omitempty"`
+	IdAttr  *int            `xml:"id,attr"`
 }
 
 // STEm ...
@@ -279,9 +279,9 @@ type CTEm struct {
 // CTLanguage ...
 type CTLanguage struct {
 	XMLName      xml.Name `xml:"CT_Language"`
-	ValAttr      string   `xml:"val,attr,omitempty"`
-	EastAsiaAttr string   `xml:"eastAsia,attr,omitempty"`
-	BidiAttr     string   `xml:"bidi,attr,omitempty"`
+	ValAttr      *string  `xml:"val,attr"`
+	EastAsiaAttr *string  `xml:"eastAsia,attr"`
+	BidiAttr     *string  `xml:"bidi,attr"`
 }
 
 // STCombineBrackets ...
@@ -290,9 +290,9 @@ type STCombineBrackets string
 // CTEastAsianLayout ...
 type CTEastAsianLayout struct {
 	XMLName             xml.Name `xml:"CT_EastAsianLayout"`
-	IdAttr              int      `xml:"id,attr,omitempty"`
+	IdAttr              *int     `xml:"id,attr"`
 	CombineAttr         *STOnOff `xml:"combine,attr,omitempty"`
-	CombineBracketsAttr string   `xml:"combineBrackets,attr,omitempty"`
+	CombineBracketsAttr *string  `xml:"combineBrackets,attr"`
 	VertAttr            *STOnOff `xml:"vert,attr,omitempty"`
 	VertCompressAttr    *STOnOff `xml:"vertCompress,attr,omitempty"`
 }
@@ -315,20 +315,20 @@ type STDropCap string
 // CTFramePr ...
 type CTFramePr struct {
 	XMLName        xml.Name              `xml:"CT_FramePr"`
-	DropCapAttr    string                `xml:"dropCap,attr,omitempty"`
-	LinesAttr      int                   `xml:"lines,attr,omitempty"`
+	DropCapAttr    *string               `xml:"dropCap,attr"`
+	LinesAttr      *int                  `xml:"lines,attr"`
 	WAttr          *STTwipsMeasure       `xml:"w,attr,omitempty"`
 	HAttr          *STTwipsMeasure       `xml:"h,attr,omitempty"`
 	VSpaceAttr     *STTwipsMeasure       `xml:"vSpace,attr,omitempty"`
 	HSpaceAttr     *STTwipsMeasure       `xml:"hSpace,attr,omitempty"`
-	WrapAttr       string                `xml:"wrap,attr,omitempty"`
-	HAnchorAttr    string                `xml:"hAnchor,attr,omitempty"`
-	VAnchorAttr    string                `xml:"vAnchor,attr,omitempty"`
+	WrapAttr       *string               `xml:"wrap,attr"`
+	HAnchorAttr    *string               `xml:"hAnchor,attr"`
+	VAnchorAttr    *string               `xml:"vAnchor,attr"`
 	XAttr          *STSignedTwipsMeasure `xml:"x,attr,omitempty"`
-	XAlignAttr     string                `xml:"xAlign,attr,omitempty"`
+	XAlignAttr     *string               `xml:"xAlign,attr"`
 	YAttr          *STSignedTwipsMeasure `xml:"y,attr,omitempty"`
-	YAlignAttr     string                `xml:"yAlign,attr,omitempty"`
-	HRuleAttr      string                `xml:"hRule,attr,omitempty"`
+	YAlignAttr     *string               `xml:"yAlign,attr"`
+	HRuleAttr      *string               `xml:"hRule,attr"`
 	AnchorLockAttr *STOnOff              `xml:"anchorLock,attr,omitempty"`
 }
 
@@ -342,7 +342,7 @@ type STTabTlc string
 type CTTabStop struct {
 	XMLName    xml.Name              `xml:"CT_TabStop"`
 	ValAttr    string                `xml:"val,attr"`
-	LeaderAttr string                `xml:"leader,attr,omitempty"`
+	LeaderAttr *string               `xml:"leader,attr"`
 	PosAttr    *STSignedTwipsMeasure `xml:"pos,attr"`
 }
 
@@ -353,26 +353,26 @@ type STLineSpacingRule string
 type CTSpacing struct {
 	XMLName               xml.Name              `xml:"CT_Spacing"`
 	BeforeAttr            *STTwipsMeasure       `xml:"before,attr,omitempty"`
-	BeforeLinesAttr       int                   `xml:"beforeLines,attr,omitempty"`
+	BeforeLinesAttr       *int                  `xml:"beforeLines,attr"`
 	BeforeAutospacingAttr *STOnOff              `xml:"beforeAutospacing,attr,omitempty"`
 	AfterAttr             *STTwipsMeasure       `xml:"after,attr,omitempty"`
-	AfterLinesAttr        int                   `xml:"afterLines,attr,omitempty"`
+	AfterLinesAttr        *int                  `xml:"afterLines,attr"`
 	AfterAutospacingAttr  *STOnOff              `xml:"afterAutospacing,attr,omitempty"`
 	LineAttr              *STSignedTwipsMeasure `xml:"line,attr,omitempty"`
-	LineRuleAttr          string                `xml:"lineRule,attr,omitempty"`
+	LineRuleAttr          *string               `xml:"lineRule,attr"`
 }
 
 // CTInd ...
 type CTInd struct {
 	XMLName            xml.Name              `xml:"CT_Ind"`
 	StartAttr          *STSignedTwipsMeasure `xml:"start,attr,omitempty"`
-	StartCharsAttr     int                   `xml:"startChars,attr,omitempty"`
+	StartCharsAttr     *int                  `xml:"startChars,attr"`
 	EndAttr            *STSignedTwipsMeasure `xml:"end,attr,omitempty"`
-	EndCharsAttr       int                   `xml:"endChars,attr,omitempty"`
+	EndCharsAttr       *int                  `xml:"endChars,attr"`
 	HangingAttr        *STTwipsMeasure       `xml:"hanging,attr,omitempty"`
-	HangingCharsAttr   int                   `xml:"hangingChars,attr,omitempty"`
+	HangingCharsAttr   *int                  `xml:"hangingChars,attr"`
 	FirstLineAttr      *STTwipsMeasure       `xml:"firstLine,attr,omitempty"`
-	FirstLineCharsAttr int                   `xml:"firstLineChars,attr,omitempty"`
+	FirstLineCharsAttr *int                  `xml:"firstLineChars,attr"`
 }
 
 // STJc ...
@@ -408,7 +408,7 @@ type STZoom string
 // CTZoom ...
 type CTZoom struct {
 	XMLName     xml.Name                  `xml:"CT_Zoom"`
-	ValAttr     string                    `xml:"val,attr,omitempty"`
+	ValAttr     *string                   `xml:"val,attr"`
 	PercentAttr *STDecimalNumberOrPercent `xml:"percent,attr"`
 }
 
@@ -429,8 +429,8 @@ type STProof string
 // CTProof ...
 type CTProof struct {
 	XMLName      xml.Name `xml:"CT_Proof"`
-	SpellingAttr string   `xml:"spelling,attr,omitempty"`
-	GrammarAttr  string   `xml:"grammar,attr,omitempty"`
+	SpellingAttr *string  `xml:"spelling,attr"`
+	GrammarAttr  *string  `xml:"grammar,attr"`
 }
 
 // STDocType ...
@@ -458,7 +458,7 @@ type AGPassword struct {
 type CTDocProtect struct {
 	XMLName         xml.Name `xml:"CT_DocProtect"`
 	AGPassword      *AGPassword
-	EditAttr        string   `xml:"edit,attr,omitempty"`
+	EditAttr        *string  `xml:"edit,attr"`
 	FormattingAttr  *STOnOff `xml:"formatting,attr,omitempty"`
 	EnforcementAttr *STOnOff `xml:"enforcement,attr,omitempty"`
 }
@@ -550,37 +550,37 @@ type CTMarkup struct {
 type CTTrackChange struct {
 	XMLName    xml.Name `xml:"CT_TrackChange"`
 	AuthorAttr string   `xml:"author,attr"`
-	DateAttr   string   `xml:"date,attr,omitempty"`
+	DateAttr   *string  `xml:"date,attr"`
 	*CTMarkup
 }
 
 // CTCellMergeTrackChange ...
 type CTCellMergeTrackChange struct {
 	XMLName        xml.Name `xml:"CT_CellMergeTrackChange"`
-	VMergeAttr     string   `xml:"vMerge,attr,omitempty"`
-	VMergeOrigAttr string   `xml:"vMergeOrig,attr,omitempty"`
+	VMergeAttr     *string  `xml:"vMerge,attr"`
+	VMergeOrigAttr *string  `xml:"vMergeOrig,attr"`
 	*CTTrackChange
 }
 
 // CTTrackChangeRange ...
 type CTTrackChangeRange struct {
 	XMLName                  xml.Name `xml:"CT_TrackChangeRange"`
-	DisplacedByCustomXmlAttr string   `xml:"displacedByCustomXml,attr,omitempty"`
+	DisplacedByCustomXmlAttr *string  `xml:"displacedByCustomXml,attr"`
 	*CTTrackChange
 }
 
 // CTMarkupRange ...
 type CTMarkupRange struct {
 	XMLName                  xml.Name `xml:"CT_MarkupRange"`
-	DisplacedByCustomXmlAttr string   `xml:"displacedByCustomXml,attr,omitempty"`
+	DisplacedByCustomXmlAttr *string  `xml:"displacedByCustomXml,attr"`
 	*CTMarkup
 }
 
 // CTBookmarkRange ...
 type CTBookmarkRange struct {
 	XMLName      xml.Name `xml:"CT_BookmarkRange"`
-	ColFirstAttr int      `xml:"colFirst,attr,omitempty"`
-	ColLastAttr  int      `xml:"colLast,attr,omitempty"`
+	ColFirstAttr *int     `xml:"colFirst,attr"`
+	ColLastAttr  *int     `xml:"colLast,attr"`
 	*CTMarkupRange
 }
 
@@ -602,7 +602,7 @@ type CTMoveBookmark struct {
 // CTComment ...
 type CTComment struct {
 	XMLName          xml.Name `xml:"CT_Comment"`
-	InitialsAttr     string   `xml:"initials,attr,omitempty"`
+	InitialsAttr     *string  `xml:"initials,attr"`
 	EGBlockLevelElts []*EGBlockLevelElts
 	*CTTrackChange
 }
@@ -821,18 +821,18 @@ type CTPPrGeneral struct {
 // CTControl ...
 type CTControl struct {
 	XMLName     xml.Name `xml:"CT_Control"`
-	NameAttr    string   `xml:"name,attr,omitempty"`
-	ShapeidAttr string   `xml:"shapeid,attr,omitempty"`
-	RIdAttr     string   `xml:"r:id,attr,omitempty"`
+	NameAttr    *string  `xml:"name,attr"`
+	ShapeidAttr *string  `xml:"shapeid,attr"`
+	RIdAttr     *string  `xml:"r:id,attr"`
 }
 
 // CTBackground ...
 type CTBackground struct {
 	XMLName        xml.Name    `xml:"CT_Background"`
 	ColorAttr      *STHexColor `xml:"color,attr,omitempty"`
-	ThemeColorAttr string      `xml:"themeColor,attr,omitempty"`
-	ThemeTintAttr  string      `xml:"themeTint,attr,omitempty"`
-	ThemeShadeAttr string      `xml:"themeShade,attr,omitempty"`
+	ThemeColorAttr *string     `xml:"themeColor,attr"`
+	ThemeTintAttr  *string     `xml:"themeTint,attr"`
+	ThemeShadeAttr *string     `xml:"themeShade,attr"`
 	Drawing        *CTDrawing  `xml:"drawing,omitempty"`
 }
 
@@ -857,11 +857,11 @@ type CTObject struct {
 // CTObjectEmbed ...
 type CTObjectEmbed struct {
 	XMLName        xml.Name `xml:"CT_ObjectEmbed"`
-	DrawAspectAttr string   `xml:"drawAspect,attr,omitempty"`
+	DrawAspectAttr *string  `xml:"drawAspect,attr"`
 	RIdAttr        string   `xml:"r:id,attr"`
-	ProgIdAttr     string   `xml:"progId,attr,omitempty"`
-	ShapeIdAttr    string   `xml:"shapeId,attr,omitempty"`
-	FieldCodesAttr string   `xml:"fieldCodes,attr,omitempty"`
+	ProgIdAttr     *string  `xml:"progId,attr"`
+	ShapeIdAttr    *string  `xml:"shapeId,attr"`
+	FieldCodesAttr *string  `xml:"fieldCodes,attr"`
 }
 
 // STObjectDrawAspect ...
@@ -921,7 +921,7 @@ type CTFFTextType struct {
 // CTFFName ...
 type CTFFName struct {
 	XMLName xml.Name `xml:"CT_FFName"`
-	ValAttr string   `xml:"val,attr,omitempty"`
+	ValAttr *string  `xml:"val,attr"`
 }
 
 // CTFldChar ...
@@ -936,12 +936,12 @@ type CTFldChar struct {
 // CTHyperlink ...
 type CTHyperlink struct {
 	XMLName         xml.Name `xml:"CT_Hyperlink"`
-	TgtFrameAttr    string   `xml:"tgtFrame,attr,omitempty"`
-	TooltipAttr     string   `xml:"tooltip,attr,omitempty"`
-	DocLocationAttr string   `xml:"docLocation,attr,omitempty"`
+	TgtFrameAttr    *string  `xml:"tgtFrame,attr"`
+	TooltipAttr     *string  `xml:"tooltip,attr"`
+	DocLocationAttr *string  `xml:"docLocation,attr"`
 	HistoryAttr     *STOnOff `xml:"history,attr,omitempty"`
-	AnchorAttr      string   `xml:"anchor,attr,omitempty"`
-	RIdAttr         string   `xml:"r:id,attr,omitempty"`
+	AnchorAttr      *string  `xml:"anchor,attr"`
+	RIdAttr         *string  `xml:"r:id,attr"`
 	EGPContent      []*EGPContent
 }
 
@@ -965,15 +965,15 @@ type CTFFData struct {
 // CTFFHelpText ...
 type CTFFHelpText struct {
 	XMLName  xml.Name `xml:"CT_FFHelpText"`
-	TypeAttr string   `xml:"type,attr,omitempty"`
-	ValAttr  string   `xml:"val,attr,omitempty"`
+	TypeAttr *string  `xml:"type,attr"`
+	ValAttr  *string  `xml:"val,attr"`
 }
 
 // CTFFStatusText ...
 type CTFFStatusText struct {
 	XMLName  xml.Name `xml:"CT_FFStatusText"`
-	TypeAttr string   `xml:"type,attr,omitempty"`
-	ValAttr  string   `xml:"val,attr,omitempty"`
+	TypeAttr *string  `xml:"type,attr"`
+	ValAttr  *string  `xml:"val,attr"`
 }
 
 // CTFFCheckBox ...
@@ -1008,14 +1008,14 @@ type STSectionMark string
 // CTSectType ...
 type CTSectType struct {
 	XMLName xml.Name `xml:"CT_SectType"`
-	ValAttr string   `xml:"val,attr,omitempty"`
+	ValAttr *string  `xml:"val,attr"`
 }
 
 // CTPaperSource ...
 type CTPaperSource struct {
 	XMLName   xml.Name `xml:"CT_PaperSource"`
-	FirstAttr int      `xml:"first,attr,omitempty"`
-	OtherAttr int      `xml:"other,attr,omitempty"`
+	FirstAttr *int     `xml:"first,attr"`
+	OtherAttr *int     `xml:"other,attr"`
 }
 
 // STNumberFormat ...
@@ -1029,8 +1029,8 @@ type CTPageSz struct {
 	XMLName    xml.Name        `xml:"CT_PageSz"`
 	WAttr      *STTwipsMeasure `xml:"w,attr,omitempty"`
 	HAttr      *STTwipsMeasure `xml:"h,attr,omitempty"`
-	OrientAttr string          `xml:"orient,attr,omitempty"`
-	CodeAttr   int             `xml:"code,attr,omitempty"`
+	OrientAttr *string         `xml:"orient,attr"`
+	CodeAttr   *int            `xml:"code,attr"`
 }
 
 // CTPageMar ...
@@ -1057,9 +1057,9 @@ type STPageBorderOffset string
 // CTPageBorders ...
 type CTPageBorders struct {
 	XMLName        xml.Name            `xml:"CT_PageBorders"`
-	ZOrderAttr     string              `xml:"zOrder,attr,omitempty"`
-	DisplayAttr    string              `xml:"display,attr,omitempty"`
-	OffsetFromAttr string              `xml:"offsetFrom,attr,omitempty"`
+	ZOrderAttr     *string             `xml:"zOrder,attr"`
+	DisplayAttr    *string             `xml:"display,attr"`
+	OffsetFromAttr *string             `xml:"offsetFrom,attr"`
 	Top            *CTTopPageBorder    `xml:"top,omitempty"`
 	Left           *CTPageBorder       `xml:"left,omitempty"`
 	Bottom         *CTBottomPageBorder `xml:"bottom,omitempty"`
@@ -1069,23 +1069,23 @@ type CTPageBorders struct {
 // CTPageBorder ...
 type CTPageBorder struct {
 	XMLName xml.Name `xml:"CT_PageBorder"`
-	RIdAttr string   `xml:"r:id,attr,omitempty"`
+	RIdAttr *string  `xml:"r:id,attr"`
 	*CTBorder
 }
 
 // CTBottomPageBorder ...
 type CTBottomPageBorder struct {
 	XMLName          xml.Name `xml:"CT_BottomPageBorder"`
-	RBottomLeftAttr  string   `xml:"r:bottomLeft,attr,omitempty"`
-	RBottomRightAttr string   `xml:"r:bottomRight,attr,omitempty"`
+	RBottomLeftAttr  *string  `xml:"r:bottomLeft,attr"`
+	RBottomRightAttr *string  `xml:"r:bottomRight,attr"`
 	*CTPageBorder
 }
 
 // CTTopPageBorder ...
 type CTTopPageBorder struct {
 	XMLName       xml.Name `xml:"CT_TopPageBorder"`
-	RTopLeftAttr  string   `xml:"r:topLeft,attr,omitempty"`
-	RTopRightAttr string   `xml:"r:topRight,attr,omitempty"`
+	RTopLeftAttr  *string  `xml:"r:topLeft,attr"`
+	RTopRightAttr *string  `xml:"r:topRight,attr"`
 	*CTPageBorder
 }
 
@@ -1098,19 +1098,19 @@ type STLineNumberRestart string
 // CTLineNumber ...
 type CTLineNumber struct {
 	XMLName      xml.Name        `xml:"CT_LineNumber"`
-	CountByAttr  int             `xml:"countBy,attr,omitempty"`
-	StartAttr    int             `xml:"start,attr,omitempty"`
+	CountByAttr  *int            `xml:"countBy,attr"`
+	StartAttr    *int            `xml:"start,attr"`
 	DistanceAttr *STTwipsMeasure `xml:"distance,attr,omitempty"`
-	RestartAttr  string          `xml:"restart,attr,omitempty"`
+	RestartAttr  *string         `xml:"restart,attr"`
 }
 
 // CTPageNumber ...
 type CTPageNumber struct {
 	XMLName       xml.Name `xml:"CT_PageNumber"`
-	FmtAttr       string   `xml:"fmt,attr,omitempty"`
-	StartAttr     int      `xml:"start,attr,omitempty"`
-	ChapStyleAttr int      `xml:"chapStyle,attr,omitempty"`
-	ChapSepAttr   string   `xml:"chapSep,attr,omitempty"`
+	FmtAttr       *string  `xml:"fmt,attr"`
+	StartAttr     *int     `xml:"start,attr"`
+	ChapStyleAttr *int     `xml:"chapStyle,attr"`
+	ChapSepAttr   *string  `xml:"chapSep,attr"`
 }
 
 // CTColumn ...
@@ -1125,7 +1125,7 @@ type CTColumns struct {
 	XMLName        xml.Name        `xml:"CT_Columns"`
 	EqualWidthAttr *STOnOff        `xml:"equalWidth,attr,omitempty"`
 	SpaceAttr      *STTwipsMeasure `xml:"space,attr,omitempty"`
-	NumAttr        int             `xml:"num,attr,omitempty"`
+	NumAttr        *int            `xml:"num,attr"`
 	SepAttr        *STOnOff        `xml:"sep,attr,omitempty"`
 	Col            []*CTColumn     `xml:"col"`
 }
@@ -1145,9 +1145,9 @@ type STDocGrid string
 // CTDocGrid ...
 type CTDocGrid struct {
 	XMLName       xml.Name `xml:"CT_DocGrid"`
-	TypeAttr      string   `xml:"type,attr,omitempty"`
-	LinePitchAttr int      `xml:"linePitch,attr,omitempty"`
-	CharSpaceAttr int      `xml:"charSpace,attr,omitempty"`
+	TypeAttr      *string  `xml:"type,attr"`
+	LinePitchAttr *int     `xml:"linePitch,attr"`
+	CharSpaceAttr *int     `xml:"charSpace,attr"`
 }
 
 // STHdrFtr ...
@@ -1234,8 +1234,8 @@ type STBrClear string
 // CTBr ...
 type CTBr struct {
 	XMLName   xml.Name `xml:"CT_Br"`
-	TypeAttr  string   `xml:"type,attr,omitempty"`
-	ClearAttr string   `xml:"clear,attr,omitempty"`
+	TypeAttr  *string  `xml:"type,attr"`
+	ClearAttr *string  `xml:"clear,attr"`
 }
 
 // STPTabAlignment ...
@@ -1258,8 +1258,8 @@ type CTPTab struct {
 // CTSym ...
 type CTSym struct {
 	XMLName  xml.Name `xml:"CT_Sym"`
-	FontAttr string   `xml:"font,attr,omitempty"`
-	CharAttr string   `xml:"char,attr,omitempty"`
+	FontAttr *string  `xml:"font,attr"`
+	CharAttr *string  `xml:"char,attr"`
 }
 
 // STProofErr ...
@@ -1278,16 +1278,16 @@ type STEdGrp string
 type CTPerm struct {
 	XMLName                  xml.Name `xml:"CT_Perm"`
 	IdAttr                   string   `xml:"id,attr"`
-	DisplacedByCustomXmlAttr string   `xml:"displacedByCustomXml,attr,omitempty"`
+	DisplacedByCustomXmlAttr *string  `xml:"displacedByCustomXml,attr"`
 }
 
 // CTPermStart ...
 type CTPermStart struct {
 	XMLName      xml.Name `xml:"CT_PermStart"`
-	EdGrpAttr    string   `xml:"edGrp,attr,omitempty"`
-	EdAttr       string   `xml:"ed,attr,omitempty"`
-	ColFirstAttr int      `xml:"colFirst,attr,omitempty"`
-	ColLastAttr  int      `xml:"colLast,attr,omitempty"`
+	EdGrpAttr    *string  `xml:"edGrp,attr"`
+	EdAttr       *string  `xml:"ed,attr"`
+	ColFirstAttr *int     `xml:"colFirst,attr"`
+	ColLastAttr  *int     `xml:"colLast,attr"`
 	*CTPerm
 }
 
@@ -1338,9 +1338,9 @@ type EGRunInnerContent struct {
 // CTR ...
 type CTR struct {
 	XMLName           xml.Name `xml:"CT_R"`
-	RsidRPrAttr       string   `xml:"rsidRPr,attr,omitempty"`
-	RsidDelAttr       string   `xml:"rsidDel,attr,omitempty"`
-	RsidRAttr         string   `xml:"rsidR,attr,omitempty"`
+	RsidRPrAttr       *string  `xml:"rsidRPr,attr"`
+	RsidDelAttr       *string  `xml:"rsidDel,attr"`
+	RsidRAttr         *string  `xml:"rsidR,attr"`
 	EGRPr             *EGRPr
 	EGRunInnerContent []*EGRunInnerContent
 }
@@ -1354,15 +1354,15 @@ type STTheme string
 // CTFonts ...
 type CTFonts struct {
 	XMLName           xml.Name `xml:"CT_Fonts"`
-	HintAttr          string   `xml:"hint,attr,omitempty"`
-	AsciiAttr         string   `xml:"ascii,attr,omitempty"`
-	HAnsiAttr         string   `xml:"hAnsi,attr,omitempty"`
-	EastAsiaAttr      string   `xml:"eastAsia,attr,omitempty"`
-	CsAttr            string   `xml:"cs,attr,omitempty"`
-	AsciiThemeAttr    string   `xml:"asciiTheme,attr,omitempty"`
-	HAnsiThemeAttr    string   `xml:"hAnsiTheme,attr,omitempty"`
-	EastAsiaThemeAttr string   `xml:"eastAsiaTheme,attr,omitempty"`
-	CsthemeAttr       string   `xml:"cstheme,attr,omitempty"`
+	HintAttr          *string  `xml:"hint,attr"`
+	AsciiAttr         *string  `xml:"ascii,attr"`
+	HAnsiAttr         *string  `xml:"hAnsi,attr"`
+	EastAsiaAttr      *string  `xml:"eastAsia,attr"`
+	CsAttr            *string  `xml:"cs,attr"`
+	AsciiThemeAttr    *string  `xml:"asciiTheme,attr"`
+	HAnsiThemeAttr    *string  `xml:"hAnsiTheme,attr"`
+	EastAsiaThemeAttr *string  `xml:"eastAsiaTheme,attr"`
+	CsthemeAttr       *string  `xml:"cstheme,attr"`
 }
 
 // EGRPrBase ...
@@ -1484,7 +1484,7 @@ type EGParaRPrTrackChanges struct {
 // CTAltChunk ...
 type CTAltChunk struct {
 	XMLName    xml.Name      `xml:"CT_AltChunk"`
-	RIdAttr    string        `xml:"r:id,attr,omitempty"`
+	RIdAttr    *string       `xml:"r:id,attr"`
 	AltChunkPr *CTAltChunkPr `xml:"altChunkPr,omitempty"`
 }
 
@@ -1541,14 +1541,14 @@ type STLock string
 // CTLock ...
 type CTLock struct {
 	XMLName xml.Name `xml:"CT_Lock"`
-	ValAttr string   `xml:"val,attr,omitempty"`
+	ValAttr *string  `xml:"val,attr"`
 }
 
 // CTSdtListItem ...
 type CTSdtListItem struct {
 	XMLName         xml.Name `xml:"CT_SdtListItem"`
-	DisplayTextAttr string   `xml:"displayText,attr,omitempty"`
-	ValueAttr       string   `xml:"value,attr,omitempty"`
+	DisplayTextAttr *string  `xml:"displayText,attr"`
+	ValueAttr       *string  `xml:"value,attr"`
 }
 
 // STSdtDateMappingType ...
@@ -1557,19 +1557,19 @@ type STSdtDateMappingType string
 // CTSdtDateMappingType ...
 type CTSdtDateMappingType struct {
 	XMLName xml.Name `xml:"CT_SdtDateMappingType"`
-	ValAttr string   `xml:"val,attr,omitempty"`
+	ValAttr *string  `xml:"val,attr"`
 }
 
 // CTCalendarType ...
 type CTCalendarType struct {
 	XMLName xml.Name `xml:"CT_CalendarType"`
-	ValAttr string   `xml:"val,attr,omitempty"`
+	ValAttr *string  `xml:"val,attr"`
 }
 
 // CTSdtDate ...
 type CTSdtDate struct {
 	XMLName           xml.Name              `xml:"CT_SdtDate"`
-	FullDateAttr      string                `xml:"fullDate,attr,omitempty"`
+	FullDateAttr      *string               `xml:"fullDate,attr"`
 	DateFormat        *CTString             `xml:"dateFormat,omitempty"`
 	Lid               *CTLang               `xml:"lid,omitempty"`
 	StoreMappedDataAs *CTSdtDateMappingType `xml:"storeMappedDataAs,omitempty"`
@@ -1579,7 +1579,7 @@ type CTSdtDate struct {
 // CTSdtComboBox ...
 type CTSdtComboBox struct {
 	XMLName       xml.Name         `xml:"CT_SdtComboBox"`
-	LastValueAttr string           `xml:"lastValue,attr,omitempty"`
+	LastValueAttr *string          `xml:"lastValue,attr"`
 	ListItem      []*CTSdtListItem `xml:"listItem,omitempty"`
 }
 
@@ -1594,7 +1594,7 @@ type CTSdtDocPart struct {
 // CTSdtDropDownList ...
 type CTSdtDropDownList struct {
 	XMLName       xml.Name         `xml:"CT_SdtDropDownList"`
-	LastValueAttr string           `xml:"lastValue,attr,omitempty"`
+	LastValueAttr *string          `xml:"lastValue,attr"`
 	ListItem      []*CTSdtListItem `xml:"listItem,omitempty"`
 }
 
@@ -1613,7 +1613,7 @@ type CTSdtText struct {
 // CTDataBinding ...
 type CTDataBinding struct {
 	XMLName            xml.Name `xml:"CT_DataBinding"`
-	PrefixMappingsAttr string   `xml:"prefixMappings,attr,omitempty"`
+	PrefixMappingsAttr *string  `xml:"prefixMappings,attr"`
 	XpathAttr          string   `xml:"xpath,attr"`
 	StoreItemIDAttr    string   `xml:"storeItemID,attr"`
 }
@@ -1667,14 +1667,14 @@ type EGContentRunContent struct {
 // CTDirContentRun ...
 type CTDirContentRun struct {
 	XMLName    xml.Name `xml:"CT_DirContentRun"`
-	ValAttr    string   `xml:"val,attr,omitempty"`
+	ValAttr    *string  `xml:"val,attr"`
 	EGPContent []*EGPContent
 }
 
 // CTBdoContentRun ...
 type CTBdoContentRun struct {
 	XMLName    xml.Name `xml:"CT_BdoContentRun"`
-	ValAttr    string   `xml:"val,attr,omitempty"`
+	ValAttr    *string  `xml:"val,attr"`
 	EGPContent []*EGPContent
 }
 
@@ -1768,7 +1768,7 @@ type CTSdtRow struct {
 // CTAttr ...
 type CTAttr struct {
 	XMLName  xml.Name `xml:"CT_Attr"`
-	UriAttr  string   `xml:"uri,attr,omitempty"`
+	UriAttr  *string  `xml:"uri,attr"`
 	NameAttr string   `xml:"name,attr"`
 	ValAttr  string   `xml:"val,attr"`
 }
@@ -1776,7 +1776,7 @@ type CTAttr struct {
 // CTCustomXmlRun ...
 type CTCustomXmlRun struct {
 	XMLName     xml.Name `xml:"CT_CustomXmlRun"`
-	UriAttr     string   `xml:"uri,attr,omitempty"`
+	UriAttr     *string  `xml:"uri,attr"`
 	ElementAttr string   `xml:"element,attr"`
 	EGPContent  []*EGPContent
 	CustomXmlPr *CTCustomXmlPr `xml:"customXmlPr,omitempty"`
@@ -1785,7 +1785,7 @@ type CTCustomXmlRun struct {
 // CTSmartTagRun ...
 type CTSmartTagRun struct {
 	XMLName     xml.Name `xml:"CT_SmartTagRun"`
-	UriAttr     string   `xml:"uri,attr,omitempty"`
+	UriAttr     *string  `xml:"uri,attr"`
 	ElementAttr string   `xml:"element,attr"`
 	EGPContent  []*EGPContent
 	SmartTagPr  *CTSmartTagPr `xml:"smartTagPr,omitempty"`
@@ -1794,7 +1794,7 @@ type CTSmartTagRun struct {
 // CTCustomXmlBlock ...
 type CTCustomXmlBlock struct {
 	XMLName               xml.Name `xml:"CT_CustomXmlBlock"`
-	UriAttr               string   `xml:"uri,attr,omitempty"`
+	UriAttr               *string  `xml:"uri,attr"`
 	ElementAttr           string   `xml:"element,attr"`
 	EGContentBlockContent []*EGContentBlockContent
 	CustomXmlPr           *CTCustomXmlPr `xml:"customXmlPr,omitempty"`
@@ -1810,7 +1810,7 @@ type CTCustomXmlPr struct {
 // CTCustomXmlRow ...
 type CTCustomXmlRow struct {
 	XMLName             xml.Name `xml:"CT_CustomXmlRow"`
-	UriAttr             string   `xml:"uri,attr,omitempty"`
+	UriAttr             *string  `xml:"uri,attr"`
 	ElementAttr         string   `xml:"element,attr"`
 	EGContentRowContent []*EGContentRowContent
 	CustomXmlPr         *CTCustomXmlPr `xml:"customXmlPr,omitempty"`
@@ -1819,7 +1819,7 @@ type CTCustomXmlRow struct {
 // CTCustomXmlCell ...
 type CTCustomXmlCell struct {
 	XMLName              xml.Name `xml:"CT_CustomXmlCell"`
-	UriAttr              string   `xml:"uri,attr,omitempty"`
+	UriAttr              *string  `xml:"uri,attr"`
 	ElementAttr          string   `xml:"element,attr"`
 	EGContentCellContent []*EGContentCellContent
 	CustomXmlPr          *CTCustomXmlPr `xml:"customXmlPr,omitempty"`
@@ -1843,11 +1843,11 @@ type EGPContent struct {
 // CTP ...
 type CTP struct {
 	XMLName          xml.Name `xml:"CT_P"`
-	RsidRPrAttr      string   `xml:"rsidRPr,attr,omitempty"`
-	RsidRAttr        string   `xml:"rsidR,attr,omitempty"`
-	RsidDelAttr      string   `xml:"rsidDel,attr,omitempty"`
-	RsidPAttr        string   `xml:"rsidP,attr,omitempty"`
-	RsidRDefaultAttr string   `xml:"rsidRDefault,attr,omitempty"`
+	RsidRPrAttr      *string  `xml:"rsidRPr,attr"`
+	RsidRAttr        *string  `xml:"rsidR,attr"`
+	RsidDelAttr      *string  `xml:"rsidDel,attr"`
+	RsidPAttr        *string  `xml:"rsidP,attr"`
+	RsidRDefaultAttr *string  `xml:"rsidRDefault,attr"`
 	EGPContent       []*EGPContent
 	PPr              *CTPPr `xml:"pPr,omitempty"`
 }
@@ -1859,7 +1859,7 @@ type STTblWidth string
 type CTHeight struct {
 	XMLName   xml.Name        `xml:"CT_Height"`
 	ValAttr   *STTwipsMeasure `xml:"val,attr,omitempty"`
-	HRuleAttr string          `xml:"hRule,attr,omitempty"`
+	HRuleAttr *string         `xml:"hRule,attr"`
 }
 
 // STMeasurementOrPercent ...
@@ -1873,7 +1873,7 @@ type STMeasurementOrPercent struct {
 type CTTblWidth struct {
 	XMLName  xml.Name                `xml:"CT_TblWidth"`
 	WAttr    *STMeasurementOrPercent `xml:"w,attr,omitempty"`
-	TypeAttr string                  `xml:"type,attr,omitempty"`
+	TypeAttr *string                 `xml:"type,attr"`
 }
 
 // CTTblGridCol ...
@@ -1923,7 +1923,7 @@ type STMerge string
 // CTVMerge ...
 type CTVMerge struct {
 	XMLName xml.Name `xml:"CT_VMerge"`
-	ValAttr string   `xml:"val,attr,omitempty"`
+	ValAttr *string  `xml:"val,attr"`
 }
 
 // CTTcPrBase ...
@@ -1961,7 +1961,7 @@ type CTTcPrInner struct {
 // CTTc ...
 type CTTc struct {
 	XMLName          xml.Name `xml:"CT_Tc"`
-	IdAttr           string   `xml:"id,attr,omitempty"`
+	IdAttr           *string  `xml:"id,attr"`
 	EGBlockLevelElts []*EGBlockLevelElts
 	TcPr             *CTTcPr `xml:"tcPr,omitempty"`
 }
@@ -2018,10 +2018,10 @@ type CTTrPr struct {
 // CTRow ...
 type CTRow struct {
 	XMLName              xml.Name `xml:"CT_Row"`
-	RsidRPrAttr          string   `xml:"rsidRPr,attr,omitempty"`
-	RsidRAttr            string   `xml:"rsidR,attr,omitempty"`
-	RsidDelAttr          string   `xml:"rsidDel,attr,omitempty"`
-	RsidTrAttr           string   `xml:"rsidTr,attr,omitempty"`
+	RsidRPrAttr          *string  `xml:"rsidRPr,attr"`
+	RsidRAttr            *string  `xml:"rsidR,attr"`
+	RsidDelAttr          *string  `xml:"rsidDel,attr"`
+	RsidTrAttr           *string  `xml:"rsidTr,attr"`
 	EGContentCellContent []*EGContentCellContent
 	TblPrEx              *CTTblPrEx `xml:"tblPrEx,omitempty"`
 	TrPr                 *CTTrPr    `xml:"trPr,omitempty"`
@@ -2033,7 +2033,7 @@ type STTblLayoutType string
 // CTTblLayoutType ...
 type CTTblLayoutType struct {
 	XMLName  xml.Name `xml:"CT_TblLayoutType"`
-	TypeAttr string   `xml:"type,attr,omitempty"`
+	TypeAttr *string  `xml:"type,attr"`
 }
 
 // STTblOverlap ...
@@ -2052,11 +2052,11 @@ type CTTblPPr struct {
 	RightFromTextAttr  *STTwipsMeasure       `xml:"rightFromText,attr,omitempty"`
 	TopFromTextAttr    *STTwipsMeasure       `xml:"topFromText,attr,omitempty"`
 	BottomFromTextAttr *STTwipsMeasure       `xml:"bottomFromText,attr,omitempty"`
-	VertAnchorAttr     string                `xml:"vertAnchor,attr,omitempty"`
-	HorzAnchorAttr     string                `xml:"horzAnchor,attr,omitempty"`
-	TblpXSpecAttr      string                `xml:"tblpXSpec,attr,omitempty"`
+	VertAnchorAttr     *string               `xml:"vertAnchor,attr"`
+	HorzAnchorAttr     *string               `xml:"horzAnchor,attr"`
+	TblpXSpecAttr      *string               `xml:"tblpXSpec,attr"`
 	TblpXAttr          *STSignedTwipsMeasure `xml:"tblpX,attr,omitempty"`
-	TblpYSpecAttr      string                `xml:"tblpYSpec,attr,omitempty"`
+	TblpYSpecAttr      *string               `xml:"tblpYSpec,attr"`
 	TblpYAttr          *STSignedTwipsMeasure `xml:"tblpY,attr,omitempty"`
 }
 
@@ -2172,7 +2172,7 @@ type CTEdnPos struct {
 type CTNumFmt struct {
 	XMLName    xml.Name `xml:"CT_NumFmt"`
 	ValAttr    string   `xml:"val,attr"`
-	FormatAttr string   `xml:"format,attr,omitempty"`
+	FormatAttr *string  `xml:"format,attr"`
 }
 
 // STRestartNumber ...
@@ -2200,7 +2200,7 @@ type CTFtnEdnSepRef struct {
 // CTFtnEdn ...
 type CTFtnEdn struct {
 	XMLName          xml.Name `xml:"CT_FtnEdn"`
-	TypeAttr         string   `xml:"type,attr,omitempty"`
+	TypeAttr         *string  `xml:"type,attr"`
 	IdAttr           int      `xml:"id,attr"`
 	EGBlockLevelElts []*EGBlockLevelElts
 }
@@ -2344,9 +2344,9 @@ type CTCompat struct {
 // CTCompatSetting ...
 type CTCompatSetting struct {
 	XMLName  xml.Name `xml:"CT_CompatSetting"`
-	NameAttr string   `xml:"name,attr,omitempty"`
-	UriAttr  string   `xml:"uri,attr,omitempty"`
-	ValAttr  string   `xml:"val,attr,omitempty"`
+	NameAttr *string  `xml:"name,attr"`
+	UriAttr  *string  `xml:"uri,attr"`
+	ValAttr  *string  `xml:"val,attr"`
 }
 
 // CTDocVar ...
@@ -2381,8 +2381,8 @@ type CTCharacterSpacing struct {
 // CTSaveThroughXslt ...
 type CTSaveThroughXslt struct {
 	XMLName        xml.Name `xml:"CT_SaveThroughXslt"`
-	RIdAttr        string   `xml:"r:id,attr,omitempty"`
-	SolutionIDAttr string   `xml:"solutionID,attr,omitempty"`
+	RIdAttr        *string  `xml:"r:id,attr"`
+	SolutionIDAttr *string  `xml:"solutionID,attr"`
 }
 
 // CTRPrDefault ...
@@ -2410,18 +2410,18 @@ type STWmlColorSchemeIndex string
 // CTColorSchemeMapping ...
 type CTColorSchemeMapping struct {
 	XMLName               xml.Name `xml:"CT_ColorSchemeMapping"`
-	Bg1Attr               string   `xml:"bg1,attr,omitempty"`
-	T1Attr                string   `xml:"t1,attr,omitempty"`
-	Bg2Attr               string   `xml:"bg2,attr,omitempty"`
-	T2Attr                string   `xml:"t2,attr,omitempty"`
-	Accent1Attr           string   `xml:"accent1,attr,omitempty"`
-	Accent2Attr           string   `xml:"accent2,attr,omitempty"`
-	Accent3Attr           string   `xml:"accent3,attr,omitempty"`
-	Accent4Attr           string   `xml:"accent4,attr,omitempty"`
-	Accent5Attr           string   `xml:"accent5,attr,omitempty"`
-	Accent6Attr           string   `xml:"accent6,attr,omitempty"`
-	HyperlinkAttr         string   `xml:"hyperlink,attr,omitempty"`
-	FollowedHyperlinkAttr string   `xml:"followedHyperlink,attr,omitempty"`
+	Bg1Attr               *string  `xml:"bg1,attr"`
+	T1Attr                *string  `xml:"t1,attr"`
+	Bg2Attr               *string  `xml:"bg2,attr"`
+	T2Attr                *string  `xml:"t2,attr"`
+	Accent1Attr           *string  `xml:"accent1,attr"`
+	Accent2Attr           *string  `xml:"accent2,attr"`
+	Accent3Attr           *string  `xml:"accent3,attr"`
+	Accent4Attr           *string  `xml:"accent4,attr"`
+	Accent5Attr           *string  `xml:"accent5,attr"`
+	Accent6Attr           *string  `xml:"accent6,attr"`
+	HyperlinkAttr         *string  `xml:"hyperlink,attr"`
+	FollowedHyperlinkAttr *string  `xml:"followedHyperlink,attr"`
 }
 
 // CTReadingModeInkLockDown ...
@@ -2599,7 +2599,7 @@ type CTFrameScrollbar struct {
 // CTOptimizeForBrowser ...
 type CTOptimizeForBrowser struct {
 	XMLName    xml.Name `xml:"CT_OptimizeForBrowser"`
-	TargetAttr string   `xml:"target,attr,omitempty"`
+	TargetAttr *string  `xml:"target,attr"`
 	*CTOnOff
 }
 
@@ -2666,7 +2666,7 @@ type CTLevelSuffix struct {
 // CTLevelText ...
 type CTLevelText struct {
 	XMLName  xml.Name `xml:"CT_LevelText"`
-	ValAttr  string   `xml:"val,attr,omitempty"`
+	ValAttr  *string  `xml:"val,attr"`
 	NullAttr *STOnOff `xml:"null,attr,omitempty"`
 }
 
@@ -2674,7 +2674,7 @@ type CTLevelText struct {
 type CTLvl struct {
 	XMLName        xml.Name         `xml:"CT_Lvl"`
 	IlvlAttr       int              `xml:"ilvl,attr"`
-	TplcAttr       string           `xml:"tplc,attr,omitempty"`
+	TplcAttr       *string          `xml:"tplc,attr"`
 	TentativeAttr  *STOnOff         `xml:"tentative,attr,omitempty"`
 	Start          *CTDecimalNumber `xml:"start,omitempty"`
 	NumFmt         *CTNumFmt        `xml:"numFmt,omitempty"`
@@ -2756,8 +2756,8 @@ type STStyleType string
 // CTStyle ...
 type CTStyle struct {
 	XMLName         xml.Name         `xml:"CT_Style"`
-	TypeAttr        string           `xml:"type,attr,omitempty"`
-	StyleIdAttr     string           `xml:"styleId,attr,omitempty"`
+	TypeAttr        *string          `xml:"type,attr"`
+	StyleIdAttr     *string          `xml:"styleId,attr"`
 	DefaultAttr     *STOnOff         `xml:"default,attr,omitempty"`
 	CustomStyleAttr *STOnOff         `xml:"customStyle,attr,omitempty"`
 	Name            *CTString        `xml:"name,omitempty"`
@@ -2789,7 +2789,7 @@ type CTLsdException struct {
 	XMLName            xml.Name `xml:"CT_LsdException"`
 	NameAttr           string   `xml:"name,attr"`
 	LockedAttr         *STOnOff `xml:"locked,attr,omitempty"`
-	UiPriorityAttr     int      `xml:"uiPriority,attr,omitempty"`
+	UiPriorityAttr     *int     `xml:"uiPriority,attr"`
 	SemiHiddenAttr     *STOnOff `xml:"semiHidden,attr,omitempty"`
 	UnhideWhenUsedAttr *STOnOff `xml:"unhideWhenUsed,attr,omitempty"`
 	QFormatAttr        *STOnOff `xml:"qFormat,attr,omitempty"`
@@ -2799,11 +2799,11 @@ type CTLsdException struct {
 type CTLatentStyles struct {
 	XMLName               xml.Name          `xml:"CT_LatentStyles"`
 	DefLockedStateAttr    *STOnOff          `xml:"defLockedState,attr,omitempty"`
-	DefUIPriorityAttr     int               `xml:"defUIPriority,attr,omitempty"`
+	DefUIPriorityAttr     *int              `xml:"defUIPriority,attr"`
 	DefSemiHiddenAttr     *STOnOff          `xml:"defSemiHidden,attr,omitempty"`
 	DefUnhideWhenUsedAttr *STOnOff          `xml:"defUnhideWhenUsed,attr,omitempty"`
 	DefQFormatAttr        *STOnOff          `xml:"defQFormat,attr,omitempty"`
-	CountAttr             int               `xml:"count,attr,omitempty"`
+	CountAttr             *int              `xml:"count,attr"`
 	LsdException          []*CTLsdException `xml:"lsdException,omitempty"`
 }
 
@@ -2853,7 +2853,7 @@ type CTFontSig struct {
 // CTFontRel ...
 type CTFontRel struct {
 	XMLName       xml.Name `xml:"CT_FontRel"`
-	FontKeyAttr   string   `xml:"fontKey,attr,omitempty"`
+	FontKeyAttr   *string  `xml:"fontKey,attr"`
 	SubsettedAttr *STOnOff `xml:"subsetted,attr,omitempty"`
 	*CTRel
 }
@@ -2987,9 +2987,9 @@ type Ftr *CTHdrFtr
 // CTSmartTagType ...
 type CTSmartTagType struct {
 	XMLName          xml.Name `xml:"CT_SmartTagType"`
-	NamespaceuriAttr string   `xml:"namespaceuri,attr,omitempty"`
-	NameAttr         string   `xml:"name,attr,omitempty"`
-	UrlAttr          string   `xml:"url,attr,omitempty"`
+	NamespaceuriAttr *string  `xml:"namespaceuri,attr"`
+	NameAttr         *string  `xml:"name,attr"`
+	UrlAttr          *string  `xml:"url,attr"`
 }
 
 // STThemeColor ...
@@ -3096,12 +3096,12 @@ type STCaptionPos string
 type CTCaption struct {
 	XMLName     xml.Name `xml:"CT_Caption"`
 	NameAttr    string   `xml:"name,attr"`
-	PosAttr     string   `xml:"pos,attr,omitempty"`
+	PosAttr     *string  `xml:"pos,attr"`
 	ChapNumAttr *STOnOff `xml:"chapNum,attr,omitempty"`
-	HeadingAttr int      `xml:"heading,attr,omitempty"`
+	HeadingAttr *int     `xml:"heading,attr"`
 	NoLabelAttr *STOnOff `xml:"noLabel,attr,omitempty"`
-	NumFmtAttr  string   `xml:"numFmt,attr,omitempty"`
-	SepAttr     string   `xml:"sep,attr,omitempty"`
+	NumFmtAttr  *string  `xml:"numFmt,attr"`
+	SepAttr     *string  `xml:"sep,attr"`
 }
 
 // CTAutoCaption ...
@@ -3133,7 +3133,7 @@ type CTDocumentBase struct {
 // CTDocument ...
 type CTDocument struct {
 	XMLName         xml.Name `xml:"CT_Document"`
-	ConformanceAttr string   `xml:"conformance,attr,omitempty"`
+	ConformanceAttr *string  `xml:"conformance,attr"`
 	Body            *CTBody  `xml:"body,omitempty"`
 	*CTDocumentBase
 }

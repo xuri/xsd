@@ -20,7 +20,7 @@ public class Library {
 
 // Person ...
 public class Person {
-	@XmlAttribute(name = "id", required = true)
+	@XmlAttribute(required = true, name = "id")
 	protected String IdAttr;
 	@XmlElement(required = true, name = "name")
 	protected String Name;
@@ -46,9 +46,9 @@ public class Characters {
 
 // BookType ...
 public class BookType {
-	@XmlAttribute(name = "id", required = true)
+	@XmlAttribute(required = true, name = "id")
 	protected String IdAttr;
-	@XmlAttribute(name = "available", required = true)
+	@XmlAttribute(required = true, name = "available")
 	protected String AvailableAttr;
 	@XmlElement(required = true, name = "isbn")
 	protected String Isbn;

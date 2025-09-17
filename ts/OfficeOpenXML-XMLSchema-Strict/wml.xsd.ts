@@ -6,7 +6,7 @@ export class CT_Empty {
 
 // CT_OnOff ...
 export class CT_OnOff {
-	ValAttr: ST_OnOff | null;
+	ValAttr?: ST_OnOff;
 }
 
 // ST_LongHexNumber ...
@@ -25,7 +25,7 @@ export type ST_UcharHexNumber = Uint8Array;
 
 // CT_Charset ...
 export class CT_Charset {
-	CharacterSetAttr: string | null;
+	CharacterSetAttr?: string;
 }
 
 // ST_DecimalNumberOrPercent ...
@@ -129,7 +129,7 @@ export type ST_TextScalePercent = string;
 
 // CT_TextScale ...
 export class CT_TextScale {
-	ValAttr: ST_TextScale | null;
+	ValAttr?: ST_TextScale;
 }
 
 // ST_HighlightColor ...
@@ -172,9 +172,9 @@ export class ST_HexColor {
 // CT_Color ...
 export class CT_Color {
 	ValAttr: ST_HexColor;
-	ThemeColorAttr: string | null;
-	ThemeTintAttr: Uint8Array | null;
-	ThemeShadeAttr: Uint8Array | null;
+	ThemeColorAttr?: string;
+	ThemeTintAttr?: Uint8Array;
+	ThemeShadeAttr?: Uint8Array;
 }
 
 // CT_Lang ...
@@ -184,7 +184,7 @@ export class CT_Lang {
 
 // CT_Guid ...
 export class CT_Guid {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // ST_Underline ...
@@ -211,11 +211,11 @@ export enum ST_Underline {
 
 // CT_Underline ...
 export class CT_Underline {
-	ValAttr: string | null;
-	ColorAttr: ST_HexColor | null;
-	ThemeColorAttr: string | null;
-	ThemeTintAttr: Uint8Array | null;
-	ThemeShadeAttr: Uint8Array | null;
+	ValAttr?: string;
+	ColorAttr?: ST_HexColor;
+	ThemeColorAttr?: string;
+	ThemeTintAttr?: Uint8Array;
+	ThemeShadeAttr?: Uint8Array;
 }
 
 // ST_TextEffect ...
@@ -434,14 +434,14 @@ export enum ST_Border {
 // CT_Border ...
 export class CT_Border {
 	ValAttr: string;
-	ColorAttr: ST_HexColor | null;
-	ThemeColorAttr: string | null;
-	ThemeTintAttr: Uint8Array | null;
-	ThemeShadeAttr: Uint8Array | null;
-	SzAttr: number | null;
-	SpaceAttr: number | null;
-	ShadowAttr: ST_OnOff | null;
-	FrameAttr: ST_OnOff | null;
+	ColorAttr?: ST_HexColor;
+	ThemeColorAttr?: string;
+	ThemeTintAttr?: Uint8Array;
+	ThemeShadeAttr?: Uint8Array;
+	SzAttr?: number;
+	SpaceAttr?: number;
+	ShadowAttr?: ST_OnOff;
+	FrameAttr?: ST_OnOff;
 }
 
 // ST_Shd ...
@@ -489,14 +489,14 @@ export enum ST_Shd {
 // CT_Shd ...
 export class CT_Shd {
 	ValAttr: string;
-	ColorAttr: ST_HexColor | null;
-	ThemeColorAttr: string | null;
-	ThemeTintAttr: Uint8Array | null;
-	ThemeShadeAttr: Uint8Array | null;
-	FillAttr: ST_HexColor | null;
-	ThemeFillAttr: string | null;
-	ThemeFillTintAttr: Uint8Array | null;
-	ThemeFillShadeAttr: Uint8Array | null;
+	ColorAttr?: ST_HexColor;
+	ThemeColorAttr?: string;
+	ThemeTintAttr?: Uint8Array;
+	ThemeShadeAttr?: Uint8Array;
+	FillAttr?: ST_HexColor;
+	ThemeFillAttr?: string;
+	ThemeFillTintAttr?: Uint8Array;
+	ThemeFillShadeAttr?: Uint8Array;
 }
 
 // CT_VerticalAlignRun ...
@@ -507,7 +507,7 @@ export class CT_VerticalAlignRun {
 // CT_FitText ...
 export class CT_FitText {
 	ValAttr: ST_TwipsMeasure;
-	IdAttr: number | null;
+	IdAttr?: number;
 }
 
 // ST_Em ...
@@ -526,9 +526,9 @@ export class CT_Em {
 
 // CT_Language ...
 export class CT_Language {
-	ValAttr: string | null;
-	EastAsiaAttr: string | null;
-	BidiAttr: string | null;
+	ValAttr?: string;
+	EastAsiaAttr?: string;
+	BidiAttr?: string;
 }
 
 // ST_CombineBrackets ...
@@ -542,11 +542,11 @@ export enum ST_CombineBrackets {
 
 // CT_EastAsianLayout ...
 export class CT_EastAsianLayout {
-	IdAttr: number | null;
-	CombineAttr: ST_OnOff | null;
-	CombineBracketsAttr: string | null;
-	VertAttr: ST_OnOff | null;
-	VertCompressAttr: ST_OnOff | null;
+	IdAttr?: number;
+	CombineAttr?: ST_OnOff;
+	CombineBracketsAttr?: string;
+	VertAttr?: ST_OnOff;
+	VertCompressAttr?: ST_OnOff;
 }
 
 // ST_HeightRule ...
@@ -589,21 +589,21 @@ export enum ST_DropCap {
 
 // CT_FramePr ...
 export class CT_FramePr {
-	DropCapAttr: string | null;
-	LinesAttr: number | null;
-	WAttr: ST_TwipsMeasure | null;
-	HAttr: ST_TwipsMeasure | null;
-	VSpaceAttr: ST_TwipsMeasure | null;
-	HSpaceAttr: ST_TwipsMeasure | null;
-	WrapAttr: string | null;
-	HAnchorAttr: string | null;
-	VAnchorAttr: string | null;
-	XAttr: ST_SignedTwipsMeasure | null;
-	XAlignAttr: string | null;
-	YAttr: ST_SignedTwipsMeasure | null;
-	YAlignAttr: string | null;
-	HRuleAttr: string | null;
-	AnchorLockAttr: ST_OnOff | null;
+	DropCapAttr?: string;
+	LinesAttr?: number;
+	WAttr?: ST_TwipsMeasure;
+	HAttr?: ST_TwipsMeasure;
+	VSpaceAttr?: ST_TwipsMeasure;
+	HSpaceAttr?: ST_TwipsMeasure;
+	WrapAttr?: string;
+	HAnchorAttr?: string;
+	VAnchorAttr?: string;
+	XAttr?: ST_SignedTwipsMeasure;
+	XAlignAttr?: string;
+	YAttr?: ST_SignedTwipsMeasure;
+	YAlignAttr?: string;
+	HRuleAttr?: string;
+	AnchorLockAttr?: ST_OnOff;
 }
 
 // ST_TabJc ...
@@ -630,7 +630,7 @@ export enum ST_TabTlc {
 // CT_TabStop ...
 export class CT_TabStop {
 	ValAttr: string;
-	LeaderAttr: string | null;
+	LeaderAttr?: string;
 	PosAttr: ST_SignedTwipsMeasure;
 }
 
@@ -643,26 +643,26 @@ export enum ST_LineSpacingRule {
 
 // CT_Spacing ...
 export class CT_Spacing {
-	BeforeAttr: ST_TwipsMeasure | null;
-	BeforeLinesAttr: number | null;
-	BeforeAutospacingAttr: ST_OnOff | null;
-	AfterAttr: ST_TwipsMeasure | null;
-	AfterLinesAttr: number | null;
-	AfterAutospacingAttr: ST_OnOff | null;
-	LineAttr: ST_SignedTwipsMeasure | null;
-	LineRuleAttr: string | null;
+	BeforeAttr?: ST_TwipsMeasure;
+	BeforeLinesAttr?: number;
+	BeforeAutospacingAttr?: ST_OnOff;
+	AfterAttr?: ST_TwipsMeasure;
+	AfterLinesAttr?: number;
+	AfterAutospacingAttr?: ST_OnOff;
+	LineAttr?: ST_SignedTwipsMeasure;
+	LineRuleAttr?: string;
 }
 
 // CT_Ind ...
 export class CT_Ind {
-	StartAttr: ST_SignedTwipsMeasure | null;
-	StartCharsAttr: number | null;
-	EndAttr: ST_SignedTwipsMeasure | null;
-	EndCharsAttr: number | null;
-	HangingAttr: ST_TwipsMeasure | null;
-	HangingCharsAttr: number | null;
-	FirstLineAttr: ST_TwipsMeasure | null;
-	FirstLineCharsAttr: number | null;
+	StartAttr?: ST_SignedTwipsMeasure;
+	StartCharsAttr?: number;
+	EndAttr?: ST_SignedTwipsMeasure;
+	EndCharsAttr?: number;
+	HangingAttr?: ST_TwipsMeasure;
+	HangingCharsAttr?: number;
+	FirstLineAttr?: ST_TwipsMeasure;
+	FirstLineCharsAttr?: number;
 }
 
 // ST_Jc ...
@@ -721,7 +721,7 @@ export enum ST_Zoom {
 
 // CT_Zoom ...
 export class CT_Zoom {
-	ValAttr: string | null;
+	ValAttr?: string;
 	PercentAttr: ST_DecimalNumberOrPercent;
 }
 
@@ -730,7 +730,7 @@ export class CT_WritingStyle {
 	LangAttr: string;
 	VendorIDAttr: string;
 	DllVersionAttr: string;
-	NlCheckAttr: ST_OnOff | null;
+	NlCheckAttr?: ST_OnOff;
 	CheckStyleAttr: ST_OnOff;
 	AppNameAttr: string;
 }
@@ -743,8 +743,8 @@ export enum ST_Proof {
 
 // CT_Proof ...
 export class CT_Proof {
-	SpellingAttr: string | null;
-	GrammarAttr: string | null;
+	SpellingAttr?: string;
+	GrammarAttr?: string;
 }
 
 // ST_DocType ...
@@ -775,9 +775,9 @@ export class AG_Password {
 // CT_DocProtect ...
 export class CT_DocProtect {
 	AG_Password: AG_Password;
-	EditAttr: string | null;
-	FormattingAttr: ST_OnOff | null;
-	EnforcementAttr: ST_OnOff | null;
+	EditAttr?: string;
+	FormattingAttr?: ST_OnOff;
+	EnforcementAttr?: ST_OnOff;
 }
 
 // ST_MailMergeDocType ...
@@ -829,11 +829,11 @@ export class CT_MailMergeOdsoFMDFieldType {
 
 // CT_TrackChangesView ...
 export class CT_TrackChangesView {
-	MarkupAttr: ST_OnOff | null;
-	CommentsAttr: ST_OnOff | null;
-	InsDelAttr: ST_OnOff | null;
-	FormattingAttr: ST_OnOff | null;
-	InkAnnotationsAttr: ST_OnOff | null;
+	MarkupAttr?: ST_OnOff;
+	CommentsAttr?: ST_OnOff;
+	InsDelAttr?: ST_OnOff;
+	FormattingAttr?: ST_OnOff;
+	InkAnnotationsAttr?: ST_OnOff;
 }
 
 // CT_Kinsoku ...
@@ -891,29 +891,29 @@ export class CT_Markup {
 // CT_TrackChange ...
 export class CT_TrackChange extends CT_Markup  {
 	AuthorAttr: string;
-	DateAttr: string | null;
+	DateAttr?: string;
 }
 
 // CT_CellMergeTrackChange ...
 export class CT_CellMergeTrackChange extends CT_TrackChange  {
-	VMergeAttr: string | null;
-	VMergeOrigAttr: string | null;
+	VMergeAttr?: string;
+	VMergeOrigAttr?: string;
 }
 
 // CT_TrackChangeRange ...
 export class CT_TrackChangeRange extends CT_TrackChange  {
-	DisplacedByCustomXmlAttr: string | null;
+	DisplacedByCustomXmlAttr?: string;
 }
 
 // CT_MarkupRange ...
 export class CT_MarkupRange extends CT_Markup  {
-	DisplacedByCustomXmlAttr: string | null;
+	DisplacedByCustomXmlAttr?: string;
 }
 
 // CT_BookmarkRange ...
 export class CT_BookmarkRange extends CT_MarkupRange  {
-	ColFirstAttr: number | null;
-	ColLastAttr: number | null;
+	ColFirstAttr?: number;
+	ColLastAttr?: number;
 }
 
 // CT_Bookmark ...
@@ -929,7 +929,7 @@ export class CT_MoveBookmark extends CT_Bookmark  {
 
 // CT_Comment ...
 export class CT_Comment extends CT_TrackChange  {
-	InitialsAttr: string | null;
+	InitialsAttr?: string;
 	EG_BlockLevelElts: Array<EG_BlockLevelElts>;
 }
 
@@ -1118,17 +1118,17 @@ export class CT_PPrGeneral extends CT_PPrBase  {
 
 // CT_Control ...
 export class CT_Control {
-	NameAttr: string | null;
-	ShapeidAttr: string | null;
-	RIdAttr: string | null;
+	NameAttr?: string;
+	ShapeidAttr?: string;
+	RIdAttr?: string;
 }
 
 // CT_Background ...
 export class CT_Background {
-	ColorAttr: ST_HexColor | null;
-	ThemeColorAttr: string | null;
-	ThemeTintAttr: Uint8Array | null;
-	ThemeShadeAttr: Uint8Array | null;
+	ColorAttr?: ST_HexColor;
+	ThemeColorAttr?: string;
+	ThemeTintAttr?: Uint8Array;
+	ThemeShadeAttr?: Uint8Array;
 	Drawing?: CT_Drawing;
 }
 
@@ -1139,8 +1139,8 @@ export class CT_Rel {
 
 // CT_Object ...
 export class CT_Object {
-	DxaOrigAttr: ST_TwipsMeasure | null;
-	DyaOrigAttr: ST_TwipsMeasure | null;
+	DxaOrigAttr?: ST_TwipsMeasure;
+	DyaOrigAttr?: ST_TwipsMeasure;
 	Drawing?: CT_Drawing;
 	Control: CT_Control;
 	ObjectLink: CT_ObjectLink;
@@ -1150,11 +1150,11 @@ export class CT_Object {
 
 // CT_ObjectEmbed ...
 export class CT_ObjectEmbed {
-	DrawAspectAttr: string | null;
+	DrawAspectAttr?: string;
 	RIdAttr: string;
-	ProgIdAttr: string | null;
-	ShapeIdAttr: string | null;
-	FieldCodesAttr: string | null;
+	ProgIdAttr?: string;
+	ShapeIdAttr?: string;
+	FieldCodesAttr?: string;
 }
 
 // ST_ObjectDrawAspect ...
@@ -1166,7 +1166,7 @@ export enum ST_ObjectDrawAspect {
 // CT_ObjectLink ...
 export class CT_ObjectLink extends CT_ObjectEmbed  {
 	UpdateModeAttr: string;
-	LockedFieldAttr: ST_OnOff | null;
+	LockedFieldAttr?: ST_OnOff;
 }
 
 // ST_ObjectUpdateMode ...
@@ -1184,8 +1184,8 @@ export class CT_Drawing {
 // CT_SimpleField ...
 export class CT_SimpleField {
 	InstrAttr: string;
-	FldLockAttr: ST_OnOff | null;
-	DirtyAttr: ST_OnOff | null;
+	FldLockAttr?: ST_OnOff;
+	DirtyAttr?: ST_OnOff;
 	EG_PContent: Array<EG_PContent>;
 }
 
@@ -1228,25 +1228,25 @@ export class CT_FFTextType {
 
 // CT_FFName ...
 export class CT_FFName {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // CT_FldChar ...
 export class CT_FldChar {
 	FldCharTypeAttr: string;
-	FldLockAttr: ST_OnOff | null;
-	DirtyAttr: ST_OnOff | null;
+	FldLockAttr?: ST_OnOff;
+	DirtyAttr?: ST_OnOff;
 	FfData?: CT_FFData;
 }
 
 // CT_Hyperlink ...
 export class CT_Hyperlink {
-	TgtFrameAttr: string | null;
-	TooltipAttr: string | null;
-	DocLocationAttr: string | null;
-	HistoryAttr: ST_OnOff | null;
-	AnchorAttr: string | null;
-	RIdAttr: string | null;
+	TgtFrameAttr?: string;
+	TooltipAttr?: string;
+	DocLocationAttr?: string;
+	HistoryAttr?: ST_OnOff;
+	AnchorAttr?: string;
+	RIdAttr?: string;
 	EG_PContent: Array<EG_PContent>;
 }
 
@@ -1268,14 +1268,14 @@ export class CT_FFData {
 
 // CT_FFHelpText ...
 export class CT_FFHelpText {
-	TypeAttr: string | null;
-	ValAttr: string | null;
+	TypeAttr?: string;
+	ValAttr?: string;
 }
 
 // CT_FFStatusText ...
 export class CT_FFStatusText {
-	TypeAttr: string | null;
-	ValAttr: string | null;
+	TypeAttr?: string;
+	ValAttr?: string;
 }
 
 // CT_FFCheckBox ...
@@ -1312,13 +1312,13 @@ export enum ST_SectionMark {
 
 // CT_SectType ...
 export class CT_SectType {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // CT_PaperSource ...
 export class CT_PaperSource {
-	FirstAttr: number | null;
-	OtherAttr: number | null;
+	FirstAttr?: number;
+	OtherAttr?: number;
 }
 
 // ST_NumberFormat ...
@@ -1396,10 +1396,10 @@ export enum ST_PageOrientation {
 
 // CT_PageSz ...
 export class CT_PageSz {
-	WAttr: ST_TwipsMeasure | null;
-	HAttr: ST_TwipsMeasure | null;
-	OrientAttr: string | null;
-	CodeAttr: number | null;
+	WAttr?: ST_TwipsMeasure;
+	HAttr?: ST_TwipsMeasure;
+	OrientAttr?: string;
+	CodeAttr?: number;
 }
 
 // CT_PageMar ...
@@ -1434,9 +1434,9 @@ export enum ST_PageBorderOffset {
 
 // CT_PageBorders ...
 export class CT_PageBorders {
-	ZOrderAttr: string | null;
-	DisplayAttr: string | null;
-	OffsetFromAttr: string | null;
+	ZOrderAttr?: string;
+	DisplayAttr?: string;
+	OffsetFromAttr?: string;
 	Top?: CT_TopPageBorder;
 	Left?: CT_PageBorder;
 	Bottom?: CT_BottomPageBorder;
@@ -1445,19 +1445,19 @@ export class CT_PageBorders {
 
 // CT_PageBorder ...
 export class CT_PageBorder extends CT_Border  {
-	RIdAttr: string | null;
+	RIdAttr?: string;
 }
 
 // CT_BottomPageBorder ...
 export class CT_BottomPageBorder extends CT_PageBorder  {
-	RBottomLeftAttr: string | null;
-	RBottomRightAttr: string | null;
+	RBottomLeftAttr?: string;
+	RBottomRightAttr?: string;
 }
 
 // CT_TopPageBorder ...
 export class CT_TopPageBorder extends CT_PageBorder  {
-	RTopLeftAttr: string | null;
-	RTopRightAttr: string | null;
+	RTopLeftAttr?: string;
+	RTopRightAttr?: string;
 }
 
 // ST_ChapterSep ...
@@ -1478,32 +1478,32 @@ export enum ST_LineNumberRestart {
 
 // CT_LineNumber ...
 export class CT_LineNumber {
-	CountByAttr: number | null;
-	StartAttr: number | null;
-	DistanceAttr: ST_TwipsMeasure | null;
-	RestartAttr: string | null;
+	CountByAttr?: number;
+	StartAttr?: number;
+	DistanceAttr?: ST_TwipsMeasure;
+	RestartAttr?: string;
 }
 
 // CT_PageNumber ...
 export class CT_PageNumber {
-	FmtAttr: string | null;
-	StartAttr: number | null;
-	ChapStyleAttr: number | null;
-	ChapSepAttr: string | null;
+	FmtAttr?: string;
+	StartAttr?: number;
+	ChapStyleAttr?: number;
+	ChapSepAttr?: string;
 }
 
 // CT_Column ...
 export class CT_Column {
-	WAttr: ST_TwipsMeasure | null;
-	SpaceAttr: ST_TwipsMeasure | null;
+	WAttr?: ST_TwipsMeasure;
+	SpaceAttr?: ST_TwipsMeasure;
 }
 
 // CT_Columns ...
 export class CT_Columns {
-	EqualWidthAttr: ST_OnOff | null;
-	SpaceAttr: ST_TwipsMeasure | null;
-	NumAttr: number | null;
-	SepAttr: ST_OnOff | null;
+	EqualWidthAttr?: ST_OnOff;
+	SpaceAttr?: ST_TwipsMeasure;
+	NumAttr?: number;
+	SepAttr?: ST_OnOff;
 	Col: Array<CT_Column>;
 }
 
@@ -1530,9 +1530,9 @@ export enum ST_DocGrid {
 
 // CT_DocGrid ...
 export class CT_DocGrid {
-	TypeAttr: string | null;
-	LinePitchAttr: number | null;
-	CharSpaceAttr: number | null;
+	TypeAttr?: string;
+	LinePitchAttr?: number;
+	CharSpaceAttr?: number;
 }
 
 // ST_HdrFtr ...
@@ -1628,8 +1628,8 @@ export enum ST_BrClear {
 
 // CT_Br ...
 export class CT_Br {
-	TypeAttr: string | null;
-	ClearAttr: string | null;
+	TypeAttr?: string;
+	ClearAttr?: string;
 }
 
 // ST_PTabAlignment ...
@@ -1663,8 +1663,8 @@ export class CT_PTab {
 
 // CT_Sym ...
 export class CT_Sym {
-	FontAttr: string | null;
-	CharAttr: Uint8Array | null;
+	FontAttr?: string;
+	CharAttr?: Uint8Array;
 }
 
 // ST_ProofErr ...
@@ -1694,20 +1694,20 @@ export enum ST_EdGrp {
 // CT_Perm ...
 export class CT_Perm {
 	IdAttr: string;
-	DisplacedByCustomXmlAttr: string | null;
+	DisplacedByCustomXmlAttr?: string;
 }
 
 // CT_PermStart ...
 export class CT_PermStart extends CT_Perm  {
-	EdGrpAttr: string | null;
-	EdAttr: string | null;
-	ColFirstAttr: number | null;
-	ColLastAttr: number | null;
+	EdGrpAttr?: string;
+	EdAttr?: string;
+	ColFirstAttr?: number;
+	ColLastAttr?: number;
 }
 
 // CT_Text ...
 export class CT_Text {
-	XmlSpaceAttr: Space | null;
+	XmlSpaceAttr?: Space;
 	Value: string;
 }
 
@@ -1749,9 +1749,9 @@ export class EG_RunInnerContent {
 
 // CT_R ...
 export class CT_R {
-	RsidRPrAttr: Uint8Array | null;
-	RsidDelAttr: Uint8Array | null;
-	RsidRAttr: Uint8Array | null;
+	RsidRPrAttr?: Uint8Array;
+	RsidDelAttr?: Uint8Array;
+	RsidRAttr?: Uint8Array;
 	EG_RPr: EG_RPr;
 	EG_RunInnerContent: Array<EG_RunInnerContent>;
 }
@@ -1776,15 +1776,15 @@ export enum ST_Theme {
 
 // CT_Fonts ...
 export class CT_Fonts {
-	HintAttr: string | null;
-	AsciiAttr: string | null;
-	HAnsiAttr: string | null;
-	EastAsiaAttr: string | null;
-	CsAttr: string | null;
-	AsciiThemeAttr: string | null;
-	HAnsiThemeAttr: string | null;
-	EastAsiaThemeAttr: string | null;
-	CsthemeAttr: string | null;
+	HintAttr?: string;
+	AsciiAttr?: string;
+	HAnsiAttr?: string;
+	EastAsiaAttr?: string;
+	CsAttr?: string;
+	AsciiThemeAttr?: string;
+	HAnsiThemeAttr?: string;
+	EastAsiaThemeAttr?: string;
+	CsthemeAttr?: string;
 }
 
 // EG_RPrBase ...
@@ -1892,7 +1892,7 @@ export class EG_ParaRPrTrackChanges {
 
 // CT_AltChunk ...
 export class CT_AltChunk {
-	RIdAttr: string | null;
+	RIdAttr?: string;
 	AltChunkPr?: CT_AltChunkPr;
 }
 
@@ -1954,13 +1954,13 @@ export enum ST_Lock {
 
 // CT_Lock ...
 export class CT_Lock {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // CT_SdtListItem ...
 export class CT_SdtListItem {
-	DisplayTextAttr: string | null;
-	ValueAttr: string | null;
+	DisplayTextAttr?: string;
+	ValueAttr?: string;
 }
 
 // ST_SdtDateMappingType ...
@@ -1972,17 +1972,17 @@ export enum ST_SdtDateMappingType {
 
 // CT_SdtDateMappingType ...
 export class CT_SdtDateMappingType {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // CT_CalendarType ...
 export class CT_CalendarType {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // CT_SdtDate ...
 export class CT_SdtDate {
-	FullDateAttr: string | null;
+	FullDateAttr?: string;
 	DateFormat?: CT_String;
 	Lid?: CT_Lang;
 	StoreMappedDataAs?: CT_SdtDateMappingType;
@@ -1991,7 +1991,7 @@ export class CT_SdtDate {
 
 // CT_SdtComboBox ...
 export class CT_SdtComboBox {
-	LastValueAttr: string | null;
+	LastValueAttr?: string;
 	ListItem?: Array<CT_SdtListItem>;
 }
 
@@ -2004,7 +2004,7 @@ export class CT_SdtDocPart {
 
 // CT_SdtDropDownList ...
 export class CT_SdtDropDownList {
-	LastValueAttr: string | null;
+	LastValueAttr?: string;
 	ListItem?: Array<CT_SdtListItem>;
 }
 
@@ -2015,12 +2015,12 @@ export class CT_Placeholder {
 
 // CT_SdtText ...
 export class CT_SdtText {
-	MultiLineAttr: ST_OnOff | null;
+	MultiLineAttr?: ST_OnOff;
 }
 
 // CT_DataBinding ...
 export class CT_DataBinding {
-	PrefixMappingsAttr: string | null;
+	PrefixMappingsAttr?: string;
 	XpathAttr: string;
 	StoreItemIDAttr: string;
 }
@@ -2070,13 +2070,13 @@ export class EG_ContentRunContent {
 
 // CT_DirContentRun ...
 export class CT_DirContentRun {
-	ValAttr: string | null;
+	ValAttr?: string;
 	EG_PContent: Array<EG_PContent>;
 }
 
 // CT_BdoContentRun ...
 export class CT_BdoContentRun {
-	ValAttr: string | null;
+	ValAttr?: string;
 	EG_PContent: Array<EG_PContent>;
 }
 
@@ -2161,14 +2161,14 @@ export class CT_SdtRow {
 
 // CT_Attr ...
 export class CT_Attr {
-	UriAttr: string | null;
+	UriAttr?: string;
 	NameAttr: string;
 	ValAttr: string;
 }
 
 // CT_CustomXmlRun ...
 export class CT_CustomXmlRun {
-	UriAttr: string | null;
+	UriAttr?: string;
 	ElementAttr: string;
 	EG_PContent: Array<EG_PContent>;
 	CustomXmlPr?: CT_CustomXmlPr;
@@ -2176,7 +2176,7 @@ export class CT_CustomXmlRun {
 
 // CT_SmartTagRun ...
 export class CT_SmartTagRun {
-	UriAttr: string | null;
+	UriAttr?: string;
 	ElementAttr: string;
 	EG_PContent: Array<EG_PContent>;
 	SmartTagPr?: CT_SmartTagPr;
@@ -2184,7 +2184,7 @@ export class CT_SmartTagRun {
 
 // CT_CustomXmlBlock ...
 export class CT_CustomXmlBlock {
-	UriAttr: string | null;
+	UriAttr?: string;
 	ElementAttr: string;
 	EG_ContentBlockContent: Array<EG_ContentBlockContent>;
 	CustomXmlPr?: CT_CustomXmlPr;
@@ -2198,7 +2198,7 @@ export class CT_CustomXmlPr {
 
 // CT_CustomXmlRow ...
 export class CT_CustomXmlRow {
-	UriAttr: string | null;
+	UriAttr?: string;
 	ElementAttr: string;
 	EG_ContentRowContent: Array<EG_ContentRowContent>;
 	CustomXmlPr?: CT_CustomXmlPr;
@@ -2206,7 +2206,7 @@ export class CT_CustomXmlRow {
 
 // CT_CustomXmlCell ...
 export class CT_CustomXmlCell {
-	UriAttr: string | null;
+	UriAttr?: string;
 	ElementAttr: string;
 	EG_ContentCellContent: Array<EG_ContentCellContent>;
 	CustomXmlPr?: CT_CustomXmlPr;
@@ -2227,11 +2227,11 @@ export class EG_PContent {
 
 // CT_P ...
 export class CT_P {
-	RsidRPrAttr: Uint8Array | null;
-	RsidRAttr: Uint8Array | null;
-	RsidDelAttr: Uint8Array | null;
-	RsidPAttr: Uint8Array | null;
-	RsidRDefaultAttr: Uint8Array | null;
+	RsidRPrAttr?: Uint8Array;
+	RsidRAttr?: Uint8Array;
+	RsidDelAttr?: Uint8Array;
+	RsidPAttr?: Uint8Array;
+	RsidRDefaultAttr?: Uint8Array;
 	EG_PContent: Array<EG_PContent>;
 	PPr?: CT_PPr;
 }
@@ -2246,8 +2246,8 @@ export enum ST_TblWidth {
 
 // CT_Height ...
 export class CT_Height {
-	ValAttr: ST_TwipsMeasure | null;
-	HRuleAttr: string | null;
+	ValAttr?: ST_TwipsMeasure;
+	HRuleAttr?: string;
 }
 
 // ST_MeasurementOrPercent ...
@@ -2258,13 +2258,13 @@ export class ST_MeasurementOrPercent {
 
 // CT_TblWidth ...
 export class CT_TblWidth {
-	WAttr: ST_MeasurementOrPercent | null;
-	TypeAttr: string | null;
+	WAttr?: ST_MeasurementOrPercent;
+	TypeAttr?: string;
 }
 
 // CT_TblGridCol ...
 export class CT_TblGridCol {
-	WAttr: ST_TwipsMeasure | null;
+	WAttr?: ST_TwipsMeasure;
 }
 
 // CT_TblGridBase ...
@@ -2305,7 +2305,7 @@ export enum ST_Merge {
 
 // CT_VMerge ...
 export class CT_VMerge {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // CT_TcPrBase ...
@@ -2337,25 +2337,25 @@ export class CT_TcPrInner extends CT_TcPrBase  {
 
 // CT_Tc ...
 export class CT_Tc {
-	IdAttr: string | null;
+	IdAttr?: string;
 	EG_BlockLevelElts: Array<EG_BlockLevelElts>;
 	TcPr?: CT_TcPr;
 }
 
 // CT_Cnf ...
 export class CT_Cnf {
-	FirstRowAttr: ST_OnOff | null;
-	LastRowAttr: ST_OnOff | null;
-	FirstColumnAttr: ST_OnOff | null;
-	LastColumnAttr: ST_OnOff | null;
-	OddVBandAttr: ST_OnOff | null;
-	EvenVBandAttr: ST_OnOff | null;
-	OddHBandAttr: ST_OnOff | null;
-	EvenHBandAttr: ST_OnOff | null;
-	FirstRowFirstColumnAttr: ST_OnOff | null;
-	FirstRowLastColumnAttr: ST_OnOff | null;
-	LastRowFirstColumnAttr: ST_OnOff | null;
-	LastRowLastColumnAttr: ST_OnOff | null;
+	FirstRowAttr?: ST_OnOff;
+	LastRowAttr?: ST_OnOff;
+	FirstColumnAttr?: ST_OnOff;
+	LastColumnAttr?: ST_OnOff;
+	OddVBandAttr?: ST_OnOff;
+	EvenVBandAttr?: ST_OnOff;
+	OddHBandAttr?: ST_OnOff;
+	EvenHBandAttr?: ST_OnOff;
+	FirstRowFirstColumnAttr?: ST_OnOff;
+	FirstRowLastColumnAttr?: ST_OnOff;
+	LastRowFirstColumnAttr?: ST_OnOff;
+	LastRowLastColumnAttr?: ST_OnOff;
 }
 
 // CT_Headers ...
@@ -2388,10 +2388,10 @@ export class CT_TrPr extends CT_TrPrBase  {
 
 // CT_Row ...
 export class CT_Row {
-	RsidRPrAttr: Uint8Array | null;
-	RsidRAttr: Uint8Array | null;
-	RsidDelAttr: Uint8Array | null;
-	RsidTrAttr: Uint8Array | null;
+	RsidRPrAttr?: Uint8Array;
+	RsidRAttr?: Uint8Array;
+	RsidDelAttr?: Uint8Array;
+	RsidTrAttr?: Uint8Array;
 	EG_ContentCellContent: Array<EG_ContentCellContent>;
 	TblPrEx?: CT_TblPrEx;
 	TrPr?: CT_TrPr;
@@ -2405,7 +2405,7 @@ export enum ST_TblLayoutType {
 
 // CT_TblLayoutType ...
 export class CT_TblLayoutType {
-	TypeAttr: string | null;
+	TypeAttr?: string;
 }
 
 // ST_TblOverlap ...
@@ -2421,16 +2421,16 @@ export class CT_TblOverlap {
 
 // CT_TblPPr ...
 export class CT_TblPPr {
-	LeftFromTextAttr: ST_TwipsMeasure | null;
-	RightFromTextAttr: ST_TwipsMeasure | null;
-	TopFromTextAttr: ST_TwipsMeasure | null;
-	BottomFromTextAttr: ST_TwipsMeasure | null;
-	VertAnchorAttr: string | null;
-	HorzAnchorAttr: string | null;
-	TblpXSpecAttr: string | null;
-	TblpXAttr: ST_SignedTwipsMeasure | null;
-	TblpYSpecAttr: string | null;
-	TblpYAttr: ST_SignedTwipsMeasure | null;
+	LeftFromTextAttr?: ST_TwipsMeasure;
+	RightFromTextAttr?: ST_TwipsMeasure;
+	TopFromTextAttr?: ST_TwipsMeasure;
+	BottomFromTextAttr?: ST_TwipsMeasure;
+	VertAnchorAttr?: string;
+	HorzAnchorAttr?: string;
+	TblpXSpecAttr?: string;
+	TblpXAttr?: ST_SignedTwipsMeasure;
+	TblpYSpecAttr?: string;
+	TblpYAttr?: ST_SignedTwipsMeasure;
 }
 
 // CT_TblCellMar ...
@@ -2505,12 +2505,12 @@ export class CT_Tbl {
 
 // CT_TblLook ...
 export class CT_TblLook {
-	FirstRowAttr: ST_OnOff | null;
-	LastRowAttr: ST_OnOff | null;
-	FirstColumnAttr: ST_OnOff | null;
-	LastColumnAttr: ST_OnOff | null;
-	NoHBandAttr: ST_OnOff | null;
-	NoVBandAttr: ST_OnOff | null;
+	FirstRowAttr?: ST_OnOff;
+	LastRowAttr?: ST_OnOff;
+	FirstColumnAttr?: ST_OnOff;
+	LastColumnAttr?: ST_OnOff;
+	NoHBandAttr?: ST_OnOff;
+	NoVBandAttr?: ST_OnOff;
 }
 
 // ST_FtnPos ...
@@ -2540,7 +2540,7 @@ export class CT_EdnPos {
 // CT_NumFmt ...
 export class CT_NumFmt {
 	ValAttr: string;
-	FormatAttr: string | null;
+	FormatAttr?: string;
 }
 
 // ST_RestartNumber ...
@@ -2557,7 +2557,7 @@ export class CT_NumRestart {
 
 // CT_FtnEdnRef ...
 export class CT_FtnEdnRef {
-	CustomMarkFollowsAttr: ST_OnOff | null;
+	CustomMarkFollowsAttr?: ST_OnOff;
 	IdAttr: number;
 }
 
@@ -2568,7 +2568,7 @@ export class CT_FtnEdnSepRef {
 
 // CT_FtnEdn ...
 export class CT_FtnEdn {
-	TypeAttr: string | null;
+	TypeAttr?: string;
 	IdAttr: number;
 	EG_BlockLevelElts: Array<EG_BlockLevelElts>;
 }
@@ -2717,9 +2717,9 @@ export class CT_Compat {
 
 // CT_CompatSetting ...
 export class CT_CompatSetting {
-	NameAttr: string | null;
-	UriAttr: string | null;
-	ValAttr: string | null;
+	NameAttr?: string;
+	UriAttr?: string;
+	ValAttr?: string;
 }
 
 // CT_DocVar ...
@@ -2753,8 +2753,8 @@ export class CT_CharacterSpacing {
 
 // CT_SaveThroughXslt ...
 export class CT_SaveThroughXslt {
-	RIdAttr: string | null;
-	SolutionIDAttr: string | null;
+	RIdAttr?: string;
+	SolutionIDAttr?: string;
 }
 
 // CT_RPrDefault ...
@@ -2791,18 +2791,18 @@ export enum ST_WmlColorSchemeIndex {
 
 // CT_ColorSchemeMapping ...
 export class CT_ColorSchemeMapping {
-	Bg1Attr: string | null;
-	T1Attr: string | null;
-	Bg2Attr: string | null;
-	T2Attr: string | null;
-	Accent1Attr: string | null;
-	Accent2Attr: string | null;
-	Accent3Attr: string | null;
-	Accent4Attr: string | null;
-	Accent5Attr: string | null;
-	Accent6Attr: string | null;
-	HyperlinkAttr: string | null;
-	FollowedHyperlinkAttr: string | null;
+	Bg1Attr?: string;
+	T1Attr?: string;
+	Bg2Attr?: string;
+	T2Attr?: string;
+	Accent1Attr?: string;
+	Accent2Attr?: string;
+	Accent3Attr?: string;
+	Accent4Attr?: string;
+	Accent5Attr?: string;
+	Accent6Attr?: string;
+	HyperlinkAttr?: string;
+	FollowedHyperlinkAttr?: string;
 }
 
 // CT_ReadingModeInkLockDown ...
@@ -2816,7 +2816,7 @@ export class CT_ReadingModeInkLockDown {
 // CT_WriteProtection ...
 export class CT_WriteProtection {
 	AG_Password: AG_Password;
-	RecommendedAttr: ST_OnOff | null;
+	RecommendedAttr?: ST_OnOff;
 }
 
 // CT_Settings ...
@@ -2926,21 +2926,21 @@ export class CT_StyleSort {
 
 // CT_StylePaneFilter ...
 export class CT_StylePaneFilter {
-	AllStylesAttr: ST_OnOff | null;
-	CustomStylesAttr: ST_OnOff | null;
-	LatentStylesAttr: ST_OnOff | null;
-	StylesInUseAttr: ST_OnOff | null;
-	HeadingStylesAttr: ST_OnOff | null;
-	NumberingStylesAttr: ST_OnOff | null;
-	TableStylesAttr: ST_OnOff | null;
-	DirectFormattingOnRunsAttr: ST_OnOff | null;
-	DirectFormattingOnParagraphsAttr: ST_OnOff | null;
-	DirectFormattingOnNumberingAttr: ST_OnOff | null;
-	DirectFormattingOnTablesAttr: ST_OnOff | null;
-	ClearFormattingAttr: ST_OnOff | null;
-	Top3HeadingStylesAttr: ST_OnOff | null;
-	VisibleStylesAttr: ST_OnOff | null;
-	AlternateStyleNamesAttr: ST_OnOff | null;
+	AllStylesAttr?: ST_OnOff;
+	CustomStylesAttr?: ST_OnOff;
+	LatentStylesAttr?: ST_OnOff;
+	StylesInUseAttr?: ST_OnOff;
+	HeadingStylesAttr?: ST_OnOff;
+	NumberingStylesAttr?: ST_OnOff;
+	TableStylesAttr?: ST_OnOff;
+	DirectFormattingOnRunsAttr?: ST_OnOff;
+	DirectFormattingOnParagraphsAttr?: ST_OnOff;
+	DirectFormattingOnNumberingAttr?: ST_OnOff;
+	DirectFormattingOnTablesAttr?: ST_OnOff;
+	ClearFormattingAttr?: ST_OnOff;
+	Top3HeadingStylesAttr?: ST_OnOff;
+	VisibleStylesAttr?: ST_OnOff;
+	AlternateStyleNamesAttr?: ST_OnOff;
 }
 
 // ST_StyleSort ...
@@ -2983,7 +2983,7 @@ export class CT_FrameScrollbar {
 
 // CT_OptimizeForBrowser ...
 export class CT_OptimizeForBrowser extends CT_OnOff  {
-	TargetAttr: string | null;
+	TargetAttr?: string;
 }
 
 // CT_Frame ...
@@ -3050,15 +3050,15 @@ export class CT_LevelSuffix {
 
 // CT_LevelText ...
 export class CT_LevelText {
-	ValAttr: string | null;
-	NullAttr: ST_OnOff | null;
+	ValAttr?: string;
+	NullAttr?: ST_OnOff;
 }
 
 // CT_Lvl ...
 export class CT_Lvl {
 	IlvlAttr: number;
-	TplcAttr: Uint8Array | null;
-	TentativeAttr: ST_OnOff | null;
+	TplcAttr?: Uint8Array;
+	TentativeAttr?: ST_OnOff;
 	Start?: CT_DecimalNumber;
 	NumFmt?: CT_NumFmt;
 	LvlRestart?: CT_DecimalNumber;
@@ -3155,10 +3155,10 @@ export enum ST_StyleType {
 
 // CT_Style ...
 export class CT_Style {
-	TypeAttr: string | null;
-	StyleIdAttr: string | null;
-	DefaultAttr: ST_OnOff | null;
-	CustomStyleAttr: ST_OnOff | null;
+	TypeAttr?: string;
+	StyleIdAttr?: string;
+	DefaultAttr?: ST_OnOff;
+	CustomStyleAttr?: ST_OnOff;
 	Name?: CT_String;
 	Aliases?: CT_String;
 	BasedOn?: CT_String;
@@ -3186,21 +3186,21 @@ export class CT_Style {
 // CT_LsdException ...
 export class CT_LsdException {
 	NameAttr: string;
-	LockedAttr: ST_OnOff | null;
-	UiPriorityAttr: number | null;
-	SemiHiddenAttr: ST_OnOff | null;
-	UnhideWhenUsedAttr: ST_OnOff | null;
-	QFormatAttr: ST_OnOff | null;
+	LockedAttr?: ST_OnOff;
+	UiPriorityAttr?: number;
+	SemiHiddenAttr?: ST_OnOff;
+	UnhideWhenUsedAttr?: ST_OnOff;
+	QFormatAttr?: ST_OnOff;
 }
 
 // CT_LatentStyles ...
 export class CT_LatentStyles {
-	DefLockedStateAttr: ST_OnOff | null;
-	DefUIPriorityAttr: number | null;
-	DefSemiHiddenAttr: ST_OnOff | null;
-	DefUnhideWhenUsedAttr: ST_OnOff | null;
-	DefQFormatAttr: ST_OnOff | null;
-	CountAttr: number | null;
+	DefLockedStateAttr?: ST_OnOff;
+	DefUIPriorityAttr?: number;
+	DefSemiHiddenAttr?: ST_OnOff;
+	DefUnhideWhenUsedAttr?: ST_OnOff;
+	DefQFormatAttr?: ST_OnOff;
+	CountAttr?: number;
 	LsdException?: Array<CT_LsdException>;
 }
 
@@ -3255,8 +3255,8 @@ export class CT_FontSig {
 
 // CT_FontRel ...
 export class CT_FontRel extends CT_Rel  {
-	FontKeyAttr: string | null;
-	SubsettedAttr: ST_OnOff | null;
+	FontKeyAttr?: string;
+	SubsettedAttr?: ST_OnOff;
 }
 
 // CT_Font ...
@@ -3374,9 +3374,9 @@ export type Ftr = CT_HdrFtr;
 
 // CT_SmartTagType ...
 export class CT_SmartTagType {
-	NamespaceuriAttr: string | null;
-	NameAttr: string | null;
-	UrlAttr: string | null;
+	NamespaceuriAttr?: string;
+	NameAttr?: string;
+	UrlAttr?: string;
 }
 
 // ST_ThemeColor ...
@@ -3435,7 +3435,7 @@ export class CT_DocPartType {
 
 // CT_DocPartTypes ...
 export class CT_DocPartTypes {
-	AllAttr: ST_OnOff | null;
+	AllAttr?: ST_OnOff;
 	Type: Array<CT_DocPartType>;
 }
 
@@ -3495,7 +3495,7 @@ export class CT_DocPartCategory {
 // CT_DocPartName ...
 export class CT_DocPartName {
 	ValAttr: string;
-	DecoratedAttr: ST_OnOff | null;
+	DecoratedAttr?: ST_OnOff;
 }
 
 // CT_DocPartPr ...
@@ -3546,12 +3546,12 @@ export enum ST_CaptionPos {
 // CT_Caption ...
 export class CT_Caption {
 	NameAttr: string;
-	PosAttr: string | null;
-	ChapNumAttr: ST_OnOff | null;
-	HeadingAttr: number | null;
-	NoLabelAttr: ST_OnOff | null;
-	NumFmtAttr: string | null;
-	SepAttr: string | null;
+	PosAttr?: string;
+	ChapNumAttr?: ST_OnOff;
+	HeadingAttr?: number;
+	NoLabelAttr?: ST_OnOff;
+	NumFmtAttr?: string;
+	SepAttr?: string;
 }
 
 // CT_AutoCaption ...
@@ -3578,7 +3578,7 @@ export class CT_DocumentBase {
 
 // CT_Document ...
 export class CT_Document extends CT_DocumentBase  {
-	ConformanceAttr: string | null;
+	ConformanceAttr?: string;
 	Body?: CT_Body;
 }
 

@@ -16,10 +16,10 @@ type CTShapeNonVisual struct {
 // CTShape ...
 type CTShape struct {
 	XMLName        xml.Name           `xml:"CT_Shape"`
-	MacroAttr      string             `xml:"macro,attr,omitempty"`
-	TextlinkAttr   string             `xml:"textlink,attr,omitempty"`
-	FLocksTextAttr bool               `xml:"fLocksText,attr,omitempty"`
-	FPublishedAttr bool               `xml:"fPublished,attr,omitempty"`
+	MacroAttr      *string            `xml:"macro,attr"`
+	TextlinkAttr   *string            `xml:"textlink,attr"`
+	FLocksTextAttr *bool              `xml:"fLocksText,attr"`
+	FPublishedAttr *bool              `xml:"fPublished,attr"`
 	NvSpPr         *CTShapeNonVisual  `xml:"nvSpPr"`
 	SpPr           *CTShapeProperties `xml:"spPr"`
 	Style          *CTShapeStyle      `xml:"style,omitempty"`
@@ -36,8 +36,8 @@ type CTConnectorNonVisual struct {
 // CTConnector ...
 type CTConnector struct {
 	XMLName        xml.Name              `xml:"CT_Connector"`
-	MacroAttr      string                `xml:"macro,attr,omitempty"`
-	FPublishedAttr bool                  `xml:"fPublished,attr,omitempty"`
+	MacroAttr      *string               `xml:"macro,attr"`
+	FPublishedAttr *bool                 `xml:"fPublished,attr"`
 	NvCxnSpPr      *CTConnectorNonVisual `xml:"nvCxnSpPr"`
 	SpPr           *CTShapeProperties    `xml:"spPr"`
 	Style          *CTShapeStyle         `xml:"style,omitempty"`
@@ -53,8 +53,8 @@ type CTPictureNonVisual struct {
 // CTPicture ...
 type CTPicture struct {
 	XMLName        xml.Name              `xml:"CT_Picture"`
-	MacroAttr      string                `xml:"macro,attr,omitempty"`
-	FPublishedAttr bool                  `xml:"fPublished,attr,omitempty"`
+	MacroAttr      *string               `xml:"macro,attr"`
+	FPublishedAttr *bool                 `xml:"fPublished,attr"`
 	NvPicPr        *CTPictureNonVisual   `xml:"nvPicPr"`
 	BlipFill       *CTBlipFillProperties `xml:"blipFill"`
 	SpPr           *CTShapeProperties    `xml:"spPr"`
@@ -71,8 +71,8 @@ type CTGraphicFrameNonVisual struct {
 // CTGraphicFrame ...
 type CTGraphicFrame struct {
 	XMLName          xml.Name                 `xml:"CT_GraphicFrame"`
-	MacroAttr        string                   `xml:"macro,attr,omitempty"`
-	FPublishedAttr   bool                     `xml:"fPublished,attr,omitempty"`
+	MacroAttr        *string                  `xml:"macro,attr"`
+	FPublishedAttr   *bool                    `xml:"fPublished,attr"`
 	NvGraphicFramePr *CTGraphicFrameNonVisual `xml:"nvGraphicFramePr"`
 	Xfrm             *CTTransform2D           `xml:"xfrm"`
 	AGraphic         *CTGraphicalObject       `xml:"a:graphic"`

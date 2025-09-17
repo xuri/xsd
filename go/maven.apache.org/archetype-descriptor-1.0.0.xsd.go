@@ -29,8 +29,8 @@ type Modules struct {
 
 // ArchetypeDescriptor is 0.0.0+
 type ArchetypeDescriptor struct {
-	NameAttr           string              `xml:"name,attr,omitempty"`
-	PartialAttr        bool                `xml:"partial,attr,omitempty"`
+	NameAttr           *string             `xml:"name,attr"`
+	PartialAttr        *bool               `xml:"partial,attr"`
 	RequiredProperties *RequiredProperties `xml:"requiredProperties,omitempty"`
 	FileSets           *FileSets           `xml:"fileSets,omitempty"`
 	Modules            *Modules            `xml:"modules,omitempty"`
@@ -51,9 +51,9 @@ type Excludes struct {
 // FileSet is The directory where the files will be searched for, which is also the directory where the
 //            project's files will be generated.
 type FileSet struct {
-	FilteredAttr bool      `xml:"filtered,attr,omitempty"`
-	PackagedAttr bool      `xml:"packaged,attr,omitempty"`
-	EncodingAttr string    `xml:"encoding,attr,omitempty"`
+	FilteredAttr *bool     `xml:"filtered,attr"`
+	PackagedAttr *bool     `xml:"packaged,attr"`
+	EncodingAttr *string   `xml:"encoding,attr"`
 	Directory    *string   `xml:"directory"`
 	Includes     *Includes `xml:"includes,omitempty"`
 	Excludes     *Excludes `xml:"excludes,omitempty"`
@@ -61,15 +61,15 @@ type FileSet struct {
 
 // RequiredProperty is Default value of the property.
 type RequiredProperty struct {
-	KeyAttr      string  `xml:"key,attr,omitempty"`
+	KeyAttr      *string `xml:"key,attr"`
 	DefaultValue *string `xml:"defaultValue"`
 }
 
 // ModuleDescriptor is 0.0.0+
 type ModuleDescriptor struct {
-	IdAttr   string    `xml:"id,attr,omitempty"`
-	DirAttr  string    `xml:"dir,attr,omitempty"`
-	NameAttr string    `xml:"name,attr,omitempty"`
+	IdAttr   *string   `xml:"id,attr"`
+	DirAttr  *string   `xml:"dir,attr"`
+	NameAttr *string   `xml:"name,attr"`
 	FileSets *FileSets `xml:"fileSets,omitempty"`
 	Modules  *Modules  `xml:"modules,omitempty"`
 }

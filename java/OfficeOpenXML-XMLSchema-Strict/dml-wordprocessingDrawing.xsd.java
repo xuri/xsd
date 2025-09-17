@@ -14,13 +14,13 @@ import javax.xml.bind.annotation.XmlValue;
 
 // CT_EffectExtent ...
 public class CT_EffectExtent {
-	@XmlAttribute(name = "l", required = true)
+	@XmlAttribute(required = true, name = "l")
 	protected ST_Coordinate LAttr;
-	@XmlAttribute(name = "t", required = true)
+	@XmlAttribute(required = true, name = "t")
 	protected ST_Coordinate TAttr;
-	@XmlAttribute(name = "r", required = true)
+	@XmlAttribute(required = true, name = "r")
 	protected ST_Coordinate RAttr;
-	@XmlAttribute(name = "b", required = true)
+	@XmlAttribute(required = true, name = "b")
 	protected ST_Coordinate BAttr;
 }
 
@@ -76,7 +76,7 @@ public class CT_WrapNone {
 
 // CT_WrapSquare ...
 public class CT_WrapSquare {
-	@XmlAttribute(name = "wrapText", required = true)
+	@XmlAttribute(required = true, name = "wrapText")
 	protected String WrapTextAttr;
 	@XmlAttribute(name = "distT")
 	protected Integer DistTAttr;
@@ -92,7 +92,7 @@ public class CT_WrapSquare {
 
 // CT_WrapTight ...
 public class CT_WrapTight {
-	@XmlAttribute(name = "wrapText", required = true)
+	@XmlAttribute(required = true, name = "wrapText")
 	protected String WrapTextAttr;
 	@XmlAttribute(name = "distL")
 	protected Integer DistLAttr;
@@ -104,7 +104,7 @@ public class CT_WrapTight {
 
 // CT_WrapThrough ...
 public class CT_WrapThrough {
-	@XmlAttribute(name = "wrapText", required = true)
+	@XmlAttribute(required = true, name = "wrapText")
 	protected String WrapTextAttr;
 	@XmlAttribute(name = "distL")
 	protected Integer DistLAttr;
@@ -161,7 +161,7 @@ public class ST_RelFromH {
 
 // CT_PosH ...
 public class CT_PosH {
-	@XmlAttribute(name = "relativeFrom", required = true)
+	@XmlAttribute(required = true, name = "relativeFrom")
 	protected String RelativeFromAttr;
 	@XmlElement(required = true, name = "align")
 	protected String Align;
@@ -185,7 +185,7 @@ public class ST_RelFromV {
 
 // CT_PosV ...
 public class CT_PosV {
-	@XmlAttribute(name = "relativeFrom", required = true)
+	@XmlAttribute(required = true, name = "relativeFrom")
 	protected String RelativeFromAttr;
 	@XmlElement(required = true, name = "align")
 	protected String Align;
@@ -205,17 +205,17 @@ public class CT_Anchor {
 	protected Integer DistRAttr;
 	@XmlAttribute(name = "simplePos")
 	protected Boolean SimplePosAttr;
-	@XmlAttribute(name = "relativeHeight", required = true)
+	@XmlAttribute(required = true, name = "relativeHeight")
 	protected Integer RelativeHeightAttr;
-	@XmlAttribute(name = "behindDoc", required = true)
+	@XmlAttribute(required = true, name = "behindDoc")
 	protected Boolean BehindDocAttr;
-	@XmlAttribute(name = "locked", required = true)
+	@XmlAttribute(required = true, name = "locked")
 	protected Boolean LockedAttr;
-	@XmlAttribute(name = "layoutInCell", required = true)
+	@XmlAttribute(required = true, name = "layoutInCell")
 	protected Boolean LayoutInCellAttr;
 	@XmlAttribute(name = "hidden")
 	protected Boolean HiddenAttr;
-	@XmlAttribute(name = "allowOverlap", required = true)
+	@XmlAttribute(required = true, name = "allowOverlap")
 	protected Boolean AllowOverlapAttr;
 	protected EG_WrapType EG_WrapType;
 	@XmlElement(required = true, name = "simplePos")
@@ -253,9 +253,9 @@ public class CT_TextboxInfo {
 
 // CT_LinkedTextboxInformation ...
 public class CT_LinkedTextboxInformation {
-	@XmlAttribute(name = "id", required = true)
+	@XmlAttribute(required = true, name = "id")
 	protected Short IdAttr;
-	@XmlAttribute(name = "seq", required = true)
+	@XmlAttribute(required = true, name = "seq")
 	protected Short SeqAttr;
 	@XmlElement(name = "extLst")
 	protected CT_OfficeArtExtensionList ExtLst;
@@ -311,7 +311,7 @@ public class CT_WordprocessingContentPartNonVisual {
 public class CT_WordprocessingContentPart {
 	@XmlAttribute(name = "bwMode")
 	protected String BwModeAttr;
-	@XmlAttribute(name = "r:id", required = true)
+	@XmlAttribute(required = true, name = "r:id")
 	protected String RIdAttr;
 	@XmlElement(name = "nvContentPartPr")
 	protected CT_WordprocessingContentPartNonVisual NvContentPartPr;

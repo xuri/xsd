@@ -19,34 +19,34 @@ type Body struct {
 
 // Release is The list of actions taken for this release.
 type Release struct {
-	VersionAttr     string    `xml:"version,attr,omitempty"`
-	DateAttr        string    `xml:"date,attr,omitempty"`
-	DescriptionAttr string    `xml:"description,attr,omitempty"`
+	VersionAttr     *string   `xml:"version,attr"`
+	DateAttr        *string   `xml:"date,attr"`
+	DescriptionAttr *string   `xml:"description,attr"`
 	Action          []*Action `xml:"action,omitempty"`
 }
 
 // Action is A list of contibutors for this issue.
 type Action struct {
-	DevAttr        string        `xml:"dev,attr,omitempty"`
-	DueToAttr      string        `xml:"due-to,attr,omitempty"`
-	DueToEmailAttr string        `xml:"due-to-email,attr,omitempty"`
-	IssueAttr      string        `xml:"issue,attr,omitempty"`
-	TypeAttr       string        `xml:"type,attr,omitempty"`
-	SystemAttr     string        `xml:"system,attr,omitempty"`
-	DateAttr       string        `xml:"date,attr,omitempty"`
+	DevAttr        *string       `xml:"dev,attr"`
+	DueToAttr      *string       `xml:"due-to,attr"`
+	DueToEmailAttr *string       `xml:"due-to-email,attr"`
+	IssueAttr      *string       `xml:"issue,attr"`
+	TypeAttr       *string       `xml:"type,attr"`
+	SystemAttr     *string       `xml:"system,attr"`
+	DateAttr       *string       `xml:"date,attr"`
 	Fixes          []*FixedIssue `xml:"fixes,omitempty"`
 	Dueto          []*DueTo      `xml:"dueto,omitempty"`
 }
 
 // FixedIssue is A fixed issue.
 type FixedIssue struct {
-	IssueAttr string `xml:"issue,attr,omitempty"`
+	IssueAttr *string `xml:"issue,attr"`
 }
 
 // DueTo is Name and Email of the person to be credited for this change. This can be used when a patch is submitted by a non-committer.
 type DueTo struct {
-	NameAttr  string `xml:"name,attr,omitempty"`
-	EmailAttr string `xml:"email,attr,omitempty"`
+	NameAttr  *string `xml:"name,attr"`
+	EmailAttr *string `xml:"email,attr"`
 }
 
 // Properties is Page Author
@@ -57,5 +57,5 @@ type Properties struct {
 
 // Author is A description of the author page.
 type Author struct {
-	EmailAttr string `xml:"email,attr,omitempty"`
+	EmailAttr *string `xml:"email,attr"`
 }

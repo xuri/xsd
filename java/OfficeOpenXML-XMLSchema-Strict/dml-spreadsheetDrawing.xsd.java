@@ -172,7 +172,7 @@ public class EG_ObjectChoices {
 
 // CT_Rel ...
 public class CT_Rel {
-	@XmlAttribute(name = "r:id", required = true)
+	@XmlAttribute(required = true, name = "r:id")
 	protected String RIdAttr;
 }
 

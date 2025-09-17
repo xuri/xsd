@@ -46,8 +46,8 @@ type AnyTopLevelOptionalElement struct {
 // TDefinitions ...
 type TDefinitions struct {
 	XMLName                        xml.Name `xml:"tDefinitions"`
-	TargetNamespaceAttr            string   `xml:"targetNamespace,attr,omitempty"`
-	NameAttr                       string   `xml:"name,attr,omitempty"`
+	TargetNamespaceAttr            *string  `xml:"targetNamespace,attr"`
+	NameAttr                       *string  `xml:"name,attr"`
 	WsdlAnyTopLevelOptionalElement []*AnyTopLevelOptionalElement
 	*TExtensibleDocumented
 }
@@ -76,10 +76,10 @@ type TMessage struct {
 
 // TPart ...
 type TPart struct {
-	XMLName     xml.Name `xml:"tPart"`
-	NameAttr    string   `xml:"name,attr"`
-	ElementAttr xml.Name `xml:"element,attr,omitempty"`
-	TypeAttr    xml.Name `xml:"type,attr,omitempty"`
+	XMLName     xml.Name  `xml:"tPart"`
+	NameAttr    string    `xml:"name,attr"`
+	ElementAttr *xml.Name `xml:"element,attr"`
+	TypeAttr    *xml.Name `xml:"type,attr"`
 	*TExtensibleAttributesDocumented
 }
 
@@ -93,9 +93,9 @@ type TPortType struct {
 
 // TOperation ...
 type TOperation struct {
-	XMLName                                    xml.Name `xml:"tOperation"`
-	NameAttr                                   string   `xml:"name,attr"`
-	ParameterOrderAttr                         []string `xml:"parameterOrder,attr,omitempty"`
+	XMLName                                    xml.Name  `xml:"tOperation"`
+	NameAttr                                   string    `xml:"name,attr"`
+	ParameterOrderAttr                         *[]string `xml:"parameterOrder,attr"`
 	WsdlRequestResponseOrOneWayOperation       *RequestResponseOrOneWayOperation
 	WsdlSolicitResponseOrNotificationOperation *SolicitResponseOrNotificationOperation
 	*TExtensibleDocumented
@@ -120,7 +120,7 @@ type SolicitResponseOrNotificationOperation struct {
 // TParam ...
 type TParam struct {
 	XMLName     xml.Name `xml:"tParam"`
-	NameAttr    string   `xml:"name,attr,omitempty"`
+	NameAttr    *string  `xml:"name,attr"`
 	MessageAttr xml.Name `xml:"message,attr"`
 	*TExtensibleAttributesDocumented
 }
@@ -145,7 +145,7 @@ type TBinding struct {
 // TBindingOperationMessage ...
 type TBindingOperationMessage struct {
 	XMLName  xml.Name `xml:"tBindingOperationMessage"`
-	NameAttr string   `xml:"name,attr,omitempty"`
+	NameAttr *string  `xml:"name,attr"`
 	*TExtensibleDocumented
 }
 
@@ -191,5 +191,5 @@ type Required bool
 // TExtensibilityElement ...
 type TExtensibilityElement struct {
 	XMLName          xml.Name `xml:"tExtensibilityElement"`
-	WsdlRequiredAttr bool     `xml:"wsdl:required,attr,omitempty"`
+	WsdlRequiredAttr *bool    `xml:"wsdl:required,attr"`
 }

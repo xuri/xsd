@@ -2,7 +2,7 @@
 
 // Number ...
 export class Number {
-	PrecisionAttr: number | null;
+	PrecisionAttr?: number;
 	Value: number;
 }
 

@@ -21,7 +21,7 @@ public class ST_Integer255 {
 
 // CT_Integer255 ...
 public class CT_Integer255 {
-	@XmlAttribute(name = "val", required = true)
+	@XmlAttribute(required = true, name = "val")
 	protected Integer ValAttr;
 }
 
@@ -34,7 +34,7 @@ public class ST_Integer2 {
 
 // CT_Integer2 ...
 public class CT_Integer2 {
-	@XmlAttribute(name = "val", required = true)
+	@XmlAttribute(required = true, name = "val")
 	protected Integer ValAttr;
 }
 
@@ -47,7 +47,7 @@ public class ST_SpacingRule {
 
 // CT_SpacingRule ...
 public class CT_SpacingRule {
-	@XmlAttribute(name = "val", required = true)
+	@XmlAttribute(required = true, name = "val")
 	protected Integer ValAttr;
 }
 
@@ -60,7 +60,7 @@ public class ST_UnSignedInteger {
 
 // CT_UnSignedInteger ...
 public class CT_UnSignedInteger {
-	@XmlAttribute(name = "val", required = true)
+	@XmlAttribute(required = true, name = "val")
 	protected Integer ValAttr;
 }
 
@@ -73,7 +73,7 @@ public class ST_Char {
 
 // CT_Char ...
 public class CT_Char {
-	@XmlAttribute(name = "val", required = true)
+	@XmlAttribute(required = true, name = "val")
 	protected String ValAttr;
 }
 
@@ -91,13 +91,13 @@ public class CT_String {
 
 // CT_XAlign ...
 public class CT_XAlign {
-	@XmlAttribute(name = "val", required = true)
+	@XmlAttribute(required = true, name = "val")
 	protected String ValAttr;
 }
 
 // CT_YAlign ...
 public class CT_YAlign {
-	@XmlAttribute(name = "val", required = true)
+	@XmlAttribute(required = true, name = "val")
 	protected String ValAttr;
 }
 
@@ -110,7 +110,7 @@ public class ST_Shp {
 
 // CT_Shp ...
 public class CT_Shp {
-	@XmlAttribute(name = "val", required = true)
+	@XmlAttribute(required = true, name = "val")
 	protected String ValAttr;
 }
 
@@ -123,7 +123,7 @@ public class ST_FType {
 
 // CT_FType ...
 public class CT_FType {
-	@XmlAttribute(name = "val", required = true)
+	@XmlAttribute(required = true, name = "val")
 	protected String ValAttr;
 }
 
@@ -136,7 +136,7 @@ public class ST_LimLoc {
 
 // CT_LimLoc ...
 public class CT_LimLoc {
-	@XmlAttribute(name = "val", required = true)
+	@XmlAttribute(required = true, name = "val")
 	protected String ValAttr;
 }
 
@@ -149,7 +149,7 @@ public class ST_TopBot {
 
 // CT_TopBot ...
 public class CT_TopBot {
-	@XmlAttribute(name = "val", required = true)
+	@XmlAttribute(required = true, name = "val")
 	protected String ValAttr;
 }
 
@@ -731,7 +731,7 @@ public class CT_OMathParaPr {
 
 // CT_TwipsMeasure ...
 public class CT_TwipsMeasure {
-	@XmlAttribute(name = "val", required = true)
+	@XmlAttribute(required = true, name = "val")
 	protected ST_TwipsMeasure ValAttr;
 }
 

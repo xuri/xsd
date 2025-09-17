@@ -20,8 +20,8 @@ export class Modules {
 
 // ArchetypeDescriptor is 0.0.0+
 export class ArchetypeDescriptor {
-	NameAttr: string | null;
-	PartialAttr: boolean | null;
+	NameAttr?: string;
+	PartialAttr?: boolean;
 	RequiredProperties?: RequiredProperties;
 	FileSets?: FileSets;
 	Modules?: Modules;
@@ -40,9 +40,9 @@ export class Excludes {
 // FileSet is The directory where the files will be searched for, which is also the directory where the
 //            project's files will be generated.
 export class FileSet {
-	FilteredAttr: boolean | null;
-	PackagedAttr: boolean | null;
-	EncodingAttr: string | null;
+	FilteredAttr?: boolean;
+	PackagedAttr?: boolean;
+	EncodingAttr?: string;
 	Directory?: string;
 	Includes?: Includes;
 	Excludes?: Excludes;
@@ -50,15 +50,15 @@ export class FileSet {
 
 // RequiredProperty is Default value of the property.
 export class RequiredProperty {
-	KeyAttr: string | null;
+	KeyAttr?: string;
 	DefaultValue?: string;
 }
 
 // ModuleDescriptor is 0.0.0+
 export class ModuleDescriptor {
-	IdAttr: string | null;
-	DirAttr: string | null;
-	NameAttr: string | null;
+	IdAttr?: string;
+	DirAttr?: string;
+	NameAttr?: string;
 	FileSets?: FileSets;
 	Modules?: Modules;
 }

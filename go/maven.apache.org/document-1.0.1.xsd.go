@@ -11,7 +11,7 @@ type Document *DocumentModel
 
 // DocumentModel is The meta data to construct a cover page for the document.
 type DocumentModel struct {
-	OutputNameAttr string         `xml:"outputName,attr,omitempty"`
+	OutputNameAttr *string        `xml:"outputName,attr"`
 	Meta           *DocumentMeta  `xml:"meta,omitempty"`
 	Toc            *DocumentTOC   `xml:"toc,omitempty"`
 	Cover          *DocumentCover `xml:"cover,omitempty"`
@@ -19,16 +19,16 @@ type DocumentModel struct {
 
 // DocumentTOC is TOC item.
 type DocumentTOC struct {
-	NameAttr  string             `xml:"name,attr,omitempty"`
-	DepthAttr int                `xml:"depth,attr,omitempty"`
+	NameAttr  *string            `xml:"name,attr"`
+	DepthAttr *int               `xml:"depth,attr"`
 	Item      []*DocumentTOCItem `xml:"item,omitempty"`
 }
 
 // DocumentTOCItem is A table of content item containing sub-items.
 type DocumentTOCItem struct {
-	NameAttr     string             `xml:"name,attr,omitempty"`
-	RefAttr      string             `xml:"ref,attr,omitempty"`
-	CollapseAttr bool               `xml:"collapse,attr,omitempty"`
+	NameAttr     *string            `xml:"name,attr"`
+	RefAttr      *string            `xml:"ref,attr"`
+	CollapseAttr *bool              `xml:"collapse,attr"`
 	Item         []*DocumentTOCItem `xml:"item,omitempty"`
 }
 
@@ -116,31 +116,31 @@ type DocumentMeta struct {
 
 // DocumentTemplate is A template that was used to create the document.
 type DocumentTemplate struct {
-	HrefAttr       string `xml:"href,attr,omitempty"`
-	TitleAttr      string `xml:"title,attr,omitempty"`
-	DateAttr       string `xml:"date,attr,omitempty"`
-	ModifydateAttr string `xml:"modifydate,attr,omitempty"`
+	HrefAttr       *string `xml:"href,attr"`
+	TitleAttr      *string `xml:"title,attr"`
+	DateAttr       *string `xml:"date,attr"`
+	ModifydateAttr *string `xml:"modifydate,attr"`
 }
 
 // DocumentStatistic is Statistical attributes of the document.
 type DocumentStatistic struct {
-	PageCountAttr                   int64 `xml:"pageCount,attr,omitempty"`
-	TableCountAttr                  int64 `xml:"tableCount,attr,omitempty"`
-	DrawCountAttr                   int64 `xml:"drawCount,attr,omitempty"`
-	ImageCountAttr                  int64 `xml:"imageCount,attr,omitempty"`
-	ObjectCountAttr                 int64 `xml:"objectCount,attr,omitempty"`
-	OleObjectCountAttr              int64 `xml:"oleObjectCount,attr,omitempty"`
-	ParagraphCountAttr              int64 `xml:"paragraphCount,attr,omitempty"`
-	WordCountAttr                   int64 `xml:"wordCount,attr,omitempty"`
-	CharacterCountAttr              int64 `xml:"characterCount,attr,omitempty"`
-	RowCountAttr                    int64 `xml:"rowCount,attr,omitempty"`
-	FrameCountAttr                  int64 `xml:"frameCount,attr,omitempty"`
-	SentenceCountAttr               int64 `xml:"sentenceCount,attr,omitempty"`
-	SyllableCountAttr               int64 `xml:"syllableCount,attr,omitempty"`
-	NonWhitespaceCharacterCountAttr int64 `xml:"nonWhitespaceCharacterCount,attr,omitempty"`
+	PageCountAttr                   *int64 `xml:"pageCount,attr"`
+	TableCountAttr                  *int64 `xml:"tableCount,attr"`
+	DrawCountAttr                   *int64 `xml:"drawCount,attr"`
+	ImageCountAttr                  *int64 `xml:"imageCount,attr"`
+	ObjectCountAttr                 *int64 `xml:"objectCount,attr"`
+	OleObjectCountAttr              *int64 `xml:"oleObjectCount,attr"`
+	ParagraphCountAttr              *int64 `xml:"paragraphCount,attr"`
+	WordCountAttr                   *int64 `xml:"wordCount,attr"`
+	CharacterCountAttr              *int64 `xml:"characterCount,attr"`
+	RowCountAttr                    *int64 `xml:"rowCount,attr"`
+	FrameCountAttr                  *int64 `xml:"frameCount,attr"`
+	SentenceCountAttr               *int64 `xml:"sentenceCount,attr"`
+	SyllableCountAttr               *int64 `xml:"syllableCount,attr"`
+	NonWhitespaceCharacterCountAttr *int64 `xml:"nonWhitespaceCharacterCount,attr"`
 }
 
 // DocumentHyperlinkBehaviour is Specifies the default behavior for hyperlinks in the document.
 type DocumentHyperlinkBehaviour struct {
-	TargetFrameAttr string `xml:"targetFrame,attr,omitempty"`
+	TargetFrameAttr *string `xml:"targetFrame,attr"`
 }

@@ -98,7 +98,7 @@ type Profiles struct {
 //             project belongs. These attributes are utilized when documentation is created (for
 //             copyright notices and links).
 type Model struct {
-	ChildProjectUrlInheritAppendPathAttr string                  `xml:"child.project.url.inherit.append.path,attr,omitempty"`
+	ChildProjectUrlInheritAppendPathAttr *string                 `xml:"child.project.url.inherit.append.path,attr"`
 	ModelVersion                         *string                 `xml:"modelVersion"`
 	Parent                               *Parent                 `xml:"parent,omitempty"`
 	GroupId                              *string                 `xml:"groupId"`
@@ -174,9 +174,9 @@ type Notifier struct {
 //             <br><b>Default value is</b>: parent value [+ path adjustment] + (artifactId or project.directory property), or just parent value if
 //             scm's <code>child.scm.url.inherit.append.path="false"</code>
 type Scm struct {
-	ChildScmConnectionInheritAppendPathAttr          string  `xml:"child.scm.connection.inherit.append.path,attr,omitempty"`
-	ChildScmDeveloperConnectionInheritAppendPathAttr string  `xml:"child.scm.developerConnection.inherit.append.path,attr,omitempty"`
-	ChildScmUrlInheritAppendPathAttr                 string  `xml:"child.scm.url.inherit.append.path,attr,omitempty"`
+	ChildScmConnectionInheritAppendPathAttr          *string `xml:"child.scm.connection.inherit.append.path,attr"`
+	ChildScmDeveloperConnectionInheritAppendPathAttr *string `xml:"child.scm.developerConnection.inherit.append.path,attr"`
+	ChildScmUrlInheritAppendPathAttr                 *string `xml:"child.scm.url.inherit.append.path,attr"`
 	Connection                                       *string `xml:"connection"`
 	DeveloperConnection                              *string `xml:"developerConnection"`
 	Tag                                              *string `xml:"tag"`
@@ -352,7 +352,7 @@ type Relocation struct {
 //             <br><b>Default value is</b>: parent value [+ path adjustment] + (artifactId or project.directory property), or just parent value if
 //             site's <code>child.site.url.inherit.append.path="false"</code>
 type Site struct {
-	ChildSiteUrlInheritAppendPathAttr string  `xml:"child.site.url.inherit.append.path,attr,omitempty"`
+	ChildSiteUrlInheritAppendPathAttr *string `xml:"child.site.url.inherit.append.path,attr"`
 	Id                                *string `xml:"id"`
 	Name                              *string `xml:"name"`
 	Url                               *string `xml:"url"`

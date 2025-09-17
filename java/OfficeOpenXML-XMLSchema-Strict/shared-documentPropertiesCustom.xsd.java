@@ -26,9 +26,9 @@ public class CT_Properties {
 
 // CT_Property ...
 public class CT_Property {
-	@XmlAttribute(name = "fmtid", required = true)
+	@XmlAttribute(required = true, name = "fmtid")
 	protected String FmtidAttr;
-	@XmlAttribute(name = "pid", required = true)
+	@XmlAttribute(required = true, name = "pid")
 	protected Integer PidAttr;
 	@XmlAttribute(name = "name")
 	protected String NameAttr;

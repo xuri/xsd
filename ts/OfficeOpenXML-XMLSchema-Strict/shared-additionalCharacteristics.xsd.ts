@@ -10,7 +10,7 @@ export class CT_Characteristic {
 	NameAttr: string;
 	RelationAttr: string;
 	ValAttr: string;
-	VocabularyAttr: string | null;
+	VocabularyAttr?: string;
 }
 
 // ST_Relation ...

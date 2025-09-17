@@ -2,13 +2,13 @@
 
 // CT_CTName ...
 export class CT_CTName {
-	LangAttr: string | null;
+	LangAttr?: string;
 	ValAttr: string;
 }
 
 // CT_CTDescription ...
 export class CT_CTDescription {
-	LangAttr: string | null;
+	LangAttr?: string;
 	ValAttr: string;
 }
 
@@ -38,8 +38,8 @@ export enum ST_HueDir {
 
 // CT_Colors ...
 export class CT_Colors {
-	MethAttr: string | null;
-	HueDirAttr: string | null;
+	MethAttr?: string;
+	HueDirAttr?: string;
 	AEG_ColorChoice: Array<EG_ColorChoice>;
 }
 
@@ -57,8 +57,8 @@ export class CT_CTStyleLabel {
 
 // CT_ColorTransform ...
 export class CT_ColorTransform {
-	UniqueIdAttr: string | null;
-	MinVerAttr: string | null;
+	UniqueIdAttr?: string;
+	MinVerAttr?: string;
 	Title?: Array<CT_CTName>;
 	Desc?: Array<CT_CTDescription>;
 	CatLst?: CT_CTCategories;
@@ -72,8 +72,8 @@ export type ColorsDef = CT_ColorTransform;
 // CT_ColorTransformHeader ...
 export class CT_ColorTransformHeader {
 	UniqueIdAttr: string;
-	MinVerAttr: string | null;
-	ResIdAttr: number | null;
+	MinVerAttr?: string;
+	ResIdAttr?: number;
 	Title: Array<CT_CTName>;
 	Desc: Array<CT_CTDescription>;
 	CatLst?: CT_CTCategories;
@@ -104,8 +104,8 @@ export enum ST_PtType {
 // CT_Pt ...
 export class CT_Pt {
 	ModelIdAttr: ST_ModelId;
-	TypeAttr: string | null;
-	CxnIdAttr: ST_ModelId | null;
+	TypeAttr?: string;
+	CxnIdAttr?: ST_ModelId;
 	PrSet?: CT_ElemPropSet;
 	SpPr?: CT_ShapeProperties;
 	T?: CT_TextBody;
@@ -128,14 +128,14 @@ export enum ST_CxnType {
 // CT_Cxn ...
 export class CT_Cxn {
 	ModelIdAttr: ST_ModelId;
-	TypeAttr: string | null;
+	TypeAttr?: string;
 	SrcIdAttr: ST_ModelId;
 	DestIdAttr: ST_ModelId;
 	SrcOrdAttr: number;
 	DestOrdAttr: number;
-	ParTransIdAttr: ST_ModelId | null;
-	SibTransIdAttr: ST_ModelId | null;
-	PresIdAttr: string | null;
+	ParTransIdAttr?: ST_ModelId;
+	SibTransIdAttr?: ST_ModelId;
+	PresIdAttr?: string;
 	ExtLst?: CT_OfficeArtExtensionList;
 }
 
@@ -186,9 +186,9 @@ export class AG_ConstraintRefAttributes {
 export class CT_Constraint {
 	AG_ConstraintAttributes: AG_ConstraintAttributes;
 	AG_ConstraintRefAttributes: AG_ConstraintRefAttributes;
-	OpAttr: string | null;
-	ValAttr: number | null;
-	FactAttr: number | null;
+	OpAttr?: string;
+	ValAttr?: number;
+	FactAttr?: number;
 	ExtLst?: CT_OfficeArtExtensionList;
 }
 
@@ -200,9 +200,9 @@ export class CT_Constraints {
 // CT_NumericRule ...
 export class CT_NumericRule {
 	AG_ConstraintAttributes: AG_ConstraintAttributes;
-	ValAttr: number | null;
-	FactAttr: number | null;
-	MaxAttr: number | null;
+	ValAttr?: number;
+	FactAttr?: number;
+	MaxAttr?: number;
 	ExtLst?: CT_OfficeArtExtensionList;
 }
 
@@ -239,13 +239,13 @@ export class CT_AdjLst {
 
 // CT_Shape ...
 export class CT_Shape {
-	RotAttr: number | null;
-	TypeAttr: ST_LayoutShapeType | null;
-	RBlipAttr: string | null;
-	ZOrderOffAttr: number | null;
-	HideGeomAttr: boolean | null;
-	LkTxEntryAttr: boolean | null;
-	BlipPhldrAttr: boolean | null;
+	RotAttr?: number;
+	TypeAttr?: ST_LayoutShapeType;
+	RBlipAttr?: string;
+	ZOrderOffAttr?: number;
+	HideGeomAttr?: boolean;
+	LkTxEntryAttr?: boolean;
+	BlipPhldrAttr?: boolean;
 	AdjLst?: CT_AdjLst;
 	ExtLst?: CT_OfficeArtExtensionList;
 }
@@ -259,17 +259,17 @@ export class CT_Parameter {
 // CT_Algorithm ...
 export class CT_Algorithm {
 	TypeAttr: string;
-	RevAttr: number | null;
+	RevAttr?: number;
 	Param?: Array<CT_Parameter>;
 	ExtLst?: CT_OfficeArtExtensionList;
 }
 
 // CT_LayoutNode ...
 export class CT_LayoutNode {
-	NameAttr: string | null;
-	StyleLblAttr: string | null;
-	ChOrderAttr: string | null;
-	MoveWithAttr: string | null;
+	NameAttr?: string;
+	StyleLblAttr?: string;
+	ChOrderAttr?: string;
+	MoveWithAttr?: string;
 	Alg?: Array<CT_Algorithm>;
 	Shape?: Array<CT_Shape>;
 	PresOf?: Array<CT_PresentationOf>;
@@ -285,8 +285,8 @@ export class CT_LayoutNode {
 // CT_ForEach ...
 export class CT_ForEach {
 	AG_IteratorAttributes: AG_IteratorAttributes;
-	NameAttr: string | null;
-	RefAttr: string | null;
+	NameAttr?: string;
+	RefAttr?: string;
 	Alg?: Array<CT_Algorithm>;
 	Shape?: Array<CT_Shape>;
 	PresOf?: Array<CT_PresentationOf>;
@@ -301,9 +301,9 @@ export class CT_ForEach {
 // CT_When ...
 export class CT_When {
 	AG_IteratorAttributes: AG_IteratorAttributes;
-	NameAttr: string | null;
+	NameAttr?: string;
 	FuncAttr: string;
-	ArgAttr: ST_FunctionArgument | null;
+	ArgAttr?: ST_FunctionArgument;
 	OpAttr: string;
 	ValAttr: ST_FunctionValue;
 	Alg?: Array<CT_Algorithm>;
@@ -319,7 +319,7 @@ export class CT_When {
 
 // CT_Otherwise ...
 export class CT_Otherwise {
-	NameAttr: string | null;
+	NameAttr?: string;
 	Alg?: Array<CT_Algorithm>;
 	Shape?: Array<CT_Shape>;
 	PresOf?: Array<CT_PresentationOf>;
@@ -333,14 +333,14 @@ export class CT_Otherwise {
 
 // CT_Choose ...
 export class CT_Choose {
-	NameAttr: string | null;
+	NameAttr?: string;
 	If: Array<CT_When>;
 	Else?: CT_Otherwise;
 }
 
 // CT_SampleData ...
 export class CT_SampleData {
-	UseDefAttr: boolean | null;
+	UseDefAttr?: boolean;
 	DataModel?: CT_DataModel;
 }
 
@@ -357,21 +357,21 @@ export class CT_Categories {
 
 // CT_Name ...
 export class CT_Name {
-	LangAttr: string | null;
+	LangAttr?: string;
 	ValAttr: string;
 }
 
 // CT_Description ...
 export class CT_Description {
-	LangAttr: string | null;
+	LangAttr?: string;
 	ValAttr: string;
 }
 
 // CT_DiagramDefinition ...
 export class CT_DiagramDefinition {
-	UniqueIdAttr: string | null;
-	MinVerAttr: string | null;
-	DefStyleAttr: string | null;
+	UniqueIdAttr?: string;
+	MinVerAttr?: string;
+	DefStyleAttr?: string;
 	Title?: Array<CT_Name>;
 	Desc?: Array<CT_Description>;
 	CatLst?: CT_Categories;
@@ -388,9 +388,9 @@ export type LayoutDef = CT_DiagramDefinition;
 // CT_DiagramDefinitionHeader ...
 export class CT_DiagramDefinitionHeader {
 	UniqueIdAttr: string;
-	MinVerAttr: string | null;
-	DefStyleAttr: string | null;
-	ResIdAttr: number | null;
+	MinVerAttr?: string;
+	DefStyleAttr?: string;
+	ResIdAttr?: number;
 	Title: Array<CT_Name>;
 	Desc: Array<CT_Description>;
 	CatLst?: CT_Categories;
@@ -472,34 +472,34 @@ export class ST_PrSetCustVal {
 
 // CT_ElemPropSet ...
 export class CT_ElemPropSet {
-	PresAssocIDAttr: ST_ModelId | null;
-	PresNameAttr: string | null;
-	PresStyleLblAttr: string | null;
-	PresStyleIdxAttr: number | null;
-	PresStyleCntAttr: number | null;
-	LoTypeIdAttr: string | null;
-	LoCatIdAttr: string | null;
-	QsTypeIdAttr: string | null;
-	QsCatIdAttr: string | null;
-	CsTypeIdAttr: string | null;
-	CsCatIdAttr: string | null;
-	Coherent3DOffAttr: boolean | null;
-	PhldrTAttr: string | null;
-	PhldrAttr: boolean | null;
-	CustAngAttr: number | null;
-	CustFlipVertAttr: boolean | null;
-	CustFlipHorAttr: boolean | null;
-	CustSzXAttr: number | null;
-	CustSzYAttr: number | null;
-	CustScaleXAttr: ST_PrSetCustVal | null;
-	CustScaleYAttr: ST_PrSetCustVal | null;
-	CustTAttr: boolean | null;
-	CustLinFactXAttr: ST_PrSetCustVal | null;
-	CustLinFactYAttr: ST_PrSetCustVal | null;
-	CustLinFactNeighborXAttr: ST_PrSetCustVal | null;
-	CustLinFactNeighborYAttr: ST_PrSetCustVal | null;
-	CustRadScaleRadAttr: ST_PrSetCustVal | null;
-	CustRadScaleIncAttr: ST_PrSetCustVal | null;
+	PresAssocIDAttr?: ST_ModelId;
+	PresNameAttr?: string;
+	PresStyleLblAttr?: string;
+	PresStyleIdxAttr?: number;
+	PresStyleCntAttr?: number;
+	LoTypeIdAttr?: string;
+	LoCatIdAttr?: string;
+	QsTypeIdAttr?: string;
+	QsCatIdAttr?: string;
+	CsTypeIdAttr?: string;
+	CsCatIdAttr?: string;
+	Coherent3DOffAttr?: boolean;
+	PhldrTAttr?: string;
+	PhldrAttr?: boolean;
+	CustAngAttr?: number;
+	CustFlipVertAttr?: boolean;
+	CustFlipHorAttr?: boolean;
+	CustSzXAttr?: number;
+	CustSzYAttr?: number;
+	CustScaleXAttr?: ST_PrSetCustVal;
+	CustScaleYAttr?: ST_PrSetCustVal;
+	CustTAttr?: boolean;
+	CustLinFactXAttr?: ST_PrSetCustVal;
+	CustLinFactYAttr?: ST_PrSetCustVal;
+	CustLinFactNeighborXAttr?: ST_PrSetCustVal;
+	CustLinFactNeighborYAttr?: ST_PrSetCustVal;
+	CustRadScaleRadAttr?: ST_PrSetCustVal;
+	CustRadScaleIncAttr?: ST_PrSetCustVal;
 	PresLayoutVars?: CT_LayoutVariablePropertySet;
 	Style?: CT_ShapeStyle;
 }
@@ -535,7 +535,7 @@ export enum ST_AnimLvlStr {
 
 // CT_OrgChart ...
 export class CT_OrgChart {
-	ValAttr: boolean | null;
+	ValAttr?: boolean;
 }
 
 // ST_NodeCount ...
@@ -543,37 +543,37 @@ export type ST_NodeCount = number;
 
 // CT_ChildMax ...
 export class CT_ChildMax {
-	ValAttr: number | null;
+	ValAttr?: number;
 }
 
 // CT_ChildPref ...
 export class CT_ChildPref {
-	ValAttr: number | null;
+	ValAttr?: number;
 }
 
 // CT_BulletEnabled ...
 export class CT_BulletEnabled {
-	ValAttr: boolean | null;
+	ValAttr?: boolean;
 }
 
 // CT_Direction ...
 export class CT_Direction {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // CT_HierBranchStyle ...
 export class CT_HierBranchStyle {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // CT_AnimOne ...
 export class CT_AnimOne {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // CT_AnimLvl ...
 export class CT_AnimLvl {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // ST_ResizeHandlesStr ...
@@ -584,7 +584,7 @@ export enum ST_ResizeHandlesStr {
 
 // CT_ResizeHandles ...
 export class CT_ResizeHandles {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // CT_LayoutVariablePropertySet ...
@@ -602,13 +602,13 @@ export class CT_LayoutVariablePropertySet {
 
 // CT_SDName ...
 export class CT_SDName {
-	LangAttr: string | null;
+	LangAttr?: string;
 	ValAttr: string;
 }
 
 // CT_SDDescription ...
 export class CT_SDDescription {
-	LangAttr: string | null;
+	LangAttr?: string;
 	ValAttr: string;
 }
 
@@ -640,8 +640,8 @@ export class CT_StyleLabel {
 
 // CT_StyleDefinition ...
 export class CT_StyleDefinition {
-	UniqueIdAttr: string | null;
-	MinVerAttr: string | null;
+	UniqueIdAttr?: string;
+	MinVerAttr?: string;
 	Title?: Array<CT_SDName>;
 	Desc?: Array<CT_SDDescription>;
 	CatLst?: CT_SDCategories;
@@ -656,8 +656,8 @@ export type StyleDef = CT_StyleDefinition;
 // CT_StyleDefinitionHeader ...
 export class CT_StyleDefinitionHeader {
 	UniqueIdAttr: string;
-	MinVerAttr: string | null;
-	ResIdAttr: number | null;
+	MinVerAttr?: string;
+	ResIdAttr?: number;
 	Title: Array<CT_SDName>;
 	Desc: Array<CT_SDDescription>;
 	CatLst?: CT_SDCategories;

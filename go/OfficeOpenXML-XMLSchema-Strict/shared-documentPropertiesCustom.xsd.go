@@ -20,8 +20,8 @@ type CTProperty struct {
 	XMLName        xml.Name   `xml:"CT_Property"`
 	FmtidAttr      string     `xml:"fmtid,attr"`
 	PidAttr        int        `xml:"pid,attr"`
-	NameAttr       string     `xml:"name,attr,omitempty"`
-	LinkTargetAttr string     `xml:"linkTarget,attr,omitempty"`
+	NameAttr       *string    `xml:"name,attr"`
+	LinkTargetAttr *string    `xml:"linkTarget,attr"`
 	VtVector       *CTVector  `xml:"vt:vector"`
 	VtArray        *CTArray   `xml:"vt:array"`
 	VtBlob         string     `xml:"vt:blob"`

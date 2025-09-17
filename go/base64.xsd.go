@@ -12,14 +12,14 @@ type MyType1 string
 // MyType2 ...
 type MyType2 struct {
 	XMLName    xml.Name `xml:"myType2"`
-	LengthAttr int      `xml:"length,attr,omitempty"`
+	LengthAttr *int     `xml:"length,attr"`
 	Value      string   `xml:",chardata"`
 }
 
 // MyType3 ...
 type MyType3 struct {
 	XMLName    xml.Name `xml:"myType3"`
-	LengthAttr int      `xml:"length,attr,omitempty"`
+	LengthAttr *int     `xml:"length,attr"`
 	Value      string   `xml:",chardata"`
 }
 

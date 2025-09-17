@@ -8,8 +8,8 @@ export type To = CT_Marker;
 
 // CT_AnchorClientData ...
 export class CT_AnchorClientData {
-	FLocksWithSheetAttr: boolean | null;
-	FPrintsWithSheetAttr: boolean | null;
+	FLocksWithSheetAttr?: boolean;
+	FPrintsWithSheetAttr?: boolean;
 }
 
 // CT_ShapeNonVisual ...
@@ -20,10 +20,10 @@ export class CT_ShapeNonVisual {
 
 // CT_Shape ...
 export class CT_Shape {
-	MacroAttr: string | null;
-	TextlinkAttr: string | null;
-	FLocksTextAttr: boolean | null;
-	FPublishedAttr: boolean | null;
+	MacroAttr?: string;
+	TextlinkAttr?: string;
+	FLocksTextAttr?: boolean;
+	FPublishedAttr?: boolean;
 	NvSpPr: CT_ShapeNonVisual;
 	SpPr: CT_ShapeProperties;
 	Style?: CT_ShapeStyle;
@@ -38,8 +38,8 @@ export class CT_ConnectorNonVisual {
 
 // CT_Connector ...
 export class CT_Connector {
-	MacroAttr: string | null;
-	FPublishedAttr: boolean | null;
+	MacroAttr?: string;
+	FPublishedAttr?: boolean;
 	NvCxnSpPr: CT_ConnectorNonVisual;
 	SpPr: CT_ShapeProperties;
 	Style?: CT_ShapeStyle;
@@ -53,8 +53,8 @@ export class CT_PictureNonVisual {
 
 // CT_Picture ...
 export class CT_Picture {
-	MacroAttr: string | null;
-	FPublishedAttr: boolean | null;
+	MacroAttr?: string;
+	FPublishedAttr?: boolean;
 	NvPicPr: CT_PictureNonVisual;
 	BlipFill: CT_BlipFillProperties;
 	SpPr: CT_ShapeProperties;
@@ -69,8 +69,8 @@ export class CT_GraphicalObjectFrameNonVisual {
 
 // CT_GraphicalObjectFrame ...
 export class CT_GraphicalObjectFrame {
-	MacroAttr: string | null;
-	FPublishedAttr: boolean | null;
+	MacroAttr?: string;
+	FPublishedAttr?: boolean;
 	NvGraphicFramePr: CT_GraphicalObjectFrameNonVisual;
 	Xfrm: CT_Transform2D;
 	AGraphic: CT_GraphicalObject;
@@ -131,7 +131,7 @@ export enum ST_EditAs {
 
 // CT_TwoCellAnchor ...
 export class CT_TwoCellAnchor {
-	EditAsAttr: string | null;
+	EditAsAttr?: string;
 	EG_ObjectChoices: EG_ObjectChoices;
 	From: CT_Marker;
 	To: CT_Marker;

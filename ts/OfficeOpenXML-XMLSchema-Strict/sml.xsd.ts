@@ -2,7 +2,7 @@
 
 // CT_AutoFilter ...
 export class CT_AutoFilter {
-	RefAttr: string | null;
+	RefAttr?: string;
 	FilterColumn?: Array<CT_FilterColumn>;
 	SortState?: CT_SortState;
 	ExtLst?: CT_ExtensionList;
@@ -11,8 +11,8 @@ export class CT_AutoFilter {
 // CT_FilterColumn ...
 export class CT_FilterColumn {
 	ColIdAttr: number;
-	HiddenButtonAttr: boolean | null;
-	ShowButtonAttr: boolean | null;
+	HiddenButtonAttr?: boolean;
+	ShowButtonAttr?: boolean;
 	Filters?: CT_Filters;
 	Top10?: CT_Top10;
 	CustomFilters?: CT_CustomFilters;
@@ -24,47 +24,47 @@ export class CT_FilterColumn {
 
 // CT_Filters ...
 export class CT_Filters {
-	BlankAttr: boolean | null;
-	CalendarTypeAttr: string | null;
+	BlankAttr?: boolean;
+	CalendarTypeAttr?: string;
 	Filter?: Array<CT_Filter>;
 	DateGroupItem?: Array<CT_DateGroupItem>;
 }
 
 // CT_Filter ...
 export class CT_Filter {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // CT_CustomFilters ...
 export class CT_CustomFilters {
-	AndAttr: boolean | null;
+	AndAttr?: boolean;
 	CustomFilter: Array<CT_CustomFilter>;
 }
 
 // CT_CustomFilter ...
 export class CT_CustomFilter {
-	OperatorAttr: string | null;
-	ValAttr: string | null;
+	OperatorAttr?: string;
+	ValAttr?: string;
 }
 
 // CT_Top10 ...
 export class CT_Top10 {
-	TopAttr: boolean | null;
-	PercentAttr: boolean | null;
+	TopAttr?: boolean;
+	PercentAttr?: boolean;
 	ValAttr: number;
-	FilterValAttr: number | null;
+	FilterValAttr?: number;
 }
 
 // CT_ColorFilter ...
 export class CT_ColorFilter {
-	DxfIdAttr: number | null;
-	CellColorAttr: boolean | null;
+	DxfIdAttr?: number;
+	CellColorAttr?: boolean;
 }
 
 // CT_IconFilter ...
 export class CT_IconFilter {
 	IconSetAttr: string;
-	IconIdAttr: number | null;
+	IconIdAttr?: number;
 }
 
 // ST_FilterOperator ...
@@ -80,9 +80,9 @@ export enum ST_FilterOperator {
 // CT_DynamicFilter ...
 export class CT_DynamicFilter {
 	TypeAttr: string;
-	ValAttr: number | null;
-	ValIsoAttr: string | null;
-	MaxValIsoAttr: string | null;
+	ValAttr?: number;
+	ValIsoAttr?: string;
+	MaxValIsoAttr?: string;
 }
 
 // ST_DynamicFilterType ...
@@ -147,9 +147,9 @@ export enum ST_IconSetType {
 
 // CT_SortState ...
 export class CT_SortState {
-	ColumnSortAttr: boolean | null;
-	CaseSensitiveAttr: boolean | null;
-	SortMethodAttr: string | null;
+	ColumnSortAttr?: boolean;
+	CaseSensitiveAttr?: boolean;
+	SortMethodAttr?: string;
 	RefAttr: string;
 	SortCondition?: Array<CT_SortCondition>;
 	ExtLst?: CT_ExtensionList;
@@ -157,13 +157,13 @@ export class CT_SortState {
 
 // CT_SortCondition ...
 export class CT_SortCondition {
-	DescendingAttr: boolean | null;
-	SortByAttr: string | null;
+	DescendingAttr?: boolean;
+	SortByAttr?: string;
 	RefAttr: string;
-	CustomListAttr: string | null;
-	DxfIdAttr: number | null;
-	IconSetAttr: string | null;
-	IconIdAttr: number | null;
+	CustomListAttr?: string;
+	DxfIdAttr?: number;
+	IconSetAttr?: string;
+	IconIdAttr?: number;
 }
 
 // ST_SortBy ...
@@ -184,11 +184,11 @@ export enum ST_SortMethod {
 // CT_DateGroupItem ...
 export class CT_DateGroupItem {
 	YearAttr: number;
-	MonthAttr: number | null;
-	DayAttr: number | null;
-	HourAttr: number | null;
-	MinuteAttr: number | null;
-	SecondAttr: number | null;
+	MonthAttr?: number;
+	DayAttr?: number;
+	HourAttr?: number;
+	MinuteAttr?: number;
+	SecondAttr?: number;
 	DateTimeGroupingAttr: string;
 }
 
@@ -227,13 +227,13 @@ export class CT_XStringElement {
 
 // CT_Extension ...
 export class CT_Extension {
-	UriAttr: string | null;
+	UriAttr?: string;
 }
 
 // CT_ObjectAnchor ...
 export class CT_ObjectAnchor {
-	MoveWithCellsAttr: boolean | null;
-	SizeWithCellsAttr: boolean | null;
+	MoveWithCellsAttr?: boolean;
+	SizeWithCellsAttr?: boolean;
 	XdrFrom: CT_Marker;
 	XdrTo: CT_Marker;
 }
@@ -260,11 +260,11 @@ export class CT_CalcChain {
 // CT_CalcCell ...
 export class CT_CalcCell {
 	RAttr: string;
-	IAttr: number | null;
-	SAttr: boolean | null;
-	LAttr: boolean | null;
-	TAttr: boolean | null;
-	AAttr: boolean | null;
+	IAttr?: number;
+	SAttr?: boolean;
+	LAttr?: boolean;
+	TAttr?: boolean;
+	AAttr?: boolean;
 }
 
 // Comments ...
@@ -291,26 +291,26 @@ export class CT_CommentList {
 export class CT_Comment {
 	RefAttr: string;
 	AuthorIdAttr: number;
-	GuidAttr: string | null;
-	ShapeIdAttr: number | null;
+	GuidAttr?: string;
+	ShapeIdAttr?: number;
 	Text: CT_Rst;
 	CommentPr?: CT_CommentPr;
 }
 
 // CT_CommentPr ...
 export class CT_CommentPr {
-	LockedAttr: boolean | null;
-	DefaultSizeAttr: boolean | null;
-	PrintAttr: boolean | null;
-	DisabledAttr: boolean | null;
-	AutoFillAttr: boolean | null;
-	AutoLineAttr: boolean | null;
-	AltTextAttr: string | null;
-	TextHAlignAttr: string | null;
-	TextVAlignAttr: string | null;
-	LockTextAttr: boolean | null;
-	JustLastXAttr: boolean | null;
-	AutoScaleAttr: boolean | null;
+	LockedAttr?: boolean;
+	DefaultSizeAttr?: boolean;
+	PrintAttr?: boolean;
+	DisabledAttr?: boolean;
+	AutoFillAttr?: boolean;
+	AutoLineAttr?: boolean;
+	AltTextAttr?: string;
+	TextHAlignAttr?: string;
+	TextVAlignAttr?: string;
+	LockTextAttr?: boolean;
+	JustLastXAttr?: boolean;
+	AutoScaleAttr?: boolean;
 	Anchor: CT_ObjectAnchor;
 }
 
@@ -345,9 +345,9 @@ export class CT_MapInfo {
 // CT_Schema ...
 export class CT_Schema {
 	IDAttr: string;
-	SchemaRefAttr: string | null;
-	NamespaceAttr: string | null;
-	SchemaLanguageAttr: string | null;
+	SchemaRefAttr?: string;
+	NamespaceAttr?: string;
+	SchemaLanguageAttr?: string;
 }
 
 // CT_Map ...
@@ -366,10 +366,10 @@ export class CT_Map {
 
 // CT_DataBinding ...
 export class CT_DataBinding {
-	DataBindingNameAttr: string | null;
-	FileBindingAttr: boolean | null;
-	ConnectionIDAttr: number | null;
-	FileBindingNameAttr: string | null;
+	DataBindingNameAttr?: string;
+	FileBindingAttr?: boolean;
+	ConnectionIDAttr?: number;
+	FileBindingNameAttr?: string;
 	DataBindingLoadModeAttr: number;
 }
 
@@ -384,25 +384,25 @@ export class CT_Connections {
 // CT_Connection ...
 export class CT_Connection {
 	IdAttr: number;
-	SourceFileAttr: string | null;
-	OdcFileAttr: string | null;
-	KeepAliveAttr: boolean | null;
-	IntervalAttr: number | null;
-	NameAttr: string | null;
-	DescriptionAttr: string | null;
-	TypeAttr: number | null;
-	ReconnectionMethodAttr: number | null;
+	SourceFileAttr?: string;
+	OdcFileAttr?: string;
+	KeepAliveAttr?: boolean;
+	IntervalAttr?: number;
+	NameAttr?: string;
+	DescriptionAttr?: string;
+	TypeAttr?: number;
+	ReconnectionMethodAttr?: number;
 	RefreshedVersionAttr: any;
-	MinRefreshableVersionAttr: any | null;
-	SavePasswordAttr: boolean | null;
-	NewAttr: boolean | null;
-	DeletedAttr: boolean | null;
-	OnlyUseConnectionFileAttr: boolean | null;
-	BackgroundAttr: boolean | null;
-	RefreshOnLoadAttr: boolean | null;
-	SaveDataAttr: boolean | null;
-	CredentialsAttr: string | null;
-	SingleSignOnIdAttr: string | null;
+	MinRefreshableVersionAttr?: any;
+	SavePasswordAttr?: boolean;
+	NewAttr?: boolean;
+	DeletedAttr?: boolean;
+	OnlyUseConnectionFileAttr?: boolean;
+	BackgroundAttr?: boolean;
+	RefreshOnLoadAttr?: boolean;
+	SaveDataAttr?: boolean;
+	CredentialsAttr?: string;
+	SingleSignOnIdAttr?: string;
 	DbPr?: CT_DbPr;
 	OlapPr?: CT_OlapPr;
 	WebPr?: CT_WebPr;
@@ -422,39 +422,39 @@ export enum ST_CredMethod {
 // CT_DbPr ...
 export class CT_DbPr {
 	ConnectionAttr: string;
-	CommandAttr: string | null;
-	ServerCommandAttr: string | null;
-	CommandTypeAttr: number | null;
+	CommandAttr?: string;
+	ServerCommandAttr?: string;
+	CommandTypeAttr?: number;
 }
 
 // CT_OlapPr ...
 export class CT_OlapPr {
-	LocalAttr: boolean | null;
-	LocalConnectionAttr: string | null;
-	LocalRefreshAttr: boolean | null;
-	SendLocaleAttr: boolean | null;
-	RowDrillCountAttr: number | null;
-	ServerFillAttr: boolean | null;
-	ServerNumberFormatAttr: boolean | null;
-	ServerFontAttr: boolean | null;
-	ServerFontColorAttr: boolean | null;
+	LocalAttr?: boolean;
+	LocalConnectionAttr?: string;
+	LocalRefreshAttr?: boolean;
+	SendLocaleAttr?: boolean;
+	RowDrillCountAttr?: number;
+	ServerFillAttr?: boolean;
+	ServerNumberFormatAttr?: boolean;
+	ServerFontAttr?: boolean;
+	ServerFontColorAttr?: boolean;
 }
 
 // CT_WebPr ...
 export class CT_WebPr {
-	XmlAttr: boolean | null;
-	SourceDataAttr: boolean | null;
-	ParsePreAttr: boolean | null;
-	ConsecutiveAttr: boolean | null;
-	FirstRowAttr: boolean | null;
-	Xl97Attr: boolean | null;
-	TextDatesAttr: boolean | null;
-	Xl2000Attr: boolean | null;
-	UrlAttr: string | null;
-	PostAttr: string | null;
-	HtmlTablesAttr: boolean | null;
-	HtmlFormatAttr: string | null;
-	EditPageAttr: string | null;
+	XmlAttr?: boolean;
+	SourceDataAttr?: boolean;
+	ParsePreAttr?: boolean;
+	ConsecutiveAttr?: boolean;
+	FirstRowAttr?: boolean;
+	Xl97Attr?: boolean;
+	TextDatesAttr?: boolean;
+	Xl2000Attr?: boolean;
+	UrlAttr?: string;
+	PostAttr?: string;
+	HtmlTablesAttr?: boolean;
+	HtmlFormatAttr?: string;
+	EditPageAttr?: string;
 	Tables?: CT_Tables;
 }
 
@@ -467,22 +467,22 @@ export enum ST_HtmlFmt {
 
 // CT_Parameters ...
 export class CT_Parameters {
-	CountAttr: number | null;
+	CountAttr?: number;
 	Parameter: Array<CT_Parameter>;
 }
 
 // CT_Parameter ...
 export class CT_Parameter {
-	NameAttr: string | null;
-	SqlTypeAttr: number | null;
-	ParameterTypeAttr: string | null;
-	RefreshOnChangeAttr: boolean | null;
-	PromptAttr: string | null;
-	BooleanAttr: boolean | null;
-	DoubleAttr: number | null;
-	IntegerAttr: number | null;
-	StringAttr: string | null;
-	CellAttr: string | null;
+	NameAttr?: string;
+	SqlTypeAttr?: number;
+	ParameterTypeAttr?: string;
+	RefreshOnChangeAttr?: boolean;
+	PromptAttr?: string;
+	BooleanAttr?: boolean;
+	DoubleAttr?: number;
+	IntegerAttr?: number;
+	StringAttr?: string;
+	CellAttr?: string;
 }
 
 // ST_ParameterType ...
@@ -494,7 +494,7 @@ export enum ST_ParameterType {
 
 // CT_Tables ...
 export class CT_Tables {
-	CountAttr: number | null;
+	CountAttr?: number;
 	M: Array<CT_TableMissing>;
 	S: Array<CT_XStringElement>;
 	X: Array<CT_Index>;
@@ -506,21 +506,21 @@ export class CT_TableMissing {
 
 // CT_TextPr ...
 export class CT_TextPr {
-	PromptAttr: boolean | null;
-	FileTypeAttr: string | null;
-	CharacterSetAttr: string | null;
-	FirstRowAttr: number | null;
-	SourceFileAttr: string | null;
-	DelimitedAttr: boolean | null;
-	DecimalAttr: string | null;
-	ThousandsAttr: string | null;
-	TabAttr: boolean | null;
-	SpaceAttr: boolean | null;
-	CommaAttr: boolean | null;
-	SemicolonAttr: boolean | null;
-	ConsecutiveAttr: boolean | null;
-	QualifierAttr: string | null;
-	DelimiterAttr: string | null;
+	PromptAttr?: boolean;
+	FileTypeAttr?: string;
+	CharacterSetAttr?: string;
+	FirstRowAttr?: number;
+	SourceFileAttr?: string;
+	DelimitedAttr?: boolean;
+	DecimalAttr?: string;
+	ThousandsAttr?: string;
+	TabAttr?: boolean;
+	SpaceAttr?: boolean;
+	CommaAttr?: boolean;
+	SemicolonAttr?: boolean;
+	ConsecutiveAttr?: boolean;
+	QualifierAttr?: string;
+	DelimiterAttr?: string;
 	TextFields?: CT_TextFields;
 }
 
@@ -542,14 +542,14 @@ export enum ST_Qualifier {
 
 // CT_TextFields ...
 export class CT_TextFields {
-	CountAttr: number | null;
+	CountAttr?: number;
 	TextField: Array<CT_TextField>;
 }
 
 // CT_TextField ...
 export class CT_TextField {
-	TypeAttr: string | null;
-	PositionAttr: number | null;
+	TypeAttr?: string;
+	PositionAttr?: number;
 }
 
 // ST_ExternalConnectionType ...
@@ -577,24 +577,24 @@ export type PivotTableDefinition = CT_pivotTableDefinition;
 
 // CT_PivotCacheDefinition ...
 export class CT_PivotCacheDefinition {
-	RIdAttr: string | null;
-	InvalidAttr: boolean | null;
-	SaveDataAttr: boolean | null;
-	RefreshOnLoadAttr: boolean | null;
-	OptimizeMemoryAttr: boolean | null;
-	EnableRefreshAttr: boolean | null;
-	RefreshedByAttr: string | null;
-	RefreshedDateIsoAttr: string | null;
-	BackgroundQueryAttr: boolean | null;
-	MissingItemsLimitAttr: number | null;
-	CreatedVersionAttr: any | null;
-	RefreshedVersionAttr: any | null;
-	MinRefreshableVersionAttr: any | null;
-	RecordCountAttr: number | null;
-	UpgradeOnRefreshAttr: boolean | null;
-	TupleCacheAttr: boolean | null;
-	SupportSubqueryAttr: boolean | null;
-	SupportAdvancedDrillAttr: boolean | null;
+	RIdAttr?: string;
+	InvalidAttr?: boolean;
+	SaveDataAttr?: boolean;
+	RefreshOnLoadAttr?: boolean;
+	OptimizeMemoryAttr?: boolean;
+	EnableRefreshAttr?: boolean;
+	RefreshedByAttr?: string;
+	RefreshedDateIsoAttr?: string;
+	BackgroundQueryAttr?: boolean;
+	MissingItemsLimitAttr?: number;
+	CreatedVersionAttr?: any;
+	RefreshedVersionAttr?: any;
+	MinRefreshableVersionAttr?: any;
+	RecordCountAttr?: number;
+	UpgradeOnRefreshAttr?: boolean;
+	TupleCacheAttr?: boolean;
+	SupportSubqueryAttr?: boolean;
+	SupportAdvancedDrillAttr?: boolean;
 	CacheSource: CT_CacheSource;
 	CacheFields: CT_CacheFields;
 	CacheHierarchies?: CT_CacheHierarchies;
@@ -610,25 +610,25 @@ export class CT_PivotCacheDefinition {
 
 // CT_CacheFields ...
 export class CT_CacheFields {
-	CountAttr: number | null;
+	CountAttr?: number;
 	CacheField?: Array<CT_CacheField>;
 }
 
 // CT_CacheField ...
 export class CT_CacheField {
 	NameAttr: string;
-	CaptionAttr: string | null;
-	PropertyNameAttr: string | null;
-	ServerFieldAttr: boolean | null;
-	UniqueListAttr: boolean | null;
-	NumFmtIdAttr: number | null;
-	FormulaAttr: string | null;
-	SqlTypeAttr: number | null;
-	HierarchyAttr: number | null;
-	LevelAttr: number | null;
-	DatabaseFieldAttr: boolean | null;
-	MappingCountAttr: number | null;
-	MemberPropertyFieldAttr: boolean | null;
+	CaptionAttr?: string;
+	PropertyNameAttr?: string;
+	ServerFieldAttr?: boolean;
+	UniqueListAttr?: boolean;
+	NumFmtIdAttr?: number;
+	FormulaAttr?: string;
+	SqlTypeAttr?: number;
+	HierarchyAttr?: number;
+	LevelAttr?: number;
+	DatabaseFieldAttr?: boolean;
+	MappingCountAttr?: number;
+	MemberPropertyFieldAttr?: boolean;
 	SharedItems?: CT_SharedItems;
 	FieldGroup?: CT_FieldGroup;
 	MpMap?: Array<CT_X>;
@@ -638,7 +638,7 @@ export class CT_CacheField {
 // CT_CacheSource ...
 export class CT_CacheSource {
 	TypeAttr: string;
-	ConnectionIdAttr: number | null;
+	ConnectionIdAttr?: number;
 	WorksheetSource: CT_WorksheetSource;
 	Consolidation: CT_Consolidation;
 	ExtLst?: CT_ExtensionList;
@@ -654,28 +654,28 @@ export enum ST_SourceType {
 
 // CT_WorksheetSource ...
 export class CT_WorksheetSource {
-	RefAttr: string | null;
-	NameAttr: string | null;
-	SheetAttr: string | null;
-	RIdAttr: string | null;
+	RefAttr?: string;
+	NameAttr?: string;
+	SheetAttr?: string;
+	RIdAttr?: string;
 }
 
 // CT_Consolidation ...
 export class CT_Consolidation {
-	AutoPageAttr: boolean | null;
+	AutoPageAttr?: boolean;
 	Pages?: CT_Pages;
 	RangeSets: CT_RangeSets;
 }
 
 // CT_Pages ...
 export class CT_Pages {
-	CountAttr: number | null;
+	CountAttr?: number;
 	Page: Array<CT_PCDSCPage>;
 }
 
 // CT_PCDSCPage ...
 export class CT_PCDSCPage {
-	CountAttr: number | null;
+	CountAttr?: number;
 	PageItem?: Array<CT_PageItem>;
 }
 
@@ -686,38 +686,38 @@ export class CT_PageItem {
 
 // CT_RangeSets ...
 export class CT_RangeSets {
-	CountAttr: number | null;
+	CountAttr?: number;
 	RangeSet: Array<CT_RangeSet>;
 }
 
 // CT_RangeSet ...
 export class CT_RangeSet {
-	I1Attr: number | null;
-	I2Attr: number | null;
-	I3Attr: number | null;
-	I4Attr: number | null;
-	RefAttr: string | null;
-	NameAttr: string | null;
-	SheetAttr: string | null;
-	RIdAttr: string | null;
+	I1Attr?: number;
+	I2Attr?: number;
+	I3Attr?: number;
+	I4Attr?: number;
+	RefAttr?: string;
+	NameAttr?: string;
+	SheetAttr?: string;
+	RIdAttr?: string;
 }
 
 // CT_SharedItems ...
 export class CT_SharedItems {
-	ContainsSemiMixedTypesAttr: boolean | null;
-	ContainsNonDateAttr: boolean | null;
-	ContainsDateAttr: boolean | null;
-	ContainsStringAttr: boolean | null;
-	ContainsBlankAttr: boolean | null;
-	ContainsMixedTypesAttr: boolean | null;
-	ContainsNumberAttr: boolean | null;
-	ContainsIntegerAttr: boolean | null;
-	MinValueAttr: number | null;
-	MaxValueAttr: number | null;
-	MinDateAttr: string | null;
-	MaxDateAttr: string | null;
-	CountAttr: number | null;
-	LongTextAttr: boolean | null;
+	ContainsSemiMixedTypesAttr?: boolean;
+	ContainsNonDateAttr?: boolean;
+	ContainsDateAttr?: boolean;
+	ContainsStringAttr?: boolean;
+	ContainsBlankAttr?: boolean;
+	ContainsMixedTypesAttr?: boolean;
+	ContainsNumberAttr?: boolean;
+	ContainsIntegerAttr?: boolean;
+	MinValueAttr?: number;
+	MaxValueAttr?: number;
+	MinDateAttr?: string;
+	MaxDateAttr?: string;
+	CountAttr?: number;
+	LongTextAttr?: boolean;
 	M: Array<CT_Missing>;
 	N: Array<CT_Number>;
 	B: Array<CT_Boolean>;
@@ -728,17 +728,17 @@ export class CT_SharedItems {
 
 // CT_Missing ...
 export class CT_Missing {
-	UAttr: boolean | null;
-	FAttr: boolean | null;
-	CAttr: string | null;
-	CpAttr: number | null;
-	InAttr: number | null;
-	BcAttr: Uint8Array | null;
-	FcAttr: Uint8Array | null;
-	IAttr: boolean | null;
-	UnAttr: boolean | null;
-	StAttr: boolean | null;
-	BAttr: boolean | null;
+	UAttr?: boolean;
+	FAttr?: boolean;
+	CAttr?: string;
+	CpAttr?: number;
+	InAttr?: number;
+	BcAttr?: Uint8Array;
+	FcAttr?: Uint8Array;
+	IAttr?: boolean;
+	UnAttr?: boolean;
+	StAttr?: boolean;
+	BAttr?: boolean;
 	Tpls?: Array<CT_Tuples>;
 	X?: Array<CT_X>;
 }
@@ -746,17 +746,17 @@ export class CT_Missing {
 // CT_Number ...
 export class CT_Number {
 	VAttr: number;
-	UAttr: boolean | null;
-	FAttr: boolean | null;
-	CAttr: string | null;
-	CpAttr: number | null;
-	InAttr: number | null;
-	BcAttr: Uint8Array | null;
-	FcAttr: Uint8Array | null;
-	IAttr: boolean | null;
-	UnAttr: boolean | null;
-	StAttr: boolean | null;
-	BAttr: boolean | null;
+	UAttr?: boolean;
+	FAttr?: boolean;
+	CAttr?: string;
+	CpAttr?: number;
+	InAttr?: number;
+	BcAttr?: Uint8Array;
+	FcAttr?: Uint8Array;
+	IAttr?: boolean;
+	UnAttr?: boolean;
+	StAttr?: boolean;
+	BAttr?: boolean;
 	Tpls?: Array<CT_Tuples>;
 	X?: Array<CT_X>;
 }
@@ -764,27 +764,27 @@ export class CT_Number {
 // CT_Boolean ...
 export class CT_Boolean {
 	VAttr: boolean;
-	UAttr: boolean | null;
-	FAttr: boolean | null;
-	CAttr: string | null;
-	CpAttr: number | null;
+	UAttr?: boolean;
+	FAttr?: boolean;
+	CAttr?: string;
+	CpAttr?: number;
 	X?: Array<CT_X>;
 }
 
 // CT_Error ...
 export class CT_Error {
 	VAttr: string;
-	UAttr: boolean | null;
-	FAttr: boolean | null;
-	CAttr: string | null;
-	CpAttr: number | null;
-	InAttr: number | null;
-	BcAttr: Uint8Array | null;
-	FcAttr: Uint8Array | null;
-	IAttr: boolean | null;
-	UnAttr: boolean | null;
-	StAttr: boolean | null;
-	BAttr: boolean | null;
+	UAttr?: boolean;
+	FAttr?: boolean;
+	CAttr?: string;
+	CpAttr?: number;
+	InAttr?: number;
+	BcAttr?: Uint8Array;
+	FcAttr?: Uint8Array;
+	IAttr?: boolean;
+	UnAttr?: boolean;
+	StAttr?: boolean;
+	BAttr?: boolean;
 	Tpls?: CT_Tuples;
 	X?: Array<CT_X>;
 }
@@ -792,17 +792,17 @@ export class CT_Error {
 // CT_String ...
 export class CT_String {
 	VAttr: string;
-	UAttr: boolean | null;
-	FAttr: boolean | null;
-	CAttr: string | null;
-	CpAttr: number | null;
-	InAttr: number | null;
-	BcAttr: Uint8Array | null;
-	FcAttr: Uint8Array | null;
-	IAttr: boolean | null;
-	UnAttr: boolean | null;
-	StAttr: boolean | null;
-	BAttr: boolean | null;
+	UAttr?: boolean;
+	FAttr?: boolean;
+	CAttr?: string;
+	CpAttr?: number;
+	InAttr?: number;
+	BcAttr?: Uint8Array;
+	FcAttr?: Uint8Array;
+	IAttr?: boolean;
+	UnAttr?: boolean;
+	StAttr?: boolean;
+	BAttr?: boolean;
 	Tpls?: Array<CT_Tuples>;
 	X?: Array<CT_X>;
 }
@@ -810,17 +810,17 @@ export class CT_String {
 // CT_DateTime ...
 export class CT_DateTime {
 	VAttr: string;
-	UAttr: boolean | null;
-	FAttr: boolean | null;
-	CAttr: string | null;
-	CpAttr: number | null;
+	UAttr?: boolean;
+	FAttr?: boolean;
+	CAttr?: string;
+	CpAttr?: number;
 	X?: Array<CT_X>;
 }
 
 // CT_FieldGroup ...
 export class CT_FieldGroup {
-	ParAttr: number | null;
-	BaseAttr: number | null;
+	ParAttr?: number;
+	BaseAttr?: number;
 	RangePr?: CT_RangePr;
 	DiscretePr?: CT_DiscretePr;
 	GroupItems?: CT_GroupItems;
@@ -828,14 +828,14 @@ export class CT_FieldGroup {
 
 // CT_RangePr ...
 export class CT_RangePr {
-	AutoStartAttr: boolean | null;
-	AutoEndAttr: boolean | null;
-	GroupByAttr: string | null;
-	StartNumAttr: number | null;
-	EndNumAttr: number | null;
-	StartDateAttr: string | null;
-	EndDateAttr: string | null;
-	GroupIntervalAttr: number | null;
+	AutoStartAttr?: boolean;
+	AutoEndAttr?: boolean;
+	GroupByAttr?: string;
+	StartNumAttr?: number;
+	EndNumAttr?: number;
+	StartDateAttr?: string;
+	EndDateAttr?: string;
+	GroupIntervalAttr?: number;
 }
 
 // ST_GroupBy ...
@@ -852,13 +852,13 @@ export enum ST_GroupBy {
 
 // CT_DiscretePr ...
 export class CT_DiscretePr {
-	CountAttr: number | null;
+	CountAttr?: number;
 	X: Array<CT_Index>;
 }
 
 // CT_GroupItems ...
 export class CT_GroupItems {
-	CountAttr: number | null;
+	CountAttr?: number;
 	M: Array<CT_Missing>;
 	N: Array<CT_Number>;
 	B: Array<CT_Boolean>;
@@ -869,7 +869,7 @@ export class CT_GroupItems {
 
 // CT_PivotCacheRecords ...
 export class CT_PivotCacheRecords {
-	CountAttr: number | null;
+	CountAttr?: number;
 	R?: Array<CT_Record>;
 	ExtLst?: CT_ExtensionList;
 }
@@ -887,55 +887,55 @@ export class CT_Record {
 
 // CT_PCDKPIs ...
 export class CT_PCDKPIs {
-	CountAttr: number | null;
+	CountAttr?: number;
 	Kpi?: Array<CT_PCDKPI>;
 }
 
 // CT_PCDKPI ...
 export class CT_PCDKPI {
 	UniqueNameAttr: string;
-	CaptionAttr: string | null;
-	DisplayFolderAttr: string | null;
-	MeasureGroupAttr: string | null;
-	ParentAttr: string | null;
+	CaptionAttr?: string;
+	DisplayFolderAttr?: string;
+	MeasureGroupAttr?: string;
+	ParentAttr?: string;
 	ValueAttr: string;
-	GoalAttr: string | null;
-	StatusAttr: string | null;
-	TrendAttr: string | null;
-	WeightAttr: string | null;
-	TimeAttr: string | null;
+	GoalAttr?: string;
+	StatusAttr?: string;
+	TrendAttr?: string;
+	WeightAttr?: string;
+	TimeAttr?: string;
 }
 
 // CT_CacheHierarchies ...
 export class CT_CacheHierarchies {
-	CountAttr: number | null;
+	CountAttr?: number;
 	CacheHierarchy?: Array<CT_CacheHierarchy>;
 }
 
 // CT_CacheHierarchy ...
 export class CT_CacheHierarchy {
 	UniqueNameAttr: string;
-	CaptionAttr: string | null;
-	MeasureAttr: boolean | null;
-	SetAttr: boolean | null;
-	ParentSetAttr: number | null;
-	IconSetAttr: number | null;
-	AttributeAttr: boolean | null;
-	TimeAttr: boolean | null;
-	KeyAttributeAttr: boolean | null;
-	DefaultMemberUniqueNameAttr: string | null;
-	AllUniqueNameAttr: string | null;
-	AllCaptionAttr: string | null;
-	DimensionUniqueNameAttr: string | null;
-	DisplayFolderAttr: string | null;
-	MeasureGroupAttr: string | null;
-	MeasuresAttr: boolean | null;
+	CaptionAttr?: string;
+	MeasureAttr?: boolean;
+	SetAttr?: boolean;
+	ParentSetAttr?: number;
+	IconSetAttr?: number;
+	AttributeAttr?: boolean;
+	TimeAttr?: boolean;
+	KeyAttributeAttr?: boolean;
+	DefaultMemberUniqueNameAttr?: string;
+	AllUniqueNameAttr?: string;
+	AllCaptionAttr?: string;
+	DimensionUniqueNameAttr?: string;
+	DisplayFolderAttr?: string;
+	MeasureGroupAttr?: string;
+	MeasuresAttr?: boolean;
 	CountAttr: number;
-	OneFieldAttr: boolean | null;
-	MemberValueDatatypeAttr: number | null;
-	UnbalancedAttr: boolean | null;
-	UnbalancedGroupAttr: boolean | null;
-	HiddenAttr: boolean | null;
+	OneFieldAttr?: boolean;
+	MemberValueDatatypeAttr?: number;
+	UnbalancedAttr?: boolean;
+	UnbalancedGroupAttr?: boolean;
+	HiddenAttr?: boolean;
 	FieldsUsage?: CT_FieldsUsage;
 	GroupLevels?: CT_GroupLevels;
 	ExtLst?: CT_ExtensionList;
@@ -943,7 +943,7 @@ export class CT_CacheHierarchy {
 
 // CT_FieldsUsage ...
 export class CT_FieldsUsage {
-	CountAttr: number | null;
+	CountAttr?: number;
 	FieldUsage?: Array<CT_FieldUsage>;
 }
 
@@ -954,7 +954,7 @@ export class CT_FieldUsage {
 
 // CT_GroupLevels ...
 export class CT_GroupLevels {
-	CountAttr: number | null;
+	CountAttr?: number;
 	GroupLevel: Array<CT_GroupLevel>;
 }
 
@@ -962,15 +962,15 @@ export class CT_GroupLevels {
 export class CT_GroupLevel {
 	UniqueNameAttr: string;
 	CaptionAttr: string;
-	UserAttr: boolean | null;
-	CustomRollUpAttr: boolean | null;
+	UserAttr?: boolean;
+	CustomRollUpAttr?: boolean;
 	Groups?: CT_Groups;
 	ExtLst?: CT_ExtensionList;
 }
 
 // CT_Groups ...
 export class CT_Groups {
-	CountAttr: number | null;
+	CountAttr?: number;
 	Group: Array<CT_LevelGroup>;
 }
 
@@ -979,21 +979,21 @@ export class CT_LevelGroup {
 	NameAttr: string;
 	UniqueNameAttr: string;
 	CaptionAttr: string;
-	UniqueParentAttr: string | null;
-	IdAttr: number | null;
+	UniqueParentAttr?: string;
+	IdAttr?: number;
 	GroupMembers: CT_GroupMembers;
 }
 
 // CT_GroupMembers ...
 export class CT_GroupMembers {
-	CountAttr: number | null;
+	CountAttr?: number;
 	GroupMember: Array<CT_GroupMember>;
 }
 
 // CT_GroupMember ...
 export class CT_GroupMember {
 	UniqueNameAttr: string;
-	GroupAttr: boolean | null;
+	GroupAttr?: boolean;
 }
 
 // CT_TupleCache ...
@@ -1007,19 +1007,19 @@ export class CT_TupleCache {
 
 // CT_ServerFormat ...
 export class CT_ServerFormat {
-	CultureAttr: string | null;
-	FormatAttr: string | null;
+	CultureAttr?: string;
+	FormatAttr?: string;
 }
 
 // CT_ServerFormats ...
 export class CT_ServerFormats {
-	CountAttr: number | null;
+	CountAttr?: number;
 	ServerFormat?: Array<CT_ServerFormat>;
 }
 
 // CT_PCDSDTCEntries ...
 export class CT_PCDSDTCEntries {
-	CountAttr: number | null;
+	CountAttr?: number;
 	M: Array<CT_Missing>;
 	N: Array<CT_Number>;
 	E: Array<CT_Error>;
@@ -1028,30 +1028,30 @@ export class CT_PCDSDTCEntries {
 
 // CT_Tuples ...
 export class CT_Tuples {
-	CAttr: number | null;
+	CAttr?: number;
 	Tpl: Array<CT_Tuple>;
 }
 
 // CT_Tuple ...
 export class CT_Tuple {
-	FldAttr: number | null;
-	HierAttr: number | null;
+	FldAttr?: number;
+	HierAttr?: number;
 	ItemAttr: number;
 }
 
 // CT_Sets ...
 export class CT_Sets {
-	CountAttr: number | null;
+	CountAttr?: number;
 	Set: Array<CT_Set>;
 }
 
 // CT_Set ...
 export class CT_Set {
-	CountAttr: number | null;
+	CountAttr?: number;
 	MaxRankAttr: number;
 	SetDefinitionAttr: string;
-	SortTypeAttr: string | null;
-	QueryFailedAttr: boolean | null;
+	SortTypeAttr?: string;
+	QueryFailedAttr?: boolean;
 	Tpls?: Array<CT_Tuples>;
 	SortByTuple?: CT_Tuples;
 }
@@ -1069,7 +1069,7 @@ export enum ST_SortType {
 
 // CT_QueryCache ...
 export class CT_QueryCache {
-	CountAttr: number | null;
+	CountAttr?: number;
 	Query: Array<CT_Query>;
 }
 
@@ -1081,21 +1081,21 @@ export class CT_Query {
 
 // CT_CalculatedItems ...
 export class CT_CalculatedItems {
-	CountAttr: number | null;
+	CountAttr?: number;
 	CalculatedItem: Array<CT_CalculatedItem>;
 }
 
 // CT_CalculatedItem ...
 export class CT_CalculatedItem {
-	FieldAttr: number | null;
-	FormulaAttr: string | null;
+	FieldAttr?: number;
+	FormulaAttr?: string;
 	PivotArea: CT_PivotArea;
 	ExtLst?: CT_ExtensionList;
 }
 
 // CT_CalculatedMembers ...
 export class CT_CalculatedMembers {
-	CountAttr: number | null;
+	CountAttr?: number;
 	CalculatedMember: Array<CT_CalculatedMember>;
 }
 
@@ -1103,11 +1103,11 @@ export class CT_CalculatedMembers {
 export class CT_CalculatedMember {
 	NameAttr: string;
 	MdxAttr: string;
-	MemberNameAttr: string | null;
-	HierarchyAttr: string | null;
-	ParentAttr: string | null;
-	SolveOrderAttr: number | null;
-	SetAttr: boolean | null;
+	MemberNameAttr?: string;
+	HierarchyAttr?: string;
+	ParentAttr?: string;
+	SolveOrderAttr?: number;
+	SetAttr?: boolean;
 	ExtLst?: CT_ExtensionList;
 }
 
@@ -1116,65 +1116,65 @@ export class CT_pivotTableDefinition {
 	AG_AutoFormat: AG_AutoFormat;
 	NameAttr: string;
 	CacheIdAttr: number;
-	DataOnRowsAttr: boolean | null;
-	DataPositionAttr: number | null;
+	DataOnRowsAttr?: boolean;
+	DataPositionAttr?: number;
 	DataCaptionAttr: string;
-	GrandTotalCaptionAttr: string | null;
-	ErrorCaptionAttr: string | null;
-	ShowErrorAttr: boolean | null;
-	MissingCaptionAttr: string | null;
-	ShowMissingAttr: boolean | null;
-	PageStyleAttr: string | null;
-	PivotTableStyleAttr: string | null;
-	VacatedStyleAttr: string | null;
-	TagAttr: string | null;
-	UpdatedVersionAttr: any | null;
-	MinRefreshableVersionAttr: any | null;
-	AsteriskTotalsAttr: boolean | null;
-	ShowItemsAttr: boolean | null;
-	EditDataAttr: boolean | null;
-	DisableFieldListAttr: boolean | null;
-	ShowCalcMbrsAttr: boolean | null;
-	VisualTotalsAttr: boolean | null;
-	ShowMultipleLabelAttr: boolean | null;
-	ShowDataDropDownAttr: boolean | null;
-	ShowDrillAttr: boolean | null;
-	PrintDrillAttr: boolean | null;
-	ShowMemberPropertyTipsAttr: boolean | null;
-	ShowDataTipsAttr: boolean | null;
-	EnableWizardAttr: boolean | null;
-	EnableDrillAttr: boolean | null;
-	EnableFieldPropertiesAttr: boolean | null;
-	PreserveFormattingAttr: boolean | null;
-	UseAutoFormattingAttr: boolean | null;
-	PageWrapAttr: number | null;
-	PageOverThenDownAttr: boolean | null;
-	SubtotalHiddenItemsAttr: boolean | null;
-	RowGrandTotalsAttr: boolean | null;
-	ColGrandTotalsAttr: boolean | null;
-	FieldPrintTitlesAttr: boolean | null;
-	ItemPrintTitlesAttr: boolean | null;
-	MergeItemAttr: boolean | null;
-	ShowDropZonesAttr: boolean | null;
-	CreatedVersionAttr: any | null;
-	IndentAttr: number | null;
-	ShowEmptyRowAttr: boolean | null;
-	ShowEmptyColAttr: boolean | null;
-	ShowHeadersAttr: boolean | null;
-	CompactAttr: boolean | null;
-	OutlineAttr: boolean | null;
-	OutlineDataAttr: boolean | null;
-	CompactDataAttr: boolean | null;
-	PublishedAttr: boolean | null;
-	GridDropZonesAttr: boolean | null;
-	ImmersiveAttr: boolean | null;
-	MultipleFieldFiltersAttr: boolean | null;
-	ChartFormatAttr: number | null;
-	RowHeaderCaptionAttr: string | null;
-	ColHeaderCaptionAttr: string | null;
-	FieldListSortAscendingAttr: boolean | null;
-	MdxSubqueriesAttr: boolean | null;
-	CustomListSortAttr: boolean | null;
+	GrandTotalCaptionAttr?: string;
+	ErrorCaptionAttr?: string;
+	ShowErrorAttr?: boolean;
+	MissingCaptionAttr?: string;
+	ShowMissingAttr?: boolean;
+	PageStyleAttr?: string;
+	PivotTableStyleAttr?: string;
+	VacatedStyleAttr?: string;
+	TagAttr?: string;
+	UpdatedVersionAttr?: any;
+	MinRefreshableVersionAttr?: any;
+	AsteriskTotalsAttr?: boolean;
+	ShowItemsAttr?: boolean;
+	EditDataAttr?: boolean;
+	DisableFieldListAttr?: boolean;
+	ShowCalcMbrsAttr?: boolean;
+	VisualTotalsAttr?: boolean;
+	ShowMultipleLabelAttr?: boolean;
+	ShowDataDropDownAttr?: boolean;
+	ShowDrillAttr?: boolean;
+	PrintDrillAttr?: boolean;
+	ShowMemberPropertyTipsAttr?: boolean;
+	ShowDataTipsAttr?: boolean;
+	EnableWizardAttr?: boolean;
+	EnableDrillAttr?: boolean;
+	EnableFieldPropertiesAttr?: boolean;
+	PreserveFormattingAttr?: boolean;
+	UseAutoFormattingAttr?: boolean;
+	PageWrapAttr?: number;
+	PageOverThenDownAttr?: boolean;
+	SubtotalHiddenItemsAttr?: boolean;
+	RowGrandTotalsAttr?: boolean;
+	ColGrandTotalsAttr?: boolean;
+	FieldPrintTitlesAttr?: boolean;
+	ItemPrintTitlesAttr?: boolean;
+	MergeItemAttr?: boolean;
+	ShowDropZonesAttr?: boolean;
+	CreatedVersionAttr?: any;
+	IndentAttr?: number;
+	ShowEmptyRowAttr?: boolean;
+	ShowEmptyColAttr?: boolean;
+	ShowHeadersAttr?: boolean;
+	CompactAttr?: boolean;
+	OutlineAttr?: boolean;
+	OutlineDataAttr?: boolean;
+	CompactDataAttr?: boolean;
+	PublishedAttr?: boolean;
+	GridDropZonesAttr?: boolean;
+	ImmersiveAttr?: boolean;
+	MultipleFieldFiltersAttr?: boolean;
+	ChartFormatAttr?: number;
+	RowHeaderCaptionAttr?: string;
+	ColHeaderCaptionAttr?: string;
+	FieldListSortAscendingAttr?: boolean;
+	MdxSubqueriesAttr?: boolean;
+	CustomListSortAttr?: boolean;
 	Location: CT_Location;
 	PivotFields?: CT_PivotFields;
 	RowFields?: CT_RowFields;
@@ -1200,66 +1200,66 @@ export class CT_Location {
 	FirstHeaderRowAttr: number;
 	FirstDataRowAttr: number;
 	FirstDataColAttr: number;
-	RowPageCountAttr: number | null;
-	ColPageCountAttr: number | null;
+	RowPageCountAttr?: number;
+	ColPageCountAttr?: number;
 }
 
 // CT_PivotFields ...
 export class CT_PivotFields {
-	CountAttr: number | null;
+	CountAttr?: number;
 	PivotField: Array<CT_PivotField>;
 }
 
 // CT_PivotField ...
 export class CT_PivotField {
-	NameAttr: string | null;
-	AxisAttr: string | null;
-	DataFieldAttr: boolean | null;
-	SubtotalCaptionAttr: string | null;
-	ShowDropDownsAttr: boolean | null;
-	HiddenLevelAttr: boolean | null;
-	UniqueMemberPropertyAttr: string | null;
-	CompactAttr: boolean | null;
-	AllDrilledAttr: boolean | null;
-	NumFmtIdAttr: number | null;
-	OutlineAttr: boolean | null;
-	SubtotalTopAttr: boolean | null;
-	DragToRowAttr: boolean | null;
-	DragToColAttr: boolean | null;
-	MultipleItemSelectionAllowedAttr: boolean | null;
-	DragToPageAttr: boolean | null;
-	DragToDataAttr: boolean | null;
-	DragOffAttr: boolean | null;
-	ShowAllAttr: boolean | null;
-	InsertBlankRowAttr: boolean | null;
-	ServerFieldAttr: boolean | null;
-	InsertPageBreakAttr: boolean | null;
-	AutoShowAttr: boolean | null;
-	TopAutoShowAttr: boolean | null;
-	HideNewItemsAttr: boolean | null;
-	MeasureFilterAttr: boolean | null;
-	IncludeNewItemsInFilterAttr: boolean | null;
-	ItemPageCountAttr: number | null;
-	SortTypeAttr: string | null;
-	DataSourceSortAttr: boolean | null;
-	NonAutoSortDefaultAttr: boolean | null;
-	RankByAttr: number | null;
-	DefaultSubtotalAttr: boolean | null;
-	SumSubtotalAttr: boolean | null;
-	CountASubtotalAttr: boolean | null;
-	AvgSubtotalAttr: boolean | null;
-	MaxSubtotalAttr: boolean | null;
-	MinSubtotalAttr: boolean | null;
-	ProductSubtotalAttr: boolean | null;
-	CountSubtotalAttr: boolean | null;
-	StdDevSubtotalAttr: boolean | null;
-	StdDevPSubtotalAttr: boolean | null;
-	VarSubtotalAttr: boolean | null;
-	VarPSubtotalAttr: boolean | null;
-	ShowPropCellAttr: boolean | null;
-	ShowPropTipAttr: boolean | null;
-	ShowPropAsCaptionAttr: boolean | null;
-	DefaultAttributeDrillStateAttr: boolean | null;
+	NameAttr?: string;
+	AxisAttr?: string;
+	DataFieldAttr?: boolean;
+	SubtotalCaptionAttr?: string;
+	ShowDropDownsAttr?: boolean;
+	HiddenLevelAttr?: boolean;
+	UniqueMemberPropertyAttr?: string;
+	CompactAttr?: boolean;
+	AllDrilledAttr?: boolean;
+	NumFmtIdAttr?: number;
+	OutlineAttr?: boolean;
+	SubtotalTopAttr?: boolean;
+	DragToRowAttr?: boolean;
+	DragToColAttr?: boolean;
+	MultipleItemSelectionAllowedAttr?: boolean;
+	DragToPageAttr?: boolean;
+	DragToDataAttr?: boolean;
+	DragOffAttr?: boolean;
+	ShowAllAttr?: boolean;
+	InsertBlankRowAttr?: boolean;
+	ServerFieldAttr?: boolean;
+	InsertPageBreakAttr?: boolean;
+	AutoShowAttr?: boolean;
+	TopAutoShowAttr?: boolean;
+	HideNewItemsAttr?: boolean;
+	MeasureFilterAttr?: boolean;
+	IncludeNewItemsInFilterAttr?: boolean;
+	ItemPageCountAttr?: number;
+	SortTypeAttr?: string;
+	DataSourceSortAttr?: boolean;
+	NonAutoSortDefaultAttr?: boolean;
+	RankByAttr?: number;
+	DefaultSubtotalAttr?: boolean;
+	SumSubtotalAttr?: boolean;
+	CountASubtotalAttr?: boolean;
+	AvgSubtotalAttr?: boolean;
+	MaxSubtotalAttr?: boolean;
+	MinSubtotalAttr?: boolean;
+	ProductSubtotalAttr?: boolean;
+	CountSubtotalAttr?: boolean;
+	StdDevSubtotalAttr?: boolean;
+	StdDevPSubtotalAttr?: boolean;
+	VarSubtotalAttr?: boolean;
+	VarPSubtotalAttr?: boolean;
+	ShowPropCellAttr?: boolean;
+	ShowPropTipAttr?: boolean;
+	ShowPropAsCaptionAttr?: boolean;
+	DefaultAttributeDrillStateAttr?: boolean;
 	Items?: CT_Items;
 	AutoSortScope?: CT_AutoSortScope;
 	ExtLst?: CT_ExtensionList;
@@ -1272,93 +1272,93 @@ export class CT_AutoSortScope {
 
 // CT_Items ...
 export class CT_Items {
-	CountAttr: number | null;
+	CountAttr?: number;
 	Item: Array<CT_Item>;
 }
 
 // CT_Item ...
 export class CT_Item {
-	NAttr: string | null;
-	TAttr: string | null;
-	HAttr: boolean | null;
-	SAttr: boolean | null;
-	SdAttr: boolean | null;
-	FAttr: boolean | null;
-	MAttr: boolean | null;
-	CAttr: boolean | null;
-	XAttr: number | null;
-	DAttr: boolean | null;
-	EAttr: boolean | null;
+	NAttr?: string;
+	TAttr?: string;
+	HAttr?: boolean;
+	SAttr?: boolean;
+	SdAttr?: boolean;
+	FAttr?: boolean;
+	MAttr?: boolean;
+	CAttr?: boolean;
+	XAttr?: number;
+	DAttr?: boolean;
+	EAttr?: boolean;
 }
 
 // CT_PageFields ...
 export class CT_PageFields {
-	CountAttr: number | null;
+	CountAttr?: number;
 	PageField: Array<CT_PageField>;
 }
 
 // CT_PageField ...
 export class CT_PageField {
 	FldAttr: number;
-	ItemAttr: number | null;
-	HierAttr: number | null;
-	NameAttr: string | null;
-	CapAttr: string | null;
+	ItemAttr?: number;
+	HierAttr?: number;
+	NameAttr?: string;
+	CapAttr?: string;
 	ExtLst?: CT_ExtensionList;
 }
 
 // CT_DataFields ...
 export class CT_DataFields {
-	CountAttr: number | null;
+	CountAttr?: number;
 	DataField: Array<CT_DataField>;
 }
 
 // CT_DataField ...
 export class CT_DataField {
-	NameAttr: string | null;
+	NameAttr?: string;
 	FldAttr: number;
-	SubtotalAttr: string | null;
-	ShowDataAsAttr: string | null;
-	BaseFieldAttr: number | null;
-	BaseItemAttr: number | null;
-	NumFmtIdAttr: number | null;
+	SubtotalAttr?: string;
+	ShowDataAsAttr?: string;
+	BaseFieldAttr?: number;
+	BaseItemAttr?: number;
+	NumFmtIdAttr?: number;
 	ExtLst?: CT_ExtensionList;
 }
 
 // CT_rowItems ...
 export class CT_rowItems {
-	CountAttr: number | null;
+	CountAttr?: number;
 	I: Array<CT_I>;
 }
 
 // CT_colItems ...
 export class CT_colItems {
-	CountAttr: number | null;
+	CountAttr?: number;
 	I: Array<CT_I>;
 }
 
 // CT_I ...
 export class CT_I {
-	TAttr: string | null;
-	RAttr: number | null;
-	IAttr: number | null;
+	TAttr?: string;
+	RAttr?: number;
+	IAttr?: number;
 	X?: Array<CT_X>;
 }
 
 // CT_X ...
 export class CT_X {
-	VAttr: number | null;
+	VAttr?: number;
 }
 
 // CT_RowFields ...
 export class CT_RowFields {
-	CountAttr: number | null;
+	CountAttr?: number;
 	Field: Array<CT_Field>;
 }
 
 // CT_ColFields ...
 export class CT_ColFields {
-	CountAttr: number | null;
+	CountAttr?: number;
 	Field: Array<CT_Field>;
 }
 
@@ -1369,28 +1369,28 @@ export class CT_Field {
 
 // CT_Formats ...
 export class CT_Formats {
-	CountAttr: number | null;
+	CountAttr?: number;
 	Format: Array<CT_Format>;
 }
 
 // CT_Format ...
 export class CT_Format {
-	ActionAttr: string | null;
-	DxfIdAttr: number | null;
+	ActionAttr?: string;
+	DxfIdAttr?: number;
 	PivotArea: CT_PivotArea;
 	ExtLst?: CT_ExtensionList;
 }
 
 // CT_ConditionalFormats ...
 export class CT_ConditionalFormats {
-	CountAttr: number | null;
+	CountAttr?: number;
 	ConditionalFormat: Array<CT_ConditionalFormat>;
 }
 
 // CT_ConditionalFormat ...
 export class CT_ConditionalFormat {
-	ScopeAttr: string | null;
-	TypeAttr: string | null;
+	ScopeAttr?: string;
+	TypeAttr?: string;
 	PriorityAttr: number;
 	PivotAreas: CT_PivotAreas;
 	ExtLst?: CT_ExtensionList;
@@ -1398,7 +1398,7 @@ export class CT_ConditionalFormat {
 
 // CT_PivotAreas ...
 export class CT_PivotAreas {
-	CountAttr: number | null;
+	CountAttr?: number;
 	PivotArea?: Array<CT_PivotArea>;
 }
 
@@ -1419,7 +1419,7 @@ export enum ST_Type {
 
 // CT_ChartFormats ...
 export class CT_ChartFormats {
-	CountAttr: number | null;
+	CountAttr?: number;
 	ChartFormat: Array<CT_ChartFormat>;
 }
 
@@ -1427,29 +1427,29 @@ export class CT_ChartFormats {
 export class CT_ChartFormat {
 	ChartAttr: number;
 	FormatAttr: number;
-	SeriesAttr: boolean | null;
+	SeriesAttr?: boolean;
 	PivotArea: CT_PivotArea;
 }
 
 // CT_PivotHierarchies ...
 export class CT_PivotHierarchies {
-	CountAttr: number | null;
+	CountAttr?: number;
 	PivotHierarchy: Array<CT_PivotHierarchy>;
 }
 
 // CT_PivotHierarchy ...
 export class CT_PivotHierarchy {
-	OutlineAttr: boolean | null;
-	MultipleItemSelectionAllowedAttr: boolean | null;
-	SubtotalTopAttr: boolean | null;
-	ShowInFieldListAttr: boolean | null;
-	DragToRowAttr: boolean | null;
-	DragToColAttr: boolean | null;
-	DragToPageAttr: boolean | null;
-	DragToDataAttr: boolean | null;
-	DragOffAttr: boolean | null;
-	IncludeNewItemsInFilterAttr: boolean | null;
-	CaptionAttr: string | null;
+	OutlineAttr?: boolean;
+	MultipleItemSelectionAllowedAttr?: boolean;
+	SubtotalTopAttr?: boolean;
+	ShowInFieldListAttr?: boolean;
+	DragToRowAttr?: boolean;
+	DragToColAttr?: boolean;
+	DragToPageAttr?: boolean;
+	DragToDataAttr?: boolean;
+	DragOffAttr?: boolean;
+	IncludeNewItemsInFilterAttr?: boolean;
+	CaptionAttr?: string;
 	Mps?: CT_MemberProperties;
 	Members?: Array<CT_Members>;
 	ExtLst?: CT_ExtensionList;
@@ -1457,13 +1457,13 @@ export class CT_PivotHierarchy {
 
 // CT_RowHierarchiesUsage ...
 export class CT_RowHierarchiesUsage {
-	CountAttr: number | null;
+	CountAttr?: number;
 	RowHierarchyUsage: Array<CT_HierarchyUsage>;
 }
 
 // CT_ColHierarchiesUsage ...
 export class CT_ColHierarchiesUsage {
-	CountAttr: number | null;
+	CountAttr?: number;
 	ColHierarchyUsage: Array<CT_HierarchyUsage>;
 }
 
@@ -1474,27 +1474,27 @@ export class CT_HierarchyUsage {
 
 // CT_MemberProperties ...
 export class CT_MemberProperties {
-	CountAttr: number | null;
+	CountAttr?: number;
 	Mp: Array<CT_MemberProperty>;
 }
 
 // CT_MemberProperty ...
 export class CT_MemberProperty {
-	NameAttr: string | null;
-	ShowCellAttr: boolean | null;
-	ShowTipAttr: boolean | null;
-	ShowAsCaptionAttr: boolean | null;
-	NameLenAttr: number | null;
-	PPosAttr: number | null;
-	PLenAttr: number | null;
-	LevelAttr: number | null;
+	NameAttr?: string;
+	ShowCellAttr?: boolean;
+	ShowTipAttr?: boolean;
+	ShowAsCaptionAttr?: boolean;
+	NameLenAttr?: number;
+	PPosAttr?: number;
+	PLenAttr?: number;
+	LevelAttr?: number;
 	FieldAttr: number;
 }
 
 // CT_Members ...
 export class CT_Members {
-	CountAttr: number | null;
-	LevelAttr: number | null;
+	CountAttr?: number;
+	LevelAttr?: number;
 	Member: Array<CT_Member>;
 }
 
@@ -1505,13 +1505,13 @@ export class CT_Member {
 
 // CT_Dimensions ...
 export class CT_Dimensions {
-	CountAttr: number | null;
+	CountAttr?: number;
 	Dimension?: Array<CT_PivotDimension>;
 }
 
 // CT_PivotDimension ...
 export class CT_PivotDimension {
-	MeasureAttr: boolean | null;
+	MeasureAttr?: boolean;
 	NameAttr: string;
 	UniqueNameAttr: string;
 	CaptionAttr: string;
@@ -1519,13 +1519,13 @@ export class CT_PivotDimension {
 
 // CT_MeasureGroups ...
 export class CT_MeasureGroups {
-	CountAttr: number | null;
+	CountAttr?: number;
 	MeasureGroup?: Array<CT_MeasureGroup>;
 }
 
 // CT_MeasureDimensionMaps ...
 export class CT_MeasureDimensionMaps {
-	CountAttr: number | null;
+	CountAttr?: number;
 	Map?: Array<CT_MeasureDimensionMap>;
 }
 
@@ -1537,39 +1537,39 @@ export class CT_MeasureGroup {
 
 // CT_MeasureDimensionMap ...
 export class CT_MeasureDimensionMap {
-	MeasureGroupAttr: number | null;
-	DimensionAttr: number | null;
+	MeasureGroupAttr?: number;
+	DimensionAttr?: number;
 }
 
 // CT_PivotTableStyle ...
 export class CT_PivotTableStyle {
-	NameAttr: string | null;
-	ShowRowHeadersAttr: boolean | null;
-	ShowColHeadersAttr: boolean | null;
-	ShowRowStripesAttr: boolean | null;
-	ShowColStripesAttr: boolean | null;
-	ShowLastColumnAttr: boolean | null;
+	NameAttr?: string;
+	ShowRowHeadersAttr?: boolean;
+	ShowColHeadersAttr?: boolean;
+	ShowRowStripesAttr?: boolean;
+	ShowColStripesAttr?: boolean;
+	ShowLastColumnAttr?: boolean;
 }
 
 // CT_PivotFilters ...
 export class CT_PivotFilters {
-	CountAttr: number | null;
+	CountAttr?: number;
 	Filter?: Array<CT_PivotFilter>;
 }
 
 // CT_PivotFilter ...
 export class CT_PivotFilter {
 	FldAttr: number;
-	MpFldAttr: number | null;
+	MpFldAttr?: number;
 	TypeAttr: string;
-	EvalOrderAttr: number | null;
+	EvalOrderAttr?: number;
 	IdAttr: number;
-	IMeasureHierAttr: number | null;
-	IMeasureFldAttr: number | null;
-	NameAttr: string | null;
-	DescriptionAttr: string | null;
-	StringValue1Attr: string | null;
-	StringValue2Attr: string | null;
+	IMeasureHierAttr?: number;
+	IMeasureFldAttr?: number;
+	NameAttr?: string;
+	DescriptionAttr?: string;
+	StringValue1Attr?: string;
+	StringValue2Attr?: string;
 	AutoFilter: CT_AutoFilter;
 	ExtLst?: CT_ExtensionList;
 }
@@ -1693,18 +1693,18 @@ export enum ST_PivotFilterType {
 
 // CT_PivotArea ...
 export class CT_PivotArea {
-	FieldAttr: number | null;
-	TypeAttr: string | null;
-	DataOnlyAttr: boolean | null;
-	LabelOnlyAttr: boolean | null;
-	GrandRowAttr: boolean | null;
-	GrandColAttr: boolean | null;
-	CacheIndexAttr: boolean | null;
-	OutlineAttr: boolean | null;
-	OffsetAttr: string | null;
-	CollapsedLevelsAreSubtotalsAttr: boolean | null;
-	AxisAttr: string | null;
-	FieldPositionAttr: number | null;
+	FieldAttr?: number;
+	TypeAttr?: string;
+	DataOnlyAttr?: boolean;
+	LabelOnlyAttr?: boolean;
+	GrandRowAttr?: boolean;
+	GrandColAttr?: boolean;
+	CacheIndexAttr?: boolean;
+	OutlineAttr?: boolean;
+	OffsetAttr?: string;
+	CollapsedLevelsAreSubtotalsAttr?: boolean;
+	AxisAttr?: string;
+	FieldPositionAttr?: number;
 	References?: CT_PivotAreaReferences;
 	ExtLst?: CT_ExtensionList;
 }
@@ -1722,29 +1722,29 @@ export enum ST_PivotAreaType {
 
 // CT_PivotAreaReferences ...
 export class CT_PivotAreaReferences {
-	CountAttr: number | null;
+	CountAttr?: number;
 	Reference: Array<CT_PivotAreaReference>;
 }
 
 // CT_PivotAreaReference ...
 export class CT_PivotAreaReference {
-	FieldAttr: number | null;
-	CountAttr: number | null;
-	SelectedAttr: boolean | null;
-	ByPositionAttr: boolean | null;
-	RelativeAttr: boolean | null;
-	DefaultSubtotalAttr: boolean | null;
-	SumSubtotalAttr: boolean | null;
-	CountASubtotalAttr: boolean | null;
-	AvgSubtotalAttr: boolean | null;
-	MaxSubtotalAttr: boolean | null;
-	MinSubtotalAttr: boolean | null;
-	ProductSubtotalAttr: boolean | null;
-	CountSubtotalAttr: boolean | null;
-	StdDevSubtotalAttr: boolean | null;
-	StdDevPSubtotalAttr: boolean | null;
-	VarSubtotalAttr: boolean | null;
-	VarPSubtotalAttr: boolean | null;
+	FieldAttr?: number;
+	CountAttr?: number;
+	SelectedAttr?: boolean;
+	ByPositionAttr?: boolean;
+	RelativeAttr?: boolean;
+	DefaultSubtotalAttr?: boolean;
+	SumSubtotalAttr?: boolean;
+	CountASubtotalAttr?: boolean;
+	AvgSubtotalAttr?: boolean;
+	MaxSubtotalAttr?: boolean;
+	MinSubtotalAttr?: boolean;
+	ProductSubtotalAttr?: boolean;
+	CountSubtotalAttr?: boolean;
+	StdDevSubtotalAttr?: boolean;
+	StdDevPSubtotalAttr?: boolean;
+	VarSubtotalAttr?: boolean;
+	VarPSubtotalAttr?: boolean;
 	X?: Array<CT_Index>;
 	ExtLst?: CT_ExtensionList;
 }
@@ -1769,19 +1769,19 @@ export type QueryTable = CT_QueryTable;
 export class CT_QueryTable {
 	AG_AutoFormat: AG_AutoFormat;
 	NameAttr: string;
-	HeadersAttr: boolean | null;
-	RowNumbersAttr: boolean | null;
-	DisableRefreshAttr: boolean | null;
-	BackgroundRefreshAttr: boolean | null;
-	FirstBackgroundRefreshAttr: boolean | null;
-	RefreshOnLoadAttr: boolean | null;
-	GrowShrinkTypeAttr: string | null;
-	FillFormulasAttr: boolean | null;
-	RemoveDataOnSaveAttr: boolean | null;
-	DisableEditAttr: boolean | null;
-	PreserveFormattingAttr: boolean | null;
-	AdjustColumnWidthAttr: boolean | null;
-	IntermediateAttr: boolean | null;
+	HeadersAttr?: boolean;
+	RowNumbersAttr?: boolean;
+	DisableRefreshAttr?: boolean;
+	BackgroundRefreshAttr?: boolean;
+	FirstBackgroundRefreshAttr?: boolean;
+	RefreshOnLoadAttr?: boolean;
+	GrowShrinkTypeAttr?: string;
+	FillFormulasAttr?: boolean;
+	RemoveDataOnSaveAttr?: boolean;
+	DisableEditAttr?: boolean;
+	PreserveFormattingAttr?: boolean;
+	AdjustColumnWidthAttr?: boolean;
+	IntermediateAttr?: boolean;
 	ConnectionIdAttr: number;
 	QueryTableRefresh?: CT_QueryTableRefresh;
 	ExtLst?: CT_ExtensionList;
@@ -1789,13 +1789,13 @@ export class CT_QueryTable {
 
 // CT_QueryTableRefresh ...
 export class CT_QueryTableRefresh {
-	PreserveSortFilterLayoutAttr: boolean | null;
-	FieldIdWrappedAttr: boolean | null;
-	HeadersInLastRefreshAttr: boolean | null;
-	MinimumVersionAttr: any | null;
-	NextIdAttr: number | null;
-	UnboundColumnsLeftAttr: number | null;
-	UnboundColumnsRightAttr: number | null;
+	PreserveSortFilterLayoutAttr?: boolean;
+	FieldIdWrappedAttr?: boolean;
+	HeadersInLastRefreshAttr?: boolean;
+	MinimumVersionAttr?: any;
+	NextIdAttr?: number;
+	UnboundColumnsLeftAttr?: number;
+	UnboundColumnsRightAttr?: number;
 	QueryTableFields: CT_QueryTableFields;
 	QueryTableDeletedFields?: CT_QueryTableDeletedFields;
 	SortState?: CT_SortState;
@@ -1804,7 +1804,7 @@ export class CT_QueryTableRefresh {
 
 // CT_QueryTableDeletedFields ...
 export class CT_QueryTableDeletedFields {
-	CountAttr: number | null;
+	CountAttr?: number;
 	DeletedField: Array<CT_DeletedField>;
 }
 
@@ -1815,19 +1815,19 @@ export class CT_DeletedField {
 
 // CT_QueryTableFields ...
 export class CT_QueryTableFields {
-	CountAttr: number | null;
+	CountAttr?: number;
 	QueryTableField?: Array<CT_QueryTableField>;
 }
 
 // CT_QueryTableField ...
 export class CT_QueryTableField {
 	IdAttr: number;
-	NameAttr: string | null;
-	DataBoundAttr: boolean | null;
-	RowNumbersAttr: boolean | null;
-	FillFormulasAttr: boolean | null;
-	ClippedAttr: boolean | null;
-	TableColumnIdAttr: number | null;
+	NameAttr?: string;
+	DataBoundAttr?: boolean;
+	RowNumbersAttr?: boolean;
+	FillFormulasAttr?: boolean;
+	ClippedAttr?: boolean;
+	TableColumnIdAttr?: number;
 	ExtLst?: CT_ExtensionList;
 }
 
@@ -1843,8 +1843,8 @@ export type Sst = CT_Sst;
 
 // CT_Sst ...
 export class CT_Sst {
-	CountAttr: number | null;
-	UniqueCountAttr: number | null;
+	CountAttr?: number;
+	UniqueCountAttr?: number;
 	Si?: Array<CT_Rst>;
 	ExtLst?: CT_ExtensionList;
 }
@@ -1908,8 +1908,8 @@ export class CT_Rst {
 // CT_PhoneticPr ...
 export class CT_PhoneticPr {
 	FontIdAttr: number;
-	TypeAttr: string | null;
-	AlignmentAttr: string | null;
+	TypeAttr?: string;
+	AlignmentAttr?: string;
 }
 
 // Headers ...
@@ -1921,17 +1921,17 @@ export type Revisions = CT_Revisions;
 // CT_RevisionHeaders ...
 export class CT_RevisionHeaders {
 	GuidAttr: string;
-	LastGuidAttr: string | null;
-	SharedAttr: boolean | null;
-	DiskRevisionsAttr: boolean | null;
-	HistoryAttr: boolean | null;
-	TrackRevisionsAttr: boolean | null;
-	ExclusiveAttr: boolean | null;
-	RevisionIdAttr: number | null;
-	VersionAttr: number | null;
-	KeepChangeHistoryAttr: boolean | null;
-	ProtectedAttr: boolean | null;
-	PreserveHistoryAttr: number | null;
+	LastGuidAttr?: string;
+	SharedAttr?: boolean;
+	DiskRevisionsAttr?: boolean;
+	HistoryAttr?: boolean;
+	TrackRevisionsAttr?: boolean;
+	ExclusiveAttr?: boolean;
+	RevisionIdAttr?: number;
+	VersionAttr?: number;
+	KeepChangeHistoryAttr?: boolean;
+	ProtectedAttr?: boolean;
+	PreserveHistoryAttr?: number;
 	Header: Array<CT_RevisionHeader>;
 }
 
@@ -1965,8 +1965,8 @@ export class CT_RevisionHeader {
 	MaxSheetIdAttr: number;
 	UserNameAttr: string;
 	RIdAttr: string;
-	MinRIdAttr: number | null;
-	MaxRIdAttr: number | null;
+	MinRIdAttr?: number;
+	MaxRIdAttr?: number;
 	SheetIdMap: CT_SheetIdMap;
 	ReviewedList?: CT_ReviewedRevisions;
 	ExtLst?: CT_ExtensionList;
@@ -1974,7 +1974,7 @@ export class CT_RevisionHeader {
 
 // CT_SheetIdMap ...
 export class CT_SheetIdMap {
-	CountAttr: number | null;
+	CountAttr?: number;
 	SheetId: Array<CT_SheetId>;
 }
 
@@ -1985,7 +1985,7 @@ export class CT_SheetId {
 
 // CT_ReviewedRevisions ...
 export class CT_ReviewedRevisions {
-	CountAttr: number | null;
+	CountAttr?: number;
 	Reviewed: Array<CT_Reviewed>;
 }
 
@@ -1998,25 +1998,25 @@ export class CT_Reviewed {
 export class CT_UndoInfo {
 	IndexAttr: number;
 	ExpAttr: string;
-	Ref3DAttr: boolean | null;
-	ArrayAttr: boolean | null;
-	VAttr: boolean | null;
-	NfAttr: boolean | null;
-	CsAttr: boolean | null;
+	Ref3DAttr?: boolean;
+	ArrayAttr?: boolean;
+	VAttr?: boolean;
+	NfAttr?: boolean;
+	CsAttr?: boolean;
 	DrAttr: string;
-	DnAttr: string | null;
-	RAttr: string | null;
-	SIdAttr: number | null;
+	DnAttr?: string;
+	RAttr?: string;
+	SIdAttr?: number;
 }
 
 // CT_RevisionRowColumn ...
 export class CT_RevisionRowColumn {
 	AG_RevData: AG_RevData;
 	SIdAttr: number;
-	EolAttr: boolean | null;
+	EolAttr?: boolean;
 	RefAttr: string;
 	ActionAttr: string;
-	EdgeAttr: boolean | null;
+	EdgeAttr?: boolean;
 	Undo?: Array<CT_UndoInfo>;
 	Rcc?: Array<CT_RevisionCellChange>;
 	Rfmt?: Array<CT_RevisionFormatting>;
@@ -2028,7 +2028,7 @@ export class CT_RevisionMove {
 	SheetIdAttr: number;
 	SourceAttr: string;
 	DestinationAttr: string;
-	SourceSheetIdAttr: number | null;
+	SourceSheetIdAttr?: number;
 	Undo?: Array<CT_UndoInfo>;
 	Rcc?: Array<CT_RevisionCellChange>;
 	Rfmt?: Array<CT_RevisionFormatting>;
@@ -2061,16 +2061,16 @@ export class CT_RevisionInsertSheet {
 export class CT_RevisionCellChange {
 	AG_RevData: AG_RevData;
 	SIdAttr: number;
-	OdxfAttr: boolean | null;
-	XfDxfAttr: boolean | null;
-	SAttr: boolean | null;
-	DxfAttr: boolean | null;
-	NumFmtIdAttr: number | null;
-	QuotePrefixAttr: boolean | null;
-	OldQuotePrefixAttr: boolean | null;
-	PhAttr: boolean | null;
-	OldPhAttr: boolean | null;
-	EndOfListFormulaUpdateAttr: boolean | null;
+	OdxfAttr?: boolean;
+	XfDxfAttr?: boolean;
+	SAttr?: boolean;
+	DxfAttr?: boolean;
+	NumFmtIdAttr?: number;
+	QuotePrefixAttr?: boolean;
+	OldQuotePrefixAttr?: boolean;
+	PhAttr?: boolean;
+	OldPhAttr?: boolean;
+	EndOfListFormulaUpdateAttr?: boolean;
 	Oc?: CT_Cell;
 	Nc: CT_Cell;
 	Odxf?: CT_Dxf;
@@ -2081,11 +2081,11 @@ export class CT_RevisionCellChange {
 // CT_RevisionFormatting ...
 export class CT_RevisionFormatting {
 	SheetIdAttr: number;
-	XfDxfAttr: boolean | null;
-	SAttr: boolean | null;
+	XfDxfAttr?: boolean;
+	SAttr?: boolean;
 	SqrefAttr: ST_Sqref;
-	StartAttr: number | null;
-	LengthAttr: number | null;
+	StartAttr?: number;
+	LengthAttr?: number;
 	Dxf?: CT_Dxf;
 	ExtLst?: CT_ExtensionList;
 }
@@ -2102,40 +2102,40 @@ export class CT_RevisionComment {
 	SheetIdAttr: number;
 	CellAttr: string;
 	GuidAttr: string;
-	ActionAttr: string | null;
-	AlwaysShowAttr: boolean | null;
-	OldAttr: boolean | null;
-	HiddenRowAttr: boolean | null;
-	HiddenColumnAttr: boolean | null;
+	ActionAttr?: string;
+	AlwaysShowAttr?: boolean;
+	OldAttr?: boolean;
+	HiddenRowAttr?: boolean;
+	HiddenColumnAttr?: boolean;
 	AuthorAttr: string;
-	OldLengthAttr: number | null;
-	NewLengthAttr: number | null;
+	OldLengthAttr?: number;
+	NewLengthAttr?: number;
 }
 
 // CT_RevisionDefinedName ...
 export class CT_RevisionDefinedName {
 	AG_RevData: AG_RevData;
-	LocalSheetIdAttr: number | null;
-	CustomViewAttr: boolean | null;
+	LocalSheetIdAttr?: number;
+	CustomViewAttr?: boolean;
 	NameAttr: string;
-	FunctionAttr: boolean | null;
-	OldFunctionAttr: boolean | null;
-	FunctionGroupIdAttr: any | null;
-	OldFunctionGroupIdAttr: any | null;
-	ShortcutKeyAttr: any | null;
-	OldShortcutKeyAttr: any | null;
-	HiddenAttr: boolean | null;
-	OldHiddenAttr: boolean | null;
-	CustomMenuAttr: string | null;
-	OldCustomMenuAttr: string | null;
-	DescriptionAttr: string | null;
-	OldDescriptionAttr: string | null;
-	HelpAttr: string | null;
-	OldHelpAttr: string | null;
-	StatusBarAttr: string | null;
-	OldStatusBarAttr: string | null;
-	CommentAttr: string | null;
-	OldCommentAttr: string | null;
+	FunctionAttr?: boolean;
+	OldFunctionAttr?: boolean;
+	FunctionGroupIdAttr?: any;
+	OldFunctionGroupIdAttr?: any;
+	ShortcutKeyAttr?: any;
+	OldShortcutKeyAttr?: any;
+	HiddenAttr?: boolean;
+	OldHiddenAttr?: boolean;
+	CustomMenuAttr?: string;
+	OldCustomMenuAttr?: string;
+	DescriptionAttr?: string;
+	OldDescriptionAttr?: string;
+	HelpAttr?: string;
+	OldHelpAttr?: string;
+	StatusBarAttr?: string;
+	OldStatusBarAttr?: string;
+	CommentAttr?: string;
+	OldCommentAttr?: string;
 	Formula?: string;
 	OldFormula?: string;
 	ExtLst?: CT_ExtensionList;
@@ -2144,7 +2144,7 @@ export class CT_RevisionDefinedName {
 // CT_RevisionConflict ...
 export class CT_RevisionConflict {
 	AG_RevData: AG_RevData;
-	SheetIdAttr: number | null;
+	SheetIdAttr?: number;
 }
 
 // CT_RevisionQueryTableField ...
@@ -2182,7 +2182,7 @@ export type Users = CT_Users;
 
 // CT_Users ...
 export class CT_Users {
-	CountAttr: number | null;
+	CountAttr?: number;
 	UserInfo?: Array<CT_SharedUser>;
 }
 
@@ -2299,20 +2299,20 @@ export class CT_SheetData {
 
 // CT_SheetCalcPr ...
 export class CT_SheetCalcPr {
-	FullCalcOnLoadAttr: boolean | null;
+	FullCalcOnLoadAttr?: boolean;
 }
 
 // CT_SheetFormatPr ...
 export class CT_SheetFormatPr {
-	BaseColWidthAttr: number | null;
-	DefaultColWidthAttr: number | null;
+	BaseColWidthAttr?: number;
+	DefaultColWidthAttr?: number;
 	DefaultRowHeightAttr: number;
-	CustomHeightAttr: boolean | null;
-	ZeroHeightAttr: boolean | null;
-	ThickTopAttr: boolean | null;
-	ThickBottomAttr: boolean | null;
-	OutlineLevelRowAttr: any | null;
-	OutlineLevelColAttr: any | null;
+	CustomHeightAttr?: boolean;
+	ZeroHeightAttr?: boolean;
+	ThickTopAttr?: boolean;
+	ThickBottomAttr?: boolean;
+	OutlineLevelRowAttr?: any;
+	OutlineLevelColAttr?: any;
 }
 
 // CT_Cols ...
@@ -2324,14 +2324,14 @@ export class CT_Cols {
 export class CT_Col {
 	MinAttr: number;
 	MaxAttr: number;
-	WidthAttr: number | null;
-	StyleAttr: number | null;
-	HiddenAttr: boolean | null;
-	BestFitAttr: boolean | null;
-	CustomWidthAttr: boolean | null;
-	PhoneticAttr: boolean | null;
-	OutlineLevelAttr: any | null;
-	CollapsedAttr: boolean | null;
+	WidthAttr?: number;
+	StyleAttr?: number;
+	HiddenAttr?: boolean;
+	BestFitAttr?: boolean;
+	CustomWidthAttr?: boolean;
+	PhoneticAttr?: boolean;
+	OutlineLevelAttr?: any;
+	CollapsedAttr?: boolean;
 }
 
 // ST_CellSpan ...
@@ -2342,30 +2342,30 @@ export type ST_CellSpans = string;
 
 // CT_Row ...
 export class CT_Row {
-	RAttr: number | null;
-	SpansAttr: ST_CellSpans | null;
-	SAttr: number | null;
-	CustomFormatAttr: boolean | null;
-	HtAttr: number | null;
-	HiddenAttr: boolean | null;
-	CustomHeightAttr: boolean | null;
-	OutlineLevelAttr: any | null;
-	CollapsedAttr: boolean | null;
-	ThickTopAttr: boolean | null;
-	ThickBotAttr: boolean | null;
-	PhAttr: boolean | null;
+	RAttr?: number;
+	SpansAttr?: ST_CellSpans;
+	SAttr?: number;
+	CustomFormatAttr?: boolean;
+	HtAttr?: number;
+	HiddenAttr?: boolean;
+	CustomHeightAttr?: boolean;
+	OutlineLevelAttr?: any;
+	CollapsedAttr?: boolean;
+	ThickTopAttr?: boolean;
+	ThickBotAttr?: boolean;
+	PhAttr?: boolean;
 	C?: Array<CT_Cell>;
 	ExtLst?: CT_ExtensionList;
 }
 
 // CT_Cell ...
 export class CT_Cell {
-	RAttr: string | null;
-	SAttr: number | null;
-	TAttr: string | null;
-	CmAttr: number | null;
-	VmAttr: number | null;
-	PhAttr: boolean | null;
+	RAttr?: string;
+	SAttr?: number;
+	TAttr?: string;
+	CmAttr?: number;
+	VmAttr?: number;
+	PhAttr?: boolean;
 	F?: CT_CellFormula;
 	V?: string;
 	Is?: CT_Rst;
@@ -2393,15 +2393,15 @@ export enum ST_CellFormulaType {
 
 // CT_SheetPr ...
 export class CT_SheetPr {
-	SyncHorizontalAttr: boolean | null;
-	SyncVerticalAttr: boolean | null;
-	SyncRefAttr: string | null;
-	TransitionEvaluationAttr: boolean | null;
-	TransitionEntryAttr: boolean | null;
-	PublishedAttr: boolean | null;
-	CodeNameAttr: string | null;
-	FilterModeAttr: boolean | null;
-	EnableFormatConditionsCalculationAttr: boolean | null;
+	SyncHorizontalAttr?: boolean;
+	SyncVerticalAttr?: boolean;
+	SyncRefAttr?: string;
+	TransitionEvaluationAttr?: boolean;
+	TransitionEntryAttr?: boolean;
+	PublishedAttr?: boolean;
+	CodeNameAttr?: string;
+	FilterModeAttr?: boolean;
+	EnableFormatConditionsCalculationAttr?: boolean;
 	TabColor?: CT_Color;
 	OutlinePr?: CT_OutlinePr;
 	PageSetUpPr?: CT_PageSetUpPr;
@@ -2420,24 +2420,24 @@ export class CT_SheetViews {
 
 // CT_SheetView ...
 export class CT_SheetView {
-	WindowProtectionAttr: boolean | null;
-	ShowFormulasAttr: boolean | null;
-	ShowGridLinesAttr: boolean | null;
-	ShowRowColHeadersAttr: boolean | null;
-	ShowZerosAttr: boolean | null;
-	RightToLeftAttr: boolean | null;
-	TabSelectedAttr: boolean | null;
-	ShowRulerAttr: boolean | null;
-	ShowOutlineSymbolsAttr: boolean | null;
-	DefaultGridColorAttr: boolean | null;
-	ShowWhiteSpaceAttr: boolean | null;
-	ViewAttr: string | null;
-	TopLeftCellAttr: string | null;
-	ColorIdAttr: number | null;
-	ZoomScaleAttr: number | null;
-	ZoomScaleNormalAttr: number | null;
-	ZoomScaleSheetLayoutViewAttr: number | null;
-	ZoomScalePageLayoutViewAttr: number | null;
+	WindowProtectionAttr?: boolean;
+	ShowFormulasAttr?: boolean;
+	ShowGridLinesAttr?: boolean;
+	ShowRowColHeadersAttr?: boolean;
+	ShowZerosAttr?: boolean;
+	RightToLeftAttr?: boolean;
+	TabSelectedAttr?: boolean;
+	ShowRulerAttr?: boolean;
+	ShowOutlineSymbolsAttr?: boolean;
+	DefaultGridColorAttr?: boolean;
+	ShowWhiteSpaceAttr?: boolean;
+	ViewAttr?: string;
+	TopLeftCellAttr?: string;
+	ColorIdAttr?: number;
+	ZoomScaleAttr?: number;
+	ZoomScaleNormalAttr?: number;
+	ZoomScaleSheetLayoutViewAttr?: number;
+	ZoomScalePageLayoutViewAttr?: number;
 	WorkbookViewIdAttr: number;
 	Pane?: CT_Pane;
 	Selection?: Array<CT_Selection>;
@@ -2447,41 +2447,41 @@ export class CT_SheetView {
 
 // CT_Pane ...
 export class CT_Pane {
-	XSplitAttr: number | null;
-	YSplitAttr: number | null;
-	TopLeftCellAttr: string | null;
-	ActivePaneAttr: string | null;
-	StateAttr: string | null;
+	XSplitAttr?: number;
+	YSplitAttr?: number;
+	TopLeftCellAttr?: string;
+	ActivePaneAttr?: string;
+	StateAttr?: string;
 }
 
 // CT_PivotSelection ...
 export class CT_PivotSelection {
-	PaneAttr: string | null;
-	ShowHeaderAttr: boolean | null;
-	LabelAttr: boolean | null;
-	DataAttr: boolean | null;
-	ExtendableAttr: boolean | null;
-	CountAttr: number | null;
-	AxisAttr: string | null;
-	DimensionAttr: number | null;
-	StartAttr: number | null;
-	MinAttr: number | null;
-	MaxAttr: number | null;
-	ActiveRowAttr: number | null;
-	ActiveColAttr: number | null;
-	PreviousRowAttr: number | null;
-	PreviousColAttr: number | null;
-	ClickAttr: number | null;
-	RIdAttr: string | null;
+	PaneAttr?: string;
+	ShowHeaderAttr?: boolean;
+	LabelAttr?: boolean;
+	DataAttr?: boolean;
+	ExtendableAttr?: boolean;
+	CountAttr?: number;
+	AxisAttr?: string;
+	DimensionAttr?: number;
+	StartAttr?: number;
+	MinAttr?: number;
+	MaxAttr?: number;
+	ActiveRowAttr?: number;
+	ActiveColAttr?: number;
+	PreviousRowAttr?: number;
+	PreviousColAttr?: number;
+	ClickAttr?: number;
+	RIdAttr?: string;
 	PivotArea: CT_PivotArea;
 }
 
 // CT_Selection ...
 export class CT_Selection {
-	PaneAttr: string | null;
-	ActiveCellAttr: string | null;
-	ActiveCellIdAttr: number | null;
-	SqrefAttr: ST_Sqref | null;
+	PaneAttr?: string;
+	ActiveCellAttr?: string;
+	ActiveCellIdAttr?: number;
+	SqrefAttr?: ST_Sqref;
 }
 
 // ST_Pane ...
@@ -2494,18 +2494,18 @@ export enum ST_Pane {
 
 // CT_PageBreak ...
 export class CT_PageBreak {
-	CountAttr: number | null;
-	ManualBreakCountAttr: number | null;
+	CountAttr?: number;
+	ManualBreakCountAttr?: number;
 	Brk?: Array<CT_Break>;
 }
 
 // CT_Break ...
 export class CT_Break {
-	IdAttr: number | null;
-	MinAttr: number | null;
-	MaxAttr: number | null;
-	ManAttr: boolean | null;
-	PtAttr: boolean | null;
+	IdAttr?: number;
+	MinAttr?: number;
+	MaxAttr?: number;
+	ManAttr?: boolean;
+	PtAttr?: boolean;
 }
 
 // ST_SheetViewType ...
@@ -2517,24 +2517,24 @@ export enum ST_SheetViewType {
 
 // CT_OutlinePr ...
 export class CT_OutlinePr {
-	ApplyStylesAttr: boolean | null;
-	SummaryBelowAttr: boolean | null;
-	SummaryRightAttr: boolean | null;
-	ShowOutlineSymbolsAttr: boolean | null;
+	ApplyStylesAttr?: boolean;
+	SummaryBelowAttr?: boolean;
+	SummaryRightAttr?: boolean;
+	ShowOutlineSymbolsAttr?: boolean;
 }
 
 // CT_PageSetUpPr ...
 export class CT_PageSetUpPr {
-	AutoPageBreaksAttr: boolean | null;
-	FitToPageAttr: boolean | null;
+	AutoPageBreaksAttr?: boolean;
+	FitToPageAttr?: boolean;
 }
 
 // CT_DataConsolidate ...
 export class CT_DataConsolidate {
-	FunctionAttr: string | null;
-	StartLabelsAttr: boolean | null;
-	TopLabelsAttr: boolean | null;
-	LinkAttr: boolean | null;
+	FunctionAttr?: string;
+	StartLabelsAttr?: boolean;
+	TopLabelsAttr?: boolean;
+	LinkAttr?: boolean;
 	DataRefs?: CT_DataRefs;
 }
 
@@ -2555,21 +2555,21 @@ export enum ST_DataConsolidateFunction {
 
 // CT_DataRefs ...
 export class CT_DataRefs {
-	CountAttr: number | null;
+	CountAttr?: number;
 	DataRef?: Array<CT_DataRef>;
 }
 
 // CT_DataRef ...
 export class CT_DataRef {
-	RefAttr: string | null;
-	NameAttr: string | null;
-	SheetAttr: string | null;
-	RIdAttr: string | null;
+	RefAttr?: string;
+	NameAttr?: string;
+	SheetAttr?: string;
+	RIdAttr?: string;
 }
 
 // CT_MergeCells ...
 export class CT_MergeCells {
-	CountAttr: number | null;
+	CountAttr?: number;
 	MergeCell: Array<CT_MergeCell>;
 }
 
@@ -2592,8 +2592,8 @@ export class CT_CellSmartTags {
 // CT_CellSmartTag ...
 export class CT_CellSmartTag {
 	TypeAttr: number;
-	DeletedAttr: boolean | null;
-	XmlBasedAttr: boolean | null;
+	DeletedAttr?: boolean;
+	XmlBasedAttr?: boolean;
 	CellSmartTagPr?: Array<CT_CellSmartTagPr>;
 }
 
@@ -2611,24 +2611,24 @@ export class CT_Drawing {
 // CT_DrawingHF ...
 export class CT_DrawingHF {
 	RIdAttr: string;
-	LhoAttr: number | null;
-	LheAttr: number | null;
-	LhfAttr: number | null;
-	ChoAttr: number | null;
-	CheAttr: number | null;
-	ChfAttr: number | null;
-	RhoAttr: number | null;
-	RheAttr: number | null;
-	RhfAttr: number | null;
-	LfoAttr: number | null;
-	LfeAttr: number | null;
-	LffAttr: number | null;
-	CfoAttr: number | null;
-	CfeAttr: number | null;
-	CffAttr: number | null;
-	RfoAttr: number | null;
-	RfeAttr: number | null;
-	RffAttr: number | null;
+	LhoAttr?: number;
+	LheAttr?: number;
+	LhfAttr?: number;
+	ChoAttr?: number;
+	CheAttr?: number;
+	ChfAttr?: number;
+	RhoAttr?: number;
+	RheAttr?: number;
+	RhfAttr?: number;
+	LfoAttr?: number;
+	LfeAttr?: number;
+	LffAttr?: number;
+	CfoAttr?: number;
+	CfeAttr?: number;
+	CffAttr?: number;
+	RfoAttr?: number;
+	RfeAttr?: number;
+	RffAttr?: number;
 }
 
 // CT_CustomSheetViews ...
@@ -2639,25 +2639,25 @@ export class CT_CustomSheetViews {
 // CT_CustomSheetView ...
 export class CT_CustomSheetView {
 	GuidAttr: string;
-	ScaleAttr: number | null;
-	ColorIdAttr: number | null;
-	ShowPageBreaksAttr: boolean | null;
-	ShowFormulasAttr: boolean | null;
-	ShowGridLinesAttr: boolean | null;
-	ShowRowColAttr: boolean | null;
-	OutlineSymbolsAttr: boolean | null;
-	ZeroValuesAttr: boolean | null;
-	FitToPageAttr: boolean | null;
-	PrintAreaAttr: boolean | null;
-	FilterAttr: boolean | null;
-	ShowAutoFilterAttr: boolean | null;
-	HiddenRowsAttr: boolean | null;
-	HiddenColumnsAttr: boolean | null;
-	StateAttr: string | null;
-	FilterUniqueAttr: boolean | null;
-	ViewAttr: string | null;
-	ShowRulerAttr: boolean | null;
-	TopLeftCellAttr: string | null;
+	ScaleAttr?: number;
+	ColorIdAttr?: number;
+	ShowPageBreaksAttr?: boolean;
+	ShowFormulasAttr?: boolean;
+	ShowGridLinesAttr?: boolean;
+	ShowRowColAttr?: boolean;
+	OutlineSymbolsAttr?: boolean;
+	ZeroValuesAttr?: boolean;
+	FitToPageAttr?: boolean;
+	PrintAreaAttr?: boolean;
+	FilterAttr?: boolean;
+	ShowAutoFilterAttr?: boolean;
+	HiddenRowsAttr?: boolean;
+	HiddenColumnsAttr?: boolean;
+	StateAttr?: string;
+	FilterUniqueAttr?: boolean;
+	ViewAttr?: string;
+	ShowRulerAttr?: boolean;
+	TopLeftCellAttr?: string;
 	Pane?: CT_Pane;
 	Selection?: CT_Selection;
 	RowBreaks?: CT_PageBreak;
@@ -2672,27 +2672,27 @@ export class CT_CustomSheetView {
 
 // CT_DataValidations ...
 export class CT_DataValidations {
-	DisablePromptsAttr: boolean | null;
-	XWindowAttr: number | null;
-	YWindowAttr: number | null;
-	CountAttr: number | null;
+	DisablePromptsAttr?: boolean;
+	XWindowAttr?: number;
+	YWindowAttr?: number;
+	CountAttr?: number;
 	DataValidation: Array<CT_DataValidation>;
 }
 
 // CT_DataValidation ...
 export class CT_DataValidation {
-	TypeAttr: string | null;
-	ErrorStyleAttr: string | null;
-	ImeModeAttr: string | null;
-	OperatorAttr: string | null;
-	AllowBlankAttr: boolean | null;
-	ShowDropDownAttr: boolean | null;
-	ShowInputMessageAttr: boolean | null;
-	ShowErrorMessageAttr: boolean | null;
-	ErrorTitleAttr: string | null;
-	ErrorAttr: string | null;
-	PromptTitleAttr: string | null;
-	PromptAttr: string | null;
+	TypeAttr?: string;
+	ErrorStyleAttr?: string;
+	ImeModeAttr?: string;
+	OperatorAttr?: string;
+	AllowBlankAttr?: boolean;
+	ShowDropDownAttr?: boolean;
+	ShowInputMessageAttr?: boolean;
+	ShowErrorMessageAttr?: boolean;
+	ErrorTitleAttr?: string;
+	ErrorAttr?: string;
+	PromptTitleAttr?: string;
+	PromptAttr?: string;
 	SqrefAttr: ST_Sqref;
 	Formula1?: string;
 	Formula2?: string;
@@ -2808,27 +2808,27 @@ export enum ST_CfvoType {
 
 // CT_ConditionalFormatting ...
 export class CT_ConditionalFormatting {
-	PivotAttr: boolean | null;
-	SqrefAttr: ST_Sqref | null;
+	PivotAttr?: boolean;
+	SqrefAttr?: ST_Sqref;
 	CfRule: Array<CT_CfRule>;
 	ExtLst?: CT_ExtensionList;
 }
 
 // CT_CfRule ...
 export class CT_CfRule {
-	TypeAttr: string | null;
-	DxfIdAttr: number | null;
+	TypeAttr?: string;
+	DxfIdAttr?: number;
 	PriorityAttr: number;
-	StopIfTrueAttr: boolean | null;
-	AboveAverageAttr: boolean | null;
-	PercentAttr: boolean | null;
-	BottomAttr: boolean | null;
-	OperatorAttr: string | null;
-	TextAttr: string | null;
-	TimePeriodAttr: string | null;
-	RankAttr: number | null;
-	StdDevAttr: number | null;
-	EqualAverageAttr: boolean | null;
+	StopIfTrueAttr?: boolean;
+	AboveAverageAttr?: boolean;
+	PercentAttr?: boolean;
+	BottomAttr?: boolean;
+	OperatorAttr?: string;
+	TextAttr?: string;
+	TimePeriodAttr?: string;
+	RankAttr?: number;
+	StdDevAttr?: number;
+	EqualAverageAttr?: boolean;
 	Formula?: string;
 	ColorScale?: CT_ColorScale;
 	DataBar?: CT_DataBar;
@@ -2844,26 +2844,26 @@ export class CT_Hyperlinks {
 // CT_Hyperlink ...
 export class CT_Hyperlink {
 	RefAttr: string;
-	RIdAttr: string | null;
-	LocationAttr: string | null;
-	TooltipAttr: string | null;
-	DisplayAttr: string | null;
+	RIdAttr?: string;
+	LocationAttr?: string;
+	TooltipAttr?: string;
+	DisplayAttr?: string;
 }
 
 // CT_CellFormula ...
 export class CT_CellFormula {
-	TAttr: string | null;
-	AcaAttr: boolean | null;
-	RefAttr: string | null;
-	Dt2DAttr: boolean | null;
-	DtrAttr: boolean | null;
-	Del1Attr: boolean | null;
-	Del2Attr: boolean | null;
-	R1Attr: string | null;
-	R2Attr: string | null;
-	CaAttr: boolean | null;
-	SiAttr: number | null;
-	BxAttr: boolean | null;
+	TAttr?: string;
+	AcaAttr?: boolean;
+	RefAttr?: string;
+	Dt2DAttr?: boolean;
+	DtrAttr?: boolean;
+	Del1Attr?: boolean;
+	Del2Attr?: boolean;
+	R1Attr?: string;
+	R2Attr?: string;
+	CaAttr?: boolean;
+	SiAttr?: number;
+	BxAttr?: boolean;
 	Value: string;
 }
 
@@ -2875,27 +2875,27 @@ export class CT_ColorScale {
 
 // CT_DataBar ...
 export class CT_DataBar {
-	MinLengthAttr: number | null;
-	MaxLengthAttr: number | null;
-	ShowValueAttr: boolean | null;
+	MinLengthAttr?: number;
+	MaxLengthAttr?: number;
+	ShowValueAttr?: boolean;
 	Cfvo: Array<CT_Cfvo>;
 	Color: CT_Color;
 }
 
 // CT_IconSet ...
 export class CT_IconSet {
-	IconSetAttr: string | null;
-	ShowValueAttr: boolean | null;
-	PercentAttr: boolean | null;
-	ReverseAttr: boolean | null;
+	IconSetAttr?: string;
+	ShowValueAttr?: boolean;
+	PercentAttr?: boolean;
+	ReverseAttr?: boolean;
 	Cfvo: Array<CT_Cfvo>;
 }
 
 // CT_Cfvo ...
 export class CT_Cfvo {
 	TypeAttr: string;
-	ValAttr: string | null;
-	GteAttr: boolean | null;
+	ValAttr?: string;
+	GteAttr?: boolean;
 	ExtLst?: CT_ExtensionList;
 }
 
@@ -2911,34 +2911,34 @@ export class CT_PageMargins {
 
 // CT_PrintOptions ...
 export class CT_PrintOptions {
-	HorizontalCenteredAttr: boolean | null;
-	VerticalCenteredAttr: boolean | null;
-	HeadingsAttr: boolean | null;
-	GridLinesAttr: boolean | null;
-	GridLinesSetAttr: boolean | null;
+	HorizontalCenteredAttr?: boolean;
+	VerticalCenteredAttr?: boolean;
+	HeadingsAttr?: boolean;
+	GridLinesAttr?: boolean;
+	GridLinesSetAttr?: boolean;
 }
 
 // CT_PageSetup ...
 export class CT_PageSetup {
-	PaperSizeAttr: number | null;
-	PaperHeightAttr: string | null;
-	PaperWidthAttr: string | null;
-	ScaleAttr: number | null;
-	FirstPageNumberAttr: number | null;
-	FitToWidthAttr: number | null;
-	FitToHeightAttr: number | null;
-	PageOrderAttr: string | null;
-	OrientationAttr: string | null;
-	UsePrinterDefaultsAttr: boolean | null;
-	BlackAndWhiteAttr: boolean | null;
-	DraftAttr: boolean | null;
-	CellCommentsAttr: string | null;
-	UseFirstPageNumberAttr: boolean | null;
-	ErrorsAttr: string | null;
-	HorizontalDpiAttr: number | null;
-	VerticalDpiAttr: number | null;
-	CopiesAttr: number | null;
-	RIdAttr: string | null;
+	PaperSizeAttr?: number;
+	PaperHeightAttr?: string;
+	PaperWidthAttr?: string;
+	ScaleAttr?: number;
+	FirstPageNumberAttr?: number;
+	FitToWidthAttr?: number;
+	FitToHeightAttr?: number;
+	PageOrderAttr?: string;
+	OrientationAttr?: string;
+	UsePrinterDefaultsAttr?: boolean;
+	BlackAndWhiteAttr?: boolean;
+	DraftAttr?: boolean;
+	CellCommentsAttr?: string;
+	UseFirstPageNumberAttr?: boolean;
+	ErrorsAttr?: string;
+	HorizontalDpiAttr?: number;
+	VerticalDpiAttr?: number;
+	CopiesAttr?: number;
+	RIdAttr?: string;
 }
 
 // ST_PageOrder ...
@@ -2963,10 +2963,10 @@ export enum ST_CellComments {
 
 // CT_HeaderFooter ...
 export class CT_HeaderFooter {
-	DifferentOddEvenAttr: boolean | null;
-	DifferentFirstAttr: boolean | null;
-	ScaleWithDocAttr: boolean | null;
-	AlignWithMarginsAttr: boolean | null;
+	DifferentOddEvenAttr?: boolean;
+	DifferentFirstAttr?: boolean;
+	ScaleWithDocAttr?: boolean;
+	AlignWithMarginsAttr?: boolean;
 	OddHeader?: string;
 	OddFooter?: string;
 	EvenHeader?: string;
@@ -2985,34 +2985,34 @@ export enum ST_PrintError {
 
 // CT_Scenarios ...
 export class CT_Scenarios {
-	CurrentAttr: number | null;
-	ShowAttr: number | null;
-	SqrefAttr: ST_Sqref | null;
+	CurrentAttr?: number;
+	ShowAttr?: number;
+	SqrefAttr?: ST_Sqref;
 	Scenario: Array<CT_Scenario>;
 }
 
 // CT_SheetProtection ...
 export class CT_SheetProtection {
-	AlgorithmNameAttr: string | null;
-	HashValueAttr: Uint8Array | null;
-	SaltValueAttr: Uint8Array | null;
-	SpinCountAttr: number | null;
-	SheetAttr: boolean | null;
-	ObjectsAttr: boolean | null;
-	ScenariosAttr: boolean | null;
-	FormatCellsAttr: boolean | null;
-	FormatColumnsAttr: boolean | null;
-	FormatRowsAttr: boolean | null;
-	InsertColumnsAttr: boolean | null;
-	InsertRowsAttr: boolean | null;
-	InsertHyperlinksAttr: boolean | null;
-	DeleteColumnsAttr: boolean | null;
-	DeleteRowsAttr: boolean | null;
-	SelectLockedCellsAttr: boolean | null;
-	SortAttr: boolean | null;
-	AutoFilterAttr: boolean | null;
-	PivotTablesAttr: boolean | null;
-	SelectUnlockedCellsAttr: boolean | null;
+	AlgorithmNameAttr?: string;
+	HashValueAttr?: Uint8Array;
+	SaltValueAttr?: Uint8Array;
+	SpinCountAttr?: number;
+	SheetAttr?: boolean;
+	ObjectsAttr?: boolean;
+	ScenariosAttr?: boolean;
+	FormatCellsAttr?: boolean;
+	FormatColumnsAttr?: boolean;
+	FormatRowsAttr?: boolean;
+	InsertColumnsAttr?: boolean;
+	InsertRowsAttr?: boolean;
+	InsertHyperlinksAttr?: boolean;
+	DeleteColumnsAttr?: boolean;
+	DeleteRowsAttr?: boolean;
+	SelectLockedCellsAttr?: boolean;
+	SortAttr?: boolean;
+	AutoFilterAttr?: boolean;
+	PivotTablesAttr?: boolean;
+	SelectUnlockedCellsAttr?: boolean;
 }
 
 // CT_ProtectedRanges ...
@@ -3024,31 +3024,31 @@ export class CT_ProtectedRanges {
 export class CT_ProtectedRange {
 	SqrefAttr: ST_Sqref;
 	NameAttr: string;
-	AlgorithmNameAttr: string | null;
-	HashValueAttr: Uint8Array | null;
-	SaltValueAttr: Uint8Array | null;
-	SpinCountAttr: number | null;
+	AlgorithmNameAttr?: string;
+	HashValueAttr?: Uint8Array;
+	SaltValueAttr?: Uint8Array;
+	SpinCountAttr?: number;
 	SecurityDescriptor?: string;
 }
 
 // CT_Scenario ...
 export class CT_Scenario {
 	NameAttr: string;
-	LockedAttr: boolean | null;
-	HiddenAttr: boolean | null;
-	CountAttr: number | null;
-	UserAttr: string | null;
-	CommentAttr: string | null;
+	LockedAttr?: boolean;
+	HiddenAttr?: boolean;
+	CountAttr?: number;
+	UserAttr?: string;
+	CommentAttr?: string;
 	InputCells: Array<CT_InputCells>;
 }
 
 // CT_InputCells ...
 export class CT_InputCells {
 	RAttr: string;
-	DeletedAttr: boolean | null;
-	UndoneAttr: boolean | null;
+	DeletedAttr?: boolean;
+	UndoneAttr?: boolean;
 	ValAttr: string;
-	NumFmtIdAttr: number | null;
+	NumFmtIdAttr?: number;
 }
 
 // CT_CellWatches ...
@@ -3079,8 +3079,8 @@ export class CT_Chartsheet {
 
 // CT_ChartsheetPr ...
 export class CT_ChartsheetPr {
-	PublishedAttr: boolean | null;
-	CodeNameAttr: string | null;
+	PublishedAttr?: boolean;
+	CodeNameAttr?: string;
 	TabColor?: CT_Color;
 }
 
@@ -3092,38 +3092,38 @@ export class CT_ChartsheetViews {
 
 // CT_ChartsheetView ...
 export class CT_ChartsheetView {
-	TabSelectedAttr: boolean | null;
-	ZoomScaleAttr: number | null;
+	TabSelectedAttr?: boolean;
+	ZoomScaleAttr?: number;
 	WorkbookViewIdAttr: number;
-	ZoomToFitAttr: boolean | null;
+	ZoomToFitAttr?: boolean;
 	ExtLst?: CT_ExtensionList;
 }
 
 // CT_ChartsheetProtection ...
 export class CT_ChartsheetProtection {
-	AlgorithmNameAttr: string | null;
-	HashValueAttr: Uint8Array | null;
-	SaltValueAttr: Uint8Array | null;
-	SpinCountAttr: number | null;
-	ContentAttr: boolean | null;
-	ObjectsAttr: boolean | null;
+	AlgorithmNameAttr?: string;
+	HashValueAttr?: Uint8Array;
+	SaltValueAttr?: Uint8Array;
+	SpinCountAttr?: number;
+	ContentAttr?: boolean;
+	ObjectsAttr?: boolean;
 }
 
 // CT_CsPageSetup ...
 export class CT_CsPageSetup {
-	PaperSizeAttr: number | null;
-	PaperHeightAttr: string | null;
-	PaperWidthAttr: string | null;
-	FirstPageNumberAttr: number | null;
-	OrientationAttr: string | null;
-	UsePrinterDefaultsAttr: boolean | null;
-	BlackAndWhiteAttr: boolean | null;
-	DraftAttr: boolean | null;
-	UseFirstPageNumberAttr: boolean | null;
-	HorizontalDpiAttr: number | null;
-	VerticalDpiAttr: number | null;
-	CopiesAttr: number | null;
-	RIdAttr: string | null;
+	PaperSizeAttr?: number;
+	PaperHeightAttr?: string;
+	PaperWidthAttr?: string;
+	FirstPageNumberAttr?: number;
+	OrientationAttr?: string;
+	UsePrinterDefaultsAttr?: boolean;
+	BlackAndWhiteAttr?: boolean;
+	DraftAttr?: boolean;
+	UseFirstPageNumberAttr?: boolean;
+	HorizontalDpiAttr?: number;
+	VerticalDpiAttr?: number;
+	CopiesAttr?: number;
+	RIdAttr?: string;
 }
 
 // CT_CustomChartsheetViews ...
@@ -3134,9 +3134,9 @@ export class CT_CustomChartsheetViews {
 // CT_CustomChartsheetView ...
 export class CT_CustomChartsheetView {
 	GuidAttr: string;
-	ScaleAttr: number | null;
-	StateAttr: string | null;
-	ZoomToFitAttr: boolean | null;
+	ScaleAttr?: number;
+	StateAttr?: string;
+	ZoomToFitAttr?: boolean;
 	PageMargins?: CT_PageMargins;
 	PageSetup?: CT_CsPageSetup;
 	HeaderFooter?: CT_HeaderFooter;
@@ -3160,30 +3160,30 @@ export class CT_OleObjects {
 
 // CT_OleObject ...
 export class CT_OleObject {
-	ProgIdAttr: string | null;
-	DvAspectAttr: string | null;
-	LinkAttr: string | null;
-	OleUpdateAttr: string | null;
-	AutoLoadAttr: boolean | null;
+	ProgIdAttr?: string;
+	DvAspectAttr?: string;
+	LinkAttr?: string;
+	OleUpdateAttr?: string;
+	AutoLoadAttr?: boolean;
 	ShapeIdAttr: number;
-	RIdAttr: string | null;
+	RIdAttr?: string;
 	ObjectPr?: CT_ObjectPr;
 }
 
 // CT_ObjectPr ...
 export class CT_ObjectPr {
-	LockedAttr: boolean | null;
-	DefaultSizeAttr: boolean | null;
-	PrintAttr: boolean | null;
-	DisabledAttr: boolean | null;
-	UiObjectAttr: boolean | null;
-	AutoFillAttr: boolean | null;
-	AutoLineAttr: boolean | null;
-	AutoPictAttr: boolean | null;
-	MacroAttr: string | null;
-	AltTextAttr: string | null;
-	DdeAttr: boolean | null;
-	RIdAttr: string | null;
+	LockedAttr?: boolean;
+	DefaultSizeAttr?: boolean;
+	PrintAttr?: boolean;
+	DisabledAttr?: boolean;
+	UiObjectAttr?: boolean;
+	AutoFillAttr?: boolean;
+	AutoLineAttr?: boolean;
+	AutoPictAttr?: boolean;
+	MacroAttr?: string;
+	AltTextAttr?: string;
+	DdeAttr?: boolean;
+	RIdAttr?: string;
 	Anchor: CT_ObjectAnchor;
 }
 
@@ -3201,7 +3201,7 @@ export enum ST_OleUpdate {
 
 // CT_WebPublishItems ...
 export class CT_WebPublishItems {
-	CountAttr: number | null;
+	CountAttr?: number;
 	WebPublishItem: Array<CT_WebPublishItem>;
 }
 
@@ -3210,11 +3210,11 @@ export class CT_WebPublishItem {
 	IdAttr: number;
 	DivIdAttr: string;
 	SourceTypeAttr: string;
-	SourceRefAttr: string | null;
-	SourceObjectAttr: string | null;
+	SourceRefAttr?: string;
+	SourceObjectAttr?: string;
 	DestinationFileAttr: string;
-	TitleAttr: string | null;
-	AutoRepublishAttr: boolean | null;
+	TitleAttr?: string;
+	AutoRepublishAttr?: boolean;
 }
 
 // CT_Controls ...
@@ -3226,27 +3226,27 @@ export class CT_Controls {
 export class CT_Control {
 	ShapeIdAttr: number;
 	RIdAttr: string;
-	NameAttr: string | null;
+	NameAttr?: string;
 	ControlPr?: CT_ControlPr;
 }
 
 // CT_ControlPr ...
 export class CT_ControlPr {
-	LockedAttr: boolean | null;
-	DefaultSizeAttr: boolean | null;
-	PrintAttr: boolean | null;
-	DisabledAttr: boolean | null;
-	RecalcAlwaysAttr: boolean | null;
-	UiObjectAttr: boolean | null;
-	AutoFillAttr: boolean | null;
-	AutoLineAttr: boolean | null;
-	AutoPictAttr: boolean | null;
-	MacroAttr: string | null;
-	AltTextAttr: string | null;
-	LinkedCellAttr: string | null;
-	ListFillRangeAttr: string | null;
-	CfAttr: string | null;
-	RIdAttr: string | null;
+	LockedAttr?: boolean;
+	DefaultSizeAttr?: boolean;
+	PrintAttr?: boolean;
+	DisabledAttr?: boolean;
+	RecalcAlwaysAttr?: boolean;
+	UiObjectAttr?: boolean;
+	AutoFillAttr?: boolean;
+	AutoLineAttr?: boolean;
+	AutoPictAttr?: boolean;
+	MacroAttr?: string;
+	AltTextAttr?: string;
+	LinkedCellAttr?: string;
+	ListFillRangeAttr?: string;
+	CfAttr?: string;
+	RIdAttr?: string;
 	Anchor: CT_ObjectAnchor;
 }
 
@@ -3271,15 +3271,15 @@ export class CT_IgnoredErrors {
 // CT_IgnoredError ...
 export class CT_IgnoredError {
 	SqrefAttr: ST_Sqref;
-	EvalErrorAttr: boolean | null;
-	TwoDigitTextYearAttr: boolean | null;
-	NumberStoredAsTextAttr: boolean | null;
-	FormulaAttr: boolean | null;
-	FormulaRangeAttr: boolean | null;
-	UnlockedFormulaAttr: boolean | null;
-	EmptyCellReferenceAttr: boolean | null;
-	ListDataValidationAttr: boolean | null;
-	CalculatedColumnAttr: boolean | null;
+	EvalErrorAttr?: boolean;
+	TwoDigitTextYearAttr?: boolean;
+	NumberStoredAsTextAttr?: boolean;
+	FormulaAttr?: boolean;
+	FormulaRangeAttr?: boolean;
+	UnlockedFormulaAttr?: boolean;
+	EmptyCellReferenceAttr?: boolean;
+	ListDataValidationAttr?: boolean;
+	CalculatedColumnAttr?: boolean;
 }
 
 // ST_PaneState ...
@@ -3291,7 +3291,7 @@ export enum ST_PaneState {
 
 // CT_TableParts ...
 export class CT_TableParts {
-	CountAttr: number | null;
+	CountAttr?: number;
 	TablePart?: Array<CT_TablePart>;
 }
 
@@ -3316,7 +3316,7 @@ export class CT_Metadata {
 
 // CT_MetadataTypes ...
 export class CT_MetadataTypes {
-	CountAttr: number | null;
+	CountAttr?: number;
 	MetadataType: Array<CT_MetadataType>;
 }
 
@@ -3324,37 +3324,37 @@ export class CT_MetadataTypes {
 export class CT_MetadataType {
 	NameAttr: string;
 	MinSupportedVersionAttr: number;
-	GhostRowAttr: boolean | null;
-	GhostColAttr: boolean | null;
-	EditAttr: boolean | null;
-	DeleteAttr: boolean | null;
-	CopyAttr: boolean | null;
-	PasteAllAttr: boolean | null;
-	PasteFormulasAttr: boolean | null;
-	PasteValuesAttr: boolean | null;
-	PasteFormatsAttr: boolean | null;
-	PasteCommentsAttr: boolean | null;
-	PasteDataValidationAttr: boolean | null;
-	PasteBordersAttr: boolean | null;
-	PasteColWidthsAttr: boolean | null;
-	PasteNumberFormatsAttr: boolean | null;
-	MergeAttr: boolean | null;
-	SplitFirstAttr: boolean | null;
-	SplitAllAttr: boolean | null;
-	RowColShiftAttr: boolean | null;
-	ClearAllAttr: boolean | null;
-	ClearFormatsAttr: boolean | null;
-	ClearContentsAttr: boolean | null;
-	ClearCommentsAttr: boolean | null;
-	AssignAttr: boolean | null;
-	CoerceAttr: boolean | null;
-	AdjustAttr: boolean | null;
-	CellMetaAttr: boolean | null;
+	GhostRowAttr?: boolean;
+	GhostColAttr?: boolean;
+	EditAttr?: boolean;
+	DeleteAttr?: boolean;
+	CopyAttr?: boolean;
+	PasteAllAttr?: boolean;
+	PasteFormulasAttr?: boolean;
+	PasteValuesAttr?: boolean;
+	PasteFormatsAttr?: boolean;
+	PasteCommentsAttr?: boolean;
+	PasteDataValidationAttr?: boolean;
+	PasteBordersAttr?: boolean;
+	PasteColWidthsAttr?: boolean;
+	PasteNumberFormatsAttr?: boolean;
+	MergeAttr?: boolean;
+	SplitFirstAttr?: boolean;
+	SplitAllAttr?: boolean;
+	RowColShiftAttr?: boolean;
+	ClearAllAttr?: boolean;
+	ClearFormatsAttr?: boolean;
+	ClearContentsAttr?: boolean;
+	ClearCommentsAttr?: boolean;
+	AssignAttr?: boolean;
+	CoerceAttr?: boolean;
+	AdjustAttr?: boolean;
+	CellMetaAttr?: boolean;
 }
 
 // CT_MetadataBlocks ...
 export class CT_MetadataBlocks {
-	CountAttr: number | null;
+	CountAttr?: number;
 	Bk: Array<CT_MetadataBlock>;
 }
 
@@ -3372,7 +3372,7 @@ export class CT_MetadataRecord {
 // CT_FutureMetadata ...
 export class CT_FutureMetadata {
 	NameAttr: string;
-	CountAttr: number | null;
+	CountAttr?: number;
 	Bk?: Array<CT_FutureMetadataBlock>;
 	ExtLst?: CT_ExtensionList;
 }
@@ -3384,7 +3384,7 @@ export class CT_FutureMetadataBlock {
 
 // CT_MdxMetadata ...
 export class CT_MdxMetadata {
-	CountAttr: number | null;
+	CountAttr?: number;
 	Mdx: Array<CT_Mdx>;
 }
 
@@ -3411,24 +3411,24 @@ export enum ST_MdxFunctionType {
 
 // CT_MdxTuple ...
 export class CT_MdxTuple {
-	CAttr: number | null;
-	CtAttr: string | null;
-	SiAttr: number | null;
-	FiAttr: number | null;
-	BcAttr: Uint8Array | null;
-	FcAttr: Uint8Array | null;
-	IAttr: boolean | null;
-	UAttr: boolean | null;
-	StAttr: boolean | null;
-	BAttr: boolean | null;
+	CAttr?: number;
+	CtAttr?: string;
+	SiAttr?: number;
+	FiAttr?: number;
+	BcAttr?: Uint8Array;
+	FcAttr?: Uint8Array;
+	IAttr?: boolean;
+	UAttr?: boolean;
+	StAttr?: boolean;
+	BAttr?: boolean;
 	N?: Array<CT_MetadataStringIndex>;
 }
 
 // CT_MdxSet ...
 export class CT_MdxSet {
 	NsAttr: number;
-	CAttr: number | null;
-	OAttr: string | null;
+	CAttr?: number;
+	OAttr?: string;
 	N?: Array<CT_MetadataStringIndex>;
 }
 
@@ -3469,12 +3469,12 @@ export enum ST_MdxKPIProperty {
 // CT_MetadataStringIndex ...
 export class CT_MetadataStringIndex {
 	XAttr: number;
-	SAttr: boolean | null;
+	SAttr?: boolean;
 }
 
 // CT_MetadataStrings ...
 export class CT_MetadataStrings {
-	CountAttr: number | null;
+	CountAttr?: number;
 	S: Array<CT_XStringElement>;
 }
 
@@ -3498,7 +3498,7 @@ export class CT_SingleXmlCell {
 // CT_XmlCellPr ...
 export class CT_XmlCellPr {
 	IdAttr: number;
-	UniqueNameAttr: string | null;
+	UniqueNameAttr?: string;
 	XmlPr: CT_XmlPr;
 	ExtLst?: CT_ExtensionList;
 }
@@ -3531,15 +3531,15 @@ export class CT_Stylesheet {
 
 // CT_CellAlignment ...
 export class CT_CellAlignment {
-	HorizontalAttr: string | null;
-	VerticalAttr: string | null;
-	TextRotationAttr: ST_TextRotation | null;
-	WrapTextAttr: boolean | null;
-	IndentAttr: number | null;
-	RelativeIndentAttr: number | null;
-	JustifyLastLineAttr: boolean | null;
-	ShrinkToFitAttr: boolean | null;
-	ReadingOrderAttr: number | null;
+	HorizontalAttr?: string;
+	VerticalAttr?: string;
+	TextRotationAttr?: ST_TextRotation;
+	WrapTextAttr?: boolean;
+	IndentAttr?: number;
+	RelativeIndentAttr?: number;
+	JustifyLastLineAttr?: boolean;
+	ShrinkToFitAttr?: boolean;
+	ReadingOrderAttr?: number;
 }
 
 // ST_TextRotation ...
@@ -3567,15 +3567,15 @@ export enum ST_BorderStyle {
 
 // CT_Borders ...
 export class CT_Borders {
-	CountAttr: number | null;
+	CountAttr?: number;
 	Border?: Array<CT_Border>;
 }
 
 // CT_Border ...
 export class CT_Border {
-	DiagonalUpAttr: boolean | null;
-	DiagonalDownAttr: boolean | null;
-	OutlineAttr: boolean | null;
+	DiagonalUpAttr?: boolean;
+	DiagonalDownAttr?: boolean;
+	OutlineAttr?: boolean;
 	Start?: CT_BorderPr;
 	End?: CT_BorderPr;
 	Top?: CT_BorderPr;
@@ -3587,25 +3587,25 @@ export class CT_Border {
 
 // CT_BorderPr ...
 export class CT_BorderPr {
-	StyleAttr: string | null;
+	StyleAttr?: string;
 	Color?: CT_Color;
 }
 
 // CT_CellProtection ...
 export class CT_CellProtection {
-	LockedAttr: boolean | null;
-	HiddenAttr: boolean | null;
+	LockedAttr?: boolean;
+	HiddenAttr?: boolean;
 }
 
 // CT_Fonts ...
 export class CT_Fonts {
-	CountAttr: number | null;
+	CountAttr?: number;
 	Font?: Array<CT_Font>;
 }
 
 // CT_Fills ...
 export class CT_Fills {
-	CountAttr: number | null;
+	CountAttr?: number;
 	Fill?: Array<CT_Fill>;
 }
 
@@ -3617,18 +3617,18 @@ export class CT_Fill {
 
 // CT_PatternFill ...
 export class CT_PatternFill {
-	PatternTypeAttr: string | null;
+	PatternTypeAttr?: string;
 	FgColor?: CT_Color;
 	BgColor?: CT_Color;
 }
 
 // CT_Color ...
 export class CT_Color {
-	AutoAttr: boolean | null;
-	IndexedAttr: number | null;
-	RgbAttr: Uint8Array | null;
-	ThemeAttr: number | null;
-	TintAttr: number | null;
+	AutoAttr?: boolean;
+	IndexedAttr?: number;
+	RgbAttr?: Uint8Array;
+	ThemeAttr?: number;
+	TintAttr?: number;
 }
 
 // ST_PatternType ...
@@ -3656,12 +3656,12 @@ export enum ST_PatternType {
 
 // CT_GradientFill ...
 export class CT_GradientFill {
-	TypeAttr: string | null;
-	DegreeAttr: number | null;
-	LeftAttr: number | null;
-	RightAttr: number | null;
-	TopAttr: number | null;
-	BottomAttr: number | null;
+	TypeAttr?: string;
+	DegreeAttr?: number;
+	LeftAttr?: number;
+	RightAttr?: number;
+	TopAttr?: number;
+	BottomAttr?: number;
 	Stop?: Array<CT_GradientStop>;
 }
 
@@ -3700,7 +3700,7 @@ export enum ST_VerticalAlignment {
 
 // CT_NumFmts ...
 export class CT_NumFmts {
-	CountAttr: number | null;
+	CountAttr?: number;
 	NumFmt?: Array<CT_NumFmt>;
 }
 
@@ -3712,31 +3712,31 @@ export class CT_NumFmt {
 
 // CT_CellStyleXfs ...
 export class CT_CellStyleXfs {
-	CountAttr: number | null;
+	CountAttr?: number;
 	Xf: Array<CT_Xf>;
 }
 
 // CT_CellXfs ...
 export class CT_CellXfs {
-	CountAttr: number | null;
+	CountAttr?: number;
 	Xf: Array<CT_Xf>;
 }
 
 // CT_Xf ...
 export class CT_Xf {
-	NumFmtIdAttr: number | null;
-	FontIdAttr: number | null;
-	FillIdAttr: number | null;
-	BorderIdAttr: number | null;
-	XfIdAttr: number | null;
-	QuotePrefixAttr: boolean | null;
-	PivotButtonAttr: boolean | null;
-	ApplyNumberFormatAttr: boolean | null;
-	ApplyFontAttr: boolean | null;
-	ApplyFillAttr: boolean | null;
-	ApplyBorderAttr: boolean | null;
-	ApplyAlignmentAttr: boolean | null;
-	ApplyProtectionAttr: boolean | null;
+	NumFmtIdAttr?: number;
+	FontIdAttr?: number;
+	FillIdAttr?: number;
+	BorderIdAttr?: number;
+	XfIdAttr?: number;
+	QuotePrefixAttr?: boolean;
+	PivotButtonAttr?: boolean;
+	ApplyNumberFormatAttr?: boolean;
+	ApplyFontAttr?: boolean;
+	ApplyFillAttr?: boolean;
+	ApplyBorderAttr?: boolean;
+	ApplyAlignmentAttr?: boolean;
+	ApplyProtectionAttr?: boolean;
 	Alignment?: CT_CellAlignment;
 	Protection?: CT_CellProtection;
 	ExtLst?: CT_ExtensionList;
@@ -3744,24 +3744,24 @@ export class CT_Xf {
 
 // CT_CellStyles ...
 export class CT_CellStyles {
-	CountAttr: number | null;
+	CountAttr?: number;
 	CellStyle: Array<CT_CellStyle>;
 }
 
 // CT_CellStyle ...
 export class CT_CellStyle {
-	NameAttr: string | null;
+	NameAttr?: string;
 	XfIdAttr: number;
-	BuiltinIdAttr: number | null;
-	ILevelAttr: number | null;
-	HiddenAttr: boolean | null;
-	CustomBuiltinAttr: boolean | null;
+	BuiltinIdAttr?: number;
+	ILevelAttr?: number;
+	HiddenAttr?: boolean;
+	CustomBuiltinAttr?: boolean;
 	ExtLst?: CT_ExtensionList;
 }
 
 // CT_Dxfs ...
 export class CT_Dxfs {
-	CountAttr: number | null;
+	CountAttr?: number;
 	Dxf?: Array<CT_Dxf>;
 }
 
@@ -3812,31 +3812,31 @@ export class CT_MRUColors {
 
 // CT_RgbColor ...
 export class CT_RgbColor {
-	RgbAttr: Uint8Array | null;
+	RgbAttr?: Uint8Array;
 }
 
 // CT_TableStyles ...
 export class CT_TableStyles {
-	CountAttr: number | null;
-	DefaultTableStyleAttr: string | null;
-	DefaultPivotStyleAttr: string | null;
+	CountAttr?: number;
+	DefaultTableStyleAttr?: string;
+	DefaultPivotStyleAttr?: string;
 	TableStyle?: Array<CT_TableStyle>;
 }
 
 // CT_TableStyle ...
 export class CT_TableStyle {
 	NameAttr: string;
-	PivotAttr: boolean | null;
-	TableAttr: boolean | null;
-	CountAttr: number | null;
+	PivotAttr?: boolean;
+	TableAttr?: boolean;
+	CountAttr?: number;
 	TableStyleElement?: Array<CT_TableStyleElement>;
 }
 
 // CT_TableStyleElement ...
 export class CT_TableStyleElement {
 	TypeAttr: string;
-	SizeAttr: number | null;
-	DxfIdAttr: number | null;
+	SizeAttr?: number;
+	DxfIdAttr?: number;
 }
 
 // ST_TableStyleType ...
@@ -3873,7 +3873,7 @@ export enum ST_TableStyleType {
 
 // CT_BooleanProperty ...
 export class CT_BooleanProperty {
-	ValAttr: boolean | null;
+	ValAttr?: boolean;
 }
 
 // CT_FontSize ...
@@ -3910,7 +3910,7 @@ export enum ST_FontScheme {
 
 // CT_UnderlineProperty ...
 export class CT_UnderlineProperty {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // ST_UnderlineValues ...
@@ -3986,7 +3986,7 @@ export class CT_ExternalSheetNames {
 
 // CT_ExternalSheetName ...
 export class CT_ExternalSheetName {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // CT_ExternalDefinedNames ...
@@ -3997,8 +3997,8 @@ export class CT_ExternalDefinedNames {
 // CT_ExternalDefinedName ...
 export class CT_ExternalDefinedName {
 	NameAttr: string;
-	RefersToAttr: string | null;
-	SheetIdAttr: number | null;
+	RefersToAttr?: string;
+	SheetIdAttr?: number;
 }
 
 // CT_ExternalSheetDataSet ...
@@ -4009,7 +4009,7 @@ export class CT_ExternalSheetDataSet {
 // CT_ExternalSheetData ...
 export class CT_ExternalSheetData {
 	SheetIdAttr: number;
-	RefreshErrorAttr: boolean | null;
+	RefreshErrorAttr?: boolean;
 	Row?: Array<CT_ExternalRow>;
 }
 
@@ -4021,9 +4021,9 @@ export class CT_ExternalRow {
 
 // CT_ExternalCell ...
 export class CT_ExternalCell {
-	RAttr: string | null;
-	TAttr: string | null;
-	VmAttr: number | null;
+	RAttr?: string;
+	TAttr?: string;
+	VmAttr?: number;
 	V?: string;
 }
 
@@ -4041,23 +4041,23 @@ export class CT_DdeItems {
 
 // CT_DdeItem ...
 export class CT_DdeItem {
-	NameAttr: string | null;
-	OleAttr: boolean | null;
-	AdviseAttr: boolean | null;
-	PreferPicAttr: boolean | null;
+	NameAttr?: string;
+	OleAttr?: boolean;
+	AdviseAttr?: boolean;
+	PreferPicAttr?: boolean;
 	Values?: CT_DdeValues;
 }
 
 // CT_DdeValues ...
 export class CT_DdeValues {
-	RowsAttr: number | null;
-	ColsAttr: number | null;
+	RowsAttr?: number;
+	ColsAttr?: number;
 	Value: Array<CT_DdeValue>;
 }
 
 // CT_DdeValue ...
 export class CT_DdeValue {
-	TAttr: string | null;
+	TAttr?: string;
 	Val: string;
 }
 
@@ -4085,9 +4085,9 @@ export class CT_OleItems {
 // CT_OleItem ...
 export class CT_OleItem {
 	NameAttr: string;
-	IconAttr: boolean | null;
-	AdviseAttr: boolean | null;
-	PreferPicAttr: boolean | null;
+	IconAttr?: boolean;
+	AdviseAttr?: boolean;
+	PreferPicAttr?: boolean;
 }
 
 // Table ...
@@ -4096,27 +4096,27 @@ export type Table = CT_Table;
 // CT_Table ...
 export class CT_Table {
 	IdAttr: number;
-	NameAttr: string | null;
+	NameAttr?: string;
 	DisplayNameAttr: string;
-	CommentAttr: string | null;
+	CommentAttr?: string;
 	RefAttr: string;
-	TableTypeAttr: string | null;
-	HeaderRowCountAttr: number | null;
-	InsertRowAttr: boolean | null;
-	InsertRowShiftAttr: boolean | null;
-	TotalsRowCountAttr: number | null;
-	TotalsRowShownAttr: boolean | null;
-	PublishedAttr: boolean | null;
-	HeaderRowDxfIdAttr: number | null;
-	DataDxfIdAttr: number | null;
-	TotalsRowDxfIdAttr: number | null;
-	HeaderRowBorderDxfIdAttr: number | null;
-	TableBorderDxfIdAttr: number | null;
-	TotalsRowBorderDxfIdAttr: number | null;
-	HeaderRowCellStyleAttr: string | null;
-	DataCellStyleAttr: string | null;
-	TotalsRowCellStyleAttr: string | null;
-	ConnectionIdAttr: number | null;
+	TableTypeAttr?: string;
+	HeaderRowCountAttr?: number;
+	InsertRowAttr?: boolean;
+	InsertRowShiftAttr?: boolean;
+	TotalsRowCountAttr?: number;
+	TotalsRowShownAttr?: boolean;
+	PublishedAttr?: boolean;
+	HeaderRowDxfIdAttr?: number;
+	DataDxfIdAttr?: number;
+	TotalsRowDxfIdAttr?: number;
+	HeaderRowBorderDxfIdAttr?: number;
+	TableBorderDxfIdAttr?: number;
+	TotalsRowBorderDxfIdAttr?: number;
+	HeaderRowCellStyleAttr?: string;
+	DataCellStyleAttr?: string;
+	TotalsRowCellStyleAttr?: string;
+	ConnectionIdAttr?: number;
 	AutoFilter?: CT_AutoFilter;
 	SortState?: CT_SortState;
 	TableColumns: CT_TableColumns;
@@ -4133,33 +4133,33 @@ export enum ST_TableType {
 
 // CT_TableStyleInfo ...
 export class CT_TableStyleInfo {
-	NameAttr: string | null;
-	ShowFirstColumnAttr: boolean | null;
-	ShowLastColumnAttr: boolean | null;
-	ShowRowStripesAttr: boolean | null;
-	ShowColumnStripesAttr: boolean | null;
+	NameAttr?: string;
+	ShowFirstColumnAttr?: boolean;
+	ShowLastColumnAttr?: boolean;
+	ShowRowStripesAttr?: boolean;
+	ShowColumnStripesAttr?: boolean;
 }
 
 // CT_TableColumns ...
 export class CT_TableColumns {
-	CountAttr: number | null;
+	CountAttr?: number;
 	TableColumn: Array<CT_TableColumn>;
 }
 
 // CT_TableColumn ...
 export class CT_TableColumn {
 	IdAttr: number;
-	UniqueNameAttr: string | null;
+	UniqueNameAttr?: string;
 	NameAttr: string;
-	TotalsRowFunctionAttr: string | null;
-	TotalsRowLabelAttr: string | null;
-	QueryTableFieldIdAttr: number | null;
-	HeaderRowDxfIdAttr: number | null;
-	DataDxfIdAttr: number | null;
-	TotalsRowDxfIdAttr: number | null;
-	HeaderRowCellStyleAttr: string | null;
-	DataCellStyleAttr: string | null;
-	TotalsRowCellStyleAttr: string | null;
+	TotalsRowFunctionAttr?: string;
+	TotalsRowLabelAttr?: string;
+	QueryTableFieldIdAttr?: number;
+	HeaderRowDxfIdAttr?: number;
+	DataDxfIdAttr?: number;
+	TotalsRowDxfIdAttr?: number;
+	HeaderRowCellStyleAttr?: string;
+	DataCellStyleAttr?: string;
+	TotalsRowCellStyleAttr?: string;
 	CalculatedColumnFormula?: CT_TableFormula;
 	TotalsRowFormula?: CT_TableFormula;
 	XmlColumnPr?: CT_XmlColumnPr;
@@ -4168,7 +4168,7 @@ export class CT_TableColumn {
 
 // CT_TableFormula ...
 export class CT_TableFormula {
-	ArrayAttr: boolean | null;
+	ArrayAttr?: boolean;
 	Value: string;
 }
 
@@ -4190,7 +4190,7 @@ export enum ST_TotalsRowFunction {
 export class CT_XmlColumnPr {
 	MapIdAttr: number;
 	XpathAttr: string;
-	DenormalizedAttr: boolean | null;
+	DenormalizedAttr?: boolean;
 	XmlDataTypeAttr: string;
 	ExtLst?: CT_ExtensionList;
 }
@@ -4221,7 +4221,7 @@ export class CT_VolMain {
 
 // CT_VolTopic ...
 export class CT_VolTopic {
-	TAttr: string | null;
+	TAttr?: string;
 	V: string;
 	Stp?: string;
 	Tr: Array<CT_VolTopicRef>;
@@ -4252,7 +4252,7 @@ export type Workbook = CT_Workbook;
 
 // CT_Workbook ...
 export class CT_Workbook {
-	ConformanceAttr: string | null;
+	ConformanceAttr?: string;
 	FileVersion?: CT_FileVersion;
 	FileSharing?: CT_FileSharing;
 	WorkbookPr?: CT_WorkbookPr;
@@ -4276,11 +4276,11 @@ export class CT_Workbook {
 
 // CT_FileVersion ...
 export class CT_FileVersion {
-	AppNameAttr: string | null;
-	LastEditedAttr: string | null;
-	LowestEditedAttr: string | null;
-	RupBuildAttr: string | null;
-	CodeNameAttr: string | null;
+	AppNameAttr?: string;
+	LastEditedAttr?: string;
+	LowestEditedAttr?: string;
+	RupBuildAttr?: string;
+	CodeNameAttr?: string;
 }
 
 // CT_BookViews ...
@@ -4290,19 +4290,19 @@ export class CT_BookViews {
 
 // CT_BookView ...
 export class CT_BookView {
-	VisibilityAttr: string | null;
-	MinimizedAttr: boolean | null;
-	ShowHorizontalScrollAttr: boolean | null;
-	ShowVerticalScrollAttr: boolean | null;
-	ShowSheetTabsAttr: boolean | null;
-	XWindowAttr: number | null;
-	YWindowAttr: number | null;
-	WindowWidthAttr: number | null;
-	WindowHeightAttr: number | null;
-	TabRatioAttr: number | null;
-	FirstSheetAttr: number | null;
-	ActiveTabAttr: number | null;
-	AutoFilterDateGroupingAttr: boolean | null;
+	VisibilityAttr?: string;
+	MinimizedAttr?: boolean;
+	ShowHorizontalScrollAttr?: boolean;
+	ShowVerticalScrollAttr?: boolean;
+	ShowSheetTabsAttr?: boolean;
+	XWindowAttr?: number;
+	YWindowAttr?: number;
+	WindowWidthAttr?: number;
+	WindowHeightAttr?: number;
+	TabRatioAttr?: number;
+	FirstSheetAttr?: number;
+	ActiveTabAttr?: number;
+	AutoFilterDateGroupingAttr?: boolean;
 	ExtLst?: CT_ExtensionList;
 }
 
@@ -4322,28 +4322,28 @@ export class CT_CustomWorkbookViews {
 export class CT_CustomWorkbookView {
 	NameAttr: string;
 	GuidAttr: string;
-	AutoUpdateAttr: boolean | null;
-	MergeIntervalAttr: number | null;
-	ChangesSavedWinAttr: boolean | null;
-	OnlySyncAttr: boolean | null;
-	PersonalViewAttr: boolean | null;
-	IncludePrintSettingsAttr: boolean | null;
-	IncludeHiddenRowColAttr: boolean | null;
-	MaximizedAttr: boolean | null;
-	MinimizedAttr: boolean | null;
-	ShowHorizontalScrollAttr: boolean | null;
-	ShowVerticalScrollAttr: boolean | null;
-	ShowSheetTabsAttr: boolean | null;
-	XWindowAttr: number | null;
-	YWindowAttr: number | null;
+	AutoUpdateAttr?: boolean;
+	MergeIntervalAttr?: number;
+	ChangesSavedWinAttr?: boolean;
+	OnlySyncAttr?: boolean;
+	PersonalViewAttr?: boolean;
+	IncludePrintSettingsAttr?: boolean;
+	IncludeHiddenRowColAttr?: boolean;
+	MaximizedAttr?: boolean;
+	MinimizedAttr?: boolean;
+	ShowHorizontalScrollAttr?: boolean;
+	ShowVerticalScrollAttr?: boolean;
+	ShowSheetTabsAttr?: boolean;
+	XWindowAttr?: number;
+	YWindowAttr?: number;
 	WindowWidthAttr: number;
 	WindowHeightAttr: number;
-	TabRatioAttr: number | null;
+	TabRatioAttr?: number;
 	ActiveSheetIdAttr: number;
-	ShowFormulaBarAttr: boolean | null;
-	ShowStatusbarAttr: boolean | null;
-	ShowCommentsAttr: string | null;
-	ShowObjectsAttr: string | null;
+	ShowFormulaBarAttr?: boolean;
+	ShowStatusbarAttr?: boolean;
+	ShowCommentsAttr?: string;
+	ShowObjectsAttr?: string;
 	ExtLst?: CT_ExtensionList;
 }
 
@@ -4370,7 +4370,7 @@ export class CT_Sheets {
 export class CT_Sheet {
 	NameAttr: string;
 	SheetIdAttr: number;
-	StateAttr: string | null;
+	StateAttr?: string;
 	RIdAttr: string;
 }
 
@@ -4383,24 +4383,24 @@ export enum ST_SheetState {
 
 // CT_WorkbookPr ...
 export class CT_WorkbookPr {
-	Date1904Attr: boolean | null;
-	ShowObjectsAttr: string | null;
-	ShowBorderUnselectedTablesAttr: boolean | null;
-	FilterPrivacyAttr: boolean | null;
-	PromptedSolutionsAttr: boolean | null;
-	ShowInkAnnotationAttr: boolean | null;
-	BackupFileAttr: boolean | null;
-	SaveExternalLinkValuesAttr: boolean | null;
-	UpdateLinksAttr: string | null;
-	CodeNameAttr: string | null;
-	HidePivotFieldListAttr: boolean | null;
-	ShowPivotChartFilterAttr: boolean | null;
-	AllowRefreshQueryAttr: boolean | null;
-	PublishItemsAttr: boolean | null;
-	CheckCompatibilityAttr: boolean | null;
-	AutoCompressPicturesAttr: boolean | null;
-	RefreshAllConnectionsAttr: boolean | null;
-	DefaultThemeVersionAttr: number | null;
+	Date1904Attr?: boolean;
+	ShowObjectsAttr?: string;
+	ShowBorderUnselectedTablesAttr?: boolean;
+	FilterPrivacyAttr?: boolean;
+	PromptedSolutionsAttr?: boolean;
+	ShowInkAnnotationAttr?: boolean;
+	BackupFileAttr?: boolean;
+	SaveExternalLinkValuesAttr?: boolean;
+	UpdateLinksAttr?: string;
+	CodeNameAttr?: string;
+	HidePivotFieldListAttr?: boolean;
+	ShowPivotChartFilterAttr?: boolean;
+	AllowRefreshQueryAttr?: boolean;
+	PublishItemsAttr?: boolean;
+	CheckCompatibilityAttr?: boolean;
+	AutoCompressPicturesAttr?: boolean;
+	RefreshAllConnectionsAttr?: boolean;
+	DefaultThemeVersionAttr?: number;
 }
 
 // ST_UpdateLinks ...
@@ -4412,8 +4412,8 @@ export enum ST_UpdateLinks {
 
 // CT_SmartTagPr ...
 export class CT_SmartTagPr {
-	EmbedAttr: boolean | null;
-	ShowAttr: string | null;
+	EmbedAttr?: boolean;
+	ShowAttr?: string;
 }
 
 // ST_SmartTagShow ...
@@ -4430,34 +4430,34 @@ export class CT_SmartTagTypes {
 
 // CT_SmartTagType ...
 export class CT_SmartTagType {
-	NamespaceUriAttr: string | null;
-	NameAttr: string | null;
-	UrlAttr: string | null;
+	NamespaceUriAttr?: string;
+	NameAttr?: string;
+	UrlAttr?: string;
 }
 
 // CT_FileRecoveryPr ...
 export class CT_FileRecoveryPr {
-	AutoRecoverAttr: boolean | null;
-	CrashSaveAttr: boolean | null;
-	DataExtractLoadAttr: boolean | null;
-	RepairLoadAttr: boolean | null;
+	AutoRecoverAttr?: boolean;
+	CrashSaveAttr?: boolean;
+	DataExtractLoadAttr?: boolean;
+	RepairLoadAttr?: boolean;
 }
 
 // CT_CalcPr ...
 export class CT_CalcPr {
-	CalcIdAttr: number | null;
-	CalcModeAttr: string | null;
-	FullCalcOnLoadAttr: boolean | null;
-	RefModeAttr: string | null;
-	IterateAttr: boolean | null;
-	IterateCountAttr: number | null;
-	IterateDeltaAttr: number | null;
-	FullPrecisionAttr: boolean | null;
-	CalcCompletedAttr: boolean | null;
-	CalcOnSaveAttr: boolean | null;
-	ConcurrentCalcAttr: boolean | null;
-	ConcurrentManualCountAttr: number | null;
-	ForceFullCalcAttr: boolean | null;
+	CalcIdAttr?: number;
+	CalcModeAttr?: string;
+	FullCalcOnLoadAttr?: boolean;
+	RefModeAttr?: string;
+	IterateAttr?: boolean;
+	IterateCountAttr?: number;
+	IterateDeltaAttr?: number;
+	FullPrecisionAttr?: boolean;
+	CalcCompletedAttr?: boolean;
+	CalcOnSaveAttr?: boolean;
+	ConcurrentCalcAttr?: boolean;
+	ConcurrentManualCountAttr?: number;
+	ForceFullCalcAttr?: boolean;
 }
 
 // ST_CalcMode ...
@@ -4481,20 +4481,20 @@ export class CT_DefinedNames {
 // CT_DefinedName ...
 export class CT_DefinedName {
 	NameAttr: string;
-	CommentAttr: string | null;
-	CustomMenuAttr: string | null;
-	DescriptionAttr: string | null;
-	HelpAttr: string | null;
-	StatusBarAttr: string | null;
-	LocalSheetIdAttr: number | null;
-	HiddenAttr: boolean | null;
-	FunctionAttr: boolean | null;
-	VbProcedureAttr: boolean | null;
-	XlmAttr: boolean | null;
-	FunctionGroupIdAttr: number | null;
-	ShortcutKeyAttr: string | null;
-	PublishToServerAttr: boolean | null;
-	WorkbookParameterAttr: boolean | null;
+	CommentAttr?: string;
+	CustomMenuAttr?: string;
+	DescriptionAttr?: string;
+	HelpAttr?: string;
+	StatusBarAttr?: string;
+	LocalSheetIdAttr?: number;
+	HiddenAttr?: boolean;
+	FunctionAttr?: boolean;
+	VbProcedureAttr?: boolean;
+	XlmAttr?: boolean;
+	FunctionGroupIdAttr?: number;
+	ShortcutKeyAttr?: string;
+	PublishToServerAttr?: boolean;
+	WorkbookParameterAttr?: boolean;
 	Value: string;
 }
 
@@ -4526,12 +4526,12 @@ export class CT_PivotCache {
 
 // CT_FileSharing ...
 export class CT_FileSharing {
-	ReadOnlyRecommendedAttr: boolean | null;
-	UserNameAttr: string | null;
-	AlgorithmNameAttr: string | null;
-	HashValueAttr: Uint8Array | null;
-	SaltValueAttr: Uint8Array | null;
-	SpinCountAttr: number | null;
+	ReadOnlyRecommendedAttr?: boolean;
+	UserNameAttr?: string;
+	AlgorithmNameAttr?: string;
+	HashValueAttr?: Uint8Array;
+	SaltValueAttr?: Uint8Array;
+	SpinCountAttr?: number;
 }
 
 // CT_OleSize ...
@@ -4541,29 +4541,29 @@ export class CT_OleSize {
 
 // CT_WorkbookProtection ...
 export class CT_WorkbookProtection {
-	LockStructureAttr: boolean | null;
-	LockWindowsAttr: boolean | null;
-	LockRevisionAttr: boolean | null;
-	RevisionsAlgorithmNameAttr: string | null;
-	RevisionsHashValueAttr: Uint8Array | null;
-	RevisionsSaltValueAttr: Uint8Array | null;
-	RevisionsSpinCountAttr: number | null;
-	WorkbookAlgorithmNameAttr: string | null;
-	WorkbookHashValueAttr: Uint8Array | null;
-	WorkbookSaltValueAttr: Uint8Array | null;
-	WorkbookSpinCountAttr: number | null;
+	LockStructureAttr?: boolean;
+	LockWindowsAttr?: boolean;
+	LockRevisionAttr?: boolean;
+	RevisionsAlgorithmNameAttr?: string;
+	RevisionsHashValueAttr?: Uint8Array;
+	RevisionsSaltValueAttr?: Uint8Array;
+	RevisionsSpinCountAttr?: number;
+	WorkbookAlgorithmNameAttr?: string;
+	WorkbookHashValueAttr?: Uint8Array;
+	WorkbookSaltValueAttr?: Uint8Array;
+	WorkbookSpinCountAttr?: number;
 }
 
 // CT_WebPublishing ...
 export class CT_WebPublishing {
-	CssAttr: boolean | null;
-	ThicketAttr: boolean | null;
-	LongFileNamesAttr: boolean | null;
-	VmlAttr: boolean | null;
-	AllowPngAttr: boolean | null;
-	TargetScreenSizeAttr: string | null;
-	DpiAttr: number | null;
-	CharacterSetAttr: string | null;
+	CssAttr?: boolean;
+	ThicketAttr?: boolean;
+	LongFileNamesAttr?: boolean;
+	VmlAttr?: boolean;
+	AllowPngAttr?: boolean;
+	TargetScreenSizeAttr?: string;
+	DpiAttr?: number;
+	CharacterSetAttr?: string;
 }
 
 // ST_TargetScreenSize ...
@@ -4583,18 +4583,18 @@ export enum ST_TargetScreenSize {
 
 // CT_FunctionGroups ...
 export class CT_FunctionGroups {
-	BuiltInGroupCountAttr: number | null;
+	BuiltInGroupCountAttr?: number;
 	FunctionGroup?: Array<CT_FunctionGroup>;
 }
 
 // CT_FunctionGroup ...
 export class CT_FunctionGroup {
-	NameAttr: string | null;
+	NameAttr?: string;
 }
 
 // CT_WebPublishObjects ...
 export class CT_WebPublishObjects {
-	CountAttr: number | null;
+	CountAttr?: number;
 	WebPublishObject: Array<CT_WebPublishObject>;
 }
 
@@ -4602,8 +4602,8 @@ export class CT_WebPublishObjects {
 export class CT_WebPublishObject {
 	IdAttr: number;
 	DivIdAttr: string;
-	SourceObjectAttr: string | null;
+	SourceObjectAttr?: string;
 	DestinationFileAttr: string;
-	TitleAttr: string | null;
-	AutoRepublishAttr: boolean | null;
+	TitleAttr?: string;
+	AutoRepublishAttr?: boolean;
 }

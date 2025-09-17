@@ -20,11 +20,11 @@ public class CT_AdditionalCharacteristics {
 
 // CT_Characteristic ...
 public class CT_Characteristic {
-	@XmlAttribute(name = "name", required = true)
+	@XmlAttribute(required = true, name = "name")
 	protected String NameAttr;
-	@XmlAttribute(name = "relation", required = true)
+	@XmlAttribute(required = true, name = "relation")
 	protected String RelationAttr;
-	@XmlAttribute(name = "val", required = true)
+	@XmlAttribute(required = true, name = "val")
 	protected String ValAttr;
 	@XmlAttribute(name = "vocabulary")
 	protected QName VocabularyAttr;

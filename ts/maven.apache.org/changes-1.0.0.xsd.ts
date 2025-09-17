@@ -17,34 +17,34 @@ export class Body {
 
 // Release is The list of actions taken for this release.
 export class Release {
-	VersionAttr: string | null;
-	DateAttr: string | null;
-	DescriptionAttr: string | null;
+	VersionAttr?: string;
+	DateAttr?: string;
+	DescriptionAttr?: string;
 	Action?: Array<Action>;
 }
 
 // Action is A list of contibutors for this issue.
 export class Action {
-	DevAttr: string | null;
-	DuetoAttr: string | null;
-	DuetoemailAttr: string | null;
-	IssueAttr: string | null;
-	TypeAttr: string | null;
-	SystemAttr: string | null;
-	DateAttr: string | null;
+	DevAttr?: string;
+	DuetoAttr?: string;
+	DuetoemailAttr?: string;
+	IssueAttr?: string;
+	TypeAttr?: string;
+	SystemAttr?: string;
+	DateAttr?: string;
 	Fixes?: Array<FixedIssue>;
 	Dueto?: Array<DueTo>;
 }
 
 // FixedIssue is A fixed issue.
 export class FixedIssue {
-	IssueAttr: string | null;
+	IssueAttr?: string;
 }
 
 // DueTo is Name and Email of the person to be credited for this change. This can be used when a patch is submitted by a non-committer.
 export class DueTo {
-	NameAttr: string | null;
-	EmailAttr: string | null;
+	NameAttr?: string;
+	EmailAttr?: string;
 }
 
 // Properties is Page Author
@@ -55,5 +55,5 @@ export class Properties {
 
 // Author is A description of the author page.
 export class Author {
-	EmailAttr: string | null;
+	EmailAttr?: string;
 }

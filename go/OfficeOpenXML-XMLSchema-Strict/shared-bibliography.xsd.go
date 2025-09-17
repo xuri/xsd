@@ -120,8 +120,8 @@ type Sources *CTSources
 // CTSources ...
 type CTSources struct {
 	XMLName           xml.Name        `xml:"CT_Sources"`
-	SelectedStyleAttr string          `xml:"SelectedStyle,attr,omitempty"`
-	StyleNameAttr     string          `xml:"StyleName,attr,omitempty"`
-	URIAttr           string          `xml:"URI,attr,omitempty"`
+	SelectedStyleAttr *string         `xml:"SelectedStyle,attr"`
+	StyleNameAttr     *string         `xml:"StyleName,attr"`
+	URIAttr           *string         `xml:"URI,attr"`
 	Source            []*CTSourceType `xml:"Source,omitempty"`
 }

@@ -384,8 +384,8 @@ export class HeadMisc {
 //       title and an optional base element in any order
 export class Head {
 	I18n: I18n;
-	IdAttr: string | null;
-	ProfileAttr: string | null;
+	IdAttr?: string;
+	ProfileAttr?: string;
 	HeadMisc: HeadMisc;
 	Title: Title;
 	Base: Base;
@@ -396,24 +396,24 @@ export class Head {
 //       window title. Exactly one title is required per document.
 export class Title {
 	I18n: I18n;
-	IdAttr: string | null;
+	IdAttr?: string;
 }
 
 // Base is document base URI
 export class Base {
-	IdAttr: string | null;
-	HrefAttr: string | null;
-	TargetAttr: string | null;
+	IdAttr?: string;
+	HrefAttr?: string;
+	TargetAttr?: string;
 }
 
 // Meta is generic metainformation
 export class Meta {
 	I18n: I18n;
-	IdAttr: string | null;
-	HttpequivAttr: any | null;
-	NameAttr: any | null;
+	IdAttr?: string;
+	HttpequivAttr?: any;
+	NameAttr?: any;
 	ContentAttr: any;
-	SchemeAttr: any | null;
+	SchemeAttr?: any;
 }
 
 // Link is Relationship values can be used in principle:
@@ -429,35 +429,35 @@ export class Meta {
 //          e.g. a PostScript or PDF version (rel="alternate" media="print")
 export class Link {
 	Attrs: Attrs;
-	CharsetAttr: string | null;
-	HrefAttr: string | null;
-	HreflangAttr: string | null;
-	TypeAttr: string | null;
-	RelAttr: Array<string> | null;
-	RevAttr: Array<string> | null;
-	MediaAttr: string | null;
-	TargetAttr: string | null;
+	CharsetAttr?: string;
+	HrefAttr?: string;
+	HreflangAttr?: string;
+	TypeAttr?: string;
+	RelAttr?: Array<string>;
+	RevAttr?: Array<string>;
+	MediaAttr?: string;
+	TargetAttr?: string;
 }
 
 // Style is style info, which may include CDATA sections
 export class Style {
 	I18n: I18n;
-	IdAttr: string | null;
+	IdAttr?: string;
 	TypeAttr: string;
-	MediaAttr: string | null;
-	TitleAttr: string | null;
-	XmlSpaceAttr: Space | null;
+	MediaAttr?: string;
+	TitleAttr?: string;
+	XmlSpaceAttr?: Space;
 }
 
 // Script2 is script statements, which may include CDATA sections
 export class Script2 {
-	IdAttr: string | null;
-	CharsetAttr: string | null;
+	IdAttr?: string;
+	CharsetAttr?: string;
 	TypeAttr: string;
-	LanguageAttr: any | null;
-	SrcAttr: string | null;
-	DeferAttr: string | null;
-	XmlSpaceAttr: Space | null;
+	LanguageAttr?: any;
+	SrcAttr?: string;
+	DeferAttr?: string;
+	XmlSpaceAttr?: Space;
 }
 
 // Noscript is alternate content container for non script-based rendering
@@ -468,16 +468,16 @@ export class Noscript extends Flow  {
 // Iframe is inline subwindow
 export class Iframe extends Flow  {
 	Coreattrs: Coreattrs;
-	LongdescAttr: string | null;
-	NameAttr: string | null;
-	SrcAttr: string | null;
-	FrameborderAttr: string | null;
-	MarginwidthAttr: number | null;
-	MarginheightAttr: number | null;
-	ScrollingAttr: string | null;
-	AlignAttr: string | null;
-	HeightAttr: string | null;
-	WidthAttr: string | null;
+	LongdescAttr?: string;
+	NameAttr?: string;
+	SrcAttr?: string;
+	FrameborderAttr?: string;
+	MarginwidthAttr?: number;
+	MarginheightAttr?: number;
+	ScrollingAttr?: string;
+	AlignAttr?: string;
+	HeightAttr?: string;
+	WidthAttr?: string;
 }
 
 // Noframes is alternate content container for non frame-based rendering
@@ -543,8 +543,8 @@ export enum ULStyle {
 // Ul is Unordered list
 export class Ul {
 	Attrs: Attrs;
-	TypeAttr: string | null;
-	CompactAttr: string | null;
+	TypeAttr?: string;
+	CompactAttr?: string;
 	Li: Array<Li>;
 }
 
@@ -563,23 +563,23 @@ export type OLStyle = string;
 // Ol is Ordered (numbered) list
 export class Ol {
 	Attrs: Attrs;
-	TypeAttr: string | null;
-	CompactAttr: string | null;
-	StartAttr: number | null;
+	TypeAttr?: string;
+	CompactAttr?: string;
+	StartAttr?: number;
 	Li: Array<Li>;
 }
 
 // Menu is single column list (DEPRECATED)
 export class Menu {
 	Attrs: Attrs;
-	CompactAttr: string | null;
+	CompactAttr?: string;
 	Li: Array<Li>;
 }
 
 // Dir is multiple column list (DEPRECATED)
 export class Dir {
 	Attrs: Attrs;
-	CompactAttr: string | null;
+	CompactAttr?: string;
 	Li: Array<Li>;
 }
 
@@ -589,14 +589,14 @@ export type LIStyle = string;
 // Li is list item
 export class Li extends Flow  {
 	Attrs: Attrs;
-	TypeAttr: string | null;
-	ValueAttr: number | null;
+	TypeAttr?: string;
+	ValueAttr?: number;
 }
 
 // Dl ...
 export class Dl {
 	Attrs: Attrs;
-	CompactAttr: string | null;
+	CompactAttr?: string;
 	Dt: Array<Dt>;
 	Dd: Array<Dd>;
 }
@@ -622,24 +622,24 @@ export class Address {
 // Hr ...
 export class Hr {
 	Attrs: Attrs;
-	AlignAttr: string | null;
-	NoshadeAttr: string | null;
-	SizeAttr: number | null;
-	WidthAttr: string | null;
+	AlignAttr?: string;
+	NoshadeAttr?: string;
+	SizeAttr?: number;
+	WidthAttr?: string;
 }
 
 // Pre is content is "Inline" excluding
 //          "img|object|applet|big|small|sub|sup|font|basefont"
 export class Pre extends PreContent  {
 	Attrs: Attrs;
-	WidthAttr: number | null;
-	XmlSpaceAttr: Space | null;
+	WidthAttr?: number;
+	XmlSpaceAttr?: Space;
 }
 
 // Blockquote ...
 export class Blockquote extends Flow  {
 	Attrs: Attrs;
-	CiteAttr: string | null;
+	CiteAttr?: string;
 }
 
 // Center is center content
@@ -650,31 +650,31 @@ export class Center extends Flow  {
 // Ins ...
 export class Ins extends Flow  {
 	Attrs: Attrs;
-	CiteAttr: string | null;
-	DatetimeAttr: string | null;
+	CiteAttr?: string;
+	DatetimeAttr?: string;
 }
 
 // Del ...
 export class Del extends Flow  {
 	Attrs: Attrs;
-	CiteAttr: string | null;
-	DatetimeAttr: string | null;
+	CiteAttr?: string;
+	DatetimeAttr?: string;
 }
 
 // A is content is "Inline" except that anchors shouldn't be nested
 export class A extends AContent  {
 	Attrs: Attrs;
 	Focus: Focus;
-	CharsetAttr: string | null;
-	TypeAttr: string | null;
-	NameAttr: string | null;
-	HrefAttr: string | null;
-	HreflangAttr: string | null;
-	RelAttr: Array<string> | null;
-	RevAttr: Array<string> | null;
-	ShapeAttr: string | null;
-	CoordsAttr: string | null;
-	TargetAttr: string | null;
+	CharsetAttr?: string;
+	TypeAttr?: string;
+	NameAttr?: string;
+	HrefAttr?: string;
+	HreflangAttr?: string;
+	RelAttr?: Array<string>;
+	RevAttr?: Array<string>;
+	ShapeAttr?: string;
+	CoordsAttr?: string;
+	TargetAttr?: string;
 }
 
 // Span is generic language/style container
@@ -686,15 +686,15 @@ export class Span extends Inline  {
 export class Bdo extends Inline  {
 	Coreattrs: Coreattrs;
 	Events: Events;
-	LangAttr: string | null;
-	XmlLangAttr: Lang | null;
+	LangAttr?: string;
+	XmlLangAttr?: Lang;
 	DirAttr: string;
 }
 
 // Br is forced line break
 export class Br {
 	Coreattrs: Coreattrs;
-	ClearAttr: string | null;
+	ClearAttr?: string;
 }
 
 // Em is emphasis
@@ -750,7 +750,7 @@ export class Acronym extends Inline  {
 // Q is inlined quote
 export class Q extends Inline  {
 	Attrs: Attrs;
-	CiteAttr: string | null;
+	CiteAttr?: string;
 }
 
 // Sub is subscript
@@ -805,41 +805,41 @@ export class Strike extends Inline  {
 
 // Basefont is base font size
 export class Basefont {
-	IdAttr: string | null;
+	IdAttr?: string;
 	SizeAttr: any;
-	ColorAttr: string | null;
-	FaceAttr: any | null;
+	ColorAttr?: string;
+	FaceAttr?: any;
 }
 
 // Font is local change to font
 export class Font extends Inline  {
 	Coreattrs: Coreattrs;
 	I18n: I18n;
-	SizeAttr: any | null;
-	ColorAttr: string | null;
-	FaceAttr: any | null;
+	SizeAttr?: any;
+	ColorAttr?: string;
+	FaceAttr?: any;
 }
 
 // Object ...
 export class Object {
 	Attrs: Attrs;
-	DeclareAttr: string | null;
-	ClassidAttr: string | null;
-	CodebaseAttr: string | null;
-	DataAttr: string | null;
-	TypeAttr: string | null;
-	CodetypeAttr: string | null;
-	ArchiveAttr: string | null;
-	StandbyAttr: string | null;
-	HeightAttr: string | null;
-	WidthAttr: string | null;
-	UsemapAttr: string | null;
-	NameAttr: string | null;
-	TabindexAttr: number | null;
-	AlignAttr: string | null;
-	BorderAttr: number | null;
-	HspaceAttr: number | null;
-	VspaceAttr: number | null;
+	DeclareAttr?: string;
+	ClassidAttr?: string;
+	CodebaseAttr?: string;
+	DataAttr?: string;
+	TypeAttr?: string;
+	CodetypeAttr?: string;
+	ArchiveAttr?: string;
+	StandbyAttr?: string;
+	HeightAttr?: string;
+	WidthAttr?: string;
+	UsemapAttr?: string;
+	NameAttr?: string;
+	TabindexAttr?: number;
+	AlignAttr?: string;
+	BorderAttr?: number;
+	HspaceAttr?: number;
+	VspaceAttr?: number;
 	Block: Array<Block>;
 	Inline: Array<Inline>;
 	Misc: Array<Misc>;
@@ -852,27 +852,27 @@ export class Object {
 //       abbreviated syntax where the param elements are replaced
 //       by attribute value pairs on the object start tag.
 export class Param {
-	IdAttr: string | null;
+	IdAttr?: string;
 	NameAttr: any;
-	ValueAttr: any | null;
-	ValuetypeAttr: string | null;
-	TypeAttr: string | null;
+	ValueAttr?: any;
+	ValuetypeAttr?: string;
+	TypeAttr?: string;
 }
 
 // Applet ...
 export class Applet {
 	Coreattrs: Coreattrs;
-	CodebaseAttr: string | null;
-	ArchiveAttr: any | null;
-	CodeAttr: any | null;
-	ObjectAttr: any | null;
-	AltAttr: string | null;
-	NameAttr: string | null;
+	CodebaseAttr?: string;
+	ArchiveAttr?: any;
+	CodeAttr?: any;
+	ObjectAttr?: any;
+	AltAttr?: string;
+	NameAttr?: string;
 	WidthAttr: string;
 	HeightAttr: string;
-	AlignAttr: string | null;
-	HspaceAttr: number | null;
-	VspaceAttr: number | null;
+	AlignAttr?: string;
+	HspaceAttr?: number;
+	VspaceAttr?: number;
 	Block: Array<Block>;
 	Inline: Array<Inline>;
 	Misc: Array<Misc>;
@@ -885,16 +885,16 @@ export class Img {
 	Attrs: Attrs;
 	SrcAttr: string;
 	AltAttr: string;
-	NameAttr: string | null;
-	LongdescAttr: string | null;
-	HeightAttr: string | null;
-	WidthAttr: string | null;
-	UsemapAttr: string | null;
-	IsmapAttr: string | null;
-	AlignAttr: string | null;
-	BorderAttr: string | null;
-	HspaceAttr: number | null;
-	VspaceAttr: number | null;
+	NameAttr?: string;
+	LongdescAttr?: string;
+	HeightAttr?: string;
+	WidthAttr?: string;
+	UsemapAttr?: string;
+	IsmapAttr?: string;
+	AlignAttr?: string;
+	BorderAttr?: string;
+	HspaceAttr?: number;
+	VspaceAttr?: number;
 }
 
 // Map ...
@@ -902,10 +902,10 @@ export class Map {
 	I18n: I18n;
 	Events: Events;
 	IdAttr: string;
-	ClassAttr: any | null;
-	StyleAttr: string | null;
-	TitleAttr: string | null;
-	NameAttr: any | null;
+	ClassAttr?: any;
+	StyleAttr?: string;
+	TitleAttr?: string;
+	NameAttr?: any;
 	Block: Array<Block>;
 	Misc: Array<Misc>;
 	Form: Array<Form>;
@@ -916,35 +916,35 @@ export class Map {
 export class Area {
 	Attrs: Attrs;
 	Focus: Focus;
-	ShapeAttr: string | null;
-	CoordsAttr: string | null;
-	HrefAttr: string | null;
-	NohrefAttr: string | null;
+	ShapeAttr?: string;
+	CoordsAttr?: string;
+	HrefAttr?: string;
+	NohrefAttr?: string;
 	AltAttr: string;
-	TargetAttr: string | null;
+	TargetAttr?: string;
 }
 
 // Form ...
 export class Form extends FormContent  {
 	Attrs: Attrs;
 	ActionAttr: string;
-	MethodAttr: string | null;
-	EnctypeAttr: string | null;
-	OnsubmitAttr: string | null;
-	OnresetAttr: string | null;
-	AcceptAttr: string | null;
-	AcceptcharsetAttr: string | null;
-	TargetAttr: string | null;
+	MethodAttr?: string;
+	EnctypeAttr?: string;
+	OnsubmitAttr?: string;
+	OnresetAttr?: string;
+	AcceptAttr?: string;
+	AcceptcharsetAttr?: string;
+	TargetAttr?: string;
 }
 
 // Label is Each label must not contain more than ONE field
 //       Label elements shouldn't be nested.
 export class Label extends Inline  {
 	Attrs: Attrs;
-	ForAttr: string | null;
-	AccesskeyAttr: string | null;
-	OnfocusAttr: string | null;
-	OnblurAttr: string | null;
+	ForAttr?: string;
+	AccesskeyAttr?: string;
+	OnfocusAttr?: string;
+	OnblurAttr?: string;
 }
 
 // InputType ...
@@ -965,34 +965,34 @@ export enum InputType {
 export class Input {
 	Attrs: Attrs;
 	Focus: Focus;
-	TypeAttr: string | null;
-	NameAttr: any | null;
-	ValueAttr: any | null;
-	CheckedAttr: string | null;
-	DisabledAttr: string | null;
-	ReadonlyAttr: string | null;
-	SizeAttr: any | null;
-	MaxlengthAttr: number | null;
-	SrcAttr: string | null;
-	AltAttr: any | null;
-	UsemapAttr: string | null;
-	OnselectAttr: string | null;
-	OnchangeAttr: string | null;
-	AcceptAttr: string | null;
-	AlignAttr: string | null;
+	TypeAttr?: string;
+	NameAttr?: any;
+	ValueAttr?: any;
+	CheckedAttr?: string;
+	DisabledAttr?: string;
+	ReadonlyAttr?: string;
+	SizeAttr?: any;
+	MaxlengthAttr?: number;
+	SrcAttr?: string;
+	AltAttr?: any;
+	UsemapAttr?: string;
+	OnselectAttr?: string;
+	OnchangeAttr?: string;
+	AcceptAttr?: string;
+	AlignAttr?: string;
 }
 
 // Select is option selector
 export class Select {
 	Attrs: Attrs;
-	NameAttr: any | null;
-	SizeAttr: number | null;
-	MultipleAttr: string | null;
-	DisabledAttr: string | null;
-	TabindexAttr: number | null;
-	OnfocusAttr: string | null;
-	OnblurAttr: string | null;
-	OnchangeAttr: string | null;
+	NameAttr?: any;
+	SizeAttr?: number;
+	MultipleAttr?: string;
+	DisabledAttr?: string;
+	TabindexAttr?: number;
+	OnfocusAttr?: string;
+	OnblurAttr?: string;
+	OnchangeAttr?: string;
 	Optgroup: Array<Optgroup>;
 	Option: Array<Option>;
 }
@@ -1000,7 +1000,7 @@ export class Select {
 // Optgroup is option group
 export class Optgroup {
 	Attrs: Attrs;
-	DisabledAttr: string | null;
+	DisabledAttr?: string;
 	LabelAttr: string;
 	Option: Array<Option>;
 }
@@ -1008,23 +1008,23 @@ export class Optgroup {
 // Option is selectable choice
 export class Option {
 	Attrs: Attrs;
-	SelectedAttr: string | null;
-	DisabledAttr: string | null;
-	LabelAttr: string | null;
-	ValueAttr: any | null;
+	SelectedAttr?: string;
+	DisabledAttr?: string;
+	LabelAttr?: string;
+	ValueAttr?: any;
 }
 
 // Textarea is multi-line text field
 export class Textarea {
 	Attrs: Attrs;
 	Focus: Focus;
-	NameAttr: any | null;
+	NameAttr?: any;
 	RowsAttr: number;
 	ColsAttr: number;
-	DisabledAttr: string | null;
-	ReadonlyAttr: string | null;
-	OnselectAttr: string | null;
-	OnchangeAttr: string | null;
+	DisabledAttr?: string;
+	ReadonlyAttr?: string;
+	OnselectAttr?: string;
+	OnchangeAttr?: string;
 }
 
 // Fieldset is The fieldset element is used to group form fields.
@@ -1053,25 +1053,25 @@ export enum LAlign {
 // Legend is fieldset label
 export class Legend extends Inline  {
 	Attrs: Attrs;
-	AccesskeyAttr: string | null;
-	AlignAttr: string | null;
+	AccesskeyAttr?: string;
+	AlignAttr?: string;
 }
 
 // Button is Content is "Flow" excluding a, form and form controls
 export class Button extends ButtonContent  {
 	Attrs: Attrs;
 	Focus: Focus;
-	NameAttr: any | null;
-	ValueAttr: any | null;
-	TypeAttr: string | null;
-	DisabledAttr: string | null;
+	NameAttr?: any;
+	ValueAttr?: any;
+	TypeAttr?: string;
+	DisabledAttr?: string;
 }
 
 // Isindex is single-line text input control (DEPRECATED)
 export class Isindex {
 	Coreattrs: Coreattrs;
 	I18n: I18n;
-	PromptAttr: string | null;
+	PromptAttr?: string;
 }
 
 // TFrame is The border attribute sets the thickness of the frame around the
@@ -1129,15 +1129,15 @@ export class Cellvalign {
 // Table ...
 export class Table {
 	Attrs: Attrs;
-	SummaryAttr: string | null;
-	WidthAttr: string | null;
-	BorderAttr: number | null;
-	FrameAttr: string | null;
-	RulesAttr: string | null;
-	CellspacingAttr: string | null;
-	CellpaddingAttr: string | null;
-	AlignAttr: string | null;
-	BgcolorAttr: string | null;
+	SummaryAttr?: string;
+	WidthAttr?: string;
+	BorderAttr?: number;
+	FrameAttr?: string;
+	RulesAttr?: string;
+	CellspacingAttr?: string;
+	CellpaddingAttr?: string;
+	AlignAttr?: string;
+	BgcolorAttr?: string;
 	Caption?: Caption;
 	Col?: Array<Col>;
 	Colgroup?: Array<Colgroup>;
@@ -1158,7 +1158,7 @@ export enum CAlign {
 // Caption ...
 export class Caption extends Inline  {
 	Attrs: Attrs;
-	AlignAttr: string | null;
+	AlignAttr?: string;
 }
 
 // Thead ...
@@ -1191,8 +1191,8 @@ export class Colgroup {
 	Attrs: Attrs;
 	Cellhalign: Cellhalign;
 	Cellvalign: Cellvalign;
-	SpanAttr: number | null;
-	WidthAttr: string | null;
+	SpanAttr?: number;
+	WidthAttr?: string;
 	Col?: Array<Col>;
 }
 
@@ -1210,8 +1210,8 @@ export class Col {
 	Attrs: Attrs;
 	Cellhalign: Cellhalign;
 	Cellvalign: Cellvalign;
-	SpanAttr: number | null;
-	WidthAttr: string | null;
+	SpanAttr?: number;
+	WidthAttr?: string;
 }
 
 // Tr ...
@@ -1219,7 +1219,7 @@ export class Tr {
 	Attrs: Attrs;
 	Cellhalign: Cellhalign;
 	Cellvalign: Cellvalign;
-	BgcolorAttr: string | null;
+	BgcolorAttr?: string;
 	Th: Array<Th>;
 	Td: Array<Td>;
 }
@@ -1237,16 +1237,16 @@ export class Th extends Flow  {
 	Attrs: Attrs;
 	Cellhalign: Cellhalign;
 	Cellvalign: Cellvalign;
-	AbbrAttr: string | null;
-	AxisAttr: any | null;
-	HeadersAttr: Array<string> | null;
-	ScopeAttr: string | null;
-	RowspanAttr: number | null;
-	ColspanAttr: number | null;
-	NowrapAttr: string | null;
-	BgcolorAttr: string | null;
-	WidthAttr: string | null;
-	HeightAttr: string | null;
+	AbbrAttr?: string;
+	AxisAttr?: any;
+	HeadersAttr?: Array<string>;
+	ScopeAttr?: string;
+	RowspanAttr?: number;
+	ColspanAttr?: number;
+	NowrapAttr?: string;
+	BgcolorAttr?: string;
+	WidthAttr?: string;
+	HeightAttr?: string;
 }
 
 // Td ...
@@ -1254,37 +1254,37 @@ export class Td extends Flow  {
 	Attrs: Attrs;
 	Cellhalign: Cellhalign;
 	Cellvalign: Cellvalign;
-	AbbrAttr: string | null;
-	AxisAttr: any | null;
-	HeadersAttr: Array<string> | null;
-	ScopeAttr: string | null;
-	RowspanAttr: number | null;
-	ColspanAttr: number | null;
-	NowrapAttr: string | null;
-	BgcolorAttr: string | null;
-	WidthAttr: string | null;
-	HeightAttr: string | null;
+	AbbrAttr?: string;
+	AxisAttr?: any;
+	HeadersAttr?: Array<string>;
+	ScopeAttr?: string;
+	RowspanAttr?: number;
+	ColspanAttr?: number;
+	NowrapAttr?: string;
+	BgcolorAttr?: string;
+	WidthAttr?: string;
+	HeightAttr?: string;
 }
 
 // Faqs is Required part element for this faqs element.
 export class Faqs {
 	I18n: I18n;
-	IdAttr: string | null;
-	TitleAttr: string | null;
-	ToplinkAttr: boolean | null;
+	IdAttr?: string;
+	TitleAttr?: string;
+	ToplinkAttr?: boolean;
 	Part: Array<Part>;
 }
 
 // Part is Required faq element for this part element.
 export class Part {
-	IdAttr: string | null;
+	IdAttr?: string;
 	Title?: Title;
 	Faq: Array<Faq>;
 }
 
 // Faq is The answer of this faq element.
 export class Faq {
-	IdAttr: string | null;
+	IdAttr?: string;
 	Question: Question;
 	Answer: Answer;
 }

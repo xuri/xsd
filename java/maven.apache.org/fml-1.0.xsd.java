@@ -627,7 +627,7 @@ public class Meta {
 	protected void HttpequivAttr;
 	@XmlAttribute(name = "name")
 	protected void NameAttr;
-	@XmlAttribute(name = "content", required = true)
+	@XmlAttribute(required = true, name = "content")
 	protected void ContentAttr;
 	@XmlAttribute(name = "scheme")
 	protected void SchemeAttr;
@@ -671,7 +671,7 @@ public class Style {
 	protected I18n I18n;
 	@XmlAttribute(name = "id")
 	protected String IdAttr;
-	@XmlAttribute(name = "type", required = true)
+	@XmlAttribute(required = true, name = "type")
 	protected String TypeAttr;
 	@XmlAttribute(name = "media")
 	protected String MediaAttr;
@@ -687,7 +687,7 @@ public class Script2 {
 	protected String IdAttr;
 	@XmlAttribute(name = "charset")
 	protected String CharsetAttr;
-	@XmlAttribute(name = "type", required = true)
+	@XmlAttribute(required = true, name = "type")
 	protected String TypeAttr;
 	@XmlAttribute(name = "language")
 	protected void LanguageAttr;
@@ -1024,7 +1024,7 @@ public class Bdo extends Inline  {
 	protected String LangAttr;
 	@XmlAttribute(name = "xml:lang")
 	protected Lang XmlLangAttr;
-	@XmlAttribute(name = "dir", required = true)
+	@XmlAttribute(required = true, name = "dir")
 	protected String DirAttr;
 }
 
@@ -1168,7 +1168,7 @@ public class Strike extends Inline  {
 public class Basefont {
 	@XmlAttribute(name = "id")
 	protected String IdAttr;
-	@XmlAttribute(name = "size", required = true)
+	@XmlAttribute(required = true, name = "size")
 	protected void SizeAttr;
 	@XmlAttribute(name = "color")
 	protected String ColorAttr;
@@ -1244,7 +1244,7 @@ public class Object {
 public class Param {
 	@XmlAttribute(name = "id")
 	protected String IdAttr;
-	@XmlAttribute(name = "name", required = true)
+	@XmlAttribute(required = true, name = "name")
 	protected void NameAttr;
 	@XmlAttribute(name = "value")
 	protected void ValueAttr;
@@ -1270,9 +1270,9 @@ public class Applet {
 	protected String AltAttr;
 	@XmlAttribute(name = "name")
 	protected String NameAttr;
-	@XmlAttribute(name = "width", required = true)
+	@XmlAttribute(required = true, name = "width")
 	protected String WidthAttr;
-	@XmlAttribute(name = "height", required = true)
+	@XmlAttribute(required = true, name = "height")
 	protected String HeightAttr;
 	@XmlAttribute(name = "align")
 	protected String AlignAttr;
@@ -1293,9 +1293,9 @@ public class Applet {
 public class Img {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
-	@XmlAttribute(name = "src", required = true)
+	@XmlAttribute(required = true, name = "src")
 	protected String SrcAttr;
-	@XmlAttribute(name = "alt", required = true)
+	@XmlAttribute(required = true, name = "alt")
 	protected String AltAttr;
 	@XmlAttribute(name = "name")
 	protected String NameAttr;
@@ -1325,7 +1325,7 @@ public class Map {
 	protected I18n I18n;
 	@XmlElement(required = true)
 	protected Events Events;
-	@XmlAttribute(name = "id", required = true)
+	@XmlAttribute(required = true, name = "id")
 	protected String IdAttr;
 	@XmlAttribute(name = "class")
 	protected void ClassAttr;
@@ -1357,7 +1357,7 @@ public class Area {
 	protected String HrefAttr;
 	@XmlAttribute(name = "nohref")
 	protected String NohrefAttr;
-	@XmlAttribute(name = "alt", required = true)
+	@XmlAttribute(required = true, name = "alt")
 	protected String AltAttr;
 	@XmlAttribute(name = "target")
 	protected String TargetAttr;
@@ -1367,7 +1367,7 @@ public class Area {
 public class Form extends FormContent  {
 	@XmlElement(required = true)
 	protected Attrs Attrs;
-	@XmlAttribute(name = "action", required = true)
+	@XmlAttribute(required = true, name = "action")
 	protected String ActionAttr;
 	@XmlAttribute(name = "method")
 	protected String MethodAttr;
@@ -1477,7 +1477,7 @@ public class Optgroup {
 	protected Attrs Attrs;
 	@XmlAttribute(name = "disabled")
 	protected String DisabledAttr;
-	@XmlAttribute(name = "label", required = true)
+	@XmlAttribute(required = true, name = "label")
 	protected String LabelAttr;
 	@XmlElement(required = true, name = "option")
 	protected List<Option> Option;
@@ -1505,9 +1505,9 @@ public class Textarea {
 	protected Focus Focus;
 	@XmlAttribute(name = "name")
 	protected void NameAttr;
-	@XmlAttribute(name = "rows", required = true)
+	@XmlAttribute(required = true, name = "rows")
 	protected Integer RowsAttr;
-	@XmlAttribute(name = "cols", required = true)
+	@XmlAttribute(required = true, name = "cols")
 	protected Integer ColsAttr;
 	@XmlAttribute(name = "disabled")
 	protected String DisabledAttr;

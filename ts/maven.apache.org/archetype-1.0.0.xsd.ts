@@ -43,13 +43,13 @@ export class ArchetypeModel {
 // Source is Describes a source file. Note that source files are always filtered, unlike resources that
 //         can be non-filtered.
 export class Source {
-	EncodingAttr: string | null;
+	EncodingAttr?: string;
 	Value: string;
 }
 
 // Resource is Describes a resource file.
 export class Resource {
-	EncodingAttr: string | null;
-	FilteredAttr: boolean | null;
+	EncodingAttr?: string;
+	FilteredAttr?: boolean;
 	Value: string;
 }

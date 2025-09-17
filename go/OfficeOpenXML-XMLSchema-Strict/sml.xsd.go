@@ -9,7 +9,7 @@ import (
 // CTAutoFilter ...
 type CTAutoFilter struct {
 	XMLName      xml.Name          `xml:"CT_AutoFilter"`
-	RefAttr      string            `xml:"ref,attr,omitempty"`
+	RefAttr      *string           `xml:"ref,attr"`
 	FilterColumn []*CTFilterColumn `xml:"filterColumn,omitempty"`
 	SortState    *CTSortState      `xml:"sortState,omitempty"`
 	ExtLst       *CTExtensionList  `xml:"extLst,omitempty"`
@@ -19,8 +19,8 @@ type CTAutoFilter struct {
 type CTFilterColumn struct {
 	XMLName          xml.Name         `xml:"CT_FilterColumn"`
 	ColIdAttr        uint32           `xml:"colId,attr"`
-	HiddenButtonAttr bool             `xml:"hiddenButton,attr,omitempty"`
-	ShowButtonAttr   bool             `xml:"showButton,attr,omitempty"`
+	HiddenButtonAttr *bool            `xml:"hiddenButton,attr"`
+	ShowButtonAttr   *bool            `xml:"showButton,attr"`
 	Filters          *CTFilters       `xml:"filters,omitempty"`
 	Top10            *CTTop10         `xml:"top10,omitempty"`
 	CustomFilters    *CTCustomFilters `xml:"customFilters,omitempty"`
@@ -33,8 +33,8 @@ type CTFilterColumn struct {
 // CTFilters ...
 type CTFilters struct {
 	XMLName          xml.Name           `xml:"CT_Filters"`
-	BlankAttr        bool               `xml:"blank,attr,omitempty"`
-	CalendarTypeAttr string             `xml:"calendarType,attr,omitempty"`
+	BlankAttr        *bool              `xml:"blank,attr"`
+	CalendarTypeAttr *string            `xml:"calendarType,attr"`
 	Filter           []*CTFilter        `xml:"filter,omitempty"`
 	DateGroupItem    []*CTDateGroupItem `xml:"dateGroupItem,omitempty"`
 }
@@ -42,44 +42,44 @@ type CTFilters struct {
 // CTFilter ...
 type CTFilter struct {
 	XMLName xml.Name `xml:"CT_Filter"`
-	ValAttr string   `xml:"val,attr,omitempty"`
+	ValAttr *string  `xml:"val,attr"`
 }
 
 // CTCustomFilters ...
 type CTCustomFilters struct {
 	XMLName      xml.Name          `xml:"CT_CustomFilters"`
-	AndAttr      bool              `xml:"and,attr,omitempty"`
+	AndAttr      *bool             `xml:"and,attr"`
 	CustomFilter []*CTCustomFilter `xml:"customFilter"`
 }
 
 // CTCustomFilter ...
 type CTCustomFilter struct {
 	XMLName      xml.Name `xml:"CT_CustomFilter"`
-	OperatorAttr string   `xml:"operator,attr,omitempty"`
-	ValAttr      string   `xml:"val,attr,omitempty"`
+	OperatorAttr *string  `xml:"operator,attr"`
+	ValAttr      *string  `xml:"val,attr"`
 }
 
 // CTTop10 ...
 type CTTop10 struct {
 	XMLName       xml.Name `xml:"CT_Top10"`
-	TopAttr       bool     `xml:"top,attr,omitempty"`
-	PercentAttr   bool     `xml:"percent,attr,omitempty"`
+	TopAttr       *bool    `xml:"top,attr"`
+	PercentAttr   *bool    `xml:"percent,attr"`
 	ValAttr       float64  `xml:"val,attr"`
-	FilterValAttr float64  `xml:"filterVal,attr,omitempty"`
+	FilterValAttr *float64 `xml:"filterVal,attr"`
 }
 
 // CTColorFilter ...
 type CTColorFilter struct {
 	XMLName       xml.Name `xml:"CT_ColorFilter"`
-	DxfIdAttr     uint32   `xml:"dxfId,attr,omitempty"`
-	CellColorAttr bool     `xml:"cellColor,attr,omitempty"`
+	DxfIdAttr     *uint32  `xml:"dxfId,attr"`
+	CellColorAttr *bool    `xml:"cellColor,attr"`
 }
 
 // CTIconFilter ...
 type CTIconFilter struct {
 	XMLName     xml.Name `xml:"CT_IconFilter"`
 	IconSetAttr string   `xml:"iconSet,attr"`
-	IconIdAttr  uint32   `xml:"iconId,attr,omitempty"`
+	IconIdAttr  *uint32  `xml:"iconId,attr"`
 }
 
 // STFilterOperator ...
@@ -89,9 +89,9 @@ type STFilterOperator string
 type CTDynamicFilter struct {
 	XMLName       xml.Name `xml:"CT_DynamicFilter"`
 	TypeAttr      string   `xml:"type,attr"`
-	ValAttr       float64  `xml:"val,attr,omitempty"`
-	ValIsoAttr    string   `xml:"valIso,attr,omitempty"`
-	MaxValIsoAttr string   `xml:"maxValIso,attr,omitempty"`
+	ValAttr       *float64 `xml:"val,attr"`
+	ValIsoAttr    *string  `xml:"valIso,attr"`
+	MaxValIsoAttr *string  `xml:"maxValIso,attr"`
 }
 
 // STDynamicFilterType ...
@@ -103,9 +103,9 @@ type STIconSetType string
 // CTSortState ...
 type CTSortState struct {
 	XMLName           xml.Name           `xml:"CT_SortState"`
-	ColumnSortAttr    bool               `xml:"columnSort,attr,omitempty"`
-	CaseSensitiveAttr bool               `xml:"caseSensitive,attr,omitempty"`
-	SortMethodAttr    string             `xml:"sortMethod,attr,omitempty"`
+	ColumnSortAttr    *bool              `xml:"columnSort,attr"`
+	CaseSensitiveAttr *bool              `xml:"caseSensitive,attr"`
+	SortMethodAttr    *string            `xml:"sortMethod,attr"`
 	RefAttr           string             `xml:"ref,attr"`
 	SortCondition     []*CTSortCondition `xml:"sortCondition,omitempty"`
 	ExtLst            *CTExtensionList   `xml:"extLst,omitempty"`
@@ -114,13 +114,13 @@ type CTSortState struct {
 // CTSortCondition ...
 type CTSortCondition struct {
 	XMLName        xml.Name `xml:"CT_SortCondition"`
-	DescendingAttr bool     `xml:"descending,attr,omitempty"`
-	SortByAttr     string   `xml:"sortBy,attr,omitempty"`
+	DescendingAttr *bool    `xml:"descending,attr"`
+	SortByAttr     *string  `xml:"sortBy,attr"`
 	RefAttr        string   `xml:"ref,attr"`
-	CustomListAttr string   `xml:"customList,attr,omitempty"`
-	DxfIdAttr      uint32   `xml:"dxfId,attr,omitempty"`
-	IconSetAttr    string   `xml:"iconSet,attr,omitempty"`
-	IconIdAttr     uint32   `xml:"iconId,attr,omitempty"`
+	CustomListAttr *string  `xml:"customList,attr"`
+	DxfIdAttr      *uint32  `xml:"dxfId,attr"`
+	IconSetAttr    *string  `xml:"iconSet,attr"`
+	IconIdAttr     *uint32  `xml:"iconId,attr"`
 }
 
 // STSortBy ...
@@ -133,11 +133,11 @@ type STSortMethod string
 type CTDateGroupItem struct {
 	XMLName              xml.Name `xml:"CT_DateGroupItem"`
 	YearAttr             uint16   `xml:"year,attr"`
-	MonthAttr            uint16   `xml:"month,attr,omitempty"`
-	DayAttr              uint16   `xml:"day,attr,omitempty"`
-	HourAttr             uint16   `xml:"hour,attr,omitempty"`
-	MinuteAttr           uint16   `xml:"minute,attr,omitempty"`
-	SecondAttr           uint16   `xml:"second,attr,omitempty"`
+	MonthAttr            *uint16  `xml:"month,attr"`
+	DayAttr              *uint16  `xml:"day,attr"`
+	HourAttr             *uint16  `xml:"hour,attr"`
+	MinuteAttr           *uint16  `xml:"minute,attr"`
+	SecondAttr           *uint16  `xml:"second,attr"`
 	DateTimeGroupingAttr string   `xml:"dateTimeGrouping,attr"`
 }
 
@@ -171,14 +171,14 @@ type CTXStringElement struct {
 // CTExtension ...
 type CTExtension struct {
 	XMLName xml.Name `xml:"CT_Extension"`
-	UriAttr string   `xml:"uri,attr,omitempty"`
+	UriAttr *string  `xml:"uri,attr"`
 }
 
 // CTObjectAnchor ...
 type CTObjectAnchor struct {
 	XMLName           xml.Name  `xml:"CT_ObjectAnchor"`
-	MoveWithCellsAttr bool      `xml:"moveWithCells,attr,omitempty"`
-	SizeWithCellsAttr bool      `xml:"sizeWithCells,attr,omitempty"`
+	MoveWithCellsAttr *bool     `xml:"moveWithCells,attr"`
+	SizeWithCellsAttr *bool     `xml:"sizeWithCells,attr"`
 	XdrFrom           *CTMarker `xml:"xdr:from"`
 	XdrTo             *CTMarker `xml:"xdr:to"`
 }
@@ -209,11 +209,11 @@ type CTCalcChain struct {
 type CTCalcCell struct {
 	XMLName xml.Name `xml:"CT_CalcCell"`
 	RAttr   string   `xml:"r,attr"`
-	IAttr   int      `xml:"i,attr,omitempty"`
-	SAttr   bool     `xml:"s,attr,omitempty"`
-	LAttr   bool     `xml:"l,attr,omitempty"`
-	TAttr   bool     `xml:"t,attr,omitempty"`
-	AAttr   bool     `xml:"a,attr,omitempty"`
+	IAttr   *int     `xml:"i,attr"`
+	SAttr   *bool    `xml:"s,attr"`
+	LAttr   *bool    `xml:"l,attr"`
+	TAttr   *bool    `xml:"t,attr"`
+	AAttr   *bool    `xml:"a,attr"`
 }
 
 // Comments ...
@@ -244,8 +244,8 @@ type CTComment struct {
 	XMLName      xml.Name     `xml:"CT_Comment"`
 	RefAttr      string       `xml:"ref,attr"`
 	AuthorIdAttr uint32       `xml:"authorId,attr"`
-	GuidAttr     string       `xml:"guid,attr,omitempty"`
-	ShapeIdAttr  uint32       `xml:"shapeId,attr,omitempty"`
+	GuidAttr     *string      `xml:"guid,attr"`
+	ShapeIdAttr  *uint32      `xml:"shapeId,attr"`
 	Text         *CTRst       `xml:"text"`
 	CommentPr    *CTCommentPr `xml:"commentPr,omitempty"`
 }
@@ -253,18 +253,18 @@ type CTComment struct {
 // CTCommentPr ...
 type CTCommentPr struct {
 	XMLName         xml.Name        `xml:"CT_CommentPr"`
-	LockedAttr      bool            `xml:"locked,attr,omitempty"`
-	DefaultSizeAttr bool            `xml:"defaultSize,attr,omitempty"`
-	PrintAttr       bool            `xml:"print,attr,omitempty"`
-	DisabledAttr    bool            `xml:"disabled,attr,omitempty"`
-	AutoFillAttr    bool            `xml:"autoFill,attr,omitempty"`
-	AutoLineAttr    bool            `xml:"autoLine,attr,omitempty"`
-	AltTextAttr     string          `xml:"altText,attr,omitempty"`
-	TextHAlignAttr  string          `xml:"textHAlign,attr,omitempty"`
-	TextVAlignAttr  string          `xml:"textVAlign,attr,omitempty"`
-	LockTextAttr    bool            `xml:"lockText,attr,omitempty"`
-	JustLastXAttr   bool            `xml:"justLastX,attr,omitempty"`
-	AutoScaleAttr   bool            `xml:"autoScale,attr,omitempty"`
+	LockedAttr      *bool           `xml:"locked,attr"`
+	DefaultSizeAttr *bool           `xml:"defaultSize,attr"`
+	PrintAttr       *bool           `xml:"print,attr"`
+	DisabledAttr    *bool           `xml:"disabled,attr"`
+	AutoFillAttr    *bool           `xml:"autoFill,attr"`
+	AutoLineAttr    *bool           `xml:"autoLine,attr"`
+	AltTextAttr     *string         `xml:"altText,attr"`
+	TextHAlignAttr  *string         `xml:"textHAlign,attr"`
+	TextVAlignAttr  *string         `xml:"textVAlign,attr"`
+	LockTextAttr    *bool           `xml:"lockText,attr"`
+	JustLastXAttr   *bool           `xml:"justLastX,attr"`
+	AutoScaleAttr   *bool           `xml:"autoScale,attr"`
 	Anchor          *CTObjectAnchor `xml:"anchor"`
 }
 
@@ -289,9 +289,9 @@ type CTMapInfo struct {
 type CTSchema struct {
 	XMLName            xml.Name `xml:"CT_Schema"`
 	IDAttr             string   `xml:"ID,attr"`
-	SchemaRefAttr      string   `xml:"SchemaRef,attr,omitempty"`
-	NamespaceAttr      string   `xml:"Namespace,attr,omitempty"`
-	SchemaLanguageAttr string   `xml:"SchemaLanguage,attr,omitempty"`
+	SchemaRefAttr      *string  `xml:"SchemaRef,attr"`
+	NamespaceAttr      *string  `xml:"Namespace,attr"`
+	SchemaLanguageAttr *string  `xml:"SchemaLanguage,attr"`
 }
 
 // CTMap ...
@@ -312,10 +312,10 @@ type CTMap struct {
 // CTDataBinding ...
 type CTDataBinding struct {
 	XMLName                 xml.Name `xml:"CT_DataBinding"`
-	DataBindingNameAttr     string   `xml:"DataBindingName,attr,omitempty"`
-	FileBindingAttr         bool     `xml:"FileBinding,attr,omitempty"`
-	ConnectionIDAttr        uint32   `xml:"ConnectionID,attr,omitempty"`
-	FileBindingNameAttr     string   `xml:"FileBindingName,attr,omitempty"`
+	DataBindingNameAttr     *string  `xml:"DataBindingName,attr"`
+	FileBindingAttr         *bool    `xml:"FileBinding,attr"`
+	ConnectionIDAttr        *uint32  `xml:"ConnectionID,attr"`
+	FileBindingNameAttr     *string  `xml:"FileBindingName,attr"`
 	DataBindingLoadModeAttr uint32   `xml:"DataBindingLoadMode,attr"`
 }
 
@@ -332,25 +332,25 @@ type CTConnections struct {
 type CTConnection struct {
 	XMLName                   xml.Name         `xml:"CT_Connection"`
 	IdAttr                    uint32           `xml:"id,attr"`
-	SourceFileAttr            string           `xml:"sourceFile,attr,omitempty"`
-	OdcFileAttr               string           `xml:"odcFile,attr,omitempty"`
-	KeepAliveAttr             bool             `xml:"keepAlive,attr,omitempty"`
-	IntervalAttr              uint32           `xml:"interval,attr,omitempty"`
-	NameAttr                  string           `xml:"name,attr,omitempty"`
-	DescriptionAttr           string           `xml:"description,attr,omitempty"`
-	TypeAttr                  uint32           `xml:"type,attr,omitempty"`
-	ReconnectionMethodAttr    uint32           `xml:"reconnectionMethod,attr,omitempty"`
+	SourceFileAttr            *string          `xml:"sourceFile,attr"`
+	OdcFileAttr               *string          `xml:"odcFile,attr"`
+	KeepAliveAttr             *bool            `xml:"keepAlive,attr"`
+	IntervalAttr              *uint32          `xml:"interval,attr"`
+	NameAttr                  *string          `xml:"name,attr"`
+	DescriptionAttr           *string          `xml:"description,attr"`
+	TypeAttr                  *uint32          `xml:"type,attr"`
+	ReconnectionMethodAttr    *uint32          `xml:"reconnectionMethod,attr"`
 	RefreshedVersionAttr      uint8            `xml:"refreshedVersion,attr"`
-	MinRefreshableVersionAttr uint8            `xml:"minRefreshableVersion,attr,omitempty"`
-	SavePasswordAttr          bool             `xml:"savePassword,attr,omitempty"`
-	NewAttr                   bool             `xml:"new,attr,omitempty"`
-	DeletedAttr               bool             `xml:"deleted,attr,omitempty"`
-	OnlyUseConnectionFileAttr bool             `xml:"onlyUseConnectionFile,attr,omitempty"`
-	BackgroundAttr            bool             `xml:"background,attr,omitempty"`
-	RefreshOnLoadAttr         bool             `xml:"refreshOnLoad,attr,omitempty"`
-	SaveDataAttr              bool             `xml:"saveData,attr,omitempty"`
-	CredentialsAttr           string           `xml:"credentials,attr,omitempty"`
-	SingleSignOnIdAttr        string           `xml:"singleSignOnId,attr,omitempty"`
+	MinRefreshableVersionAttr *uint8           `xml:"minRefreshableVersion,attr"`
+	SavePasswordAttr          *bool            `xml:"savePassword,attr"`
+	NewAttr                   *bool            `xml:"new,attr"`
+	DeletedAttr               *bool            `xml:"deleted,attr"`
+	OnlyUseConnectionFileAttr *bool            `xml:"onlyUseConnectionFile,attr"`
+	BackgroundAttr            *bool            `xml:"background,attr"`
+	RefreshOnLoadAttr         *bool            `xml:"refreshOnLoad,attr"`
+	SaveDataAttr              *bool            `xml:"saveData,attr"`
+	CredentialsAttr           *string          `xml:"credentials,attr"`
+	SingleSignOnIdAttr        *string          `xml:"singleSignOnId,attr"`
 	DbPr                      *CTDbPr          `xml:"dbPr,omitempty"`
 	OlapPr                    *CTOlapPr        `xml:"olapPr,omitempty"`
 	WebPr                     *CTWebPr         `xml:"webPr,omitempty"`
@@ -366,41 +366,41 @@ type STCredMethod string
 type CTDbPr struct {
 	XMLName           xml.Name `xml:"CT_DbPr"`
 	ConnectionAttr    string   `xml:"connection,attr"`
-	CommandAttr       string   `xml:"command,attr,omitempty"`
-	ServerCommandAttr string   `xml:"serverCommand,attr,omitempty"`
-	CommandTypeAttr   uint32   `xml:"commandType,attr,omitempty"`
+	CommandAttr       *string  `xml:"command,attr"`
+	ServerCommandAttr *string  `xml:"serverCommand,attr"`
+	CommandTypeAttr   *uint32  `xml:"commandType,attr"`
 }
 
 // CTOlapPr ...
 type CTOlapPr struct {
 	XMLName                xml.Name `xml:"CT_OlapPr"`
-	LocalAttr              bool     `xml:"local,attr,omitempty"`
-	LocalConnectionAttr    string   `xml:"localConnection,attr,omitempty"`
-	LocalRefreshAttr       bool     `xml:"localRefresh,attr,omitempty"`
-	SendLocaleAttr         bool     `xml:"sendLocale,attr,omitempty"`
-	RowDrillCountAttr      uint32   `xml:"rowDrillCount,attr,omitempty"`
-	ServerFillAttr         bool     `xml:"serverFill,attr,omitempty"`
-	ServerNumberFormatAttr bool     `xml:"serverNumberFormat,attr,omitempty"`
-	ServerFontAttr         bool     `xml:"serverFont,attr,omitempty"`
-	ServerFontColorAttr    bool     `xml:"serverFontColor,attr,omitempty"`
+	LocalAttr              *bool    `xml:"local,attr"`
+	LocalConnectionAttr    *string  `xml:"localConnection,attr"`
+	LocalRefreshAttr       *bool    `xml:"localRefresh,attr"`
+	SendLocaleAttr         *bool    `xml:"sendLocale,attr"`
+	RowDrillCountAttr      *uint32  `xml:"rowDrillCount,attr"`
+	ServerFillAttr         *bool    `xml:"serverFill,attr"`
+	ServerNumberFormatAttr *bool    `xml:"serverNumberFormat,attr"`
+	ServerFontAttr         *bool    `xml:"serverFont,attr"`
+	ServerFontColorAttr    *bool    `xml:"serverFontColor,attr"`
 }
 
 // CTWebPr ...
 type CTWebPr struct {
 	XMLName         xml.Name  `xml:"CT_WebPr"`
-	XmlAttr         bool      `xml:"xml,attr,omitempty"`
-	SourceDataAttr  bool      `xml:"sourceData,attr,omitempty"`
-	ParsePreAttr    bool      `xml:"parsePre,attr,omitempty"`
-	ConsecutiveAttr bool      `xml:"consecutive,attr,omitempty"`
-	FirstRowAttr    bool      `xml:"firstRow,attr,omitempty"`
-	Xl97Attr        bool      `xml:"xl97,attr,omitempty"`
-	TextDatesAttr   bool      `xml:"textDates,attr,omitempty"`
-	Xl2000Attr      bool      `xml:"xl2000,attr,omitempty"`
-	UrlAttr         string    `xml:"url,attr,omitempty"`
-	PostAttr        string    `xml:"post,attr,omitempty"`
-	HtmlTablesAttr  bool      `xml:"htmlTables,attr,omitempty"`
-	HtmlFormatAttr  string    `xml:"htmlFormat,attr,omitempty"`
-	EditPageAttr    string    `xml:"editPage,attr,omitempty"`
+	XmlAttr         *bool     `xml:"xml,attr"`
+	SourceDataAttr  *bool     `xml:"sourceData,attr"`
+	ParsePreAttr    *bool     `xml:"parsePre,attr"`
+	ConsecutiveAttr *bool     `xml:"consecutive,attr"`
+	FirstRowAttr    *bool     `xml:"firstRow,attr"`
+	Xl97Attr        *bool     `xml:"xl97,attr"`
+	TextDatesAttr   *bool     `xml:"textDates,attr"`
+	Xl2000Attr      *bool     `xml:"xl2000,attr"`
+	UrlAttr         *string   `xml:"url,attr"`
+	PostAttr        *string   `xml:"post,attr"`
+	HtmlTablesAttr  *bool     `xml:"htmlTables,attr"`
+	HtmlFormatAttr  *string   `xml:"htmlFormat,attr"`
+	EditPageAttr    *string   `xml:"editPage,attr"`
 	Tables          *CTTables `xml:"tables,omitempty"`
 }
 
@@ -410,23 +410,23 @@ type STHtmlFmt string
 // CTParameters ...
 type CTParameters struct {
 	XMLName   xml.Name       `xml:"CT_Parameters"`
-	CountAttr uint32         `xml:"count,attr,omitempty"`
+	CountAttr *uint32        `xml:"count,attr"`
 	Parameter []*CTParameter `xml:"parameter"`
 }
 
 // CTParameter ...
 type CTParameter struct {
 	XMLName             xml.Name `xml:"CT_Parameter"`
-	NameAttr            string   `xml:"name,attr,omitempty"`
-	SqlTypeAttr         int      `xml:"sqlType,attr,omitempty"`
-	ParameterTypeAttr   string   `xml:"parameterType,attr,omitempty"`
-	RefreshOnChangeAttr bool     `xml:"refreshOnChange,attr,omitempty"`
-	PromptAttr          string   `xml:"prompt,attr,omitempty"`
-	BooleanAttr         bool     `xml:"boolean,attr,omitempty"`
-	DoubleAttr          float64  `xml:"double,attr,omitempty"`
-	IntegerAttr         int      `xml:"integer,attr,omitempty"`
-	StringAttr          string   `xml:"string,attr,omitempty"`
-	CellAttr            string   `xml:"cell,attr,omitempty"`
+	NameAttr            *string  `xml:"name,attr"`
+	SqlTypeAttr         *int     `xml:"sqlType,attr"`
+	ParameterTypeAttr   *string  `xml:"parameterType,attr"`
+	RefreshOnChangeAttr *bool    `xml:"refreshOnChange,attr"`
+	PromptAttr          *string  `xml:"prompt,attr"`
+	BooleanAttr         *bool    `xml:"boolean,attr"`
+	DoubleAttr          *float64 `xml:"double,attr"`
+	IntegerAttr         *int     `xml:"integer,attr"`
+	StringAttr          *string  `xml:"string,attr"`
+	CellAttr            *string  `xml:"cell,attr"`
 }
 
 // STParameterType ...
@@ -435,7 +435,7 @@ type STParameterType string
 // CTTables ...
 type CTTables struct {
 	XMLName   xml.Name            `xml:"CT_Tables"`
-	CountAttr uint32              `xml:"count,attr,omitempty"`
+	CountAttr *uint32             `xml:"count,attr"`
 	M         []*CTTableMissing   `xml:"m"`
 	S         []*CTXStringElement `xml:"s"`
 	X         []*CTIndex          `xml:"x"`
@@ -449,21 +449,21 @@ type CTTableMissing struct {
 // CTTextPr ...
 type CTTextPr struct {
 	XMLName          xml.Name      `xml:"CT_TextPr"`
-	PromptAttr       bool          `xml:"prompt,attr,omitempty"`
-	FileTypeAttr     string        `xml:"fileType,attr,omitempty"`
-	CharacterSetAttr string        `xml:"characterSet,attr,omitempty"`
-	FirstRowAttr     uint32        `xml:"firstRow,attr,omitempty"`
-	SourceFileAttr   string        `xml:"sourceFile,attr,omitempty"`
-	DelimitedAttr    bool          `xml:"delimited,attr,omitempty"`
-	DecimalAttr      string        `xml:"decimal,attr,omitempty"`
-	ThousandsAttr    string        `xml:"thousands,attr,omitempty"`
-	TabAttr          bool          `xml:"tab,attr,omitempty"`
-	SpaceAttr        bool          `xml:"space,attr,omitempty"`
-	CommaAttr        bool          `xml:"comma,attr,omitempty"`
-	SemicolonAttr    bool          `xml:"semicolon,attr,omitempty"`
-	ConsecutiveAttr  bool          `xml:"consecutive,attr,omitempty"`
-	QualifierAttr    string        `xml:"qualifier,attr,omitempty"`
-	DelimiterAttr    string        `xml:"delimiter,attr,omitempty"`
+	PromptAttr       *bool         `xml:"prompt,attr"`
+	FileTypeAttr     *string       `xml:"fileType,attr"`
+	CharacterSetAttr *string       `xml:"characterSet,attr"`
+	FirstRowAttr     *uint32       `xml:"firstRow,attr"`
+	SourceFileAttr   *string       `xml:"sourceFile,attr"`
+	DelimitedAttr    *bool         `xml:"delimited,attr"`
+	DecimalAttr      *string       `xml:"decimal,attr"`
+	ThousandsAttr    *string       `xml:"thousands,attr"`
+	TabAttr          *bool         `xml:"tab,attr"`
+	SpaceAttr        *bool         `xml:"space,attr"`
+	CommaAttr        *bool         `xml:"comma,attr"`
+	SemicolonAttr    *bool         `xml:"semicolon,attr"`
+	ConsecutiveAttr  *bool         `xml:"consecutive,attr"`
+	QualifierAttr    *string       `xml:"qualifier,attr"`
+	DelimiterAttr    *string       `xml:"delimiter,attr"`
 	TextFields       *CTTextFields `xml:"textFields,omitempty"`
 }
 
@@ -476,15 +476,15 @@ type STQualifier string
 // CTTextFields ...
 type CTTextFields struct {
 	XMLName   xml.Name       `xml:"CT_TextFields"`
-	CountAttr uint32         `xml:"count,attr,omitempty"`
+	CountAttr *uint32        `xml:"count,attr"`
 	TextField []*CTTextField `xml:"textField"`
 }
 
 // CTTextField ...
 type CTTextField struct {
 	XMLName      xml.Name `xml:"CT_TextField"`
-	TypeAttr     string   `xml:"type,attr,omitempty"`
-	PositionAttr uint32   `xml:"position,attr,omitempty"`
+	TypeAttr     *string  `xml:"type,attr"`
+	PositionAttr *uint32  `xml:"position,attr"`
 }
 
 // STExternalConnectionType ...
@@ -502,24 +502,24 @@ type PivotTableDefinition *CTPivotTableDefinition
 // CTPivotCacheDefinition ...
 type CTPivotCacheDefinition struct {
 	XMLName                   xml.Name                `xml:"CT_PivotCacheDefinition"`
-	RIdAttr                   string                  `xml:"r:id,attr,omitempty"`
-	InvalidAttr               bool                    `xml:"invalid,attr,omitempty"`
-	SaveDataAttr              bool                    `xml:"saveData,attr,omitempty"`
-	RefreshOnLoadAttr         bool                    `xml:"refreshOnLoad,attr,omitempty"`
-	OptimizeMemoryAttr        bool                    `xml:"optimizeMemory,attr,omitempty"`
-	EnableRefreshAttr         bool                    `xml:"enableRefresh,attr,omitempty"`
-	RefreshedByAttr           string                  `xml:"refreshedBy,attr,omitempty"`
-	RefreshedDateIsoAttr      string                  `xml:"refreshedDateIso,attr,omitempty"`
-	BackgroundQueryAttr       bool                    `xml:"backgroundQuery,attr,omitempty"`
-	MissingItemsLimitAttr     uint32                  `xml:"missingItemsLimit,attr,omitempty"`
-	CreatedVersionAttr        uint8                   `xml:"createdVersion,attr,omitempty"`
-	RefreshedVersionAttr      uint8                   `xml:"refreshedVersion,attr,omitempty"`
-	MinRefreshableVersionAttr uint8                   `xml:"minRefreshableVersion,attr,omitempty"`
-	RecordCountAttr           uint32                  `xml:"recordCount,attr,omitempty"`
-	UpgradeOnRefreshAttr      bool                    `xml:"upgradeOnRefresh,attr,omitempty"`
-	TupleCacheAttr            bool                    `xml:"tupleCache,attr,omitempty"`
-	SupportSubqueryAttr       bool                    `xml:"supportSubquery,attr,omitempty"`
-	SupportAdvancedDrillAttr  bool                    `xml:"supportAdvancedDrill,attr,omitempty"`
+	RIdAttr                   *string                 `xml:"r:id,attr"`
+	InvalidAttr               *bool                   `xml:"invalid,attr"`
+	SaveDataAttr              *bool                   `xml:"saveData,attr"`
+	RefreshOnLoadAttr         *bool                   `xml:"refreshOnLoad,attr"`
+	OptimizeMemoryAttr        *bool                   `xml:"optimizeMemory,attr"`
+	EnableRefreshAttr         *bool                   `xml:"enableRefresh,attr"`
+	RefreshedByAttr           *string                 `xml:"refreshedBy,attr"`
+	RefreshedDateIsoAttr      *string                 `xml:"refreshedDateIso,attr"`
+	BackgroundQueryAttr       *bool                   `xml:"backgroundQuery,attr"`
+	MissingItemsLimitAttr     *uint32                 `xml:"missingItemsLimit,attr"`
+	CreatedVersionAttr        *uint8                  `xml:"createdVersion,attr"`
+	RefreshedVersionAttr      *uint8                  `xml:"refreshedVersion,attr"`
+	MinRefreshableVersionAttr *uint8                  `xml:"minRefreshableVersion,attr"`
+	RecordCountAttr           *uint32                 `xml:"recordCount,attr"`
+	UpgradeOnRefreshAttr      *bool                   `xml:"upgradeOnRefresh,attr"`
+	TupleCacheAttr            *bool                   `xml:"tupleCache,attr"`
+	SupportSubqueryAttr       *bool                   `xml:"supportSubquery,attr"`
+	SupportAdvancedDrillAttr  *bool                   `xml:"supportAdvancedDrill,attr"`
 	CacheSource               *CTCacheSource          `xml:"cacheSource"`
 	CacheFields               *CTCacheFields          `xml:"cacheFields"`
 	CacheHierarchies          *CTCacheHierarchies     `xml:"cacheHierarchies,omitempty"`
@@ -536,7 +536,7 @@ type CTPivotCacheDefinition struct {
 // CTCacheFields ...
 type CTCacheFields struct {
 	XMLName    xml.Name        `xml:"CT_CacheFields"`
-	CountAttr  uint32          `xml:"count,attr,omitempty"`
+	CountAttr  *uint32         `xml:"count,attr"`
 	CacheField []*CTCacheField `xml:"cacheField,omitempty"`
 }
 
@@ -544,18 +544,18 @@ type CTCacheFields struct {
 type CTCacheField struct {
 	XMLName                 xml.Name         `xml:"CT_CacheField"`
 	NameAttr                string           `xml:"name,attr"`
-	CaptionAttr             string           `xml:"caption,attr,omitempty"`
-	PropertyNameAttr        string           `xml:"propertyName,attr,omitempty"`
-	ServerFieldAttr         bool             `xml:"serverField,attr,omitempty"`
-	UniqueListAttr          bool             `xml:"uniqueList,attr,omitempty"`
-	NumFmtIdAttr            uint32           `xml:"numFmtId,attr,omitempty"`
-	FormulaAttr             string           `xml:"formula,attr,omitempty"`
-	SqlTypeAttr             int              `xml:"sqlType,attr,omitempty"`
-	HierarchyAttr           int              `xml:"hierarchy,attr,omitempty"`
-	LevelAttr               uint32           `xml:"level,attr,omitempty"`
-	DatabaseFieldAttr       bool             `xml:"databaseField,attr,omitempty"`
-	MappingCountAttr        uint32           `xml:"mappingCount,attr,omitempty"`
-	MemberPropertyFieldAttr bool             `xml:"memberPropertyField,attr,omitempty"`
+	CaptionAttr             *string          `xml:"caption,attr"`
+	PropertyNameAttr        *string          `xml:"propertyName,attr"`
+	ServerFieldAttr         *bool            `xml:"serverField,attr"`
+	UniqueListAttr          *bool            `xml:"uniqueList,attr"`
+	NumFmtIdAttr            *uint32          `xml:"numFmtId,attr"`
+	FormulaAttr             *string          `xml:"formula,attr"`
+	SqlTypeAttr             *int             `xml:"sqlType,attr"`
+	HierarchyAttr           *int             `xml:"hierarchy,attr"`
+	LevelAttr               *uint32          `xml:"level,attr"`
+	DatabaseFieldAttr       *bool            `xml:"databaseField,attr"`
+	MappingCountAttr        *uint32          `xml:"mappingCount,attr"`
+	MemberPropertyFieldAttr *bool            `xml:"memberPropertyField,attr"`
 	SharedItems             *CTSharedItems   `xml:"sharedItems,omitempty"`
 	FieldGroup              *CTFieldGroup    `xml:"fieldGroup,omitempty"`
 	MpMap                   []*CTX           `xml:"mpMap,omitempty"`
@@ -566,7 +566,7 @@ type CTCacheField struct {
 type CTCacheSource struct {
 	XMLName          xml.Name           `xml:"CT_CacheSource"`
 	TypeAttr         string             `xml:"type,attr"`
-	ConnectionIdAttr uint32             `xml:"connectionId,attr,omitempty"`
+	ConnectionIdAttr *uint32            `xml:"connectionId,attr"`
 	WorksheetSource  *CTWorksheetSource `xml:"worksheetSource"`
 	Consolidation    *CTConsolidation   `xml:"consolidation"`
 	ExtLst           *CTExtensionList   `xml:"extLst,omitempty"`
@@ -578,16 +578,16 @@ type STSourceType string
 // CTWorksheetSource ...
 type CTWorksheetSource struct {
 	XMLName   xml.Name `xml:"CT_WorksheetSource"`
-	RefAttr   string   `xml:"ref,attr,omitempty"`
-	NameAttr  string   `xml:"name,attr,omitempty"`
-	SheetAttr string   `xml:"sheet,attr,omitempty"`
-	RIdAttr   string   `xml:"r:id,attr,omitempty"`
+	RefAttr   *string  `xml:"ref,attr"`
+	NameAttr  *string  `xml:"name,attr"`
+	SheetAttr *string  `xml:"sheet,attr"`
+	RIdAttr   *string  `xml:"r:id,attr"`
 }
 
 // CTConsolidation ...
 type CTConsolidation struct {
 	XMLName      xml.Name     `xml:"CT_Consolidation"`
-	AutoPageAttr bool         `xml:"autoPage,attr,omitempty"`
+	AutoPageAttr *bool        `xml:"autoPage,attr"`
 	Pages        *CTPages     `xml:"pages,omitempty"`
 	RangeSets    *CTRangeSets `xml:"rangeSets"`
 }
@@ -595,14 +595,14 @@ type CTConsolidation struct {
 // CTPages ...
 type CTPages struct {
 	XMLName   xml.Name       `xml:"CT_Pages"`
-	CountAttr uint32         `xml:"count,attr,omitempty"`
+	CountAttr *uint32        `xml:"count,attr"`
 	Page      []*CTPCDSCPage `xml:"page"`
 }
 
 // CTPCDSCPage ...
 type CTPCDSCPage struct {
 	XMLName   xml.Name      `xml:"CT_PCDSCPage"`
-	CountAttr uint32        `xml:"count,attr,omitempty"`
+	CountAttr *uint32       `xml:"count,attr"`
 	PageItem  []*CTPageItem `xml:"pageItem,omitempty"`
 }
 
@@ -615,40 +615,40 @@ type CTPageItem struct {
 // CTRangeSets ...
 type CTRangeSets struct {
 	XMLName   xml.Name      `xml:"CT_RangeSets"`
-	CountAttr uint32        `xml:"count,attr,omitempty"`
+	CountAttr *uint32       `xml:"count,attr"`
 	RangeSet  []*CTRangeSet `xml:"rangeSet"`
 }
 
 // CTRangeSet ...
 type CTRangeSet struct {
 	XMLName   xml.Name `xml:"CT_RangeSet"`
-	I1Attr    uint32   `xml:"i1,attr,omitempty"`
-	I2Attr    uint32   `xml:"i2,attr,omitempty"`
-	I3Attr    uint32   `xml:"i3,attr,omitempty"`
-	I4Attr    uint32   `xml:"i4,attr,omitempty"`
-	RefAttr   string   `xml:"ref,attr,omitempty"`
-	NameAttr  string   `xml:"name,attr,omitempty"`
-	SheetAttr string   `xml:"sheet,attr,omitempty"`
-	RIdAttr   string   `xml:"r:id,attr,omitempty"`
+	I1Attr    *uint32  `xml:"i1,attr"`
+	I2Attr    *uint32  `xml:"i2,attr"`
+	I3Attr    *uint32  `xml:"i3,attr"`
+	I4Attr    *uint32  `xml:"i4,attr"`
+	RefAttr   *string  `xml:"ref,attr"`
+	NameAttr  *string  `xml:"name,attr"`
+	SheetAttr *string  `xml:"sheet,attr"`
+	RIdAttr   *string  `xml:"r:id,attr"`
 }
 
 // CTSharedItems ...
 type CTSharedItems struct {
 	XMLName                    xml.Name      `xml:"CT_SharedItems"`
-	ContainsSemiMixedTypesAttr bool          `xml:"containsSemiMixedTypes,attr,omitempty"`
-	ContainsNonDateAttr        bool          `xml:"containsNonDate,attr,omitempty"`
-	ContainsDateAttr           bool          `xml:"containsDate,attr,omitempty"`
-	ContainsStringAttr         bool          `xml:"containsString,attr,omitempty"`
-	ContainsBlankAttr          bool          `xml:"containsBlank,attr,omitempty"`
-	ContainsMixedTypesAttr     bool          `xml:"containsMixedTypes,attr,omitempty"`
-	ContainsNumberAttr         bool          `xml:"containsNumber,attr,omitempty"`
-	ContainsIntegerAttr        bool          `xml:"containsInteger,attr,omitempty"`
-	MinValueAttr               float64       `xml:"minValue,attr,omitempty"`
-	MaxValueAttr               float64       `xml:"maxValue,attr,omitempty"`
-	MinDateAttr                string        `xml:"minDate,attr,omitempty"`
-	MaxDateAttr                string        `xml:"maxDate,attr,omitempty"`
-	CountAttr                  uint32        `xml:"count,attr,omitempty"`
-	LongTextAttr               bool          `xml:"longText,attr,omitempty"`
+	ContainsSemiMixedTypesAttr *bool         `xml:"containsSemiMixedTypes,attr"`
+	ContainsNonDateAttr        *bool         `xml:"containsNonDate,attr"`
+	ContainsDateAttr           *bool         `xml:"containsDate,attr"`
+	ContainsStringAttr         *bool         `xml:"containsString,attr"`
+	ContainsBlankAttr          *bool         `xml:"containsBlank,attr"`
+	ContainsMixedTypesAttr     *bool         `xml:"containsMixedTypes,attr"`
+	ContainsNumberAttr         *bool         `xml:"containsNumber,attr"`
+	ContainsIntegerAttr        *bool         `xml:"containsInteger,attr"`
+	MinValueAttr               *float64      `xml:"minValue,attr"`
+	MaxValueAttr               *float64      `xml:"maxValue,attr"`
+	MinDateAttr                *string       `xml:"minDate,attr"`
+	MaxDateAttr                *string       `xml:"maxDate,attr"`
+	CountAttr                  *uint32       `xml:"count,attr"`
+	LongTextAttr               *bool         `xml:"longText,attr"`
 	M                          []*CTMissing  `xml:"m"`
 	N                          []*CTNumber   `xml:"n"`
 	B                          []*CTBoolean  `xml:"b"`
@@ -660,17 +660,17 @@ type CTSharedItems struct {
 // CTMissing ...
 type CTMissing struct {
 	XMLName xml.Name    `xml:"CT_Missing"`
-	UAttr   bool        `xml:"u,attr,omitempty"`
-	FAttr   bool        `xml:"f,attr,omitempty"`
-	CAttr   string      `xml:"c,attr,omitempty"`
-	CpAttr  uint32      `xml:"cp,attr,omitempty"`
-	InAttr  uint32      `xml:"in,attr,omitempty"`
-	BcAttr  string      `xml:"bc,attr,omitempty"`
-	FcAttr  string      `xml:"fc,attr,omitempty"`
-	IAttr   bool        `xml:"i,attr,omitempty"`
-	UnAttr  bool        `xml:"un,attr,omitempty"`
-	StAttr  bool        `xml:"st,attr,omitempty"`
-	BAttr   bool        `xml:"b,attr,omitempty"`
+	UAttr   *bool       `xml:"u,attr"`
+	FAttr   *bool       `xml:"f,attr"`
+	CAttr   *string     `xml:"c,attr"`
+	CpAttr  *uint32     `xml:"cp,attr"`
+	InAttr  *uint32     `xml:"in,attr"`
+	BcAttr  *string     `xml:"bc,attr"`
+	FcAttr  *string     `xml:"fc,attr"`
+	IAttr   *bool       `xml:"i,attr"`
+	UnAttr  *bool       `xml:"un,attr"`
+	StAttr  *bool       `xml:"st,attr"`
+	BAttr   *bool       `xml:"b,attr"`
 	Tpls    []*CTTuples `xml:"tpls,omitempty"`
 	X       []*CTX      `xml:"x,omitempty"`
 }
@@ -679,17 +679,17 @@ type CTMissing struct {
 type CTNumber struct {
 	XMLName xml.Name    `xml:"CT_Number"`
 	VAttr   float64     `xml:"v,attr"`
-	UAttr   bool        `xml:"u,attr,omitempty"`
-	FAttr   bool        `xml:"f,attr,omitempty"`
-	CAttr   string      `xml:"c,attr,omitempty"`
-	CpAttr  uint32      `xml:"cp,attr,omitempty"`
-	InAttr  uint32      `xml:"in,attr,omitempty"`
-	BcAttr  string      `xml:"bc,attr,omitempty"`
-	FcAttr  string      `xml:"fc,attr,omitempty"`
-	IAttr   bool        `xml:"i,attr,omitempty"`
-	UnAttr  bool        `xml:"un,attr,omitempty"`
-	StAttr  bool        `xml:"st,attr,omitempty"`
-	BAttr   bool        `xml:"b,attr,omitempty"`
+	UAttr   *bool       `xml:"u,attr"`
+	FAttr   *bool       `xml:"f,attr"`
+	CAttr   *string     `xml:"c,attr"`
+	CpAttr  *uint32     `xml:"cp,attr"`
+	InAttr  *uint32     `xml:"in,attr"`
+	BcAttr  *string     `xml:"bc,attr"`
+	FcAttr  *string     `xml:"fc,attr"`
+	IAttr   *bool       `xml:"i,attr"`
+	UnAttr  *bool       `xml:"un,attr"`
+	StAttr  *bool       `xml:"st,attr"`
+	BAttr   *bool       `xml:"b,attr"`
 	Tpls    []*CTTuples `xml:"tpls,omitempty"`
 	X       []*CTX      `xml:"x,omitempty"`
 }
@@ -698,10 +698,10 @@ type CTNumber struct {
 type CTBoolean struct {
 	XMLName xml.Name `xml:"CT_Boolean"`
 	VAttr   bool     `xml:"v,attr"`
-	UAttr   bool     `xml:"u,attr,omitempty"`
-	FAttr   bool     `xml:"f,attr,omitempty"`
-	CAttr   string   `xml:"c,attr,omitempty"`
-	CpAttr  uint32   `xml:"cp,attr,omitempty"`
+	UAttr   *bool    `xml:"u,attr"`
+	FAttr   *bool    `xml:"f,attr"`
+	CAttr   *string  `xml:"c,attr"`
+	CpAttr  *uint32  `xml:"cp,attr"`
 	X       []*CTX   `xml:"x,omitempty"`
 }
 
@@ -709,17 +709,17 @@ type CTBoolean struct {
 type CTError struct {
 	XMLName xml.Name  `xml:"CT_Error"`
 	VAttr   string    `xml:"v,attr"`
-	UAttr   bool      `xml:"u,attr,omitempty"`
-	FAttr   bool      `xml:"f,attr,omitempty"`
-	CAttr   string    `xml:"c,attr,omitempty"`
-	CpAttr  uint32    `xml:"cp,attr,omitempty"`
-	InAttr  uint32    `xml:"in,attr,omitempty"`
-	BcAttr  string    `xml:"bc,attr,omitempty"`
-	FcAttr  string    `xml:"fc,attr,omitempty"`
-	IAttr   bool      `xml:"i,attr,omitempty"`
-	UnAttr  bool      `xml:"un,attr,omitempty"`
-	StAttr  bool      `xml:"st,attr,omitempty"`
-	BAttr   bool      `xml:"b,attr,omitempty"`
+	UAttr   *bool     `xml:"u,attr"`
+	FAttr   *bool     `xml:"f,attr"`
+	CAttr   *string   `xml:"c,attr"`
+	CpAttr  *uint32   `xml:"cp,attr"`
+	InAttr  *uint32   `xml:"in,attr"`
+	BcAttr  *string   `xml:"bc,attr"`
+	FcAttr  *string   `xml:"fc,attr"`
+	IAttr   *bool     `xml:"i,attr"`
+	UnAttr  *bool     `xml:"un,attr"`
+	StAttr  *bool     `xml:"st,attr"`
+	BAttr   *bool     `xml:"b,attr"`
 	Tpls    *CTTuples `xml:"tpls,omitempty"`
 	X       []*CTX    `xml:"x,omitempty"`
 }
@@ -728,17 +728,17 @@ type CTError struct {
 type CTString struct {
 	XMLName xml.Name    `xml:"CT_String"`
 	VAttr   string      `xml:"v,attr"`
-	UAttr   bool        `xml:"u,attr,omitempty"`
-	FAttr   bool        `xml:"f,attr,omitempty"`
-	CAttr   string      `xml:"c,attr,omitempty"`
-	CpAttr  uint32      `xml:"cp,attr,omitempty"`
-	InAttr  uint32      `xml:"in,attr,omitempty"`
-	BcAttr  string      `xml:"bc,attr,omitempty"`
-	FcAttr  string      `xml:"fc,attr,omitempty"`
-	IAttr   bool        `xml:"i,attr,omitempty"`
-	UnAttr  bool        `xml:"un,attr,omitempty"`
-	StAttr  bool        `xml:"st,attr,omitempty"`
-	BAttr   bool        `xml:"b,attr,omitempty"`
+	UAttr   *bool       `xml:"u,attr"`
+	FAttr   *bool       `xml:"f,attr"`
+	CAttr   *string     `xml:"c,attr"`
+	CpAttr  *uint32     `xml:"cp,attr"`
+	InAttr  *uint32     `xml:"in,attr"`
+	BcAttr  *string     `xml:"bc,attr"`
+	FcAttr  *string     `xml:"fc,attr"`
+	IAttr   *bool       `xml:"i,attr"`
+	UnAttr  *bool       `xml:"un,attr"`
+	StAttr  *bool       `xml:"st,attr"`
+	BAttr   *bool       `xml:"b,attr"`
 	Tpls    []*CTTuples `xml:"tpls,omitempty"`
 	X       []*CTX      `xml:"x,omitempty"`
 }
@@ -747,18 +747,18 @@ type CTString struct {
 type CTDateTime struct {
 	XMLName xml.Name `xml:"CT_DateTime"`
 	VAttr   string   `xml:"v,attr"`
-	UAttr   bool     `xml:"u,attr,omitempty"`
-	FAttr   bool     `xml:"f,attr,omitempty"`
-	CAttr   string   `xml:"c,attr,omitempty"`
-	CpAttr  uint32   `xml:"cp,attr,omitempty"`
+	UAttr   *bool    `xml:"u,attr"`
+	FAttr   *bool    `xml:"f,attr"`
+	CAttr   *string  `xml:"c,attr"`
+	CpAttr  *uint32  `xml:"cp,attr"`
 	X       []*CTX   `xml:"x,omitempty"`
 }
 
 // CTFieldGroup ...
 type CTFieldGroup struct {
 	XMLName    xml.Name      `xml:"CT_FieldGroup"`
-	ParAttr    uint32        `xml:"par,attr,omitempty"`
-	BaseAttr   uint32        `xml:"base,attr,omitempty"`
+	ParAttr    *uint32       `xml:"par,attr"`
+	BaseAttr   *uint32       `xml:"base,attr"`
 	RangePr    *CTRangePr    `xml:"rangePr,omitempty"`
 	DiscretePr *CTDiscretePr `xml:"discretePr,omitempty"`
 	GroupItems *CTGroupItems `xml:"groupItems,omitempty"`
@@ -767,14 +767,14 @@ type CTFieldGroup struct {
 // CTRangePr ...
 type CTRangePr struct {
 	XMLName           xml.Name `xml:"CT_RangePr"`
-	AutoStartAttr     bool     `xml:"autoStart,attr,omitempty"`
-	AutoEndAttr       bool     `xml:"autoEnd,attr,omitempty"`
-	GroupByAttr       string   `xml:"groupBy,attr,omitempty"`
-	StartNumAttr      float64  `xml:"startNum,attr,omitempty"`
-	EndNumAttr        float64  `xml:"endNum,attr,omitempty"`
-	StartDateAttr     string   `xml:"startDate,attr,omitempty"`
-	EndDateAttr       string   `xml:"endDate,attr,omitempty"`
-	GroupIntervalAttr float64  `xml:"groupInterval,attr,omitempty"`
+	AutoStartAttr     *bool    `xml:"autoStart,attr"`
+	AutoEndAttr       *bool    `xml:"autoEnd,attr"`
+	GroupByAttr       *string  `xml:"groupBy,attr"`
+	StartNumAttr      *float64 `xml:"startNum,attr"`
+	EndNumAttr        *float64 `xml:"endNum,attr"`
+	StartDateAttr     *string  `xml:"startDate,attr"`
+	EndDateAttr       *string  `xml:"endDate,attr"`
+	GroupIntervalAttr *float64 `xml:"groupInterval,attr"`
 }
 
 // STGroupBy ...
@@ -783,14 +783,14 @@ type STGroupBy string
 // CTDiscretePr ...
 type CTDiscretePr struct {
 	XMLName   xml.Name   `xml:"CT_DiscretePr"`
-	CountAttr uint32     `xml:"count,attr,omitempty"`
+	CountAttr *uint32    `xml:"count,attr"`
 	X         []*CTIndex `xml:"x"`
 }
 
 // CTGroupItems ...
 type CTGroupItems struct {
 	XMLName   xml.Name      `xml:"CT_GroupItems"`
-	CountAttr uint32        `xml:"count,attr,omitempty"`
+	CountAttr *uint32       `xml:"count,attr"`
 	M         []*CTMissing  `xml:"m"`
 	N         []*CTNumber   `xml:"n"`
 	B         []*CTBoolean  `xml:"b"`
@@ -802,7 +802,7 @@ type CTGroupItems struct {
 // CTPivotCacheRecords ...
 type CTPivotCacheRecords struct {
 	XMLName   xml.Name         `xml:"CT_PivotCacheRecords"`
-	CountAttr uint32           `xml:"count,attr,omitempty"`
+	CountAttr *uint32          `xml:"count,attr"`
 	R         []*CTRecord      `xml:"r,omitempty"`
 	ExtLst    *CTExtensionList `xml:"extLst,omitempty"`
 }
@@ -822,7 +822,7 @@ type CTRecord struct {
 // CTPCDKPIs ...
 type CTPCDKPIs struct {
 	XMLName   xml.Name    `xml:"CT_PCDKPIs"`
-	CountAttr uint32      `xml:"count,attr,omitempty"`
+	CountAttr *uint32     `xml:"count,attr"`
 	Kpi       []*CTPCDKPI `xml:"kpi,omitempty"`
 }
 
@@ -830,22 +830,22 @@ type CTPCDKPIs struct {
 type CTPCDKPI struct {
 	XMLName           xml.Name `xml:"CT_PCDKPI"`
 	UniqueNameAttr    string   `xml:"uniqueName,attr"`
-	CaptionAttr       string   `xml:"caption,attr,omitempty"`
-	DisplayFolderAttr string   `xml:"displayFolder,attr,omitempty"`
-	MeasureGroupAttr  string   `xml:"measureGroup,attr,omitempty"`
-	ParentAttr        string   `xml:"parent,attr,omitempty"`
+	CaptionAttr       *string  `xml:"caption,attr"`
+	DisplayFolderAttr *string  `xml:"displayFolder,attr"`
+	MeasureGroupAttr  *string  `xml:"measureGroup,attr"`
+	ParentAttr        *string  `xml:"parent,attr"`
 	ValueAttr         string   `xml:"value,attr"`
-	GoalAttr          string   `xml:"goal,attr,omitempty"`
-	StatusAttr        string   `xml:"status,attr,omitempty"`
-	TrendAttr         string   `xml:"trend,attr,omitempty"`
-	WeightAttr        string   `xml:"weight,attr,omitempty"`
-	TimeAttr          string   `xml:"time,attr,omitempty"`
+	GoalAttr          *string  `xml:"goal,attr"`
+	StatusAttr        *string  `xml:"status,attr"`
+	TrendAttr         *string  `xml:"trend,attr"`
+	WeightAttr        *string  `xml:"weight,attr"`
+	TimeAttr          *string  `xml:"time,attr"`
 }
 
 // CTCacheHierarchies ...
 type CTCacheHierarchies struct {
 	XMLName        xml.Name            `xml:"CT_CacheHierarchies"`
-	CountAttr      uint32              `xml:"count,attr,omitempty"`
+	CountAttr      *uint32             `xml:"count,attr"`
 	CacheHierarchy []*CTCacheHierarchy `xml:"cacheHierarchy,omitempty"`
 }
 
@@ -853,27 +853,27 @@ type CTCacheHierarchies struct {
 type CTCacheHierarchy struct {
 	XMLName                     xml.Name         `xml:"CT_CacheHierarchy"`
 	UniqueNameAttr              string           `xml:"uniqueName,attr"`
-	CaptionAttr                 string           `xml:"caption,attr,omitempty"`
-	MeasureAttr                 bool             `xml:"measure,attr,omitempty"`
-	SetAttr                     bool             `xml:"set,attr,omitempty"`
-	ParentSetAttr               uint32           `xml:"parentSet,attr,omitempty"`
-	IconSetAttr                 int              `xml:"iconSet,attr,omitempty"`
-	AttributeAttr               bool             `xml:"attribute,attr,omitempty"`
-	TimeAttr                    bool             `xml:"time,attr,omitempty"`
-	KeyAttributeAttr            bool             `xml:"keyAttribute,attr,omitempty"`
-	DefaultMemberUniqueNameAttr string           `xml:"defaultMemberUniqueName,attr,omitempty"`
-	AllUniqueNameAttr           string           `xml:"allUniqueName,attr,omitempty"`
-	AllCaptionAttr              string           `xml:"allCaption,attr,omitempty"`
-	DimensionUniqueNameAttr     string           `xml:"dimensionUniqueName,attr,omitempty"`
-	DisplayFolderAttr           string           `xml:"displayFolder,attr,omitempty"`
-	MeasureGroupAttr            string           `xml:"measureGroup,attr,omitempty"`
-	MeasuresAttr                bool             `xml:"measures,attr,omitempty"`
+	CaptionAttr                 *string          `xml:"caption,attr"`
+	MeasureAttr                 *bool            `xml:"measure,attr"`
+	SetAttr                     *bool            `xml:"set,attr"`
+	ParentSetAttr               *uint32          `xml:"parentSet,attr"`
+	IconSetAttr                 *int             `xml:"iconSet,attr"`
+	AttributeAttr               *bool            `xml:"attribute,attr"`
+	TimeAttr                    *bool            `xml:"time,attr"`
+	KeyAttributeAttr            *bool            `xml:"keyAttribute,attr"`
+	DefaultMemberUniqueNameAttr *string          `xml:"defaultMemberUniqueName,attr"`
+	AllUniqueNameAttr           *string          `xml:"allUniqueName,attr"`
+	AllCaptionAttr              *string          `xml:"allCaption,attr"`
+	DimensionUniqueNameAttr     *string          `xml:"dimensionUniqueName,attr"`
+	DisplayFolderAttr           *string          `xml:"displayFolder,attr"`
+	MeasureGroupAttr            *string          `xml:"measureGroup,attr"`
+	MeasuresAttr                *bool            `xml:"measures,attr"`
 	CountAttr                   uint32           `xml:"count,attr"`
-	OneFieldAttr                bool             `xml:"oneField,attr,omitempty"`
-	MemberValueDatatypeAttr     uint16           `xml:"memberValueDatatype,attr,omitempty"`
-	UnbalancedAttr              bool             `xml:"unbalanced,attr,omitempty"`
-	UnbalancedGroupAttr         bool             `xml:"unbalancedGroup,attr,omitempty"`
-	HiddenAttr                  bool             `xml:"hidden,attr,omitempty"`
+	OneFieldAttr                *bool            `xml:"oneField,attr"`
+	MemberValueDatatypeAttr     *uint16          `xml:"memberValueDatatype,attr"`
+	UnbalancedAttr              *bool            `xml:"unbalanced,attr"`
+	UnbalancedGroupAttr         *bool            `xml:"unbalancedGroup,attr"`
+	HiddenAttr                  *bool            `xml:"hidden,attr"`
 	FieldsUsage                 *CTFieldsUsage   `xml:"fieldsUsage,omitempty"`
 	GroupLevels                 *CTGroupLevels   `xml:"groupLevels,omitempty"`
 	ExtLst                      *CTExtensionList `xml:"extLst,omitempty"`
@@ -882,7 +882,7 @@ type CTCacheHierarchy struct {
 // CTFieldsUsage ...
 type CTFieldsUsage struct {
 	XMLName    xml.Name        `xml:"CT_FieldsUsage"`
-	CountAttr  uint32          `xml:"count,attr,omitempty"`
+	CountAttr  *uint32         `xml:"count,attr"`
 	FieldUsage []*CTFieldUsage `xml:"fieldUsage,omitempty"`
 }
 
@@ -895,7 +895,7 @@ type CTFieldUsage struct {
 // CTGroupLevels ...
 type CTGroupLevels struct {
 	XMLName    xml.Name        `xml:"CT_GroupLevels"`
-	CountAttr  uint32          `xml:"count,attr,omitempty"`
+	CountAttr  *uint32         `xml:"count,attr"`
 	GroupLevel []*CTGroupLevel `xml:"groupLevel"`
 }
 
@@ -904,8 +904,8 @@ type CTGroupLevel struct {
 	XMLName          xml.Name         `xml:"CT_GroupLevel"`
 	UniqueNameAttr   string           `xml:"uniqueName,attr"`
 	CaptionAttr      string           `xml:"caption,attr"`
-	UserAttr         bool             `xml:"user,attr,omitempty"`
-	CustomRollUpAttr bool             `xml:"customRollUp,attr,omitempty"`
+	UserAttr         *bool            `xml:"user,attr"`
+	CustomRollUpAttr *bool            `xml:"customRollUp,attr"`
 	Groups           *CTGroups        `xml:"groups,omitempty"`
 	ExtLst           *CTExtensionList `xml:"extLst,omitempty"`
 }
@@ -913,7 +913,7 @@ type CTGroupLevel struct {
 // CTGroups ...
 type CTGroups struct {
 	XMLName   xml.Name        `xml:"CT_Groups"`
-	CountAttr uint32          `xml:"count,attr,omitempty"`
+	CountAttr *uint32         `xml:"count,attr"`
 	Group     []*CTLevelGroup `xml:"group"`
 }
 
@@ -923,15 +923,15 @@ type CTLevelGroup struct {
 	NameAttr         string          `xml:"name,attr"`
 	UniqueNameAttr   string          `xml:"uniqueName,attr"`
 	CaptionAttr      string          `xml:"caption,attr"`
-	UniqueParentAttr string          `xml:"uniqueParent,attr,omitempty"`
-	IdAttr           int             `xml:"id,attr,omitempty"`
+	UniqueParentAttr *string         `xml:"uniqueParent,attr"`
+	IdAttr           *int            `xml:"id,attr"`
 	GroupMembers     *CTGroupMembers `xml:"groupMembers"`
 }
 
 // CTGroupMembers ...
 type CTGroupMembers struct {
 	XMLName     xml.Name         `xml:"CT_GroupMembers"`
-	CountAttr   uint32           `xml:"count,attr,omitempty"`
+	CountAttr   *uint32          `xml:"count,attr"`
 	GroupMember []*CTGroupMember `xml:"groupMember"`
 }
 
@@ -939,7 +939,7 @@ type CTGroupMembers struct {
 type CTGroupMember struct {
 	XMLName        xml.Name `xml:"CT_GroupMember"`
 	UniqueNameAttr string   `xml:"uniqueName,attr"`
-	GroupAttr      bool     `xml:"group,attr,omitempty"`
+	GroupAttr      *bool    `xml:"group,attr"`
 }
 
 // CTTupleCache ...
@@ -955,21 +955,21 @@ type CTTupleCache struct {
 // CTServerFormat ...
 type CTServerFormat struct {
 	XMLName     xml.Name `xml:"CT_ServerFormat"`
-	CultureAttr string   `xml:"culture,attr,omitempty"`
-	FormatAttr  string   `xml:"format,attr,omitempty"`
+	CultureAttr *string  `xml:"culture,attr"`
+	FormatAttr  *string  `xml:"format,attr"`
 }
 
 // CTServerFormats ...
 type CTServerFormats struct {
 	XMLName      xml.Name          `xml:"CT_ServerFormats"`
-	CountAttr    uint32            `xml:"count,attr,omitempty"`
+	CountAttr    *uint32           `xml:"count,attr"`
 	ServerFormat []*CTServerFormat `xml:"serverFormat,omitempty"`
 }
 
 // CTPCDSDTCEntries ...
 type CTPCDSDTCEntries struct {
 	XMLName   xml.Name     `xml:"CT_PCDSDTCEntries"`
-	CountAttr uint32       `xml:"count,attr,omitempty"`
+	CountAttr *uint32      `xml:"count,attr"`
 	M         []*CTMissing `xml:"m"`
 	N         []*CTNumber  `xml:"n"`
 	E         []*CTError   `xml:"e"`
@@ -979,33 +979,33 @@ type CTPCDSDTCEntries struct {
 // CTTuples ...
 type CTTuples struct {
 	XMLName xml.Name   `xml:"CT_Tuples"`
-	CAttr   uint32     `xml:"c,attr,omitempty"`
+	CAttr   *uint32    `xml:"c,attr"`
 	Tpl     []*CTTuple `xml:"tpl"`
 }
 
 // CTTuple ...
 type CTTuple struct {
 	XMLName  xml.Name `xml:"CT_Tuple"`
-	FldAttr  uint32   `xml:"fld,attr,omitempty"`
-	HierAttr uint32   `xml:"hier,attr,omitempty"`
+	FldAttr  *uint32  `xml:"fld,attr"`
+	HierAttr *uint32  `xml:"hier,attr"`
 	ItemAttr uint32   `xml:"item,attr"`
 }
 
 // CTSets ...
 type CTSets struct {
 	XMLName   xml.Name `xml:"CT_Sets"`
-	CountAttr uint32   `xml:"count,attr,omitempty"`
+	CountAttr *uint32  `xml:"count,attr"`
 	Set       []*CTSet `xml:"set"`
 }
 
 // CTSet ...
 type CTSet struct {
 	XMLName           xml.Name    `xml:"CT_Set"`
-	CountAttr         uint32      `xml:"count,attr,omitempty"`
+	CountAttr         *uint32     `xml:"count,attr"`
 	MaxRankAttr       int         `xml:"maxRank,attr"`
 	SetDefinitionAttr string      `xml:"setDefinition,attr"`
-	SortTypeAttr      string      `xml:"sortType,attr,omitempty"`
-	QueryFailedAttr   bool        `xml:"queryFailed,attr,omitempty"`
+	SortTypeAttr      *string     `xml:"sortType,attr"`
+	QueryFailedAttr   *bool       `xml:"queryFailed,attr"`
 	Tpls              []*CTTuples `xml:"tpls,omitempty"`
 	SortByTuple       *CTTuples   `xml:"sortByTuple,omitempty"`
 }
@@ -1016,7 +1016,7 @@ type STSortType string
 // CTQueryCache ...
 type CTQueryCache struct {
 	XMLName   xml.Name   `xml:"CT_QueryCache"`
-	CountAttr uint32     `xml:"count,attr,omitempty"`
+	CountAttr *uint32    `xml:"count,attr"`
 	Query     []*CTQuery `xml:"query"`
 }
 
@@ -1030,15 +1030,15 @@ type CTQuery struct {
 // CTCalculatedItems ...
 type CTCalculatedItems struct {
 	XMLName        xml.Name            `xml:"CT_CalculatedItems"`
-	CountAttr      uint32              `xml:"count,attr,omitempty"`
+	CountAttr      *uint32             `xml:"count,attr"`
 	CalculatedItem []*CTCalculatedItem `xml:"calculatedItem"`
 }
 
 // CTCalculatedItem ...
 type CTCalculatedItem struct {
 	XMLName     xml.Name         `xml:"CT_CalculatedItem"`
-	FieldAttr   uint32           `xml:"field,attr,omitempty"`
-	FormulaAttr string           `xml:"formula,attr,omitempty"`
+	FieldAttr   *uint32          `xml:"field,attr"`
+	FormulaAttr *string          `xml:"formula,attr"`
 	PivotArea   *CTPivotArea     `xml:"pivotArea"`
 	ExtLst      *CTExtensionList `xml:"extLst,omitempty"`
 }
@@ -1046,7 +1046,7 @@ type CTCalculatedItem struct {
 // CTCalculatedMembers ...
 type CTCalculatedMembers struct {
 	XMLName          xml.Name              `xml:"CT_CalculatedMembers"`
-	CountAttr        uint32                `xml:"count,attr,omitempty"`
+	CountAttr        *uint32               `xml:"count,attr"`
 	CalculatedMember []*CTCalculatedMember `xml:"calculatedMember"`
 }
 
@@ -1055,11 +1055,11 @@ type CTCalculatedMember struct {
 	XMLName        xml.Name         `xml:"CT_CalculatedMember"`
 	NameAttr       string           `xml:"name,attr"`
 	MdxAttr        string           `xml:"mdx,attr"`
-	MemberNameAttr string           `xml:"memberName,attr,omitempty"`
-	HierarchyAttr  string           `xml:"hierarchy,attr,omitempty"`
-	ParentAttr     string           `xml:"parent,attr,omitempty"`
-	SolveOrderAttr int              `xml:"solveOrder,attr,omitempty"`
-	SetAttr        bool             `xml:"set,attr,omitempty"`
+	MemberNameAttr *string          `xml:"memberName,attr"`
+	HierarchyAttr  *string          `xml:"hierarchy,attr"`
+	ParentAttr     *string          `xml:"parent,attr"`
+	SolveOrderAttr *int             `xml:"solveOrder,attr"`
+	SetAttr        *bool            `xml:"set,attr"`
 	ExtLst         *CTExtensionList `xml:"extLst,omitempty"`
 }
 
@@ -1069,65 +1069,65 @@ type CTPivotTableDefinition struct {
 	AGAutoFormat               *AGAutoFormat
 	NameAttr                   string                 `xml:"name,attr"`
 	CacheIdAttr                uint32                 `xml:"cacheId,attr"`
-	DataOnRowsAttr             bool                   `xml:"dataOnRows,attr,omitempty"`
-	DataPositionAttr           uint32                 `xml:"dataPosition,attr,omitempty"`
+	DataOnRowsAttr             *bool                  `xml:"dataOnRows,attr"`
+	DataPositionAttr           *uint32                `xml:"dataPosition,attr"`
 	DataCaptionAttr            string                 `xml:"dataCaption,attr"`
-	GrandTotalCaptionAttr      string                 `xml:"grandTotalCaption,attr,omitempty"`
-	ErrorCaptionAttr           string                 `xml:"errorCaption,attr,omitempty"`
-	ShowErrorAttr              bool                   `xml:"showError,attr,omitempty"`
-	MissingCaptionAttr         string                 `xml:"missingCaption,attr,omitempty"`
-	ShowMissingAttr            bool                   `xml:"showMissing,attr,omitempty"`
-	PageStyleAttr              string                 `xml:"pageStyle,attr,omitempty"`
-	PivotTableStyleAttr        string                 `xml:"pivotTableStyle,attr,omitempty"`
-	VacatedStyleAttr           string                 `xml:"vacatedStyle,attr,omitempty"`
-	TagAttr                    string                 `xml:"tag,attr,omitempty"`
-	UpdatedVersionAttr         uint8                  `xml:"updatedVersion,attr,omitempty"`
-	MinRefreshableVersionAttr  uint8                  `xml:"minRefreshableVersion,attr,omitempty"`
-	AsteriskTotalsAttr         bool                   `xml:"asteriskTotals,attr,omitempty"`
-	ShowItemsAttr              bool                   `xml:"showItems,attr,omitempty"`
-	EditDataAttr               bool                   `xml:"editData,attr,omitempty"`
-	DisableFieldListAttr       bool                   `xml:"disableFieldList,attr,omitempty"`
-	ShowCalcMbrsAttr           bool                   `xml:"showCalcMbrs,attr,omitempty"`
-	VisualTotalsAttr           bool                   `xml:"visualTotals,attr,omitempty"`
-	ShowMultipleLabelAttr      bool                   `xml:"showMultipleLabel,attr,omitempty"`
-	ShowDataDropDownAttr       bool                   `xml:"showDataDropDown,attr,omitempty"`
-	ShowDrillAttr              bool                   `xml:"showDrill,attr,omitempty"`
-	PrintDrillAttr             bool                   `xml:"printDrill,attr,omitempty"`
-	ShowMemberPropertyTipsAttr bool                   `xml:"showMemberPropertyTips,attr,omitempty"`
-	ShowDataTipsAttr           bool                   `xml:"showDataTips,attr,omitempty"`
-	EnableWizardAttr           bool                   `xml:"enableWizard,attr,omitempty"`
-	EnableDrillAttr            bool                   `xml:"enableDrill,attr,omitempty"`
-	EnableFieldPropertiesAttr  bool                   `xml:"enableFieldProperties,attr,omitempty"`
-	PreserveFormattingAttr     bool                   `xml:"preserveFormatting,attr,omitempty"`
-	UseAutoFormattingAttr      bool                   `xml:"useAutoFormatting,attr,omitempty"`
-	PageWrapAttr               uint32                 `xml:"pageWrap,attr,omitempty"`
-	PageOverThenDownAttr       bool                   `xml:"pageOverThenDown,attr,omitempty"`
-	SubtotalHiddenItemsAttr    bool                   `xml:"subtotalHiddenItems,attr,omitempty"`
-	RowGrandTotalsAttr         bool                   `xml:"rowGrandTotals,attr,omitempty"`
-	ColGrandTotalsAttr         bool                   `xml:"colGrandTotals,attr,omitempty"`
-	FieldPrintTitlesAttr       bool                   `xml:"fieldPrintTitles,attr,omitempty"`
-	ItemPrintTitlesAttr        bool                   `xml:"itemPrintTitles,attr,omitempty"`
-	MergeItemAttr              bool                   `xml:"mergeItem,attr,omitempty"`
-	ShowDropZonesAttr          bool                   `xml:"showDropZones,attr,omitempty"`
-	CreatedVersionAttr         uint8                  `xml:"createdVersion,attr,omitempty"`
-	IndentAttr                 uint32                 `xml:"indent,attr,omitempty"`
-	ShowEmptyRowAttr           bool                   `xml:"showEmptyRow,attr,omitempty"`
-	ShowEmptyColAttr           bool                   `xml:"showEmptyCol,attr,omitempty"`
-	ShowHeadersAttr            bool                   `xml:"showHeaders,attr,omitempty"`
-	CompactAttr                bool                   `xml:"compact,attr,omitempty"`
-	OutlineAttr                bool                   `xml:"outline,attr,omitempty"`
-	OutlineDataAttr            bool                   `xml:"outlineData,attr,omitempty"`
-	CompactDataAttr            bool                   `xml:"compactData,attr,omitempty"`
-	PublishedAttr              bool                   `xml:"published,attr,omitempty"`
-	GridDropZonesAttr          bool                   `xml:"gridDropZones,attr,omitempty"`
-	ImmersiveAttr              bool                   `xml:"immersive,attr,omitempty"`
-	MultipleFieldFiltersAttr   bool                   `xml:"multipleFieldFilters,attr,omitempty"`
-	ChartFormatAttr            uint32                 `xml:"chartFormat,attr,omitempty"`
-	RowHeaderCaptionAttr       string                 `xml:"rowHeaderCaption,attr,omitempty"`
-	ColHeaderCaptionAttr       string                 `xml:"colHeaderCaption,attr,omitempty"`
-	FieldListSortAscendingAttr bool                   `xml:"fieldListSortAscending,attr,omitempty"`
-	MdxSubqueriesAttr          bool                   `xml:"mdxSubqueries,attr,omitempty"`
-	CustomListSortAttr         bool                   `xml:"customListSort,attr,omitempty"`
+	GrandTotalCaptionAttr      *string                `xml:"grandTotalCaption,attr"`
+	ErrorCaptionAttr           *string                `xml:"errorCaption,attr"`
+	ShowErrorAttr              *bool                  `xml:"showError,attr"`
+	MissingCaptionAttr         *string                `xml:"missingCaption,attr"`
+	ShowMissingAttr            *bool                  `xml:"showMissing,attr"`
+	PageStyleAttr              *string                `xml:"pageStyle,attr"`
+	PivotTableStyleAttr        *string                `xml:"pivotTableStyle,attr"`
+	VacatedStyleAttr           *string                `xml:"vacatedStyle,attr"`
+	TagAttr                    *string                `xml:"tag,attr"`
+	UpdatedVersionAttr         *uint8                 `xml:"updatedVersion,attr"`
+	MinRefreshableVersionAttr  *uint8                 `xml:"minRefreshableVersion,attr"`
+	AsteriskTotalsAttr         *bool                  `xml:"asteriskTotals,attr"`
+	ShowItemsAttr              *bool                  `xml:"showItems,attr"`
+	EditDataAttr               *bool                  `xml:"editData,attr"`
+	DisableFieldListAttr       *bool                  `xml:"disableFieldList,attr"`
+	ShowCalcMbrsAttr           *bool                  `xml:"showCalcMbrs,attr"`
+	VisualTotalsAttr           *bool                  `xml:"visualTotals,attr"`
+	ShowMultipleLabelAttr      *bool                  `xml:"showMultipleLabel,attr"`
+	ShowDataDropDownAttr       *bool                  `xml:"showDataDropDown,attr"`
+	ShowDrillAttr              *bool                  `xml:"showDrill,attr"`
+	PrintDrillAttr             *bool                  `xml:"printDrill,attr"`
+	ShowMemberPropertyTipsAttr *bool                  `xml:"showMemberPropertyTips,attr"`
+	ShowDataTipsAttr           *bool                  `xml:"showDataTips,attr"`
+	EnableWizardAttr           *bool                  `xml:"enableWizard,attr"`
+	EnableDrillAttr            *bool                  `xml:"enableDrill,attr"`
+	EnableFieldPropertiesAttr  *bool                  `xml:"enableFieldProperties,attr"`
+	PreserveFormattingAttr     *bool                  `xml:"preserveFormatting,attr"`
+	UseAutoFormattingAttr      *bool                  `xml:"useAutoFormatting,attr"`
+	PageWrapAttr               *uint32                `xml:"pageWrap,attr"`
+	PageOverThenDownAttr       *bool                  `xml:"pageOverThenDown,attr"`
+	SubtotalHiddenItemsAttr    *bool                  `xml:"subtotalHiddenItems,attr"`
+	RowGrandTotalsAttr         *bool                  `xml:"rowGrandTotals,attr"`
+	ColGrandTotalsAttr         *bool                  `xml:"colGrandTotals,attr"`
+	FieldPrintTitlesAttr       *bool                  `xml:"fieldPrintTitles,attr"`
+	ItemPrintTitlesAttr        *bool                  `xml:"itemPrintTitles,attr"`
+	MergeItemAttr              *bool                  `xml:"mergeItem,attr"`
+	ShowDropZonesAttr          *bool                  `xml:"showDropZones,attr"`
+	CreatedVersionAttr         *uint8                 `xml:"createdVersion,attr"`
+	IndentAttr                 *uint32                `xml:"indent,attr"`
+	ShowEmptyRowAttr           *bool                  `xml:"showEmptyRow,attr"`
+	ShowEmptyColAttr           *bool                  `xml:"showEmptyCol,attr"`
+	ShowHeadersAttr            *bool                  `xml:"showHeaders,attr"`
+	CompactAttr                *bool                  `xml:"compact,attr"`
+	OutlineAttr                *bool                  `xml:"outline,attr"`
+	OutlineDataAttr            *bool                  `xml:"outlineData,attr"`
+	CompactDataAttr            *bool                  `xml:"compactData,attr"`
+	PublishedAttr              *bool                  `xml:"published,attr"`
+	GridDropZonesAttr          *bool                  `xml:"gridDropZones,attr"`
+	ImmersiveAttr              *bool                  `xml:"immersive,attr"`
+	MultipleFieldFiltersAttr   *bool                  `xml:"multipleFieldFilters,attr"`
+	ChartFormatAttr            *uint32                `xml:"chartFormat,attr"`
+	RowHeaderCaptionAttr       *string                `xml:"rowHeaderCaption,attr"`
+	ColHeaderCaptionAttr       *string                `xml:"colHeaderCaption,attr"`
+	FieldListSortAscendingAttr *bool                  `xml:"fieldListSortAscending,attr"`
+	MdxSubqueriesAttr          *bool                  `xml:"mdxSubqueries,attr"`
+	CustomListSortAttr         *bool                  `xml:"customListSort,attr"`
 	Location                   *CTLocation            `xml:"location"`
 	PivotFields                *CTPivotFields         `xml:"pivotFields,omitempty"`
 	RowFields                  *CTRowFields           `xml:"rowFields,omitempty"`
@@ -1154,68 +1154,68 @@ type CTLocation struct {
 	FirstHeaderRowAttr uint32   `xml:"firstHeaderRow,attr"`
 	FirstDataRowAttr   uint32   `xml:"firstDataRow,attr"`
 	FirstDataColAttr   uint32   `xml:"firstDataCol,attr"`
-	RowPageCountAttr   uint32   `xml:"rowPageCount,attr,omitempty"`
-	ColPageCountAttr   uint32   `xml:"colPageCount,attr,omitempty"`
+	RowPageCountAttr   *uint32  `xml:"rowPageCount,attr"`
+	ColPageCountAttr   *uint32  `xml:"colPageCount,attr"`
 }
 
 // CTPivotFields ...
 type CTPivotFields struct {
 	XMLName    xml.Name        `xml:"CT_PivotFields"`
-	CountAttr  uint32          `xml:"count,attr,omitempty"`
+	CountAttr  *uint32         `xml:"count,attr"`
 	PivotField []*CTPivotField `xml:"pivotField"`
 }
 
 // CTPivotField ...
 type CTPivotField struct {
 	XMLName                          xml.Name         `xml:"CT_PivotField"`
-	NameAttr                         string           `xml:"name,attr,omitempty"`
-	AxisAttr                         string           `xml:"axis,attr,omitempty"`
-	DataFieldAttr                    bool             `xml:"dataField,attr,omitempty"`
-	SubtotalCaptionAttr              string           `xml:"subtotalCaption,attr,omitempty"`
-	ShowDropDownsAttr                bool             `xml:"showDropDowns,attr,omitempty"`
-	HiddenLevelAttr                  bool             `xml:"hiddenLevel,attr,omitempty"`
-	UniqueMemberPropertyAttr         string           `xml:"uniqueMemberProperty,attr,omitempty"`
-	CompactAttr                      bool             `xml:"compact,attr,omitempty"`
-	AllDrilledAttr                   bool             `xml:"allDrilled,attr,omitempty"`
-	NumFmtIdAttr                     uint32           `xml:"numFmtId,attr,omitempty"`
-	OutlineAttr                      bool             `xml:"outline,attr,omitempty"`
-	SubtotalTopAttr                  bool             `xml:"subtotalTop,attr,omitempty"`
-	DragToRowAttr                    bool             `xml:"dragToRow,attr,omitempty"`
-	DragToColAttr                    bool             `xml:"dragToCol,attr,omitempty"`
-	MultipleItemSelectionAllowedAttr bool             `xml:"multipleItemSelectionAllowed,attr,omitempty"`
-	DragToPageAttr                   bool             `xml:"dragToPage,attr,omitempty"`
-	DragToDataAttr                   bool             `xml:"dragToData,attr,omitempty"`
-	DragOffAttr                      bool             `xml:"dragOff,attr,omitempty"`
-	ShowAllAttr                      bool             `xml:"showAll,attr,omitempty"`
-	InsertBlankRowAttr               bool             `xml:"insertBlankRow,attr,omitempty"`
-	ServerFieldAttr                  bool             `xml:"serverField,attr,omitempty"`
-	InsertPageBreakAttr              bool             `xml:"insertPageBreak,attr,omitempty"`
-	AutoShowAttr                     bool             `xml:"autoShow,attr,omitempty"`
-	TopAutoShowAttr                  bool             `xml:"topAutoShow,attr,omitempty"`
-	HideNewItemsAttr                 bool             `xml:"hideNewItems,attr,omitempty"`
-	MeasureFilterAttr                bool             `xml:"measureFilter,attr,omitempty"`
-	IncludeNewItemsInFilterAttr      bool             `xml:"includeNewItemsInFilter,attr,omitempty"`
-	ItemPageCountAttr                uint32           `xml:"itemPageCount,attr,omitempty"`
-	SortTypeAttr                     string           `xml:"sortType,attr,omitempty"`
-	DataSourceSortAttr               bool             `xml:"dataSourceSort,attr,omitempty"`
-	NonAutoSortDefaultAttr           bool             `xml:"nonAutoSortDefault,attr,omitempty"`
-	RankByAttr                       uint32           `xml:"rankBy,attr,omitempty"`
-	DefaultSubtotalAttr              bool             `xml:"defaultSubtotal,attr,omitempty"`
-	SumSubtotalAttr                  bool             `xml:"sumSubtotal,attr,omitempty"`
-	CountASubtotalAttr               bool             `xml:"countASubtotal,attr,omitempty"`
-	AvgSubtotalAttr                  bool             `xml:"avgSubtotal,attr,omitempty"`
-	MaxSubtotalAttr                  bool             `xml:"maxSubtotal,attr,omitempty"`
-	MinSubtotalAttr                  bool             `xml:"minSubtotal,attr,omitempty"`
-	ProductSubtotalAttr              bool             `xml:"productSubtotal,attr,omitempty"`
-	CountSubtotalAttr                bool             `xml:"countSubtotal,attr,omitempty"`
-	StdDevSubtotalAttr               bool             `xml:"stdDevSubtotal,attr,omitempty"`
-	StdDevPSubtotalAttr              bool             `xml:"stdDevPSubtotal,attr,omitempty"`
-	VarSubtotalAttr                  bool             `xml:"varSubtotal,attr,omitempty"`
-	VarPSubtotalAttr                 bool             `xml:"varPSubtotal,attr,omitempty"`
-	ShowPropCellAttr                 bool             `xml:"showPropCell,attr,omitempty"`
-	ShowPropTipAttr                  bool             `xml:"showPropTip,attr,omitempty"`
-	ShowPropAsCaptionAttr            bool             `xml:"showPropAsCaption,attr,omitempty"`
-	DefaultAttributeDrillStateAttr   bool             `xml:"defaultAttributeDrillState,attr,omitempty"`
+	NameAttr                         *string          `xml:"name,attr"`
+	AxisAttr                         *string          `xml:"axis,attr"`
+	DataFieldAttr                    *bool            `xml:"dataField,attr"`
+	SubtotalCaptionAttr              *string          `xml:"subtotalCaption,attr"`
+	ShowDropDownsAttr                *bool            `xml:"showDropDowns,attr"`
+	HiddenLevelAttr                  *bool            `xml:"hiddenLevel,attr"`
+	UniqueMemberPropertyAttr         *string          `xml:"uniqueMemberProperty,attr"`
+	CompactAttr                      *bool            `xml:"compact,attr"`
+	AllDrilledAttr                   *bool            `xml:"allDrilled,attr"`
+	NumFmtIdAttr                     *uint32          `xml:"numFmtId,attr"`
+	OutlineAttr                      *bool            `xml:"outline,attr"`
+	SubtotalTopAttr                  *bool            `xml:"subtotalTop,attr"`
+	DragToRowAttr                    *bool            `xml:"dragToRow,attr"`
+	DragToColAttr                    *bool            `xml:"dragToCol,attr"`
+	MultipleItemSelectionAllowedAttr *bool            `xml:"multipleItemSelectionAllowed,attr"`
+	DragToPageAttr                   *bool            `xml:"dragToPage,attr"`
+	DragToDataAttr                   *bool            `xml:"dragToData,attr"`
+	DragOffAttr                      *bool            `xml:"dragOff,attr"`
+	ShowAllAttr                      *bool            `xml:"showAll,attr"`
+	InsertBlankRowAttr               *bool            `xml:"insertBlankRow,attr"`
+	ServerFieldAttr                  *bool            `xml:"serverField,attr"`
+	InsertPageBreakAttr              *bool            `xml:"insertPageBreak,attr"`
+	AutoShowAttr                     *bool            `xml:"autoShow,attr"`
+	TopAutoShowAttr                  *bool            `xml:"topAutoShow,attr"`
+	HideNewItemsAttr                 *bool            `xml:"hideNewItems,attr"`
+	MeasureFilterAttr                *bool            `xml:"measureFilter,attr"`
+	IncludeNewItemsInFilterAttr      *bool            `xml:"includeNewItemsInFilter,attr"`
+	ItemPageCountAttr                *uint32          `xml:"itemPageCount,attr"`
+	SortTypeAttr                     *string          `xml:"sortType,attr"`
+	DataSourceSortAttr               *bool            `xml:"dataSourceSort,attr"`
+	NonAutoSortDefaultAttr           *bool            `xml:"nonAutoSortDefault,attr"`
+	RankByAttr                       *uint32          `xml:"rankBy,attr"`
+	DefaultSubtotalAttr              *bool            `xml:"defaultSubtotal,attr"`
+	SumSubtotalAttr                  *bool            `xml:"sumSubtotal,attr"`
+	CountASubtotalAttr               *bool            `xml:"countASubtotal,attr"`
+	AvgSubtotalAttr                  *bool            `xml:"avgSubtotal,attr"`
+	MaxSubtotalAttr                  *bool            `xml:"maxSubtotal,attr"`
+	MinSubtotalAttr                  *bool            `xml:"minSubtotal,attr"`
+	ProductSubtotalAttr              *bool            `xml:"productSubtotal,attr"`
+	CountSubtotalAttr                *bool            `xml:"countSubtotal,attr"`
+	StdDevSubtotalAttr               *bool            `xml:"stdDevSubtotal,attr"`
+	StdDevPSubtotalAttr              *bool            `xml:"stdDevPSubtotal,attr"`
+	VarSubtotalAttr                  *bool            `xml:"varSubtotal,attr"`
+	VarPSubtotalAttr                 *bool            `xml:"varPSubtotal,attr"`
+	ShowPropCellAttr                 *bool            `xml:"showPropCell,attr"`
+	ShowPropTipAttr                  *bool            `xml:"showPropTip,attr"`
+	ShowPropAsCaptionAttr            *bool            `xml:"showPropAsCaption,attr"`
+	DefaultAttributeDrillStateAttr   *bool            `xml:"defaultAttributeDrillState,attr"`
 	Items                            *CTItems         `xml:"items,omitempty"`
 	AutoSortScope                    *CTAutoSortScope `xml:"autoSortScope,omitempty"`
 	ExtLst                           *CTExtensionList `xml:"extLst,omitempty"`
@@ -1230,30 +1230,30 @@ type CTAutoSortScope struct {
 // CTItems ...
 type CTItems struct {
 	XMLName   xml.Name  `xml:"CT_Items"`
-	CountAttr uint32    `xml:"count,attr,omitempty"`
+	CountAttr *uint32   `xml:"count,attr"`
 	Item      []*CTItem `xml:"item"`
 }
 
 // CTItem ...
 type CTItem struct {
 	XMLName xml.Name `xml:"CT_Item"`
-	NAttr   string   `xml:"n,attr,omitempty"`
-	TAttr   string   `xml:"t,attr,omitempty"`
-	HAttr   bool     `xml:"h,attr,omitempty"`
-	SAttr   bool     `xml:"s,attr,omitempty"`
-	SdAttr  bool     `xml:"sd,attr,omitempty"`
-	FAttr   bool     `xml:"f,attr,omitempty"`
-	MAttr   bool     `xml:"m,attr,omitempty"`
-	CAttr   bool     `xml:"c,attr,omitempty"`
-	XAttr   uint32   `xml:"x,attr,omitempty"`
-	DAttr   bool     `xml:"d,attr,omitempty"`
-	EAttr   bool     `xml:"e,attr,omitempty"`
+	NAttr   *string  `xml:"n,attr"`
+	TAttr   *string  `xml:"t,attr"`
+	HAttr   *bool    `xml:"h,attr"`
+	SAttr   *bool    `xml:"s,attr"`
+	SdAttr  *bool    `xml:"sd,attr"`
+	FAttr   *bool    `xml:"f,attr"`
+	MAttr   *bool    `xml:"m,attr"`
+	CAttr   *bool    `xml:"c,attr"`
+	XAttr   *uint32  `xml:"x,attr"`
+	DAttr   *bool    `xml:"d,attr"`
+	EAttr   *bool    `xml:"e,attr"`
 }
 
 // CTPageFields ...
 type CTPageFields struct {
 	XMLName   xml.Name       `xml:"CT_PageFields"`
-	CountAttr uint32         `xml:"count,attr,omitempty"`
+	CountAttr *uint32        `xml:"count,attr"`
 	PageField []*CTPageField `xml:"pageField"`
 }
 
@@ -1261,73 +1261,73 @@ type CTPageFields struct {
 type CTPageField struct {
 	XMLName  xml.Name         `xml:"CT_PageField"`
 	FldAttr  int              `xml:"fld,attr"`
-	ItemAttr uint32           `xml:"item,attr,omitempty"`
-	HierAttr int              `xml:"hier,attr,omitempty"`
-	NameAttr string           `xml:"name,attr,omitempty"`
-	CapAttr  string           `xml:"cap,attr,omitempty"`
+	ItemAttr *uint32          `xml:"item,attr"`
+	HierAttr *int             `xml:"hier,attr"`
+	NameAttr *string          `xml:"name,attr"`
+	CapAttr  *string          `xml:"cap,attr"`
 	ExtLst   *CTExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTDataFields ...
 type CTDataFields struct {
 	XMLName   xml.Name       `xml:"CT_DataFields"`
-	CountAttr uint32         `xml:"count,attr,omitempty"`
+	CountAttr *uint32        `xml:"count,attr"`
 	DataField []*CTDataField `xml:"dataField"`
 }
 
 // CTDataField ...
 type CTDataField struct {
 	XMLName        xml.Name         `xml:"CT_DataField"`
-	NameAttr       string           `xml:"name,attr,omitempty"`
+	NameAttr       *string          `xml:"name,attr"`
 	FldAttr        uint32           `xml:"fld,attr"`
-	SubtotalAttr   string           `xml:"subtotal,attr,omitempty"`
-	ShowDataAsAttr string           `xml:"showDataAs,attr,omitempty"`
-	BaseFieldAttr  int              `xml:"baseField,attr,omitempty"`
-	BaseItemAttr   uint32           `xml:"baseItem,attr,omitempty"`
-	NumFmtIdAttr   uint32           `xml:"numFmtId,attr,omitempty"`
+	SubtotalAttr   *string          `xml:"subtotal,attr"`
+	ShowDataAsAttr *string          `xml:"showDataAs,attr"`
+	BaseFieldAttr  *int             `xml:"baseField,attr"`
+	BaseItemAttr   *uint32          `xml:"baseItem,attr"`
+	NumFmtIdAttr   *uint32          `xml:"numFmtId,attr"`
 	ExtLst         *CTExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTRowItems ...
 type CTRowItems struct {
 	XMLName   xml.Name `xml:"CT_rowItems"`
-	CountAttr uint32   `xml:"count,attr,omitempty"`
+	CountAttr *uint32  `xml:"count,attr"`
 	I         []*CTI   `xml:"i"`
 }
 
 // CTColItems ...
 type CTColItems struct {
 	XMLName   xml.Name `xml:"CT_colItems"`
-	CountAttr uint32   `xml:"count,attr,omitempty"`
+	CountAttr *uint32  `xml:"count,attr"`
 	I         []*CTI   `xml:"i"`
 }
 
 // CTI ...
 type CTI struct {
 	XMLName xml.Name `xml:"CT_I"`
-	TAttr   string   `xml:"t,attr,omitempty"`
-	RAttr   uint32   `xml:"r,attr,omitempty"`
-	IAttr   uint32   `xml:"i,attr,omitempty"`
+	TAttr   *string  `xml:"t,attr"`
+	RAttr   *uint32  `xml:"r,attr"`
+	IAttr   *uint32  `xml:"i,attr"`
 	X       []*CTX   `xml:"x,omitempty"`
 }
 
 // CTX ...
 type CTX struct {
 	XMLName xml.Name `xml:"CT_X"`
-	VAttr   int      `xml:"v,attr,omitempty"`
+	VAttr   *int     `xml:"v,attr"`
 }
 
 // CTRowFields ...
 type CTRowFields struct {
 	XMLName   xml.Name   `xml:"CT_RowFields"`
-	CountAttr uint32     `xml:"count,attr,omitempty"`
+	CountAttr *uint32    `xml:"count,attr"`
 	Field     []*CTField `xml:"field"`
 }
 
 // CTColFields ...
 type CTColFields struct {
 	XMLName   xml.Name   `xml:"CT_ColFields"`
-	CountAttr uint32     `xml:"count,attr,omitempty"`
+	CountAttr *uint32    `xml:"count,attr"`
 	Field     []*CTField `xml:"field"`
 }
 
@@ -1340,15 +1340,15 @@ type CTField struct {
 // CTFormats ...
 type CTFormats struct {
 	XMLName   xml.Name    `xml:"CT_Formats"`
-	CountAttr uint32      `xml:"count,attr,omitempty"`
+	CountAttr *uint32     `xml:"count,attr"`
 	Format    []*CTFormat `xml:"format"`
 }
 
 // CTFormat ...
 type CTFormat struct {
 	XMLName    xml.Name         `xml:"CT_Format"`
-	ActionAttr string           `xml:"action,attr,omitempty"`
-	DxfIdAttr  uint32           `xml:"dxfId,attr,omitempty"`
+	ActionAttr *string          `xml:"action,attr"`
+	DxfIdAttr  *uint32          `xml:"dxfId,attr"`
 	PivotArea  *CTPivotArea     `xml:"pivotArea"`
 	ExtLst     *CTExtensionList `xml:"extLst,omitempty"`
 }
@@ -1356,15 +1356,15 @@ type CTFormat struct {
 // CTConditionalFormats ...
 type CTConditionalFormats struct {
 	XMLName           xml.Name               `xml:"CT_ConditionalFormats"`
-	CountAttr         uint32                 `xml:"count,attr,omitempty"`
+	CountAttr         *uint32                `xml:"count,attr"`
 	ConditionalFormat []*CTConditionalFormat `xml:"conditionalFormat"`
 }
 
 // CTConditionalFormat ...
 type CTConditionalFormat struct {
 	XMLName      xml.Name         `xml:"CT_ConditionalFormat"`
-	ScopeAttr    string           `xml:"scope,attr,omitempty"`
-	TypeAttr     string           `xml:"type,attr,omitempty"`
+	ScopeAttr    *string          `xml:"scope,attr"`
+	TypeAttr     *string          `xml:"type,attr"`
 	PriorityAttr uint32           `xml:"priority,attr"`
 	PivotAreas   *CTPivotAreas    `xml:"pivotAreas"`
 	ExtLst       *CTExtensionList `xml:"extLst,omitempty"`
@@ -1373,7 +1373,7 @@ type CTConditionalFormat struct {
 // CTPivotAreas ...
 type CTPivotAreas struct {
 	XMLName   xml.Name       `xml:"CT_PivotAreas"`
-	CountAttr uint32         `xml:"count,attr,omitempty"`
+	CountAttr *uint32        `xml:"count,attr"`
 	PivotArea []*CTPivotArea `xml:"pivotArea,omitempty"`
 }
 
@@ -1386,7 +1386,7 @@ type STType string
 // CTChartFormats ...
 type CTChartFormats struct {
 	XMLName     xml.Name         `xml:"CT_ChartFormats"`
-	CountAttr   uint32           `xml:"count,attr,omitempty"`
+	CountAttr   *uint32          `xml:"count,attr"`
 	ChartFormat []*CTChartFormat `xml:"chartFormat"`
 }
 
@@ -1395,31 +1395,31 @@ type CTChartFormat struct {
 	XMLName    xml.Name     `xml:"CT_ChartFormat"`
 	ChartAttr  uint32       `xml:"chart,attr"`
 	FormatAttr uint32       `xml:"format,attr"`
-	SeriesAttr bool         `xml:"series,attr,omitempty"`
+	SeriesAttr *bool        `xml:"series,attr"`
 	PivotArea  *CTPivotArea `xml:"pivotArea"`
 }
 
 // CTPivotHierarchies ...
 type CTPivotHierarchies struct {
 	XMLName        xml.Name            `xml:"CT_PivotHierarchies"`
-	CountAttr      uint32              `xml:"count,attr,omitempty"`
+	CountAttr      *uint32             `xml:"count,attr"`
 	PivotHierarchy []*CTPivotHierarchy `xml:"pivotHierarchy"`
 }
 
 // CTPivotHierarchy ...
 type CTPivotHierarchy struct {
 	XMLName                          xml.Name            `xml:"CT_PivotHierarchy"`
-	OutlineAttr                      bool                `xml:"outline,attr,omitempty"`
-	MultipleItemSelectionAllowedAttr bool                `xml:"multipleItemSelectionAllowed,attr,omitempty"`
-	SubtotalTopAttr                  bool                `xml:"subtotalTop,attr,omitempty"`
-	ShowInFieldListAttr              bool                `xml:"showInFieldList,attr,omitempty"`
-	DragToRowAttr                    bool                `xml:"dragToRow,attr,omitempty"`
-	DragToColAttr                    bool                `xml:"dragToCol,attr,omitempty"`
-	DragToPageAttr                   bool                `xml:"dragToPage,attr,omitempty"`
-	DragToDataAttr                   bool                `xml:"dragToData,attr,omitempty"`
-	DragOffAttr                      bool                `xml:"dragOff,attr,omitempty"`
-	IncludeNewItemsInFilterAttr      bool                `xml:"includeNewItemsInFilter,attr,omitempty"`
-	CaptionAttr                      string              `xml:"caption,attr,omitempty"`
+	OutlineAttr                      *bool               `xml:"outline,attr"`
+	MultipleItemSelectionAllowedAttr *bool               `xml:"multipleItemSelectionAllowed,attr"`
+	SubtotalTopAttr                  *bool               `xml:"subtotalTop,attr"`
+	ShowInFieldListAttr              *bool               `xml:"showInFieldList,attr"`
+	DragToRowAttr                    *bool               `xml:"dragToRow,attr"`
+	DragToColAttr                    *bool               `xml:"dragToCol,attr"`
+	DragToPageAttr                   *bool               `xml:"dragToPage,attr"`
+	DragToDataAttr                   *bool               `xml:"dragToData,attr"`
+	DragOffAttr                      *bool               `xml:"dragOff,attr"`
+	IncludeNewItemsInFilterAttr      *bool               `xml:"includeNewItemsInFilter,attr"`
+	CaptionAttr                      *string             `xml:"caption,attr"`
 	Mps                              *CTMemberProperties `xml:"mps,omitempty"`
 	Members                          []*CTMembers        `xml:"members,omitempty"`
 	ExtLst                           *CTExtensionList    `xml:"extLst,omitempty"`
@@ -1428,14 +1428,14 @@ type CTPivotHierarchy struct {
 // CTRowHierarchiesUsage ...
 type CTRowHierarchiesUsage struct {
 	XMLName           xml.Name            `xml:"CT_RowHierarchiesUsage"`
-	CountAttr         uint32              `xml:"count,attr,omitempty"`
+	CountAttr         *uint32             `xml:"count,attr"`
 	RowHierarchyUsage []*CTHierarchyUsage `xml:"rowHierarchyUsage"`
 }
 
 // CTColHierarchiesUsage ...
 type CTColHierarchiesUsage struct {
 	XMLName           xml.Name            `xml:"CT_ColHierarchiesUsage"`
-	CountAttr         uint32              `xml:"count,attr,omitempty"`
+	CountAttr         *uint32             `xml:"count,attr"`
 	ColHierarchyUsage []*CTHierarchyUsage `xml:"colHierarchyUsage"`
 }
 
@@ -1448,29 +1448,29 @@ type CTHierarchyUsage struct {
 // CTMemberProperties ...
 type CTMemberProperties struct {
 	XMLName   xml.Name            `xml:"CT_MemberProperties"`
-	CountAttr uint32              `xml:"count,attr,omitempty"`
+	CountAttr *uint32             `xml:"count,attr"`
 	Mp        []*CTMemberProperty `xml:"mp"`
 }
 
 // CTMemberProperty ...
 type CTMemberProperty struct {
 	XMLName           xml.Name `xml:"CT_MemberProperty"`
-	NameAttr          string   `xml:"name,attr,omitempty"`
-	ShowCellAttr      bool     `xml:"showCell,attr,omitempty"`
-	ShowTipAttr       bool     `xml:"showTip,attr,omitempty"`
-	ShowAsCaptionAttr bool     `xml:"showAsCaption,attr,omitempty"`
-	NameLenAttr       uint32   `xml:"nameLen,attr,omitempty"`
-	PPosAttr          uint32   `xml:"pPos,attr,omitempty"`
-	PLenAttr          uint32   `xml:"pLen,attr,omitempty"`
-	LevelAttr         uint32   `xml:"level,attr,omitempty"`
+	NameAttr          *string  `xml:"name,attr"`
+	ShowCellAttr      *bool    `xml:"showCell,attr"`
+	ShowTipAttr       *bool    `xml:"showTip,attr"`
+	ShowAsCaptionAttr *bool    `xml:"showAsCaption,attr"`
+	NameLenAttr       *uint32  `xml:"nameLen,attr"`
+	PPosAttr          *uint32  `xml:"pPos,attr"`
+	PLenAttr          *uint32  `xml:"pLen,attr"`
+	LevelAttr         *uint32  `xml:"level,attr"`
 	FieldAttr         uint32   `xml:"field,attr"`
 }
 
 // CTMembers ...
 type CTMembers struct {
 	XMLName   xml.Name    `xml:"CT_Members"`
-	CountAttr uint32      `xml:"count,attr,omitempty"`
-	LevelAttr uint32      `xml:"level,attr,omitempty"`
+	CountAttr *uint32     `xml:"count,attr"`
+	LevelAttr *uint32     `xml:"level,attr"`
 	Member    []*CTMember `xml:"member"`
 }
 
@@ -1483,14 +1483,14 @@ type CTMember struct {
 // CTDimensions ...
 type CTDimensions struct {
 	XMLName   xml.Name            `xml:"CT_Dimensions"`
-	CountAttr uint32              `xml:"count,attr,omitempty"`
+	CountAttr *uint32             `xml:"count,attr"`
 	Dimension []*CTPivotDimension `xml:"dimension,omitempty"`
 }
 
 // CTPivotDimension ...
 type CTPivotDimension struct {
 	XMLName        xml.Name `xml:"CT_PivotDimension"`
-	MeasureAttr    bool     `xml:"measure,attr,omitempty"`
+	MeasureAttr    *bool    `xml:"measure,attr"`
 	NameAttr       string   `xml:"name,attr"`
 	UniqueNameAttr string   `xml:"uniqueName,attr"`
 	CaptionAttr    string   `xml:"caption,attr"`
@@ -1499,14 +1499,14 @@ type CTPivotDimension struct {
 // CTMeasureGroups ...
 type CTMeasureGroups struct {
 	XMLName      xml.Name          `xml:"CT_MeasureGroups"`
-	CountAttr    uint32            `xml:"count,attr,omitempty"`
+	CountAttr    *uint32           `xml:"count,attr"`
 	MeasureGroup []*CTMeasureGroup `xml:"measureGroup,omitempty"`
 }
 
 // CTMeasureDimensionMaps ...
 type CTMeasureDimensionMaps struct {
 	XMLName   xml.Name                 `xml:"CT_MeasureDimensionMaps"`
-	CountAttr uint32                   `xml:"count,attr,omitempty"`
+	CountAttr *uint32                  `xml:"count,attr"`
 	Map       []*CTMeasureDimensionMap `xml:"map,omitempty"`
 }
 
@@ -1520,25 +1520,25 @@ type CTMeasureGroup struct {
 // CTMeasureDimensionMap ...
 type CTMeasureDimensionMap struct {
 	XMLName          xml.Name `xml:"CT_MeasureDimensionMap"`
-	MeasureGroupAttr uint32   `xml:"measureGroup,attr,omitempty"`
-	DimensionAttr    uint32   `xml:"dimension,attr,omitempty"`
+	MeasureGroupAttr *uint32  `xml:"measureGroup,attr"`
+	DimensionAttr    *uint32  `xml:"dimension,attr"`
 }
 
 // CTPivotTableStyle ...
 type CTPivotTableStyle struct {
 	XMLName            xml.Name `xml:"CT_PivotTableStyle"`
-	NameAttr           string   `xml:"name,attr,omitempty"`
-	ShowRowHeadersAttr bool     `xml:"showRowHeaders,attr,omitempty"`
-	ShowColHeadersAttr bool     `xml:"showColHeaders,attr,omitempty"`
-	ShowRowStripesAttr bool     `xml:"showRowStripes,attr,omitempty"`
-	ShowColStripesAttr bool     `xml:"showColStripes,attr,omitempty"`
-	ShowLastColumnAttr bool     `xml:"showLastColumn,attr,omitempty"`
+	NameAttr           *string  `xml:"name,attr"`
+	ShowRowHeadersAttr *bool    `xml:"showRowHeaders,attr"`
+	ShowColHeadersAttr *bool    `xml:"showColHeaders,attr"`
+	ShowRowStripesAttr *bool    `xml:"showRowStripes,attr"`
+	ShowColStripesAttr *bool    `xml:"showColStripes,attr"`
+	ShowLastColumnAttr *bool    `xml:"showLastColumn,attr"`
 }
 
 // CTPivotFilters ...
 type CTPivotFilters struct {
 	XMLName   xml.Name         `xml:"CT_PivotFilters"`
-	CountAttr uint32           `xml:"count,attr,omitempty"`
+	CountAttr *uint32          `xml:"count,attr"`
 	Filter    []*CTPivotFilter `xml:"filter,omitempty"`
 }
 
@@ -1546,16 +1546,16 @@ type CTPivotFilters struct {
 type CTPivotFilter struct {
 	XMLName          xml.Name         `xml:"CT_PivotFilter"`
 	FldAttr          uint32           `xml:"fld,attr"`
-	MpFldAttr        uint32           `xml:"mpFld,attr,omitempty"`
+	MpFldAttr        *uint32          `xml:"mpFld,attr"`
 	TypeAttr         string           `xml:"type,attr"`
-	EvalOrderAttr    int              `xml:"evalOrder,attr,omitempty"`
+	EvalOrderAttr    *int             `xml:"evalOrder,attr"`
 	IdAttr           uint32           `xml:"id,attr"`
-	IMeasureHierAttr uint32           `xml:"iMeasureHier,attr,omitempty"`
-	IMeasureFldAttr  uint32           `xml:"iMeasureFld,attr,omitempty"`
-	NameAttr         string           `xml:"name,attr,omitempty"`
-	DescriptionAttr  string           `xml:"description,attr,omitempty"`
-	StringValue1Attr string           `xml:"stringValue1,attr,omitempty"`
-	StringValue2Attr string           `xml:"stringValue2,attr,omitempty"`
+	IMeasureHierAttr *uint32          `xml:"iMeasureHier,attr"`
+	IMeasureFldAttr  *uint32          `xml:"iMeasureFld,attr"`
+	NameAttr         *string          `xml:"name,attr"`
+	DescriptionAttr  *string          `xml:"description,attr"`
+	StringValue1Attr *string          `xml:"stringValue1,attr"`
+	StringValue2Attr *string          `xml:"stringValue2,attr"`
 	AutoFilter       *CTAutoFilter    `xml:"autoFilter"`
 	ExtLst           *CTExtensionList `xml:"extLst,omitempty"`
 }
@@ -1578,18 +1578,18 @@ type STPivotFilterType string
 // CTPivotArea ...
 type CTPivotArea struct {
 	XMLName                         xml.Name               `xml:"CT_PivotArea"`
-	FieldAttr                       int                    `xml:"field,attr,omitempty"`
-	TypeAttr                        string                 `xml:"type,attr,omitempty"`
-	DataOnlyAttr                    bool                   `xml:"dataOnly,attr,omitempty"`
-	LabelOnlyAttr                   bool                   `xml:"labelOnly,attr,omitempty"`
-	GrandRowAttr                    bool                   `xml:"grandRow,attr,omitempty"`
-	GrandColAttr                    bool                   `xml:"grandCol,attr,omitempty"`
-	CacheIndexAttr                  bool                   `xml:"cacheIndex,attr,omitempty"`
-	OutlineAttr                     bool                   `xml:"outline,attr,omitempty"`
-	OffsetAttr                      string                 `xml:"offset,attr,omitempty"`
-	CollapsedLevelsAreSubtotalsAttr bool                   `xml:"collapsedLevelsAreSubtotals,attr,omitempty"`
-	AxisAttr                        string                 `xml:"axis,attr,omitempty"`
-	FieldPositionAttr               uint32                 `xml:"fieldPosition,attr,omitempty"`
+	FieldAttr                       *int                   `xml:"field,attr"`
+	TypeAttr                        *string                `xml:"type,attr"`
+	DataOnlyAttr                    *bool                  `xml:"dataOnly,attr"`
+	LabelOnlyAttr                   *bool                  `xml:"labelOnly,attr"`
+	GrandRowAttr                    *bool                  `xml:"grandRow,attr"`
+	GrandColAttr                    *bool                  `xml:"grandCol,attr"`
+	CacheIndexAttr                  *bool                  `xml:"cacheIndex,attr"`
+	OutlineAttr                     *bool                  `xml:"outline,attr"`
+	OffsetAttr                      *string                `xml:"offset,attr"`
+	CollapsedLevelsAreSubtotalsAttr *bool                  `xml:"collapsedLevelsAreSubtotals,attr"`
+	AxisAttr                        *string                `xml:"axis,attr"`
+	FieldPositionAttr               *uint32                `xml:"fieldPosition,attr"`
 	References                      *CTPivotAreaReferences `xml:"references,omitempty"`
 	ExtLst                          *CTExtensionList       `xml:"extLst,omitempty"`
 }
@@ -1600,30 +1600,30 @@ type STPivotAreaType string
 // CTPivotAreaReferences ...
 type CTPivotAreaReferences struct {
 	XMLName   xml.Name                `xml:"CT_PivotAreaReferences"`
-	CountAttr uint32                  `xml:"count,attr,omitempty"`
+	CountAttr *uint32                 `xml:"count,attr"`
 	Reference []*CTPivotAreaReference `xml:"reference"`
 }
 
 // CTPivotAreaReference ...
 type CTPivotAreaReference struct {
 	XMLName             xml.Name         `xml:"CT_PivotAreaReference"`
-	FieldAttr           uint32           `xml:"field,attr,omitempty"`
-	CountAttr           uint32           `xml:"count,attr,omitempty"`
-	SelectedAttr        bool             `xml:"selected,attr,omitempty"`
-	ByPositionAttr      bool             `xml:"byPosition,attr,omitempty"`
-	RelativeAttr        bool             `xml:"relative,attr,omitempty"`
-	DefaultSubtotalAttr bool             `xml:"defaultSubtotal,attr,omitempty"`
-	SumSubtotalAttr     bool             `xml:"sumSubtotal,attr,omitempty"`
-	CountASubtotalAttr  bool             `xml:"countASubtotal,attr,omitempty"`
-	AvgSubtotalAttr     bool             `xml:"avgSubtotal,attr,omitempty"`
-	MaxSubtotalAttr     bool             `xml:"maxSubtotal,attr,omitempty"`
-	MinSubtotalAttr     bool             `xml:"minSubtotal,attr,omitempty"`
-	ProductSubtotalAttr bool             `xml:"productSubtotal,attr,omitempty"`
-	CountSubtotalAttr   bool             `xml:"countSubtotal,attr,omitempty"`
-	StdDevSubtotalAttr  bool             `xml:"stdDevSubtotal,attr,omitempty"`
-	StdDevPSubtotalAttr bool             `xml:"stdDevPSubtotal,attr,omitempty"`
-	VarSubtotalAttr     bool             `xml:"varSubtotal,attr,omitempty"`
-	VarPSubtotalAttr    bool             `xml:"varPSubtotal,attr,omitempty"`
+	FieldAttr           *uint32          `xml:"field,attr"`
+	CountAttr           *uint32          `xml:"count,attr"`
+	SelectedAttr        *bool            `xml:"selected,attr"`
+	ByPositionAttr      *bool            `xml:"byPosition,attr"`
+	RelativeAttr        *bool            `xml:"relative,attr"`
+	DefaultSubtotalAttr *bool            `xml:"defaultSubtotal,attr"`
+	SumSubtotalAttr     *bool            `xml:"sumSubtotal,attr"`
+	CountASubtotalAttr  *bool            `xml:"countASubtotal,attr"`
+	AvgSubtotalAttr     *bool            `xml:"avgSubtotal,attr"`
+	MaxSubtotalAttr     *bool            `xml:"maxSubtotal,attr"`
+	MinSubtotalAttr     *bool            `xml:"minSubtotal,attr"`
+	ProductSubtotalAttr *bool            `xml:"productSubtotal,attr"`
+	CountSubtotalAttr   *bool            `xml:"countSubtotal,attr"`
+	StdDevSubtotalAttr  *bool            `xml:"stdDevSubtotal,attr"`
+	StdDevPSubtotalAttr *bool            `xml:"stdDevPSubtotal,attr"`
+	VarSubtotalAttr     *bool            `xml:"varSubtotal,attr"`
+	VarPSubtotalAttr    *bool            `xml:"varPSubtotal,attr"`
 	X                   []*CTIndex       `xml:"x,omitempty"`
 	ExtLst              *CTExtensionList `xml:"extLst,omitempty"`
 }
@@ -1645,19 +1645,19 @@ type CTQueryTable struct {
 	XMLName                    xml.Name `xml:"CT_QueryTable"`
 	AGAutoFormat               *AGAutoFormat
 	NameAttr                   string               `xml:"name,attr"`
-	HeadersAttr                bool                 `xml:"headers,attr,omitempty"`
-	RowNumbersAttr             bool                 `xml:"rowNumbers,attr,omitempty"`
-	DisableRefreshAttr         bool                 `xml:"disableRefresh,attr,omitempty"`
-	BackgroundRefreshAttr      bool                 `xml:"backgroundRefresh,attr,omitempty"`
-	FirstBackgroundRefreshAttr bool                 `xml:"firstBackgroundRefresh,attr,omitempty"`
-	RefreshOnLoadAttr          bool                 `xml:"refreshOnLoad,attr,omitempty"`
-	GrowShrinkTypeAttr         string               `xml:"growShrinkType,attr,omitempty"`
-	FillFormulasAttr           bool                 `xml:"fillFormulas,attr,omitempty"`
-	RemoveDataOnSaveAttr       bool                 `xml:"removeDataOnSave,attr,omitempty"`
-	DisableEditAttr            bool                 `xml:"disableEdit,attr,omitempty"`
-	PreserveFormattingAttr     bool                 `xml:"preserveFormatting,attr,omitempty"`
-	AdjustColumnWidthAttr      bool                 `xml:"adjustColumnWidth,attr,omitempty"`
-	IntermediateAttr           bool                 `xml:"intermediate,attr,omitempty"`
+	HeadersAttr                *bool                `xml:"headers,attr"`
+	RowNumbersAttr             *bool                `xml:"rowNumbers,attr"`
+	DisableRefreshAttr         *bool                `xml:"disableRefresh,attr"`
+	BackgroundRefreshAttr      *bool                `xml:"backgroundRefresh,attr"`
+	FirstBackgroundRefreshAttr *bool                `xml:"firstBackgroundRefresh,attr"`
+	RefreshOnLoadAttr          *bool                `xml:"refreshOnLoad,attr"`
+	GrowShrinkTypeAttr         *string              `xml:"growShrinkType,attr"`
+	FillFormulasAttr           *bool                `xml:"fillFormulas,attr"`
+	RemoveDataOnSaveAttr       *bool                `xml:"removeDataOnSave,attr"`
+	DisableEditAttr            *bool                `xml:"disableEdit,attr"`
+	PreserveFormattingAttr     *bool                `xml:"preserveFormatting,attr"`
+	AdjustColumnWidthAttr      *bool                `xml:"adjustColumnWidth,attr"`
+	IntermediateAttr           *bool                `xml:"intermediate,attr"`
 	ConnectionIdAttr           uint32               `xml:"connectionId,attr"`
 	QueryTableRefresh          *CTQueryTableRefresh `xml:"queryTableRefresh,omitempty"`
 	ExtLst                     *CTExtensionList     `xml:"extLst,omitempty"`
@@ -1666,13 +1666,13 @@ type CTQueryTable struct {
 // CTQueryTableRefresh ...
 type CTQueryTableRefresh struct {
 	XMLName                      xml.Name                   `xml:"CT_QueryTableRefresh"`
-	PreserveSortFilterLayoutAttr bool                       `xml:"preserveSortFilterLayout,attr,omitempty"`
-	FieldIdWrappedAttr           bool                       `xml:"fieldIdWrapped,attr,omitempty"`
-	HeadersInLastRefreshAttr     bool                       `xml:"headersInLastRefresh,attr,omitempty"`
-	MinimumVersionAttr           uint8                      `xml:"minimumVersion,attr,omitempty"`
-	NextIdAttr                   uint32                     `xml:"nextId,attr,omitempty"`
-	UnboundColumnsLeftAttr       uint32                     `xml:"unboundColumnsLeft,attr,omitempty"`
-	UnboundColumnsRightAttr      uint32                     `xml:"unboundColumnsRight,attr,omitempty"`
+	PreserveSortFilterLayoutAttr *bool                      `xml:"preserveSortFilterLayout,attr"`
+	FieldIdWrappedAttr           *bool                      `xml:"fieldIdWrapped,attr"`
+	HeadersInLastRefreshAttr     *bool                      `xml:"headersInLastRefresh,attr"`
+	MinimumVersionAttr           *uint8                     `xml:"minimumVersion,attr"`
+	NextIdAttr                   *uint32                    `xml:"nextId,attr"`
+	UnboundColumnsLeftAttr       *uint32                    `xml:"unboundColumnsLeft,attr"`
+	UnboundColumnsRightAttr      *uint32                    `xml:"unboundColumnsRight,attr"`
 	QueryTableFields             *CTQueryTableFields        `xml:"queryTableFields"`
 	QueryTableDeletedFields      *CTQueryTableDeletedFields `xml:"queryTableDeletedFields,omitempty"`
 	SortState                    *CTSortState               `xml:"sortState,omitempty"`
@@ -1682,7 +1682,7 @@ type CTQueryTableRefresh struct {
 // CTQueryTableDeletedFields ...
 type CTQueryTableDeletedFields struct {
 	XMLName      xml.Name          `xml:"CT_QueryTableDeletedFields"`
-	CountAttr    uint32            `xml:"count,attr,omitempty"`
+	CountAttr    *uint32           `xml:"count,attr"`
 	DeletedField []*CTDeletedField `xml:"deletedField"`
 }
 
@@ -1695,7 +1695,7 @@ type CTDeletedField struct {
 // CTQueryTableFields ...
 type CTQueryTableFields struct {
 	XMLName         xml.Name             `xml:"CT_QueryTableFields"`
-	CountAttr       uint32               `xml:"count,attr,omitempty"`
+	CountAttr       *uint32              `xml:"count,attr"`
 	QueryTableField []*CTQueryTableField `xml:"queryTableField,omitempty"`
 }
 
@@ -1703,12 +1703,12 @@ type CTQueryTableFields struct {
 type CTQueryTableField struct {
 	XMLName           xml.Name         `xml:"CT_QueryTableField"`
 	IdAttr            uint32           `xml:"id,attr"`
-	NameAttr          string           `xml:"name,attr,omitempty"`
-	DataBoundAttr     bool             `xml:"dataBound,attr,omitempty"`
-	RowNumbersAttr    bool             `xml:"rowNumbers,attr,omitempty"`
-	FillFormulasAttr  bool             `xml:"fillFormulas,attr,omitempty"`
-	ClippedAttr       bool             `xml:"clipped,attr,omitempty"`
-	TableColumnIdAttr uint32           `xml:"tableColumnId,attr,omitempty"`
+	NameAttr          *string          `xml:"name,attr"`
+	DataBoundAttr     *bool            `xml:"dataBound,attr"`
+	RowNumbersAttr    *bool            `xml:"rowNumbers,attr"`
+	FillFormulasAttr  *bool            `xml:"fillFormulas,attr"`
+	ClippedAttr       *bool            `xml:"clipped,attr"`
+	TableColumnIdAttr *uint32          `xml:"tableColumnId,attr"`
 	ExtLst            *CTExtensionList `xml:"extLst,omitempty"`
 }
 
@@ -1721,8 +1721,8 @@ type Sst *CTSst
 // CTSst ...
 type CTSst struct {
 	XMLName         xml.Name         `xml:"CT_Sst"`
-	CountAttr       uint32           `xml:"count,attr,omitempty"`
-	UniqueCountAttr uint32           `xml:"uniqueCount,attr,omitempty"`
+	CountAttr       *uint32          `xml:"count,attr"`
+	UniqueCountAttr *uint32          `xml:"uniqueCount,attr"`
 	Si              []*CTRst         `xml:"si,omitempty"`
 	ExtLst          *CTExtensionList `xml:"extLst,omitempty"`
 }
@@ -1781,8 +1781,8 @@ type CTRst struct {
 type CTPhoneticPr struct {
 	XMLName       xml.Name `xml:"CT_PhoneticPr"`
 	FontIdAttr    uint32   `xml:"fontId,attr"`
-	TypeAttr      string   `xml:"type,attr,omitempty"`
-	AlignmentAttr string   `xml:"alignment,attr,omitempty"`
+	TypeAttr      *string  `xml:"type,attr"`
+	AlignmentAttr *string  `xml:"alignment,attr"`
 }
 
 // Headers ...
@@ -1795,17 +1795,17 @@ type Revisions *CTRevisions
 type CTRevisionHeaders struct {
 	XMLName               xml.Name            `xml:"CT_RevisionHeaders"`
 	GuidAttr              string              `xml:"guid,attr"`
-	LastGuidAttr          string              `xml:"lastGuid,attr,omitempty"`
-	SharedAttr            bool                `xml:"shared,attr,omitempty"`
-	DiskRevisionsAttr     bool                `xml:"diskRevisions,attr,omitempty"`
-	HistoryAttr           bool                `xml:"history,attr,omitempty"`
-	TrackRevisionsAttr    bool                `xml:"trackRevisions,attr,omitempty"`
-	ExclusiveAttr         bool                `xml:"exclusive,attr,omitempty"`
-	RevisionIdAttr        uint32              `xml:"revisionId,attr,omitempty"`
-	VersionAttr           int                 `xml:"version,attr,omitempty"`
-	KeepChangeHistoryAttr bool                `xml:"keepChangeHistory,attr,omitempty"`
-	ProtectedAttr         bool                `xml:"protected,attr,omitempty"`
-	PreserveHistoryAttr   uint32              `xml:"preserveHistory,attr,omitempty"`
+	LastGuidAttr          *string             `xml:"lastGuid,attr"`
+	SharedAttr            *bool               `xml:"shared,attr"`
+	DiskRevisionsAttr     *bool               `xml:"diskRevisions,attr"`
+	HistoryAttr           *bool               `xml:"history,attr"`
+	TrackRevisionsAttr    *bool               `xml:"trackRevisions,attr"`
+	ExclusiveAttr         *bool               `xml:"exclusive,attr"`
+	RevisionIdAttr        *uint32             `xml:"revisionId,attr"`
+	VersionAttr           *int                `xml:"version,attr"`
+	KeepChangeHistoryAttr *bool               `xml:"keepChangeHistory,attr"`
+	ProtectedAttr         *bool               `xml:"protected,attr"`
+	PreserveHistoryAttr   *uint32             `xml:"preserveHistory,attr"`
 	Header                []*CTRevisionHeader `xml:"header"`
 }
 
@@ -1842,8 +1842,8 @@ type CTRevisionHeader struct {
 	MaxSheetIdAttr uint32               `xml:"maxSheetId,attr"`
 	UserNameAttr   string               `xml:"userName,attr"`
 	RIdAttr        string               `xml:"r:id,attr"`
-	MinRIdAttr     uint32               `xml:"minRId,attr,omitempty"`
-	MaxRIdAttr     uint32               `xml:"maxRId,attr,omitempty"`
+	MinRIdAttr     *uint32              `xml:"minRId,attr"`
+	MaxRIdAttr     *uint32              `xml:"maxRId,attr"`
 	SheetIdMap     *CTSheetIdMap        `xml:"sheetIdMap"`
 	ReviewedList   *CTReviewedRevisions `xml:"reviewedList,omitempty"`
 	ExtLst         *CTExtensionList     `xml:"extLst,omitempty"`
@@ -1852,7 +1852,7 @@ type CTRevisionHeader struct {
 // CTSheetIdMap ...
 type CTSheetIdMap struct {
 	XMLName   xml.Name     `xml:"CT_SheetIdMap"`
-	CountAttr uint32       `xml:"count,attr,omitempty"`
+	CountAttr *uint32      `xml:"count,attr"`
 	SheetId   []*CTSheetId `xml:"sheetId"`
 }
 
@@ -1865,7 +1865,7 @@ type CTSheetId struct {
 // CTReviewedRevisions ...
 type CTReviewedRevisions struct {
 	XMLName   xml.Name      `xml:"CT_ReviewedRevisions"`
-	CountAttr uint32        `xml:"count,attr,omitempty"`
+	CountAttr *uint32       `xml:"count,attr"`
 	Reviewed  []*CTReviewed `xml:"reviewed"`
 }
 
@@ -1880,15 +1880,15 @@ type CTUndoInfo struct {
 	XMLName   xml.Name `xml:"CT_UndoInfo"`
 	IndexAttr uint32   `xml:"index,attr"`
 	ExpAttr   string   `xml:"exp,attr"`
-	Ref3DAttr bool     `xml:"ref3D,attr,omitempty"`
-	ArrayAttr bool     `xml:"array,attr,omitempty"`
-	VAttr     bool     `xml:"v,attr,omitempty"`
-	NfAttr    bool     `xml:"nf,attr,omitempty"`
-	CsAttr    bool     `xml:"cs,attr,omitempty"`
+	Ref3DAttr *bool    `xml:"ref3D,attr"`
+	ArrayAttr *bool    `xml:"array,attr"`
+	VAttr     *bool    `xml:"v,attr"`
+	NfAttr    *bool    `xml:"nf,attr"`
+	CsAttr    *bool    `xml:"cs,attr"`
 	DrAttr    string   `xml:"dr,attr"`
-	DnAttr    string   `xml:"dn,attr,omitempty"`
-	RAttr     string   `xml:"r,attr,omitempty"`
-	SIdAttr   uint32   `xml:"sId,attr,omitempty"`
+	DnAttr    *string  `xml:"dn,attr"`
+	RAttr     *string  `xml:"r,attr"`
+	SIdAttr   *uint32  `xml:"sId,attr"`
 }
 
 // CTRevisionRowColumn ...
@@ -1896,10 +1896,10 @@ type CTRevisionRowColumn struct {
 	XMLName    xml.Name `xml:"CT_RevisionRowColumn"`
 	AGRevData  *AGRevData
 	SIdAttr    uint32                  `xml:"sId,attr"`
-	EolAttr    bool                    `xml:"eol,attr,omitempty"`
+	EolAttr    *bool                   `xml:"eol,attr"`
 	RefAttr    string                  `xml:"ref,attr"`
 	ActionAttr string                  `xml:"action,attr"`
-	EdgeAttr   bool                    `xml:"edge,attr,omitempty"`
+	EdgeAttr   *bool                   `xml:"edge,attr"`
 	Undo       []*CTUndoInfo           `xml:"undo,omitempty"`
 	Rcc        []*CTRevisionCellChange `xml:"rcc,omitempty"`
 	Rfmt       []*CTRevisionFormatting `xml:"rfmt,omitempty"`
@@ -1912,7 +1912,7 @@ type CTRevisionMove struct {
 	SheetIdAttr       uint32                  `xml:"sheetId,attr"`
 	SourceAttr        string                  `xml:"source,attr"`
 	DestinationAttr   string                  `xml:"destination,attr"`
-	SourceSheetIdAttr uint32                  `xml:"sourceSheetId,attr,omitempty"`
+	SourceSheetIdAttr *uint32                 `xml:"sourceSheetId,attr"`
 	Undo              []*CTUndoInfo           `xml:"undo,omitempty"`
 	Rcc               []*CTRevisionCellChange `xml:"rcc,omitempty"`
 	Rfmt              []*CTRevisionFormatting `xml:"rfmt,omitempty"`
@@ -1949,16 +1949,16 @@ type CTRevisionCellChange struct {
 	XMLName                    xml.Name `xml:"CT_RevisionCellChange"`
 	AGRevData                  *AGRevData
 	SIdAttr                    uint32           `xml:"sId,attr"`
-	OdxfAttr                   bool             `xml:"odxf,attr,omitempty"`
-	XfDxfAttr                  bool             `xml:"xfDxf,attr,omitempty"`
-	SAttr                      bool             `xml:"s,attr,omitempty"`
-	DxfAttr                    bool             `xml:"dxf,attr,omitempty"`
-	NumFmtIdAttr               uint32           `xml:"numFmtId,attr,omitempty"`
-	QuotePrefixAttr            bool             `xml:"quotePrefix,attr,omitempty"`
-	OldQuotePrefixAttr         bool             `xml:"oldQuotePrefix,attr,omitempty"`
-	PhAttr                     bool             `xml:"ph,attr,omitempty"`
-	OldPhAttr                  bool             `xml:"oldPh,attr,omitempty"`
-	EndOfListFormulaUpdateAttr bool             `xml:"endOfListFormulaUpdate,attr,omitempty"`
+	OdxfAttr                   *bool            `xml:"odxf,attr"`
+	XfDxfAttr                  *bool            `xml:"xfDxf,attr"`
+	SAttr                      *bool            `xml:"s,attr"`
+	DxfAttr                    *bool            `xml:"dxf,attr"`
+	NumFmtIdAttr               *uint32          `xml:"numFmtId,attr"`
+	QuotePrefixAttr            *bool            `xml:"quotePrefix,attr"`
+	OldQuotePrefixAttr         *bool            `xml:"oldQuotePrefix,attr"`
+	PhAttr                     *bool            `xml:"ph,attr"`
+	OldPhAttr                  *bool            `xml:"oldPh,attr"`
+	EndOfListFormulaUpdateAttr *bool            `xml:"endOfListFormulaUpdate,attr"`
 	Oc                         *CTCell          `xml:"oc,omitempty"`
 	Nc                         *CTCell          `xml:"nc"`
 	Odxf                       *CTDxf           `xml:"odxf,omitempty"`
@@ -1970,11 +1970,11 @@ type CTRevisionCellChange struct {
 type CTRevisionFormatting struct {
 	XMLName     xml.Name         `xml:"CT_RevisionFormatting"`
 	SheetIdAttr uint32           `xml:"sheetId,attr"`
-	XfDxfAttr   bool             `xml:"xfDxf,attr,omitempty"`
-	SAttr       bool             `xml:"s,attr,omitempty"`
+	XfDxfAttr   *bool            `xml:"xfDxf,attr"`
+	SAttr       *bool            `xml:"s,attr"`
 	SqrefAttr   *STSqref         `xml:"sqref,attr"`
-	StartAttr   uint32           `xml:"start,attr,omitempty"`
-	LengthAttr  uint32           `xml:"length,attr,omitempty"`
+	StartAttr   *uint32          `xml:"start,attr"`
+	LengthAttr  *uint32          `xml:"length,attr"`
 	Dxf         *CTDxf           `xml:"dxf,omitempty"`
 	ExtLst      *CTExtensionList `xml:"extLst,omitempty"`
 }
@@ -1993,41 +1993,41 @@ type CTRevisionComment struct {
 	SheetIdAttr      uint32   `xml:"sheetId,attr"`
 	CellAttr         string   `xml:"cell,attr"`
 	GuidAttr         string   `xml:"guid,attr"`
-	ActionAttr       string   `xml:"action,attr,omitempty"`
-	AlwaysShowAttr   bool     `xml:"alwaysShow,attr,omitempty"`
-	OldAttr          bool     `xml:"old,attr,omitempty"`
-	HiddenRowAttr    bool     `xml:"hiddenRow,attr,omitempty"`
-	HiddenColumnAttr bool     `xml:"hiddenColumn,attr,omitempty"`
+	ActionAttr       *string  `xml:"action,attr"`
+	AlwaysShowAttr   *bool    `xml:"alwaysShow,attr"`
+	OldAttr          *bool    `xml:"old,attr"`
+	HiddenRowAttr    *bool    `xml:"hiddenRow,attr"`
+	HiddenColumnAttr *bool    `xml:"hiddenColumn,attr"`
 	AuthorAttr       string   `xml:"author,attr"`
-	OldLengthAttr    uint32   `xml:"oldLength,attr,omitempty"`
-	NewLengthAttr    uint32   `xml:"newLength,attr,omitempty"`
+	OldLengthAttr    *uint32  `xml:"oldLength,attr"`
+	NewLengthAttr    *uint32  `xml:"newLength,attr"`
 }
 
 // CTRevisionDefinedName ...
 type CTRevisionDefinedName struct {
 	XMLName                xml.Name `xml:"CT_RevisionDefinedName"`
 	AGRevData              *AGRevData
-	LocalSheetIdAttr       uint32           `xml:"localSheetId,attr,omitempty"`
-	CustomViewAttr         bool             `xml:"customView,attr,omitempty"`
+	LocalSheetIdAttr       *uint32          `xml:"localSheetId,attr"`
+	CustomViewAttr         *bool            `xml:"customView,attr"`
 	NameAttr               string           `xml:"name,attr"`
-	FunctionAttr           bool             `xml:"function,attr,omitempty"`
-	OldFunctionAttr        bool             `xml:"oldFunction,attr,omitempty"`
-	FunctionGroupIdAttr    uint8            `xml:"functionGroupId,attr,omitempty"`
-	OldFunctionGroupIdAttr uint8            `xml:"oldFunctionGroupId,attr,omitempty"`
-	ShortcutKeyAttr        uint8            `xml:"shortcutKey,attr,omitempty"`
-	OldShortcutKeyAttr     uint8            `xml:"oldShortcutKey,attr,omitempty"`
-	HiddenAttr             bool             `xml:"hidden,attr,omitempty"`
-	OldHiddenAttr          bool             `xml:"oldHidden,attr,omitempty"`
-	CustomMenuAttr         string           `xml:"customMenu,attr,omitempty"`
-	OldCustomMenuAttr      string           `xml:"oldCustomMenu,attr,omitempty"`
-	DescriptionAttr        string           `xml:"description,attr,omitempty"`
-	OldDescriptionAttr     string           `xml:"oldDescription,attr,omitempty"`
-	HelpAttr               string           `xml:"help,attr,omitempty"`
-	OldHelpAttr            string           `xml:"oldHelp,attr,omitempty"`
-	StatusBarAttr          string           `xml:"statusBar,attr,omitempty"`
-	OldStatusBarAttr       string           `xml:"oldStatusBar,attr,omitempty"`
-	CommentAttr            string           `xml:"comment,attr,omitempty"`
-	OldCommentAttr         string           `xml:"oldComment,attr,omitempty"`
+	FunctionAttr           *bool            `xml:"function,attr"`
+	OldFunctionAttr        *bool            `xml:"oldFunction,attr"`
+	FunctionGroupIdAttr    *uint8           `xml:"functionGroupId,attr"`
+	OldFunctionGroupIdAttr *uint8           `xml:"oldFunctionGroupId,attr"`
+	ShortcutKeyAttr        *uint8           `xml:"shortcutKey,attr"`
+	OldShortcutKeyAttr     *uint8           `xml:"oldShortcutKey,attr"`
+	HiddenAttr             *bool            `xml:"hidden,attr"`
+	OldHiddenAttr          *bool            `xml:"oldHidden,attr"`
+	CustomMenuAttr         *string          `xml:"customMenu,attr"`
+	OldCustomMenuAttr      *string          `xml:"oldCustomMenu,attr"`
+	DescriptionAttr        *string          `xml:"description,attr"`
+	OldDescriptionAttr     *string          `xml:"oldDescription,attr"`
+	HelpAttr               *string          `xml:"help,attr"`
+	OldHelpAttr            *string          `xml:"oldHelp,attr"`
+	StatusBarAttr          *string          `xml:"statusBar,attr"`
+	OldStatusBarAttr       *string          `xml:"oldStatusBar,attr"`
+	CommentAttr            *string          `xml:"comment,attr"`
+	OldCommentAttr         *string          `xml:"oldComment,attr"`
 	Formula                *string          `xml:"formula"`
 	OldFormula             *string          `xml:"oldFormula"`
 	ExtLst                 *CTExtensionList `xml:"extLst,omitempty"`
@@ -2037,7 +2037,7 @@ type CTRevisionDefinedName struct {
 type CTRevisionConflict struct {
 	XMLName     xml.Name `xml:"CT_RevisionConflict"`
 	AGRevData   *AGRevData
-	SheetIdAttr uint32 `xml:"sheetId,attr,omitempty"`
+	SheetIdAttr *uint32 `xml:"sheetId,attr"`
 }
 
 // CTRevisionQueryTableField ...
@@ -2063,7 +2063,7 @@ type Users *CTUsers
 // CTUsers ...
 type CTUsers struct {
 	XMLName   xml.Name        `xml:"CT_Users"`
-	CountAttr uint32          `xml:"count,attr,omitempty"`
+	CountAttr *uint32         `xml:"count,attr"`
 	UserInfo  []*CTSharedUser `xml:"userInfo,omitempty"`
 }
 
@@ -2186,21 +2186,21 @@ type CTSheetData struct {
 // CTSheetCalcPr ...
 type CTSheetCalcPr struct {
 	XMLName            xml.Name `xml:"CT_SheetCalcPr"`
-	FullCalcOnLoadAttr bool     `xml:"fullCalcOnLoad,attr,omitempty"`
+	FullCalcOnLoadAttr *bool    `xml:"fullCalcOnLoad,attr"`
 }
 
 // CTSheetFormatPr ...
 type CTSheetFormatPr struct {
 	XMLName              xml.Name `xml:"CT_SheetFormatPr"`
-	BaseColWidthAttr     uint32   `xml:"baseColWidth,attr,omitempty"`
-	DefaultColWidthAttr  float64  `xml:"defaultColWidth,attr,omitempty"`
+	BaseColWidthAttr     *uint32  `xml:"baseColWidth,attr"`
+	DefaultColWidthAttr  *float64 `xml:"defaultColWidth,attr"`
 	DefaultRowHeightAttr float64  `xml:"defaultRowHeight,attr"`
-	CustomHeightAttr     bool     `xml:"customHeight,attr,omitempty"`
-	ZeroHeightAttr       bool     `xml:"zeroHeight,attr,omitempty"`
-	ThickTopAttr         bool     `xml:"thickTop,attr,omitempty"`
-	ThickBottomAttr      bool     `xml:"thickBottom,attr,omitempty"`
-	OutlineLevelRowAttr  uint8    `xml:"outlineLevelRow,attr,omitempty"`
-	OutlineLevelColAttr  uint8    `xml:"outlineLevelCol,attr,omitempty"`
+	CustomHeightAttr     *bool    `xml:"customHeight,attr"`
+	ZeroHeightAttr       *bool    `xml:"zeroHeight,attr"`
+	ThickTopAttr         *bool    `xml:"thickTop,attr"`
+	ThickBottomAttr      *bool    `xml:"thickBottom,attr"`
+	OutlineLevelRowAttr  *uint8   `xml:"outlineLevelRow,attr"`
+	OutlineLevelColAttr  *uint8   `xml:"outlineLevelCol,attr"`
 }
 
 // CTCols ...
@@ -2214,14 +2214,14 @@ type CTCol struct {
 	XMLName          xml.Name `xml:"CT_Col"`
 	MinAttr          uint32   `xml:"min,attr"`
 	MaxAttr          uint32   `xml:"max,attr"`
-	WidthAttr        float64  `xml:"width,attr,omitempty"`
-	StyleAttr        uint32   `xml:"style,attr,omitempty"`
-	HiddenAttr       bool     `xml:"hidden,attr,omitempty"`
-	BestFitAttr      bool     `xml:"bestFit,attr,omitempty"`
-	CustomWidthAttr  bool     `xml:"customWidth,attr,omitempty"`
-	PhoneticAttr     bool     `xml:"phonetic,attr,omitempty"`
-	OutlineLevelAttr uint8    `xml:"outlineLevel,attr,omitempty"`
-	CollapsedAttr    bool     `xml:"collapsed,attr,omitempty"`
+	WidthAttr        *float64 `xml:"width,attr"`
+	StyleAttr        *uint32  `xml:"style,attr"`
+	HiddenAttr       *bool    `xml:"hidden,attr"`
+	BestFitAttr      *bool    `xml:"bestFit,attr"`
+	CustomWidthAttr  *bool    `xml:"customWidth,attr"`
+	PhoneticAttr     *bool    `xml:"phonetic,attr"`
+	OutlineLevelAttr *uint8   `xml:"outlineLevel,attr"`
+	CollapsedAttr    *bool    `xml:"collapsed,attr"`
 }
 
 // STCellSpan ...
@@ -2233,18 +2233,18 @@ type STCellSpans []string
 // CTRow ...
 type CTRow struct {
 	XMLName          xml.Name         `xml:"CT_Row"`
-	RAttr            uint32           `xml:"r,attr,omitempty"`
+	RAttr            *uint32          `xml:"r,attr"`
 	SpansAttr        *STCellSpans     `xml:"spans,attr,omitempty"`
-	SAttr            uint32           `xml:"s,attr,omitempty"`
-	CustomFormatAttr bool             `xml:"customFormat,attr,omitempty"`
-	HtAttr           float64          `xml:"ht,attr,omitempty"`
-	HiddenAttr       bool             `xml:"hidden,attr,omitempty"`
-	CustomHeightAttr bool             `xml:"customHeight,attr,omitempty"`
-	OutlineLevelAttr uint8            `xml:"outlineLevel,attr,omitempty"`
-	CollapsedAttr    bool             `xml:"collapsed,attr,omitempty"`
-	ThickTopAttr     bool             `xml:"thickTop,attr,omitempty"`
-	ThickBotAttr     bool             `xml:"thickBot,attr,omitempty"`
-	PhAttr           bool             `xml:"ph,attr,omitempty"`
+	SAttr            *uint32          `xml:"s,attr"`
+	CustomFormatAttr *bool            `xml:"customFormat,attr"`
+	HtAttr           *float64         `xml:"ht,attr"`
+	HiddenAttr       *bool            `xml:"hidden,attr"`
+	CustomHeightAttr *bool            `xml:"customHeight,attr"`
+	OutlineLevelAttr *uint8           `xml:"outlineLevel,attr"`
+	CollapsedAttr    *bool            `xml:"collapsed,attr"`
+	ThickTopAttr     *bool            `xml:"thickTop,attr"`
+	ThickBotAttr     *bool            `xml:"thickBot,attr"`
+	PhAttr           *bool            `xml:"ph,attr"`
 	C                []*CTCell        `xml:"c,omitempty"`
 	ExtLst           *CTExtensionList `xml:"extLst,omitempty"`
 }
@@ -2252,12 +2252,12 @@ type CTRow struct {
 // CTCell ...
 type CTCell struct {
 	XMLName xml.Name         `xml:"CT_Cell"`
-	RAttr   string           `xml:"r,attr,omitempty"`
-	SAttr   uint32           `xml:"s,attr,omitempty"`
-	TAttr   string           `xml:"t,attr,omitempty"`
-	CmAttr  uint32           `xml:"cm,attr,omitempty"`
-	VmAttr  uint32           `xml:"vm,attr,omitempty"`
-	PhAttr  bool             `xml:"ph,attr,omitempty"`
+	RAttr   *string          `xml:"r,attr"`
+	SAttr   *uint32          `xml:"s,attr"`
+	TAttr   *string          `xml:"t,attr"`
+	CmAttr  *uint32          `xml:"cm,attr"`
+	VmAttr  *uint32          `xml:"vm,attr"`
+	PhAttr  *bool            `xml:"ph,attr"`
 	F       *CTCellFormula   `xml:"f,omitempty"`
 	V       *string          `xml:"v"`
 	Is      *CTRst           `xml:"is,omitempty"`
@@ -2273,15 +2273,15 @@ type STCellFormulaType string
 // CTSheetPr ...
 type CTSheetPr struct {
 	XMLName                               xml.Name       `xml:"CT_SheetPr"`
-	SyncHorizontalAttr                    bool           `xml:"syncHorizontal,attr,omitempty"`
-	SyncVerticalAttr                      bool           `xml:"syncVertical,attr,omitempty"`
-	SyncRefAttr                           string         `xml:"syncRef,attr,omitempty"`
-	TransitionEvaluationAttr              bool           `xml:"transitionEvaluation,attr,omitempty"`
-	TransitionEntryAttr                   bool           `xml:"transitionEntry,attr,omitempty"`
-	PublishedAttr                         bool           `xml:"published,attr,omitempty"`
-	CodeNameAttr                          string         `xml:"codeName,attr,omitempty"`
-	FilterModeAttr                        bool           `xml:"filterMode,attr,omitempty"`
-	EnableFormatConditionsCalculationAttr bool           `xml:"enableFormatConditionsCalculation,attr,omitempty"`
+	SyncHorizontalAttr                    *bool          `xml:"syncHorizontal,attr"`
+	SyncVerticalAttr                      *bool          `xml:"syncVertical,attr"`
+	SyncRefAttr                           *string        `xml:"syncRef,attr"`
+	TransitionEvaluationAttr              *bool          `xml:"transitionEvaluation,attr"`
+	TransitionEntryAttr                   *bool          `xml:"transitionEntry,attr"`
+	PublishedAttr                         *bool          `xml:"published,attr"`
+	CodeNameAttr                          *string        `xml:"codeName,attr"`
+	FilterModeAttr                        *bool          `xml:"filterMode,attr"`
+	EnableFormatConditionsCalculationAttr *bool          `xml:"enableFormatConditionsCalculation,attr"`
 	TabColor                              *CTColor       `xml:"tabColor,omitempty"`
 	OutlinePr                             *CTOutlinePr   `xml:"outlinePr,omitempty"`
 	PageSetUpPr                           *CTPageSetUpPr `xml:"pageSetUpPr,omitempty"`
@@ -2303,24 +2303,24 @@ type CTSheetViews struct {
 // CTSheetView ...
 type CTSheetView struct {
 	XMLName                      xml.Name            `xml:"CT_SheetView"`
-	WindowProtectionAttr         bool                `xml:"windowProtection,attr,omitempty"`
-	ShowFormulasAttr             bool                `xml:"showFormulas,attr,omitempty"`
-	ShowGridLinesAttr            bool                `xml:"showGridLines,attr,omitempty"`
-	ShowRowColHeadersAttr        bool                `xml:"showRowColHeaders,attr,omitempty"`
-	ShowZerosAttr                bool                `xml:"showZeros,attr,omitempty"`
-	RightToLeftAttr              bool                `xml:"rightToLeft,attr,omitempty"`
-	TabSelectedAttr              bool                `xml:"tabSelected,attr,omitempty"`
-	ShowRulerAttr                bool                `xml:"showRuler,attr,omitempty"`
-	ShowOutlineSymbolsAttr       bool                `xml:"showOutlineSymbols,attr,omitempty"`
-	DefaultGridColorAttr         bool                `xml:"defaultGridColor,attr,omitempty"`
-	ShowWhiteSpaceAttr           bool                `xml:"showWhiteSpace,attr,omitempty"`
-	ViewAttr                     string              `xml:"view,attr,omitempty"`
-	TopLeftCellAttr              string              `xml:"topLeftCell,attr,omitempty"`
-	ColorIdAttr                  uint32              `xml:"colorId,attr,omitempty"`
-	ZoomScaleAttr                uint32              `xml:"zoomScale,attr,omitempty"`
-	ZoomScaleNormalAttr          uint32              `xml:"zoomScaleNormal,attr,omitempty"`
-	ZoomScaleSheetLayoutViewAttr uint32              `xml:"zoomScaleSheetLayoutView,attr,omitempty"`
-	ZoomScalePageLayoutViewAttr  uint32              `xml:"zoomScalePageLayoutView,attr,omitempty"`
+	WindowProtectionAttr         *bool               `xml:"windowProtection,attr"`
+	ShowFormulasAttr             *bool               `xml:"showFormulas,attr"`
+	ShowGridLinesAttr            *bool               `xml:"showGridLines,attr"`
+	ShowRowColHeadersAttr        *bool               `xml:"showRowColHeaders,attr"`
+	ShowZerosAttr                *bool               `xml:"showZeros,attr"`
+	RightToLeftAttr              *bool               `xml:"rightToLeft,attr"`
+	TabSelectedAttr              *bool               `xml:"tabSelected,attr"`
+	ShowRulerAttr                *bool               `xml:"showRuler,attr"`
+	ShowOutlineSymbolsAttr       *bool               `xml:"showOutlineSymbols,attr"`
+	DefaultGridColorAttr         *bool               `xml:"defaultGridColor,attr"`
+	ShowWhiteSpaceAttr           *bool               `xml:"showWhiteSpace,attr"`
+	ViewAttr                     *string             `xml:"view,attr"`
+	TopLeftCellAttr              *string             `xml:"topLeftCell,attr"`
+	ColorIdAttr                  *uint32             `xml:"colorId,attr"`
+	ZoomScaleAttr                *uint32             `xml:"zoomScale,attr"`
+	ZoomScaleNormalAttr          *uint32             `xml:"zoomScaleNormal,attr"`
+	ZoomScaleSheetLayoutViewAttr *uint32             `xml:"zoomScaleSheetLayoutView,attr"`
+	ZoomScalePageLayoutViewAttr  *uint32             `xml:"zoomScalePageLayoutView,attr"`
 	WorkbookViewIdAttr           uint32              `xml:"workbookViewId,attr"`
 	Pane                         *CTPane             `xml:"pane,omitempty"`
 	Selection                    []*CTSelection      `xml:"selection,omitempty"`
@@ -2331,42 +2331,42 @@ type CTSheetView struct {
 // CTPane ...
 type CTPane struct {
 	XMLName         xml.Name `xml:"CT_Pane"`
-	XSplitAttr      float64  `xml:"xSplit,attr,omitempty"`
-	YSplitAttr      float64  `xml:"ySplit,attr,omitempty"`
-	TopLeftCellAttr string   `xml:"topLeftCell,attr,omitempty"`
-	ActivePaneAttr  string   `xml:"activePane,attr,omitempty"`
-	StateAttr       string   `xml:"state,attr,omitempty"`
+	XSplitAttr      *float64 `xml:"xSplit,attr"`
+	YSplitAttr      *float64 `xml:"ySplit,attr"`
+	TopLeftCellAttr *string  `xml:"topLeftCell,attr"`
+	ActivePaneAttr  *string  `xml:"activePane,attr"`
+	StateAttr       *string  `xml:"state,attr"`
 }
 
 // CTPivotSelection ...
 type CTPivotSelection struct {
 	XMLName         xml.Name     `xml:"CT_PivotSelection"`
-	PaneAttr        string       `xml:"pane,attr,omitempty"`
-	ShowHeaderAttr  bool         `xml:"showHeader,attr,omitempty"`
-	LabelAttr       bool         `xml:"label,attr,omitempty"`
-	DataAttr        bool         `xml:"data,attr,omitempty"`
-	ExtendableAttr  bool         `xml:"extendable,attr,omitempty"`
-	CountAttr       uint32       `xml:"count,attr,omitempty"`
-	AxisAttr        string       `xml:"axis,attr,omitempty"`
-	DimensionAttr   uint32       `xml:"dimension,attr,omitempty"`
-	StartAttr       uint32       `xml:"start,attr,omitempty"`
-	MinAttr         uint32       `xml:"min,attr,omitempty"`
-	MaxAttr         uint32       `xml:"max,attr,omitempty"`
-	ActiveRowAttr   uint32       `xml:"activeRow,attr,omitempty"`
-	ActiveColAttr   uint32       `xml:"activeCol,attr,omitempty"`
-	PreviousRowAttr uint32       `xml:"previousRow,attr,omitempty"`
-	PreviousColAttr uint32       `xml:"previousCol,attr,omitempty"`
-	ClickAttr       uint32       `xml:"click,attr,omitempty"`
-	RIdAttr         string       `xml:"r:id,attr,omitempty"`
+	PaneAttr        *string      `xml:"pane,attr"`
+	ShowHeaderAttr  *bool        `xml:"showHeader,attr"`
+	LabelAttr       *bool        `xml:"label,attr"`
+	DataAttr        *bool        `xml:"data,attr"`
+	ExtendableAttr  *bool        `xml:"extendable,attr"`
+	CountAttr       *uint32      `xml:"count,attr"`
+	AxisAttr        *string      `xml:"axis,attr"`
+	DimensionAttr   *uint32      `xml:"dimension,attr"`
+	StartAttr       *uint32      `xml:"start,attr"`
+	MinAttr         *uint32      `xml:"min,attr"`
+	MaxAttr         *uint32      `xml:"max,attr"`
+	ActiveRowAttr   *uint32      `xml:"activeRow,attr"`
+	ActiveColAttr   *uint32      `xml:"activeCol,attr"`
+	PreviousRowAttr *uint32      `xml:"previousRow,attr"`
+	PreviousColAttr *uint32      `xml:"previousCol,attr"`
+	ClickAttr       *uint32      `xml:"click,attr"`
+	RIdAttr         *string      `xml:"r:id,attr"`
 	PivotArea       *CTPivotArea `xml:"pivotArea"`
 }
 
 // CTSelection ...
 type CTSelection struct {
 	XMLName          xml.Name `xml:"CT_Selection"`
-	PaneAttr         string   `xml:"pane,attr,omitempty"`
-	ActiveCellAttr   string   `xml:"activeCell,attr,omitempty"`
-	ActiveCellIdAttr uint32   `xml:"activeCellId,attr,omitempty"`
+	PaneAttr         *string  `xml:"pane,attr"`
+	ActiveCellAttr   *string  `xml:"activeCell,attr"`
+	ActiveCellIdAttr *uint32  `xml:"activeCellId,attr"`
 	SqrefAttr        *STSqref `xml:"sqref,attr,omitempty"`
 }
 
@@ -2376,19 +2376,19 @@ type STPane string
 // CTPageBreak ...
 type CTPageBreak struct {
 	XMLName              xml.Name   `xml:"CT_PageBreak"`
-	CountAttr            uint32     `xml:"count,attr,omitempty"`
-	ManualBreakCountAttr uint32     `xml:"manualBreakCount,attr,omitempty"`
+	CountAttr            *uint32    `xml:"count,attr"`
+	ManualBreakCountAttr *uint32    `xml:"manualBreakCount,attr"`
 	Brk                  []*CTBreak `xml:"brk,omitempty"`
 }
 
 // CTBreak ...
 type CTBreak struct {
 	XMLName xml.Name `xml:"CT_Break"`
-	IdAttr  uint32   `xml:"id,attr,omitempty"`
-	MinAttr uint32   `xml:"min,attr,omitempty"`
-	MaxAttr uint32   `xml:"max,attr,omitempty"`
-	ManAttr bool     `xml:"man,attr,omitempty"`
-	PtAttr  bool     `xml:"pt,attr,omitempty"`
+	IdAttr  *uint32  `xml:"id,attr"`
+	MinAttr *uint32  `xml:"min,attr"`
+	MaxAttr *uint32  `xml:"max,attr"`
+	ManAttr *bool    `xml:"man,attr"`
+	PtAttr  *bool    `xml:"pt,attr"`
 }
 
 // STSheetViewType ...
@@ -2397,26 +2397,26 @@ type STSheetViewType string
 // CTOutlinePr ...
 type CTOutlinePr struct {
 	XMLName                xml.Name `xml:"CT_OutlinePr"`
-	ApplyStylesAttr        bool     `xml:"applyStyles,attr,omitempty"`
-	SummaryBelowAttr       bool     `xml:"summaryBelow,attr,omitempty"`
-	SummaryRightAttr       bool     `xml:"summaryRight,attr,omitempty"`
-	ShowOutlineSymbolsAttr bool     `xml:"showOutlineSymbols,attr,omitempty"`
+	ApplyStylesAttr        *bool    `xml:"applyStyles,attr"`
+	SummaryBelowAttr       *bool    `xml:"summaryBelow,attr"`
+	SummaryRightAttr       *bool    `xml:"summaryRight,attr"`
+	ShowOutlineSymbolsAttr *bool    `xml:"showOutlineSymbols,attr"`
 }
 
 // CTPageSetUpPr ...
 type CTPageSetUpPr struct {
 	XMLName            xml.Name `xml:"CT_PageSetUpPr"`
-	AutoPageBreaksAttr bool     `xml:"autoPageBreaks,attr,omitempty"`
-	FitToPageAttr      bool     `xml:"fitToPage,attr,omitempty"`
+	AutoPageBreaksAttr *bool    `xml:"autoPageBreaks,attr"`
+	FitToPageAttr      *bool    `xml:"fitToPage,attr"`
 }
 
 // CTDataConsolidate ...
 type CTDataConsolidate struct {
 	XMLName         xml.Name    `xml:"CT_DataConsolidate"`
-	FunctionAttr    string      `xml:"function,attr,omitempty"`
-	StartLabelsAttr bool        `xml:"startLabels,attr,omitempty"`
-	TopLabelsAttr   bool        `xml:"topLabels,attr,omitempty"`
-	LinkAttr        bool        `xml:"link,attr,omitempty"`
+	FunctionAttr    *string     `xml:"function,attr"`
+	StartLabelsAttr *bool       `xml:"startLabels,attr"`
+	TopLabelsAttr   *bool       `xml:"topLabels,attr"`
+	LinkAttr        *bool       `xml:"link,attr"`
 	DataRefs        *CTDataRefs `xml:"dataRefs,omitempty"`
 }
 
@@ -2426,23 +2426,23 @@ type STDataConsolidateFunction string
 // CTDataRefs ...
 type CTDataRefs struct {
 	XMLName   xml.Name     `xml:"CT_DataRefs"`
-	CountAttr uint32       `xml:"count,attr,omitempty"`
+	CountAttr *uint32      `xml:"count,attr"`
 	DataRef   []*CTDataRef `xml:"dataRef,omitempty"`
 }
 
 // CTDataRef ...
 type CTDataRef struct {
 	XMLName   xml.Name `xml:"CT_DataRef"`
-	RefAttr   string   `xml:"ref,attr,omitempty"`
-	NameAttr  string   `xml:"name,attr,omitempty"`
-	SheetAttr string   `xml:"sheet,attr,omitempty"`
-	RIdAttr   string   `xml:"r:id,attr,omitempty"`
+	RefAttr   *string  `xml:"ref,attr"`
+	NameAttr  *string  `xml:"name,attr"`
+	SheetAttr *string  `xml:"sheet,attr"`
+	RIdAttr   *string  `xml:"r:id,attr"`
 }
 
 // CTMergeCells ...
 type CTMergeCells struct {
 	XMLName   xml.Name       `xml:"CT_MergeCells"`
-	CountAttr uint32         `xml:"count,attr,omitempty"`
+	CountAttr *uint32        `xml:"count,attr"`
 	MergeCell []*CTMergeCell `xml:"mergeCell"`
 }
 
@@ -2469,8 +2469,8 @@ type CTCellSmartTags struct {
 type CTCellSmartTag struct {
 	XMLName        xml.Name            `xml:"CT_CellSmartTag"`
 	TypeAttr       uint32              `xml:"type,attr"`
-	DeletedAttr    bool                `xml:"deleted,attr,omitempty"`
-	XmlBasedAttr   bool                `xml:"xmlBased,attr,omitempty"`
+	DeletedAttr    *bool               `xml:"deleted,attr"`
+	XmlBasedAttr   *bool               `xml:"xmlBased,attr"`
 	CellSmartTagPr []*CTCellSmartTagPr `xml:"cellSmartTagPr,omitempty"`
 }
 
@@ -2491,24 +2491,24 @@ type CTDrawing struct {
 type CTDrawingHF struct {
 	XMLName xml.Name `xml:"CT_DrawingHF"`
 	RIdAttr string   `xml:"r:id,attr"`
-	LhoAttr uint32   `xml:"lho,attr,omitempty"`
-	LheAttr uint32   `xml:"lhe,attr,omitempty"`
-	LhfAttr uint32   `xml:"lhf,attr,omitempty"`
-	ChoAttr uint32   `xml:"cho,attr,omitempty"`
-	CheAttr uint32   `xml:"che,attr,omitempty"`
-	ChfAttr uint32   `xml:"chf,attr,omitempty"`
-	RhoAttr uint32   `xml:"rho,attr,omitempty"`
-	RheAttr uint32   `xml:"rhe,attr,omitempty"`
-	RhfAttr uint32   `xml:"rhf,attr,omitempty"`
-	LfoAttr uint32   `xml:"lfo,attr,omitempty"`
-	LfeAttr uint32   `xml:"lfe,attr,omitempty"`
-	LffAttr uint32   `xml:"lff,attr,omitempty"`
-	CfoAttr uint32   `xml:"cfo,attr,omitempty"`
-	CfeAttr uint32   `xml:"cfe,attr,omitempty"`
-	CffAttr uint32   `xml:"cff,attr,omitempty"`
-	RfoAttr uint32   `xml:"rfo,attr,omitempty"`
-	RfeAttr uint32   `xml:"rfe,attr,omitempty"`
-	RffAttr uint32   `xml:"rff,attr,omitempty"`
+	LhoAttr *uint32  `xml:"lho,attr"`
+	LheAttr *uint32  `xml:"lhe,attr"`
+	LhfAttr *uint32  `xml:"lhf,attr"`
+	ChoAttr *uint32  `xml:"cho,attr"`
+	CheAttr *uint32  `xml:"che,attr"`
+	ChfAttr *uint32  `xml:"chf,attr"`
+	RhoAttr *uint32  `xml:"rho,attr"`
+	RheAttr *uint32  `xml:"rhe,attr"`
+	RhfAttr *uint32  `xml:"rhf,attr"`
+	LfoAttr *uint32  `xml:"lfo,attr"`
+	LfeAttr *uint32  `xml:"lfe,attr"`
+	LffAttr *uint32  `xml:"lff,attr"`
+	CfoAttr *uint32  `xml:"cfo,attr"`
+	CfeAttr *uint32  `xml:"cfe,attr"`
+	CffAttr *uint32  `xml:"cff,attr"`
+	RfoAttr *uint32  `xml:"rfo,attr"`
+	RfeAttr *uint32  `xml:"rfe,attr"`
+	RffAttr *uint32  `xml:"rff,attr"`
 }
 
 // CTCustomSheetViews ...
@@ -2521,25 +2521,25 @@ type CTCustomSheetViews struct {
 type CTCustomSheetView struct {
 	XMLName            xml.Name         `xml:"CT_CustomSheetView"`
 	GuidAttr           string           `xml:"guid,attr"`
-	ScaleAttr          uint32           `xml:"scale,attr,omitempty"`
-	ColorIdAttr        uint32           `xml:"colorId,attr,omitempty"`
-	ShowPageBreaksAttr bool             `xml:"showPageBreaks,attr,omitempty"`
-	ShowFormulasAttr   bool             `xml:"showFormulas,attr,omitempty"`
-	ShowGridLinesAttr  bool             `xml:"showGridLines,attr,omitempty"`
-	ShowRowColAttr     bool             `xml:"showRowCol,attr,omitempty"`
-	OutlineSymbolsAttr bool             `xml:"outlineSymbols,attr,omitempty"`
-	ZeroValuesAttr     bool             `xml:"zeroValues,attr,omitempty"`
-	FitToPageAttr      bool             `xml:"fitToPage,attr,omitempty"`
-	PrintAreaAttr      bool             `xml:"printArea,attr,omitempty"`
-	FilterAttr         bool             `xml:"filter,attr,omitempty"`
-	ShowAutoFilterAttr bool             `xml:"showAutoFilter,attr,omitempty"`
-	HiddenRowsAttr     bool             `xml:"hiddenRows,attr,omitempty"`
-	HiddenColumnsAttr  bool             `xml:"hiddenColumns,attr,omitempty"`
-	StateAttr          string           `xml:"state,attr,omitempty"`
-	FilterUniqueAttr   bool             `xml:"filterUnique,attr,omitempty"`
-	ViewAttr           string           `xml:"view,attr,omitempty"`
-	ShowRulerAttr      bool             `xml:"showRuler,attr,omitempty"`
-	TopLeftCellAttr    string           `xml:"topLeftCell,attr,omitempty"`
+	ScaleAttr          *uint32          `xml:"scale,attr"`
+	ColorIdAttr        *uint32          `xml:"colorId,attr"`
+	ShowPageBreaksAttr *bool            `xml:"showPageBreaks,attr"`
+	ShowFormulasAttr   *bool            `xml:"showFormulas,attr"`
+	ShowGridLinesAttr  *bool            `xml:"showGridLines,attr"`
+	ShowRowColAttr     *bool            `xml:"showRowCol,attr"`
+	OutlineSymbolsAttr *bool            `xml:"outlineSymbols,attr"`
+	ZeroValuesAttr     *bool            `xml:"zeroValues,attr"`
+	FitToPageAttr      *bool            `xml:"fitToPage,attr"`
+	PrintAreaAttr      *bool            `xml:"printArea,attr"`
+	FilterAttr         *bool            `xml:"filter,attr"`
+	ShowAutoFilterAttr *bool            `xml:"showAutoFilter,attr"`
+	HiddenRowsAttr     *bool            `xml:"hiddenRows,attr"`
+	HiddenColumnsAttr  *bool            `xml:"hiddenColumns,attr"`
+	StateAttr          *string          `xml:"state,attr"`
+	FilterUniqueAttr   *bool            `xml:"filterUnique,attr"`
+	ViewAttr           *string          `xml:"view,attr"`
+	ShowRulerAttr      *bool            `xml:"showRuler,attr"`
+	TopLeftCellAttr    *string          `xml:"topLeftCell,attr"`
 	Pane               *CTPane          `xml:"pane,omitempty"`
 	Selection          *CTSelection     `xml:"selection,omitempty"`
 	RowBreaks          *CTPageBreak     `xml:"rowBreaks,omitempty"`
@@ -2555,28 +2555,28 @@ type CTCustomSheetView struct {
 // CTDataValidations ...
 type CTDataValidations struct {
 	XMLName            xml.Name            `xml:"CT_DataValidations"`
-	DisablePromptsAttr bool                `xml:"disablePrompts,attr,omitempty"`
-	XWindowAttr        uint32              `xml:"xWindow,attr,omitempty"`
-	YWindowAttr        uint32              `xml:"yWindow,attr,omitempty"`
-	CountAttr          uint32              `xml:"count,attr,omitempty"`
+	DisablePromptsAttr *bool               `xml:"disablePrompts,attr"`
+	XWindowAttr        *uint32             `xml:"xWindow,attr"`
+	YWindowAttr        *uint32             `xml:"yWindow,attr"`
+	CountAttr          *uint32             `xml:"count,attr"`
 	DataValidation     []*CTDataValidation `xml:"dataValidation"`
 }
 
 // CTDataValidation ...
 type CTDataValidation struct {
 	XMLName              xml.Name `xml:"CT_DataValidation"`
-	TypeAttr             string   `xml:"type,attr,omitempty"`
-	ErrorStyleAttr       string   `xml:"errorStyle,attr,omitempty"`
-	ImeModeAttr          string   `xml:"imeMode,attr,omitempty"`
-	OperatorAttr         string   `xml:"operator,attr,omitempty"`
-	AllowBlankAttr       bool     `xml:"allowBlank,attr,omitempty"`
-	ShowDropDownAttr     bool     `xml:"showDropDown,attr,omitempty"`
-	ShowInputMessageAttr bool     `xml:"showInputMessage,attr,omitempty"`
-	ShowErrorMessageAttr bool     `xml:"showErrorMessage,attr,omitempty"`
-	ErrorTitleAttr       string   `xml:"errorTitle,attr,omitempty"`
-	ErrorAttr            string   `xml:"error,attr,omitempty"`
-	PromptTitleAttr      string   `xml:"promptTitle,attr,omitempty"`
-	PromptAttr           string   `xml:"prompt,attr,omitempty"`
+	TypeAttr             *string  `xml:"type,attr"`
+	ErrorStyleAttr       *string  `xml:"errorStyle,attr"`
+	ImeModeAttr          *string  `xml:"imeMode,attr"`
+	OperatorAttr         *string  `xml:"operator,attr"`
+	AllowBlankAttr       *bool    `xml:"allowBlank,attr"`
+	ShowDropDownAttr     *bool    `xml:"showDropDown,attr"`
+	ShowInputMessageAttr *bool    `xml:"showInputMessage,attr"`
+	ShowErrorMessageAttr *bool    `xml:"showErrorMessage,attr"`
+	ErrorTitleAttr       *string  `xml:"errorTitle,attr"`
+	ErrorAttr            *string  `xml:"error,attr"`
+	PromptTitleAttr      *string  `xml:"promptTitle,attr"`
+	PromptAttr           *string  `xml:"prompt,attr"`
 	SqrefAttr            *STSqref `xml:"sqref,attr"`
 	Formula1             *string  `xml:"formula1"`
 	Formula2             *string  `xml:"formula2"`
@@ -2609,7 +2609,7 @@ type STCfvoType string
 // CTConditionalFormatting ...
 type CTConditionalFormatting struct {
 	XMLName   xml.Name         `xml:"CT_ConditionalFormatting"`
-	PivotAttr bool             `xml:"pivot,attr,omitempty"`
+	PivotAttr *bool            `xml:"pivot,attr"`
 	SqrefAttr *STSqref         `xml:"sqref,attr,omitempty"`
 	CfRule    []*CTCfRule      `xml:"cfRule"`
 	ExtLst    *CTExtensionList `xml:"extLst,omitempty"`
@@ -2618,19 +2618,19 @@ type CTConditionalFormatting struct {
 // CTCfRule ...
 type CTCfRule struct {
 	XMLName          xml.Name         `xml:"CT_CfRule"`
-	TypeAttr         string           `xml:"type,attr,omitempty"`
-	DxfIdAttr        uint32           `xml:"dxfId,attr,omitempty"`
+	TypeAttr         *string          `xml:"type,attr"`
+	DxfIdAttr        *uint32          `xml:"dxfId,attr"`
 	PriorityAttr     int              `xml:"priority,attr"`
-	StopIfTrueAttr   bool             `xml:"stopIfTrue,attr,omitempty"`
-	AboveAverageAttr bool             `xml:"aboveAverage,attr,omitempty"`
-	PercentAttr      bool             `xml:"percent,attr,omitempty"`
-	BottomAttr       bool             `xml:"bottom,attr,omitempty"`
-	OperatorAttr     string           `xml:"operator,attr,omitempty"`
-	TextAttr         string           `xml:"text,attr,omitempty"`
-	TimePeriodAttr   string           `xml:"timePeriod,attr,omitempty"`
-	RankAttr         uint32           `xml:"rank,attr,omitempty"`
-	StdDevAttr       int              `xml:"stdDev,attr,omitempty"`
-	EqualAverageAttr bool             `xml:"equalAverage,attr,omitempty"`
+	StopIfTrueAttr   *bool            `xml:"stopIfTrue,attr"`
+	AboveAverageAttr *bool            `xml:"aboveAverage,attr"`
+	PercentAttr      *bool            `xml:"percent,attr"`
+	BottomAttr       *bool            `xml:"bottom,attr"`
+	OperatorAttr     *string          `xml:"operator,attr"`
+	TextAttr         *string          `xml:"text,attr"`
+	TimePeriodAttr   *string          `xml:"timePeriod,attr"`
+	RankAttr         *uint32          `xml:"rank,attr"`
+	StdDevAttr       *int             `xml:"stdDev,attr"`
+	EqualAverageAttr *bool            `xml:"equalAverage,attr"`
 	Formula          []string         `xml:"formula,omitempty"`
 	ColorScale       *CTColorScale    `xml:"colorScale,omitempty"`
 	DataBar          *CTDataBar       `xml:"dataBar,omitempty"`
@@ -2648,27 +2648,27 @@ type CTHyperlinks struct {
 type CTHyperlink struct {
 	XMLName      xml.Name `xml:"CT_Hyperlink"`
 	RefAttr      string   `xml:"ref,attr"`
-	RIdAttr      string   `xml:"r:id,attr,omitempty"`
-	LocationAttr string   `xml:"location,attr,omitempty"`
-	TooltipAttr  string   `xml:"tooltip,attr,omitempty"`
-	DisplayAttr  string   `xml:"display,attr,omitempty"`
+	RIdAttr      *string  `xml:"r:id,attr"`
+	LocationAttr *string  `xml:"location,attr"`
+	TooltipAttr  *string  `xml:"tooltip,attr"`
+	DisplayAttr  *string  `xml:"display,attr"`
 }
 
 // CTCellFormula ...
 type CTCellFormula struct {
 	XMLName  xml.Name `xml:"CT_CellFormula"`
-	TAttr    string   `xml:"t,attr,omitempty"`
-	AcaAttr  bool     `xml:"aca,attr,omitempty"`
-	RefAttr  string   `xml:"ref,attr,omitempty"`
-	Dt2DAttr bool     `xml:"dt2D,attr,omitempty"`
-	DtrAttr  bool     `xml:"dtr,attr,omitempty"`
-	Del1Attr bool     `xml:"del1,attr,omitempty"`
-	Del2Attr bool     `xml:"del2,attr,omitempty"`
-	R1Attr   string   `xml:"r1,attr,omitempty"`
-	R2Attr   string   `xml:"r2,attr,omitempty"`
-	CaAttr   bool     `xml:"ca,attr,omitempty"`
-	SiAttr   uint32   `xml:"si,attr,omitempty"`
-	BxAttr   bool     `xml:"bx,attr,omitempty"`
+	TAttr    *string  `xml:"t,attr"`
+	AcaAttr  *bool    `xml:"aca,attr"`
+	RefAttr  *string  `xml:"ref,attr"`
+	Dt2DAttr *bool    `xml:"dt2D,attr"`
+	DtrAttr  *bool    `xml:"dtr,attr"`
+	Del1Attr *bool    `xml:"del1,attr"`
+	Del2Attr *bool    `xml:"del2,attr"`
+	R1Attr   *string  `xml:"r1,attr"`
+	R2Attr   *string  `xml:"r2,attr"`
+	CaAttr   *bool    `xml:"ca,attr"`
+	SiAttr   *uint32  `xml:"si,attr"`
+	BxAttr   *bool    `xml:"bx,attr"`
 	Value    string   `xml:",chardata"`
 }
 
@@ -2682,9 +2682,9 @@ type CTColorScale struct {
 // CTDataBar ...
 type CTDataBar struct {
 	XMLName       xml.Name  `xml:"CT_DataBar"`
-	MinLengthAttr uint32    `xml:"minLength,attr,omitempty"`
-	MaxLengthAttr uint32    `xml:"maxLength,attr,omitempty"`
-	ShowValueAttr bool      `xml:"showValue,attr,omitempty"`
+	MinLengthAttr *uint32   `xml:"minLength,attr"`
+	MaxLengthAttr *uint32   `xml:"maxLength,attr"`
+	ShowValueAttr *bool     `xml:"showValue,attr"`
 	Cfvo          []*CTCfvo `xml:"cfvo"`
 	Color         *CTColor  `xml:"color"`
 }
@@ -2692,10 +2692,10 @@ type CTDataBar struct {
 // CTIconSet ...
 type CTIconSet struct {
 	XMLName       xml.Name  `xml:"CT_IconSet"`
-	IconSetAttr   string    `xml:"iconSet,attr,omitempty"`
-	ShowValueAttr bool      `xml:"showValue,attr,omitempty"`
-	PercentAttr   bool      `xml:"percent,attr,omitempty"`
-	ReverseAttr   bool      `xml:"reverse,attr,omitempty"`
+	IconSetAttr   *string   `xml:"iconSet,attr"`
+	ShowValueAttr *bool     `xml:"showValue,attr"`
+	PercentAttr   *bool     `xml:"percent,attr"`
+	ReverseAttr   *bool     `xml:"reverse,attr"`
 	Cfvo          []*CTCfvo `xml:"cfvo"`
 }
 
@@ -2703,8 +2703,8 @@ type CTIconSet struct {
 type CTCfvo struct {
 	XMLName  xml.Name         `xml:"CT_Cfvo"`
 	TypeAttr string           `xml:"type,attr"`
-	ValAttr  string           `xml:"val,attr,omitempty"`
-	GteAttr  bool             `xml:"gte,attr,omitempty"`
+	ValAttr  *string          `xml:"val,attr"`
+	GteAttr  *bool            `xml:"gte,attr"`
 	ExtLst   *CTExtensionList `xml:"extLst,omitempty"`
 }
 
@@ -2722,35 +2722,35 @@ type CTPageMargins struct {
 // CTPrintOptions ...
 type CTPrintOptions struct {
 	XMLName                xml.Name `xml:"CT_PrintOptions"`
-	HorizontalCenteredAttr bool     `xml:"horizontalCentered,attr,omitempty"`
-	VerticalCenteredAttr   bool     `xml:"verticalCentered,attr,omitempty"`
-	HeadingsAttr           bool     `xml:"headings,attr,omitempty"`
-	GridLinesAttr          bool     `xml:"gridLines,attr,omitempty"`
-	GridLinesSetAttr       bool     `xml:"gridLinesSet,attr,omitempty"`
+	HorizontalCenteredAttr *bool    `xml:"horizontalCentered,attr"`
+	VerticalCenteredAttr   *bool    `xml:"verticalCentered,attr"`
+	HeadingsAttr           *bool    `xml:"headings,attr"`
+	GridLinesAttr          *bool    `xml:"gridLines,attr"`
+	GridLinesSetAttr       *bool    `xml:"gridLinesSet,attr"`
 }
 
 // CTPageSetup ...
 type CTPageSetup struct {
 	XMLName                xml.Name `xml:"CT_PageSetup"`
-	PaperSizeAttr          uint32   `xml:"paperSize,attr,omitempty"`
-	PaperHeightAttr        string   `xml:"paperHeight,attr,omitempty"`
-	PaperWidthAttr         string   `xml:"paperWidth,attr,omitempty"`
-	ScaleAttr              uint32   `xml:"scale,attr,omitempty"`
-	FirstPageNumberAttr    uint32   `xml:"firstPageNumber,attr,omitempty"`
-	FitToWidthAttr         uint32   `xml:"fitToWidth,attr,omitempty"`
-	FitToHeightAttr        uint32   `xml:"fitToHeight,attr,omitempty"`
-	PageOrderAttr          string   `xml:"pageOrder,attr,omitempty"`
-	OrientationAttr        string   `xml:"orientation,attr,omitempty"`
-	UsePrinterDefaultsAttr bool     `xml:"usePrinterDefaults,attr,omitempty"`
-	BlackAndWhiteAttr      bool     `xml:"blackAndWhite,attr,omitempty"`
-	DraftAttr              bool     `xml:"draft,attr,omitempty"`
-	CellCommentsAttr       string   `xml:"cellComments,attr,omitempty"`
-	UseFirstPageNumberAttr bool     `xml:"useFirstPageNumber,attr,omitempty"`
-	ErrorsAttr             string   `xml:"errors,attr,omitempty"`
-	HorizontalDpiAttr      uint32   `xml:"horizontalDpi,attr,omitempty"`
-	VerticalDpiAttr        uint32   `xml:"verticalDpi,attr,omitempty"`
-	CopiesAttr             uint32   `xml:"copies,attr,omitempty"`
-	RIdAttr                string   `xml:"r:id,attr,omitempty"`
+	PaperSizeAttr          *uint32  `xml:"paperSize,attr"`
+	PaperHeightAttr        *string  `xml:"paperHeight,attr"`
+	PaperWidthAttr         *string  `xml:"paperWidth,attr"`
+	ScaleAttr              *uint32  `xml:"scale,attr"`
+	FirstPageNumberAttr    *uint32  `xml:"firstPageNumber,attr"`
+	FitToWidthAttr         *uint32  `xml:"fitToWidth,attr"`
+	FitToHeightAttr        *uint32  `xml:"fitToHeight,attr"`
+	PageOrderAttr          *string  `xml:"pageOrder,attr"`
+	OrientationAttr        *string  `xml:"orientation,attr"`
+	UsePrinterDefaultsAttr *bool    `xml:"usePrinterDefaults,attr"`
+	BlackAndWhiteAttr      *bool    `xml:"blackAndWhite,attr"`
+	DraftAttr              *bool    `xml:"draft,attr"`
+	CellCommentsAttr       *string  `xml:"cellComments,attr"`
+	UseFirstPageNumberAttr *bool    `xml:"useFirstPageNumber,attr"`
+	ErrorsAttr             *string  `xml:"errors,attr"`
+	HorizontalDpiAttr      *uint32  `xml:"horizontalDpi,attr"`
+	VerticalDpiAttr        *uint32  `xml:"verticalDpi,attr"`
+	CopiesAttr             *uint32  `xml:"copies,attr"`
+	RIdAttr                *string  `xml:"r:id,attr"`
 }
 
 // STPageOrder ...
@@ -2765,10 +2765,10 @@ type STCellComments string
 // CTHeaderFooter ...
 type CTHeaderFooter struct {
 	XMLName              xml.Name `xml:"CT_HeaderFooter"`
-	DifferentOddEvenAttr bool     `xml:"differentOddEven,attr,omitempty"`
-	DifferentFirstAttr   bool     `xml:"differentFirst,attr,omitempty"`
-	ScaleWithDocAttr     bool     `xml:"scaleWithDoc,attr,omitempty"`
-	AlignWithMarginsAttr bool     `xml:"alignWithMargins,attr,omitempty"`
+	DifferentOddEvenAttr *bool    `xml:"differentOddEven,attr"`
+	DifferentFirstAttr   *bool    `xml:"differentFirst,attr"`
+	ScaleWithDocAttr     *bool    `xml:"scaleWithDoc,attr"`
+	AlignWithMarginsAttr *bool    `xml:"alignWithMargins,attr"`
 	OddHeader            *string  `xml:"oddHeader"`
 	OddFooter            *string  `xml:"oddFooter"`
 	EvenHeader           *string  `xml:"evenHeader"`
@@ -2783,8 +2783,8 @@ type STPrintError string
 // CTScenarios ...
 type CTScenarios struct {
 	XMLName     xml.Name      `xml:"CT_Scenarios"`
-	CurrentAttr uint32        `xml:"current,attr,omitempty"`
-	ShowAttr    uint32        `xml:"show,attr,omitempty"`
+	CurrentAttr *uint32       `xml:"current,attr"`
+	ShowAttr    *uint32       `xml:"show,attr"`
 	SqrefAttr   *STSqref      `xml:"sqref,attr,omitempty"`
 	Scenario    []*CTScenario `xml:"scenario"`
 }
@@ -2792,26 +2792,26 @@ type CTScenarios struct {
 // CTSheetProtection ...
 type CTSheetProtection struct {
 	XMLName                 xml.Name `xml:"CT_SheetProtection"`
-	AlgorithmNameAttr       string   `xml:"algorithmName,attr,omitempty"`
-	HashValueAttr           string   `xml:"hashValue,attr,omitempty"`
-	SaltValueAttr           string   `xml:"saltValue,attr,omitempty"`
-	SpinCountAttr           uint32   `xml:"spinCount,attr,omitempty"`
-	SheetAttr               bool     `xml:"sheet,attr,omitempty"`
-	ObjectsAttr             bool     `xml:"objects,attr,omitempty"`
-	ScenariosAttr           bool     `xml:"scenarios,attr,omitempty"`
-	FormatCellsAttr         bool     `xml:"formatCells,attr,omitempty"`
-	FormatColumnsAttr       bool     `xml:"formatColumns,attr,omitempty"`
-	FormatRowsAttr          bool     `xml:"formatRows,attr,omitempty"`
-	InsertColumnsAttr       bool     `xml:"insertColumns,attr,omitempty"`
-	InsertRowsAttr          bool     `xml:"insertRows,attr,omitempty"`
-	InsertHyperlinksAttr    bool     `xml:"insertHyperlinks,attr,omitempty"`
-	DeleteColumnsAttr       bool     `xml:"deleteColumns,attr,omitempty"`
-	DeleteRowsAttr          bool     `xml:"deleteRows,attr,omitempty"`
-	SelectLockedCellsAttr   bool     `xml:"selectLockedCells,attr,omitempty"`
-	SortAttr                bool     `xml:"sort,attr,omitempty"`
-	AutoFilterAttr          bool     `xml:"autoFilter,attr,omitempty"`
-	PivotTablesAttr         bool     `xml:"pivotTables,attr,omitempty"`
-	SelectUnlockedCellsAttr bool     `xml:"selectUnlockedCells,attr,omitempty"`
+	AlgorithmNameAttr       *string  `xml:"algorithmName,attr"`
+	HashValueAttr           *string  `xml:"hashValue,attr"`
+	SaltValueAttr           *string  `xml:"saltValue,attr"`
+	SpinCountAttr           *uint32  `xml:"spinCount,attr"`
+	SheetAttr               *bool    `xml:"sheet,attr"`
+	ObjectsAttr             *bool    `xml:"objects,attr"`
+	ScenariosAttr           *bool    `xml:"scenarios,attr"`
+	FormatCellsAttr         *bool    `xml:"formatCells,attr"`
+	FormatColumnsAttr       *bool    `xml:"formatColumns,attr"`
+	FormatRowsAttr          *bool    `xml:"formatRows,attr"`
+	InsertColumnsAttr       *bool    `xml:"insertColumns,attr"`
+	InsertRowsAttr          *bool    `xml:"insertRows,attr"`
+	InsertHyperlinksAttr    *bool    `xml:"insertHyperlinks,attr"`
+	DeleteColumnsAttr       *bool    `xml:"deleteColumns,attr"`
+	DeleteRowsAttr          *bool    `xml:"deleteRows,attr"`
+	SelectLockedCellsAttr   *bool    `xml:"selectLockedCells,attr"`
+	SortAttr                *bool    `xml:"sort,attr"`
+	AutoFilterAttr          *bool    `xml:"autoFilter,attr"`
+	PivotTablesAttr         *bool    `xml:"pivotTables,attr"`
+	SelectUnlockedCellsAttr *bool    `xml:"selectUnlockedCells,attr"`
 }
 
 // CTProtectedRanges ...
@@ -2825,10 +2825,10 @@ type CTProtectedRange struct {
 	XMLName            xml.Name `xml:"CT_ProtectedRange"`
 	SqrefAttr          *STSqref `xml:"sqref,attr"`
 	NameAttr           string   `xml:"name,attr"`
-	AlgorithmNameAttr  string   `xml:"algorithmName,attr,omitempty"`
-	HashValueAttr      string   `xml:"hashValue,attr,omitempty"`
-	SaltValueAttr      string   `xml:"saltValue,attr,omitempty"`
-	SpinCountAttr      uint32   `xml:"spinCount,attr,omitempty"`
+	AlgorithmNameAttr  *string  `xml:"algorithmName,attr"`
+	HashValueAttr      *string  `xml:"hashValue,attr"`
+	SaltValueAttr      *string  `xml:"saltValue,attr"`
+	SpinCountAttr      *uint32  `xml:"spinCount,attr"`
 	SecurityDescriptor []string `xml:"securityDescriptor,omitempty"`
 }
 
@@ -2836,11 +2836,11 @@ type CTProtectedRange struct {
 type CTScenario struct {
 	XMLName     xml.Name        `xml:"CT_Scenario"`
 	NameAttr    string          `xml:"name,attr"`
-	LockedAttr  bool            `xml:"locked,attr,omitempty"`
-	HiddenAttr  bool            `xml:"hidden,attr,omitempty"`
-	CountAttr   uint32          `xml:"count,attr,omitempty"`
-	UserAttr    string          `xml:"user,attr,omitempty"`
-	CommentAttr string          `xml:"comment,attr,omitempty"`
+	LockedAttr  *bool           `xml:"locked,attr"`
+	HiddenAttr  *bool           `xml:"hidden,attr"`
+	CountAttr   *uint32         `xml:"count,attr"`
+	UserAttr    *string         `xml:"user,attr"`
+	CommentAttr *string         `xml:"comment,attr"`
 	InputCells  []*CTInputCells `xml:"inputCells"`
 }
 
@@ -2848,10 +2848,10 @@ type CTScenario struct {
 type CTInputCells struct {
 	XMLName      xml.Name `xml:"CT_InputCells"`
 	RAttr        string   `xml:"r,attr"`
-	DeletedAttr  bool     `xml:"deleted,attr,omitempty"`
-	UndoneAttr   bool     `xml:"undone,attr,omitempty"`
+	DeletedAttr  *bool    `xml:"deleted,attr"`
+	UndoneAttr   *bool    `xml:"undone,attr"`
 	ValAttr      string   `xml:"val,attr"`
-	NumFmtIdAttr uint32   `xml:"numFmtId,attr,omitempty"`
+	NumFmtIdAttr *uint32  `xml:"numFmtId,attr"`
 }
 
 // CTCellWatches ...
@@ -2886,8 +2886,8 @@ type CTChartsheet struct {
 // CTChartsheetPr ...
 type CTChartsheetPr struct {
 	XMLName       xml.Name `xml:"CT_ChartsheetPr"`
-	PublishedAttr bool     `xml:"published,attr,omitempty"`
-	CodeNameAttr  string   `xml:"codeName,attr,omitempty"`
+	PublishedAttr *bool    `xml:"published,attr"`
+	CodeNameAttr  *string  `xml:"codeName,attr"`
 	TabColor      *CTColor `xml:"tabColor,omitempty"`
 }
 
@@ -2901,40 +2901,40 @@ type CTChartsheetViews struct {
 // CTChartsheetView ...
 type CTChartsheetView struct {
 	XMLName            xml.Name         `xml:"CT_ChartsheetView"`
-	TabSelectedAttr    bool             `xml:"tabSelected,attr,omitempty"`
-	ZoomScaleAttr      uint32           `xml:"zoomScale,attr,omitempty"`
+	TabSelectedAttr    *bool            `xml:"tabSelected,attr"`
+	ZoomScaleAttr      *uint32          `xml:"zoomScale,attr"`
 	WorkbookViewIdAttr uint32           `xml:"workbookViewId,attr"`
-	ZoomToFitAttr      bool             `xml:"zoomToFit,attr,omitempty"`
+	ZoomToFitAttr      *bool            `xml:"zoomToFit,attr"`
 	ExtLst             *CTExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTChartsheetProtection ...
 type CTChartsheetProtection struct {
 	XMLName           xml.Name `xml:"CT_ChartsheetProtection"`
-	AlgorithmNameAttr string   `xml:"algorithmName,attr,omitempty"`
-	HashValueAttr     string   `xml:"hashValue,attr,omitempty"`
-	SaltValueAttr     string   `xml:"saltValue,attr,omitempty"`
-	SpinCountAttr     uint32   `xml:"spinCount,attr,omitempty"`
-	ContentAttr       bool     `xml:"content,attr,omitempty"`
-	ObjectsAttr       bool     `xml:"objects,attr,omitempty"`
+	AlgorithmNameAttr *string  `xml:"algorithmName,attr"`
+	HashValueAttr     *string  `xml:"hashValue,attr"`
+	SaltValueAttr     *string  `xml:"saltValue,attr"`
+	SpinCountAttr     *uint32  `xml:"spinCount,attr"`
+	ContentAttr       *bool    `xml:"content,attr"`
+	ObjectsAttr       *bool    `xml:"objects,attr"`
 }
 
 // CTCsPageSetup ...
 type CTCsPageSetup struct {
 	XMLName                xml.Name `xml:"CT_CsPageSetup"`
-	PaperSizeAttr          uint32   `xml:"paperSize,attr,omitempty"`
-	PaperHeightAttr        string   `xml:"paperHeight,attr,omitempty"`
-	PaperWidthAttr         string   `xml:"paperWidth,attr,omitempty"`
-	FirstPageNumberAttr    uint32   `xml:"firstPageNumber,attr,omitempty"`
-	OrientationAttr        string   `xml:"orientation,attr,omitempty"`
-	UsePrinterDefaultsAttr bool     `xml:"usePrinterDefaults,attr,omitempty"`
-	BlackAndWhiteAttr      bool     `xml:"blackAndWhite,attr,omitempty"`
-	DraftAttr              bool     `xml:"draft,attr,omitempty"`
-	UseFirstPageNumberAttr bool     `xml:"useFirstPageNumber,attr,omitempty"`
-	HorizontalDpiAttr      uint32   `xml:"horizontalDpi,attr,omitempty"`
-	VerticalDpiAttr        uint32   `xml:"verticalDpi,attr,omitempty"`
-	CopiesAttr             uint32   `xml:"copies,attr,omitempty"`
-	RIdAttr                string   `xml:"r:id,attr,omitempty"`
+	PaperSizeAttr          *uint32  `xml:"paperSize,attr"`
+	PaperHeightAttr        *string  `xml:"paperHeight,attr"`
+	PaperWidthAttr         *string  `xml:"paperWidth,attr"`
+	FirstPageNumberAttr    *uint32  `xml:"firstPageNumber,attr"`
+	OrientationAttr        *string  `xml:"orientation,attr"`
+	UsePrinterDefaultsAttr *bool    `xml:"usePrinterDefaults,attr"`
+	BlackAndWhiteAttr      *bool    `xml:"blackAndWhite,attr"`
+	DraftAttr              *bool    `xml:"draft,attr"`
+	UseFirstPageNumberAttr *bool    `xml:"useFirstPageNumber,attr"`
+	HorizontalDpiAttr      *uint32  `xml:"horizontalDpi,attr"`
+	VerticalDpiAttr        *uint32  `xml:"verticalDpi,attr"`
+	CopiesAttr             *uint32  `xml:"copies,attr"`
+	RIdAttr                *string  `xml:"r:id,attr"`
 }
 
 // CTCustomChartsheetViews ...
@@ -2947,9 +2947,9 @@ type CTCustomChartsheetViews struct {
 type CTCustomChartsheetView struct {
 	XMLName       xml.Name        `xml:"CT_CustomChartsheetView"`
 	GuidAttr      string          `xml:"guid,attr"`
-	ScaleAttr     uint32          `xml:"scale,attr,omitempty"`
-	StateAttr     string          `xml:"state,attr,omitempty"`
-	ZoomToFitAttr bool            `xml:"zoomToFit,attr,omitempty"`
+	ScaleAttr     *uint32         `xml:"scale,attr"`
+	StateAttr     *string         `xml:"state,attr"`
+	ZoomToFitAttr *bool           `xml:"zoomToFit,attr"`
 	PageMargins   *CTPageMargins  `xml:"pageMargins,omitempty"`
 	PageSetup     *CTCsPageSetup  `xml:"pageSetup,omitempty"`
 	HeaderFooter  *CTHeaderFooter `xml:"headerFooter,omitempty"`
@@ -2977,31 +2977,31 @@ type CTOleObjects struct {
 // CTOleObject ...
 type CTOleObject struct {
 	XMLName       xml.Name    `xml:"CT_OleObject"`
-	ProgIdAttr    string      `xml:"progId,attr,omitempty"`
-	DvAspectAttr  string      `xml:"dvAspect,attr,omitempty"`
-	LinkAttr      string      `xml:"link,attr,omitempty"`
-	OleUpdateAttr string      `xml:"oleUpdate,attr,omitempty"`
-	AutoLoadAttr  bool        `xml:"autoLoad,attr,omitempty"`
+	ProgIdAttr    *string     `xml:"progId,attr"`
+	DvAspectAttr  *string     `xml:"dvAspect,attr"`
+	LinkAttr      *string     `xml:"link,attr"`
+	OleUpdateAttr *string     `xml:"oleUpdate,attr"`
+	AutoLoadAttr  *bool       `xml:"autoLoad,attr"`
 	ShapeIdAttr   uint32      `xml:"shapeId,attr"`
-	RIdAttr       string      `xml:"r:id,attr,omitempty"`
+	RIdAttr       *string     `xml:"r:id,attr"`
 	ObjectPr      *CTObjectPr `xml:"objectPr,omitempty"`
 }
 
 // CTObjectPr ...
 type CTObjectPr struct {
 	XMLName         xml.Name        `xml:"CT_ObjectPr"`
-	LockedAttr      bool            `xml:"locked,attr,omitempty"`
-	DefaultSizeAttr bool            `xml:"defaultSize,attr,omitempty"`
-	PrintAttr       bool            `xml:"print,attr,omitempty"`
-	DisabledAttr    bool            `xml:"disabled,attr,omitempty"`
-	UiObjectAttr    bool            `xml:"uiObject,attr,omitempty"`
-	AutoFillAttr    bool            `xml:"autoFill,attr,omitempty"`
-	AutoLineAttr    bool            `xml:"autoLine,attr,omitempty"`
-	AutoPictAttr    bool            `xml:"autoPict,attr,omitempty"`
-	MacroAttr       string          `xml:"macro,attr,omitempty"`
-	AltTextAttr     string          `xml:"altText,attr,omitempty"`
-	DdeAttr         bool            `xml:"dde,attr,omitempty"`
-	RIdAttr         string          `xml:"r:id,attr,omitempty"`
+	LockedAttr      *bool           `xml:"locked,attr"`
+	DefaultSizeAttr *bool           `xml:"defaultSize,attr"`
+	PrintAttr       *bool           `xml:"print,attr"`
+	DisabledAttr    *bool           `xml:"disabled,attr"`
+	UiObjectAttr    *bool           `xml:"uiObject,attr"`
+	AutoFillAttr    *bool           `xml:"autoFill,attr"`
+	AutoLineAttr    *bool           `xml:"autoLine,attr"`
+	AutoPictAttr    *bool           `xml:"autoPict,attr"`
+	MacroAttr       *string         `xml:"macro,attr"`
+	AltTextAttr     *string         `xml:"altText,attr"`
+	DdeAttr         *bool           `xml:"dde,attr"`
+	RIdAttr         *string         `xml:"r:id,attr"`
 	Anchor          *CTObjectAnchor `xml:"anchor"`
 }
 
@@ -3014,7 +3014,7 @@ type STOleUpdate string
 // CTWebPublishItems ...
 type CTWebPublishItems struct {
 	XMLName        xml.Name            `xml:"CT_WebPublishItems"`
-	CountAttr      uint32              `xml:"count,attr,omitempty"`
+	CountAttr      *uint32             `xml:"count,attr"`
 	WebPublishItem []*CTWebPublishItem `xml:"webPublishItem"`
 }
 
@@ -3024,11 +3024,11 @@ type CTWebPublishItem struct {
 	IdAttr              uint32   `xml:"id,attr"`
 	DivIdAttr           string   `xml:"divId,attr"`
 	SourceTypeAttr      string   `xml:"sourceType,attr"`
-	SourceRefAttr       string   `xml:"sourceRef,attr,omitempty"`
-	SourceObjectAttr    string   `xml:"sourceObject,attr,omitempty"`
+	SourceRefAttr       *string  `xml:"sourceRef,attr"`
+	SourceObjectAttr    *string  `xml:"sourceObject,attr"`
 	DestinationFileAttr string   `xml:"destinationFile,attr"`
-	TitleAttr           string   `xml:"title,attr,omitempty"`
-	AutoRepublishAttr   bool     `xml:"autoRepublish,attr,omitempty"`
+	TitleAttr           *string  `xml:"title,attr"`
+	AutoRepublishAttr   *bool    `xml:"autoRepublish,attr"`
 }
 
 // CTControls ...
@@ -3042,28 +3042,28 @@ type CTControl struct {
 	XMLName     xml.Name     `xml:"CT_Control"`
 	ShapeIdAttr uint32       `xml:"shapeId,attr"`
 	RIdAttr     string       `xml:"r:id,attr"`
-	NameAttr    string       `xml:"name,attr,omitempty"`
+	NameAttr    *string      `xml:"name,attr"`
 	ControlPr   *CTControlPr `xml:"controlPr,omitempty"`
 }
 
 // CTControlPr ...
 type CTControlPr struct {
 	XMLName           xml.Name        `xml:"CT_ControlPr"`
-	LockedAttr        bool            `xml:"locked,attr,omitempty"`
-	DefaultSizeAttr   bool            `xml:"defaultSize,attr,omitempty"`
-	PrintAttr         bool            `xml:"print,attr,omitempty"`
-	DisabledAttr      bool            `xml:"disabled,attr,omitempty"`
-	RecalcAlwaysAttr  bool            `xml:"recalcAlways,attr,omitempty"`
-	UiObjectAttr      bool            `xml:"uiObject,attr,omitempty"`
-	AutoFillAttr      bool            `xml:"autoFill,attr,omitempty"`
-	AutoLineAttr      bool            `xml:"autoLine,attr,omitempty"`
-	AutoPictAttr      bool            `xml:"autoPict,attr,omitempty"`
-	MacroAttr         string          `xml:"macro,attr,omitempty"`
-	AltTextAttr       string          `xml:"altText,attr,omitempty"`
-	LinkedCellAttr    string          `xml:"linkedCell,attr,omitempty"`
-	ListFillRangeAttr string          `xml:"listFillRange,attr,omitempty"`
-	CfAttr            string          `xml:"cf,attr,omitempty"`
-	RIdAttr           string          `xml:"r:id,attr,omitempty"`
+	LockedAttr        *bool           `xml:"locked,attr"`
+	DefaultSizeAttr   *bool           `xml:"defaultSize,attr"`
+	PrintAttr         *bool           `xml:"print,attr"`
+	DisabledAttr      *bool           `xml:"disabled,attr"`
+	RecalcAlwaysAttr  *bool           `xml:"recalcAlways,attr"`
+	UiObjectAttr      *bool           `xml:"uiObject,attr"`
+	AutoFillAttr      *bool           `xml:"autoFill,attr"`
+	AutoLineAttr      *bool           `xml:"autoLine,attr"`
+	AutoPictAttr      *bool           `xml:"autoPict,attr"`
+	MacroAttr         *string         `xml:"macro,attr"`
+	AltTextAttr       *string         `xml:"altText,attr"`
+	LinkedCellAttr    *string         `xml:"linkedCell,attr"`
+	ListFillRangeAttr *string         `xml:"listFillRange,attr"`
+	CfAttr            *string         `xml:"cf,attr"`
+	RIdAttr           *string         `xml:"r:id,attr"`
 	Anchor            *CTObjectAnchor `xml:"anchor"`
 }
 
@@ -3081,15 +3081,15 @@ type CTIgnoredErrors struct {
 type CTIgnoredError struct {
 	XMLName                xml.Name `xml:"CT_IgnoredError"`
 	SqrefAttr              *STSqref `xml:"sqref,attr"`
-	EvalErrorAttr          bool     `xml:"evalError,attr,omitempty"`
-	TwoDigitTextYearAttr   bool     `xml:"twoDigitTextYear,attr,omitempty"`
-	NumberStoredAsTextAttr bool     `xml:"numberStoredAsText,attr,omitempty"`
-	FormulaAttr            bool     `xml:"formula,attr,omitempty"`
-	FormulaRangeAttr       bool     `xml:"formulaRange,attr,omitempty"`
-	UnlockedFormulaAttr    bool     `xml:"unlockedFormula,attr,omitempty"`
-	EmptyCellReferenceAttr bool     `xml:"emptyCellReference,attr,omitempty"`
-	ListDataValidationAttr bool     `xml:"listDataValidation,attr,omitempty"`
-	CalculatedColumnAttr   bool     `xml:"calculatedColumn,attr,omitempty"`
+	EvalErrorAttr          *bool    `xml:"evalError,attr"`
+	TwoDigitTextYearAttr   *bool    `xml:"twoDigitTextYear,attr"`
+	NumberStoredAsTextAttr *bool    `xml:"numberStoredAsText,attr"`
+	FormulaAttr            *bool    `xml:"formula,attr"`
+	FormulaRangeAttr       *bool    `xml:"formulaRange,attr"`
+	UnlockedFormulaAttr    *bool    `xml:"unlockedFormula,attr"`
+	EmptyCellReferenceAttr *bool    `xml:"emptyCellReference,attr"`
+	ListDataValidationAttr *bool    `xml:"listDataValidation,attr"`
+	CalculatedColumnAttr   *bool    `xml:"calculatedColumn,attr"`
 }
 
 // STPaneState ...
@@ -3098,7 +3098,7 @@ type STPaneState string
 // CTTableParts ...
 type CTTableParts struct {
 	XMLName   xml.Name       `xml:"CT_TableParts"`
-	CountAttr uint32         `xml:"count,attr,omitempty"`
+	CountAttr *uint32        `xml:"count,attr"`
 	TablePart []*CTTablePart `xml:"tablePart,omitempty"`
 }
 
@@ -3126,7 +3126,7 @@ type CTMetadata struct {
 // CTMetadataTypes ...
 type CTMetadataTypes struct {
 	XMLName      xml.Name          `xml:"CT_MetadataTypes"`
-	CountAttr    uint32            `xml:"count,attr,omitempty"`
+	CountAttr    *uint32           `xml:"count,attr"`
 	MetadataType []*CTMetadataType `xml:"metadataType"`
 }
 
@@ -3135,38 +3135,38 @@ type CTMetadataType struct {
 	XMLName                 xml.Name `xml:"CT_MetadataType"`
 	NameAttr                string   `xml:"name,attr"`
 	MinSupportedVersionAttr uint32   `xml:"minSupportedVersion,attr"`
-	GhostRowAttr            bool     `xml:"ghostRow,attr,omitempty"`
-	GhostColAttr            bool     `xml:"ghostCol,attr,omitempty"`
-	EditAttr                bool     `xml:"edit,attr,omitempty"`
-	DeleteAttr              bool     `xml:"delete,attr,omitempty"`
-	CopyAttr                bool     `xml:"copy,attr,omitempty"`
-	PasteAllAttr            bool     `xml:"pasteAll,attr,omitempty"`
-	PasteFormulasAttr       bool     `xml:"pasteFormulas,attr,omitempty"`
-	PasteValuesAttr         bool     `xml:"pasteValues,attr,omitempty"`
-	PasteFormatsAttr        bool     `xml:"pasteFormats,attr,omitempty"`
-	PasteCommentsAttr       bool     `xml:"pasteComments,attr,omitempty"`
-	PasteDataValidationAttr bool     `xml:"pasteDataValidation,attr,omitempty"`
-	PasteBordersAttr        bool     `xml:"pasteBorders,attr,omitempty"`
-	PasteColWidthsAttr      bool     `xml:"pasteColWidths,attr,omitempty"`
-	PasteNumberFormatsAttr  bool     `xml:"pasteNumberFormats,attr,omitempty"`
-	MergeAttr               bool     `xml:"merge,attr,omitempty"`
-	SplitFirstAttr          bool     `xml:"splitFirst,attr,omitempty"`
-	SplitAllAttr            bool     `xml:"splitAll,attr,omitempty"`
-	RowColShiftAttr         bool     `xml:"rowColShift,attr,omitempty"`
-	ClearAllAttr            bool     `xml:"clearAll,attr,omitempty"`
-	ClearFormatsAttr        bool     `xml:"clearFormats,attr,omitempty"`
-	ClearContentsAttr       bool     `xml:"clearContents,attr,omitempty"`
-	ClearCommentsAttr       bool     `xml:"clearComments,attr,omitempty"`
-	AssignAttr              bool     `xml:"assign,attr,omitempty"`
-	CoerceAttr              bool     `xml:"coerce,attr,omitempty"`
-	AdjustAttr              bool     `xml:"adjust,attr,omitempty"`
-	CellMetaAttr            bool     `xml:"cellMeta,attr,omitempty"`
+	GhostRowAttr            *bool    `xml:"ghostRow,attr"`
+	GhostColAttr            *bool    `xml:"ghostCol,attr"`
+	EditAttr                *bool    `xml:"edit,attr"`
+	DeleteAttr              *bool    `xml:"delete,attr"`
+	CopyAttr                *bool    `xml:"copy,attr"`
+	PasteAllAttr            *bool    `xml:"pasteAll,attr"`
+	PasteFormulasAttr       *bool    `xml:"pasteFormulas,attr"`
+	PasteValuesAttr         *bool    `xml:"pasteValues,attr"`
+	PasteFormatsAttr        *bool    `xml:"pasteFormats,attr"`
+	PasteCommentsAttr       *bool    `xml:"pasteComments,attr"`
+	PasteDataValidationAttr *bool    `xml:"pasteDataValidation,attr"`
+	PasteBordersAttr        *bool    `xml:"pasteBorders,attr"`
+	PasteColWidthsAttr      *bool    `xml:"pasteColWidths,attr"`
+	PasteNumberFormatsAttr  *bool    `xml:"pasteNumberFormats,attr"`
+	MergeAttr               *bool    `xml:"merge,attr"`
+	SplitFirstAttr          *bool    `xml:"splitFirst,attr"`
+	SplitAllAttr            *bool    `xml:"splitAll,attr"`
+	RowColShiftAttr         *bool    `xml:"rowColShift,attr"`
+	ClearAllAttr            *bool    `xml:"clearAll,attr"`
+	ClearFormatsAttr        *bool    `xml:"clearFormats,attr"`
+	ClearContentsAttr       *bool    `xml:"clearContents,attr"`
+	ClearCommentsAttr       *bool    `xml:"clearComments,attr"`
+	AssignAttr              *bool    `xml:"assign,attr"`
+	CoerceAttr              *bool    `xml:"coerce,attr"`
+	AdjustAttr              *bool    `xml:"adjust,attr"`
+	CellMetaAttr            *bool    `xml:"cellMeta,attr"`
 }
 
 // CTMetadataBlocks ...
 type CTMetadataBlocks struct {
 	XMLName   xml.Name           `xml:"CT_MetadataBlocks"`
-	CountAttr uint32             `xml:"count,attr,omitempty"`
+	CountAttr *uint32            `xml:"count,attr"`
 	Bk        []*CTMetadataBlock `xml:"bk"`
 }
 
@@ -3187,7 +3187,7 @@ type CTMetadataRecord struct {
 type CTFutureMetadata struct {
 	XMLName   xml.Name                 `xml:"CT_FutureMetadata"`
 	NameAttr  string                   `xml:"name,attr"`
-	CountAttr uint32                   `xml:"count,attr,omitempty"`
+	CountAttr *uint32                  `xml:"count,attr"`
 	Bk        []*CTFutureMetadataBlock `xml:"bk,omitempty"`
 	ExtLst    *CTExtensionList         `xml:"extLst,omitempty"`
 }
@@ -3201,7 +3201,7 @@ type CTFutureMetadataBlock struct {
 // CTMdxMetadata ...
 type CTMdxMetadata struct {
 	XMLName   xml.Name `xml:"CT_MdxMetadata"`
-	CountAttr uint32   `xml:"count,attr,omitempty"`
+	CountAttr *uint32  `xml:"count,attr"`
 	Mdx       []*CTMdx `xml:"mdx"`
 }
 
@@ -3222,16 +3222,16 @@ type STMdxFunctionType string
 // CTMdxTuple ...
 type CTMdxTuple struct {
 	XMLName xml.Name                 `xml:"CT_MdxTuple"`
-	CAttr   uint32                   `xml:"c,attr,omitempty"`
-	CtAttr  string                   `xml:"ct,attr,omitempty"`
-	SiAttr  uint32                   `xml:"si,attr,omitempty"`
-	FiAttr  uint32                   `xml:"fi,attr,omitempty"`
-	BcAttr  string                   `xml:"bc,attr,omitempty"`
-	FcAttr  string                   `xml:"fc,attr,omitempty"`
-	IAttr   bool                     `xml:"i,attr,omitempty"`
-	UAttr   bool                     `xml:"u,attr,omitempty"`
-	StAttr  bool                     `xml:"st,attr,omitempty"`
-	BAttr   bool                     `xml:"b,attr,omitempty"`
+	CAttr   *uint32                  `xml:"c,attr"`
+	CtAttr  *string                  `xml:"ct,attr"`
+	SiAttr  *uint32                  `xml:"si,attr"`
+	FiAttr  *uint32                  `xml:"fi,attr"`
+	BcAttr  *string                  `xml:"bc,attr"`
+	FcAttr  *string                  `xml:"fc,attr"`
+	IAttr   *bool                    `xml:"i,attr"`
+	UAttr   *bool                    `xml:"u,attr"`
+	StAttr  *bool                    `xml:"st,attr"`
+	BAttr   *bool                    `xml:"b,attr"`
 	N       []*CTMetadataStringIndex `xml:"n,omitempty"`
 }
 
@@ -3239,8 +3239,8 @@ type CTMdxTuple struct {
 type CTMdxSet struct {
 	XMLName xml.Name                 `xml:"CT_MdxSet"`
 	NsAttr  uint32                   `xml:"ns,attr"`
-	CAttr   uint32                   `xml:"c,attr,omitempty"`
-	OAttr   string                   `xml:"o,attr,omitempty"`
+	CAttr   *uint32                  `xml:"c,attr"`
+	OAttr   *string                  `xml:"o,attr"`
 	N       []*CTMetadataStringIndex `xml:"n,omitempty"`
 }
 
@@ -3269,13 +3269,13 @@ type STMdxKPIProperty string
 type CTMetadataStringIndex struct {
 	XMLName xml.Name `xml:"CT_MetadataStringIndex"`
 	XAttr   uint32   `xml:"x,attr"`
-	SAttr   bool     `xml:"s,attr,omitempty"`
+	SAttr   *bool    `xml:"s,attr"`
 }
 
 // CTMetadataStrings ...
 type CTMetadataStrings struct {
 	XMLName   xml.Name            `xml:"CT_MetadataStrings"`
-	CountAttr uint32              `xml:"count,attr,omitempty"`
+	CountAttr *uint32             `xml:"count,attr"`
 	S         []*CTXStringElement `xml:"s"`
 }
 
@@ -3302,7 +3302,7 @@ type CTSingleXmlCell struct {
 type CTXmlCellPr struct {
 	XMLName        xml.Name         `xml:"CT_XmlCellPr"`
 	IdAttr         uint32           `xml:"id,attr"`
-	UniqueNameAttr string           `xml:"uniqueName,attr,omitempty"`
+	UniqueNameAttr *string          `xml:"uniqueName,attr"`
 	XmlPr          *CTXmlPr         `xml:"xmlPr"`
 	ExtLst         *CTExtensionList `xml:"extLst,omitempty"`
 }
@@ -3338,15 +3338,15 @@ type CTStylesheet struct {
 // CTCellAlignment ...
 type CTCellAlignment struct {
 	XMLName             xml.Name        `xml:"CT_CellAlignment"`
-	HorizontalAttr      string          `xml:"horizontal,attr,omitempty"`
-	VerticalAttr        string          `xml:"vertical,attr,omitempty"`
+	HorizontalAttr      *string         `xml:"horizontal,attr"`
+	VerticalAttr        *string         `xml:"vertical,attr"`
 	TextRotationAttr    *STTextRotation `xml:"textRotation,attr,omitempty"`
-	WrapTextAttr        bool            `xml:"wrapText,attr,omitempty"`
-	IndentAttr          uint32          `xml:"indent,attr,omitempty"`
-	RelativeIndentAttr  int             `xml:"relativeIndent,attr,omitempty"`
-	JustifyLastLineAttr bool            `xml:"justifyLastLine,attr,omitempty"`
-	ShrinkToFitAttr     bool            `xml:"shrinkToFit,attr,omitempty"`
-	ReadingOrderAttr    uint32          `xml:"readingOrder,attr,omitempty"`
+	WrapTextAttr        *bool           `xml:"wrapText,attr"`
+	IndentAttr          *uint32         `xml:"indent,attr"`
+	RelativeIndentAttr  *int            `xml:"relativeIndent,attr"`
+	JustifyLastLineAttr *bool           `xml:"justifyLastLine,attr"`
+	ShrinkToFitAttr     *bool           `xml:"shrinkToFit,attr"`
+	ReadingOrderAttr    *uint32         `xml:"readingOrder,attr"`
 }
 
 // STTextRotation ...
@@ -3358,16 +3358,16 @@ type STBorderStyle string
 // CTBorders ...
 type CTBorders struct {
 	XMLName   xml.Name    `xml:"CT_Borders"`
-	CountAttr uint32      `xml:"count,attr,omitempty"`
+	CountAttr *uint32     `xml:"count,attr"`
 	Border    []*CTBorder `xml:"border,omitempty"`
 }
 
 // CTBorder ...
 type CTBorder struct {
 	XMLName          xml.Name    `xml:"CT_Border"`
-	DiagonalUpAttr   bool        `xml:"diagonalUp,attr,omitempty"`
-	DiagonalDownAttr bool        `xml:"diagonalDown,attr,omitempty"`
-	OutlineAttr      bool        `xml:"outline,attr,omitempty"`
+	DiagonalUpAttr   *bool       `xml:"diagonalUp,attr"`
+	DiagonalDownAttr *bool       `xml:"diagonalDown,attr"`
+	OutlineAttr      *bool       `xml:"outline,attr"`
 	Start            *CTBorderPr `xml:"start,omitempty"`
 	End              *CTBorderPr `xml:"end,omitempty"`
 	Top              *CTBorderPr `xml:"top,omitempty"`
@@ -3380,28 +3380,28 @@ type CTBorder struct {
 // CTBorderPr ...
 type CTBorderPr struct {
 	XMLName   xml.Name `xml:"CT_BorderPr"`
-	StyleAttr string   `xml:"style,attr,omitempty"`
+	StyleAttr *string  `xml:"style,attr"`
 	Color     *CTColor `xml:"color,omitempty"`
 }
 
 // CTCellProtection ...
 type CTCellProtection struct {
 	XMLName    xml.Name `xml:"CT_CellProtection"`
-	LockedAttr bool     `xml:"locked,attr,omitempty"`
-	HiddenAttr bool     `xml:"hidden,attr,omitempty"`
+	LockedAttr *bool    `xml:"locked,attr"`
+	HiddenAttr *bool    `xml:"hidden,attr"`
 }
 
 // CTFonts ...
 type CTFonts struct {
 	XMLName   xml.Name  `xml:"CT_Fonts"`
-	CountAttr uint32    `xml:"count,attr,omitempty"`
+	CountAttr *uint32   `xml:"count,attr"`
 	Font      []*CTFont `xml:"font,omitempty"`
 }
 
 // CTFills ...
 type CTFills struct {
 	XMLName   xml.Name  `xml:"CT_Fills"`
-	CountAttr uint32    `xml:"count,attr,omitempty"`
+	CountAttr *uint32   `xml:"count,attr"`
 	Fill      []*CTFill `xml:"fill,omitempty"`
 }
 
@@ -3415,7 +3415,7 @@ type CTFill struct {
 // CTPatternFill ...
 type CTPatternFill struct {
 	XMLName         xml.Name `xml:"CT_PatternFill"`
-	PatternTypeAttr string   `xml:"patternType,attr,omitempty"`
+	PatternTypeAttr *string  `xml:"patternType,attr"`
 	FgColor         *CTColor `xml:"fgColor,omitempty"`
 	BgColor         *CTColor `xml:"bgColor,omitempty"`
 }
@@ -3423,11 +3423,11 @@ type CTPatternFill struct {
 // CTColor ...
 type CTColor struct {
 	XMLName     xml.Name `xml:"CT_Color"`
-	AutoAttr    bool     `xml:"auto,attr,omitempty"`
-	IndexedAttr uint32   `xml:"indexed,attr,omitempty"`
-	RgbAttr     string   `xml:"rgb,attr,omitempty"`
-	ThemeAttr   uint32   `xml:"theme,attr,omitempty"`
-	TintAttr    float64  `xml:"tint,attr,omitempty"`
+	AutoAttr    *bool    `xml:"auto,attr"`
+	IndexedAttr *uint32  `xml:"indexed,attr"`
+	RgbAttr     *string  `xml:"rgb,attr"`
+	ThemeAttr   *uint32  `xml:"theme,attr"`
+	TintAttr    *float64 `xml:"tint,attr"`
 }
 
 // STPatternType ...
@@ -3436,12 +3436,12 @@ type STPatternType string
 // CTGradientFill ...
 type CTGradientFill struct {
 	XMLName    xml.Name          `xml:"CT_GradientFill"`
-	TypeAttr   string            `xml:"type,attr,omitempty"`
-	DegreeAttr float64           `xml:"degree,attr,omitempty"`
-	LeftAttr   float64           `xml:"left,attr,omitempty"`
-	RightAttr  float64           `xml:"right,attr,omitempty"`
-	TopAttr    float64           `xml:"top,attr,omitempty"`
-	BottomAttr float64           `xml:"bottom,attr,omitempty"`
+	TypeAttr   *string           `xml:"type,attr"`
+	DegreeAttr *float64          `xml:"degree,attr"`
+	LeftAttr   *float64          `xml:"left,attr"`
+	RightAttr  *float64          `xml:"right,attr"`
+	TopAttr    *float64          `xml:"top,attr"`
+	BottomAttr *float64          `xml:"bottom,attr"`
 	Stop       []*CTGradientStop `xml:"stop,omitempty"`
 }
 
@@ -3464,7 +3464,7 @@ type STVerticalAlignment string
 // CTNumFmts ...
 type CTNumFmts struct {
 	XMLName   xml.Name    `xml:"CT_NumFmts"`
-	CountAttr uint32      `xml:"count,attr,omitempty"`
+	CountAttr *uint32     `xml:"count,attr"`
 	NumFmt    []*CTNumFmt `xml:"numFmt,omitempty"`
 }
 
@@ -3478,33 +3478,33 @@ type CTNumFmt struct {
 // CTCellStyleXfs ...
 type CTCellStyleXfs struct {
 	XMLName   xml.Name `xml:"CT_CellStyleXfs"`
-	CountAttr uint32   `xml:"count,attr,omitempty"`
+	CountAttr *uint32  `xml:"count,attr"`
 	Xf        []*CTXf  `xml:"xf"`
 }
 
 // CTCellXfs ...
 type CTCellXfs struct {
 	XMLName   xml.Name `xml:"CT_CellXfs"`
-	CountAttr uint32   `xml:"count,attr,omitempty"`
+	CountAttr *uint32  `xml:"count,attr"`
 	Xf        []*CTXf  `xml:"xf"`
 }
 
 // CTXf ...
 type CTXf struct {
 	XMLName               xml.Name          `xml:"CT_Xf"`
-	NumFmtIdAttr          uint32            `xml:"numFmtId,attr,omitempty"`
-	FontIdAttr            uint32            `xml:"fontId,attr,omitempty"`
-	FillIdAttr            uint32            `xml:"fillId,attr,omitempty"`
-	BorderIdAttr          uint32            `xml:"borderId,attr,omitempty"`
-	XfIdAttr              uint32            `xml:"xfId,attr,omitempty"`
-	QuotePrefixAttr       bool              `xml:"quotePrefix,attr,omitempty"`
-	PivotButtonAttr       bool              `xml:"pivotButton,attr,omitempty"`
-	ApplyNumberFormatAttr bool              `xml:"applyNumberFormat,attr,omitempty"`
-	ApplyFontAttr         bool              `xml:"applyFont,attr,omitempty"`
-	ApplyFillAttr         bool              `xml:"applyFill,attr,omitempty"`
-	ApplyBorderAttr       bool              `xml:"applyBorder,attr,omitempty"`
-	ApplyAlignmentAttr    bool              `xml:"applyAlignment,attr,omitempty"`
-	ApplyProtectionAttr   bool              `xml:"applyProtection,attr,omitempty"`
+	NumFmtIdAttr          *uint32           `xml:"numFmtId,attr"`
+	FontIdAttr            *uint32           `xml:"fontId,attr"`
+	FillIdAttr            *uint32           `xml:"fillId,attr"`
+	BorderIdAttr          *uint32           `xml:"borderId,attr"`
+	XfIdAttr              *uint32           `xml:"xfId,attr"`
+	QuotePrefixAttr       *bool             `xml:"quotePrefix,attr"`
+	PivotButtonAttr       *bool             `xml:"pivotButton,attr"`
+	ApplyNumberFormatAttr *bool             `xml:"applyNumberFormat,attr"`
+	ApplyFontAttr         *bool             `xml:"applyFont,attr"`
+	ApplyFillAttr         *bool             `xml:"applyFill,attr"`
+	ApplyBorderAttr       *bool             `xml:"applyBorder,attr"`
+	ApplyAlignmentAttr    *bool             `xml:"applyAlignment,attr"`
+	ApplyProtectionAttr   *bool             `xml:"applyProtection,attr"`
 	Alignment             *CTCellAlignment  `xml:"alignment,omitempty"`
 	Protection            *CTCellProtection `xml:"protection,omitempty"`
 	ExtLst                *CTExtensionList  `xml:"extLst,omitempty"`
@@ -3513,26 +3513,26 @@ type CTXf struct {
 // CTCellStyles ...
 type CTCellStyles struct {
 	XMLName   xml.Name       `xml:"CT_CellStyles"`
-	CountAttr uint32         `xml:"count,attr,omitempty"`
+	CountAttr *uint32        `xml:"count,attr"`
 	CellStyle []*CTCellStyle `xml:"cellStyle"`
 }
 
 // CTCellStyle ...
 type CTCellStyle struct {
 	XMLName           xml.Name         `xml:"CT_CellStyle"`
-	NameAttr          string           `xml:"name,attr,omitempty"`
+	NameAttr          *string          `xml:"name,attr"`
 	XfIdAttr          uint32           `xml:"xfId,attr"`
-	BuiltinIdAttr     uint32           `xml:"builtinId,attr,omitempty"`
-	ILevelAttr        uint32           `xml:"iLevel,attr,omitempty"`
-	HiddenAttr        bool             `xml:"hidden,attr,omitempty"`
-	CustomBuiltinAttr bool             `xml:"customBuiltin,attr,omitempty"`
+	BuiltinIdAttr     *uint32          `xml:"builtinId,attr"`
+	ILevelAttr        *uint32          `xml:"iLevel,attr"`
+	HiddenAttr        *bool            `xml:"hidden,attr"`
+	CustomBuiltinAttr *bool            `xml:"customBuiltin,attr"`
 	ExtLst            *CTExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTDxfs ...
 type CTDxfs struct {
 	XMLName   xml.Name `xml:"CT_Dxfs"`
-	CountAttr uint32   `xml:"count,attr,omitempty"`
+	CountAttr *uint32  `xml:"count,attr"`
 	Dxf       []*CTDxf `xml:"dxf,omitempty"`
 }
 
@@ -3588,15 +3588,15 @@ type CTMRUColors struct {
 // CTRgbColor ...
 type CTRgbColor struct {
 	XMLName xml.Name `xml:"CT_RgbColor"`
-	RgbAttr string   `xml:"rgb,attr,omitempty"`
+	RgbAttr *string  `xml:"rgb,attr"`
 }
 
 // CTTableStyles ...
 type CTTableStyles struct {
 	XMLName               xml.Name        `xml:"CT_TableStyles"`
-	CountAttr             uint32          `xml:"count,attr,omitempty"`
-	DefaultTableStyleAttr string          `xml:"defaultTableStyle,attr,omitempty"`
-	DefaultPivotStyleAttr string          `xml:"defaultPivotStyle,attr,omitempty"`
+	CountAttr             *uint32         `xml:"count,attr"`
+	DefaultTableStyleAttr *string         `xml:"defaultTableStyle,attr"`
+	DefaultPivotStyleAttr *string         `xml:"defaultPivotStyle,attr"`
 	TableStyle            []*CTTableStyle `xml:"tableStyle,omitempty"`
 }
 
@@ -3604,9 +3604,9 @@ type CTTableStyles struct {
 type CTTableStyle struct {
 	XMLName           xml.Name               `xml:"CT_TableStyle"`
 	NameAttr          string                 `xml:"name,attr"`
-	PivotAttr         bool                   `xml:"pivot,attr,omitempty"`
-	TableAttr         bool                   `xml:"table,attr,omitempty"`
-	CountAttr         uint32                 `xml:"count,attr,omitempty"`
+	PivotAttr         *bool                  `xml:"pivot,attr"`
+	TableAttr         *bool                  `xml:"table,attr"`
+	CountAttr         *uint32                `xml:"count,attr"`
 	TableStyleElement []*CTTableStyleElement `xml:"tableStyleElement,omitempty"`
 }
 
@@ -3614,8 +3614,8 @@ type CTTableStyle struct {
 type CTTableStyleElement struct {
 	XMLName   xml.Name `xml:"CT_TableStyleElement"`
 	TypeAttr  string   `xml:"type,attr"`
-	SizeAttr  uint32   `xml:"size,attr,omitempty"`
-	DxfIdAttr uint32   `xml:"dxfId,attr,omitempty"`
+	SizeAttr  *uint32  `xml:"size,attr"`
+	DxfIdAttr *uint32  `xml:"dxfId,attr"`
 }
 
 // STTableStyleType ...
@@ -3624,7 +3624,7 @@ type STTableStyleType string
 // CTBooleanProperty ...
 type CTBooleanProperty struct {
 	XMLName xml.Name `xml:"CT_BooleanProperty"`
-	ValAttr bool     `xml:"val,attr,omitempty"`
+	ValAttr *bool    `xml:"val,attr"`
 }
 
 // CTFontSize ...
@@ -3663,7 +3663,7 @@ type STFontScheme string
 // CTUnderlineProperty ...
 type CTUnderlineProperty struct {
 	XMLName xml.Name `xml:"CT_UnderlineProperty"`
-	ValAttr string   `xml:"val,attr,omitempty"`
+	ValAttr *string  `xml:"val,attr"`
 }
 
 // STUnderlineValues ...
@@ -3740,7 +3740,7 @@ type CTExternalSheetNames struct {
 // CTExternalSheetName ...
 type CTExternalSheetName struct {
 	XMLName xml.Name `xml:"CT_ExternalSheetName"`
-	ValAttr string   `xml:"val,attr,omitempty"`
+	ValAttr *string  `xml:"val,attr"`
 }
 
 // CTExternalDefinedNames ...
@@ -3753,8 +3753,8 @@ type CTExternalDefinedNames struct {
 type CTExternalDefinedName struct {
 	XMLName      xml.Name `xml:"CT_ExternalDefinedName"`
 	NameAttr     string   `xml:"name,attr"`
-	RefersToAttr string   `xml:"refersTo,attr,omitempty"`
-	SheetIdAttr  uint32   `xml:"sheetId,attr,omitempty"`
+	RefersToAttr *string  `xml:"refersTo,attr"`
+	SheetIdAttr  *uint32  `xml:"sheetId,attr"`
 }
 
 // CTExternalSheetDataSet ...
@@ -3767,7 +3767,7 @@ type CTExternalSheetDataSet struct {
 type CTExternalSheetData struct {
 	XMLName          xml.Name         `xml:"CT_ExternalSheetData"`
 	SheetIdAttr      uint32           `xml:"sheetId,attr"`
-	RefreshErrorAttr bool             `xml:"refreshError,attr,omitempty"`
+	RefreshErrorAttr *bool            `xml:"refreshError,attr"`
 	Row              []*CTExternalRow `xml:"row,omitempty"`
 }
 
@@ -3781,9 +3781,9 @@ type CTExternalRow struct {
 // CTExternalCell ...
 type CTExternalCell struct {
 	XMLName xml.Name `xml:"CT_ExternalCell"`
-	RAttr   string   `xml:"r,attr,omitempty"`
-	TAttr   string   `xml:"t,attr,omitempty"`
-	VmAttr  uint32   `xml:"vm,attr,omitempty"`
+	RAttr   *string  `xml:"r,attr"`
+	TAttr   *string  `xml:"t,attr"`
+	VmAttr  *uint32  `xml:"vm,attr"`
 	V       *string  `xml:"v"`
 }
 
@@ -3804,25 +3804,25 @@ type CTDdeItems struct {
 // CTDdeItem ...
 type CTDdeItem struct {
 	XMLName       xml.Name     `xml:"CT_DdeItem"`
-	NameAttr      string       `xml:"name,attr,omitempty"`
-	OleAttr       bool         `xml:"ole,attr,omitempty"`
-	AdviseAttr    bool         `xml:"advise,attr,omitempty"`
-	PreferPicAttr bool         `xml:"preferPic,attr,omitempty"`
+	NameAttr      *string      `xml:"name,attr"`
+	OleAttr       *bool        `xml:"ole,attr"`
+	AdviseAttr    *bool        `xml:"advise,attr"`
+	PreferPicAttr *bool        `xml:"preferPic,attr"`
 	Values        *CTDdeValues `xml:"values,omitempty"`
 }
 
 // CTDdeValues ...
 type CTDdeValues struct {
 	XMLName  xml.Name      `xml:"CT_DdeValues"`
-	RowsAttr uint32        `xml:"rows,attr,omitempty"`
-	ColsAttr uint32        `xml:"cols,attr,omitempty"`
+	RowsAttr *uint32       `xml:"rows,attr"`
+	ColsAttr *uint32       `xml:"cols,attr"`
 	Value    []*CTDdeValue `xml:"value"`
 }
 
 // CTDdeValue ...
 type CTDdeValue struct {
 	XMLName xml.Name `xml:"CT_DdeValue"`
-	TAttr   string   `xml:"t,attr,omitempty"`
+	TAttr   *string  `xml:"t,attr"`
 	Val     string   `xml:"val"`
 }
 
@@ -3847,9 +3847,9 @@ type CTOleItems struct {
 type CTOleItem struct {
 	XMLName       xml.Name `xml:"CT_OleItem"`
 	NameAttr      string   `xml:"name,attr"`
-	IconAttr      bool     `xml:"icon,attr,omitempty"`
-	AdviseAttr    bool     `xml:"advise,attr,omitempty"`
-	PreferPicAttr bool     `xml:"preferPic,attr,omitempty"`
+	IconAttr      *bool    `xml:"icon,attr"`
+	AdviseAttr    *bool    `xml:"advise,attr"`
+	PreferPicAttr *bool    `xml:"preferPic,attr"`
 }
 
 // Table ...
@@ -3859,27 +3859,27 @@ type Table *CTTable
 type CTTable struct {
 	XMLName                  xml.Name          `xml:"CT_Table"`
 	IdAttr                   uint32            `xml:"id,attr"`
-	NameAttr                 string            `xml:"name,attr,omitempty"`
+	NameAttr                 *string           `xml:"name,attr"`
 	DisplayNameAttr          string            `xml:"displayName,attr"`
-	CommentAttr              string            `xml:"comment,attr,omitempty"`
+	CommentAttr              *string           `xml:"comment,attr"`
 	RefAttr                  string            `xml:"ref,attr"`
-	TableTypeAttr            string            `xml:"tableType,attr,omitempty"`
-	HeaderRowCountAttr       uint32            `xml:"headerRowCount,attr,omitempty"`
-	InsertRowAttr            bool              `xml:"insertRow,attr,omitempty"`
-	InsertRowShiftAttr       bool              `xml:"insertRowShift,attr,omitempty"`
-	TotalsRowCountAttr       uint32            `xml:"totalsRowCount,attr,omitempty"`
-	TotalsRowShownAttr       bool              `xml:"totalsRowShown,attr,omitempty"`
-	PublishedAttr            bool              `xml:"published,attr,omitempty"`
-	HeaderRowDxfIdAttr       uint32            `xml:"headerRowDxfId,attr,omitempty"`
-	DataDxfIdAttr            uint32            `xml:"dataDxfId,attr,omitempty"`
-	TotalsRowDxfIdAttr       uint32            `xml:"totalsRowDxfId,attr,omitempty"`
-	HeaderRowBorderDxfIdAttr uint32            `xml:"headerRowBorderDxfId,attr,omitempty"`
-	TableBorderDxfIdAttr     uint32            `xml:"tableBorderDxfId,attr,omitempty"`
-	TotalsRowBorderDxfIdAttr uint32            `xml:"totalsRowBorderDxfId,attr,omitempty"`
-	HeaderRowCellStyleAttr   string            `xml:"headerRowCellStyle,attr,omitempty"`
-	DataCellStyleAttr        string            `xml:"dataCellStyle,attr,omitempty"`
-	TotalsRowCellStyleAttr   string            `xml:"totalsRowCellStyle,attr,omitempty"`
-	ConnectionIdAttr         uint32            `xml:"connectionId,attr,omitempty"`
+	TableTypeAttr            *string           `xml:"tableType,attr"`
+	HeaderRowCountAttr       *uint32           `xml:"headerRowCount,attr"`
+	InsertRowAttr            *bool             `xml:"insertRow,attr"`
+	InsertRowShiftAttr       *bool             `xml:"insertRowShift,attr"`
+	TotalsRowCountAttr       *uint32           `xml:"totalsRowCount,attr"`
+	TotalsRowShownAttr       *bool             `xml:"totalsRowShown,attr"`
+	PublishedAttr            *bool             `xml:"published,attr"`
+	HeaderRowDxfIdAttr       *uint32           `xml:"headerRowDxfId,attr"`
+	DataDxfIdAttr            *uint32           `xml:"dataDxfId,attr"`
+	TotalsRowDxfIdAttr       *uint32           `xml:"totalsRowDxfId,attr"`
+	HeaderRowBorderDxfIdAttr *uint32           `xml:"headerRowBorderDxfId,attr"`
+	TableBorderDxfIdAttr     *uint32           `xml:"tableBorderDxfId,attr"`
+	TotalsRowBorderDxfIdAttr *uint32           `xml:"totalsRowBorderDxfId,attr"`
+	HeaderRowCellStyleAttr   *string           `xml:"headerRowCellStyle,attr"`
+	DataCellStyleAttr        *string           `xml:"dataCellStyle,attr"`
+	TotalsRowCellStyleAttr   *string           `xml:"totalsRowCellStyle,attr"`
+	ConnectionIdAttr         *uint32           `xml:"connectionId,attr"`
 	AutoFilter               *CTAutoFilter     `xml:"autoFilter,omitempty"`
 	SortState                *CTSortState      `xml:"sortState,omitempty"`
 	TableColumns             *CTTableColumns   `xml:"tableColumns"`
@@ -3893,17 +3893,17 @@ type STTableType string
 // CTTableStyleInfo ...
 type CTTableStyleInfo struct {
 	XMLName               xml.Name `xml:"CT_TableStyleInfo"`
-	NameAttr              string   `xml:"name,attr,omitempty"`
-	ShowFirstColumnAttr   bool     `xml:"showFirstColumn,attr,omitempty"`
-	ShowLastColumnAttr    bool     `xml:"showLastColumn,attr,omitempty"`
-	ShowRowStripesAttr    bool     `xml:"showRowStripes,attr,omitempty"`
-	ShowColumnStripesAttr bool     `xml:"showColumnStripes,attr,omitempty"`
+	NameAttr              *string  `xml:"name,attr"`
+	ShowFirstColumnAttr   *bool    `xml:"showFirstColumn,attr"`
+	ShowLastColumnAttr    *bool    `xml:"showLastColumn,attr"`
+	ShowRowStripesAttr    *bool    `xml:"showRowStripes,attr"`
+	ShowColumnStripesAttr *bool    `xml:"showColumnStripes,attr"`
 }
 
 // CTTableColumns ...
 type CTTableColumns struct {
 	XMLName     xml.Name         `xml:"CT_TableColumns"`
-	CountAttr   uint32           `xml:"count,attr,omitempty"`
+	CountAttr   *uint32          `xml:"count,attr"`
 	TableColumn []*CTTableColumn `xml:"tableColumn"`
 }
 
@@ -3911,17 +3911,17 @@ type CTTableColumns struct {
 type CTTableColumn struct {
 	XMLName                 xml.Name         `xml:"CT_TableColumn"`
 	IdAttr                  uint32           `xml:"id,attr"`
-	UniqueNameAttr          string           `xml:"uniqueName,attr,omitempty"`
+	UniqueNameAttr          *string          `xml:"uniqueName,attr"`
 	NameAttr                string           `xml:"name,attr"`
-	TotalsRowFunctionAttr   string           `xml:"totalsRowFunction,attr,omitempty"`
-	TotalsRowLabelAttr      string           `xml:"totalsRowLabel,attr,omitempty"`
-	QueryTableFieldIdAttr   uint32           `xml:"queryTableFieldId,attr,omitempty"`
-	HeaderRowDxfIdAttr      uint32           `xml:"headerRowDxfId,attr,omitempty"`
-	DataDxfIdAttr           uint32           `xml:"dataDxfId,attr,omitempty"`
-	TotalsRowDxfIdAttr      uint32           `xml:"totalsRowDxfId,attr,omitempty"`
-	HeaderRowCellStyleAttr  string           `xml:"headerRowCellStyle,attr,omitempty"`
-	DataCellStyleAttr       string           `xml:"dataCellStyle,attr,omitempty"`
-	TotalsRowCellStyleAttr  string           `xml:"totalsRowCellStyle,attr,omitempty"`
+	TotalsRowFunctionAttr   *string          `xml:"totalsRowFunction,attr"`
+	TotalsRowLabelAttr      *string          `xml:"totalsRowLabel,attr"`
+	QueryTableFieldIdAttr   *uint32          `xml:"queryTableFieldId,attr"`
+	HeaderRowDxfIdAttr      *uint32          `xml:"headerRowDxfId,attr"`
+	DataDxfIdAttr           *uint32          `xml:"dataDxfId,attr"`
+	TotalsRowDxfIdAttr      *uint32          `xml:"totalsRowDxfId,attr"`
+	HeaderRowCellStyleAttr  *string          `xml:"headerRowCellStyle,attr"`
+	DataCellStyleAttr       *string          `xml:"dataCellStyle,attr"`
+	TotalsRowCellStyleAttr  *string          `xml:"totalsRowCellStyle,attr"`
 	CalculatedColumnFormula *CTTableFormula  `xml:"calculatedColumnFormula,omitempty"`
 	TotalsRowFormula        *CTTableFormula  `xml:"totalsRowFormula,omitempty"`
 	XmlColumnPr             *CTXmlColumnPr   `xml:"xmlColumnPr,omitempty"`
@@ -3931,7 +3931,7 @@ type CTTableColumn struct {
 // CTTableFormula ...
 type CTTableFormula struct {
 	XMLName   xml.Name `xml:"CT_TableFormula"`
-	ArrayAttr bool     `xml:"array,attr,omitempty"`
+	ArrayAttr *bool    `xml:"array,attr"`
 	Value     string   `xml:",chardata"`
 }
 
@@ -3943,7 +3943,7 @@ type CTXmlColumnPr struct {
 	XMLName          xml.Name         `xml:"CT_XmlColumnPr"`
 	MapIdAttr        uint32           `xml:"mapId,attr"`
 	XpathAttr        string           `xml:"xpath,attr"`
-	DenormalizedAttr bool             `xml:"denormalized,attr,omitempty"`
+	DenormalizedAttr *bool            `xml:"denormalized,attr"`
 	XmlDataTypeAttr  string           `xml:"xmlDataType,attr"`
 	ExtLst           *CTExtensionList `xml:"extLst,omitempty"`
 }
@@ -3978,7 +3978,7 @@ type CTVolMain struct {
 // CTVolTopic ...
 type CTVolTopic struct {
 	XMLName xml.Name         `xml:"CT_VolTopic"`
-	TAttr   string           `xml:"t,attr,omitempty"`
+	TAttr   *string          `xml:"t,attr"`
 	V       string           `xml:"v"`
 	Stp     []string         `xml:"stp,omitempty"`
 	Tr      []*CTVolTopicRef `xml:"tr"`
@@ -4003,7 +4003,7 @@ type Workbook *CTWorkbook
 // CTWorkbook ...
 type CTWorkbook struct {
 	XMLName             xml.Name               `xml:"CT_Workbook"`
-	ConformanceAttr     string                 `xml:"conformance,attr,omitempty"`
+	ConformanceAttr     *string                `xml:"conformance,attr"`
 	FileVersion         *CTFileVersion         `xml:"fileVersion,omitempty"`
 	FileSharing         *CTFileSharing         `xml:"fileSharing,omitempty"`
 	WorkbookPr          *CTWorkbookPr          `xml:"workbookPr,omitempty"`
@@ -4028,11 +4028,11 @@ type CTWorkbook struct {
 // CTFileVersion ...
 type CTFileVersion struct {
 	XMLName          xml.Name `xml:"CT_FileVersion"`
-	AppNameAttr      string   `xml:"appName,attr,omitempty"`
-	LastEditedAttr   string   `xml:"lastEdited,attr,omitempty"`
-	LowestEditedAttr string   `xml:"lowestEdited,attr,omitempty"`
-	RupBuildAttr     string   `xml:"rupBuild,attr,omitempty"`
-	CodeNameAttr     string   `xml:"codeName,attr,omitempty"`
+	AppNameAttr      *string  `xml:"appName,attr"`
+	LastEditedAttr   *string  `xml:"lastEdited,attr"`
+	LowestEditedAttr *string  `xml:"lowestEdited,attr"`
+	RupBuildAttr     *string  `xml:"rupBuild,attr"`
+	CodeNameAttr     *string  `xml:"codeName,attr"`
 }
 
 // CTBookViews ...
@@ -4044,19 +4044,19 @@ type CTBookViews struct {
 // CTBookView ...
 type CTBookView struct {
 	XMLName                    xml.Name         `xml:"CT_BookView"`
-	VisibilityAttr             string           `xml:"visibility,attr,omitempty"`
-	MinimizedAttr              bool             `xml:"minimized,attr,omitempty"`
-	ShowHorizontalScrollAttr   bool             `xml:"showHorizontalScroll,attr,omitempty"`
-	ShowVerticalScrollAttr     bool             `xml:"showVerticalScroll,attr,omitempty"`
-	ShowSheetTabsAttr          bool             `xml:"showSheetTabs,attr,omitempty"`
-	XWindowAttr                int              `xml:"xWindow,attr,omitempty"`
-	YWindowAttr                int              `xml:"yWindow,attr,omitempty"`
-	WindowWidthAttr            uint32           `xml:"windowWidth,attr,omitempty"`
-	WindowHeightAttr           uint32           `xml:"windowHeight,attr,omitempty"`
-	TabRatioAttr               uint32           `xml:"tabRatio,attr,omitempty"`
-	FirstSheetAttr             uint32           `xml:"firstSheet,attr,omitempty"`
-	ActiveTabAttr              uint32           `xml:"activeTab,attr,omitempty"`
-	AutoFilterDateGroupingAttr bool             `xml:"autoFilterDateGrouping,attr,omitempty"`
+	VisibilityAttr             *string          `xml:"visibility,attr"`
+	MinimizedAttr              *bool            `xml:"minimized,attr"`
+	ShowHorizontalScrollAttr   *bool            `xml:"showHorizontalScroll,attr"`
+	ShowVerticalScrollAttr     *bool            `xml:"showVerticalScroll,attr"`
+	ShowSheetTabsAttr          *bool            `xml:"showSheetTabs,attr"`
+	XWindowAttr                *int             `xml:"xWindow,attr"`
+	YWindowAttr                *int             `xml:"yWindow,attr"`
+	WindowWidthAttr            *uint32          `xml:"windowWidth,attr"`
+	WindowHeightAttr           *uint32          `xml:"windowHeight,attr"`
+	TabRatioAttr               *uint32          `xml:"tabRatio,attr"`
+	FirstSheetAttr             *uint32          `xml:"firstSheet,attr"`
+	ActiveTabAttr              *uint32          `xml:"activeTab,attr"`
+	AutoFilterDateGroupingAttr *bool            `xml:"autoFilterDateGrouping,attr"`
 	ExtLst                     *CTExtensionList `xml:"extLst,omitempty"`
 }
 
@@ -4074,28 +4074,28 @@ type CTCustomWorkbookView struct {
 	XMLName                  xml.Name         `xml:"CT_CustomWorkbookView"`
 	NameAttr                 string           `xml:"name,attr"`
 	GuidAttr                 string           `xml:"guid,attr"`
-	AutoUpdateAttr           bool             `xml:"autoUpdate,attr,omitempty"`
-	MergeIntervalAttr        uint32           `xml:"mergeInterval,attr,omitempty"`
-	ChangesSavedWinAttr      bool             `xml:"changesSavedWin,attr,omitempty"`
-	OnlySyncAttr             bool             `xml:"onlySync,attr,omitempty"`
-	PersonalViewAttr         bool             `xml:"personalView,attr,omitempty"`
-	IncludePrintSettingsAttr bool             `xml:"includePrintSettings,attr,omitempty"`
-	IncludeHiddenRowColAttr  bool             `xml:"includeHiddenRowCol,attr,omitempty"`
-	MaximizedAttr            bool             `xml:"maximized,attr,omitempty"`
-	MinimizedAttr            bool             `xml:"minimized,attr,omitempty"`
-	ShowHorizontalScrollAttr bool             `xml:"showHorizontalScroll,attr,omitempty"`
-	ShowVerticalScrollAttr   bool             `xml:"showVerticalScroll,attr,omitempty"`
-	ShowSheetTabsAttr        bool             `xml:"showSheetTabs,attr,omitempty"`
-	XWindowAttr              int              `xml:"xWindow,attr,omitempty"`
-	YWindowAttr              int              `xml:"yWindow,attr,omitempty"`
+	AutoUpdateAttr           *bool            `xml:"autoUpdate,attr"`
+	MergeIntervalAttr        *uint32          `xml:"mergeInterval,attr"`
+	ChangesSavedWinAttr      *bool            `xml:"changesSavedWin,attr"`
+	OnlySyncAttr             *bool            `xml:"onlySync,attr"`
+	PersonalViewAttr         *bool            `xml:"personalView,attr"`
+	IncludePrintSettingsAttr *bool            `xml:"includePrintSettings,attr"`
+	IncludeHiddenRowColAttr  *bool            `xml:"includeHiddenRowCol,attr"`
+	MaximizedAttr            *bool            `xml:"maximized,attr"`
+	MinimizedAttr            *bool            `xml:"minimized,attr"`
+	ShowHorizontalScrollAttr *bool            `xml:"showHorizontalScroll,attr"`
+	ShowVerticalScrollAttr   *bool            `xml:"showVerticalScroll,attr"`
+	ShowSheetTabsAttr        *bool            `xml:"showSheetTabs,attr"`
+	XWindowAttr              *int             `xml:"xWindow,attr"`
+	YWindowAttr              *int             `xml:"yWindow,attr"`
 	WindowWidthAttr          uint32           `xml:"windowWidth,attr"`
 	WindowHeightAttr         uint32           `xml:"windowHeight,attr"`
-	TabRatioAttr             uint32           `xml:"tabRatio,attr,omitempty"`
+	TabRatioAttr             *uint32          `xml:"tabRatio,attr"`
 	ActiveSheetIdAttr        uint32           `xml:"activeSheetId,attr"`
-	ShowFormulaBarAttr       bool             `xml:"showFormulaBar,attr,omitempty"`
-	ShowStatusbarAttr        bool             `xml:"showStatusbar,attr,omitempty"`
-	ShowCommentsAttr         string           `xml:"showComments,attr,omitempty"`
-	ShowObjectsAttr          string           `xml:"showObjects,attr,omitempty"`
+	ShowFormulaBarAttr       *bool            `xml:"showFormulaBar,attr"`
+	ShowStatusbarAttr        *bool            `xml:"showStatusbar,attr"`
+	ShowCommentsAttr         *string          `xml:"showComments,attr"`
+	ShowObjectsAttr          *string          `xml:"showObjects,attr"`
 	ExtLst                   *CTExtensionList `xml:"extLst,omitempty"`
 }
 
@@ -4116,7 +4116,7 @@ type CTSheet struct {
 	XMLName     xml.Name `xml:"CT_Sheet"`
 	NameAttr    string   `xml:"name,attr"`
 	SheetIdAttr uint32   `xml:"sheetId,attr"`
-	StateAttr   string   `xml:"state,attr,omitempty"`
+	StateAttr   *string  `xml:"state,attr"`
 	RIdAttr     string   `xml:"r:id,attr"`
 }
 
@@ -4126,24 +4126,24 @@ type STSheetState string
 // CTWorkbookPr ...
 type CTWorkbookPr struct {
 	XMLName                        xml.Name `xml:"CT_WorkbookPr"`
-	Date1904Attr                   bool     `xml:"date1904,attr,omitempty"`
-	ShowObjectsAttr                string   `xml:"showObjects,attr,omitempty"`
-	ShowBorderUnselectedTablesAttr bool     `xml:"showBorderUnselectedTables,attr,omitempty"`
-	FilterPrivacyAttr              bool     `xml:"filterPrivacy,attr,omitempty"`
-	PromptedSolutionsAttr          bool     `xml:"promptedSolutions,attr,omitempty"`
-	ShowInkAnnotationAttr          bool     `xml:"showInkAnnotation,attr,omitempty"`
-	BackupFileAttr                 bool     `xml:"backupFile,attr,omitempty"`
-	SaveExternalLinkValuesAttr     bool     `xml:"saveExternalLinkValues,attr,omitempty"`
-	UpdateLinksAttr                string   `xml:"updateLinks,attr,omitempty"`
-	CodeNameAttr                   string   `xml:"codeName,attr,omitempty"`
-	HidePivotFieldListAttr         bool     `xml:"hidePivotFieldList,attr,omitempty"`
-	ShowPivotChartFilterAttr       bool     `xml:"showPivotChartFilter,attr,omitempty"`
-	AllowRefreshQueryAttr          bool     `xml:"allowRefreshQuery,attr,omitempty"`
-	PublishItemsAttr               bool     `xml:"publishItems,attr,omitempty"`
-	CheckCompatibilityAttr         bool     `xml:"checkCompatibility,attr,omitempty"`
-	AutoCompressPicturesAttr       bool     `xml:"autoCompressPictures,attr,omitempty"`
-	RefreshAllConnectionsAttr      bool     `xml:"refreshAllConnections,attr,omitempty"`
-	DefaultThemeVersionAttr        uint32   `xml:"defaultThemeVersion,attr,omitempty"`
+	Date1904Attr                   *bool    `xml:"date1904,attr"`
+	ShowObjectsAttr                *string  `xml:"showObjects,attr"`
+	ShowBorderUnselectedTablesAttr *bool    `xml:"showBorderUnselectedTables,attr"`
+	FilterPrivacyAttr              *bool    `xml:"filterPrivacy,attr"`
+	PromptedSolutionsAttr          *bool    `xml:"promptedSolutions,attr"`
+	ShowInkAnnotationAttr          *bool    `xml:"showInkAnnotation,attr"`
+	BackupFileAttr                 *bool    `xml:"backupFile,attr"`
+	SaveExternalLinkValuesAttr     *bool    `xml:"saveExternalLinkValues,attr"`
+	UpdateLinksAttr                *string  `xml:"updateLinks,attr"`
+	CodeNameAttr                   *string  `xml:"codeName,attr"`
+	HidePivotFieldListAttr         *bool    `xml:"hidePivotFieldList,attr"`
+	ShowPivotChartFilterAttr       *bool    `xml:"showPivotChartFilter,attr"`
+	AllowRefreshQueryAttr          *bool    `xml:"allowRefreshQuery,attr"`
+	PublishItemsAttr               *bool    `xml:"publishItems,attr"`
+	CheckCompatibilityAttr         *bool    `xml:"checkCompatibility,attr"`
+	AutoCompressPicturesAttr       *bool    `xml:"autoCompressPictures,attr"`
+	RefreshAllConnectionsAttr      *bool    `xml:"refreshAllConnections,attr"`
+	DefaultThemeVersionAttr        *uint32  `xml:"defaultThemeVersion,attr"`
 }
 
 // STUpdateLinks ...
@@ -4152,8 +4152,8 @@ type STUpdateLinks string
 // CTSmartTagPr ...
 type CTSmartTagPr struct {
 	XMLName   xml.Name `xml:"CT_SmartTagPr"`
-	EmbedAttr bool     `xml:"embed,attr,omitempty"`
-	ShowAttr  string   `xml:"show,attr,omitempty"`
+	EmbedAttr *bool    `xml:"embed,attr"`
+	ShowAttr  *string  `xml:"show,attr"`
 }
 
 // STSmartTagShow ...
@@ -4168,36 +4168,36 @@ type CTSmartTagTypes struct {
 // CTSmartTagType ...
 type CTSmartTagType struct {
 	XMLName          xml.Name `xml:"CT_SmartTagType"`
-	NamespaceUriAttr string   `xml:"namespaceUri,attr,omitempty"`
-	NameAttr         string   `xml:"name,attr,omitempty"`
-	UrlAttr          string   `xml:"url,attr,omitempty"`
+	NamespaceUriAttr *string  `xml:"namespaceUri,attr"`
+	NameAttr         *string  `xml:"name,attr"`
+	UrlAttr          *string  `xml:"url,attr"`
 }
 
 // CTFileRecoveryPr ...
 type CTFileRecoveryPr struct {
 	XMLName             xml.Name `xml:"CT_FileRecoveryPr"`
-	AutoRecoverAttr     bool     `xml:"autoRecover,attr,omitempty"`
-	CrashSaveAttr       bool     `xml:"crashSave,attr,omitempty"`
-	DataExtractLoadAttr bool     `xml:"dataExtractLoad,attr,omitempty"`
-	RepairLoadAttr      bool     `xml:"repairLoad,attr,omitempty"`
+	AutoRecoverAttr     *bool    `xml:"autoRecover,attr"`
+	CrashSaveAttr       *bool    `xml:"crashSave,attr"`
+	DataExtractLoadAttr *bool    `xml:"dataExtractLoad,attr"`
+	RepairLoadAttr      *bool    `xml:"repairLoad,attr"`
 }
 
 // CTCalcPr ...
 type CTCalcPr struct {
 	XMLName                   xml.Name `xml:"CT_CalcPr"`
-	CalcIdAttr                uint32   `xml:"calcId,attr,omitempty"`
-	CalcModeAttr              string   `xml:"calcMode,attr,omitempty"`
-	FullCalcOnLoadAttr        bool     `xml:"fullCalcOnLoad,attr,omitempty"`
-	RefModeAttr               string   `xml:"refMode,attr,omitempty"`
-	IterateAttr               bool     `xml:"iterate,attr,omitempty"`
-	IterateCountAttr          uint32   `xml:"iterateCount,attr,omitempty"`
-	IterateDeltaAttr          float64  `xml:"iterateDelta,attr,omitempty"`
-	FullPrecisionAttr         bool     `xml:"fullPrecision,attr,omitempty"`
-	CalcCompletedAttr         bool     `xml:"calcCompleted,attr,omitempty"`
-	CalcOnSaveAttr            bool     `xml:"calcOnSave,attr,omitempty"`
-	ConcurrentCalcAttr        bool     `xml:"concurrentCalc,attr,omitempty"`
-	ConcurrentManualCountAttr uint32   `xml:"concurrentManualCount,attr,omitempty"`
-	ForceFullCalcAttr         bool     `xml:"forceFullCalc,attr,omitempty"`
+	CalcIdAttr                *uint32  `xml:"calcId,attr"`
+	CalcModeAttr              *string  `xml:"calcMode,attr"`
+	FullCalcOnLoadAttr        *bool    `xml:"fullCalcOnLoad,attr"`
+	RefModeAttr               *string  `xml:"refMode,attr"`
+	IterateAttr               *bool    `xml:"iterate,attr"`
+	IterateCountAttr          *uint32  `xml:"iterateCount,attr"`
+	IterateDeltaAttr          *float64 `xml:"iterateDelta,attr"`
+	FullPrecisionAttr         *bool    `xml:"fullPrecision,attr"`
+	CalcCompletedAttr         *bool    `xml:"calcCompleted,attr"`
+	CalcOnSaveAttr            *bool    `xml:"calcOnSave,attr"`
+	ConcurrentCalcAttr        *bool    `xml:"concurrentCalc,attr"`
+	ConcurrentManualCountAttr *uint32  `xml:"concurrentManualCount,attr"`
+	ForceFullCalcAttr         *bool    `xml:"forceFullCalc,attr"`
 }
 
 // STCalcMode ...
@@ -4216,20 +4216,20 @@ type CTDefinedNames struct {
 type CTDefinedName struct {
 	XMLName               xml.Name `xml:"CT_DefinedName"`
 	NameAttr              string   `xml:"name,attr"`
-	CommentAttr           string   `xml:"comment,attr,omitempty"`
-	CustomMenuAttr        string   `xml:"customMenu,attr,omitempty"`
-	DescriptionAttr       string   `xml:"description,attr,omitempty"`
-	HelpAttr              string   `xml:"help,attr,omitempty"`
-	StatusBarAttr         string   `xml:"statusBar,attr,omitempty"`
-	LocalSheetIdAttr      uint32   `xml:"localSheetId,attr,omitempty"`
-	HiddenAttr            bool     `xml:"hidden,attr,omitempty"`
-	FunctionAttr          bool     `xml:"function,attr,omitempty"`
-	VbProcedureAttr       bool     `xml:"vbProcedure,attr,omitempty"`
-	XlmAttr               bool     `xml:"xlm,attr,omitempty"`
-	FunctionGroupIdAttr   uint32   `xml:"functionGroupId,attr,omitempty"`
-	ShortcutKeyAttr       string   `xml:"shortcutKey,attr,omitempty"`
-	PublishToServerAttr   bool     `xml:"publishToServer,attr,omitempty"`
-	WorkbookParameterAttr bool     `xml:"workbookParameter,attr,omitempty"`
+	CommentAttr           *string  `xml:"comment,attr"`
+	CustomMenuAttr        *string  `xml:"customMenu,attr"`
+	DescriptionAttr       *string  `xml:"description,attr"`
+	HelpAttr              *string  `xml:"help,attr"`
+	StatusBarAttr         *string  `xml:"statusBar,attr"`
+	LocalSheetIdAttr      *uint32  `xml:"localSheetId,attr"`
+	HiddenAttr            *bool    `xml:"hidden,attr"`
+	FunctionAttr          *bool    `xml:"function,attr"`
+	VbProcedureAttr       *bool    `xml:"vbProcedure,attr"`
+	XlmAttr               *bool    `xml:"xlm,attr"`
+	FunctionGroupIdAttr   *uint32  `xml:"functionGroupId,attr"`
+	ShortcutKeyAttr       *string  `xml:"shortcutKey,attr"`
+	PublishToServerAttr   *bool    `xml:"publishToServer,attr"`
+	WorkbookParameterAttr *bool    `xml:"workbookParameter,attr"`
 	Value                 string   `xml:",chardata"`
 }
 
@@ -4267,12 +4267,12 @@ type CTPivotCache struct {
 // CTFileSharing ...
 type CTFileSharing struct {
 	XMLName                 xml.Name `xml:"CT_FileSharing"`
-	ReadOnlyRecommendedAttr bool     `xml:"readOnlyRecommended,attr,omitempty"`
-	UserNameAttr            string   `xml:"userName,attr,omitempty"`
-	AlgorithmNameAttr       string   `xml:"algorithmName,attr,omitempty"`
-	HashValueAttr           string   `xml:"hashValue,attr,omitempty"`
-	SaltValueAttr           string   `xml:"saltValue,attr,omitempty"`
-	SpinCountAttr           uint32   `xml:"spinCount,attr,omitempty"`
+	ReadOnlyRecommendedAttr *bool    `xml:"readOnlyRecommended,attr"`
+	UserNameAttr            *string  `xml:"userName,attr"`
+	AlgorithmNameAttr       *string  `xml:"algorithmName,attr"`
+	HashValueAttr           *string  `xml:"hashValue,attr"`
+	SaltValueAttr           *string  `xml:"saltValue,attr"`
+	SpinCountAttr           *uint32  `xml:"spinCount,attr"`
 }
 
 // CTOleSize ...
@@ -4284,30 +4284,30 @@ type CTOleSize struct {
 // CTWorkbookProtection ...
 type CTWorkbookProtection struct {
 	XMLName                    xml.Name `xml:"CT_WorkbookProtection"`
-	LockStructureAttr          bool     `xml:"lockStructure,attr,omitempty"`
-	LockWindowsAttr            bool     `xml:"lockWindows,attr,omitempty"`
-	LockRevisionAttr           bool     `xml:"lockRevision,attr,omitempty"`
-	RevisionsAlgorithmNameAttr string   `xml:"revisionsAlgorithmName,attr,omitempty"`
-	RevisionsHashValueAttr     string   `xml:"revisionsHashValue,attr,omitempty"`
-	RevisionsSaltValueAttr     string   `xml:"revisionsSaltValue,attr,omitempty"`
-	RevisionsSpinCountAttr     uint32   `xml:"revisionsSpinCount,attr,omitempty"`
-	WorkbookAlgorithmNameAttr  string   `xml:"workbookAlgorithmName,attr,omitempty"`
-	WorkbookHashValueAttr      string   `xml:"workbookHashValue,attr,omitempty"`
-	WorkbookSaltValueAttr      string   `xml:"workbookSaltValue,attr,omitempty"`
-	WorkbookSpinCountAttr      uint32   `xml:"workbookSpinCount,attr,omitempty"`
+	LockStructureAttr          *bool    `xml:"lockStructure,attr"`
+	LockWindowsAttr            *bool    `xml:"lockWindows,attr"`
+	LockRevisionAttr           *bool    `xml:"lockRevision,attr"`
+	RevisionsAlgorithmNameAttr *string  `xml:"revisionsAlgorithmName,attr"`
+	RevisionsHashValueAttr     *string  `xml:"revisionsHashValue,attr"`
+	RevisionsSaltValueAttr     *string  `xml:"revisionsSaltValue,attr"`
+	RevisionsSpinCountAttr     *uint32  `xml:"revisionsSpinCount,attr"`
+	WorkbookAlgorithmNameAttr  *string  `xml:"workbookAlgorithmName,attr"`
+	WorkbookHashValueAttr      *string  `xml:"workbookHashValue,attr"`
+	WorkbookSaltValueAttr      *string  `xml:"workbookSaltValue,attr"`
+	WorkbookSpinCountAttr      *uint32  `xml:"workbookSpinCount,attr"`
 }
 
 // CTWebPublishing ...
 type CTWebPublishing struct {
 	XMLName              xml.Name `xml:"CT_WebPublishing"`
-	CssAttr              bool     `xml:"css,attr,omitempty"`
-	ThicketAttr          bool     `xml:"thicket,attr,omitempty"`
-	LongFileNamesAttr    bool     `xml:"longFileNames,attr,omitempty"`
-	VmlAttr              bool     `xml:"vml,attr,omitempty"`
-	AllowPngAttr         bool     `xml:"allowPng,attr,omitempty"`
-	TargetScreenSizeAttr string   `xml:"targetScreenSize,attr,omitempty"`
-	DpiAttr              uint32   `xml:"dpi,attr,omitempty"`
-	CharacterSetAttr     string   `xml:"characterSet,attr,omitempty"`
+	CssAttr              *bool    `xml:"css,attr"`
+	ThicketAttr          *bool    `xml:"thicket,attr"`
+	LongFileNamesAttr    *bool    `xml:"longFileNames,attr"`
+	VmlAttr              *bool    `xml:"vml,attr"`
+	AllowPngAttr         *bool    `xml:"allowPng,attr"`
+	TargetScreenSizeAttr *string  `xml:"targetScreenSize,attr"`
+	DpiAttr              *uint32  `xml:"dpi,attr"`
+	CharacterSetAttr     *string  `xml:"characterSet,attr"`
 }
 
 // STTargetScreenSize ...
@@ -4316,20 +4316,20 @@ type STTargetScreenSize string
 // CTFunctionGroups ...
 type CTFunctionGroups struct {
 	XMLName               xml.Name           `xml:"CT_FunctionGroups"`
-	BuiltInGroupCountAttr uint32             `xml:"builtInGroupCount,attr,omitempty"`
+	BuiltInGroupCountAttr *uint32            `xml:"builtInGroupCount,attr"`
 	FunctionGroup         []*CTFunctionGroup `xml:"functionGroup,omitempty"`
 }
 
 // CTFunctionGroup ...
 type CTFunctionGroup struct {
 	XMLName  xml.Name `xml:"CT_FunctionGroup"`
-	NameAttr string   `xml:"name,attr,omitempty"`
+	NameAttr *string  `xml:"name,attr"`
 }
 
 // CTWebPublishObjects ...
 type CTWebPublishObjects struct {
 	XMLName          xml.Name              `xml:"CT_WebPublishObjects"`
-	CountAttr        uint32                `xml:"count,attr,omitempty"`
+	CountAttr        *uint32               `xml:"count,attr"`
 	WebPublishObject []*CTWebPublishObject `xml:"webPublishObject"`
 }
 
@@ -4338,8 +4338,8 @@ type CTWebPublishObject struct {
 	XMLName             xml.Name `xml:"CT_WebPublishObject"`
 	IdAttr              uint32   `xml:"id,attr"`
 	DivIdAttr           string   `xml:"divId,attr"`
-	SourceObjectAttr    string   `xml:"sourceObject,attr,omitempty"`
+	SourceObjectAttr    *string  `xml:"sourceObject,attr"`
 	DestinationFileAttr string   `xml:"destinationFile,attr"`
-	TitleAttr           string   `xml:"title,attr,omitempty"`
-	AutoRepublishAttr   bool     `xml:"autoRepublish,attr,omitempty"`
+	TitleAttr           *string  `xml:"title,attr"`
+	AutoRepublishAttr   *bool    `xml:"autoRepublish,attr"`
 }

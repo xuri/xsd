@@ -18,13 +18,13 @@ type STTransitionInOutDirectionType string
 // CTSideDirectionTransition ...
 type CTSideDirectionTransition struct {
 	XMLName xml.Name `xml:"CT_SideDirectionTransition"`
-	DirAttr string   `xml:"dir,attr,omitempty"`
+	DirAttr *string  `xml:"dir,attr"`
 }
 
 // CTCornerDirectionTransition ...
 type CTCornerDirectionTransition struct {
 	XMLName xml.Name `xml:"CT_CornerDirectionTransition"`
-	DirAttr string   `xml:"dir,attr,omitempty"`
+	DirAttr *string  `xml:"dir,attr"`
 }
 
 // STTransitionEightDirectionType ...
@@ -43,38 +43,38 @@ type CTEightDirectionTransition struct {
 // CTOrientationTransition ...
 type CTOrientationTransition struct {
 	XMLName xml.Name `xml:"CT_OrientationTransition"`
-	DirAttr string   `xml:"dir,attr,omitempty"`
+	DirAttr *string  `xml:"dir,attr"`
 }
 
 // CTInOutTransition ...
 type CTInOutTransition struct {
 	XMLName xml.Name `xml:"CT_InOutTransition"`
-	DirAttr string   `xml:"dir,attr,omitempty"`
+	DirAttr *string  `xml:"dir,attr"`
 }
 
 // CTOptionalBlackTransition ...
 type CTOptionalBlackTransition struct {
 	XMLName     xml.Name `xml:"CT_OptionalBlackTransition"`
-	ThruBlkAttr bool     `xml:"thruBlk,attr,omitempty"`
+	ThruBlkAttr *bool    `xml:"thruBlk,attr"`
 }
 
 // CTSplitTransition ...
 type CTSplitTransition struct {
 	XMLName    xml.Name `xml:"CT_SplitTransition"`
-	OrientAttr string   `xml:"orient,attr,omitempty"`
-	DirAttr    string   `xml:"dir,attr,omitempty"`
+	OrientAttr *string  `xml:"orient,attr"`
+	DirAttr    *string  `xml:"dir,attr"`
 }
 
 // CTWheelTransition ...
 type CTWheelTransition struct {
 	XMLName    xml.Name `xml:"CT_WheelTransition"`
-	SpokesAttr uint32   `xml:"spokes,attr,omitempty"`
+	SpokesAttr *uint32  `xml:"spokes,attr"`
 }
 
 // CTTransitionStartSoundAction ...
 type CTTransitionStartSoundAction struct {
 	XMLName  xml.Name                `xml:"CT_TransitionStartSoundAction"`
-	LoopAttr bool                    `xml:"loop,attr,omitempty"`
+	LoopAttr *bool                   `xml:"loop,attr"`
 	Snd      *CTEmbeddedWAVAudioFile `xml:"snd"`
 }
 
@@ -91,9 +91,9 @@ type STTransitionSpeed string
 // CTSlideTransition ...
 type CTSlideTransition struct {
 	XMLName      xml.Name                     `xml:"CT_SlideTransition"`
-	SpdAttr      string                       `xml:"spd,attr,omitempty"`
-	AdvClickAttr bool                         `xml:"advClick,attr,omitempty"`
-	AdvTmAttr    uint32                       `xml:"advTm,attr,omitempty"`
+	SpdAttr      *string                      `xml:"spd,attr"`
+	AdvClickAttr *bool                        `xml:"advClick,attr"`
+	AdvTmAttr    *uint32                      `xml:"advTm,attr"`
 	Blinds       *CTOrientationTransition     `xml:"blinds"`
 	Checker      *CTOrientationTransition     `xml:"checker"`
 	Circle       *CTEmpty                     `xml:"circle"`
@@ -150,8 +150,8 @@ type STIterateType string
 // CTTLIterateData ...
 type CTTLIterateData struct {
 	XMLName       xml.Name                       `xml:"CT_TLIterateData"`
-	TypeAttr      string                         `xml:"type,attr,omitempty"`
-	BackwardsAttr bool                           `xml:"backwards,attr,omitempty"`
+	TypeAttr      *string                        `xml:"type,attr"`
+	BackwardsAttr *bool                          `xml:"backwards,attr"`
 	TmAbs         *CTTLIterateIntervalTime       `xml:"tmAbs"`
 	TmPct         *CTTLIterateIntervalPercentage `xml:"tmPct"`
 }
@@ -176,7 +176,7 @@ type STTLChartSubelementType string
 type CTTLOleChartTargetElement struct {
 	XMLName  xml.Name `xml:"CT_TLOleChartTargetElement"`
 	TypeAttr string   `xml:"type,attr"`
-	LvlAttr  uint32   `xml:"lvl,attr,omitempty"`
+	LvlAttr  *uint32  `xml:"lvl,attr"`
 }
 
 // CTTLShapeTargetElement ...
@@ -220,7 +220,7 @@ type STTLTriggerEvent string
 // CTTLTimeCondition ...
 type CTTLTimeCondition struct {
 	XMLName   xml.Name                `xml:"CT_TLTimeCondition"`
-	EvtAttr   string                  `xml:"evt,attr,omitempty"`
+	EvtAttr   *string                 `xml:"evt,attr"`
 	DelayAttr *STTLTime               `xml:"delay,attr,omitempty"`
 	TgtEl     *CTTLTimeTargetElement  `xml:"tgtEl"`
 	Tn        *CTTLTriggerTimeNodeID  `xml:"tn"`
@@ -272,29 +272,29 @@ type STTLTimeNodeType string
 // CTTLCommonTimeNodeData ...
 type CTTLCommonTimeNodeData struct {
 	XMLName           xml.Name                   `xml:"CT_TLCommonTimeNodeData"`
-	IdAttr            uint32                     `xml:"id,attr,omitempty"`
-	PresetIDAttr      int                        `xml:"presetID,attr,omitempty"`
-	PresetClassAttr   string                     `xml:"presetClass,attr,omitempty"`
-	PresetSubtypeAttr int                        `xml:"presetSubtype,attr,omitempty"`
+	IdAttr            *uint32                    `xml:"id,attr"`
+	PresetIDAttr      *int                       `xml:"presetID,attr"`
+	PresetClassAttr   *string                    `xml:"presetClass,attr"`
+	PresetSubtypeAttr *int                       `xml:"presetSubtype,attr"`
 	DurAttr           *STTLTime                  `xml:"dur,attr,omitempty"`
 	RepeatCountAttr   *STTLTime                  `xml:"repeatCount,attr,omitempty"`
 	RepeatDurAttr     *STTLTime                  `xml:"repeatDur,attr,omitempty"`
 	SpdAttr           *STPercentage              `xml:"spd,attr,omitempty"`
 	AccelAttr         *STPositiveFixedPercentage `xml:"accel,attr,omitempty"`
 	DecelAttr         *STPositiveFixedPercentage `xml:"decel,attr,omitempty"`
-	AutoRevAttr       bool                       `xml:"autoRev,attr,omitempty"`
-	RestartAttr       string                     `xml:"restart,attr,omitempty"`
-	FillAttr          string                     `xml:"fill,attr,omitempty"`
-	SyncBehaviorAttr  string                     `xml:"syncBehavior,attr,omitempty"`
-	TmFilterAttr      string                     `xml:"tmFilter,attr,omitempty"`
-	EvtFilterAttr     string                     `xml:"evtFilter,attr,omitempty"`
-	DisplayAttr       bool                       `xml:"display,attr,omitempty"`
-	MasterRelAttr     string                     `xml:"masterRel,attr,omitempty"`
-	BldLvlAttr        int                        `xml:"bldLvl,attr,omitempty"`
-	GrpIdAttr         uint32                     `xml:"grpId,attr,omitempty"`
-	AfterEffectAttr   bool                       `xml:"afterEffect,attr,omitempty"`
-	NodeTypeAttr      string                     `xml:"nodeType,attr,omitempty"`
-	NodePhAttr        bool                       `xml:"nodePh,attr,omitempty"`
+	AutoRevAttr       *bool                      `xml:"autoRev,attr"`
+	RestartAttr       *string                    `xml:"restart,attr"`
+	FillAttr          *string                    `xml:"fill,attr"`
+	SyncBehaviorAttr  *string                    `xml:"syncBehavior,attr"`
+	TmFilterAttr      *string                    `xml:"tmFilter,attr"`
+	EvtFilterAttr     *string                    `xml:"evtFilter,attr"`
+	DisplayAttr       *bool                      `xml:"display,attr"`
+	MasterRelAttr     *string                    `xml:"masterRel,attr"`
+	BldLvlAttr        *int                       `xml:"bldLvl,attr"`
+	GrpIdAttr         *uint32                    `xml:"grpId,attr"`
+	AfterEffectAttr   *bool                      `xml:"afterEffect,attr"`
+	NodeTypeAttr      *string                    `xml:"nodeType,attr"`
+	NodePhAttr        *bool                      `xml:"nodePh,attr"`
 	StCondLst         *CTTLTimeConditionList     `xml:"stCondLst,omitempty"`
 	EndCondLst        *CTTLTimeConditionList     `xml:"endCondLst,omitempty"`
 	EndSync           *CTTLTimeCondition         `xml:"endSync,omitempty"`
@@ -318,9 +318,9 @@ type STTLPreviousActionType string
 // CTTLTimeNodeSequence ...
 type CTTLTimeNodeSequence struct {
 	XMLName        xml.Name                `xml:"CT_TLTimeNodeSequence"`
-	ConcurrentAttr bool                    `xml:"concurrent,attr,omitempty"`
-	PrevAcAttr     string                  `xml:"prevAc,attr,omitempty"`
-	NextAcAttr     string                  `xml:"nextAc,attr,omitempty"`
+	ConcurrentAttr *bool                   `xml:"concurrent,attr"`
+	PrevAcAttr     *string                 `xml:"prevAc,attr"`
+	NextAcAttr     *string                 `xml:"nextAc,attr"`
 	CTn            *CTTLCommonTimeNodeData `xml:"cTn"`
 	PrevCondLst    *CTTLTimeConditionList  `xml:"prevCondLst,omitempty"`
 	NextCondLst    *CTTLTimeConditionList  `xml:"nextCondLst,omitempty"`
@@ -353,14 +353,14 @@ type STTLBehaviorOverrideType string
 // CTTLCommonBehaviorData ...
 type CTTLCommonBehaviorData struct {
 	XMLName        xml.Name                       `xml:"CT_TLCommonBehaviorData"`
-	AdditiveAttr   string                         `xml:"additive,attr,omitempty"`
-	AccumulateAttr string                         `xml:"accumulate,attr,omitempty"`
-	XfrmTypeAttr   string                         `xml:"xfrmType,attr,omitempty"`
-	FromAttr       string                         `xml:"from,attr,omitempty"`
-	ToAttr         string                         `xml:"to,attr,omitempty"`
-	ByAttr         string                         `xml:"by,attr,omitempty"`
-	RctxAttr       string                         `xml:"rctx,attr,omitempty"`
-	OverrideAttr   string                         `xml:"override,attr,omitempty"`
+	AdditiveAttr   *string                        `xml:"additive,attr"`
+	AccumulateAttr *string                        `xml:"accumulate,attr"`
+	XfrmTypeAttr   *string                        `xml:"xfrmType,attr"`
+	FromAttr       *string                        `xml:"from,attr"`
+	ToAttr         *string                        `xml:"to,attr"`
+	ByAttr         *string                        `xml:"by,attr"`
+	RctxAttr       *string                        `xml:"rctx,attr"`
+	OverrideAttr   *string                        `xml:"override,attr"`
 	CTn            *CTTLCommonTimeNodeData        `xml:"cTn"`
 	TgtEl          *CTTLTimeTargetElement         `xml:"tgtEl"`
 	AttrNameLst    *CTTLBehaviorAttributeNameList `xml:"attrNameLst,omitempty"`
@@ -411,7 +411,7 @@ type STTLTimeAnimateValueTime struct {
 type CTTLTimeAnimateValue struct {
 	XMLName  xml.Name                  `xml:"CT_TLTimeAnimateValue"`
 	TmAttr   *STTLTimeAnimateValueTime `xml:"tm,attr,omitempty"`
-	FmlaAttr string                    `xml:"fmla,attr,omitempty"`
+	FmlaAttr *string                   `xml:"fmla,attr"`
 	Val      *CTTLAnimVariant          `xml:"val,omitempty"`
 }
 
@@ -430,11 +430,11 @@ type STTLAnimateBehaviorValueType string
 // CTTLAnimateBehavior ...
 type CTTLAnimateBehavior struct {
 	XMLName       xml.Name                  `xml:"CT_TLAnimateBehavior"`
-	ByAttr        string                    `xml:"by,attr,omitempty"`
-	FromAttr      string                    `xml:"from,attr,omitempty"`
-	ToAttr        string                    `xml:"to,attr,omitempty"`
-	CalcmodeAttr  string                    `xml:"calcmode,attr,omitempty"`
-	ValueTypeAttr string                    `xml:"valueType,attr,omitempty"`
+	ByAttr        *string                   `xml:"by,attr"`
+	FromAttr      *string                   `xml:"from,attr"`
+	ToAttr        *string                   `xml:"to,attr"`
+	CalcmodeAttr  *string                   `xml:"calcmode,attr"`
+	ValueTypeAttr *string                   `xml:"valueType,attr"`
 	CBhvr         *CTTLCommonBehaviorData   `xml:"cBhvr"`
 	TavLst        *CTTLTimeAnimateValueList `xml:"tavLst,omitempty"`
 }
@@ -471,8 +471,8 @@ type STTLAnimateColorDirection string
 // CTTLAnimateColorBehavior ...
 type CTTLAnimateColorBehavior struct {
 	XMLName    xml.Name                     `xml:"CT_TLAnimateColorBehavior"`
-	ClrSpcAttr string                       `xml:"clrSpc,attr,omitempty"`
-	DirAttr    string                       `xml:"dir,attr,omitempty"`
+	ClrSpcAttr *string                      `xml:"clrSpc,attr"`
+	DirAttr    *string                      `xml:"dir,attr"`
 	CBhvr      *CTTLCommonBehaviorData      `xml:"cBhvr"`
 	By         *CTTLByAnimateColorTransform `xml:"by,omitempty"`
 	From       *CTColor                     `xml:"from,omitempty"`
@@ -485,9 +485,9 @@ type STTLAnimateEffectTransition string
 // CTTLAnimateEffectBehavior ...
 type CTTLAnimateEffectBehavior struct {
 	XMLName        xml.Name                `xml:"CT_TLAnimateEffectBehavior"`
-	TransitionAttr string                  `xml:"transition,attr,omitempty"`
-	FilterAttr     string                  `xml:"filter,attr,omitempty"`
-	PrLstAttr      string                  `xml:"prLst,attr,omitempty"`
+	TransitionAttr *string                 `xml:"transition,attr"`
+	FilterAttr     *string                 `xml:"filter,attr"`
+	PrLstAttr      *string                 `xml:"prLst,attr"`
 	CBhvr          *CTTLCommonBehaviorData `xml:"cBhvr"`
 	Progress       *CTTLAnimVariant        `xml:"progress,omitempty"`
 }
@@ -508,11 +508,11 @@ type CTTLPoint struct {
 // CTTLAnimateMotionBehavior ...
 type CTTLAnimateMotionBehavior struct {
 	XMLName          xml.Name                `xml:"CT_TLAnimateMotionBehavior"`
-	OriginAttr       string                  `xml:"origin,attr,omitempty"`
-	PathAttr         string                  `xml:"path,attr,omitempty"`
-	PathEditModeAttr string                  `xml:"pathEditMode,attr,omitempty"`
-	RAngAttr         int                     `xml:"rAng,attr,omitempty"`
-	PtsTypesAttr     string                  `xml:"ptsTypes,attr,omitempty"`
+	OriginAttr       *string                 `xml:"origin,attr"`
+	PathAttr         *string                 `xml:"path,attr"`
+	PathEditModeAttr *string                 `xml:"pathEditMode,attr"`
+	RAngAttr         *int                    `xml:"rAng,attr"`
+	PtsTypesAttr     *string                 `xml:"ptsTypes,attr"`
 	CBhvr            *CTTLCommonBehaviorData `xml:"cBhvr"`
 	By               *CTTLPoint              `xml:"by,omitempty"`
 	From             *CTTLPoint              `xml:"from,omitempty"`
@@ -523,16 +523,16 @@ type CTTLAnimateMotionBehavior struct {
 // CTTLAnimateRotationBehavior ...
 type CTTLAnimateRotationBehavior struct {
 	XMLName  xml.Name                `xml:"CT_TLAnimateRotationBehavior"`
-	ByAttr   int                     `xml:"by,attr,omitempty"`
-	FromAttr int                     `xml:"from,attr,omitempty"`
-	ToAttr   int                     `xml:"to,attr,omitempty"`
+	ByAttr   *int                    `xml:"by,attr"`
+	FromAttr *int                    `xml:"from,attr"`
+	ToAttr   *int                    `xml:"to,attr"`
 	CBhvr    *CTTLCommonBehaviorData `xml:"cBhvr"`
 }
 
 // CTTLAnimateScaleBehavior ...
 type CTTLAnimateScaleBehavior struct {
 	XMLName          xml.Name                `xml:"CT_TLAnimateScaleBehavior"`
-	ZoomContentsAttr bool                    `xml:"zoomContents,attr,omitempty"`
+	ZoomContentsAttr *bool                   `xml:"zoomContents,attr"`
 	CBhvr            *CTTLCommonBehaviorData `xml:"cBhvr"`
 	By               *CTTLPoint              `xml:"by,omitempty"`
 	From             *CTTLPoint              `xml:"from,omitempty"`
@@ -545,8 +545,8 @@ type STTLCommandType string
 // CTTLCommandBehavior ...
 type CTTLCommandBehavior struct {
 	XMLName  xml.Name                `xml:"CT_TLCommandBehavior"`
-	TypeAttr string                  `xml:"type,attr,omitempty"`
-	CmdAttr  string                  `xml:"cmd,attr,omitempty"`
+	TypeAttr *string                 `xml:"type,attr"`
+	CmdAttr  *string                 `xml:"cmd,attr"`
 	CBhvr    *CTTLCommonBehaviorData `xml:"cBhvr"`
 }
 
@@ -561,9 +561,9 @@ type CTTLSetBehavior struct {
 type CTTLCommonMediaNodeData struct {
 	XMLName             xml.Name                   `xml:"CT_TLCommonMediaNodeData"`
 	VolAttr             *STPositiveFixedPercentage `xml:"vol,attr,omitempty"`
-	MuteAttr            bool                       `xml:"mute,attr,omitempty"`
-	NumSldAttr          uint32                     `xml:"numSld,attr,omitempty"`
-	ShowWhenStoppedAttr bool                       `xml:"showWhenStopped,attr,omitempty"`
+	MuteAttr            *bool                      `xml:"mute,attr"`
+	NumSldAttr          *uint32                    `xml:"numSld,attr"`
+	ShowWhenStoppedAttr *bool                      `xml:"showWhenStopped,attr"`
 	CTn                 *CTTLCommonTimeNodeData    `xml:"cTn"`
 	TgtEl               *CTTLTimeTargetElement     `xml:"tgtEl"`
 }
@@ -571,14 +571,14 @@ type CTTLCommonMediaNodeData struct {
 // CTTLMediaNodeAudio ...
 type CTTLMediaNodeAudio struct {
 	XMLName         xml.Name                 `xml:"CT_TLMediaNodeAudio"`
-	IsNarrationAttr bool                     `xml:"isNarration,attr,omitempty"`
+	IsNarrationAttr *bool                    `xml:"isNarration,attr"`
 	CMediaNode      *CTTLCommonMediaNodeData `xml:"cMediaNode"`
 }
 
 // CTTLMediaNodeVideo ...
 type CTTLMediaNodeVideo struct {
 	XMLName      xml.Name                 `xml:"CT_TLMediaNodeVideo"`
-	FullScrnAttr bool                     `xml:"fullScrn,attr,omitempty"`
+	FullScrnAttr *bool                    `xml:"fullScrn,attr"`
 	CMediaNode   *CTTLCommonMediaNodeData `xml:"cMediaNode"`
 }
 
@@ -593,7 +593,7 @@ type AGTLBuild struct {
 // CTTLTemplate ...
 type CTTLTemplate struct {
 	XMLName xml.Name        `xml:"CT_TLTemplate"`
-	LvlAttr uint32          `xml:"lvl,attr,omitempty"`
+	LvlAttr *uint32         `xml:"lvl,attr"`
 	TnLst   *CTTimeNodeList `xml:"tnLst"`
 }
 
@@ -610,11 +610,11 @@ type STTLParaBuildType string
 type CTTLBuildParagraph struct {
 	XMLName              xml.Name `xml:"CT_TLBuildParagraph"`
 	AGTLBuild            *AGTLBuild
-	BuildAttr            string            `xml:"build,attr,omitempty"`
-	BldLvlAttr           uint32            `xml:"bldLvl,attr,omitempty"`
-	AnimBgAttr           bool              `xml:"animBg,attr,omitempty"`
-	AutoUpdateAnimBgAttr bool              `xml:"autoUpdateAnimBg,attr,omitempty"`
-	RevAttr              bool              `xml:"rev,attr,omitempty"`
+	BuildAttr            *string           `xml:"build,attr"`
+	BldLvlAttr           *uint32           `xml:"bldLvl,attr"`
+	AnimBgAttr           *bool             `xml:"animBg,attr"`
+	AutoUpdateAnimBgAttr *bool             `xml:"autoUpdateAnimBg,attr"`
+	RevAttr              *bool             `xml:"rev,attr"`
 	AdvAutoAttr          *STTLTime         `xml:"advAuto,attr,omitempty"`
 	TmplLst              *CTTLTemplateList `xml:"tmplLst,omitempty"`
 }
@@ -626,7 +626,7 @@ type STTLDiagramBuildType string
 type CTTLBuildDiagram struct {
 	XMLName   xml.Name `xml:"CT_TLBuildDiagram"`
 	AGTLBuild *AGTLBuild
-	BldAttr   string `xml:"bld,attr,omitempty"`
+	BldAttr   *string `xml:"bld,attr"`
 }
 
 // STTLOleChartBuildType ...
@@ -636,8 +636,8 @@ type STTLOleChartBuildType string
 type CTTLOleBuildChart struct {
 	XMLName    xml.Name `xml:"CT_TLOleBuildChart"`
 	AGTLBuild  *AGTLBuild
-	BldAttr    string `xml:"bld,attr,omitempty"`
-	AnimBgAttr bool   `xml:"animBg,attr,omitempty"`
+	BldAttr    *string `xml:"bld,attr"`
+	AnimBgAttr *bool   `xml:"animBg,attr"`
 }
 
 // CTTLGraphicalObjectBuild ...
@@ -752,7 +752,7 @@ type CTExtensionList struct {
 // CTExtensionListModify ...
 type CTExtensionListModify struct {
 	XMLName         xml.Name `xml:"CT_ExtensionListModify"`
-	ModAttr         bool     `xml:"mod,attr,omitempty"`
+	ModAttr         *bool    `xml:"mod,attr"`
 	EGExtensionList []*EGExtensionList
 }
 
@@ -780,7 +780,7 @@ type CmAuthorLst *CTCommentAuthorList
 type CTComment struct {
 	XMLName      xml.Name               `xml:"CT_Comment"`
 	AuthorIdAttr uint32                 `xml:"authorId,attr"`
-	DtAttr       string                 `xml:"dt,attr,omitempty"`
+	DtAttr       *string                `xml:"dt,attr"`
 	IdxAttr      uint32                 `xml:"idx,attr"`
 	Pos          *CTPoint2D             `xml:"pos"`
 	Text         string                 `xml:"text"`
@@ -812,14 +812,14 @@ type STOleObjectFollowColorScheme string
 // CTOleObjectEmbed ...
 type CTOleObjectEmbed struct {
 	XMLName               xml.Name         `xml:"CT_OleObjectEmbed"`
-	FollowColorSchemeAttr string           `xml:"followColorScheme,attr,omitempty"`
+	FollowColorSchemeAttr *string          `xml:"followColorScheme,attr"`
 	ExtLst                *CTExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTOleObjectLink ...
 type CTOleObjectLink struct {
 	XMLName             xml.Name         `xml:"CT_OleObjectLink"`
-	UpdateAutomaticAttr bool             `xml:"updateAutomatic,attr,omitempty"`
+	UpdateAutomaticAttr *bool            `xml:"updateAutomatic,attr"`
 	ExtLst              *CTExtensionList `xml:"extLst,omitempty"`
 }
 
@@ -827,7 +827,7 @@ type CTOleObjectLink struct {
 type CTOleObject struct {
 	XMLName    xml.Name `xml:"CT_OleObject"`
 	AGOle      *AGOle
-	ProgIdAttr string            `xml:"progId,attr,omitempty"`
+	ProgIdAttr *string           `xml:"progId,attr"`
 	Embed      *CTOleObjectEmbed `xml:"embed"`
 	Link       *CTOleObjectLink  `xml:"link"`
 	Pic        *CTPicture        `xml:"pic"`
@@ -873,7 +873,7 @@ type STSlideMasterId uint32
 // CTSlideMasterIdListEntry ...
 type CTSlideMasterIdListEntry struct {
 	XMLName xml.Name         `xml:"CT_SlideMasterIdListEntry"`
-	IdAttr  uint32           `xml:"id,attr,omitempty"`
+	IdAttr  *uint32          `xml:"id,attr"`
 	RIdAttr string           `xml:"r:id,attr"`
 	ExtLst  *CTExtensionList `xml:"extLst,omitempty"`
 }
@@ -962,10 +962,10 @@ type STPhotoAlbumFrameShape string
 // CTPhotoAlbum ...
 type CTPhotoAlbum struct {
 	XMLName          xml.Name         `xml:"CT_PhotoAlbum"`
-	BwAttr           bool             `xml:"bw,attr,omitempty"`
-	ShowCaptionsAttr bool             `xml:"showCaptions,attr,omitempty"`
-	LayoutAttr       string           `xml:"layout,attr,omitempty"`
-	FrameAttr        string           `xml:"frame,attr,omitempty"`
+	BwAttr           *bool            `xml:"bw,attr"`
+	ShowCaptionsAttr *bool            `xml:"showCaptions,attr"`
+	LayoutAttr       *string          `xml:"layout,attr"`
+	FrameAttr        *string          `xml:"frame,attr"`
 	ExtLst           *CTExtensionList `xml:"extLst,omitempty"`
 }
 
@@ -980,13 +980,13 @@ type CTSlideSize struct {
 	XMLName  xml.Name `xml:"CT_SlideSize"`
 	CxAttr   int      `xml:"cx,attr"`
 	CyAttr   int      `xml:"cy,attr"`
-	TypeAttr string   `xml:"type,attr,omitempty"`
+	TypeAttr *string  `xml:"type,attr"`
 }
 
 // CTKinsoku ...
 type CTKinsoku struct {
 	XMLName           xml.Name `xml:"CT_Kinsoku"`
-	LangAttr          string   `xml:"lang,attr,omitempty"`
+	LangAttr          *string  `xml:"lang,attr"`
 	InvalStCharsAttr  string   `xml:"invalStChars,attr"`
 	InvalEndCharsAttr string   `xml:"invalEndChars,attr"`
 }
@@ -997,27 +997,27 @@ type STBookmarkIdSeed uint32
 // CTModifyVerifier ...
 type CTModifyVerifier struct {
 	XMLName           xml.Name `xml:"CT_ModifyVerifier"`
-	AlgorithmNameAttr string   `xml:"algorithmName,attr,omitempty"`
-	HashValueAttr     string   `xml:"hashValue,attr,omitempty"`
-	SaltValueAttr     string   `xml:"saltValue,attr,omitempty"`
-	SpinValueAttr     uint32   `xml:"spinValue,attr,omitempty"`
+	AlgorithmNameAttr *string  `xml:"algorithmName,attr"`
+	HashValueAttr     *string  `xml:"hashValue,attr"`
+	SaltValueAttr     *string  `xml:"saltValue,attr"`
+	SpinValueAttr     *uint32  `xml:"spinValue,attr"`
 }
 
 // CTPresentation ...
 type CTPresentation struct {
 	XMLName                      xml.Name               `xml:"CT_Presentation"`
 	ServerZoomAttr               *STPercentage          `xml:"serverZoom,attr,omitempty"`
-	FirstSlideNumAttr            int                    `xml:"firstSlideNum,attr,omitempty"`
-	ShowSpecialPlsOnTitleSldAttr bool                   `xml:"showSpecialPlsOnTitleSld,attr,omitempty"`
-	RtlAttr                      bool                   `xml:"rtl,attr,omitempty"`
-	RemovePersonalInfoOnSaveAttr bool                   `xml:"removePersonalInfoOnSave,attr,omitempty"`
-	CompatModeAttr               bool                   `xml:"compatMode,attr,omitempty"`
-	StrictFirstAndLastCharsAttr  bool                   `xml:"strictFirstAndLastChars,attr,omitempty"`
-	EmbedTrueTypeFontsAttr       bool                   `xml:"embedTrueTypeFonts,attr,omitempty"`
-	SaveSubsetFontsAttr          bool                   `xml:"saveSubsetFonts,attr,omitempty"`
-	AutoCompressPicturesAttr     bool                   `xml:"autoCompressPictures,attr,omitempty"`
-	BookmarkIdSeedAttr           uint32                 `xml:"bookmarkIdSeed,attr,omitempty"`
-	ConformanceAttr              string                 `xml:"conformance,attr,omitempty"`
+	FirstSlideNumAttr            *int                   `xml:"firstSlideNum,attr"`
+	ShowSpecialPlsOnTitleSldAttr *bool                  `xml:"showSpecialPlsOnTitleSld,attr"`
+	RtlAttr                      *bool                  `xml:"rtl,attr"`
+	RemovePersonalInfoOnSaveAttr *bool                  `xml:"removePersonalInfoOnSave,attr"`
+	CompatModeAttr               *bool                  `xml:"compatMode,attr"`
+	StrictFirstAndLastCharsAttr  *bool                  `xml:"strictFirstAndLastChars,attr"`
+	EmbedTrueTypeFontsAttr       *bool                  `xml:"embedTrueTypeFonts,attr"`
+	SaveSubsetFontsAttr          *bool                  `xml:"saveSubsetFonts,attr"`
+	AutoCompressPicturesAttr     *bool                  `xml:"autoCompressPictures,attr"`
+	BookmarkIdSeedAttr           *uint32                `xml:"bookmarkIdSeed,attr"`
+	ConformanceAttr              *string                `xml:"conformance,attr"`
 	SldMasterIdLst               *CTSlideMasterIdList   `xml:"sldMasterIdLst,omitempty"`
 	NotesMasterIdLst             *CTNotesMasterIdList   `xml:"notesMasterIdLst,omitempty"`
 	HandoutMasterIdLst           *CTHandoutMasterIdList `xml:"handoutMasterIdLst,omitempty"`
@@ -1041,9 +1041,9 @@ type Presentation *CTPresentation
 // CTHtmlPublishProperties ...
 type CTHtmlPublishProperties struct {
 	XMLName              xml.Name `xml:"CT_HtmlPublishProperties"`
-	ShowSpeakerNotesAttr bool     `xml:"showSpeakerNotes,attr,omitempty"`
-	TargetAttr           string   `xml:"target,attr,omitempty"`
-	TitleAttr            string   `xml:"title,attr,omitempty"`
+	ShowSpeakerNotesAttr *bool    `xml:"showSpeakerNotes,attr"`
+	TargetAttr           *string  `xml:"target,attr"`
+	TitleAttr            *string  `xml:"title,attr"`
 	RIdAttr              string   `xml:"r:id,attr"`
 	EGSlideListChoice    []*EGSlideListChoice
 	ExtLst               *CTExtensionList `xml:"extLst,omitempty"`
@@ -1058,24 +1058,24 @@ type STPrintColorMode string
 // CTPrintProperties ...
 type CTPrintProperties struct {
 	XMLName             xml.Name         `xml:"CT_PrintProperties"`
-	PrnWhatAttr         string           `xml:"prnWhat,attr,omitempty"`
-	ClrModeAttr         string           `xml:"clrMode,attr,omitempty"`
-	HiddenSlidesAttr    bool             `xml:"hiddenSlides,attr,omitempty"`
-	ScaleToFitPaperAttr bool             `xml:"scaleToFitPaper,attr,omitempty"`
-	FrameSlidesAttr     bool             `xml:"frameSlides,attr,omitempty"`
+	PrnWhatAttr         *string          `xml:"prnWhat,attr"`
+	ClrModeAttr         *string          `xml:"clrMode,attr"`
+	HiddenSlidesAttr    *bool            `xml:"hiddenSlides,attr"`
+	ScaleToFitPaperAttr *bool            `xml:"scaleToFitPaper,attr"`
+	FrameSlidesAttr     *bool            `xml:"frameSlides,attr"`
 	ExtLst              *CTExtensionList `xml:"extLst,omitempty"`
 }
 
 // CTShowInfoBrowse ...
 type CTShowInfoBrowse struct {
 	XMLName           xml.Name `xml:"CT_ShowInfoBrowse"`
-	ShowScrollbarAttr bool     `xml:"showScrollbar,attr,omitempty"`
+	ShowScrollbarAttr *bool    `xml:"showScrollbar,attr"`
 }
 
 // CTShowInfoKiosk ...
 type CTShowInfoKiosk struct {
 	XMLName     xml.Name `xml:"CT_ShowInfoKiosk"`
-	RestartAttr uint32   `xml:"restart,attr,omitempty"`
+	RestartAttr *uint32  `xml:"restart,attr"`
 }
 
 // EGShowType ...
@@ -1089,10 +1089,10 @@ type EGShowType struct {
 // CTShowProperties ...
 type CTShowProperties struct {
 	XMLName           xml.Name `xml:"CT_ShowProperties"`
-	LoopAttr          bool     `xml:"loop,attr,omitempty"`
-	ShowNarrationAttr bool     `xml:"showNarration,attr,omitempty"`
-	ShowAnimationAttr bool     `xml:"showAnimation,attr,omitempty"`
-	UseTimingsAttr    bool     `xml:"useTimings,attr,omitempty"`
+	LoopAttr          *bool    `xml:"loop,attr"`
+	ShowNarrationAttr *bool    `xml:"showNarration,attr"`
+	ShowAnimationAttr *bool    `xml:"showAnimation,attr"`
+	UseTimingsAttr    *bool    `xml:"useTimings,attr"`
 	EGShowType        []*EGShowType
 	EGSlideListChoice []*EGSlideListChoice
 	PenClr            *CTColor         `xml:"penClr,omitempty"`
@@ -1114,10 +1114,10 @@ type PresentationPr *CTPresentationProperties
 // CTHeaderFooter ...
 type CTHeaderFooter struct {
 	XMLName    xml.Name               `xml:"CT_HeaderFooter"`
-	SldNumAttr bool                   `xml:"sldNum,attr,omitempty"`
-	HdrAttr    bool                   `xml:"hdr,attr,omitempty"`
-	FtrAttr    bool                   `xml:"ftr,attr,omitempty"`
-	DtAttr     bool                   `xml:"dt,attr,omitempty"`
+	SldNumAttr *bool                  `xml:"sldNum,attr"`
+	HdrAttr    *bool                  `xml:"hdr,attr"`
+	FtrAttr    *bool                  `xml:"ftr,attr"`
+	DtAttr     *bool                  `xml:"dt,attr"`
 	ExtLst     *CTExtensionListModify `xml:"extLst,omitempty"`
 }
 
@@ -1130,19 +1130,19 @@ type STPlaceholderSize string
 // CTPlaceholder ...
 type CTPlaceholder struct {
 	XMLName             xml.Name               `xml:"CT_Placeholder"`
-	TypeAttr            string                 `xml:"type,attr,omitempty"`
-	OrientAttr          string                 `xml:"orient,attr,omitempty"`
-	SzAttr              string                 `xml:"sz,attr,omitempty"`
-	IdxAttr             uint32                 `xml:"idx,attr,omitempty"`
-	HasCustomPromptAttr bool                   `xml:"hasCustomPrompt,attr,omitempty"`
+	TypeAttr            *string                `xml:"type,attr"`
+	OrientAttr          *string                `xml:"orient,attr"`
+	SzAttr              *string                `xml:"sz,attr"`
+	IdxAttr             *uint32                `xml:"idx,attr"`
+	HasCustomPromptAttr *bool                  `xml:"hasCustomPrompt,attr"`
 	ExtLst              *CTExtensionListModify `xml:"extLst,omitempty"`
 }
 
 // CTApplicationNonVisualDrawingProps ...
 type CTApplicationNonVisualDrawingProps struct {
 	XMLName       xml.Name `xml:"CT_ApplicationNonVisualDrawingProps"`
-	IsPhotoAttr   bool     `xml:"isPhoto,attr,omitempty"`
-	UserDrawnAttr bool     `xml:"userDrawn,attr,omitempty"`
+	IsPhotoAttr   *bool    `xml:"isPhoto,attr"`
+	UserDrawnAttr *bool    `xml:"userDrawn,attr"`
 	AEGMedia      []*EGMedia
 	Ph            *CTPlaceholder      `xml:"ph,omitempty"`
 	CustDataLst   *CTCustomerDataList `xml:"custDataLst,omitempty"`
@@ -1160,7 +1160,7 @@ type CTShapeNonVisual struct {
 // CTShape ...
 type CTShape struct {
 	XMLName       xml.Name               `xml:"CT_Shape"`
-	UseBgFillAttr bool                   `xml:"useBgFill,attr,omitempty"`
+	UseBgFillAttr *bool                  `xml:"useBgFill,attr"`
 	NvSpPr        *CTShapeNonVisual      `xml:"nvSpPr"`
 	SpPr          *CTShapeProperties     `xml:"spPr"`
 	Style         *CTShapeStyle          `xml:"style,omitempty"`
@@ -1214,7 +1214,7 @@ type CTGraphicalObjectFrameNonVisual struct {
 // CTGraphicalObjectFrame ...
 type CTGraphicalObjectFrame struct {
 	XMLName          xml.Name                         `xml:"CT_GraphicalObjectFrame"`
-	BwModeAttr       string                           `xml:"bwMode,attr,omitempty"`
+	BwModeAttr       *string                          `xml:"bwMode,attr"`
 	NvGraphicFramePr *CTGraphicalObjectFrameNonVisual `xml:"nvGraphicFramePr"`
 	Xfrm             *CTTransform2D                   `xml:"xfrm"`
 	AGraphic         *CTGraphicalObject               `xml:"a:graphic"`
@@ -1271,7 +1271,7 @@ type AGChildSlide struct {
 // CTBackgroundProperties ...
 type CTBackgroundProperties struct {
 	XMLName             xml.Name `xml:"CT_BackgroundProperties"`
-	ShadeToTitleAttr    bool     `xml:"shadeToTitle,attr,omitempty"`
+	ShadeToTitleAttr    *bool    `xml:"shadeToTitle,attr"`
 	AEGFillProperties   []*EGFillProperties
 	AEGEffectProperties []*EGEffectProperties
 	ExtLst              *CTExtensionList `xml:"extLst,omitempty"`
@@ -1287,14 +1287,14 @@ type EGBackground struct {
 // CTBackground ...
 type CTBackground struct {
 	XMLName      xml.Name `xml:"CT_Background"`
-	BwModeAttr   string   `xml:"bwMode,attr,omitempty"`
+	BwModeAttr   *string  `xml:"bwMode,attr"`
 	EGBackground *EGBackground
 }
 
 // CTCommonSlideData ...
 type CTCommonSlideData struct {
 	XMLName     xml.Name            `xml:"CT_CommonSlideData"`
-	NameAttr    string              `xml:"name,attr,omitempty"`
+	NameAttr    *string             `xml:"name,attr"`
 	Bg          *CTBackground       `xml:"bg,omitempty"`
 	SpTree      *CTGroupShape       `xml:"spTree"`
 	CustDataLst *CTCustomerDataList `xml:"custDataLst,omitempty"`
@@ -1306,7 +1306,7 @@ type CTCommonSlideData struct {
 type CTSlide struct {
 	XMLName      xml.Name `xml:"CT_Slide"`
 	AGChildSlide *AGChildSlide
-	ShowAttr     bool `xml:"show,attr,omitempty"`
+	ShowAttr     *bool `xml:"show,attr"`
 	EGChildSlide []*EGChildSlide
 	CSld         *CTCommonSlideData     `xml:"cSld"`
 	Transition   *CTSlideTransition     `xml:"transition,omitempty"`
@@ -1324,10 +1324,10 @@ type STSlideLayoutType string
 type CTSlideLayout struct {
 	XMLName          xml.Name `xml:"CT_SlideLayout"`
 	AGChildSlide     *AGChildSlide
-	MatchingNameAttr string `xml:"matchingName,attr,omitempty"`
-	TypeAttr         string `xml:"type,attr,omitempty"`
-	PreserveAttr     bool   `xml:"preserve,attr,omitempty"`
-	UserDrawnAttr    bool   `xml:"userDrawn,attr,omitempty"`
+	MatchingNameAttr *string `xml:"matchingName,attr"`
+	TypeAttr         *string `xml:"type,attr"`
+	PreserveAttr     *bool   `xml:"preserve,attr"`
+	UserDrawnAttr    *bool   `xml:"userDrawn,attr"`
 	EGChildSlide     []*EGChildSlide
 	CSld             *CTCommonSlideData     `xml:"cSld"`
 	Transition       *CTSlideTransition     `xml:"transition,omitempty"`
@@ -1354,7 +1354,7 @@ type STSlideLayoutId uint32
 // CTSlideLayoutIdListEntry ...
 type CTSlideLayoutIdListEntry struct {
 	XMLName xml.Name         `xml:"CT_SlideLayoutIdListEntry"`
-	IdAttr  uint32           `xml:"id,attr,omitempty"`
+	IdAttr  *uint32          `xml:"id,attr"`
 	RIdAttr string           `xml:"r:id,attr"`
 	ExtLst  *CTExtensionList `xml:"extLst,omitempty"`
 }
@@ -1368,7 +1368,7 @@ type CTSlideLayoutIdList struct {
 // CTSlideMaster ...
 type CTSlideMaster struct {
 	XMLName         xml.Name `xml:"CT_SlideMaster"`
-	PreserveAttr    bool     `xml:"preserve,attr,omitempty"`
+	PreserveAttr    *bool    `xml:"preserve,attr"`
 	EGTopLevelSlide []*EGTopLevelSlide
 	CSld            *CTCommonSlideData       `xml:"cSld"`
 	SldLayoutIdLst  *CTSlideLayoutIdList     `xml:"sldLayoutIdLst,omitempty"`
@@ -1457,17 +1457,17 @@ type STViewType string
 type CTNormalViewPortion struct {
 	XMLName        xml.Name                   `xml:"CT_NormalViewPortion"`
 	SzAttr         *STPositiveFixedPercentage `xml:"sz,attr"`
-	AutoAdjustAttr bool                       `xml:"autoAdjust,attr,omitempty"`
+	AutoAdjustAttr *bool                      `xml:"autoAdjust,attr"`
 }
 
 // CTNormalViewProperties ...
 type CTNormalViewProperties struct {
 	XMLName              xml.Name             `xml:"CT_NormalViewProperties"`
-	ShowOutlineIconsAttr bool                 `xml:"showOutlineIcons,attr,omitempty"`
-	SnapVertSplitterAttr bool                 `xml:"snapVertSplitter,attr,omitempty"`
-	VertBarStateAttr     string               `xml:"vertBarState,attr,omitempty"`
-	HorzBarStateAttr     string               `xml:"horzBarState,attr,omitempty"`
-	PreferSingleViewAttr bool                 `xml:"preferSingleView,attr,omitempty"`
+	ShowOutlineIconsAttr *bool                `xml:"showOutlineIcons,attr"`
+	SnapVertSplitterAttr *bool                `xml:"snapVertSplitter,attr"`
+	VertBarStateAttr     *string              `xml:"vertBarState,attr"`
+	HorzBarStateAttr     *string              `xml:"horzBarState,attr"`
+	PreferSingleViewAttr *bool                `xml:"preferSingleView,attr"`
 	RestoredLeft         *CTNormalViewPortion `xml:"restoredLeft"`
 	RestoredTop          *CTNormalViewPortion `xml:"restoredTop"`
 	ExtLst               *CTExtensionList     `xml:"extLst,omitempty"`
@@ -1476,7 +1476,7 @@ type CTNormalViewProperties struct {
 // CTCommonViewProperties ...
 type CTCommonViewProperties struct {
 	XMLName      xml.Name   `xml:"CT_CommonViewProperties"`
-	VarScaleAttr bool       `xml:"varScale,attr,omitempty"`
+	VarScaleAttr *bool      `xml:"varScale,attr"`
 	Scale        *CTScale2D `xml:"scale"`
 	Origin       *CTPoint2D `xml:"origin"`
 }
@@ -1492,7 +1492,7 @@ type CTNotesTextViewProperties struct {
 type CTOutlineViewSlideEntry struct {
 	XMLName      xml.Name `xml:"CT_OutlineViewSlideEntry"`
 	RIdAttr      string   `xml:"r:id,attr"`
-	CollapseAttr bool     `xml:"collapse,attr,omitempty"`
+	CollapseAttr *bool    `xml:"collapse,attr"`
 }
 
 // CTOutlineViewSlideList ...
@@ -1512,7 +1512,7 @@ type CTOutlineViewProperties struct {
 // CTSlideSorterViewProperties ...
 type CTSlideSorterViewProperties struct {
 	XMLName            xml.Name                `xml:"CT_SlideSorterViewProperties"`
-	ShowFormattingAttr bool                    `xml:"showFormatting,attr,omitempty"`
+	ShowFormattingAttr *bool                   `xml:"showFormatting,attr"`
 	CViewPr            *CTCommonViewProperties `xml:"cViewPr"`
 	ExtLst             *CTExtensionList        `xml:"extLst,omitempty"`
 }
@@ -1520,7 +1520,7 @@ type CTSlideSorterViewProperties struct {
 // CTGuide ...
 type CTGuide struct {
 	XMLName    xml.Name        `xml:"CT_Guide"`
-	OrientAttr string          `xml:"orient,attr,omitempty"`
+	OrientAttr *string         `xml:"orient,attr"`
 	PosAttr    *STCoordinate32 `xml:"pos,attr,omitempty"`
 }
 
@@ -1533,9 +1533,9 @@ type CTGuideList struct {
 // CTCommonSlideViewProperties ...
 type CTCommonSlideViewProperties struct {
 	XMLName           xml.Name                `xml:"CT_CommonSlideViewProperties"`
-	SnapToGridAttr    bool                    `xml:"snapToGrid,attr,omitempty"`
-	SnapToObjectsAttr bool                    `xml:"snapToObjects,attr,omitempty"`
-	ShowGuidesAttr    bool                    `xml:"showGuides,attr,omitempty"`
+	SnapToGridAttr    *bool                   `xml:"snapToGrid,attr"`
+	SnapToObjectsAttr *bool                   `xml:"snapToObjects,attr"`
+	ShowGuidesAttr    *bool                   `xml:"showGuides,attr"`
 	CViewPr           *CTCommonViewProperties `xml:"cViewPr"`
 	GuideLst          *CTGuideList            `xml:"guideLst,omitempty"`
 }
@@ -1557,8 +1557,8 @@ type CTNotesViewProperties struct {
 // CTViewProperties ...
 type CTViewProperties struct {
 	XMLName          xml.Name                     `xml:"CT_ViewProperties"`
-	LastViewAttr     string                       `xml:"lastView,attr,omitempty"`
-	ShowCommentsAttr bool                         `xml:"showComments,attr,omitempty"`
+	LastViewAttr     *string                      `xml:"lastView,attr"`
+	ShowCommentsAttr *bool                        `xml:"showComments,attr"`
 	NormalViewPr     *CTNormalViewProperties      `xml:"normalViewPr,omitempty"`
 	SlideViewPr      *CTSlideViewProperties       `xml:"slideViewPr,omitempty"`
 	OutlineViewPr    *CTOutlineViewProperties     `xml:"outlineViewPr,omitempty"`

@@ -81,7 +81,7 @@ export class Profiles {
 //             project belongs. These attributes are utilized when documentation is created (for
 //             copyright notices and links).
 export class Model {
-	ChildProjectUrlInheritAppendPathAttr: string | null;
+	ChildProjectUrlInheritAppendPathAttr?: string;
 	ModelVersion?: string;
 	Parent?: Parent;
 	GroupId?: string;
@@ -155,9 +155,9 @@ export class Notifier {
 //             <br><b>Default value is</b>: parent value [+ path adjustment] + (artifactId or project.directory property), or just parent value if
 //             scm's <code>child.scm.url.inherit.append.path="false"</code>
 export class Scm {
-	ChildScmConnectionInheritAppendPathAttr: string | null;
-	ChildScmDeveloperConnectionInheritAppendPathAttr: string | null;
-	ChildScmUrlInheritAppendPathAttr: string | null;
+	ChildScmConnectionInheritAppendPathAttr?: string;
+	ChildScmDeveloperConnectionInheritAppendPathAttr?: string;
+	ChildScmUrlInheritAppendPathAttr?: string;
 	Connection?: string;
 	DeveloperConnection?: string;
 	Tag?: string;
@@ -330,7 +330,7 @@ export class Relocation {
 //             <br><b>Default value is</b>: parent value [+ path adjustment] + (artifactId or project.directory property), or just parent value if
 //             site's <code>child.site.url.inherit.append.path="false"</code>
 export class Site {
-	ChildSiteUrlInheritAppendPathAttr: string | null;
+	ChildSiteUrlInheritAppendPathAttr?: string;
 	Id?: string;
 	Name?: string;
 	Url?: string;

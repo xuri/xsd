@@ -8,10 +8,10 @@ export class CT_ShapeNonVisual {
 
 // CT_Shape ...
 export class CT_Shape {
-	MacroAttr: string | null;
-	TextlinkAttr: string | null;
-	FLocksTextAttr: boolean | null;
-	FPublishedAttr: boolean | null;
+	MacroAttr?: string;
+	TextlinkAttr?: string;
+	FLocksTextAttr?: boolean;
+	FPublishedAttr?: boolean;
 	NvSpPr: CT_ShapeNonVisual;
 	SpPr: CT_ShapeProperties;
 	Style?: CT_ShapeStyle;
@@ -26,8 +26,8 @@ export class CT_ConnectorNonVisual {
 
 // CT_Connector ...
 export class CT_Connector {
-	MacroAttr: string | null;
-	FPublishedAttr: boolean | null;
+	MacroAttr?: string;
+	FPublishedAttr?: boolean;
 	NvCxnSpPr: CT_ConnectorNonVisual;
 	SpPr: CT_ShapeProperties;
 	Style?: CT_ShapeStyle;
@@ -41,8 +41,8 @@ export class CT_PictureNonVisual {
 
 // CT_Picture ...
 export class CT_Picture {
-	MacroAttr: string | null;
-	FPublishedAttr: boolean | null;
+	MacroAttr?: string;
+	FPublishedAttr?: boolean;
 	NvPicPr: CT_PictureNonVisual;
 	BlipFill: CT_BlipFillProperties;
 	SpPr: CT_ShapeProperties;
@@ -57,8 +57,8 @@ export class CT_GraphicFrameNonVisual {
 
 // CT_GraphicFrame ...
 export class CT_GraphicFrame {
-	MacroAttr: string | null;
-	FPublishedAttr: boolean | null;
+	MacroAttr?: string;
+	FPublishedAttr?: boolean;
 	NvGraphicFramePr: CT_GraphicFrameNonVisual;
 	Xfrm: CT_Transform2D;
 	AGraphic: CT_GraphicalObject;

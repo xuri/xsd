@@ -24,8 +24,8 @@ type Custom struct {
 
 // DecorationModel is Modify the version published display properties.
 type DecorationModel struct {
-	NameAttr                 string       `xml:"name,attr,omitempty"`
-	CombineSelfAttr          string       `xml:"combine.self,attr,omitempty"`
+	NameAttr                 *string      `xml:"name,attr"`
+	CombineSelfAttr          *string      `xml:"combine.self,attr"`
 	BannerLeft               *Banner      `xml:"bannerLeft,omitempty"`
 	BannerRight              *Banner      `xml:"bannerRight,omitempty"`
 	GoogleAdSenseClient      *string      `xml:"googleAdSenseClient"`
@@ -41,7 +41,7 @@ type DecorationModel struct {
 
 // Version is Modify display properties for version published.
 type Version struct {
-	PositionAttr string `xml:"position,attr,omitempty"`
+	PositionAttr *string `xml:"position,attr"`
 }
 
 // Banner is The title for the banner image.
@@ -89,48 +89,48 @@ type Body struct {
 
 // LinkItem is A link in the navigation.
 type LinkItem struct {
-	NameAttr     string `xml:"name,attr,omitempty"`
-	HrefAttr     string `xml:"href,attr,omitempty"`
-	ImgAttr      string `xml:"img,attr,omitempty"`
-	PositionAttr string `xml:"position,attr,omitempty"`
-	AltAttr      string `xml:"alt,attr,omitempty"`
-	BorderAttr   string `xml:"border,attr,omitempty"`
-	WidthAttr    string `xml:"width,attr,omitempty"`
-	HeightAttr   string `xml:"height,attr,omitempty"`
-	TargetAttr   string `xml:"target,attr,omitempty"`
-	TitleAttr    string `xml:"title,attr,omitempty"`
+	NameAttr     *string `xml:"name,attr"`
+	HrefAttr     *string `xml:"href,attr"`
+	ImgAttr      *string `xml:"img,attr"`
+	PositionAttr *string `xml:"position,attr"`
+	AltAttr      *string `xml:"alt,attr"`
+	BorderAttr   *string `xml:"border,attr"`
+	WidthAttr    *string `xml:"width,attr"`
+	HeightAttr   *string `xml:"height,attr"`
+	TargetAttr   *string `xml:"target,attr"`
+	TitleAttr    *string `xml:"title,attr"`
 }
 
 // Menu is A list of menu item.
 type Menu struct {
-	NameAttr         string      `xml:"name,attr,omitempty"`
-	InheritAttr      string      `xml:"inherit,attr,omitempty"`
-	InheritAsRefAttr bool        `xml:"inheritAsRef,attr,omitempty"`
-	RefAttr          string      `xml:"ref,attr,omitempty"`
-	ImgAttr          string      `xml:"img,attr,omitempty"`
-	AltAttr          string      `xml:"alt,attr,omitempty"`
-	PositionAttr     string      `xml:"position,attr,omitempty"`
-	BorderAttr       string      `xml:"border,attr,omitempty"`
-	WidthAttr        string      `xml:"width,attr,omitempty"`
-	HeightAttr       string      `xml:"height,attr,omitempty"`
-	TitleAttr        string      `xml:"title,attr,omitempty"`
+	NameAttr         *string     `xml:"name,attr"`
+	InheritAttr      *string     `xml:"inherit,attr"`
+	InheritAsRefAttr *bool       `xml:"inheritAsRef,attr"`
+	RefAttr          *string     `xml:"ref,attr"`
+	ImgAttr          *string     `xml:"img,attr"`
+	AltAttr          *string     `xml:"alt,attr"`
+	PositionAttr     *string     `xml:"position,attr"`
+	BorderAttr       *string     `xml:"border,attr"`
+	WidthAttr        *string     `xml:"width,attr"`
+	HeightAttr       *string     `xml:"height,attr"`
+	TitleAttr        *string     `xml:"title,attr"`
 	Item             []*MenuItem `xml:"item,omitempty"`
 }
 
 // MenuItem is A list of menu item.
 type MenuItem struct {
-	CollapseAttr bool        `xml:"collapse,attr,omitempty"`
-	RefAttr      string      `xml:"ref,attr,omitempty"`
-	NameAttr     string      `xml:"name,attr,omitempty"`
-	HrefAttr     string      `xml:"href,attr,omitempty"`
-	ImgAttr      string      `xml:"img,attr,omitempty"`
-	PositionAttr string      `xml:"position,attr,omitempty"`
-	AltAttr      string      `xml:"alt,attr,omitempty"`
-	BorderAttr   string      `xml:"border,attr,omitempty"`
-	WidthAttr    string      `xml:"width,attr,omitempty"`
-	HeightAttr   string      `xml:"height,attr,omitempty"`
-	TargetAttr   string      `xml:"target,attr,omitempty"`
-	TitleAttr    string      `xml:"title,attr,omitempty"`
+	CollapseAttr *bool       `xml:"collapse,attr"`
+	RefAttr      *string     `xml:"ref,attr"`
+	NameAttr     *string     `xml:"name,attr"`
+	HrefAttr     *string     `xml:"href,attr"`
+	ImgAttr      *string     `xml:"img,attr"`
+	PositionAttr *string     `xml:"position,attr"`
+	AltAttr      *string     `xml:"alt,attr"`
+	BorderAttr   *string     `xml:"border,attr"`
+	WidthAttr    *string     `xml:"width,attr"`
+	HeightAttr   *string     `xml:"height,attr"`
+	TargetAttr   *string     `xml:"target,attr"`
+	TitleAttr    *string     `xml:"title,attr"`
 	Description  *string     `xml:"description"`
 	Item         []*MenuItem `xml:"item,omitempty"`
 }
@@ -144,20 +144,20 @@ type Skin struct {
 
 // Logo is Power by logo on the navigation.
 type Logo struct {
-	NameAttr     string `xml:"name,attr,omitempty"`
-	HrefAttr     string `xml:"href,attr,omitempty"`
-	ImgAttr      string `xml:"img,attr,omitempty"`
-	PositionAttr string `xml:"position,attr,omitempty"`
-	AltAttr      string `xml:"alt,attr,omitempty"`
-	BorderAttr   string `xml:"border,attr,omitempty"`
-	WidthAttr    string `xml:"width,attr,omitempty"`
-	HeightAttr   string `xml:"height,attr,omitempty"`
-	TargetAttr   string `xml:"target,attr,omitempty"`
-	TitleAttr    string `xml:"title,attr,omitempty"`
+	NameAttr     *string `xml:"name,attr"`
+	HrefAttr     *string `xml:"href,attr"`
+	ImgAttr      *string `xml:"img,attr"`
+	PositionAttr *string `xml:"position,attr"`
+	AltAttr      *string `xml:"alt,attr"`
+	BorderAttr   *string `xml:"border,attr"`
+	WidthAttr    *string `xml:"width,attr"`
+	HeightAttr   *string `xml:"height,attr"`
+	TargetAttr   *string `xml:"target,attr"`
+	TitleAttr    *string `xml:"title,attr"`
 }
 
 // PublishDate is Modify display properties for date published.
 type PublishDate struct {
-	PositionAttr string `xml:"position,attr,omitempty"`
-	FormatAttr   string `xml:"format,attr,omitempty"`
+	PositionAttr *string `xml:"position,attr"`
+	FormatAttr   *string `xml:"format,attr"`
 }

@@ -21,7 +21,7 @@ export class Modules {
 // ArchetypeDescriptor is 1.0.0+
 export class ArchetypeDescriptor {
 	NameAttr: string;
-	PartialAttr: boolean | null;
+	PartialAttr?: boolean;
 	RequiredProperties?: RequiredProperties;
 	FileSets?: FileSets;
 	Modules?: Modules;
@@ -56,9 +56,9 @@ export class Excludes {
 // FileSet is The directory where the files will be searched for, which is also the directory where the
 //            project's files will be generated.
 export class FileSet {
-	FilteredAttr: boolean | null;
-	PackagedAttr: boolean | null;
-	EncodingAttr: string | null;
+	FilteredAttr?: boolean;
+	PackagedAttr?: boolean;
+	EncodingAttr?: string;
 	Directory?: string;
 	Includes?: Includes;
 	Excludes?: Excludes;

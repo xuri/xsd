@@ -2,7 +2,7 @@
 
 // CT_Boolean ...
 export class CT_Boolean {
-	ValAttr: boolean | null;
+	ValAttr?: boolean;
 }
 
 // CT_Double ...
@@ -22,7 +22,7 @@ export class CT_RelId {
 
 // CT_Extension ...
 export class CT_Extension {
-	UriAttr: string | null;
+	UriAttr?: string;
 }
 
 // CT_ExtensionList ...
@@ -33,7 +33,7 @@ export class CT_ExtensionList {
 // CT_NumVal ...
 export class CT_NumVal {
 	IdxAttr: number;
-	FormatCodeAttr: string | null;
+	FormatCodeAttr?: string;
 	V: string;
 }
 
@@ -131,7 +131,7 @@ export enum ST_LayoutTarget {
 
 // CT_LayoutTarget ...
 export class CT_LayoutTarget {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // ST_LayoutMode ...
@@ -142,7 +142,7 @@ export enum ST_LayoutMode {
 
 // CT_LayoutMode ...
 export class CT_LayoutMode {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // CT_ManualLayout ...
@@ -180,7 +180,7 @@ export type ST_RotX = any;
 
 // CT_RotX ...
 export class CT_RotX {
-	ValAttr: any | null;
+	ValAttr?: any;
 }
 
 // ST_HPercent ...
@@ -193,7 +193,7 @@ export type ST_HPercentWithSymbol = string;
 
 // CT_HPercent ...
 export class CT_HPercent {
-	ValAttr: ST_HPercent | null;
+	ValAttr?: ST_HPercent;
 }
 
 // ST_RotY ...
@@ -201,7 +201,7 @@ export type ST_RotY = number;
 
 // CT_RotY ...
 export class CT_RotY {
-	ValAttr: number | null;
+	ValAttr?: number;
 }
 
 // ST_DepthPercent ...
@@ -214,7 +214,7 @@ export type ST_DepthPercentWithSymbol = string;
 
 // CT_DepthPercent ...
 export class CT_DepthPercent {
-	ValAttr: ST_DepthPercent | null;
+	ValAttr?: ST_DepthPercent;
 }
 
 // ST_Perspective ...
@@ -222,7 +222,7 @@ export type ST_Perspective = any;
 
 // CT_Perspective ...
 export class CT_Perspective {
-	ValAttr: any | null;
+	ValAttr?: any;
 }
 
 // CT_View3D ...
@@ -278,7 +278,7 @@ export type ST_GapAmountPercent = string;
 
 // CT_GapAmount ...
 export class CT_GapAmount {
-	ValAttr: ST_GapAmount | null;
+	ValAttr?: ST_GapAmount;
 }
 
 // ST_Overlap ...
@@ -291,7 +291,7 @@ export type ST_OverlapPercent = string;
 
 // CT_Overlap ...
 export class CT_Overlap {
-	ValAttr: ST_Overlap | null;
+	ValAttr?: ST_Overlap;
 }
 
 // ST_BubbleScale ...
@@ -304,7 +304,7 @@ export type ST_BubbleScalePercent = string;
 
 // CT_BubbleScale ...
 export class CT_BubbleScale {
-	ValAttr: ST_BubbleScale | null;
+	ValAttr?: ST_BubbleScale;
 }
 
 // ST_SizeRepresents ...
@@ -315,7 +315,7 @@ export enum ST_SizeRepresents {
 
 // CT_SizeRepresents ...
 export class CT_SizeRepresents {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // ST_FirstSliceAng ...
@@ -323,7 +323,7 @@ export type ST_FirstSliceAng = number;
 
 // CT_FirstSliceAng ...
 export class CT_FirstSliceAng {
-	ValAttr: number | null;
+	ValAttr?: number;
 }
 
 // ST_HoleSize ...
@@ -336,7 +336,7 @@ export type ST_HoleSizePercent = string;
 
 // CT_HoleSize ...
 export class CT_HoleSize {
-	ValAttr: ST_HoleSize | null;
+	ValAttr?: ST_HoleSize;
 }
 
 // ST_SplitType ...
@@ -350,7 +350,7 @@ export enum ST_SplitType {
 
 // CT_SplitType ...
 export class CT_SplitType {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // CT_CustSplit ...
@@ -368,13 +368,13 @@ export type ST_SecondPieSizePercent = string;
 
 // CT_SecondPieSize ...
 export class CT_SecondPieSize {
-	ValAttr: ST_SecondPieSize | null;
+	ValAttr?: ST_SecondPieSize;
 }
 
 // CT_NumFmt ...
 export class CT_NumFmt {
 	FormatCodeAttr: string;
-	SourceLinkedAttr: boolean | null;
+	SourceLinkedAttr?: boolean;
 }
 
 // ST_LblAlgn ...
@@ -478,7 +478,7 @@ export type ST_MarkerSize = any;
 
 // CT_MarkerSize ...
 export class CT_MarkerSize {
-	ValAttr: any | null;
+	ValAttr?: any;
 }
 
 // CT_Marker ...
@@ -513,7 +513,7 @@ export enum ST_TrendlineType {
 
 // CT_TrendlineType ...
 export class CT_TrendlineType {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // ST_Order ...
@@ -521,7 +521,7 @@ export type ST_Order = any;
 
 // CT_Order ...
 export class CT_Order {
-	ValAttr: any | null;
+	ValAttr?: any;
 }
 
 // ST_Period ...
@@ -529,7 +529,7 @@ export type ST_Period = number;
 
 // CT_Period ...
 export class CT_Period {
-	ValAttr: number | null;
+	ValAttr?: number;
 }
 
 // CT_TrendlineLbl ...
@@ -578,7 +578,7 @@ export enum ST_ErrBarType {
 
 // CT_ErrBarType ...
 export class CT_ErrBarType {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // ST_ErrValType ...
@@ -592,7 +592,7 @@ export enum ST_ErrValType {
 
 // CT_ErrValType ...
 export class CT_ErrValType {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // CT_ErrBars ...
@@ -739,7 +739,7 @@ export enum ST_Grouping {
 
 // CT_Grouping ...
 export class CT_Grouping {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // CT_ChartLines ...
@@ -798,7 +798,7 @@ export enum ST_ScatterStyle {
 
 // CT_ScatterStyle ...
 export class CT_ScatterStyle {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // CT_ScatterChart ...
@@ -820,7 +820,7 @@ export enum ST_RadarStyle {
 
 // CT_RadarStyle ...
 export class CT_RadarStyle {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // CT_RadarChart ...
@@ -843,7 +843,7 @@ export enum ST_BarGrouping {
 
 // CT_BarGrouping ...
 export class CT_BarGrouping {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // ST_BarDir ...
@@ -854,7 +854,7 @@ export enum ST_BarDir {
 
 // CT_BarDir ...
 export class CT_BarDir {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // ST_Shape ...
@@ -869,7 +869,7 @@ export enum ST_Shape {
 
 // CT_Shape ...
 export class CT_Shape {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // EG_BarChartShared ...
@@ -961,7 +961,7 @@ export enum ST_OfPieType {
 
 // CT_OfPieType ...
 export class CT_OfPieType {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // CT_OfPieChart ...
@@ -1068,7 +1068,7 @@ export enum ST_TickMark {
 
 // CT_TickMark ...
 export class CT_TickMark {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // ST_TickLblPos ...
@@ -1081,7 +1081,7 @@ export enum ST_TickLblPos {
 
 // CT_TickLblPos ...
 export class CT_TickLblPos {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // ST_Skip ...
@@ -1101,7 +1101,7 @@ export enum ST_TimeUnit {
 
 // CT_TimeUnit ...
 export class CT_TimeUnit {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // ST_AxisUnit ...
@@ -1127,7 +1127,7 @@ export enum ST_BuiltInUnit {
 
 // CT_BuiltInUnit ...
 export class CT_BuiltInUnit {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // ST_PictureFormat ...
@@ -1183,7 +1183,7 @@ export enum ST_Orientation {
 
 // CT_Orientation ...
 export class CT_Orientation {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // ST_LogBase ...
@@ -1213,7 +1213,7 @@ export type ST_LblOffsetPercent = string;
 
 // CT_LblOffset ...
 export class CT_LblOffset {
-	ValAttr: ST_LblOffset | null;
+	ValAttr?: ST_LblOffset;
 }
 
 // EG_AxShared ...
@@ -1333,7 +1333,7 @@ export enum ST_LegendPos {
 
 // CT_LegendPos ...
 export class CT_LegendPos {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // EG_LegendEntryData ...
@@ -1369,7 +1369,7 @@ export enum ST_DispBlanksAs {
 
 // CT_DispBlanksAs ...
 export class CT_DispBlanksAs {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // CT_Chart ...
@@ -1415,9 +1415,9 @@ export class CT_Protection {
 
 // CT_HeaderFooter ...
 export class CT_HeaderFooter {
-	AlignWithMarginsAttr: boolean | null;
-	DifferentOddEvenAttr: boolean | null;
-	DifferentFirstAttr: boolean | null;
+	AlignWithMarginsAttr?: boolean;
+	DifferentOddEvenAttr?: boolean;
+	DifferentFirstAttr?: boolean;
 	OddHeader?: string;
 	OddFooter?: string;
 	EvenHeader?: string;
@@ -1451,17 +1451,17 @@ export class CT_ExternalData {
 
 // CT_PageSetup ...
 export class CT_PageSetup {
-	PaperSizeAttr: number | null;
-	PaperHeightAttr: string | null;
-	PaperWidthAttr: string | null;
-	FirstPageNumberAttr: number | null;
-	OrientationAttr: string | null;
-	BlackAndWhiteAttr: boolean | null;
-	DraftAttr: boolean | null;
-	UseFirstPageNumberAttr: boolean | null;
-	HorizontalDpiAttr: number | null;
-	VerticalDpiAttr: number | null;
-	CopiesAttr: number | null;
+	PaperSizeAttr?: number;
+	PaperHeightAttr?: string;
+	PaperWidthAttr?: string;
+	FirstPageNumberAttr?: number;
+	OrientationAttr?: string;
+	BlackAndWhiteAttr?: boolean;
+	DraftAttr?: boolean;
+	UseFirstPageNumberAttr?: boolean;
+	HorizontalDpiAttr?: number;
+	VerticalDpiAttr?: number;
+	CopiesAttr?: number;
 }
 
 // CT_PrintSettings ...

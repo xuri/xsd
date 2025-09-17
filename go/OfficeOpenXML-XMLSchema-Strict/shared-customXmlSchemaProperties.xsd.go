@@ -9,10 +9,10 @@ import (
 // CTSchema ...
 type CTSchema struct {
 	XMLName              xml.Name `xml:"CT_Schema"`
-	UriAttr              string   `xml:"uri,attr,omitempty"`
-	ManifestLocationAttr string   `xml:"manifestLocation,attr,omitempty"`
-	SchemaLocationAttr   string   `xml:"schemaLocation,attr,omitempty"`
-	SchemaLanguageAttr   string   `xml:"schemaLanguage,attr,omitempty"`
+	UriAttr              *string  `xml:"uri,attr"`
+	ManifestLocationAttr *string  `xml:"manifestLocation,attr"`
+	SchemaLocationAttr   *string  `xml:"schemaLocation,attr"`
+	SchemaLanguageAttr   *string  `xml:"schemaLanguage,attr"`
 }
 
 // CTSchemaLibrary ...

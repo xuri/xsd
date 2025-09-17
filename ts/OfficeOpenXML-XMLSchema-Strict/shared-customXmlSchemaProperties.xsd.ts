@@ -2,10 +2,10 @@
 
 // CT_Schema ...
 export class CT_Schema {
-	UriAttr: string | null;
-	ManifestLocationAttr: string | null;
-	SchemaLocationAttr: string | null;
-	SchemaLanguageAttr: string | null;
+	UriAttr?: string;
+	ManifestLocationAttr?: string;
+	SchemaLocationAttr?: string;
+	SchemaLanguageAttr?: string;
 }
 
 // CT_SchemaLibrary ...

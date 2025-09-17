@@ -10,7 +10,7 @@ export class Plugins {
 
 // Metadata2 is Versioning information for the artifact.
 export class Metadata2 {
-	ModelVersionAttr: string | null;
+	ModelVersionAttr?: string;
 	GroupId?: string;
 	ArtifactId?: string;
 	Version?: string;

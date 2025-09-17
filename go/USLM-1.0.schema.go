@@ -259,7 +259,7 @@ type TextType struct {
 
 // ContentType is The content type is a broad base type allowing any content.
 type ContentType struct {
-	OrientationAttr string `xml:"orientation,attr,omitempty"`
+	OrientationAttr *string `xml:"orientation,attr"`
 	*BaseContentType
 }
 
@@ -330,13 +330,13 @@ type PropertyType struct {
 	DateGroup      *DateGroup
 	ValueGroup     *ValueGroup
 	ReferenceGroup *ReferenceGroup
-	TypeAttr       string `xml:"type,attr,omitempty"`
+	TypeAttr       *string `xml:"type,attr"`
 	*InlineType
 }
 
 // SetType is A set can contain 0 or more sets.
 type SetType struct {
-	TypeAttr string          `xml:"type,attr,omitempty"`
+	TypeAttr *string         `xml:"type,attr"`
 	Property []*PropertyType `xml:"property"`
 	Set      []*SetType      `xml:"set"`
 	*BaseBlockType
@@ -347,7 +347,7 @@ type SetType struct {
 //                         When a layout is specified, use <column> elements
 //                         within each <tocItem> to indicate specific columns.
 type TocType struct {
-	GenerateAttr     bool `xml:"generate,attr,omitempty"`
+	GenerateAttr     *bool `xml:"generate,attr"`
 	HeadingStructure *HeadingStructure
 	TocItem          []*TocItemType `xml:"tocItem"`
 	Layout           []*LayoutType  `xml:"layout"`
@@ -476,7 +476,7 @@ type NoteType struct {
 type AppendixType struct {
 	DescriptionGroup *DescriptionGroup
 	LinkGroup        *LinkGroup
-	OrientationAttr  string `xml:"orientation,attr,omitempty"`
+	OrientationAttr  *string `xml:"orientation,attr"`
 	NumStructure     *NumStructure
 	HeadingStructure *HeadingStructure
 	TocStructure     *TocStructure
@@ -551,7 +551,7 @@ type DateType struct {
 //             Use the @identifier attribute to establish the referencing context
 //             of the quoted text.
 type QuotedTextType struct {
-	OriginAttr string `xml:"origin,attr,omitempty"`
+	OriginAttr *string `xml:"origin,attr"`
 	*InlineType
 }
 
@@ -563,7 +563,7 @@ type QuotedTextType struct {
 //             Use the @identifier attribute to establish the referencing context
 //             of the quoted structure
 type QuotedContentType struct {
-	OriginAttr string `xml:"origin,attr,omitempty"`
+	OriginAttr *string `xml:"origin,attr"`
 	*ContentType
 }
 
@@ -814,7 +814,7 @@ type QuotedContent *QuotedContentType
 //                      are treated as rows when found directly within a layout
 //                      structure.
 type LayoutType struct {
-	OrientationAttr string `xml:"orientation,attr,omitempty"`
+	OrientationAttr *string `xml:"orientation,attr"`
 	NoteStructure   []*NoteStructure
 	Header          []*RowType     `xml:"header"`
 	Row             []*RowType     `xml:"row"`
@@ -852,7 +852,7 @@ type BrType struct {
 //             image is to be inserted.
 type ImgType struct {
 	LinkGroup       *LinkGroup
-	OrientationAttr string `xml:"orientation,attr,omitempty"`
+	OrientationAttr *string `xml:"orientation,attr"`
 	*MarkerType
 }
 

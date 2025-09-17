@@ -15,7 +15,7 @@ export class Custom {
 
 // DecorationModel is Modify the version published display properties.
 export class DecorationModel {
-	NameAttr: string | null;
+	NameAttr?: string;
 	BannerLeft?: Banner;
 	BannerRight?: Banner;
 	GoogleAnalyticsAccountId?: string;
@@ -67,45 +67,45 @@ export class Body {
 
 // LinkItem is A link in the navigation.
 export class LinkItem {
-	NameAttr: string | null;
-	HrefAttr: string | null;
-	ImgAttr: string | null;
-	PositionAttr: string | null;
-	AltAttr: string | null;
-	BorderAttr: string | null;
-	WidthAttr: string | null;
-	HeightAttr: string | null;
-	TargetAttr: string | null;
+	NameAttr?: string;
+	HrefAttr?: string;
+	ImgAttr?: string;
+	PositionAttr?: string;
+	AltAttr?: string;
+	BorderAttr?: string;
+	WidthAttr?: string;
+	HeightAttr?: string;
+	TargetAttr?: string;
 }
 
 // Menu is A list of menu item.
 export class Menu {
-	NameAttr: string | null;
-	InheritAttr: string | null;
-	InheritAsRefAttr: boolean | null;
-	RefAttr: string | null;
-	ImgAttr: string | null;
-	AltAttr: string | null;
-	PositionAttr: string | null;
-	BorderAttr: string | null;
-	WidthAttr: string | null;
-	HeightAttr: string | null;
+	NameAttr?: string;
+	InheritAttr?: string;
+	InheritAsRefAttr?: boolean;
+	RefAttr?: string;
+	ImgAttr?: string;
+	AltAttr?: string;
+	PositionAttr?: string;
+	BorderAttr?: string;
+	WidthAttr?: string;
+	HeightAttr?: string;
 	Item?: Array<MenuItem>;
 }
 
 // MenuItem is A list of menu item.
 export class MenuItem {
-	CollapseAttr: boolean | null;
-	RefAttr: string | null;
-	NameAttr: string | null;
-	HrefAttr: string | null;
-	ImgAttr: string | null;
-	PositionAttr: string | null;
-	AltAttr: string | null;
-	BorderAttr: string | null;
-	WidthAttr: string | null;
-	HeightAttr: string | null;
-	TargetAttr: string | null;
+	CollapseAttr?: boolean;
+	RefAttr?: string;
+	NameAttr?: string;
+	HrefAttr?: string;
+	ImgAttr?: string;
+	PositionAttr?: string;
+	AltAttr?: string;
+	BorderAttr?: string;
+	WidthAttr?: string;
+	HeightAttr?: string;
+	TargetAttr?: string;
 	Description?: string;
 	Item?: Array<MenuItem>;
 }
@@ -119,24 +119,24 @@ export class Skin {
 
 // Version is Modify display properties for version published.
 export class Version {
-	PositionAttr: string | null;
+	PositionAttr?: string;
 }
 
 // PublishDate is Modify display properties for date published.
 export class PublishDate {
-	PositionAttr: string | null;
-	FormatAttr: string | null;
+	PositionAttr?: string;
+	FormatAttr?: string;
 }
 
 // Logo is Power by logo on the navigation.
 export class Logo {
-	NameAttr: string | null;
-	HrefAttr: string | null;
-	ImgAttr: string | null;
-	PositionAttr: string | null;
-	AltAttr: string | null;
-	BorderAttr: string | null;
-	WidthAttr: string | null;
-	HeightAttr: string | null;
-	TargetAttr: string | null;
+	NameAttr?: string;
+	HrefAttr?: string;
+	ImgAttr?: string;
+	PositionAttr?: string;
+	AltAttr?: string;
+	BorderAttr?: string;
+	WidthAttr?: string;
+	HeightAttr?: string;
+	TargetAttr?: string;
 }

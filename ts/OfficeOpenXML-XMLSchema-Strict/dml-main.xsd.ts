@@ -3,14 +3,14 @@
 // CT_AudioFile ...
 export class CT_AudioFile {
 	RLinkAttr: string;
-	ContentTypeAttr: string | null;
+	ContentTypeAttr?: string;
 	ExtLst?: CT_OfficeArtExtensionList;
 }
 
 // CT_VideoFile ...
 export class CT_VideoFile {
 	RLinkAttr: string;
-	ContentTypeAttr: string | null;
+	ContentTypeAttr?: string;
 	ExtLst?: CT_OfficeArtExtensionList;
 }
 
@@ -23,7 +23,7 @@ export class CT_QuickTimeFile {
 // CT_AudioCDTime ...
 export class CT_AudioCDTime {
 	TrackAttr: any;
-	TimeAttr: number | null;
+	TimeAttr?: number;
 }
 
 // CT_AudioCD ...
@@ -91,7 +91,7 @@ export class CT_ColorScheme {
 
 // CT_CustomColor ...
 export class CT_CustomColor {
-	NameAttr: string | null;
+	NameAttr?: string;
 	EG_ColorChoice: Array<EG_ColorChoice>;
 }
 
@@ -152,7 +152,7 @@ export class CT_BackgroundFillStyleList {
 
 // CT_StyleMatrix ...
 export class CT_StyleMatrix {
-	NameAttr: string | null;
+	NameAttr?: string;
 	FillStyleLst: CT_FillStyleList;
 	LnStyleLst: CT_LineStyleList;
 	EffectStyleLst: CT_EffectStyleList;
@@ -384,7 +384,7 @@ export enum ST_SystemColorVal {
 // CT_SystemColor ...
 export class CT_SystemColor {
 	ValAttr: string;
-	LastClrAttr: Uint8Array | null;
+	LastClrAttr?: Uint8Array;
 	EG_ColorTransform: Array<EG_ColorTransform>;
 }
 
@@ -633,18 +633,18 @@ export class CT_Scale2D {
 
 // CT_Transform2D ...
 export class CT_Transform2D {
-	RotAttr: number | null;
-	FlipHAttr: boolean | null;
-	FlipVAttr: boolean | null;
+	RotAttr?: number;
+	FlipHAttr?: boolean;
+	FlipVAttr?: boolean;
 	Off?: CT_Point2D;
 	Ext?: CT_PositiveSize2D;
 }
 
 // CT_GroupTransform2D ...
 export class CT_GroupTransform2D {
-	RotAttr: number | null;
-	FlipHAttr: boolean | null;
-	FlipVAttr: boolean | null;
+	RotAttr?: number;
+	FlipHAttr?: boolean;
+	FlipVAttr?: boolean;
 	Off?: CT_Point2D;
 	Ext?: CT_PositiveSize2D;
 	ChOff?: CT_Point2D;
@@ -674,10 +674,10 @@ export class CT_SphereCoords {
 
 // CT_RelativeRect ...
 export class CT_RelativeRect {
-	LAttr: ST_Percentage | null;
-	TAttr: ST_Percentage | null;
-	RAttr: ST_Percentage | null;
-	BAttr: ST_Percentage | null;
+	LAttr?: ST_Percentage;
+	TAttr?: ST_Percentage;
+	RAttr?: ST_Percentage;
+	BAttr?: ST_Percentage;
 }
 
 // ST_RectAlignment ...
@@ -737,19 +737,19 @@ export class AG_Blob {
 // CT_EmbeddedWAVAudioFile ...
 export class CT_EmbeddedWAVAudioFile {
 	REmbedAttr: string;
-	NameAttr: string | null;
+	NameAttr?: string;
 }
 
 // CT_Hyperlink ...
 export class CT_Hyperlink {
-	RIdAttr: string | null;
-	InvalidUrlAttr: string | null;
-	ActionAttr: string | null;
-	TgtFrameAttr: string | null;
-	TooltipAttr: string | null;
-	HistoryAttr: boolean | null;
-	HighlightClickAttr: boolean | null;
-	EndSndAttr: boolean | null;
+	RIdAttr?: string;
+	InvalidUrlAttr?: string;
+	ActionAttr?: string;
+	TgtFrameAttr?: string;
+	TooltipAttr?: string;
+	HistoryAttr?: boolean;
+	HighlightClickAttr?: boolean;
+	EndSndAttr?: boolean;
 	Snd?: CT_EmbeddedWAVAudioFile;
 	ExtLst?: CT_OfficeArtExtensionList;
 }
@@ -780,37 +780,37 @@ export class CT_ConnectorLocking {
 // CT_ShapeLocking ...
 export class CT_ShapeLocking {
 	AG_Locking: AG_Locking;
-	NoTextEditAttr: boolean | null;
+	NoTextEditAttr?: boolean;
 	ExtLst?: CT_OfficeArtExtensionList;
 }
 
 // CT_PictureLocking ...
 export class CT_PictureLocking {
 	AG_Locking: AG_Locking;
-	NoCropAttr: boolean | null;
+	NoCropAttr?: boolean;
 	ExtLst?: CT_OfficeArtExtensionList;
 }
 
 // CT_GroupLocking ...
 export class CT_GroupLocking {
-	NoGrpAttr: boolean | null;
-	NoUngrpAttr: boolean | null;
-	NoSelectAttr: boolean | null;
-	NoRotAttr: boolean | null;
-	NoChangeAspectAttr: boolean | null;
-	NoMoveAttr: boolean | null;
-	NoResizeAttr: boolean | null;
+	NoGrpAttr?: boolean;
+	NoUngrpAttr?: boolean;
+	NoSelectAttr?: boolean;
+	NoRotAttr?: boolean;
+	NoChangeAspectAttr?: boolean;
+	NoMoveAttr?: boolean;
+	NoResizeAttr?: boolean;
 	ExtLst?: CT_OfficeArtExtensionList;
 }
 
 // CT_GraphicalObjectFrameLocking ...
 export class CT_GraphicalObjectFrameLocking {
-	NoGrpAttr: boolean | null;
-	NoDrilldownAttr: boolean | null;
-	NoSelectAttr: boolean | null;
-	NoChangeAspectAttr: boolean | null;
-	NoMoveAttr: boolean | null;
-	NoResizeAttr: boolean | null;
+	NoGrpAttr?: boolean;
+	NoDrilldownAttr?: boolean;
+	NoSelectAttr?: boolean;
+	NoChangeAspectAttr?: boolean;
+	NoMoveAttr?: boolean;
+	NoResizeAttr?: boolean;
 	ExtLst?: CT_OfficeArtExtensionList;
 }
 
@@ -824,9 +824,9 @@ export class CT_ContentPartLocking {
 export class CT_NonVisualDrawingProps {
 	IdAttr: number;
 	NameAttr: string;
-	DescrAttr: string | null;
-	HiddenAttr: boolean | null;
-	TitleAttr: string | null;
+	DescrAttr?: string;
+	HiddenAttr?: boolean;
+	TitleAttr?: string;
 	HlinkClick?: CT_Hyperlink;
 	HlinkHover?: CT_Hyperlink;
 	ExtLst?: CT_OfficeArtExtensionList;
@@ -834,7 +834,7 @@ export class CT_NonVisualDrawingProps {
 
 // CT_NonVisualDrawingShapeProps ...
 export class CT_NonVisualDrawingShapeProps {
-	TxBoxAttr: boolean | null;
+	TxBoxAttr?: boolean;
 	SpLocks?: CT_ShapeLocking;
 	ExtLst?: CT_OfficeArtExtensionList;
 }
@@ -849,7 +849,7 @@ export class CT_NonVisualConnectorProperties {
 
 // CT_NonVisualPictureProperties ...
 export class CT_NonVisualPictureProperties {
-	PreferRelativeResizeAttr: boolean | null;
+	PreferRelativeResizeAttr?: boolean;
 	PicLocks?: CT_PictureLocking;
 	ExtLst?: CT_OfficeArtExtensionList;
 }
@@ -868,7 +868,7 @@ export class CT_NonVisualGraphicFrameProperties {
 
 // CT_NonVisualContentPartProperties ...
 export class CT_NonVisualContentPartProperties {
-	IsCommentAttr: boolean | null;
+	IsCommentAttr?: boolean;
 	CpLocks?: CT_ContentPartLocking;
 	ExtLst?: CT_OfficeArtExtensionList;
 }
@@ -904,14 +904,14 @@ export enum ST_DgmBuildStep {
 
 // CT_AnimationDgmElement ...
 export class CT_AnimationDgmElement {
-	IdAttr: string | null;
-	BldStepAttr: string | null;
+	IdAttr?: string;
+	BldStepAttr?: string;
 }
 
 // CT_AnimationChartElement ...
 export class CT_AnimationChartElement {
-	SeriesIdxAttr: number | null;
-	CategoryIdxAttr: number | null;
+	SeriesIdxAttr?: number;
+	CategoryIdxAttr?: number;
 	BldStepAttr: string;
 }
 
@@ -941,8 +941,8 @@ export class ST_AnimationDgmBuildType {
 
 // CT_AnimationDgmBuildProperties ...
 export class CT_AnimationDgmBuildProperties {
-	BldAttr: ST_AnimationDgmBuildType | null;
-	RevAttr: boolean | null;
+	BldAttr?: ST_AnimationDgmBuildType;
+	RevAttr?: boolean;
 }
 
 // ST_AnimationChartOnlyBuildType ...
@@ -961,8 +961,8 @@ export class ST_AnimationChartBuildType {
 
 // CT_AnimationChartBuildProperties ...
 export class CT_AnimationChartBuildProperties {
-	BldAttr: ST_AnimationChartBuildType | null;
-	AnimBgAttr: boolean | null;
+	BldAttr?: ST_AnimationChartBuildType;
+	AnimBgAttr?: boolean;
 }
 
 // CT_AnimationGraphicalObjectBuildProperties ...
@@ -1144,8 +1144,8 @@ export type ST_FOVAngle = number;
 // CT_Camera ...
 export class CT_Camera {
 	PrstAttr: string;
-	FovAttr: number | null;
-	ZoomAttr: ST_PositivePercentage | null;
+	FovAttr?: number;
+	ZoomAttr?: ST_PositivePercentage;
 	Rot?: CT_SphereCoords;
 }
 
@@ -1233,9 +1233,9 @@ export enum ST_BevelPresetType {
 
 // CT_Bevel ...
 export class CT_Bevel {
-	WAttr: number | null;
-	HAttr: number | null;
-	PrstAttr: string | null;
+	WAttr?: number;
+	HAttr?: number;
+	PrstAttr?: string;
 }
 
 // ST_PresetMaterialType ...
@@ -1259,10 +1259,10 @@ export enum ST_PresetMaterialType {
 
 // CT_Shape3D ...
 export class CT_Shape3D {
-	ZAttr: ST_Coordinate | null;
-	ExtrusionHAttr: number | null;
-	ContourWAttr: number | null;
-	PrstMaterialAttr: string | null;
+	ZAttr?: ST_Coordinate;
+	ExtrusionHAttr?: number;
+	ContourWAttr?: number;
+	PrstMaterialAttr?: string;
 	BevelT?: CT_Bevel;
 	BevelB?: CT_Bevel;
 	ExtrusionClr?: CT_Color;
@@ -1272,7 +1272,7 @@ export class CT_Shape3D {
 
 // CT_FlatText ...
 export class CT_FlatText {
-	ZAttr: ST_Coordinate | null;
+	ZAttr?: ST_Coordinate;
 }
 
 // EG_Text3D ...
@@ -1301,12 +1301,12 @@ export class CT_AlphaInverseEffect {
 
 // CT_AlphaModulateFixedEffect ...
 export class CT_AlphaModulateFixedEffect {
-	AmtAttr: ST_PositivePercentage | null;
+	AmtAttr?: ST_PositivePercentage;
 }
 
 // CT_AlphaOutsetEffect ...
 export class CT_AlphaOutsetEffect {
-	RadAttr: ST_Coordinate | null;
+	RadAttr?: ST_Coordinate;
 }
 
 // CT_AlphaReplaceEffect ...
@@ -1321,13 +1321,13 @@ export class CT_BiLevelEffect {
 
 // CT_BlurEffect ...
 export class CT_BlurEffect {
-	RadAttr: number | null;
-	GrowAttr: boolean | null;
+	RadAttr?: number;
+	GrowAttr?: boolean;
 }
 
 // CT_ColorChangeEffect ...
 export class CT_ColorChangeEffect {
-	UseAAttr: boolean | null;
+	UseAAttr?: boolean;
 	ClrFrom: CT_Color;
 	ClrTo: CT_Color;
 }
@@ -1344,7 +1344,7 @@ export class CT_DuotoneEffect {
 
 // CT_GlowEffect ...
 export class CT_GlowEffect {
-	RadAttr: number | null;
+	RadAttr?: number;
 	EG_ColorChoice: Array<EG_ColorChoice>;
 }
 
@@ -1354,36 +1354,36 @@ export class CT_GrayscaleEffect {
 
 // CT_HSLEffect ...
 export class CT_HSLEffect {
-	HueAttr: number | null;
-	SatAttr: ST_FixedPercentage | null;
-	LumAttr: ST_FixedPercentage | null;
+	HueAttr?: number;
+	SatAttr?: ST_FixedPercentage;
+	LumAttr?: ST_FixedPercentage;
 }
 
 // CT_InnerShadowEffect ...
 export class CT_InnerShadowEffect {
-	BlurRadAttr: number | null;
-	DistAttr: number | null;
-	DirAttr: number | null;
+	BlurRadAttr?: number;
+	DistAttr?: number;
+	DirAttr?: number;
 	EG_ColorChoice: Array<EG_ColorChoice>;
 }
 
 // CT_LuminanceEffect ...
 export class CT_LuminanceEffect {
-	BrightAttr: ST_FixedPercentage | null;
-	ContrastAttr: ST_FixedPercentage | null;
+	BrightAttr?: ST_FixedPercentage;
+	ContrastAttr?: ST_FixedPercentage;
 }
 
 // CT_OuterShadowEffect ...
 export class CT_OuterShadowEffect {
-	BlurRadAttr: number | null;
-	DistAttr: number | null;
-	DirAttr: number | null;
-	SxAttr: ST_Percentage | null;
-	SyAttr: ST_Percentage | null;
-	KxAttr: number | null;
-	KyAttr: number | null;
-	AlgnAttr: string | null;
-	RotWithShapeAttr: boolean | null;
+	BlurRadAttr?: number;
+	DistAttr?: number;
+	DirAttr?: number;
+	SxAttr?: ST_Percentage;
+	SyAttr?: ST_Percentage;
+	KxAttr?: number;
+	KyAttr?: number;
+	AlgnAttr?: string;
+	RotWithShapeAttr?: boolean;
 	EG_ColorChoice: Array<EG_ColorChoice>;
 }
 
@@ -1414,33 +1414,33 @@ export enum ST_PresetShadowVal {
 // CT_PresetShadowEffect ...
 export class CT_PresetShadowEffect {
 	PrstAttr: string;
-	DistAttr: number | null;
-	DirAttr: number | null;
+	DistAttr?: number;
+	DirAttr?: number;
 	EG_ColorChoice: Array<EG_ColorChoice>;
 }
 
 // CT_ReflectionEffect ...
 export class CT_ReflectionEffect {
-	BlurRadAttr: number | null;
-	StAAttr: ST_PositiveFixedPercentage | null;
-	StPosAttr: ST_PositiveFixedPercentage | null;
-	EndAAttr: ST_PositiveFixedPercentage | null;
-	EndPosAttr: ST_PositiveFixedPercentage | null;
-	DistAttr: number | null;
-	DirAttr: number | null;
-	FadeDirAttr: number | null;
-	SxAttr: ST_Percentage | null;
-	SyAttr: ST_Percentage | null;
-	KxAttr: number | null;
-	KyAttr: number | null;
-	AlgnAttr: string | null;
-	RotWithShapeAttr: boolean | null;
+	BlurRadAttr?: number;
+	StAAttr?: ST_PositiveFixedPercentage;
+	StPosAttr?: ST_PositiveFixedPercentage;
+	EndAAttr?: ST_PositiveFixedPercentage;
+	EndPosAttr?: ST_PositiveFixedPercentage;
+	DistAttr?: number;
+	DirAttr?: number;
+	FadeDirAttr?: number;
+	SxAttr?: ST_Percentage;
+	SyAttr?: ST_Percentage;
+	KxAttr?: number;
+	KyAttr?: number;
+	AlgnAttr?: string;
+	RotWithShapeAttr?: boolean;
 }
 
 // CT_RelativeOffsetEffect ...
 export class CT_RelativeOffsetEffect {
-	TxAttr: ST_Percentage | null;
-	TyAttr: ST_Percentage | null;
+	TxAttr?: ST_Percentage;
+	TyAttr?: ST_Percentage;
 }
 
 // CT_SoftEdgesEffect ...
@@ -1450,18 +1450,18 @@ export class CT_SoftEdgesEffect {
 
 // CT_TintEffect ...
 export class CT_TintEffect {
-	HueAttr: number | null;
-	AmtAttr: ST_FixedPercentage | null;
+	HueAttr?: number;
+	AmtAttr?: ST_FixedPercentage;
 }
 
 // CT_TransformEffect ...
 export class CT_TransformEffect {
-	SxAttr: ST_Percentage | null;
-	SyAttr: ST_Percentage | null;
-	KxAttr: number | null;
-	KyAttr: number | null;
-	TxAttr: ST_Coordinate | null;
-	TyAttr: ST_Coordinate | null;
+	SxAttr?: ST_Percentage;
+	SyAttr?: ST_Percentage;
+	KxAttr?: number;
+	KyAttr?: number;
+	TxAttr?: ST_Coordinate;
+	TyAttr?: ST_Coordinate;
 }
 
 // CT_NoFillProperties ...
@@ -1475,8 +1475,8 @@ export class CT_SolidColorFillProperties {
 
 // CT_LinearShadeProperties ...
 export class CT_LinearShadeProperties {
-	AngAttr: number | null;
-	ScaledAttr: boolean | null;
+	AngAttr?: number;
+	ScaledAttr?: boolean;
 }
 
 // ST_PathShadeType ...
@@ -1488,7 +1488,7 @@ export enum ST_PathShadeType {
 
 // CT_PathShadeProperties ...
 export class CT_PathShadeProperties {
-	PathAttr: string | null;
+	PathAttr?: string;
 	FillToRect?: CT_RelativeRect;
 }
 
@@ -1519,8 +1519,8 @@ export class CT_GradientStopList {
 
 // CT_GradientFillProperties ...
 export class CT_GradientFillProperties {
-	FlipAttr: string | null;
-	RotWithShapeAttr: boolean | null;
+	FlipAttr?: string;
+	RotWithShapeAttr?: boolean;
 	EG_ShadeProperties: Array<EG_ShadeProperties>;
 	GsLst?: CT_GradientStopList;
 	TileRect?: CT_RelativeRect;
@@ -1528,12 +1528,12 @@ export class CT_GradientFillProperties {
 
 // CT_TileInfoProperties ...
 export class CT_TileInfoProperties {
-	TxAttr: ST_Coordinate | null;
-	TyAttr: ST_Coordinate | null;
-	SxAttr: ST_Percentage | null;
-	SyAttr: ST_Percentage | null;
-	FlipAttr: string | null;
-	AlgnAttr: string | null;
+	TxAttr?: ST_Coordinate;
+	TyAttr?: ST_Coordinate;
+	SxAttr?: ST_Percentage;
+	SyAttr?: ST_Percentage;
+	FlipAttr?: string;
+	AlgnAttr?: string;
 }
 
 // CT_StretchInfoProperties ...
@@ -1559,7 +1559,7 @@ export enum ST_BlipCompression {
 // CT_Blip ...
 export class CT_Blip {
 	AG_Blob: AG_Blob;
-	CstateAttr: string | null;
+	CstateAttr?: string;
 	AlphaBiLevel: Array<CT_AlphaBiLevelEffect>;
 	AlphaCeiling: Array<CT_AlphaCeilingEffect>;
 	AlphaFloor: Array<CT_AlphaFloorEffect>;
@@ -1582,8 +1582,8 @@ export class CT_Blip {
 
 // CT_BlipFillProperties ...
 export class CT_BlipFillProperties {
-	DpiAttr: number | null;
-	RotWithShapeAttr: boolean | null;
+	DpiAttr?: number;
+	RotWithShapeAttr?: boolean;
 	EG_FillModeProperties: Array<EG_FillModeProperties>;
 	Blip?: CT_Blip;
 	SrcRect?: CT_RelativeRect;
@@ -1649,7 +1649,7 @@ export enum ST_PresetPatternVal {
 
 // CT_PatternFillProperties ...
 export class CT_PatternFillProperties {
-	PrstAttr: string | null;
+	PrstAttr?: string;
 	FgClr?: CT_Color;
 	BgClr?: CT_Color;
 }
@@ -1740,8 +1740,8 @@ export enum ST_EffectContainerType {
 
 // CT_EffectContainer ...
 export class CT_EffectContainer {
-	TypeAttr: string | null;
-	NameAttr: string | null;
+	TypeAttr?: string;
+	NameAttr?: string;
 	EG_Effect: Array<EG_Effect>;
 }
 
@@ -2063,23 +2063,23 @@ export class CT_GeomRect {
 
 // CT_XYAdjustHandle ...
 export class CT_XYAdjustHandle {
-	GdRefXAttr: string | null;
-	MinXAttr: ST_AdjCoordinate | null;
-	MaxXAttr: ST_AdjCoordinate | null;
-	GdRefYAttr: string | null;
-	MinYAttr: ST_AdjCoordinate | null;
-	MaxYAttr: ST_AdjCoordinate | null;
+	GdRefXAttr?: string;
+	MinXAttr?: ST_AdjCoordinate;
+	MaxXAttr?: ST_AdjCoordinate;
+	GdRefYAttr?: string;
+	MinYAttr?: ST_AdjCoordinate;
+	MaxYAttr?: ST_AdjCoordinate;
 	Pos: CT_AdjPoint2D;
 }
 
 // CT_PolarAdjustHandle ...
 export class CT_PolarAdjustHandle {
-	GdRefRAttr: string | null;
-	MinRAttr: ST_AdjCoordinate | null;
-	MaxRAttr: ST_AdjCoordinate | null;
-	GdRefAngAttr: string | null;
-	MinAngAttr: ST_AdjAngle | null;
-	MaxAngAttr: ST_AdjAngle | null;
+	GdRefRAttr?: string;
+	MinRAttr?: ST_AdjCoordinate;
+	MaxRAttr?: ST_AdjCoordinate;
+	GdRefAngAttr?: string;
+	MinAngAttr?: ST_AdjAngle;
+	MaxAngAttr?: ST_AdjAngle;
 	Pos: CT_AdjPoint2D;
 }
 
@@ -2150,11 +2150,11 @@ export enum ST_PathFillMode {
 
 // CT_Path2D ...
 export class CT_Path2D {
-	WAttr: number | null;
-	HAttr: number | null;
-	FillAttr: string | null;
-	StrokeAttr: boolean | null;
-	ExtrusionOkAttr: boolean | null;
+	WAttr?: number;
+	HAttr?: number;
+	FillAttr?: string;
+	StrokeAttr?: boolean;
+	ExtrusionOkAttr?: boolean;
 	Close: Array<CT_Path2DClose>;
 	MoveTo: Array<CT_Path2DMoveTo>;
 	LnTo: Array<CT_Path2DLineTo>;
@@ -2228,9 +2228,9 @@ export enum ST_LineEndLength {
 
 // CT_LineEndProperties ...
 export class CT_LineEndProperties {
-	TypeAttr: string | null;
-	WAttr: string | null;
-	LenAttr: string | null;
+	TypeAttr?: string;
+	WAttr?: string;
+	LenAttr?: string;
 }
 
 // EG_LineFillProperties ...
@@ -2251,7 +2251,7 @@ export class CT_LineJoinRound {
 
 // CT_LineJoinMiterProperties ...
 export class CT_LineJoinMiterProperties {
-	LimAttr: ST_PositivePercentage | null;
+	LimAttr?: ST_PositivePercentage;
 }
 
 // EG_LineJoinProperties ...
@@ -2278,7 +2278,7 @@ export enum ST_PresetLineDashVal {
 
 // CT_PresetLineDashProperties ...
 export class CT_PresetLineDashProperties {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // CT_DashStop ...
@@ -2325,10 +2325,10 @@ export enum ST_CompoundLine {
 
 // CT_LineProperties ...
 export class CT_LineProperties {
-	WAttr: number | null;
-	CapAttr: string | null;
-	CmpdAttr: string | null;
-	AlgnAttr: string | null;
+	WAttr?: number;
+	CapAttr?: string;
+	CmpdAttr?: string;
+	AlgnAttr?: string;
 	EG_LineFillProperties: Array<EG_LineFillProperties>;
 	EG_LineDashProperties: Array<EG_LineDashProperties>;
 	EG_LineJoinProperties: Array<EG_LineJoinProperties>;
@@ -2342,7 +2342,7 @@ export type ST_ShapeID = string;
 
 // CT_ShapeProperties ...
 export class CT_ShapeProperties {
-	BwModeAttr: string | null;
+	BwModeAttr?: string;
 	EG_Geometry: Array<EG_Geometry>;
 	EG_FillProperties: Array<EG_FillProperties>;
 	EG_EffectProperties: Array<EG_EffectProperties>;
@@ -2355,7 +2355,7 @@ export class CT_ShapeProperties {
 
 // CT_GroupShapeProperties ...
 export class CT_GroupShapeProperties {
-	BwModeAttr: string | null;
+	BwModeAttr?: string;
 	EG_FillProperties: Array<EG_FillProperties>;
 	EG_EffectProperties: Array<EG_EffectProperties>;
 	Xfrm?: CT_GroupTransform2D;
@@ -2440,7 +2440,7 @@ export class CT_ColorSchemeList {
 
 // CT_OfficeStyleSheet ...
 export class CT_OfficeStyleSheet {
-	NameAttr: string | null;
+	NameAttr?: string;
 	ThemeElements: CT_BaseStyles;
 	ObjectDefaults?: CT_ObjectStyleDefaults;
 	ExtraClrSchemeLst?: CT_ColorSchemeList;
@@ -2472,14 +2472,14 @@ export type ThemeManager = CT_EmptyElement;
 
 // CT_TableCellProperties ...
 export class CT_TableCellProperties {
-	MarLAttr: ST_Coordinate32 | null;
-	MarRAttr: ST_Coordinate32 | null;
-	MarTAttr: ST_Coordinate32 | null;
-	MarBAttr: ST_Coordinate32 | null;
-	VertAttr: string | null;
-	AnchorAttr: string | null;
-	AnchorCtrAttr: boolean | null;
-	HorzOverflowAttr: string | null;
+	MarLAttr?: ST_Coordinate32;
+	MarRAttr?: ST_Coordinate32;
+	MarTAttr?: ST_Coordinate32;
+	MarBAttr?: ST_Coordinate32;
+	VertAttr?: string;
+	AnchorAttr?: string;
+	AnchorCtrAttr?: boolean;
+	HorzOverflowAttr?: string;
 	EG_FillProperties: Array<EG_FillProperties>;
 	LnL?: CT_LineProperties;
 	LnR?: CT_LineProperties;
@@ -2510,11 +2510,11 @@ export class CT_TableGrid {
 
 // CT_TableCell ...
 export class CT_TableCell {
-	RowSpanAttr: number | null;
-	GridSpanAttr: number | null;
-	HMergeAttr: boolean | null;
-	VMergeAttr: boolean | null;
-	IdAttr: string | null;
+	RowSpanAttr?: number;
+	GridSpanAttr?: number;
+	HMergeAttr?: boolean;
+	VMergeAttr?: boolean;
+	IdAttr?: string;
 	TxBody?: CT_TextBody;
 	TcPr?: CT_TableCellProperties;
 	ExtLst?: CT_OfficeArtExtensionList;
@@ -2529,13 +2529,13 @@ export class CT_TableRow {
 
 // CT_TableProperties ...
 export class CT_TableProperties {
-	RtlAttr: boolean | null;
-	FirstRowAttr: boolean | null;
-	FirstColAttr: boolean | null;
-	LastRowAttr: boolean | null;
-	LastColAttr: boolean | null;
-	BandRowAttr: boolean | null;
-	BandColAttr: boolean | null;
+	RtlAttr?: boolean;
+	FirstRowAttr?: boolean;
+	FirstColAttr?: boolean;
+	LastRowAttr?: boolean;
+	LastColAttr?: boolean;
+	BandRowAttr?: boolean;
+	BandColAttr?: boolean;
 	EG_FillProperties: Array<EG_FillProperties>;
 	EG_EffectProperties: Array<EG_EffectProperties>;
 	TableStyle: CT_TableStyle;
@@ -2555,7 +2555,7 @@ export type Tbl = CT_Table;
 
 // CT_Cell3D ...
 export class CT_Cell3D {
-	PrstMaterialAttr: string | null;
+	PrstMaterialAttr?: string;
 	Bevel: CT_Bevel;
 	LightRig?: CT_LightRig;
 	ExtLst?: CT_OfficeArtExtensionList;
@@ -2594,8 +2594,8 @@ export enum ST_OnOffStyleType {
 
 // CT_TableStyleTextStyle ...
 export class CT_TableStyleTextStyle {
-	BAttr: string | null;
-	IAttr: string | null;
+	BAttr?: string;
+	IAttr?: string;
 	EG_ThemeableFontStyles: Array<EG_ThemeableFontStyles>;
 	EG_ColorChoice: Array<EG_ColorChoice>;
 	ExtLst?: CT_OfficeArtExtensionList;
@@ -2734,8 +2734,8 @@ export class ST_TextFontScalePercentOrPercentString {
 
 // CT_TextNormalAutofit ...
 export class CT_TextNormalAutofit {
-	FontScaleAttr: ST_TextFontScalePercentOrPercentString | null;
-	LnSpcReductionAttr: ST_TextSpacingPercentOrPercentString | null;
+	FontScaleAttr?: ST_TextFontScalePercentOrPercentString;
+	LnSpcReductionAttr?: ST_TextSpacingPercentOrPercentString;
 }
 
 // CT_TextShapeAutofit ...
@@ -2755,25 +2755,25 @@ export class EG_TextAutofit {
 
 // CT_TextBodyProperties ...
 export class CT_TextBodyProperties {
-	RotAttr: number | null;
-	SpcFirstLastParaAttr: boolean | null;
-	VertOverflowAttr: string | null;
-	HorzOverflowAttr: string | null;
-	VertAttr: string | null;
-	WrapAttr: string | null;
-	LInsAttr: ST_Coordinate32 | null;
-	TInsAttr: ST_Coordinate32 | null;
-	RInsAttr: ST_Coordinate32 | null;
-	BInsAttr: ST_Coordinate32 | null;
-	NumColAttr: number | null;
-	SpcColAttr: number | null;
-	RtlColAttr: boolean | null;
-	FromWordArtAttr: boolean | null;
-	AnchorAttr: string | null;
-	AnchorCtrAttr: boolean | null;
-	ForceAAAttr: boolean | null;
-	UprightAttr: boolean | null;
-	CompatLnSpcAttr: boolean | null;
+	RotAttr?: number;
+	SpcFirstLastParaAttr?: boolean;
+	VertOverflowAttr?: string;
+	HorzOverflowAttr?: string;
+	VertAttr?: string;
+	WrapAttr?: string;
+	LInsAttr?: ST_Coordinate32;
+	TInsAttr?: ST_Coordinate32;
+	RInsAttr?: ST_Coordinate32;
+	BInsAttr?: ST_Coordinate32;
+	NumColAttr?: number;
+	SpcColAttr?: number;
+	RtlColAttr?: boolean;
+	FromWordArtAttr?: boolean;
+	AnchorAttr?: string;
+	AnchorCtrAttr?: boolean;
+	ForceAAAttr?: boolean;
+	UprightAttr?: boolean;
+	CompatLnSpcAttr?: boolean;
 	EG_TextAutofit: Array<EG_TextAutofit>;
 	EG_Text3D: Array<EG_Text3D>;
 	PrstTxWarp?: CT_PresetTextShape;
@@ -2888,7 +2888,7 @@ export class EG_TextBulletTypeface {
 // CT_TextAutonumberBullet ...
 export class CT_TextAutonumberBullet {
 	TypeAttr: string;
-	StartAtAttr: number | null;
+	StartAtAttr?: number;
 }
 
 // CT_TextCharBullet ...
@@ -2956,9 +2956,9 @@ export enum ST_PitchFamily {
 // CT_TextFont ...
 export class CT_TextFont {
 	TypefaceAttr: string;
-	PanoseAttr: Uint8Array | null;
-	PitchFamilyAttr: any | null;
-	CharsetAttr: any | null;
+	PanoseAttr?: Uint8Array;
+	PitchFamilyAttr?: any;
+	CharsetAttr?: any;
 }
 
 // ST_TextUnderlineType ...
@@ -3024,25 +3024,25 @@ export enum ST_TextCapsType {
 
 // CT_TextCharacterProperties ...
 export class CT_TextCharacterProperties {
-	KumimojiAttr: boolean | null;
-	LangAttr: string | null;
-	AltLangAttr: string | null;
-	SzAttr: number | null;
-	BAttr: boolean | null;
-	IAttr: boolean | null;
-	UAttr: string | null;
-	StrikeAttr: string | null;
-	KernAttr: number | null;
-	CapAttr: string | null;
-	SpcAttr: ST_TextPoint | null;
-	NormalizeHAttr: boolean | null;
-	BaselineAttr: ST_Percentage | null;
-	NoProofAttr: boolean | null;
-	DirtyAttr: boolean | null;
-	ErrAttr: boolean | null;
-	SmtCleanAttr: boolean | null;
-	SmtIdAttr: number | null;
-	BmkAttr: string | null;
+	KumimojiAttr?: boolean;
+	LangAttr?: string;
+	AltLangAttr?: string;
+	SzAttr?: number;
+	BAttr?: boolean;
+	IAttr?: boolean;
+	UAttr?: string;
+	StrikeAttr?: string;
+	KernAttr?: number;
+	CapAttr?: string;
+	SpcAttr?: ST_TextPoint;
+	NormalizeHAttr?: boolean;
+	BaselineAttr?: ST_Percentage;
+	NoProofAttr?: boolean;
+	DirtyAttr?: boolean;
+	ErrAttr?: boolean;
+	SmtCleanAttr?: boolean;
+	SmtIdAttr?: number;
+	BmkAttr?: string;
 	EG_FillProperties: Array<EG_FillProperties>;
 	EG_EffectProperties: Array<EG_EffectProperties>;
 	EG_TextUnderlineLine: Array<EG_TextUnderlineLine>;
@@ -3061,7 +3061,7 @@ export class CT_TextCharacterProperties {
 
 // CT_Boolean ...
 export class CT_Boolean {
-	ValAttr: ST_OnOff | null;
+	ValAttr?: ST_OnOff;
 }
 
 // ST_TextSpacingPoint ...
@@ -3098,8 +3098,8 @@ export enum ST_TextTabAlignType {
 
 // CT_TextTabStop ...
 export class CT_TextTabStop {
-	PosAttr: ST_Coordinate32 | null;
-	AlgnAttr: string | null;
+	PosAttr?: ST_Coordinate32;
+	AlgnAttr?: string;
 }
 
 // CT_TextTabStopList ...
@@ -3143,17 +3143,17 @@ export type ST_TextIndentLevelType = number;
 
 // CT_TextParagraphProperties ...
 export class CT_TextParagraphProperties {
-	MarLAttr: number | null;
-	MarRAttr: number | null;
-	LvlAttr: number | null;
-	IndentAttr: number | null;
-	AlgnAttr: string | null;
-	DefTabSzAttr: ST_Coordinate32 | null;
-	RtlAttr: boolean | null;
-	EaLnBrkAttr: boolean | null;
-	FontAlgnAttr: string | null;
-	LatinLnBrkAttr: boolean | null;
-	HangingPunctAttr: boolean | null;
+	MarLAttr?: number;
+	MarRAttr?: number;
+	LvlAttr?: number;
+	IndentAttr?: number;
+	AlgnAttr?: string;
+	DefTabSzAttr?: ST_Coordinate32;
+	RtlAttr?: boolean;
+	EaLnBrkAttr?: boolean;
+	FontAlgnAttr?: string;
+	LatinLnBrkAttr?: boolean;
+	HangingPunctAttr?: boolean;
 	EG_TextBulletColor: Array<EG_TextBulletColor>;
 	EG_TextBulletSize: Array<EG_TextBulletSize>;
 	EG_TextBulletTypeface: Array<EG_TextBulletTypeface>;
@@ -3169,7 +3169,7 @@ export class CT_TextParagraphProperties {
 // CT_TextField ...
 export class CT_TextField {
 	IdAttr: string;
-	TypeAttr: string | null;
+	TypeAttr?: string;
 	RPr?: CT_TextCharacterProperties;
 	PPr?: CT_TextParagraphProperties;
 	T?: string;

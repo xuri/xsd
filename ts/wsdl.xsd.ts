@@ -32,8 +32,8 @@ export class AnyTopLevelOptionalElement {
 
 // TDefinitions ...
 export class TDefinitions extends TExtensibleDocumented  {
-	TargetNamespaceAttr: string | null;
-	NameAttr: string | null;
+	TargetNamespaceAttr?: string;
+	NameAttr?: string;
 	WsdlAnyTopLevelOptionalElement: Array<AnyTopLevelOptionalElement>;
 }
 
@@ -56,8 +56,8 @@ export class TMessage extends TExtensibleDocumented  {
 // TPart ...
 export class TPart extends TExtensibleAttributesDocumented  {
 	NameAttr: string;
-	ElementAttr: any | null;
-	TypeAttr: any | null;
+	ElementAttr?: any;
+	TypeAttr?: any;
 }
 
 // TPortType ...
@@ -69,7 +69,7 @@ export class TPortType extends TExtensibleAttributesDocumented  {
 // TOperation ...
 export class TOperation extends TExtensibleDocumented  {
 	NameAttr: string;
-	ParameterOrderAttr: Array<string> | null;
+	ParameterOrderAttr?: Array<string>;
 	WsdlRequestresponseoronewayoperation: Requestresponseoronewayoperation;
 	WsdlSolicitresponseornotificationoperation: Solicitresponseornotificationoperation;
 }
@@ -90,7 +90,7 @@ export class Solicitresponseornotificationoperation {
 
 // TParam ...
 export class TParam extends TExtensibleAttributesDocumented  {
-	NameAttr: string | null;
+	NameAttr?: string;
 	MessageAttr: any;
 }
 
@@ -109,7 +109,7 @@ export class TBinding extends TExtensibleDocumented  {
 
 // TBindingOperationMessage ...
 export class TBindingOperationMessage extends TExtensibleDocumented  {
-	NameAttr: string | null;
+	NameAttr?: string;
 }
 
 // TBindingOperationFault ...
@@ -145,5 +145,5 @@ export type Required = boolean;
 
 // TExtensibilityElement ...
 export class TExtensibilityElement {
-	WsdlRequiredAttr: boolean | null;
+	WsdlRequiredAttr?: boolean;
 }

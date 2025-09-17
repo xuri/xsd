@@ -13,10 +13,10 @@ export type ST_WrapDistance = number;
 
 // CT_Inline ...
 export class CT_Inline {
-	DistTAttr: number | null;
-	DistBAttr: number | null;
-	DistLAttr: number | null;
-	DistRAttr: number | null;
+	DistTAttr?: number;
+	DistBAttr?: number;
+	DistLAttr?: number;
+	DistRAttr?: number;
 	Extent: CT_PositiveSize2D;
 	EffectExtent?: CT_EffectExtent;
 	DocPr: CT_NonVisualDrawingProps;
@@ -34,7 +34,7 @@ export enum ST_WrapText {
 
 // CT_WrapPath ...
 export class CT_WrapPath {
-	EditedAttr: boolean | null;
+	EditedAttr?: boolean;
 	Start: CT_Point2D;
 	LineTo: Array<CT_Point2D>;
 }
@@ -46,33 +46,33 @@ export class CT_WrapNone {
 // CT_WrapSquare ...
 export class CT_WrapSquare {
 	WrapTextAttr: string;
-	DistTAttr: number | null;
-	DistBAttr: number | null;
-	DistLAttr: number | null;
-	DistRAttr: number | null;
+	DistTAttr?: number;
+	DistBAttr?: number;
+	DistLAttr?: number;
+	DistRAttr?: number;
 	EffectExtent?: CT_EffectExtent;
 }
 
 // CT_WrapTight ...
 export class CT_WrapTight {
 	WrapTextAttr: string;
-	DistLAttr: number | null;
-	DistRAttr: number | null;
+	DistLAttr?: number;
+	DistRAttr?: number;
 	WrapPolygon: CT_WrapPath;
 }
 
 // CT_WrapThrough ...
 export class CT_WrapThrough {
 	WrapTextAttr: string;
-	DistLAttr: number | null;
-	DistRAttr: number | null;
+	DistLAttr?: number;
+	DistRAttr?: number;
 	WrapPolygon: CT_WrapPath;
 }
 
 // CT_WrapTopBottom ...
 export class CT_WrapTopBottom {
-	DistTAttr: number | null;
-	DistBAttr: number | null;
+	DistTAttr?: number;
+	DistBAttr?: number;
 	EffectExtent?: CT_EffectExtent;
 }
 
@@ -146,16 +146,16 @@ export class CT_PosV {
 
 // CT_Anchor ...
 export class CT_Anchor {
-	DistTAttr: number | null;
-	DistBAttr: number | null;
-	DistLAttr: number | null;
-	DistRAttr: number | null;
-	SimplePosAttr: boolean | null;
+	DistTAttr?: number;
+	DistBAttr?: number;
+	DistLAttr?: number;
+	DistRAttr?: number;
+	SimplePosAttr?: boolean;
 	RelativeHeightAttr: number;
 	BehindDocAttr: boolean;
 	LockedAttr: boolean;
 	LayoutInCellAttr: boolean;
-	HiddenAttr: boolean | null;
+	HiddenAttr?: boolean;
 	AllowOverlapAttr: boolean;
 	EG_WrapType: EG_WrapType;
 	SimplePos: CT_Point2D;
@@ -175,7 +175,7 @@ export class CT_TxbxContent {
 
 // CT_TextboxInfo ...
 export class CT_TextboxInfo {
-	IdAttr: number | null;
+	IdAttr?: number;
 	TxbxContent: CT_TxbxContent;
 	ExtLst?: CT_OfficeArtExtensionList;
 }
@@ -189,7 +189,7 @@ export class CT_LinkedTextboxInformation {
 
 // CT_WordprocessingShape ...
 export class CT_WordprocessingShape {
-	NormalEastAsianFlowAttr: boolean | null;
+	NormalEastAsianFlowAttr?: boolean;
 	CNvPr?: CT_NonVisualDrawingProps;
 	CNvSpPr: CT_NonVisualDrawingShapeProps;
 	CNvCnPr: CT_NonVisualConnectorProperties;
@@ -218,7 +218,7 @@ export class CT_WordprocessingContentPartNonVisual {
 
 // CT_WordprocessingContentPart ...
 export class CT_WordprocessingContentPart {
-	BwModeAttr: string | null;
+	BwModeAttr?: string;
 	RIdAttr: string;
 	NvContentPartPr?: CT_WordprocessingContentPartNonVisual;
 	Xfrm?: CT_Transform2D;

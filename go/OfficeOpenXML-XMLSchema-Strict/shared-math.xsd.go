@@ -60,7 +60,7 @@ type CTOnOff struct {
 // CTString ...
 type CTString struct {
 	XMLName xml.Name `xml:"CT_String"`
-	ValAttr string   `xml:"val,attr,omitempty"`
+	ValAttr *string  `xml:"val,attr"`
 }
 
 // CTXAlign ...
@@ -117,7 +117,7 @@ type STScript string
 // CTScript ...
 type CTScript struct {
 	XMLName xml.Name `xml:"CT_Script"`
-	ValAttr string   `xml:"val,attr,omitempty"`
+	ValAttr *string  `xml:"val,attr"`
 }
 
 // STStyle ...
@@ -126,13 +126,13 @@ type STStyle string
 // CTStyle ...
 type CTStyle struct {
 	XMLName xml.Name `xml:"CT_Style"`
-	ValAttr string   `xml:"val,attr,omitempty"`
+	ValAttr *string  `xml:"val,attr"`
 }
 
 // CTManualBreak ...
 type CTManualBreak struct {
 	XMLName   xml.Name `xml:"CT_ManualBreak"`
-	AlnAtAttr int      `xml:"alnAt,attr,omitempty"`
+	AlnAtAttr *int     `xml:"alnAt,attr"`
 }
 
 // EGScriptStyle ...
@@ -560,7 +560,7 @@ type STJc string
 // CTOMathJc ...
 type CTOMathJc struct {
 	XMLName xml.Name `xml:"CT_OMathJc"`
-	ValAttr string   `xml:"val,attr,omitempty"`
+	ValAttr *string  `xml:"val,attr"`
 }
 
 // CTOMathParaPr ...
@@ -581,7 +581,7 @@ type STBreakBin string
 // CTBreakBin ...
 type CTBreakBin struct {
 	XMLName xml.Name `xml:"CT_BreakBin"`
-	ValAttr string   `xml:"val,attr,omitempty"`
+	ValAttr *string  `xml:"val,attr"`
 }
 
 // STBreakBinSub ...
@@ -590,7 +590,7 @@ type STBreakBinSub string
 // CTBreakBinSub ...
 type CTBreakBinSub struct {
 	XMLName xml.Name `xml:"CT_BreakBinSub"`
-	ValAttr string   `xml:"val,attr,omitempty"`
+	ValAttr *string  `xml:"val,attr"`
 }
 
 // CTMathPr ...

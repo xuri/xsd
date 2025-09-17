@@ -50,9 +50,9 @@ public class CT_Null {
 
 // CT_Vector ...
 public class CT_Vector {
-	@XmlAttribute(name = "baseType", required = true)
+	@XmlAttribute(required = true, name = "baseType")
 	protected String BaseTypeAttr;
-	@XmlAttribute(name = "size", required = true)
+	@XmlAttribute(required = true, name = "size")
 	protected Integer SizeAttr;
 	@XmlElement(required = true, name = "variant")
 	protected List<CT_Variant> Variant;
@@ -98,11 +98,11 @@ public class CT_Vector {
 
 // CT_Array ...
 public class CT_Array {
-	@XmlAttribute(name = "lBounds", required = true)
+	@XmlAttribute(required = true, name = "lBounds")
 	protected Integer LBoundsAttr;
-	@XmlAttribute(name = "uBounds", required = true)
+	@XmlAttribute(required = true, name = "uBounds")
 	protected Integer UBoundsAttr;
-	@XmlAttribute(name = "baseType", required = true)
+	@XmlAttribute(required = true, name = "baseType")
 	protected String BaseTypeAttr;
 	@XmlElement(required = true, name = "variant")
 	protected List<CT_Variant> Variant;

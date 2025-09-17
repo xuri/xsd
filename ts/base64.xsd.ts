@@ -5,13 +5,13 @@ export type MyType1 = Uint8Array;
 
 // MyType2 ...
 export class MyType2 {
-	LengthAttr: number | null;
+	LengthAttr?: number;
 	Value: Uint8Array;
 }
 
 // MyType3 ...
 export class MyType3 {
-	LengthAttr: number | null;
+	LengthAttr?: number;
 	Value: string;
 }
 

@@ -12,8 +12,8 @@ export class CT_Properties {
 export class CT_Property {
 	FmtidAttr: string;
 	PidAttr: number;
-	NameAttr: string | null;
-	LinkTargetAttr: string | null;
+	NameAttr?: string;
+	LinkTargetAttr?: string;
 	VtVector: CT_Vector;
 	VtArray: CT_Array;
 	VtBlob: Uint8Array;

@@ -4,7 +4,7 @@ package schema
 
 // Number ...
 type Number struct {
-	PrecisionAttr int     `xml:"precision,attr,omitempty"`
+	PrecisionAttr *int    `xml:"precision,attr"`
 	Value         float64 `xml:",chardata"`
 }
 

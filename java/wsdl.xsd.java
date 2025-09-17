@@ -63,9 +63,9 @@ public class TDefinitions extends TExtensibleDocumented  {
 
 // TImport ...
 public class TImport extends TExtensibleAttributesDocumented  {
-	@XmlAttribute(name = "namespace", required = true)
+	@XmlAttribute(required = true, name = "namespace")
 	protected QName NamespaceAttr;
-	@XmlAttribute(name = "location", required = true)
+	@XmlAttribute(required = true, name = "location")
 	protected QName LocationAttr;
 }
 
@@ -75,7 +75,7 @@ public class TTypes extends TExtensibleDocumented  {
 
 // TMessage ...
 public class TMessage extends TExtensibleDocumented  {
-	@XmlAttribute(name = "name", required = true)
+	@XmlAttribute(required = true, name = "name")
 	protected String NameAttr;
 	@XmlElement(name = "part")
 	protected List<TPart> Part;
@@ -83,7 +83,7 @@ public class TMessage extends TExtensibleDocumented  {
 
 // TPart ...
 public class TPart extends TExtensibleAttributesDocumented  {
-	@XmlAttribute(name = "name", required = true)
+	@XmlAttribute(required = true, name = "name")
 	protected String NameAttr;
 	@XmlAttribute(name = "element")
 	protected String ElementAttr;
@@ -93,7 +93,7 @@ public class TPart extends TExtensibleAttributesDocumented  {
 
 // TPortType ...
 public class TPortType extends TExtensibleAttributesDocumented  {
-	@XmlAttribute(name = "name", required = true)
+	@XmlAttribute(required = true, name = "name")
 	protected String NameAttr;
 	@XmlElement(name = "operation")
 	protected List<TOperation> Operation;
@@ -101,7 +101,7 @@ public class TPortType extends TExtensibleAttributesDocumented  {
 
 // TOperation ...
 public class TOperation extends TExtensibleDocumented  {
-	@XmlAttribute(name = "name", required = true)
+	@XmlAttribute(required = true, name = "name")
 	protected String NameAttr;
 	@XmlAttribute(name = "parameterOrder")
 	protected List<String> ParameterOrderAttr;
@@ -133,23 +133,23 @@ public class Solicitresponseornotificationoperation {
 public class TParam extends TExtensibleAttributesDocumented  {
 	@XmlAttribute(name = "name")
 	protected String NameAttr;
-	@XmlAttribute(name = "message", required = true)
+	@XmlAttribute(required = true, name = "message")
 	protected String MessageAttr;
 }
 
 // TFault ...
 public class TFault extends TExtensibleAttributesDocumented  {
-	@XmlAttribute(name = "name", required = true)
+	@XmlAttribute(required = true, name = "name")
 	protected String NameAttr;
-	@XmlAttribute(name = "message", required = true)
+	@XmlAttribute(required = true, name = "message")
 	protected String MessageAttr;
 }
 
 // TBinding ...
 public class TBinding extends TExtensibleDocumented  {
-	@XmlAttribute(name = "name", required = true)
+	@XmlAttribute(required = true, name = "name")
 	protected String NameAttr;
-	@XmlAttribute(name = "type", required = true)
+	@XmlAttribute(required = true, name = "type")
 	protected String TypeAttr;
 	@XmlElement(name = "operation")
 	protected List<TBindingOperation> Operation;
@@ -163,13 +163,13 @@ public class TBindingOperationMessage extends TExtensibleDocumented  {
 
 // TBindingOperationFault ...
 public class TBindingOperationFault extends TExtensibleDocumented  {
-	@XmlAttribute(name = "name", required = true)
+	@XmlAttribute(required = true, name = "name")
 	protected String NameAttr;
 }
 
 // TBindingOperation ...
 public class TBindingOperation extends TExtensibleDocumented  {
-	@XmlAttribute(name = "name", required = true)
+	@XmlAttribute(required = true, name = "name")
 	protected String NameAttr;
 	@XmlElement(name = "input")
 	protected TBindingOperationMessage Input;
@@ -181,7 +181,7 @@ public class TBindingOperation extends TExtensibleDocumented  {
 
 // TService ...
 public class TService extends TExtensibleDocumented  {
-	@XmlAttribute(name = "name", required = true)
+	@XmlAttribute(required = true, name = "name")
 	protected String NameAttr;
 	@XmlElement(name = "port")
 	protected List<TPort> Port;
@@ -189,9 +189,9 @@ public class TService extends TExtensibleDocumented  {
 
 // TPort ...
 public class TPort extends TExtensibleDocumented  {
-	@XmlAttribute(name = "name", required = true)
+	@XmlAttribute(required = true, name = "name")
 	protected String NameAttr;
-	@XmlAttribute(name = "binding", required = true)
+	@XmlAttribute(required = true, name = "binding")
 	protected String BindingAttr;
 }
 

@@ -24,12 +24,12 @@ export enum ST_TransitionInOutDirectionType {
 
 // CT_SideDirectionTransition ...
 export class CT_SideDirectionTransition {
-	DirAttr: string | null;
+	DirAttr?: string;
 }
 
 // CT_CornerDirectionTransition ...
 export class CT_CornerDirectionTransition {
-	DirAttr: string | null;
+	DirAttr?: string;
 }
 
 // ST_TransitionEightDirectionType ...
@@ -40,38 +40,38 @@ export class ST_TransitionEightDirectionType {
 
 // CT_EightDirectionTransition ...
 export class CT_EightDirectionTransition {
-	DirAttr: ST_TransitionEightDirectionType | null;
+	DirAttr?: ST_TransitionEightDirectionType;
 }
 
 // CT_OrientationTransition ...
 export class CT_OrientationTransition {
-	DirAttr: string | null;
+	DirAttr?: string;
 }
 
 // CT_InOutTransition ...
 export class CT_InOutTransition {
-	DirAttr: string | null;
+	DirAttr?: string;
 }
 
 // CT_OptionalBlackTransition ...
 export class CT_OptionalBlackTransition {
-	ThruBlkAttr: boolean | null;
+	ThruBlkAttr?: boolean;
 }
 
 // CT_SplitTransition ...
 export class CT_SplitTransition {
-	OrientAttr: string | null;
-	DirAttr: string | null;
+	OrientAttr?: string;
+	DirAttr?: string;
 }
 
 // CT_WheelTransition ...
 export class CT_WheelTransition {
-	SpokesAttr: number | null;
+	SpokesAttr?: number;
 }
 
 // CT_TransitionStartSoundAction ...
 export class CT_TransitionStartSoundAction {
-	LoopAttr: boolean | null;
+	LoopAttr?: boolean;
 	Snd: CT_EmbeddedWAVAudioFile;
 }
 
@@ -90,9 +90,9 @@ export enum ST_TransitionSpeed {
 
 // CT_SlideTransition ...
 export class CT_SlideTransition {
-	SpdAttr: string | null;
-	AdvClickAttr: boolean | null;
-	AdvTmAttr: number | null;
+	SpdAttr?: string;
+	AdvClickAttr?: boolean;
+	AdvTmAttr?: number;
 	Blinds: CT_OrientationTransition;
 	Checker: CT_OrientationTransition;
 	Circle: CT_Empty;
@@ -151,8 +151,8 @@ export enum ST_IterateType {
 
 // CT_TLIterateData ...
 export class CT_TLIterateData {
-	TypeAttr: string | null;
-	BackwardsAttr: boolean | null;
+	TypeAttr?: string;
+	BackwardsAttr?: boolean;
 	TmAbs: CT_TLIterateIntervalTime;
 	TmPct: CT_TLIterateIntervalPercentage;
 }
@@ -180,7 +180,7 @@ export enum ST_TLChartSubelementType {
 // CT_TLOleChartTargetElement ...
 export class CT_TLOleChartTargetElement {
 	TypeAttr: string;
-	LvlAttr: number | null;
+	LvlAttr?: number;
 }
 
 // CT_TLShapeTargetElement ...
@@ -235,8 +235,8 @@ export enum ST_TLTriggerEvent {
 
 // CT_TLTimeCondition ...
 export class CT_TLTimeCondition {
-	EvtAttr: string | null;
-	DelayAttr: ST_TLTime | null;
+	EvtAttr?: string;
+	DelayAttr?: ST_TLTime;
 	TgtEl: CT_TLTimeTargetElement;
 	Tn: CT_TLTriggerTimeNodeID;
 	Rtn: CT_TLTriggerRuntimeNode;
@@ -317,29 +317,29 @@ export enum ST_TLTimeNodeType {
 
 // CT_TLCommonTimeNodeData ...
 export class CT_TLCommonTimeNodeData {
-	IdAttr: number | null;
-	PresetIDAttr: number | null;
-	PresetClassAttr: string | null;
-	PresetSubtypeAttr: number | null;
-	DurAttr: ST_TLTime | null;
-	RepeatCountAttr: ST_TLTime | null;
-	RepeatDurAttr: ST_TLTime | null;
-	SpdAttr: ST_Percentage | null;
-	AccelAttr: ST_PositiveFixedPercentage | null;
-	DecelAttr: ST_PositiveFixedPercentage | null;
-	AutoRevAttr: boolean | null;
-	RestartAttr: string | null;
-	FillAttr: string | null;
-	SyncBehaviorAttr: string | null;
-	TmFilterAttr: string | null;
-	EvtFilterAttr: string | null;
-	DisplayAttr: boolean | null;
-	MasterRelAttr: string | null;
-	BldLvlAttr: number | null;
-	GrpIdAttr: number | null;
-	AfterEffectAttr: boolean | null;
-	NodeTypeAttr: string | null;
-	NodePhAttr: boolean | null;
+	IdAttr?: number;
+	PresetIDAttr?: number;
+	PresetClassAttr?: string;
+	PresetSubtypeAttr?: number;
+	DurAttr?: ST_TLTime;
+	RepeatCountAttr?: ST_TLTime;
+	RepeatDurAttr?: ST_TLTime;
+	SpdAttr?: ST_Percentage;
+	AccelAttr?: ST_PositiveFixedPercentage;
+	DecelAttr?: ST_PositiveFixedPercentage;
+	AutoRevAttr?: boolean;
+	RestartAttr?: string;
+	FillAttr?: string;
+	SyncBehaviorAttr?: string;
+	TmFilterAttr?: string;
+	EvtFilterAttr?: string;
+	DisplayAttr?: boolean;
+	MasterRelAttr?: string;
+	BldLvlAttr?: number;
+	GrpIdAttr?: number;
+	AfterEffectAttr?: boolean;
+	NodeTypeAttr?: string;
+	NodePhAttr?: boolean;
 	StCondLst?: CT_TLTimeConditionList;
 	EndCondLst?: CT_TLTimeConditionList;
 	EndSync?: CT_TLTimeCondition;
@@ -367,9 +367,9 @@ export enum ST_TLPreviousActionType {
 
 // CT_TLTimeNodeSequence ...
 export class CT_TLTimeNodeSequence {
-	ConcurrentAttr: boolean | null;
-	PrevAcAttr: string | null;
-	NextAcAttr: string | null;
+	ConcurrentAttr?: boolean;
+	PrevAcAttr?: string;
+	NextAcAttr?: string;
 	CTn: CT_TLCommonTimeNodeData;
 	PrevCondLst?: CT_TLTimeConditionList;
 	NextCondLst?: CT_TLTimeConditionList;
@@ -414,14 +414,14 @@ export enum ST_TLBehaviorOverrideType {
 
 // CT_TLCommonBehaviorData ...
 export class CT_TLCommonBehaviorData {
-	AdditiveAttr: string | null;
-	AccumulateAttr: string | null;
-	XfrmTypeAttr: string | null;
-	FromAttr: string | null;
-	ToAttr: string | null;
-	ByAttr: string | null;
-	RctxAttr: string | null;
-	OverrideAttr: string | null;
+	AdditiveAttr?: string;
+	AccumulateAttr?: string;
+	XfrmTypeAttr?: string;
+	FromAttr?: string;
+	ToAttr?: string;
+	ByAttr?: string;
+	RctxAttr?: string;
+	OverrideAttr?: string;
 	CTn: CT_TLCommonTimeNodeData;
 	TgtEl: CT_TLTimeTargetElement;
 	AttrNameLst?: CT_TLBehaviorAttributeNameList;
@@ -464,8 +464,8 @@ export class ST_TLTimeAnimateValueTime {
 
 // CT_TLTimeAnimateValue ...
 export class CT_TLTimeAnimateValue {
-	TmAttr: ST_TLTimeAnimateValueTime | null;
-	FmlaAttr: string | null;
+	TmAttr?: ST_TLTimeAnimateValueTime;
+	FmlaAttr?: string;
 	Val?: CT_TLAnimVariant;
 }
 
@@ -490,11 +490,11 @@ export enum ST_TLAnimateBehaviorValueType {
 
 // CT_TLAnimateBehavior ...
 export class CT_TLAnimateBehavior {
-	ByAttr: string | null;
-	FromAttr: string | null;
-	ToAttr: string | null;
-	CalcmodeAttr: string | null;
-	ValueTypeAttr: string | null;
+	ByAttr?: string;
+	FromAttr?: string;
+	ToAttr?: string;
+	CalcmodeAttr?: string;
+	ValueTypeAttr?: string;
 	CBhvr: CT_TLCommonBehaviorData;
 	TavLst?: CT_TLTimeAnimateValueList;
 }
@@ -533,8 +533,8 @@ export enum ST_TLAnimateColorDirection {
 
 // CT_TLAnimateColorBehavior ...
 export class CT_TLAnimateColorBehavior {
-	ClrSpcAttr: string | null;
-	DirAttr: string | null;
+	ClrSpcAttr?: string;
+	DirAttr?: string;
 	CBhvr: CT_TLCommonBehaviorData;
 	By?: CT_TLByAnimateColorTransform;
 	From?: CT_Color;
@@ -550,9 +550,9 @@ export enum ST_TLAnimateEffectTransition {
 
 // CT_TLAnimateEffectBehavior ...
 export class CT_TLAnimateEffectBehavior {
-	TransitionAttr: string | null;
-	FilterAttr: string | null;
-	PrLstAttr: string | null;
+	TransitionAttr?: string;
+	FilterAttr?: string;
+	PrLstAttr?: string;
 	CBhvr: CT_TLCommonBehaviorData;
 	Progress?: CT_TLAnimVariant;
 }
@@ -577,11 +577,11 @@ export class CT_TLPoint {
 
 // CT_TLAnimateMotionBehavior ...
 export class CT_TLAnimateMotionBehavior {
-	OriginAttr: string | null;
-	PathAttr: string | null;
-	PathEditModeAttr: string | null;
-	RAngAttr: number | null;
-	PtsTypesAttr: string | null;
+	OriginAttr?: string;
+	PathAttr?: string;
+	PathEditModeAttr?: string;
+	RAngAttr?: number;
+	PtsTypesAttr?: string;
 	CBhvr: CT_TLCommonBehaviorData;
 	By?: CT_TLPoint;
 	From?: CT_TLPoint;
@@ -591,15 +591,15 @@ export class CT_TLAnimateMotionBehavior {
 
 // CT_TLAnimateRotationBehavior ...
 export class CT_TLAnimateRotationBehavior {
-	ByAttr: number | null;
-	FromAttr: number | null;
-	ToAttr: number | null;
+	ByAttr?: number;
+	FromAttr?: number;
+	ToAttr?: number;
 	CBhvr: CT_TLCommonBehaviorData;
 }
 
 // CT_TLAnimateScaleBehavior ...
 export class CT_TLAnimateScaleBehavior {
-	ZoomContentsAttr: boolean | null;
+	ZoomContentsAttr?: boolean;
 	CBhvr: CT_TLCommonBehaviorData;
 	By?: CT_TLPoint;
 	From?: CT_TLPoint;
@@ -615,8 +615,8 @@ export enum ST_TLCommandType {
 
 // CT_TLCommandBehavior ...
 export class CT_TLCommandBehavior {
-	TypeAttr: string | null;
-	CmdAttr: string | null;
+	TypeAttr?: string;
+	CmdAttr?: string;
 	CBhvr: CT_TLCommonBehaviorData;
 }
 
@@ -628,23 +628,23 @@ export class CT_TLSetBehavior {
 
 // CT_TLCommonMediaNodeData ...
 export class CT_TLCommonMediaNodeData {
-	VolAttr: ST_PositiveFixedPercentage | null;
-	MuteAttr: boolean | null;
-	NumSldAttr: number | null;
-	ShowWhenStoppedAttr: boolean | null;
+	VolAttr?: ST_PositiveFixedPercentage;
+	MuteAttr?: boolean;
+	NumSldAttr?: number;
+	ShowWhenStoppedAttr?: boolean;
 	CTn: CT_TLCommonTimeNodeData;
 	TgtEl: CT_TLTimeTargetElement;
 }
 
 // CT_TLMediaNodeAudio ...
 export class CT_TLMediaNodeAudio {
-	IsNarrationAttr: boolean | null;
+	IsNarrationAttr?: boolean;
 	CMediaNode: CT_TLCommonMediaNodeData;
 }
 
 // CT_TLMediaNodeVideo ...
 export class CT_TLMediaNodeVideo {
-	FullScrnAttr: boolean | null;
+	FullScrnAttr?: boolean;
 	CMediaNode: CT_TLCommonMediaNodeData;
 }
 
@@ -657,7 +657,7 @@ export class AG_TLBuild {
 
 // CT_TLTemplate ...
 export class CT_TLTemplate {
-	LvlAttr: number | null;
+	LvlAttr?: number;
 	TnLst: CT_TimeNodeList;
 }
 
@@ -677,12 +677,12 @@ export enum ST_TLParaBuildType {
 // CT_TLBuildParagraph ...
 export class CT_TLBuildParagraph {
 	AG_TLBuild: AG_TLBuild;
-	BuildAttr: string | null;
-	BldLvlAttr: number | null;
-	AnimBgAttr: boolean | null;
-	AutoUpdateAnimBgAttr: boolean | null;
-	RevAttr: boolean | null;
-	AdvAutoAttr: ST_TLTime | null;
+	BuildAttr?: string;
+	BldLvlAttr?: number;
+	AnimBgAttr?: boolean;
+	AutoUpdateAnimBgAttr?: boolean;
+	RevAttr?: boolean;
+	AdvAutoAttr?: ST_TLTime;
 	TmplLst?: CT_TLTemplateList;
 }
 
@@ -710,7 +710,7 @@ export enum ST_TLDiagramBuildType {
 // CT_TLBuildDiagram ...
 export class CT_TLBuildDiagram {
 	AG_TLBuild: AG_TLBuild;
-	BldAttr: string | null;
+	BldAttr?: string;
 }
 
 // ST_TLOleChartBuildType ...
@@ -725,8 +725,8 @@ export enum ST_TLOleChartBuildType {
 // CT_TLOleBuildChart ...
 export class CT_TLOleBuildChart {
 	AG_TLBuild: AG_TLBuild;
-	BldAttr: string | null;
-	AnimBgAttr: boolean | null;
+	BldAttr?: string;
+	AnimBgAttr?: boolean;
 }
 
 // CT_TLGraphicalObjectBuild ...
@@ -828,7 +828,7 @@ export class CT_ExtensionList {
 
 // CT_ExtensionListModify ...
 export class CT_ExtensionListModify {
-	ModAttr: boolean | null;
+	ModAttr?: boolean;
 	EG_ExtensionList: Array<EG_ExtensionList>;
 }
 
@@ -853,7 +853,7 @@ export type CmAuthorLst = CT_CommentAuthorList;
 // CT_Comment ...
 export class CT_Comment {
 	AuthorIdAttr: number;
-	DtAttr: string | null;
+	DtAttr?: string;
 	IdxAttr: number;
 	Pos: CT_Point2D;
 	Text: string;
@@ -886,20 +886,20 @@ export enum ST_OleObjectFollowColorScheme {
 
 // CT_OleObjectEmbed ...
 export class CT_OleObjectEmbed {
-	FollowColorSchemeAttr: string | null;
+	FollowColorSchemeAttr?: string;
 	ExtLst?: CT_ExtensionList;
 }
 
 // CT_OleObjectLink ...
 export class CT_OleObjectLink {
-	UpdateAutomaticAttr: boolean | null;
+	UpdateAutomaticAttr?: boolean;
 	ExtLst?: CT_ExtensionList;
 }
 
 // CT_OleObject ...
 export class CT_OleObject {
 	AG_Ole: AG_Ole;
-	ProgIdAttr: string | null;
+	ProgIdAttr?: string;
 	Embed: CT_OleObjectEmbed;
 	Link: CT_OleObjectLink;
 	Pic: CT_Picture;
@@ -940,7 +940,7 @@ export type ST_SlideMasterId = number;
 
 // CT_SlideMasterIdListEntry ...
 export class CT_SlideMasterIdListEntry {
-	IdAttr: number | null;
+	IdAttr?: number;
 	RIdAttr: string;
 	ExtLst?: CT_ExtensionList;
 }
@@ -1033,10 +1033,10 @@ export enum ST_PhotoAlbumFrameShape {
 
 // CT_PhotoAlbum ...
 export class CT_PhotoAlbum {
-	BwAttr: boolean | null;
-	ShowCaptionsAttr: boolean | null;
-	LayoutAttr: string | null;
-	FrameAttr: string | null;
+	BwAttr?: boolean;
+	ShowCaptionsAttr?: boolean;
+	LayoutAttr?: string;
+	FrameAttr?: string;
 	ExtLst?: CT_ExtensionList;
 }
 
@@ -1067,12 +1067,12 @@ export enum ST_SlideSizeType {
 export class CT_SlideSize {
 	CxAttr: number;
 	CyAttr: number;
-	TypeAttr: string | null;
+	TypeAttr?: string;
 }
 
 // CT_Kinsoku ...
 export class CT_Kinsoku {
-	LangAttr: string | null;
+	LangAttr?: string;
 	InvalStCharsAttr: string;
 	InvalEndCharsAttr: string;
 }
@@ -1082,26 +1082,26 @@ export type ST_BookmarkIdSeed = number;
 
 // CT_ModifyVerifier ...
 export class CT_ModifyVerifier {
-	AlgorithmNameAttr: string | null;
-	HashValueAttr: Uint8Array | null;
-	SaltValueAttr: Uint8Array | null;
-	SpinValueAttr: number | null;
+	AlgorithmNameAttr?: string;
+	HashValueAttr?: Uint8Array;
+	SaltValueAttr?: Uint8Array;
+	SpinValueAttr?: number;
 }
 
 // CT_Presentation ...
 export class CT_Presentation {
-	ServerZoomAttr: ST_Percentage | null;
-	FirstSlideNumAttr: number | null;
-	ShowSpecialPlsOnTitleSldAttr: boolean | null;
-	RtlAttr: boolean | null;
-	RemovePersonalInfoOnSaveAttr: boolean | null;
-	CompatModeAttr: boolean | null;
-	StrictFirstAndLastCharsAttr: boolean | null;
-	EmbedTrueTypeFontsAttr: boolean | null;
-	SaveSubsetFontsAttr: boolean | null;
-	AutoCompressPicturesAttr: boolean | null;
-	BookmarkIdSeedAttr: number | null;
-	ConformanceAttr: string | null;
+	ServerZoomAttr?: ST_Percentage;
+	FirstSlideNumAttr?: number;
+	ShowSpecialPlsOnTitleSldAttr?: boolean;
+	RtlAttr?: boolean;
+	RemovePersonalInfoOnSaveAttr?: boolean;
+	CompatModeAttr?: boolean;
+	StrictFirstAndLastCharsAttr?: boolean;
+	EmbedTrueTypeFontsAttr?: boolean;
+	SaveSubsetFontsAttr?: boolean;
+	AutoCompressPicturesAttr?: boolean;
+	BookmarkIdSeedAttr?: number;
+	ConformanceAttr?: string;
 	SldMasterIdLst?: CT_SlideMasterIdList;
 	NotesMasterIdLst?: CT_NotesMasterIdList;
 	HandoutMasterIdLst?: CT_HandoutMasterIdList;
@@ -1124,9 +1124,9 @@ export type Presentation = CT_Presentation;
 
 // CT_HtmlPublishProperties ...
 export class CT_HtmlPublishProperties {
-	ShowSpeakerNotesAttr: boolean | null;
-	TargetAttr: string | null;
-	TitleAttr: string | null;
+	ShowSpeakerNotesAttr?: boolean;
+	TargetAttr?: string;
+	TitleAttr?: string;
 	RIdAttr: string;
 	EG_SlideListChoice: Array<EG_SlideListChoice>;
 	ExtLst?: CT_ExtensionList;
@@ -1154,22 +1154,22 @@ export enum ST_PrintColorMode {
 
 // CT_PrintProperties ...
 export class CT_PrintProperties {
-	PrnWhatAttr: string | null;
-	ClrModeAttr: string | null;
-	HiddenSlidesAttr: boolean | null;
-	ScaleToFitPaperAttr: boolean | null;
-	FrameSlidesAttr: boolean | null;
+	PrnWhatAttr?: string;
+	ClrModeAttr?: string;
+	HiddenSlidesAttr?: boolean;
+	ScaleToFitPaperAttr?: boolean;
+	FrameSlidesAttr?: boolean;
 	ExtLst?: CT_ExtensionList;
 }
 
 // CT_ShowInfoBrowse ...
 export class CT_ShowInfoBrowse {
-	ShowScrollbarAttr: boolean | null;
+	ShowScrollbarAttr?: boolean;
 }
 
 // CT_ShowInfoKiosk ...
 export class CT_ShowInfoKiosk {
-	RestartAttr: number | null;
+	RestartAttr?: number;
 }
 
 // EG_ShowType ...
@@ -1181,10 +1181,10 @@ export class EG_ShowType {
 
 // CT_ShowProperties ...
 export class CT_ShowProperties {
-	LoopAttr: boolean | null;
-	ShowNarrationAttr: boolean | null;
-	ShowAnimationAttr: boolean | null;
-	UseTimingsAttr: boolean | null;
+	LoopAttr?: boolean;
+	ShowNarrationAttr?: boolean;
+	ShowAnimationAttr?: boolean;
+	UseTimingsAttr?: boolean;
 	EG_ShowType: Array<EG_ShowType>;
 	EG_SlideListChoice: Array<EG_SlideListChoice>;
 	PenClr?: CT_Color;
@@ -1204,10 +1204,10 @@ export type PresentationPr = CT_PresentationProperties;
 
 // CT_HeaderFooter ...
 export class CT_HeaderFooter {
-	SldNumAttr: boolean | null;
-	HdrAttr: boolean | null;
-	FtrAttr: boolean | null;
-	DtAttr: boolean | null;
+	SldNumAttr?: boolean;
+	HdrAttr?: boolean;
+	FtrAttr?: boolean;
+	DtAttr?: boolean;
 	ExtLst?: CT_ExtensionListModify;
 }
 
@@ -1240,18 +1240,18 @@ export enum ST_PlaceholderSize {
 
 // CT_Placeholder ...
 export class CT_Placeholder {
-	TypeAttr: string | null;
-	OrientAttr: string | null;
-	SzAttr: string | null;
-	IdxAttr: number | null;
-	HasCustomPromptAttr: boolean | null;
+	TypeAttr?: string;
+	OrientAttr?: string;
+	SzAttr?: string;
+	IdxAttr?: number;
+	HasCustomPromptAttr?: boolean;
 	ExtLst?: CT_ExtensionListModify;
 }
 
 // CT_ApplicationNonVisualDrawingProps ...
 export class CT_ApplicationNonVisualDrawingProps {
-	IsPhotoAttr: boolean | null;
-	UserDrawnAttr: boolean | null;
+	IsPhotoAttr?: boolean;
+	UserDrawnAttr?: boolean;
 	AEG_Media: Array<EG_Media>;
 	Ph?: CT_Placeholder;
 	CustDataLst?: CT_CustomerDataList;
@@ -1267,7 +1267,7 @@ export class CT_ShapeNonVisual {
 
 // CT_Shape ...
 export class CT_Shape {
-	UseBgFillAttr: boolean | null;
+	UseBgFillAttr?: boolean;
 	NvSpPr: CT_ShapeNonVisual;
 	SpPr: CT_ShapeProperties;
 	Style?: CT_ShapeStyle;
@@ -1315,7 +1315,7 @@ export class CT_GraphicalObjectFrameNonVisual {
 
 // CT_GraphicalObjectFrame ...
 export class CT_GraphicalObjectFrame {
-	BwModeAttr: string | null;
+	BwModeAttr?: string;
 	NvGraphicFramePr: CT_GraphicalObjectFrameNonVisual;
 	Xfrm: CT_Transform2D;
 	AGraphic: CT_GraphicalObject;
@@ -1365,7 +1365,7 @@ export class AG_ChildSlide {
 
 // CT_BackgroundProperties ...
 export class CT_BackgroundProperties {
-	ShadeToTitleAttr: boolean | null;
+	ShadeToTitleAttr?: boolean;
 	AEG_FillProperties: Array<EG_FillProperties>;
 	AEG_EffectProperties: Array<EG_EffectProperties>;
 	ExtLst?: CT_ExtensionList;
@@ -1379,13 +1379,13 @@ export class EG_Background {
 
 // CT_Background ...
 export class CT_Background {
-	BwModeAttr: string | null;
+	BwModeAttr?: string;
 	EG_Background: EG_Background;
 }
 
 // CT_CommonSlideData ...
 export class CT_CommonSlideData {
-	NameAttr: string | null;
+	NameAttr?: string;
 	Bg?: CT_Background;
 	SpTree: CT_GroupShape;
 	CustDataLst?: CT_CustomerDataList;
@@ -1396,7 +1396,7 @@ export class CT_CommonSlideData {
 // CT_Slide ...
 export class CT_Slide {
 	AG_ChildSlide: AG_ChildSlide;
-	ShowAttr: boolean | null;
+	ShowAttr?: boolean;
 	EG_ChildSlide: Array<EG_ChildSlide>;
 	CSld: CT_CommonSlideData;
 	Transition?: CT_SlideTransition;
@@ -1450,10 +1450,10 @@ export enum ST_SlideLayoutType {
 // CT_SlideLayout ...
 export class CT_SlideLayout {
 	AG_ChildSlide: AG_ChildSlide;
-	MatchingNameAttr: string | null;
-	TypeAttr: string | null;
-	PreserveAttr: boolean | null;
-	UserDrawnAttr: boolean | null;
+	MatchingNameAttr?: string;
+	TypeAttr?: string;
+	PreserveAttr?: boolean;
+	UserDrawnAttr?: boolean;
 	EG_ChildSlide: Array<EG_ChildSlide>;
 	CSld: CT_CommonSlideData;
 	Transition?: CT_SlideTransition;
@@ -1478,7 +1478,7 @@ export type ST_SlideLayoutId = number;
 
 // CT_SlideLayoutIdListEntry ...
 export class CT_SlideLayoutIdListEntry {
-	IdAttr: number | null;
+	IdAttr?: number;
 	RIdAttr: string;
 	ExtLst?: CT_ExtensionList;
 }
@@ -1490,7 +1490,7 @@ export class CT_SlideLayoutIdList {
 
 // CT_SlideMaster ...
 export class CT_SlideMaster {
-	PreserveAttr: boolean | null;
+	PreserveAttr?: boolean;
 	EG_TopLevelSlide: Array<EG_TopLevelSlide>;
 	CSld: CT_CommonSlideData;
 	SldLayoutIdLst?: CT_SlideLayoutIdList;
@@ -1585,16 +1585,16 @@ export enum ST_ViewType {
 // CT_NormalViewPortion ...
 export class CT_NormalViewPortion {
 	SzAttr: ST_PositiveFixedPercentage;
-	AutoAdjustAttr: boolean | null;
+	AutoAdjustAttr?: boolean;
 }
 
 // CT_NormalViewProperties ...
 export class CT_NormalViewProperties {
-	ShowOutlineIconsAttr: boolean | null;
-	SnapVertSplitterAttr: boolean | null;
-	VertBarStateAttr: string | null;
-	HorzBarStateAttr: string | null;
-	PreferSingleViewAttr: boolean | null;
+	ShowOutlineIconsAttr?: boolean;
+	SnapVertSplitterAttr?: boolean;
+	VertBarStateAttr?: string;
+	HorzBarStateAttr?: string;
+	PreferSingleViewAttr?: boolean;
 	RestoredLeft: CT_NormalViewPortion;
 	RestoredTop: CT_NormalViewPortion;
 	ExtLst?: CT_ExtensionList;
@@ -1602,7 +1602,7 @@ export class CT_NormalViewProperties {
 
 // CT_CommonViewProperties ...
 export class CT_CommonViewProperties {
-	VarScaleAttr: boolean | null;
+	VarScaleAttr?: boolean;
 	Scale: CT_Scale2D;
 	Origin: CT_Point2D;
 }
@@ -1616,7 +1616,7 @@ export class CT_NotesTextViewProperties {
 // CT_OutlineViewSlideEntry ...
 export class CT_OutlineViewSlideEntry {
 	RIdAttr: string;
-	CollapseAttr: boolean | null;
+	CollapseAttr?: boolean;
 }
 
 // CT_OutlineViewSlideList ...
@@ -1633,15 +1633,15 @@ export class CT_OutlineViewProperties {
 
 // CT_SlideSorterViewProperties ...
 export class CT_SlideSorterViewProperties {
-	ShowFormattingAttr: boolean | null;
+	ShowFormattingAttr?: boolean;
 	CViewPr: CT_CommonViewProperties;
 	ExtLst?: CT_ExtensionList;
 }
 
 // CT_Guide ...
 export class CT_Guide {
-	OrientAttr: string | null;
-	PosAttr: ST_Coordinate32 | null;
+	OrientAttr?: string;
+	PosAttr?: ST_Coordinate32;
 }
 
 // CT_GuideList ...
@@ -1651,9 +1651,9 @@ export class CT_GuideList {
 
 // CT_CommonSlideViewProperties ...
 export class CT_CommonSlideViewProperties {
-	SnapToGridAttr: boolean | null;
-	SnapToObjectsAttr: boolean | null;
-	ShowGuidesAttr: boolean | null;
+	SnapToGridAttr?: boolean;
+	SnapToObjectsAttr?: boolean;
+	ShowGuidesAttr?: boolean;
 	CViewPr: CT_CommonViewProperties;
 	GuideLst?: CT_GuideList;
 }
@@ -1672,8 +1672,8 @@ export class CT_NotesViewProperties {
 
 // CT_ViewProperties ...
 export class CT_ViewProperties {
-	LastViewAttr: string | null;
-	ShowCommentsAttr: boolean | null;
+	LastViewAttr?: string;
+	ShowCommentsAttr?: boolean;
 	NormalViewPr?: CT_NormalViewProperties;
 	SlideViewPr?: CT_SlideViewProperties;
 	OutlineViewPr?: CT_OutlineViewProperties;

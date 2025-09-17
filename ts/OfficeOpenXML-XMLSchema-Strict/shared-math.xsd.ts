@@ -42,12 +42,12 @@ export class CT_Char {
 
 // CT_OnOff ...
 export class CT_OnOff {
-	ValAttr: ST_OnOff | null;
+	ValAttr?: ST_OnOff;
 }
 
 // CT_String ...
 export class CT_String {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // CT_XAlign ...
@@ -118,7 +118,7 @@ export enum ST_Script {
 
 // CT_Script ...
 export class CT_Script {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // ST_Style ...
@@ -131,12 +131,12 @@ export enum ST_Style {
 
 // CT_Style ...
 export class CT_Style {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // CT_ManualBreak ...
 export class CT_ManualBreak {
-	AlnAtAttr: number | null;
+	AlnAtAttr?: number;
 }
 
 // EG_ScriptStyle ...
@@ -156,7 +156,7 @@ export class CT_RPR {
 
 // CT_Text ...
 export class CT_Text {
-	XmlSpaceAttr: Space | null;
+	XmlSpaceAttr?: Space;
 	Value: string;
 }
 
@@ -517,7 +517,7 @@ export enum ST_Jc {
 
 // CT_OMathJc ...
 export class CT_OMathJc {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // CT_OMathParaPr ...
@@ -539,7 +539,7 @@ export enum ST_BreakBin {
 
 // CT_BreakBin ...
 export class CT_BreakBin {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // ST_BreakBinSub ...
@@ -551,7 +551,7 @@ export enum ST_BreakBinSub {
 
 // CT_BreakBinSub ...
 export class CT_BreakBinSub {
-	ValAttr: string | null;
+	ValAttr?: string;
 }
 
 // CT_MathPr ...

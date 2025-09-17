@@ -17,7 +17,7 @@ type Plugins struct {
 
 // Metadata is Versioning information for the artifact.
 type Metadata struct {
-	ModelVersionAttr string      `xml:"modelVersion,attr,omitempty"`
+	ModelVersionAttr *string     `xml:"modelVersion,attr"`
 	GroupId          *string     `xml:"groupId"`
 	ArtifactId       *string     `xml:"artifactId"`
 	Version          *string     `xml:"version"`

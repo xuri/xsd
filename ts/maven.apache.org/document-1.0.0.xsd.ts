@@ -5,7 +5,7 @@ export type Document = DocumentModel;
 
 // DocumentModel is The meta data to construct a cover page for the document.
 export class DocumentModel {
-	OutputNameAttr: string | null;
+	OutputNameAttr?: string;
 	Meta?: DocumentMeta;
 	Toc?: DocumentTOC;
 	Cover?: DocumentCover;
@@ -13,16 +13,16 @@ export class DocumentModel {
 
 // DocumentTOC is TOC item.
 export class DocumentTOC {
-	NameAttr: string | null;
-	DepthAttr: number | null;
+	NameAttr?: string;
+	DepthAttr?: number;
 	Item?: Array<DocumentTOCItem>;
 }
 
 // DocumentTOCItem is A table of content item containing sub-items.
 export class DocumentTOCItem {
-	NameAttr: string | null;
-	RefAttr: string | null;
-	CollapseAttr: boolean | null;
+	NameAttr?: string;
+	RefAttr?: string;
+	CollapseAttr?: boolean;
 	Item?: Array<DocumentTOCItem>;
 }
 
@@ -100,30 +100,30 @@ export class DocumentMeta {
 
 // DocumentTemplate is A template that was used to create the document.
 export class DocumentTemplate {
-	HrefAttr: string | null;
-	TitleAttr: string | null;
-	DateAttr: string | null;
+	HrefAttr?: string;
+	TitleAttr?: string;
+	DateAttr?: string;
 }
 
 // DocumentStatistic is Statistical attributes of the document.
 export class DocumentStatistic {
-	PageCountAttr: number | null;
-	TableCountAttr: number | null;
-	DrawCountAttr: number | null;
-	ImageCountAttr: number | null;
-	ObjectCountAttr: number | null;
-	OleObjectCountAttr: number | null;
-	ParagraphCountAttr: number | null;
-	WordCountAttr: number | null;
-	CharacterCountAttr: number | null;
-	RowCountAttr: number | null;
-	FrameCountAttr: number | null;
-	SentenceCountAttr: number | null;
-	SyllableCountAttr: number | null;
-	NonWhitespaceCharacterCountAttr: number | null;
+	PageCountAttr?: number;
+	TableCountAttr?: number;
+	DrawCountAttr?: number;
+	ImageCountAttr?: number;
+	ObjectCountAttr?: number;
+	OleObjectCountAttr?: number;
+	ParagraphCountAttr?: number;
+	WordCountAttr?: number;
+	CharacterCountAttr?: number;
+	RowCountAttr?: number;
+	FrameCountAttr?: number;
+	SentenceCountAttr?: number;
+	SyllableCountAttr?: number;
+	NonWhitespaceCharacterCountAttr?: number;
 }
 
 // DocumentHyperlinkBehaviour is Specifies the default behavior for hyperlinks in the document.
 export class DocumentHyperlinkBehaviour {
-	TargetFrameAttr: string | null;
+	TargetFrameAttr?: string;
 }

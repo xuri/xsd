@@ -23,7 +23,7 @@ type Custom struct {
 
 // DecorationModel is Modify the version published display properties.
 type DecorationModel struct {
-	NameAttr    string       `xml:"name,attr,omitempty"`
+	NameAttr    *string      `xml:"name,attr"`
 	BannerLeft  *Banner      `xml:"bannerLeft,omitempty"`
 	BannerRight *Banner      `xml:"bannerRight,omitempty"`
 	PublishDate *PublishDate `xml:"publishDate,omitempty"`
@@ -69,26 +69,26 @@ type Body struct {
 
 // LinkItem is A link in the navigation.
 type LinkItem struct {
-	NameAttr string `xml:"name,attr,omitempty"`
-	HrefAttr string `xml:"href,attr,omitempty"`
+	NameAttr *string `xml:"name,attr"`
+	HrefAttr *string `xml:"href,attr"`
 }
 
 // Menu is A list of menu item.
 type Menu struct {
-	NameAttr         string      `xml:"name,attr,omitempty"`
-	InheritAttr      string      `xml:"inherit,attr,omitempty"`
-	InheritAsRefAttr bool        `xml:"inheritAsRef,attr,omitempty"`
-	RefAttr          string      `xml:"ref,attr,omitempty"`
-	ImgAttr          string      `xml:"img,attr,omitempty"`
+	NameAttr         *string     `xml:"name,attr"`
+	InheritAttr      *string     `xml:"inherit,attr"`
+	InheritAsRefAttr *bool       `xml:"inheritAsRef,attr"`
+	RefAttr          *string     `xml:"ref,attr"`
+	ImgAttr          *string     `xml:"img,attr"`
 	Item             []*MenuItem `xml:"item,omitempty"`
 }
 
 // MenuItem is Menu item.
 type MenuItem struct {
-	CollapseAttr bool        `xml:"collapse,attr,omitempty"`
-	RefAttr      string      `xml:"ref,attr,omitempty"`
-	NameAttr     string      `xml:"name,attr,omitempty"`
-	HrefAttr     string      `xml:"href,attr,omitempty"`
+	CollapseAttr *bool       `xml:"collapse,attr"`
+	RefAttr      *string     `xml:"ref,attr"`
+	NameAttr     *string     `xml:"name,attr"`
+	HrefAttr     *string     `xml:"href,attr"`
 	Description  *string     `xml:"description"`
 	Item         []*MenuItem `xml:"item,omitempty"`
 }
@@ -102,18 +102,18 @@ type Skin struct {
 
 // Version is Modify display properties for version published.
 type Version struct {
-	PositionAttr string `xml:"position,attr,omitempty"`
+	PositionAttr *string `xml:"position,attr"`
 }
 
 // PublishDate is Modify display properties for date published.
 type PublishDate struct {
-	PositionAttr string `xml:"position,attr,omitempty"`
-	FormatAttr   string `xml:"format,attr,omitempty"`
+	PositionAttr *string `xml:"position,attr"`
+	FormatAttr   *string `xml:"format,attr"`
 }
 
 // Logo is Power by logo on the navigation.
 type Logo struct {
-	ImgAttr  string `xml:"img,attr,omitempty"`
-	NameAttr string `xml:"name,attr,omitempty"`
-	HrefAttr string `xml:"href,attr,omitempty"`
+	ImgAttr  *string `xml:"img,attr"`
+	NameAttr *string `xml:"name,attr"`
+	HrefAttr *string `xml:"href,attr"`
 }

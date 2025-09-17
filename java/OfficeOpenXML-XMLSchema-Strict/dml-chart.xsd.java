@@ -20,19 +20,19 @@ public class CT_Boolean {
 
 // CT_Double ...
 public class CT_Double {
-	@XmlAttribute(name = "val", required = true)
+	@XmlAttribute(required = true, name = "val")
 	protected Float ValAttr;
 }
 
 // CT_UnsignedInt ...
 public class CT_UnsignedInt {
-	@XmlAttribute(name = "val", required = true)
+	@XmlAttribute(required = true, name = "val")
 	protected Integer ValAttr;
 }
 
 // CT_RelId ...
 public class CT_RelId {
-	@XmlAttribute(name = "r:id", required = true)
+	@XmlAttribute(required = true, name = "r:id")
 	protected String RIdAttr;
 }
 
@@ -50,7 +50,7 @@ public class CT_ExtensionList {
 
 // CT_NumVal ...
 public class CT_NumVal {
-	@XmlAttribute(name = "idx", required = true)
+	@XmlAttribute(required = true, name = "idx")
 	protected Integer IdxAttr;
 	@XmlAttribute(name = "formatCode")
 	protected String FormatCodeAttr;
@@ -90,7 +90,7 @@ public class CT_NumDataSource {
 
 // CT_StrVal ...
 public class CT_StrVal {
-	@XmlAttribute(name = "idx", required = true)
+	@XmlAttribute(required = true, name = "idx")
 	protected Integer IdxAttr;
 	@XmlElement(required = true, name = "v")
 	protected String V;
@@ -126,7 +126,7 @@ public class CT_Tx {
 
 // CT_TextLanguageID ...
 public class CT_TextLanguageID {
-	@XmlAttribute(name = "val", required = true)
+	@XmlAttribute(required = true, name = "val")
 	protected String ValAttr;
 }
 
@@ -374,7 +374,7 @@ public class ST_ThicknessPercent {
 
 // CT_Thickness ...
 public class CT_Thickness {
-	@XmlAttribute(name = "val", required = true)
+	@XmlAttribute(required = true, name = "val")
 	protected ST_Thickness ValAttr;
 }
 
@@ -538,7 +538,7 @@ public class CT_SecondPieSize {
 
 // CT_NumFmt ...
 public class CT_NumFmt {
-	@XmlAttribute(name = "formatCode", required = true)
+	@XmlAttribute(required = true, name = "formatCode")
 	protected String FormatCodeAttr;
 	@XmlAttribute(name = "sourceLinked")
 	protected Boolean SourceLinkedAttr;
@@ -553,7 +553,7 @@ public class ST_LblAlgn {
 
 // CT_LblAlgn ...
 public class CT_LblAlgn {
-	@XmlAttribute(name = "val", required = true)
+	@XmlAttribute(required = true, name = "val")
 	protected String ValAttr;
 }
 
@@ -566,7 +566,7 @@ public class ST_DLblPos {
 
 // CT_DLblPos ...
 public class CT_DLblPos {
-	@XmlAttribute(name = "val", required = true)
+	@XmlAttribute(required = true, name = "val")
 	protected String ValAttr;
 }
 
@@ -645,7 +645,7 @@ public class ST_MarkerStyle {
 
 // CT_MarkerStyle ...
 public class CT_MarkerStyle {
-	@XmlAttribute(name = "val", required = true)
+	@XmlAttribute(required = true, name = "val")
 	protected String ValAttr;
 }
 
@@ -786,7 +786,7 @@ public class ST_ErrDir {
 
 // CT_ErrDir ...
 public class CT_ErrDir {
-	@XmlAttribute(name = "val", required = true)
+	@XmlAttribute(required = true, name = "val")
 	protected String ValAttr;
 }
 
@@ -1428,7 +1428,7 @@ public class ST_AxPos {
 
 // CT_AxPos ...
 public class CT_AxPos {
-	@XmlAttribute(name = "val", required = true)
+	@XmlAttribute(required = true, name = "val")
 	protected String ValAttr;
 }
 
@@ -1441,7 +1441,7 @@ public class ST_Crosses {
 
 // CT_Crosses ...
 public class CT_Crosses {
-	@XmlAttribute(name = "val", required = true)
+	@XmlAttribute(required = true, name = "val")
 	protected String ValAttr;
 }
 
@@ -1454,7 +1454,7 @@ public class ST_CrossBetween {
 
 // CT_CrossBetween ...
 public class CT_CrossBetween {
-	@XmlAttribute(name = "val", required = true)
+	@XmlAttribute(required = true, name = "val")
 	protected String ValAttr;
 }
 
@@ -1493,7 +1493,7 @@ public class ST_Skip {
 
 // CT_Skip ...
 public class CT_Skip {
-	@XmlAttribute(name = "val", required = true)
+	@XmlAttribute(required = true, name = "val")
 	protected Integer ValAttr;
 }
 
@@ -1519,7 +1519,7 @@ public class ST_AxisUnit {
 
 // CT_AxisUnit ...
 public class CT_AxisUnit {
-	@XmlAttribute(name = "val", required = true)
+	@XmlAttribute(required = true, name = "val")
 	protected Float ValAttr;
 }
 
@@ -1545,7 +1545,7 @@ public class ST_PictureFormat {
 
 // CT_PictureFormat ...
 public class CT_PictureFormat {
-	@XmlAttribute(name = "val", required = true)
+	@XmlAttribute(required = true, name = "val")
 	protected String ValAttr;
 }
 
@@ -1558,7 +1558,7 @@ public class ST_PictureStackUnit {
 
 // CT_PictureStackUnit ...
 public class CT_PictureStackUnit {
-	@XmlAttribute(name = "val", required = true)
+	@XmlAttribute(required = true, name = "val")
 	protected Float ValAttr;
 }
 
@@ -1622,7 +1622,7 @@ public class ST_LogBase {
 
 // CT_LogBase ...
 public class CT_LogBase {
-	@XmlAttribute(name = "val", required = true)
+	@XmlAttribute(required = true, name = "val")
 	protected Float ValAttr;
 }
 
@@ -1935,7 +1935,7 @@ public class ST_Style {
 
 // CT_Style ...
 public class CT_Style {
-	@XmlAttribute(name = "val", required = true)
+	@XmlAttribute(required = true, name = "val")
 	protected Byte ValAttr;
 }
 
@@ -1987,17 +1987,17 @@ public class CT_HeaderFooter {
 
 // CT_PageMargins ...
 public class CT_PageMargins {
-	@XmlAttribute(name = "l", required = true)
+	@XmlAttribute(required = true, name = "l")
 	protected Float LAttr;
-	@XmlAttribute(name = "r", required = true)
+	@XmlAttribute(required = true, name = "r")
 	protected Float RAttr;
-	@XmlAttribute(name = "t", required = true)
+	@XmlAttribute(required = true, name = "t")
 	protected Float TAttr;
-	@XmlAttribute(name = "b", required = true)
+	@XmlAttribute(required = true, name = "b")
 	protected Float BAttr;
-	@XmlAttribute(name = "header", required = true)
+	@XmlAttribute(required = true, name = "header")
 	protected Float HeaderAttr;
-	@XmlAttribute(name = "footer", required = true)
+	@XmlAttribute(required = true, name = "footer")
 	protected Float FooterAttr;
 }
 
@@ -2010,7 +2010,7 @@ public class ST_PageSetupOrientation {
 
 // CT_ExternalData ...
 public class CT_ExternalData {
-	@XmlAttribute(name = "r:id", required = true)
+	@XmlAttribute(required = true, name = "r:id")
 	protected String RIdAttr;
 	@XmlElement(name = "autoUpdate")
 	protected CT_Boolean AutoUpdate;

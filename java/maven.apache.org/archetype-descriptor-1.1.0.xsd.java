@@ -38,7 +38,7 @@ public class Modules {
 
 // ArchetypeDescriptor is 1.0.0+
 public class ArchetypeDescriptor {
-	@XmlAttribute(name = "name", required = true)
+	@XmlAttribute(required = true, name = "name")
 	protected String NameAttr;
 	@XmlAttribute(name = "partial")
 	protected Boolean PartialAttr;
@@ -52,7 +52,7 @@ public class ArchetypeDescriptor {
 
 // RequiredProperty is A regular expression used to validate the property.
 public class RequiredProperty {
-	@XmlAttribute(name = "key", required = true)
+	@XmlAttribute(required = true, name = "key")
 	protected String KeyAttr;
 	@XmlElement(name = "defaultValue")
 	protected String DefaultValue;
@@ -62,11 +62,11 @@ public class RequiredProperty {
 
 // ModuleDescriptor is 1.0.0+
 public class ModuleDescriptor {
-	@XmlAttribute(name = "id", required = true)
+	@XmlAttribute(required = true, name = "id")
 	protected String IdAttr;
-	@XmlAttribute(name = "dir", required = true)
+	@XmlAttribute(required = true, name = "dir")
 	protected String DirAttr;
-	@XmlAttribute(name = "name", required = true)
+	@XmlAttribute(required = true, name = "name")
 	protected String NameAttr;
 	@XmlElement(name = "fileSets")
 	protected FileSets FileSets;
