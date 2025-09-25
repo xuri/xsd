@@ -16,7 +16,7 @@ type PublshInformation struct {
 // ProgramList ...
 type ProgramList struct {
 	XMLName xml.Name `xml:"programList"`
-	Program []string `xml:"program,omitempty"`
+	Program []string `xml:"program"`
 }
 
 // Id ...
@@ -33,7 +33,7 @@ type Id struct {
 // IdList ...
 type IdList struct {
 	XMLName xml.Name `xml:"idList"`
-	Id      []*Id    `xml:"id,omitempty"`
+	Id      []*Id    `xml:"id"`
 }
 
 // Aka ...
@@ -49,7 +49,7 @@ type Aka struct {
 // AkaList ...
 type AkaList struct {
 	XMLName xml.Name `xml:"akaList"`
-	Aka     []*Aka   `xml:"aka,omitempty"`
+	Aka     []*Aka   `xml:"aka"`
 }
 
 // Address ...
@@ -68,7 +68,7 @@ type Address struct {
 // AddressList ...
 type AddressList struct {
 	XMLName xml.Name   `xml:"addressList"`
-	Address []*Address `xml:"address,omitempty"`
+	Address []*Address `xml:"address"`
 }
 
 // Nationality ...
@@ -82,7 +82,7 @@ type Nationality struct {
 // NationalityList ...
 type NationalityList struct {
 	XMLName     xml.Name       `xml:"nationalityList"`
-	Nationality []*Nationality `xml:"nationality,omitempty"`
+	Nationality []*Nationality `xml:"nationality"`
 }
 
 // Citizenship ...
@@ -96,7 +96,7 @@ type Citizenship struct {
 // CitizenshipList ...
 type CitizenshipList struct {
 	XMLName     xml.Name       `xml:"citizenshipList"`
-	Citizenship []*Citizenship `xml:"citizenship,omitempty"`
+	Citizenship []*Citizenship `xml:"citizenship"`
 }
 
 // DateOfBirthItem ...
@@ -110,7 +110,7 @@ type DateOfBirthItem struct {
 // DateOfBirthList ...
 type DateOfBirthList struct {
 	XMLName         xml.Name           `xml:"dateOfBirthList"`
-	DateOfBirthItem []*DateOfBirthItem `xml:"dateOfBirthItem,omitempty"`
+	DateOfBirthItem []*DateOfBirthItem `xml:"dateOfBirthItem"`
 }
 
 // PlaceOfBirthItem ...
@@ -124,7 +124,7 @@ type PlaceOfBirthItem struct {
 // PlaceOfBirthList ...
 type PlaceOfBirthList struct {
 	XMLName          xml.Name            `xml:"placeOfBirthList"`
-	PlaceOfBirthItem []*PlaceOfBirthItem `xml:"placeOfBirthItem,omitempty"`
+	PlaceOfBirthItem []*PlaceOfBirthItem `xml:"placeOfBirthItem"`
 }
 
 // VesselInfo ...
@@ -148,14 +148,14 @@ type SdnEntry struct {
 	SdnType          string            `xml:"sdnType"`
 	Remarks          *string           `xml:"remarks"`
 	ProgramList      *ProgramList      `xml:"programList"`
-	IdList           *IdList           `xml:"idList,omitempty"`
-	AkaList          *AkaList          `xml:"akaList,omitempty"`
-	AddressList      *AddressList      `xml:"addressList,omitempty"`
-	NationalityList  *NationalityList  `xml:"nationalityList,omitempty"`
-	CitizenshipList  *CitizenshipList  `xml:"citizenshipList,omitempty"`
-	DateOfBirthList  *DateOfBirthList  `xml:"dateOfBirthList,omitempty"`
-	PlaceOfBirthList *PlaceOfBirthList `xml:"placeOfBirthList,omitempty"`
-	VesselInfo       *VesselInfo       `xml:"vesselInfo,omitempty"`
+	IdList           *IdList           `xml:"idList"`
+	AkaList          *AkaList          `xml:"akaList"`
+	AddressList      *AddressList      `xml:"addressList"`
+	NationalityList  *NationalityList  `xml:"nationalityList"`
+	CitizenshipList  *CitizenshipList  `xml:"citizenshipList"`
+	DateOfBirthList  *DateOfBirthList  `xml:"dateOfBirthList"`
+	PlaceOfBirthList *PlaceOfBirthList `xml:"placeOfBirthList"`
+	VesselInfo       *VesselInfo       `xml:"vesselInfo"`
 }
 
 // SdnList ...

@@ -77,8 +77,8 @@ export class CT_TransitionStartSoundAction {
 
 // CT_TransitionSoundAction ...
 export class CT_TransitionSoundAction {
-	StSnd: CT_TransitionStartSoundAction;
-	EndSnd: CT_Empty;
+	StSnd?: CT_TransitionStartSoundAction;
+	EndSnd?: CT_Empty;
 }
 
 // ST_TransitionSpeed ...
@@ -93,27 +93,27 @@ export class CT_SlideTransition {
 	SpdAttr?: string;
 	AdvClickAttr?: boolean;
 	AdvTmAttr?: number;
-	Blinds: CT_OrientationTransition;
-	Checker: CT_OrientationTransition;
-	Circle: CT_Empty;
-	Dissolve: CT_Empty;
-	Comb: CT_OrientationTransition;
-	Cover: CT_EightDirectionTransition;
-	Cut: CT_OptionalBlackTransition;
-	Diamond: CT_Empty;
-	Fade: CT_OptionalBlackTransition;
-	Newsflash: CT_Empty;
-	Plus: CT_Empty;
-	Pull: CT_EightDirectionTransition;
-	Push: CT_SideDirectionTransition;
-	Random: CT_Empty;
-	RandomBar: CT_OrientationTransition;
-	Split: CT_SplitTransition;
-	Strips: CT_CornerDirectionTransition;
-	Wedge: CT_Empty;
-	Wheel: CT_WheelTransition;
-	Wipe: CT_SideDirectionTransition;
-	Zoom: CT_InOutTransition;
+	Blinds?: CT_OrientationTransition;
+	Checker?: CT_OrientationTransition;
+	Circle?: CT_Empty;
+	Dissolve?: CT_Empty;
+	Comb?: CT_OrientationTransition;
+	Cover?: CT_EightDirectionTransition;
+	Cut?: CT_OptionalBlackTransition;
+	Diamond?: CT_Empty;
+	Fade?: CT_OptionalBlackTransition;
+	Newsflash?: CT_Empty;
+	Plus?: CT_Empty;
+	Pull?: CT_EightDirectionTransition;
+	Push?: CT_SideDirectionTransition;
+	Random?: CT_Empty;
+	RandomBar?: CT_OrientationTransition;
+	Split?: CT_SplitTransition;
+	Strips?: CT_CornerDirectionTransition;
+	Wedge?: CT_Empty;
+	Wheel?: CT_WheelTransition;
+	Wipe?: CT_SideDirectionTransition;
+	Zoom?: CT_InOutTransition;
 	SndAc?: CT_TransitionSoundAction;
 	ExtLst?: CT_ExtensionListModify;
 }
@@ -153,8 +153,8 @@ export enum ST_IterateType {
 export class CT_TLIterateData {
 	TypeAttr?: string;
 	BackwardsAttr?: boolean;
-	TmAbs: CT_TLIterateIntervalTime;
-	TmPct: CT_TLIterateIntervalPercentage;
+	TmAbs?: CT_TLIterateIntervalTime;
+	TmPct?: CT_TLIterateIntervalPercentage;
 }
 
 // CT_TLSubShapeId ...
@@ -164,8 +164,8 @@ export class CT_TLSubShapeId {
 
 // CT_TLTextTargetElement ...
 export class CT_TLTextTargetElement {
-	CharRg: CT_IndexRange;
-	PRg: CT_IndexRange;
+	CharRg?: CT_IndexRange;
+	PRg?: CT_IndexRange;
 }
 
 // ST_TLChartSubelementType ...
@@ -186,19 +186,19 @@ export class CT_TLOleChartTargetElement {
 // CT_TLShapeTargetElement ...
 export class CT_TLShapeTargetElement {
 	SpidAttr: number;
-	Bg: CT_Empty;
-	SubSp: CT_TLSubShapeId;
-	OleChartEl: CT_TLOleChartTargetElement;
-	TxEl: CT_TLTextTargetElement;
-	GraphicEl: CT_AnimationElementChoice;
+	Bg?: CT_Empty;
+	SubSp?: CT_TLSubShapeId;
+	OleChartEl?: CT_TLOleChartTargetElement;
+	TxEl?: CT_TLTextTargetElement;
+	GraphicEl?: CT_AnimationElementChoice;
 }
 
 // CT_TLTimeTargetElement ...
 export class CT_TLTimeTargetElement {
-	SldTgt: CT_Empty;
-	SndTgt: CT_EmbeddedWAVAudioFile;
-	SpTgt: CT_TLShapeTargetElement;
-	InkTgt: CT_TLSubShapeId;
+	SldTgt?: CT_Empty;
+	SndTgt?: CT_EmbeddedWAVAudioFile;
+	SpTgt?: CT_TLShapeTargetElement;
+	InkTgt?: CT_TLSubShapeId;
 }
 
 // CT_TLTriggerTimeNodeID ...
@@ -237,9 +237,9 @@ export enum ST_TLTriggerEvent {
 export class CT_TLTimeCondition {
 	EvtAttr?: string;
 	DelayAttr?: ST_TLTime;
-	TgtEl: CT_TLTimeTargetElement;
-	Tn: CT_TLTriggerTimeNodeID;
-	Rtn: CT_TLTriggerRuntimeNode;
+	TgtEl?: CT_TLTimeTargetElement;
+	Tn?: CT_TLTriggerTimeNodeID;
+	Rtn?: CT_TLTriggerRuntimeNode;
 }
 
 // CT_TLTimeConditionList ...
@@ -249,19 +249,19 @@ export class CT_TLTimeConditionList {
 
 // CT_TimeNodeList ...
 export class CT_TimeNodeList {
-	Par: Array<CT_TLTimeNodeParallel>;
-	Seq: Array<CT_TLTimeNodeSequence>;
-	Excl: Array<CT_TLTimeNodeExclusive>;
-	Anim: Array<CT_TLAnimateBehavior>;
-	AnimClr: Array<CT_TLAnimateColorBehavior>;
-	AnimEffect: Array<CT_TLAnimateEffectBehavior>;
-	AnimMotion: Array<CT_TLAnimateMotionBehavior>;
-	AnimRot: Array<CT_TLAnimateRotationBehavior>;
-	AnimScale: Array<CT_TLAnimateScaleBehavior>;
-	Cmd: Array<CT_TLCommandBehavior>;
-	Set: Array<CT_TLSetBehavior>;
-	Audio: Array<CT_TLMediaNodeAudio>;
-	Video: Array<CT_TLMediaNodeVideo>;
+	Par?: Array<CT_TLTimeNodeParallel>;
+	Seq?: Array<CT_TLTimeNodeSequence>;
+	Excl?: Array<CT_TLTimeNodeExclusive>;
+	Anim?: Array<CT_TLAnimateBehavior>;
+	AnimClr?: Array<CT_TLAnimateColorBehavior>;
+	AnimEffect?: Array<CT_TLAnimateEffectBehavior>;
+	AnimMotion?: Array<CT_TLAnimateMotionBehavior>;
+	AnimRot?: Array<CT_TLAnimateRotationBehavior>;
+	AnimScale?: Array<CT_TLAnimateScaleBehavior>;
+	Cmd?: Array<CT_TLCommandBehavior>;
+	Set?: Array<CT_TLSetBehavior>;
+	Audio?: Array<CT_TLMediaNodeAudio>;
+	Video?: Array<CT_TLMediaNodeVideo>;
 }
 
 // ST_TLTimeNodePresetClassType ...
@@ -449,11 +449,11 @@ export class CT_TLAnimVariantStringVal {
 
 // CT_TLAnimVariant ...
 export class CT_TLAnimVariant {
-	BoolVal: CT_TLAnimVariantBooleanVal;
-	IntVal: CT_TLAnimVariantIntegerVal;
-	FltVal: CT_TLAnimVariantFloatVal;
-	StrVal: CT_TLAnimVariantStringVal;
-	ClrVal: CT_Color;
+	BoolVal?: CT_TLAnimVariantBooleanVal;
+	IntVal?: CT_TLAnimVariantIntegerVal;
+	FltVal?: CT_TLAnimVariantFloatVal;
+	StrVal?: CT_TLAnimVariantStringVal;
+	ClrVal?: CT_Color;
 }
 
 // ST_TLTimeAnimateValueTime ...
@@ -515,8 +515,8 @@ export class CT_TLByHslColorTransform {
 
 // CT_TLByAnimateColorTransform ...
 export class CT_TLByAnimateColorTransform {
-	Rgb: CT_TLByRgbColorTransform;
-	Hsl: CT_TLByHslColorTransform;
+	Rgb?: CT_TLByRgbColorTransform;
+	Hsl?: CT_TLByHslColorTransform;
 }
 
 // ST_TLAnimateColorSpace ...
@@ -732,16 +732,16 @@ export class CT_TLOleBuildChart {
 // CT_TLGraphicalObjectBuild ...
 export class CT_TLGraphicalObjectBuild {
 	AG_TLBuild: AG_TLBuild;
-	BldAsOne: CT_Empty;
-	BldSub: CT_AnimationGraphicalObjectBuildProperties;
+	BldAsOne?: CT_Empty;
+	BldSub?: CT_AnimationGraphicalObjectBuildProperties;
 }
 
 // CT_BuildList ...
 export class CT_BuildList {
-	BldP: Array<CT_TLBuildParagraph>;
-	BldDgm: Array<CT_TLBuildDiagram>;
-	BldOleChart: Array<CT_TLOleBuildChart>;
-	BldGraphic: Array<CT_TLGraphicalObjectBuild>;
+	BldP?: Array<CT_TLBuildParagraph>;
+	BldDgm?: Array<CT_TLBuildDiagram>;
+	BldOleChart?: Array<CT_TLOleBuildChart>;
+	BldGraphic?: Array<CT_TLGraphicalObjectBuild>;
 }
 
 // CT_SlideTiming ...
@@ -900,8 +900,8 @@ export class CT_OleObjectLink {
 export class CT_OleObject {
 	AG_Ole: AG_Ole;
 	ProgIdAttr?: string;
-	Embed: CT_OleObjectEmbed;
-	Link: CT_OleObjectLink;
+	Embed?: CT_OleObjectEmbed;
+	Link?: CT_OleObjectLink;
 	Pic: CT_Picture;
 }
 
@@ -1333,12 +1333,12 @@ export class CT_GroupShapeNonVisual {
 export class CT_GroupShape {
 	NvGrpSpPr: CT_GroupShapeNonVisual;
 	GrpSpPr: CT_GroupShapeProperties;
-	Sp: Array<CT_Shape>;
-	GrpSp: Array<CT_GroupShape>;
-	GraphicFrame: Array<CT_GraphicalObjectFrame>;
-	CxnSp: Array<CT_Connector>;
-	Pic: Array<CT_Picture>;
-	ContentPart: Array<CT_Rel>;
+	Sp?: Array<CT_Shape>;
+	GrpSp?: Array<CT_GroupShape>;
+	GraphicFrame?: Array<CT_GraphicalObjectFrame>;
+	CxnSp?: Array<CT_Connector>;
+	Pic?: Array<CT_Picture>;
+	ContentPart?: Array<CT_Rel>;
 	ExtLst?: CT_ExtensionListModify;
 }
 

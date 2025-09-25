@@ -118,9 +118,9 @@ pub struct CTTransitionStartSoundAction {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTTransitionSoundAction {
 	#[serde(rename = "stSnd")]
-	pub st_snd: CTTransitionStartSoundAction,
+	pub st_snd: Option<CTTransitionStartSoundAction>,
 	#[serde(rename = "endSnd")]
-	pub end_snd: CTEmpty,
+	pub end_snd: Option<CTEmpty>,
 }
 
 
@@ -142,47 +142,47 @@ pub struct CTSlideTransition {
 	#[serde(rename = "advTm")]
 	pub adv_tm: Option<u32>,
 	#[serde(rename = "blinds")]
-	pub blinds: CTOrientationTransition,
+	pub blinds: Option<CTOrientationTransition>,
 	#[serde(rename = "checker")]
-	pub checker: CTOrientationTransition,
+	pub checker: Option<CTOrientationTransition>,
 	#[serde(rename = "circle")]
-	pub circle: CTEmpty,
+	pub circle: Option<CTEmpty>,
 	#[serde(rename = "dissolve")]
-	pub dissolve: CTEmpty,
+	pub dissolve: Option<CTEmpty>,
 	#[serde(rename = "comb")]
-	pub comb: CTOrientationTransition,
+	pub comb: Option<CTOrientationTransition>,
 	#[serde(rename = "cover")]
-	pub cover: CTEightDirectionTransition,
+	pub cover: Option<CTEightDirectionTransition>,
 	#[serde(rename = "cut")]
-	pub cut: CTOptionalBlackTransition,
+	pub cut: Option<CTOptionalBlackTransition>,
 	#[serde(rename = "diamond")]
-	pub diamond: CTEmpty,
+	pub diamond: Option<CTEmpty>,
 	#[serde(rename = "fade")]
-	pub fade: CTOptionalBlackTransition,
+	pub fade: Option<CTOptionalBlackTransition>,
 	#[serde(rename = "newsflash")]
-	pub newsflash: CTEmpty,
+	pub newsflash: Option<CTEmpty>,
 	#[serde(rename = "plus")]
-	pub plus: CTEmpty,
+	pub plus: Option<CTEmpty>,
 	#[serde(rename = "pull")]
-	pub pull: CTEightDirectionTransition,
+	pub pull: Option<CTEightDirectionTransition>,
 	#[serde(rename = "push")]
-	pub push: CTSideDirectionTransition,
+	pub push: Option<CTSideDirectionTransition>,
 	#[serde(rename = "random")]
-	pub random: CTEmpty,
+	pub random: Option<CTEmpty>,
 	#[serde(rename = "randomBar")]
-	pub random_bar: CTOrientationTransition,
+	pub random_bar: Option<CTOrientationTransition>,
 	#[serde(rename = "split")]
-	pub split: CTSplitTransition,
+	pub split: Option<CTSplitTransition>,
 	#[serde(rename = "strips")]
-	pub strips: CTCornerDirectionTransition,
+	pub strips: Option<CTCornerDirectionTransition>,
 	#[serde(rename = "wedge")]
-	pub wedge: CTEmpty,
+	pub wedge: Option<CTEmpty>,
 	#[serde(rename = "wheel")]
-	pub wheel: CTWheelTransition,
+	pub wheel: Option<CTWheelTransition>,
 	#[serde(rename = "wipe")]
-	pub wipe: CTSideDirectionTransition,
+	pub wipe: Option<CTSideDirectionTransition>,
 	#[serde(rename = "zoom")]
-	pub zoom: CTInOutTransition,
+	pub zoom: Option<CTInOutTransition>,
 	#[serde(rename = "sndAc")]
 	pub snd_ac: Option<CTTransitionSoundAction>,
 	#[serde(rename = "extLst")]
@@ -246,9 +246,9 @@ pub struct CTTLIterateData {
 	#[serde(rename = "backwards")]
 	pub backwards: Option<bool>,
 	#[serde(rename = "tmAbs")]
-	pub tm_abs: CTTLIterateIntervalTime,
+	pub tm_abs: Option<CTTLIterateIntervalTime>,
 	#[serde(rename = "tmPct")]
-	pub tm_pct: CTTLIterateIntervalPercentage,
+	pub tm_pct: Option<CTTLIterateIntervalPercentage>,
 }
 
 
@@ -264,9 +264,9 @@ pub struct CTTLSubShapeId {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTTLTextTargetElement {
 	#[serde(rename = "charRg")]
-	pub char_rg: CTIndexRange,
+	pub char_rg: Option<CTIndexRange>,
 	#[serde(rename = "pRg")]
-	pub p_rg: CTIndexRange,
+	pub p_rg: Option<CTIndexRange>,
 }
 
 
@@ -294,15 +294,15 @@ pub struct CTTLShapeTargetElement {
 	#[serde(rename = "spid")]
 	pub spid: u32,
 	#[serde(rename = "bg")]
-	pub bg: CTEmpty,
+	pub bg: Option<CTEmpty>,
 	#[serde(rename = "subSp")]
-	pub sub_sp: CTTLSubShapeId,
+	pub sub_sp: Option<CTTLSubShapeId>,
 	#[serde(rename = "oleChartEl")]
-	pub ole_chart_el: CTTLOleChartTargetElement,
+	pub ole_chart_el: Option<CTTLOleChartTargetElement>,
 	#[serde(rename = "txEl")]
-	pub tx_el: CTTLTextTargetElement,
+	pub tx_el: Option<CTTLTextTargetElement>,
 	#[serde(rename = "graphicEl")]
-	pub graphic_el: CTAnimationElementChoice,
+	pub graphic_el: Option<CTAnimationElementChoice>,
 }
 
 
@@ -310,13 +310,13 @@ pub struct CTTLShapeTargetElement {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTTLTimeTargetElement {
 	#[serde(rename = "sldTgt")]
-	pub sld_tgt: CTEmpty,
+	pub sld_tgt: Option<CTEmpty>,
 	#[serde(rename = "sndTgt")]
-	pub snd_tgt: CTEmbeddedWAVAudioFile,
+	pub snd_tgt: Option<CTEmbeddedWAVAudioFile>,
 	#[serde(rename = "spTgt")]
-	pub sp_tgt: CTTLShapeTargetElement,
+	pub sp_tgt: Option<CTTLShapeTargetElement>,
 	#[serde(rename = "inkTgt")]
-	pub ink_tgt: CTTLSubShapeId,
+	pub ink_tgt: Option<CTTLSubShapeId>,
 }
 
 
@@ -360,11 +360,11 @@ pub struct CTTLTimeCondition {
 	#[serde(rename = "delay")]
 	pub delay: Option<STTLTime>,
 	#[serde(rename = "tgtEl")]
-	pub tgt_el: CTTLTimeTargetElement,
+	pub tgt_el: Option<CTTLTimeTargetElement>,
 	#[serde(rename = "tn")]
-	pub tn: CTTLTriggerTimeNodeID,
+	pub tn: Option<CTTLTriggerTimeNodeID>,
 	#[serde(rename = "rtn")]
-	pub rtn: CTTLTriggerRuntimeNode,
+	pub rtn: Option<CTTLTriggerRuntimeNode>,
 }
 
 
@@ -674,15 +674,15 @@ pub struct CTTLAnimVariantStringVal {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTTLAnimVariant {
 	#[serde(rename = "boolVal")]
-	pub bool_val: CTTLAnimVariantBooleanVal,
+	pub bool_val: Option<CTTLAnimVariantBooleanVal>,
 	#[serde(rename = "intVal")]
-	pub int_val: CTTLAnimVariantIntegerVal,
+	pub int_val: Option<CTTLAnimVariantIntegerVal>,
 	#[serde(rename = "fltVal")]
-	pub flt_val: CTTLAnimVariantFloatVal,
+	pub flt_val: Option<CTTLAnimVariantFloatVal>,
 	#[serde(rename = "strVal")]
-	pub str_val: CTTLAnimVariantStringVal,
+	pub str_val: Option<CTTLAnimVariantStringVal>,
 	#[serde(rename = "clrVal")]
-	pub clr_val: CTColor,
+	pub clr_val: Option<CTColor>,
 }
 
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
@@ -778,9 +778,9 @@ pub struct CTTLByHslColorTransform {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTTLByAnimateColorTransform {
 	#[serde(rename = "rgb")]
-	pub rgb: CTTLByRgbColorTransform,
+	pub rgb: Option<CTTLByRgbColorTransform>,
 	#[serde(rename = "hsl")]
-	pub hsl: CTTLByHslColorTransform,
+	pub hsl: Option<CTTLByHslColorTransform>,
 }
 
 
@@ -1096,9 +1096,9 @@ pub struct CTTLGraphicalObjectBuild {
 	#[serde(rename = "AG_TLBuild")]
 	pub ag_tl_build: Vec<AGTLBuild>,
 	#[serde(rename = "bldAsOne")]
-	pub bld_as_one: CTEmpty,
+	pub bld_as_one: Option<CTEmpty>,
 	#[serde(rename = "bldSub")]
-	pub bld_sub: CTAnimationGraphicalObjectBuildProperties,
+	pub bld_sub: Option<CTAnimationGraphicalObjectBuildProperties>,
 }
 
 
@@ -1384,9 +1384,9 @@ pub struct CTOleObject {
 	#[serde(rename = "progId")]
 	pub prog_id: Option<String>,
 	#[serde(rename = "embed")]
-	pub embed: CTOleObjectEmbed,
+	pub embed: Option<CTOleObjectEmbed>,
 	#[serde(rename = "link")]
-	pub link: CTOleObjectLink,
+	pub link: Option<CTOleObjectLink>,
 	#[serde(rename = "pic")]
 	pub pic: CTPicture,
 }

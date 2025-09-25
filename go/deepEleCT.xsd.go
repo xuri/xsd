@@ -9,7 +9,7 @@ type B struct {
 
 // A ...
 type A struct {
-	B *B `xml:"B,omitempty"`
+	B *B `xml:"B"`
 }
 
 // FileUpload ...

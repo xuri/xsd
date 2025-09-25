@@ -7,7 +7,7 @@ type Skin *SkinModel
 
 // SkinModel is Encoding of text content, like the Velocity template itself.
 type SkinModel struct {
-	Prerequisites *Prerequisites `xml:"prerequisites,omitempty"`
+	Prerequisites *Prerequisites `xml:"prerequisites"`
 	Encoding      *string        `xml:"encoding"`
 }
 

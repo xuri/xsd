@@ -12,7 +12,7 @@ type Book *BookModel
 // Chapters is Specifies a collection of chapters.
 type Chapters struct {
 	XMLName xml.Name   `xml:"chapters"`
-	Chapter []*Chapter `xml:"chapter,omitempty"`
+	Chapter []*Chapter `xml:"chapter"`
 }
 
 // BookModel is Specifies the date of this book.
@@ -21,20 +21,20 @@ type BookModel struct {
 	Title    *string   `xml:"title"`
 	Author   *string   `xml:"author"`
 	Date     *string   `xml:"date"`
-	Chapters *Chapters `xml:"chapters,omitempty"`
+	Chapters *Chapters `xml:"chapters"`
 }
 
 // Sections is Specifies a collection of sections.
 type Sections struct {
 	XMLName xml.Name   `xml:"sections"`
-	Section []*Section `xml:"section,omitempty"`
+	Section []*Section `xml:"section"`
 }
 
 // Chapter is Specifies the title of this chapter.
 type Chapter struct {
 	Id       *string   `xml:"id"`
 	Title    *string   `xml:"title"`
-	Sections *Sections `xml:"sections,omitempty"`
+	Sections *Sections `xml:"sections"`
 }
 
 // Section is Specifies the file of this section.

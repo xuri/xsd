@@ -8,13 +8,13 @@ type Document *ChangesDocument
 // ChangesDocument is Contains the releases of this project with the actions taken
 //             for each of the releases.
 type ChangesDocument struct {
-	Properties *Properties `xml:"properties,omitempty"`
-	Body       *Body       `xml:"body,omitempty"`
+	Properties *Properties `xml:"properties"`
+	Body       *Body       `xml:"body"`
 }
 
 // Body is The list of releases for this project.
 type Body struct {
-	Release []*Release `xml:"release,omitempty"`
+	Release []*Release `xml:"release"`
 }
 
 // Release is The list of actions taken for this release.
@@ -22,7 +22,7 @@ type Release struct {
 	VersionAttr     *string   `xml:"version,attr"`
 	DateAttr        *string   `xml:"date,attr"`
 	DescriptionAttr *string   `xml:"description,attr"`
-	Action          []*Action `xml:"action,omitempty"`
+	Action          []*Action `xml:"action"`
 }
 
 // Action is A list of contibutors for this issue.
@@ -34,8 +34,8 @@ type Action struct {
 	TypeAttr       *string       `xml:"type,attr"`
 	SystemAttr     *string       `xml:"system,attr"`
 	DateAttr       *string       `xml:"date,attr"`
-	Fixes          []*FixedIssue `xml:"fixes,omitempty"`
-	Dueto          []*DueTo      `xml:"dueto,omitempty"`
+	Fixes          []*FixedIssue `xml:"fixes"`
+	Dueto          []*DueTo      `xml:"dueto"`
 }
 
 // FixedIssue is A fixed issue.
@@ -52,7 +52,7 @@ type DueTo struct {
 // Properties is Page Author
 type Properties struct {
 	Title  *string `xml:"title"`
-	Author *Author `xml:"author,omitempty"`
+	Author *Author `xml:"author"`
 }
 
 // Author is A description of the author page.

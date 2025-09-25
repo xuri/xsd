@@ -276,9 +276,9 @@ export class CT_LayoutNode {
 	ConstrLst?: Array<CT_Constraints>;
 	RuleLst?: Array<CT_Rules>;
 	VarLst?: Array<CT_LayoutVariablePropertySet>;
-	ForEach: Array<CT_ForEach>;
-	LayoutNode: Array<CT_LayoutNode>;
-	Choose: Array<CT_Choose>;
+	ForEach?: Array<CT_ForEach>;
+	LayoutNode?: Array<CT_LayoutNode>;
+	Choose?: Array<CT_Choose>;
 	ExtLst?: Array<CT_OfficeArtExtensionList>;
 }
 
@@ -292,9 +292,9 @@ export class CT_ForEach {
 	PresOf?: Array<CT_PresentationOf>;
 	ConstrLst?: Array<CT_Constraints>;
 	RuleLst?: Array<CT_Rules>;
-	ForEach: Array<CT_ForEach>;
-	LayoutNode: Array<CT_LayoutNode>;
-	Choose: Array<CT_Choose>;
+	ForEach?: Array<CT_ForEach>;
+	LayoutNode?: Array<CT_LayoutNode>;
+	Choose?: Array<CT_Choose>;
 	ExtLst?: Array<CT_OfficeArtExtensionList>;
 }
 
@@ -311,9 +311,9 @@ export class CT_When {
 	PresOf?: Array<CT_PresentationOf>;
 	ConstrLst?: Array<CT_Constraints>;
 	RuleLst?: Array<CT_Rules>;
-	ForEach: Array<CT_ForEach>;
-	LayoutNode: Array<CT_LayoutNode>;
-	Choose: Array<CT_Choose>;
+	ForEach?: Array<CT_ForEach>;
+	LayoutNode?: Array<CT_LayoutNode>;
+	Choose?: Array<CT_Choose>;
 	ExtLst?: Array<CT_OfficeArtExtensionList>;
 }
 
@@ -325,9 +325,9 @@ export class CT_Otherwise {
 	PresOf?: Array<CT_PresentationOf>;
 	ConstrLst?: Array<CT_Constraints>;
 	RuleLst?: Array<CT_Rules>;
-	ForEach: Array<CT_ForEach>;
-	LayoutNode: Array<CT_LayoutNode>;
-	Choose: Array<CT_Choose>;
+	ForEach?: Array<CT_ForEach>;
+	LayoutNode?: Array<CT_LayoutNode>;
+	Choose?: Array<CT_Choose>;
 	ExtLst?: Array<CT_OfficeArtExtensionList>;
 }
 

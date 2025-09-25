@@ -320,7 +320,7 @@ export class Flow {
 	Block: Array<Block>;
 	Inline: Array<Inline>;
 	Misc: Array<Misc>;
-	Form: Array<Form>;
+	Form?: Array<Form>;
 }
 
 // AContent is a elements use "Inline" excluding a
@@ -340,7 +340,7 @@ export class PreContent {
 	PhraseBasic: Array<PhraseBasic>;
 	InlineForms: Array<InlineForms>;
 	MiscInline: Array<MiscInline>;
-	A: Array<A>;
+	A?: Array<A>;
 }
 
 // FormContent is form uses "Flow" excluding form
@@ -358,16 +358,16 @@ export class ButtonContent {
 	Fontstyle: Array<Fontstyle>;
 	Phrase: Array<Phrase>;
 	Misc: Array<Misc>;
-	P: Array<P>;
-	Div: Array<Div>;
-	Table: Array<Table>;
-	Br: Array<Br>;
-	Span: Array<Span>;
-	Bdo: Array<Bdo>;
-	Object: Array<Object>;
-	Applet: Array<Applet>;
-	Img: Array<Img>;
-	Map: Array<Map>;
+	P?: Array<P>;
+	Div?: Array<Div>;
+	Table?: Array<Table>;
+	Br?: Array<Br>;
+	Span?: Array<Span>;
+	Bdo?: Array<Bdo>;
+	Object?: Array<Object>;
+	Applet?: Array<Applet>;
+	Img?: Array<Img>;
+	Map?: Array<Map>;
 }
 
 // HeadMisc ...
@@ -387,8 +387,8 @@ export class Head {
 	IdAttr?: string;
 	ProfileAttr?: string;
 	HeadMisc: HeadMisc;
-	Title: Title;
-	Base: Base;
+	Title?: Title;
+	Base?: Base;
 }
 
 // Title is The title element is not considered part of the flow of text.
@@ -597,8 +597,8 @@ export class Li extends Flow  {
 export class Dl {
 	Attrs: Attrs;
 	CompactAttr?: string;
-	Dt: Array<Dt>;
-	Dd: Array<Dd>;
+	Dt?: Array<Dt>;
+	Dd?: Array<Dd>;
 }
 
 // Dt ...
@@ -616,7 +616,7 @@ export class Address {
 	Attrs: Attrs;
 	Inline: Array<Inline>;
 	MiscInline: Array<MiscInline>;
-	P: Array<P>;
+	P?: Array<P>;
 }
 
 // Hr ...
@@ -843,8 +843,8 @@ export class Object {
 	Block: Array<Block>;
 	Inline: Array<Inline>;
 	Misc: Array<Misc>;
-	Param: Array<Param>;
-	Form: Array<Form>;
+	Param?: Array<Param>;
+	Form?: Array<Form>;
 }
 
 // Param is param is used to supply a named property value.
@@ -876,8 +876,8 @@ export class Applet {
 	Block: Array<Block>;
 	Inline: Array<Inline>;
 	Misc: Array<Misc>;
-	Param: Array<Param>;
-	Form: Array<Form>;
+	Param?: Array<Param>;
+	Form?: Array<Form>;
 }
 
 // Img ...
@@ -908,8 +908,8 @@ export class Map {
 	NameAttr?: any;
 	Block: Array<Block>;
 	Misc: Array<Misc>;
-	Form: Array<Form>;
-	Area: Array<Area>;
+	Form?: Array<Form>;
+	Area?: Array<Area>;
 }
 
 // Area ...
@@ -993,8 +993,8 @@ export class Select {
 	OnfocusAttr?: string;
 	OnblurAttr?: string;
 	OnchangeAttr?: string;
-	Optgroup: Array<Optgroup>;
-	Option: Array<Option>;
+	Optgroup?: Array<Optgroup>;
+	Option?: Array<Option>;
 }
 
 // Optgroup is option group
@@ -1039,7 +1039,7 @@ export class Fieldset {
 	Inline: Array<Inline>;
 	Misc: Array<Misc>;
 	Legend: Legend;
-	Form: Array<Form>;
+	Form?: Array<Form>;
 }
 
 // LAlign ...
@@ -1143,8 +1143,8 @@ export class Table {
 	Colgroup?: Array<Colgroup>;
 	Thead?: Thead;
 	Tfoot?: Tfoot;
-	Tbody: Array<Tbody>;
-	Tr: Array<Tr>;
+	Tbody?: Array<Tbody>;
+	Tr?: Array<Tr>;
 }
 
 // CAlign ...
@@ -1220,8 +1220,8 @@ export class Tr {
 	Cellhalign: Cellhalign;
 	Cellvalign: Cellvalign;
 	BgcolorAttr?: string;
-	Th: Array<Th>;
-	Td: Array<Td>;
+	Th?: Array<Th>;
+	Td?: Array<Td>;
 }
 
 // Scope is Scope is simpler than headers attribute for common tables
@@ -1300,7 +1300,7 @@ export class Answer {
 	Block: Array<Block>;
 	Inline: Array<Inline>;
 	Misc: Array<Misc>;
-	Form: Array<Form>;
+	Form?: Array<Form>;
 }
 
 // Source is A source element.

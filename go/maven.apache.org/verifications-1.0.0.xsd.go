@@ -12,12 +12,12 @@ type Verifications *Verifications
 // Files is List of files and directories to check.
 type Files struct {
 	XMLName xml.Name `xml:"files"`
-	File    []*File  `xml:"file,omitempty"`
+	File    []*File  `xml:"file"`
 }
 
 // Verifications is Root element of the verifications file.
 type Verifications struct {
-	Files *Files `xml:"files,omitempty"`
+	Files *Files `xml:"files"`
 }
 
 // File is When this is set to <code>true</code> the plugin checks that the

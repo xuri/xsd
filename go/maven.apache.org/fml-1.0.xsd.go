@@ -1249,11 +1249,11 @@ type Table struct {
 	CellpaddingAttr *string     `xml:"cellpadding,attr"`
 	AlignAttr       *string     `xml:"align,attr"`
 	BgcolorAttr     *string     `xml:"bgcolor,attr"`
-	Caption         *Caption    `xml:"caption,omitempty"`
-	Col             []*Col      `xml:"col,omitempty"`
-	Colgroup        []*Colgroup `xml:"colgroup,omitempty"`
-	Thead           *Thead      `xml:"thead,omitempty"`
-	Tfoot           *Tfoot      `xml:"tfoot,omitempty"`
+	Caption         *Caption    `xml:"caption"`
+	Col             []*Col      `xml:"col"`
+	Colgroup        []*Colgroup `xml:"colgroup"`
+	Thead           *Thead      `xml:"thead"`
+	Tfoot           *Tfoot      `xml:"tfoot"`
 	Tbody           []*Tbody    `xml:"tbody"`
 	Tr              []*Tr       `xml:"tr"`
 }
@@ -1305,7 +1305,7 @@ type Colgroup struct {
 	Cellvalign *Cellvalign
 	SpanAttr   *int    `xml:"span,attr"`
 	WidthAttr  *string `xml:"width,attr"`
-	Col        []*Col  `xml:"col,omitempty"`
+	Col        []*Col  `xml:"col"`
 }
 
 // Col is col elements define the alignment properties for cells in
@@ -1393,7 +1393,7 @@ type Faqs struct {
 type Part struct {
 	XMLName xml.Name `xml:"part"`
 	IdAttr  *string  `xml:"id,attr"`
-	Title   *Title   `xml:"title,omitempty"`
+	Title   *Title   `xml:"title"`
 	Faq     []*Faq   `xml:"faq"`
 }
 

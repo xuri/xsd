@@ -12,24 +12,24 @@ type PluginMetadata *PluginMetadata
 // Mojos is The list of mojos contained in the accompanying script.
 type Mojos struct {
 	XMLName xml.Name `xml:"mojos"`
-	Mojo    []*Mojo  `xml:"mojo,omitempty"`
+	Mojo    []*Mojo  `xml:"mojo"`
 }
 
 // PluginMetadata is Root element of a script-based mojo's plugin metadata bindings.
 type PluginMetadata struct {
-	Mojos *Mojos `xml:"mojos,omitempty"`
+	Mojos *Mojos `xml:"mojos"`
 }
 
 // Components is List of plexus components required by this mojo.
 type Components struct {
 	XMLName   xml.Name     `xml:"components"`
-	Component []*Component `xml:"component,omitempty"`
+	Component []*Component `xml:"component"`
 }
 
 // Parameters is List of parameters used by this mojo.
 type Parameters struct {
 	XMLName   xml.Name     `xml:"parameters"`
-	Parameter []*Parameter `xml:"parameter,omitempty"`
+	Parameter []*Parameter `xml:"parameter"`
 }
 
 // Mojo is Information about a sub-execution of the Maven lifecycle which should be processed.
@@ -43,9 +43,9 @@ type Mojo struct {
 	RequiresOnline               *bool               `xml:"requiresOnline"`
 	InheritByDefault             *bool               `xml:"inheritByDefault"`
 	RequiresDirectInvocation     *bool               `xml:"requiresDirectInvocation"`
-	Execution                    *LifecycleExecution `xml:"execution,omitempty"`
-	Components                   *Components         `xml:"components,omitempty"`
-	Parameters                   *Parameters         `xml:"parameters,omitempty"`
+	Execution                    *LifecycleExecution `xml:"execution"`
+	Components                   *Components         `xml:"components"`
+	Parameters                   *Parameters         `xml:"parameters"`
 	Description                  *string             `xml:"description"`
 	Deprecated                   *string             `xml:"deprecated"`
 	Call                         *string             `xml:"call"`

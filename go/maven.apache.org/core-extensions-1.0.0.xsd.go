@@ -7,7 +7,7 @@ type Extensions *CoreExtensions
 
 // CoreExtensions is A set of build extensions to use from this project.
 type CoreExtensions struct {
-	Extension []*CoreExtension `xml:"extension,omitempty"`
+	Extension []*CoreExtension `xml:"extension"`
 }
 
 // CoreExtension is The version of the extension.

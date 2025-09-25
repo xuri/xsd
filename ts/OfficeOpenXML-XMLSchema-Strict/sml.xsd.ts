@@ -495,9 +495,9 @@ export enum ST_ParameterType {
 // CT_Tables ...
 export class CT_Tables {
 	CountAttr?: number;
-	M: Array<CT_TableMissing>;
-	S: Array<CT_XStringElement>;
-	X: Array<CT_Index>;
+	M?: Array<CT_TableMissing>;
+	S?: Array<CT_XStringElement>;
+	X?: Array<CT_Index>;
 }
 
 // CT_TableMissing ...
@@ -639,8 +639,8 @@ export class CT_CacheField {
 export class CT_CacheSource {
 	TypeAttr: string;
 	ConnectionIdAttr?: number;
-	WorksheetSource: CT_WorksheetSource;
-	Consolidation: CT_Consolidation;
+	WorksheetSource?: CT_WorksheetSource;
+	Consolidation?: CT_Consolidation;
 	ExtLst?: CT_ExtensionList;
 }
 
@@ -718,12 +718,12 @@ export class CT_SharedItems {
 	MaxDateAttr?: string;
 	CountAttr?: number;
 	LongTextAttr?: boolean;
-	M: Array<CT_Missing>;
-	N: Array<CT_Number>;
-	B: Array<CT_Boolean>;
-	E: Array<CT_Error>;
-	S: Array<CT_String>;
-	D: Array<CT_DateTime>;
+	M?: Array<CT_Missing>;
+	N?: Array<CT_Number>;
+	B?: Array<CT_Boolean>;
+	E?: Array<CT_Error>;
+	S?: Array<CT_String>;
+	D?: Array<CT_DateTime>;
 }
 
 // CT_Missing ...
@@ -859,12 +859,12 @@ export class CT_DiscretePr {
 // CT_GroupItems ...
 export class CT_GroupItems {
 	CountAttr?: number;
-	M: Array<CT_Missing>;
-	N: Array<CT_Number>;
-	B: Array<CT_Boolean>;
-	E: Array<CT_Error>;
-	S: Array<CT_String>;
-	D: Array<CT_DateTime>;
+	M?: Array<CT_Missing>;
+	N?: Array<CT_Number>;
+	B?: Array<CT_Boolean>;
+	E?: Array<CT_Error>;
+	S?: Array<CT_String>;
+	D?: Array<CT_DateTime>;
 }
 
 // CT_PivotCacheRecords ...
@@ -876,13 +876,13 @@ export class CT_PivotCacheRecords {
 
 // CT_Record ...
 export class CT_Record {
-	M: Array<CT_Missing>;
-	N: Array<CT_Number>;
-	B: Array<CT_Boolean>;
-	E: Array<CT_Error>;
-	S: Array<CT_String>;
-	D: Array<CT_DateTime>;
-	X: Array<CT_Index>;
+	M?: Array<CT_Missing>;
+	N?: Array<CT_Number>;
+	B?: Array<CT_Boolean>;
+	E?: Array<CT_Error>;
+	S?: Array<CT_String>;
+	D?: Array<CT_DateTime>;
+	X?: Array<CT_Index>;
 }
 
 // CT_PCDKPIs ...
@@ -1020,10 +1020,10 @@ export class CT_ServerFormats {
 // CT_PCDSDTCEntries ...
 export class CT_PCDSDTCEntries {
 	CountAttr?: number;
-	M: Array<CT_Missing>;
-	N: Array<CT_Number>;
-	E: Array<CT_Error>;
-	S: Array<CT_String>;
+	M?: Array<CT_Missing>;
+	N?: Array<CT_Number>;
+	E?: Array<CT_Error>;
+	S?: Array<CT_String>;
 }
 
 // CT_Tuples ...
@@ -3392,10 +3392,10 @@ export class CT_MdxMetadata {
 export class CT_Mdx {
 	NAttr: number;
 	FAttr: string;
-	T: CT_MdxTuple;
-	Ms: CT_MdxSet;
-	P: CT_MdxMemeberProp;
-	K: CT_MdxKPI;
+	T?: CT_MdxTuple;
+	Ms?: CT_MdxSet;
+	P?: CT_MdxMemeberProp;
+	K?: CT_MdxKPI;
 }
 
 // ST_MdxFunctionType ...

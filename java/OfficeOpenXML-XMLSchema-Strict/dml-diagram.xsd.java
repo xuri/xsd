@@ -416,11 +416,11 @@ public class CT_LayoutNode {
 	protected List<CT_Rules> RuleLst;
 	@XmlElement(name = "varLst")
 	protected List<CT_LayoutVariablePropertySet> VarLst;
-	@XmlElement(required = true, name = "forEach")
+	@XmlElement(name = "forEach")
 	protected List<CT_ForEach> ForEach;
-	@XmlElement(required = true, name = "layoutNode")
+	@XmlElement(name = "layoutNode")
 	protected List<CT_LayoutNode> LayoutNode;
-	@XmlElement(required = true, name = "choose")
+	@XmlElement(name = "choose")
 	protected List<CT_Choose> Choose;
 	@XmlElement(name = "extLst")
 	protected List<CT_OfficeArtExtensionList> ExtLst;
@@ -444,11 +444,11 @@ public class CT_ForEach {
 	protected List<CT_Constraints> ConstrLst;
 	@XmlElement(name = "ruleLst")
 	protected List<CT_Rules> RuleLst;
-	@XmlElement(required = true, name = "forEach")
+	@XmlElement(name = "forEach")
 	protected List<CT_ForEach> ForEach;
-	@XmlElement(required = true, name = "layoutNode")
+	@XmlElement(name = "layoutNode")
 	protected List<CT_LayoutNode> LayoutNode;
-	@XmlElement(required = true, name = "choose")
+	@XmlElement(name = "choose")
 	protected List<CT_Choose> Choose;
 	@XmlElement(name = "extLst")
 	protected List<CT_OfficeArtExtensionList> ExtLst;
@@ -478,11 +478,11 @@ public class CT_When {
 	protected List<CT_Constraints> ConstrLst;
 	@XmlElement(name = "ruleLst")
 	protected List<CT_Rules> RuleLst;
-	@XmlElement(required = true, name = "forEach")
+	@XmlElement(name = "forEach")
 	protected List<CT_ForEach> ForEach;
-	@XmlElement(required = true, name = "layoutNode")
+	@XmlElement(name = "layoutNode")
 	protected List<CT_LayoutNode> LayoutNode;
-	@XmlElement(required = true, name = "choose")
+	@XmlElement(name = "choose")
 	protected List<CT_Choose> Choose;
 	@XmlElement(name = "extLst")
 	protected List<CT_OfficeArtExtensionList> ExtLst;
@@ -502,11 +502,11 @@ public class CT_Otherwise {
 	protected List<CT_Constraints> ConstrLst;
 	@XmlElement(name = "ruleLst")
 	protected List<CT_Rules> RuleLst;
-	@XmlElement(required = true, name = "forEach")
+	@XmlElement(name = "forEach")
 	protected List<CT_ForEach> ForEach;
-	@XmlElement(required = true, name = "layoutNode")
+	@XmlElement(name = "layoutNode")
 	protected List<CT_LayoutNode> LayoutNode;
-	@XmlElement(required = true, name = "choose")
+	@XmlElement(name = "choose")
 	protected List<CT_Choose> Choose;
 	@XmlElement(name = "extLst")
 	protected List<CT_OfficeArtExtensionList> ExtLst;

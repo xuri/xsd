@@ -27,15 +27,15 @@ type CTProperties struct {
 	HiddenSlides         *int             `xml:"HiddenSlides"`
 	MMClips              *int             `xml:"MMClips"`
 	ScaleCrop            *bool            `xml:"ScaleCrop"`
-	HeadingPairs         *CTVectorVariant `xml:"HeadingPairs,omitempty"`
-	TitlesOfParts        *CTVectorLpstr   `xml:"TitlesOfParts,omitempty"`
+	HeadingPairs         *CTVectorVariant `xml:"HeadingPairs"`
+	TitlesOfParts        *CTVectorLpstr   `xml:"TitlesOfParts"`
 	LinksUpToDate        *bool            `xml:"LinksUpToDate"`
 	CharactersWithSpaces *int             `xml:"CharactersWithSpaces"`
 	SharedDoc            *bool            `xml:"SharedDoc"`
 	HyperlinkBase        *string          `xml:"HyperlinkBase"`
-	HLinks               *CTVectorVariant `xml:"HLinks,omitempty"`
+	HLinks               *CTVectorVariant `xml:"HLinks"`
 	HyperlinksChanged    *bool            `xml:"HyperlinksChanged"`
-	DigSig               *CTDigSigBlob    `xml:"DigSig,omitempty"`
+	DigSig               *CTDigSigBlob    `xml:"DigSig"`
 	Application          *string          `xml:"Application"`
 	AppVersion           *string          `xml:"AppVersion"`
 	DocSecurity          *int             `xml:"DocSecurity"`

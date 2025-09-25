@@ -9,7 +9,7 @@ import (
 // CTAdditionalCharacteristics ...
 type CTAdditionalCharacteristics struct {
 	XMLName        xml.Name            `xml:"CT_AdditionalCharacteristics"`
-	Characteristic []*CTCharacteristic `xml:"characteristic,omitempty"`
+	Characteristic []*CTCharacteristic `xml:"characteristic"`
 }
 
 // CTCharacteristic ...

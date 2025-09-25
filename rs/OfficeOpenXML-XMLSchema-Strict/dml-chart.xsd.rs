@@ -96,9 +96,9 @@ pub struct CTNumRef {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTNumDataSource {
 	#[serde(rename = "numRef")]
-	pub num_ref: CTNumRef,
+	pub num_ref: Option<CTNumRef>,
 	#[serde(rename = "numLit")]
-	pub num_lit: CTNumData,
+	pub num_lit: Option<CTNumData>,
 }
 
 
@@ -140,9 +140,9 @@ pub struct CTStrRef {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTTx {
 	#[serde(rename = "strRef")]
-	pub str_ref: CTStrRef,
+	pub str_ref: Option<CTStrRef>,
 	#[serde(rename = "rich")]
-	pub rich: CTTextBody,
+	pub rich: Option<CTTextBody>,
 }
 
 
@@ -190,15 +190,15 @@ pub struct CTMultiLvlStrRef {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTAxDataSource {
 	#[serde(rename = "multiLvlStrRef")]
-	pub multi_lvl_str_ref: CTMultiLvlStrRef,
+	pub multi_lvl_str_ref: Option<CTMultiLvlStrRef>,
 	#[serde(rename = "numRef")]
-	pub num_ref: CTNumRef,
+	pub num_ref: Option<CTNumRef>,
 	#[serde(rename = "numLit")]
-	pub num_lit: CTNumData,
+	pub num_lit: Option<CTNumData>,
 	#[serde(rename = "strRef")]
-	pub str_ref: CTStrRef,
+	pub str_ref: Option<CTStrRef>,
 	#[serde(rename = "strLit")]
-	pub str_lit: CTStrData,
+	pub str_lit: Option<CTStrData>,
 }
 
 
@@ -206,9 +206,9 @@ pub struct CTAxDataSource {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTSerTx {
 	#[serde(rename = "strRef")]
-	pub str_ref: CTStrRef,
+	pub str_ref: Option<CTStrRef>,
 	#[serde(rename = "v")]
-	pub v: String,
+	pub v: Option<String>,
 }
 
 
@@ -722,7 +722,7 @@ pub struct CTDLbl {
 	#[serde(rename = "idx")]
 	pub idx: CTUnsignedInt,
 	#[serde(rename = "delete")]
-	pub delete: CTBoolean,
+	pub delete: Option<CTBoolean>,
 	#[serde(rename = "extLst")]
 	pub ext_lst: Option<CTExtensionList>,
 }
@@ -748,7 +748,7 @@ pub struct CTDLbls {
 	#[serde(rename = "dLbl")]
 	pub d_lbl: Vec<CTDLbl>,
 	#[serde(rename = "delete")]
-	pub delete: CTBoolean,
+	pub delete: Option<CTBoolean>,
 	#[serde(rename = "extLst")]
 	pub ext_lst: Option<CTExtensionList>,
 }
@@ -1892,9 +1892,9 @@ pub struct CTDispUnitsLbl {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTDispUnits {
 	#[serde(rename = "custUnit")]
-	pub cust_unit: CTDouble,
+	pub cust_unit: Option<CTDouble>,
 	#[serde(rename = "builtInUnit")]
-	pub built_in_unit: CTBuiltInUnit,
+	pub built_in_unit: Option<CTBuiltInUnit>,
 	#[serde(rename = "dispUnitsLbl")]
 	pub disp_units_lbl: Option<CTDispUnitsLbl>,
 	#[serde(rename = "extLst")]
@@ -2200,7 +2200,7 @@ pub struct CTLegendEntry {
 	#[serde(rename = "idx")]
 	pub idx: CTUnsignedInt,
 	#[serde(rename = "delete")]
-	pub delete: CTBoolean,
+	pub delete: Option<CTBoolean>,
 	#[serde(rename = "extLst")]
 	pub ext_lst: Option<CTExtensionList>,
 }

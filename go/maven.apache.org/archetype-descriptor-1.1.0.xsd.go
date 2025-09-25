@@ -12,28 +12,28 @@ type ArchetypeDescriptor *ArchetypeDescriptor
 // RequiredProperties is List of required properties to generate a project from this archetype.
 type RequiredProperties struct {
 	XMLName          xml.Name            `xml:"requiredProperties"`
-	RequiredProperty []*RequiredProperty `xml:"requiredProperty,omitempty"`
+	RequiredProperty []*RequiredProperty `xml:"requiredProperty"`
 }
 
 // FileSets is File sets definition.
 type FileSets struct {
 	XMLName xml.Name   `xml:"fileSets"`
-	FileSet []*FileSet `xml:"fileSet,omitempty"`
+	FileSet []*FileSet `xml:"fileSet"`
 }
 
 // Modules is Modules definition.
 type Modules struct {
 	XMLName xml.Name            `xml:"modules"`
-	Module  []*ModuleDescriptor `xml:"module,omitempty"`
+	Module  []*ModuleDescriptor `xml:"module"`
 }
 
 // ArchetypeDescriptor is 1.0.0+
 type ArchetypeDescriptor struct {
 	NameAttr           string              `xml:"name,attr"`
 	PartialAttr        *bool               `xml:"partial,attr"`
-	RequiredProperties *RequiredProperties `xml:"requiredProperties,omitempty"`
-	FileSets           *FileSets           `xml:"fileSets,omitempty"`
-	Modules            *Modules            `xml:"modules,omitempty"`
+	RequiredProperties *RequiredProperties `xml:"requiredProperties"`
+	FileSets           *FileSets           `xml:"fileSets"`
+	Modules            *Modules            `xml:"modules"`
 }
 
 // RequiredProperty is A regular expression used to validate the property.
@@ -48,20 +48,20 @@ type ModuleDescriptor struct {
 	IdAttr   string    `xml:"id,attr"`
 	DirAttr  string    `xml:"dir,attr"`
 	NameAttr string    `xml:"name,attr"`
-	FileSets *FileSets `xml:"fileSets,omitempty"`
-	Modules  *Modules  `xml:"modules,omitempty"`
+	FileSets *FileSets `xml:"fileSets"`
+	Modules  *Modules  `xml:"modules"`
 }
 
 // Includes is Inclusion definition "à la" Ant.
 type Includes struct {
 	XMLName xml.Name `xml:"includes"`
-	Include []string `xml:"include,omitempty"`
+	Include []string `xml:"include"`
 }
 
 // Excludes is Exclusion definition "à la" Ant.
 type Excludes struct {
 	XMLName xml.Name `xml:"excludes"`
-	Exclude []string `xml:"exclude,omitempty"`
+	Exclude []string `xml:"exclude"`
 }
 
 // FileSet is The directory where the files will be searched for, which is also the directory where the
@@ -71,6 +71,6 @@ type FileSet struct {
 	PackagedAttr *bool     `xml:"packaged,attr"`
 	EncodingAttr *string   `xml:"encoding,attr"`
 	Directory    *string   `xml:"directory"`
-	Includes     *Includes `xml:"includes,omitempty"`
-	Excludes     *Excludes `xml:"excludes,omitempty"`
+	Includes     *Includes `xml:"includes"`
+	Excludes     *Excludes `xml:"excludes"`
 }

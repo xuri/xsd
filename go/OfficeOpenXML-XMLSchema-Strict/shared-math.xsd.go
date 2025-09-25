@@ -146,10 +146,10 @@ type EGScriptStyle struct {
 type CTRPR struct {
 	XMLName       xml.Name `xml:"CT_RPR"`
 	EGScriptStyle *EGScriptStyle
-	Lit           *CTOnOff       `xml:"lit,omitempty"`
-	Nor           *CTOnOff       `xml:"nor,omitempty"`
-	Brk           *CTManualBreak `xml:"brk,omitempty"`
-	Aln           *CTOnOff       `xml:"aln,omitempty"`
+	Lit           *CTOnOff       `xml:"lit"`
+	Nor           *CTOnOff       `xml:"nor"`
+	Brk           *CTManualBreak `xml:"brk"`
+	Aln           *CTOnOff       `xml:"aln"`
 }
 
 // CTText ...
@@ -164,8 +164,8 @@ type CTR struct {
 	XMLName            xml.Name `xml:"CT_R"`
 	WEGRPr             *EGRPr
 	WEGRunInnerContent []*EGRunInnerContent
-	RPr                *CTRPR    `xml:"rPr,omitempty"`
-	T                  []*CTText `xml:"t,omitempty"`
+	RPr                *CTRPR    `xml:"rPr"`
+	T                  []*CTText `xml:"t"`
 }
 
 // CTCtrlPr ...
@@ -177,117 +177,117 @@ type CTCtrlPr struct {
 // CTAccPr ...
 type CTAccPr struct {
 	XMLName xml.Name  `xml:"CT_AccPr"`
-	Chr     *CTChar   `xml:"chr,omitempty"`
-	CtrlPr  *CTCtrlPr `xml:"ctrlPr,omitempty"`
+	Chr     *CTChar   `xml:"chr"`
+	CtrlPr  *CTCtrlPr `xml:"ctrlPr"`
 }
 
 // CTAcc ...
 type CTAcc struct {
 	XMLName xml.Name    `xml:"CT_Acc"`
-	AccPr   *CTAccPr    `xml:"accPr,omitempty"`
+	AccPr   *CTAccPr    `xml:"accPr"`
 	E       *CTOMathArg `xml:"e"`
 }
 
 // CTBarPr ...
 type CTBarPr struct {
 	XMLName xml.Name  `xml:"CT_BarPr"`
-	Pos     *CTTopBot `xml:"pos,omitempty"`
-	CtrlPr  *CTCtrlPr `xml:"ctrlPr,omitempty"`
+	Pos     *CTTopBot `xml:"pos"`
+	CtrlPr  *CTCtrlPr `xml:"ctrlPr"`
 }
 
 // CTBar ...
 type CTBar struct {
 	XMLName xml.Name    `xml:"CT_Bar"`
-	BarPr   *CTBarPr    `xml:"barPr,omitempty"`
+	BarPr   *CTBarPr    `xml:"barPr"`
 	E       *CTOMathArg `xml:"e"`
 }
 
 // CTBoxPr ...
 type CTBoxPr struct {
 	XMLName xml.Name       `xml:"CT_BoxPr"`
-	OpEmu   *CTOnOff       `xml:"opEmu,omitempty"`
-	NoBreak *CTOnOff       `xml:"noBreak,omitempty"`
-	Diff    *CTOnOff       `xml:"diff,omitempty"`
-	Brk     *CTManualBreak `xml:"brk,omitempty"`
-	Aln     *CTOnOff       `xml:"aln,omitempty"`
-	CtrlPr  *CTCtrlPr      `xml:"ctrlPr,omitempty"`
+	OpEmu   *CTOnOff       `xml:"opEmu"`
+	NoBreak *CTOnOff       `xml:"noBreak"`
+	Diff    *CTOnOff       `xml:"diff"`
+	Brk     *CTManualBreak `xml:"brk"`
+	Aln     *CTOnOff       `xml:"aln"`
+	CtrlPr  *CTCtrlPr      `xml:"ctrlPr"`
 }
 
 // CTBox ...
 type CTBox struct {
 	XMLName xml.Name    `xml:"CT_Box"`
-	BoxPr   *CTBoxPr    `xml:"boxPr,omitempty"`
+	BoxPr   *CTBoxPr    `xml:"boxPr"`
 	E       *CTOMathArg `xml:"e"`
 }
 
 // CTBorderBoxPr ...
 type CTBorderBoxPr struct {
 	XMLName    xml.Name  `xml:"CT_BorderBoxPr"`
-	HideTop    *CTOnOff  `xml:"hideTop,omitempty"`
-	HideBot    *CTOnOff  `xml:"hideBot,omitempty"`
-	HideLeft   *CTOnOff  `xml:"hideLeft,omitempty"`
-	HideRight  *CTOnOff  `xml:"hideRight,omitempty"`
-	StrikeH    *CTOnOff  `xml:"strikeH,omitempty"`
-	StrikeV    *CTOnOff  `xml:"strikeV,omitempty"`
-	StrikeBLTR *CTOnOff  `xml:"strikeBLTR,omitempty"`
-	StrikeTLBR *CTOnOff  `xml:"strikeTLBR,omitempty"`
-	CtrlPr     *CTCtrlPr `xml:"ctrlPr,omitempty"`
+	HideTop    *CTOnOff  `xml:"hideTop"`
+	HideBot    *CTOnOff  `xml:"hideBot"`
+	HideLeft   *CTOnOff  `xml:"hideLeft"`
+	HideRight  *CTOnOff  `xml:"hideRight"`
+	StrikeH    *CTOnOff  `xml:"strikeH"`
+	StrikeV    *CTOnOff  `xml:"strikeV"`
+	StrikeBLTR *CTOnOff  `xml:"strikeBLTR"`
+	StrikeTLBR *CTOnOff  `xml:"strikeTLBR"`
+	CtrlPr     *CTCtrlPr `xml:"ctrlPr"`
 }
 
 // CTBorderBox ...
 type CTBorderBox struct {
 	XMLName     xml.Name       `xml:"CT_BorderBox"`
-	BorderBoxPr *CTBorderBoxPr `xml:"borderBoxPr,omitempty"`
+	BorderBoxPr *CTBorderBoxPr `xml:"borderBoxPr"`
 	E           *CTOMathArg    `xml:"e"`
 }
 
 // CTDPr ...
 type CTDPr struct {
 	XMLName xml.Name  `xml:"CT_DPr"`
-	BegChr  *CTChar   `xml:"begChr,omitempty"`
-	SepChr  *CTChar   `xml:"sepChr,omitempty"`
-	EndChr  *CTChar   `xml:"endChr,omitempty"`
-	Grow    *CTOnOff  `xml:"grow,omitempty"`
-	Shp     *CTShp    `xml:"shp,omitempty"`
-	CtrlPr  *CTCtrlPr `xml:"ctrlPr,omitempty"`
+	BegChr  *CTChar   `xml:"begChr"`
+	SepChr  *CTChar   `xml:"sepChr"`
+	EndChr  *CTChar   `xml:"endChr"`
+	Grow    *CTOnOff  `xml:"grow"`
+	Shp     *CTShp    `xml:"shp"`
+	CtrlPr  *CTCtrlPr `xml:"ctrlPr"`
 }
 
 // CTD ...
 type CTD struct {
 	XMLName xml.Name      `xml:"CT_D"`
-	DPr     *CTDPr        `xml:"dPr,omitempty"`
+	DPr     *CTDPr        `xml:"dPr"`
 	E       []*CTOMathArg `xml:"e"`
 }
 
 // CTEqArrPr ...
 type CTEqArrPr struct {
 	XMLName xml.Name           `xml:"CT_EqArrPr"`
-	BaseJc  *CTYAlign          `xml:"baseJc,omitempty"`
-	MaxDist *CTOnOff           `xml:"maxDist,omitempty"`
-	ObjDist *CTOnOff           `xml:"objDist,omitempty"`
-	RSpRule *CTSpacingRule     `xml:"rSpRule,omitempty"`
-	RSp     *CTUnSignedInteger `xml:"rSp,omitempty"`
-	CtrlPr  *CTCtrlPr          `xml:"ctrlPr,omitempty"`
+	BaseJc  *CTYAlign          `xml:"baseJc"`
+	MaxDist *CTOnOff           `xml:"maxDist"`
+	ObjDist *CTOnOff           `xml:"objDist"`
+	RSpRule *CTSpacingRule     `xml:"rSpRule"`
+	RSp     *CTUnSignedInteger `xml:"rSp"`
+	CtrlPr  *CTCtrlPr          `xml:"ctrlPr"`
 }
 
 // CTEqArr ...
 type CTEqArr struct {
 	XMLName xml.Name      `xml:"CT_EqArr"`
-	EqArrPr *CTEqArrPr    `xml:"eqArrPr,omitempty"`
+	EqArrPr *CTEqArrPr    `xml:"eqArrPr"`
 	E       []*CTOMathArg `xml:"e"`
 }
 
 // CTFPr ...
 type CTFPr struct {
 	XMLName xml.Name  `xml:"CT_FPr"`
-	Type    *CTFType  `xml:"type,omitempty"`
-	CtrlPr  *CTCtrlPr `xml:"ctrlPr,omitempty"`
+	Type    *CTFType  `xml:"type"`
+	CtrlPr  *CTCtrlPr `xml:"ctrlPr"`
 }
 
 // CTF ...
 type CTF struct {
 	XMLName xml.Name    `xml:"CT_F"`
-	FPr     *CTFPr      `xml:"fPr,omitempty"`
+	FPr     *CTFPr      `xml:"fPr"`
 	Num     *CTOMathArg `xml:"num"`
 	Den     *CTOMathArg `xml:"den"`
 }
@@ -295,13 +295,13 @@ type CTF struct {
 // CTFuncPr ...
 type CTFuncPr struct {
 	XMLName xml.Name  `xml:"CT_FuncPr"`
-	CtrlPr  *CTCtrlPr `xml:"ctrlPr,omitempty"`
+	CtrlPr  *CTCtrlPr `xml:"ctrlPr"`
 }
 
 // CTFunc ...
 type CTFunc struct {
 	XMLName xml.Name    `xml:"CT_Func"`
-	FuncPr  *CTFuncPr   `xml:"funcPr,omitempty"`
+	FuncPr  *CTFuncPr   `xml:"funcPr"`
 	FName   *CTOMathArg `xml:"fName"`
 	E       *CTOMathArg `xml:"e"`
 }
@@ -309,29 +309,29 @@ type CTFunc struct {
 // CTGroupChrPr ...
 type CTGroupChrPr struct {
 	XMLName xml.Name  `xml:"CT_GroupChrPr"`
-	Chr     *CTChar   `xml:"chr,omitempty"`
-	Pos     *CTTopBot `xml:"pos,omitempty"`
-	VertJc  *CTTopBot `xml:"vertJc,omitempty"`
-	CtrlPr  *CTCtrlPr `xml:"ctrlPr,omitempty"`
+	Chr     *CTChar   `xml:"chr"`
+	Pos     *CTTopBot `xml:"pos"`
+	VertJc  *CTTopBot `xml:"vertJc"`
+	CtrlPr  *CTCtrlPr `xml:"ctrlPr"`
 }
 
 // CTGroupChr ...
 type CTGroupChr struct {
 	XMLName    xml.Name      `xml:"CT_GroupChr"`
-	GroupChrPr *CTGroupChrPr `xml:"groupChrPr,omitempty"`
+	GroupChrPr *CTGroupChrPr `xml:"groupChrPr"`
 	E          *CTOMathArg   `xml:"e"`
 }
 
 // CTLimLowPr ...
 type CTLimLowPr struct {
 	XMLName xml.Name  `xml:"CT_LimLowPr"`
-	CtrlPr  *CTCtrlPr `xml:"ctrlPr,omitempty"`
+	CtrlPr  *CTCtrlPr `xml:"ctrlPr"`
 }
 
 // CTLimLow ...
 type CTLimLow struct {
 	XMLName  xml.Name    `xml:"CT_LimLow"`
-	LimLowPr *CTLimLowPr `xml:"limLowPr,omitempty"`
+	LimLowPr *CTLimLowPr `xml:"limLowPr"`
 	E        *CTOMathArg `xml:"e"`
 	Lim      *CTOMathArg `xml:"lim"`
 }
@@ -339,13 +339,13 @@ type CTLimLow struct {
 // CTLimUppPr ...
 type CTLimUppPr struct {
 	XMLName xml.Name  `xml:"CT_LimUppPr"`
-	CtrlPr  *CTCtrlPr `xml:"ctrlPr,omitempty"`
+	CtrlPr  *CTCtrlPr `xml:"ctrlPr"`
 }
 
 // CTLimUpp ...
 type CTLimUpp struct {
 	XMLName  xml.Name    `xml:"CT_LimUpp"`
-	LimUppPr *CTLimUppPr `xml:"limUppPr,omitempty"`
+	LimUppPr *CTLimUppPr `xml:"limUppPr"`
 	E        *CTOMathArg `xml:"e"`
 	Lim      *CTOMathArg `xml:"lim"`
 }
@@ -353,14 +353,14 @@ type CTLimUpp struct {
 // CTMCPr ...
 type CTMCPr struct {
 	XMLName xml.Name      `xml:"CT_MCPr"`
-	Count   *CTInteger255 `xml:"count,omitempty"`
-	McJc    *CTXAlign     `xml:"mcJc,omitempty"`
+	Count   *CTInteger255 `xml:"count"`
+	McJc    *CTXAlign     `xml:"mcJc"`
 }
 
 // CTMC ...
 type CTMC struct {
 	XMLName xml.Name `xml:"CT_MC"`
-	McPr    *CTMCPr  `xml:"mcPr,omitempty"`
+	McPr    *CTMCPr  `xml:"mcPr"`
 }
 
 // CTMCS ...
@@ -372,15 +372,15 @@ type CTMCS struct {
 // CTMPr ...
 type CTMPr struct {
 	XMLName xml.Name           `xml:"CT_MPr"`
-	BaseJc  *CTYAlign          `xml:"baseJc,omitempty"`
-	PlcHide *CTOnOff           `xml:"plcHide,omitempty"`
-	RSpRule *CTSpacingRule     `xml:"rSpRule,omitempty"`
-	CGpRule *CTSpacingRule     `xml:"cGpRule,omitempty"`
-	RSp     *CTUnSignedInteger `xml:"rSp,omitempty"`
-	CSp     *CTUnSignedInteger `xml:"cSp,omitempty"`
-	CGp     *CTUnSignedInteger `xml:"cGp,omitempty"`
-	Mcs     *CTMCS             `xml:"mcs,omitempty"`
-	CtrlPr  *CTCtrlPr          `xml:"ctrlPr,omitempty"`
+	BaseJc  *CTYAlign          `xml:"baseJc"`
+	PlcHide *CTOnOff           `xml:"plcHide"`
+	RSpRule *CTSpacingRule     `xml:"rSpRule"`
+	CGpRule *CTSpacingRule     `xml:"cGpRule"`
+	RSp     *CTUnSignedInteger `xml:"rSp"`
+	CSp     *CTUnSignedInteger `xml:"cSp"`
+	CGp     *CTUnSignedInteger `xml:"cGp"`
+	Mcs     *CTMCS             `xml:"mcs"`
+	CtrlPr  *CTCtrlPr          `xml:"ctrlPr"`
 }
 
 // CTMR ...
@@ -392,25 +392,25 @@ type CTMR struct {
 // CTM ...
 type CTM struct {
 	XMLName xml.Name `xml:"CT_M"`
-	MPr     *CTMPr   `xml:"mPr,omitempty"`
+	MPr     *CTMPr   `xml:"mPr"`
 	Mr      []*CTMR  `xml:"mr"`
 }
 
 // CTNaryPr ...
 type CTNaryPr struct {
 	XMLName xml.Name  `xml:"CT_NaryPr"`
-	Chr     *CTChar   `xml:"chr,omitempty"`
-	LimLoc  *CTLimLoc `xml:"limLoc,omitempty"`
-	Grow    *CTOnOff  `xml:"grow,omitempty"`
-	SubHide *CTOnOff  `xml:"subHide,omitempty"`
-	SupHide *CTOnOff  `xml:"supHide,omitempty"`
-	CtrlPr  *CTCtrlPr `xml:"ctrlPr,omitempty"`
+	Chr     *CTChar   `xml:"chr"`
+	LimLoc  *CTLimLoc `xml:"limLoc"`
+	Grow    *CTOnOff  `xml:"grow"`
+	SubHide *CTOnOff  `xml:"subHide"`
+	SupHide *CTOnOff  `xml:"supHide"`
+	CtrlPr  *CTCtrlPr `xml:"ctrlPr"`
 }
 
 // CTNary ...
 type CTNary struct {
 	XMLName xml.Name    `xml:"CT_Nary"`
-	NaryPr  *CTNaryPr   `xml:"naryPr,omitempty"`
+	NaryPr  *CTNaryPr   `xml:"naryPr"`
 	Sub     *CTOMathArg `xml:"sub"`
 	Sup     *CTOMathArg `xml:"sup"`
 	E       *CTOMathArg `xml:"e"`
@@ -419,32 +419,32 @@ type CTNary struct {
 // CTPhantPr ...
 type CTPhantPr struct {
 	XMLName  xml.Name  `xml:"CT_PhantPr"`
-	Show     *CTOnOff  `xml:"show,omitempty"`
-	ZeroWid  *CTOnOff  `xml:"zeroWid,omitempty"`
-	ZeroAsc  *CTOnOff  `xml:"zeroAsc,omitempty"`
-	ZeroDesc *CTOnOff  `xml:"zeroDesc,omitempty"`
-	Transp   *CTOnOff  `xml:"transp,omitempty"`
-	CtrlPr   *CTCtrlPr `xml:"ctrlPr,omitempty"`
+	Show     *CTOnOff  `xml:"show"`
+	ZeroWid  *CTOnOff  `xml:"zeroWid"`
+	ZeroAsc  *CTOnOff  `xml:"zeroAsc"`
+	ZeroDesc *CTOnOff  `xml:"zeroDesc"`
+	Transp   *CTOnOff  `xml:"transp"`
+	CtrlPr   *CTCtrlPr `xml:"ctrlPr"`
 }
 
 // CTPhant ...
 type CTPhant struct {
 	XMLName xml.Name    `xml:"CT_Phant"`
-	PhantPr *CTPhantPr  `xml:"phantPr,omitempty"`
+	PhantPr *CTPhantPr  `xml:"phantPr"`
 	E       *CTOMathArg `xml:"e"`
 }
 
 // CTRadPr ...
 type CTRadPr struct {
 	XMLName xml.Name  `xml:"CT_RadPr"`
-	DegHide *CTOnOff  `xml:"degHide,omitempty"`
-	CtrlPr  *CTCtrlPr `xml:"ctrlPr,omitempty"`
+	DegHide *CTOnOff  `xml:"degHide"`
+	CtrlPr  *CTCtrlPr `xml:"ctrlPr"`
 }
 
 // CTRad ...
 type CTRad struct {
 	XMLName xml.Name    `xml:"CT_Rad"`
-	RadPr   *CTRadPr    `xml:"radPr,omitempty"`
+	RadPr   *CTRadPr    `xml:"radPr"`
 	Deg     *CTOMathArg `xml:"deg"`
 	E       *CTOMathArg `xml:"e"`
 }
@@ -452,13 +452,13 @@ type CTRad struct {
 // CTSPrePr ...
 type CTSPrePr struct {
 	XMLName xml.Name  `xml:"CT_SPrePr"`
-	CtrlPr  *CTCtrlPr `xml:"ctrlPr,omitempty"`
+	CtrlPr  *CTCtrlPr `xml:"ctrlPr"`
 }
 
 // CTSPre ...
 type CTSPre struct {
 	XMLName xml.Name    `xml:"CT_SPre"`
-	SPrePr  *CTSPrePr   `xml:"sPrePr,omitempty"`
+	SPrePr  *CTSPrePr   `xml:"sPrePr"`
 	Sub     *CTOMathArg `xml:"sub"`
 	Sup     *CTOMathArg `xml:"sup"`
 	E       *CTOMathArg `xml:"e"`
@@ -467,13 +467,13 @@ type CTSPre struct {
 // CTSSubPr ...
 type CTSSubPr struct {
 	XMLName xml.Name  `xml:"CT_SSubPr"`
-	CtrlPr  *CTCtrlPr `xml:"ctrlPr,omitempty"`
+	CtrlPr  *CTCtrlPr `xml:"ctrlPr"`
 }
 
 // CTSSub ...
 type CTSSub struct {
 	XMLName xml.Name    `xml:"CT_SSub"`
-	SSubPr  *CTSSubPr   `xml:"sSubPr,omitempty"`
+	SSubPr  *CTSSubPr   `xml:"sSubPr"`
 	E       *CTOMathArg `xml:"e"`
 	Sub     *CTOMathArg `xml:"sub"`
 }
@@ -481,14 +481,14 @@ type CTSSub struct {
 // CTSSubSupPr ...
 type CTSSubSupPr struct {
 	XMLName xml.Name  `xml:"CT_SSubSupPr"`
-	AlnScr  *CTOnOff  `xml:"alnScr,omitempty"`
-	CtrlPr  *CTCtrlPr `xml:"ctrlPr,omitempty"`
+	AlnScr  *CTOnOff  `xml:"alnScr"`
+	CtrlPr  *CTCtrlPr `xml:"ctrlPr"`
 }
 
 // CTSSubSup ...
 type CTSSubSup struct {
 	XMLName   xml.Name     `xml:"CT_SSubSup"`
-	SSubSupPr *CTSSubSupPr `xml:"sSubSupPr,omitempty"`
+	SSubSupPr *CTSSubSupPr `xml:"sSubSupPr"`
 	E         *CTOMathArg  `xml:"e"`
 	Sub       *CTOMathArg  `xml:"sub"`
 	Sup       *CTOMathArg  `xml:"sup"`
@@ -497,13 +497,13 @@ type CTSSubSup struct {
 // CTSSupPr ...
 type CTSSupPr struct {
 	XMLName xml.Name  `xml:"CT_SSupPr"`
-	CtrlPr  *CTCtrlPr `xml:"ctrlPr,omitempty"`
+	CtrlPr  *CTCtrlPr `xml:"ctrlPr"`
 }
 
 // CTSSup ...
 type CTSSup struct {
 	XMLName xml.Name    `xml:"CT_SSup"`
-	SSupPr  *CTSSupPr   `xml:"sSupPr,omitempty"`
+	SSupPr  *CTSSupPr   `xml:"sSupPr"`
 	E       *CTOMathArg `xml:"e"`
 	Sup     *CTOMathArg `xml:"sup"`
 }
@@ -543,15 +543,15 @@ type EGOMathElements struct {
 // CTOMathArgPr ...
 type CTOMathArgPr struct {
 	XMLName xml.Name    `xml:"CT_OMathArgPr"`
-	ArgSz   *CTInteger2 `xml:"argSz,omitempty"`
+	ArgSz   *CTInteger2 `xml:"argSz"`
 }
 
 // CTOMathArg ...
 type CTOMathArg struct {
 	XMLName         xml.Name `xml:"CT_OMathArg"`
 	EGOMathElements []*EGOMathElements
-	ArgPr           *CTOMathArgPr `xml:"argPr,omitempty"`
-	CtrlPr          *CTCtrlPr     `xml:"ctrlPr,omitempty"`
+	ArgPr           *CTOMathArgPr `xml:"argPr"`
+	CtrlPr          *CTCtrlPr     `xml:"ctrlPr"`
 }
 
 // STJc ...
@@ -566,7 +566,7 @@ type CTOMathJc struct {
 // CTOMathParaPr ...
 type CTOMathParaPr struct {
 	XMLName xml.Name   `xml:"CT_OMathParaPr"`
-	Jc      *CTOMathJc `xml:"jc,omitempty"`
+	Jc      *CTOMathJc `xml:"jc"`
 }
 
 // CTTwipsMeasure ...
@@ -596,22 +596,22 @@ type CTBreakBinSub struct {
 // CTMathPr ...
 type CTMathPr struct {
 	XMLName    xml.Name        `xml:"CT_MathPr"`
-	MathFont   *CTString       `xml:"mathFont,omitempty"`
-	BrkBin     *CTBreakBin     `xml:"brkBin,omitempty"`
-	BrkBinSub  *CTBreakBinSub  `xml:"brkBinSub,omitempty"`
-	SmallFrac  *CTOnOff        `xml:"smallFrac,omitempty"`
-	DispDef    *CTOnOff        `xml:"dispDef,omitempty"`
-	LMargin    *CTTwipsMeasure `xml:"lMargin,omitempty"`
-	RMargin    *CTTwipsMeasure `xml:"rMargin,omitempty"`
-	DefJc      *CTOMathJc      `xml:"defJc,omitempty"`
-	PreSp      *CTTwipsMeasure `xml:"preSp,omitempty"`
-	PostSp     *CTTwipsMeasure `xml:"postSp,omitempty"`
-	InterSp    *CTTwipsMeasure `xml:"interSp,omitempty"`
-	IntraSp    *CTTwipsMeasure `xml:"intraSp,omitempty"`
+	MathFont   *CTString       `xml:"mathFont"`
+	BrkBin     *CTBreakBin     `xml:"brkBin"`
+	BrkBinSub  *CTBreakBinSub  `xml:"brkBinSub"`
+	SmallFrac  *CTOnOff        `xml:"smallFrac"`
+	DispDef    *CTOnOff        `xml:"dispDef"`
+	LMargin    *CTTwipsMeasure `xml:"lMargin"`
+	RMargin    *CTTwipsMeasure `xml:"rMargin"`
+	DefJc      *CTOMathJc      `xml:"defJc"`
+	PreSp      *CTTwipsMeasure `xml:"preSp"`
+	PostSp     *CTTwipsMeasure `xml:"postSp"`
+	InterSp    *CTTwipsMeasure `xml:"interSp"`
+	IntraSp    *CTTwipsMeasure `xml:"intraSp"`
 	WrapIndent *CTTwipsMeasure `xml:"wrapIndent"`
 	WrapRight  *CTOnOff        `xml:"wrapRight"`
-	IntLim     *CTLimLoc       `xml:"intLim,omitempty"`
-	NaryLim    *CTLimLoc       `xml:"naryLim,omitempty"`
+	IntLim     *CTLimLoc       `xml:"intLim"`
+	NaryLim    *CTLimLoc       `xml:"naryLim"`
 }
 
 // MathPr ...
@@ -620,7 +620,7 @@ type MathPr *CTMathPr
 // CTOMathPara ...
 type CTOMathPara struct {
 	XMLName     xml.Name       `xml:"CT_OMathPara"`
-	OMathParaPr *CTOMathParaPr `xml:"oMathParaPr,omitempty"`
+	OMathParaPr *CTOMathParaPr `xml:"oMathParaPr"`
 	OMath       []*CTOMath     `xml:"oMath"`
 }
 

@@ -1154,13 +1154,13 @@ public class CT_Object {
 	protected ST_TwipsMeasure DyaOrigAttr;
 	@XmlElement(name = "drawing")
 	protected CT_Drawing Drawing;
-	@XmlElement(required = true, name = "control")
+	@XmlElement(name = "control")
 	protected CT_Control Control;
-	@XmlElement(required = true, name = "objectLink")
+	@XmlElement(name = "objectLink")
 	protected CT_ObjectLink ObjectLink;
-	@XmlElement(required = true, name = "objectEmbed")
+	@XmlElement(name = "objectEmbed")
 	protected CT_ObjectEmbed ObjectEmbed;
-	@XmlElement(required = true, name = "movie")
+	@XmlElement(name = "movie")
 	protected CT_Rel Movie;
 }
 
@@ -1304,15 +1304,15 @@ public class CT_Hyperlink {
 
 // CT_FFData ...
 public class CT_FFData {
-	@XmlElement(required = true, name = "name")
+	@XmlElement(name = "name")
 	protected List<CT_FFName> Name;
 	@XmlElement(name = "label")
 	protected List<CT_DecimalNumber> Label;
 	@XmlElement(name = "tabIndex")
 	protected List<CT_UnsignedDecimalNumber> TabIndex;
-	@XmlElement(required = true, name = "enabled")
+	@XmlElement(name = "enabled")
 	protected List<CT_OnOff> Enabled;
-	@XmlElement(required = true, name = "calcOnExit")
+	@XmlElement(name = "calcOnExit")
 	protected List<CT_OnOff> CalcOnExit;
 	@XmlElement(name = "entryMacro")
 	protected List<CT_MacroName> EntryMacro;
@@ -1322,11 +1322,11 @@ public class CT_FFData {
 	protected List<CT_FFHelpText> HelpText;
 	@XmlElement(name = "statusText")
 	protected List<CT_FFStatusText> StatusText;
-	@XmlElement(required = true, name = "checkBox")
+	@XmlElement(name = "checkBox")
 	protected List<CT_FFCheckBox> CheckBox;
-	@XmlElement(required = true, name = "ddList")
+	@XmlElement(name = "ddList")
 	protected List<CT_FFDDList> DdList;
-	@XmlElement(required = true, name = "textInput")
+	@XmlElement(name = "textInput")
 	protected List<CT_FFTextInput> TextInput;
 }
 
@@ -1348,9 +1348,9 @@ public class CT_FFStatusText {
 
 // CT_FFCheckBox ...
 public class CT_FFCheckBox {
-	@XmlElement(required = true, name = "size")
+	@XmlElement(name = "size")
 	protected CT_HpsMeasure Size;
-	@XmlElement(required = true, name = "sizeAuto")
+	@XmlElement(name = "sizeAuto")
 	protected CT_OnOff SizeAuto;
 	@XmlElement(name = "default")
 	protected CT_OnOff Default;
@@ -2036,15 +2036,15 @@ public class EG_RPrMath {
 
 // CT_MathCtrlIns ...
 public class CT_MathCtrlIns extends CT_TrackChange  {
-	@XmlElement(required = true, name = "del")
+	@XmlElement(name = "del")
 	protected CT_RPrChange Del;
-	@XmlElement(required = true, name = "rPr")
+	@XmlElement(name = "rPr")
 	protected CT_RPr RPr;
 }
 
 // CT_MathCtrlDel ...
 public class CT_MathCtrlDel extends CT_TrackChange  {
-	@XmlElement(required = true, name = "rPr")
+	@XmlElement(name = "rPr")
 	protected CT_RPr RPr;
 }
 
@@ -2270,29 +2270,29 @@ public class CT_SdtPr {
 	protected CT_DecimalNumber Label;
 	@XmlElement(name = "tabIndex")
 	protected CT_UnsignedDecimalNumber TabIndex;
-	@XmlElement(required = true, name = "equation")
+	@XmlElement(name = "equation")
 	protected CT_Empty Equation;
-	@XmlElement(required = true, name = "comboBox")
+	@XmlElement(name = "comboBox")
 	protected CT_SdtComboBox ComboBox;
-	@XmlElement(required = true, name = "date")
+	@XmlElement(name = "date")
 	protected CT_SdtDate Date;
-	@XmlElement(required = true, name = "docPartObj")
+	@XmlElement(name = "docPartObj")
 	protected CT_SdtDocPart DocPartObj;
-	@XmlElement(required = true, name = "docPartList")
+	@XmlElement(name = "docPartList")
 	protected CT_SdtDocPart DocPartList;
-	@XmlElement(required = true, name = "dropDownList")
+	@XmlElement(name = "dropDownList")
 	protected CT_SdtDropDownList DropDownList;
-	@XmlElement(required = true, name = "picture")
+	@XmlElement(name = "picture")
 	protected CT_Empty Picture;
-	@XmlElement(required = true, name = "richText")
+	@XmlElement(name = "richText")
 	protected CT_Empty RichText;
-	@XmlElement(required = true, name = "text")
+	@XmlElement(name = "text")
 	protected CT_SdtText Text;
-	@XmlElement(required = true, name = "citation")
+	@XmlElement(name = "citation")
 	protected CT_Empty Citation;
-	@XmlElement(required = true, name = "group")
+	@XmlElement(name = "group")
 	protected CT_Empty Group;
-	@XmlElement(required = true, name = "bibliography")
+	@XmlElement(name = "bibliography")
 	protected CT_Empty Bibliography;
 }
 
@@ -3692,7 +3692,7 @@ public class CT_Frameset {
 public class CT_NumPicBullet {
 	@XmlAttribute(required = true, name = "numPicBulletId")
 	protected Integer NumPicBulletIdAttr;
-	@XmlElement(required = true, name = "drawing")
+	@XmlElement(name = "drawing")
 	protected CT_Drawing Drawing;
 }
 
@@ -4201,7 +4201,7 @@ public class CT_DocPartBehavior {
 
 // CT_DocPartBehaviors ...
 public class CT_DocPartBehaviors {
-	@XmlElement(required = true, name = "behavior")
+	@XmlElement(name = "behavior")
 	protected List<CT_DocPartBehavior> Behavior;
 }
 
@@ -4222,7 +4222,7 @@ public class CT_DocPartType {
 public class CT_DocPartTypes {
 	@XmlAttribute(name = "all")
 	protected ST_OnOff AllAttr;
-	@XmlElement(required = true, name = "type")
+	@XmlElement(name = "type")
 	protected List<CT_DocPartType> Type;
 }
 
@@ -4283,7 +4283,7 @@ public class CT_DocPart {
 
 // CT_DocParts ...
 public class CT_DocParts {
-	@XmlElement(required = true, name = "docPart")
+	@XmlElement(name = "docPart")
 	protected List<CT_DocPart> DocPart;
 }
 

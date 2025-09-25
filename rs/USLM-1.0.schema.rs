@@ -742,7 +742,7 @@ pub struct NotesType {
 	#[serde(rename = "note")]
 	pub note: Vec<NoteType>,
 	#[serde(rename = "layout")]
-	pub layout: LayoutType,
+	pub layout: Option<LayoutType>,
 	#[serde(flatten)]
 	pub base_block_type: BaseBlockType,
 }
@@ -781,7 +781,7 @@ pub struct AppendixType {
 	#[serde(rename = "LevelStructure")]
 	pub level_structure: LevelStructure,
 	#[serde(rename = "block")]
-	pub block: BlockType,
+	pub block: Option<BlockType>,
 	#[serde(flatten)]
 	pub base_block_type: BaseBlockType,
 }
@@ -800,7 +800,7 @@ pub struct SignaturesType {
 	#[serde(rename = "signature")]
 	pub signature: Vec<SignatureType>,
 	#[serde(rename = "layout")]
-	pub layout: LayoutType,
+	pub layout: Option<LayoutType>,
 	#[serde(rename = "date")]
 	pub date: Option<u8>,
 }

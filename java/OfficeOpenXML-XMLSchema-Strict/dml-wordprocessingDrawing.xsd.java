@@ -163,9 +163,9 @@ public class ST_RelFromH {
 public class CT_PosH {
 	@XmlAttribute(required = true, name = "relativeFrom")
 	protected String RelativeFromAttr;
-	@XmlElement(required = true, name = "align")
+	@XmlElement(name = "align")
 	protected String Align;
-	@XmlElement(required = true, name = "posOffset")
+	@XmlElement(name = "posOffset")
 	protected Integer PosOffset;
 }
 
@@ -187,9 +187,9 @@ public class ST_RelFromV {
 public class CT_PosV {
 	@XmlAttribute(required = true, name = "relativeFrom")
 	protected String RelativeFromAttr;
-	@XmlElement(required = true, name = "align")
+	@XmlElement(name = "align")
 	protected String Align;
-	@XmlElement(required = true, name = "posOffset")
+	@XmlElement(name = "posOffset")
 	protected Integer PosOffset;
 }
 
@@ -267,9 +267,9 @@ public class CT_WordprocessingShape {
 	protected Boolean NormalEastAsianFlowAttr;
 	@XmlElement(name = "cNvPr")
 	protected CT_NonVisualDrawingProps CNvPr;
-	@XmlElement(required = true, name = "cNvSpPr")
+	@XmlElement(name = "cNvSpPr")
 	protected CT_NonVisualDrawingShapeProps CNvSpPr;
-	@XmlElement(required = true, name = "cNvCnPr")
+	@XmlElement(name = "cNvCnPr")
 	protected CT_NonVisualConnectorProperties CNvCnPr;
 	@XmlElement(required = true, name = "spPr")
 	protected CT_ShapeProperties SpPr;
@@ -277,9 +277,9 @@ public class CT_WordprocessingShape {
 	protected CT_ShapeStyle Style;
 	@XmlElement(name = "extLst")
 	protected CT_OfficeArtExtensionList ExtLst;
-	@XmlElement(required = true, name = "txbx")
+	@XmlElement(name = "txbx")
 	protected CT_TextboxInfo Txbx;
-	@XmlElement(required = true, name = "linkedTxbx")
+	@XmlElement(name = "linkedTxbx")
 	protected CT_LinkedTextboxInformation LinkedTxbx;
 	@XmlElement(required = true, name = "bodyPr")
 	protected CT_TextBodyProperties BodyPr;
@@ -329,15 +329,15 @@ public class CT_WordprocessingGroup {
 	protected CT_NonVisualGroupDrawingShapeProps CNvGrpSpPr;
 	@XmlElement(required = true, name = "grpSpPr")
 	protected CT_GroupShapeProperties GrpSpPr;
-	@XmlElement(required = true, name = "wsp")
+	@XmlElement(name = "wsp")
 	protected List<CT_WordprocessingShape> Wsp;
-	@XmlElement(required = true, name = "grpSp")
+	@XmlElement(name = "grpSp")
 	protected List<CT_WordprocessingGroup> GrpSp;
-	@XmlElement(required = true, name = "graphicFrame")
+	@XmlElement(name = "graphicFrame")
 	protected List<CT_GraphicFrame> GraphicFrame;
-	@XmlElement(required = true, name = "dpct:pic")
+	@XmlElement(name = "dpct:pic")
 	protected List<CT_Picture> DpctPic;
-	@XmlElement(required = true, name = "contentPart")
+	@XmlElement(name = "contentPart")
 	protected List<CT_WordprocessingContentPart> ContentPart;
 	@XmlElement(name = "extLst")
 	protected CT_OfficeArtExtensionList ExtLst;
@@ -349,15 +349,15 @@ public class CT_WordprocessingCanvas {
 	protected CT_BackgroundFormatting Bg;
 	@XmlElement(name = "whole")
 	protected CT_WholeE2oFormatting Whole;
-	@XmlElement(required = true, name = "wsp")
+	@XmlElement(name = "wsp")
 	protected List<CT_WordprocessingShape> Wsp;
-	@XmlElement(required = true, name = "dpct:pic")
+	@XmlElement(name = "dpct:pic")
 	protected List<CT_Picture> DpctPic;
-	@XmlElement(required = true, name = "contentPart")
+	@XmlElement(name = "contentPart")
 	protected List<CT_WordprocessingContentPart> ContentPart;
-	@XmlElement(required = true, name = "wgp")
+	@XmlElement(name = "wgp")
 	protected List<CT_WordprocessingGroup> Wgp;
-	@XmlElement(required = true, name = "graphicFrame")
+	@XmlElement(name = "graphicFrame")
 	protected List<CT_GraphicFrame> GraphicFrame;
 	@XmlElement(name = "extLst")
 	protected CT_OfficeArtExtensionList ExtLst;

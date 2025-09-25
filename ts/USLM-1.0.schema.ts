@@ -297,8 +297,8 @@ export class MarkerType {
 // InlineType is The inline type is a extension of the base type to text content or
 //             other inline elements.
 export class InlineType extends BaseContentType  {
-	Marker: Array<MarkerType>;
-	Inline: Array<InlineType>;
+	Marker?: Array<MarkerType>;
+	Inline?: Array<InlineType>;
 }
 
 // BlockType is The block type is a extension of the base type to content
@@ -345,8 +345,8 @@ export type Content = ContentType;
 export class LawDocType extends BaseBlockType  {
 	Meta: MetaType;
 	Main?: MainType;
-	Block: Array<BlockType>;
-	Appendix: Array<AppendixType>;
+	Block?: Array<BlockType>;
+	Appendix?: Array<AppendixType>;
 }
 
 // GenericDocType is In addition to the content part of the document, a document
@@ -362,8 +362,8 @@ export class GenericDocType extends BaseBlockType  {
 //                         a person, or another other object related to the
 //                         document.
 export class MetaType extends BaseBlockType  {
-	Property: Array<PropertyType>;
-	Set: Array<SetType>;
+	Property?: Array<PropertyType>;
+	Set?: Array<SetType>;
 }
 
 // PropertyType is A property can represent a pointer to either an external
@@ -385,8 +385,8 @@ export class PropertyType extends InlineType  {
 // SetType is A set can contain 0 or more sets.
 export class SetType extends BaseBlockType  {
 	TypeAttr?: string;
-	Property: Array<PropertyType>;
-	Set: Array<SetType>;
+	Property?: Array<PropertyType>;
+	Set?: Array<SetType>;
 }
 
 // TocType is The items in a table of contents can be arranged in
@@ -396,8 +396,8 @@ export class SetType extends BaseBlockType  {
 export class TocType extends BaseBlockType  {
 	GenerateAttr?: boolean;
 	HeadingStructure: HeadingStructure;
-	TocItem: Array<TocItemType>;
-	Layout: Array<LayoutType>;
+	TocItem?: Array<TocItemType>;
+	Layout?: Array<LayoutType>;
 }
 
 // TocItemType is Use the description group to record the number and title in the
@@ -406,7 +406,7 @@ export class TocItemType extends BaseBlockType  {
 	DescriptionGroup: DescriptionGroup;
 	HeadingStructure: HeadingStructure;
 	TocItem?: Array<TocItemType>;
-	Content: Array<ContentType>;
+	Content?: Array<ContentType>;
 }
 
 // MainType is The document is permitted to be empty to allow for the
@@ -416,10 +416,10 @@ export class MainType {
 	NoteStructure: Array<NoteStructure>;
 	PreambleStructure: PreambleStructure;
 	LevelStructure: LevelStructure;
-	Property: Array<PropertyType>;
-	Block: Array<BlockType>;
-	Statement: Array<StatementType>;
-	Toc: Array<TocType>;
+	Property?: Array<PropertyType>;
+	Block?: Array<BlockType>;
+	Statement?: Array<StatementType>;
+	Toc?: Array<TocType>;
 }
 
 // StatementType is The attributes of the description group can be used to
@@ -427,12 +427,12 @@ export class MainType {
 //                   generating a table of contents.
 export class StatementType extends BaseContentType  {
 	DescriptionGroup: DescriptionGroup;
-	Marker: Array<MarkerType>;
-	Inline: Array<InlineType>;
-	Block: Array<BlockType>;
-	Text: Array<TextType>;
-	Content: Array<ContentType>;
-	Level: Array<LevelType>;
+	Marker?: Array<MarkerType>;
+	Inline?: Array<InlineType>;
+	Block?: Array<BlockType>;
+	Text?: Array<TextType>;
+	Content?: Array<ContentType>;
+	Level?: Array<LevelType>;
 }
 
 // PreambleType is Attributes from the description group may be used to
@@ -474,12 +474,12 @@ export class HeadingType extends ContentType  {
 //                            action.
 export class InstructionType extends BaseContentType  {
 	Ref: RefType;
-	Inline: Array<InlineType>;
-	Marker: Array<MarkerType>;
+	Inline?: Array<InlineType>;
+	Marker?: Array<MarkerType>;
 	Action: Array<ActionType>;
-	Level: Array<LevelType>;
-	QuotedText: Array<QuotedTextType>;
-	QuotedContent: Array<QuotedContentType>;
+	Level?: Array<LevelType>;
+	QuotedText?: Array<QuotedTextType>;
+	QuotedContent?: Array<QuotedContentType>;
 }
 
 // ActionType is Use the @action attribute to describe the action being taken.
@@ -495,8 +495,8 @@ export class NotesType extends BaseBlockType  {
 	NoteGroup: NoteGroup;
 	Heading?: HeadingType;
 	Subheading?: Array<HeadingType>;
-	Note: Array<NoteType>;
-	Layout: LayoutType;
+	Note?: Array<NoteType>;
+	Layout?: LayoutType;
 }
 
 // NoteType is You can use the @date to associate dates to your notes.
@@ -517,7 +517,7 @@ export class AppendixType extends BaseBlockType  {
 	HeadingStructure: HeadingStructure;
 	TocStructure: TocStructure;
 	LevelStructure: LevelStructure;
-	Block: BlockType;
+	Block?: BlockType;
 }
 
 // SignaturesType is Defines a block for a collection of signatures. An opening paragraph
@@ -528,8 +528,8 @@ export class AppendixType extends BaseBlockType  {
 //             layout.
 export class SignaturesType {
 	P?: PType;
-	Signature: Array<SignatureType>;
-	Layout: LayoutType;
+	Signature?: Array<SignatureType>;
+	Layout?: LayoutType;
 	Date?: string;
 }
 
@@ -845,11 +845,11 @@ export type QuotedContent = QuotedContentType;
 export class LayoutType extends BaseBlockType  {
 	OrientationAttr?: string;
 	NoteStructure: Array<NoteStructure>;
-	Header: Array<RowType>;
-	Row: Array<RowType>;
-	TocItem: Array<TocItemType>;
-	Block: Array<BlockType>;
-	Content: Array<ContentType>;
+	Header?: Array<RowType>;
+	Row?: Array<RowType>;
+	TocItem?: Array<TocItemType>;
+	Block?: Array<BlockType>;
+	Content?: Array<ContentType>;
 }
 
 // RowType is A row contains one or more column cells.

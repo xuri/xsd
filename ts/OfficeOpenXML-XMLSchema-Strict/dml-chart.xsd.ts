@@ -54,8 +54,8 @@ export class CT_NumRef {
 
 // CT_NumDataSource ...
 export class CT_NumDataSource {
-	NumRef: CT_NumRef;
-	NumLit: CT_NumData;
+	NumRef?: CT_NumRef;
+	NumLit?: CT_NumData;
 }
 
 // CT_StrVal ...
@@ -80,8 +80,8 @@ export class CT_StrRef {
 
 // CT_Tx ...
 export class CT_Tx {
-	StrRef: CT_StrRef;
-	Rich: CT_TextBody;
+	StrRef?: CT_StrRef;
+	Rich?: CT_TextBody;
 }
 
 // CT_TextLanguageID ...
@@ -110,17 +110,17 @@ export class CT_MultiLvlStrRef {
 
 // CT_AxDataSource ...
 export class CT_AxDataSource {
-	MultiLvlStrRef: CT_MultiLvlStrRef;
-	NumRef: CT_NumRef;
-	NumLit: CT_NumData;
-	StrRef: CT_StrRef;
-	StrLit: CT_StrData;
+	MultiLvlStrRef?: CT_MultiLvlStrRef;
+	NumRef?: CT_NumRef;
+	NumLit?: CT_NumData;
+	StrRef?: CT_StrRef;
+	StrLit?: CT_StrData;
 }
 
 // CT_SerTx ...
 export class CT_SerTx {
-	StrRef: CT_StrRef;
-	V: string;
+	StrRef?: CT_StrRef;
+	V?: string;
 }
 
 // ST_LayoutTarget ...
@@ -433,7 +433,7 @@ export class Group_DLbl {
 export class CT_DLbl {
 	Group_DLbl: Array<Group_DLbl>;
 	Idx: CT_UnsignedInt;
-	Delete: CT_Boolean;
+	Delete?: CT_Boolean;
 	ExtLst?: CT_ExtensionList;
 }
 
@@ -448,7 +448,7 @@ export class Group_DLbls {
 export class CT_DLbls {
 	Group_DLbls: Array<Group_DLbls>;
 	DLbl?: Array<CT_DLbl>;
-	Delete: CT_Boolean;
+	Delete?: CT_Boolean;
 	ExtLst?: CT_ExtensionList;
 }
 
@@ -1169,8 +1169,8 @@ export class CT_DispUnitsLbl {
 
 // CT_DispUnits ...
 export class CT_DispUnits {
-	CustUnit: CT_Double;
-	BuiltInUnit: CT_BuiltInUnit;
+	CustUnit?: CT_Double;
+	BuiltInUnit?: CT_BuiltInUnit;
 	DispUnitsLbl?: CT_DispUnitsLbl;
 	ExtLst?: CT_ExtensionList;
 }
@@ -1282,26 +1282,26 @@ export class CT_ValAx {
 // CT_PlotArea ...
 export class CT_PlotArea {
 	Layout?: CT_Layout;
-	AreaChart: Array<CT_AreaChart>;
-	Area3DChart: Array<CT_Area3DChart>;
-	LineChart: Array<CT_LineChart>;
-	Line3DChart: Array<CT_Line3DChart>;
-	StockChart: Array<CT_StockChart>;
-	RadarChart: Array<CT_RadarChart>;
-	ScatterChart: Array<CT_ScatterChart>;
-	PieChart: Array<CT_PieChart>;
-	Pie3DChart: Array<CT_Pie3DChart>;
-	DoughnutChart: Array<CT_DoughnutChart>;
-	BarChart: Array<CT_BarChart>;
-	Bar3DChart: Array<CT_Bar3DChart>;
-	OfPieChart: Array<CT_OfPieChart>;
-	SurfaceChart: Array<CT_SurfaceChart>;
-	Surface3DChart: Array<CT_Surface3DChart>;
-	BubbleChart: Array<CT_BubbleChart>;
-	ValAx: Array<CT_ValAx>;
-	CatAx: Array<CT_CatAx>;
-	DateAx: Array<CT_DateAx>;
-	SerAx: Array<CT_SerAx>;
+	AreaChart?: Array<CT_AreaChart>;
+	Area3DChart?: Array<CT_Area3DChart>;
+	LineChart?: Array<CT_LineChart>;
+	Line3DChart?: Array<CT_Line3DChart>;
+	StockChart?: Array<CT_StockChart>;
+	RadarChart?: Array<CT_RadarChart>;
+	ScatterChart?: Array<CT_ScatterChart>;
+	PieChart?: Array<CT_PieChart>;
+	Pie3DChart?: Array<CT_Pie3DChart>;
+	DoughnutChart?: Array<CT_DoughnutChart>;
+	BarChart?: Array<CT_BarChart>;
+	Bar3DChart?: Array<CT_Bar3DChart>;
+	OfPieChart?: Array<CT_OfPieChart>;
+	SurfaceChart?: Array<CT_SurfaceChart>;
+	Surface3DChart?: Array<CT_Surface3DChart>;
+	BubbleChart?: Array<CT_BubbleChart>;
+	ValAx?: Array<CT_ValAx>;
+	CatAx?: Array<CT_CatAx>;
+	DateAx?: Array<CT_DateAx>;
+	SerAx?: Array<CT_SerAx>;
 	DTable?: CT_DTable;
 	SpPr?: CT_ShapeProperties;
 	ExtLst?: CT_ExtensionList;
@@ -1345,7 +1345,7 @@ export class EG_LegendEntryData {
 export class CT_LegendEntry {
 	EG_LegendEntryData: Array<EG_LegendEntryData>;
 	Idx: CT_UnsignedInt;
-	Delete: CT_Boolean;
+	Delete?: CT_Boolean;
 	ExtLst?: CT_ExtensionList;
 }
 

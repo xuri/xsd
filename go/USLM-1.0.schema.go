@@ -292,7 +292,7 @@ type Content *ContentType
 //                         referenced documents.
 type LawDocType struct {
 	Meta     *MetaType       `xml:"meta"`
-	Main     *MainType       `xml:"main,omitempty"`
+	Main     *MainType       `xml:"main"`
 	Block    []*BlockType    `xml:"block"`
 	Appendix []*AppendixType `xml:"appendix"`
 	*BaseBlockType
@@ -303,7 +303,7 @@ type LawDocType struct {
 type GenericDocType struct {
 	Meta     *MetaType       `xml:"meta"`
 	Content  *ContentType    `xml:"content"`
-	Appendix []*AppendixType `xml:"appendix,omitempty"`
+	Appendix []*AppendixType `xml:"appendix"`
 	*BaseBlockType
 }
 
@@ -359,7 +359,7 @@ type TocType struct {
 type TocItemType struct {
 	DescriptionGroup *DescriptionGroup
 	HeadingStructure *HeadingStructure
-	TocItem          []*TocItemType `xml:"tocItem,omitempty"`
+	TocItem          []*TocItemType `xml:"tocItem"`
 	Content          []*ContentType `xml:"content"`
 	*BaseBlockType
 }
@@ -398,7 +398,7 @@ type PreambleType struct {
 	DescriptionGroup *DescriptionGroup
 	HeadingStructure *HeadingStructure
 	RecitalStructure []*RecitalStructure
-	EnactingFormula  *StatementType `xml:"enactingFormula,omitempty"`
+	EnactingFormula  *StatementType `xml:"enactingFormula"`
 	*BaseBlockType
 }
 
@@ -455,8 +455,8 @@ type ActionType struct {
 //                      and the @topic attribute to categorize the notes.
 type NotesType struct {
 	NoteGroup  *NoteGroup
-	Heading    *HeadingType   `xml:"heading,omitempty"`
-	Subheading []*HeadingType `xml:"subheading,omitempty"`
+	Heading    *HeadingType   `xml:"heading"`
+	Subheading []*HeadingType `xml:"subheading"`
 	Note       []*NoteType    `xml:"note"`
 	Layout     *LayoutType    `xml:"layout"`
 	*BaseBlockType
@@ -492,7 +492,7 @@ type AppendixType struct {
 //             The signatures may either be specified serially in a grid-like
 //             layout.
 type SignaturesType struct {
-	P         *PType           `xml:"p,omitempty"`
+	P         *PType           `xml:"p"`
 	Signature []*SignatureType `xml:"signature"`
 	Layout    *LayoutType      `xml:"layout"`
 	Date      *string          `xml:"date"`
@@ -520,8 +520,8 @@ type Affiliation struct {
 //             their affiliation.
 type SignatureType struct {
 	Name        *Name        `xml:"name"`
-	Role        *Role        `xml:"role,omitempty"`
-	Affiliation *Affiliation `xml:"affiliation,omitempty"`
+	Role        *Role        `xml:"role"`
+	Affiliation *Affiliation `xml:"affiliation"`
 	Date        *string      `xml:"date"`
 }
 

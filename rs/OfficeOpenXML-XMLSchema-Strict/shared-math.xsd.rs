@@ -948,9 +948,9 @@ pub struct CTMathPr {
 	#[serde(rename = "intraSp")]
 	pub intra_sp: Option<CTTwipsMeasure>,
 	#[serde(rename = "wrapIndent")]
-	pub wrap_indent: CTTwipsMeasure,
+	pub wrap_indent: Option<CTTwipsMeasure>,
 	#[serde(rename = "wrapRight")]
-	pub wrap_right: CTOnOff,
+	pub wrap_right: Option<CTOnOff>,
 	#[serde(rename = "intLim")]
 	pub int_lim: Option<CTLimLoc>,
 	#[serde(rename = "naryLim")]

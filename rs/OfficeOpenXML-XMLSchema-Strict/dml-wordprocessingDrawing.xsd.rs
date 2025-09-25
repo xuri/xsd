@@ -182,9 +182,9 @@ pub struct CTPosH {
 	#[serde(rename = "relativeFrom")]
 	pub relative_from: String,
 	#[serde(rename = "align")]
-	pub align: String,
+	pub align: Option<String>,
 	#[serde(rename = "posOffset")]
-	pub pos_offset: i32,
+	pub pos_offset: Option<i32>,
 }
 
 
@@ -210,9 +210,9 @@ pub struct CTPosV {
 	#[serde(rename = "relativeFrom")]
 	pub relative_from: String,
 	#[serde(rename = "align")]
-	pub align: String,
+	pub align: Option<String>,
 	#[serde(rename = "posOffset")]
-	pub pos_offset: i32,
+	pub pos_offset: Option<i32>,
 }
 
 
@@ -302,9 +302,9 @@ pub struct CTWordprocessingShape {
 	#[serde(rename = "cNvPr")]
 	pub c_nv_pr: Option<CTNonVisualDrawingProps>,
 	#[serde(rename = "cNvSpPr")]
-	pub c_nv_sp_pr: CTNonVisualDrawingShapeProps,
+	pub c_nv_sp_pr: Option<CTNonVisualDrawingShapeProps>,
 	#[serde(rename = "cNvCnPr")]
-	pub c_nv_cn_pr: CTNonVisualConnectorProperties,
+	pub c_nv_cn_pr: Option<CTNonVisualConnectorProperties>,
 	#[serde(rename = "spPr")]
 	pub sp_pr: CTShapeProperties,
 	#[serde(rename = "style")]
@@ -312,9 +312,9 @@ pub struct CTWordprocessingShape {
 	#[serde(rename = "extLst")]
 	pub ext_lst: Option<CTOfficeArtExtensionList>,
 	#[serde(rename = "txbx")]
-	pub txbx: CTTextboxInfo,
+	pub txbx: Option<CTTextboxInfo>,
 	#[serde(rename = "linkedTxbx")]
-	pub linked_txbx: CTLinkedTextboxInformation,
+	pub linked_txbx: Option<CTLinkedTextboxInformation>,
 	#[serde(rename = "bodyPr")]
 	pub body_pr: CTTextBodyProperties,
 }

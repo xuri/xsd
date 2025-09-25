@@ -787,9 +787,9 @@ public class CT_MathPr {
 	protected CT_TwipsMeasure InterSp;
 	@XmlElement(name = "intraSp")
 	protected CT_TwipsMeasure IntraSp;
-	@XmlElement(required = true, name = "wrapIndent")
+	@XmlElement(name = "wrapIndent")
 	protected CT_TwipsMeasure WrapIndent;
-	@XmlElement(required = true, name = "wrapRight")
+	@XmlElement(name = "wrapRight")
 	protected CT_OnOff WrapRight;
 	@XmlElement(name = "intLim")
 	protected CT_LimLoc IntLim;

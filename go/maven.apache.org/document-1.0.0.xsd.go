@@ -12,16 +12,16 @@ type Document *DocumentModel
 // DocumentModel is The meta data to construct a cover page for the document.
 type DocumentModel struct {
 	OutputNameAttr *string        `xml:"outputName,attr"`
-	Meta           *DocumentMeta  `xml:"meta,omitempty"`
-	Toc            *DocumentTOC   `xml:"toc,omitempty"`
-	Cover          *DocumentCover `xml:"cover,omitempty"`
+	Meta           *DocumentMeta  `xml:"meta"`
+	Toc            *DocumentTOC   `xml:"toc"`
+	Cover          *DocumentCover `xml:"cover"`
 }
 
 // DocumentTOC is TOC item.
 type DocumentTOC struct {
 	NameAttr  *string            `xml:"name,attr"`
 	DepthAttr *int               `xml:"depth,attr"`
-	Item      []*DocumentTOCItem `xml:"item,omitempty"`
+	Item      []*DocumentTOCItem `xml:"item"`
 }
 
 // DocumentTOCItem is A table of content item containing sub-items.
@@ -29,7 +29,7 @@ type DocumentTOCItem struct {
 	NameAttr     *string            `xml:"name,attr"`
 	RefAttr      *string            `xml:"ref,attr"`
 	CollapseAttr *bool              `xml:"collapse,attr"`
-	Item         []*DocumentTOCItem `xml:"item,omitempty"`
+	Item         []*DocumentTOCItem `xml:"item"`
 }
 
 // DocumentCover is The location of an image file that represents the company logo.
@@ -39,7 +39,7 @@ type DocumentCover struct {
 	CoverVersion  *string           `xml:"coverVersion"`
 	CoverType     *string           `xml:"coverType"`
 	CoverDate     *string           `xml:"coverDate"`
-	Author        []*DocumentAuthor `xml:"author,omitempty"`
+	Author        []*DocumentAuthor `xml:"author"`
 	ProjectName   *string           `xml:"projectName"`
 	ProjectLogo   *string           `xml:"projectLogo"`
 	CompanyName   *string           `xml:"companyName"`
@@ -68,14 +68,14 @@ type DocumentAuthor struct {
 //             are primarily responsible for the content of the document.
 type Authors struct {
 	XMLName xml.Name          `xml:"authors"`
-	Author  []*DocumentAuthor `xml:"author,omitempty"`
+	Author  []*DocumentAuthor `xml:"author"`
 }
 
 // KeyWords is A keyword pertaining to the document. The metadata can contain any
 //             number of keyword elements, each element specifying one keyword.
 type KeyWords struct {
 	XMLName xml.Name `xml:"keyWords"`
-	KeyWord []string `xml:"keyWord,omitempty"`
+	KeyWord []string `xml:"keyWord"`
 }
 
 // DocumentMeta is A shortcut for the unique author of the document, usually as a String of "firstName lastName". For
@@ -83,10 +83,10 @@ type KeyWords struct {
 type DocumentMeta struct {
 	Title              *string                     `xml:"title"`
 	Author             *string                     `xml:"author"`
-	Authors            *Authors                    `xml:"authors,omitempty"`
+	Authors            *Authors                    `xml:"authors"`
 	Subject            *string                     `xml:"subject"`
 	Keywords           *string                     `xml:"keywords"`
-	KeyWords           *KeyWords                   `xml:"keyWords,omitempty"`
+	KeyWords           *KeyWords                   `xml:"keyWords"`
 	PageSize           *string                     `xml:"pageSize"`
 	Generator          *string                     `xml:"generator"`
 	Description        *string                     `xml:"description"`
@@ -96,12 +96,12 @@ type DocumentMeta struct {
 	CreationDate       *string                     `xml:"creationDate"`
 	Date               *string                     `xml:"date"`
 	PrintDate          *string                     `xml:"printDate"`
-	Template           *DocumentTemplate           `xml:"template,omitempty"`
-	HyperlinkBehaviour *DocumentHyperlinkBehaviour `xml:"hyperlinkBehaviour,omitempty"`
+	Template           *DocumentTemplate           `xml:"template"`
+	HyperlinkBehaviour *DocumentHyperlinkBehaviour `xml:"hyperlinkBehaviour"`
 	Language           *string                     `xml:"language"`
 	EditingCycles      *int64                      `xml:"editingCycles"`
 	EditingDuration    *int64                      `xml:"editingDuration"`
-	DocumentStatistic  *DocumentStatistic          `xml:"documentStatistic,omitempty"`
+	DocumentStatistic  *DocumentStatistic          `xml:"documentStatistic"`
 	Confidential       *bool                       `xml:"confidential"`
 	Draft              *bool                       `xml:"draft"`
 }

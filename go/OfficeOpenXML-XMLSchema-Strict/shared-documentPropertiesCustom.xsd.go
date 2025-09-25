@@ -12,7 +12,7 @@ type Properties *CTProperties
 // CTProperties ...
 type CTProperties struct {
 	XMLName  xml.Name      `xml:"CT_Properties"`
-	Property []*CTProperty `xml:"property,omitempty"`
+	Property []*CTProperty `xml:"property"`
 }
 
 // CTProperty ...
@@ -24,35 +24,35 @@ type CTProperty struct {
 	LinkTargetAttr *string    `xml:"linkTarget,attr"`
 	VtVector       *CTVector  `xml:"vt:vector"`
 	VtArray        *CTArray   `xml:"vt:array"`
-	VtBlob         string     `xml:"vt:blob"`
-	VtOblob        string     `xml:"vt:oblob"`
+	VtBlob         *string    `xml:"vt:blob"`
+	VtOblob        *string    `xml:"vt:oblob"`
 	VtEmpty        *CTEmpty   `xml:"vt:empty"`
 	VtNull         *CTNull    `xml:"vt:null"`
-	VtI1           int8       `xml:"vt:i1"`
-	VtI2           int16      `xml:"vt:i2"`
-	VtI4           int        `xml:"vt:i4"`
-	VtI8           int64      `xml:"vt:i8"`
-	VtInt          int        `xml:"vt:int"`
-	VtUi1          uint8      `xml:"vt:ui1"`
-	VtUi2          uint16     `xml:"vt:ui2"`
-	VtUi4          uint32     `xml:"vt:ui4"`
-	VtUi8          uint64     `xml:"vt:ui8"`
-	VtUint         uint32     `xml:"vt:uint"`
-	VtR4           float32    `xml:"vt:r4"`
-	VtR8           float64    `xml:"vt:r8"`
-	VtDecimal      float64    `xml:"vt:decimal"`
-	VtLpstr        string     `xml:"vt:lpstr"`
-	VtLpwstr       string     `xml:"vt:lpwstr"`
-	VtBstr         string     `xml:"vt:bstr"`
-	VtDate         string     `xml:"vt:date"`
-	VtFiletime     string     `xml:"vt:filetime"`
-	VtBool         bool       `xml:"vt:bool"`
-	VtCy           string     `xml:"vt:cy"`
-	VtError        string     `xml:"vt:error"`
-	VtStream       string     `xml:"vt:stream"`
-	VtOstream      string     `xml:"vt:ostream"`
-	VtStorage      string     `xml:"vt:storage"`
-	VtOstorage     string     `xml:"vt:ostorage"`
+	VtI1           *int8      `xml:"vt:i1"`
+	VtI2           *int16     `xml:"vt:i2"`
+	VtI4           *int       `xml:"vt:i4"`
+	VtI8           *int64     `xml:"vt:i8"`
+	VtInt          *int       `xml:"vt:int"`
+	VtUi1          *uint8     `xml:"vt:ui1"`
+	VtUi2          *uint16    `xml:"vt:ui2"`
+	VtUi4          *uint32    `xml:"vt:ui4"`
+	VtUi8          *uint64    `xml:"vt:ui8"`
+	VtUint         *uint32    `xml:"vt:uint"`
+	VtR4           *float32   `xml:"vt:r4"`
+	VtR8           *float64   `xml:"vt:r8"`
+	VtDecimal      *float64   `xml:"vt:decimal"`
+	VtLpstr        *string    `xml:"vt:lpstr"`
+	VtLpwstr       *string    `xml:"vt:lpwstr"`
+	VtBstr         *string    `xml:"vt:bstr"`
+	VtDate         *string    `xml:"vt:date"`
+	VtFiletime     *string    `xml:"vt:filetime"`
+	VtBool         *bool      `xml:"vt:bool"`
+	VtCy           *string    `xml:"vt:cy"`
+	VtError        *string    `xml:"vt:error"`
+	VtStream       *string    `xml:"vt:stream"`
+	VtOstream      *string    `xml:"vt:ostream"`
+	VtStorage      *string    `xml:"vt:storage"`
+	VtOstorage     *string    `xml:"vt:ostorage"`
 	VtVstream      *CTVstream `xml:"vt:vstream"`
-	VtClsid        string     `xml:"vt:clsid"`
+	VtClsid        *string    `xml:"vt:clsid"`
 }

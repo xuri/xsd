@@ -7,16 +7,16 @@ type ArchetypeRegistry *ArchetypeRegistry
 
 // Languages is 0.0.0+
 type Languages struct {
-	Language []string `xml:"Language,omitempty"`
+	Language []string `xml:"Language"`
 }
 
 // FilteredExtensions is 0.0.0+
 type FilteredExtensions struct {
-	FilteredExtension []string `xml:"FilteredExtension,omitempty"`
+	FilteredExtension []string `xml:"FilteredExtension"`
 }
 
 // ArchetypeRegistry is 0.0.0+
 type ArchetypeRegistry struct {
-	Languages          *Languages          `xml:"Languages,omitempty"`
-	FilteredExtensions *FilteredExtensions `xml:"FilteredExtensions,omitempty"`
+	Languages          *Languages          `xml:"Languages"`
+	FilteredExtensions *FilteredExtensions `xml:"FilteredExtensions"`
 }

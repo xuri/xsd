@@ -101,9 +101,9 @@ public class CT_TransitionStartSoundAction {
 
 // CT_TransitionSoundAction ...
 public class CT_TransitionSoundAction {
-	@XmlElement(required = true, name = "stSnd")
+	@XmlElement(name = "stSnd")
 	protected CT_TransitionStartSoundAction StSnd;
-	@XmlElement(required = true, name = "endSnd")
+	@XmlElement(name = "endSnd")
 	protected CT_Empty EndSnd;
 }
 
@@ -122,47 +122,47 @@ public class CT_SlideTransition {
 	protected Boolean AdvClickAttr;
 	@XmlAttribute(name = "advTm")
 	protected Integer AdvTmAttr;
-	@XmlElement(required = true, name = "blinds")
+	@XmlElement(name = "blinds")
 	protected CT_OrientationTransition Blinds;
-	@XmlElement(required = true, name = "checker")
+	@XmlElement(name = "checker")
 	protected CT_OrientationTransition Checker;
-	@XmlElement(required = true, name = "circle")
+	@XmlElement(name = "circle")
 	protected CT_Empty Circle;
-	@XmlElement(required = true, name = "dissolve")
+	@XmlElement(name = "dissolve")
 	protected CT_Empty Dissolve;
-	@XmlElement(required = true, name = "comb")
+	@XmlElement(name = "comb")
 	protected CT_OrientationTransition Comb;
-	@XmlElement(required = true, name = "cover")
+	@XmlElement(name = "cover")
 	protected CT_EightDirectionTransition Cover;
-	@XmlElement(required = true, name = "cut")
+	@XmlElement(name = "cut")
 	protected CT_OptionalBlackTransition Cut;
-	@XmlElement(required = true, name = "diamond")
+	@XmlElement(name = "diamond")
 	protected CT_Empty Diamond;
-	@XmlElement(required = true, name = "fade")
+	@XmlElement(name = "fade")
 	protected CT_OptionalBlackTransition Fade;
-	@XmlElement(required = true, name = "newsflash")
+	@XmlElement(name = "newsflash")
 	protected CT_Empty Newsflash;
-	@XmlElement(required = true, name = "plus")
+	@XmlElement(name = "plus")
 	protected CT_Empty Plus;
-	@XmlElement(required = true, name = "pull")
+	@XmlElement(name = "pull")
 	protected CT_EightDirectionTransition Pull;
-	@XmlElement(required = true, name = "push")
+	@XmlElement(name = "push")
 	protected CT_SideDirectionTransition Push;
-	@XmlElement(required = true, name = "random")
+	@XmlElement(name = "random")
 	protected CT_Empty Random;
-	@XmlElement(required = true, name = "randomBar")
+	@XmlElement(name = "randomBar")
 	protected CT_OrientationTransition RandomBar;
-	@XmlElement(required = true, name = "split")
+	@XmlElement(name = "split")
 	protected CT_SplitTransition Split;
-	@XmlElement(required = true, name = "strips")
+	@XmlElement(name = "strips")
 	protected CT_CornerDirectionTransition Strips;
-	@XmlElement(required = true, name = "wedge")
+	@XmlElement(name = "wedge")
 	protected CT_Empty Wedge;
-	@XmlElement(required = true, name = "wheel")
+	@XmlElement(name = "wheel")
 	protected CT_WheelTransition Wheel;
-	@XmlElement(required = true, name = "wipe")
+	@XmlElement(name = "wipe")
 	protected CT_SideDirectionTransition Wipe;
-	@XmlElement(required = true, name = "zoom")
+	@XmlElement(name = "zoom")
 	protected CT_InOutTransition Zoom;
 	@XmlElement(name = "sndAc")
 	protected CT_TransitionSoundAction SndAc;
@@ -217,9 +217,9 @@ public class CT_TLIterateData {
 	protected String TypeAttr;
 	@XmlAttribute(name = "backwards")
 	protected Boolean BackwardsAttr;
-	@XmlElement(required = true, name = "tmAbs")
+	@XmlElement(name = "tmAbs")
 	protected CT_TLIterateIntervalTime TmAbs;
-	@XmlElement(required = true, name = "tmPct")
+	@XmlElement(name = "tmPct")
 	protected CT_TLIterateIntervalPercentage TmPct;
 }
 
@@ -231,9 +231,9 @@ public class CT_TLSubShapeId {
 
 // CT_TLTextTargetElement ...
 public class CT_TLTextTargetElement {
-	@XmlElement(required = true, name = "charRg")
+	@XmlElement(name = "charRg")
 	protected CT_IndexRange CharRg;
-	@XmlElement(required = true, name = "pRg")
+	@XmlElement(name = "pRg")
 	protected CT_IndexRange PRg;
 }
 
@@ -256,27 +256,27 @@ public class CT_TLOleChartTargetElement {
 public class CT_TLShapeTargetElement {
 	@XmlAttribute(required = true, name = "spid")
 	protected Integer SpidAttr;
-	@XmlElement(required = true, name = "bg")
+	@XmlElement(name = "bg")
 	protected CT_Empty Bg;
-	@XmlElement(required = true, name = "subSp")
+	@XmlElement(name = "subSp")
 	protected CT_TLSubShapeId SubSp;
-	@XmlElement(required = true, name = "oleChartEl")
+	@XmlElement(name = "oleChartEl")
 	protected CT_TLOleChartTargetElement OleChartEl;
-	@XmlElement(required = true, name = "txEl")
+	@XmlElement(name = "txEl")
 	protected CT_TLTextTargetElement TxEl;
-	@XmlElement(required = true, name = "graphicEl")
+	@XmlElement(name = "graphicEl")
 	protected CT_AnimationElementChoice GraphicEl;
 }
 
 // CT_TLTimeTargetElement ...
 public class CT_TLTimeTargetElement {
-	@XmlElement(required = true, name = "sldTgt")
+	@XmlElement(name = "sldTgt")
 	protected CT_Empty SldTgt;
-	@XmlElement(required = true, name = "sndTgt")
+	@XmlElement(name = "sndTgt")
 	protected CT_EmbeddedWAVAudioFile SndTgt;
-	@XmlElement(required = true, name = "spTgt")
+	@XmlElement(name = "spTgt")
 	protected CT_TLShapeTargetElement SpTgt;
-	@XmlElement(required = true, name = "inkTgt")
+	@XmlElement(name = "inkTgt")
 	protected CT_TLSubShapeId InkTgt;
 }
 
@@ -312,11 +312,11 @@ public class CT_TLTimeCondition {
 	protected String EvtAttr;
 	@XmlAttribute(name = "delay")
 	protected ST_TLTime DelayAttr;
-	@XmlElement(required = true, name = "tgtEl")
+	@XmlElement(name = "tgtEl")
 	protected CT_TLTimeTargetElement TgtEl;
-	@XmlElement(required = true, name = "tn")
+	@XmlElement(name = "tn")
 	protected CT_TLTriggerTimeNodeID Tn;
-	@XmlElement(required = true, name = "rtn")
+	@XmlElement(name = "rtn")
 	protected CT_TLTriggerRuntimeNode Rtn;
 }
 
@@ -328,31 +328,31 @@ public class CT_TLTimeConditionList {
 
 // CT_TimeNodeList ...
 public class CT_TimeNodeList {
-	@XmlElement(required = true, name = "par")
+	@XmlElement(name = "par")
 	protected List<CT_TLTimeNodeParallel> Par;
-	@XmlElement(required = true, name = "seq")
+	@XmlElement(name = "seq")
 	protected List<CT_TLTimeNodeSequence> Seq;
-	@XmlElement(required = true, name = "excl")
+	@XmlElement(name = "excl")
 	protected List<CT_TLTimeNodeExclusive> Excl;
-	@XmlElement(required = true, name = "anim")
+	@XmlElement(name = "anim")
 	protected List<CT_TLAnimateBehavior> Anim;
-	@XmlElement(required = true, name = "animClr")
+	@XmlElement(name = "animClr")
 	protected List<CT_TLAnimateColorBehavior> AnimClr;
-	@XmlElement(required = true, name = "animEffect")
+	@XmlElement(name = "animEffect")
 	protected List<CT_TLAnimateEffectBehavior> AnimEffect;
-	@XmlElement(required = true, name = "animMotion")
+	@XmlElement(name = "animMotion")
 	protected List<CT_TLAnimateMotionBehavior> AnimMotion;
-	@XmlElement(required = true, name = "animRot")
+	@XmlElement(name = "animRot")
 	protected List<CT_TLAnimateRotationBehavior> AnimRot;
-	@XmlElement(required = true, name = "animScale")
+	@XmlElement(name = "animScale")
 	protected List<CT_TLAnimateScaleBehavior> AnimScale;
-	@XmlElement(required = true, name = "cmd")
+	@XmlElement(name = "cmd")
 	protected List<CT_TLCommandBehavior> Cmd;
-	@XmlElement(required = true, name = "set")
+	@XmlElement(name = "set")
 	protected List<CT_TLSetBehavior> Set;
-	@XmlElement(required = true, name = "audio")
+	@XmlElement(name = "audio")
 	protected List<CT_TLMediaNodeAudio> Audio;
-	@XmlElement(required = true, name = "video")
+	@XmlElement(name = "video")
 	protected List<CT_TLMediaNodeVideo> Video;
 }
 
@@ -588,15 +588,15 @@ public class CT_TLAnimVariantStringVal {
 
 // CT_TLAnimVariant ...
 public class CT_TLAnimVariant {
-	@XmlElement(required = true, name = "boolVal")
+	@XmlElement(name = "boolVal")
 	protected CT_TLAnimVariantBooleanVal BoolVal;
-	@XmlElement(required = true, name = "intVal")
+	@XmlElement(name = "intVal")
 	protected CT_TLAnimVariantIntegerVal IntVal;
-	@XmlElement(required = true, name = "fltVal")
+	@XmlElement(name = "fltVal")
 	protected CT_TLAnimVariantFloatVal FltVal;
-	@XmlElement(required = true, name = "strVal")
+	@XmlElement(name = "strVal")
 	protected CT_TLAnimVariantStringVal StrVal;
-	@XmlElement(required = true, name = "clrVal")
+	@XmlElement(name = "clrVal")
 	protected CT_Color ClrVal;
 }
 
@@ -678,9 +678,9 @@ public class CT_TLByHslColorTransform {
 
 // CT_TLByAnimateColorTransform ...
 public class CT_TLByAnimateColorTransform {
-	@XmlElement(required = true, name = "rgb")
+	@XmlElement(name = "rgb")
 	protected CT_TLByRgbColorTransform Rgb;
-	@XmlElement(required = true, name = "hsl")
+	@XmlElement(name = "hsl")
 	protected CT_TLByHslColorTransform Hsl;
 }
 
@@ -951,21 +951,21 @@ public class CT_TLOleBuildChart {
 public class CT_TLGraphicalObjectBuild {
 	@XmlElement(required = true)
 	protected AG_TLBuild AG_TLBuild;
-	@XmlElement(required = true, name = "bldAsOne")
+	@XmlElement(name = "bldAsOne")
 	protected CT_Empty BldAsOne;
-	@XmlElement(required = true, name = "bldSub")
+	@XmlElement(name = "bldSub")
 	protected CT_AnimationGraphicalObjectBuildProperties BldSub;
 }
 
 // CT_BuildList ...
 public class CT_BuildList {
-	@XmlElement(required = true, name = "bldP")
+	@XmlElement(name = "bldP")
 	protected List<CT_TLBuildParagraph> BldP;
-	@XmlElement(required = true, name = "bldDgm")
+	@XmlElement(name = "bldDgm")
 	protected List<CT_TLBuildDiagram> BldDgm;
-	@XmlElement(required = true, name = "bldOleChart")
+	@XmlElement(name = "bldOleChart")
 	protected List<CT_TLOleBuildChart> BldOleChart;
-	@XmlElement(required = true, name = "bldGraphic")
+	@XmlElement(name = "bldGraphic")
 	protected List<CT_TLGraphicalObjectBuild> BldGraphic;
 }
 
@@ -1183,9 +1183,9 @@ public class CT_OleObject {
 	protected AG_Ole AG_Ole;
 	@XmlAttribute(name = "progId")
 	protected String ProgIdAttr;
-	@XmlElement(required = true, name = "embed")
+	@XmlElement(name = "embed")
 	protected CT_OleObjectEmbed Embed;
-	@XmlElement(required = true, name = "link")
+	@XmlElement(name = "link")
 	protected CT_OleObjectLink Link;
 	@XmlElement(required = true, name = "pic")
 	protected CT_Picture Pic;
@@ -1756,17 +1756,17 @@ public class CT_GroupShape {
 	protected CT_GroupShapeNonVisual NvGrpSpPr;
 	@XmlElement(required = true, name = "grpSpPr")
 	protected CT_GroupShapeProperties GrpSpPr;
-	@XmlElement(required = true, name = "sp")
+	@XmlElement(name = "sp")
 	protected List<CT_Shape> Sp;
-	@XmlElement(required = true, name = "grpSp")
+	@XmlElement(name = "grpSp")
 	protected List<CT_GroupShape> GrpSp;
-	@XmlElement(required = true, name = "graphicFrame")
+	@XmlElement(name = "graphicFrame")
 	protected List<CT_GraphicalObjectFrame> GraphicFrame;
-	@XmlElement(required = true, name = "cxnSp")
+	@XmlElement(name = "cxnSp")
 	protected List<CT_Connector> CxnSp;
-	@XmlElement(required = true, name = "pic")
+	@XmlElement(name = "pic")
 	protected List<CT_Picture> Pic;
-	@XmlElement(required = true, name = "contentPart")
+	@XmlElement(name = "contentPart")
 	protected List<CT_Rel> ContentPart;
 	@XmlElement(name = "extLst")
 	protected CT_ExtensionListModify ExtLst;

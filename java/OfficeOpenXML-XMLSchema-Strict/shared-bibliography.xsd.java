@@ -43,153 +43,153 @@ public class CT_NameType {
 
 // CT_NameOrCorporateType ...
 public class CT_NameOrCorporateType {
-	@XmlElement(required = true, name = "NameList")
+	@XmlElement(name = "NameList")
 	protected CT_NameListType NameList;
-	@XmlElement(required = true, name = "Corporate")
+	@XmlElement(name = "Corporate")
 	protected String Corporate;
 }
 
 // CT_AuthorType ...
 public class CT_AuthorType {
-	@XmlElement(required = true, name = "Artist")
+	@XmlElement(name = "Artist")
 	protected List<CT_NameType> Artist;
-	@XmlElement(required = true, name = "Author")
+	@XmlElement(name = "Author")
 	protected List<CT_NameOrCorporateType> Author;
-	@XmlElement(required = true, name = "BookAuthor")
+	@XmlElement(name = "BookAuthor")
 	protected List<CT_NameType> BookAuthor;
-	@XmlElement(required = true, name = "Compiler")
+	@XmlElement(name = "Compiler")
 	protected List<CT_NameType> Compiler;
-	@XmlElement(required = true, name = "Composer")
+	@XmlElement(name = "Composer")
 	protected List<CT_NameType> Composer;
-	@XmlElement(required = true, name = "Conductor")
+	@XmlElement(name = "Conductor")
 	protected List<CT_NameType> Conductor;
-	@XmlElement(required = true, name = "Counsel")
+	@XmlElement(name = "Counsel")
 	protected List<CT_NameType> Counsel;
-	@XmlElement(required = true, name = "Director")
+	@XmlElement(name = "Director")
 	protected List<CT_NameType> Director;
-	@XmlElement(required = true, name = "Editor")
+	@XmlElement(name = "Editor")
 	protected List<CT_NameType> Editor;
-	@XmlElement(required = true, name = "Interviewee")
+	@XmlElement(name = "Interviewee")
 	protected List<CT_NameType> Interviewee;
-	@XmlElement(required = true, name = "Interviewer")
+	@XmlElement(name = "Interviewer")
 	protected List<CT_NameType> Interviewer;
-	@XmlElement(required = true, name = "Inventor")
+	@XmlElement(name = "Inventor")
 	protected List<CT_NameType> Inventor;
-	@XmlElement(required = true, name = "Performer")
+	@XmlElement(name = "Performer")
 	protected List<CT_NameOrCorporateType> Performer;
-	@XmlElement(required = true, name = "ProducerName")
+	@XmlElement(name = "ProducerName")
 	protected List<CT_NameType> ProducerName;
-	@XmlElement(required = true, name = "Translator")
+	@XmlElement(name = "Translator")
 	protected List<CT_NameType> Translator;
-	@XmlElement(required = true, name = "Writer")
+	@XmlElement(name = "Writer")
 	protected List<CT_NameType> Writer;
 }
 
 // CT_SourceType ...
 public class CT_SourceType {
-	@XmlElement(required = true, name = "AbbreviatedCaseNumber")
+	@XmlElement(name = "AbbreviatedCaseNumber")
 	protected List<String> AbbreviatedCaseNumber;
-	@XmlElement(required = true, name = "AlbumTitle")
+	@XmlElement(name = "AlbumTitle")
 	protected List<String> AlbumTitle;
-	@XmlElement(required = true, name = "Author")
+	@XmlElement(name = "Author")
 	protected List<CT_AuthorType> Author;
-	@XmlElement(required = true, name = "BookTitle")
+	@XmlElement(name = "BookTitle")
 	protected List<String> BookTitle;
-	@XmlElement(required = true, name = "Broadcaster")
+	@XmlElement(name = "Broadcaster")
 	protected List<String> Broadcaster;
-	@XmlElement(required = true, name = "BroadcastTitle")
+	@XmlElement(name = "BroadcastTitle")
 	protected List<String> BroadcastTitle;
-	@XmlElement(required = true, name = "CaseNumber")
+	@XmlElement(name = "CaseNumber")
 	protected List<String> CaseNumber;
-	@XmlElement(required = true, name = "ChapterNumber")
+	@XmlElement(name = "ChapterNumber")
 	protected List<String> ChapterNumber;
-	@XmlElement(required = true, name = "City")
+	@XmlElement(name = "City")
 	protected List<String> City;
-	@XmlElement(required = true, name = "Comments")
+	@XmlElement(name = "Comments")
 	protected List<String> Comments;
-	@XmlElement(required = true, name = "ConferenceName")
+	@XmlElement(name = "ConferenceName")
 	protected List<String> ConferenceName;
-	@XmlElement(required = true, name = "CountryRegion")
+	@XmlElement(name = "CountryRegion")
 	protected List<String> CountryRegion;
-	@XmlElement(required = true, name = "Court")
+	@XmlElement(name = "Court")
 	protected List<String> Court;
-	@XmlElement(required = true, name = "Day")
+	@XmlElement(name = "Day")
 	protected List<String> Day;
-	@XmlElement(required = true, name = "DayAccessed")
+	@XmlElement(name = "DayAccessed")
 	protected List<String> DayAccessed;
-	@XmlElement(required = true, name = "Department")
+	@XmlElement(name = "Department")
 	protected List<String> Department;
-	@XmlElement(required = true, name = "Distributor")
+	@XmlElement(name = "Distributor")
 	protected List<String> Distributor;
-	@XmlElement(required = true, name = "Edition")
+	@XmlElement(name = "Edition")
 	protected List<String> Edition;
-	@XmlElement(required = true, name = "Guid")
+	@XmlElement(name = "Guid")
 	protected List<String> Guid;
-	@XmlElement(required = true, name = "Institution")
+	@XmlElement(name = "Institution")
 	protected List<String> Institution;
-	@XmlElement(required = true, name = "InternetSiteTitle")
+	@XmlElement(name = "InternetSiteTitle")
 	protected List<String> InternetSiteTitle;
-	@XmlElement(required = true, name = "Issue")
+	@XmlElement(name = "Issue")
 	protected List<String> Issue;
-	@XmlElement(required = true, name = "JournalName")
+	@XmlElement(name = "JournalName")
 	protected List<String> JournalName;
-	@XmlElement(required = true, name = "LCID")
+	@XmlElement(name = "LCID")
 	protected List<String> LCID;
-	@XmlElement(required = true, name = "Medium")
+	@XmlElement(name = "Medium")
 	protected List<String> Medium;
-	@XmlElement(required = true, name = "Month")
+	@XmlElement(name = "Month")
 	protected List<String> Month;
-	@XmlElement(required = true, name = "MonthAccessed")
+	@XmlElement(name = "MonthAccessed")
 	protected List<String> MonthAccessed;
-	@XmlElement(required = true, name = "NumberVolumes")
+	@XmlElement(name = "NumberVolumes")
 	protected List<String> NumberVolumes;
-	@XmlElement(required = true, name = "Pages")
+	@XmlElement(name = "Pages")
 	protected List<String> Pages;
-	@XmlElement(required = true, name = "PatentNumber")
+	@XmlElement(name = "PatentNumber")
 	protected List<String> PatentNumber;
-	@XmlElement(required = true, name = "PeriodicalTitle")
+	@XmlElement(name = "PeriodicalTitle")
 	protected List<String> PeriodicalTitle;
-	@XmlElement(required = true, name = "ProductionCompany")
+	@XmlElement(name = "ProductionCompany")
 	protected List<String> ProductionCompany;
-	@XmlElement(required = true, name = "PublicationTitle")
+	@XmlElement(name = "PublicationTitle")
 	protected List<String> PublicationTitle;
-	@XmlElement(required = true, name = "Publisher")
+	@XmlElement(name = "Publisher")
 	protected List<String> Publisher;
-	@XmlElement(required = true, name = "RecordingNumber")
+	@XmlElement(name = "RecordingNumber")
 	protected List<String> RecordingNumber;
-	@XmlElement(required = true, name = "RefOrder")
+	@XmlElement(name = "RefOrder")
 	protected List<String> RefOrder;
-	@XmlElement(required = true, name = "Reporter")
+	@XmlElement(name = "Reporter")
 	protected List<String> Reporter;
-	@XmlElement(required = true, name = "SourceType")
+	@XmlElement(name = "SourceType")
 	protected List<String> SourceType;
-	@XmlElement(required = true, name = "ShortTitle")
+	@XmlElement(name = "ShortTitle")
 	protected List<String> ShortTitle;
-	@XmlElement(required = true, name = "StandardNumber")
+	@XmlElement(name = "StandardNumber")
 	protected List<String> StandardNumber;
-	@XmlElement(required = true, name = "StateProvince")
+	@XmlElement(name = "StateProvince")
 	protected List<String> StateProvince;
-	@XmlElement(required = true, name = "Station")
+	@XmlElement(name = "Station")
 	protected List<String> Station;
-	@XmlElement(required = true, name = "Tag")
+	@XmlElement(name = "Tag")
 	protected List<String> Tag;
-	@XmlElement(required = true, name = "Theater")
+	@XmlElement(name = "Theater")
 	protected List<String> Theater;
-	@XmlElement(required = true, name = "ThesisType")
+	@XmlElement(name = "ThesisType")
 	protected List<String> ThesisType;
-	@XmlElement(required = true, name = "Title")
+	@XmlElement(name = "Title")
 	protected List<String> Title;
-	@XmlElement(required = true, name = "Type")
+	@XmlElement(name = "Type")
 	protected List<String> Type;
-	@XmlElement(required = true, name = "URL")
+	@XmlElement(name = "URL")
 	protected List<String> URL;
-	@XmlElement(required = true, name = "Version")
+	@XmlElement(name = "Version")
 	protected List<String> Version;
-	@XmlElement(required = true, name = "Volume")
+	@XmlElement(name = "Volume")
 	protected List<String> Volume;
-	@XmlElement(required = true, name = "Year")
+	@XmlElement(name = "Year")
 	protected List<String> Year;
-	@XmlElement(required = true, name = "YearAccessed")
+	@XmlElement(name = "YearAccessed")
 	protected List<String> YearAccessed;
 }
 

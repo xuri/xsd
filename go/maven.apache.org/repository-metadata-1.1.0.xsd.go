@@ -12,7 +12,7 @@ type Metadata *Metadata
 // Plugins is The set of plugin mappings for the group represented by this directory
 type Plugins struct {
 	XMLName xml.Name  `xml:"plugins"`
-	Plugin  []*Plugin `xml:"plugin,omitempty"`
+	Plugin  []*Plugin `xml:"plugin"`
 }
 
 // Metadata is Versioning information for the artifact.
@@ -21,8 +21,8 @@ type Metadata struct {
 	GroupId          *string     `xml:"groupId"`
 	ArtifactId       *string     `xml:"artifactId"`
 	Version          *string     `xml:"version"`
-	Versioning       *Versioning `xml:"versioning,omitempty"`
-	Plugins          *Plugins    `xml:"plugins,omitempty"`
+	Versioning       *Versioning `xml:"versioning"`
+	Plugins          *Plugins    `xml:"plugins"`
 }
 
 // Plugin is The plugin artifactId
@@ -35,23 +35,23 @@ type Plugin struct {
 // Versions is Versions available of the artifact (both releases and snapshots)
 type Versions struct {
 	XMLName xml.Name `xml:"versions"`
-	Version []string `xml:"version,omitempty"`
+	Version []string `xml:"version"`
 }
 
 // SnapshotVersions is Information for each sub-artifact available in this artifact snapshot.
 type SnapshotVersions struct {
 	XMLName         xml.Name           `xml:"snapshotVersions"`
-	SnapshotVersion []*SnapshotVersion `xml:"snapshotVersion,omitempty"`
+	SnapshotVersion []*SnapshotVersion `xml:"snapshotVersion"`
 }
 
 // Versioning is The current snapshot data in use for this version (artifact snapshots only)
 type Versioning struct {
 	Latest           *string           `xml:"latest"`
 	Release          *string           `xml:"release"`
-	Snapshot         *Snapshot         `xml:"snapshot,omitempty"`
-	Versions         *Versions         `xml:"versions,omitempty"`
+	Snapshot         *Snapshot         `xml:"snapshot"`
+	Versions         *Versions         `xml:"versions"`
 	LastUpdated      *string           `xml:"lastUpdated"`
-	SnapshotVersions *SnapshotVersions `xml:"snapshotVersions,omitempty"`
+	SnapshotVersions *SnapshotVersions `xml:"snapshotVersions"`
 }
 
 // SnapshotVersion is The timestamp when this version information was last updated. The timestamp is expressed using UTC in the format yyyyMMddHHmmss.

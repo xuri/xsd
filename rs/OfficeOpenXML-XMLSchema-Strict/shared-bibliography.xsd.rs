@@ -46,9 +46,9 @@ pub struct CTNameType {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTNameOrCorporateType {
 	#[serde(rename = "NameList")]
-	pub name_list: CTNameListType,
+	pub name_list: Option<CTNameListType>,
 	#[serde(rename = "Corporate")]
-	pub corporate: String,
+	pub corporate: Option<String>,
 }
 
 

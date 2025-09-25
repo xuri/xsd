@@ -12,12 +12,12 @@ type ArchetypeCatalog *ArchetypeCatalog
 // Archetypes is List of Acthetypes available in this catalog.
 type Archetypes struct {
 	XMLName   xml.Name     `xml:"archetypes"`
-	Archetype []*Archetype `xml:"archetype,omitempty"`
+	Archetype []*Archetype `xml:"archetype"`
 }
 
 // ArchetypeCatalog is 0.0.0+
 type ArchetypeCatalog struct {
-	Archetypes *Archetypes `xml:"archetypes,omitempty"`
+	Archetypes *Archetypes `xml:"archetypes"`
 }
 
 // Archetype is The description of the archetype.

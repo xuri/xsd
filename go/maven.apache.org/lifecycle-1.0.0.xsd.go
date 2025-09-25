@@ -11,25 +11,25 @@ type Lifecycles *LifecycleConfiguration
 
 // LifecycleConfiguration is 1.0.0
 type LifecycleConfiguration struct {
-	Lifecycle []*Lifecycle `xml:"lifecycle,omitempty"`
+	Lifecycle []*Lifecycle `xml:"lifecycle"`
 }
 
 // Phases is The phase mappings for this lifecycle.
 type Phases struct {
 	XMLName xml.Name `xml:"phases"`
-	Phase   []*Phase `xml:"phase,omitempty"`
+	Phase   []*Phase `xml:"phase"`
 }
 
 // Lifecycle is The ID of this lifecycle, for identification in the mojo descriptor.
 type Lifecycle struct {
 	Id     *string `xml:"id"`
-	Phases *Phases `xml:"phases,omitempty"`
+	Phases *Phases `xml:"phases"`
 }
 
 // Executions is The goals to execute within the phase.
 type Executions struct {
 	XMLName   xml.Name     `xml:"executions"`
-	Execution []*Execution `xml:"execution,omitempty"`
+	Execution []*Execution `xml:"execution"`
 }
 
 // Configuration is Configuration to pass to all goals run in this phase.
@@ -40,18 +40,18 @@ type Configuration struct {
 // Phase is The ID of this phase, e.g., <code>generate-sources</code>.
 type Phase struct {
 	Id            *string        `xml:"id"`
-	Executions    *Executions    `xml:"executions,omitempty"`
-	Configuration *Configuration `xml:"configuration,omitempty"`
+	Executions    *Executions    `xml:"executions"`
+	Configuration *Configuration `xml:"configuration"`
 }
 
 // Goals is The goals to execute.
 type Goals struct {
 	XMLName xml.Name `xml:"goals"`
-	Goal    []string `xml:"goal,omitempty"`
+	Goal    []string `xml:"goal"`
 }
 
 // Execution is A set of goals to execute.
 type Execution struct {
-	Configuration *Configuration `xml:"configuration,omitempty"`
-	Goals         *Goals         `xml:"goals,omitempty"`
+	Configuration *Configuration `xml:"configuration"`
+	Goals         *Goals         `xml:"goals"`
 }

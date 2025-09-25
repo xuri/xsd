@@ -13,20 +13,20 @@ type ProfilesXml *ProfilesRoot
 //             according to environmental parameters
 type Profiles struct {
 	XMLName xml.Name   `xml:"profiles"`
-	Profile []*Profile `xml:"profile,omitempty"`
+	Profile []*Profile `xml:"profile"`
 }
 
 // ActiveProfiles is List of manually-activated build profiles, specified in the order in which
 //             they should be applied.
 type ActiveProfiles struct {
 	XMLName       xml.Name `xml:"activeProfiles"`
-	ActiveProfile []string `xml:"activeProfile,omitempty"`
+	ActiveProfile []string `xml:"activeProfile"`
 }
 
 // ProfilesRoot is Root element of the profiles.xml file.
 type ProfilesRoot struct {
-	Profiles       *Profiles       `xml:"profiles,omitempty"`
-	ActiveProfiles *ActiveProfiles `xml:"activeProfiles,omitempty"`
+	Profiles       *Profiles       `xml:"profiles"`
+	ActiveProfiles *ActiveProfiles `xml:"activeProfiles"`
 }
 
 // Properties is Extended configuration specific to this profile goes
@@ -38,32 +38,32 @@ type Properties struct {
 // Repositories is The lists of the remote repositories
 type Repositories struct {
 	XMLName    xml.Name      `xml:"repositories"`
-	Repository []*Repository `xml:"repository,omitempty"`
+	Repository []*Repository `xml:"repository"`
 }
 
 // PluginRepositories is The lists of the remote repositories for discovering plugins
 type PluginRepositories struct {
 	XMLName          xml.Name      `xml:"pluginRepositories"`
-	PluginRepository []*Repository `xml:"pluginRepository,omitempty"`
+	PluginRepository []*Repository `xml:"pluginRepository"`
 }
 
 // Profile is The conditional logic which will automatically
 //             trigger the inclusion of this profile.
 type Profile struct {
 	Id                 *string             `xml:"id"`
-	Activation         *Activation         `xml:"activation,omitempty"`
-	Properties         *Properties         `xml:"properties,omitempty"`
-	Repositories       *Repositories       `xml:"repositories,omitempty"`
-	PluginRepositories *PluginRepositories `xml:"pluginRepositories,omitempty"`
+	Activation         *Activation         `xml:"activation"`
+	Properties         *Properties         `xml:"properties"`
+	Repositories       *Repositories       `xml:"repositories"`
+	PluginRepositories *PluginRepositories `xml:"pluginRepositories"`
 }
 
 // Activation is Specifies that this profile will be activated based on existence of a file.
 type Activation struct {
 	ActiveByDefault *bool               `xml:"activeByDefault"`
 	Jdk             *string             `xml:"jdk"`
-	Os              *ActivationOS       `xml:"os,omitempty"`
-	Property        *ActivationProperty `xml:"property,omitempty"`
-	File            *ActivationFile     `xml:"file,omitempty"`
+	Os              *ActivationOS       `xml:"os"`
+	Property        *ActivationProperty `xml:"property"`
+	File            *ActivationFile     `xml:"file"`
 }
 
 // ActivationOS is The version of the OS to be used to activate a profile
@@ -89,8 +89,8 @@ type ActivationFile struct {
 // Repository is The type of layout this repository uses for locating and storing artifacts - can be "legacy" or
 //             "default".
 type Repository struct {
-	Releases  *RepositoryPolicy `xml:"releases,omitempty"`
-	Snapshots *RepositoryPolicy `xml:"snapshots,omitempty"`
+	Releases  *RepositoryPolicy `xml:"releases"`
+	Snapshots *RepositoryPolicy `xml:"snapshots"`
 	Id        *string           `xml:"id"`
 	Name      *string           `xml:"name"`
 	Url       *string           `xml:"url"`

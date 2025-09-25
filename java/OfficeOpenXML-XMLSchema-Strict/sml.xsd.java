@@ -667,11 +667,11 @@ public class ST_ParameterType {
 public class CT_Tables {
 	@XmlAttribute(name = "count")
 	protected Integer CountAttr;
-	@XmlElement(required = true, name = "m")
+	@XmlElement(name = "m")
 	protected List<CT_TableMissing> M;
-	@XmlElement(required = true, name = "s")
+	@XmlElement(name = "s")
 	protected List<CT_XStringElement> S;
-	@XmlElement(required = true, name = "x")
+	@XmlElement(name = "x")
 	protected List<CT_Index> X;
 }
 
@@ -884,9 +884,9 @@ public class CT_CacheSource {
 	protected String TypeAttr;
 	@XmlAttribute(name = "connectionId")
 	protected Integer ConnectionIdAttr;
-	@XmlElement(required = true, name = "worksheetSource")
+	@XmlElement(name = "worksheetSource")
 	protected CT_WorksheetSource WorksheetSource;
-	@XmlElement(required = true, name = "consolidation")
+	@XmlElement(name = "consolidation")
 	protected CT_Consolidation Consolidation;
 	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
@@ -1001,17 +1001,17 @@ public class CT_SharedItems {
 	protected Integer CountAttr;
 	@XmlAttribute(name = "longText")
 	protected Boolean LongTextAttr;
-	@XmlElement(required = true, name = "m")
+	@XmlElement(name = "m")
 	protected List<CT_Missing> M;
-	@XmlElement(required = true, name = "n")
+	@XmlElement(name = "n")
 	protected List<CT_Number> N;
-	@XmlElement(required = true, name = "b")
+	@XmlElement(name = "b")
 	protected List<CT_Boolean> B;
-	@XmlElement(required = true, name = "e")
+	@XmlElement(name = "e")
 	protected List<CT_Error> E;
-	@XmlElement(required = true, name = "s")
+	@XmlElement(name = "s")
 	protected List<CT_String> S;
-	@XmlElement(required = true, name = "d")
+	@XmlElement(name = "d")
 	protected List<CT_DateTime> D;
 }
 
@@ -1226,17 +1226,17 @@ public class CT_DiscretePr {
 public class CT_GroupItems {
 	@XmlAttribute(name = "count")
 	protected Integer CountAttr;
-	@XmlElement(required = true, name = "m")
+	@XmlElement(name = "m")
 	protected List<CT_Missing> M;
-	@XmlElement(required = true, name = "n")
+	@XmlElement(name = "n")
 	protected List<CT_Number> N;
-	@XmlElement(required = true, name = "b")
+	@XmlElement(name = "b")
 	protected List<CT_Boolean> B;
-	@XmlElement(required = true, name = "e")
+	@XmlElement(name = "e")
 	protected List<CT_Error> E;
-	@XmlElement(required = true, name = "s")
+	@XmlElement(name = "s")
 	protected List<CT_String> S;
-	@XmlElement(required = true, name = "d")
+	@XmlElement(name = "d")
 	protected List<CT_DateTime> D;
 }
 
@@ -1252,19 +1252,19 @@ public class CT_PivotCacheRecords {
 
 // CT_Record ...
 public class CT_Record {
-	@XmlElement(required = true, name = "m")
+	@XmlElement(name = "m")
 	protected List<CT_Missing> M;
-	@XmlElement(required = true, name = "n")
+	@XmlElement(name = "n")
 	protected List<CT_Number> N;
-	@XmlElement(required = true, name = "b")
+	@XmlElement(name = "b")
 	protected List<CT_Boolean> B;
-	@XmlElement(required = true, name = "e")
+	@XmlElement(name = "e")
 	protected List<CT_Error> E;
-	@XmlElement(required = true, name = "s")
+	@XmlElement(name = "s")
 	protected List<CT_String> S;
-	@XmlElement(required = true, name = "d")
+	@XmlElement(name = "d")
 	protected List<CT_DateTime> D;
-	@XmlElement(required = true, name = "x")
+	@XmlElement(name = "x")
 	protected List<CT_Index> X;
 }
 
@@ -1476,13 +1476,13 @@ public class CT_ServerFormats {
 public class CT_PCDSDTCEntries {
 	@XmlAttribute(name = "count")
 	protected Integer CountAttr;
-	@XmlElement(required = true, name = "m")
+	@XmlElement(name = "m")
 	protected List<CT_Missing> M;
-	@XmlElement(required = true, name = "n")
+	@XmlElement(name = "n")
 	protected List<CT_Number> N;
-	@XmlElement(required = true, name = "e")
+	@XmlElement(name = "e")
 	protected List<CT_Error> E;
-	@XmlElement(required = true, name = "s")
+	@XmlElement(name = "s")
 	protected List<CT_String> S;
 }
 
@@ -4908,13 +4908,13 @@ public class CT_Mdx {
 	protected Integer NAttr;
 	@XmlAttribute(required = true, name = "f")
 	protected String FAttr;
-	@XmlElement(required = true, name = "t")
+	@XmlElement(name = "t")
 	protected CT_MdxTuple T;
-	@XmlElement(required = true, name = "ms")
+	@XmlElement(name = "ms")
 	protected CT_MdxSet Ms;
-	@XmlElement(required = true, name = "p")
+	@XmlElement(name = "p")
 	protected CT_MdxMemeberProp P;
-	@XmlElement(required = true, name = "k")
+	@XmlElement(name = "k")
 	protected CT_MdxKPI K;
 }
 

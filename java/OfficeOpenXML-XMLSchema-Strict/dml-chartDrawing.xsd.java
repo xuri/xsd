@@ -122,15 +122,15 @@ public class CT_GroupShape {
 	protected CT_GroupShapeNonVisual NvGrpSpPr;
 	@XmlElement(required = true, name = "grpSpPr")
 	protected CT_GroupShapeProperties GrpSpPr;
-	@XmlElement(required = true, name = "sp")
+	@XmlElement(name = "sp")
 	protected List<CT_Shape> Sp;
-	@XmlElement(required = true, name = "grpSp")
+	@XmlElement(name = "grpSp")
 	protected List<CT_GroupShape> GrpSp;
-	@XmlElement(required = true, name = "graphicFrame")
+	@XmlElement(name = "graphicFrame")
 	protected List<CT_GraphicFrame> GraphicFrame;
-	@XmlElement(required = true, name = "cxnSp")
+	@XmlElement(name = "cxnSp")
 	protected List<CT_Connector> CxnSp;
-	@XmlElement(required = true, name = "pic")
+	@XmlElement(name = "pic")
 	protected List<CT_Picture> Pic;
 }
 

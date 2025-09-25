@@ -1142,10 +1142,10 @@ export class CT_Object {
 	DxaOrigAttr?: ST_TwipsMeasure;
 	DyaOrigAttr?: ST_TwipsMeasure;
 	Drawing?: CT_Drawing;
-	Control: CT_Control;
-	ObjectLink: CT_ObjectLink;
-	ObjectEmbed: CT_ObjectEmbed;
-	Movie: CT_Rel;
+	Control?: CT_Control;
+	ObjectLink?: CT_ObjectLink;
+	ObjectEmbed?: CT_ObjectEmbed;
+	Movie?: CT_Rel;
 }
 
 // CT_ObjectEmbed ...
@@ -1252,18 +1252,18 @@ export class CT_Hyperlink {
 
 // CT_FFData ...
 export class CT_FFData {
-	Name: Array<CT_FFName>;
+	Name?: Array<CT_FFName>;
 	Label?: Array<CT_DecimalNumber>;
 	TabIndex?: Array<CT_UnsignedDecimalNumber>;
-	Enabled: Array<CT_OnOff>;
-	CalcOnExit: Array<CT_OnOff>;
+	Enabled?: Array<CT_OnOff>;
+	CalcOnExit?: Array<CT_OnOff>;
 	EntryMacro?: Array<CT_MacroName>;
 	ExitMacro?: Array<CT_MacroName>;
 	HelpText?: Array<CT_FFHelpText>;
 	StatusText?: Array<CT_FFStatusText>;
-	CheckBox: Array<CT_FFCheckBox>;
-	DdList: Array<CT_FFDDList>;
-	TextInput: Array<CT_FFTextInput>;
+	CheckBox?: Array<CT_FFCheckBox>;
+	DdList?: Array<CT_FFDDList>;
+	TextInput?: Array<CT_FFTextInput>;
 }
 
 // CT_FFHelpText ...
@@ -1280,8 +1280,8 @@ export class CT_FFStatusText {
 
 // CT_FFCheckBox ...
 export class CT_FFCheckBox {
-	Size: CT_HpsMeasure;
-	SizeAuto: CT_OnOff;
+	Size?: CT_HpsMeasure;
+	SizeAuto?: CT_OnOff;
 	Default?: CT_OnOff;
 	Checked?: CT_OnOff;
 }
@@ -1855,13 +1855,13 @@ export class EG_RPrMath {
 
 // CT_MathCtrlIns ...
 export class CT_MathCtrlIns extends CT_TrackChange  {
-	Del: CT_RPrChange;
-	RPr: CT_RPr;
+	Del?: CT_RPrChange;
+	RPr?: CT_RPr;
 }
 
 // CT_MathCtrlDel ...
 export class CT_MathCtrlDel extends CT_TrackChange  {
-	RPr: CT_RPr;
+	RPr?: CT_RPr;
 }
 
 // CT_RPrOriginal ...
@@ -2038,18 +2038,18 @@ export class CT_SdtPr {
 	DataBinding?: CT_DataBinding;
 	Label?: CT_DecimalNumber;
 	TabIndex?: CT_UnsignedDecimalNumber;
-	Equation: CT_Empty;
-	ComboBox: CT_SdtComboBox;
-	Date: CT_SdtDate;
-	DocPartObj: CT_SdtDocPart;
-	DocPartList: CT_SdtDocPart;
-	DropDownList: CT_SdtDropDownList;
-	Picture: CT_Empty;
-	RichText: CT_Empty;
-	Text: CT_SdtText;
-	Citation: CT_Empty;
-	Group: CT_Empty;
-	Bibliography: CT_Empty;
+	Equation?: CT_Empty;
+	ComboBox?: CT_SdtComboBox;
+	Date?: CT_SdtDate;
+	DocPartObj?: CT_SdtDocPart;
+	DocPartList?: CT_SdtDocPart;
+	DropDownList?: CT_SdtDropDownList;
+	Picture?: CT_Empty;
+	RichText?: CT_Empty;
+	Text?: CT_SdtText;
+	Citation?: CT_Empty;
+	Group?: CT_Empty;
+	Bibliography?: CT_Empty;
 }
 
 // CT_SdtEndPr ...
@@ -3033,7 +3033,7 @@ export class CT_Frameset {
 // CT_NumPicBullet ...
 export class CT_NumPicBullet {
 	NumPicBulletIdAttr: number;
-	Drawing: CT_Drawing;
+	Drawing?: CT_Drawing;
 }
 
 // ST_LevelSuffix ...
@@ -3414,7 +3414,7 @@ export class CT_DocPartBehavior {
 
 // CT_DocPartBehaviors ...
 export class CT_DocPartBehaviors {
-	Behavior: Array<CT_DocPartBehavior>;
+	Behavior?: Array<CT_DocPartBehavior>;
 }
 
 // ST_DocPartType ...
@@ -3436,7 +3436,7 @@ export class CT_DocPartType {
 // CT_DocPartTypes ...
 export class CT_DocPartTypes {
 	AllAttr?: ST_OnOff;
-	Type: Array<CT_DocPartType>;
+	Type?: Array<CT_DocPartType>;
 }
 
 // ST_DocPartGallery ...
@@ -3517,7 +3517,7 @@ export class CT_DocPart {
 
 // CT_DocParts ...
 export class CT_DocParts {
-	DocPart: Array<CT_DocPart>;
+	DocPart?: Array<CT_DocPart>;
 }
 
 // Settings ...

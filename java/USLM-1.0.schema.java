@@ -349,9 +349,9 @@ public class MarkerType {
 // InlineType is The inline type is a extension of the base type to text content or
 //             other inline elements.
 public class InlineType extends BaseContentType  {
-	@XmlElement(required = true, name = "marker")
+	@XmlElement(name = "marker")
 	protected List<MarkerType> Marker;
-	@XmlElement(required = true, name = "inline")
+	@XmlElement(name = "inline")
 	protected List<InlineType> Inline;
 }
 
@@ -404,9 +404,9 @@ public class LawDocType extends BaseBlockType  {
 	protected MetaType Meta;
 	@XmlElement(name = "main")
 	protected MainType Main;
-	@XmlElement(required = true, name = "block")
+	@XmlElement(name = "block")
 	protected List<BlockType> Block;
-	@XmlElement(required = true, name = "appendix")
+	@XmlElement(name = "appendix")
 	protected List<AppendixType> Appendix;
 }
 
@@ -426,9 +426,9 @@ public class GenericDocType extends BaseBlockType  {
 //                         a person, or another other object related to the
 //                         document.
 public class MetaType extends BaseBlockType  {
-	@XmlElement(required = true, name = "property")
+	@XmlElement(name = "property")
 	protected List<PropertyType> Property;
-	@XmlElement(required = true, name = "set")
+	@XmlElement(name = "set")
 	protected List<SetType> Set;
 }
 
@@ -456,9 +456,9 @@ public class PropertyType extends InlineType  {
 public class SetType extends BaseBlockType  {
 	@XmlAttribute(name = "type")
 	protected String TypeAttr;
-	@XmlElement(required = true, name = "property")
+	@XmlElement(name = "property")
 	protected List<PropertyType> Property;
-	@XmlElement(required = true, name = "set")
+	@XmlElement(name = "set")
 	protected List<SetType> Set;
 }
 
@@ -470,9 +470,9 @@ public class TocType extends BaseBlockType  {
 	@XmlAttribute(name = "generate")
 	protected Boolean GenerateAttr;
 	protected HeadingStructure HeadingStructure;
-	@XmlElement(required = true, name = "tocItem")
+	@XmlElement(name = "tocItem")
 	protected List<TocItemType> TocItem;
-	@XmlElement(required = true, name = "layout")
+	@XmlElement(name = "layout")
 	protected List<LayoutType> Layout;
 }
 
@@ -484,7 +484,7 @@ public class TocItemType extends BaseBlockType  {
 	protected HeadingStructure HeadingStructure;
 	@XmlElement(name = "tocItem")
 	protected List<TocItemType> TocItem;
-	@XmlElement(required = true, name = "content")
+	@XmlElement(name = "content")
 	protected List<ContentType> Content;
 }
 
@@ -495,13 +495,13 @@ public class MainType {
 	protected List<NoteStructure> NoteStructure;
 	protected PreambleStructure PreambleStructure;
 	protected LevelStructure LevelStructure;
-	@XmlElement(required = true, name = "property")
+	@XmlElement(name = "property")
 	protected List<PropertyType> Property;
-	@XmlElement(required = true, name = "block")
+	@XmlElement(name = "block")
 	protected List<BlockType> Block;
-	@XmlElement(required = true, name = "statement")
+	@XmlElement(name = "statement")
 	protected List<StatementType> Statement;
-	@XmlElement(required = true, name = "toc")
+	@XmlElement(name = "toc")
 	protected List<TocType> Toc;
 }
 
@@ -511,17 +511,17 @@ public class MainType {
 public class StatementType extends BaseContentType  {
 	@XmlElement(required = true)
 	protected DescriptionGroup DescriptionGroup;
-	@XmlElement(required = true, name = "marker")
+	@XmlElement(name = "marker")
 	protected List<MarkerType> Marker;
-	@XmlElement(required = true, name = "inline")
+	@XmlElement(name = "inline")
 	protected List<InlineType> Inline;
-	@XmlElement(required = true, name = "block")
+	@XmlElement(name = "block")
 	protected List<BlockType> Block;
-	@XmlElement(required = true, name = "text")
+	@XmlElement(name = "text")
 	protected List<TextType> Text;
-	@XmlElement(required = true, name = "content")
+	@XmlElement(name = "content")
 	protected List<ContentType> Content;
-	@XmlElement(required = true, name = "level")
+	@XmlElement(name = "level")
 	protected List<LevelType> Level;
 }
 
@@ -569,17 +569,17 @@ public class HeadingType extends ContentType  {
 public class InstructionType extends BaseContentType  {
 	@XmlElement(required = true, name = "ref")
 	protected RefType Ref;
-	@XmlElement(required = true, name = "inline")
+	@XmlElement(name = "inline")
 	protected List<InlineType> Inline;
-	@XmlElement(required = true, name = "marker")
+	@XmlElement(name = "marker")
 	protected List<MarkerType> Marker;
 	@XmlElement(required = true, name = "action")
 	protected List<ActionType> Action;
-	@XmlElement(required = true, name = "level")
+	@XmlElement(name = "level")
 	protected List<LevelType> Level;
-	@XmlElement(required = true, name = "quotedText")
+	@XmlElement(name = "quotedText")
 	protected List<QuotedTextType> QuotedText;
-	@XmlElement(required = true, name = "quotedContent")
+	@XmlElement(name = "quotedContent")
 	protected List<QuotedContentType> QuotedContent;
 }
 
@@ -602,9 +602,9 @@ public class NotesType extends BaseBlockType  {
 	protected HeadingType Heading;
 	@XmlElement(name = "subheading")
 	protected List<HeadingType> Subheading;
-	@XmlElement(required = true, name = "note")
+	@XmlElement(name = "note")
 	protected List<NoteType> Note;
-	@XmlElement(required = true, name = "layout")
+	@XmlElement(name = "layout")
 	protected LayoutType Layout;
 }
 
@@ -631,7 +631,7 @@ public class AppendixType extends BaseBlockType  {
 	protected HeadingStructure HeadingStructure;
 	protected TocStructure TocStructure;
 	protected LevelStructure LevelStructure;
-	@XmlElement(required = true, name = "block")
+	@XmlElement(name = "block")
 	protected BlockType Block;
 }
 
@@ -644,9 +644,9 @@ public class AppendixType extends BaseBlockType  {
 public class SignaturesType {
 	@XmlElement(name = "p")
 	protected PType P;
-	@XmlElement(required = true, name = "signature")
+	@XmlElement(name = "signature")
 	protected List<SignatureType> Signature;
-	@XmlElement(required = true, name = "layout")
+	@XmlElement(name = "layout")
 	protected LayoutType Layout;
 	@XmlElement(name = "date")
 	protected String Date;
@@ -977,15 +977,15 @@ public class LayoutType extends BaseBlockType  {
 	@XmlAttribute(name = "orientation")
 	protected String OrientationAttr;
 	protected List<NoteStructure> NoteStructure;
-	@XmlElement(required = true, name = "header")
+	@XmlElement(name = "header")
 	protected List<RowType> Header;
-	@XmlElement(required = true, name = "row")
+	@XmlElement(name = "row")
 	protected List<RowType> Row;
-	@XmlElement(required = true, name = "tocItem")
+	@XmlElement(name = "tocItem")
 	protected List<TocItemType> TocItem;
-	@XmlElement(required = true, name = "block")
+	@XmlElement(name = "block")
 	protected List<BlockType> Block;
-	@XmlElement(required = true, name = "content")
+	@XmlElement(name = "content")
 	protected List<ContentType> Content;
 }
 

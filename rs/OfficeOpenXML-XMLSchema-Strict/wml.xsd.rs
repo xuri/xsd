@@ -1404,13 +1404,13 @@ pub struct CTObject {
 	#[serde(rename = "drawing")]
 	pub drawing: Option<CTDrawing>,
 	#[serde(rename = "control")]
-	pub control: CTControl,
+	pub control: Option<CTControl>,
 	#[serde(rename = "objectLink")]
-	pub object_link: CTObjectLink,
+	pub object_link: Option<CTObjectLink>,
 	#[serde(rename = "objectEmbed")]
-	pub object_embed: CTObjectEmbed,
+	pub object_embed: Option<CTObjectEmbed>,
 	#[serde(rename = "movie")]
-	pub movie: CTRel,
+	pub movie: Option<CTRel>,
 }
 
 
@@ -1634,9 +1634,9 @@ pub struct CTFFStatusText {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTFFCheckBox {
 	#[serde(rename = "size")]
-	pub size: CTHpsMeasure,
+	pub size: Option<CTHpsMeasure>,
 	#[serde(rename = "sizeAuto")]
-	pub size_auto: CTOnOff,
+	pub size_auto: Option<CTOnOff>,
 	#[serde(rename = "default")]
 	pub default: Option<CTOnOff>,
 	#[serde(rename = "checked")]
@@ -2440,9 +2440,9 @@ pub struct EGRPrMath {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTMathCtrlIns {
 	#[serde(rename = "del")]
-	pub del: CTRPrChange,
+	pub del: Option<CTRPrChange>,
 	#[serde(rename = "rPr")]
-	pub r_pr: CTRPr,
+	pub r_pr: Option<CTRPr>,
 	#[serde(flatten)]
 	pub ct_track_change: CTTrackChange,
 }
@@ -2452,7 +2452,7 @@ pub struct CTMathCtrlIns {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTMathCtrlDel {
 	#[serde(rename = "rPr")]
-	pub r_pr: CTRPr,
+	pub r_pr: Option<CTRPr>,
 	#[serde(flatten)]
 	pub ct_track_change: CTTrackChange,
 }
@@ -2736,29 +2736,29 @@ pub struct CTSdtPr {
 	#[serde(rename = "tabIndex")]
 	pub tab_index: Option<CTUnsignedDecimalNumber>,
 	#[serde(rename = "equation")]
-	pub equation: CTEmpty,
+	pub equation: Option<CTEmpty>,
 	#[serde(rename = "comboBox")]
-	pub combo_box: CTSdtComboBox,
+	pub combo_box: Option<CTSdtComboBox>,
 	#[serde(rename = "date")]
-	pub date: CTSdtDate,
+	pub date: Option<CTSdtDate>,
 	#[serde(rename = "docPartObj")]
-	pub doc_part_obj: CTSdtDocPart,
+	pub doc_part_obj: Option<CTSdtDocPart>,
 	#[serde(rename = "docPartList")]
-	pub doc_part_list: CTSdtDocPart,
+	pub doc_part_list: Option<CTSdtDocPart>,
 	#[serde(rename = "dropDownList")]
-	pub drop_down_list: CTSdtDropDownList,
+	pub drop_down_list: Option<CTSdtDropDownList>,
 	#[serde(rename = "picture")]
-	pub picture: CTEmpty,
+	pub picture: Option<CTEmpty>,
 	#[serde(rename = "richText")]
-	pub rich_text: CTEmpty,
+	pub rich_text: Option<CTEmpty>,
 	#[serde(rename = "text")]
-	pub text: CTSdtText,
+	pub text: Option<CTSdtText>,
 	#[serde(rename = "citation")]
-	pub citation: CTEmpty,
+	pub citation: Option<CTEmpty>,
 	#[serde(rename = "group")]
-	pub group: CTEmpty,
+	pub group: Option<CTEmpty>,
 	#[serde(rename = "bibliography")]
-	pub bibliography: CTEmpty,
+	pub bibliography: Option<CTEmpty>,
 }
 
 
@@ -4412,7 +4412,7 @@ pub struct CTNumPicBullet {
 	#[serde(rename = "numPicBulletId")]
 	pub num_pic_bullet_id: i32,
 	#[serde(rename = "drawing")]
-	pub drawing: CTDrawing,
+	pub drawing: Option<CTDrawing>,
 }
 
 

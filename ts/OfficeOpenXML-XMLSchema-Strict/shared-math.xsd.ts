@@ -568,8 +568,8 @@ export class CT_MathPr {
 	PostSp?: CT_TwipsMeasure;
 	InterSp?: CT_TwipsMeasure;
 	IntraSp?: CT_TwipsMeasure;
-	WrapIndent: CT_TwipsMeasure;
-	WrapRight: CT_OnOff;
+	WrapIndent?: CT_TwipsMeasure;
+	WrapRight?: CT_OnOff;
 	IntLim?: CT_LimLoc;
 	NaryLim?: CT_LimLoc;
 }

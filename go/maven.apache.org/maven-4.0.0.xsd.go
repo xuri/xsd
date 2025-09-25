@@ -19,25 +19,25 @@ type Project *Model
 //             any of them, not that they must accept all.
 type Licenses struct {
 	XMLName xml.Name   `xml:"licenses"`
-	License []*License `xml:"license,omitempty"`
+	License []*License `xml:"license"`
 }
 
 // Developers is Describes the committers of a project.
 type Developers struct {
 	XMLName   xml.Name     `xml:"developers"`
-	Developer []*Developer `xml:"developer,omitempty"`
+	Developer []*Developer `xml:"developer"`
 }
 
 // Contributors is Describes the contributors to a project that are not yet committers.
 type Contributors struct {
 	XMLName     xml.Name       `xml:"contributors"`
-	Contributor []*Contributor `xml:"contributor,omitempty"`
+	Contributor []*Contributor `xml:"contributor"`
 }
 
 // MailingLists is Contains information about a project's mailing lists.
 type MailingLists struct {
 	XMLName     xml.Name       `xml:"mailingLists"`
-	MailingList []*MailingList `xml:"mailingList,omitempty"`
+	MailingList []*MailingList `xml:"mailingList"`
 }
 
 // Modules is The modules (sometimes called subprojects) to build as a part of this
@@ -46,7 +46,7 @@ type MailingLists struct {
 //             to have module names match artifact ids.
 type Modules struct {
 	XMLName xml.Name `xml:"modules"`
-	Module  []string `xml:"module,omitempty"`
+	Module  []string `xml:"module"`
 }
 
 // Properties is Properties that can be used throughout the POM as a substitution, and
@@ -65,21 +65,21 @@ type Properties struct {
 //             dependency mechanism</a> for more information.
 type Dependencies struct {
 	XMLName    xml.Name      `xml:"dependencies"`
-	Dependency []*Dependency `xml:"dependency,omitempty"`
+	Dependency []*Dependency `xml:"dependency"`
 }
 
 // Repositories is The lists of the remote repositories for discovering dependencies and
 //             extensions.
 type Repositories struct {
 	XMLName    xml.Name      `xml:"repositories"`
-	Repository []*Repository `xml:"repository,omitempty"`
+	Repository []*Repository `xml:"repository"`
 }
 
 // PluginRepositories is The lists of the remote repositories for discovering plugins for builds and
 //             reports.
 type PluginRepositories struct {
 	XMLName          xml.Name      `xml:"pluginRepositories"`
-	PluginRepository []*Repository `xml:"pluginRepository,omitempty"`
+	PluginRepository []*Repository `xml:"pluginRepository"`
 }
 
 // Reports is <b>Deprecated</b>. Now ignored by Maven.
@@ -91,7 +91,7 @@ type Reports struct {
 //             when activated.
 type Profiles struct {
 	XMLName xml.Name   `xml:"profiles"`
-	Profile []*Profile `xml:"profile,omitempty"`
+	Profile []*Profile `xml:"profile"`
 }
 
 // Model is This element describes various attributes of the organization to which the
@@ -100,7 +100,7 @@ type Profiles struct {
 type Model struct {
 	ChildProjectUrlInheritAppendPathAttr *string                 `xml:"child.project.url.inherit.append.path,attr"`
 	ModelVersion                         *string                 `xml:"modelVersion"`
-	Parent                               *Parent                 `xml:"parent,omitempty"`
+	Parent                               *Parent                 `xml:"parent"`
 	GroupId                              *string                 `xml:"groupId"`
 	ArtifactId                           *string                 `xml:"artifactId"`
 	Version                              *string                 `xml:"version"`
@@ -109,26 +109,26 @@ type Model struct {
 	Description                          *string                 `xml:"description"`
 	Url                                  *string                 `xml:"url"`
 	InceptionYear                        *string                 `xml:"inceptionYear"`
-	Organization                         *Organization           `xml:"organization,omitempty"`
-	Licenses                             *Licenses               `xml:"licenses,omitempty"`
-	Developers                           *Developers             `xml:"developers,omitempty"`
-	Contributors                         *Contributors           `xml:"contributors,omitempty"`
-	MailingLists                         *MailingLists           `xml:"mailingLists,omitempty"`
-	Prerequisites                        *Prerequisites          `xml:"prerequisites,omitempty"`
-	Modules                              *Modules                `xml:"modules,omitempty"`
-	Scm                                  *Scm                    `xml:"scm,omitempty"`
-	IssueManagement                      *IssueManagement        `xml:"issueManagement,omitempty"`
-	CiManagement                         *CiManagement           `xml:"ciManagement,omitempty"`
-	DistributionManagement               *DistributionManagement `xml:"distributionManagement,omitempty"`
-	Properties                           *Properties             `xml:"properties,omitempty"`
-	DependencyManagement                 *DependencyManagement   `xml:"dependencyManagement,omitempty"`
-	Dependencies                         *Dependencies           `xml:"dependencies,omitempty"`
-	Repositories                         *Repositories           `xml:"repositories,omitempty"`
-	PluginRepositories                   *PluginRepositories     `xml:"pluginRepositories,omitempty"`
-	Build                                *Build                  `xml:"build,omitempty"`
-	Reports                              *Reports                `xml:"reports,omitempty"`
-	Reporting                            *Reporting              `xml:"reporting,omitempty"`
-	Profiles                             *Profiles               `xml:"profiles,omitempty"`
+	Organization                         *Organization           `xml:"organization"`
+	Licenses                             *Licenses               `xml:"licenses"`
+	Developers                           *Developers             `xml:"developers"`
+	Contributors                         *Contributors           `xml:"contributors"`
+	MailingLists                         *MailingLists           `xml:"mailingLists"`
+	Prerequisites                        *Prerequisites          `xml:"prerequisites"`
+	Modules                              *Modules                `xml:"modules"`
+	Scm                                  *Scm                    `xml:"scm"`
+	IssueManagement                      *IssueManagement        `xml:"issueManagement"`
+	CiManagement                         *CiManagement           `xml:"ciManagement"`
+	DistributionManagement               *DistributionManagement `xml:"distributionManagement"`
+	Properties                           *Properties             `xml:"properties"`
+	DependencyManagement                 *DependencyManagement   `xml:"dependencyManagement"`
+	Dependencies                         *Dependencies           `xml:"dependencies"`
+	Repositories                         *Repositories           `xml:"repositories"`
+	PluginRepositories                   *PluginRepositories     `xml:"pluginRepositories"`
+	Build                                *Build                  `xml:"build"`
+	Reports                              *Reports                `xml:"reports"`
+	Reporting                            *Reporting              `xml:"reporting"`
+	Profiles                             *Profiles               `xml:"profiles"`
 }
 
 // License is Addendum information pertaining to this license.
@@ -143,7 +143,7 @@ type License struct {
 //             including user information and notification mode.
 type Notifiers struct {
 	XMLName  xml.Name    `xml:"notifiers"`
-	Notifier []*Notifier `xml:"notifier,omitempty"`
+	Notifier []*Notifier `xml:"notifier"`
 }
 
 // CiManagement is URL for the continuous integration system used by the project if it has a web
@@ -151,7 +151,7 @@ type Notifiers struct {
 type CiManagement struct {
 	System    *string    `xml:"system"`
 	Url       *string    `xml:"url"`
-	Notifiers *Notifiers `xml:"notifiers,omitempty"`
+	Notifiers *Notifiers `xml:"notifiers"`
 }
 
 // Configuration is Extended configuration specific to this notifier goes here.
@@ -167,7 +167,7 @@ type Notifier struct {
 	SendOnSuccess *bool          `xml:"sendOnSuccess"`
 	SendOnWarning *bool          `xml:"sendOnWarning"`
 	Address       *string        `xml:"address"`
-	Configuration *Configuration `xml:"configuration,omitempty"`
+	Configuration *Configuration `xml:"configuration"`
 }
 
 // Scm is The URL to the project's browsable SCM repository, such as ViewVC or Fisheye.
@@ -192,14 +192,14 @@ type IssueManagement struct {
 // DependencyManagement is Section for management of default dependency information for use in a group of
 //         POMs.
 type DependencyManagement struct {
-	Dependencies *Dependencies `xml:"dependencies,omitempty"`
+	Dependencies *Dependencies `xml:"dependencies"`
 }
 
 // Exclusions is Lists a set of artifacts that should be excluded from this dependency's
 //             artifact list when it comes to calculating transitive dependencies.
 type Exclusions struct {
 	XMLName   xml.Name     `xml:"exclusions"`
-	Exclusion []*Exclusion `xml:"exclusion,omitempty"`
+	Exclusion []*Exclusion `xml:"exclusion"`
 }
 
 // Dependency is FOR SYSTEM SCOPE ONLY. Note that use of this property is <b>discouraged</b>
@@ -216,7 +216,7 @@ type Dependency struct {
 	Classifier *string     `xml:"classifier"`
 	Scope      *string     `xml:"scope"`
 	SystemPath *string     `xml:"systemPath"`
-	Exclusions *Exclusions `xml:"exclusions,omitempty"`
+	Exclusions *Exclusions `xml:"exclusions"`
 	Optional   *string     `xml:"optional"`
 }
 
@@ -249,7 +249,7 @@ type Parent struct {
 //             describe the contribution.
 type Roles struct {
 	XMLName xml.Name `xml:"roles"`
-	Role    []string `xml:"role,omitempty"`
+	Role    []string `xml:"role"`
 }
 
 // Developer is The URL of the organization.
@@ -260,15 +260,15 @@ type Developer struct {
 	Url             *string     `xml:"url"`
 	Organization    *string     `xml:"organization"`
 	OrganizationUrl *string     `xml:"organizationUrl"`
-	Roles           *Roles      `xml:"roles,omitempty"`
+	Roles           *Roles      `xml:"roles"`
 	Timezone        *string     `xml:"timezone"`
-	Properties      *Properties `xml:"properties,omitempty"`
+	Properties      *Properties `xml:"properties"`
 }
 
 // OtherArchives is The link to alternate URLs where you can browse the list archive.
 type OtherArchives struct {
 	XMLName      xml.Name `xml:"otherArchives"`
-	OtherArchive []string `xml:"otherArchive,omitempty"`
+	OtherArchive []string `xml:"otherArchive"`
 }
 
 // MailingList is The link to a URL where you can browse the mailing list archive.
@@ -278,7 +278,7 @@ type MailingList struct {
 	Unsubscribe   *string        `xml:"unsubscribe"`
 	Post          *string        `xml:"post"`
 	Archive       *string        `xml:"archive"`
-	OtherArchives *OtherArchives `xml:"otherArchives,omitempty"`
+	OtherArchives *OtherArchives `xml:"otherArchives"`
 }
 
 // Contributor is The URL of the organization.
@@ -288,9 +288,9 @@ type Contributor struct {
 	Url             *string     `xml:"url"`
 	Organization    *string     `xml:"organization"`
 	OrganizationUrl *string     `xml:"organizationUrl"`
-	Roles           *Roles      `xml:"roles,omitempty"`
+	Roles           *Roles      `xml:"roles"`
 	Timezone        *string     `xml:"timezone"`
-	Properties      *Properties `xml:"properties,omitempty"`
+	Properties      *Properties `xml:"properties"`
 }
 
 // Organization is The URL to the organization's home page.
@@ -307,11 +307,11 @@ type Organization struct {
 //             (directly synced from a partner Maven 2 repository), <code>deployed</code> (was deployed from a Maven 2
 //             instance), <code>verified</code> (has been hand verified as correct and final).
 type DistributionManagement struct {
-	Repository         *DeploymentRepository `xml:"repository,omitempty"`
-	SnapshotRepository *DeploymentRepository `xml:"snapshotRepository,omitempty"`
-	Site               *Site                 `xml:"site,omitempty"`
+	Repository         *DeploymentRepository `xml:"repository"`
+	SnapshotRepository *DeploymentRepository `xml:"snapshotRepository"`
+	Site               *Site                 `xml:"site"`
 	DownloadUrl        *string               `xml:"downloadUrl"`
-	Relocation         *Relocation           `xml:"relocation,omitempty"`
+	Relocation         *Relocation           `xml:"relocation"`
 	Status             *string               `xml:"status"`
 }
 
@@ -319,8 +319,8 @@ type DistributionManagement struct {
 //             can be <code>legacy</code> or <code>default</code>.
 type DeploymentRepository struct {
 	UniqueVersion *bool             `xml:"uniqueVersion"`
-	Releases      *RepositoryPolicy `xml:"releases,omitempty"`
-	Snapshots     *RepositoryPolicy `xml:"snapshots,omitempty"`
+	Releases      *RepositoryPolicy `xml:"releases"`
+	Snapshots     *RepositoryPolicy `xml:"snapshots"`
 	Id            *string           `xml:"id"`
 	Name          *string           `xml:"name"`
 	Url           *string           `xml:"url"`
@@ -361,7 +361,7 @@ type Site struct {
 // Plugins is The reporting plugins to use and their configuration.
 type Plugins struct {
 	XMLName xml.Name        `xml:"plugins"`
-	Plugin  []*ReportPlugin `xml:"plugin,omitempty"`
+	Plugin  []*ReportPlugin `xml:"plugin"`
 }
 
 // Reporting is Where to store all of the generated reports. The default is
@@ -369,14 +369,14 @@ type Plugins struct {
 type Reporting struct {
 	ExcludeDefaults *string  `xml:"excludeDefaults"`
 	OutputDirectory *string  `xml:"outputDirectory"`
-	Plugins         *Plugins `xml:"plugins,omitempty"`
+	Plugins         *Plugins `xml:"plugins"`
 }
 
 // ReportSets is Multiple specifications of a set of reports, each having (possibly) different
 //             configuration. This is the reporting parallel to an <code>execution</code> in the build.
 type ReportSets struct {
 	XMLName   xml.Name     `xml:"reportSets"`
-	ReportSet []*ReportSet `xml:"reportSet,omitempty"`
+	ReportSet []*ReportSet `xml:"reportSet"`
 }
 
 // ReportPlugin is The version of the reporting plugin to be used.
@@ -384,43 +384,43 @@ type ReportPlugin struct {
 	GroupId       *string        `xml:"groupId"`
 	ArtifactId    *string        `xml:"artifactId"`
 	Version       *string        `xml:"version"`
-	ReportSets    *ReportSets    `xml:"reportSets,omitempty"`
+	ReportSets    *ReportSets    `xml:"reportSets"`
 	Inherited     *string        `xml:"inherited"`
-	Configuration *Configuration `xml:"configuration,omitempty"`
+	Configuration *Configuration `xml:"configuration"`
 }
 
 // ReportSet is The unique id for this report set, to be used during POM inheritance and profile injection
 //             for merging of report sets.
 type ReportSet struct {
 	Id            *string        `xml:"id"`
-	Reports       *Reports       `xml:"reports,omitempty"`
+	Reports       *Reports       `xml:"reports"`
 	Inherited     *string        `xml:"inherited"`
-	Configuration *Configuration `xml:"configuration,omitempty"`
+	Configuration *Configuration `xml:"configuration"`
 }
 
 // Profile is Information required to build the project.
 type Profile struct {
 	Id                     *string                 `xml:"id"`
-	Activation             *Activation             `xml:"activation,omitempty"`
-	Build                  *BuildBase              `xml:"build,omitempty"`
-	Modules                *Modules                `xml:"modules,omitempty"`
-	DistributionManagement *DistributionManagement `xml:"distributionManagement,omitempty"`
-	Properties             *Properties             `xml:"properties,omitempty"`
-	DependencyManagement   *DependencyManagement   `xml:"dependencyManagement,omitempty"`
-	Dependencies           *Dependencies           `xml:"dependencies,omitempty"`
-	Repositories           *Repositories           `xml:"repositories,omitempty"`
-	PluginRepositories     *PluginRepositories     `xml:"pluginRepositories,omitempty"`
-	Reports                *Reports                `xml:"reports,omitempty"`
-	Reporting              *Reporting              `xml:"reporting,omitempty"`
+	Activation             *Activation             `xml:"activation"`
+	Build                  *BuildBase              `xml:"build"`
+	Modules                *Modules                `xml:"modules"`
+	DistributionManagement *DistributionManagement `xml:"distributionManagement"`
+	Properties             *Properties             `xml:"properties"`
+	DependencyManagement   *DependencyManagement   `xml:"dependencyManagement"`
+	Dependencies           *Dependencies           `xml:"dependencies"`
+	Repositories           *Repositories           `xml:"repositories"`
+	PluginRepositories     *PluginRepositories     `xml:"pluginRepositories"`
+	Reports                *Reports                `xml:"reports"`
+	Reporting              *Reporting              `xml:"reporting"`
 }
 
 // Activation is Specifies that this profile will be activated based on existence of a file.
 type Activation struct {
 	ActiveByDefault *bool               `xml:"activeByDefault"`
 	Jdk             *string             `xml:"jdk"`
-	Os              *ActivationOS       `xml:"os,omitempty"`
-	Property        *ActivationProperty `xml:"property,omitempty"`
-	File            *ActivationFile     `xml:"file,omitempty"`
+	Os              *ActivationOS       `xml:"os"`
+	Property        *ActivationProperty `xml:"property"`
+	File            *ActivationFile     `xml:"file"`
 }
 
 // ActivationProperty is The value of the property required to activate a profile.
@@ -447,8 +447,8 @@ type ActivationOS struct {
 // Repository is The type of layout this repository uses for locating and storing artifacts -
 //             can be <code>legacy</code> or <code>default</code>.
 type Repository struct {
-	Releases  *RepositoryPolicy `xml:"releases,omitempty"`
-	Snapshots *RepositoryPolicy `xml:"snapshots,omitempty"`
+	Releases  *RepositoryPolicy `xml:"releases"`
+	Snapshots *RepositoryPolicy `xml:"snapshots"`
 	Id        *string           `xml:"id"`
 	Name      *string           `xml:"name"`
 	Url       *string           `xml:"url"`
@@ -461,7 +461,7 @@ type Repository struct {
 //             The default value is <code>src/main/resources</code>.
 type Resources struct {
 	XMLName  xml.Name    `xml:"resources"`
-	Resource []*Resource `xml:"resource,omitempty"`
+	Resource []*Resource `xml:"resource"`
 }
 
 // TestResources is This element describes all of the classpath resources such as properties
@@ -469,13 +469,13 @@ type Resources struct {
 //             The default value is <code>src/test/resources</code>.
 type TestResources struct {
 	XMLName      xml.Name    `xml:"testResources"`
-	TestResource []*Resource `xml:"testResource,omitempty"`
+	TestResource []*Resource `xml:"testResource"`
 }
 
 // Filters is The list of filter properties files that are used when filtering is enabled.
 type Filters struct {
 	XMLName xml.Name `xml:"filters"`
-	Filter  []string `xml:"filter,omitempty"`
+	Filter  []string `xml:"filter"`
 }
 
 // BuildBase is The default goal (or phase in Maven 2) to execute when none is specified for
@@ -484,20 +484,20 @@ type Filters struct {
 //             multiple goals/phases can be separated by whitespace.
 type BuildBase struct {
 	DefaultGoal      *string           `xml:"defaultGoal"`
-	Resources        *Resources        `xml:"resources,omitempty"`
-	TestResources    *TestResources    `xml:"testResources,omitempty"`
+	Resources        *Resources        `xml:"resources"`
+	TestResources    *TestResources    `xml:"testResources"`
 	Directory        *string           `xml:"directory"`
 	FinalName        *string           `xml:"finalName"`
-	Filters          *Filters          `xml:"filters,omitempty"`
-	PluginManagement *PluginManagement `xml:"pluginManagement,omitempty"`
-	Plugins          *Plugins          `xml:"plugins,omitempty"`
+	Filters          *Filters          `xml:"filters"`
+	PluginManagement *PluginManagement `xml:"pluginManagement"`
+	Plugins          *Plugins          `xml:"plugins"`
 }
 
 // Executions is Multiple specifications of a set of goals to execute during the build
 //             lifecycle, each having (possibly) a different configuration.
 type Executions struct {
 	XMLName   xml.Name           `xml:"executions"`
-	Execution []*PluginExecution `xml:"execution,omitempty"`
+	Execution []*PluginExecution `xml:"execution"`
 }
 
 // Goals is <b>Deprecated</b>. Unused by Maven.
@@ -514,11 +514,11 @@ type Plugin struct {
 	ArtifactId    *string        `xml:"artifactId"`
 	Version       *string        `xml:"version"`
 	Extensions    *string        `xml:"extensions"`
-	Executions    *Executions    `xml:"executions,omitempty"`
-	Dependencies  *Dependencies  `xml:"dependencies,omitempty"`
-	Goals         *Goals         `xml:"goals,omitempty"`
+	Executions    *Executions    `xml:"executions"`
+	Dependencies  *Dependencies  `xml:"dependencies"`
+	Goals         *Goals         `xml:"goals"`
 	Inherited     *string        `xml:"inherited"`
-	Configuration *Configuration `xml:"configuration,omitempty"`
+	Configuration *Configuration `xml:"configuration"`
 }
 
 // PluginExecution is The build lifecycle phase to bind the goals in this execution to. If omitted,
@@ -526,21 +526,21 @@ type Plugin struct {
 type PluginExecution struct {
 	Id            *string        `xml:"id"`
 	Phase         *string        `xml:"phase"`
-	Goals         *Goals         `xml:"goals,omitempty"`
+	Goals         *Goals         `xml:"goals"`
 	Inherited     *string        `xml:"inherited"`
-	Configuration *Configuration `xml:"configuration,omitempty"`
+	Configuration *Configuration `xml:"configuration"`
 }
 
 // Includes is A list of patterns to include, e.g. <code>**&#47;*.xml</code>.
 type Includes struct {
 	XMLName xml.Name `xml:"includes"`
-	Include []string `xml:"include,omitempty"`
+	Include []string `xml:"include"`
 }
 
 // Excludes is A list of patterns to exclude, e.g. <code>**&#47;*.xml</code>
 type Excludes struct {
 	XMLName xml.Name `xml:"excludes"`
-	Exclude []string `xml:"exclude,omitempty"`
+	Exclude []string `xml:"exclude"`
 }
 
 // Resource is Describe the directory where the resources are stored. The path is relative
@@ -549,13 +549,13 @@ type Resource struct {
 	TargetPath *string   `xml:"targetPath"`
 	Filtering  *string   `xml:"filtering"`
 	Directory  *string   `xml:"directory"`
-	Includes   *Includes `xml:"includes,omitempty"`
-	Excludes   *Excludes `xml:"excludes,omitempty"`
+	Includes   *Includes `xml:"includes"`
+	Excludes   *Excludes `xml:"excludes"`
 }
 
 // PluginManagement is Section for management of default plugin information for use in a group of POMs.
 type PluginManagement struct {
-	Plugins *Plugins `xml:"plugins,omitempty"`
+	Plugins *Plugins `xml:"plugins"`
 }
 
 // Prerequisites is For a plugin project (packaging is <code>maven-plugin</code>), the minimum version of
@@ -567,7 +567,7 @@ type Prerequisites struct {
 // Extensions is A set of build extensions to use from this project.
 type Extensions struct {
 	XMLName   xml.Name     `xml:"extensions"`
-	Extension []*Extension `xml:"extension,omitempty"`
+	Extension []*Extension `xml:"extension"`
 }
 
 // Build is The directory where compiled test classes are placed.
@@ -578,15 +578,15 @@ type Build struct {
 	TestSourceDirectory   *string           `xml:"testSourceDirectory"`
 	OutputDirectory       *string           `xml:"outputDirectory"`
 	TestOutputDirectory   *string           `xml:"testOutputDirectory"`
-	Extensions            *Extensions       `xml:"extensions,omitempty"`
+	Extensions            *Extensions       `xml:"extensions"`
 	DefaultGoal           *string           `xml:"defaultGoal"`
-	Resources             *Resources        `xml:"resources,omitempty"`
-	TestResources         *TestResources    `xml:"testResources,omitempty"`
+	Resources             *Resources        `xml:"resources"`
+	TestResources         *TestResources    `xml:"testResources"`
 	Directory             *string           `xml:"directory"`
 	FinalName             *string           `xml:"finalName"`
-	Filters               *Filters          `xml:"filters,omitempty"`
-	PluginManagement      *PluginManagement `xml:"pluginManagement,omitempty"`
-	Plugins               *Plugins          `xml:"plugins,omitempty"`
+	Filters               *Filters          `xml:"filters"`
+	PluginManagement      *PluginManagement `xml:"pluginManagement"`
+	Plugins               *Plugins          `xml:"plugins"`
 }
 
 // Extension is The version of the extension.

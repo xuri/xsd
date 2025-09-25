@@ -1004,9 +1004,9 @@ pub struct CTCacheSource {
 	#[serde(rename = "connectionId")]
 	pub connection_id: Option<u32>,
 	#[serde(rename = "worksheetSource")]
-	pub worksheet_source: CTWorksheetSource,
+	pub worksheet_source: Option<CTWorksheetSource>,
 	#[serde(rename = "consolidation")]
-	pub consolidation: CTConsolidation,
+	pub consolidation: Option<CTConsolidation>,
 	#[serde(rename = "extLst")]
 	pub ext_lst: Option<CTExtensionList>,
 }
@@ -5522,13 +5522,13 @@ pub struct CTMdx {
 	#[serde(rename = "f")]
 	pub f: String,
 	#[serde(rename = "t")]
-	pub t: CTMdxTuple,
+	pub t: Option<CTMdxTuple>,
 	#[serde(rename = "ms")]
-	pub ms: CTMdxSet,
+	pub ms: Option<CTMdxSet>,
 	#[serde(rename = "p")]
-	pub p: CTMdxMemeberProp,
+	pub p: Option<CTMdxMemeberProp>,
 	#[serde(rename = "k")]
-	pub k: CTMdxKPI,
+	pub k: Option<CTMdxKPI>,
 }
 
 

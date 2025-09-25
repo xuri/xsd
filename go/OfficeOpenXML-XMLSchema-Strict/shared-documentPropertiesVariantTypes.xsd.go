@@ -86,37 +86,37 @@ type CTVariant struct {
 	Variant  *CTVariant `xml:"variant"`
 	Vector   *CTVector  `xml:"vector"`
 	Array    *CTArray   `xml:"array"`
-	Blob     string     `xml:"blob"`
-	Oblob    string     `xml:"oblob"`
+	Blob     *string    `xml:"blob"`
+	Oblob    *string    `xml:"oblob"`
 	Empty    *CTEmpty   `xml:"empty"`
 	Null     *CTNull    `xml:"null"`
-	I1       int8       `xml:"i1"`
-	I2       int16      `xml:"i2"`
-	I4       int        `xml:"i4"`
-	I8       int64      `xml:"i8"`
-	Int      int        `xml:"int"`
-	Ui1      uint8      `xml:"ui1"`
-	Ui2      uint16     `xml:"ui2"`
-	Ui4      uint32     `xml:"ui4"`
-	Ui8      uint64     `xml:"ui8"`
-	Uint     uint32     `xml:"uint"`
-	R4       float32    `xml:"r4"`
-	R8       float64    `xml:"r8"`
-	Decimal  float64    `xml:"decimal"`
-	Lpstr    string     `xml:"lpstr"`
-	Lpwstr   string     `xml:"lpwstr"`
-	Bstr     string     `xml:"bstr"`
-	Date     string     `xml:"date"`
-	Filetime string     `xml:"filetime"`
-	Bool     bool       `xml:"bool"`
-	Cy       string     `xml:"cy"`
-	Error    string     `xml:"error"`
-	Stream   string     `xml:"stream"`
-	Ostream  string     `xml:"ostream"`
-	Storage  string     `xml:"storage"`
-	Ostorage string     `xml:"ostorage"`
+	I1       *int8      `xml:"i1"`
+	I2       *int16     `xml:"i2"`
+	I4       *int       `xml:"i4"`
+	I8       *int64     `xml:"i8"`
+	Int      *int       `xml:"int"`
+	Ui1      *uint8     `xml:"ui1"`
+	Ui2      *uint16    `xml:"ui2"`
+	Ui4      *uint32    `xml:"ui4"`
+	Ui8      *uint64    `xml:"ui8"`
+	Uint     *uint32    `xml:"uint"`
+	R4       *float32   `xml:"r4"`
+	R8       *float64   `xml:"r8"`
+	Decimal  *float64   `xml:"decimal"`
+	Lpstr    *string    `xml:"lpstr"`
+	Lpwstr   *string    `xml:"lpwstr"`
+	Bstr     *string    `xml:"bstr"`
+	Date     *string    `xml:"date"`
+	Filetime *string    `xml:"filetime"`
+	Bool     *bool      `xml:"bool"`
+	Cy       *string    `xml:"cy"`
+	Error    *string    `xml:"error"`
+	Stream   *string    `xml:"stream"`
+	Ostream  *string    `xml:"ostream"`
+	Storage  *string    `xml:"storage"`
+	Ostorage *string    `xml:"ostorage"`
 	Vstream  *CTVstream `xml:"vstream"`
-	Clsid    string     `xml:"clsid"`
+	Clsid    *string    `xml:"clsid"`
 }
 
 // CTVstream ...

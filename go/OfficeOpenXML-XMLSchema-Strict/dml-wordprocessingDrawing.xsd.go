@@ -26,9 +26,9 @@ type CTInline struct {
 	DistLAttr         *uint32                            `xml:"distL,attr"`
 	DistRAttr         *uint32                            `xml:"distR,attr"`
 	Extent            *CTPositiveSize2D                  `xml:"extent"`
-	EffectExtent      *CTEffectExtent                    `xml:"effectExtent,omitempty"`
+	EffectExtent      *CTEffectExtent                    `xml:"effectExtent"`
 	DocPr             *CTNonVisualDrawingProps           `xml:"docPr"`
-	CNvGraphicFramePr *CTNonVisualGraphicFrameProperties `xml:"cNvGraphicFramePr,omitempty"`
+	CNvGraphicFramePr *CTNonVisualGraphicFrameProperties `xml:"cNvGraphicFramePr"`
 	AGraphic          *CTGraphicalObject                 `xml:"a:graphic"`
 }
 
@@ -56,7 +56,7 @@ type CTWrapSquare struct {
 	DistBAttr    *uint32         `xml:"distB,attr"`
 	DistLAttr    *uint32         `xml:"distL,attr"`
 	DistRAttr    *uint32         `xml:"distR,attr"`
-	EffectExtent *CTEffectExtent `xml:"effectExtent,omitempty"`
+	EffectExtent *CTEffectExtent `xml:"effectExtent"`
 }
 
 // CTWrapTight ...
@@ -82,7 +82,7 @@ type CTWrapTopBottom struct {
 	XMLName      xml.Name        `xml:"CT_WrapTopBottom"`
 	DistTAttr    *uint32         `xml:"distT,attr"`
 	DistBAttr    *uint32         `xml:"distB,attr"`
-	EffectExtent *CTEffectExtent `xml:"effectExtent,omitempty"`
+	EffectExtent *CTEffectExtent `xml:"effectExtent"`
 }
 
 // EGWrapType ...
@@ -108,8 +108,8 @@ type STRelFromH string
 type CTPosH struct {
 	XMLName          xml.Name `xml:"CT_PosH"`
 	RelativeFromAttr string   `xml:"relativeFrom,attr"`
-	Align            string   `xml:"align"`
-	PosOffset        int      `xml:"posOffset"`
+	Align            *string  `xml:"align"`
+	PosOffset        *int     `xml:"posOffset"`
 }
 
 // STAlignV ...
@@ -122,8 +122,8 @@ type STRelFromV string
 type CTPosV struct {
 	XMLName          xml.Name `xml:"CT_PosV"`
 	RelativeFromAttr string   `xml:"relativeFrom,attr"`
-	Align            string   `xml:"align"`
-	PosOffset        int      `xml:"posOffset"`
+	Align            *string  `xml:"align"`
+	PosOffset        *int     `xml:"posOffset"`
 }
 
 // CTAnchor ...
@@ -145,9 +145,9 @@ type CTAnchor struct {
 	PositionH          *CTPosH                            `xml:"positionH"`
 	PositionV          *CTPosV                            `xml:"positionV"`
 	Extent             *CTPositiveSize2D                  `xml:"extent"`
-	EffectExtent       *CTEffectExtent                    `xml:"effectExtent,omitempty"`
+	EffectExtent       *CTEffectExtent                    `xml:"effectExtent"`
 	DocPr              *CTNonVisualDrawingProps           `xml:"docPr"`
-	CNvGraphicFramePr  *CTNonVisualGraphicFrameProperties `xml:"cNvGraphicFramePr,omitempty"`
+	CNvGraphicFramePr  *CTNonVisualGraphicFrameProperties `xml:"cNvGraphicFramePr"`
 	AGraphic           *CTGraphicalObject                 `xml:"a:graphic"`
 }
 
@@ -162,7 +162,7 @@ type CTTextboxInfo struct {
 	XMLName     xml.Name                  `xml:"CT_TextboxInfo"`
 	IdAttr      *uint16                   `xml:"id,attr"`
 	TxbxContent *CTTxbxContent            `xml:"txbxContent"`
-	ExtLst      *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
+	ExtLst      *CTOfficeArtExtensionList `xml:"extLst"`
 }
 
 // CTLinkedTextboxInformation ...
@@ -170,19 +170,19 @@ type CTLinkedTextboxInformation struct {
 	XMLName xml.Name                  `xml:"CT_LinkedTextboxInformation"`
 	IdAttr  uint16                    `xml:"id,attr"`
 	SeqAttr uint16                    `xml:"seq,attr"`
-	ExtLst  *CTOfficeArtExtensionList `xml:"extLst,omitempty"`
+	ExtLst  *CTOfficeArtExtensionList `xml:"extLst"`
 }
 
 // CTWordprocessingShape ...
 type CTWordprocessingShape struct {
 	XMLName                 xml.Name                        `xml:"CT_WordprocessingShape"`
 	NormalEastAsianFlowAttr *bool                           `xml:"normalEastAsianFlow,attr"`
-	CNvPr                   *CTNonVisualDrawingProps        `xml:"cNvPr,omitempty"`
+	CNvPr                   *CTNonVisualDrawingProps        `xml:"cNvPr"`
 	CNvSpPr                 *CTNonVisualDrawingShapeProps   `xml:"cNvSpPr"`
 	CNvCnPr                 *CTNonVisualConnectorProperties `xml:"cNvCnPr"`
 	SpPr                    *CTShapeProperties              `xml:"spPr"`
-	Style                   *CTShapeStyle                   `xml:"style,omitempty"`
-	ExtLst                  *CTOfficeArtExtensionList       `xml:"extLst,omitempty"`
+	Style                   *CTShapeStyle                   `xml:"style"`
+	ExtLst                  *CTOfficeArtExtensionList       `xml:"extLst"`
 	Txbx                    *CTTextboxInfo                  `xml:"txbx"`
 	LinkedTxbx              *CTLinkedTextboxInformation     `xml:"linkedTxbx"`
 	BodyPr                  *CTTextBodyProperties           `xml:"bodyPr"`
@@ -195,14 +195,14 @@ type CTGraphicFrame struct {
 	CNvFrPr  *CTNonVisualGraphicFrameProperties `xml:"cNvFrPr"`
 	Xfrm     *CTTransform2D                     `xml:"xfrm"`
 	AGraphic *CTGraphicalObject                 `xml:"a:graphic"`
-	ExtLst   *CTOfficeArtExtensionList          `xml:"extLst,omitempty"`
+	ExtLst   *CTOfficeArtExtensionList          `xml:"extLst"`
 }
 
 // CTWordprocessingContentPartNonVisual ...
 type CTWordprocessingContentPartNonVisual struct {
 	XMLName          xml.Name                          `xml:"CT_WordprocessingContentPartNonVisual"`
-	CNvPr            *CTNonVisualDrawingProps          `xml:"cNvPr,omitempty"`
-	CNvContentPartPr *CTNonVisualContentPartProperties `xml:"cNvContentPartPr,omitempty"`
+	CNvPr            *CTNonVisualDrawingProps          `xml:"cNvPr"`
+	CNvContentPartPr *CTNonVisualContentPartProperties `xml:"cNvContentPartPr"`
 }
 
 // CTWordprocessingContentPart ...
@@ -210,15 +210,15 @@ type CTWordprocessingContentPart struct {
 	XMLName         xml.Name                              `xml:"CT_WordprocessingContentPart"`
 	BwModeAttr      *string                               `xml:"bwMode,attr"`
 	RIdAttr         string                                `xml:"r:id,attr"`
-	NvContentPartPr *CTWordprocessingContentPartNonVisual `xml:"nvContentPartPr,omitempty"`
-	Xfrm            *CTTransform2D                        `xml:"xfrm,omitempty"`
-	ExtLst          *CTOfficeArtExtensionList             `xml:"extLst,omitempty"`
+	NvContentPartPr *CTWordprocessingContentPartNonVisual `xml:"nvContentPartPr"`
+	Xfrm            *CTTransform2D                        `xml:"xfrm"`
+	ExtLst          *CTOfficeArtExtensionList             `xml:"extLst"`
 }
 
 // CTWordprocessingGroup ...
 type CTWordprocessingGroup struct {
 	XMLName      xml.Name                           `xml:"CT_WordprocessingGroup"`
-	CNvPr        *CTNonVisualDrawingProps           `xml:"cNvPr,omitempty"`
+	CNvPr        *CTNonVisualDrawingProps           `xml:"cNvPr"`
 	CNvGrpSpPr   *CTNonVisualGroupDrawingShapeProps `xml:"cNvGrpSpPr"`
 	GrpSpPr      *CTGroupShapeProperties            `xml:"grpSpPr"`
 	Wsp          []*CTWordprocessingShape           `xml:"wsp"`
@@ -226,20 +226,20 @@ type CTWordprocessingGroup struct {
 	GraphicFrame []*CTGraphicFrame                  `xml:"graphicFrame"`
 	DpctPic      []*CTPicture                       `xml:"dpct:pic"`
 	ContentPart  []*CTWordprocessingContentPart     `xml:"contentPart"`
-	ExtLst       *CTOfficeArtExtensionList          `xml:"extLst,omitempty"`
+	ExtLst       *CTOfficeArtExtensionList          `xml:"extLst"`
 }
 
 // CTWordprocessingCanvas ...
 type CTWordprocessingCanvas struct {
 	XMLName      xml.Name                       `xml:"CT_WordprocessingCanvas"`
-	Bg           *CTBackgroundFormatting        `xml:"bg,omitempty"`
-	Whole        *CTWholeE2oFormatting          `xml:"whole,omitempty"`
+	Bg           *CTBackgroundFormatting        `xml:"bg"`
+	Whole        *CTWholeE2oFormatting          `xml:"whole"`
 	Wsp          []*CTWordprocessingShape       `xml:"wsp"`
 	DpctPic      []*CTPicture                   `xml:"dpct:pic"`
 	ContentPart  []*CTWordprocessingContentPart `xml:"contentPart"`
 	Wgp          []*CTWordprocessingGroup       `xml:"wgp"`
 	GraphicFrame []*CTGraphicFrame              `xml:"graphicFrame"`
-	ExtLst       *CTOfficeArtExtensionList      `xml:"extLst,omitempty"`
+	ExtLst       *CTOfficeArtExtensionList      `xml:"extLst"`
 }
 
 // Wpc ...

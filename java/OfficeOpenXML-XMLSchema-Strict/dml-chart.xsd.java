@@ -82,9 +82,9 @@ public class CT_NumRef {
 
 // CT_NumDataSource ...
 public class CT_NumDataSource {
-	@XmlElement(required = true, name = "numRef")
+	@XmlElement(name = "numRef")
 	protected CT_NumRef NumRef;
-	@XmlElement(required = true, name = "numLit")
+	@XmlElement(name = "numLit")
 	protected CT_NumData NumLit;
 }
 
@@ -118,9 +118,9 @@ public class CT_StrRef {
 
 // CT_Tx ...
 public class CT_Tx {
-	@XmlElement(required = true, name = "strRef")
+	@XmlElement(name = "strRef")
 	protected CT_StrRef StrRef;
-	@XmlElement(required = true, name = "rich")
+	@XmlElement(name = "rich")
 	protected CT_TextBody Rich;
 }
 
@@ -158,23 +158,23 @@ public class CT_MultiLvlStrRef {
 
 // CT_AxDataSource ...
 public class CT_AxDataSource {
-	@XmlElement(required = true, name = "multiLvlStrRef")
+	@XmlElement(name = "multiLvlStrRef")
 	protected CT_MultiLvlStrRef MultiLvlStrRef;
-	@XmlElement(required = true, name = "numRef")
+	@XmlElement(name = "numRef")
 	protected CT_NumRef NumRef;
-	@XmlElement(required = true, name = "numLit")
+	@XmlElement(name = "numLit")
 	protected CT_NumData NumLit;
-	@XmlElement(required = true, name = "strRef")
+	@XmlElement(name = "strRef")
 	protected CT_StrRef StrRef;
-	@XmlElement(required = true, name = "strLit")
+	@XmlElement(name = "strLit")
 	protected CT_StrData StrLit;
 }
 
 // CT_SerTx ...
 public class CT_SerTx {
-	@XmlElement(required = true, name = "strRef")
+	@XmlElement(name = "strRef")
 	protected CT_StrRef StrRef;
-	@XmlElement(required = true, name = "v")
+	@XmlElement(name = "v")
 	protected String V;
 }
 
@@ -610,7 +610,7 @@ public class CT_DLbl {
 	protected List<Group_DLbl> Group_DLbl;
 	@XmlElement(required = true, name = "idx")
 	protected CT_UnsignedInt Idx;
-	@XmlElement(required = true, name = "delete")
+	@XmlElement(name = "delete")
 	protected CT_Boolean Delete;
 	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
@@ -630,7 +630,7 @@ public class CT_DLbls {
 	protected List<Group_DLbls> Group_DLbls;
 	@XmlElement(name = "dLbl")
 	protected List<CT_DLbl> DLbl;
-	@XmlElement(required = true, name = "delete")
+	@XmlElement(name = "delete")
 	protected CT_Boolean Delete;
 	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;
@@ -1590,9 +1590,9 @@ public class CT_DispUnitsLbl {
 
 // CT_DispUnits ...
 public class CT_DispUnits {
-	@XmlElement(required = true, name = "custUnit")
+	@XmlElement(name = "custUnit")
 	protected CT_Double CustUnit;
-	@XmlElement(required = true, name = "builtInUnit")
+	@XmlElement(name = "builtInUnit")
 	protected CT_BuiltInUnit BuiltInUnit;
 	@XmlElement(name = "dispUnitsLbl")
 	protected CT_DispUnitsLbl DispUnitsLbl;
@@ -1765,45 +1765,45 @@ public class CT_ValAx {
 public class CT_PlotArea {
 	@XmlElement(name = "layout")
 	protected CT_Layout Layout;
-	@XmlElement(required = true, name = "areaChart")
+	@XmlElement(name = "areaChart")
 	protected List<CT_AreaChart> AreaChart;
-	@XmlElement(required = true, name = "area3DChart")
+	@XmlElement(name = "area3DChart")
 	protected List<CT_Area3DChart> Area3DChart;
-	@XmlElement(required = true, name = "lineChart")
+	@XmlElement(name = "lineChart")
 	protected List<CT_LineChart> LineChart;
-	@XmlElement(required = true, name = "line3DChart")
+	@XmlElement(name = "line3DChart")
 	protected List<CT_Line3DChart> Line3DChart;
-	@XmlElement(required = true, name = "stockChart")
+	@XmlElement(name = "stockChart")
 	protected List<CT_StockChart> StockChart;
-	@XmlElement(required = true, name = "radarChart")
+	@XmlElement(name = "radarChart")
 	protected List<CT_RadarChart> RadarChart;
-	@XmlElement(required = true, name = "scatterChart")
+	@XmlElement(name = "scatterChart")
 	protected List<CT_ScatterChart> ScatterChart;
-	@XmlElement(required = true, name = "pieChart")
+	@XmlElement(name = "pieChart")
 	protected List<CT_PieChart> PieChart;
-	@XmlElement(required = true, name = "pie3DChart")
+	@XmlElement(name = "pie3DChart")
 	protected List<CT_Pie3DChart> Pie3DChart;
-	@XmlElement(required = true, name = "doughnutChart")
+	@XmlElement(name = "doughnutChart")
 	protected List<CT_DoughnutChart> DoughnutChart;
-	@XmlElement(required = true, name = "barChart")
+	@XmlElement(name = "barChart")
 	protected List<CT_BarChart> BarChart;
-	@XmlElement(required = true, name = "bar3DChart")
+	@XmlElement(name = "bar3DChart")
 	protected List<CT_Bar3DChart> Bar3DChart;
-	@XmlElement(required = true, name = "ofPieChart")
+	@XmlElement(name = "ofPieChart")
 	protected List<CT_OfPieChart> OfPieChart;
-	@XmlElement(required = true, name = "surfaceChart")
+	@XmlElement(name = "surfaceChart")
 	protected List<CT_SurfaceChart> SurfaceChart;
-	@XmlElement(required = true, name = "surface3DChart")
+	@XmlElement(name = "surface3DChart")
 	protected List<CT_Surface3DChart> Surface3DChart;
-	@XmlElement(required = true, name = "bubbleChart")
+	@XmlElement(name = "bubbleChart")
 	protected List<CT_BubbleChart> BubbleChart;
-	@XmlElement(required = true, name = "valAx")
+	@XmlElement(name = "valAx")
 	protected List<CT_ValAx> ValAx;
-	@XmlElement(required = true, name = "catAx")
+	@XmlElement(name = "catAx")
 	protected List<CT_CatAx> CatAx;
-	@XmlElement(required = true, name = "dateAx")
+	@XmlElement(name = "dateAx")
 	protected List<CT_DateAx> DateAx;
-	@XmlElement(required = true, name = "serAx")
+	@XmlElement(name = "serAx")
 	protected List<CT_SerAx> SerAx;
 	@XmlElement(name = "dTable")
 	protected CT_DTable DTable;
@@ -1859,7 +1859,7 @@ public class CT_LegendEntry {
 	protected List<EG_LegendEntryData> EG_LegendEntryData;
 	@XmlElement(required = true, name = "idx")
 	protected CT_UnsignedInt Idx;
-	@XmlElement(required = true, name = "delete")
+	@XmlElement(name = "delete")
 	protected CT_Boolean Delete;
 	@XmlElement(name = "extLst")
 	protected CT_ExtensionList ExtLst;

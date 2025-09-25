@@ -16,7 +16,7 @@ type Settings *Settings
 //             the command line or from the defaults section below.
 type Proxies struct {
 	XMLName xml.Name `xml:"proxies"`
-	Proxy   []*Proxy `xml:"proxy,omitempty"`
+	Proxy   []*Proxy `xml:"proxy"`
 }
 
 // Servers is Configuration of server-specific settings, mainly authentication
@@ -24,34 +24,34 @@ type Proxies struct {
 //             basis.
 type Servers struct {
 	XMLName xml.Name  `xml:"servers"`
-	Server  []*Server `xml:"server,omitempty"`
+	Server  []*Server `xml:"server"`
 }
 
 // Mirrors is Configuration of download mirrors for repositories.
 type Mirrors struct {
 	XMLName xml.Name  `xml:"mirrors"`
-	Mirror  []*Mirror `xml:"mirror,omitempty"`
+	Mirror  []*Mirror `xml:"mirror"`
 }
 
 // Profiles is Configuration of build profiles for adjusting the build
 //             according to environmental parameters.
 type Profiles struct {
 	XMLName xml.Name   `xml:"profiles"`
-	Profile []*Profile `xml:"profile,omitempty"`
+	Profile []*Profile `xml:"profile"`
 }
 
 // ActiveProfiles is List of manually-activated build profiles, specified in the order in which
 //             they should be applied.
 type ActiveProfiles struct {
 	XMLName       xml.Name `xml:"activeProfiles"`
-	ActiveProfile []string `xml:"activeProfile,omitempty"`
+	ActiveProfile []string `xml:"activeProfile"`
 }
 
 // PluginGroups is List of groupIds to search for a plugin when that plugin
 //             groupId is not explicitly provided.
 type PluginGroups struct {
 	XMLName     xml.Name `xml:"pluginGroups"`
-	PluginGroup []string `xml:"pluginGroup,omitempty"`
+	PluginGroup []string `xml:"pluginGroup"`
 }
 
 // Settings is Indicate whether maven should operate in offline mode full-time.
@@ -60,12 +60,12 @@ type Settings struct {
 	InteractiveMode   *bool           `xml:"interactiveMode"`
 	UsePluginRegistry *bool           `xml:"usePluginRegistry"`
 	Offline           *bool           `xml:"offline"`
-	Proxies           *Proxies        `xml:"proxies,omitempty"`
-	Servers           *Servers        `xml:"servers,omitempty"`
-	Mirrors           *Mirrors        `xml:"mirrors,omitempty"`
-	Profiles          *Profiles       `xml:"profiles,omitempty"`
-	ActiveProfiles    *ActiveProfiles `xml:"activeProfiles,omitempty"`
-	PluginGroups      *PluginGroups   `xml:"pluginGroups,omitempty"`
+	Proxies           *Proxies        `xml:"proxies"`
+	Servers           *Servers        `xml:"servers"`
+	Mirrors           *Mirrors        `xml:"mirrors"`
+	Profiles          *Profiles       `xml:"profiles"`
+	ActiveProfiles    *ActiveProfiles `xml:"activeProfiles"`
+	PluginGroups      *PluginGroups   `xml:"pluginGroups"`
 }
 
 // Mirror is 1.0.0
@@ -101,7 +101,7 @@ type Server struct {
 	Passphrase           *string        `xml:"passphrase"`
 	FilePermissions      *string        `xml:"filePermissions"`
 	DirectoryPermissions *string        `xml:"directoryPermissions"`
-	Configuration        *Configuration `xml:"configuration,omitempty"`
+	Configuration        *Configuration `xml:"configuration"`
 	Id                   *string        `xml:"id"`
 }
 
@@ -115,30 +115,30 @@ type Properties struct {
 // Repositories is The lists of the remote repositories.
 type Repositories struct {
 	XMLName    xml.Name      `xml:"repositories"`
-	Repository []*Repository `xml:"repository,omitempty"`
+	Repository []*Repository `xml:"repository"`
 }
 
 // PluginRepositories is The lists of the remote repositories for discovering plugins.
 type PluginRepositories struct {
 	XMLName          xml.Name      `xml:"pluginRepositories"`
-	PluginRepository []*Repository `xml:"pluginRepository,omitempty"`
+	PluginRepository []*Repository `xml:"pluginRepository"`
 }
 
 // Profile is The conditional logic which will automatically
 //             trigger the inclusion of this profile.
 type Profile struct {
-	Activation         *Activation         `xml:"activation,omitempty"`
-	Properties         *Properties         `xml:"properties,omitempty"`
-	Repositories       *Repositories       `xml:"repositories,omitempty"`
-	PluginRepositories *PluginRepositories `xml:"pluginRepositories,omitempty"`
+	Activation         *Activation         `xml:"activation"`
+	Properties         *Properties         `xml:"properties"`
+	Repositories       *Repositories       `xml:"repositories"`
+	PluginRepositories *PluginRepositories `xml:"pluginRepositories"`
 	Id                 *string             `xml:"id"`
 }
 
 // Repository is The type of layout this repository uses for locating and
 //             storing artifacts - can be "legacy" or "default".
 type Repository struct {
-	Releases  *RepositoryPolicy `xml:"releases,omitempty"`
-	Snapshots *RepositoryPolicy `xml:"snapshots,omitempty"`
+	Releases  *RepositoryPolicy `xml:"releases"`
+	Snapshots *RepositoryPolicy `xml:"snapshots"`
 	Id        *string           `xml:"id"`
 	Name      *string           `xml:"name"`
 	Url       *string           `xml:"url"`
@@ -157,9 +157,9 @@ type RepositoryPolicy struct {
 type Activation struct {
 	ActiveByDefault *bool               `xml:"activeByDefault"`
 	Jdk             *string             `xml:"jdk"`
-	Os              *ActivationOS       `xml:"os,omitempty"`
-	Property        *ActivationProperty `xml:"property,omitempty"`
-	File            *ActivationFile     `xml:"file,omitempty"`
+	Os              *ActivationOS       `xml:"os"`
+	Property        *ActivationProperty `xml:"property"`
+	File            *ActivationFile     `xml:"file"`
 }
 
 // ActivationFile is The name of the file that should exist to activate a profile.

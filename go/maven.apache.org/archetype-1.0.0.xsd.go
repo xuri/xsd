@@ -12,31 +12,31 @@ type Archetype *ArchetypeModel
 // Sources is Files that will go into <code>src/main/java</code>.
 type Sources struct {
 	XMLName xml.Name  `xml:"sources"`
-	Source  []*Source `xml:"source,omitempty"`
+	Source  []*Source `xml:"source"`
 }
 
 // Resources is Files that will go into <code>src/main/resources</code>.
 type Resources struct {
 	XMLName  xml.Name    `xml:"resources"`
-	Resource []*Resource `xml:"resource,omitempty"`
+	Resource []*Resource `xml:"resource"`
 }
 
 // TestSources is Files that will go into <code>src/test/java</code>.
 type TestSources struct {
 	XMLName xml.Name  `xml:"testSources"`
-	Source  []*Source `xml:"source,omitempty"`
+	Source  []*Source `xml:"source"`
 }
 
 // TestResources is Files that will go into <code>src/test/resources</code>.
 type TestResources struct {
 	XMLName  xml.Name    `xml:"testResources"`
-	Resource []*Resource `xml:"resource,omitempty"`
+	Resource []*Resource `xml:"resource"`
 }
 
 // SiteResources is Files that will go into <code>src/site</code>.
 type SiteResources struct {
 	XMLName  xml.Name    `xml:"siteResources"`
-	Resource []*Resource `xml:"resource,omitempty"`
+	Resource []*Resource `xml:"resource"`
 }
 
 // ArchetypeModel is Setting this option to <code>true</code> makes it possible to run the
@@ -44,11 +44,11 @@ type SiteResources struct {
 type ArchetypeModel struct {
 	Id            *string        `xml:"id"`
 	AllowPartial  *bool          `xml:"allowPartial"`
-	Sources       *Sources       `xml:"sources,omitempty"`
-	Resources     *Resources     `xml:"resources,omitempty"`
-	TestSources   *TestSources   `xml:"testSources,omitempty"`
-	TestResources *TestResources `xml:"testResources,omitempty"`
-	SiteResources *SiteResources `xml:"siteResources,omitempty"`
+	Sources       *Sources       `xml:"sources"`
+	Resources     *Resources     `xml:"resources"`
+	TestSources   *TestSources   `xml:"testSources"`
+	TestResources *TestResources `xml:"testResources"`
+	SiteResources *SiteResources `xml:"siteResources"`
 }
 
 // Source is Describes a source file. Note that source files are always filtered, unlike resources that

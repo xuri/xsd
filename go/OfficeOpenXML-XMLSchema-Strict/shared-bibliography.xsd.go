@@ -18,9 +18,9 @@ type CTNameListType struct {
 // CTPersonType ...
 type CTPersonType struct {
 	XMLName xml.Name `xml:"CT_PersonType"`
-	Last    []string `xml:"Last,omitempty"`
-	First   []string `xml:"First,omitempty"`
-	Middle  []string `xml:"Middle,omitempty"`
+	Last    []string `xml:"Last"`
+	First   []string `xml:"First"`
+	Middle  []string `xml:"Middle"`
 }
 
 // CTNameType ...
@@ -33,7 +33,7 @@ type CTNameType struct {
 type CTNameOrCorporateType struct {
 	XMLName   xml.Name        `xml:"CT_NameOrCorporateType"`
 	NameList  *CTNameListType `xml:"NameList"`
-	Corporate string          `xml:"Corporate"`
+	Corporate *string         `xml:"Corporate"`
 }
 
 // CTAuthorType ...
@@ -123,5 +123,5 @@ type CTSources struct {
 	SelectedStyleAttr *string         `xml:"SelectedStyle,attr"`
 	StyleNameAttr     *string         `xml:"StyleName,attr"`
 	URIAttr           *string         `xml:"URI,attr"`
-	Source            []*CTSourceType `xml:"Source,omitempty"`
+	Source            []*CTSourceType `xml:"Source"`
 }

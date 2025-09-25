@@ -503,7 +503,7 @@ public class Flow {
 	protected List<Block> Block;
 	protected List<Inline> Inline;
 	protected List<Misc> Misc;
-	@XmlElement(required = true, name = "form")
+	@XmlElement(name = "form")
 	protected List<Form> Form;
 }
 
@@ -524,7 +524,7 @@ public class PreContent {
 	protected List<PhraseBasic> PhraseBasic;
 	protected List<InlineForms> InlineForms;
 	protected List<MiscInline> MiscInline;
-	@XmlElement(required = true, name = "a")
+	@XmlElement(name = "a")
 	protected List<A> A;
 }
 
@@ -543,25 +543,25 @@ public class ButtonContent {
 	protected List<Fontstyle> Fontstyle;
 	protected List<Phrase> Phrase;
 	protected List<Misc> Misc;
-	@XmlElement(required = true, name = "p")
+	@XmlElement(name = "p")
 	protected List<P> P;
-	@XmlElement(required = true, name = "div")
+	@XmlElement(name = "div")
 	protected List<Div> Div;
-	@XmlElement(required = true, name = "table")
+	@XmlElement(name = "table")
 	protected List<Table> Table;
-	@XmlElement(required = true, name = "br")
+	@XmlElement(name = "br")
 	protected List<Br> Br;
-	@XmlElement(required = true, name = "span")
+	@XmlElement(name = "span")
 	protected List<Span> Span;
-	@XmlElement(required = true, name = "bdo")
+	@XmlElement(name = "bdo")
 	protected List<Bdo> Bdo;
-	@XmlElement(required = true, name = "object")
+	@XmlElement(name = "object")
 	protected List<Object> Object;
-	@XmlElement(required = true, name = "applet")
+	@XmlElement(name = "applet")
 	protected List<Applet> Applet;
-	@XmlElement(required = true, name = "img")
+	@XmlElement(name = "img")
 	protected List<Img> Img;
-	@XmlElement(required = true, name = "map")
+	@XmlElement(name = "map")
 	protected List<Map> Map;
 }
 
@@ -591,9 +591,9 @@ public class Head {
 	@XmlAttribute(name = "profile")
 	protected String ProfileAttr;
 	protected HeadMisc HeadMisc;
-	@XmlElement(required = true, name = "title")
+	@XmlElement(name = "title")
 	protected Title Title;
-	@XmlElement(required = true, name = "base")
+	@XmlElement(name = "base")
 	protected Base Base;
 }
 
@@ -893,9 +893,9 @@ public class Dl {
 	protected Attrs Attrs;
 	@XmlAttribute(name = "compact")
 	protected String CompactAttr;
-	@XmlElement(required = true, name = "dt")
+	@XmlElement(name = "dt")
 	protected List<Dt> Dt;
-	@XmlElement(required = true, name = "dd")
+	@XmlElement(name = "dd")
 	protected List<Dd> Dd;
 }
 
@@ -917,7 +917,7 @@ public class Address {
 	protected Attrs Attrs;
 	protected List<Inline> Inline;
 	protected List<MiscInline> MiscInline;
-	@XmlElement(required = true, name = "p")
+	@XmlElement(name = "p")
 	protected List<P> P;
 }
 
@@ -1231,9 +1231,9 @@ public class Object {
 	protected List<Block> Block;
 	protected List<Inline> Inline;
 	protected List<Misc> Misc;
-	@XmlElement(required = true, name = "param")
+	@XmlElement(name = "param")
 	protected List<Param> Param;
-	@XmlElement(required = true, name = "form")
+	@XmlElement(name = "form")
 	protected List<Form> Form;
 }
 
@@ -1283,9 +1283,9 @@ public class Applet {
 	protected List<Block> Block;
 	protected List<Inline> Inline;
 	protected List<Misc> Misc;
-	@XmlElement(required = true, name = "param")
+	@XmlElement(name = "param")
 	protected List<Param> Param;
-	@XmlElement(required = true, name = "form")
+	@XmlElement(name = "form")
 	protected List<Form> Form;
 }
 
@@ -1337,9 +1337,9 @@ public class Map {
 	protected void NameAttr;
 	protected List<Block> Block;
 	protected List<Misc> Misc;
-	@XmlElement(required = true, name = "form")
+	@XmlElement(name = "form")
 	protected List<Form> Form;
-	@XmlElement(required = true, name = "area")
+	@XmlElement(name = "area")
 	protected List<Area> Area;
 }
 
@@ -1465,9 +1465,9 @@ public class Select {
 	protected String OnblurAttr;
 	@XmlAttribute(name = "onchange")
 	protected String OnchangeAttr;
-	@XmlElement(required = true, name = "optgroup")
+	@XmlElement(name = "optgroup")
 	protected List<Optgroup> Optgroup;
-	@XmlElement(required = true, name = "option")
+	@XmlElement(name = "option")
 	protected List<Option> Option;
 }
 
@@ -1533,7 +1533,7 @@ public class Fieldset {
 	protected List<Misc> Misc;
 	@XmlElement(required = true, name = "legend")
 	protected Legend Legend;
-	@XmlElement(required = true, name = "form")
+	@XmlElement(name = "form")
 	protected List<Form> Form;
 }
 
@@ -1660,9 +1660,9 @@ public class Table {
 	protected Thead Thead;
 	@XmlElement(name = "tfoot")
 	protected Tfoot Tfoot;
-	@XmlElement(required = true, name = "tbody")
+	@XmlElement(name = "tbody")
 	protected List<Tbody> Tbody;
-	@XmlElement(required = true, name = "tr")
+	@XmlElement(name = "tr")
 	protected List<Tr> Tr;
 }
 
@@ -1767,9 +1767,9 @@ public class Tr {
 	protected Cellvalign Cellvalign;
 	@XmlAttribute(name = "bgcolor")
 	protected String BgcolorAttr;
-	@XmlElement(required = true, name = "th")
+	@XmlElement(name = "th")
 	protected List<Th> Th;
-	@XmlElement(required = true, name = "td")
+	@XmlElement(name = "td")
 	protected List<Td> Td;
 }
 
@@ -1885,7 +1885,7 @@ public class Answer {
 	protected List<Block> Block;
 	protected List<Inline> Inline;
 	protected List<Misc> Misc;
-	@XmlElement(required = true, name = "form")
+	@XmlElement(name = "form")
 	protected List<Form> Form;
 }
 

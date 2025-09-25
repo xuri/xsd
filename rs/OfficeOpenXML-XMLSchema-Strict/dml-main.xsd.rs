@@ -1130,9 +1130,9 @@ pub struct CTAnimationChartElement {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTAnimationElementChoice {
 	#[serde(rename = "dgm")]
-	pub dgm: CTAnimationDgmElement,
+	pub dgm: Option<CTAnimationDgmElement>,
 	#[serde(rename = "chart")]
-	pub chart: CTAnimationChartElement,
+	pub chart: Option<CTAnimationChartElement>,
 }
 
 
@@ -1200,9 +1200,9 @@ pub struct CTAnimationChartBuildProperties {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTAnimationGraphicalObjectBuildProperties {
 	#[serde(rename = "bldDgm")]
-	pub bld_dgm: CTAnimationDgmBuildProperties,
+	pub bld_dgm: Option<CTAnimationDgmBuildProperties>,
 	#[serde(rename = "bldChart")]
-	pub bld_chart: CTAnimationChartBuildProperties,
+	pub bld_chart: Option<CTAnimationChartBuildProperties>,
 }
 
 
@@ -1238,9 +1238,9 @@ pub struct CTGvmlTextShape {
 	#[serde(rename = "txBody")]
 	pub tx_body: CTTextBody,
 	#[serde(rename = "useSpRect")]
-	pub use_sp_rect: CTGvmlUseShapeRectangle,
+	pub use_sp_rect: Option<CTGvmlUseShapeRectangle>,
 	#[serde(rename = "xfrm")]
-	pub xfrm: CTTransform2D,
+	pub xfrm: Option<CTTransform2D>,
 	#[serde(rename = "extLst")]
 	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
@@ -2914,9 +2914,9 @@ pub struct CTColorMapping {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTColorMappingOverride {
 	#[serde(rename = "masterClrMapping")]
-	pub master_clr_mapping: CTEmptyElement,
+	pub master_clr_mapping: Option<CTEmptyElement>,
 	#[serde(rename = "overrideClrMapping")]
-	pub override_clr_mapping: CTColorMapping,
+	pub override_clr_mapping: Option<CTColorMapping>,
 }
 
 
@@ -3126,9 +3126,9 @@ pub struct CTTableProperties {
 	#[serde(rename = "EG_EffectProperties")]
 	pub eg_effect_properties: Vec<EGEffectProperties>,
 	#[serde(rename = "tableStyle")]
-	pub table_style: CTTableStyle,
+	pub table_style: Option<CTTableStyle>,
 	#[serde(rename = "tableStyleId")]
-	pub table_style_id: String,
+	pub table_style_id: Option<String>,
 	#[serde(rename = "extLst")]
 	pub ext_lst: Option<CTOfficeArtExtensionList>,
 }
@@ -3182,9 +3182,9 @@ pub struct EGThemeableFillStyle {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTThemeableLineStyle {
 	#[serde(rename = "ln")]
-	pub ln: CTLineProperties,
+	pub ln: Option<CTLineProperties>,
 	#[serde(rename = "lnRef")]
-	pub ln_ref: CTStyleMatrixReference,
+	pub ln_ref: Option<CTStyleMatrixReference>,
 }
 
 
@@ -3972,9 +3972,9 @@ pub struct CTTextLineBreak {
 #[derive(Debug, Deserialize, Serialize, PartialEq)]
 pub struct CTTextSpacing {
 	#[serde(rename = "spcPct")]
-	pub spc_pct: CTTextSpacingPercent,
+	pub spc_pct: Option<CTTextSpacingPercent>,
 	#[serde(rename = "spcPts")]
-	pub spc_pts: CTTextSpacingPoint,
+	pub spc_pts: Option<CTTextSpacingPoint>,
 }
 
 

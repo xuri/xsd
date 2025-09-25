@@ -34,69 +34,69 @@ pub struct CTProperty {
 	#[serde(rename = "linkTarget")]
 	pub link_target: Option<String>,
 	#[serde(rename = "vt:vector")]
-	pub vt_vector: CTVector,
+	pub vt_vector: Option<CTVector>,
 	#[serde(rename = "vt:array")]
-	pub vt_array: CTArray,
+	pub vt_array: Option<CTArray>,
 	#[serde(rename = "vt:blob")]
-	pub vt_blob: String,
+	pub vt_blob: Option<String>,
 	#[serde(rename = "vt:oblob")]
-	pub vt_oblob: String,
+	pub vt_oblob: Option<String>,
 	#[serde(rename = "vt:empty")]
-	pub vt_empty: CTEmpty,
+	pub vt_empty: Option<CTEmpty>,
 	#[serde(rename = "vt:null")]
-	pub vt_null: CTNull,
+	pub vt_null: Option<CTNull>,
 	#[serde(rename = "vt:i1")]
-	pub vt_i1: u8,
+	pub vt_i1: Option<u8>,
 	#[serde(rename = "vt:i2")]
-	pub vt_i2: i16,
+	pub vt_i2: Option<i16>,
 	#[serde(rename = "vt:i4")]
-	pub vt_i4: i32,
+	pub vt_i4: Option<i32>,
 	#[serde(rename = "vt:i8")]
-	pub vt_i8: i64,
+	pub vt_i8: Option<i64>,
 	#[serde(rename = "vt:int")]
-	pub vt_int: i32,
+	pub vt_int: Option<i32>,
 	#[serde(rename = "vt:ui1")]
-	pub vt_ui1: u8,
+	pub vt_ui1: Option<u8>,
 	#[serde(rename = "vt:ui2")]
-	pub vt_ui2: u16,
+	pub vt_ui2: Option<u16>,
 	#[serde(rename = "vt:ui4")]
-	pub vt_ui4: u32,
+	pub vt_ui4: Option<u32>,
 	#[serde(rename = "vt:ui8")]
-	pub vt_ui8: u64,
+	pub vt_ui8: Option<u64>,
 	#[serde(rename = "vt:uint")]
-	pub vt_uint: u32,
+	pub vt_uint: Option<u32>,
 	#[serde(rename = "vt:r4")]
-	pub vt_r4: f64,
+	pub vt_r4: Option<f64>,
 	#[serde(rename = "vt:r8")]
-	pub vt_r8: f64,
+	pub vt_r8: Option<f64>,
 	#[serde(rename = "vt:decimal")]
-	pub vt_decimal: f64,
+	pub vt_decimal: Option<f64>,
 	#[serde(rename = "vt:lpstr")]
-	pub vt_lpstr: String,
+	pub vt_lpstr: Option<String>,
 	#[serde(rename = "vt:lpwstr")]
-	pub vt_lpwstr: String,
+	pub vt_lpwstr: Option<String>,
 	#[serde(rename = "vt:bstr")]
-	pub vt_bstr: String,
+	pub vt_bstr: Option<String>,
 	#[serde(rename = "vt:date")]
-	pub vt_date: u8,
+	pub vt_date: Option<u8>,
 	#[serde(rename = "vt:filetime")]
-	pub vt_filetime: u8,
+	pub vt_filetime: Option<u8>,
 	#[serde(rename = "vt:bool")]
-	pub vt_bool: bool,
+	pub vt_bool: Option<bool>,
 	#[serde(rename = "vt:cy")]
-	pub vt_cy: String,
+	pub vt_cy: Option<String>,
 	#[serde(rename = "vt:error")]
-	pub vt_error: String,
+	pub vt_error: Option<String>,
 	#[serde(rename = "vt:stream")]
-	pub vt_stream: String,
+	pub vt_stream: Option<String>,
 	#[serde(rename = "vt:ostream")]
-	pub vt_ostream: String,
+	pub vt_ostream: Option<String>,
 	#[serde(rename = "vt:storage")]
-	pub vt_storage: String,
+	pub vt_storage: Option<String>,
 	#[serde(rename = "vt:ostorage")]
-	pub vt_ostorage: String,
+	pub vt_ostorage: Option<String>,
 	#[serde(rename = "vt:vstream")]
-	pub vt_vstream: CTVstream,
+	pub vt_vstream: Option<CTVstream>,
 	#[serde(rename = "vt:clsid")]
-	pub vt_clsid: String,
+	pub vt_clsid: Option<String>,
 }

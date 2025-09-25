@@ -12,7 +12,7 @@ type Toolchains *PersistedToolchains
 
 // PersistedToolchains is The toolchain instance definition.
 type PersistedToolchains struct {
-	Toolchain []*ToolchainModel `xml:"toolchain,omitempty"`
+	Toolchain []*ToolchainModel `xml:"toolchain"`
 }
 
 // Provides is <p>Toolchain identification information, which will be matched against project requirements.</p>
@@ -38,6 +38,6 @@ type Configuration struct {
 //                     </ul>
 type ToolchainModel struct {
 	Type          *string        `xml:"type"`
-	Provides      *Provides      `xml:"provides,omitempty"`
-	Configuration *Configuration `xml:"configuration,omitempty"`
+	Provides      *Provides      `xml:"provides"`
+	Configuration *Configuration `xml:"configuration"`
 }

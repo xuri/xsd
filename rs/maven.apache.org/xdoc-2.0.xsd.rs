@@ -712,9 +712,9 @@ pub struct Head {
 	#[serde(rename = "head.misc")]
 	pub head_misc: HeadMisc,
 	#[serde(rename = "title")]
-	pub title: Title,
+	pub title: Option<Title>,
 	#[serde(rename = "base")]
-	pub base: Base,
+	pub base: Option<Base>,
 }
 
 

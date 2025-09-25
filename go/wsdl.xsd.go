@@ -14,7 +14,7 @@ type TDocumentation struct {
 // TDocumented is This type is extended by  component types to allow them to be documented
 type TDocumented struct {
 	XMLName       xml.Name        `xml:"tDocumented"`
-	Documentation *TDocumentation `xml:"documentation,omitempty"`
+	Documentation *TDocumentation `xml:"documentation"`
 }
 
 // TExtensibleAttributesDocumented is This type is extended by component types to allow attributes from other namespaces to be added.
@@ -70,7 +70,7 @@ type TTypes struct {
 type TMessage struct {
 	XMLName  xml.Name `xml:"tMessage"`
 	NameAttr string   `xml:"name,attr"`
-	Part     []*TPart `xml:"part,omitempty"`
+	Part     []*TPart `xml:"part"`
 	*TExtensibleDocumented
 }
 
@@ -87,7 +87,7 @@ type TPart struct {
 type TPortType struct {
 	XMLName   xml.Name      `xml:"tPortType"`
 	NameAttr  string        `xml:"name,attr"`
-	Operation []*TOperation `xml:"operation,omitempty"`
+	Operation []*TOperation `xml:"operation"`
 	*TExtensibleAttributesDocumented
 }
 
@@ -138,7 +138,7 @@ type TBinding struct {
 	XMLName   xml.Name             `xml:"tBinding"`
 	NameAttr  string               `xml:"name,attr"`
 	TypeAttr  xml.Name             `xml:"type,attr"`
-	Operation []*TBindingOperation `xml:"operation,omitempty"`
+	Operation []*TBindingOperation `xml:"operation"`
 	*TExtensibleDocumented
 }
 
@@ -160,9 +160,9 @@ type TBindingOperationFault struct {
 type TBindingOperation struct {
 	XMLName  xml.Name                  `xml:"tBindingOperation"`
 	NameAttr string                    `xml:"name,attr"`
-	Input    *TBindingOperationMessage `xml:"input,omitempty"`
-	Output   *TBindingOperationMessage `xml:"output,omitempty"`
-	Fault    []*TBindingOperationFault `xml:"fault,omitempty"`
+	Input    *TBindingOperationMessage `xml:"input"`
+	Output   *TBindingOperationMessage `xml:"output"`
+	Fault    []*TBindingOperationFault `xml:"fault"`
 	*TExtensibleDocumented
 }
 
@@ -170,7 +170,7 @@ type TBindingOperation struct {
 type TService struct {
 	XMLName  xml.Name `xml:"tService"`
 	NameAttr string   `xml:"name,attr"`
-	Port     []*TPort `xml:"port,omitempty"`
+	Port     []*TPort `xml:"port"`
 	*TExtensibleDocumented
 }
 

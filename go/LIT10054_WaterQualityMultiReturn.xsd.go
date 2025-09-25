@@ -35,12 +35,12 @@ type Sample struct {
 	MaterialName                   interface{}           `xml:"MaterialName"`
 	Mechanism                      interface{}           `xml:"Mechanism"`
 	CustomersLabSampleRef          interface{}           `xml:"CustomersLabSampleRef"`
-	CustomersLabSampleRefSecondary []interface{}         `xml:"CustomersLabSampleRefSecondary,omitempty"`
+	CustomersLabSampleRefSecondary []interface{}         `xml:"CustomersLabSampleRefSecondary"`
 	Comment                        *interface{}          `xml:"Comment"`
 	LabName                        interface{}           `xml:"LabName"`
 	AnalysisCompleteDateTime       string                `xml:"AnalysisCompleteDateTime"`
-	DepthValueRecorded             *DepthValueRecorded   `xml:"DepthValueRecorded,omitempty"`
-	PurgedVolumeRecorded           *PurgedVolumeRecorded `xml:"PurgedVolumeRecorded,omitempty"`
+	DepthValueRecorded             *DepthValueRecorded   `xml:"DepthValueRecorded"`
+	PurgedVolumeRecorded           *PurgedVolumeRecorded `xml:"PurgedVolumeRecorded"`
 	Measurement                    []*Measurement        `xml:"Measurement"`
 }
 

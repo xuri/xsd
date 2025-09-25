@@ -20,78 +20,78 @@ type Assembly *Assembly
 //             </ul>
 type Formats struct {
 	XMLName xml.Name `xml:"formats"`
-	Format  []string `xml:"format,omitempty"`
+	Format  []string `xml:"format"`
 }
 
 // ModuleSets is Specify which modules source files to include in the assembly
 type ModuleSets struct {
 	XMLName   xml.Name     `xml:"moduleSets"`
-	ModuleSet []*ModuleSet `xml:"moduleSet,omitempty"`
+	ModuleSet []*ModuleSet `xml:"moduleSet"`
 }
 
 // FileSets is Specify assembly parameters for groups of files.
 type FileSets struct {
 	XMLName xml.Name   `xml:"fileSets"`
-	FileSet []*FileSet `xml:"fileSet,omitempty"`
+	FileSet []*FileSet `xml:"fileSet"`
 }
 
 // Files is Specify assembly parameters for single files.
 type Files struct {
 	XMLName xml.Name    `xml:"files"`
-	File    []*FileItem `xml:"file,omitempty"`
+	File    []*FileItem `xml:"file"`
 }
 
 // DependencySets is Specify assembly behavior for sets of dependencies.
 type DependencySets struct {
 	XMLName       xml.Name         `xml:"dependencySets"`
-	DependencySet []*DependencySet `xml:"dependencySet,omitempty"`
+	DependencySet []*DependencySet `xml:"dependencySet"`
 }
 
 // Repositories is Specify assembly behavior for sets of repositories.
 type Repositories struct {
 	XMLName    xml.Name      `xml:"repositories"`
-	Repository []*Repository `xml:"repository,omitempty"`
+	Repository []*Repository `xml:"repository"`
 }
 
 // ComponentDescriptors is File relative to basedir containing Component.
 type ComponentDescriptors struct {
 	XMLName             xml.Name `xml:"componentDescriptors"`
-	ComponentDescriptor []string `xml:"componentDescriptor,omitempty"`
+	ComponentDescriptor []string `xml:"componentDescriptor"`
 }
 
 // Assembly is The id of this assembly. This is a symbolic name for a
 //             particular assembly of files from this project.
 type Assembly struct {
 	Id                   *string               `xml:"id"`
-	Formats              *Formats              `xml:"formats,omitempty"`
+	Formats              *Formats              `xml:"formats"`
 	IncludeBaseDirectory *bool                 `xml:"includeBaseDirectory"`
 	IncludeSiteDirectory *bool                 `xml:"includeSiteDirectory"`
-	ModuleSets           *ModuleSets           `xml:"moduleSets,omitempty"`
-	FileSets             *FileSets             `xml:"fileSets,omitempty"`
-	Files                *Files                `xml:"files,omitempty"`
-	DependencySets       *DependencySets       `xml:"dependencySets,omitempty"`
-	Repositories         *Repositories         `xml:"repositories,omitempty"`
-	ComponentDescriptors *ComponentDescriptors `xml:"componentDescriptors,omitempty"`
+	ModuleSets           *ModuleSets           `xml:"moduleSets"`
+	FileSets             *FileSets             `xml:"fileSets"`
+	Files                *Files                `xml:"files"`
+	DependencySets       *DependencySets       `xml:"dependencySets"`
+	Repositories         *Repositories         `xml:"repositories"`
+	ComponentDescriptors *ComponentDescriptors `xml:"componentDescriptors"`
 }
 
 // GroupVersionAlignments is Align a group to a version or an individual artifact.
 type GroupVersionAlignments struct {
 	XMLName               xml.Name                 `xml:"groupVersionAlignments"`
-	GroupVersionAlignment []*GroupVersionAlignment `xml:"groupVersionAlignment,omitempty"`
+	GroupVersionAlignment []*GroupVersionAlignment `xml:"groupVersionAlignment"`
 }
 
 // Includes is When &lt;include&gt; subelements are present, they define
 //             a set of files and directory to include.
 type Includes struct {
 	XMLName xml.Name `xml:"includes"`
-	Include []string `xml:"include,omitempty"`
+	Include []string `xml:"include"`
 }
 
 // Excludes is When &lt;exclude&gt; subelements are present, they define
 //             a set of files and directory to exclude.
 type Excludes struct {
 	XMLName xml.Name `xml:"excludes"`
-	Exclude []string `xml:"exclude,omitempty"`
+	Exclude []string `xml:"exclude"`
 }
 
 // Repository is If set to true, this property will trigger the creation of repository
@@ -99,10 +99,10 @@ type Excludes struct {
 //             repository.
 type Repository struct {
 	IncludeMetadata        *bool                   `xml:"includeMetadata"`
-	GroupVersionAlignments *GroupVersionAlignments `xml:"groupVersionAlignments,omitempty"`
+	GroupVersionAlignments *GroupVersionAlignments `xml:"groupVersionAlignments"`
 	OutputDirectory        *string                 `xml:"outputDirectory"`
-	Includes               *Includes               `xml:"includes,omitempty"`
-	Excludes               *Excludes               `xml:"excludes,omitempty"`
+	Includes               *Includes               `xml:"includes"`
+	Excludes               *Excludes               `xml:"excludes"`
 	FileMode               *string                 `xml:"fileMode"`
 	DirectoryMode          *string                 `xml:"directoryMode"`
 }
@@ -111,7 +111,7 @@ type Repository struct {
 type GroupVersionAlignment struct {
 	Id       *string   `xml:"id"`
 	Version  *string   `xml:"version"`
-	Excludes *Excludes `xml:"excludes,omitempty"`
+	Excludes *Excludes `xml:"excludes"`
 }
 
 // DependencySet is Specifies the output directory relative to the root
@@ -122,18 +122,18 @@ type DependencySet struct {
 	Unpack                *bool     `xml:"unpack"`
 	Scope                 *string   `xml:"scope"`
 	OutputDirectory       *string   `xml:"outputDirectory"`
-	Includes              *Includes `xml:"includes,omitempty"`
-	Excludes              *Excludes `xml:"excludes,omitempty"`
+	Includes              *Includes `xml:"includes"`
+	Excludes              *Excludes `xml:"excludes"`
 	FileMode              *string   `xml:"fileMode"`
 	DirectoryMode         *string   `xml:"directoryMode"`
 }
 
 // ModuleSet is 1.0.0
 type ModuleSet struct {
-	Includes *Includes       `xml:"includes,omitempty"`
-	Excludes *Excludes       `xml:"excludes,omitempty"`
-	Sources  *ModuleSources  `xml:"sources,omitempty"`
-	Binaries *ModuleBinaries `xml:"binaries,omitempty"`
+	Includes *Includes       `xml:"includes"`
+	Excludes *Excludes       `xml:"excludes"`
+	Sources  *ModuleSources  `xml:"sources"`
+	Binaries *ModuleBinaries `xml:"binaries"`
 }
 
 // ModuleSources is Specifies the output directory relative to the root
@@ -141,8 +141,8 @@ type ModuleSet struct {
 //             "log" will put the specified files in the log directory.
 type ModuleSources struct {
 	OutputDirectory *string   `xml:"outputDirectory"`
-	Includes        *Includes `xml:"includes,omitempty"`
-	Excludes        *Excludes `xml:"excludes,omitempty"`
+	Includes        *Includes `xml:"includes"`
+	Excludes        *Excludes `xml:"excludes"`
 	FileMode        *string   `xml:"fileMode"`
 	DirectoryMode   *string   `xml:"directoryMode"`
 }
@@ -155,8 +155,8 @@ type ModuleBinaries struct {
 	Unpack                *bool     `xml:"unpack"`
 	OutputFileNameMapping *string   `xml:"outputFileNameMapping"`
 	OutputDirectory       *string   `xml:"outputDirectory"`
-	Includes              *Includes `xml:"includes,omitempty"`
-	Excludes              *Excludes `xml:"excludes,omitempty"`
+	Includes              *Includes `xml:"includes"`
+	Excludes              *Excludes `xml:"excludes"`
 	FileMode              *string   `xml:"fileMode"`
 	DirectoryMode         *string   `xml:"directoryMode"`
 }
@@ -178,8 +178,8 @@ type FileSet struct {
 	Directory       *string   `xml:"directory"`
 	LineEnding      *string   `xml:"lineEnding"`
 	OutputDirectory *string   `xml:"outputDirectory"`
-	Includes        *Includes `xml:"includes,omitempty"`
-	Excludes        *Excludes `xml:"excludes,omitempty"`
+	Includes        *Includes `xml:"includes"`
+	Excludes        *Excludes `xml:"excludes"`
 	FileMode        *string   `xml:"fileMode"`
 	DirectoryMode   *string   `xml:"directoryMode"`
 }

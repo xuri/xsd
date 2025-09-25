@@ -12,40 +12,40 @@ type Component *Component
 // FileSets is Specify assembly parameters for groups of files.
 type FileSets struct {
 	XMLName xml.Name   `xml:"fileSets"`
-	FileSet []*FileSet `xml:"fileSet,omitempty"`
+	FileSet []*FileSet `xml:"fileSet"`
 }
 
 // Files is Specify assembly parameters for single files.
 type Files struct {
 	XMLName xml.Name    `xml:"files"`
-	File    []*FileItem `xml:"file,omitempty"`
+	File    []*FileItem `xml:"file"`
 }
 
 // DependencySets is Specify assembly behavior for sets of dependencies.
 type DependencySets struct {
 	XMLName       xml.Name         `xml:"dependencySets"`
-	DependencySet []*DependencySet `xml:"dependencySet,omitempty"`
+	DependencySet []*DependencySet `xml:"dependencySet"`
 }
 
 // Component is Describes the component layout and packaging.
 type Component struct {
-	FileSets       *FileSets       `xml:"fileSets,omitempty"`
-	Files          *Files          `xml:"files,omitempty"`
-	DependencySets *DependencySets `xml:"dependencySets,omitempty"`
+	FileSets       *FileSets       `xml:"fileSets"`
+	Files          *Files          `xml:"files"`
+	DependencySets *DependencySets `xml:"dependencySets"`
 }
 
 // Includes is When &lt;include&gt; subelements are present, they define
 //             a set of files and directory to include.
 type Includes struct {
 	XMLName xml.Name `xml:"includes"`
-	Include []string `xml:"include,omitempty"`
+	Include []string `xml:"include"`
 }
 
 // Excludes is When &lt;exclude&gt; subelements are present, they define
 //             a set of files and directory to exclude.
 type Excludes struct {
 	XMLName xml.Name `xml:"excludes"`
-	Exclude []string `xml:"exclude,omitempty"`
+	Exclude []string `xml:"exclude"`
 }
 
 // DependencySet is Specifies the output directory relative to the root
@@ -56,8 +56,8 @@ type DependencySet struct {
 	Unpack                *bool     `xml:"unpack"`
 	Scope                 *string   `xml:"scope"`
 	OutputDirectory       *string   `xml:"outputDirectory"`
-	Includes              *Includes `xml:"includes,omitempty"`
-	Excludes              *Excludes `xml:"excludes,omitempty"`
+	Includes              *Includes `xml:"includes"`
+	Excludes              *Excludes `xml:"excludes"`
 	FileMode              *string   `xml:"fileMode"`
 	DirectoryMode         *string   `xml:"directoryMode"`
 }
@@ -79,8 +79,8 @@ type FileSet struct {
 	Directory       *string   `xml:"directory"`
 	LineEnding      *string   `xml:"lineEnding"`
 	OutputDirectory *string   `xml:"outputDirectory"`
-	Includes        *Includes `xml:"includes,omitempty"`
-	Excludes        *Excludes `xml:"excludes,omitempty"`
+	Includes        *Includes `xml:"includes"`
+	Excludes        *Excludes `xml:"excludes"`
 	FileMode        *string   `xml:"fileMode"`
 	DirectoryMode   *string   `xml:"directoryMode"`
 }

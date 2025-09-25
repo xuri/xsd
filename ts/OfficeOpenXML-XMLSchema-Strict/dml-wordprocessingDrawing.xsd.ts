@@ -112,8 +112,8 @@ export enum ST_RelFromH {
 // CT_PosH ...
 export class CT_PosH {
 	RelativeFromAttr: string;
-	Align: string;
-	PosOffset: number;
+	Align?: string;
+	PosOffset?: number;
 }
 
 // ST_AlignV ...
@@ -140,8 +140,8 @@ export enum ST_RelFromV {
 // CT_PosV ...
 export class CT_PosV {
 	RelativeFromAttr: string;
-	Align: string;
-	PosOffset: number;
+	Align?: string;
+	PosOffset?: number;
 }
 
 // CT_Anchor ...
@@ -191,13 +191,13 @@ export class CT_LinkedTextboxInformation {
 export class CT_WordprocessingShape {
 	NormalEastAsianFlowAttr?: boolean;
 	CNvPr?: CT_NonVisualDrawingProps;
-	CNvSpPr: CT_NonVisualDrawingShapeProps;
-	CNvCnPr: CT_NonVisualConnectorProperties;
+	CNvSpPr?: CT_NonVisualDrawingShapeProps;
+	CNvCnPr?: CT_NonVisualConnectorProperties;
 	SpPr: CT_ShapeProperties;
 	Style?: CT_ShapeStyle;
 	ExtLst?: CT_OfficeArtExtensionList;
-	Txbx: CT_TextboxInfo;
-	LinkedTxbx: CT_LinkedTextboxInformation;
+	Txbx?: CT_TextboxInfo;
+	LinkedTxbx?: CT_LinkedTextboxInformation;
 	BodyPr: CT_TextBodyProperties;
 }
 
@@ -230,11 +230,11 @@ export class CT_WordprocessingGroup {
 	CNvPr?: CT_NonVisualDrawingProps;
 	CNvGrpSpPr: CT_NonVisualGroupDrawingShapeProps;
 	GrpSpPr: CT_GroupShapeProperties;
-	Wsp: Array<CT_WordprocessingShape>;
-	GrpSp: Array<CT_WordprocessingGroup>;
-	GraphicFrame: Array<CT_GraphicFrame>;
-	DpctPic: Array<CT_Picture>;
-	ContentPart: Array<CT_WordprocessingContentPart>;
+	Wsp?: Array<CT_WordprocessingShape>;
+	GrpSp?: Array<CT_WordprocessingGroup>;
+	GraphicFrame?: Array<CT_GraphicFrame>;
+	DpctPic?: Array<CT_Picture>;
+	ContentPart?: Array<CT_WordprocessingContentPart>;
 	ExtLst?: CT_OfficeArtExtensionList;
 }
 
@@ -242,11 +242,11 @@ export class CT_WordprocessingGroup {
 export class CT_WordprocessingCanvas {
 	Bg?: CT_BackgroundFormatting;
 	Whole?: CT_WholeE2oFormatting;
-	Wsp: Array<CT_WordprocessingShape>;
-	DpctPic: Array<CT_Picture>;
-	ContentPart: Array<CT_WordprocessingContentPart>;
-	Wgp: Array<CT_WordprocessingGroup>;
-	GraphicFrame: Array<CT_GraphicFrame>;
+	Wsp?: Array<CT_WordprocessingShape>;
+	DpctPic?: Array<CT_Picture>;
+	ContentPart?: Array<CT_WordprocessingContentPart>;
+	Wgp?: Array<CT_WordprocessingGroup>;
+	GraphicFrame?: Array<CT_GraphicFrame>;
 	ExtLst?: CT_OfficeArtExtensionList;
 }
 

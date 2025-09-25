@@ -13,7 +13,7 @@ type Project *DecorationModel
 // PoweredBy is Powered by logos list.
 type PoweredBy struct {
 	XMLName xml.Name `xml:"poweredBy"`
-	Logo    []*Logo  `xml:"logo,omitempty"`
+	Logo    []*Logo  `xml:"logo"`
 }
 
 // Custom is Custom configuration for use with customized Velocity templates. Data from this field are
@@ -26,17 +26,17 @@ type Custom struct {
 // DecorationModel is Modify the version published display properties.
 type DecorationModel struct {
 	NameAttr                 *string      `xml:"name,attr"`
-	BannerLeft               *Banner      `xml:"bannerLeft,omitempty"`
-	BannerRight              *Banner      `xml:"bannerRight,omitempty"`
+	BannerLeft               *Banner      `xml:"bannerLeft"`
+	BannerRight              *Banner      `xml:"bannerRight"`
 	GoogleAdSenseClient      *string      `xml:"googleAdSenseClient"`
 	GoogleAdSenseSlot        *string      `xml:"googleAdSenseSlot"`
 	GoogleAnalyticsAccountId *string      `xml:"googleAnalyticsAccountId"`
-	PublishDate              *PublishDate `xml:"publishDate,omitempty"`
-	Version                  *Version     `xml:"version,omitempty"`
-	PoweredBy                *PoweredBy   `xml:"poweredBy,omitempty"`
-	Skin                     *Skin        `xml:"skin,omitempty"`
-	Body                     *Body        `xml:"body,omitempty"`
-	Custom                   *Custom      `xml:"custom,omitempty"`
+	PublishDate              *PublishDate `xml:"publishDate"`
+	Version                  *Version     `xml:"version"`
+	PoweredBy                *PoweredBy   `xml:"poweredBy"`
+	Skin                     *Skin        `xml:"skin"`
+	Body                     *Body        `xml:"body"`
+	Custom                   *Custom      `xml:"custom"`
 }
 
 // Version is Modify display properties for version published.
@@ -64,13 +64,13 @@ type Head struct {
 // Links is A list of links to display in the navigation.
 type Links struct {
 	XMLName xml.Name    `xml:"links"`
-	Item    []*LinkItem `xml:"item,omitempty"`
+	Item    []*LinkItem `xml:"item"`
 }
 
 // Breadcrumbs is A list of breadcrumbs to display in the navigation.
 type Breadcrumbs struct {
 	XMLName xml.Name    `xml:"breadcrumbs"`
-	Item    []*LinkItem `xml:"item,omitempty"`
+	Item    []*LinkItem `xml:"item"`
 }
 
 // Footer is If present, the contained text will be used instead of the generated copyright text.
@@ -80,11 +80,11 @@ type Footer struct {
 
 // Body is The main content decoration.
 type Body struct {
-	Head        *Head        `xml:"head,omitempty"`
-	Links       *Links       `xml:"links,omitempty"`
-	Breadcrumbs *Breadcrumbs `xml:"breadcrumbs,omitempty"`
-	Menu        []*Menu      `xml:"menu,omitempty"`
-	Footer      *Footer      `xml:"footer,omitempty"`
+	Head        *Head        `xml:"head"`
+	Links       *Links       `xml:"links"`
+	Breadcrumbs *Breadcrumbs `xml:"breadcrumbs"`
+	Menu        []*Menu      `xml:"menu"`
+	Footer      *Footer      `xml:"footer"`
 }
 
 // LinkItem is A link in the navigation.
@@ -114,7 +114,7 @@ type Menu struct {
 	WidthAttr        *string     `xml:"width,attr"`
 	HeightAttr       *string     `xml:"height,attr"`
 	TitleAttr        *string     `xml:"title,attr"`
-	Item             []*MenuItem `xml:"item,omitempty"`
+	Item             []*MenuItem `xml:"item"`
 }
 
 // MenuItem is A list of menu item.
@@ -132,7 +132,7 @@ type MenuItem struct {
 	TargetAttr   *string     `xml:"target,attr"`
 	TitleAttr    *string     `xml:"title,attr"`
 	Description  *string     `xml:"description"`
-	Item         []*MenuItem `xml:"item,omitempty"`
+	Item         []*MenuItem `xml:"item"`
 }
 
 // Skin is The skin version.

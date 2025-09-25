@@ -54,45 +54,45 @@ public class CT_Vector {
 	protected String BaseTypeAttr;
 	@XmlAttribute(required = true, name = "size")
 	protected Integer SizeAttr;
-	@XmlElement(required = true, name = "variant")
+	@XmlElement(name = "variant")
 	protected List<CT_Variant> Variant;
-	@XmlElement(required = true, name = "i1")
+	@XmlElement(name = "i1")
 	protected List<Byte> I1;
-	@XmlElement(required = true, name = "i2")
+	@XmlElement(name = "i2")
 	protected List<Integer> I2;
-	@XmlElement(required = true, name = "i4")
+	@XmlElement(name = "i4")
 	protected List<Integer> I4;
-	@XmlElement(required = true, name = "i8")
+	@XmlElement(name = "i8")
 	protected List<Long> I8;
-	@XmlElement(required = true, name = "ui1")
+	@XmlElement(name = "ui1")
 	protected List<Byte> Ui1;
-	@XmlElement(required = true, name = "ui2")
+	@XmlElement(name = "ui2")
 	protected List<Short> Ui2;
-	@XmlElement(required = true, name = "ui4")
+	@XmlElement(name = "ui4")
 	protected List<Integer> Ui4;
-	@XmlElement(required = true, name = "ui8")
+	@XmlElement(name = "ui8")
 	protected List<Long> Ui8;
-	@XmlElement(required = true, name = "r4")
+	@XmlElement(name = "r4")
 	protected List<Float> R4;
-	@XmlElement(required = true, name = "r8")
+	@XmlElement(name = "r8")
 	protected List<Float> R8;
-	@XmlElement(required = true, name = "lpstr")
+	@XmlElement(name = "lpstr")
 	protected List<String> Lpstr;
-	@XmlElement(required = true, name = "lpwstr")
+	@XmlElement(name = "lpwstr")
 	protected List<String> Lpwstr;
-	@XmlElement(required = true, name = "bstr")
+	@XmlElement(name = "bstr")
 	protected List<String> Bstr;
-	@XmlElement(required = true, name = "date")
+	@XmlElement(name = "date")
 	protected List<String> Date;
-	@XmlElement(required = true, name = "filetime")
+	@XmlElement(name = "filetime")
 	protected List<String> Filetime;
-	@XmlElement(required = true, name = "bool")
+	@XmlElement(name = "bool")
 	protected List<Boolean> Bool;
-	@XmlElement(required = true, name = "cy")
+	@XmlElement(name = "cy")
 	protected List<String> Cy;
-	@XmlElement(required = true, name = "error")
+	@XmlElement(name = "error")
 	protected List<String> Error;
-	@XmlElement(required = true, name = "clsid")
+	@XmlElement(name = "clsid")
 	protected List<String> Clsid;
 }
 
@@ -104,111 +104,111 @@ public class CT_Array {
 	protected Integer UBoundsAttr;
 	@XmlAttribute(required = true, name = "baseType")
 	protected String BaseTypeAttr;
-	@XmlElement(required = true, name = "variant")
+	@XmlElement(name = "variant")
 	protected List<CT_Variant> Variant;
-	@XmlElement(required = true, name = "i1")
+	@XmlElement(name = "i1")
 	protected List<Byte> I1;
-	@XmlElement(required = true, name = "i2")
+	@XmlElement(name = "i2")
 	protected List<Integer> I2;
-	@XmlElement(required = true, name = "i4")
+	@XmlElement(name = "i4")
 	protected List<Integer> I4;
-	@XmlElement(required = true, name = "int")
+	@XmlElement(name = "int")
 	protected List<Integer> Int;
-	@XmlElement(required = true, name = "ui1")
+	@XmlElement(name = "ui1")
 	protected List<Byte> Ui1;
-	@XmlElement(required = true, name = "ui2")
+	@XmlElement(name = "ui2")
 	protected List<Short> Ui2;
-	@XmlElement(required = true, name = "ui4")
+	@XmlElement(name = "ui4")
 	protected List<Integer> Ui4;
-	@XmlElement(required = true, name = "uint")
+	@XmlElement(name = "uint")
 	protected List<Integer> Uint;
-	@XmlElement(required = true, name = "r4")
+	@XmlElement(name = "r4")
 	protected List<Float> R4;
-	@XmlElement(required = true, name = "r8")
+	@XmlElement(name = "r8")
 	protected List<Float> R8;
-	@XmlElement(required = true, name = "decimal")
+	@XmlElement(name = "decimal")
 	protected List<Float> Decimal;
-	@XmlElement(required = true, name = "bstr")
+	@XmlElement(name = "bstr")
 	protected List<String> Bstr;
-	@XmlElement(required = true, name = "date")
+	@XmlElement(name = "date")
 	protected List<String> Date;
-	@XmlElement(required = true, name = "bool")
+	@XmlElement(name = "bool")
 	protected List<Boolean> Bool;
-	@XmlElement(required = true, name = "error")
+	@XmlElement(name = "error")
 	protected List<String> Error;
-	@XmlElement(required = true, name = "cy")
+	@XmlElement(name = "cy")
 	protected List<String> Cy;
 }
 
 // CT_Variant ...
 public class CT_Variant {
-	@XmlElement(required = true, name = "variant")
+	@XmlElement(name = "variant")
 	protected CT_Variant Variant;
-	@XmlElement(required = true, name = "vector")
+	@XmlElement(name = "vector")
 	protected CT_Vector Vector;
-	@XmlElement(required = true, name = "array")
+	@XmlElement(name = "array")
 	protected CT_Array Array;
-	@XmlElement(required = true, name = "blob")
+	@XmlElement(name = "blob")
 	protected List<Byte> Blob;
-	@XmlElement(required = true, name = "oblob")
+	@XmlElement(name = "oblob")
 	protected List<Byte> Oblob;
-	@XmlElement(required = true, name = "empty")
+	@XmlElement(name = "empty")
 	protected CT_Empty Empty;
-	@XmlElement(required = true, name = "null")
+	@XmlElement(name = "null")
 	protected CT_Null Null;
-	@XmlElement(required = true, name = "i1")
+	@XmlElement(name = "i1")
 	protected Byte I1;
-	@XmlElement(required = true, name = "i2")
+	@XmlElement(name = "i2")
 	protected Integer I2;
-	@XmlElement(required = true, name = "i4")
+	@XmlElement(name = "i4")
 	protected Integer I4;
-	@XmlElement(required = true, name = "i8")
+	@XmlElement(name = "i8")
 	protected Long I8;
-	@XmlElement(required = true, name = "int")
+	@XmlElement(name = "int")
 	protected Integer Int;
-	@XmlElement(required = true, name = "ui1")
+	@XmlElement(name = "ui1")
 	protected Byte Ui1;
-	@XmlElement(required = true, name = "ui2")
+	@XmlElement(name = "ui2")
 	protected Short Ui2;
-	@XmlElement(required = true, name = "ui4")
+	@XmlElement(name = "ui4")
 	protected Integer Ui4;
-	@XmlElement(required = true, name = "ui8")
+	@XmlElement(name = "ui8")
 	protected Long Ui8;
-	@XmlElement(required = true, name = "uint")
+	@XmlElement(name = "uint")
 	protected Integer Uint;
-	@XmlElement(required = true, name = "r4")
+	@XmlElement(name = "r4")
 	protected Float R4;
-	@XmlElement(required = true, name = "r8")
+	@XmlElement(name = "r8")
 	protected Float R8;
-	@XmlElement(required = true, name = "decimal")
+	@XmlElement(name = "decimal")
 	protected Float Decimal;
-	@XmlElement(required = true, name = "lpstr")
+	@XmlElement(name = "lpstr")
 	protected String Lpstr;
-	@XmlElement(required = true, name = "lpwstr")
+	@XmlElement(name = "lpwstr")
 	protected String Lpwstr;
-	@XmlElement(required = true, name = "bstr")
+	@XmlElement(name = "bstr")
 	protected String Bstr;
-	@XmlElement(required = true, name = "date")
+	@XmlElement(name = "date")
 	protected String Date;
-	@XmlElement(required = true, name = "filetime")
+	@XmlElement(name = "filetime")
 	protected String Filetime;
-	@XmlElement(required = true, name = "bool")
+	@XmlElement(name = "bool")
 	protected Boolean Bool;
-	@XmlElement(required = true, name = "cy")
+	@XmlElement(name = "cy")
 	protected String Cy;
-	@XmlElement(required = true, name = "error")
+	@XmlElement(name = "error")
 	protected String Error;
-	@XmlElement(required = true, name = "stream")
+	@XmlElement(name = "stream")
 	protected List<Byte> Stream;
-	@XmlElement(required = true, name = "ostream")
+	@XmlElement(name = "ostream")
 	protected List<Byte> Ostream;
-	@XmlElement(required = true, name = "storage")
+	@XmlElement(name = "storage")
 	protected List<Byte> Storage;
-	@XmlElement(required = true, name = "ostorage")
+	@XmlElement(name = "ostorage")
 	protected List<Byte> Ostorage;
-	@XmlElement(required = true, name = "vstream")
+	@XmlElement(name = "vstream")
 	protected CT_Vstream Vstream;
-	@XmlElement(required = true, name = "clsid")
+	@XmlElement(name = "clsid")
 	protected String Clsid;
 }
 

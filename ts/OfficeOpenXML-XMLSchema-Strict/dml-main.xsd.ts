@@ -917,8 +917,8 @@ export class CT_AnimationChartElement {
 
 // CT_AnimationElementChoice ...
 export class CT_AnimationElementChoice {
-	Dgm: CT_AnimationDgmElement;
-	Chart: CT_AnimationChartElement;
+	Dgm?: CT_AnimationDgmElement;
+	Chart?: CT_AnimationChartElement;
 }
 
 // ST_AnimationBuildType ...
@@ -967,8 +967,8 @@ export class CT_AnimationChartBuildProperties {
 
 // CT_AnimationGraphicalObjectBuildProperties ...
 export class CT_AnimationGraphicalObjectBuildProperties {
-	BldDgm: CT_AnimationDgmBuildProperties;
-	BldChart: CT_AnimationChartBuildProperties;
+	BldDgm?: CT_AnimationDgmBuildProperties;
+	BldChart?: CT_AnimationChartBuildProperties;
 }
 
 // CT_BackgroundFormatting ...
@@ -990,8 +990,8 @@ export class CT_GvmlUseShapeRectangle {
 // CT_GvmlTextShape ...
 export class CT_GvmlTextShape {
 	TxBody: CT_TextBody;
-	UseSpRect: CT_GvmlUseShapeRectangle;
-	Xfrm: CT_Transform2D;
+	UseSpRect?: CT_GvmlUseShapeRectangle;
+	Xfrm?: CT_Transform2D;
 	ExtLst?: CT_OfficeArtExtensionList;
 }
 
@@ -1063,12 +1063,12 @@ export class CT_GvmlGroupShapeNonVisual {
 export class CT_GvmlGroupShape {
 	NvGrpSpPr: CT_GvmlGroupShapeNonVisual;
 	GrpSpPr: CT_GroupShapeProperties;
-	TxSp: Array<CT_GvmlTextShape>;
-	Sp: Array<CT_GvmlShape>;
-	CxnSp: Array<CT_GvmlConnector>;
-	Pic: Array<CT_GvmlPicture>;
-	GraphicFrame: Array<CT_GvmlGraphicalObjectFrame>;
-	GrpSp: Array<CT_GvmlGroupShape>;
+	TxSp?: Array<CT_GvmlTextShape>;
+	Sp?: Array<CT_GvmlShape>;
+	CxnSp?: Array<CT_GvmlConnector>;
+	Pic?: Array<CT_GvmlPicture>;
+	GraphicFrame?: Array<CT_GvmlGraphicalObjectFrame>;
+	GrpSp?: Array<CT_GvmlGroupShape>;
 	ExtLst?: CT_OfficeArtExtensionList;
 }
 
@@ -1560,23 +1560,23 @@ export enum ST_BlipCompression {
 export class CT_Blip {
 	AG_Blob: AG_Blob;
 	CstateAttr?: string;
-	AlphaBiLevel: Array<CT_AlphaBiLevelEffect>;
-	AlphaCeiling: Array<CT_AlphaCeilingEffect>;
-	AlphaFloor: Array<CT_AlphaFloorEffect>;
-	AlphaInv: Array<CT_AlphaInverseEffect>;
-	AlphaMod: Array<CT_AlphaModulateEffect>;
-	AlphaModFix: Array<CT_AlphaModulateFixedEffect>;
-	AlphaRepl: Array<CT_AlphaReplaceEffect>;
-	BiLevel: Array<CT_BiLevelEffect>;
-	Blur: Array<CT_BlurEffect>;
-	ClrChange: Array<CT_ColorChangeEffect>;
-	ClrRepl: Array<CT_ColorReplaceEffect>;
-	Duotone: Array<CT_DuotoneEffect>;
-	FillOverlay: Array<CT_FillOverlayEffect>;
-	Grayscl: Array<CT_GrayscaleEffect>;
-	Hsl: Array<CT_HSLEffect>;
-	Lum: Array<CT_LuminanceEffect>;
-	Tint: Array<CT_TintEffect>;
+	AlphaBiLevel?: Array<CT_AlphaBiLevelEffect>;
+	AlphaCeiling?: Array<CT_AlphaCeilingEffect>;
+	AlphaFloor?: Array<CT_AlphaFloorEffect>;
+	AlphaInv?: Array<CT_AlphaInverseEffect>;
+	AlphaMod?: Array<CT_AlphaModulateEffect>;
+	AlphaModFix?: Array<CT_AlphaModulateFixedEffect>;
+	AlphaRepl?: Array<CT_AlphaReplaceEffect>;
+	BiLevel?: Array<CT_BiLevelEffect>;
+	Blur?: Array<CT_BlurEffect>;
+	ClrChange?: Array<CT_ColorChangeEffect>;
+	ClrRepl?: Array<CT_ColorReplaceEffect>;
+	Duotone?: Array<CT_DuotoneEffect>;
+	FillOverlay?: Array<CT_FillOverlayEffect>;
+	Grayscl?: Array<CT_GrayscaleEffect>;
+	Hsl?: Array<CT_HSLEffect>;
+	Lum?: Array<CT_LuminanceEffect>;
+	Tint?: Array<CT_TintEffect>;
 	ExtLst?: CT_OfficeArtExtensionList;
 }
 
@@ -2091,8 +2091,8 @@ export class CT_ConnectionSite {
 
 // CT_AdjustHandleList ...
 export class CT_AdjustHandleList {
-	AhXY: Array<CT_XYAdjustHandle>;
-	AhPolar: Array<CT_PolarAdjustHandle>;
+	AhXY?: Array<CT_XYAdjustHandle>;
+	AhPolar?: Array<CT_PolarAdjustHandle>;
 }
 
 // CT_ConnectionSiteList ...
@@ -2155,12 +2155,12 @@ export class CT_Path2D {
 	FillAttr?: string;
 	StrokeAttr?: boolean;
 	ExtrusionOkAttr?: boolean;
-	Close: Array<CT_Path2DClose>;
-	MoveTo: Array<CT_Path2DMoveTo>;
-	LnTo: Array<CT_Path2DLineTo>;
-	ArcTo: Array<CT_Path2DArcTo>;
-	QuadBezTo: Array<CT_Path2DQuadBezierTo>;
-	CubicBezTo: Array<CT_Path2DCubicBezierTo>;
+	Close?: Array<CT_Path2DClose>;
+	MoveTo?: Array<CT_Path2DMoveTo>;
+	LnTo?: Array<CT_Path2DLineTo>;
+	ArcTo?: Array<CT_Path2DArcTo>;
+	QuadBezTo?: Array<CT_Path2DQuadBezierTo>;
+	CubicBezTo?: Array<CT_Path2DCubicBezierTo>;
 }
 
 // CT_Path2DList ...
@@ -2423,8 +2423,8 @@ export class CT_ColorMapping {
 
 // CT_ColorMappingOverride ...
 export class CT_ColorMappingOverride {
-	MasterClrMapping: CT_EmptyElement;
-	OverrideClrMapping: CT_ColorMapping;
+	MasterClrMapping?: CT_EmptyElement;
+	OverrideClrMapping?: CT_ColorMapping;
 }
 
 // CT_ColorSchemeAndMapping ...
@@ -2538,8 +2538,8 @@ export class CT_TableProperties {
 	BandColAttr?: boolean;
 	EG_FillProperties: Array<EG_FillProperties>;
 	EG_EffectProperties: Array<EG_EffectProperties>;
-	TableStyle: CT_TableStyle;
-	TableStyleId: string;
+	TableStyle?: CT_TableStyle;
+	TableStyleId?: string;
 	ExtLst?: CT_OfficeArtExtensionList;
 }
 
@@ -2569,8 +2569,8 @@ export class EG_ThemeableFillStyle {
 
 // CT_ThemeableLineStyle ...
 export class CT_ThemeableLineStyle {
-	Ln: CT_LineProperties;
-	LnRef: CT_StyleMatrixReference;
+	Ln?: CT_LineProperties;
+	LnRef?: CT_StyleMatrixReference;
 }
 
 // EG_ThemeableEffectStyle ...
@@ -3114,8 +3114,8 @@ export class CT_TextLineBreak {
 
 // CT_TextSpacing ...
 export class CT_TextSpacing {
-	SpcPct: CT_TextSpacingPercent;
-	SpcPts: CT_TextSpacingPoint;
+	SpcPct?: CT_TextSpacingPercent;
+	SpcPts?: CT_TextSpacingPoint;
 }
 
 // ST_TextAlignType ...
